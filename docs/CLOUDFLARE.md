@@ -1,6 +1,6 @@
 # Cloudflare 외부 접속
 
-연결일: 2026-09-08 · 최신 모델·UI 배포 및 공개 경로 검증: 2026-09-14
+연결일: 2026-09-08 · 최신 경혈409개·UI 배포 및 공개 경로 검증: 2026-09-16
 
 현재 주소: https://veterans-curtis-inquiries-configurations.trycloudflare.com
 
@@ -45,3 +45,5 @@ cloudflared tunnel --no-autoupdate --url http://127.0.0.1:3002
 상세 증거: [구조 확장·이동·가독성 검증](anatomy-expansion/VERIFICATION.md). 공개 모델 매니페스트의 메쉬1,030개와 4가지 화면 크기의 캡처 및 글자 대비를 확인했습니다.
 
 LLM 모델은 연결하지 않았으므로 질문은 출처 기반 위키 검색으로 동작합니다.
+
+2026-09-16: 경혈409개·위키419편으로 서버/정적 파일 갱신. 공개 HTTPS 전체 smoke 재통과. 영구적인 정적 배포 주소는 https://jay-jang.github.io/gyeol-atlas/ 이며 Quick Tunnel은 실행 중인 호스트에 의존합니다.
