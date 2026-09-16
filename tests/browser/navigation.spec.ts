@@ -1,0 +1,25 @@
+import { test, expect } from '@playwright/test';
+import { ready, snapshot } from './helpers';
+test('game movement, wheel zoom, focus safety and reset work on the actual canvas', async ({page}) => {
+  await page.goto('/#atlas/ST36'); await ready(page);
+  const canvas=page.locator('canvas'); await canvas.focus();
+  const before=(await snapshot(page)).camera;
+  await page.keyboard.down('KeyW'); await page.waitForTimeout(500); await page.keyboard.up('KeyW');
+  await expect.poll(async()=> (await snapshot(page)).camera.position[2]).toBeLessThan(before.position[2]-.05);
+  const moved=(await snapshot(page)).camera;
+  expect(moved.target[2]).toBeLessThan(before.target[2]);
+  await page.keyboard.down('KeyD'); await page.waitForTimeout(400); await page.keyboard.up('KeyD');
+  await expect.poll(async()=> (await snapshot(page)).camera.position[0]).toBeGreaterThan(moved.position[0]+.04);
+  await page.getByRole('button',{name:'위로 이동',exact:true}).click();
+  await expect.poll(async()=> (await snapshot(page)).camera.position[1]).toBeGreaterThan(moved.position[1]+.08);
+  const box=(await canvas.boundingBox())!; await page.mouse.move(box.x+box.width/2,box.y+box.height/2);
+  const distance=(p:any)=>Math.hypot(...p.position.map((x:number,i:number)=>x-p.target[i]));
+  const d=distance((await snapshot(page)).camera);
+  await page.mouse.wheel(0,-400); await expect.poll(async()=>distance((await snapshot(page)).camera)).toBeLessThan(d*.9);
+  const zoomed=distance((await snapshot(page)).camera); await page.mouse.wheel(0,600); await expect.poll(async()=>distance((await snapshot(page)).camera)).toBeGreaterThan(zoomed*1.1);
+  await page.getByRole('button',{name:'경혈 찾기',exact:true}).click();
+  const input=page.locator('input[placeholder="이름, 코드, 해부 구조 검색"]'); await input.fill('wasd');
+  const stable=(await snapshot(page)).camera;await page.waitForTimeout(300);expect((await snapshot(page)).camera).toEqual(stable);
+  await page.getByRole('button',{name:'도구 패널 닫기',exact:true}).click();await page.getByRole('button',{name:'시점 초기화'}).click();
+  await expect.poll(async()=> (await snapshot(page)).camera.target[0]).toBe(0);
+});

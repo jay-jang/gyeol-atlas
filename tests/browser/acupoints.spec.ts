@@ -1,0 +1,52 @@
+import { test, expect } from '@playwright/test';
+import points from '../../data/points.json' with { type: 'json' };
+import { ready, openTool, closeTool, snapshot, choosePoint } from './helpers';
+
+test('409 points, extra-point regional meshes, multiple locations and theory survive wiki return', async ({page}) => {
+  await page.goto('/'); await ready(page);
+  await openTool(page,'경혈 찾기');
+  await expect(page.locator('.point-item')).toHaveCount(409);
+  await page.getByLabel('모델 부위 선택').selectOption('손목·손');
+  await page.locator('.point-filter-options summary').click();
+  await page.getByLabel('수록 범위',{exact:true}).selectOption('extra');
+  const expected=points.filter(p=>p.bodyRegion==='손목·손' && p.catalogue==='extra');
+  await expect(page.locator('.point-item')).toHaveCount(expected.length);
+  await expect(page.locator('canvas')).toHaveAttribute('data-rendered-point-ids',expected.map(p=>p.id).sort().join(','));
+  await expect(page.locator('canvas')).toHaveAttribute('data-rendered-markers',String(expected.reduce((n,p)=>n+p.markerCount,0)));
+  await page.getByRole('button',{name:/필터 결과 .*모델에서 보기/}).click();
+  await expect(page.locator('.floating-dock')).toHaveCount(0);
+  const pose=(await snapshot(page)).camera;
+  await page.getByRole('link',{name:'지식 위키',exact:true}).first().click();
+  await page.getByRole('link',{name:/3D 보기로 돌아가기/}).click(); await ready(page);
+  expect((await snapshot(page)).filters.bodyRegion).toBe('손목·손');
+  await expect(page.locator('canvas')).toHaveAttribute('data-rendered-point-ids',expected.map(p=>p.id).sort().join(','));
+  expect((await snapshot(page)).camera.target.map((n:number)=>+n.toFixed(6))).toEqual(pose.target.map((n:number)=>+n.toFixed(6)));
+  await choosePoint(page,'EX-UE11'); await page.locator('.point-summary').click();
+  await expect(page.locator('.detail-panel')).toContainText('10곳 표시');
+  await page.getByRole('tab',{name:'효능·오행'}).click();
+  await expect(page.locator('.point-tradition')).toContainText('별도 배속 없음');
+  await expect(page.locator('.point-tradition a').first()).toHaveAttribute('href',/tcmwiki/);
+  await page.screenshot({path:'docs/acupoint-expansion/desktop-extra.png'});
+  await closeTool(page); await openTool(page,'경혈 찾기'); await page.getByRole('button',{name:'초기화',exact:true}).click();
+  await choosePoint(page,'LU9'); await page.locator('.point-summary').click(); await page.getByRole('tab',{name:'효능·오행'}).click();
+  await expect(page.locator('.theory-facts')).toContainText('금'); await expect(page.locator('.theory-facts')).toContainText('수(輸) · 토');
+  await page.screenshot({path:'docs/acupoint-expansion/desktop-theory.png'});
+});
+
+test('mobile regions and 34-site Jiaji retain the scene and expose sourced content', async ({page}) => {
+  await page.setViewportSize({width:390,height:844}); await page.goto('/'); await ready(page);
+  await openTool(page,'경혈 찾기'); await page.getByLabel('모델 부위 선택').selectOption('등·허리');
+  await page.getByLabel('경혈 검색').fill('협척');
+  await expect(page.locator('.point-item')).toHaveCount(1);
+  await expect(page.locator('canvas')).toHaveAttribute('data-rendered-markers','34');
+  await page.getByRole('button',{name:/필터 결과 .*모델에서 보기/}).click();
+  await page.screenshot({path:'docs/acupoint-expansion/mobile-back.png'});
+  await choosePoint(page,'EX-B2'); await page.locator('.point-summary').click();
+  await expect(page.locator('.detail-panel')).toContainText('34곳 표시');
+  await page.getByRole('tab',{name:'효능·오행'}).click();
+  await page.locator('.point-tradition').scrollIntoViewIfNeeded();
+  const canvas=await page.locator('canvas').boundingBox(), dock=await page.locator('.floating-dock').boundingBox();
+  expect(dock!.height).toBeLessThan(canvas!.height*.45);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await page.screenshot({path:'docs/acupoint-expansion/mobile-theory.png'});
+});

@@ -1,0 +1,3991 @@
+{
+  "sourceCommit": "f0eeb6e843380cfe6b83797cf8c3e1af74de5e61",
+  "before": {
+    "skin": 1,
+    "bone": 101,
+    "muscle": 42,
+    "organ": 19,
+    "vessel": 50,
+    "nerve": 7
+  },
+  "after": {
+    "skin": 1,
+    "bone": 129,
+    "muscle": 437,
+    "organ": 60,
+    "vessel": 55,
+    "nerve": 99
+  },
+  "requiredSourceIds": {
+    "muscle": [
+      "BP44",
+      "BP45",
+      "BP46",
+      "BP47",
+      "FMA11336",
+      "FMA13295",
+      "FMA13336",
+      "FMA13337",
+      "FMA13346",
+      "FMA13347",
+      "FMA13348",
+      "FMA13349",
+      "FMA13350",
+      "FMA13351",
+      "FMA13352",
+      "FMA13353",
+      "FMA13358",
+      "FMA13359",
+      "FMA13375",
+      "FMA13376",
+      "FMA13377",
+      "FMA13378",
+      "FMA13381",
+      "FMA13382",
+      "FMA13383",
+      "FMA13384",
+      "FMA13388",
+      "FMA13389",
+      "FMA13390",
+      "FMA13391",
+      "FMA13392",
+      "FMA13393",
+      "FMA13398",
+      "FMA13399",
+      "FMA13403",
+      "FMA13404",
+      "FMA13405",
+      "FMA13406",
+      "FMA13408",
+      "FMA13409",
+      "FMA13411",
+      "FMA13412",
+      "FMA13414",
+      "FMA13415",
+      "FMA13892",
+      "FMA13893",
+      "FMA21930",
+      "FMA21964",
+      "FMA21965",
+      "FMA22322",
+      "FMA22323",
+      "FMA22324",
+      "FMA22325",
+      "FMA22326",
+      "FMA22327",
+      "FMA22328",
+      "FMA22329",
+      "FMA22330",
+      "FMA22331",
+      "FMA22332",
+      "FMA22333",
+      "FMA22334",
+      "FMA22335",
+      "FMA22336",
+      "FMA22337",
+      "FMA22338",
+      "FMA22339",
+      "FMA22340",
+      "FMA22341",
+      "FMA22342",
+      "FMA22343",
+      "FMA22344",
+      "FMA22345",
+      "FMA22346",
+      "FMA22347",
+      "FMA22348",
+      "FMA22349",
+      "FMA22354",
+      "FMA22355",
+      "FMA22358",
+      "FMA22359",
+      "FMA22425",
+      "FMA22426",
+      "FMA22448",
+      "FMA22449",
+      "FMA22450",
+      "FMA22451",
+      "FMA22452",
+      "FMA22454",
+      "FMA22456",
+      "FMA22457",
+      "FMA22459",
+      "FMA22460",
+      "FMA22544",
+      "FMA22545",
+      "FMA22546",
+      "FMA22547",
+      "FMA22548",
+      "FMA22549",
+      "FMA22550",
+      "FMA22551",
+      "FMA22552",
+      "FMA22553",
+      "FMA22554",
+      "FMA22555",
+      "FMA22558",
+      "FMA22559",
+      "FMA22560",
+      "FMA22561",
+      "FMA22591",
+      "FMA22592",
+      "FMA22726",
+      "FMA22727",
+      "FMA22728",
+      "FMA22729",
+      "FMA22740",
+      "FMA22741",
+      "FMA22742",
+      "FMA22743",
+      "FMA22744",
+      "FMA22745",
+      "FMA22751",
+      "FMA22753",
+      "FMA22754",
+      "FMA22756",
+      "FMA22757",
+      "FMA22758",
+      "FMA22779",
+      "FMA22780",
+      "FMA22781",
+      "FMA22782",
+      "FMA22872",
+      "FMA22873",
+      "FMA22874",
+      "FMA22875",
+      "FMA22876",
+      "FMA22877",
+      "FMA22878",
+      "FMA22879",
+      "FMA23083",
+      "FMA23089",
+      "FMA23090",
+      "FMA258847",
+      "FMA258850",
+      "FMA264840",
+      "FMA264844",
+      "FMA32530",
+      "FMA32531",
+      "FMA32532",
+      "FMA32533",
+      "FMA32534",
+      "FMA32535",
+      "FMA32536",
+      "FMA32537",
+      "FMA32540",
+      "FMA32541",
+      "FMA32544",
+      "FMA32545",
+      "FMA32547",
+      "FMA32548",
+      "FMA32551",
+      "FMA32552",
+      "FMA32553",
+      "FMA32554",
+      "FMA33581",
+      "FMA33583",
+      "FMA33584",
+      "FMA33585",
+      "FMA33586",
+      "FMA33587",
+      "FMA34680",
+      "FMA34681",
+      "FMA34682",
+      "FMA34683",
+      "FMA34684",
+      "FMA34685",
+      "FMA34690",
+      "FMA34691",
+      "FMA37386",
+      "FMA37387",
+      "FMA37390",
+      "FMA37391",
+      "FMA37396",
+      "FMA37397",
+      "FMA37398",
+      "FMA37399",
+      "FMA37400",
+      "FMA37401",
+      "FMA37459",
+      "FMA37460",
+      "FMA37461",
+      "FMA37462",
+      "FMA37463",
+      "FMA37464",
+      "FMA37465",
+      "FMA37466",
+      "FMA37471",
+      "FMA37472",
+      "FMA37483",
+      "FMA37484",
+      "FMA37485",
+      "FMA37486",
+      "FMA37665",
+      "FMA37666",
+      "FMA37668",
+      "FMA37669",
+      "FMA37684",
+      "FMA37685",
+      "FMA37686",
+      "FMA37687",
+      "FMA37695",
+      "FMA37696",
+      "FMA37697",
+      "FMA37698",
+      "FMA37699",
+      "FMA37700",
+      "FMA37705",
+      "FMA37706",
+      "FMA37717",
+      "FMA37718",
+      "FMA37719",
+      "FMA37720",
+      "FMA37741",
+      "FMA37742",
+      "FMA37743",
+      "FMA37744",
+      "FMA37745",
+      "FMA37746",
+      "FMA38454",
+      "FMA38455",
+      "FMA38460",
+      "FMA38461",
+      "FMA38463",
+      "FMA38464",
+      "FMA38479",
+      "FMA38480",
+      "FMA38482",
+      "FMA38484",
+      "FMA38486",
+      "FMA38487",
+      "FMA38495",
+      "FMA38496",
+      "FMA38498",
+      "FMA38499",
+      "FMA38501",
+      "FMA38502",
+      "FMA38504",
+      "FMA38505",
+      "FMA38513",
+      "FMA38514",
+      "FMA38516",
+      "FMA38517",
+      "FMA38519",
+      "FMA38520",
+      "FMA38522",
+      "FMA38523",
+      "FMA38525",
+      "FMA38526",
+      "FMA38560",
+      "FMA38561",
+      "FMA38562",
+      "FMA38563",
+      "FMA38617",
+      "FMA38618",
+      "FMA38619",
+      "FMA38620",
+      "FMA38638",
+      "FMA38639",
+      "FMA38640",
+      "FMA38641",
+      "FMA38928",
+      "FMA38929",
+      "FMA38930",
+      "FMA38931",
+      "FMA38932",
+      "FMA38933",
+      "FMA38934",
+      "FMA38935",
+      "FMA40120",
+      "FMA40121",
+      "FMA42398",
+      "FMA42399",
+      "FMA42402",
+      "FMA42403",
+      "FMA42404",
+      "FMA42405",
+      "FMA43883",
+      "FMA43884",
+      "FMA43886",
+      "FMA43887",
+      "FMA45739",
+      "FMA45740",
+      "FMA45826",
+      "FMA45827",
+      "FMA45854",
+      "FMA45855",
+      "FMA45856",
+      "FMA45857",
+      "FMA45858",
+      "FMA45859",
+      "FMA45874",
+      "FMA45875",
+      "FMA45888",
+      "FMA45889",
+      "FMA45891",
+      "FMA45892",
+      "FMA45957",
+      "FMA45958",
+      "FMA45960",
+      "FMA45961",
+      "FMA45971",
+      "FMA45972",
+      "FMA45973",
+      "FMA45974",
+      "FMA46018",
+      "FMA46019",
+      "FMA46020",
+      "FMA46021",
+      "FMA46110",
+      "FMA46111",
+      "FMA46121",
+      "FMA46122",
+      "FMA46123",
+      "FMA46124",
+      "FMA46283",
+      "FMA46284",
+      "FMA46285",
+      "FMA46286",
+      "FMA46287",
+      "FMA46288",
+      "FMA46304",
+      "FMA46305",
+      "FMA46306",
+      "FMA46307",
+      "FMA46309",
+      "FMA46310",
+      "FMA46313",
+      "FMA46314",
+      "FMA46317",
+      "FMA46318",
+      "FMA46321",
+      "FMA46322",
+      "FMA46326",
+      "FMA46327",
+      "FMA46442",
+      "FMA46443",
+      "FMA46444",
+      "FMA46759",
+      "FMA46760",
+      "FMA46761",
+      "FMA46762",
+      "FMA46763",
+      "FMA46764",
+      "FMA46768",
+      "FMA46782",
+      "FMA46783",
+      "FMA46785",
+      "FMA46786",
+      "FMA46796",
+      "FMA46797",
+      "FMA46803",
+      "FMA46804",
+      "FMA46806",
+      "FMA46807",
+      "FMA46812",
+      "FMA46813",
+      "FMA46814",
+      "FMA46815",
+      "FMA46817",
+      "FMA46818",
+      "FMA46823",
+      "FMA46824",
+      "FMA46826",
+      "FMA46827",
+      "FMA46829",
+      "FMA46830",
+      "FMA46835",
+      "FMA46836",
+      "FMA46839",
+      "FMA46840",
+      "FMA46841",
+      "FMA49001",
+      "FMA49002",
+      "FMA49004",
+      "FMA49005",
+      "FMA49007",
+      "FMA49008",
+      "FMA49012",
+      "FMA49013",
+      "FMA49022",
+      "FMA49023",
+      "FMA49024",
+      "FMA49025",
+      "FMA51142",
+      "FMA51143",
+      "FMA51144",
+      "FMA51145",
+      "FMA55606",
+      "FMA55607",
+      "FMA55608",
+      "FMA55609",
+      "FMA55610",
+      "FMA55611",
+      "FMA58776",
+      "FMA58777",
+      "FMA65014",
+      "FMA65015",
+      "FMA65016",
+      "FMA65017",
+      "FMA65018",
+      "FMA65019",
+      "FMA65198",
+      "FMA65199",
+      "FMA71307",
+      "FMA71308",
+      "FMA71309",
+      "FMA71442",
+      "FMA71443",
+      "FMA71444",
+      "FMA74075",
+      "FMA74076",
+      "FMA74077",
+      "FMA74078",
+      "FMA74140",
+      "FMA74141",
+      "FMA76775",
+      "FMA79979",
+      "FMA79980",
+      "FMA81752",
+      "FMA81753",
+      "FMA86034",
+      "FMA86035",
+      "FMA9756",
+      "FMA9757",
+      "FMA9758",
+      "FMA9761",
+      "FMA9762"
+    ],
+    "nerve": [
+      "BP49",
+      "BP50",
+      "BP51",
+      "FMA258714",
+      "FMA258716",
+      "FMA274027",
+      "FMA274029",
+      "FMA50875",
+      "FMA50878",
+      "FMA61822",
+      "FMA61844",
+      "FMA61961",
+      "FMA61970",
+      "FMA61975",
+      "FMA61993nsn",
+      "FMA62004",
+      "FMA62008nsn",
+      "FMA62032",
+      "FMA62033",
+      "FMA62045",
+      "FMA62072",
+      "FMA62327",
+      "FMA62382",
+      "FMA62394",
+      "FMA67936",
+      "FMA67943",
+      "FMA67944",
+      "FMA72653",
+      "FMA72654",
+      "FMA72655",
+      "FMA72656",
+      "FMA72661",
+      "FMA72662",
+      "FMA72665",
+      "FMA72666",
+      "FMA72667",
+      "FMA72668",
+      "FMA72669",
+      "FMA72670",
+      "FMA72685",
+      "FMA72686",
+      "FMA72687",
+      "FMA72688",
+      "FMA72689",
+      "FMA72690",
+      "FMA72701",
+      "FMA72702",
+      "FMA72705",
+      "FMA72706",
+      "FMA72713",
+      "FMA72714",
+      "FMA72717",
+      "FMA72718",
+      "FMA72800",
+      "FMA72801",
+      "FMA72804",
+      "FMA72805",
+      "FMA72826",
+      "FMA72827",
+      "FMA72828",
+      "FMA72829",
+      "FMA72830",
+      "FMA72831",
+      "FMA72832",
+      "FMA72833",
+      "FMA72908",
+      "FMA72909",
+      "FMA72924",
+      "FMA72925",
+      "FMA72939",
+      "FMA72940",
+      "FMA72975",
+      "FMA72976",
+      "FMA72977",
+      "FMA72978",
+      "FMA73303",
+      "FMA73304",
+      "FMA73309",
+      "FMA73310",
+      "FMA73413",
+      "FMA73414",
+      "FMA73422",
+      "FMA73423",
+      "FMA73434",
+      "FMA73435",
+      "FMA73461",
+      "FMA73462",
+      "FMA73463",
+      "FMA73464",
+      "FMA74877",
+      "FMA75351",
+      "FMA78449",
+      "FMA78450",
+      "FMA78454",
+      "FMA78467",
+      "FMA78469",
+      "FMA78497",
+      "FMA83740",
+      "FMA86464"
+    ],
+    "organ": [
+      "FMA10419",
+      "FMA12513",
+      "FMA13889",
+      "FMA14542",
+      "FMA14543nsn",
+      "FMA14544",
+      "FMA15571",
+      "FMA15572",
+      "FMA15629",
+      "FMA15630",
+      "FMA15900",
+      "FMA18247",
+      "FMA18256",
+      "FMA18257",
+      "FMA19235",
+      "FMA19236",
+      "FMA19387",
+      "FMA19388",
+      "FMA19617nsn",
+      "FMA19618",
+      "FMA19667",
+      "FMA52780",
+      "FMA55099",
+      "FMA59815nsn",
+      "FMA71194",
+      "FMA71195",
+      "FMA7131",
+      "FMA7148",
+      "FMA71704",
+      "FMA7196",
+      "FMA7197",
+      "FMA7198nsn",
+      "FMA7202",
+      "FMA7204",
+      "FMA7205",
+      "FMA7206",
+      "FMA7207",
+      "FMA7208",
+      "FMA7211",
+      "FMA7212",
+      "FMA7234",
+      "FMA7235",
+      "FMA7246",
+      "FMA7260",
+      "FMA7261",
+      "FMA7262",
+      "FMA7266",
+      "FMA7274",
+      "FMA7333",
+      "FMA7337",
+      "FMA7370",
+      "FMA7371",
+      "FMA7383",
+      "FMA7394",
+      "FMA7409",
+      "FMA76891",
+      "FMA76892",
+      "FMA76893",
+      "FMA9352nsn",
+      "FMA9600"
+    ]
+  },
+  "added": [
+    {
+      "id": "BP44",
+      "name": "humeral head of left extensor carpi ulnaris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/BP44.stl"
+    },
+    {
+      "id": "BP45",
+      "name": "humeral head of right extensor carpi ulnaris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/BP45.stl"
+    },
+    {
+      "id": "BP46",
+      "name": "ulnar head of left extensor carpi ulnaris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/BP46.stl"
+    },
+    {
+      "id": "BP47",
+      "name": "ulnar head of right extensor carpi ulnaris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/BP47.stl"
+    },
+    {
+      "id": "FMA11336",
+      "name": "linea alba",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA11336.stl"
+    },
+    {
+      "id": "FMA13295",
+      "name": "diaphragm",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13295.stl"
+    },
+    {
+      "id": "FMA13336",
+      "name": "right external oblique",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13336.stl"
+    },
+    {
+      "id": "FMA13337",
+      "name": "left external oblique",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13337.stl"
+    },
+    {
+      "id": "FMA13346",
+      "name": "right sternohyoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13346.stl"
+    },
+    {
+      "id": "FMA13347",
+      "name": "left sternohyoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13347.stl"
+    },
+    {
+      "id": "FMA13348",
+      "name": "right omohyoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13348.stl"
+    },
+    {
+      "id": "FMA13349",
+      "name": "left omohyoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13349.stl"
+    },
+    {
+      "id": "FMA13350",
+      "name": "right sternothyroid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13350.stl"
+    },
+    {
+      "id": "FMA13351",
+      "name": "left sternothyroid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13351.stl"
+    },
+    {
+      "id": "FMA13352",
+      "name": "right thyrohyoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13352.stl"
+    },
+    {
+      "id": "FMA13353",
+      "name": "left thyrohyoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13353.stl"
+    },
+    {
+      "id": "FMA13358",
+      "name": "right latissimus dorsi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13358.stl"
+    },
+    {
+      "id": "FMA13359",
+      "name": "left latissimus dorsi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13359.stl"
+    },
+    {
+      "id": "FMA13375",
+      "name": "right pectoralis minor",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13375.stl"
+    },
+    {
+      "id": "FMA13376",
+      "name": "left pectoralis minor",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13376.stl"
+    },
+    {
+      "id": "FMA13381",
+      "name": "right rhomboid major",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13381.stl"
+    },
+    {
+      "id": "FMA13382",
+      "name": "left rhomboid major",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13382.stl"
+    },
+    {
+      "id": "FMA13383",
+      "name": "right rhomboid minor",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13383.stl"
+    },
+    {
+      "id": "FMA13384",
+      "name": "left rhomboid minor",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13384.stl"
+    },
+    {
+      "id": "FMA13388",
+      "name": "right scalenus posterior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13388.stl"
+    },
+    {
+      "id": "FMA13389",
+      "name": "left scalenus posterior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13389.stl"
+    },
+    {
+      "id": "FMA13390",
+      "name": "right scalenus medius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13390.stl"
+    },
+    {
+      "id": "FMA13391",
+      "name": "left scalenus medius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13391.stl"
+    },
+    {
+      "id": "FMA13392",
+      "name": "right scalenus anterior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13392.stl"
+    },
+    {
+      "id": "FMA13393",
+      "name": "left scalenus anterior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13393.stl"
+    },
+    {
+      "id": "FMA13398",
+      "name": "right serratus anterior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13398.stl"
+    },
+    {
+      "id": "FMA13399",
+      "name": "left serratus anterior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13399.stl"
+    },
+    {
+      "id": "FMA13403",
+      "name": "right serratus posterior superior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13403.stl"
+    },
+    {
+      "id": "FMA13404",
+      "name": "left serratus posterior superior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13404.stl"
+    },
+    {
+      "id": "FMA13405",
+      "name": "right serratus posterior inferior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13405.stl"
+    },
+    {
+      "id": "FMA13406",
+      "name": "left serratus posterior inferior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13406.stl"
+    },
+    {
+      "id": "FMA13408",
+      "name": "right sternocleidomastoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13408.stl"
+    },
+    {
+      "id": "FMA13409",
+      "name": "left sternocleidomastoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13409.stl"
+    },
+    {
+      "id": "FMA13411",
+      "name": "left subclavius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13411.stl"
+    },
+    {
+      "id": "FMA13412",
+      "name": "right subclavius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13412.stl"
+    },
+    {
+      "id": "FMA13414",
+      "name": "right subscapularis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13414.stl"
+    },
+    {
+      "id": "FMA13415",
+      "name": "left subscapularis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13415.stl"
+    },
+    {
+      "id": "FMA13892",
+      "name": "right internal oblique",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13892.stl"
+    },
+    {
+      "id": "FMA13893",
+      "name": "left internal oblique",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA13893.stl"
+    },
+    {
+      "id": "FMA21930",
+      "name": "external anal sphincter",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA21930.stl"
+    },
+    {
+      "id": "FMA21964",
+      "name": "right inguinal ligament",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA21964.stl"
+    },
+    {
+      "id": "FMA21965",
+      "name": "left inguinal ligament",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA21965.stl"
+    },
+    {
+      "id": "FMA22322",
+      "name": "right iliacus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22322.stl"
+    },
+    {
+      "id": "FMA22323",
+      "name": "left iliacus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22323.stl"
+    },
+    {
+      "id": "FMA22324",
+      "name": "right obturator internus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22324.stl"
+    },
+    {
+      "id": "FMA22325",
+      "name": "left obturator internus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22325.stl"
+    },
+    {
+      "id": "FMA22326",
+      "name": "right obturator externus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22326.stl"
+    },
+    {
+      "id": "FMA22327",
+      "name": "left obturator externus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22327.stl"
+    },
+    {
+      "id": "FMA22328",
+      "name": "right gluteus maximus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22328.stl"
+    },
+    {
+      "id": "FMA22329",
+      "name": "left gluteus maximus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22329.stl"
+    },
+    {
+      "id": "FMA22330",
+      "name": "right gluteus medius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22330.stl"
+    },
+    {
+      "id": "FMA22331",
+      "name": "left gluteus medius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22331.stl"
+    },
+    {
+      "id": "FMA22332",
+      "name": "right gluteus minimus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22332.stl"
+    },
+    {
+      "id": "FMA22333",
+      "name": "left gluteus minimus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22333.stl"
+    },
+    {
+      "id": "FMA22334",
+      "name": "right gemellus superior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22334.stl"
+    },
+    {
+      "id": "FMA22335",
+      "name": "left gemellus superior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22335.stl"
+    },
+    {
+      "id": "FMA22336",
+      "name": "right gemellus inferior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22336.stl"
+    },
+    {
+      "id": "FMA22337",
+      "name": "left gemellus inferior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22337.stl"
+    },
+    {
+      "id": "FMA22338",
+      "name": "right quadratus femoris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22338.stl"
+    },
+    {
+      "id": "FMA22339",
+      "name": "left quadratus femoris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22339.stl"
+    },
+    {
+      "id": "FMA22340",
+      "name": "right piriformis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22340.stl"
+    },
+    {
+      "id": "FMA22341",
+      "name": "left piriformis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22341.stl"
+    },
+    {
+      "id": "FMA22342",
+      "name": "right psoas major",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22342.stl"
+    },
+    {
+      "id": "FMA22343",
+      "name": "left psoas major",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22343.stl"
+    },
+    {
+      "id": "FMA22344",
+      "name": "right transversus abdominis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22344.stl"
+    },
+    {
+      "id": "FMA22345",
+      "name": "left transversus abdominis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22345.stl"
+    },
+    {
+      "id": "FMA22346",
+      "name": "right pyramidalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22346.stl"
+    },
+    {
+      "id": "FMA22347",
+      "name": "left pyramidalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22347.stl"
+    },
+    {
+      "id": "FMA22348",
+      "name": "right quadratus lumborum",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22348.stl"
+    },
+    {
+      "id": "FMA22349",
+      "name": "left quadratus lumborum",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22349.stl"
+    },
+    {
+      "id": "FMA22358",
+      "name": "right semitendinosus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22358.stl"
+    },
+    {
+      "id": "FMA22359",
+      "name": "left semitendinosus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22359.stl"
+    },
+    {
+      "id": "FMA22425",
+      "name": "right tensor fasciae latae",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22425.stl"
+    },
+    {
+      "id": "FMA22426",
+      "name": "left tensor fasciae latae",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22426.stl"
+    },
+    {
+      "id": "FMA22448",
+      "name": "right semimembranosus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22448.stl"
+    },
+    {
+      "id": "FMA22449",
+      "name": "left semimembranosus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22449.stl"
+    },
+    {
+      "id": "FMA22450",
+      "name": "right pectineus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22450.stl"
+    },
+    {
+      "id": "FMA22451",
+      "name": "left pectineus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22451.stl"
+    },
+    {
+      "id": "FMA22452",
+      "name": "right adductor brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22452.stl"
+    },
+    {
+      "id": "FMA22454",
+      "name": "left adductor brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22454.stl"
+    },
+    {
+      "id": "FMA22456",
+      "name": "right adductor longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22456.stl"
+    },
+    {
+      "id": "FMA22457",
+      "name": "left adductor longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22457.stl"
+    },
+    {
+      "id": "FMA22459",
+      "name": "right adductor magnus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22459.stl"
+    },
+    {
+      "id": "FMA22460",
+      "name": "left adductor magnus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22460.stl"
+    },
+    {
+      "id": "FMA22546",
+      "name": "right extensor hallucis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22546.stl"
+    },
+    {
+      "id": "FMA22547",
+      "name": "left extensor hallucis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22547.stl"
+    },
+    {
+      "id": "FMA22548",
+      "name": "right extensor digitorum longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22548.stl"
+    },
+    {
+      "id": "FMA22549",
+      "name": "left extensor digitorum longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22549.stl"
+    },
+    {
+      "id": "FMA22550",
+      "name": "right fibularis tertius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22550.stl"
+    },
+    {
+      "id": "FMA22551",
+      "name": "left fibularis tertius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22551.stl"
+    },
+    {
+      "id": "FMA22552",
+      "name": "right fibularis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22552.stl"
+    },
+    {
+      "id": "FMA22553",
+      "name": "left fibularis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22553.stl"
+    },
+    {
+      "id": "FMA22554",
+      "name": "right fibularis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22554.stl"
+    },
+    {
+      "id": "FMA22555",
+      "name": "left fibularis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22555.stl"
+    },
+    {
+      "id": "FMA22558",
+      "name": "right soleus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22558.stl"
+    },
+    {
+      "id": "FMA22559",
+      "name": "left soleus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22559.stl"
+    },
+    {
+      "id": "FMA22560",
+      "name": "right plantaris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22560.stl"
+    },
+    {
+      "id": "FMA22561",
+      "name": "left plantaris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22561.stl"
+    },
+    {
+      "id": "FMA22591",
+      "name": "right popliteus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22591.stl"
+    },
+    {
+      "id": "FMA22592",
+      "name": "left popliteus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22592.stl"
+    },
+    {
+      "id": "FMA22726",
+      "name": "right splenius cervicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22726.stl"
+    },
+    {
+      "id": "FMA22727",
+      "name": "left splenius cervicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22727.stl"
+    },
+    {
+      "id": "FMA22728",
+      "name": "right splenius capitis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22728.stl"
+    },
+    {
+      "id": "FMA22729",
+      "name": "left splenius capitis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22729.stl"
+    },
+    {
+      "id": "FMA22740",
+      "name": "right iliocostalis lumborum",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22740.stl"
+    },
+    {
+      "id": "FMA22741",
+      "name": "left iliocostalis lumborum",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22741.stl"
+    },
+    {
+      "id": "FMA22742",
+      "name": "right iliocostalis thoracis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22742.stl"
+    },
+    {
+      "id": "FMA22743",
+      "name": "left iliocostalis thoracis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22743.stl"
+    },
+    {
+      "id": "FMA22744",
+      "name": "right iliocostalis cervicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22744.stl"
+    },
+    {
+      "id": "FMA22745",
+      "name": "left iliocostalis cervicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22745.stl"
+    },
+    {
+      "id": "FMA22751",
+      "name": "right longissimus thoracis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22751.stl"
+    },
+    {
+      "id": "FMA22753",
+      "name": "left longissimus thoracis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22753.stl"
+    },
+    {
+      "id": "FMA22754",
+      "name": "right longissimus capitis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22754.stl"
+    },
+    {
+      "id": "FMA22756",
+      "name": "left longissimus capitis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22756.stl"
+    },
+    {
+      "id": "FMA22757",
+      "name": "right longissimus cervicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22757.stl"
+    },
+    {
+      "id": "FMA22758",
+      "name": "left longissimus cervicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22758.stl"
+    },
+    {
+      "id": "FMA22779",
+      "name": "right spinalis thoracis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22779.stl"
+    },
+    {
+      "id": "FMA22780",
+      "name": "left spinalis thoracis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22780.stl"
+    },
+    {
+      "id": "FMA22781",
+      "name": "right spinalis cervicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22781.stl"
+    },
+    {
+      "id": "FMA22782",
+      "name": "left spinalis cervicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22782.stl"
+    },
+    {
+      "id": "FMA22872",
+      "name": "right semispinalis thoracis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22872.stl"
+    },
+    {
+      "id": "FMA22873",
+      "name": "left semispinalis thoracis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22873.stl"
+    },
+    {
+      "id": "FMA22874",
+      "name": "right semispinalis cervicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22874.stl"
+    },
+    {
+      "id": "FMA22875",
+      "name": "left semispinalis cervicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22875.stl"
+    },
+    {
+      "id": "FMA22876",
+      "name": "right semispinalis capitis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22876.stl"
+    },
+    {
+      "id": "FMA22877",
+      "name": "left semispinalis capitis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22877.stl"
+    },
+    {
+      "id": "FMA22878",
+      "name": "right multifidus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22878.stl"
+    },
+    {
+      "id": "FMA22879",
+      "name": "left multifidus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA22879.stl"
+    },
+    {
+      "id": "FMA23083",
+      "name": "thoracic rotator",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA23083.stl"
+    },
+    {
+      "id": "FMA23089",
+      "name": "right lumbar rotator",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA23089.stl"
+    },
+    {
+      "id": "FMA23090",
+      "name": "left lumbar rotator",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA23090.stl"
+    },
+    {
+      "id": "FMA258847",
+      "name": "right calcaneal tendon",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA258847.stl"
+    },
+    {
+      "id": "FMA258850",
+      "name": "right intermediate tendon",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA258850.stl"
+    },
+    {
+      "id": "FMA264840",
+      "name": "left intermediate tendon",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA264840.stl"
+    },
+    {
+      "id": "FMA264844",
+      "name": "left calcaneal tendon",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA264844.stl"
+    },
+    {
+      "id": "FMA32530",
+      "name": "right rectus capitis posterior major",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32530.stl"
+    },
+    {
+      "id": "FMA32531",
+      "name": "left rectus capitis posterior major",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32531.stl"
+    },
+    {
+      "id": "FMA32532",
+      "name": "right rectus capitis posterior minor",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32532.stl"
+    },
+    {
+      "id": "FMA32533",
+      "name": "left rectus capitis posterior minor",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32533.stl"
+    },
+    {
+      "id": "FMA32534",
+      "name": "right obliquus capitis superior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32534.stl"
+    },
+    {
+      "id": "FMA32535",
+      "name": "left obliquus capitis superior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32535.stl"
+    },
+    {
+      "id": "FMA32536",
+      "name": "right obliquus capitis inferior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32536.stl"
+    },
+    {
+      "id": "FMA32537",
+      "name": "left obliquus capitis inferior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32537.stl"
+    },
+    {
+      "id": "FMA32540",
+      "name": "right levator scapulae",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32540.stl"
+    },
+    {
+      "id": "FMA32541",
+      "name": "left levator scapulae",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32541.stl"
+    },
+    {
+      "id": "FMA32544",
+      "name": "right supraspinatus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32544.stl"
+    },
+    {
+      "id": "FMA32545",
+      "name": "left supraspinatus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32545.stl"
+    },
+    {
+      "id": "FMA32547",
+      "name": "right infraspinatus muscle",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32547.stl"
+    },
+    {
+      "id": "FMA32548",
+      "name": "left infraspinatus muscle",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32548.stl"
+    },
+    {
+      "id": "FMA32551",
+      "name": "right teres major",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32551.stl"
+    },
+    {
+      "id": "FMA32552",
+      "name": "left teres major",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32552.stl"
+    },
+    {
+      "id": "FMA32553",
+      "name": "right teres minor",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32553.stl"
+    },
+    {
+      "id": "FMA32554",
+      "name": "left teres minor",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA32554.stl"
+    },
+    {
+      "id": "FMA37386",
+      "name": "right abductor pollicis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37386.stl"
+    },
+    {
+      "id": "FMA37387",
+      "name": "left abductor pollicis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37387.stl"
+    },
+    {
+      "id": "FMA37390",
+      "name": "right opponens pollicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37390.stl"
+    },
+    {
+      "id": "FMA37391",
+      "name": "left opponens pollicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37391.stl"
+    },
+    {
+      "id": "FMA37396",
+      "name": "abductor digiti minimi of right hand",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37396.stl"
+    },
+    {
+      "id": "FMA37397",
+      "name": "abductor digiti minimi of left hand",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37397.stl"
+    },
+    {
+      "id": "FMA37398",
+      "name": "flexor digiti minimi brevis of right hand",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37398.stl"
+    },
+    {
+      "id": "FMA37399",
+      "name": "flexor digiti minimi brevis of left hand",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37399.stl"
+    },
+    {
+      "id": "FMA37400",
+      "name": "opponens digiti minimi of right hand",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37400.stl"
+    },
+    {
+      "id": "FMA37401",
+      "name": "opponens digiti minimi of left hand",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37401.stl"
+    },
+    {
+      "id": "FMA37459",
+      "name": "right abductor hallucis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37459.stl"
+    },
+    {
+      "id": "FMA37460",
+      "name": "left abductor hallucis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37460.stl"
+    },
+    {
+      "id": "FMA37461",
+      "name": "right flexor digitorum brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37461.stl"
+    },
+    {
+      "id": "FMA37462",
+      "name": "left flexor digitorum brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37462.stl"
+    },
+    {
+      "id": "FMA37463",
+      "name": "abductor digiti minimi of right foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37463.stl"
+    },
+    {
+      "id": "FMA37464",
+      "name": "abductor digiti minimi of left foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37464.stl"
+    },
+    {
+      "id": "FMA37465",
+      "name": "right flexor accessorius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37465.stl"
+    },
+    {
+      "id": "FMA37466",
+      "name": "left flexor accessorius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37466.stl"
+    },
+    {
+      "id": "FMA37471",
+      "name": "flexor digiti minimi brevis of right foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37471.stl"
+    },
+    {
+      "id": "FMA37472",
+      "name": "flexor digiti minimi brevis of left foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37472.stl"
+    },
+    {
+      "id": "FMA37483",
+      "name": "fourth lumbrical of right foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37483.stl"
+    },
+    {
+      "id": "FMA37484",
+      "name": "fourth lumbrical of left foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37484.stl"
+    },
+    {
+      "id": "FMA37485",
+      "name": "third lumbrical of right foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37485.stl"
+    },
+    {
+      "id": "FMA37486",
+      "name": "third lumbrical of left foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37486.stl"
+    },
+    {
+      "id": "FMA37665",
+      "name": "right coracobrachialis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37665.stl"
+    },
+    {
+      "id": "FMA37666",
+      "name": "left coracobrachialis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37666.stl"
+    },
+    {
+      "id": "FMA37684",
+      "name": "short head of right biceps brachii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37684.stl"
+    },
+    {
+      "id": "FMA37685",
+      "name": "short head of left biceps brachii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37685.stl"
+    },
+    {
+      "id": "FMA37686",
+      "name": "long head of right biceps brachii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37686.stl"
+    },
+    {
+      "id": "FMA37687",
+      "name": "long head of left biceps brachii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37687.stl"
+    },
+    {
+      "id": "FMA37695",
+      "name": "medial head of right triceps brachii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37695.stl"
+    },
+    {
+      "id": "FMA37696",
+      "name": "medial head of left triceps brachii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37696.stl"
+    },
+    {
+      "id": "FMA37697",
+      "name": "lateral head of right triceps brachii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37697.stl"
+    },
+    {
+      "id": "FMA37698",
+      "name": "lateral head of left triceps brachii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37698.stl"
+    },
+    {
+      "id": "FMA37699",
+      "name": "long head of right triceps brachii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37699.stl"
+    },
+    {
+      "id": "FMA37700",
+      "name": "long head of left triceps brachii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37700.stl"
+    },
+    {
+      "id": "FMA37705",
+      "name": "right anconeus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37705.stl"
+    },
+    {
+      "id": "FMA37706",
+      "name": "left anconeus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37706.stl"
+    },
+    {
+      "id": "FMA37717",
+      "name": "first lumbrical of right foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37717.stl"
+    },
+    {
+      "id": "FMA37718",
+      "name": "first lumbrical of left foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37718.stl"
+    },
+    {
+      "id": "FMA37719",
+      "name": "second lumbrical of right foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37719.stl"
+    },
+    {
+      "id": "FMA37720",
+      "name": "second lumbrical of left foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37720.stl"
+    },
+    {
+      "id": "FMA37741",
+      "name": "third plantar interosseous of right foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37741.stl"
+    },
+    {
+      "id": "FMA37742",
+      "name": "third plantar interosseous of left foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37742.stl"
+    },
+    {
+      "id": "FMA37743",
+      "name": "second plantar interosseous of right foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37743.stl"
+    },
+    {
+      "id": "FMA37744",
+      "name": "second plantar interosseous of left foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37744.stl"
+    },
+    {
+      "id": "FMA37745",
+      "name": "first plantar interosseous of right foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37745.stl"
+    },
+    {
+      "id": "FMA37746",
+      "name": "first plantar interosseous of left foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA37746.stl"
+    },
+    {
+      "id": "FMA38454",
+      "name": "right pronator quadratus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38454.stl"
+    },
+    {
+      "id": "FMA38455",
+      "name": "left pronator quadratus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38455.stl"
+    },
+    {
+      "id": "FMA38479",
+      "name": "right flexor digitorum profundus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38479.stl"
+    },
+    {
+      "id": "FMA38480",
+      "name": "left flexor digitorum profundus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38480.stl"
+    },
+    {
+      "id": "FMA38482",
+      "name": "right flexor pollicis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38482.stl"
+    },
+    {
+      "id": "FMA38484",
+      "name": "left flexor pollicis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38484.stl"
+    },
+    {
+      "id": "FMA38495",
+      "name": "right extensor carpi radialis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38495.stl"
+    },
+    {
+      "id": "FMA38496",
+      "name": "left extensor carpi radialis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38496.stl"
+    },
+    {
+      "id": "FMA38498",
+      "name": "right extensor carpi radialis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38498.stl"
+    },
+    {
+      "id": "FMA38499",
+      "name": "left extensor carpi radialis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38499.stl"
+    },
+    {
+      "id": "FMA38501",
+      "name": "right extensor digitorum",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38501.stl"
+    },
+    {
+      "id": "FMA38502",
+      "name": "left extensor digitorum",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38502.stl"
+    },
+    {
+      "id": "FMA38504",
+      "name": "right extensor digiti minimi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38504.stl"
+    },
+    {
+      "id": "FMA38505",
+      "name": "left extensor digiti minimi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38505.stl"
+    },
+    {
+      "id": "FMA38513",
+      "name": "right supinator",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38513.stl"
+    },
+    {
+      "id": "FMA38514",
+      "name": "left supinator",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38514.stl"
+    },
+    {
+      "id": "FMA38516",
+      "name": "right abductor pollicis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38516.stl"
+    },
+    {
+      "id": "FMA38517",
+      "name": "left abductor pollicis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38517.stl"
+    },
+    {
+      "id": "FMA38519",
+      "name": "right extensor pollicis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38519.stl"
+    },
+    {
+      "id": "FMA38520",
+      "name": "left extensor pollicis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38520.stl"
+    },
+    {
+      "id": "FMA38522",
+      "name": "right extensor pollicis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38522.stl"
+    },
+    {
+      "id": "FMA38523",
+      "name": "left extensor pollicis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38523.stl"
+    },
+    {
+      "id": "FMA38525",
+      "name": "right extensor indicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38525.stl"
+    },
+    {
+      "id": "FMA38526",
+      "name": "left extensor indicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38526.stl"
+    },
+    {
+      "id": "FMA38560",
+      "name": "humeral head of right pronator teres",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38560.stl"
+    },
+    {
+      "id": "FMA38561",
+      "name": "humeral head of left pronator teres",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38561.stl"
+    },
+    {
+      "id": "FMA38562",
+      "name": "ulnar head of right pronator teres",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38562.stl"
+    },
+    {
+      "id": "FMA38563",
+      "name": "ulnar head of left pronator teres",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38563.stl"
+    },
+    {
+      "id": "FMA38617",
+      "name": "humeral head of right flexor carpi ulnaris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38617.stl"
+    },
+    {
+      "id": "FMA38618",
+      "name": "humeral head of left flexor carpi ulnaris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38618.stl"
+    },
+    {
+      "id": "FMA38619",
+      "name": "ulnar head of right flexor carpi ulnaris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38619.stl"
+    },
+    {
+      "id": "FMA38620",
+      "name": "ulnar head of left flexor carpi ulnaris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38620.stl"
+    },
+    {
+      "id": "FMA38638",
+      "name": "humeroulnar head of right flexor digitorum superficialis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38638.stl"
+    },
+    {
+      "id": "FMA38639",
+      "name": "humeroulnar head of left flexor digitorum superficialis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38639.stl"
+    },
+    {
+      "id": "FMA38640",
+      "name": "radial head of right flexor digitorum superficialis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38640.stl"
+    },
+    {
+      "id": "FMA38641",
+      "name": "radial head of left flexor digitorum superficialis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38641.stl"
+    },
+    {
+      "id": "FMA38934",
+      "name": "right vastus intermedius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38934.stl"
+    },
+    {
+      "id": "FMA38935",
+      "name": "left vastus intermedius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA38935.stl"
+    },
+    {
+      "id": "FMA40120",
+      "name": "flexor retinaculum of right wrist",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA40120.stl"
+    },
+    {
+      "id": "FMA40121",
+      "name": "flexor retinaculum of left wrist",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA40121.stl"
+    },
+    {
+      "id": "FMA42398",
+      "name": "set of lumbricals of right hand",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA42398.stl"
+    },
+    {
+      "id": "FMA42399",
+      "name": "set of lumbricals of left hand",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA42399.stl"
+    },
+    {
+      "id": "FMA42402",
+      "name": "set of palmar interossei of right hand",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA42402.stl"
+    },
+    {
+      "id": "FMA42403",
+      "name": "set of palmar interossei of left hand",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA42403.stl"
+    },
+    {
+      "id": "FMA42404",
+      "name": "set of dorsal interossei of right hand",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA42404.stl"
+    },
+    {
+      "id": "FMA42405",
+      "name": "set of dorsal interossei of left hand",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA42405.stl"
+    },
+    {
+      "id": "FMA43883",
+      "name": "right gracilis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA43883.stl"
+    },
+    {
+      "id": "FMA43884",
+      "name": "left gracilis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA43884.stl"
+    },
+    {
+      "id": "FMA43886",
+      "name": "right adductor minimus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA43886.stl"
+    },
+    {
+      "id": "FMA43887",
+      "name": "left adductor minimus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA43887.stl"
+    },
+    {
+      "id": "FMA45739",
+      "name": "right platysma",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45739.stl"
+    },
+    {
+      "id": "FMA45740",
+      "name": "left platysma",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45740.stl"
+    },
+    {
+      "id": "FMA45826",
+      "name": "right stylohyoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45826.stl"
+    },
+    {
+      "id": "FMA45827",
+      "name": "left stylohyoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45827.stl"
+    },
+    {
+      "id": "FMA45854",
+      "name": "right pubococcygeus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45854.stl"
+    },
+    {
+      "id": "FMA45855",
+      "name": "left pubococcygeus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45855.stl"
+    },
+    {
+      "id": "FMA45856",
+      "name": "right puborectalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45856.stl"
+    },
+    {
+      "id": "FMA45857",
+      "name": "left puborectalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45857.stl"
+    },
+    {
+      "id": "FMA45858",
+      "name": "right iliococcygeus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45858.stl"
+    },
+    {
+      "id": "FMA45859",
+      "name": "left iliococcygeus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45859.stl"
+    },
+    {
+      "id": "FMA45888",
+      "name": "long head of right biceps femoris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45888.stl"
+    },
+    {
+      "id": "FMA45889",
+      "name": "long head of left biceps femoris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45889.stl"
+    },
+    {
+      "id": "FMA45891",
+      "name": "short head of right biceps femoris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45891.stl"
+    },
+    {
+      "id": "FMA45892",
+      "name": "short head of left biceps femoris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45892.stl"
+    },
+    {
+      "id": "FMA45971",
+      "name": "medial head of right flexor hallucis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45971.stl"
+    },
+    {
+      "id": "FMA45972",
+      "name": "medial head of left flexor hallucis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45972.stl"
+    },
+    {
+      "id": "FMA45973",
+      "name": "lateral head of right flexor hallucis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45973.stl"
+    },
+    {
+      "id": "FMA45974",
+      "name": "lateral head of left flexor hallucis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA45974.stl"
+    },
+    {
+      "id": "FMA46018",
+      "name": "oblique head of right adductor hallucis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46018.stl"
+    },
+    {
+      "id": "FMA46019",
+      "name": "oblique head of left adductor hallucis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46019.stl"
+    },
+    {
+      "id": "FMA46020",
+      "name": "transverse head of right adductor hallucis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46020.stl"
+    },
+    {
+      "id": "FMA46021",
+      "name": "transverse head of left adductor hallucis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46021.stl"
+    },
+    {
+      "id": "FMA46110",
+      "name": "deep head of right flexor pollicis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46110.stl"
+    },
+    {
+      "id": "FMA46111",
+      "name": "deep head of left flexor pollicis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46111.stl"
+    },
+    {
+      "id": "FMA46121",
+      "name": "oblique head of right adductor pollicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46121.stl"
+    },
+    {
+      "id": "FMA46122",
+      "name": "oblique head of left adductor pollicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46122.stl"
+    },
+    {
+      "id": "FMA46123",
+      "name": "transverse head of right adductor pollicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46123.stl"
+    },
+    {
+      "id": "FMA46124",
+      "name": "transverse head of left adductor pollicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46124.stl"
+    },
+    {
+      "id": "FMA46283",
+      "name": "superior oblique part of right longus colli",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46283.stl"
+    },
+    {
+      "id": "FMA46284",
+      "name": "superior oblique part of left longus colli",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46284.stl"
+    },
+    {
+      "id": "FMA46285",
+      "name": "vertical intermediate part of right longus colli",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46285.stl"
+    },
+    {
+      "id": "FMA46286",
+      "name": "vertical intermediate part of left longus colli",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46286.stl"
+    },
+    {
+      "id": "FMA46287",
+      "name": "inferior oblique part of right longus colli",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46287.stl"
+    },
+    {
+      "id": "FMA46288",
+      "name": "inferior oblique part of left longus colli",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46288.stl"
+    },
+    {
+      "id": "FMA46304",
+      "name": "anterior belly of right digastric",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46304.stl"
+    },
+    {
+      "id": "FMA46305",
+      "name": "anterior belly of left digastric",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46305.stl"
+    },
+    {
+      "id": "FMA46306",
+      "name": "posterior belly of right digastric",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46306.stl"
+    },
+    {
+      "id": "FMA46307",
+      "name": "posterior belly of left digastric",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46307.stl"
+    },
+    {
+      "id": "FMA46309",
+      "name": "right longus capitis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46309.stl"
+    },
+    {
+      "id": "FMA46310",
+      "name": "left longus capitis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46310.stl"
+    },
+    {
+      "id": "FMA46313",
+      "name": "right rectus capitis anterior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46313.stl"
+    },
+    {
+      "id": "FMA46314",
+      "name": "left rectus capitis anterior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46314.stl"
+    },
+    {
+      "id": "FMA46317",
+      "name": "right rectus capitis lateralis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46317.stl"
+    },
+    {
+      "id": "FMA46318",
+      "name": "left rectus capitis lateralis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46318.stl"
+    },
+    {
+      "id": "FMA46321",
+      "name": "right mylohyoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46321.stl"
+    },
+    {
+      "id": "FMA46322",
+      "name": "left mylohyoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46322.stl"
+    },
+    {
+      "id": "FMA46326",
+      "name": "right geniohyoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46326.stl"
+    },
+    {
+      "id": "FMA46327",
+      "name": "left geniohyoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46327.stl"
+    },
+    {
+      "id": "FMA46442",
+      "name": "tendinous arch of levator ani",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46442.stl"
+    },
+    {
+      "id": "FMA46443",
+      "name": "right coccygeus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46443.stl"
+    },
+    {
+      "id": "FMA46444",
+      "name": "left coccygeus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46444.stl"
+    },
+    {
+      "id": "FMA46759",
+      "name": "right frontalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46759.stl"
+    },
+    {
+      "id": "FMA46760",
+      "name": "left frontalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46760.stl"
+    },
+    {
+      "id": "FMA46761",
+      "name": "right occipitalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46761.stl"
+    },
+    {
+      "id": "FMA46762",
+      "name": "left occipitalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46762.stl"
+    },
+    {
+      "id": "FMA46763",
+      "name": "right temporoparietalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46763.stl"
+    },
+    {
+      "id": "FMA46764",
+      "name": "left temporoparietalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46764.stl"
+    },
+    {
+      "id": "FMA46768",
+      "name": "aponeurosis of epicranius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46768.stl"
+    },
+    {
+      "id": "FMA46782",
+      "name": "orbital part of right orbicularis oculi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46782.stl"
+    },
+    {
+      "id": "FMA46783",
+      "name": "orbital part of left orbicularis oculi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46783.stl"
+    },
+    {
+      "id": "FMA46785",
+      "name": "palpebral part of right orbicularis oculi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46785.stl"
+    },
+    {
+      "id": "FMA46786",
+      "name": "palpebral part of left orbicularis oculi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46786.stl"
+    },
+    {
+      "id": "FMA46796",
+      "name": "right corrugator supercilii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46796.stl"
+    },
+    {
+      "id": "FMA46797",
+      "name": "left corrugator supercilii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46797.stl"
+    },
+    {
+      "id": "FMA46803",
+      "name": "right levator labii superioris alaeque nasi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46803.stl"
+    },
+    {
+      "id": "FMA46804",
+      "name": "left levator labii superioris alaeque nasi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46804.stl"
+    },
+    {
+      "id": "FMA46806",
+      "name": "right levator labii superioris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46806.stl"
+    },
+    {
+      "id": "FMA46807",
+      "name": "left levator labii superioris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46807.stl"
+    },
+    {
+      "id": "FMA46812",
+      "name": "right zygomaticus major",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46812.stl"
+    },
+    {
+      "id": "FMA46813",
+      "name": "left zygomaticus major",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46813.stl"
+    },
+    {
+      "id": "FMA46814",
+      "name": "right zygomaticus minor",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46814.stl"
+    },
+    {
+      "id": "FMA46815",
+      "name": "left zygomaticus minor",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46815.stl"
+    },
+    {
+      "id": "FMA46817",
+      "name": "right depressor labii inferioris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46817.stl"
+    },
+    {
+      "id": "FMA46818",
+      "name": "left depressor labii inferioris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46818.stl"
+    },
+    {
+      "id": "FMA46823",
+      "name": "right levator anguli oris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46823.stl"
+    },
+    {
+      "id": "FMA46824",
+      "name": "left levator anguli oris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46824.stl"
+    },
+    {
+      "id": "FMA46826",
+      "name": "right mentalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46826.stl"
+    },
+    {
+      "id": "FMA46827",
+      "name": "left mentalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46827.stl"
+    },
+    {
+      "id": "FMA46829",
+      "name": "right depressor anguli oris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46829.stl"
+    },
+    {
+      "id": "FMA46830",
+      "name": "left depressor anguli oris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46830.stl"
+    },
+    {
+      "id": "FMA46835",
+      "name": "right buccinator",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46835.stl"
+    },
+    {
+      "id": "FMA46836",
+      "name": "left buccinator",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46836.stl"
+    },
+    {
+      "id": "FMA46839",
+      "name": "right risorius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46839.stl"
+    },
+    {
+      "id": "FMA46840",
+      "name": "left risorius",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46840.stl"
+    },
+    {
+      "id": "FMA46841",
+      "name": "orbicularis oris",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA46841.stl"
+    },
+    {
+      "id": "FMA49001",
+      "name": "superficial part of right masseter",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA49001.stl"
+    },
+    {
+      "id": "FMA49002",
+      "name": "superficial part of left masseter",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA49002.stl"
+    },
+    {
+      "id": "FMA49004",
+      "name": "deep part of right masseter",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA49004.stl"
+    },
+    {
+      "id": "FMA49005",
+      "name": "deep part of left masseter",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA49005.stl"
+    },
+    {
+      "id": "FMA49007",
+      "name": "right temporalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA49007.stl"
+    },
+    {
+      "id": "FMA49008",
+      "name": "left temporalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA49008.stl"
+    },
+    {
+      "id": "FMA49012",
+      "name": "right medial pterygoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA49012.stl"
+    },
+    {
+      "id": "FMA49013",
+      "name": "left medial pterygoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA49013.stl"
+    },
+    {
+      "id": "FMA49022",
+      "name": "lower head of right lateral pterygoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA49022.stl"
+    },
+    {
+      "id": "FMA49023",
+      "name": "lower head of left lateral pterygoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA49023.stl"
+    },
+    {
+      "id": "FMA49024",
+      "name": "upper head of right lateral pterygoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA49024.stl"
+    },
+    {
+      "id": "FMA49025",
+      "name": "upper head of left lateral pterygoid",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA49025.stl"
+    },
+    {
+      "id": "FMA51142",
+      "name": "right extensor digitorum brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA51142.stl"
+    },
+    {
+      "id": "FMA51143",
+      "name": "left extensor digitorum brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA51143.stl"
+    },
+    {
+      "id": "FMA51144",
+      "name": "right extensor hallucis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA51144.stl"
+    },
+    {
+      "id": "FMA51145",
+      "name": "left extensor hallucis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA51145.stl"
+    },
+    {
+      "id": "FMA55606",
+      "name": "right nasalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA55606.stl"
+    },
+    {
+      "id": "FMA55607",
+      "name": "left nasalis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA55607.stl"
+    },
+    {
+      "id": "FMA55608",
+      "name": "right depressor septi nasi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA55608.stl"
+    },
+    {
+      "id": "FMA55609",
+      "name": "left depressor septi nasi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA55609.stl"
+    },
+    {
+      "id": "FMA55610",
+      "name": "right procerus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA55610.stl"
+    },
+    {
+      "id": "FMA55611",
+      "name": "left procerus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA55611.stl"
+    },
+    {
+      "id": "FMA58776",
+      "name": "right iliotibial tract",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA58776.stl"
+    },
+    {
+      "id": "FMA58777",
+      "name": "left iliotibial tract",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA58777.stl"
+    },
+    {
+      "id": "FMA65014",
+      "name": "right flexor hallucis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA65014.stl"
+    },
+    {
+      "id": "FMA65015",
+      "name": "left flexor hallucis longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA65015.stl"
+    },
+    {
+      "id": "FMA65016",
+      "name": "right flexor digitorum longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA65016.stl"
+    },
+    {
+      "id": "FMA65017",
+      "name": "left flexor digitorum longus",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA65017.stl"
+    },
+    {
+      "id": "FMA65018",
+      "name": "right tibialis posterior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA65018.stl"
+    },
+    {
+      "id": "FMA65019",
+      "name": "left tibialis posterior",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA65019.stl"
+    },
+    {
+      "id": "FMA65198",
+      "name": "superficial head of right flexor pollicis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA65198.stl"
+    },
+    {
+      "id": "FMA65199",
+      "name": "superficial head of left flexor pollicis brevis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA65199.stl"
+    },
+    {
+      "id": "FMA71307",
+      "name": "set of interspinales lumborum",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA71307.stl"
+    },
+    {
+      "id": "FMA71308",
+      "name": "set of interspinales thoracis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA71308.stl"
+    },
+    {
+      "id": "FMA71309",
+      "name": "set of interspinales cervicis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA71309.stl"
+    },
+    {
+      "id": "FMA71442",
+      "name": "set of anterior cervical intertransversarii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA71442.stl"
+    },
+    {
+      "id": "FMA71443",
+      "name": "set of posterior cervical intertransversarii",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA71443.stl"
+    },
+    {
+      "id": "FMA71444",
+      "name": "set of lateral lumbar intertransversarius muscles",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA71444.stl"
+    },
+    {
+      "id": "FMA74075",
+      "name": "set of right levatores costarum longi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA74075.stl"
+    },
+    {
+      "id": "FMA74076",
+      "name": "set of left levatores costarum longi",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA74076.stl"
+    },
+    {
+      "id": "FMA74077",
+      "name": "set of right levatores costarum breves",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA74077.stl"
+    },
+    {
+      "id": "FMA74078",
+      "name": "set of left levatores costarum breves",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA74078.stl"
+    },
+    {
+      "id": "FMA74140",
+      "name": "set of dorsal interossei of right foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA74140.stl"
+    },
+    {
+      "id": "FMA74141",
+      "name": "set of dorsal interossei of left foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA74141.stl"
+    },
+    {
+      "id": "FMA76775",
+      "name": "set of medial lumbar intertransversarius muscles",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA76775.stl"
+    },
+    {
+      "id": "FMA81752",
+      "name": "right cervical rotator",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA81752.stl"
+    },
+    {
+      "id": "FMA81753",
+      "name": "left cervical rotator",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA81753.stl"
+    },
+    {
+      "id": "FMA86034",
+      "name": "opponens digiti minimi of right foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA86034.stl"
+    },
+    {
+      "id": "FMA86035",
+      "name": "opponens digiti minimi of left foot",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA86035.stl"
+    },
+    {
+      "id": "FMA9756",
+      "name": "external intercostal muscle",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA9756.stl"
+    },
+    {
+      "id": "FMA9757",
+      "name": "internal intercostal muscle",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA9757.stl"
+    },
+    {
+      "id": "FMA9758",
+      "name": "innermost intercostal muscle",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA9758.stl"
+    },
+    {
+      "id": "FMA9761",
+      "name": "right transversus thoracis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA9761.stl"
+    },
+    {
+      "id": "FMA9762",
+      "name": "left transversus thoracis",
+      "layer": "muscle",
+      "path": "assets/BodyParts3D_data/stl/FMA9762.stl"
+    },
+    {
+      "id": "BP49",
+      "name": "left superior parietal lobule precuneus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/BP49.stl"
+    },
+    {
+      "id": "BP50",
+      "name": "right superior parietal lobule precuneus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/BP50.stl"
+    },
+    {
+      "id": "BP51",
+      "name": "orbital gyri straight gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/BP51.stl"
+    },
+    {
+      "id": "FMA258714",
+      "name": "right thalamus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA258714.stl"
+    },
+    {
+      "id": "FMA258716",
+      "name": "left thalamus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA258716.stl"
+    },
+    {
+      "id": "FMA274027",
+      "name": "choroid plexus of right cerebral hemisphere",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA274027.stl"
+    },
+    {
+      "id": "FMA274029",
+      "name": "choroid plexus of left cerebral hemisphere",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA274029.stl"
+    },
+    {
+      "id": "FMA61844",
+      "name": "septum pellucidum",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA61844.stl"
+    },
+    {
+      "id": "FMA61961",
+      "name": "anterior commissure",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA61961.stl"
+    },
+    {
+      "id": "FMA61970",
+      "name": "commissure of fornix of forebrain",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA61970.stl"
+    },
+    {
+      "id": "FMA61975",
+      "name": "lamina terminalis",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA61975.stl"
+    },
+    {
+      "id": "FMA62008nsn",
+      "name": "hypothalamus, nsn",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA62008nsn.stl"
+    },
+    {
+      "id": "FMA62032",
+      "name": "habenula",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA62032.stl"
+    },
+    {
+      "id": "FMA62033",
+      "name": "pineal body",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA62033.stl"
+    },
+    {
+      "id": "FMA62045",
+      "name": "optic chiasm",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA62045.stl"
+    },
+    {
+      "id": "FMA62072",
+      "name": "posterior commissure",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA62072.stl"
+    },
+    {
+      "id": "FMA62327",
+      "name": "tuber cinereum",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA62327.stl"
+    },
+    {
+      "id": "FMA62382",
+      "name": "right optic tract",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA62382.stl"
+    },
+    {
+      "id": "FMA62394",
+      "name": "peduncle of midbrain",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA62394.stl"
+    },
+    {
+      "id": "FMA67936",
+      "name": "left optic tract",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA67936.stl"
+    },
+    {
+      "id": "FMA72653",
+      "name": "right superior frontal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72653.stl"
+    },
+    {
+      "id": "FMA72654",
+      "name": "left superior frontal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72654.stl"
+    },
+    {
+      "id": "FMA72655",
+      "name": "right middle frontal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72655.stl"
+    },
+    {
+      "id": "FMA72656",
+      "name": "left middle frontal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72656.stl"
+    },
+    {
+      "id": "FMA72661",
+      "name": "right precentral gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72661.stl"
+    },
+    {
+      "id": "FMA72662",
+      "name": "left precentral gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72662.stl"
+    },
+    {
+      "id": "FMA72665",
+      "name": "right postcentral gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72665.stl"
+    },
+    {
+      "id": "FMA72666",
+      "name": "left postcentral gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72666.stl"
+    },
+    {
+      "id": "FMA72667",
+      "name": "right supramarginal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72667.stl"
+    },
+    {
+      "id": "FMA72668",
+      "name": "left supramarginal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72668.stl"
+    },
+    {
+      "id": "FMA72669",
+      "name": "right angular gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72669.stl"
+    },
+    {
+      "id": "FMA72670",
+      "name": "left angular gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72670.stl"
+    },
+    {
+      "id": "FMA72685",
+      "name": "right middle temporal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72685.stl"
+    },
+    {
+      "id": "FMA72686",
+      "name": "left middle temporal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72686.stl"
+    },
+    {
+      "id": "FMA72687",
+      "name": "right inferior temporal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72687.stl"
+    },
+    {
+      "id": "FMA72688",
+      "name": "left inferior temporal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72688.stl"
+    },
+    {
+      "id": "FMA72689",
+      "name": "right fusiform gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72689.stl"
+    },
+    {
+      "id": "FMA72690",
+      "name": "left fusiform gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72690.stl"
+    },
+    {
+      "id": "FMA72701",
+      "name": "right accessory short gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72701.stl"
+    },
+    {
+      "id": "FMA72702",
+      "name": "left accessory short gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72702.stl"
+    },
+    {
+      "id": "FMA72705",
+      "name": "right parahippocampal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72705.stl"
+    },
+    {
+      "id": "FMA72706",
+      "name": "left parahippocampal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72706.stl"
+    },
+    {
+      "id": "FMA72713",
+      "name": "right hippocampus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72713.stl"
+    },
+    {
+      "id": "FMA72714",
+      "name": "left hippocampus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72714.stl"
+    },
+    {
+      "id": "FMA72717",
+      "name": "right cingulate gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72717.stl"
+    },
+    {
+      "id": "FMA72718",
+      "name": "left cingulate gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72718.stl"
+    },
+    {
+      "id": "FMA72800",
+      "name": "anterior part of right superior temporal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72800.stl"
+    },
+    {
+      "id": "FMA72801",
+      "name": "anterior part of left superior temporal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72801.stl"
+    },
+    {
+      "id": "FMA72804",
+      "name": "posterior part of right superior temporal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72804.stl"
+    },
+    {
+      "id": "FMA72805",
+      "name": "posterior part of left superior temporal gyrus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72805.stl"
+    },
+    {
+      "id": "FMA72826",
+      "name": "right caudate nucleus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72826.stl"
+    },
+    {
+      "id": "FMA72827",
+      "name": "left caudate nucleus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72827.stl"
+    },
+    {
+      "id": "FMA72828",
+      "name": "right putamen",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72828.stl"
+    },
+    {
+      "id": "FMA72829",
+      "name": "left putamen",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72829.stl"
+    },
+    {
+      "id": "FMA72830",
+      "name": "right globus pallidus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72830.stl"
+    },
+    {
+      "id": "FMA72831",
+      "name": "left globus pallidus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72831.stl"
+    },
+    {
+      "id": "FMA72832",
+      "name": "right amygdala",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72832.stl"
+    },
+    {
+      "id": "FMA72833",
+      "name": "left amygdala",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72833.stl"
+    },
+    {
+      "id": "FMA72908",
+      "name": "anterior limb of right internal capsule",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72908.stl"
+    },
+    {
+      "id": "FMA72909",
+      "name": "anterior limb of left internal capsule",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72909.stl"
+    },
+    {
+      "id": "FMA72924",
+      "name": "right fornix of forebrain",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72924.stl"
+    },
+    {
+      "id": "FMA72925",
+      "name": "left fornix of forebrain",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72925.stl"
+    },
+    {
+      "id": "FMA72939",
+      "name": "right stria terminalis",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72939.stl"
+    },
+    {
+      "id": "FMA72940",
+      "name": "left stria terminalis",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72940.stl"
+    },
+    {
+      "id": "FMA72975",
+      "name": "right occipital lobe",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72975.stl"
+    },
+    {
+      "id": "FMA72976",
+      "name": "left occipital lobe",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72976.stl"
+    },
+    {
+      "id": "FMA72977",
+      "name": "right insula",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72977.stl"
+    },
+    {
+      "id": "FMA72978",
+      "name": "left insula",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA72978.stl"
+    },
+    {
+      "id": "FMA73303",
+      "name": "right lateral geniculate body",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73303.stl"
+    },
+    {
+      "id": "FMA73304",
+      "name": "left lateral geniculate body",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73304.stl"
+    },
+    {
+      "id": "FMA73309",
+      "name": "right medial geniculate body",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73309.stl"
+    },
+    {
+      "id": "FMA73310",
+      "name": "left medial geniculate body",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73310.stl"
+    },
+    {
+      "id": "FMA73413",
+      "name": "right stria medullaris of thalamus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73413.stl"
+    },
+    {
+      "id": "FMA73414",
+      "name": "left stria medullaris of thalamus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73414.stl"
+    },
+    {
+      "id": "FMA73422",
+      "name": "right superior colliculus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73422.stl"
+    },
+    {
+      "id": "FMA73423",
+      "name": "left superior colliculus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73423.stl"
+    },
+    {
+      "id": "FMA73434",
+      "name": "right inferior colliculus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73434.stl"
+    },
+    {
+      "id": "FMA73435",
+      "name": "left inferior colliculus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73435.stl"
+    },
+    {
+      "id": "FMA73461",
+      "name": "brachium of right superior colliculus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73461.stl"
+    },
+    {
+      "id": "FMA73462",
+      "name": "brachium of left superior colliculus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73462.stl"
+    },
+    {
+      "id": "FMA73463",
+      "name": "brachium of right inferior colliculus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73463.stl"
+    },
+    {
+      "id": "FMA73464",
+      "name": "brachium of left inferior colliculus",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA73464.stl"
+    },
+    {
+      "id": "FMA74877",
+      "name": "mammillary body",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA74877.stl"
+    },
+    {
+      "id": "FMA75351",
+      "name": "interventricular foramen",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA75351.stl"
+    },
+    {
+      "id": "FMA78449",
+      "name": "right lateral ventricle",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA78449.stl"
+    },
+    {
+      "id": "FMA78450",
+      "name": "left lateral ventricle",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA78450.stl"
+    },
+    {
+      "id": "FMA78454",
+      "name": "third ventricle",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA78454.stl"
+    },
+    {
+      "id": "FMA78467",
+      "name": "cerebral aqueduct",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA78467.stl"
+    },
+    {
+      "id": "FMA78469",
+      "name": "fourth ventricle",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA78469.stl"
+    },
+    {
+      "id": "FMA78497",
+      "name": "central canal of spinal cord",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA78497.stl"
+    },
+    {
+      "id": "FMA83740",
+      "name": "interpeduncular fossa",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA83740.stl"
+    },
+    {
+      "id": "FMA86464",
+      "name": "corpus callosum",
+      "layer": "nerve",
+      "path": "assets/BodyParts3D_data/stl/FMA86464.stl"
+    },
+    {
+      "id": "FMA10419",
+      "name": "pancreatic duct",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA10419.stl"
+    },
+    {
+      "id": "FMA13889",
+      "name": "pituitary gland",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA13889.stl"
+    },
+    {
+      "id": "FMA14542",
+      "name": "appendix",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA14542.stl"
+    },
+    {
+      "id": "FMA15571",
+      "name": "right ureter",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA15571.stl"
+    },
+    {
+      "id": "FMA15572",
+      "name": "left ureter",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA15572.stl"
+    },
+    {
+      "id": "FMA15629",
+      "name": "right adrenal gland",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA15629.stl"
+    },
+    {
+      "id": "FMA15630",
+      "name": "left adrenal gland",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA15630.stl"
+    },
+    {
+      "id": "FMA18247",
+      "name": "glans penis",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA18247.stl"
+    },
+    {
+      "id": "FMA18256",
+      "name": "right epididymis",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA18256.stl"
+    },
+    {
+      "id": "FMA18257",
+      "name": "left epididymis",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA18257.stl"
+    },
+    {
+      "id": "FMA19235",
+      "name": "right deferent duct",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA19235.stl"
+    },
+    {
+      "id": "FMA19236",
+      "name": "left deferent duct",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA19236.stl"
+    },
+    {
+      "id": "FMA19387",
+      "name": "right seminal vesicle",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA19387.stl"
+    },
+    {
+      "id": "FMA19388",
+      "name": "left seminal vesicle",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA19388.stl"
+    },
+    {
+      "id": "FMA19617nsn",
+      "name": "corpus spongiosum of penis, nsn",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA19617nsn.stl"
+    },
+    {
+      "id": "FMA19618",
+      "name": "corpus cavernosum of penis",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA19618.stl"
+    },
+    {
+      "id": "FMA19667",
+      "name": "urethra",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA19667.stl"
+    },
+    {
+      "id": "FMA3840nsn",
+      "name": "posterior interventricular branch of right coronary artery, nsn",
+      "layer": "vessel",
+      "path": "assets/BodyParts3D_data/stl/FMA3840nsn.stl"
+    },
+    {
+      "id": "FMA3862nsn",
+      "name": "anterior interventricular branch of left coronary artery, nsn",
+      "layer": "vessel",
+      "path": "assets/BodyParts3D_data/stl/FMA3862nsn.stl"
+    },
+    {
+      "id": "FMA4706",
+      "name": "coronary sinus",
+      "layer": "vessel",
+      "path": "assets/BodyParts3D_data/stl/FMA4706.stl"
+    },
+    {
+      "id": "FMA52780",
+      "name": "ear",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA52780.stl"
+    },
+    {
+      "id": "FMA55099",
+      "name": "thyroid cartilage",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA55099.stl"
+    },
+    {
+      "id": "FMA55680",
+      "name": "right upper lateral secondary incisor tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55680.stl"
+    },
+    {
+      "id": "FMA55681",
+      "name": "right upper central secondary incisor tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55681.stl"
+    },
+    {
+      "id": "FMA55682",
+      "name": "left upper central secondary incisor tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55682.stl"
+    },
+    {
+      "id": "FMA55683",
+      "name": "left upper lateral secondary incisor tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55683.stl"
+    },
+    {
+      "id": "FMA55686",
+      "name": "right lower secondary canine tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55686.stl"
+    },
+    {
+      "id": "FMA55687",
+      "name": "left lower secondary canine tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55687.stl"
+    },
+    {
+      "id": "FMA55688",
+      "name": "right upper second secondary premolar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55688.stl"
+    },
+    {
+      "id": "FMA55689",
+      "name": "right upper first secondary premolar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55689.stl"
+    },
+    {
+      "id": "FMA55690",
+      "name": "left upper first secondary premolar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55690.stl"
+    },
+    {
+      "id": "FMA55691",
+      "name": "left upper second secondary premolar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55691.stl"
+    },
+    {
+      "id": "FMA55692",
+      "name": "left lower second secondary premolar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55692.stl"
+    },
+    {
+      "id": "FMA55693",
+      "name": "left lower first secondary premolar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55693.stl"
+    },
+    {
+      "id": "FMA55694",
+      "name": "right lower first secondary premolar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55694.stl"
+    },
+    {
+      "id": "FMA55695",
+      "name": "right lower second secondary premolar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55695.stl"
+    },
+    {
+      "id": "FMA55697",
+      "name": "right upper second secondary molar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55697.stl"
+    },
+    {
+      "id": "FMA55698",
+      "name": "right upper first secondary molar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55698.stl"
+    },
+    {
+      "id": "FMA55699",
+      "name": "left upper first secondary molar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55699.stl"
+    },
+    {
+      "id": "FMA55700",
+      "name": "left upper second secondary molar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55700.stl"
+    },
+    {
+      "id": "FMA55703",
+      "name": "left lower second secondary molar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55703.stl"
+    },
+    {
+      "id": "FMA55704",
+      "name": "left lower first secondary molar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55704.stl"
+    },
+    {
+      "id": "FMA55705",
+      "name": "right lower first secondary molar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55705.stl"
+    },
+    {
+      "id": "FMA55706",
+      "name": "right lower second secondary molar tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55706.stl"
+    },
+    {
+      "id": "FMA55798",
+      "name": "right upper secondary canine tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55798.stl"
+    },
+    {
+      "id": "FMA55799",
+      "name": "left upper secondary canine tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA55799.stl"
+    },
+    {
+      "id": "FMA57140",
+      "name": "right lower lateral secondary incisor tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA57140.stl"
+    },
+    {
+      "id": "FMA57141",
+      "name": "left lower lateral secondary incisor tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA57141.stl"
+    },
+    {
+      "id": "FMA57142",
+      "name": "right lower central secondary incisor tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA57142.stl"
+    },
+    {
+      "id": "FMA57143",
+      "name": "left lower central secondary incisor tooth",
+      "layer": "bone",
+      "path": "assets/BodyParts3D_data/stl/FMA57143.stl"
+    },
+    {
+      "id": "FMA59815nsn",
+      "name": "labial part of mouth, nsn",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA59815nsn.stl"
+    },
+    {
+      "id": "FMA71194",
+      "name": "right lobe of thymus",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA71194.stl"
+    },
+    {
+      "id": "FMA71195",
+      "name": "left lobe of thymus",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA71195.stl"
+    },
+    {
+      "id": "FMA7131",
+      "name": "esophagus",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA7131.stl"
+    },
+    {
+      "id": "FMA71567",
+      "name": "set of anterior cardiac veins",
+      "layer": "vessel",
+      "path": "assets/BodyParts3D_data/stl/FMA71567.stl"
+    },
+    {
+      "id": "FMA71704",
+      "name": "set of nasal cartilages",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA71704.stl"
+    },
+    {
+      "id": "FMA7211",
+      "name": "right testis",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA7211.stl"
+    },
+    {
+      "id": "FMA7212",
+      "name": "left testis",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA7212.stl"
+    },
+    {
+      "id": "FMA7234",
+      "name": "tricuspid valve",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA7234.stl"
+    },
+    {
+      "id": "FMA7235",
+      "name": "mitral valve",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA7235.stl"
+    },
+    {
+      "id": "FMA7246",
+      "name": "pulmonary valve",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA7246.stl"
+    },
+    {
+      "id": "FMA7260",
+      "name": "anterior papillary muscle of right ventricle",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA7260.stl"
+    },
+    {
+      "id": "FMA7261",
+      "name": "posterior papillary muscle of right ventricle",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA7261.stl"
+    },
+    {
+      "id": "FMA7262",
+      "name": "septal papillary muscle of right ventricle",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA7262.stl"
+    },
+    {
+      "id": "FMA7266",
+      "name": "posterior papillary muscle of left ventricle",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA7266.stl"
+    },
+    {
+      "id": "FMA7394",
+      "name": "trachea",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA7394.stl"
+    },
+    {
+      "id": "FMA7409",
+      "name": "bronchus",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA7409.stl"
+    },
+    {
+      "id": "FMA76751",
+      "name": "set of posterior veins of left ventricle",
+      "layer": "vessel",
+      "path": "assets/BodyParts3D_data/stl/FMA76751.stl"
+    },
+    {
+      "id": "FMA76891",
+      "name": "mesocolic taenia",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA76891.stl"
+    },
+    {
+      "id": "FMA76892",
+      "name": "omental taenia",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA76892.stl"
+    },
+    {
+      "id": "FMA76893",
+      "name": "free taenia",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA76893.stl"
+    },
+    {
+      "id": "FMA9352nsn",
+      "name": "papillary muscle of left ventricle, nsn",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA9352nsn.stl"
+    },
+    {
+      "id": "FMA9600",
+      "name": "prostate",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA9600.stl"
+    },
+    {
+      "id": "FMA12513",
+      "name": "eyeball",
+      "layer": "organ",
+      "path": "assets/BodyParts3D_data/stl/FMA12513.stl"
+    }
+  ]
+}

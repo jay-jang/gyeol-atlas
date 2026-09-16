@@ -1,0 +1,14 @@
+RUN ['npm', 'run', 'test:production']
+
+> anatomy2@1.0.0 test:production
+> node scripts/smoke-production.mjs
+
+Production smoke passed: static wiki, lazy 3D chunk, all 6 GLBs, bundle and wiki restoration, citations API, Markdown export, attribution, zero browser errors.
+RUN ['node', 'scripts/check-readability.mjs']
+Visible mobile panel text: minimum 12px and contrast >= 4.5:1 passed.
+RUN ['npm', 'run', 'test:visual']
+
+> anatomy2@1.0.0 test:visual
+> node scripts/capture-workspace.mjs
+
+Visual workspace gates passed for four viewports. Screenshots still require visual review.

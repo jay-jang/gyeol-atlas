@@ -1,0 +1,123 @@
+/* Readability tokens shared by atlas tools, detail pages and wiki. */
+:root {
+  --ink: #172f29;
+  --ink-secondary: #43564f;
+  --surface: #ffffff;
+  --surface-subtle: #f0f4f2;
+  --border-strong: #a5b5ad;
+  --accent: #14553f;
+  --muted: #43564f;
+  --green: #14553f;
+  --line: #c6d2cb;
+  color: var(--ink);
+}
+button, input, select, summary { font-size: max(1em, 12px); }
+input::placeholder { color: #586a61; opacity: 1; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible,
+summary:focus-visible, canvas:focus-visible { outline: 3px solid #166e9a; outline-offset: 2px; }
+svg { stroke-width: 2; }
+.anatomy-workspace { color: var(--ink); }
+.floating-tools, .floating-dock, .system-strip, .floating-point, .view-tools,
+.anatomy-workspace > .view-presets { background: var(--surface); border-color: var(--border-strong); box-shadow: 0 4px 18px #102d211a; }
+.dock-header { background: var(--surface-subtle); padding: 10px 14px; }
+.dock-header strong, .structure-group h3 { font-size: 15px; font-weight: 700; }
+.dock-body { font-size: 14px; line-height: 1.65; }
+.structure-item strong, .layer-row, .setting-select, .setting-check, .cutaway-setting,
+.system-strip button, .selection-actions button { font-size: 14px; }
+.structure-item strong { font-weight: 600; }
+.control-hint, .coverage-description, .cutaway-setting p, .structure-item small,
+.scene-title p, .point-summary > span, .point-summary small, .layer-row output,
+.selection-card strong small, .scene-status, .scene-guide, .scene-legend,
+.point-filter-options summary, .structure-group h3 small { color: var(--ink-secondary); }
+.classification-text { color: var(--ink-secondary) !important; font-size: 12px !important; }
+.scene-legend, .scene-status, .scene-guide { background: #fffffff2; padding: 4px 6px; border-radius: 5px; }
+.selection-card { background: #fffdf3; border-color: #ad9f70; }
+.selection-card strong { font-weight: 650; font-size: 16px; }
+.selection-kind { color: #12666b; font-weight: 650; }
+.selection-kind.bundle { color: #77500c; }
+.selection-actions button { border-color: #91a69a; min-height: 40px; }
+.layer-row input[type=checkbox], .setting-check input { width: 18px; height: 18px; accent-color: var(--accent); }
+.floating-tools button { height: 44px; width: 44px; }
+.view-tools button { width: 44px; height: 44px; position: relative; }
+.view-action-label { position: absolute; right: 50px; padding: 5px 8px; border-radius: 5px; background: #173c2e; color: white; white-space: nowrap; opacity: 0; pointer-events: none; font-size: 12px; }
+.view-tools button:hover .view-action-label, .view-tools button:focus-visible .view-action-label { opacity: 1; }
+.movement-pad { position: absolute; right: 24px; bottom: 315px; z-index: 28; border: 1px solid var(--border-strong); background: white; padding: 8px; border-radius: 12px; color: var(--ink); }
+.movement-pad > span { display: block; font-weight: 650; font-size: 13px; margin-bottom: 5px; }
+.movement-pad small { display: block; font-weight: 400; color: var(--ink-secondary); font-size: 12px; }
+.movement-pad > div { display: grid; grid-template-columns: repeat(3, 40px); gap: 3px; }
+.movement-pad button { min-height: 40px; font-size: 13px; background: #edf3f0; border: 1px solid #bdccc4; border-radius: 6px; }
+.movement-pad button:hover { background: #cfdfd6; }
+.navigation-hint { position: absolute; left: 24px; bottom: 64px; z-index: 23; padding: 6px 9px; background: white; border-radius: 6px; font-size: 12px; color: var(--ink-secondary); }
+.anatomy-workspace .point-label { font-size: 12px; background: #fff; color: #574010; border-color: #99712d; }
+.wiki-article { color: var(--ink); }
+.point-tradition { line-height: 1.75; }
+.point-tradition h3 { font-size: 15px; margin: 16px 0 8px; }
+.point-tradition p { font-size: 14px; margin: 8px 0; }
+.point-tradition > a, .point-tradition > small { display: block; font-size: 12px; margin-top: 10px; }
+.traditional-indications { font-weight: 600; }
+.theory-facts { margin: 10px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.theory-facts > div { background: var(--surface-subtle); border: 1px solid var(--line); padding: 8px; border-radius: 6px; }
+.theory-facts dt { color: var(--ink-secondary); font-size: 12px; }
+.theory-facts dd { margin: 4px 0 0; font-size: 13px; font-weight: 650; }
+.show-filtered-button { width: 100%; min-height: 40px; margin: 6px 0 12px; padding: 8px; background: var(--accent); color: white; border-radius: 7px; font-size: 13px; }
+.show-filtered-button:disabled { background: #586a61; cursor: default; }
+@media (max-width: 700px) {
+  .scene-title { top: 14px; }
+  .scene-title .eyebrow { display: none; }
+  .scene-title h1 { font-size: 15px; }
+  .system-strip button { font-size: 12px; padding: 5px 6px; }
+  .movement-pad { right: 10px; bottom: 308px; padding: 5px; }
+  .movement-pad > span { font-size: 12px; }
+  .movement-pad small { display: none; }
+  .movement-pad > div { grid-template-columns: repeat(3, 32px); gap: 2px; }
+  .movement-pad button { min-height: 34px; font-size: 12px; padding: 0; }
+  .navigation-hint { display: none; }
+  .anatomy-workspace[data-panel]:not([data-panel="none"]) .movement-pad { display: none; }
+  .scene-status { max-width: 100%; font-size: 12px; bottom: 0; }
+  .scene-guide { bottom: 28px; font-size: 12px; }
+  .scene-legend { bottom: 60px; font-size: 12px; }
+  .selection-card { bottom: 114px; width: calc(100% - 84px); left: 10px; transform: none; padding: 10px; }
+  .selection-actions button { font-size: 12px; min-height: 38px; }
+  .view-tools { right: 10px; bottom: 110px; }
+  .view-tools button { width: 40px; height: 40px; }
+  .anatomy-workspace .comparison-note { font-size: 12px; bottom: 86px; }
+  .anatomy-workspace > .view-presets button { font-size: 12px; min-height: 34px; }
+}
+@media (max-height: 550px) and (min-width: 701px) {
+  .movement-pad { right: 70px; bottom: 85px; padding: 4px; }
+  .movement-pad small, .navigation-hint { display: none; }
+  .movement-pad > div { grid-template-columns: repeat(3, 32px); }
+  .movement-pad button { min-height: 30px; }
+  .view-tools button { width: 34px; height: 32px; }
+  .scene-legend, .scene-status, .scene-guide { font-size: 12px; }
+  .scene-legend { bottom: 24px; }
+  .system-strip button { font-size: 12px; }
+}
+.search-box { color: var(--ink-secondary); }
+.search-box input { color: var(--ink); }
+/* A dedicated footer row for each meaning; comparison notes never sit under actions. */
+@media (max-width: 700px) {
+  .selection-card { bottom: 151px; }
+  .view-tools { bottom: 146px; }
+  .movement-pad { bottom: 348px; }
+  .anatomy-workspace .comparison-note { bottom: 110px; width: calc(100% - 24px); max-width: none; white-space: nowrap; font-size: 12px; }
+  .anatomy-workspace > .view-presets { bottom: 61px; }
+  .scene-legend { bottom: 28px; left: 50%; transform: translateX(-50%); flex-direction: row; white-space: nowrap; gap: 10px; }
+  .scene-status { bottom: 0; }
+  .scene-guide { top: 40px; left: 14px; right: auto; bottom: auto; max-width: 190px; padding: 2px 6px; line-height: 16px; text-align: left; }
+}
+@media (max-width: 700px) {
+  .floating-dock, .dock-detail { max-height: 44%; }
+  .anatomy-workspace[data-panel]:not([data-panel="none"]) .view-tools { bottom: 46%; }
+  .anatomy-workspace .filter-switch { margin: 5px 0; }
+  .anatomy-workspace .filter-switch button { padding-bottom: 6px; }
+  .anatomy-workspace .meridian-select { flex-direction: row; align-items: center; padding: 0; margin: 6px 0; }
+  .anatomy-workspace .meridian-select > span { flex: 0 0 64px; white-space: nowrap; }
+  .anatomy-workspace .point-filter-options { margin: 6px 0; }
+  .anatomy-workspace .point-filter-options summary { padding: 6px 0; }
+  .anatomy-workspace .list-header { padding: 8px 0; }
+}
+@media (max-height: 550px) and (min-width: 701px) {
+  .movement-pad button { padding: 0; white-space: nowrap; }
+  .scene-legend { left: 80px; bottom: 20px; }
+}

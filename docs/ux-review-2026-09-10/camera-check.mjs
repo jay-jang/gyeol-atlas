@@ -1,0 +1,3 @@
+import {chromium} from '@playwright/test';
+const browser=await chromium.launch({headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']});
+try{const page=await browser.newPage({viewport:{width:1440,height:900}});await page.goto('http://127.0.0.1:3002/#atlas/ST36');await page.getByText('해부 모델 로드 완료').waitFor();await page.getByRole('button',{name:'3D에서 가까이 보기'}).click();await page.locator('canvas').screenshot({path:'docs/ux-review-2026-09-10/focused-point.png'});await page.getByRole('region',{name:'단계별 해부 탐색'}).getByRole('button',{name:'3골격',exact:true}).click();await page.locator('canvas').screenshot({path:'docs/ux-review-2026-09-10/after-stage-switch.png'});console.log('camera comparison captured');}finally{await browser.close();}

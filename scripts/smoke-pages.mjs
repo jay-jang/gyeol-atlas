@@ -1,0 +1,33 @@
+import { chromium } from '@playwright/test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+const origin = process.env.PAGES_ORIGIN || 'http://127.0.0.1:4184/gyeol-atlas/';
+const browser = await chromium.launch({headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']});
+try {
+ const page=await browser.newPage({viewport:{width:1440,height:1100}});
+ const requests=[],errors=[],failures=[];
+ page.on('request',r=>requests.push(r.url()));page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400) failures.push(`${r.status()} ${r.url()}`)});
+ await page.goto(origin+'#wiki');
+ await page.getByRole('heading',{name:'위키에 물어보기'}).waitFor();
+ assert.equal(requests.filter(u=>u.endsWith('.glb')||/\/assets\/Atlas-/.test(u)).length,0);
+ await page.getByLabel('위키 질문').fill('내관과 외관');await page.getByRole('button',{name:'질문 보내기'}).click();
+ await page.locator('.answer').waitFor();assert.match(await page.locator('.answer').innerText(),/PC6/);assert.match(await page.locator('.answer').innerText(),/TE5/);
+ assert.equal(requests.filter(u=>u.includes('/api/')).length,0);
+ await page.goto(origin+'#wiki/points/EX-UE11');
+ await page.locator('article h1').waitFor();
+ const download=await page.getByRole('link',{name:'Markdown'}).getAttribute('href');assert.ok(download.startsWith('/gyeol-atlas/wiki/'));
+ assert.equal((await page.request.get(new URL(download,origin).href)).status(),200);
+ await page.getByRole('link',{name:'3D 경혈 지도',exact:true}).click();await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
+ assert.ok(requests.some(u=>u.includes('/gyeol-atlas/models/skin.glb')));
+ await page.getByRole('button',{name:'경혈 찾기',exact:true}).click();assert.equal(await page.locator('.point-item').count(),409);
+ await page.getByLabel('모델 부위 선택').selectOption('발목·발');await page.getByRole('button',{name:/필터 결과 .*모델에서 보기/}).click();
+ await page.screenshot({path:'docs/acupoint-expansion/pages-desktop.png'});
+ await page.setViewportSize({width:390,height:844});
+ await page.getByRole('button',{name:'경혈 찾기',exact:true}).click();
+ const box=await page.locator('.floating-dock').boundingBox(),canvas=await page.locator('canvas').boundingBox();assert.ok(box.height<canvas.height*.45);
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ await page.screenshot({path:'docs/acupoint-expansion/pages-mobile.png'});
+ assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
+ const result={origin,checkedAt:new Date().toISOString(),points:409,staticSearch:true,initialWikiModelRequests:0,errors,failures};
+ await fs.writeFile('docs/acupoint-expansion/pages-verification.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+} finally {await browser.close();}

@@ -1,0 +1,82 @@
+RUN ['npm', 'run', 'build']
+
+> anatomy2@1.0.0 build
+> node scripts/build-anchors.mjs && node scripts/build-wiki.mjs && tsc && vite build
+
+Projected 65 anchors; largest seed adjustment 70.2 mm (not a clinical accuracy measurement).
+Built 45 wiki articles; internal links verified.
+vite v8.2.2 building client environment for production...
+transforming...
+✓ 2662 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.63 kB │ gzip:   0.45 kB
+dist/assets/index-G30OzdxG.css     53.45 kB │ gzip:  11.58 kB
+dist/assets/index-Cfiurmtj.js     761.90 kB │ gzip: 181.92 kB
+dist/assets/Atlas-CFbScdZp.js   1,021.40 kB │ gzip: 274.34 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.35s
+RUN ['npm', 'test']
+
+> anatomy2@1.0.0 test
+> node --test tests/*.test.mjs
+
+✔ all source muscle and neural leaves and named point landmarks have meshes (9.351261ms)
+✔ supplement has official version membership and non-empty geometry in the common body coordinates (136.184285ms)
+✔ every point has valid source, atlas structure and a linked wiki article (2.052613ms)
+✔ wiki exports match canonical data and all links resolve (4.477229ms)
+✔ bundled GLB files contain real named meshes and stay within the delivery budget (261.64626ms)
+✔ all 65 bilateral/midline anchors are on the bundled skin surface before display offset (151.505625ms)
+✔ complete Yuan and Mu sets are distinct from Shu and traditional organ mappings remain valid (2.501136ms)
+✔ retrieves Korean particles, aliases and paired point questions (10.87075ms)
+✔ no evidence is explicit and procedures stay out of the educational assistant (3.11834ms)
+✔ provider is optional, successful generations carry whitelisted citations (23.288951ms)
+✔ timeouts, invalid JSON and fabricated citation IDs fall back without pretending generation (4.895392ms)
+✔ HTTP boundary validates payloads and serves evidence results (101.693901ms)
+✔ expanded concepts and massage reference retrieve grounded guides (3.251302ms)
+✔ layer changes and presets leave no dangling isolated selection and preserve camera/markers (1.517329ms)
+✔ comparison retains the entire kidney/lung bundle; explicit selection and point changes are independent (0.562524ms)
+✔ versioned session restoration validates current catalog, ranges and malformed storage (1.687971ms)
+✔ all 1030 structures have Korean search labels without losing original English identifiers (2.210694ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1205.935157
+RUN ['npx', 'playwright', 'test']
+
+Running 9 tests using 1 worker
+
+(node:2329537) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/browser/anatomy.spec.ts:4:1 › six real systems and shared layer/isolation transitions; clipping and bilingual structure selection (1.1m)
+  ✓  2 tests/browser/anatomy.spec.ts:12:1 › point focus and marker preference survive stage changes (12.6s)
+  ✓  3 tests/browser/anatomy.spec.ts:16:1 › whole-organ bundles, internal click targeting and wiki/session restoration (47.6s)
+  ✓  4 tests/browser/anatomy.spec.ts:23:1 › mobile bundle comparison keeps its result visible and avoids page scroll; invalid snapshots recover (10.3s)
+  ✓  5 tests/browser/expansion.spec.ts:3:1 › added muscles, spinal cord and thyroid can be searched, isolated and framed (1.8m)
+  ✓  6 tests/browser/navigation.spec.ts:3:1 › game movement, wheel zoom, focus safety and reset work on the actual canvas (11.6s)
+  ✓  7 tests/browser/site.spec.ts:5:1 › model-first scene, actual marker click, search, bookmarks and source-linked wiki (14.6s)
+  ✓  8 tests/browser/site.spec.ts:16:1 › mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links (7.2s)
+  ✓  9 tests/browser/site.spec.ts:22:1 › failed GLB leaves wiki access and retry available (4.0s)
+
+  9 passed (4.7m)
+RUN ['npm', 'run', 'test:visual']
+
+> anatomy2@1.0.0 test:visual
+> node scripts/capture-workspace.mjs
+
+Visual workspace gates passed for four viewports. Screenshots still require visual review.
+RUN ['npm', 'run', 'test:production']
+
+> anatomy2@1.0.0 test:production
+> node scripts/smoke-production.mjs
+
+Production smoke passed: static wiki, lazy 3D chunk, all 6 GLBs, bundle and wiki restoration, citations API, Markdown export, attribution, zero browser errors.

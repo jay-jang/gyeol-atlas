@@ -1,0 +1,30 @@
+# 공개 상용 화면 비교
+
+확인일: 2026-09-12. 유료 서비스에 로그인하거나 구매하지 않았습니다. 공개 지원 자료의 실제 UI 이미지와 설명을 비교했으며, 전체 기능·성능·모바일 제스처를 직접 시험했다고 주장하지 않습니다.
+
+| 비교 대상과 관찰 자료 | 이미지에서 확인한 패턴 | GYEOL 적용 | 그대로 채택하지 않은 점 |
+| --- | --- | --- | --- |
+| [BioDigital Human Anatomy Tree](https://support.biodigital.com/hc/en-us/articles/360005542733-What-is-the-Anatomy-Tree), 2025년7월 표기가 있는 공개 Viewer 이미지 | 모델 옆의 좁은 도구 모음, 펼쳐지는 구조 검색·계통 목록, 선택 강조. 문서는 호버로 도구를 드러내는 동작을 설명 | 전체 장면 위 도구 모음, 호버/초점 설명, 클릭·터치 패널, 계통별 구조 검색 | 모든 도구를 자동으로 숨기지 않음. 모바일은 축약 패널로 모델과 함께 표시하며 긴 고정 사이드바를 쌓지 않음 |
+| [Visible Body Atlas 공개 튜토리얼](https://www.visiblebody.com/blog/6-tips-to-help-you-become-a-human-anatomy-atlas-super-user), 2020년11월11일 글의 Isolate 이미지 | 크게 보이는 모델, 선택 구조 정보와 단독 보기 액션. 설명에서 여러 구조를 함께 단독 표시하고 이전 보기로 복귀하는 흐름 확인 | 선택 구조 옆의 확대·단독 액션, 콩팥·폐 전체 비교 묶음, 위키 왕복 상태 복원 | 화면 하단에 많은 상시 도구를 나열하거나 상용 제품의 색상·아이콘을 복제하지 않음 |
+
+Visible Body 자료는 과거 버전 화면입니다. 현재 최신 제품 UI와 동일하다는 의미가 아닙니다. BioDigital 자료의 이미지 날짜 역시 실제 릴리스 검증 날짜가 아닙니다.
+
+## 직접 확인한 원본 이미지
+
+- [BioDigital Viewer 공개 이미지](https://support.biodigital.com/hc/article_attachments/33610969035543) — 로컬 검토용 `references/biodigital-viewer.png`
+- [BioDigital Explorer 공개 이미지](https://support.biodigital.com/hc/article_attachments/33610989957271) — `references/biodigital-explorer.png`
+- [Visible Body Isolate 공개 이미지](https://www.visiblebody.com/hs-fs/hubfs/Blog_Images/Atlas%20Super%20User%20Blog/isolate-mode-button.png?name=isolate-mode-button.png&width=600) — `references/visible-body-isolate.png`
+
+이미지의 권리는 각 제공자에게 있습니다. 앱의 배포 정적 자산으로 사용하지 않고 비교 기록에만 보관했습니다. 공개 웨비나 링크는 확인했지만 영상을 끝까지 시청한 것으로 기록하지 않습니다.
+
+## 비교 후 결정한 설계 기준
+
+모델을 항상 주 화면에 두고, 도구는 화면을 밀어내지 않습니다. 선택과 그 대상의 조작을 가까이 둡니다. 전체 계통·복수 장기 묶음·개별 구조의 범위를 구분합니다. 호버 기능에는 터치·키보드 경로를 함께 제공합니다. 경혈의 전통 장부 대응은 실제 구조의 선택과 구분해 표시합니다.
+
+상용 화면과의 시각 비교가 실제 사용성 향상을 입증하는 사용자 실험은 아닙니다. 개선의 직접 근거는 이전 리뷰의 재현 시나리오와 이번 모바일/데스크톱 회귀 검사입니다.
+
+## 2026-09-16 경혈 범위 확장 후 결정
+
+409개 경혈을 동시에 이름표로 채우지 않고 기존 모델 중심 탐색에 부위 선택과 ‘필터 결과를 모델에서 보기’를 추가했습니다. 다중 위치는 표식은 모두 보이되 레이블 반복을 줄였습니다. 전통적 용도와 경맥/오수혈의 서로 다른 오행은 별도 상세 탭에서 읽습니다. 모바일에서도 장면과 패널이 함께 유지됩니다.
+
+이는 기존 agy·Codex 상호 비판의 모델/정보 동시 피드백 원칙을 적용한 설계 판단입니다. 이번에 상용 서비스의 유료 기능을 새로 실측하거나 실제 사용자 성공률을 측정하지 않았습니다. 데스크톱·모바일 과업 검사와 화면 기록은 [확장 검증](../acupoint-expansion/VERIFICATION.md)에 남깁니다.

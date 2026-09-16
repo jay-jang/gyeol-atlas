@@ -1,0 +1,52 @@
+---
+id: points/EX-LE5
+title: 슬안 EX-LE5
+category: 경혈
+sources: kmcric-points,tcm-wiki,five-shu-theory
+review: illustrative-unreviewed
+---
+# 슬안 EX-LE5
+
+膝眼 · Xiyan · 경외기혈 · 무릎·종아리
+
+표준 경외기혈 48개 중 한 항목 · 모델 표식 4곳. 이름 수와 양측·복수 위치의 표식 수는 다릅니다.
+
+## 위치 참고
+
+무릎부위, 무릎뼈 아래모서리, 무릎인대의 양쪽 오목한 곳으로, 안쪽을 內膝眼, 가쪽을 外膝眼이라 부른다.
+
+[KMCRIC EX-LE5 위치 원문](https://www.kmcric.com/database/acupoint/EX/EX-LE5); 영문 병기를 간추린 짧은 위치 참고입니다. 전문가 미검수이며 공식 번역이나 3D 좌표 표준이 아닙니다.
+
+## 전통적으로 언급된 용도
+
+무릎 부위 증상 · 다리 힘 빠짐. 문헌에 기재된 전통적 용도의 일부를 간추렸습니다. 특정 경혈의 임상 효과가 입증되었다는 뜻은 아닙니다.
+
+[항목별 용도 출처](https://tcmwiki.com/wiki/xiyan). TCM Wiki의 설명을 한국어로 간추리고 편집했습니다. [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+## 음양오행
+
+| 구분 | 배속 |
+| --- | --- |
+| 경맥 음양 | 별도 배속 없음 |
+| 경맥 오행 | 별도 배속 없음 |
+| 개별 오수혈 | 해당 없음 |
+
+경외기혈은 14경맥 밖의 별도 분류입니다. 이 목록에서는 소속 경맥의 음양·오행이나 오수혈 오행을 지정하지 않습니다. 장부 대응은 현대 해부 구조와 같지 않습니다. [음양오행 안내](#wiki/yin-yang-five-phases).
+
+## 경혈 분류와 장부 대응
+
+일반 경혈. 전통적 분류는 압력 전달이나 장기 마사지 효과를 뜻하지 않습니다. [분류표와 출처](#wiki/point-categories) · [마사지 해부학 참고](#wiki/massage-anatomy)
+
+## 해부학적 연결
+
+이 경혈의 개별 기준점 메쉬는 아직 연결하지 않았습니다. 참조 관계는 압력 전달 경로나 치료 기전이 아닙니다.
+
+## 지도에서 보기
+
+[슬안 3D 위치 열기](#atlas/EX-LE5)
+
+단일 인체에 편집한 학습용 근사 표식이며 표준 취혈 좌표가 아닙니다. AI 편집 · 전문가 미검수. [좌표의 한계와 검수 방법](#wiki/coordinate-method)
+
+## 연결 문서
+
+[골도분촌](#wiki/cun) · [근거 해석](#wiki/evidence)

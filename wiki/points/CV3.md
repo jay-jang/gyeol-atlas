@@ -1,0 +1,52 @@
+---
+id: points/CV3
+title: 중극 CV3
+category: 경혈
+sources: who-locations,point-categories,kmcric-points,tcm-wiki,five-shu-theory
+review: illustrative-unreviewed
+---
+# 중극 CV3
+
+中極 · Zhongji · 임맥 · 배·골반
+
+정규 361경혈 중 한 항목 · 모델 표식 1곳. 이름 수와 양측·복수 위치의 표식 수는 다릅니다.
+
+## 위치 참고
+
+배꼽 아래 4 B-cun의 앞정중선.
+
+[KMCRIC CV3 위치 원문](https://www.kmcric.com/database/acupoint/CV/CV3) · [WHO 위치 표준 p. 221](https://iris.who.int/handle/10665/353407); 영문 병기를 간추린 짧은 위치 참고입니다. 전문가 미검수이며 공식 번역이나 3D 좌표 표준이 아닙니다.
+
+## 전통적으로 언급된 용도
+
+배뇨 곤란 · 유뇨 · 월경 불규칙 · 월경통. 문헌에 기재된 전통적 용도의 일부를 간추렸습니다. 특정 경혈의 임상 효과가 입증되었다는 뜻은 아닙니다.
+
+[항목별 용도 출처](https://tcmwiki.com/wiki/cv3). TCM Wiki의 설명을 한국어로 간추리고 편집했습니다. [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+## 음양오행
+
+| 구분 | 배속 |
+| --- | --- |
+| 경맥 음양 | 음맥의 바다 |
+| 경맥 오행 | 별도 배속 없음 |
+| 개별 오수혈 | 해당 없음 |
+
+임맥은 음맥의 바다로 설명하는 기경팔맥의 하나입니다. 십이경맥의 장부 오행이나 오수혈 배속을 그대로 적용하지 않습니다. 장부 대응은 현대 해부 구조와 같지 않습니다. [음양오행 안내](#wiki/yin-yang-five-phases).
+
+## 경혈 분류와 장부 대응
+
+모혈. 전통적 장부 대응: 방광. 전통적 분류는 압력 전달이나 장기 마사지 효과를 뜻하지 않습니다. [분류표와 출처](#wiki/point-categories) · [마사지 해부학 참고](#wiki/massage-anatomy)
+
+## 해부학적 연결
+
+기준점 또는 같은 부위의 참조 메쉬: FMA13377. 참조 관계는 압력 전달 경로나 치료 기전이 아닙니다.
+
+## 지도에서 보기
+
+[중극 3D 위치 열기](#atlas/CV3)
+
+단일 인체에 편집한 학습용 근사 표식이며 표준 취혈 좌표가 아닙니다. AI 편집 · 전문가 미검수. [좌표의 한계와 검수 방법](#wiki/coordinate-method)
+
+## 연결 문서
+
+[중완 CV12](#wiki/points/CV12) · [골도분촌](#wiki/cun) · [근거 해석](#wiki/evidence)
