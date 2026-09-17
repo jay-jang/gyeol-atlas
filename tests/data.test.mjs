@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import crypto from "node:crypto";
 import { NodeIO } from "@gltf-transform/core";
 const read = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 const points = read("data/points.json"),
@@ -65,14 +66,22 @@ test("bundled GLB files contain real named meshes and stay within the delivery b
       assert.ok(prim.getIndices().getCount() > 50);
     }
   }
-  assert.ok(bytes < 48_000_000, `Model payload ${bytes}`);
-  assert.equal(manifest.assets.length, 1030);
+  assert.ok(bytes < 52_000_000, `Model payload ${bytes}`);
+  assert.equal(manifest.assets.length, 1179);
   assert.equal(manifest.license, "CC-BY-SA-2.1-JP");
   for (const a of manifest.assets) {
     assert.match(a.sha256, /^[a-f0-9]{64}$/);
     assert.ok(a.sourceVersion === "4.3" ? a.sourceUrl === "https://lifesciencedb.jp/bp3d/download.cgi" : a.sourceUrl.includes(manifest.commit));
     assert.ok(a.triangles <= a.originalTriangles);
   }
+  const fullSystems = read("data/catalog/full-system-supplement.json");
+  for (const asset of fullSystems.assets) {
+    const data = fs.readFileSync(asset.path);
+    assert.equal(data.readUInt32LE(0), 0x46546c67);
+    assert.equal(crypto.createHash("sha256").update(data).digest("hex"), asset.sha256);
+  }
+  assert.equal(fullSystems.assets.find((a) => a.path.includes("nerve"))?.structures, 525);
+  assert.equal(fullSystems.assets.find((a) => a.path.includes("vessel"))?.structures, 640);
 });
 
 test("all 834 bilateral/multiple-location anchors are on the bundled skin surface before display offset", async () => {
@@ -177,7 +186,7 @@ test("complete Yuan and Mu sets are distinct from Shu and traditional organ mapp
   );
   assert.deepEqual(layers, {
     skin: 1,
-    bone: 129,
+    bone: 278,
     muscle: 437,
     organ: 67,
     vessel: 56,

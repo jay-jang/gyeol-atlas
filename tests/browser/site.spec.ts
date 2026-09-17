@@ -4,6 +4,7 @@ import anchors from '../../data/anchors.json' with {type:'json'};
 import {ready,openTool,choosePoint,closeTool,snapshot} from './helpers';
 test('model-first scene, actual marker click, search, bookmarks and source-linked wiki',async({page})=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await ready(page);
+ await expect(page.getByRole('button',{name:/경혈 선택/})).toBeVisible();await expect(page.locator('.point-label')).toHaveCount(0);
  const box=await page.locator('canvas').boundingBox();expect(box!.y).toBeLessThan(100);expect(box!.height).toBeGreaterThan(700);
  await openTool(page,'레이어 조절');await page.getByLabel('경혈 표식',{exact:true}).selectOption('filtered');await closeTool(page);
  const pose=(await snapshot(page)).camera;const camera=new PerspectiveCamera(39,box!.width/box!.height,.01,20);camera.position.fromArray(pose.position);camera.lookAt(new Vector3(...pose.target));camera.updateMatrixWorld();const point=anchors.find(a=>a.pointId==='CV17')!;const projected=new Vector3(...point.position as [number,number,number]).project(camera);
@@ -20,5 +21,5 @@ test('mobile canvas and overlay coexist, filtered lists, keyboard dismissal and 
  await page.goto('/#wiki/points/ST36');await expect(page.locator('article h1')).toHaveText('족삼리 ST36');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.goto('/#wiki/not-found');await expect(page.getByRole('heading',{name:'문서를 찾지 못했습니다'})).toBeVisible();
 });
 test('failed GLB leaves wiki access and retry available',async({page})=>{
- await page.route('**/models/skin.glb',r=>r.abort());await page.goto('/');await expect(page.getByRole('alert')).toContainText('3D 모델을 열지 못했습니다');await expect(page.getByRole('button',{name:'3D 다시 시도'})).toBeVisible();await page.locator('.point-summary').click();await page.getByRole('link',{name:'위키에서 더 알아보기'}).click();await expect(page.locator('article h1')).toHaveText('족삼리 ST36');
+ await page.route('**/models/skin.glb',r=>r.abort());await page.goto('/');await expect(page.getByRole('alert')).toContainText('3D 모델을 열지 못했습니다');await expect(page.getByRole('button',{name:'3D 다시 시도'})).toBeVisible();await choosePoint(page,'ST36');await page.locator('.point-summary').click();await page.getByRole('link',{name:'위키에서 더 알아보기'}).click();await expect(page.locator('article h1')).toHaveText('족삼리 ST36');
 });

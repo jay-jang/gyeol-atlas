@@ -20,6 +20,7 @@ import {
   Plane,
   Box3,
   PerspectiveCamera,
+  PropertyBinding,
   type Intersection,
 } from "three";
 import type { OrbitControls as OrbitType } from "three-stdlib";
@@ -29,6 +30,7 @@ import { layerKeys, type Layer, structures } from "./anatomy";
 import meridians from "../data/meridians.json";
 import anchors from "../data/anchors.json";
 import structurePairs from "../data/structure-pairs.json";
+import fullSystemNodes from "../data/full-system-nodes.json";
 import { movementKeys, translateView, type MoveDirection } from "./navigation";
 import { LoaderCircle, TriangleAlert } from "lucide-react";
 
@@ -167,7 +169,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     invalidate,
   ]);
   useEffect(() => {
-    props.onReady(layer);
+    if (layer !== "nerve" && layer !== "vessel") props.onReady(layer);
   }, [object, layer, props.onReady]);
   return (
     <primitive
@@ -181,6 +183,56 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       }}
     />
   );
+}
+function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; props: Props }) {
+  const model = useGLTF(
+    assetUrl(`models/${layer}-full.glb`),
+    assetUrl("draco/"),
+  );
+  const object = useMemo(() => {
+    const clone = model.scene.clone(true);
+    const allowed = new Set(
+      fullSystemNodes[layer].map((name) => PropertyBinding.sanitizeNodeName(name)),
+    );
+    clone.traverse((item) => {
+      if (!(item instanceof Mesh)) return;
+      item.visible = allowed.has(item.name);
+      item.material = new MeshStandardMaterial({ roughness: 0.76, side: DoubleSide });
+      item.raycast = () => {};
+    });
+    return clone;
+  }, [model.scene]);
+  const { invalidate } = useThree();
+  useEffect(() => {
+    object.visible = !props.isolated;
+    object.traverse((item) => {
+      if (!(item instanceof Mesh)) return;
+      const material = item.material as MeshStandardMaterial;
+      material.color.set(layer === "nerve" ? "#d7af39" : "#a9434f");
+      const alpha = props.layerOpacity[layer];
+      const clipped = props.cutaway > 0;
+      if (material.transparent !== (alpha < 1) || Boolean(material.clippingPlanes?.length) !== clipped)
+        material.needsUpdate = true;
+      material.transparent = alpha < 1;
+      material.opacity = alpha;
+      material.clippingPlanes = clipped
+        ? [new Plane(new Vector3(0, 0, -1), 0.22 - props.cutaway * 0.44)]
+        : [];
+    });
+    invalidate();
+  }, [object, layer, props.isolated, props.layerOpacity, props.cutaway, invalidate]);
+  useEffect(() => {
+    props.onReady(layer);
+  }, [object, layer, props.onReady]);
+  useEffect(
+    () => () =>
+      object.traverse((item) => {
+        if (item instanceof Mesh && item.material instanceof MeshStandardMaterial)
+          item.material.dispose();
+      }),
+    [object],
+  );
+  return <primitive object={object} />;
 }
 function Scene(props: Props) {
   const { points, selected, onSelect, layers, labels, action } = props;
@@ -417,6 +469,12 @@ function Scene(props: Props) {
                 layer={layer}
                 props={{ ...props, onReady: layerReady }}
               />
+              {(layer === "nerve" || layer === "vessel") && (
+                <WholeBodySupplement
+                  layer={layer}
+                  props={{ ...props, onReady: layerReady }}
+                />
+              )}
             </Suspense>
           ))}
       </group>

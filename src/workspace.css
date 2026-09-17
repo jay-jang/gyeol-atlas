@@ -994,6 +994,21 @@ body:has(.anatomy-workspace) .site-footer {
   font: inherit;
   font-size: 11px;
 }
+.depth-explorer {
+  margin-top: 14px;
+  padding: 12px 12px 10px;
+  background: #eef4f6;
+  border: 1px solid #d4e0e5;
+  border-radius: 10px;
+}
+.depth-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.depth-heading span { color: #617681; font-size: 11px; font-weight: 650; }
+.depth-heading strong { color: #174f67; font-size: 12px; }
+.depth-explorer input[type="range"] { width: 100%; margin: 11px 0 7px; accent-color: #176d8b; }
+.depth-steps { display: flex; justify-content: space-between; gap: 3px; }
+.depth-steps span { display: flex; flex-direction: column; align-items: center; gap: 3px; color: #788991; font-size: 10px; }
+.depth-steps span.active { color: #164d64; font-weight: 750; }
+.depth-explorer p { margin: 9px 0 0; color: #61737c; font-size: 11px; line-height: 1.45; }
 .explore-section-label {
   display: flex;
   align-items: center;
@@ -1072,6 +1087,8 @@ body:has(.anatomy-workspace) .site-footer {
 .anatomy-workspace .navigation-hint, .anatomy-workspace .scene-legend { left: 342px; }
 .anatomy-workspace .scene-title { display: none; }
 .anatomy-workspace .floating-point { top: 18px; }
+.floating-point.empty .point-empty { padding-inline: 14px; gap: 9px; }
+.floating-point.empty .point-empty > svg:first-child { color: #176b88; }
 .site-header { background: #102d3a; border-bottom-color: #102d3a; color: #f8fbfc; }
 .site-header .brand, .site-header nav a, .site-header .header-about { color: #d8e5ea; }
 .site-header nav a.active { color: #fff; border-color: #58b7d1; }
@@ -1096,7 +1113,7 @@ body:has(.anatomy-workspace) .site-footer {
     border-bottom: 1px solid #cbd7dc;
   }
   .explore-heading { display: flex; align-items: baseline; gap: 8px; margin: 0 3px 8px; }
-  .explore-heading > span, .explore-heading p, .explore-search, .explore-section-label, .featured-anatomy, .all-anatomy-button { display: none; }
+  .explore-heading > span, .explore-heading p, .explore-search, .depth-explorer, .explore-section-label, .featured-anatomy, .all-anatomy-button { display: none; }
   .explore-heading h1 { margin: 0; font-size: 16px; }
   .explore-heading::after { content: "계통을 선택해 구조 보기"; color: #60727b; font-size: 12px; }
   .explore-systems { display: flex; gap: 5px; }

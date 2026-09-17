@@ -18,6 +18,17 @@
 
 GYEOL modifications: STL/OBJ parsing, positional welding, meshoptimizer topology-aware simplification (maximum requested relative error 0.003), recalculated normals, common coordinate transformation, binary GLB export. Original assets and checksums, observed simplification errors and resulting triangle counts are recorded in `public/models/manifest.json`. No clinical registration or expert validation was performed. Appearance, scale and surface details may differ from the original. These derivatives do not imply endorsement by DBCLS or the mirror author.
 
+## Z-Anatomy whole-body system supplement
+
+The whole-body nervous and cardiovascular reference layers are adapted from **Z-Anatomy — the libre 3D atlas of anatomy**, licensed under **CC BY-SA 4.0**, and ultimately derive in part from BodyParts3D. The web-ready system exports were produced by the open Anatria-3D asset pipeline.
+
+- Z-Anatomy source and attribution: https://github.com/Z-Anatomy/Models-of-human-anatomy
+- Packaging source: https://github.com/Nurkan1/Anatria-3D
+- License: https://creativecommons.org/licenses/by-sa/4.0/
+- Exact source URLs, hashes, component counts and measured bounds: `data/catalog/full-system-supplement.json`
+
+GYEOL modification: the two system exports are loaded as non-diagnostic whole-body reference overlays alongside the individually searchable BodyParts3D structures. Materials are replaced at runtime to match the GYEOL layer legend. The geometry is not clinically registered and may have local alignment differences even though its measured whole-body bounds match the BodyParts3D scene coordinate range.
+
 ## WHO and clinical sources
 
 WHO documents and NCCIH web pages retain their respective original rights. The repository includes short independently written educational summaries, citations, and metadata; it does **not** redistribute the WHO books or diagrams and does not claim that they are open-licensed. WHO did not supply or validate the 3D acupoint coordinates. Korean summaries are AI drafts, not official WHO translations.

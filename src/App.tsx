@@ -70,7 +70,8 @@ function readView() {
   }
 }
 function returnToAtlas() {
-  return `#atlas/${readView().pointId}`;
+  const pointId = readView().pointId;
+  return pointId ? `#atlas/${pointId}` : "#atlas";
 }
 import { layerKeys, layerNames, stages, type Layer } from "./anatomy";
 import conceptData from "../data/point-concepts.json";
@@ -97,9 +98,9 @@ const navigate = (path: string) => {
   window.location.hash = path;
 };
 function useRoute() {
-  const [route, setRoute] = useState(location.hash.slice(1) || "atlas/ST36");
+  const [route, setRoute] = useState(location.hash.slice(1) || "atlas");
   useEffect(() => {
-    const f = () => setRoute(location.hash.slice(1) || "atlas/ST36");
+    const f = () => setRoute(location.hash.slice(1) || "atlas");
     addEventListener("hashchange", f);
     return () => removeEventListener("hashchange", f);
   }, []);
@@ -131,7 +132,7 @@ function useBookmarks() {
 }
 function Logo() {
   return (
-    <a className="brand" href="#atlas/ST36" aria-label="결 홈">
+    <a className="brand" href="#atlas" aria-label="결 홈">
       <span className="brand-symbol">
         결<span />
       </span>
@@ -399,8 +400,10 @@ function AtlasPage({
   state: ViewState;
   dispatch: Dispatch<ViewAction>;
 }) {
+  const routeSelection = points.find((p) => p.id === id);
+  const hasSelected = Boolean(routeSelection);
   const selected =
-    points.find((p) => p.id === id) || points.find((p) => p.id === "ST36")!;
+    routeSelection || { ...points.find((p) => p.id === "ST36")!, id: "" };
   const [panel, setPanel] = useState<
     "points" | "layers" | "structures" | "detail" | "help" | null
   >(null);
@@ -504,7 +507,9 @@ function AtlasPage({
     state.markers === "hidden"
       ? []
       : state.markers === "selected"
-        ? [selected]
+        ? hasSelected
+          ? [selected]
+          : []
         : found;
   const names = {
     points: "경혈 찾기",
@@ -630,6 +635,43 @@ function AtlasPage({
           <span>구조 이름·FMA 검색</span>
           <kbd>/</kbd>
         </button>
+        <section
+          className="depth-explorer"
+          aria-label="인체 깊이 탐색"
+          onWheel={(event) => {
+            if (Math.abs(event.deltaY) < 8) return;
+            event.preventDefault();
+            const next = Math.max(
+              0,
+              Math.min(stages.length - 1, state.stage + (event.deltaY > 0 ? 1 : -1)),
+            );
+            if (next !== state.stage) dispatch({ type: "stage", index: next });
+          }}
+        >
+          <div className="depth-heading">
+            <span>바깥에서 안쪽으로</span>
+            <strong>{state.stage + 1} / {stages.length} · {layerNames[stages[state.stage].layer]}</strong>
+          </div>
+          <input
+            type="range"
+            min="0"
+            max={stages.length - 1}
+            step="1"
+            value={state.stage}
+            aria-label="인체 계통 깊이"
+            aria-valuetext={`${state.stage + 1}단계 ${layerNames[stages[state.stage].layer]}`}
+            onChange={(event) => dispatch({ type: "stage", index: Number(event.target.value) })}
+          />
+          <div className="depth-steps" aria-hidden="true">
+            {stages.map((stage, index) => (
+              <span key={stage.layer} className={index === state.stage ? "active" : ""}>
+                <i className={`layer-dot ${stage.layer}`} />
+                {layerNames[stage.layer]}
+              </span>
+            ))}
+          </div>
+          <p>슬라이더나 마우스 휠로 한 계통씩 벗겨 안쪽을 살펴보세요.</p>
+        </section>
         <div className="explore-section-label">
           <span>인체 계통</span>
           <button onClick={showAllSystems}>전체 켜기</button>
@@ -648,7 +690,13 @@ function AtlasPage({
               <i className={`layer-dot ${stage.layer}`} />
               <span>
                 <strong>{layerNames[stage.layer]}</strong>
-                <small>{layerCounts[stage.layer]}개 구조</small>
+                <small>
+                  {stage.layer === "nerve"
+                    ? "전신 525 + 세부 340"
+                    : stage.layer === "vessel"
+                      ? "전신 640 + 세부 56"
+                      : `${layerCounts[stage.layer]}개 구조`}
+                </small>
               </span>
               <Eye size={16} />
             </button>
@@ -699,24 +747,38 @@ function AtlasPage({
           ),
         )}
       </nav>
-      <div className="floating-point">
-        <button
-          className="point-summary"
-          aria-expanded={panel === "detail"}
-          onClick={(e) => openPanel("detail", e.currentTarget)}
-        >
-          <span>{selected.id}</span>
-          <strong>{selected.name}</strong>
-          <small>
-            {pointConcepts[selected.id]?.categories
-              .map((id) => concepts.find((c) => c.id === id)?.name)
-              .join(" · ") || "일반 경혈"}
-          </small>
-          <ChevronRight size={16} />
-        </button>
-        <button aria-label="선택 경혈 확대" onClick={() => camera("focus")}>
-          <Focus size={18} />
-        </button>
+      <div className={`floating-point ${hasSelected ? "" : "empty"}`}>
+        {hasSelected ? (
+          <>
+            <button
+              className="point-summary"
+              aria-expanded={panel === "detail"}
+              onClick={(e) => openPanel("detail", e.currentTarget)}
+            >
+              <span>{selected.id}</span>
+              <strong>{selected.name}</strong>
+              <small>
+                {pointConcepts[selected.id]?.categories
+                  .map((id) => concepts.find((c) => c.id === id)?.name)
+                  .join(" · ") || "일반 경혈"}
+              </small>
+              <ChevronRight size={16} />
+            </button>
+            <button aria-label="선택 경혈 확대" onClick={() => camera("focus")}>
+              <Focus size={18} />
+            </button>
+          </>
+        ) : (
+          <button
+            className="point-summary point-empty"
+            onClick={(e) => openPanel("points", e.currentTarget)}
+          >
+            <Search size={17} />
+            <strong>경혈 선택</strong>
+            <small>검색하거나 표식을 선택하세요</small>
+            <ChevronRight size={16} />
+          </button>
+        )}
       </div>
       {panel && (
         <div
@@ -1246,8 +1308,8 @@ function WikiPage({ docId }: { docId?: string }) {
   return (
     <div className="wiki-layout">
       <a className="atlas-return" href={returnToAtlas()}>
-        ← {points.find((p) => p.id === readView().pointId)?.name} 3D 보기로
-        돌아가기
+        ← {points.find((p) => p.id === readView().pointId)?.name || "인체"} 3D
+        보기로 돌아가기
       </a>
       <aside className="wiki-sidebar">
         <div className="eyebrow">GYEOL KNOWLEDGE</div>
@@ -1490,7 +1552,7 @@ export default function App() {
         <nav aria-label="주 메뉴">
           <a
             className={view === "atlas" ? "active" : ""}
-            href={`#atlas/${viewState.pointId}`}
+            href={viewState.pointId ? `#atlas/${viewState.pointId}` : "#atlas"}
           >
             <Layers3 size={16} />
             3D 경혈 지도
@@ -1512,7 +1574,7 @@ export default function App() {
       <div className={`app-shell ${view}`}>
         {view === "atlas" ? (
           <AtlasPage
-            id={route.split("/")[1] || "ST36"}
+            id={route.split("/")[1] || ""}
             saved={saved}
             toggle={toggle}
             state={viewState}

@@ -1,0 +1,24 @@
+{
+  "sourceRepository": "https://github.com/Nurkan1/Anatria-3D",
+  "sourceCommit": "4211d717b0b624604a8bda174ffcae31a76f4581",
+  "upstreamModel": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+  "license": "CC-BY-SA-4.0",
+  "attribution": "Z-Anatomy contributors; BodyParts3D / DBCLS",
+  "modifications": "System-level GLB export and Draco compression by the Anatria-3D asset pipeline; rendered as a whole-body reference supplement in GYEOL without anatomical registration.",
+  "assets": [
+    {
+      "path": "public/models/nerve-full.glb",
+      "sourceUrl": "https://raw.githubusercontent.com/Nurkan1/Anatria-3D/4211d717b0b624604a8bda174ffcae31a76f4581/public/anatomy/nervous_male.glb",
+      "sha256": "e7a3a2de6c6f098152e3619dd75613531749235cfa9f687d971c8b334a08dcb8",
+      "structures": 525,
+      "boundsMeters": [[-0.334, 0.007, -0.130], [0.334, 1.708, 0.130]]
+    },
+    {
+      "path": "public/models/vessel-full.glb",
+      "sourceUrl": "https://raw.githubusercontent.com/Nurkan1/Anatria-3D/4211d717b0b624604a8bda174ffcae31a76f4581/public/anatomy/cardiovascular_male.glb",
+      "sha256": "05f373a294ab809b9a628bc1474a66028642997330fddc553a33d4ac6409b757",
+      "structures": 640,
+      "boundsMeters": [[-0.332, 0.003, -0.113], [0.332, 1.701, 0.136]]
+    }
+  ]
+}

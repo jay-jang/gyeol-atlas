@@ -87,9 +87,10 @@ test("versioned session restoration validates current catalog, ranges and malfor
   ])
     assert.deepEqual(parse(raw), initialView());
 });
-test("all 1030 structures have Korean search labels without losing original English identifiers", () => {
+test("all 1179 searchable structures have Korean labels without losing original English identifiers", () => {
   const labels = JSON.parse(fs.readFileSync("data/structure-labels.json"));
-  assert.equal(Object.keys(labels).length, 1030);
+  assert.equal(Object.keys(labels).length, 1179);
+  assert.equal(assets.filter((a) => a.layer === "bone" && /phalan/i.test(a.name)).length, 56);
   for (const a of assets) {
     assert.match(labels[a.id], /[가-힣]/);
     assert.ok(a.name);

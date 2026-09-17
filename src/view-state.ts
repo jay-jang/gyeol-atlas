@@ -34,7 +34,7 @@ export type ViewState = {
   };
 };
 const keys: Layer[] = ["skin", "muscle", "bone", "organ", "vessel", "nerve"];
-export function initialView(pointId = "ST36"): ViewState {
+export function initialView(pointId = ""): ViewState {
   return {
     version: 2,
     pointId,
@@ -194,7 +194,7 @@ export function restoreView(
     if (
       !s ||
       s.version !== 2 ||
-      !pointIds.includes(s.pointId) ||
+      (s.pointId !== "" && !pointIds.includes(s.pointId)) ||
       !Number.isInteger(s.stage) ||
       s.stage < 0 ||
       s.stage > 5

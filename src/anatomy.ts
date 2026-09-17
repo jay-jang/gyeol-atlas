@@ -33,7 +33,7 @@ export const stages: { layer: Layer; description: string }[] = [
   },
   {
     layer: "bone",
-    description: "129개 골격·치아 구조에서 뼈와 관절의 기준점을 확인합니다.",
+    description: "278개 골격·치아·연골 구조에서 손가락과 발가락 마디뼈까지 확인합니다.",
   },
   {
     layer: "organ",
@@ -43,11 +43,11 @@ export const stages: { layer: Layer; description: string }[] = [
   {
     layer: "vessel",
     description:
-      "56개 주요 혈관 구조를 봅니다. 미세혈관 전체를 포함하지 않습니다.",
+      "640개 구성요소의 전신 심혈관 보완 모델과 56개 개별 검색 구조를 함께 봅니다. 미세혈관 전체를 뜻하지 않습니다.",
   },
   {
     layer: "nerve",
     description:
-      "340개 뇌·척수·뇌신경·상지 신경 및 관련 공간 구조를 봅니다. 말초신경은 원본에 수록된 부위만 표시하며 좌우와 전신을 모두 포함하지 않습니다.",
+      "525개 구성요소의 좌우 전신 신경 보완 모델과 340개 개별 검색 구조를 함께 봅니다.",
   },
 ];

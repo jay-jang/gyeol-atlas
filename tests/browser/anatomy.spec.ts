@@ -4,6 +4,7 @@ import assets from '../../scripts/model-inputs.json' with {type:'json'};
 test('explore catalogue exposes all systems and featured brain and organs',async({page})=>{
  await page.goto('/');await ready(page);
  await expect(page.getByRole('heading',{name:'인체 탐색'})).toBeVisible();
+ const depth=page.getByLabel('인체 계통 깊이');await depth.fill('5');await ready(page);expect((await snapshot(page)).stage).toBe(5);await expect(depth).toHaveAttribute('aria-valuetext','6단계 신경');
  const featured=page.locator('.featured-anatomy > button');await expect(featured).toHaveCount(6);for(const name of ['뇌','심장','폐','간','위','콩팥']) await expect(featured.filter({hasText:name})).toBeVisible();
  await featured.filter({hasText:'뇌'}).click();await ready(page);let s=await snapshot(page);expect(s.layers.nerve).toBe(true);expect(s.selection.name).toBe('뇌');expect(s.selection.ids).toHaveLength(5);
  await page.getByRole('button',{name:'전체 켜기'}).click();await ready(page);s=await snapshot(page);expect(Object.values(s.layers).every(Boolean)).toBe(true);expect(s.selection).toBe(null);
@@ -11,10 +12,16 @@ test('explore catalogue exposes all systems and featured brain and organs',async
 test('six real systems and shared layer/isolation transitions; clipping and bilingual structure selection',async({page})=>{
  test.setTimeout(180000);
  const errors:string[]=[];const glbs=new Set<string>();page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.url().endsWith('.glb')&&r.ok())glbs.add(r.url().split('/').pop()!);});await page.goto('/');await ready(page);
- for(const name of ['체표','근육','골격','장기','혈관','신경']){await page.getByRole('button',{name:`${name} 단계`,exact:true}).click();await ready(page);await page.getByRole('button',{name:'계통 전체 보기',exact:true}).click();await page.locator('canvas').screenshot({path:`docs/ui-renewal/system-${name}.png`});}expect(glbs.size).toBe(6);
+ for(const name of ['체표','근육','골격','장기','혈관','신경']){await page.getByRole('button',{name:`${name} 단계`,exact:true}).click();await ready(page);await page.getByRole('button',{name:'계통 전체 보기',exact:true}).click();await page.locator('canvas').screenshot({path:`docs/ui-renewal/system-${name}.png`});}expect([...glbs].sort()).toEqual(['bone.glb','muscle.glb','nerve-full.glb','nerve.glb','organ.glb','skin.glb','vessel-full.glb','vessel.glb']);
  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill('stomach');await page.locator('.structure-item').filter({hasText:'FMA7148'}).click();await closeTool(page);await page.getByRole('button',{name:'선택 구조만 보기',exact:true}).click();await expect.poll(async()=>(await snapshot(page)).isolated).toBe(true);
  await openTool(page,'레이어 조절');await page.getByLabel('장기 레이어',{exact:true}).uncheck();await page.getByLabel('근육 레이어',{exact:true}).check();await ready(page);expect((await snapshot(page)).isolated).toBe(false);await expect(page.locator('.selection-card')).toHaveCount(0);await closeTool(page);await page.locator('canvas').screenshot({path:'docs/ui-renewal/isolation-regression.png'});
  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill('대퇴골');await expect(page.locator('.structure-item')).toHaveCount(2);await page.getByLabel('해부 구조 검색').fill('FMA7148');await page.locator('.structure-item').click();await page.getByRole('button',{name:'선택 구조 확대',exact:true}).click();await page.getByRole('button',{name:'선택 구조만 보기',exact:true}).click();const before=await page.locator('canvas').screenshot();await openTool(page,'레이어 조절');await page.getByLabel('앞쪽 구조 일부 숨기기',{exact:true}).fill('0.5');await closeTool(page);const after=await page.locator('canvas').screenshot({path:'docs/ui-renewal/cutaway.png'});expect(before.equals(after)).toBe(false);await page.getByRole('button',{name:'앞쪽 구조 숨김 적용 · 초기화'}).click();expect((await snapshot(page)).cutaway).toBe(0);expect(errors).toEqual([]);
+});
+test('hand and foot phalanges are searchable, selectable and frameable',async({page})=>{
+ await page.goto('/');await ready(page);
+ for(const query of ['엄지손가락 끝마디뼈','엄지발가락 끝마디뼈']){
+  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(query);await expect(page.locator('.structure-item')).toHaveCount(2);await page.locator('.structure-item').first().click();await expect(page.locator('.selection-card')).toContainText(query);await page.locator('.selection-card').getByRole('button',{name:'확대',exact:true}).click();expect((await snapshot(page)).selection.ids).toHaveLength(1);
+ }
 });
 test('point focus and marker preference survive stage changes',async({page})=>{
  await page.goto('/#atlas/ST36');await ready(page);await page.getByRole('button',{name:'선택 경혈 확대'}).click();await expect.poll(async()=>(await snapshot(page)).camera.position[2]).toBeLessThan(1.5);const before=(await snapshot(page)).camera;await page.getByRole('button',{name:'골격 단계'}).click();await ready(page);expect((await snapshot(page)).camera).toEqual(before);expect((await snapshot(page)).markers).toBe('selected');await page.locator('canvas').screenshot({path:'docs/ui-renewal/preserved-knee.png'});
