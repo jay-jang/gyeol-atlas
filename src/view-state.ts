@@ -10,9 +10,10 @@ export type Selection = {
   name: string;
 };
 export type ViewState = {
-  version: 2;
+  version: 3;
   pointId: string;
   stage: number;
+  dissection: number;
   layers: Layers;
   alpha: Record<Layer, number>;
   markers: "hidden" | "selected" | "filtered";
@@ -36,9 +37,10 @@ export type ViewState = {
 const keys: Layer[] = ["skin", "muscle", "bone", "organ", "vessel", "nerve"];
 export function initialView(pointId = ""): ViewState {
   return {
-    version: 2,
+    version: 3,
     pointId,
     stage: 0,
+    dissection: 0,
     layers: {
       skin: true,
       muscle: false,
@@ -70,6 +72,7 @@ export function initialView(pointId = ""): ViewState {
 export type ViewAction =
   | { type: "point"; id: string }
   | { type: "stage"; index: number }
+  | { type: "dissection"; value: number }
   | { type: "layers"; layers: Layers }
   | { type: "alpha"; layer: Layer; value: number }
   | { type: "markers"; value: ViewState["markers"] }
@@ -102,6 +105,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return {
         ...s,
         stage: a.index,
+        dissection: [0, 20, 72, 68, 82, 96][a.index],
         layers: Object.fromEntries(
           keys.map((l, i) => [l, i === a.index]),
         ) as Layers,
@@ -111,6 +115,29 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         cutaway: 0,
         selectionTarget: "visible",
       };
+    case "dissection": {
+      const depth = Math.max(0, Math.min(100, a.value));
+      const layers: Layers = {
+        skin: depth < 16,
+        muscle: depth >= 5 && depth < 76,
+        bone: depth >= 34,
+        organ: depth >= 40,
+        vessel: depth >= 52,
+        nerve: depth >= 64,
+      };
+      const stage = depth < 12 ? 0 : depth < 66 ? 1 : depth < 78 ? 2 : depth < 86 ? 3 : depth < 94 ? 4 : 5;
+      return {
+        ...s,
+        dissection: depth,
+        stage,
+        layers,
+        selection: null,
+        comparison: null,
+        isolated: false,
+        cutaway: 0,
+        selectionTarget: "visible",
+      };
+    }
     case "layers":
       return {
         ...s,
@@ -141,7 +168,8 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
     case "compare":
       return {
         ...s,
-        stage: 3,
+        stage: 0,
+        dissection: 0,
         layers: {
           skin: true,
           muscle: false,
@@ -190,15 +218,20 @@ export function restoreView(
 ): ViewState {
   const base = initialView();
   try {
-    const s = JSON.parse(raw || "null") as ViewState;
+    const parsed = JSON.parse(raw || "null") as Record<string, any> | null;
+    const s = (parsed?.version === 2
+      ? { ...parsed, version: 3 as const, dissection: [0, 20, 72, 68, 82, 96][parsed.stage] ?? 0 }
+      : parsed) as ViewState;
     if (
       !s ||
-      s.version !== 2 ||
+      s.version !== 3 ||
       (s.pointId !== "" && !pointIds.includes(s.pointId)) ||
       !Number.isInteger(s.stage) ||
       s.stage < 0 ||
       s.stage > 5
     )
+      return base;
+    if (!Number.isFinite(s.dissection) || s.dissection < 0 || s.dissection > 100)
       return base;
     if (
       !keys.every(

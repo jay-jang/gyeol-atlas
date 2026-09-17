@@ -50,12 +50,26 @@ type Props = {
   isolated: boolean;
   highlight: string[];
   cutaway: number;
+  dissection: number;
   layerOpacity: Record<Layer, number>;
   selectionIds: string[];
   selectionTarget: "visible" | "internal" | "skin";
   initialPose: CameraPose | null;
   onPose: (pose: CameraPose) => void;
 };
+const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
+function clinicalColor(layer: Layer, name: string) {
+  const lower = name.toLowerCase();
+  if (layer === "vessel") return /vein|vena cava/.test(lower) ? "#356fb3" : "#d33f49";
+  if (layer === "organ") {
+    if (/lung/.test(lower)) return "#c97f86";
+    if (/liver/.test(lower)) return "#8f3439";
+    if (/kidney/.test(lower)) return "#95534b";
+    if (/heart/.test(lower)) return "#b52e3f";
+    if (/stomach|intestin|colon/.test(lower)) return "#c47a68";
+  }
+  return { skin: "#b9826f", bone: "#e8dec5", muscle: "#b43f3f", organ: "#a94d60", vessel: "#d33f49", nerve: "#f0c94f" }[layer];
+}
 class Boundary extends Component<
   { children: ReactNode; onRetry: () => void },
   { error: boolean }
@@ -84,20 +98,36 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
   const model = useGLTF(assetUrl(`models/${layer}.glb`));
   const object = useMemo(() => {
     const clone = model.scene.clone(true);
+    clone.updateMatrixWorld(true);
+    const muscleMeshes: { mesh: Mesh; score: number }[] = [];
     clone.traverse(o => {
-      if (o instanceof Mesh) o.material = new MeshStandardMaterial({roughness:0.77, side:layer === 'skin' ? FrontSide : DoubleSide});
+      if (!(o instanceof Mesh)) return;
+      o.material = new MeshStandardMaterial({roughness:0.72, metalness:0.015, side:layer === 'skin' ? FrontSide : DoubleSide});
+      if (layer === "muscle") {
+        const box = new Box3().setFromObject(o);
+        const center = box.getCenter(new Vector3());
+        const extent = box.getSize(new Vector3());
+        const ax = center.y < .83 ? .095 : Math.abs(center.x) > .2 && center.y < 1.5 ? .29 : 0;
+        const radius = Math.hypot(Math.abs(center.x) - ax, center.z) + Math.max(extent.x, extent.z) * .24;
+        muscleMeshes.push({ mesh: o, score: radius });
+      }
+    });
+    muscleMeshes.sort((a, b) => b.score - a.score || a.mesh.name.localeCompare(b.mesh.name));
+    muscleMeshes.forEach(({ mesh }, index) => {
+      mesh.userData.peelAt = 22 + (index / Math.max(1, muscleMeshes.length - 1)) * 46;
     });
     return clone;
   }, [model.scene, layer]);
   useEffect(() => () => object.traverse(o => {
     if (o instanceof Mesh && o.material instanceof MeshStandardMaterial) o.material.dispose();
   }), [object]);
-  const { invalidate } = useThree();
+  const { invalidate, gl } = useThree();
   useEffect(() => {
     const mirrored = props.selected.structures.flatMap((id) => [
       id,
       (structurePairs as Record<string, string>)[id] || id,
     ]);
+    let visibleCount = 0;
     object.traverse((o) => {
       if (!(o instanceof Mesh)) return;
       const id = structureById.has(o.name)
@@ -111,9 +141,19 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
             : mirrored.includes(id)
               ? "#bca77a"
               : null;
-      o.visible = !props.isolated || props.selectionIds.includes(id);
-      const alpha =
-        layer === "skin" ? props.opacity : props.layerOpacity[layer];
+      const selected = props.selectionIds.includes(id);
+      let dissectionAlpha = 1;
+      if (!props.isolated && !selected) {
+        if (layer === "skin") dissectionAlpha = clamp01((14 - props.dissection) / 6);
+        else if (layer === "muscle") dissectionAlpha = clamp01(((o.userData.peelAt as number) - props.dissection) / 4);
+        else {
+          const reveal = { bone: 34, organ: 40, vessel: 52, nerve: 64 }[layer] ?? 0;
+          dissectionAlpha = clamp01((props.dissection - reveal + 6) / 6);
+        }
+      }
+      o.visible = (!props.isolated || selected) && (selected || dissectionAlpha > .01);
+      if (o.visible) visibleCount++;
+      const alpha = (layer === "skin" ? props.opacity : props.layerOpacity[layer]) * (selected ? 1 : dissectionAlpha);
       const vessel = structureById.get(id)?.name || "";
       o.raycast = (raycaster, intersections) => {
         if (
@@ -132,17 +172,8 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
         );
       };
       const material = o.material as MeshStandardMaterial;
-      material.color.set(emphasis
-          ? emphasis
-          : {
-              skin: "#aebba9",
-              bone: "#e4dec7",
-              muscle: "#a45d4f",
-              organ: "#ae687b",
-              vessel: /vein|vena cava/.test(vessel) ? "#557ba8" : "#bc514c",
-              nerve: "#d7af39",
-            }[layer]);
-      const transparent = alpha < 1;
+      material.color.set(emphasis ? emphasis : clinicalColor(layer, vessel));
+      const transparent = alpha < .995;
       const clipping = props.cutaway > 0;
       if (material.transparent !== transparent || Boolean(material.clippingPlanes?.length) !== clipping)
         material.needsUpdate = true;
@@ -153,6 +184,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
             ? [new Plane(new Vector3(0, 0, -1), 0.22 - props.cutaway * 0.44)]
             : [];
     });
+    gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(visibleCount);
     invalidate();
 
   }, [
@@ -166,6 +198,8 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     props.opacity,
     props.layerOpacity,
     props.cutaway,
+    props.dissection,
+    gl,
     invalidate,
   ]);
   useEffect(() => {
@@ -208,8 +242,9 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
     object.traverse((item) => {
       if (!(item instanceof Mesh)) return;
       const material = item.material as MeshStandardMaterial;
-      material.color.set(layer === "nerve" ? "#d7af39" : "#a9434f");
-      const alpha = props.layerOpacity[layer];
+      material.color.set(layer === "nerve" ? "#f0c94f" : "#cf3e49");
+      const reveal = layer === "nerve" ? 64 : 52;
+      const alpha = props.layerOpacity[layer] * clamp01((props.dissection - reveal + 6) / 6);
       const clipped = props.cutaway > 0;
       if (material.transparent !== (alpha < 1) || Boolean(material.clippingPlanes?.length) !== clipped)
         material.needsUpdate = true;
@@ -220,7 +255,7 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
         : [];
     });
     invalidate();
-  }, [object, layer, props.isolated, props.layerOpacity, props.cutaway, invalidate]);
+  }, [object, layer, props.isolated, props.layerOpacity, props.cutaway, props.dissection, invalidate]);
   useEffect(() => {
     props.onReady(layer);
   }, [object, layer, props.onReady]);
@@ -449,10 +484,11 @@ function Scene(props: Props) {
   }, [action, camera, invalidate, scene, revision, emitPose]);
   return (
     <>
-      <ambientLight intensity={0.65} />
-      <hemisphereLight args={["#fffdf1", "#899886", 0.7]} />
-      <directionalLight position={[3, 4, 4]} intensity={1.7} />
-      <directionalLight position={[-3, 2, -3]} intensity={0.85} />
+      <color attach="background" args={["#07141c"]} />
+      <ambientLight intensity={0.34} />
+      <hemisphereLight args={["#cfe1ea", "#081017", 0.62]} />
+      <directionalLight position={[3, 4, 4]} intensity={2.15} color="#e8f2f5" />
+      <directionalLight position={[-3, 2, -3]} intensity={1.05} color="#7695aa" />
       <group>
         {layerKeys
           .filter((layer) => layers[layer])
@@ -535,7 +571,7 @@ function Scene(props: Props) {
       })}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.018, 0]}>
         <circleGeometry args={[0.48, 64]} />
-        <meshBasicMaterial color="#dae2d6" transparent opacity={0.55} />
+        <meshBasicMaterial color="#19313d" transparent opacity={0.58} />
       </mesh>
       <OrbitControls
         ref={controls}

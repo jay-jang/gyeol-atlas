@@ -28,7 +28,7 @@ try {
   await page.getByRole("link", { name: "3D 경혈 지도" }).click();
   await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
   assert.equal(requests.filter((r) => r.endsWith(".glb")).length, 1);
-  for (const name of ["근육 단계", "골격 단계", "장기 단계", "혈관 단계", "신경 단계"]) {
+  for (const name of ["근육 빠른 보기", "골격 빠른 보기", "장기 빠른 보기", "혈관 빠른 보기", "신경 빠른 보기"]) {
     await page.getByRole("button", { name, exact: true }).click();
     await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
   }

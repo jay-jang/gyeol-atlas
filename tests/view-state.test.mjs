@@ -60,6 +60,22 @@ test("comparison retains the entire kidney/lung bundle; explicit selection and p
     assert.equal(s.comparison, null);
   }
 });
+test("continuous dissection keeps overlapping systems and advances through muscle depth", () => {
+  let s = initialView();
+  s = viewReducer(s, { type: "dissection", value: 20 });
+  assert.equal(s.dissection, 20);
+  assert.equal(s.layers.skin, false);
+  assert.equal(s.layers.muscle, true);
+  assert.equal(s.layers.bone, false);
+  s = viewReducer(s, { type: "dissection", value: 50 });
+  assert.equal(s.layers.muscle, true);
+  assert.equal(s.layers.bone, true);
+  assert.equal(s.layers.organ, true);
+  s = viewReducer(s, { type: "dissection", value: 70 });
+  assert.equal(s.layers.muscle, true);
+  assert.equal(s.layers.vessel, true);
+  assert.equal(s.layers.nerve, true);
+});
 test("versioned session restoration validates current catalog, ranges and malformed storage", () => {
   let s = initialView("KI3");
   s = viewReducer(s, {
@@ -69,6 +85,9 @@ test("versioned session restoration validates current catalog, ranges and malfor
   });
   s = viewReducer(s, { type: "isolate" });
   assert.deepEqual(parse(JSON.stringify(s)), s);
+  const legacy = { ...s, version: 2 };
+  delete legacy.dissection;
+  assert.equal(parse(JSON.stringify(legacy)).version, 3);
   for (const raw of [
     "bad",
     "null",

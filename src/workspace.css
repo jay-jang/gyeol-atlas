@@ -883,6 +883,73 @@ body:has(.anatomy-workspace) .site-footer {
     padding: 8px 12px;
   }
 }
+
+/* Continuous clinical dissection workspace. */
+.anatomy-workspace { --atlas-panel: #0d202b; --atlas-panel-2: #122b38; --atlas-line: #294553; --atlas-text: #e6eef2; --atlas-muted: #91a8b4; }
+.explore-sidebar {
+  color: var(--atlas-text);
+  background: linear-gradient(180deg, #102632 0%, #091923 100%);
+  border-right-color: var(--atlas-line);
+  box-shadow: 10px 0 34px rgba(0, 0, 0, .28);
+}
+.explore-heading > span, .explore-heading p, .explore-section-label { color: var(--atlas-muted); }
+.explore-heading h1 { color: #f2f6f8; }
+.explore-search, .explore-systems > button {
+  color: #dce8ed;
+  background: #112936;
+  border-color: #2c4b59;
+}
+.explore-search:hover, .explore-systems > button:hover { background: #183642; border-color: #587684; }
+.explore-search kbd { color: #b8c8d0; background: #091923; border-color: #34515e; }
+.depth-explorer {
+  background: linear-gradient(145deg, #173746, #102833);
+  border-color: #375867;
+  box-shadow: inset 0 1px rgba(255,255,255,.035);
+}
+.depth-heading span, .depth-explorer p { color: #a9bdc6; }
+.depth-heading strong, .depth-steps span.active { color: #75d3e6; }
+.depth-explorer input[type="range"] { accent-color: #43b9d0; }
+.depth-steps span { color: #78909b; }
+.explore-section-label button { color: #73c9da; }
+.explore-systems > button[aria-pressed="true"] { background: #176c82; border-color: #45a8bc; }
+.featured-anatomy > button { color: #dce8ed; }
+.featured-anatomy > button:hover { background: #17313d; }
+.featured-anatomy small { color: #8fa6b1; }
+.all-anatomy-button { background: #17485a; border: 1px solid #357184; }
+.all-anatomy-button:hover { background: #1b5b6f; }
+.anatomy-workspace .viewer-panel { background: #07141c; }
+.anatomy-workspace .floating-tools,
+.anatomy-workspace .floating-point,
+.anatomy-workspace .view-tools,
+.anatomy-workspace > .view-presets,
+.anatomy-workspace .movement-pad,
+.anatomy-workspace .floating-dock {
+  color: #dce8ed;
+  background: rgba(12, 29, 39, .94);
+  border-color: #35505c;
+  box-shadow: 0 8px 24px rgba(0,0,0,.3);
+}
+.anatomy-workspace .floating-tools button:hover,
+.anatomy-workspace .floating-tools button[aria-expanded="true"],
+.anatomy-workspace .view-tools button:hover { background: #1b3e4c; color: #75d3e6; }
+.anatomy-workspace .movement-pad button { color: #dce8ed; background: #142e3a; border-color: #37525e; }
+.anatomy-workspace .scene-status, .anatomy-workspace .scene-guide, .anatomy-workspace .scene-legend,
+.anatomy-workspace .navigation-hint { color: #bfd0d7; background: rgba(7,20,28,.84); border: 1px solid #2b4652; }
+.anatomy-workspace .point-summary small, .anatomy-workspace .point-summary > span { color: #9db1ba; }
+.anatomy-workspace .point-label { color: #f8e5b5; background: #192832; border-color: #c79842; }
+
+@media (max-width: 700px) {
+  .explore-sidebar { height: 158px; padding: 9px 10px; overflow: hidden; }
+  .explore-heading { margin-bottom: 5px; }
+  .explore-heading::after { content: "표층부터 심부까지 연속 박리"; color: #8fa6b1; }
+  .explore-heading > span, .explore-heading p, .explore-search, .explore-section-label, .featured-anatomy, .all-anatomy-button, .explore-systems { display: none; }
+  .depth-explorer { display: block; margin-top: 0; padding: 8px 10px 7px; }
+  .depth-explorer p { display: none; }
+  .depth-explorer input[type="range"] { margin: 7px 0 4px; }
+  .depth-steps span { font-size: 9px; }
+  .anatomy-workspace .floating-tools { top: 172px; }
+  .anatomy-workspace .floating-point { top: 170px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .floating-tools .tool-name {
     transition: none;
@@ -1136,3 +1203,53 @@ body:has(.anatomy-workspace) .site-footer {
   .anatomy-workspace .floating-dock, .anatomy-workspace .dock-detail { left: 8px; top: auto; }
   .anatomy-workspace .navigation-hint, .anatomy-workspace .scene-legend { left: 12px; }
 }
+
+/* Final cascade for the dark clinical dissection surface. */
+.anatomy-workspace .explore-sidebar { color:#e6eef2; background:linear-gradient(180deg,#102632,#091923); border-color:#294553; box-shadow:10px 0 34px rgba(0,0,0,.28); }
+.anatomy-workspace .explore-heading h1 { color:#f2f6f8; }
+.anatomy-workspace .explore-heading > span,.anatomy-workspace .explore-heading p,.anatomy-workspace .explore-section-label { color:#91a8b4; }
+.anatomy-workspace .explore-search,.anatomy-workspace .explore-systems>button { color:#dce8ed; background:#112936; border-color:#2c4b59; }
+.anatomy-workspace .explore-search:hover,.anatomy-workspace .explore-systems>button:hover { background:#183642; border-color:#587684; }
+.anatomy-workspace .explore-search kbd { color:#b8c8d0; background:#091923; border-color:#34515e; }
+.anatomy-workspace .depth-explorer { background:linear-gradient(145deg,#173746,#102833); border-color:#375867; }
+.anatomy-workspace .depth-heading span,.anatomy-workspace .depth-explorer p { color:#a9bdc6; }
+.anatomy-workspace .depth-heading strong,.anatomy-workspace .depth-steps span.active { color:#75d3e6; }
+.anatomy-workspace .depth-explorer input[type="range"] { accent-color:#43b9d0; }
+.anatomy-workspace .depth-steps span { color:#78909b; }
+.anatomy-workspace .featured-anatomy>button { color:#dce8ed; }
+.anatomy-workspace .featured-anatomy>button:hover { background:#17313d; }
+.anatomy-workspace .featured-anatomy small { color:#8fa6b1; }
+.anatomy-workspace .all-anatomy-button { background:#17485a; border:1px solid #357184; }
+.anatomy-workspace .viewer-panel { background:#07141c; }
+
+@media (max-width:700px) {
+  .anatomy-workspace .explore-sidebar { height:158px; padding:9px 10px; border-bottom-color:#294553; }
+  .anatomy-workspace .explore-heading { margin-bottom:5px; }
+  .anatomy-workspace .explore-heading::after { content:"표층부터 심부까지 연속 박리"; color:#8fa6b1; }
+  .anatomy-workspace .explore-heading>span,.anatomy-workspace .explore-heading p,.anatomy-workspace .explore-search,.anatomy-workspace .explore-section-label,.anatomy-workspace .featured-anatomy,.anatomy-workspace .all-anatomy-button,.anatomy-workspace .explore-systems { display:none; }
+  .anatomy-workspace .depth-explorer { display:block; margin-top:0; padding:8px 10px 7px; }
+  .anatomy-workspace .depth-explorer p { display:none; }
+  .anatomy-workspace .depth-explorer input[type="range"] { margin:7px 0 4px; }
+  .anatomy-workspace .depth-steps span { font-size:9px; }
+  .anatomy-workspace .floating-tools { top:172px; }
+  .anatomy-workspace .floating-point { top:170px; }
+}
+
+.anatomy-workspace .floating-dock { color:#dce8ed; background:#0c1d27; }
+.anatomy-workspace .dock-header { color:#eef5f7; background:#102a36; border-color:#31505e; }
+.anatomy-workspace .dock-body { color:#dce8ed; background:#0c1d27; }
+.anatomy-workspace .dock-body input,.anatomy-workspace .dock-body select { color:#e5eef2; background:#102a36; border-color:#3a5966; }
+.anatomy-workspace .dock-body input::placeholder { color:#a6bac3; }
+.anatomy-workspace .dock-body .filter-switch button,.anatomy-workspace .dock-body .list-header button,
+.anatomy-workspace .dock-body .control-hint,.anatomy-workspace .dock-body .coverage-description,
+.anatomy-workspace .dock-body .cutaway-setting p,.anatomy-workspace .dock-body .structure-item small,
+.anatomy-workspace .dock-body .structure-group h3 small,.anatomy-workspace .dock-body .classification-text,
+.anatomy-workspace .dock-body .point-filter-options summary,.anatomy-workspace .dock-body .theory-facts dt,
+.anatomy-workspace .dock-body .point-tradition>small { color:#a9bdc6 !important; }
+.anatomy-workspace .dock-body .filter-switch button.active { color:#fff; border-color:#51b3c6; }
+.anatomy-workspace .dock-body .coverage-description,.anatomy-workspace .dock-body .theory-facts>div { color:#dce8ed; background:#132d39; border-color:#345360; }
+.anatomy-workspace .dock-body .structure-item,.anatomy-workspace .dock-body .point-item,.anatomy-workspace .dock-body .layer-row,
+.anatomy-workspace .dock-body .structure-group h3,.anatomy-workspace .dock-body .cutaway-setting,.anatomy-workspace .dock-body .point-filter-options { border-color:#294551; }
+.anatomy-workspace .dock-body .structure-item[aria-pressed="true"],.anatomy-workspace .dock-body .point-item.active { background:#174455; }
+.anatomy-workspace .dock-body .cutaway-setting button,.anatomy-workspace .dock-body .structure-focus { color:#e4eef2; background:#173642; border-color:#42616e; }
+.anatomy-workspace .dock-body .muted { color:#a9bdc6; }

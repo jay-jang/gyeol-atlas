@@ -612,6 +612,7 @@ function AtlasPage({
             isolated={state.isolated}
             highlight={state.comparison?.ids || []}
             cutaway={state.cutaway}
+            dissection={state.dissection}
             layerOpacity={state.alpha}
             selectionIds={state.selection?.ids || []}
             selectionTarget={state.selectionTarget}
@@ -623,8 +624,8 @@ function AtlasPage({
       <aside className="explore-sidebar" aria-label="해부학 탐색">
         <div className="explore-heading">
           <span>3D ANATOMY ATLAS</span>
-          <h1>인체 탐색</h1>
-          <p>계통 또는 주요 기관을 선택하세요</p>
+          <h1>해부 깊이 탐색</h1>
+          <p>표층 구조를 한 겹씩 걷어 내부 관계를 확인하세요</p>
         </div>
         <button
           className="explore-search"
@@ -641,26 +642,23 @@ function AtlasPage({
           onWheel={(event) => {
             if (Math.abs(event.deltaY) < 8) return;
             event.preventDefault();
-            const next = Math.max(
-              0,
-              Math.min(stages.length - 1, state.stage + (event.deltaY > 0 ? 1 : -1)),
-            );
-            if (next !== state.stage) dispatch({ type: "stage", index: next });
+            const next = Math.max(0, Math.min(100, state.dissection + (event.deltaY > 0 ? 3 : -3)));
+            if (next !== state.dissection) dispatch({ type: "dissection", value: next });
           }}
         >
           <div className="depth-heading">
-            <span>바깥에서 안쪽으로</span>
-            <strong>{state.stage + 1} / {stages.length} · {layerNames[stages[state.stage].layer]}</strong>
+            <span>연속 박리 깊이</span>
+            <strong>{state.dissection}% · {state.dissection < 8 ? "체표" : state.dissection < 28 ? "표층 근육" : state.dissection < 50 ? "중간 근육" : state.dissection < 68 ? "심부 근육" : state.dissection < 82 ? "골격·장기" : state.dissection < 94 ? "혈관" : "신경"}</strong>
           </div>
           <input
             type="range"
             min="0"
-            max={stages.length - 1}
+            max="100"
             step="1"
-            value={state.stage}
-            aria-label="인체 계통 깊이"
-            aria-valuetext={`${state.stage + 1}단계 ${layerNames[stages[state.stage].layer]}`}
-            onChange={(event) => dispatch({ type: "stage", index: Number(event.target.value) })}
+            value={state.dissection}
+            aria-label="연속 해부 박리 깊이"
+            aria-valuetext={`${state.dissection}% 해부 깊이`}
+            onChange={(event) => dispatch({ type: "dissection", value: Number(event.target.value) })}
           />
           <div className="depth-steps" aria-hidden="true">
             {stages.map((stage, index) => (
@@ -670,17 +668,17 @@ function AtlasPage({
               </span>
             ))}
           </div>
-          <p>슬라이더나 마우스 휠로 한 계통씩 벗겨 안쪽을 살펴보세요.</p>
+          <p>101단계로 체표와 437개 근육 메쉬를 표면 근접도 순서로 점진 박리합니다.</p>
         </section>
         <div className="explore-section-label">
-          <span>인체 계통</span>
+          <span>계통 빠른 보기</span>
           <button onClick={showAllSystems}>전체 켜기</button>
         </div>
         <div className="explore-systems">
           {stages.map((stage, index) => (
             <button
               key={stage.layer}
-              aria-label={`${layerNames[stage.layer]} 단계`}
+              aria-label={`${layerNames[stage.layer]} 빠른 보기`}
               aria-pressed={
                 layerKeys.filter((layer) => state.layers[layer]).length === 1 &&
                 state.layers[stage.layer]

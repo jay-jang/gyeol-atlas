@@ -5,7 +5,7 @@ const browser=await chromium.launch({headless:true,args:['--no-sandbox','--enabl
 const records=[]; const origin=process.env.SMOKE_ORIGIN||'http://127.0.0.1:5174';
 try {
  const page=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});
- await page.goto(origin); await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
+ await page.goto(origin.replace(/\/$/,'')+'/#atlas/ST36'); await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
  for(const name of ['경혈 찾기','레이어 조절','구조 찾기','도움말','효능·오행']){
   if(name==='효능·오행') {
    await page.locator('.point-summary').click();
