@@ -937,3 +937,185 @@ body:has(.anatomy-workspace) .site-footer {
 @media(max-height:550px) and (min-width:701px){.anatomy-workspace{min-height:260px}.scene-title{display:none}.system-strip{top:12px;left:45%;}.floating-point{right:12px;top:12px}.floating-tools{top:72px;left:12px;padding:3px;gap:2px}.floating-tools button{height:32px;width:34px}.floating-dock{left:62px;top:65px;max-height:calc(100% - 76px);width:280px}.dock-detail{left:auto;right:12px}.selection-card{bottom:67px;padding:8px 10px;min-width:230px}.selection-actions{margin-top:4px}.selection-actions button{min-height:29px}.view-tools{bottom:66px;right:12px}.view-tools button{height:27px;width:30px}.anatomy-workspace>.view-presets{bottom:22px}.scene-status{bottom:3px}.scene-guide{right:12px;bottom:10px}.scene-legend{left:12px;bottom:8px;font-size: 12px}.anatomy-workspace .comparison-note{bottom:54px;font-size: 12px}}
 @media(max-width:700px){.scene-legend{font-size: 12px}.scene-status{font-size: 12px}.scene-guide{font-size: 12px}.anatomy-workspace .comparison-note{font-size: 12px}}
 @media(max-height:550px) and (min-width:701px){.system-strip{left:62px;transform:none;width:min(310px,calc(50% - 95px));gap:0}.system-strip button{min-width:0;flex:1;padding:5px 3px;font-size: 12px;gap:4px}.anatomy-workspace>.view-presets{left:auto;right:72px;transform:none;bottom:32px}}
+
+/* 2026 Explore workspace: a visible anatomy catalogue beside the scene. */
+.explore-sidebar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 318px;
+  z-index: 32;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 18px 18px;
+  background: #fbfcfd;
+  border-right: 1px solid #d9e0e5;
+  box-shadow: 8px 0 32px rgba(24, 43, 54, .06);
+  overflow: auto;
+}
+.explore-heading > span {
+  color: #58707d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+.explore-heading h1 {
+  margin: 5px 0 3px;
+  color: #172f3b;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -.04em;
+}
+.explore-heading p {
+  margin: 0 0 17px;
+  color: #60727b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.explore-search {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 11px;
+  color: #536872;
+  background: #fff;
+  border: 1px solid #cdd8de;
+  border-radius: 9px;
+  text-align: left;
+}
+.explore-search span { flex: 1; }
+.explore-search kbd {
+  padding: 2px 7px;
+  color: #657882;
+  background: #eef2f4;
+  border: 1px solid #d8e0e4;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 11px;
+}
+.explore-section-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 3px 8px;
+  color: #5d7079;
+  font-size: 12px;
+  font-weight: 700;
+}
+.explore-section-label button { color: #146f91; font-size: 12px; }
+.explore-systems { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.explore-systems > button {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: 10px 1fr 16px;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  color: #304953;
+  background: #fff;
+  border: 1px solid #d8e1e5;
+  border-radius: 9px;
+  text-align: left;
+}
+.explore-systems > button:hover { background: #f0f6f8; border-color: #9fb5bf; }
+.explore-systems > button[aria-pressed="true"] {
+  color: #fff;
+  background: #155f7b;
+  border-color: #155f7b;
+  box-shadow: 0 5px 15px rgba(17, 83, 108, .18);
+}
+.explore-systems > button span { min-width: 0; }
+.explore-systems strong, .explore-systems small { display: block; }
+.explore-systems strong { font-size: 13px; }
+.explore-systems small { margin-top: 2px; font-size: 11px; opacity: .78; white-space: nowrap; }
+.featured-anatomy { display: grid; gap: 4px; }
+.featured-anatomy > button {
+  width: 100%;
+  min-height: 43px;
+  display: grid;
+  grid-template-columns: 22px 1fr 16px;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 9px;
+  border-radius: 7px;
+  color: #304953;
+  text-align: left;
+}
+.featured-anatomy > button:hover { background: #eaf1f4; }
+.featured-anatomy span, .featured-anatomy strong, .featured-anatomy small { display: block; }
+.featured-anatomy strong { font-size: 13px; }
+.featured-anatomy small { color: #6b7d85; font-size: 11px; margin-top: 1px; }
+.all-anatomy-button {
+  min-height: 55px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 9px 12px;
+  color: #fff;
+  background: #203f4d;
+  border-radius: 9px;
+  text-align: left;
+}
+.all-anatomy-button:hover { background: #102f3d; }
+.all-anatomy-button span, .all-anatomy-button strong, .all-anatomy-button small { display: block; }
+.all-anatomy-button strong { font-size: 13px; }
+.all-anatomy-button small { margin-top: 3px; color: #cfdae0; font-size: 11px; }
+.anatomy-workspace .viewer-panel { left: 318px; width: calc(100% - 318px); background: radial-gradient(ellipse at 50% 42%, #f7fafb 0%, #e3eaed 68%, #d8e2e6 100%); }
+.anatomy-workspace .scene-title { left: 342px; }
+.anatomy-workspace .floating-tools { left: 340px; top: 112px; }
+.anatomy-workspace .floating-dock { left: 398px; top: 90px; }
+.anatomy-workspace .dock-detail { left: auto; }
+.anatomy-workspace .navigation-hint, .anatomy-workspace .scene-legend { left: 342px; }
+.anatomy-workspace .scene-title { display: none; }
+.anatomy-workspace .floating-point { top: 18px; }
+.site-header { background: #102d3a; border-bottom-color: #102d3a; color: #f8fbfc; }
+.site-header .brand, .site-header nav a, .site-header .header-about { color: #d8e5ea; }
+.site-header nav a.active { color: #fff; border-color: #58b7d1; }
+.site-header .brand-symbol { color: #fff; border-color: #71909d; }
+.site-header .brand-symbol > span { border-color: #102d3a; background: #62bfd7; }
+
+@media (max-width: 900px) {
+  .explore-sidebar { width: 272px; padding-inline: 13px; }
+  .anatomy-workspace .viewer-panel { left: 272px; width: calc(100% - 272px); }
+  .anatomy-workspace .floating-tools { left: 286px; }
+  .anatomy-workspace .floating-dock { left: 342px; }
+  .anatomy-workspace .navigation-hint, .anatomy-workspace .scene-legend { left: 288px; }
+}
+@media (max-width: 700px) {
+  .explore-sidebar {
+    inset: 0 0 auto 0;
+    width: 100%;
+    height: 116px;
+    padding: 10px 10px 9px;
+    overflow: hidden;
+    border-right: 0;
+    border-bottom: 1px solid #cbd7dc;
+  }
+  .explore-heading { display: flex; align-items: baseline; gap: 8px; margin: 0 3px 8px; }
+  .explore-heading > span, .explore-heading p, .explore-search, .explore-section-label, .featured-anatomy, .all-anatomy-button { display: none; }
+  .explore-heading h1 { margin: 0; font-size: 16px; }
+  .explore-heading::after { content: "계통을 선택해 구조 보기"; color: #60727b; font-size: 12px; }
+  .explore-systems { display: flex; gap: 5px; }
+  .explore-systems > button {
+    min-width: 0;
+    min-height: 64px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding: 5px 2px;
+    text-align: center;
+  }
+  .explore-systems > button > svg, .explore-systems small { display: none; }
+  .explore-systems strong { font-size: 12px; }
+  .anatomy-workspace .viewer-panel { left: 0; top: 0; width: 100%; height: 100%; }
+  .anatomy-workspace .floating-tools { left: 10px; top: 130px; }
+  .anatomy-workspace .floating-point { top: 128px; right: 10px; }
+  .anatomy-workspace .floating-dock, .anatomy-workspace .dock-detail { left: 8px; top: auto; }
+  .anatomy-workspace .navigation-hint, .anatomy-workspace .scene-legend { left: 12px; }
+}

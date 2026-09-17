@@ -37,6 +37,10 @@ import {
   Download,
   Sparkles,
   X,
+  Brain,
+  HeartPulse,
+  Boxes,
+  Eye,
 } from "lucide-react";
 import Markdown, { defaultUrlTransform } from "react-markdown";
 import { assetUrl } from "./assets";
@@ -509,6 +513,56 @@ function AtlasPage({
     detail: "경혈 상세",
     help: "도움말",
   };
+  const layerCounts = useMemo(
+    () =>
+      Object.fromEntries(
+        layerKeys.map((layer) => [
+          layer,
+          structures.filter((structure) => structure.layer === layer).length,
+        ]),
+      ) as Record<Layer, number>,
+    [],
+  );
+  const featuredAnatomy = [
+    {
+      name: "뇌",
+      detail: "대뇌·소뇌·뇌줄기",
+      layer: "nerve" as Layer,
+      ids: ["FMA62004", "FMA67943", "FMA67944", "FMA61822", "FMA61993nsn"],
+    },
+    { name: "심장", detail: "심장벽", layer: "organ" as Layer, ids: ["FMA7274"] },
+    {
+      name: "폐",
+      detail: "좌우 5개 엽",
+      layer: "organ" as Layer,
+      ids: ["FMA7383", "FMA7333", "FMA7337", "FMA7370", "FMA7371"],
+    },
+    { name: "간", detail: "간", layer: "organ" as Layer, ids: ["FMA7197"] },
+    { name: "위", detail: "위", layer: "organ" as Layer, ids: ["FMA7148"] },
+    {
+      name: "콩팥",
+      detail: "왼쪽·오른쪽",
+      layer: "organ" as Layer,
+      ids: ["FMA7204", "FMA7205"],
+    },
+  ];
+  const selectFeatured = (item: (typeof featuredAnatomy)[number]) => {
+    dispatch({
+      type: "select",
+      layer: item.layer,
+      selection: { kind: "bundle", ids: item.ids, name: item.name },
+    });
+    setPanel(null);
+    requestAnimationFrame(() => camera("structure"));
+  };
+  const showAllSystems = () => {
+    dispatch({
+      type: "layers",
+      layers: Object.fromEntries(layerKeys.map((layer) => [layer, true])) as Layers,
+    });
+    setPanel(null);
+    camera("fit");
+  };
   return (
     <main
       className="anatomy-workspace"
@@ -561,6 +615,60 @@ function AtlasPage({
           />
         </Suspense>
       </section>
+      <aside className="explore-sidebar" aria-label="해부학 탐색">
+        <div className="explore-heading">
+          <span>3D ANATOMY ATLAS</span>
+          <h1>인체 탐색</h1>
+          <p>계통 또는 주요 기관을 선택하세요</p>
+        </div>
+        <button
+          className="explore-search"
+          onClick={(e) => openPanel("structures", e.currentTarget)}
+          aria-label="구조 카탈로그 열기"
+        >
+          <Search size={18} />
+          <span>구조 이름·FMA 검색</span>
+          <kbd>/</kbd>
+        </button>
+        <div className="explore-section-label">
+          <span>인체 계통</span>
+          <button onClick={showAllSystems}>전체 켜기</button>
+        </div>
+        <div className="explore-systems">
+          {stages.map((stage, index) => (
+            <button
+              key={stage.layer}
+              aria-label={`${layerNames[stage.layer]} 단계`}
+              aria-pressed={
+                layerKeys.filter((layer) => state.layers[layer]).length === 1 &&
+                state.layers[stage.layer]
+              }
+              onClick={() => dispatch({ type: "stage", index })}
+            >
+              <i className={`layer-dot ${stage.layer}`} />
+              <span>
+                <strong>{layerNames[stage.layer]}</strong>
+                <small>{layerCounts[stage.layer]}개 구조</small>
+              </span>
+              <Eye size={16} />
+            </button>
+          ))}
+        </div>
+        <div className="explore-section-label"><span>주요 기관</span></div>
+        <div className="featured-anatomy">
+          {featuredAnatomy.map((item) => (
+            <button key={item.name} onClick={() => selectFeatured(item)}>
+              {item.name === "뇌" ? <Brain size={18} /> : <HeartPulse size={18} />}
+              <span><strong>{item.name}</strong><small>{item.detail}</small></span>
+              <ChevronRight size={15} />
+            </button>
+          ))}
+        </div>
+        <button className="all-anatomy-button" onClick={showAllSystems}>
+          <Boxes size={18} />
+          <span><strong>전체 인체 구조 보기</strong><small>6개 계통 · {structures.length.toLocaleString()}개 메쉬</small></span>
+        </button>
+      </aside>
       <div className="scene-title">
         <span className="eyebrow">GYEOL / ANATOMY ATLAS</span>
         <h1>몸의 구조를 탐색하세요</h1>
@@ -591,22 +699,6 @@ function AtlasPage({
           ),
         )}
       </nav>
-      <div className="system-strip" role="group" aria-label="해부 단계">
-        {stages.map((st, i) => (
-          <button
-            key={st.layer}
-            aria-label={`${layerNames[st.layer]} 단계`}
-            aria-pressed={
-              layerKeys.filter((l) => state.layers[l]).length === 1 &&
-              state.layers[st.layer]
-            }
-            onClick={() => dispatch({ type: "stage", index: i })}
-          >
-            <i className={`layer-dot ${st.layer}`} />
-            {layerNames[st.layer]}
-          </button>
-        ))}
-      </div>
       <div className="floating-point">
         <button
           className="point-summary"

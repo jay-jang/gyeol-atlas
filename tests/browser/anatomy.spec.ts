@@ -1,6 +1,13 @@
 import {test,expect} from '@playwright/test';
 import {ready,openTool,choosePoint,compare,closeTool,snapshot} from './helpers';
 import assets from '../../scripts/model-inputs.json' with {type:'json'};
+test('explore catalogue exposes all systems and featured brain and organs',async({page})=>{
+ await page.goto('/');await ready(page);
+ await expect(page.getByRole('heading',{name:'인체 탐색'})).toBeVisible();
+ const featured=page.locator('.featured-anatomy > button');await expect(featured).toHaveCount(6);for(const name of ['뇌','심장','폐','간','위','콩팥']) await expect(featured.filter({hasText:name})).toBeVisible();
+ await featured.filter({hasText:'뇌'}).click();await ready(page);let s=await snapshot(page);expect(s.layers.nerve).toBe(true);expect(s.selection.name).toBe('뇌');expect(s.selection.ids).toHaveLength(5);
+ await page.getByRole('button',{name:'전체 켜기'}).click();await ready(page);s=await snapshot(page);expect(Object.values(s.layers).every(Boolean)).toBe(true);expect(s.selection).toBe(null);
+});
 test('six real systems and shared layer/isolation transitions; clipping and bilingual structure selection',async({page})=>{
  test.setTimeout(180000);
  const errors:string[]=[];const glbs=new Set<string>();page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.url().endsWith('.glb')&&r.ok())glbs.add(r.url().split('/').pop()!);});await page.goto('/');await ready(page);
