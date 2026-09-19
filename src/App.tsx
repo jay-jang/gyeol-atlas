@@ -573,6 +573,9 @@ function AtlasPage({
     if (next !== state.dissection)
       dispatch({ type: "dissection", value: next });
   };
+  const selectedAnatomy = state.selection?.kind === "structure"
+    ? structures.find((item) => item.id === state.selection?.ids[0])
+    : null;
   return (
     <main
       className="anatomy-workspace"
@@ -708,9 +711,9 @@ function AtlasPage({
                 <strong>{layerNames[stage.layer]}</strong>
                 <small>
                   {stage.layer === "nerve"
-                    ? "전신 525 + 세부 340"
+                    ? "전신 525개 선택·설명"
                     : stage.layer === "vessel"
-                      ? "전신 640 + 세부 56"
+                      ? "전신 640개 선택·설명"
                       : `${layerCounts[stage.layer]}개 구조`}
                 </small>
               </span>
@@ -1063,6 +1066,15 @@ function AtlasPage({
               {state.selection.name}{" "}
               <small>{state.selection.ids.length}개 구조</small>
             </strong>
+            {selectedAnatomy?.description && (
+              <p className="selection-description">{selectedAnatomy.description}</p>
+            )}
+            {selectedAnatomy?.latin && (
+              <small className="selection-latin">TA2 · {selectedAnatomy.latin}</small>
+            )}
+            {selectedAnatomy?.source && (
+              <small className="selection-source">{selectedAnatomy.source} · 학습용 비진단 모델</small>
+            )}
           </div>
           <div className="selection-actions">
             <button

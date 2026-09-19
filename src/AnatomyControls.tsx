@@ -13,11 +13,22 @@ export default function AnatomyControls({
   onFocus: () => void;
 }) {
   const [query, setQuery] = useState("");
+  const normalizedQuery = query.toLowerCase().trim();
   const results = structures.filter((s) =>
-    `${s.label} ${s.name} ${s.id} ${s.fmaId || ""}`
+    `${s.label} ${s.name} ${s.id} ${s.fmaId || ""} ${s.latin || ""} ${(s.hierarchy || []).join(" ")}`
       .toLowerCase()
-      .includes(query.toLowerCase().trim()),
-  );
+      .includes(normalizedQuery),
+  ).sort((a, b) => {
+    const score = (s: (typeof structures)[number]) => {
+      const direct = [s.label, s.name, s.id, s.fmaId || ""].map((value) => (value || "").toLowerCase());
+      if (direct.some((value) => value === normalizedQuery)) return 0;
+      if (direct.some((value) => value.startsWith(normalizedQuery))) return 1;
+      if (direct.some((value) => value.includes(normalizedQuery))) return 2;
+      return 3;
+    };
+    return score(a) - score(b) || (a.label || a.name).localeCompare(b.label || b.name);
+  });
+  const visibleResults = results.slice(0, 240);
   return mode === "layers" ? (
     <div className="layer-settings">
       <p className="control-hint">
@@ -139,10 +150,11 @@ export default function AnatomyControls({
         />
       </label>
       <p className="control-hint">
-        {results.length}개 구조 · 선택하면 해당 레이어가 켜집니다
+        {results.length.toLocaleString()}개 구조 · 이름·라틴명·계통 경로로 검색
+        {results.length > visibleResults.length && ` · 상위 ${visibleResults.length}개 표시`}
       </p>
       {layerKeys.map((l) => {
-        const items = results.filter((s) => s.layer === l);
+        const items = visibleResults.filter((s) => s.layer === l);
         return (
           items.length > 0 && (
             <section className="structure-group" key={l}>
@@ -171,8 +183,9 @@ export default function AnatomyControls({
                 >
                   <strong>{s.label || s.name}</strong>
                   <small>
-                    {s.name} · {s.id}
+                    {s.name}{s.latin ? ` · ${s.latin}` : ""} · {s.id}{s.fmaId && s.fmaId !== s.id ? ` · ${s.fmaId}` : ""}
                   </small>
+                  {s.hierarchy?.length ? <small className="structure-path">{s.hierarchy.join(" › ")}</small> : null}
                 </button>
               ))}
             </section>

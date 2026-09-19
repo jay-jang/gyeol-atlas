@@ -1,5 +1,6 @@
 import labels from "../data/structure-labels.json";
 import inputs from "../scripts/model-inputs.json";
+import fullSystemStructures from "../data/full-system-structures.json";
 export const layerNames = {
   skin: "체표",
   muscle: "근육",
@@ -10,16 +11,23 @@ export const layerNames = {
 };
 export type Layer = keyof typeof layerNames;
 export const layerKeys = Object.keys(layerNames) as Layer[];
-export const structures = inputs.assets.map((s) => ({
+const baseStructures = inputs.assets.map((s) => ({
   ...s,
   label: (labels as Record<string, string>)[s.id] || s.name,
-})) as {
+}));
+export const structures = [...baseStructures, ...fullSystemStructures] as {
   id: string;
   fmaId?: string;
   name: string;
   label?: string;
   layer: Layer;
+  node?: string;
+  latin?: string;
+  hierarchy?: string[];
+  description?: string;
+  source?: string;
 }[];
+export const searchableStructureCount = baseStructures.length;
 export const stages: { layer: Layer; description: string }[] = [
   {
     layer: "skin",
@@ -43,11 +51,11 @@ export const stages: { layer: Layer; description: string }[] = [
   {
     layer: "vessel",
     description:
-      "640개 구성요소의 전신 심혈관 보완 모델과 56개 개별 검색 구조를 함께 봅니다. 미세혈관 전체를 뜻하지 않습니다.",
+      "640개 전신 심혈관 구성요소를 이름·TA2 라틴명·계통 경로로 검색하고 개별 선택할 수 있습니다. 미세혈관 전체를 뜻하지 않습니다.",
   },
   {
     layer: "nerve",
     description:
-      "525개 구성요소의 좌우 전신 신경 보완 모델과 340개 개별 검색 구조를 함께 봅니다.",
+      "525개 좌우 전신 신경·감각기관 구성요소를 이름·TA2 라틴명·계통 경로로 검색하고 개별 선택할 수 있습니다.",
   },
 ];

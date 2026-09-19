@@ -82,6 +82,25 @@ test("bundled GLB files contain real named meshes and stay within the delivery b
   }
   assert.equal(fullSystems.assets.find((a) => a.path.includes("nerve"))?.structures, 525);
   assert.equal(fullSystems.assets.find((a) => a.path.includes("vessel"))?.structures, 640);
+  const fullCatalog = read("data/full-system-structures.json");
+  const fullNodes = read("data/full-system-nodes.json");
+  assert.equal(fullCatalog.length, 1165);
+  assert.equal(new Set(fullCatalog.map((item) => item.id)).size, 1165);
+  assert.equal(fullCatalog.filter((item) => item.layer === "nerve").length, 525);
+  assert.equal(fullCatalog.filter((item) => item.layer === "vessel").length, 640);
+  for (const layer of ["nerve", "vessel"])
+    assert.deepEqual(
+      new Set(fullCatalog.filter((item) => item.layer === layer).map((item) => item.node)),
+      new Set(fullNodes[layer]),
+    );
+  for (const item of fullCatalog) {
+    assert.ok(item.name && item.label && item.node && item.description);
+    assert.ok(item.hierarchy.length > 0);
+    assert.match(item.id, /^ZA_(nerve|vessel)_/);
+    assert.equal(item.source, "Z-Anatomy / Anatria-3D");
+  }
+  assert.equal(fullCatalog.find((item) => item.name === "Abdominal aorta")?.label, "복부대동맥");
+  assert.equal(fullCatalog.find((item) => item.name === "Sciatic nerve (left)")?.label, "왼쪽 좌골신경");
 });
 
 test("all 834 bilateral/multiple-location anchors are on the bundled skin surface before display offset", async () => {

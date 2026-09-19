@@ -30,7 +30,7 @@ import { layerKeys, type Layer, structures } from "./anatomy";
 import meridians from "../data/meridians.json";
 import anchors from "../data/anchors.json";
 import structurePairs from "../data/structure-pairs.json";
-import fullSystemNodes from "../data/full-system-nodes.json";
+import fullSystemStructures from "../data/full-system-structures.json";
 import { movementKeys, translateView, type MoveDirection } from "./navigation";
 import { LoaderCircle, TriangleAlert } from "lucide-react";
 
@@ -225,26 +225,34 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
   );
   const object = useMemo(() => {
     const clone = model.scene.clone(true);
-    const allowed = new Set(
-      fullSystemNodes[layer].map((name) => PropertyBinding.sanitizeNodeName(name)),
+    const byNode = new Map(
+      fullSystemStructures
+        .filter((item) => item.layer === layer)
+        .map((item) => [PropertyBinding.sanitizeNodeName(item.node), item.id]),
     );
     clone.traverse((item) => {
       if (!(item instanceof Mesh)) return;
-      item.visible = allowed.has(item.name);
+      const id = byNode.get(item.name);
+      item.userData.systemAllowed = Boolean(id);
+      item.visible = Boolean(id);
+      if (id) item.name = id;
       item.material = new MeshStandardMaterial({ roughness: 0.76, side: DoubleSide });
-      item.raycast = () => {};
     });
     return clone;
   }, [model.scene]);
   const { invalidate } = useThree();
   useEffect(() => {
-    object.visible = !props.isolated;
+    object.visible = true;
     object.traverse((item) => {
       if (!(item instanceof Mesh)) return;
+      const selected = props.selectionIds.includes(item.name);
+      item.visible = item.userData.systemAllowed && (!props.isolated || selected);
       const material = item.material as MeshStandardMaterial;
-      material.color.set(layer === "nerve" ? "#f0c94f" : "#cf3e49");
+      const entry = structureById.get(item.name);
+      const vein = layer === "vessel" && /vein|vena cava/i.test(entry?.name || "");
+      material.color.set(selected ? "#34d3dd" : layer === "nerve" ? "#f0c94f" : vein ? "#356fb3" : "#cf3e49");
       const reveal = layer === "nerve" ? 64 : 52;
-      const alpha = props.layerOpacity[layer] * clamp01((props.dissection - reveal + 6) / 6);
+      const alpha = selected ? 1 : props.layerOpacity[layer] * clamp01((props.dissection - reveal + 6) / 6);
       const clipped = props.cutaway > 0;
       if (material.transparent !== (alpha < 1) || Boolean(material.clippingPlanes?.length) !== clipped)
         material.needsUpdate = true;
@@ -255,7 +263,7 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
         : [];
     });
     invalidate();
-  }, [object, layer, props.isolated, props.layerOpacity, props.cutaway, props.dissection, invalidate]);
+  }, [object, layer, props.isolated, props.selectionIds, props.layerOpacity, props.cutaway, props.dissection, invalidate]);
   useEffect(() => {
     props.onReady(layer);
   }, [object, layer, props.onReady]);
@@ -267,7 +275,14 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
       }),
     [object],
   );
-  return <primitive object={object} />;
+  return <primitive object={object} onClick={(event: { stopPropagation: () => void; object: Mesh; point: Vector3 }) => {
+    if (props.selectionTarget === "skin") return;
+    if (props.cutaway > 0 && event.point.z > 0.22 - props.cutaway * 0.44) return;
+    const id = event.object.name;
+    if (!structureById.has(id)) return;
+    event.stopPropagation();
+    props.onStructure(id);
+  }} />;
 }
 function Scene(props: Props) {
   const { points, selected, onSelect, layers, labels, action } = props;

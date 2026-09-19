@@ -1253,3 +1253,10 @@ body:has(.anatomy-workspace) .site-footer {
 .anatomy-workspace .dock-body .structure-item[aria-pressed="true"],.anatomy-workspace .dock-body .point-item.active { background:#174455; }
 .anatomy-workspace .dock-body .cutaway-setting button,.anatomy-workspace .dock-body .structure-focus { color:#e4eef2; background:#173642; border-color:#42616e; }
 .anatomy-workspace .dock-body .muted { color:#a9bdc6; }
+.anatomy-workspace .structure-path { color:#7f9ba8 !important; font-size:11px; }
+.anatomy-workspace .selection-card { width:min(430px,calc(100% - 180px)); }
+.selection-description { margin:7px 0 3px; color:#40544c; font-size:12px; line-height:1.5; }
+.selection-latin,.selection-source { display:block; margin-top:3px; color:#64756d; font-size:11px; line-height:1.4; }
+@media(max-width:700px){
+  .anatomy-workspace .selection-card { width:calc(100% - 84px); max-height:210px; overflow:auto; }
+}
