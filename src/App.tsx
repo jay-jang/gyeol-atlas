@@ -73,7 +73,7 @@ function returnToAtlas() {
   const pointId = readView().pointId;
   return pointId ? `#atlas/${pointId}` : "#atlas";
 }
-import { anatomyRegionNames, femaleAvailableLayers, layerKeys, layerNames, stages, type Layer } from "./anatomy";
+import { anatomyRegionNames, layerKeys, layerNames, stages, structuresForSex, type Layer } from "./anatomy";
 import conceptData from "../data/point-concepts.json";
 import concepts from "../data/concepts.json";
 const pointConcepts = conceptData as Record<
@@ -489,7 +489,6 @@ function AtlasPage({
   const compare = () => {
     const c = pointConcepts[selected.id];
     if (!c?.organIds.length) return;
-    if (state.sex === "female") dispatch({ type: "sex", value: "male" });
     dispatch({
       type: "compare",
       name: c.traditionalName || selected.name,
@@ -531,7 +530,7 @@ function AtlasPage({
       Object.fromEntries(
         layerKeys.map((layer) => [
           layer,
-          structures.filter((structure) => structure.layer === layer && structure.sex === state.sex).length,
+          structuresForSex(state.sex).filter((structure) => structure.layer === layer).length,
         ]),
       ) as Record<Layer, number>,
     [state.sex],
@@ -575,16 +574,14 @@ function AtlasPage({
     requestAnimationFrame(() => camera("structure"));
   };
   const showAllSystems = () => {
-    const available = state.sex === "female" ? femaleAvailableLayers : layerKeys;
     dispatch({
       type: "layers",
-      layers: Object.fromEntries(layerKeys.map((layer) => [layer, available.includes(layer)])) as Layers,
+      layers: Object.fromEntries(layerKeys.map((layer) => [layer, true])) as Layers,
     });
     setPanel(null);
     camera("fit");
   };
   const shiftDissection = (amount: number) => {
-    if (state.sex === "female") return;
     const next = Math.max(0, Math.min(100, state.dissection + amount));
     if (next !== state.dissection)
       dispatch({ type: "dissection", value: next });
@@ -687,13 +684,12 @@ function AtlasPage({
             dispatch({ type: "anatomy-region", value });
             requestAnimationFrame(() => camera(value === "whole" ? "fit" : "anatomy-region"));
           }}>{Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}</select></label>
-          <small className="scope-source">{state.sex === "female" ? "NIH 여성 참조 · 264개 구조" : "남성 참조 · 림프 142개 포함"}</small>
+          <small className="scope-source">{state.sex === "female" ? "여성 고유 264개 + 공통 전신 보완" : "남성 참조 · 림프 142개 포함"}</small>
         </div>
         <section
           className="depth-explorer"
           aria-label="인체 깊이 탐색"
           onWheel={(event) => {
-            if (state.sex === "female") return;
             if (Math.abs(event.deltaY) < 8) return;
             event.preventDefault();
             const next = Math.max(0, Math.min(100, state.dissection + (event.deltaY > 0 ? 3 : -3)));
@@ -710,7 +706,6 @@ function AtlasPage({
             max="100"
             step="1"
             value={state.dissection}
-            disabled={state.sex === "female"}
             aria-label="연속 해부 박리 깊이"
             aria-valuetext={`${state.dissection}% 해부 깊이`}
             onWheelCapture={(event) => {
@@ -729,7 +724,7 @@ function AtlasPage({
               </span>
             ))}
           </div>
-          <p>{state.sex === "female" ? "여성 참조는 수록된 계통 빠른 보기를 사용하세요" : "슬라이더·이 영역 휠 · 모델 위 Alt/⌥+휠 또는 Alt/⌥+↑↓"}</p>
+          <p>슬라이더·이 영역 휠 · 모델 위 Alt/⌥+휠 또는 Alt/⌥+↑↓</p>
         </section>
         <div className="explore-section-label">
           <span>계통 빠른 보기</span>
@@ -739,7 +734,6 @@ function AtlasPage({
           {stages.map((stage, index) => (
             <button
               key={stage.layer}
-              disabled={state.sex === "female" && !femaleAvailableLayers.includes(stage.layer)}
               aria-label={`${layerNames[stage.layer]} 빠른 보기`}
               aria-pressed={
                 layerKeys.filter((layer) => state.layers[layer]).length === 1 &&
@@ -776,13 +770,13 @@ function AtlasPage({
         </div>
         <button className="all-anatomy-button" onClick={showAllSystems}>
           <Boxes size={18} />
-          <span><strong>전체 인체 구조 보기</strong><small>7개 계통 · {structures.filter(s => s.sex === state.sex).length.toLocaleString()}개 구조</small></span>
+          <span><strong>전체 인체 구조 보기</strong><small>7개 계통 · {structuresForSex(state.sex).length.toLocaleString()}개 구조</small></span>
         </button>
       </aside>
       <div className="scene-title">
         <span className="eyebrow">GYEOL / ANATOMY ATLAS</span>
         <h1>몸의 구조를 탐색하세요</h1>
-        <p>{state.sex === "female" ? "NIH 여성 참조" : "BodyParts3D 남성 참조"} · 7개 계통 · {anatomyRegionNames[state.anatomyRegion]}</p>
+        <p>{state.sex === "female" ? "여성 고유 + 공통 전신 보완" : "BodyParts3D 남성 참조"} · 7개 계통 · {anatomyRegionNames[state.anatomyRegion]}</p>
       </div>
       <nav className="floating-tools" aria-label="해부 탐색 도구">
         {(["points", "layers", "structures", "help"] as const).map(

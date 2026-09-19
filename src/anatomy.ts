@@ -17,7 +17,6 @@ export const anatomyRegionNames = {
   whole: "전신", head: "머리", "upper-body": "상체", "lower-body": "하체",
   "upper-limb": "팔·손", "lower-limb": "다리·발", chest: "가슴", abdomen: "배", pelvis: "골반",
 } as const;
-export const femaleAvailableLayers: Layer[] = ["skin", "bone", "organ", "vessel", "lymph"];
 const baseStructures = inputs.assets.map((s) => ({
   ...s,
   sex: "male" as const,
@@ -38,6 +37,14 @@ export const structures = [...baseStructures, ...fullSystemStructures.map(s => (
   bodyRegion?: string;
   model?: string;
 }[];
+export const maleOnlyStructureIds = new Set([
+  "FMA18247", "FMA18256", "FMA18257", "FMA19235", "FMA19236", "FMA19387",
+  "FMA19388", "FMA19617nsn", "FMA19618", "FMA7211", "FMA7212", "FMA9600",
+]);
+export const structuresForSex = (sex: "male" | "female") =>
+  structures.filter((structure) => sex === "male"
+    ? structure.sex === "male"
+    : structure.sex === "female" || !maleOnlyStructureIds.has(structure.id));
 export const searchableStructureCount = baseStructures.length;
 export const stages: { layer: Layer; description: string }[] = [
   {

@@ -13,7 +13,7 @@ STL 제공: [Kevin Mattheus Moerman의 BodyParts3D 미러](https://github.com/Ke
 
 ## NIH 여성 참조
 
-여성 심혈관·소화·피부·림프·비뇨·생식·골격 모델은 [NIH Human Reference Atlas](https://humanatlas.io/) 3D Reference Organ Library의 Visible Human Female 기반 united reference v1.5에서 유래하며 **CC BY 4.0**입니다. 264개 명명 구조를 수록하지만 대응 여성 근육·신경 자료는 이 원본에 없어 비활성화합니다. 남성 모델을 여성 모델로 바꾸어 부르거나 완전한 여성 전신 해부로 주장하지 않습니다.
+여성 심혈관·소화·피부·림프·비뇨·생식·골격 모델은 [NIH Human Reference Atlas](https://humanatlas.io/) 3D Reference Organ Library의 Visible Human Female 기반 united reference v1.5에서 유래하며 **CC BY 4.0**입니다. 이 원본의 여성 고유264개 구조에 별도 출처의 성별 공통 전신 구조를 보완해 7계통을 모두 볼 수 있습니다. 공통 보완은 검색 결과에 구분하고 여성 전용 원본이나 임상적으로 정합된 단일 모델이라고 주장하지 않습니다.
 
 변경: 정점 병합, 표면 단순화, 법선 재계산, 좌표축 변환, STL→GLB. 모델은 임상 정확도를 검증하지 않았습니다.
 

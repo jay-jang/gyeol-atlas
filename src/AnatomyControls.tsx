@@ -1,5 +1,5 @@
 import { useState, type Dispatch } from "react";
-import { anatomyRegionNames, femaleAvailableLayers, layerKeys, layerNames, stages, structures } from "./anatomy";
+import { anatomyRegionNames, layerKeys, layerNames, stages, structuresForSex } from "./anatomy";
 import type { ViewState, ViewAction } from "./view-state";
 export default function AnatomyControls({
   mode,
@@ -16,12 +16,12 @@ export default function AnatomyControls({
 }) {
   const [query, setQuery] = useState("");
   const normalizedQuery = query.toLowerCase().trim();
-  const results = structures.filter((s) => s.sex === state.sex &&
+  const results = structuresForSex(state.sex).filter((s) =>
     `${s.label} ${s.name} ${s.id} ${s.fmaId || ""} ${s.latin || ""} ${(s.hierarchy || []).join(" ")}`
       .toLowerCase()
       .includes(normalizedQuery),
   ).sort((a, b) => {
-    const score = (s: (typeof structures)[number]) => {
+    const score = (s: ReturnType<typeof structuresForSex>[number]) => {
       const direct = [s.label, s.name, s.id, s.fmaId || ""].map((value) => (value || "").toLowerCase());
       if (direct.some((value) => value === normalizedQuery)) return 0;
       if (direct.some((value) => value.startsWith(normalizedQuery))) return 1;
@@ -39,7 +39,7 @@ export default function AnatomyControls({
     <label>표시 부위<select aria-label="해부 표시 부위" value={state.anatomyRegion} onChange={e => { const value = e.target.value as ViewState["anatomyRegion"]; dispatch({ type: "anatomy-region", value }); onRegion(value); }}>
       {Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}
     </select></label>
-    {state.sex === "female" && <p className="control-hint">여성 참조 자료는 피부·골격·장기·혈관·림프를 제공합니다. 근육·신경은 원본에 없어 비활성화됩니다.</p>}
+    {state.sex === "female" && <p className="control-hint">여성 고유 구조 264개와 성별 공통 전신 구조를 함께 표시합니다. 공통 구조는 여성 전용 원본이 아닌 보완 참조입니다.</p>}
   </div>;
   return mode === "layers" ? (
     <div className="layer-settings">
@@ -54,7 +54,6 @@ export default function AnatomyControls({
               type="checkbox"
               aria-label={`${layerNames[l]} 레이어`}
               checked={state.layers[l]}
-              disabled={state.sex === "female" && !femaleAvailableLayers.includes(l)}
               onChange={(e) =>
                 dispatch({
                   type: "layers",
@@ -199,7 +198,7 @@ export default function AnatomyControls({
                 >
                   <strong>{s.label || s.name}</strong>
                   <small>
-                    {s.name}{s.latin ? ` · ${s.latin}` : ""} · {s.id}{s.fmaId && s.fmaId !== s.id ? ` · ${s.fmaId}` : ""} · {s.sex === "female" ? "여성 참조" : "남성 참조"}
+                    {s.name}{s.latin ? ` · ${s.latin}` : ""} · {s.id}{s.fmaId && s.fmaId !== s.id ? ` · ${s.fmaId}` : ""} · {s.sex === "female" ? "여성 고유 참조" : state.sex === "female" ? "성별 공통 보완" : "남성 참조"}
                   </small>
                   {s.hierarchy?.length ? <small className="structure-path">{s.hierarchy.join(" › ")}</small> : null}
                 </button>

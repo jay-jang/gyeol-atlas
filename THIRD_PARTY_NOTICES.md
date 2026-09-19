@@ -39,7 +39,7 @@ The female cardiovascular, digestive, integumentary, lymphatic, renal, reproduct
 - Packaging source: https://github.com/Nurkan1/Anatria-3D
 - Pinned source commit, exact asset URLs and SHA-256 hashes: `data/catalog/sex-lymph-models.json`
 
-GYEOL modification: system exports are displayed as a sex-specific, non-diagnostic reference; materials are replaced at runtime, named nodes are connected to the searchable catalogue, and spatial/body-region visibility controls are added. The female source contains 264 named structures across seven source systems but does not contain a matching full muscular or nervous model. It is not presented as a complete female anatomy or clinically registered to the BodyParts3D male reference.
+GYEOL modification: system exports are displayed as a sex-specific, non-diagnostic reference; materials are replaced at runtime, named nodes are connected to the searchable catalogue, and spatial/body-region visibility controls are added. The female source contains 264 named structures and does not contain matching full muscular or nervous systems. Female mode therefore combines those sex-specific structures with the separately attributed shared whole-body reference; shared structures are labeled as such rather than claimed as female-specific anatomy. The two sources are visually aligned, not clinically registered.
 
 ## WHO and clinical sources
 
