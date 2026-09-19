@@ -55,7 +55,7 @@ import {
   type ViewState,
   type ViewAction,
 } from "./view-state";
-import { structures } from "./anatomy";
+import { structures, detailForStructure } from "./anatomy";
 
 const VIEW_KEY = "gyeol-view-v2";
 function readView() {
@@ -73,7 +73,7 @@ function returnToAtlas() {
   const pointId = readView().pointId;
   return pointId ? `#atlas/${pointId}` : "#atlas";
 }
-import { anatomyRegionNames, layerKeys, layerNames, stages, structuresForSex, type Layer } from "./anatomy";
+import { anatomyRegionNames, layerKeys, layerNames, stages, structuresForSex, organGroups, type Layer } from "./anatomy";
 import conceptData from "../data/point-concepts.json";
 import concepts from "../data/concepts.json";
 const pointConcepts = conceptData as Record<
@@ -414,6 +414,8 @@ function AtlasPage({
     tick: 0,
   });
   const [loaded, setLoaded] = useState<Layer[]>([]);
+  const [loadingReference, setLoadingReference] = useState(false);
+  const [comparisonNotice, setComparisonNotice] = useState("");
   const { query, region, meridian, concept, onlySaved, bodyRegion, catalogue } = state.filters;
   const setQuery = (v: string) =>
     dispatch({ type: "filters", value: { query: v } });
@@ -445,6 +447,11 @@ function AtlasPage({
         ),
   );
   const camera = (kind: CameraAction["kind"]) => {
+    if (kind === "focus" && state.sex === "female") {
+      setComparisonNotice("여성 표면의 경혈 좌표는 검수 전입니다. 남성 기준 좌표로 이동하지 않습니다.");
+      setPanel("detail");
+      return;
+    }
     setAction((a) => ({ kind, tick: a.tick + 1 }));
     if (kind === "focus" && state.markers === "hidden")
       dispatch({ type: "markers", value: "selected" });
@@ -489,10 +496,18 @@ function AtlasPage({
   const compare = () => {
     const c = pointConcepts[selected.id];
     if (!c?.organIds.length) return;
+    const femaleGroups = [...new Set(c.organIds.map(id => structures.find(s => s.id === id)?.group).filter(Boolean))];
+    const ids = state.sex === "male" ? c.organIds : [...new Set(organGroups.filter(g => g.sex === "female" && femaleGroups.includes(g.id)).flatMap(g => g.ids))];
+    if (!ids.length) {
+      setComparisonNotice("현재 여성 원본에는 이 기관 모형이 수록되어 있지 않습니다.");
+      return;
+    }
+    setComparisonNotice("");
     dispatch({
       type: "compare",
       name: c.traditionalName || selected.name,
-      ids: c.organIds,
+      ids,
+      layers: Object.fromEntries(layerKeys.map(layer => [layer, layer === "skin" || structures.some(s => s.layer === layer && ids.includes(s.id))])) as Layers,
     });
     setPanel(null);
     camera("comparison");
@@ -504,7 +519,18 @@ function AtlasPage({
   useEffect(() => setLoaded([]), [state.sex]);
   const ready = layerKeys
     .filter((l) => state.layers[l])
-    .every((l) => loaded.includes(l));
+    .every((l) => loaded.includes(l)) && !loadingReference;
+  const selectionKey = state.selection?.ids.join("|") || "";
+  const focusedSelection = useRef(selectionKey);
+  useEffect(() => {
+    if (!selectionKey) { focusedSelection.current = ""; return; }
+    if (focusedSelection.current === selectionKey || !ready || state.comparison) return;
+    const frame = requestAnimationFrame(() => {
+      focusedSelection.current = selectionKey;
+      camera("structure");
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [selectionKey, ready, state.comparison]);
   const onPose = useCallback(
     (value: import("./view-state").CameraPose) =>
       dispatch({ type: "camera", value }),
@@ -530,45 +556,16 @@ function AtlasPage({
       Object.fromEntries(
         layerKeys.map((layer) => [
           layer,
-          structuresForSex(state.sex).filter((structure) => structure.layer === layer).length,
+          structuresForSex(state.sex).filter((structure) => structure.layer === layer && !structure.detailOnly).length,
         ]),
       ) as Record<Layer, number>,
     [state.sex],
   );
-  const featuredAnatomy = state.sex === "female" ? [
-    { name: "자궁", detail: "자궁몸통·자궁목", layer: "organ" as Layer, ids: ["HRA_F_organ_body_of_uterus", "HRA_F_organ_cervix_of_uterus"] },
-    { name: "난소", detail: "왼쪽·오른쪽", layer: "organ" as Layer, ids: ["HRA_F_organ_ovary_l", "HRA_F_organ_ovary_r"] },
-    { name: "유방", detail: "좌우 유선엽", layer: "skin" as Layer, ids: ["HRA_F_skin_lobes_of_mammary_gland_l", "HRA_F_skin_lobes_of_mammary_gland_r"] },
-    { name: "콩팥", detail: "좌우 섬유피막", layer: "organ" as Layer, ids: ["HRA_F_organ_fibrous_capsule_of_kidney_l", "HRA_F_organ_fibrous_capsule_of_kidney_r"] },
-    { name: "비장", detail: "표면·문 구조", layer: "lymph" as Layer, ids: structures.filter(s => s.sex === "female" && s.layer === "lymph").map(s => s.id) },
-  ] : [
-    {
-      name: "뇌",
-      detail: "대뇌·소뇌·뇌줄기",
-      layer: "nerve" as Layer,
-      ids: ["FMA62004", "FMA67943", "FMA67944", "FMA61822", "FMA61993nsn"],
-    },
-    { name: "심장", detail: "심장벽", layer: "organ" as Layer, ids: ["FMA7274"] },
-    {
-      name: "폐",
-      detail: "좌우 5개 엽",
-      layer: "organ" as Layer,
-      ids: ["FMA7383", "FMA7333", "FMA7337", "FMA7370", "FMA7371"],
-    },
-    { name: "간", detail: "간", layer: "organ" as Layer, ids: ["FMA7197"] },
-    { name: "위", detail: "위", layer: "organ" as Layer, ids: ["FMA7148"] },
-    {
-      name: "콩팥",
-      detail: "왼쪽·오른쪽",
-      layer: "organ" as Layer,
-      ids: ["FMA7204", "FMA7205"],
-    },
-  ];
+  const featuredAnatomy = organGroups.filter(group => group.sex === state.sex).map(group => ({ ...group, detail: group.ids.length > 1 ? `${group.ids.length}개 세부 모형` : "단일 원본 모형" }));
   const selectFeatured = (item: (typeof featuredAnatomy)[number]) => {
     dispatch({
-      type: "select",
-      layer: item.layer,
-      selection: { kind: "bundle", ids: item.ids, name: item.name },
+      type: "detail",
+      detail: { id: item.id, name: item.name, ids: item.ids, layers: Object.fromEntries(layerKeys.map(layer => [layer, structures.some(s => s.layer === layer && item.ids.includes(s.id))])) as Layers },
     });
     setPanel(null);
     requestAnimationFrame(() => camera("structure"));
@@ -589,6 +586,9 @@ function AtlasPage({
   const selectedAnatomy = state.selection?.kind === "structure"
     ? structures.find((item) => item.id === state.selection?.ids[0])
     : null;
+  const selectedGroup = state.detail?.id || selectedAnatomy?.group;
+  const selectedOrgan = featuredAnatomy.find(group => group.id === selectedGroup);
+  const detailParts = selectedOrgan ? structuresForSex(state.sex).filter(item => selectedOrgan.ids.includes(item.id)) : [];
   return (
     <main
       className="anatomy-workspace"
@@ -598,13 +598,13 @@ function AtlasPage({
         if (!event.altKey || Math.abs(event.deltaY) < 2) return;
         event.preventDefault();
         event.stopPropagation();
-        shiftDissection(event.deltaY > 0 ? 2 : -2);
+        shiftDissection(event.deltaY > 0 ? .5 : -.5);
       }}
       onKeyDownCapture={(event) => {
         if (!event.altKey || !["ArrowUp", "ArrowDown"].includes(event.key)) return;
         event.preventDefault();
         event.stopPropagation();
-        const step = event.shiftKey ? 10 : 2;
+        const step = event.shiftKey ? 5 : .5;
         shiftDissection(event.key === "ArrowDown" ? step : -step);
       }}
     >
@@ -626,6 +626,7 @@ function AtlasPage({
             labels={state.labels}
             action={action}
             onReady={onReady}
+            onLoading={setLoadingReference}
             selectedStructure={
               state.selection?.kind === "structure"
                 ? state.selection.ids[0]
@@ -637,6 +638,7 @@ function AtlasPage({
                 dispatch({
                   type: "select",
                   layer: item.layer,
+                  detail: detailForStructure(item),
                   region: item.bodyRegion && item.bodyRegion !== "whole" ? item.bodyRegion as ViewState["anatomyRegion"] : undefined,
                   selection: {
                     kind: "structure",
@@ -649,8 +651,10 @@ function AtlasPage({
             highlight={state.comparison?.ids || []}
             cutaway={state.cutaway}
             dissection={state.dissection}
+            displayMode={state.displayMode}
             layerOpacity={state.alpha}
             selectionIds={state.selection?.ids || []}
+            detailIds={state.detail?.ids || []}
             selectionTarget={state.selectionTarget}
             initialPose={state.camera}
             onPose={onPose}
@@ -684,7 +688,7 @@ function AtlasPage({
             dispatch({ type: "anatomy-region", value });
             requestAnimationFrame(() => camera(value === "whole" ? "fit" : "anatomy-region"));
           }}>{Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}</select></label>
-          <small className="scope-source">{state.sex === "female" ? "여성 고유 264개 + 공통 전신 보완" : "남성 참조 · 림프 142개 포함"}</small>
+          <small className="scope-source">{state.sex === "female" ? "여성 참조 1,220개 · 일부 기관 미수록" : "남성 참조 · 림프 142개 포함"}</small>
         </div>
         <section
           className="depth-explorer"
@@ -692,26 +696,26 @@ function AtlasPage({
           onWheel={(event) => {
             if (Math.abs(event.deltaY) < 8) return;
             event.preventDefault();
-            const next = Math.max(0, Math.min(100, state.dissection + (event.deltaY > 0 ? 3 : -3)));
+            const next = Math.max(0, Math.min(100, state.dissection + (event.deltaY > 0 ? .5 : -.5)));
             if (next !== state.dissection) dispatch({ type: "dissection", value: next });
           }}
         >
           <div className="depth-heading">
             <span>연속 박리 깊이</span>
-            <strong>{state.dissection}% · {state.dissection < 8 ? "체표" : state.dissection < 28 ? "표층 근육" : state.dissection < 50 ? "중간 근육" : state.dissection < 68 ? "심부 근육" : state.dissection < 82 ? "골격·장기" : state.dissection < 89 ? "혈관" : state.dissection < 94 ? "림프" : "신경"}</strong>
+            <strong>{state.dissection.toFixed(1)}% · {state.dissection < 8 ? "체표" : state.dissection < 38 ? "근육 박리" : state.dissection < 56 ? "골격 노출" : state.dissection < 70 ? "장기 노출" : state.dissection < 82 ? "혈관 노출" : state.dissection < 90 ? "림프 노출" : "신경 노출"}</strong>
           </div>
           <input
             type="range"
             min="0"
             max="100"
-            step="1"
+            step="0.5"
             value={state.dissection}
             aria-label="연속 해부 박리 깊이"
-            aria-valuetext={`${state.dissection}% 해부 깊이`}
+            aria-valuetext={`${state.dissection.toFixed(1)}% 해부 깊이`}
             onWheelCapture={(event) => {
               event.preventDefault();
               event.stopPropagation();
-              const next = Math.max(0, Math.min(100, state.dissection + (event.deltaY > 0 ? 3 : -3)));
+              const next = Math.max(0, Math.min(100, state.dissection + (event.deltaY > 0 ? .5 : -.5)));
               if (next !== state.dissection) dispatch({ type: "dissection", value: next });
             }}
             onChange={(event) => dispatch({ type: "dissection", value: Number(event.target.value) })}
@@ -746,7 +750,7 @@ function AtlasPage({
                 <strong>{layerNames[stage.layer]}</strong>
                 <small>
                   {stage.layer === "nerve"
-                    ? "전신 525개 선택·설명"
+                    ? `${layerCounts.nerve}개 선택·설명`
                     : stage.layer === "vessel"
                       ? `${layerCounts[stage.layer]}개 선택·설명`
                       : stage.layer === "lymph"
@@ -776,7 +780,7 @@ function AtlasPage({
       <div className="scene-title">
         <span className="eyebrow">GYEOL / ANATOMY ATLAS</span>
         <h1>몸의 구조를 탐색하세요</h1>
-        <p>{state.sex === "female" ? "여성 고유 + 공통 전신 보완" : "BodyParts3D 남성 참조"} · 7개 계통 · {anatomyRegionNames[state.anatomyRegion]}</p>
+        <p>{state.sex === "female" ? "NIH HRA 여성 독립 참조" : "BodyParts3D 남성 참조"} · 7개 계통 · {anatomyRegionNames[state.anatomyRegion]}</p>
       </div>
       <nav className="floating-tools" aria-label="해부 탐색 도구">
         {(["points", "layers", "structures", "help"] as const).map(
@@ -1052,6 +1056,7 @@ function AtlasPage({
               />
             )}
             {panel === "detail" && (
+              <>
               <PointDetail
                 point={selected}
                 onFocus={() => {
@@ -1062,6 +1067,8 @@ function AtlasPage({
                 onSave={() => toggle(selected.id)}
                 onCompare={compare}
               />
+              {comparisonNotice && <p role="status">{comparisonNotice}</p>}
+              </>
             )}
             {panel === "help" && (
               <div className="viewer-help">
@@ -1096,9 +1103,7 @@ function AtlasPage({
         <section className="selection-card" aria-label="선택 구조 조작">
           <div>
             <span className={`selection-kind ${state.selection.kind}`}>
-              {state.selection.kind === "bundle"
-                ? "전통 장부 비교"
-                : "선택 구조"}
+              {state.comparison ? "전통 장부 비교" : state.detail ? `${state.detail.name} · 기관 상세 모델` : state.selection.kind === "bundle" ? "구조 묶음" : "선택 구조"}
             </span>
             <strong>
               {state.selection.name}{" "}
@@ -1113,8 +1118,18 @@ function AtlasPage({
             {selectedAnatomy?.source && (
               <small className="selection-source">{selectedAnatomy.source} · 학습용 비진단 모델</small>
             )}
+            {detailParts.length > 1 && (
+              <details className="organ-detail-parts">
+                <summary>세부 구조 {detailParts.length}개 선택</summary>
+                <div>
+                  {detailParts.map(part => <button key={part.id} aria-pressed={state.selection?.ids.length === 1 && state.selection.ids[0] === part.id} onClick={() => dispatch({ type: "select", layer: part.layer, detail: detailForStructure(part), selection: { kind: "structure", ids: [part.id], name: part.label || part.name } })}>{part.label || part.name}<small>{part.name}</small></button>)}
+                </div>
+              </details>
+            )}
           </div>
           <div className="selection-actions">
+            {selectedOrgan && <button onClick={() => selectFeatured(selectedOrgan)}>{state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
+            {state.detail && <button onClick={() => { dispatch({ type: "detail-close" }); requestAnimationFrame(() => camera("fit")); }}>전신으로 돌아가기</button>}
             <button
               onClick={() => {
                 setPanel(null);
@@ -1125,7 +1140,7 @@ function AtlasPage({
             </button>
             <button
               aria-pressed={state.isolated}
-              onClick={() => dispatch({ type: "isolate" })}
+              onClick={() => { dispatch({ type: "isolate" }); requestAnimationFrame(() => camera("structure")); }}
             >
               {state.isolated
                 ? "전체 구조 보기"

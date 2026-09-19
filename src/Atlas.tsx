@@ -26,14 +26,17 @@ import {
 import type { OrbitControls as OrbitType } from "three-stdlib";
 import type { CameraPose } from "./view-state";
 import type { Point, Layers, CameraAction } from "./types";
-import { layerKeys, maleOnlyStructureIds, type Layer, structures } from "./anatomy";
+import { dissectionLayerOpacity, layerKeys, maleOnlyStructureIds, type Layer, structures } from "./anatomy";
 import meridians from "../data/meridians.json";
 import anchors from "../data/anchors.json";
 import structurePairs from "../data/structure-pairs.json";
 import fullSystemStructures from "../data/full-system-structures.json";
 import sexLymphStructures from "../data/sex-lymph-structures.json";
+import maleRegistration from "../data/catalog/male-registration.json";
 import { movementKeys, translateView, type MoveDirection } from "./navigation";
 import { LoaderCircle, TriangleAlert } from "lucide-react";
+import PackedAtlas from "./PackedAtlas";
+import { clippingPlanes, configurePicking } from "./anatomy-rendering";
 
 const structureById = new Map(structures.map(s => [s.id, s]));
 
@@ -46,20 +49,24 @@ type Props = {
   labels: boolean;
   action: CameraAction;
   onReady: (layer: Layer) => void;
+  onLoading: (value: boolean) => void;
   selectedStructure: string;
   onStructure: (id: string) => void;
   isolated: boolean;
   highlight: string[];
   cutaway: number;
   dissection: number;
+  displayMode: "dissection" | "layers";
   layerOpacity: Record<Layer, number>;
   selectionIds: string[];
+  detailIds: string[];
   selectionTarget: "visible" | "internal" | "skin";
   initialPose: CameraPose | null;
   onPose: (pose: CameraPose) => void;
   sex: "male" | "female";
   anatomyRegion: "whole" | "head" | "upper-body" | "lower-body" | "upper-limb" | "lower-limb" | "chest" | "abdomen" | "pelvis";
 };
+export type AtlasProps = Props;
 const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
 function clinicalColor(layer: Layer, name: string) {
   const lower = name.toLowerCase();
@@ -144,7 +151,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
   }), [object]);
   const { invalidate, gl } = useThree();
   useEffect(() => {
-    const allSystems = layerKeys.every(key => props.layers[key]);
+    const progressive = props.displayMode === "dissection";
     const mirrored = props.selected.structures.flatMap((id) => [
       id,
       (structurePairs as Record<string, string>)[id] || id,
@@ -164,48 +171,31 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
               ? "#bca77a"
               : null;
       const selected = props.selectionIds.includes(id);
-      let dissectionAlpha = 1;
-      if (!allSystems && !props.isolated && !selected) {
-        if (layer === "skin") dissectionAlpha = clamp01((14 - props.dissection) / 6);
-        else if (layer === "muscle") dissectionAlpha = clamp01(((o.userData.peelAt as number) - props.dissection) / 4);
-        else {
-          const reveal = { bone: 34, organ: 40, vessel: 52, lymph: 58, nerve: 64 }[layer] ?? 0;
-          dissectionAlpha = clamp01((props.dissection - reveal + 6) / 6);
-        }
+      let dissectionAlpha = selected || props.isolated ? 1 : dissectionLayerOpacity(layer, props.dissection, progressive);
+      if (layer === "muscle" && progressive && !selected && !props.isolated) {
+        const peelAt = o.userData.peelAt as number;
+        dissectionAlpha *= 1 - clamp01((props.dissection - peelAt + 2) / 4);
       }
       const unavailableForSex = props.sex === "female" && maleOnlyStructureIds.has(id);
       o.visible = !unavailableForSex && (!props.isolated || selected) && (selected || dissectionAlpha > .01) && (selected || inAnatomyRegion(o, props.anatomyRegion));
+      o.visible = o.visible && (!props.detailIds.length || props.detailIds.includes(id));
+      // Use a single whole-body vascular/neural source in the overview. Retain
+      // original BodyParts3D meshes for explicit searches and organ details.
+      if ((layer === "nerve" || layer === "vessel") && !selected && !props.detailIds.includes(id)) o.visible = false;
       if (o.visible) visibleCount++;
       const alpha = (layer === "skin" ? props.opacity : props.layerOpacity[layer]) * (selected ? 1 : dissectionAlpha);
       const vessel = structureById.get(id)?.name || "";
-      o.raycast = (raycaster, intersections) => {
-        if (
-          !o.visible ||
-          (props.selectionTarget === "internal" && layer === "skin") ||
-          (props.selectionTarget === "skin" && layer !== "skin")
-        )
-          return;
-        const hits: Intersection[] = [];
-        Mesh.prototype.raycast.call(o, raycaster, hits);
-        intersections.push(
-          ...hits.filter(
-            (hit) =>
-              props.cutaway === 0 || hit.point.z <= 0.22 - props.cutaway * 0.44,
-          ),
-        );
-      };
       const material = o.material as MeshStandardMaterial;
+      configurePicking(o, layer, props.selectionTarget);
       material.color.set(emphasis ? emphasis : clinicalColor(layer, vessel));
       const transparent = alpha < .995;
-      const clipping = props.cutaway > 0;
+      const planes = clippingPlanes(layer, props);
+      const clipping = planes.length > 0;
       if (material.transparent !== transparent || Boolean(material.clippingPlanes?.length) !== clipping)
         material.needsUpdate = true;
       material.transparent = transparent;
       material.opacity = alpha;
-      material.clippingPlanes =
-          props.cutaway > 0
-            ? [new Plane(new Vector3(0, 0, -1), 0.22 - props.cutaway * 0.44)]
-            : [];
+      material.clippingPlanes = planes;
     });
     gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(visibleCount);
     invalidate();
@@ -215,6 +205,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     props.selected,
     props.selectedStructure,
     props.selectionIds,
+    props.detailIds,
     props.selectionTarget,
     props.isolated,
     props.highlight,
@@ -222,6 +213,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     props.layerOpacity,
     props.cutaway,
     props.dissection,
+    props.displayMode,
     props.layers,
     props.anatomyRegion,
     gl,
@@ -250,6 +242,9 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
   );
   const object = useMemo(() => {
     const clone = model.scene.clone(true);
+    clone.scale.multiplyScalar(maleRegistration.scale);
+    clone.position.multiplyScalar(maleRegistration.scale).add(new Vector3(...maleRegistration.translation));
+    clone.updateMatrixWorld(true);
     const byNode = new Map(
       fullSystemStructures
         .filter((item) => item.layer === layer)
@@ -267,18 +262,19 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
   }, [model.scene]);
   const { invalidate } = useThree();
   useEffect(() => {
-    const allSystems = layerKeys.every(key => props.layers[key]);
+    const progressive = props.displayMode === "dissection";
     object.visible = true;
     object.traverse((item) => {
       if (!(item instanceof Mesh)) return;
       const selected = props.selectionIds.includes(item.name);
       item.visible = item.userData.systemAllowed && (!props.isolated || selected) && (selected || inAnatomyRegion(item, props.anatomyRegion));
+      item.visible = item.visible && (!props.detailIds.length || props.detailIds.includes(item.name));
       const material = item.material as MeshStandardMaterial;
       const entry = structureById.get(item.name);
       const vein = layer === "vessel" && /vein|vena cava/i.test(entry?.name || "");
       material.color.set(selected ? "#34d3dd" : layer === "nerve" ? "#f0c94f" : vein ? "#356fb3" : "#cf3e49");
-      const reveal = layer === "nerve" ? 64 : 52;
-      const alpha = selected ? 1 : props.layerOpacity[layer] * (allSystems ? 1 : clamp01((props.dissection - reveal + 6) / 6));
+      const alpha = selected ? 1 : props.layerOpacity[layer] * dissectionLayerOpacity(layer, props.dissection, progressive);
+      item.visible = item.visible && alpha > .01;
       const clipped = props.cutaway > 0;
       if (material.transparent !== (alpha < 1) || Boolean(material.clippingPlanes?.length) !== clipped)
         material.needsUpdate = true;
@@ -287,9 +283,10 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
       material.clippingPlanes = clipped
         ? [new Plane(new Vector3(0, 0, -1), 0.22 - props.cutaway * 0.44)]
         : [];
+      configurePicking(item, layer, props.selectionTarget);
     });
     invalidate();
-  }, [object, layer, props.isolated, props.selectionIds, props.layerOpacity, props.cutaway, props.dissection, props.anatomyRegion, props.layers, invalidate]);
+  }, [object, layer, props.isolated, props.selectionIds, props.detailIds, props.layerOpacity, props.cutaway, props.dissection, props.displayMode, props.selectionTarget, props.anatomyRegion, props.layers, invalidate]);
   useEffect(() => {
     props.onReady(layer);
   }, [object, layer, props.onReady]);
@@ -315,7 +312,9 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
   const entries = useMemo(() => sexLymphStructures.filter(item => item.sex === props.sex && item.layer === layer && item.model === modelName), [layer, modelName, props.sex]);
   const object = useMemo(() => {
     const clone = model.scene.clone(true);
-    if (props.sex === "female") clone.position.set(0, .58, .08);
+    clone.scale.multiplyScalar(maleRegistration.scale);
+    clone.position.multiplyScalar(maleRegistration.scale).add(new Vector3(...maleRegistration.translation));
+    clone.updateMatrixWorld(true);
     const byNode = new Map(entries.map(item => [PropertyBinding.sanitizeNodeName(item.node), item.id]));
     clone.traverse(item => {
       if (!(item instanceof Mesh)) return;
@@ -329,24 +328,31 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
   }, [entries, layer, model.scene, props.sex]);
   const { invalidate, gl } = useThree();
   useEffect(() => {
+    const progressive = props.displayMode === "dissection";
+    const depthAlpha = dissectionLayerOpacity(layer, props.dissection, progressive);
     let visibleCount = 0;
     object.traverse(item => {
       if (!(item instanceof Mesh)) return;
       const selected = props.selectionIds.includes(item.name);
       const entry = structureById.get(item.name);
-      item.visible = item.userData.systemAllowed && (!props.isolated || selected) && (selected || taggedRegionMatches(entry?.bodyRegion, props.anatomyRegion));
+      item.visible = item.userData.systemAllowed && (!props.isolated || selected) && (selected || depthAlpha > .01) && (selected || taggedRegionMatches(entry?.bodyRegion, props.anatomyRegion));
+      item.visible = item.visible && (!props.detailIds.length || props.detailIds.includes(item.name));
       if (item.visible) visibleCount++;
       const material = item.material as MeshStandardMaterial;
       material.color.set(selected ? "#34d3dd" : clinicalColor(layer, entry?.name || ""));
-      material.opacity = selected ? 1 : props.layerOpacity[layer];
+      material.opacity = selected ? 1 : props.layerOpacity[layer] * depthAlpha;
+      const planes = clippingPlanes(layer, props);
+      if (material.transparent !== (material.opacity < .995) || (material.clippingPlanes?.length || 0) !== planes.length) material.needsUpdate = true;
       material.transparent = material.opacity < .995;
+      material.clippingPlanes = planes;
+      configurePicking(item, layer, props.selectionTarget);
     });
     const key = `visibleReference${modelName.replace(/[^a-z0-9]/gi, "")}`;
     gl.domElement.dataset[key] = String(visibleCount);
     const bounds = new Box3().setFromObject(object);
     gl.domElement.dataset[`boundsReference${modelName.replace(/[^a-z0-9]/gi, "")}`] = JSON.stringify([bounds.min.toArray(), bounds.max.toArray()]);
     invalidate();
-  }, [object, layer, modelName, props.anatomyRegion, props.isolated, props.layerOpacity, props.selectionIds, gl, invalidate]);
+  }, [object, layer, modelName, props.anatomyRegion, props.isolated, props.layerOpacity, props.selectionIds, props.detailIds, props.layers, props.dissection, props.displayMode, props.cutaway, props.selectionTarget, gl, invalidate]);
   useEffect(() => { props.onReady(layer); }, [layer, object, props.onReady]);
   useEffect(() => () => object.traverse(item => { if (item instanceof Mesh && item.material instanceof MeshStandardMaterial) item.material.dispose(); }), [object]);
   return <primitive object={object} onClick={(event: { stopPropagation: () => void; object: Mesh }) => {
@@ -356,17 +362,24 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
     props.onStructure(id);
   }} />;
 }
-const femaleModels: Partial<Record<Layer, string[]>> = {
-  skin: ["integumentary_female.glb"], bone: ["skeletal_female.glb"],
-  organ: ["digestive_female.glb", "renal_female.glb", "reproductive_female.glb"],
-  vessel: ["cardiovascular_female.glb"], lymph: ["lymphatic_female.glb"],
-};
 function Scene(props: Props) {
   const { points, selected, onSelect, layers, labels, action } = props;
   const controls = useRef<OrbitType>(null);
   const markerMeshes = useRef(new Map<string, Mesh>());
   const { camera, invalidate, scene, size, gl } = useThree();
   const keys = useRef(new Set<string>());
+  const mobile = window.innerWidth <= 700;
+  const observationTop = mobile ? 182 : 0;
+  const observationBottom = mobile ? Math.max(observationTop + 120, size.height - (props.selectionIds.length ? 374 : 75)) : size.height;
+  const observationHeight = observationBottom - observationTop;
+  const observationWidth = mobile && props.selectionIds.length ? Math.max(120, size.width - 160) : size.width;
+  useEffect(() => {
+    const cam = camera as PerspectiveCamera;
+    if (mobile) cam.setViewOffset(size.width, size.height, props.selectionIds.length ? 32.5 : 0, size.height / 2 - (observationTop + observationBottom) / 2, size.width, size.height);
+    else cam.clearViewOffset();
+    cam.updateProjectionMatrix();
+    invalidate();
+  }, [camera, mobile, size.width, size.height, observationTop, observationBottom, props.selectionIds.length, invalidate]);
   useEffect(() => {
     const canvas = gl.domElement;
     canvas.tabIndex = 0;
@@ -443,7 +456,7 @@ function Scene(props: Props) {
   const [hover, setHover] = useState<string | null>(null);
   const markers = useMemo(
     () =>
-      anchors
+      (props.sex === "female" || props.detailIds.length ? [] : anchors)
         .filter((a) => points.some((p) => p.id === a.pointId))
         .map((a) => ({
           point: points.find((p) => p.id === a.pointId)!,
@@ -457,13 +470,33 @@ function Scene(props: Props) {
                 ? "왼쪽"
                 : "정중선",
         })),
-    [points],
+    [points, props.sex, props.detailIds.length],
   );
   useEffect(() => {
     // Report committed mesh membership, also useful for diagnosing crowded views.
     gl.domElement.dataset.renderedMarkers = String(markerMeshes.current.size);
     gl.domElement.dataset.renderedPointIds = [...new Set([...markerMeshes.current.values()].map(m => m.userData.pointId))].sort().join(',');
   }, [markers, gl]);
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      scene.updateMatrixWorld(true);
+      const selectedBounds = new Box3();
+      const ids: string[] = [];
+      const counts = Object.fromEntries(layerKeys.map(layer => [layer, 0])) as Record<Layer, number>;
+      scene.traverseVisible(obj => {
+        if (!(obj instanceof Mesh) || !structureById.has(obj.name)) return;
+        if ((obj.material as MeshStandardMaterial).opacity < .01) return;
+        ids.push(obj.name);
+        counts[structureById.get(obj.name)!.layer]++;
+        if (props.selectionIds.includes(obj.name)) selectedBounds.union(new Box3().setFromObject(obj));
+      });
+      gl.domElement.dataset.visibleStructureIds = [...new Set(ids)].sort().join(",");
+      gl.domElement.dataset.selectedWorldBounds = selectedBounds.isEmpty() ? "null" : JSON.stringify([selectedBounds.min.toArray(), selectedBounds.max.toArray()]);
+      gl.domElement.dataset.modelSex = props.sex;
+      for (const layer of layerKeys) gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(counts[layer]);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [revision, props.sex, props.layers, props.selectionIds, props.detailIds, props.isolated, props.dissection, props.anatomyRegion, scene, gl]);
   useEffect(() => {
     const c = controls.current;
     if (!c || executed.current === action.tick) return;
@@ -508,18 +541,18 @@ function Scene(props: Props) {
       }
       if (!count || (action.kind !== "fit" && count !== ids.length) || box.isEmpty()) return;
       const size = box.getSize(new Vector3());
+      const direction = camera.position.clone().sub(c.target).normalize();
       box.getCenter(c.target);
       const cam = camera as PerspectiveCamera;
       const tangent = Math.tan((cam.fov * Math.PI) / 360);
       const distance =
         Math.max(
-          size.y / 2 / tangent,
-          size.x / 2 / (tangent * cam.aspect),
+          size.y / 2 / tangent / (mobile ? observationHeight / gl.domElement.clientHeight : 1),
+          size.x / 2 / (tangent * cam.aspect) / (mobile ? observationWidth / gl.domElement.clientWidth : 1),
           0.12,
         ) *
-          (action.kind === "comparison" ? 2.6 : 1.65) +
+          (mobile ? 1.15 : action.kind === "comparison" ? 2.6 : 1.65) +
         size.z / 2;
-      const direction = camera.position.clone().sub(c.target).normalize();
       if (direction.lengthSq() < 0.1) direction.set(0, 0, 1);
       camera.position.copy(c.target).addScaledVector(direction, distance);
     } else if (action.kind === "region") {
@@ -589,7 +622,11 @@ function Scene(props: Props) {
       <directionalLight position={[3, 4, 4]} intensity={2.15} color="#e8f2f5" />
       <directionalLight position={[-3, 2, -3]} intensity={1.05} color="#7695aa" />
       <group>
-        {layerKeys
+        {props.sex === "female" || [...props.selectionIds, ...props.detailIds].some(id => id.startsWith("BP4_")) ? (
+          <Suspense fallback={<Html center><div className="model-loading">여성 전신 아틀라스 불러오는 중</div></Html>}>
+            <PackedAtlas key={props.sex} props={{ ...props, onReady: layerReady }} />
+          </Suspense>
+        ) : layerKeys
           .filter((layer) => layers[layer])
           .map((layer) => (
             <Suspense
@@ -608,9 +645,6 @@ function Scene(props: Props) {
                 />
               )}
               {layer === "lymph" && <ReferenceModel modelName="lymphatic_male.glb" layer="lymph" props={{ ...props, sex: "male", onReady: layerReady }} />}
-              {props.sex === "female" && (femaleModels[layer] || []).map(modelName => (
-                <ReferenceModel key={modelName} modelName={modelName} layer={layer} props={{ ...props, onReady: layerReady }} />
-              ))}
             </Suspense>
           ))}
       </group>
@@ -700,7 +734,7 @@ export default function Atlas(props: Props) {
       key={attempt}
       onRetry={() => {
         layerKeys.forEach((layer) => useGLTF.clear(assetUrl(`models/${layer}.glb`)));
-        ["lymphatic_male.glb", ...Object.values(femaleModels).flat()].forEach(name => useGLTF.clear(assetUrl(`models/reference/${name}`)));
+        useGLTF.clear(assetUrl("models/reference/lymphatic_male.glb"));
         setAttempt((x) => x + 1);
       }}
     >

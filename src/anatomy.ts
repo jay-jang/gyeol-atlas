@@ -2,6 +2,12 @@ import labels from "../data/structure-labels.json";
 import inputs from "../scripts/model-inputs.json";
 import fullSystemStructures from "../data/full-system-structures.json";
 import sexLymphStructures from "../data/sex-lymph-structures.json";
+import femaleAtlasStructures from "../data/female-atlas-structures.json";
+import femaleOrganGroups from "../data/female-organ-groups.json";
+import maleOrganGroups from "../data/male-organ-groups.json";
+import maleDetailGroups from "../data/male-detail-groups.json";
+import maleDetailStructures from "../data/male-detail-structures.json";
+export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.find(detail => detail.id === group.id) || group), ...femaleOrganGroups];
 export const layerNames = {
   skin: "체표",
   muscle: "근육",
@@ -13,16 +19,18 @@ export const layerNames = {
 };
 export type Layer = keyof typeof layerNames;
 export const layerKeys = Object.keys(layerNames) as Layer[];
+export { dissectionLayerOpacity } from "./dissection";
 export const anatomyRegionNames = {
   whole: "전신", head: "머리", "upper-body": "상체", "lower-body": "하체",
   "upper-limb": "팔·손", "lower-limb": "다리·발", chest: "가슴", abdomen: "배", pelvis: "골반",
 } as const;
 const baseStructures = inputs.assets.map((s) => ({
   ...s,
+  group: maleOrganGroups.find(group => group.ids.includes(s.id))?.id,
   sex: "male" as const,
   label: (labels as Record<string, string>)[s.id] || s.name,
 }));
-export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures] as {
+export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures.filter(s => s.sex === "male"), ...femaleAtlasStructures, ...maleDetailStructures] as {
   id: string;
   fmaId?: string;
   name: string;
@@ -36,15 +44,24 @@ export const structures = [...baseStructures, ...fullSystemStructures.map(s => (
   sex: "male" | "female";
   bodyRegion?: string;
   model?: string;
+  group?: string;
+  detailOnly?: boolean;
 }[];
 export const maleOnlyStructureIds = new Set([
   "FMA18247", "FMA18256", "FMA18257", "FMA19235", "FMA19236", "FMA19387",
   "FMA19388", "FMA19617nsn", "FMA19618", "FMA7211", "FMA7212", "FMA9600",
 ]);
 export const structuresForSex = (sex: "male" | "female") =>
-  structures.filter((structure) => sex === "male"
-    ? structure.sex === "male"
-    : structure.sex === "female" || !maleOnlyStructureIds.has(structure.id));
+  structures.filter((structure) => structure.sex === sex);
+// Detail-only references use a separate source coordinate frame. Enter a named
+// scope even when reached from search so isolation/return controls remain honest.
+export function detailForStructure(structure: (typeof structures)[number]) {
+  if (!structure.detailOnly) return undefined;
+  const group = organGroups.find(g => g.id === structure.group && g.sex === structure.sex);
+  if (!group) return undefined;
+  return { id: group.id, name: group.name, ids: group.ids,
+    layers: Object.fromEntries(layerKeys.map(layer => [layer, structures.some(s => s.layer === layer && group.ids.includes(s.id))])) as Record<Layer, boolean> };
+}
 export const searchableStructureCount = baseStructures.length;
 export const stages: { layer: Layer; description: string }[] = [
   {

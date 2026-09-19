@@ -1,7 +1,7 @@
 {
   "name": "anatomy2",
   "version": "1.0.0",
-  "description": "\uacb0 GYEOL \u2014 3D anatomy and source-grounded acupoint wiki",
+  "description": "결 GYEOL — 3D anatomy and source-grounded acupoint wiki",
   "main": "index.js",
   "scripts": {
     "dev": "concurrently -k \"node --env-file-if-exists=.env server/index.mjs\" \"vite\"",
@@ -11,6 +11,8 @@
     "test:e2e": "playwright test",
     "models:build": "node scripts/build-models.mjs && node scripts/build-anchors.mjs",
     "models:full-systems": "node scripts/download-full-systems.mjs",
+    "models:female-catalog": "node scripts/import-female-atlas.mjs",
+    "models:male-details": "node scripts/import-male-details.mjs",
     "wiki:build": "node scripts/build-anchors.mjs && node scripts/build-wiki.mjs",
     "test:production": "node scripts/smoke-production.mjs",
     "test:visual": "node scripts/capture-workspace.mjs",
@@ -34,6 +36,7 @@
     "three": "^0.185.1"
   },
   "devDependencies": {
+    "@gltf-transform/extensions": "^4.5.0",
     "@playwright/test": "^1.63.0",
     "@types/node": "^26.4.1",
     "@types/react": "^19.2.18",
@@ -41,6 +44,7 @@
     "@types/three": "^0.185.4",
     "@vitejs/plugin-react": "^6.1.1",
     "concurrently": "^10.0.5",
+    "draco3dgltf": "^1.5.7",
     "prettier": "^3.9.6",
     "typescript": "^7.0.2",
     "vite": "^8.2.2"

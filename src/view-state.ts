@@ -1,5 +1,6 @@
 import type { Layer } from "./anatomy";
 import type { Layers } from "./types";
+import { dissectionLayers, quantizeDepth, stageDepth } from "./dissection.ts";
 export type CameraPose = {
   position: [number, number, number];
   target: [number, number, number];
@@ -16,11 +17,13 @@ export type ViewState = {
   anatomyRegion: "whole" | "head" | "upper-body" | "lower-body" | "upper-limb" | "lower-limb" | "chest" | "abdomen" | "pelvis";
   stage: number;
   dissection: number;
+  displayMode: "dissection" | "layers";
   layers: Layers;
   alpha: Record<Layer, number>;
   markers: "hidden" | "selected" | "filtered";
   labels: boolean;
   selection: Selection | null;
+  detail: { id: string; name: string; ids: string[]; layers: Layers } | null;
   comparison: ({ pointId: string } & Selection) | null;
   isolated: boolean;
   cutaway: number;
@@ -37,7 +40,6 @@ export type ViewState = {
   };
 };
 const keys: Layer[] = ["skin", "muscle", "bone", "organ", "vessel", "lymph", "nerve"];
-const stageDepth = [0, 20, 72, 68, 82, 90, 96] as const;
 const singleLayer = (index: number) =>
   Object.fromEntries(keys.map((layer, layerIndex) => [layer, layerIndex === index])) as Layers;
 export function initialView(pointId = ""): ViewState {
@@ -48,6 +50,7 @@ export function initialView(pointId = ""): ViewState {
     anatomyRegion: "whole",
     stage: 0,
     dissection: 0,
+    displayMode: "dissection",
     layers: {
       skin: true,
       muscle: false,
@@ -61,6 +64,7 @@ export function initialView(pointId = ""): ViewState {
     markers: "selected",
     labels: false,
     selection: null,
+    detail: null,
     comparison: null,
     isolated: false,
     cutaway: 0,
@@ -88,8 +92,10 @@ export type ViewAction =
   | { type: "markers"; value: ViewState["markers"] }
   | { type: "labels"; value: boolean }
   | { type: "target"; value: ViewState["selectionTarget"] }
-  | { type: "select"; selection: Selection; layer?: Layer; region?: ViewState["anatomyRegion"] }
-  | { type: "compare"; name: string; ids: string[] }
+  | { type: "select"; selection: Selection; layer?: Layer; region?: ViewState["anatomyRegion"]; detail?: NonNullable<ViewState["detail"]> }
+  | { type: "detail"; detail: NonNullable<ViewState["detail"]> }
+  | { type: "detail-close" }
+  | { type: "compare"; name: string; ids: string[]; layers?: Layers }
   | { type: "isolate" }
   | { type: "clear-selection" }
   | { type: "cutaway"; value: number }
@@ -102,9 +108,9 @@ export type ViewAction =
 export function viewReducer(s: ViewState, a: ViewAction): ViewState {
   switch (a.type) {
     case "sex":
-      return a.value === s.sex ? s : { ...s, sex: a.value, stage: 0, dissection: 0, layers: singleLayer(0), selection: null, comparison: null, isolated: false, cutaway: 0 };
+      return a.value === s.sex ? s : { ...s, sex: a.value, stage: 0, dissection: 0, displayMode: "dissection", anatomyRegion: "whole", layers: singleLayer(0), alpha: initialView().alpha, selection: null, detail: null, comparison: null, isolated: false, cutaway: 0 };
     case "anatomy-region":
-      return a.value === s.anatomyRegion ? s : { ...s, anatomyRegion: a.value, selection: null, comparison: null, isolated: false };
+      return a.value === s.anatomyRegion ? s : { ...s, anatomyRegion: a.value, selection: null, detail: null, comparison: null, isolated: false };
     case "point":
       return a.id === s.pointId
         ? s
@@ -112,14 +118,17 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
             ...s,
             pointId: a.id,
             selection: null,
+            detail: null,
             comparison: null,
             isolated: false,
           };
     case "stage":
       return {
         ...s,
+        detail: null,
         stage: a.index,
         dissection: stageDepth[a.index],
+        displayMode: "layers",
         layers: singleLayer(a.index),
         selection: null,
         comparison: null,
@@ -128,20 +137,14 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         selectionTarget: "visible",
       };
     case "dissection": {
-      const depth = Math.max(0, Math.min(100, a.value));
-      const layers: Layers = {
-        skin: depth < 16,
-        muscle: depth >= 5 && depth < 76,
-        bone: depth >= 34,
-        organ: depth >= 40,
-        vessel: depth >= 52,
-        lymph: depth >= 58,
-        nerve: depth >= 64,
-      };
-      const stage = depth < 12 ? 0 : depth < 66 ? 1 : depth < 78 ? 2 : depth < 86 ? 3 : depth < 89 ? 4 : depth < 94 ? 5 : 6;
+      const depth = quantizeDepth(a.value);
+      const layers = dissectionLayers(depth);
+      const stage = depth < 8 ? 0 : depth < 38 ? 1 : depth < 56 ? 2 : depth < 70 ? 3 : depth < 82 ? 4 : depth < 90 ? 5 : 6;
       return {
         ...s,
         dissection: depth,
+        displayMode: "dissection",
+        detail: null,
         stage,
         layers,
         selection: null,
@@ -154,7 +157,9 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
     case "layers":
       return {
         ...s,
+        detail: null,
         layers: a.layers,
+        displayMode: "layers",
         selection: null,
         comparison: null,
         isolated: false,
@@ -178,12 +183,15 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       };
     case "select": {
       const stage = a.layer ? keys.indexOf(a.layer) : -1;
+      const scope = a.detail || s.detail;
+      const detail = scope && a.selection.ids.every(id => scope.ids.includes(id)) ? scope : null;
       return {
         ...s,
         ...(stage >= 0
           ? {
               stage,
               dissection: stageDepth[stage],
+              displayMode: "layers" as const,
               layers: singleLayer(stage),
               comparison: null,
               cutaway: 0,
@@ -192,15 +200,24 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
             }
           : {}),
         selection: a.selection,
-        isolated: false,
+        detail,
+        isolated: Boolean(detail),
       };
     }
+    case "detail": {
+      const stage = a.detail.layers.organ ? 3 : Math.max(0, keys.findIndex(layer => a.detail.layers[layer]));
+      return { ...s, detail: a.detail, selection: { kind: "bundle", ids: a.detail.ids, name: a.detail.name }, layers: a.detail.layers, stage, dissection: stageDepth[stage], displayMode: "layers", anatomyRegion: "whole", isolated: false, cutaway: 0, comparison: null, selectionTarget: "visible" };
+    }
+    case "detail-close":
+      return { ...s, detail: null, selection: null, isolated: false, cutaway: 0, layers: s.detail?.layers || s.layers };
     case "compare":
       return {
         ...s,
+        detail: null,
         stage: 0,
         dissection: 0,
-        layers: {
+        displayMode: "layers",
+        layers: a.layers || {
           skin: true,
           muscle: false,
           bone: false,
@@ -224,7 +241,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
     case "isolate":
       return s.selection?.ids.length ? { ...s, isolated: !s.isolated } : s;
     case "clear-selection":
-      return { ...s, selection: null, isolated: false };
+      return { ...s, selection: null, detail: null, isolated: false };
     case "cutaway":
       return { ...s, cutaway: Math.max(0, Math.min(1, a.value)) };
     case "camera":
@@ -245,7 +262,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
 export function restoreView(
   raw: string | null,
   pointIds: string[],
-  assets: { id: string; layer: string }[],
+  assets: { id: string; layer: string; sex?: string }[],
 ): ViewState {
   const base = initialView();
   try {
@@ -270,6 +287,10 @@ export function restoreView(
       return base;
     if (!Number.isFinite(s.dissection) || s.dissection < 0 || s.dissection > 100)
       return base;
+    s.displayMode ??= "layers";
+    s.detail ??= null;
+    if (!["dissection", "layers"].includes(s.displayMode)) return base;
+    s.dissection = quantizeDepth(s.dissection);
     if (
       !keys.every(
         (k) =>
@@ -297,7 +318,7 @@ export function restoreView(
         Array.isArray(x.ids) &&
         x.ids.length > 0 &&
         x.ids.every((id) =>
-          assets.some((a) => a.id === id && s.layers[a.layer as Layer]),
+          assets.some((a) => a.id === id && (!a.sex || a.sex === s.sex) && s.layers[a.layer as Layer]),
         ));
     if (
       !validSelection(s.selection) ||
@@ -306,6 +327,7 @@ export function restoreView(
       (s.isolated && !s.selection)
     )
       return base;
+    if (s.detail && (!s.detail.ids?.length || typeof s.detail.name !== "string" || typeof s.detail.id !== "string" || !keys.every(key => typeof s.detail!.layers?.[key] === "boolean") || !s.detail.ids.every(id => assets.some(a => a.id === id && (!a.sex || a.sex === s.sex))))) return base;
     if (
       s.camera &&
       ![s.camera.position, s.camera.target].every(

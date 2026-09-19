@@ -9,7 +9,7 @@ try {
  page.on('request',r=>requests.push(r.url()));page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400) failures.push(`${r.status()} ${r.url()}`)});
  await page.goto(origin+'#wiki');
  await page.getByRole('heading',{name:'위키에 물어보기'}).waitFor();
- assert.equal(requests.filter(u=>u.endsWith('.glb')||/\/assets\/Atlas-/.test(u)).length,0);
+ assert.equal(requests.filter(u=>u.endsWith('.glb')||u.endsWith('.bin.gz')||/\/assets\/Atlas-/.test(u)).length,0);
  await page.getByLabel('위키 질문').fill('내관과 외관');await page.getByRole('button',{name:'질문 보내기'}).click();
  await page.locator('.answer').waitFor();assert.match(await page.locator('.answer').innerText(),/PC6/);assert.match(await page.locator('.answer').innerText(),/TE5/);
  assert.equal(requests.filter(u=>u.includes('/api/')).length,0);
@@ -22,12 +22,25 @@ try {
  await page.getByRole('button',{name:'경혈 찾기',exact:true}).click();assert.equal(await page.locator('.point-item').count(),409);
  await page.getByLabel('모델 부위 선택').selectOption('발목·발');await page.getByRole('button',{name:/필터 결과 .*모델에서 보기/}).click();
  await page.screenshot({path:'docs/acupoint-expansion/pages-desktop.png'});
+ await page.locator('.featured-anatomy > button').filter({has:page.getByText('심장',{exact:true})}).click();
+ await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
+ await page.waitForFunction(()=>document.querySelector('canvas')?.dataset.visibleStructureIds?.split(',').length===83);
+ assert.ok(requests.some(u=>u.includes('/gyeol-atlas/models/male-detail/organs.bin.gz')));
+ await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
+ await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
+ await page.waitForFunction(()=>document.querySelector('canvas')?.dataset.femaleAtlasParts==='1220');
+ assert.equal(new Set(requests.filter(u=>/\/female\/.*\.bin\.gz$/.test(u))).size,15);
+ await page.locator('.featured-anatomy > button').filter({has:page.getByText('뇌',{exact:true})}).click();
+ await page.waitForFunction(()=>document.querySelector('canvas')?.dataset.visibleStructureIds?.split(',').length===283);
+ await page.screenshot({path:'docs/anatomy-alignment/pages-female-brain.png'});
+ await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();
+ await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
  await page.setViewportSize({width:390,height:844});
  await page.getByRole('button',{name:'경혈 찾기',exact:true}).click();
  const box=await page.locator('.floating-dock').boundingBox(),canvas=await page.locator('canvas').boundingBox();assert.ok(box.height<canvas.height*.45);
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  await page.screenshot({path:'docs/acupoint-expansion/pages-mobile.png'});
  assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
- const result={origin,checkedAt:new Date().toISOString(),points:409,staticSearch:true,initialWikiModelRequests:0,errors,failures};
+ const result={origin,checkedAt:new Date().toISOString(),points:409,staticSearch:true,initialWikiModelRequests:0,femaleParts:1220,femaleBrainParts:283,maleHeartParts:83,errors,failures};
  await fs.writeFile('docs/acupoint-expansion/pages-verification.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
 } finally {await browser.close();}

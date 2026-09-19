@@ -20,7 +20,7 @@ try {
   await page.goto(origin + "/#wiki");
   await page.getByRole("heading", { name: "위키에 물어보기" }).waitFor();
   assert.equal(
-    requests.filter((r) => r.endsWith(".glb") || /\/assets\/Atlas-/.test(r))
+    requests.filter((r) => r.endsWith(".glb") || r.endsWith(".bin.gz") || /\/assets\/Atlas-/.test(r))
       .length,
     0,
     "Wiki must not fetch the 3D chunk or models",
@@ -39,7 +39,8 @@ try {
     await page.getByRole("button", { name, exact: true }).click();
     await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
   }
-  assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, 16);
+  assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, 9, "Female mode must not load legacy male/female overlay GLBs");
+  assert.equal(new Set(requests.filter((r) => /\/female\/.*\.bin\.gz$/.test(r))).size, 15);
   await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();
   await page.goto(origin+'/#atlas/KI3');
   await page.locator('.point-summary').click();
@@ -81,7 +82,7 @@ try {
   await page.locator('.wiki-sidebar').getByRole('link',{name:'원혈·모혈·오수혈·낙혈의 구분',exact:true}).waitFor();
   assert.deepEqual(errors, []);
   console.log(
-    "Production smoke passed: static wiki, lazy 3D chunk, all 16 male/female GLBs, lymph, bundle and wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
+    "Production smoke passed: static wiki, lazy 3D chunk, 9 male GLBs and 15 independent female chunks, lymph, bundle and wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
   );
 } finally {
   await browser?.close();

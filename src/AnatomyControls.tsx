@@ -1,5 +1,5 @@
 import { useState, type Dispatch } from "react";
-import { anatomyRegionNames, layerKeys, layerNames, stages, structuresForSex } from "./anatomy";
+import { anatomyRegionNames, detailForStructure, layerKeys, layerNames, stages, structuresForSex } from "./anatomy";
 import type { ViewState, ViewAction } from "./view-state";
 export default function AnatomyControls({
   mode,
@@ -39,7 +39,7 @@ export default function AnatomyControls({
     <label>표시 부위<select aria-label="해부 표시 부위" value={state.anatomyRegion} onChange={e => { const value = e.target.value as ViewState["anatomyRegion"]; dispatch({ type: "anatomy-region", value }); onRegion(value); }}>
       {Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}
     </select></label>
-    {state.sex === "female" && <p className="control-hint">여성 고유 구조 264개와 성별 공통 전신 구조를 함께 표시합니다. 공통 구조는 여성 전용 원본이 아닌 보완 참조입니다.</p>}
+    {state.sex === "female" && <p className="control-hint">여성 HRA 전신 표면·기관 참조입니다. 하체 근육은 다른 여성 기증자 자료이고, 회청색 보완 골격 180개는 남성 유래 정합 참조입니다. 위·상체 근육·일부 말초신경은 원본에 없어 표시하지 않습니다. 여성 표면의 경혈 좌표는 검수 전이므로 표식을 숨깁니다.</p>}
   </div>;
   return mode === "layers" ? (
     <div className="layer-settings">
@@ -187,6 +187,7 @@ export default function AnatomyControls({
                     dispatch({
                       type: "select",
                       layer: l,
+                      detail: detailForStructure(s),
                       region: s.bodyRegion && s.bodyRegion !== "whole" ? s.bodyRegion as ViewState["anatomyRegion"] : undefined,
                       selection: {
                         kind: "structure",
@@ -198,7 +199,7 @@ export default function AnatomyControls({
                 >
                   <strong>{s.label || s.name}</strong>
                   <small>
-                    {s.name}{s.latin ? ` · ${s.latin}` : ""} · {s.id}{s.fmaId && s.fmaId !== s.id ? ` · ${s.fmaId}` : ""} · {s.sex === "female" ? "여성 고유 참조" : state.sex === "female" ? "성별 공통 보완" : "남성 참조"}
+                    {s.name}{s.latin ? ` · ${s.latin}` : ""} · {s.id}{s.fmaId && s.fmaId !== s.id ? ` · ${s.fmaId}` : ""} · {s.source || "BodyParts3D 남성 참조"}
                   </small>
                   {s.hierarchy?.length ? <small className="structure-path">{s.hierarchy.join(" › ")}</small> : null}
                 </button>

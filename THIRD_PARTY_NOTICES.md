@@ -39,7 +39,21 @@ The female cardiovascular, digestive, integumentary, lymphatic, renal, reproduct
 - Packaging source: https://github.com/Nurkan1/Anatria-3D
 - Pinned source commit, exact asset URLs and SHA-256 hashes: `data/catalog/sex-lymph-models.json`
 
-GYEOL modification: system exports are displayed as a sex-specific, non-diagnostic reference; materials are replaced at runtime, named nodes are connected to the searchable catalogue, and spatial/body-region visibility controls are added. The female source contains 264 named structures and does not contain matching full muscular or nervous systems. Female mode therefore combines those sex-specific structures with the separately attributed shared whole-body reference; shared structures are labeled as such rather than claimed as female-specific anatomy. The two sources are visually aligned, not clinically registered.
+The legacy 264-part GLB exports remain attributed but are no longer rendered in female mode. The previous male whole-body overlay has been removed from female rendering.
+
+### Independent packed female atlas and male organ details
+
+`public/models/female/` and `public/models/male-detail/` are adapted from [slorksmo/Human-Atlas](https://github.com/slorksmo/Human-Atlas/tree/5bb5713aab18d7fe9380c3339eb09f173491ea06), pinned commit `5bb5713aab18d7fe9380c3339eb09f173491ea06`. The upstream full attribution is preserved in `public/models/female/ATTRIBUTION.md`; its descriptions of upstream defaults do not describe GYEOL's defaults.
+
+- Female native anatomy: Kristen Browne and Heidi Schlehlein, Human Reference Atlas / HuBMAP, *3D Reference Organ Set for Female*, v1.10, plus eight pelvic structures from v1.5. CC BY 4.0, based on the NLM Visible Human Dataset. [Reference library](https://humanatlas.io/3d-reference-library).
+- Female donor lower-limb muscles: Thor E. Andreassen et al., *Three Dimensional Lower Extremity Musculoskeletal Geometry of the Visible Human Female and Male*, Scientific Data 10, 34 (2023), [doi:10.1038/s41597-022-01905-2](https://doi.org/10.1038/s41597-022-01905-2), CC BY 4.0. A separate donor, not the HRA body's own muscles.
+- 180 male-derived supplementary bones and 423 male organ-detail meshes: **BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International**. BodyParts3D 4.0, `isa_BP3D_4.0_obj_99.zip`. [Current license](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+Upstream adaptations include coordinate conversion, transform baking, mesh simplification, quantized normals, and documented regional fitting of donor muscle and borrowed bones. GYEOL preserves the female geometry and its coordinates, assigns display layers, links the exact source organ memberships, hides pregnancy references unless selected, suppresses overlapping donor rectus muscles by default, and labels borrowed bones in a distinct grey color. GYEOL enables donor muscles and borrowed bones in their corresponding layers. No male organs are added to the female body. Female stomach, upper-body muscles and some peripheral nerves are absent; female acupoint coordinates are unvalidated and hidden. This is not a complete or clinically registered atlas.
+
+Male details are repacked without modifying their source vertices and displayed independently, never superimposed on the differently sourced male overview. Source and local hashes are recorded in `data/catalog/female-atlas-source.json` and `data/catalog/male-detail-source.json`. Source anatomical English and identifiers are retained; Korean grouping is editorial and not expert-validated.
+
+The male Z-Anatomy overview overlay uses one uniform scale/translation fitted to four named neural centers; the measurements and 39 held-out vascular center differences are recorded in `data/catalog/male-registration.json`. Peeling does not change this transform. Residual local differences remain; this is not anatomical or clinical validation.
 
 ## WHO and clinical sources
 

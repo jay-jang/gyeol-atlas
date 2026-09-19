@@ -10,6 +10,24 @@ const parse = (s) =>
     points.map((p) => p.id),
     assets,
   );
+test("organ detail scopes selection, restores safely and resets on sex/layer/peel changes", () => {
+  const initial = initialView();
+  const layers = { ...initial.layers, skin: false, organ: true, vessel: true };
+  const detail = { id: "heart", name: "심장", ids: ["heart", "artery"], layers };
+  let s = viewReducer({ ...initial, selectionTarget: "skin" }, { type: "detail", detail });
+  assert.equal(s.displayMode, "layers"); assert.equal(s.selectionTarget, "visible");
+  assert.equal(s.stage, 3); assert.equal(s.dissection, 66);
+  s = viewReducer(s, { type: "select", layer: "vessel", selection: { kind: "structure", ids: ["artery"], name: "혈관" } });
+  assert.equal(s.detail.id, "heart"); assert.equal(s.isolated, true); assert.equal(s.layers.vessel, true); assert.equal(s.layers.organ, false);
+  const catalog = [{ id: "heart", layer: "organ", sex: "male" }, { id: "artery", layer: "vessel", sex: "male" }];
+  assert.deepEqual(restoreView(JSON.stringify(s), [], catalog).detail, detail);
+  for (const action of [{type:"sex",value:"female"},{type:"stage",index:2},{type:"dissection",value:50.5},{type:"detail-close"}]) {
+    const next = viewReducer(s, action); assert.equal(next.detail,null); assert.equal(next.selection,null); assert.equal(next.isolated,false);
+  }
+  assert.equal(restoreView(JSON.stringify({...s,sex:"female"}), [], catalog).detail, null);
+  const searched = viewReducer(initial, { type: "select", detail, layer: "vessel", selection: { kind: "structure", ids: ["artery"], name: "혈관" } });
+  assert.equal(searched.detail.id, "heart"); assert.equal(searched.isolated, true);
+});
 test("layer changes and presets leave no dangling isolated selection and preserve camera/markers", () => {
   let s = initialView("CV12");
   s = viewReducer(s, {
@@ -70,17 +88,22 @@ test("continuous dissection keeps overlapping systems and advances through muscl
   s = viewReducer(s, { type: "dissection", value: 50 });
   assert.equal(s.layers.muscle, true);
   assert.equal(s.layers.bone, true);
-  assert.equal(s.layers.organ, true);
+  assert.equal(s.layers.organ, false);
   s = viewReducer(s, { type: "dissection", value: 70 });
-  assert.equal(s.layers.muscle, true);
+  assert.equal(s.layers.muscle, false);
+  assert.equal(s.layers.organ, true);
   assert.equal(s.layers.vessel, true);
+  assert.equal(s.layers.nerve, false);
+  s = viewReducer(s, { type: "dissection", value: 90.24 });
+  assert.equal(s.dissection, 90);
+  assert.equal(s.layers.lymph, true);
   assert.equal(s.layers.nerve, true);
 });
 test("sex and anatomical region switches clear incompatible selections and expose lymph as its own layer", () => {
   let s = initialView("ST36");
   s = viewReducer(s, { type: "select", layer: "lymph", selection: { kind: "structure", ids: ["ZA_lymph_spleen"], name: "비장" } });
   assert.equal(s.stage, 5);
-  assert.equal(s.dissection, 90);
+  assert.equal(s.dissection, 88);
   assert.equal(s.layers.lymph, true);
   assert.equal(Object.values(s.layers).filter(Boolean).length, 1);
   s = viewReducer(s, { type: "anatomy-region", value: "upper-limb" });
@@ -103,7 +126,7 @@ test("selecting a structure switches to its anatomical layer while preserving th
     selection: { kind: "structure", ids: ["FMA7148"], name: "위" },
   });
   assert.equal(s.stage, 3);
-  assert.equal(s.dissection, 68);
+  assert.equal(s.dissection, 66);
   assert.deepEqual(s.layers, {
     skin: false,
     muscle: false,
@@ -121,7 +144,7 @@ test("selecting a structure switches to its anatomical layer while preserving th
     selection: { kind: "structure", ids: ["ZA_nerve_1"], name: "좌골신경" },
   });
   assert.equal(s.stage, 6);
-  assert.equal(s.dissection, 96);
+  assert.equal(s.dissection, 98);
   assert.equal(s.layers.organ, false);
   assert.equal(s.layers.nerve, true);
   s = viewReducer(s, { type: "target", value: "skin" });

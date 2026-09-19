@@ -13,7 +13,11 @@ STL 제공: [Kevin Mattheus Moerman의 BodyParts3D 미러](https://github.com/Ke
 
 ## NIH 여성 참조
 
-여성 심혈관·소화·피부·림프·비뇨·생식·골격 모델은 [NIH Human Reference Atlas](https://humanatlas.io/) 3D Reference Organ Library의 Visible Human Female 기반 united reference v1.5에서 유래하며 **CC BY 4.0**입니다. 이 원본의 여성 고유264개 구조에 별도 출처의 성별 공통 전신 구조를 보완해 7계통을 모두 볼 수 있습니다. 공통 보완은 검색 결과에 구분하고 여성 전용 원본이나 임상적으로 정합된 단일 모델이라고 주장하지 않습니다.
+여성은 [NIH Human Reference Atlas](https://humanatlas.io/3d-reference-library)의 Kristen Browne·Heidi Schlehlein 여성 참조 v1.10과 v1.5 골반 보완 자료를 사용합니다. 하체 근육은 [Andreassen 등(2023)](https://doi.org/10.1038/s41597-022-01905-2)의 다른 여성 기증자 자료이며, 회청색 보완 골격180개는 BodyParts3D 남성 유래입니다. 모두 **CC BY 4.0**입니다. 원본을 패키징한 [Human-Atlas](https://github.com/slorksmo/Human-Atlas)의 고정 커밋과 출처 고지를 보존했습니다.
+
+총1,220개 구조를 검색·선택할 수 있지만 위·상체 근육·일부 말초신경은 미수록입니다. 여성 체표에 남성 기관을 합성하지 않습니다. 여성 경혈 좌표는 검수 전이라 표식을 숨깁니다. 임상적으로 정합한 단일 기증자 모델이나 모든 기관을 수록한 모델이 아닙니다.
+
+남성 심장·간·폐의 독립 상세 모형423개는 BodyParts3D 4.0의 원본 하위 관계를 따릅니다. **BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International**. [현행 라이선스](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html). 전신 모형과 좌표계가 다르므로 별도 상세 보기로 표시합니다.
 
 변경: 정점 병합, 표면 단순화, 법선 재계산, 좌표축 변환, STL→GLB. 모델은 임상 정확도를 검증하지 않았습니다.
 
