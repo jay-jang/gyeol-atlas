@@ -47,6 +47,8 @@ http://127.0.0.1:3001 에서 웹과 API를 함께 제공합니다. 다른 호스
 
 ## 기술과 조사 문서
 
+개발 서버 실행 후 `npm run test:geometry`로 남녀 각각201개 박리 설정의 실제 장면 좌표 불변을 검사할 수 있습니다. 이 검사는 GPU 그리기를 멈춘 별도 검사 브라우저에서 수행하며 픽셀 화면·해부학적 정확도 검증을 대신하지 않습니다. [측정과 후속 조작 회귀](docs/anatomy-alignment/VERIFICATION.md).
+
 - [라이브러리 비교 분석](wiki/topics/library-comparison.md): Three.js/R3F, Babylon.js, vtk.js, model-viewer 및 검색·LLM 구성 선택
 - [LLM 위키 설계와 편집 흐름](docs/LLM_WIKI.md)
 - [좌표 방법론](wiki/topics/coordinate-method.md)

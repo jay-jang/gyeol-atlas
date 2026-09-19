@@ -178,7 +178,10 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return {
         ...s,
         selectionTarget: a.value,
-        ...(a.value === "skin" ? { stage: 0, dissection: 0 } : {}),
+        ...(a.value === "skin" ? {
+          stage: 0, dissection: 0, displayMode: "layers" as const,
+          detail: null, selection: null, comparison: null, isolated: false,
+        } : {}),
         layers: a.value === "skin" ? { ...s.layers, skin: true } : s.layers,
       };
     case "select": {

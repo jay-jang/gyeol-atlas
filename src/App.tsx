@@ -413,7 +413,9 @@ function AtlasPage({
     kind: "restore",
     tick: 0,
   });
-  const [loaded, setLoaded] = useState<Layer[]>([]);
+  const sourceKey = state.sex === "female" ? "female" :
+    [...(state.selection?.ids || []), ...(state.detail?.ids || [])].some(id => id.startsWith("BP4_")) ? "male-detail" : "male";
+  const [loaded, setLoaded] = useState<{ source: string | null; layers: Layer[] }>({ source: null, layers: [] });
   const [loadingReference, setLoadingReference] = useState(false);
   const [comparisonNotice, setComparisonNotice] = useState("");
   const { query, region, meridian, concept, onlySaved, bodyRegion, catalogue } = state.filters;
@@ -513,13 +515,14 @@ function AtlasPage({
     camera("comparison");
   };
   const onReady = useCallback(
-    (l: Layer) => setLoaded((v) => (v.includes(l) ? v : [...v, l])),
-    [],
+    (l: Layer) => setLoaded((v) => v.source !== sourceKey
+      ? { source: sourceKey, layers: [l] }
+      : v.layers.includes(l) ? v : { ...v, layers: [...v.layers, l] }),
+    [sourceKey],
   );
-  useEffect(() => setLoaded([]), [state.sex]);
-  const ready = layerKeys
+  const ready = loaded.source === sourceKey && layerKeys
     .filter((l) => state.layers[l])
-    .every((l) => loaded.includes(l)) && !loadingReference;
+    .every((l) => loaded.layers.includes(l)) && !loadingReference;
   const selectionKey = state.selection?.ids.join("|") || "";
   const focusedSelection = useRef(selectionKey);
   useEffect(() => {

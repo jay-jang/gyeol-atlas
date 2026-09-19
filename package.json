@@ -16,6 +16,7 @@
     "wiki:build": "node scripts/build-anchors.mjs && node scripts/build-wiki.mjs",
     "test:production": "node scripts/smoke-production.mjs",
     "test:visual": "node scripts/capture-workspace.mjs",
+    "test:geometry": "node scripts/audit-dissection-geometry.mjs",
     "check": "npm test && npm run build && npm run test:e2e && npm run test:production"
   },
   "keywords": [],

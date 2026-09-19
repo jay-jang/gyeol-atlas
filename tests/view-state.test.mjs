@@ -21,12 +21,15 @@ test("organ detail scopes selection, restores safely and resets on sex/layer/pee
   assert.equal(s.detail.id, "heart"); assert.equal(s.isolated, true); assert.equal(s.layers.vessel, true); assert.equal(s.layers.organ, false);
   const catalog = [{ id: "heart", layer: "organ", sex: "male" }, { id: "artery", layer: "vessel", sex: "male" }];
   assert.deepEqual(restoreView(JSON.stringify(s), [], catalog).detail, detail);
-  for (const action of [{type:"sex",value:"female"},{type:"stage",index:2},{type:"dissection",value:50.5},{type:"detail-close"}]) {
+  for (const action of [{type:"sex",value:"female"},{type:"stage",index:2},{type:"dissection",value:50.5},{type:"detail-close"},{type:"target",value:"skin"}]) {
     const next = viewReducer(s, action); assert.equal(next.detail,null); assert.equal(next.selection,null); assert.equal(next.isolated,false);
   }
   assert.equal(restoreView(JSON.stringify({...s,sex:"female"}), [], catalog).detail, null);
   const searched = viewReducer(initial, { type: "select", detail, layer: "vessel", selection: { kind: "structure", ids: ["artery"], name: "혈관" } });
   assert.equal(searched.detail.id, "heart"); assert.equal(searched.isolated, true);
+  const surface = viewReducer(searched, { type: "target", value: "skin" });
+  assert.equal(surface.selectionTarget, "skin"); assert.equal(surface.layers.skin, true); assert.equal(surface.displayMode, "layers");
+  assert.equal(surface.detail, null); assert.equal(surface.selection, null); assert.equal(surface.isolated, false);
 });
 test("layer changes and presets leave no dangling isolated selection and preserve camera/markers", () => {
   let s = initialView("CV12");

@@ -96,3 +96,21 @@ test('a failed female geometry chunk shows a recoverable error and retry loads t
   await expect.poll(async () => Number(await page.locator('canvas').getAttribute('data-visible-skin'))).toBe(20);
   await expect(page.locator('canvas')).toHaveAttribute('data-model-sex', 'female');
 });
+
+test('surface targeting exits organ detail and isolation for both reference bodies', async ({ page }) => {
+  test.setTimeout(120000);
+  await page.goto('/'); await ready(page);
+  for (const label of ['남성','여성']) {
+    await page.locator('.explore-sidebar').getByRole('button', { name: label, exact: true }).click(); await ready(page);
+    await page.locator('.featured-anatomy > button').filter({has:page.getByText('심장',{exact:true})}).click(); await ready(page);
+    await page.locator('.organ-detail-parts summary').click();
+    await page.locator('.organ-detail-parts button').first().click(); await ready(page);
+    expect((await snapshot(page)).isolated).toBe(true);
+    await openTool(page,'레이어 조절');
+    await page.getByLabel('클릭 선택 대상').selectOption('skin'); await ready(page);
+    const state = await snapshot(page);
+    expect(state.detail).toBe(null); expect(state.selection).toBe(null); expect(state.isolated).toBe(false);
+    await expect.poll(async()=>Number(await page.locator('canvas').getAttribute('data-visible-skin'))).toBe(label==='여성'?20:1);
+    await closeTool(page);
+  }
+});

@@ -2,6 +2,7 @@ import {test,expect} from '@playwright/test';
 import {ready,openTool,choosePoint,compare,closeTool,snapshot} from './helpers';
 import assets from '../../scripts/model-inputs.json' with {type:'json'};
 test('continuous dissection peels individual muscle meshes and exposes deep systems',async({page})=>{
+ test.setTimeout(180000); // This scenario eventually loads all seven systems under software WebGL.
  await page.goto('/');await ready(page);
  await expect(page.getByRole('heading',{name:'해부 깊이 탐색'})).toBeVisible();
  const depth=page.getByLabel('연속 해부 박리 깊이');await depth.fill('20');await ready(page);const superficial=Number(await page.locator('canvas').getAttribute('data-visible-muscle'));expect(superficial).toBeGreaterThan(400);
