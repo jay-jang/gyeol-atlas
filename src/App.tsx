@@ -568,11 +568,29 @@ function AtlasPage({
     setPanel(null);
     camera("fit");
   };
+  const shiftDissection = (amount: number) => {
+    const next = Math.max(0, Math.min(100, state.dissection + amount));
+    if (next !== state.dissection)
+      dispatch({ type: "dissection", value: next });
+  };
   return (
     <main
       className="anatomy-workspace"
       aria-label="인체 구조 탐색"
       data-panel={panel || "none"}
+      onWheelCapture={(event) => {
+        if (!event.altKey || Math.abs(event.deltaY) < 2) return;
+        event.preventDefault();
+        event.stopPropagation();
+        shiftDissection(event.deltaY > 0 ? 2 : -2);
+      }}
+      onKeyDownCapture={(event) => {
+        if (!event.altKey || !["ArrowUp", "ArrowDown"].includes(event.key)) return;
+        event.preventDefault();
+        event.stopPropagation();
+        const step = event.shiftKey ? 10 : 2;
+        shiftDissection(event.key === "ArrowDown" ? step : -step);
+      }}
     >
       <section className="viewer-panel" aria-label="3D 해부도">
         <Suspense
@@ -668,7 +686,7 @@ function AtlasPage({
               </span>
             ))}
           </div>
-          <p>101단계로 체표와 437개 근육 메쉬를 표면 근접도 순서로 점진 박리합니다.</p>
+          <p>슬라이더·이 영역 휠 · 모델 위 Alt/⌥+휠 또는 Alt/⌥+↑↓</p>
         </section>
         <div className="explore-section-label">
           <span>계통 빠른 보기</span>
@@ -1008,7 +1026,7 @@ function AtlasPage({
               <div className="viewer-help">
                 <h2>관찰에 집중하세요</h2>
                 <p>
-                  모델을 클릭한 뒤 W/S로 전진·후진, A/D로 좌우, Q/E로 아래·위로 이동합니다. Shift를 누르면 빠르게 이동합니다. 방향키도 사용할 수 있습니다. 드래그로 회전, 휠·핀치로 확대·축소합니다. 두 손가락 또는 우클릭
+                  모델을 클릭한 뒤 W/S로 전진·후진, A/D로 좌우, Q/E로 아래·위로 이동합니다. Shift를 누르면 빠르게 이동합니다. 방향키도 사용할 수 있습니다. 드래그로 회전, 일반 휠·핀치로 확대·축소합니다. Alt/Option을 누른 채 휠을 돌리거나 ↑/↓를 누르면 연속 박리 깊이를 조절합니다. 두 손가락 또는 우클릭
                   드래그로 이동하세요. 경혈과 구조는 목록에서도 선택할 수
                   있습니다.
                 </p>
@@ -1101,7 +1119,7 @@ function AtlasPage({
           ['move-left', '왼쪽으로 이동', '←'], ['move-backward', '뒤로 이동', '후진'], ['move-right', '오른쪽으로 이동', '→'],
         ] as const).map(([kind, label, text]) => <button key={kind} aria-label={label} title={label} onClick={() => camera(kind)}>{text}</button>)}</div>
       </div>
-      <div className="navigation-hint">모델 클릭 후 WASD 이동 · Q/E 높이 · 휠 확대/축소</div>
+      <div className="navigation-hint">WASD 이동 · 휠 확대/축소 · Alt/⌥+휠 박리</div>
       <div className="view-tools">
         <button aria-label="확대" onClick={() => camera("zoomIn")}>
           <Plus size={18} /><span className="view-action-label">확대</span>

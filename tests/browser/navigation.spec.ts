@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { ready, snapshot } from './helpers';
-test('game movement, wheel zoom, focus safety and reset work on the actual canvas', async ({page}) => {
+test('movement, wheel zoom and modifier-wheel dissection work on the actual canvas', async ({page}) => {
   await page.goto('/#atlas/ST36'); await ready(page);
   const canvas=page.locator('canvas'); await canvas.focus();
   const before=(await snapshot(page)).camera;
@@ -16,7 +16,19 @@ test('game movement, wheel zoom, focus safety and reset work on the actual canva
   const distance=(p:any)=>Math.hypot(...p.position.map((x:number,i:number)=>x-p.target[i]));
   const d=distance((await snapshot(page)).camera);
   await page.mouse.wheel(0,-400); await expect.poll(async()=>distance((await snapshot(page)).camera)).toBeLessThan(d*.9);
+  expect((await snapshot(page)).dissection).toBe(0);
   const zoomed=distance((await snapshot(page)).camera); await page.mouse.wheel(0,600); await expect.poll(async()=>distance((await snapshot(page)).camera)).toBeGreaterThan(zoomed*1.1);
+  const beforePeel=await snapshot(page);await page.keyboard.down('Alt');await page.mouse.wheel(0,120);await page.keyboard.up('Alt');
+  await expect.poll(async()=>(await snapshot(page)).dissection).toBe(2);
+  expect(distance((await snapshot(page)).camera)).toBeCloseTo(distance(beforePeel.camera),5);
+  await canvas.focus();await page.keyboard.down('Alt');await page.keyboard.press('ArrowDown');await page.keyboard.up('Alt');
+  await expect.poll(async()=>(await snapshot(page)).dissection).toBe(4);
+  await page.keyboard.down('Alt');await page.keyboard.press('ArrowUp');await page.keyboard.up('Alt');
+  await expect.poll(async()=>(await snapshot(page)).dissection).toBe(2);
+  const depth=page.getByLabel('연속 해부 박리 깊이');await depth.hover();const beforeCardWheel=distance((await snapshot(page)).camera);await page.mouse.wheel(0,100);
+  await expect.poll(async()=>(await snapshot(page)).dissection).toBe(5);expect(distance((await snapshot(page)).camera)).toBeCloseTo(beforeCardWheel,5);
+  await canvas.focus();await page.keyboard.down('Alt');await page.keyboard.down('Shift');await page.keyboard.press('ArrowDown');await page.keyboard.up('Shift');await page.keyboard.up('Alt');
+  await expect.poll(async()=>(await snapshot(page)).dissection).toBe(15);
   await page.getByRole('button',{name:'경혈 찾기',exact:true}).click();
   const input=page.locator('input[placeholder="이름, 코드, 해부 구조 검색"]'); await input.fill('wasd');
   const stable=(await snapshot(page)).camera;await page.waitForTimeout(300);expect((await snapshot(page)).camera).toEqual(stable);
