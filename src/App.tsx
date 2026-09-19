@@ -623,6 +623,7 @@ function AtlasPage({
               if (item)
                 dispatch({
                   type: "select",
+                  layer: item.layer,
                   selection: {
                     kind: "structure",
                     ids: [id],

@@ -35,6 +35,9 @@ export type ViewState = {
   };
 };
 const keys: Layer[] = ["skin", "muscle", "bone", "organ", "vessel", "nerve"];
+const stageDepth = [0, 20, 72, 68, 82, 96] as const;
+const singleLayer = (index: number) =>
+  Object.fromEntries(keys.map((layer, layerIndex) => [layer, layerIndex === index])) as Layers;
 export function initialView(pointId = ""): ViewState {
   return {
     version: 3,
@@ -105,10 +108,8 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return {
         ...s,
         stage: a.index,
-        dissection: [0, 20, 72, 68, 82, 96][a.index],
-        layers: Object.fromEntries(
-          keys.map((l, i) => [l, i === a.index]),
-        ) as Layers,
+        dissection: stageDepth[a.index],
+        layers: singleLayer(a.index),
         selection: null,
         comparison: null,
         isolated: false,
@@ -157,14 +158,30 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
     case "labels":
       return { ...s, labels: a.value };
     case "target":
-      return { ...s, selectionTarget: a.value };
-    case "select":
       return {
         ...s,
-        layers: a.layer ? { ...s.layers, [a.layer]: true } : s.layers,
+        selectionTarget: a.value,
+        ...(a.value === "skin" ? { stage: 0, dissection: 0 } : {}),
+        layers: a.value === "skin" ? { ...s.layers, skin: true } : s.layers,
+      };
+    case "select": {
+      const stage = a.layer ? keys.indexOf(a.layer) : -1;
+      return {
+        ...s,
+        ...(stage >= 0
+          ? {
+              stage,
+              dissection: stageDepth[stage],
+              layers: singleLayer(stage),
+              comparison: null,
+              cutaway: 0,
+              selectionTarget: "visible" as const,
+            }
+          : {}),
         selection: a.selection,
         isolated: false,
       };
+    }
     case "compare":
       return {
         ...s,

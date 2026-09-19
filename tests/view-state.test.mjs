@@ -76,6 +76,43 @@ test("continuous dissection keeps overlapping systems and advances through muscl
   assert.equal(s.layers.vessel, true);
   assert.equal(s.layers.nerve, true);
 });
+test("selecting a structure switches to its anatomical layer while preserving the camera and markers", () => {
+  const camera = { position: [0, 1, 0.5], target: [0, 1, 0] };
+  let s = initialView();
+  s = viewReducer(s, { type: "camera", value: camera });
+  s = viewReducer(s, { type: "markers", value: "filtered" });
+  s = viewReducer(s, {
+    type: "select",
+    layer: "organ",
+    selection: { kind: "structure", ids: ["FMA7148"], name: "위" },
+  });
+  assert.equal(s.stage, 3);
+  assert.equal(s.dissection, 68);
+  assert.deepEqual(s.layers, {
+    skin: false,
+    muscle: false,
+    bone: false,
+    organ: true,
+    vessel: false,
+    nerve: false,
+  });
+  assert.deepEqual(s.camera, camera);
+  assert.equal(s.markers, "filtered");
+  s = viewReducer(s, {
+    type: "select",
+    layer: "nerve",
+    selection: { kind: "structure", ids: ["ZA_nerve_1"], name: "좌골신경" },
+  });
+  assert.equal(s.stage, 5);
+  assert.equal(s.dissection, 96);
+  assert.equal(s.layers.organ, false);
+  assert.equal(s.layers.nerve, true);
+  s = viewReducer(s, { type: "target", value: "skin" });
+  assert.equal(s.stage, 0);
+  assert.equal(s.dissection, 0);
+  assert.equal(s.layers.skin, true);
+  assert.equal(s.layers.nerve, true);
+});
 test("versioned session restoration validates current catalog, ranges and malformed storage", () => {
   let s = initialView("KI3");
   s = viewReducer(s, {
