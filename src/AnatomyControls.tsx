@@ -1,20 +1,22 @@
 import { useState, type Dispatch } from "react";
-import { layerKeys, layerNames, stages, structures } from "./anatomy";
+import { anatomyRegionNames, femaleAvailableLayers, layerKeys, layerNames, stages, structures } from "./anatomy";
 import type { ViewState, ViewAction } from "./view-state";
 export default function AnatomyControls({
   mode,
   state,
   dispatch,
   onFocus,
+  onRegion,
 }: {
   mode: "layers" | "structures";
   state: ViewState;
   dispatch: Dispatch<ViewAction>;
   onFocus: () => void;
+  onRegion: (region: ViewState["anatomyRegion"]) => void;
 }) {
   const [query, setQuery] = useState("");
   const normalizedQuery = query.toLowerCase().trim();
-  const results = structures.filter((s) =>
+  const results = structures.filter((s) => s.sex === state.sex &&
     `${s.label} ${s.name} ${s.id} ${s.fmaId || ""} ${s.latin || ""} ${(s.hierarchy || []).join(" ")}`
       .toLowerCase()
       .includes(normalizedQuery),
@@ -29,8 +31,19 @@ export default function AnatomyControls({
     return score(a) - score(b) || (a.label || a.name).localeCompare(b.label || b.name);
   });
   const visibleResults = results.slice(0, 240);
+  const scopeControls = <div className="anatomy-scope-controls">
+    <fieldset><legend>인체 기준</legend>
+      <button aria-pressed={state.sex === "male"} onClick={() => dispatch({ type: "sex", value: "male" })}>남성</button>
+      <button aria-pressed={state.sex === "female"} onClick={() => dispatch({ type: "sex", value: "female" })}>여성</button>
+    </fieldset>
+    <label>표시 부위<select aria-label="해부 표시 부위" value={state.anatomyRegion} onChange={e => { const value = e.target.value as ViewState["anatomyRegion"]; dispatch({ type: "anatomy-region", value }); onRegion(value); }}>
+      {Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}
+    </select></label>
+    {state.sex === "female" && <p className="control-hint">여성 참조 자료는 피부·골격·장기·혈관·림프를 제공합니다. 근육·신경은 원본에 없어 비활성화됩니다.</p>}
+  </div>;
   return mode === "layers" ? (
     <div className="layer-settings">
+      {scopeControls}
       <p className="control-hint">
         계통을 조합해 같은 부위를 비교하세요. 현재 시점은 유지됩니다.
       </p>
@@ -41,6 +54,7 @@ export default function AnatomyControls({
               type="checkbox"
               aria-label={`${layerNames[l]} 레이어`}
               checked={state.layers[l]}
+              disabled={state.sex === "female" && !femaleAvailableLayers.includes(l)}
               onChange={(e) =>
                 dispatch({
                   type: "layers",
@@ -141,6 +155,7 @@ export default function AnatomyControls({
     </div>
   ) : (
     <div className="structure-browser">
+      {scopeControls}
       <label className="search-box">
         <input
           aria-label="해부 구조 검색"
@@ -173,6 +188,7 @@ export default function AnatomyControls({
                     dispatch({
                       type: "select",
                       layer: l,
+                      region: s.bodyRegion && s.bodyRegion !== "whole" ? s.bodyRegion as ViewState["anatomyRegion"] : undefined,
                       selection: {
                         kind: "structure",
                         ids: [s.id],
@@ -183,7 +199,7 @@ export default function AnatomyControls({
                 >
                   <strong>{s.label || s.name}</strong>
                   <small>
-                    {s.name}{s.latin ? ` · ${s.latin}` : ""} · {s.id}{s.fmaId && s.fmaId !== s.id ? ` · ${s.fmaId}` : ""}
+                    {s.name}{s.latin ? ` · ${s.latin}` : ""} · {s.id}{s.fmaId && s.fmaId !== s.id ? ` · ${s.fmaId}` : ""} · {s.sex === "female" ? "여성 참조" : "남성 참조"}
                   </small>
                   {s.hierarchy?.length ? <small className="structure-path">{s.hierarchy.join(" › ")}</small> : null}
                 </button>

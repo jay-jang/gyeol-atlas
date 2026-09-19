@@ -73,7 +73,7 @@ function returnToAtlas() {
   const pointId = readView().pointId;
   return pointId ? `#atlas/${pointId}` : "#atlas";
 }
-import { layerKeys, layerNames, stages, type Layer } from "./anatomy";
+import { anatomyRegionNames, femaleAvailableLayers, layerKeys, layerNames, stages, type Layer } from "./anatomy";
 import conceptData from "../data/point-concepts.json";
 import concepts from "../data/concepts.json";
 const pointConcepts = conceptData as Record<
@@ -449,6 +449,12 @@ function AtlasPage({
     if (kind === "focus" && state.markers === "hidden")
       dispatch({ type: "markers", value: "selected" });
   };
+  const previousSex = useRef(state.sex);
+  useEffect(() => {
+    if (previousSex.current === state.sex) return;
+    previousSex.current = state.sex;
+    camera("fit");
+  }, [state.sex]);
   const closePanel = () => {
     setPanel(null);
     requestAnimationFrame(() => triggerRef.current?.focus());
@@ -483,6 +489,7 @@ function AtlasPage({
   const compare = () => {
     const c = pointConcepts[selected.id];
     if (!c?.organIds.length) return;
+    if (state.sex === "female") dispatch({ type: "sex", value: "male" });
     dispatch({
       type: "compare",
       name: c.traditionalName || selected.name,
@@ -495,6 +502,7 @@ function AtlasPage({
     (l: Layer) => setLoaded((v) => (v.includes(l) ? v : [...v, l])),
     [],
   );
+  useEffect(() => setLoaded([]), [state.sex]);
   const ready = layerKeys
     .filter((l) => state.layers[l])
     .every((l) => loaded.includes(l));
@@ -523,12 +531,18 @@ function AtlasPage({
       Object.fromEntries(
         layerKeys.map((layer) => [
           layer,
-          structures.filter((structure) => structure.layer === layer).length,
+          structures.filter((structure) => structure.layer === layer && structure.sex === state.sex).length,
         ]),
       ) as Record<Layer, number>,
-    [],
+    [state.sex],
   );
-  const featuredAnatomy = [
+  const featuredAnatomy = state.sex === "female" ? [
+    { name: "자궁", detail: "자궁몸통·자궁목", layer: "organ" as Layer, ids: ["HRA_F_organ_body_of_uterus", "HRA_F_organ_cervix_of_uterus"] },
+    { name: "난소", detail: "왼쪽·오른쪽", layer: "organ" as Layer, ids: ["HRA_F_organ_ovary_l", "HRA_F_organ_ovary_r"] },
+    { name: "유방", detail: "좌우 유선엽", layer: "skin" as Layer, ids: ["HRA_F_skin_lobes_of_mammary_gland_l", "HRA_F_skin_lobes_of_mammary_gland_r"] },
+    { name: "콩팥", detail: "좌우 섬유피막", layer: "organ" as Layer, ids: ["HRA_F_organ_fibrous_capsule_of_kidney_l", "HRA_F_organ_fibrous_capsule_of_kidney_r"] },
+    { name: "비장", detail: "표면·문 구조", layer: "lymph" as Layer, ids: structures.filter(s => s.sex === "female" && s.layer === "lymph").map(s => s.id) },
+  ] : [
     {
       name: "뇌",
       detail: "대뇌·소뇌·뇌줄기",
@@ -561,14 +575,16 @@ function AtlasPage({
     requestAnimationFrame(() => camera("structure"));
   };
   const showAllSystems = () => {
+    const available = state.sex === "female" ? femaleAvailableLayers : layerKeys;
     dispatch({
       type: "layers",
-      layers: Object.fromEntries(layerKeys.map((layer) => [layer, true])) as Layers,
+      layers: Object.fromEntries(layerKeys.map((layer) => [layer, available.includes(layer)])) as Layers,
     });
     setPanel(null);
     camera("fit");
   };
   const shiftDissection = (amount: number) => {
+    if (state.sex === "female") return;
     const next = Math.max(0, Math.min(100, state.dissection + amount));
     if (next !== state.dissection)
       dispatch({ type: "dissection", value: next });
@@ -624,6 +640,7 @@ function AtlasPage({
                 dispatch({
                   type: "select",
                   layer: item.layer,
+                  region: item.bodyRegion && item.bodyRegion !== "whole" ? item.bodyRegion as ViewState["anatomyRegion"] : undefined,
                   selection: {
                     kind: "structure",
                     ids: [id],
@@ -640,6 +657,8 @@ function AtlasPage({
             selectionTarget={state.selectionTarget}
             initialPose={state.camera}
             onPose={onPose}
+            sex={state.sex}
+            anatomyRegion={state.anatomyRegion}
           />
         </Suspense>
       </section>
@@ -658,10 +677,23 @@ function AtlasPage({
           <span>구조 이름·FMA 검색</span>
           <kbd>/</kbd>
         </button>
+        <div className="explore-scope" aria-label="인체 기준과 표시 부위">
+          <div className="sex-switch" role="group" aria-label="인체 성별 기준">
+            <button aria-pressed={state.sex === "male"} onClick={() => dispatch({ type: "sex", value: "male" })}>남성</button>
+            <button aria-pressed={state.sex === "female"} onClick={() => dispatch({ type: "sex", value: "female" })}>여성</button>
+          </div>
+          <label>부위<select aria-label="전신 부위 선택" value={state.anatomyRegion} onChange={e => {
+            const value = e.target.value as ViewState["anatomyRegion"];
+            dispatch({ type: "anatomy-region", value });
+            requestAnimationFrame(() => camera(value === "whole" ? "fit" : "anatomy-region"));
+          }}>{Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}</select></label>
+          <small className="scope-source">{state.sex === "female" ? "NIH 여성 참조 · 264개 구조" : "남성 참조 · 림프 142개 포함"}</small>
+        </div>
         <section
           className="depth-explorer"
           aria-label="인체 깊이 탐색"
           onWheel={(event) => {
+            if (state.sex === "female") return;
             if (Math.abs(event.deltaY) < 8) return;
             event.preventDefault();
             const next = Math.max(0, Math.min(100, state.dissection + (event.deltaY > 0 ? 3 : -3)));
@@ -670,7 +702,7 @@ function AtlasPage({
         >
           <div className="depth-heading">
             <span>연속 박리 깊이</span>
-            <strong>{state.dissection}% · {state.dissection < 8 ? "체표" : state.dissection < 28 ? "표층 근육" : state.dissection < 50 ? "중간 근육" : state.dissection < 68 ? "심부 근육" : state.dissection < 82 ? "골격·장기" : state.dissection < 94 ? "혈관" : "신경"}</strong>
+            <strong>{state.dissection}% · {state.dissection < 8 ? "체표" : state.dissection < 28 ? "표층 근육" : state.dissection < 50 ? "중간 근육" : state.dissection < 68 ? "심부 근육" : state.dissection < 82 ? "골격·장기" : state.dissection < 89 ? "혈관" : state.dissection < 94 ? "림프" : "신경"}</strong>
           </div>
           <input
             type="range"
@@ -678,8 +710,15 @@ function AtlasPage({
             max="100"
             step="1"
             value={state.dissection}
+            disabled={state.sex === "female"}
             aria-label="연속 해부 박리 깊이"
             aria-valuetext={`${state.dissection}% 해부 깊이`}
+            onWheelCapture={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              const next = Math.max(0, Math.min(100, state.dissection + (event.deltaY > 0 ? 3 : -3)));
+              if (next !== state.dissection) dispatch({ type: "dissection", value: next });
+            }}
             onChange={(event) => dispatch({ type: "dissection", value: Number(event.target.value) })}
           />
           <div className="depth-steps" aria-hidden="true">
@@ -690,7 +729,7 @@ function AtlasPage({
               </span>
             ))}
           </div>
-          <p>슬라이더·이 영역 휠 · 모델 위 Alt/⌥+휠 또는 Alt/⌥+↑↓</p>
+          <p>{state.sex === "female" ? "여성 참조는 수록된 계통 빠른 보기를 사용하세요" : "슬라이더·이 영역 휠 · 모델 위 Alt/⌥+휠 또는 Alt/⌥+↑↓"}</p>
         </section>
         <div className="explore-section-label">
           <span>계통 빠른 보기</span>
@@ -700,6 +739,7 @@ function AtlasPage({
           {stages.map((stage, index) => (
             <button
               key={stage.layer}
+              disabled={state.sex === "female" && !femaleAvailableLayers.includes(stage.layer)}
               aria-label={`${layerNames[stage.layer]} 빠른 보기`}
               aria-pressed={
                 layerKeys.filter((layer) => state.layers[layer]).length === 1 &&
@@ -714,7 +754,9 @@ function AtlasPage({
                   {stage.layer === "nerve"
                     ? "전신 525개 선택·설명"
                     : stage.layer === "vessel"
-                      ? "전신 640개 선택·설명"
+                      ? `${layerCounts[stage.layer]}개 선택·설명`
+                      : stage.layer === "lymph"
+                        ? `${layerCounts[stage.layer]}개 림프 구조`
                       : `${layerCounts[stage.layer]}개 구조`}
                 </small>
               </span>
@@ -734,13 +776,13 @@ function AtlasPage({
         </div>
         <button className="all-anatomy-button" onClick={showAllSystems}>
           <Boxes size={18} />
-          <span><strong>전체 인체 구조 보기</strong><small>6개 계통 · {structures.length.toLocaleString()}개 메쉬</small></span>
+          <span><strong>전체 인체 구조 보기</strong><small>7개 계통 · {structures.filter(s => s.sex === state.sex).length.toLocaleString()}개 구조</small></span>
         </button>
       </aside>
       <div className="scene-title">
         <span className="eyebrow">GYEOL / ANATOMY ATLAS</span>
         <h1>몸의 구조를 탐색하세요</h1>
-        <p>BodyParts3D · 6개 계통 · 경혈 {points.length}개</p>
+        <p>{state.sex === "female" ? "NIH 여성 참조" : "BodyParts3D 남성 참조"} · 7개 계통 · {anatomyRegionNames[state.anatomyRegion]}</p>
       </div>
       <nav className="floating-tools" aria-label="해부 탐색 도구">
         {(["points", "layers", "structures", "help"] as const).map(
@@ -1012,6 +1054,7 @@ function AtlasPage({
                   setPanel(null);
                   camera("structure");
                 }}
+                onRegion={(region) => camera(region === "whole" ? "fit" : "anatomy-region")}
               />
             )}
             {panel === "detail" && (

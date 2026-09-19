@@ -32,6 +32,27 @@ test("every point has valid source, atlas structure and a linked wiki article", 
     for (const id of p.related) assert.ok(points.some((p) => p.id === id));
   }
 });
+test("sex-specific reference and lymph models are pinned, named and cataloged", async () => {
+  const source = read("data/catalog/sex-lymph-models.json");
+  const catalog = read("data/sex-lymph-structures.json");
+  assert.equal(source.assets.length, 8);
+  assert.equal(catalog.filter(item => item.sex === "male" && item.layer === "lymph").length, 142);
+  assert.equal(catalog.filter(item => item.sex === "female").length, 264);
+  assert.equal(catalog.filter(item => item.sex === "female" && item.layer === "lymph").length, 5);
+  assert.ok(catalog.some(item => item.name === "Body of uterus" && item.sex === "female"));
+  for (const asset of source.assets) {
+    const bytes = fs.readFileSync(asset.path);
+    assert.equal(bytes.readUInt32LE(0), 0x46546c67);
+    assert.equal(crypto.createHash("sha256").update(bytes).digest("hex"), asset.sha256);
+    assert.ok(bytes.length > 40_000, asset.path);
+    assert.ok(catalog.some(item => asset.path.endsWith(item.model)), `${asset.path} has no catalog nodes`);
+  }
+  for (const item of catalog) {
+    assert.ok(item.id && item.node && item.name && item.label && item.description && item.source);
+    assert.ok(["male", "female"].includes(item.sex));
+    assert.ok(["skin", "bone", "organ", "vessel", "lymph"].includes(item.layer));
+  }
+});
 test("wiki exports match canonical data and all links resolve", () => {
   assert.deepEqual(read("public/wiki/index.json"), docs);
   for (const d of docs) {

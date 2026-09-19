@@ -10,8 +10,10 @@ export type Selection = {
   name: string;
 };
 export type ViewState = {
-  version: 3;
+  version: 4;
   pointId: string;
+  sex: "male" | "female";
+  anatomyRegion: "whole" | "head" | "upper-body" | "lower-body" | "upper-limb" | "lower-limb" | "chest" | "abdomen" | "pelvis";
   stage: number;
   dissection: number;
   layers: Layers;
@@ -34,14 +36,16 @@ export type ViewState = {
     catalogue: string;
   };
 };
-const keys: Layer[] = ["skin", "muscle", "bone", "organ", "vessel", "nerve"];
-const stageDepth = [0, 20, 72, 68, 82, 96] as const;
+const keys: Layer[] = ["skin", "muscle", "bone", "organ", "vessel", "lymph", "nerve"];
+const stageDepth = [0, 20, 72, 68, 82, 90, 96] as const;
 const singleLayer = (index: number) =>
   Object.fromEntries(keys.map((layer, layerIndex) => [layer, layerIndex === index])) as Layers;
 export function initialView(pointId = ""): ViewState {
   return {
-    version: 3,
+    version: 4,
     pointId,
+    sex: "male",
+    anatomyRegion: "whole",
     stage: 0,
     dissection: 0,
     layers: {
@@ -50,9 +54,10 @@ export function initialView(pointId = ""): ViewState {
       bone: false,
       organ: false,
       vessel: false,
+      lymph: false,
       nerve: false,
     },
-    alpha: { skin: 1, muscle: 1, bone: 1, organ: 1, vessel: 1, nerve: 1 },
+    alpha: { skin: 1, muscle: 1, bone: 1, organ: 1, vessel: 1, lymph: 1, nerve: 1 },
     markers: "selected",
     labels: false,
     selection: null,
@@ -74,6 +79,8 @@ export function initialView(pointId = ""): ViewState {
 }
 export type ViewAction =
   | { type: "point"; id: string }
+  | { type: "sex"; value: ViewState["sex"] }
+  | { type: "anatomy-region"; value: ViewState["anatomyRegion"] }
   | { type: "stage"; index: number }
   | { type: "dissection"; value: number }
   | { type: "layers"; layers: Layers }
@@ -81,7 +88,7 @@ export type ViewAction =
   | { type: "markers"; value: ViewState["markers"] }
   | { type: "labels"; value: boolean }
   | { type: "target"; value: ViewState["selectionTarget"] }
-  | { type: "select"; selection: Selection; layer?: Layer }
+  | { type: "select"; selection: Selection; layer?: Layer; region?: ViewState["anatomyRegion"] }
   | { type: "compare"; name: string; ids: string[] }
   | { type: "isolate" }
   | { type: "clear-selection" }
@@ -94,6 +101,10 @@ export type ViewAction =
   | { type: "reset" };
 export function viewReducer(s: ViewState, a: ViewAction): ViewState {
   switch (a.type) {
+    case "sex":
+      return a.value === s.sex ? s : { ...s, sex: a.value, stage: 0, dissection: 0, layers: singleLayer(0), selection: null, comparison: null, isolated: false, cutaway: 0 };
+    case "anatomy-region":
+      return a.value === s.anatomyRegion ? s : { ...s, anatomyRegion: a.value, selection: null, comparison: null, isolated: false };
     case "point":
       return a.id === s.pointId
         ? s
@@ -124,9 +135,10 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         bone: depth >= 34,
         organ: depth >= 40,
         vessel: depth >= 52,
+        lymph: depth >= 58,
         nerve: depth >= 64,
       };
-      const stage = depth < 12 ? 0 : depth < 66 ? 1 : depth < 78 ? 2 : depth < 86 ? 3 : depth < 94 ? 4 : 5;
+      const stage = depth < 12 ? 0 : depth < 66 ? 1 : depth < 78 ? 2 : depth < 86 ? 3 : depth < 89 ? 4 : depth < 94 ? 5 : 6;
       return {
         ...s,
         dissection: depth,
@@ -176,6 +188,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
               comparison: null,
               cutaway: 0,
               selectionTarget: "visible" as const,
+              ...(a.region ? { anatomyRegion: a.region } : {}),
             }
           : {}),
         selection: a.selection,
@@ -193,6 +206,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
           bone: false,
           organ: true,
           vessel: false,
+          lymph: false,
           nerve: false,
         },
         alpha: { ...s.alpha, skin: 0.12 },
@@ -236,16 +250,22 @@ export function restoreView(
   const base = initialView();
   try {
     const parsed = JSON.parse(raw || "null") as Record<string, any> | null;
-    const s = (parsed?.version === 2
-      ? { ...parsed, version: 3 as const, dissection: [0, 20, 72, 68, 82, 96][parsed.stage] ?? 0 }
+    const legacy = parsed?.version === 2 || parsed?.version === 3;
+    const s = (legacy
+      ? { ...parsed, version: 4 as const, sex: "male" as const, anatomyRegion: "whole" as const,
+          stage: parsed.stage === 5 ? 6 : parsed.stage,
+          dissection: parsed.dissection ?? [0, 20, 72, 68, 82, 96][parsed.stage] ?? 0,
+          layers: { ...parsed.layers, lymph: false }, alpha: { ...parsed.alpha, lymph: 1 } }
       : parsed) as ViewState;
     if (
       !s ||
-      s.version !== 3 ||
+      s.version !== 4 ||
       (s.pointId !== "" && !pointIds.includes(s.pointId)) ||
       !Number.isInteger(s.stage) ||
       s.stage < 0 ||
-      s.stage > 5
+      s.stage > 6 ||
+      !["male", "female"].includes(s.sex) ||
+      !["whole", "head", "upper-body", "lower-body", "upper-limb", "lower-limb", "chest", "abdomen", "pelvis"].includes(s.anatomyRegion)
     )
       return base;
     if (!Number.isFinite(s.dissection) || s.dissection < 0 || s.dissection > 100)

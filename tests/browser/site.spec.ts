@@ -12,7 +12,7 @@ test('model-first scene, actual marker click, search, bookmarks and source-linke
  await choosePoint(page,'LI 4');await expect(page.locator('.point-summary')).toContainText('합곡');await page.locator('.point-summary').click();await page.getByRole('button',{name:'북마크 저장',exact:true}).click();await page.reload();await ready(page);await page.locator('.point-summary').click();await expect(page.getByRole('button',{name:'북마크 해제',exact:true})).toBeVisible();
  await page.getByRole('link',{name:'위키에서 더 알아보기'}).click();await expect(page.locator('article h1')).toHaveText('합곡 LI4');await expect(page.locator('.backlinks a').first()).toBeVisible();
  await page.getByRole('link',{name:'지식 위키',exact:true}).first().click();await page.getByLabel('위키 질문').fill('내관과 외관');await page.getByRole('button',{name:'질문 보내기'}).click();await expect(page.locator('.answer')).toContainText('PC6');await expect(page.locator('.answer')).toContainText('TE5');
- await page.getByRole('link',{name:'출처와 자료'}).click();await expect(page.locator('.source-cards article')).toHaveCount(12);expect(errors).toEqual([]);
+ await page.getByRole('link',{name:'출처와 자료'}).click();await expect(page.locator('.source-cards article')).toHaveCount(14);expect(errors).toEqual([]);
 });
 test('mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.goto('/');await ready(page);const canvas=await page.locator('canvas').boundingBox();expect(canvas!.y).toBeLessThan(100);expect(canvas!.y+canvas!.height).toBeLessThanOrEqual(844);

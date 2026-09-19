@@ -25,7 +25,7 @@ test('movement, wheel zoom and modifier-wheel dissection work on the actual canv
   await expect.poll(async()=>(await snapshot(page)).dissection).toBe(4);
   await page.keyboard.down('Alt');await page.keyboard.press('ArrowUp');await page.keyboard.up('Alt');
   await expect.poll(async()=>(await snapshot(page)).dissection).toBe(2);
-  const depth=page.getByLabel('연속 해부 박리 깊이');await depth.hover();const beforeCardWheel=distance((await snapshot(page)).camera);await page.mouse.wheel(0,100);
+  const depth=page.getByLabel('연속 해부 박리 깊이');await page.locator('.depth-explorer').hover({position:{x:20,y:20}});const beforeCardWheel=distance((await snapshot(page)).camera);await page.mouse.wheel(0,100);
   await expect.poll(async()=>(await snapshot(page)).dissection).toBe(5);expect(distance((await snapshot(page)).camera)).toBeCloseTo(beforeCardWheel,5);
   await canvas.focus();await page.keyboard.down('Alt');await page.keyboard.down('Shift');await page.keyboard.press('ArrowDown');await page.keyboard.up('Shift');await page.keyboard.up('Alt');
   await expect.poll(async()=>(await snapshot(page)).dissection).toBe(15);

@@ -13,6 +13,14 @@ sources: bodyparts,bodyparts-mirror,tcm-wiki,kmcric-points
 
 STL 제공: [Kevin Mattheus Moerman의 BodyParts3D 미러](https://github.com/Kevin-Mattheus-Moerman/BodyParts3D/tree/f0eeb6e843380cfe6b83797cf8c3e1af74de5e61). 버전과 커밋을 고정했습니다. 파일별 원본 SHA-256 및 변환 정보는 [모델 매니페스트](/models/manifest.json)에 있습니다.
 
+## 남성 전신 보완과 림프계
+
+[Z-Anatomy](https://github.com/Z-Anatomy/Models-of-human-anatomy) 계보의 남성 신경525·혈관640·림프142개 명명 구조를 **CC BY-SA 4.0** 조건으로 표시합니다. 웹용 묶음은 Anatria-3D의 고정 커밋에서 가져왔고 정확한 URL·해시는 로컬 카탈로그에 기록합니다. 미세 말단 전체나 임상적 정합을 뜻하지 않습니다.
+
+## NIH 여성 참조
+
+여성 심혈관·소화·피부·림프·비뇨·생식·골격 모델은 [NIH Human Reference Atlas](https://humanatlas.io/) 3D Reference Organ Library의 Visible Human Female 기반 united reference v1.5에서 유래하며 **CC BY 4.0**입니다. 264개 명명 구조를 수록하지만 대응 여성 근육·신경 자료는 이 원본에 없어 비활성화합니다. 남성 모델을 여성 모델로 바꾸어 부르거나 완전한 여성 전신 해부로 주장하지 않습니다.
+
 변경: 정점 병합, 표면 단순화, 법선 재계산, 좌표축 변환, STL→GLB. 모델은 임상 정확도를 검증하지 않았습니다.
 
 ## 문헌과 코드

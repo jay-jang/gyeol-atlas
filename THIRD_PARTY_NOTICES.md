@@ -29,6 +29,18 @@ The whole-body nervous and cardiovascular reference layers are adapted from **Z-
 
 GYEOL modification: the two system exports are loaded as non-diagnostic whole-body reference overlays alongside the individually searchable BodyParts3D structures. Materials are replaced at runtime to match the GYEOL layer legend. The geometry is not clinically registered and may have local alignment differences even though its measured whole-body bounds match the BodyParts3D scene coordinate range.
 
+## NIH Human Reference Atlas female reference
+
+The female cardiovascular, digestive, integumentary, lymphatic, renal, reproductive and skeletal reference layers derive from the **NIH Human Reference Atlas (HRA) 3D Reference Organ Library**, based on the Visible Human Female dataset of the U.S. National Library of Medicine. They are licensed under **CC BY 4.0**.
+
+- Source release: https://cdn.humanatlas.io/digital-objects/ref-organ/united-female/v1.5/
+- Human Reference Atlas: https://humanatlas.io/
+- License: https://creativecommons.org/licenses/by/4.0/
+- Packaging source: https://github.com/Nurkan1/Anatria-3D
+- Pinned source commit, exact asset URLs and SHA-256 hashes: `data/catalog/sex-lymph-models.json`
+
+GYEOL modification: system exports are displayed as a sex-specific, non-diagnostic reference; materials are replaced at runtime, named nodes are connected to the searchable catalogue, and spatial/body-region visibility controls are added. The female source contains 264 named structures across seven source systems but does not contain a matching full muscular or nervous model. It is not presented as a complete female anatomy or clinically registered to the BodyParts3D male reference.
+
 ## WHO and clinical sources
 
 WHO documents and NCCIH web pages retain their respective original rights. The repository includes short independently written educational summaries, citations, and metadata; it does **not** redistribute the WHO books or diagrams and does not claim that they are open-licensed. WHO did not supply or validate the 3D acupoint coordinates. Korean summaries are AI drafts, not official WHO translations.

@@ -1111,6 +1111,22 @@ body:has(.anatomy-workspace) .site-footer {
 .explore-systems strong, .explore-systems small { display: block; }
 .explore-systems strong { font-size: 13px; }
 .explore-systems small { margin-top: 2px; font-size: 11px; opacity: .78; white-space: nowrap; }
+.explore-systems > button:disabled { opacity: .42; cursor: not-allowed; }
+.explore-scope { display: grid; grid-template-columns: 1fr 1.25fr; gap: 8px; margin: 10px 0 4px; }
+.sex-switch { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #365563; border-radius: 8px; overflow: hidden; }
+.sex-switch button { min-height: 36px; color: #b9cbd3; background: #0c202a; font-size: 12px; font-weight: 700; }
+.sex-switch button[aria-pressed="true"] { color: #fff; background: #176c82; }
+.explore-scope label { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 7px; color: #b9cbd3; font-size: 12px; }
+.explore-scope select { min-width: 0; height: 36px; padding: 0 7px; color: #edf5f7; background: #0c202a; border: 1px solid #365563; border-radius: 8px; }
+.scope-source { grid-column: 1 / -1; color: #8fa6b1; font-size: 11px; }
+.anatomy-scope-controls { display: grid; gap: 10px; margin-bottom: 14px; padding-bottom: 13px; border-bottom: 1px solid var(--line, #365563); }
+.anatomy-scope-controls fieldset { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; border: 0; padding: 0; }
+.anatomy-scope-controls legend { grid-column: 1 / -1; margin-bottom: 6px; font-size: 12px; font-weight: 700; }
+.anatomy-scope-controls button { min-height: 36px; border: 1px solid #496674; border-radius: 7px; }
+.anatomy-scope-controls button[aria-pressed="true"] { color: #fff; background: #176c82; border-color: #55bbd0; }
+.anatomy-scope-controls label { display: grid; gap: 6px; font-size: 12px; font-weight: 700; }
+.anatomy-scope-controls select { min-height: 36px; padding: 0 8px; border-radius: 7px; }
+.layer-dot.lymph { background: #58b99f; }
 .featured-anatomy { display: grid; gap: 4px; }
 .featured-anatomy > button {
   width: 100%;
@@ -1173,7 +1189,7 @@ body:has(.anatomy-workspace) .site-footer {
   .explore-sidebar {
     inset: 0 0 auto 0;
     width: 100%;
-    height: 116px;
+    height: 156px;
     padding: 10px 10px 9px;
     overflow: hidden;
     border-right: 0;
@@ -1184,6 +1200,9 @@ body:has(.anatomy-workspace) .site-footer {
   .explore-heading h1 { margin: 0; font-size: 16px; }
   .explore-heading::after { content: "계통을 선택해 구조 보기"; color: #60727b; font-size: 12px; }
   .explore-systems { display: flex; gap: 5px; }
+  .explore-scope { margin: 0 0 6px; grid-template-columns: 130px 1fr; }
+  .explore-scope button, .explore-scope select { height: 30px; min-height: 30px; }
+  .scope-source { display: none; }
   .explore-systems > button {
     min-width: 0;
     min-height: 64px;
@@ -1198,8 +1217,8 @@ body:has(.anatomy-workspace) .site-footer {
   .explore-systems > button > svg, .explore-systems small { display: none; }
   .explore-systems strong { font-size: 12px; }
   .anatomy-workspace .viewer-panel { left: 0; top: 0; width: 100%; height: 100%; }
-  .anatomy-workspace .floating-tools { left: 10px; top: 130px; }
-  .anatomy-workspace .floating-point { top: 128px; right: 10px; }
+  .anatomy-workspace .floating-tools { left: 10px; top: 170px; }
+  .anatomy-workspace .floating-point { top: 168px; right: 10px; }
   .anatomy-workspace .floating-dock, .anatomy-workspace .dock-detail { left: 8px; top: auto; }
   .anatomy-workspace .navigation-hint, .anatomy-workspace .scene-legend { left: 12px; }
 }

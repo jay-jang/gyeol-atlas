@@ -54,6 +54,7 @@ export type CameraAction = {
     | "structure"
     | "head"
     | "region"
+    | "anatomy-region"
     | "comparison"
     | "fit"
     | "restore"

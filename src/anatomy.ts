@@ -1,21 +1,29 @@
 import labels from "../data/structure-labels.json";
 import inputs from "../scripts/model-inputs.json";
 import fullSystemStructures from "../data/full-system-structures.json";
+import sexLymphStructures from "../data/sex-lymph-structures.json";
 export const layerNames = {
   skin: "체표",
   muscle: "근육",
   bone: "골격",
   organ: "장기",
   vessel: "혈관",
+  lymph: "림프",
   nerve: "신경",
 };
 export type Layer = keyof typeof layerNames;
 export const layerKeys = Object.keys(layerNames) as Layer[];
+export const anatomyRegionNames = {
+  whole: "전신", head: "머리", "upper-body": "상체", "lower-body": "하체",
+  "upper-limb": "팔·손", "lower-limb": "다리·발", chest: "가슴", abdomen: "배", pelvis: "골반",
+} as const;
+export const femaleAvailableLayers: Layer[] = ["skin", "bone", "organ", "vessel", "lymph"];
 const baseStructures = inputs.assets.map((s) => ({
   ...s,
+  sex: "male" as const,
   label: (labels as Record<string, string>)[s.id] || s.name,
 }));
-export const structures = [...baseStructures, ...fullSystemStructures] as {
+export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures] as {
   id: string;
   fmaId?: string;
   name: string;
@@ -26,6 +34,9 @@ export const structures = [...baseStructures, ...fullSystemStructures] as {
   hierarchy?: string[];
   description?: string;
   source?: string;
+  sex: "male" | "female";
+  bodyRegion?: string;
+  model?: string;
 }[];
 export const searchableStructureCount = baseStructures.length;
 export const stages: { layer: Layer; description: string }[] = [
@@ -52,6 +63,11 @@ export const stages: { layer: Layer; description: string }[] = [
     layer: "vessel",
     description:
       "640개 전신 심혈관 구성요소를 이름·TA2 라틴명·계통 경로로 검색하고 개별 선택할 수 있습니다. 미세혈관 전체를 뜻하지 않습니다.",
+  },
+  {
+    layer: "lymph",
+    description:
+      "림프절·림프관·비장·흉선 등 원본에 명명된 림프 구조를 살펴봅니다. 남녀 참조 자료의 수록 범위가 서로 다릅니다.",
   },
   {
     layer: "nerve",

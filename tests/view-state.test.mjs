@@ -76,6 +76,22 @@ test("continuous dissection keeps overlapping systems and advances through muscl
   assert.equal(s.layers.vessel, true);
   assert.equal(s.layers.nerve, true);
 });
+test("sex and anatomical region switches clear incompatible selections and expose lymph as its own layer", () => {
+  let s = initialView("ST36");
+  s = viewReducer(s, { type: "select", layer: "lymph", selection: { kind: "structure", ids: ["ZA_lymph_spleen"], name: "비장" } });
+  assert.equal(s.stage, 5);
+  assert.equal(s.dissection, 90);
+  assert.equal(s.layers.lymph, true);
+  assert.equal(Object.values(s.layers).filter(Boolean).length, 1);
+  s = viewReducer(s, { type: "anatomy-region", value: "upper-limb" });
+  assert.equal(s.anatomyRegion, "upper-limb");
+  assert.equal(s.selection, null);
+  s = viewReducer(s, { type: "sex", value: "female" });
+  assert.equal(s.sex, "female");
+  assert.equal(s.stage, 0);
+  assert.equal(s.layers.skin, true);
+  assert.equal(Object.values(s.layers).filter(Boolean).length, 1);
+});
 test("selecting a structure switches to its anatomical layer while preserving the camera and markers", () => {
   const camera = { position: [0, 1, 0.5], target: [0, 1, 0] };
   let s = initialView();
@@ -94,6 +110,7 @@ test("selecting a structure switches to its anatomical layer while preserving th
     bone: false,
     organ: true,
     vessel: false,
+    lymph: false,
     nerve: false,
   });
   assert.deepEqual(s.camera, camera);
@@ -103,7 +120,7 @@ test("selecting a structure switches to its anatomical layer while preserving th
     layer: "nerve",
     selection: { kind: "structure", ids: ["ZA_nerve_1"], name: "좌골신경" },
   });
-  assert.equal(s.stage, 5);
+  assert.equal(s.stage, 6);
   assert.equal(s.dissection, 96);
   assert.equal(s.layers.organ, false);
   assert.equal(s.layers.nerve, true);
@@ -124,7 +141,7 @@ test("versioned session restoration validates current catalog, ranges and malfor
   assert.deepEqual(parse(JSON.stringify(s)), s);
   const legacy = { ...s, version: 2 };
   delete legacy.dissection;
-  assert.equal(parse(JSON.stringify(legacy)).version, 3);
+  assert.equal(parse(JSON.stringify(legacy)).version, 4);
   for (const raw of [
     "bad",
     "null",

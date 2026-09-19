@@ -28,11 +28,19 @@ try {
   await page.getByRole("link", { name: "3D 경혈 지도" }).click();
   await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
   assert.equal(requests.filter((r) => r.endsWith(".glb")).length, 1);
-  for (const name of ["근육 빠른 보기", "골격 빠른 보기", "장기 빠른 보기", "혈관 빠른 보기", "신경 빠른 보기"]) {
+  for (const name of ["근육 빠른 보기", "골격 빠른 보기", "장기 빠른 보기", "혈관 빠른 보기", "림프 빠른 보기", "신경 빠른 보기"]) {
     await page.getByRole("button", { name, exact: true }).click();
     await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
   }
-  assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, 8);
+  assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, 9);
+  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
+  await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
+  for (const name of ["골격 빠른 보기", "장기 빠른 보기", "혈관 빠른 보기", "림프 빠른 보기"]) {
+    await page.getByRole("button", { name, exact: true }).click();
+    await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
+  }
+  assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, 16);
+  await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();
   await page.goto(origin+'/#atlas/KI3');
   await page.locator('.point-summary').click();
   await page.getByRole('button',{name:'대응 장부의 해부 구조 비교'}).click();
@@ -63,6 +71,7 @@ try {
     (await fetch(origin + "/models/LICENSE_z-anatomy.txt")).status,
     200,
   );
+  assert.equal((await fetch(origin + "/models/LICENSE_hra_female.txt")).status, 200);
   assert.equal((await (await fetch(origin + '/api/health')).json()).documents,419);
   for (const [question,expected] of [['원혈 모혈 차이','point-categories'],['내부 장기 마사지 깊이','massage-anatomy']]) {
     const answer = await (await fetch(origin+'/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question})})).json();
@@ -72,7 +81,7 @@ try {
   await page.locator('.wiki-sidebar').getByRole('link',{name:'원혈·모혈·오수혈·낙혈의 구분',exact:true}).waitFor();
   assert.deepEqual(errors, []);
   console.log(
-    "Production smoke passed: static wiki, lazy 3D chunk, all 8 GLBs, bundle and wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
+    "Production smoke passed: static wiki, lazy 3D chunk, all 16 male/female GLBs, lymph, bundle and wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
   );
 } finally {
   await browser?.close();
