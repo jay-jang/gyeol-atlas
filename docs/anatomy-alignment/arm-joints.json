@@ -1,0 +1,320 @@
+{
+  "status": "EXPERIMENT: one-way near-surface patch centroids, not validated articular landmarks",
+  "arms": [
+    {
+      "side": "left",
+      "shoulder": {
+        "centre": [
+          0.14691216119136813,
+          1.3823681673500496,
+          -0.034597468809591414
+        ],
+        "vertices": [
+          0,
+          2,
+          6,
+          51,
+          68,
+          69,
+          73,
+          80,
+          81,
+          82,
+          83,
+          101,
+          106,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          134,
+          148,
+          204
+        ],
+        "minimumMm": 0.5454427000238811,
+        "thresholdMm": 4.545442700023881
+      },
+      "elbow": [
+        0.21745790154338607,
+        1.1167412272635366,
+        -0.034511381546869
+      ],
+      "elbowPatches": {
+        "radius": {
+          "centre": [
+            0.22891207481605252,
+            1.114084019714257,
+            -0.030642897697067163
+          ],
+          "vertices": [
+            458,
+            480,
+            481,
+            508,
+            509,
+            523,
+            524,
+            534,
+            536,
+            538,
+            539,
+            549,
+            550,
+            551,
+            552,
+            562,
+            563,
+            564
+          ],
+          "minimumMm": 5.250878114437877,
+          "thresholdMm": 9.250878114437876
+        },
+        "ulna": {
+          "centre": [
+            0.2060037282707196,
+            1.119398434812816,
+            -0.03837986539667084
+          ],
+          "vertices": [
+            365,
+            366,
+            367,
+            369,
+            403,
+            404,
+            405,
+            407,
+            410,
+            411,
+            413,
+            434,
+            436,
+            438,
+            455,
+            459,
+            462,
+            463,
+            479,
+            482,
+            484,
+            485,
+            510,
+            512,
+            541
+          ],
+          "minimumMm": 0.37440736167151334,
+          "thresholdMm": 4.374407361671514
+        }
+      }
+    },
+    {
+      "side": "right",
+      "shoulder": {
+        "centre": [
+          -0.14663664623724956,
+          1.3814060540119002,
+          -0.032940179440305035
+        ],
+        "vertices": [
+          589,
+          607,
+          610,
+          671,
+          672,
+          673,
+          674,
+          676,
+          677,
+          678,
+          679,
+          680,
+          681,
+          682,
+          683,
+          684,
+          760,
+          761,
+          762,
+          763,
+          764,
+          765,
+          766,
+          767,
+          768,
+          769,
+          770,
+          771,
+          772,
+          773,
+          774,
+          775,
+          776,
+          777,
+          778,
+          779,
+          780,
+          781,
+          782,
+          783,
+          784,
+          785,
+          786,
+          789,
+          790,
+          791,
+          792,
+          793
+        ],
+        "minimumMm": 0.5794883523714774,
+        "thresholdMm": 4.579488352371477
+      },
+      "elbow": [
+        -0.21746151861583896,
+        1.1162814773183367,
+        -0.03433088516791914
+      ],
+      "elbowPatches": {
+        "radius": {
+          "centre": [
+            -0.229787494047632,
+            1.1140578347929917,
+            -0.03045995275585163
+          ],
+          "vertices": [
+            0,
+            1,
+            3,
+            4,
+            6,
+            7,
+            24,
+            28,
+            36,
+            37,
+            46,
+            52,
+            53
+          ],
+          "minimumMm": 4.495957946678978,
+          "thresholdMm": 8.495957946678976
+        },
+        "ulna": {
+          "centre": [
+            -0.20513554318404595,
+            1.1185051198436817,
+            -0.03820181757998666
+          ],
+          "vertices": [
+            69,
+            70,
+            79,
+            83,
+            85,
+            89,
+            104,
+            105,
+            107,
+            118,
+            130,
+            131,
+            133,
+            137,
+            138,
+            165,
+            166,
+            168,
+            174,
+            175,
+            195,
+            196,
+            197,
+            198,
+            199,
+            205
+          ],
+          "minimumMm": 0.7695472114591368,
+          "thresholdMm": 4.7695472114591375
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Patch is vertex-density-dependent; threshold is minimum distance + 4 mm.",
+    "No cartilage, articular labels, contact normals or collision-free joint fit are established."
+  ],
+  "files": [
+    {
+      "path": ".cache/male-details/atlas.json",
+      "sha256": "d6979fc62cf18fa4f08a9e6efae8fdac9ec383c5a1f3c757920125ac758429fe"
+    },
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": ".cache/arm-registration/body-10.bin.gz",
+      "sha256": "9d99c2eada1ab94e0a9c26757aa7f14428d2ea4a2548d6d1fe60c0711ee3c942"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "scripts/experiment-arm-landmarks.py",
+      "sha256": "41586db95f1f94b6ba5054be4e89b1c7bf431afbcb348510f4220c8836d8ea24"
+    },
+    {
+      "path": ".cache/arm-registration/body-12.bin.gz",
+      "sha256": "8450931fd0a984778d50982324d9de98ce433977e0d3bf262aca9d0088226374"
+    },
+    {
+      "path": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "path": ".cache/arm-registration/body-13.bin.gz",
+      "sha256": "43a63dc4cdd38c20a0dc3b21e23a631fb7e5a596464348105e12b9be27ed7956"
+    },
+    {
+      "path": "scripts/experiment-arm-registration.py",
+      "sha256": "2ac26c56cebc2df10db8d8c65a5c0018f4a80300b5e091caa5cf9c474fe16e1b"
+    },
+    {
+      "path": "scripts/experiment-hand-registration.py",
+      "sha256": "f639fb7e0c359f4c465ce4de11c3e48f597137ebed1d582728b29e989b695beb"
+    },
+    {
+      "path": ".cache/arm-registration/landmarks.json",
+      "sha256": "b46eb2355bf71935b8935a2d1e35a0882693a933beb854579f5ea7aa0ed51658"
+    },
+    {
+      "path": "docs/anatomy-alignment/arm-registration-candidate.json",
+      "sha256": "0f86ad11ccd8965e33c23c9e21f246f39736cd41a5c4437881f8ed3e7d35f487"
+    },
+    {
+      "path": "docs/anatomy-alignment/hand-candidates.json",
+      "sha256": "4fa4849f0f4214173bbb822db8256431c33f3688e2c9c4200557bfd410a3151b"
+    },
+    {
+      "path": "scripts/experiment-arm-joints.mjs",
+      "sha256": "a6d3ed3999f7687480796349c348c715d5d9530958e85c9a957bb2fb4c58cf3b"
+    },
+    {
+      "path": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    }
+  ]
+}

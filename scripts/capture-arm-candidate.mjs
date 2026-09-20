@@ -4,7 +4,13 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {chromium} from '@playwright/test';
 const handOnly=process.argv.includes('--hand');
-const candidate=JSON.parse(fs.readFileSync(handOnly?'.cache/arm-registration/hand-candidates.json':'.cache/arm-registration/candidates.json'));
+const articulated=process.argv.includes('--articulated');
+assert.ok(!(handOnly&&articulated),'Choose one experiment');
+assert.ok(!process.argv.includes('--upper-existing')||articulated,'Upper-length mode requires articulated experiment');
+assert.ok(!process.argv.includes('--coupled-hand')||(articulated&&process.argv.includes('--upper-existing')),'Coupled hand requires articulated existing-upper mode');
+const prefix=articulated?(process.argv.includes('--coupled-hand')?'articulated-coupled-hand-':process.argv.includes('--upper-existing')?'articulated-existing-upper-':'articulated-'):handOnly?'hand-':'';
+const candidatePath=`.cache/arm-registration/${prefix}candidates.json`;
+const candidate=JSON.parse(fs.readFileSync(candidatePath));
 for(const file of candidate.files)assert.equal(createHash('sha256').update(fs.readFileSync(file.path)).digest('hex'),file.sha256);
 const browser=await chromium.launch({headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']});
 try {
@@ -21,7 +27,7 @@ try {
     s.layers={skin:true,muscle:false,bone:true,organ:false,vessel:false,lymph:false,nerve:false};
     s.displayMode='layers';s.alpha.skin=.28;
     s.selection=null;s.detail=null;s.comparison=null;s.isolated=false;s.cutaway=0;
-    s.camera={position:[-.35,1.03,.9],target:[-.35,1.03,-.09]};
+    s.camera={position:[-.35,1.03,1.15],target:[-.35,1.03,-.09]};
     sessionStorage.setItem('gyeol-view-v2',JSON.stringify(s));
   });
   await page.reload();await ready();
@@ -34,7 +40,7 @@ try {
     el.textContent=text;
   },text);
   await banner('교정 전 — 현재 원본 / 실험용 관찰 화면');
-  await page.screenshot({path:`.cache/arm-registration/${handOnly?'hand-':''}before.png`});
+  await page.screenshot({path:`.cache/arm-registration/${prefix}before.png`});
   const transformed=await page.evaluate(async ({url,arms})=>{
     const { _roots }=await import(url),state=_roots.get(document.querySelector('canvas')).store.getState();
     const count=[];
@@ -52,7 +58,22 @@ try {
   },{url:fiberUrl,arms:candidate.arms});
   assert.equal(new Set(transformed).size,handOnly?54:60);
   await banner('미채택 교정 후보 — 실험 전용 / 공개 모델에 적용하지 않음');
-  await page.screenshot({path:`.cache/arm-registration/${handOnly?'hand-':''}after.png`});
+  await page.screenshot({path:`.cache/arm-registration/${prefix}after.png`});
+  if(articulated){
+    await page.evaluate(async url=>{
+      const {_roots}=await import(url),state=_roots.get(document.querySelector('canvas')).store.getState();
+      state.camera.position.set(.35,1.03,1.15);state.controls.target.set(.35,1.03,-.09);state.controls.update();state.invalidate();
+      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    },fiberUrl);
+    await page.screenshot({path:`.cache/arm-registration/${prefix}after-left.png`});
+  }
   assert.deepEqual(errors,[]);
+  const hash=path=>createHash('sha256').update(fs.readFileSync(path)).digest('hex');
+  const screenshots=['before','after',...(articulated?['after-left']:[])].map(view=>{
+    const path=`.cache/arm-registration/${prefix}${view}.png`;return {view,path,sha256:hash(path)};
+  });
+  fs.writeFileSync(`.cache/arm-registration/${prefix}captures.json`,JSON.stringify({status:'Disposable local diagnostic, not deployed',
+    transformedIds:transformed,errors,screenshots,
+    files:[candidatePath,'scripts/capture-arm-candidate.mjs'].map(path=>({path,sha256:hash(path)}))},null,2)+'\n');
   console.log(`Captured unchanged baseline and rejected ${transformed.length}-bone candidate in disposable local scene; browser errors 0.`);
 } finally {await browser.close();}

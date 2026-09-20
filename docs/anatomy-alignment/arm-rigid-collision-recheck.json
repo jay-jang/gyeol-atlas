@@ -1,0 +1,1408 @@
+{
+  "status": "EXPERIMENT ONLY — not deployed; containment cannot establish correct anatomy",
+  "topology": {
+    "weldedVertices": 29338,
+    "connectedComponents": 1,
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "degenerateTriangles": 0
+  },
+  "arms": [
+    {
+      "side": "left",
+      "summary": {
+        "before": {
+          "meshes": 30,
+          "vertices": 6931,
+          "outsideVertices": 6552,
+          "outsideMeshes": 30,
+          "maxOutsideMm": 70.4369063343712
+        },
+        "after": {
+          "meshes": 30,
+          "vertices": 6931,
+          "outsideVertices": 2656,
+          "outsideMeshes": 20,
+          "maxOutsideMm": 45.72111809230852
+        }
+      },
+      "joints": [
+        {
+          "pair": [
+            "scapula",
+            "humerus"
+          ],
+          "sharedTransform": false,
+          "beforeVertexSurfaceMinimumMm": 0.6832546529319276,
+          "afterVertexSurfaceMinimumMm": 0.16085683261576741,
+          "beforeTriangleSurfacesIntersect": false,
+          "afterTriangleSurfacesIntersect": false
+        },
+        {
+          "pair": [
+            "humerus",
+            "radius"
+          ],
+          "sharedTransform": true,
+          "beforeVertexSurfaceMinimumMm": 4.790773853027053,
+          "afterVertexSurfaceMinimumMm": 5.0835043780369125,
+          "beforeTriangleSurfacesIntersect": false,
+          "afterTriangleSurfacesIntersect": false
+        },
+        {
+          "pair": [
+            "humerus",
+            "ulna"
+          ],
+          "sharedTransform": true,
+          "beforeVertexSurfaceMinimumMm": 0.3416087381156639,
+          "afterVertexSurfaceMinimumMm": 0.3624759609794986,
+          "beforeTriangleSurfacesIntersect": false,
+          "afterTriangleSurfacesIntersect": false
+        },
+        {
+          "pair": [
+            "radius",
+            "scaphoid"
+          ],
+          "sharedTransform": true,
+          "beforeVertexSurfaceMinimumMm": 1.0873479079214412,
+          "afterVertexSurfaceMinimumMm": 1.1537988707048563,
+          "beforeTriangleSurfacesIntersect": false,
+          "afterTriangleSurfacesIntersect": false
+        },
+        {
+          "pair": [
+            "radius",
+            "lunate"
+          ],
+          "sharedTransform": true,
+          "beforeVertexSurfaceMinimumMm": 4.586302676035257,
+          "afterVertexSurfaceMinimumMm": 4.866563677701984,
+          "beforeTriangleSurfacesIntersect": false,
+          "afterTriangleSurfacesIntersect": false
+        }
+      ],
+      "parts": [
+        {
+          "id": "BM0060",
+          "name": "Distal phalanx of left index finger",
+          "before": {
+            "vertices": 198,
+            "inside": 0,
+            "outside": 198,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 60.08937948880329
+          },
+          "after": {
+            "vertices": 198,
+            "inside": 0,
+            "outside": 198,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 15.72470813932433
+          }
+        },
+        {
+          "id": "BM0061",
+          "name": "Distal phalanx of left little finger",
+          "before": {
+            "vertices": 154,
+            "inside": 0,
+            "outside": 154,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 23.661157650805258
+          },
+          "after": {
+            "vertices": 154,
+            "inside": 0,
+            "outside": 154,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 45.72111809230852
+          }
+        },
+        {
+          "id": "BM0062",
+          "name": "Distal phalanx of left middle finger",
+          "before": {
+            "vertices": 170,
+            "inside": 0,
+            "outside": 170,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 41.19545009654428
+          },
+          "after": {
+            "vertices": 170,
+            "inside": 0,
+            "outside": 170,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 22.066236521082782
+          }
+        },
+        {
+          "id": "BM0063",
+          "name": "Distal phalanx of left ring finger",
+          "before": {
+            "vertices": 138,
+            "inside": 0,
+            "outside": 138,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 30.656785944600593
+          },
+          "after": {
+            "vertices": 138,
+            "inside": 0,
+            "outside": 138,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 39.44465992868995
+          }
+        },
+        {
+          "id": "BM0064",
+          "name": "Distal phalanx of left thumb",
+          "before": {
+            "vertices": 185,
+            "inside": 0,
+            "outside": 185,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 69.53986150089786
+          },
+          "after": {
+            "vertices": 185,
+            "inside": 0,
+            "outside": 157,
+            "surface-band": 28,
+            "ambiguous": 0,
+            "maxOutsideMm": 9.675091299609681
+          }
+        },
+        {
+          "id": "BM0071",
+          "name": "Left first metacarpal bone",
+          "before": {
+            "vertices": 293,
+            "inside": 0,
+            "outside": 293,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 70.4369063343712
+          },
+          "after": {
+            "vertices": 293,
+            "inside": 200,
+            "outside": 41,
+            "surface-band": 52,
+            "ambiguous": 0,
+            "maxOutsideMm": 6.364710603486551
+          }
+        },
+        {
+          "id": "BM0072",
+          "name": "Left second metacarpal bone",
+          "before": {
+            "vertices": 328,
+            "inside": 0,
+            "outside": 328,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 68.95265170809279
+          },
+          "after": {
+            "vertices": 328,
+            "inside": 306,
+            "outside": 0,
+            "surface-band": 22,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0073",
+          "name": "Left third metacarpal bone",
+          "before": {
+            "vertices": 328,
+            "inside": 0,
+            "outside": 328,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 61.87645112185516
+          },
+          "after": {
+            "vertices": 328,
+            "inside": 298,
+            "outside": 4,
+            "surface-band": 26,
+            "ambiguous": 0,
+            "maxOutsideMm": 2.3473410648969186
+          }
+        },
+        {
+          "id": "BM0074",
+          "name": "Left fourth metacarpal bone",
+          "before": {
+            "vertices": 267,
+            "inside": 0,
+            "outside": 267,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 54.21635027696469
+          },
+          "after": {
+            "vertices": 267,
+            "inside": 167,
+            "outside": 65,
+            "surface-band": 35,
+            "ambiguous": 0,
+            "maxOutsideMm": 11.322001507837848
+          }
+        },
+        {
+          "id": "BM0075",
+          "name": "Left fifth metacarpal bone",
+          "before": {
+            "vertices": 265,
+            "inside": 0,
+            "outside": 265,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 46.19299417421569
+          },
+          "after": {
+            "vertices": 265,
+            "inside": 72,
+            "outside": 156,
+            "surface-band": 37,
+            "ambiguous": 0,
+            "maxOutsideMm": 21.558881389484554
+          }
+        },
+        {
+          "id": "BM0076",
+          "name": "Left capitate",
+          "before": {
+            "vertices": 230,
+            "inside": 0,
+            "outside": 230,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 61.261839559412124
+          },
+          "after": {
+            "vertices": 230,
+            "inside": 230,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0077",
+          "name": "Left hamate",
+          "before": {
+            "vertices": 274,
+            "inside": 0,
+            "outside": 274,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 55.320719186803494
+          },
+          "after": {
+            "vertices": 274,
+            "inside": 265,
+            "outside": 0,
+            "surface-band": 9,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0078",
+          "name": "Left humerus",
+          "before": {
+            "vertices": 586,
+            "inside": 363,
+            "outside": 207,
+            "surface-band": 16,
+            "ambiguous": 0,
+            "maxOutsideMm": 47.372378973616605
+          },
+          "after": {
+            "vertices": 586,
+            "inside": 583,
+            "outside": 0,
+            "surface-band": 3,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0079",
+          "name": "Left lunate",
+          "before": {
+            "vertices": 184,
+            "inside": 0,
+            "outside": 184,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 54.334356901945476
+          },
+          "after": {
+            "vertices": 184,
+            "inside": 184,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0080",
+          "name": "Left pisiform",
+          "before": {
+            "vertices": 116,
+            "inside": 0,
+            "outside": 116,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 35.775021584824906
+          },
+          "after": {
+            "vertices": 116,
+            "inside": 0,
+            "outside": 77,
+            "surface-band": 39,
+            "ambiguous": 0,
+            "maxOutsideMm": 6.67848020960869
+          }
+        },
+        {
+          "id": "BM0081",
+          "name": "Left radius",
+          "before": {
+            "vertices": 250,
+            "inside": 0,
+            "outside": 250,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 67.65555895445722
+          },
+          "after": {
+            "vertices": 250,
+            "inside": 250,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0082",
+          "name": "Left scaphoid",
+          "before": {
+            "vertices": 172,
+            "inside": 0,
+            "outside": 172,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 61.346109913318024
+          },
+          "after": {
+            "vertices": 172,
+            "inside": 172,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0084",
+          "name": "Left trapezium",
+          "before": {
+            "vertices": 222,
+            "inside": 0,
+            "outside": 222,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 64.97870382695966
+          },
+          "after": {
+            "vertices": 222,
+            "inside": 222,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0085",
+          "name": "Left trapezoid",
+          "before": {
+            "vertices": 278,
+            "inside": 0,
+            "outside": 278,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 64.18521157356884
+          },
+          "after": {
+            "vertices": 278,
+            "inside": 278,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0086",
+          "name": "Left triquetral",
+          "before": {
+            "vertices": 178,
+            "inside": 0,
+            "outside": 178,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 48.009261008618644
+          },
+          "after": {
+            "vertices": 178,
+            "inside": 113,
+            "outside": 6,
+            "surface-band": 59,
+            "ambiguous": 0,
+            "maxOutsideMm": 2.7125174751771204
+          }
+        },
+        {
+          "id": "BM0087",
+          "name": "Left ulna",
+          "before": {
+            "vertices": 283,
+            "inside": 0,
+            "outside": 283,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 47.90514911426092
+          },
+          "after": {
+            "vertices": 283,
+            "inside": 277,
+            "outside": 0,
+            "surface-band": 6,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0088",
+          "name": "Middle phalanx of left ring finger",
+          "before": {
+            "vertices": 208,
+            "inside": 0,
+            "outside": 208,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 39.07628395237866
+          },
+          "after": {
+            "vertices": 208,
+            "inside": 0,
+            "outside": 208,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 32.319824117499685
+          }
+        },
+        {
+          "id": "BM0090",
+          "name": "Middle phalanx of left index finger",
+          "before": {
+            "vertices": 184,
+            "inside": 0,
+            "outside": 184,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 65.85386236285753
+          },
+          "after": {
+            "vertices": 184,
+            "inside": 0,
+            "outside": 163,
+            "surface-band": 21,
+            "ambiguous": 0,
+            "maxOutsideMm": 14.26413481879444
+          }
+        },
+        {
+          "id": "BM0091",
+          "name": "Middle phalanx of left little finger",
+          "before": {
+            "vertices": 190,
+            "inside": 0,
+            "outside": 190,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 30.62450568480012
+          },
+          "after": {
+            "vertices": 190,
+            "inside": 0,
+            "outside": 190,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 37.68516377742829
+          }
+        },
+        {
+          "id": "BM0092",
+          "name": "Middle phalanx of left middle finger",
+          "before": {
+            "vertices": 220,
+            "inside": 0,
+            "outside": 220,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 48.37852907909069
+          },
+          "after": {
+            "vertices": 220,
+            "inside": 0,
+            "outside": 210,
+            "surface-band": 10,
+            "ambiguous": 0,
+            "maxOutsideMm": 14.185991425818477
+          }
+        },
+        {
+          "id": "BM0096",
+          "name": "Proximal phalanx of left index finger",
+          "before": {
+            "vertices": 218,
+            "inside": 0,
+            "outside": 218,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 69.12079371364497
+          },
+          "after": {
+            "vertices": 218,
+            "inside": 74,
+            "outside": 75,
+            "surface-band": 69,
+            "ambiguous": 0,
+            "maxOutsideMm": 8.617974122911372
+          }
+        },
+        {
+          "id": "BM0097",
+          "name": "Proximal phalanx of left little finger",
+          "before": {
+            "vertices": 162,
+            "inside": 0,
+            "outside": 162,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 38.176630617712
+          },
+          "after": {
+            "vertices": 162,
+            "inside": 0,
+            "outside": 162,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 31.46285562704433
+          }
+        },
+        {
+          "id": "BM0098",
+          "name": "Proximal phalanx of left middle finger",
+          "before": {
+            "vertices": 253,
+            "inside": 0,
+            "outside": 253,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 57.667343184080565
+          },
+          "after": {
+            "vertices": 253,
+            "inside": 43,
+            "outside": 169,
+            "surface-band": 41,
+            "ambiguous": 0,
+            "maxOutsideMm": 12.53445100454624
+          }
+        },
+        {
+          "id": "BM0099",
+          "name": "Proximal phalanx of left ring finger",
+          "before": {
+            "vertices": 200,
+            "inside": 0,
+            "outside": 200,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 47.904938208292506
+          },
+          "after": {
+            "vertices": 200,
+            "inside": 0,
+            "outside": 200,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 24.25730584729912
+          }
+        },
+        {
+          "id": "BM0100",
+          "name": "Proximal phalanx of left thumb",
+          "before": {
+            "vertices": 197,
+            "inside": 0,
+            "outside": 197,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 70.12271200100496
+          },
+          "after": {
+            "vertices": 197,
+            "inside": 30,
+            "outside": 113,
+            "surface-band": 54,
+            "ambiguous": 0,
+            "maxOutsideMm": 9.182762007157624
+          }
+        }
+      ]
+    },
+    {
+      "side": "right",
+      "summary": {
+        "before": {
+          "meshes": 30,
+          "vertices": 7181,
+          "outsideVertices": 6609,
+          "outsideMeshes": 30,
+          "maxOutsideMm": 86.63082184446303
+        },
+        "after": {
+          "meshes": 30,
+          "vertices": 7181,
+          "outsideVertices": 2526,
+          "outsideMeshes": 20,
+          "maxOutsideMm": 44.780433316118675
+        }
+      },
+      "joints": [
+        {
+          "pair": [
+            "scapula",
+            "humerus"
+          ],
+          "sharedTransform": false,
+          "beforeVertexSurfaceMinimumMm": 0.5636978873970765,
+          "afterVertexSurfaceMinimumMm": 0.004778815711891272,
+          "beforeTriangleSurfacesIntersect": false,
+          "afterTriangleSurfacesIntersect": true
+        },
+        {
+          "pair": [
+            "humerus",
+            "radius"
+          ],
+          "sharedTransform": true,
+          "beforeVertexSurfaceMinimumMm": 3.9781488807555507,
+          "afterVertexSurfaceMinimumMm": 4.339723683367993,
+          "beforeTriangleSurfacesIntersect": false,
+          "afterTriangleSurfacesIntersect": false
+        },
+        {
+          "pair": [
+            "humerus",
+            "ulna"
+          ],
+          "sharedTransform": true,
+          "beforeVertexSurfaceMinimumMm": 0.6809205017185501,
+          "afterVertexSurfaceMinimumMm": 0.7428211897801603,
+          "beforeTriangleSurfacesIntersect": false,
+          "afterTriangleSurfacesIntersect": false
+        },
+        {
+          "pair": [
+            "radius",
+            "scaphoid"
+          ],
+          "sharedTransform": true,
+          "beforeVertexSurfaceMinimumMm": 1.630147487531051,
+          "afterVertexSurfaceMinimumMm": 1.778321834437411,
+          "beforeTriangleSurfacesIntersect": false,
+          "afterTriangleSurfacesIntersect": false
+        },
+        {
+          "pair": [
+            "radius",
+            "lunate"
+          ],
+          "sharedTransform": true,
+          "beforeVertexSurfaceMinimumMm": 4.251844440517443,
+          "afterVertexSurfaceMinimumMm": 4.638332942241338,
+          "beforeTriangleSurfacesIntersect": false,
+          "afterTriangleSurfacesIntersect": false
+        }
+      ],
+      "parts": [
+        {
+          "id": "BM0065",
+          "name": "Distal phalanx of right index finger",
+          "before": {
+            "vertices": 187,
+            "inside": 0,
+            "outside": 187,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 76.44127059758104
+          },
+          "after": {
+            "vertices": 187,
+            "inside": 0,
+            "outside": 187,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 16.08823505076865
+          }
+        },
+        {
+          "id": "BM0066",
+          "name": "Distal phalanx of right little finger",
+          "before": {
+            "vertices": 138,
+            "inside": 0,
+            "outside": 138,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 26.481148954579282
+          },
+          "after": {
+            "vertices": 138,
+            "inside": 0,
+            "outside": 138,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 44.780433316118675
+          }
+        },
+        {
+          "id": "BM0067",
+          "name": "Distal phalanx of right middle finger",
+          "before": {
+            "vertices": 141,
+            "inside": 0,
+            "outside": 141,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 51.54868483169478
+          },
+          "after": {
+            "vertices": 141,
+            "inside": 0,
+            "outside": 141,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 21.95197476846483
+          }
+        },
+        {
+          "id": "BM0068",
+          "name": "Distal phalanx of right ring finger",
+          "before": {
+            "vertices": 114,
+            "inside": 0,
+            "outside": 114,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 33.82224662300374
+          },
+          "after": {
+            "vertices": 114,
+            "inside": 0,
+            "outside": 114,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 40.91121488601183
+          }
+        },
+        {
+          "id": "BM0069",
+          "name": "Distal phalanx of right thumb",
+          "before": {
+            "vertices": 181,
+            "inside": 0,
+            "outside": 181,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 84.83574986853814
+          },
+          "after": {
+            "vertices": 181,
+            "inside": 9,
+            "outside": 119,
+            "surface-band": 53,
+            "ambiguous": 0,
+            "maxOutsideMm": 8.507072726003818
+          }
+        },
+        {
+          "id": "BM0089",
+          "name": "Middle phalanx of right ring finger",
+          "before": {
+            "vertices": 214,
+            "inside": 0,
+            "outside": 214,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 44.97110419953958
+          },
+          "after": {
+            "vertices": 214,
+            "inside": 0,
+            "outside": 214,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 33.74725564317754
+          }
+        },
+        {
+          "id": "BM0093",
+          "name": "Middle phalanx of right index finger",
+          "before": {
+            "vertices": 186,
+            "inside": 0,
+            "outside": 186,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 80.44226613098486
+          },
+          "after": {
+            "vertices": 186,
+            "inside": 0,
+            "outside": 147,
+            "surface-band": 39,
+            "ambiguous": 0,
+            "maxOutsideMm": 13.780170815014166
+          }
+        },
+        {
+          "id": "BM0094",
+          "name": "Middle phalanx of right little finger",
+          "before": {
+            "vertices": 168,
+            "inside": 0,
+            "outside": 168,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 34.54941403230778
+          },
+          "after": {
+            "vertices": 168,
+            "inside": 0,
+            "outside": 168,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 38.22810259927138
+          }
+        },
+        {
+          "id": "BM0095",
+          "name": "Middle phalanx of right middle finger",
+          "before": {
+            "vertices": 221,
+            "inside": 0,
+            "outside": 221,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 59.03375880736271
+          },
+          "after": {
+            "vertices": 221,
+            "inside": 0,
+            "outside": 221,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 15.642578885886982
+          }
+        },
+        {
+          "id": "BM0101",
+          "name": "Proximal phalanx of right index finger",
+          "before": {
+            "vertices": 213,
+            "inside": 0,
+            "outside": 213,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 81.59748903763538
+          },
+          "after": {
+            "vertices": 213,
+            "inside": 94,
+            "outside": 52,
+            "surface-band": 67,
+            "ambiguous": 0,
+            "maxOutsideMm": 5.93605607093744
+          }
+        },
+        {
+          "id": "BM0102",
+          "name": "Proximal phalanx of right little finger",
+          "before": {
+            "vertices": 186,
+            "inside": 0,
+            "outside": 186,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 43.90835317048663
+          },
+          "after": {
+            "vertices": 186,
+            "inside": 0,
+            "outside": 186,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 33.49009030118874
+          }
+        },
+        {
+          "id": "BM0103",
+          "name": "Proximal phalanx of right middle finger",
+          "before": {
+            "vertices": 266,
+            "inside": 0,
+            "outside": 266,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 67.60834840909226
+          },
+          "after": {
+            "vertices": 266,
+            "inside": 41,
+            "outside": 191,
+            "surface-band": 34,
+            "ambiguous": 0,
+            "maxOutsideMm": 14.014627264399191
+          }
+        },
+        {
+          "id": "BM0104",
+          "name": "Proximal phalanx of right ring finger",
+          "before": {
+            "vertices": 202,
+            "inside": 0,
+            "outside": 202,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 55.1541392057917
+          },
+          "after": {
+            "vertices": 202,
+            "inside": 0,
+            "outside": 202,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 25.76820137276767
+          }
+        },
+        {
+          "id": "BM0105",
+          "name": "Proximal phalanx of right thumb",
+          "before": {
+            "vertices": 196,
+            "inside": 0,
+            "outside": 196,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 85.46470326394234
+          },
+          "after": {
+            "vertices": 196,
+            "inside": 56,
+            "outside": 83,
+            "surface-band": 57,
+            "ambiguous": 0,
+            "maxOutsideMm": 7.627400743020034
+          }
+        },
+        {
+          "id": "BM0106",
+          "name": "Right radius",
+          "before": {
+            "vertices": 249,
+            "inside": 0,
+            "outside": 249,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 79.42077706791699
+          },
+          "after": {
+            "vertices": 249,
+            "inside": 249,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0107",
+          "name": "Right first metacarpal bone",
+          "before": {
+            "vertices": 287,
+            "inside": 0,
+            "outside": 287,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 86.63082184446303
+          },
+          "after": {
+            "vertices": 287,
+            "inside": 216,
+            "outside": 24,
+            "surface-band": 47,
+            "ambiguous": 0,
+            "maxOutsideMm": 4.325147774609239
+          }
+        },
+        {
+          "id": "BM0108",
+          "name": "Right second metacarpal bone",
+          "before": {
+            "vertices": 347,
+            "inside": 0,
+            "outside": 347,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 80.19199264602399
+          },
+          "after": {
+            "vertices": 347,
+            "inside": 346,
+            "outside": 0,
+            "surface-band": 1,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0109",
+          "name": "Right third metacarpal bone",
+          "before": {
+            "vertices": 345,
+            "inside": 0,
+            "outside": 345,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 73.48325586136748
+          },
+          "after": {
+            "vertices": 345,
+            "inside": 309,
+            "outside": 16,
+            "surface-band": 20,
+            "ambiguous": 0,
+            "maxOutsideMm": 3.243450457904297
+          }
+        },
+        {
+          "id": "BM0110",
+          "name": "Right fourth metacarpal bone",
+          "before": {
+            "vertices": 280,
+            "inside": 0,
+            "outside": 280,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 64.25993737391889
+          },
+          "after": {
+            "vertices": 280,
+            "inside": 169,
+            "outside": 78,
+            "surface-band": 33,
+            "ambiguous": 0,
+            "maxOutsideMm": 11.957367106422954
+          }
+        },
+        {
+          "id": "BM0111",
+          "name": "Right fifth metacarpal bone",
+          "before": {
+            "vertices": 236,
+            "inside": 0,
+            "outside": 236,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 55.53332917130751
+          },
+          "after": {
+            "vertices": 236,
+            "inside": 53,
+            "outside": 138,
+            "surface-band": 45,
+            "ambiguous": 0,
+            "maxOutsideMm": 22.670757270894722
+          }
+        },
+        {
+          "id": "BM0112",
+          "name": "Right capitate",
+          "before": {
+            "vertices": 245,
+            "inside": 0,
+            "outside": 245,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 72.51221254496548
+          },
+          "after": {
+            "vertices": 245,
+            "inside": 245,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0114",
+          "name": "Right hamate",
+          "before": {
+            "vertices": 316,
+            "inside": 0,
+            "outside": 316,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 64.5101143469941
+          },
+          "after": {
+            "vertices": 316,
+            "inside": 292,
+            "outside": 0,
+            "surface-band": 24,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0115",
+          "name": "Right humerus",
+          "before": {
+            "vertices": 794,
+            "inside": 566,
+            "outside": 222,
+            "surface-band": 6,
+            "ambiguous": 0,
+            "maxOutsideMm": 52.11907176496691
+          },
+          "after": {
+            "vertices": 794,
+            "inside": 790,
+            "outside": 0,
+            "surface-band": 4,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0116",
+          "name": "Right lunate",
+          "before": {
+            "vertices": 191,
+            "inside": 0,
+            "outside": 191,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 63.715408765397676
+          },
+          "after": {
+            "vertices": 191,
+            "inside": 191,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0117",
+          "name": "Right pisiform",
+          "before": {
+            "vertices": 110,
+            "inside": 0,
+            "outside": 110,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 46.11895561409992
+          },
+          "after": {
+            "vertices": 110,
+            "inside": 0,
+            "outside": 89,
+            "surface-band": 21,
+            "ambiguous": 0,
+            "maxOutsideMm": 7.639677838030135
+          }
+        },
+        {
+          "id": "BM0118",
+          "name": "Right scaphoid",
+          "before": {
+            "vertices": 185,
+            "inside": 0,
+            "outside": 185,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 73.106718947443
+          },
+          "after": {
+            "vertices": 185,
+            "inside": 185,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0120",
+          "name": "Right trapezium",
+          "before": {
+            "vertices": 272,
+            "inside": 0,
+            "outside": 272,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 78.773679679848
+          },
+          "after": {
+            "vertices": 272,
+            "inside": 272,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0121",
+          "name": "Right trapezoid",
+          "before": {
+            "vertices": 267,
+            "inside": 0,
+            "outside": 267,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 77.04066746725546
+          },
+          "after": {
+            "vertices": 267,
+            "inside": 267,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        },
+        {
+          "id": "BM0122",
+          "name": "Right triquetral",
+          "before": {
+            "vertices": 139,
+            "inside": 0,
+            "outside": 139,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 56.31786383983427
+          },
+          "after": {
+            "vertices": 139,
+            "inside": 92,
+            "outside": 18,
+            "surface-band": 29,
+            "ambiguous": 0,
+            "maxOutsideMm": 4.048449596497371
+          }
+        },
+        {
+          "id": "BM0123",
+          "name": "Right ulna",
+          "before": {
+            "vertices": 305,
+            "inside": 0,
+            "outside": 305,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "maxOutsideMm": 56.68987238243183
+          },
+          "after": {
+            "vertices": 305,
+            "inside": 287,
+            "outside": 0,
+            "surface-band": 18,
+            "ambiguous": 0,
+            "maxOutsideMm": 0
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Vertex-to-triangle joint minima are unsigned, one-way proxies; they do not detect all intersections or validate cartilage/contact regions. Separate triangle-intersection flags do not measure penetration volume or enclosed solids.",
+    "Distal joint pairs share one similarity transform. Their scaled distance checks test transform implementation, not improved joint anatomy.",
+    "Skin constrictions and adjacency patch centres are geometric proxies, not anatomically identified joint centres.",
+    "A single closed manifold skin surface is not sufficient to prove it bounds the filled body: a tissue shell can enclose a hollow interior."
+  ],
+  "files": [
+    {
+      "path": ".cache/arm-registration/candidates.json",
+      "sha256": "0f86ad11ccd8965e33c23c9e21f246f39736cd41a5c4437881f8ed3e7d35f487"
+    },
+    {
+      "path": "scripts/audit-arm-candidate.mjs",
+      "sha256": "5a385bed8159e579fb70dc7ea49680919f016862e7d442bd29f6c10dae35223f"
+    },
+    {
+      "path": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "path": "scripts/lib/joint-geometry.mjs",
+      "sha256": "a008cae6f842a7f55239d4eed617465bf765eb87998d6668f6007998d23ad2db"
+    }
+  ],
+  "rejectionScreen": {
+    "outsideVertices": 5182,
+    "newJointSurfaceIntersections": [
+      {
+        "side": "right",
+        "pair": [
+          "scapula",
+          "humerus"
+        ]
+      }
+    ],
+    "passedGeometricScreen": false,
+    "anatomicallyValidated": false,
+    "deployed": false,
+    "scope": "Only the reported skin classification and named joint surface pairs; not all-bone collisions, cartilage, or anatomical correctness."
+  }
+}

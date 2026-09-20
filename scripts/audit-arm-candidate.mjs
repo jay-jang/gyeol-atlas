@@ -6,9 +6,15 @@ import {gunzipSync} from 'node:zlib';
 import {BufferGeometry,BufferAttribute,Vector3,Ray,DoubleSide} from 'three';
 import {MeshBVH} from 'three-mesh-bvh';
 import {surfaceProbe,surfaceTopology,referencedVertices} from './lib/surface-containment.mjs';
+import {jointSurfaceRelation} from './lib/joint-geometry.mjs';
 
 const handOnly=process.argv.includes('--hand');
-const candidatePath=handOnly?'.cache/arm-registration/hand-candidates.json':'.cache/arm-registration/candidates.json';
+const articulated=process.argv.includes('--articulated');
+assert.ok(!(handOnly&&articulated),'Choose one experiment');
+assert.ok(!process.argv.includes('--upper-existing')||articulated,'Upper-length mode requires articulated experiment');
+assert.ok(!process.argv.includes('--coupled-hand')||(articulated&&process.argv.includes('--upper-existing')),'Coupled hand requires articulated existing-upper mode');
+const prefix=articulated?(process.argv.includes('--coupled-hand')?'articulated-coupled-hand-':process.argv.includes('--upper-existing')?'articulated-existing-upper-':'articulated-'):handOnly?'hand-':'';
+const candidatePath=`.cache/arm-registration/${prefix}candidates.json`;
 const read=path=>JSON.parse(fs.readFileSync(path));
 const sha256=path=>createHash('sha256').update(fs.readFileSync(path)).digest('hex');
 const candidate=read(candidatePath);
@@ -34,19 +40,12 @@ function containment(g,classifier=probe) {
   }
   return result;
 }
-function vertexSurfaceGap(a,b) {
-  // Vertex-to-triangle minimum is a geometric proxy, not an articular gap:
-  // it can miss edge-edge minima, cartilage, and matching contact regions.
-  const clone=b.clone(),bvh=new MeshBVH(clone),position=a.getAttribute('position');let distance=Infinity;
-  for(const index of referencedVertices(a,Infinity))distance=Math.min(distance,bvh.closestPointToPoint(new Vector3().fromBufferAttribute(position,index)).distance);
-  clone.dispose();return distance*1000;
-}
 const report={status:'EXPERIMENT ONLY — not deployed; containment cannot establish correct anatomy',topology,arms:[],
-  limitations:['Vertex-to-triangle joint minima are unsigned, one-way proxies; they do not detect all intersections or validate cartilage/contact regions.',
-    handOnly?'Only the hand bones move; unchanged proximal pairs are implementation controls, and wrist continuity is not enforced.':'Distal joint pairs share one similarity transform. Their scaled distance checks test transform implementation, not improved joint anatomy.',
-    'No elbow, wrist or finger articulation is fitted; skin constrictions and the shoulder pivot are only geometric proxies.',
+  limitations:['Vertex-to-triangle joint minima are unsigned, one-way proxies; they do not detect all intersections or validate cartilage/contact regions. Separate triangle-intersection flags do not measure penetration volume or enclosed solids.',
+    articulated?'Two-link proxy endpoints are constrained, but actual articular contacts, collisions and finger articulation are not fitted.':handOnly?'Only the hand bones move; unchanged proximal pairs are implementation controls, and wrist continuity is not enforced.':'Distal joint pairs share one similarity transform. Their scaled distance checks test transform implementation, not improved joint anatomy.',
+    'Skin constrictions and adjacency patch centres are geometric proxies, not anatomically identified joint centres.',
     'A single closed manifold skin surface is not sufficient to prove it bounds the filled body: a tissue shell can enclose a hollow interior.'],
-  files:[candidatePath,'scripts/audit-arm-candidate.mjs','scripts/lib/surface-containment.mjs'].map(path=>({path,sha256:sha256(path)}))};
+  files:[candidatePath,'scripts/audit-arm-candidate.mjs','scripts/lib/surface-containment.mjs','scripts/lib/joint-geometry.mjs'].map(path=>({path,sha256:sha256(path)}))};
 if(handOnly){
   const donorAtlas=read('.cache/male-details/atlas.json');
   const donorSkin=geometry(donorAtlas.parts.find(p=>p.name==='Skin'),donorAtlas,'.cache/arm-registration');
@@ -87,16 +86,22 @@ for(const arm of candidate.arms){
       }
       rows.push({id:part.id,name:part.name,before:containment(before),after:containment(after)});
     }
-    meshes.set(part.name.toLowerCase(),{before,after,transformed:part.transformed});
+    meshes.set(part.name.toLowerCase(),{before,after,part});
   }
   const joints=[['scapula','humerus'],['humerus','radius'],['humerus','ulna'],['radius','scaphoid'],['radius','lunate']].map(([a,b])=>{
     const first=meshes.get(`${arm.side} ${a}`),second=meshes.get(`${arm.side} ${b}`);
     assert.ok(first&&second,`${arm.side}: missing joint pair ${a}/${b}`);
-    const before=vertexSurfaceGap(first.before,second.before),after=vertexSurfaceGap(first.after,second.after);
-    const sharedTransform=handOnly?(!first.transformed&&!second.transformed):a!=='scapula';
-    if(sharedTransform)assert.ok(Math.abs(after-before*(handOnly?1:arm.scale))<.001,`${a}/${b}: similarity must preserve scaled relative distances`);
+    const beforeRelation=jointSurfaceRelation(first.before,second.before),afterRelation=jointSurfaceRelation(first.after,second.after);
+    const before=beforeRelation.vertexSurfaceMinimumMm,after=afterRelation.vertexSurfaceMinimumMm;
+    const sharedTransform=articulated?first.part.group===second.part.group:handOnly?(!first.part.transformed&&!second.part.transformed):a!=='scapula';
+    if(sharedTransform){
+      const m=first.part.transformed?(first.part.linear||arm.linear):[[1,0,0],[0,1,0],[0,0,1]];
+      const scale=Math.sqrt(m[0].reduce((n,v)=>n+v*v,0));
+      assert.ok(Math.abs(after-before*scale)<.001,`${a}/${b}: similarity must preserve scaled relative distances`);
+    }
     return {pair:[a,b],sharedTransform,beforeVertexSurfaceMinimumMm:before,
-      afterVertexSurfaceMinimumMm:after};
+      afterVertexSurfaceMinimumMm:after,beforeTriangleSurfacesIntersect:beforeRelation.triangleSurfacesIntersect,
+      afterTriangleSurfacesIntersect:afterRelation.triangleSurfacesIntersect};
   });
   const summary=Object.fromEntries(['before','after'].map(stage=>[stage,{
     meshes:rows.length,vertices:rows.reduce((n,p)=>n+p[stage].vertices,0),
@@ -109,4 +114,10 @@ for(const arm of candidate.arms){
   for(const pair of meshes.values()){pair.before.dispose();pair.after.dispose();}
 }
 probe.dispose();skin.dispose();
-fs.writeFileSync(handOnly?'.cache/arm-registration/hand-candidate-audit.json':'.cache/arm-registration/candidate-audit.json',JSON.stringify(report,null,2)+'\n');
+const outsideVertices=report.arms.reduce((n,a)=>n+a.summary.after.outsideVertices,0);
+const newJointSurfaceIntersections=report.arms.flatMap(a=>a.joints.filter(j=>j.afterTriangleSurfacesIntersect&&!j.beforeTriangleSurfacesIntersect).map(j=>({side:a.side,pair:j.pair})));
+report.rejectionScreen={outsideVertices,newJointSurfaceIntersections,
+  passedGeometricScreen:outsideVertices===0&&newJointSurfaceIntersections.length===0,
+  anatomicallyValidated:false,deployed:false,
+  scope:'Only the reported skin classification and named joint surface pairs; not all-bone collisions, cartilage, or anatomical correctness.'};
+fs.writeFileSync(`.cache/arm-registration/${prefix}candidate-audit.json`,JSON.stringify(report,null,2)+'\n');
