@@ -1,0 +1,40 @@
+{
+  "origin": "https://jay-jang.github.io/gyeol-atlas/",
+  "checkedAt": "2026-09-20T03:57:30.398Z",
+  "method": "Public built app: real visible mesh IDs at two discriminating peel settings, no selected-mesh override; not all-depth anatomical validation",
+  "checks": [
+    {
+      "sex": "male",
+      "label": "남성",
+      "depth": 49,
+      "hidden": [
+        "FMA22559",
+        "FMA45958",
+        "FMA45961"
+      ],
+      "visible": [
+        "FMA65015",
+        "FMA65017",
+        "FMA65019"
+      ],
+      "passed": true
+    },
+    {
+      "sex": "female",
+      "label": "여성",
+      "depth": 46.5,
+      "hidden": [
+        "VHF0005",
+        "VHF0020"
+      ],
+      "visible": [
+        "VHF0022",
+        "VHF0018",
+        "VHF0019",
+        "VHF0024"
+      ],
+      "passed": true
+    }
+  ],
+  "errors": []
+}
