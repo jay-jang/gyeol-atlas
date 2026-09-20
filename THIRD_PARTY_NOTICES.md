@@ -55,6 +55,16 @@ Male details are repacked without modifying their source vertices and displayed 
 
 The male Z-Anatomy overview overlay uses one uniform scale/translation fitted to four named neural centers; the measurements and 39 held-out vascular center differences are recorded in `data/catalog/male-registration.json`. Peeling does not change this transform. Residual local differences remain; this is not anatomical or clinical validation.
 
+## Independent female CT detail supplement
+
+**Jakob Wasserthal, University Hospital Basel**, *Dataset with segmentations of 117 important anatomical structures in 1228 CT images*, version 2.0.1, [DOI 10.5281/zenodo.10047292](https://zenodo.org/records/10047292), licensed **CC BY 4.0**. [License](https://creativecommons.org/licenses/by/4.0/). Citation: Wasserthal et al., *TotalSegmentator: Robust Segmentation of 104 Anatomic Structures in CT Images*, Radiology: Artificial Intelligence 5(5), e230024 (2023), [DOI](https://doi.org/10.1148/ryai.230024).
+
+The published metadata records subject s0255 as female. Eleven binary masks are preserved in `data/female-ct/s0255/`, including stomach, adrenal glands, esophagus, back musculature, liver, spleen, kidneys and pancreas. The esophagus and back musculature are limited by the CT field of view; they are not complete organ/muscle-length reconstructions. The material is not a complete healthy-female population atlas.
+
+GYEOL adaptations: Lewiner marching cubes at level 0.5 on the published masks (no new segmentation); RAS millimeters converted to left/superior/anterior meters; one common translation for display; calculated and quantized normals, packed geometry and gzip, editorial colors and Korean labels. No shape warping, HRA fitting or male substitution is applied. All eleven CT parts retain their mutual source positions in an independent detail scene. The rejected cross-donor fit, CRC32 checks and SHA-256 hashes are recorded in `data/catalog/female-detail-source.json`. No claim of clinical validation or endorsement is made. The public notice travels with the site at `public/models/LICENSE_female_ct.txt`.
+
+The earlier statement that the HRA whole-body source lacks a stomach remains true for that source; the independent CT detail now supplies a stomach reference, not a replacement inside HRA's body.
+
 ## WHO and clinical sources
 
 WHO documents and NCCIH web pages retain their respective original rights. The repository includes short independently written educational summaries, citations, and metadata; it does **not** redistribute the WHO books or diagrams and does not claim that they are open-licensed. WHO did not supply or validate the 3D acupoint coordinates. Korean summaries are AI drafts, not official WHO translations.

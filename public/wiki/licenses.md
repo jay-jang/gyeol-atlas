@@ -15,7 +15,7 @@ STL 제공: [Kevin Mattheus Moerman의 BodyParts3D 미러](https://github.com/Ke
 
 여성은 [NIH Human Reference Atlas](https://humanatlas.io/3d-reference-library)의 Kristen Browne·Heidi Schlehlein 여성 참조 v1.10과 v1.5 골반 보완 자료를 사용합니다. 하체 근육은 [Andreassen 등(2023)](https://doi.org/10.1038/s41597-022-01905-2)의 다른 여성 기증자 자료이며, 회청색 보완 골격180개는 BodyParts3D 남성 유래입니다. 모두 **CC BY 4.0**입니다. 원본을 패키징한 [Human-Atlas](https://github.com/slorksmo/Human-Atlas)의 고정 커밋과 출처 고지를 보존했습니다.
 
-총1,220개 구조를 검색·선택할 수 있지만 위·상체 근육·일부 말초신경은 미수록입니다. 여성 체표에 남성 기관을 합성하지 않습니다. 여성 경혈 좌표는 검수 전이라 표식을 숨깁니다. 임상적으로 정합한 단일 기증자 모델이나 모든 기관을 수록한 모델이 아닙니다.
+HRA 전신1,220개 구조에는 위·상체 근육·일부 말초신경이 없습니다. 아래 여성 CT 보완은 별도 상세로 제공하며 HRA에 합성하지 않습니다. 여성 경혈 좌표는 검수 전이라 표식을 숨깁니다. 임상적으로 정합한 단일 기증자 모델이나 모든 기관을 수록한 모델이 아닙니다.
 
 남성 심장·간·폐의 독립 상세 모형423개는 BodyParts3D 4.0의 원본 하위 관계를 따릅니다. **BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International**. [현행 라이선스](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html). 전신 모형과 좌표계가 다르므로 별도 상세 보기로 표시합니다.
 
@@ -23,9 +23,11 @@ STL 제공: [Kevin Mattheus Moerman의 BodyParts3D 미러](https://github.com/Ke
 
 ## 문헌과 코드
 
+여성 CT 보완 상세: **Jakob Wasserthal, 바젤대학병원**, [TotalSegmentator 2.0.1](https://zenodo.org/records/10047292), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). 여성으로 기록된 사례 s0255의 공개 분할 마스크11개를 사용했습니다. 위·양측 부신과 주변 간·비장·콩팥·췌장, 촬영 범위에서 잘린 식도·등 고유근육군이 포함됩니다. [원 논문](https://doi.org/10.1148/ryai.230024). 변경: 원본1.5mm 마스크의 표면 변환, 축·단위 변환, 모든 모형에 동일한 이동, 법선 계산·양자화·압축, 한국어 편집. 원본을 새로 분할하거나 HRA 전신에 맞춰 형태를 변형하지 않았습니다. 원저작자의 앱 검수·보증을 뜻하지 않습니다. [배포 고지](/models/LICENSE_female_ct.txt).
+
 WHO 문헌은 무료 열람과 재배포 허가를 혼동하지 않습니다. 원문 전체·도판을 저장하거나 오픈 라이선스로 재배포하지 않고, 짧은 학습 요약과 원문 링크를 제공합니다. 위키 초안은 AI 작성이며 WHO의 공식 한국어 번역이 아닙니다.
 
-프로젝트 코드는 MIT입니다. 독자적으로 작성한 위키 서술은 CC BY 4.0으로 제공하되, 인용된 원자료의 권리는 원저작자에게 있습니다. 모델과 모델 파생 좌표는 CC BY-SA 2.1 JP로 구분합니다. 세부 경계는 저장소의 `THIRD_PARTY_NOTICES.md`를 참조하세요.
+프로젝트 코드는 MIT입니다. 독자적으로 작성한 위키 서술은 CC BY 4.0으로 제공하되, 인용된 원자료의 권리는 원저작자에게 있습니다. 모델과 파생 좌표에는 각 원본의 조건을 적용합니다. 여성 CT 보완은 CC BY 4.0이며 기존 BodyParts3D 3.0 변환본의 CC BY-SA 2.1 JP와 구분합니다. 세부 경계는 저장소의 `THIRD_PARTY_NOTICES.md`를 참조하세요.
 
 [라이브러리 비교](#wiki/library-comparison) · [출처 목록](#sources)
 

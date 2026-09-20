@@ -1,0 +1,225 @@
+{
+  "url": "https://zenodo.org/api/records/10047292/files/Totalsegmentator_dataset_v201.zip/content",
+  "doi": "10.5281/zenodo.10047292",
+  "version": "2.0.1",
+  "license": "CC-BY-4.0",
+  "archiveBytes": 23581218285,
+  "archiveMd5Published": "fe250e5718e0a3b5df4c4ea9d58a62fe",
+  "archiveMd5Verified": false,
+  "verification": "Selected ZIP entry CRC32 and local SHA256; whole archive not downloaded",
+  "subject": {
+    "image_id": "s0255",
+    "age": "57.00",
+    "gender": "f",
+    "institute": "I",
+    "study_type": "ct abdomen-pelvis",
+    "split": "train",
+    "manufacturer": "siemens",
+    "scanner_model": "somatom definition as+",
+    "kvp": "100",
+    "pathology": "no_pathology",
+    "pathology_location": "no_location"
+  },
+  "metadataSha256": "83fa5844fc238c9453e64cddfee5964bc59bbdb994c274b8b931e948a44538ed",
+  "files": [
+    {
+      "mask": "stomach",
+      "archivePath": "s0255/segmentations/stomach.nii.gz",
+      "crc32": "46ae63b3",
+      "sha256": "303fb31b3d241e5c6f89cc53d4361eb4cc6747fddc2351da0e2a59e01285cb85",
+      "bytes": 35620,
+      "path": "data/female-ct/s0255/stomach.nii.gz"
+    },
+    {
+      "mask": "liver",
+      "archivePath": "s0255/segmentations/liver.nii.gz",
+      "crc32": "77b82cc8",
+      "sha256": "c2d61a1bb167e38e694ac18f50727b6e137f19d9dcd0feba0e05d93cb489f354",
+      "bytes": 51030,
+      "path": "data/female-ct/s0255/liver.nii.gz"
+    },
+    {
+      "mask": "spleen",
+      "archivePath": "s0255/segmentations/spleen.nii.gz",
+      "crc32": "6b5abc65",
+      "sha256": "b31ceddc2d00c6447ea5a3be664fd2f3bb5590648accaf2d2fb6d05fc099e04c",
+      "bytes": 31050,
+      "path": "data/female-ct/s0255/spleen.nii.gz"
+    },
+    {
+      "mask": "kidney_left",
+      "archivePath": "s0255/segmentations/kidney_left.nii.gz",
+      "crc32": "527ae18f",
+      "sha256": "da16fb1492c31021cde5578dbe17282d5500a2d8bd45f55da0825b7d4d51581f",
+      "bytes": 26430,
+      "path": "data/female-ct/s0255/kidney_left.nii.gz"
+    },
+    {
+      "mask": "kidney_right",
+      "archivePath": "s0255/segmentations/kidney_right.nii.gz",
+      "crc32": "860a67f4",
+      "sha256": "087e42eed97b9ad6c938de04713d88da51cbb8a3236c169f51ab281250690043",
+      "bytes": 26175,
+      "path": "data/female-ct/s0255/kidney_right.nii.gz"
+    },
+    {
+      "mask": "pancreas",
+      "archivePath": "s0255/segmentations/pancreas.nii.gz",
+      "crc32": "f65bc7d3",
+      "sha256": "f8d3fdf3f56cdaacc59ac09b2639c652ebb1e8d4bd4075d5e24675a9982936c0",
+      "bytes": 96877,
+      "path": "data/female-ct/s0255/pancreas.nii.gz"
+    },
+    {
+      "mask": "adrenal_gland_left",
+      "archivePath": "s0255/segmentations/adrenal_gland_left.nii.gz",
+      "crc32": "6f8210d8",
+      "sha256": "ca52cfd1d90598fb300d99a9d2ab7deb9a99ddc310a2d93489dcf549a9ab2b56",
+      "bytes": 92393,
+      "path": "data/female-ct/s0255/adrenal_gland_left.nii.gz"
+    },
+    {
+      "mask": "adrenal_gland_right",
+      "archivePath": "s0255/segmentations/adrenal_gland_right.nii.gz",
+      "crc32": "797de7b5",
+      "sha256": "0a334dbfa3c5f724ac40a7e9c6feb772ee552e766ae594814951aaaea3ca86d5",
+      "bytes": 91685,
+      "path": "data/female-ct/s0255/adrenal_gland_right.nii.gz"
+    },
+    {
+      "mask": "esophagus",
+      "archivePath": "s0255/segmentations/esophagus.nii.gz",
+      "crc32": "f9698603",
+      "sha256": "17ff5268d1c309c1b5d0a5c1210a909b08d14ce51d2f947ad9731431d446ed67",
+      "bytes": 92883,
+      "path": "data/female-ct/s0255/esophagus.nii.gz"
+    },
+    {
+      "mask": "autochthon_left",
+      "archivePath": "s0255/segmentations/autochthon_left.nii.gz",
+      "crc32": "110b65e0",
+      "sha256": "acfdabfe916e54b7ab079e8ec46d807500a9369fa5778cf361647fe37fd6dfbd",
+      "bytes": 114004,
+      "path": "data/female-ct/s0255/autochthon_left.nii.gz"
+    },
+    {
+      "mask": "autochthon_right",
+      "archivePath": "s0255/segmentations/autochthon_right.nii.gz",
+      "crc32": "64a7313b",
+      "sha256": "78ffdc357e2fe9b4d538d02214719aa73a331a107b71e3aaab61c47264cc0d6c",
+      "bytes": 112199,
+      "path": "data/female-ct/s0255/autochthon_right.nii.gz"
+    }
+  ],
+  "downloadBytes": 14350825,
+  "outputFiles": [
+    {
+      "path": "public/models/female-detail/atlas.json",
+      "sha256": "b8db18d1b120b8b0b090dec2920e46073e9a8446862807509a3642aef25f2041"
+    },
+    {
+      "path": "public/models/female-detail/ct-supplement.bin.gz",
+      "sha256": "e8115217a60a58217fca58f1264f65109b4855c2adb364b4ae62ddb86be907ab"
+    }
+  ],
+  "rejectedAlignment": {
+    "method": "Similarity fit of four shared abdominal organ bounding-box centers; no local warping",
+    "clinicalRegistration": false,
+    "scale": 1.151558835040056,
+    "rowVectorRotation": [
+      [
+        0.9957672517208385,
+        0.053491074470415206,
+        -0.07474145671799785
+      ],
+      [
+        -0.08837091946996353,
+        0.7807151925638766,
+        -0.6186067965129258
+      ],
+      [
+        0.025261848553918713,
+        0.6225933609122013,
+        0.7821376771104236
+      ]
+    ],
+    "translationMeters": [
+      0.044478489636389604,
+      0.6939921388540569,
+      0.01401965237614694
+    ],
+    "anchors": [
+      {
+        "mask": "liver",
+        "concept": "HRA:liver",
+        "sourceCenter": [
+          -0.046131835937500004,
+          0.3510499999523163,
+          0.1751318359375
+        ],
+        "targetCenter": [
+          -0.0052380994567227945,
+          1.1401242014575348,
+          -0.07750258578360575
+        ],
+        "residualMm": 34.8439947708948
+      },
+      {
+        "mask": "spleen",
+        "concept": "HRA:spleen",
+        "sourceCenter": [
+          0.07986816406250001,
+          0.3480499999523163,
+          0.1271318359375
+        ],
+        "targetCenter": [
+          0.08765005649537319,
+          1.1293173429179535,
+          -0.12452050375193852
+        ],
+        "residualMm": 31.23934860087304
+      },
+      {
+        "mask": "kidney_left",
+        "concept": "HRA:left_kidney",
+        "sourceCenter": [
+          0.0536181640625,
+          0.3075499999523163,
+          0.1046318359375
+        ],
+        "targetCenter": [
+          0.08270240531772846,
+          1.0308171134996758,
+          -0.10739483574778336
+        ],
+        "residualMm": 20.334181943323596
+      },
+      {
+        "mask": "kidney_right",
+        "concept": "HRA:right_kidney",
+        "sourceCenter": [
+          -0.052131835937499996,
+          0.31354999995231625,
+          0.11663183593750001
+        ],
+        "targetCenter": [
+          -0.06593069849997288,
+          1.0401359048295364,
+          -0.10646619724482792
+        ],
+        "residualMm": 28.187203894503227
+      }
+    ],
+    "heldOutPancreasCenterMm": 41.181956198590164,
+    "acceptedForOverlay": false,
+    "reason": "Different donor organ layout; large rotation and 20–41 mm center discrepancies"
+  },
+  "coordinatePolicy": "Independent female CT detail scene; RAS mm converted to left/superior/anterior meters, one common translation, no HRA registration",
+  "stageTranslationMeters": [
+    0.004131835937499995,
+    0.7589500000476838,
+    -0.1503818359375
+  ],
+  "structures": 11,
+  "gzipBytes": 2524490
+}

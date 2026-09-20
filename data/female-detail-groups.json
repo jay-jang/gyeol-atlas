@@ -1,0 +1,81 @@
+[
+  {
+    "id": "stomach-ct",
+    "name": "위 (여성 CT)",
+    "sex": "female",
+    "sourceConcepts": [
+      "CTF:stomach"
+    ],
+    "ids": [
+      "CTF_stomach"
+    ]
+  },
+  {
+    "id": "adrenal-ct",
+    "name": "부신 (여성 CT)",
+    "sex": "female",
+    "sourceConcepts": [
+      "CTF:adrenal_gland_left",
+      "CTF:adrenal_gland_right"
+    ],
+    "ids": [
+      "CTF_adrenal_gland_left",
+      "CTF_adrenal_gland_right"
+    ]
+  },
+  {
+    "id": "esophagus-ct",
+    "name": "식도 (CT 수록 구간)",
+    "sex": "female",
+    "sourceConcepts": [
+      "CTF:esophagus"
+    ],
+    "ids": [
+      "CTF_esophagus"
+    ]
+  },
+  {
+    "id": "back-muscles-ct",
+    "name": "등 근육군 (CT 수록 구간)",
+    "sex": "female",
+    "sourceConcepts": [
+      "CTF:autochthon_left",
+      "CTF:autochthon_right"
+    ],
+    "ids": [
+      "CTF_autochthon_left",
+      "CTF_autochthon_right"
+    ]
+  },
+  {
+    "id": "abdomen-ct",
+    "name": "여성 CT 주변 기관",
+    "sex": "female",
+    "sourceConcepts": [
+      "CTF:stomach",
+      "CTF:esophagus",
+      "CTF:adrenal_gland_left",
+      "CTF:adrenal_gland_right",
+      "CTF:autochthon_left",
+      "CTF:autochthon_right",
+      "CTF:liver",
+      "CTF:spleen",
+      "CTF:kidney_left",
+      "CTF:kidney_right",
+      "CTF:pancreas"
+    ],
+    "ids": [
+      "CTF_stomach",
+      "CTF_esophagus",
+      "CTF_adrenal_gland_left",
+      "CTF_adrenal_gland_right",
+      "CTF_autochthon_left",
+      "CTF_autochthon_right",
+      "CTF_liver",
+      "CTF_spleen",
+      "CTF_kidney_left",
+      "CTF_kidney_right",
+      "CTF_pancreas"
+    ]
+  }
+]

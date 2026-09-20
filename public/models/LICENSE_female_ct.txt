@@ -1,0 +1,32 @@
+TotalSegmentator female CT detail reference, subject s0255
+
+Creator: Jakob Wasserthal, Department of Research and Analysis, University Hospital Basel.
+Dataset: Dataset with segmentations of 117 important anatomical structures in 1228 CT images, version 2.0.1.
+Source: https://zenodo.org/records/10047292
+DOI: https://doi.org/10.5281/zenodo.10047292
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+License text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Please cite: Wasserthal J, Breit HC, Meyer MT, Pradella M, Hinck D, Sauter AW,
+Heye T, Boll DT, Cyriac J, Yang S, Bach M, Segeroth M. TotalSegmentator:
+Robust Segmentation of 104 Anatomic Structures in CT Images.
+Radiology: Artificial Intelligence 5(5), e230024 (2023).
+https://doi.org/10.1148/ryai.230024
+
+GYEOL modifications: converted 11 published binary NIfTI masks to surfaces
+with Lewiner marching cubes at level 0.5; converted RAS millimeters to
+left/superior/anterior meters; applied one common scene translation;
+calculated normals, quantized normals to int16, packed and gzip-compressed.
+No new image segmentation, shape warping or HRA registration is applied.
+Display colors and Korean labels are editorial adaptations.
+
+This separate female CT reference is not the same donor as the HRA overview.
+Esophagus and back musculature are truncated by the CT field of view.
+Source voxel spacing is 1.5mm. This is not a complete female anatomy atlas,
+not a clinically validated registration, and not for diagnosis or procedures.
+The source authors and institutions have not endorsed or validated this app.
+
+Source masks, selected-case metadata and per-file hashes are retained in
+data/female-ct/s0255/ and data/catalog/female-detail-source.json.
+The full 23.6GB archive was not downloaded or MD5-verified; selected entries
+were checked against ZIP CRC32 and stored with SHA-256 fingerprints.

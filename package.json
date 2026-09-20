@@ -13,6 +13,7 @@
     "models:full-systems": "node scripts/download-full-systems.mjs",
     "models:female-catalog": "node scripts/import-female-atlas.mjs",
     "models:male-details": "node scripts/import-male-details.mjs",
+    "models:female-details": "python3 scripts/build-female-ct.py --input-root data/female-ct && node scripts/import-female-details.mjs .cache/female-ct/s0255 data/female-ct/s0255",
     "wiki:build": "node scripts/build-anchors.mjs && node scripts/build-wiki.mjs",
     "test:production": "node scripts/smoke-production.mjs",
     "test:visual": "node scripts/capture-workspace.mjs",

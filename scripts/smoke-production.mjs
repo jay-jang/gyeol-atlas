@@ -41,6 +41,15 @@ try {
   }
   assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, 9, "Female mode must not load legacy male/female overlay GLBs");
   assert.equal(new Set(requests.filter((r) => /\/female\/.*\.bin\.gz$/.test(r))).size, 15);
+  assert.equal(requests.filter(r => /\/female-detail\//.test(r)).length, 0, "CT detail must not download until requested");
+  await page.locator('.featured-anatomy > button').filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
+  await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
+  await page.waitForFunction(()=>document.querySelector('canvas')?.dataset.femaleDetailParts==='11');
+  assert.equal(new Set(requests.filter(r=>/\/female-detail\/.*\.bin\.gz$/.test(r))).size, 1);
+  assert.equal(await page.locator('canvas').getAttribute('data-visible-structure-ids'), 'CTF_stomach');
+  assert.equal((await fetch(origin + '/models/LICENSE_female_ct.txt')).status, 200);
+  await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();
+  await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
   await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();
   await page.goto(origin+'/#atlas/KI3');
   await page.locator('.point-summary').click();
@@ -82,7 +91,7 @@ try {
   await page.locator('.wiki-sidebar').getByRole('link',{name:'원혈·모혈·오수혈·낙혈의 구분',exact:true}).waitFor();
   assert.deepEqual(errors, []);
   console.log(
-    "Production smoke passed: static wiki, lazy 3D chunk, 9 male GLBs and 15 independent female chunks, lymph, bundle and wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
+    "Production smoke passed: static wiki, lazy 3D, 9 male GLBs, 15 HRA female chunks, 1 on-demand independent female CT chunk, lymph, bundle/wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
   );
 } finally {
   await browser?.close();

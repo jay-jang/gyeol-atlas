@@ -1,6 +1,7 @@
 import type { Layer } from "./anatomy";
 import type { Layers } from "./types";
 import { dissectionLayers, quantizeDepth, stageDepth } from "./dissection.ts";
+import { hasMixedReferenceFrames } from "./reference-source.ts";
 export type CameraPose = {
   position: [number, number, number];
   target: [number, number, number];
@@ -320,6 +321,7 @@ export function restoreView(
         typeof x.name === "string" &&
         Array.isArray(x.ids) &&
         x.ids.length > 0 &&
+        !hasMixedReferenceFrames(s.sex, x.ids) &&
         x.ids.every((id) =>
           assets.some((a) => a.id === id && (!a.sex || a.sex === s.sex) && s.layers[a.layer as Layer]),
         ));
@@ -331,6 +333,7 @@ export function restoreView(
     )
       return base;
     if (s.detail && (!s.detail.ids?.length || typeof s.detail.name !== "string" || typeof s.detail.id !== "string" || !keys.every(key => typeof s.detail!.layers?.[key] === "boolean") || !s.detail.ids.every(id => assets.some(a => a.id === id && (!a.sex || a.sex === s.sex))))) return base;
+    if (hasMixedReferenceFrames(s.sex, [...(s.selection?.ids || []), ...(s.detail?.ids || [])])) return base;
     if (
       s.camera &&
       ![s.camera.position, s.camera.target].every(

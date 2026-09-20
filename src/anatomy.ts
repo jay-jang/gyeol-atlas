@@ -7,7 +7,9 @@ import femaleOrganGroups from "../data/female-organ-groups.json";
 import maleOrganGroups from "../data/male-organ-groups.json";
 import maleDetailGroups from "../data/male-detail-groups.json";
 import maleDetailStructures from "../data/male-detail-structures.json";
-export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.find(detail => detail.id === group.id) || group), ...femaleOrganGroups];
+import femaleDetailStructures from "../data/female-detail-structures.json";
+import femaleDetailGroups from "../data/female-detail-groups.json";
+export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.find(detail => detail.id === group.id) || group), ...femaleOrganGroups, ...femaleDetailGroups];
 export const layerNames = {
   skin: "체표",
   muscle: "근육",
@@ -30,7 +32,7 @@ const baseStructures = inputs.assets.map((s) => ({
   sex: "male" as const,
   label: (labels as Record<string, string>)[s.id] || s.name,
 }));
-export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures.filter(s => s.sex === "male"), ...femaleAtlasStructures, ...maleDetailStructures] as {
+export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures.filter(s => s.sex === "male"), ...femaleAtlasStructures, ...maleDetailStructures, ...femaleDetailStructures] as {
   id: string;
   fmaId?: string;
   name: string;

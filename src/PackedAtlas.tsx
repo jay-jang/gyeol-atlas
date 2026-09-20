@@ -7,6 +7,7 @@ import { dissectionLayerOpacity, layerKeys, structures, type Layer } from "./ana
 import type { AtlasProps } from "./Atlas";
 import { musclePeelOpacity } from "./dissection";
 import { clippingPlanes, configurePicking } from "./anatomy-rendering";
+import { referenceSourceFor } from "./reference-source";
 
 type FemalePart = {
   id: string;
@@ -59,7 +60,7 @@ async function inflate(response: Response, expectedBytes: number) {
 }
 
 export default function PackedAtlas({ props }: { props: AtlasProps }) {
-  const dataset = props.sex === "female" ? "female" : "male-detail";
+  const dataset = referenceSourceFor(props.sex, [...props.selectionIds, ...props.detailIds]);
   const [object, setObject] = useState<Group | null>(null);
   const [manifest, setManifest] = useState<FemaleManifest | null>(null);
   const [error, setError] = useState<Error | null>(null);
@@ -154,7 +155,8 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       configurePicking(item, layer, props.selectionTarget);
     });
     for (const layer of layerKeys) gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(counts[layer]);
-    gl.domElement.dataset[dataset === "female" ? "femaleAtlasParts" : "maleDetailParts"] = String(object.children.length);
+    for (const [source, key] of [["female", "femaleAtlasParts"], ["female-detail", "femaleDetailParts"], ["male-detail", "maleDetailParts"]])
+      gl.domElement.dataset[key] = source === dataset ? String(object.children.length) : "0";
     invalidate();
   }, [object, partById, props.layers, props.isolated, props.selectionIds, props.detailIds, props.highlight, props.dissection, props.displayMode, props.selectionTarget, props.layerOpacity, props.anatomyRegion, props.cutaway, gl, invalidate]);
   useEffect(() => { if (object) { layerKeys.forEach(props.onReady); props.onLoading(false); } }, [object, props.onReady, props.onLoading]);

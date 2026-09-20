@@ -56,6 +56,7 @@ import {
   type ViewAction,
 } from "./view-state";
 import { structures, detailForStructure } from "./anatomy";
+import { referenceSourceFor } from "./reference-source";
 
 const VIEW_KEY = "gyeol-view-v2";
 function readView() {
@@ -413,8 +414,7 @@ function AtlasPage({
     kind: "restore",
     tick: 0,
   });
-  const sourceKey = state.sex === "female" ? "female" :
-    [...(state.selection?.ids || []), ...(state.detail?.ids || [])].some(id => id.startsWith("BP4_")) ? "male-detail" : "male";
+  const sourceKey = referenceSourceFor(state.sex, [...(state.selection?.ids || []), ...(state.detail?.ids || [])]);
   const [loaded, setLoaded] = useState<{ source: string | null; layers: Layer[] }>({ source: null, layers: [] });
   const [loadingReference, setLoadingReference] = useState(false);
   const [comparisonNotice, setComparisonNotice] = useState("");
@@ -691,7 +691,7 @@ function AtlasPage({
             dispatch({ type: "anatomy-region", value });
             requestAnimationFrame(() => camera(value === "whole" ? "fit" : "anatomy-region"));
           }}>{Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}</select></label>
-          <small className="scope-source">{state.sex === "female" ? "여성 참조 1,220개 · 일부 기관 미수록" : "남성 참조 · 림프 142개 포함"}</small>
+          <small className="scope-source">{state.sex === "female" ? "HRA 전신 1,220개 + 여성 CT 별도 상세 11개" : "남성 참조 · 림프 142개 포함"}</small>
         </div>
         <section
           className="depth-explorer"
@@ -777,13 +777,13 @@ function AtlasPage({
         </div>
         <button className="all-anatomy-button" onClick={showAllSystems}>
           <Boxes size={18} />
-          <span><strong>전체 인체 구조 보기</strong><small>7개 계통 · {structuresForSex(state.sex).length.toLocaleString()}개 구조</small></span>
+          <span><strong>전체 인체 구조 보기</strong><small>7개 계통 · 전신 {structuresForSex(state.sex).filter(s => !s.detailOnly).length.toLocaleString()}개 구조</small></span>
         </button>
       </aside>
       <div className="scene-title">
         <span className="eyebrow">GYEOL / ANATOMY ATLAS</span>
         <h1>몸의 구조를 탐색하세요</h1>
-        <p>{state.sex === "female" ? "NIH HRA 여성 독립 참조" : "BodyParts3D 남성 참조"} · 7개 계통 · {anatomyRegionNames[state.anatomyRegion]}</p>
+        <p>{sourceKey === "female-detail" ? "여성 CT 별도 상세 · HRA 전신과 다른 신체" : state.sex === "female" ? "NIH HRA 여성 독립 참조" : "BodyParts3D 남성 참조"} · {sourceKey === "female-detail" ? "CT 촬영 범위" : `7개 계통 · ${anatomyRegionNames[state.anatomyRegion]}`}</p>
       </div>
       <nav className="floating-tools" aria-label="해부 탐색 도구">
         {(["points", "layers", "structures", "help"] as const).map(
@@ -1112,15 +1112,22 @@ function AtlasPage({
               {state.selection.name}{" "}
               <small>{state.selection.ids.length}개 구조</small>
             </strong>
-            {selectedAnatomy?.description && (
+            {selectedAnatomy?.description && sourceKey !== "female-detail" && (
               <p className="selection-description">{selectedAnatomy.description}</p>
             )}
             {selectedAnatomy?.latin && (
               <small className="selection-latin">TA2 · {selectedAnatomy.latin}</small>
             )}
-            {selectedAnatomy?.source && (
+            {selectedAnatomy?.source && sourceKey !== "female-detail" && (
               <small className="selection-source">{selectedAnatomy.source} · 학습용 비진단 모델</small>
             )}
+            {sourceKey === "female-detail" && <>
+              <p className="selection-source">여성 CT 별도 상세 · HRA 전신에 합쳐진 모델이 아닙니다.</p>
+              <details className="ct-source-details"><summary>자료 출처·수록 범위</summary>
+                <p className="selection-description">{selectedAnatomy?.description || "동일 여성 CT의 11개 공개 분할 모형입니다. 식도·등 근육군은 촬영 구간만 수록하며 내부 세부 구획은 없습니다."}</p>
+                <p className="selection-source">원본 해상도 1.5mm · Jakob Wasserthal, 바젤대학병원 · <a href="https://zenodo.org/records/10047292" target="_blank" rel="noreferrer">TotalSegmentator 2.0.1</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a> · 표면 변환·축 변환·공통 이동. 진단·시술용이 아닙니다.</p>
+              </details>
+            </>}
             {detailParts.length > 1 && (
               <details className="organ-detail-parts">
                 <summary>세부 구조 {detailParts.length}개 선택</summary>
@@ -1131,7 +1138,8 @@ function AtlasPage({
             )}
           </div>
           <div className="selection-actions">
-            {selectedOrgan && <button onClick={() => selectFeatured(selectedOrgan)}>{state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
+            {sourceKey === "female-detail" && state.detail?.id !== "abdomen-ct" && <button aria-label="같은 여성 CT의 주변 기관 보기" onClick={() => selectFeatured(featuredAnatomy.find(item => item.id === "abdomen-ct")!)}>주변 기관 함께 보기</button>}
+            {selectedOrgan && !(sourceKey === "female-detail" && selectedOrgan.ids.length === 1 && state.detail) && <button onClick={() => selectFeatured(selectedOrgan)}>{state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
             {state.detail && <button onClick={() => { dispatch({ type: "detail-close" }); requestAnimationFrame(() => camera("fit")); }}>전신으로 돌아가기</button>}
             <button
               onClick={() => {

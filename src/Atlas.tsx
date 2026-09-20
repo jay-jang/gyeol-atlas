@@ -37,6 +37,7 @@ import { movementKeys, translateView, type MoveDirection } from "./navigation";
 import { LoaderCircle, TriangleAlert } from "lucide-react";
 import PackedAtlas from "./PackedAtlas";
 import { clippingPlanes, configurePicking } from "./anatomy-rendering";
+import { referenceSourceFor } from "./reference-source";
 
 const structureById = new Map(structures.map(s => [s.id, s]));
 
@@ -369,17 +370,18 @@ function Scene(props: Props) {
   const { camera, invalidate, scene, size, gl } = useThree();
   const keys = useRef(new Set<string>());
   const mobile = window.innerWidth <= 700;
-  const observationTop = mobile ? 182 : 0;
-  const observationBottom = mobile ? Math.max(observationTop + 120, size.height - (props.selectionIds.length ? 374 : 75)) : size.height;
+  const ctDetail = referenceSourceFor(props.sex, [...props.selectionIds, ...props.detailIds]) === "female-detail";
+  const observationTop = mobile ? 182 : ctDetail ? 40 : 0;
+  const observationBottom = mobile ? Math.max(observationTop + 120, size.height - (props.selectionIds.length ? 374 : 75)) : ctDetail ? Math.max(180, size.height - 340) : size.height;
   const observationHeight = observationBottom - observationTop;
   const observationWidth = mobile && props.selectionIds.length ? Math.max(120, size.width - 160) : size.width;
   useEffect(() => {
     const cam = camera as PerspectiveCamera;
-    if (mobile) cam.setViewOffset(size.width, size.height, props.selectionIds.length ? 32.5 : 0, size.height / 2 - (observationTop + observationBottom) / 2, size.width, size.height);
+    if (mobile || ctDetail) cam.setViewOffset(size.width, size.height, mobile && props.selectionIds.length ? 32.5 : 0, size.height / 2 - (observationTop + observationBottom) / 2, size.width, size.height);
     else cam.clearViewOffset();
     cam.updateProjectionMatrix();
     invalidate();
-  }, [camera, mobile, size.width, size.height, observationTop, observationBottom, props.selectionIds.length, invalidate]);
+  }, [camera, mobile, ctDetail, size.width, size.height, observationTop, observationBottom, props.selectionIds.length, invalidate]);
   useEffect(() => {
     const canvas = gl.domElement;
     canvas.tabIndex = 0;
@@ -547,7 +549,7 @@ function Scene(props: Props) {
       const tangent = Math.tan((cam.fov * Math.PI) / 360);
       const distance =
         Math.max(
-          size.y / 2 / tangent / (mobile ? observationHeight / gl.domElement.clientHeight : 1),
+          size.y / 2 / tangent / (mobile || ctDetail ? observationHeight / gl.domElement.clientHeight : 1),
           size.x / 2 / (tangent * cam.aspect) / (mobile ? observationWidth / gl.domElement.clientWidth : 1),
           0.12,
         ) *
@@ -623,8 +625,8 @@ function Scene(props: Props) {
       <directionalLight position={[-3, 2, -3]} intensity={1.05} color="#7695aa" />
       <group>
         {props.sex === "female" || [...props.selectionIds, ...props.detailIds].some(id => id.startsWith("BP4_")) ? (
-          <Suspense fallback={<Html center><div className="model-loading">여성 전신 아틀라스 불러오는 중</div></Html>}>
-            <PackedAtlas key={props.sex} props={{ ...props, onReady: layerReady }} />
+          <Suspense fallback={<Html center><div className="model-loading">참조 아틀라스 불러오는 중</div></Html>}>
+            <PackedAtlas key={referenceSourceFor(props.sex, [...props.selectionIds, ...props.detailIds])} props={{ ...props, onReady: layerReady }} />
           </Suspense>
         ) : layerKeys
           .filter((layer) => layers[layer])

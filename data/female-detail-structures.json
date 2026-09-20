@@ -1,0 +1,200 @@
+[
+  {
+    "id": "CTF_stomach",
+    "name": "Stomach",
+    "label": "위 (여성 CT)",
+    "layer": "organ",
+    "sex": "female",
+    "group": "stomach-ct",
+    "detailOnly": true,
+    "bodyRegion": "abdomen",
+    "model": "TotalSegmentator female CT s0255",
+    "hierarchy": [
+      "여성 CT 보완 상세",
+      "위 (여성 CT)",
+      "stomach"
+    ],
+    "source": "Jakob Wasserthal · 바젤대학병원 · TotalSegmentator 2.0.1 · CC BY 4.0",
+    "description": "위. 별도 여성 CT의 공개 분할 마스크를 표면 모형으로 변환했습니다. HRA 전신과 다른 사람의 자료이며 전신에 겹치지 않습니다. 기관 전체 외형의 단일 분할이며 내부 세부 구획은 없습니다. 진단·시술용이 아닙니다."
+  },
+  {
+    "id": "CTF_esophagus",
+    "name": "Esophagus (CT field of view)",
+    "label": "식도 (CT 수록 구간)",
+    "layer": "organ",
+    "sex": "female",
+    "group": "esophagus-ct",
+    "detailOnly": true,
+    "bodyRegion": "abdomen",
+    "model": "TotalSegmentator female CT s0255",
+    "hierarchy": [
+      "여성 CT 보완 상세",
+      "식도 (CT 수록 구간)",
+      "esophagus"
+    ],
+    "source": "Jakob Wasserthal · 바젤대학병원 · TotalSegmentator 2.0.1 · CC BY 4.0",
+    "description": "식도 (CT 수록 구간). 별도 여성 CT의 공개 분할 마스크를 표면 모형으로 변환했습니다. HRA 전신과 다른 사람의 자료이며 전신에 겹치지 않습니다. 촬영 경계에서 잘린 부분 자료로, 전체 길이나 개별 근육의 완전한 모형이 아닙니다. 진단·시술용이 아닙니다."
+  },
+  {
+    "id": "CTF_adrenal_gland_left",
+    "name": "Left adrenal gland",
+    "label": "왼쪽 부신 (여성 CT)",
+    "layer": "organ",
+    "sex": "female",
+    "group": "adrenal-ct",
+    "detailOnly": true,
+    "bodyRegion": "abdomen",
+    "model": "TotalSegmentator female CT s0255",
+    "hierarchy": [
+      "여성 CT 보완 상세",
+      "부신 (여성 CT)",
+      "adrenal_gland_left"
+    ],
+    "source": "Jakob Wasserthal · 바젤대학병원 · TotalSegmentator 2.0.1 · CC BY 4.0",
+    "description": "왼쪽 부신. 별도 여성 CT의 공개 분할 마스크를 표면 모형으로 변환했습니다. HRA 전신과 다른 사람의 자료이며 전신에 겹치지 않습니다. 기관 전체 외형의 단일 분할이며 내부 세부 구획은 없습니다. 진단·시술용이 아닙니다."
+  },
+  {
+    "id": "CTF_adrenal_gland_right",
+    "name": "Right adrenal gland",
+    "label": "오른쪽 부신 (여성 CT)",
+    "layer": "organ",
+    "sex": "female",
+    "group": "adrenal-ct",
+    "detailOnly": true,
+    "bodyRegion": "abdomen",
+    "model": "TotalSegmentator female CT s0255",
+    "hierarchy": [
+      "여성 CT 보완 상세",
+      "부신 (여성 CT)",
+      "adrenal_gland_right"
+    ],
+    "source": "Jakob Wasserthal · 바젤대학병원 · TotalSegmentator 2.0.1 · CC BY 4.0",
+    "description": "오른쪽 부신. 별도 여성 CT의 공개 분할 마스크를 표면 모형으로 변환했습니다. HRA 전신과 다른 사람의 자료이며 전신에 겹치지 않습니다. 기관 전체 외형의 단일 분할이며 내부 세부 구획은 없습니다. 진단·시술용이 아닙니다."
+  },
+  {
+    "id": "CTF_autochthon_left",
+    "name": "Left autochthonous back musculature (CT field of view)",
+    "label": "왼쪽 등 고유근육군 (CT 수록 구간)",
+    "layer": "muscle",
+    "sex": "female",
+    "group": "back-muscles-ct",
+    "detailOnly": true,
+    "bodyRegion": "abdomen",
+    "model": "TotalSegmentator female CT s0255",
+    "hierarchy": [
+      "여성 CT 보완 상세",
+      "등 근육군 (CT 수록 구간)",
+      "autochthon_left"
+    ],
+    "source": "Jakob Wasserthal · 바젤대학병원 · TotalSegmentator 2.0.1 · CC BY 4.0",
+    "description": "왼쪽 등 고유근육군 (CT 수록 구간). 별도 여성 CT의 공개 분할 마스크를 표면 모형으로 변환했습니다. HRA 전신과 다른 사람의 자료이며 전신에 겹치지 않습니다. 촬영 경계에서 잘린 부분 자료로, 전체 길이나 개별 근육의 완전한 모형이 아닙니다. 진단·시술용이 아닙니다."
+  },
+  {
+    "id": "CTF_autochthon_right",
+    "name": "Right autochthonous back musculature (CT field of view)",
+    "label": "오른쪽 등 고유근육군 (CT 수록 구간)",
+    "layer": "muscle",
+    "sex": "female",
+    "group": "back-muscles-ct",
+    "detailOnly": true,
+    "bodyRegion": "abdomen",
+    "model": "TotalSegmentator female CT s0255",
+    "hierarchy": [
+      "여성 CT 보완 상세",
+      "등 근육군 (CT 수록 구간)",
+      "autochthon_right"
+    ],
+    "source": "Jakob Wasserthal · 바젤대학병원 · TotalSegmentator 2.0.1 · CC BY 4.0",
+    "description": "오른쪽 등 고유근육군 (CT 수록 구간). 별도 여성 CT의 공개 분할 마스크를 표면 모형으로 변환했습니다. HRA 전신과 다른 사람의 자료이며 전신에 겹치지 않습니다. 촬영 경계에서 잘린 부분 자료로, 전체 길이나 개별 근육의 완전한 모형이 아닙니다. 진단·시술용이 아닙니다."
+  },
+  {
+    "id": "CTF_liver",
+    "name": "Liver",
+    "label": "간 (여성 CT)",
+    "layer": "organ",
+    "sex": "female",
+    "group": "abdomen-ct",
+    "detailOnly": true,
+    "bodyRegion": "abdomen",
+    "model": "TotalSegmentator female CT s0255",
+    "hierarchy": [
+      "여성 CT 보완 상세",
+      "여성 CT 주변 기관",
+      "liver"
+    ],
+    "source": "Jakob Wasserthal · 바젤대학병원 · TotalSegmentator 2.0.1 · CC BY 4.0",
+    "description": "간. 별도 여성 CT의 공개 분할 마스크를 표면 모형으로 변환했습니다. HRA 전신과 다른 사람의 자료이며 전신에 겹치지 않습니다. 기관 전체 외형의 단일 분할이며 내부 세부 구획은 없습니다. 진단·시술용이 아닙니다."
+  },
+  {
+    "id": "CTF_spleen",
+    "name": "Spleen",
+    "label": "비장 (여성 CT)",
+    "layer": "lymph",
+    "sex": "female",
+    "group": "abdomen-ct",
+    "detailOnly": true,
+    "bodyRegion": "abdomen",
+    "model": "TotalSegmentator female CT s0255",
+    "hierarchy": [
+      "여성 CT 보완 상세",
+      "여성 CT 주변 기관",
+      "spleen"
+    ],
+    "source": "Jakob Wasserthal · 바젤대학병원 · TotalSegmentator 2.0.1 · CC BY 4.0",
+    "description": "비장. 별도 여성 CT의 공개 분할 마스크를 표면 모형으로 변환했습니다. HRA 전신과 다른 사람의 자료이며 전신에 겹치지 않습니다. 기관 전체 외형의 단일 분할이며 내부 세부 구획은 없습니다. 진단·시술용이 아닙니다."
+  },
+  {
+    "id": "CTF_kidney_left",
+    "name": "Left kidney",
+    "label": "왼쪽 콩팥 (여성 CT)",
+    "layer": "organ",
+    "sex": "female",
+    "group": "abdomen-ct",
+    "detailOnly": true,
+    "bodyRegion": "abdomen",
+    "model": "TotalSegmentator female CT s0255",
+    "hierarchy": [
+      "여성 CT 보완 상세",
+      "여성 CT 주변 기관",
+      "kidney_left"
+    ],
+    "source": "Jakob Wasserthal · 바젤대학병원 · TotalSegmentator 2.0.1 · CC BY 4.0",
+    "description": "왼쪽 콩팥. 별도 여성 CT의 공개 분할 마스크를 표면 모형으로 변환했습니다. HRA 전신과 다른 사람의 자료이며 전신에 겹치지 않습니다. 기관 전체 외형의 단일 분할이며 내부 세부 구획은 없습니다. 진단·시술용이 아닙니다."
+  },
+  {
+    "id": "CTF_kidney_right",
+    "name": "Right kidney",
+    "label": "오른쪽 콩팥 (여성 CT)",
+    "layer": "organ",
+    "sex": "female",
+    "group": "abdomen-ct",
+    "detailOnly": true,
+    "bodyRegion": "abdomen",
+    "model": "TotalSegmentator female CT s0255",
+    "hierarchy": [
+      "여성 CT 보완 상세",
+      "여성 CT 주변 기관",
+      "kidney_right"
+    ],
+    "source": "Jakob Wasserthal · 바젤대학병원 · TotalSegmentator 2.0.1 · CC BY 4.0",
+    "description": "오른쪽 콩팥. 별도 여성 CT의 공개 분할 마스크를 표면 모형으로 변환했습니다. HRA 전신과 다른 사람의 자료이며 전신에 겹치지 않습니다. 기관 전체 외형의 단일 분할이며 내부 세부 구획은 없습니다. 진단·시술용이 아닙니다."
+  },
+  {
+    "id": "CTF_pancreas",
+    "name": "Pancreas",
+    "label": "췌장 (여성 CT)",
+    "layer": "organ",
+    "sex": "female",
+    "group": "abdomen-ct",
+    "detailOnly": true,
+    "bodyRegion": "abdomen",
+    "model": "TotalSegmentator female CT s0255",
+    "hierarchy": [
+      "여성 CT 보완 상세",
+      "여성 CT 주변 기관",
+      "pancreas"
+    ],
+    "source": "Jakob Wasserthal · 바젤대학병원 · TotalSegmentator 2.0.1 · CC BY 4.0",
+    "description": "췌장. 별도 여성 CT의 공개 분할 마스크를 표면 모형으로 변환했습니다. HRA 전신과 다른 사람의 자료이며 전신에 겹치지 않습니다. 기관 전체 외형의 단일 분할이며 내부 세부 구획은 없습니다. 진단·시술용이 아닙니다."
+  }
+]
