@@ -31,6 +31,11 @@ const expected=records.map(r=>{
 const browser=await chromium.launch({headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']});
 try {
   const page=await browser.newPage({viewport:{width:1440,height:900}}),errors=[],failures=[],checks=[];
+  if(process.env.DEBUG_LOADING){
+    page.on('response',r=>{if(/\/female\//.test(r.url()))console.log('female response',r.status(),r.url().split('/').pop());});
+    page.on('requestfailed',r=>console.log('request failed',r.url(),r.failure()?.errorText));
+    page.on('console',m=>{if(['warning','error'].includes(m.type()))console.log(m.type(),m.text());});
+  }
   page.on('pageerror',e=>errors.push(e.message));
   page.on('response',r=>{if(r.status()>=400)failures.push(`${r.status()} ${r.url()}`);});
   const ready=()=>page.getByText('해부 모델 로드 완료').waitFor({timeout:120000});
