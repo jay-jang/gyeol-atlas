@@ -7,9 +7,11 @@ import draco from 'draco3dgltf';
 import assert from 'node:assert/strict';
 import {BufferGeometry,BufferAttribute,Matrix4,Vector3} from 'three';
 import {surfaceProbe,surfaceTopology,referencedVertices} from './lib/surface-containment.mjs';
+import {applyFemaleArmRegistration} from '../src/female-arm-registration.ts';
 
 const read=file=>JSON.parse(fs.readFileSync(file));
 const allFemale=process.argv.includes('--all-female-vertices');
+const sourceFemale=process.argv.includes('--source-female');
 const maxSamples=allFemale?Number.MAX_SAFE_INTEGER:Number(process.env.CONTAINMENT_SAMPLES||512);
 if(!Number.isInteger(maxSamples)||maxSamples<32)throw new Error('CONTAINMENT_SAMPLES must be an integer >=32');
 const hashes=new Map();
@@ -47,6 +49,7 @@ function female() {
     for(let i=0;i<positions.length;i++)positions[i]=bytes.readFloatLE(part.positions+i*4);
     for(let i=0;i<indices.length;i++)indices[i]=bytes.readUInt32LE(part.indices+i*4);
     geometry.setAttribute('position',new BufferAttribute(positions,3));geometry.setIndex(new BufferAttribute(indices,1));
+    if(!sourceFemale)applyFemaleArmRegistration(geometry,'female',part.id,part.system);
     const entry=catalog.find(c=>c.id===part.id);
     if(!entry)throw new Error(`Missing female catalog ${part.id}`);
     const defaultHidden=part.system==='pregnancy'||(part.system==='donor-muscle'&&/^Rectus femoris /.test(part.name));
@@ -54,7 +57,9 @@ function female() {
   });
 }
 for(const file of ['src/Atlas.tsx','src/PackedAtlas.tsx','src/anatomy.ts','scripts/audit-body-containment.mjs','scripts/lib/surface-containment.mjs'])hash(file);
+if(!sourceFemale)for(const file of ['src/female-arm-registration.ts','data/catalog/female-arm-registration.json'])hash(file);
 const report={method:'Referenced vertex sampling, nearest skin-triangle distance and consensus of three oblique ray parities; not clinical validation',
+  femaleGeometry:sourceFemale?'Unmodified source coordinates':'Runtime partial arm registration applied; other source coordinates unchanged',
   sampling:allFemale?'Every triangle-referenced female vertex':'Deterministic subsample of triangle-referenced vertices',
   toleranceMm:2,maxSamplesPerMesh:allFemale?null:maxSamples,limitations:[allFemale?'All triangle-referenced vertices are checked; this does not test triangle interiors.':'Not every vertex/triangle is sampled.',
     'Fractions are vertex fractions, not tissue volumes or surface areas.',
@@ -96,4 +101,4 @@ for(const sex of allFemale?['female']:['male','female']){
   probe.dispose();parts.forEach(p=>p.geometry.dispose());
 }
 report.files=[...hashes].map(([path,sha256])=>({path,sha256}));
-fs.writeFileSync(`docs/anatomy-alignment/body-containment${allFemale?'-female-all':''}.json`,JSON.stringify(report,null,2)+'\n');
+fs.writeFileSync(`docs/anatomy-alignment/body-containment${allFemale?'-female':''}-${sourceFemale?'source':'registered'}${allFemale?'-all':''}.json`,JSON.stringify(report,null,2)+'\n');

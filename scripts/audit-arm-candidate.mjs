@@ -9,11 +9,14 @@ import {surfaceProbe,surfaceTopology,referencedVertices} from './lib/surface-con
 import {jointSurfaceRelation} from './lib/joint-geometry.mjs';
 
 const handOnly=process.argv.includes('--hand');
-const articulated=process.argv.includes('--articulated');
+const comparison=process.argv.find(arg=>arg.startsWith('--comparison='))?.split('=')[1];
+assert.ok(!comparison||['area-upper','joint-upper','joint-area-upper','free-upper','hand-clearance'].includes(comparison),'Unknown comparison');
+assert.ok(!comparison||!process.argv.some(arg=>['--hand','--articulated','--upper-existing','--coupled-hand'].includes(arg)),'Comparison modes cannot be combined with legacy modes');
+const articulated=Boolean(comparison)||process.argv.includes('--articulated');
 assert.ok(!(handOnly&&articulated),'Choose one experiment');
 assert.ok(!process.argv.includes('--upper-existing')||articulated,'Upper-length mode requires articulated experiment');
 assert.ok(!process.argv.includes('--coupled-hand')||(articulated&&process.argv.includes('--upper-existing')),'Coupled hand requires articulated existing-upper mode');
-const prefix=articulated?(process.argv.includes('--coupled-hand')?'articulated-coupled-hand-':process.argv.includes('--upper-existing')?'articulated-existing-upper-':'articulated-'):handOnly?'hand-':'';
+const prefix=comparison?`${comparison}-`:articulated?(process.argv.includes('--coupled-hand')?'articulated-coupled-hand-':process.argv.includes('--upper-existing')?'articulated-existing-upper-':'articulated-'):handOnly?'hand-':'';
 const candidatePath=`.cache/arm-registration/${prefix}candidates.json`;
 const read=path=>JSON.parse(fs.readFileSync(path));
 const sha256=path=>createHash('sha256').update(fs.readFileSync(path)).digest('hex');
