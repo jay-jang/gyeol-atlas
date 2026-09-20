@@ -1,0 +1,1472 @@
+{
+  "status": "EXPERIMENT ONLY: not applied to app; skin fit is not anatomical validation",
+  "sourceCommit": "5bb5713aab18d7fe9380c3339eb09f173491ea06",
+  "arms": [
+    {
+      "side": "left",
+      "sourcePoints": 1216,
+      "targetPoints": 2926,
+      "sourceCutY": 1.22,
+      "targetCutY": 1.17,
+      "segmentation": {
+        "source": [
+          {
+            "cutY": 1.3,
+            "points": 4452,
+            "bounds": [
+              [
+                0.0005976660177111626,
+                1.3877787807814457e-17,
+                -0.14206409454345703
+              ],
+              [
+                0.332753986120224,
+                1.299611210823059,
+                0.146696999669075
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.29,
+            "points": 4422,
+            "bounds": [
+              [
+                0.0005976660177111626,
+                1.3877787807814457e-17,
+                -0.14206409454345703
+              ],
+              [
+                0.332753986120224,
+                1.2899211645126343,
+                0.146696999669075
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.28,
+            "points": 4370,
+            "bounds": [
+              [
+                0.0005976660177111626,
+                1.3877787807814457e-17,
+                -0.14206409454345703
+              ],
+              [
+                0.332753986120224,
+                1.2796411514282227,
+                0.146696999669075
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.27,
+            "points": 4327,
+            "bounds": [
+              [
+                0.0005976660177111626,
+                1.3877787807814457e-17,
+                -0.14206409454345703
+              ],
+              [
+                0.332753986120224,
+                1.2694711685180664,
+                0.146696999669075
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.26,
+            "points": 4303,
+            "bounds": [
+              [
+                0.0005976660177111626,
+                1.3877787807814457e-17,
+                -0.14206409454345703
+              ],
+              [
+                0.332753986120224,
+                1.2598011493682861,
+                0.146696999669075
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.25,
+            "points": 4272,
+            "bounds": [
+              [
+                0.0005976660177111626,
+                1.3877787807814457e-17,
+                -0.14206409454345703
+              ],
+              [
+                0.332753986120224,
+                1.2498512268066406,
+                0.146696999669075
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.24,
+            "points": 4232,
+            "bounds": [
+              [
+                0.0005976660177111626,
+                1.3877787807814457e-17,
+                -0.14206409454345703
+              ],
+              [
+                0.332753986120224,
+                1.2394611835479736,
+                0.146696999669075
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.23,
+            "points": 4197,
+            "bounds": [
+              [
+                0.0005976660177111626,
+                1.3877787807814457e-17,
+                -0.14206409454345703
+              ],
+              [
+                0.332753986120224,
+                1.2288812398910522,
+                0.146696999669075
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.22,
+            "points": 1395,
+            "bounds": [
+              [
+                0.14708900451660156,
+                0.7255032062530518,
+                -0.09570036083459854
+              ],
+              [
+                0.332753986120224,
+                1.2169911861419678,
+                0.1088619977235794
+              ]
+            ],
+            "accepted": true
+          }
+        ],
+        "target": [
+          {
+            "cutY": 1.3,
+            "points": 12989,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.2999064922332764,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.29,
+            "points": 12882,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.289882779121399,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.28,
+            "points": 12785,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.2798974514007568,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.27,
+            "points": 12672,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.2698731422424316,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.26,
+            "points": 12572,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.259993553161621,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.25,
+            "points": 12466,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.249854564666748,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.24,
+            "points": 12344,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.2399834394454956,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.23,
+            "points": 12218,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.2297062873840332,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.22,
+            "points": 12089,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.2199448347091675,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.21,
+            "points": 11942,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.2099334001541138,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.2,
+            "points": 11794,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.1999855041503906,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.19,
+            "points": 11640,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.189954400062561,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.18,
+            "points": 11482,
+            "bounds": [
+              [
+                1.0916921382886358e-05,
+                0.0005023371195420623,
+                -0.2258436530828476
+              ],
+              [
+                0.48084744811058044,
+                1.1799832582473755,
+                0.09780234843492508
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.17,
+            "points": 3519,
+            "bounds": [
+              [
+                0.17036022245883942,
+                0.7294532060623169,
+                -0.15530994534492493
+              ],
+              [
+                0.48084744811058044,
+                1.1698367595672607,
+                0.019976390525698662
+              ]
+            ],
+            "accepted": true
+          }
+        ]
+      },
+      "existingTransformMaxErrorMm": 6.316338564147175e-05,
+      "parts": [
+        {
+          "id": "BM0060",
+          "sourceId": "FJ3183",
+          "name": "Distal phalanx of left index finger",
+          "maxPlacementErrorMm": 3.799896219367961e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0061",
+          "sourceId": "FJ3184",
+          "name": "Distal phalanx of left little finger",
+          "maxPlacementErrorMm": 3.77551448467626e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0062",
+          "sourceId": "FJ3186",
+          "name": "Distal phalanx of left middle finger",
+          "maxPlacementErrorMm": 3.945973218685991e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0063",
+          "sourceId": "FJ3187",
+          "name": "Distal phalanx of left ring finger",
+          "maxPlacementErrorMm": 3.9011532833969834e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0064",
+          "sourceId": "FJ3188",
+          "name": "Distal phalanx of left thumb",
+          "maxPlacementErrorMm": 3.8949931982806124e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0070",
+          "sourceId": "FJ3237",
+          "name": "Left clavicle",
+          "maxPlacementErrorMm": 6.730817056846227e-05,
+          "transformed": false
+        },
+        {
+          "id": "BM0071",
+          "sourceId": "FJ3240",
+          "name": "Left first metacarpal bone",
+          "maxPlacementErrorMm": 3.56505393297246e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0072",
+          "sourceId": "FJ3243",
+          "name": "Left second metacarpal bone",
+          "maxPlacementErrorMm": 3.705911403550585e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0073",
+          "sourceId": "FJ3246",
+          "name": "Left third metacarpal bone",
+          "maxPlacementErrorMm": 3.360270937528117e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0074",
+          "sourceId": "FJ3249",
+          "name": "Left fourth metacarpal bone",
+          "maxPlacementErrorMm": 3.410633439923197e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0075",
+          "sourceId": "FJ3252",
+          "name": "Left fifth metacarpal bone",
+          "maxPlacementErrorMm": 3.4926893999313845e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0076",
+          "sourceId": "FJ3257",
+          "name": "Left capitate",
+          "maxPlacementErrorMm": 3.276895694475401e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0077",
+          "sourceId": "FJ3261",
+          "name": "Left hamate",
+          "maxPlacementErrorMm": 3.448568487261713e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0078",
+          "sourceId": "FJ3262",
+          "name": "Left humerus",
+          "maxPlacementErrorMm": 6.316338564147175e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0079",
+          "sourceId": "FJ3268",
+          "name": "Left lunate",
+          "maxPlacementErrorMm": 3.4162035892371285e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0080",
+          "sourceId": "FJ3276",
+          "name": "Left pisiform",
+          "maxPlacementErrorMm": 3.4282357538563644e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0081",
+          "sourceId": "FJ3277",
+          "name": "Left radius",
+          "maxPlacementErrorMm": 6.126987125031508e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0082",
+          "sourceId": "FJ3278",
+          "name": "Left scaphoid",
+          "maxPlacementErrorMm": 3.348802702613733e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0083",
+          "sourceId": "FJ3279",
+          "name": "Left scapula",
+          "maxPlacementErrorMm": 6.688382512481297e-05,
+          "transformed": false
+        },
+        {
+          "id": "BM0084",
+          "sourceId": "FJ3283",
+          "name": "Left trapezium",
+          "maxPlacementErrorMm": 3.593339509747272e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0085",
+          "sourceId": "FJ3284",
+          "name": "Left trapezoid",
+          "maxPlacementErrorMm": 3.48529709234608e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0086",
+          "sourceId": "FJ3285",
+          "name": "Left triquetral",
+          "maxPlacementErrorMm": 3.28410102756409e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0087",
+          "sourceId": "FJ3286",
+          "name": "Left ulna",
+          "maxPlacementErrorMm": 6.243072948016547e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0088",
+          "sourceId": "FJ3291",
+          "name": "Middle phalanx of left ring finger",
+          "maxPlacementErrorMm": 3.810844536641872e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0090",
+          "sourceId": "FJ3296",
+          "name": "Middle phalanx of left index finger",
+          "maxPlacementErrorMm": 3.760128025620694e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0091",
+          "sourceId": "FJ3297",
+          "name": "Middle phalanx of left little finger",
+          "maxPlacementErrorMm": 3.8948118542317e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0092",
+          "sourceId": "FJ3299",
+          "name": "Middle phalanx of left middle finger",
+          "maxPlacementErrorMm": 3.824781886674745e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0096",
+          "sourceId": "FJ3313",
+          "name": "Proximal phalanx of left index finger",
+          "maxPlacementErrorMm": 3.5109350675506366e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0097",
+          "sourceId": "FJ3314",
+          "name": "Proximal phalanx of left little finger",
+          "maxPlacementErrorMm": 3.72850036042733e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0098",
+          "sourceId": "FJ3316",
+          "name": "Proximal phalanx of left middle finger",
+          "maxPlacementErrorMm": 3.660294608890625e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0099",
+          "sourceId": "FJ3317",
+          "name": "Proximal phalanx of left ring finger",
+          "maxPlacementErrorMm": 3.817511021654228e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0100",
+          "sourceId": "FJ3318",
+          "name": "Proximal phalanx of left thumb",
+          "maxPlacementErrorMm": 3.644473080453805e-05,
+          "transformed": true
+        }
+      ],
+      "initialTwistDegrees": -60,
+      "iterations": 60,
+      "multistartScores": [
+        {
+          "twistDegrees": -60,
+          "symmetricMeanSquaredDistance": 0.000571785204672477
+        },
+        {
+          "twistDegrees": -30,
+          "symmetricMeanSquaredDistance": 0.0005719979137798768
+        },
+        {
+          "twistDegrees": 0,
+          "symmetricMeanSquaredDistance": 0.000572057054603435
+        },
+        {
+          "twistDegrees": 30,
+          "symmetricMeanSquaredDistance": 0.0005720262050956441
+        },
+        {
+          "twistDegrees": 60,
+          "symmetricMeanSquaredDistance": 0.0005720664837290698
+        }
+      ],
+      "pivot": [
+        0.17512119410343907,
+        1.35548995391756,
+        -0.10010932430651724
+      ],
+      "scale": 1.0611068066343667,
+      "rotationDegrees": 25.330325053652793,
+      "linear": [
+        [
+          1.0000090301420343,
+          -0.1594865933620728,
+          -0.31700728896656594
+        ],
+        [
+          0.0647100907617785,
+          1.0139655679569257,
+          -0.3059968729205813
+        ],
+        [
+          0.3489157475290752,
+          0.26904555120152585,
+          0.9653082137797632
+        ]
+      ],
+      "translation": [
+        -0.052785739588901176,
+        0.035933263945149285,
+        0.4668174108798611
+      ],
+      "before": {
+        "medianMm": 43.442755661336804,
+        "p95Mm": 75.29522665940958,
+        "maxMm": 81.82462198961025
+      },
+      "after": {
+        "medianMm": 11.141809480324117,
+        "p95Mm": 40.273818989753536,
+        "maxMm": 55.96767644920154
+      },
+      "reverseAfter": {
+        "medianMm": 11.333843212810097,
+        "p95Mm": 26.71688524868547,
+        "maxMm": 51.205457677825855
+      }
+    },
+    {
+      "side": "right",
+      "sourcePoints": 1147,
+      "targetPoints": 2088,
+      "sourceCutY": 1.2,
+      "targetCutY": 1.17,
+      "segmentation": {
+        "source": [
+          {
+            "cutY": 1.3,
+            "points": 4396,
+            "bounds": [
+              [
+                -0.3340040147304535,
+                2.8000000384054147e-05,
+                -0.14205269515514374
+              ],
+              [
+                -0.001166700036264956,
+                1.2999012470245361,
+                0.1467829942703247
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.29,
+            "points": 4365,
+            "bounds": [
+              [
+                -0.3340040147304535,
+                2.8000000384054147e-05,
+                -0.14205269515514374
+              ],
+              [
+                -0.001166700036264956,
+                1.2896711826324463,
+                0.1467829942703247
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.28,
+            "points": 4315,
+            "bounds": [
+              [
+                -0.3340040147304535,
+                2.8000000384054147e-05,
+                -0.14205269515514374
+              ],
+              [
+                -0.001166700036264956,
+                1.2792412042617798,
+                0.1467829942703247
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.27,
+            "points": 4285,
+            "bounds": [
+              [
+                -0.3340040147304535,
+                2.8000000384054147e-05,
+                -0.14205269515514374
+              ],
+              [
+                -0.001166700036264956,
+                1.269551157951355,
+                0.1467829942703247
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.26,
+            "points": 4247,
+            "bounds": [
+              [
+                -0.3340040147304535,
+                2.8000000384054147e-05,
+                -0.14205269515514374
+              ],
+              [
+                -0.001166700036264956,
+                1.2596712112426758,
+                0.1467829942703247
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.25,
+            "points": 4214,
+            "bounds": [
+              [
+                -0.3340040147304535,
+                2.8000000384054147e-05,
+                -0.14205269515514374
+              ],
+              [
+                -0.001166700036264956,
+                1.2498911619186401,
+                0.1467829942703247
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.24,
+            "points": 4179,
+            "bounds": [
+              [
+                -0.3340040147304535,
+                2.8000000384054147e-05,
+                -0.14205269515514374
+              ],
+              [
+                -0.001166700036264956,
+                1.2396612167358398,
+                0.1467829942703247
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.23,
+            "points": 4136,
+            "bounds": [
+              [
+                -0.3340040147304535,
+                2.8000000384054147e-05,
+                -0.14205269515514374
+              ],
+              [
+                -0.001166700036264956,
+                1.2298212051391602,
+                0.1467829942703247
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.22,
+            "points": 4111,
+            "bounds": [
+              [
+                -0.3340040147304535,
+                2.8000000384054147e-05,
+                -0.14205269515514374
+              ],
+              [
+                -0.001166700036264956,
+                1.2198312282562256,
+                0.1467829942703247
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.21,
+            "points": 4078,
+            "bounds": [
+              [
+                -0.3340040147304535,
+                2.8000000384054147e-05,
+                -0.14205269515514374
+              ],
+              [
+                -0.001166700036264956,
+                1.2099511623382568,
+                0.1467829942703247
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.2,
+            "points": 1299,
+            "bounds": [
+              [
+                -0.3340040147304535,
+                0.725517213344574,
+                -0.09465896338224411
+              ],
+              [
+                -0.15222500264644623,
+                1.199991226196289,
+                0.10884000360965729
+              ]
+            ],
+            "accepted": true
+          }
+        ],
+        "target": [
+          {
+            "cutY": 1.3,
+            "points": 9624,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.22405365109443665
+              ],
+              [
+                -0.00012453511590138078,
+                1.299955129623413,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.29,
+            "points": 9556,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.22405365109443665
+              ],
+              [
+                -0.00012453511590138078,
+                1.2897131443023682,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.28,
+            "points": 9481,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.22405365109443665
+              ],
+              [
+                -0.00012453511590138078,
+                1.2798552513122559,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.27,
+            "points": 9407,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.22405365109443665
+              ],
+              [
+                -0.00012453511590138078,
+                1.26991868019104,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.26,
+            "points": 9330,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.22405365109443665
+              ],
+              [
+                -0.00012453511590138078,
+                1.2599310874938965,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.25,
+            "points": 9247,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.22405365109443665
+              ],
+              [
+                -0.00012453511590138078,
+                1.249966025352478,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.24,
+            "points": 9173,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.22405365109443665
+              ],
+              [
+                -0.00012453511590138078,
+                1.2399407625198364,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.23,
+            "points": 9076,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.22361648082733154
+              ],
+              [
+                -0.00012453511590138078,
+                1.2296773195266724,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.22,
+            "points": 8979,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.2226252555847168
+              ],
+              [
+                -0.00012453511590138078,
+                1.2199499607086182,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.21,
+            "points": 8885,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.2226252555847168
+              ],
+              [
+                -0.00012453511590138078,
+                1.2098829746246338,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.2,
+            "points": 8758,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.2210569828748703
+              ],
+              [
+                -0.00012453511590138078,
+                1.1998519897460938,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.19,
+            "points": 8626,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.22015896439552307
+              ],
+              [
+                -0.00012453511590138078,
+                1.1897231340408325,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.18,
+            "points": 8495,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                5.373808065201047e-09,
+                -0.21987281739711761
+              ],
+              [
+                -0.00012453511590138078,
+                1.1799869537353516,
+                0.1012394055724144
+              ]
+            ],
+            "accepted": false
+          },
+          {
+            "cutY": 1.17,
+            "points": 2475,
+            "bounds": [
+              [
+                -0.48084741830825806,
+                0.7310011386871338,
+                -0.15519960224628448
+              ],
+              [
+                -0.1700011044740677,
+                1.1699978113174438,
+                0.019491299986839294
+              ]
+            ],
+            "accepted": true
+          }
+        ]
+      },
+      "existingTransformMaxErrorMm": 6.461515539163915e-05,
+      "parts": [
+        {
+          "id": "BM0065",
+          "sourceId": "FJ3193",
+          "name": "Distal phalanx of right index finger",
+          "maxPlacementErrorMm": 4.7205022323354624e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0066",
+          "sourceId": "FJ3194",
+          "name": "Distal phalanx of right little finger",
+          "maxPlacementErrorMm": 3.237296117678089e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0067",
+          "sourceId": "FJ3196",
+          "name": "Distal phalanx of right middle finger",
+          "maxPlacementErrorMm": 3.4088657103066976e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0068",
+          "sourceId": "FJ3197",
+          "name": "Distal phalanx of right ring finger",
+          "maxPlacementErrorMm": 3.0454149656894706e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0069",
+          "sourceId": "FJ3198",
+          "name": "Distal phalanx of right thumb",
+          "maxPlacementErrorMm": 3.989630611992825e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0089",
+          "sourceId": "FJ3292",
+          "name": "Middle phalanx of right ring finger",
+          "maxPlacementErrorMm": 3.17508538847951e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0093",
+          "sourceId": "FJ3303",
+          "name": "Middle phalanx of right index finger",
+          "maxPlacementErrorMm": 3.967150266779806e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0094",
+          "sourceId": "FJ3304",
+          "name": "Middle phalanx of right little finger",
+          "maxPlacementErrorMm": 3.238191827181709e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0095",
+          "sourceId": "FJ3306",
+          "name": "Middle phalanx of right middle finger",
+          "maxPlacementErrorMm": 3.492349333028111e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0101",
+          "sourceId": "FJ3322",
+          "name": "Proximal phalanx of right index finger",
+          "maxPlacementErrorMm": 3.478337014635989e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0102",
+          "sourceId": "FJ3323",
+          "name": "Proximal phalanx of right little finger",
+          "maxPlacementErrorMm": 3.24273531070374e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0103",
+          "sourceId": "FJ3325",
+          "name": "Proximal phalanx of right middle finger",
+          "maxPlacementErrorMm": 3.5510293664868705e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0104",
+          "sourceId": "FJ3326",
+          "name": "Proximal phalanx of right ring finger",
+          "maxPlacementErrorMm": 3.343906551687478e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0105",
+          "sourceId": "FJ3327",
+          "name": "Proximal phalanx of right thumb",
+          "maxPlacementErrorMm": 4.072061851186886e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0106",
+          "sourceId": "FJ3349",
+          "name": "Right radius",
+          "maxPlacementErrorMm": 6.481086048072739e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0107",
+          "sourceId": "FJ3350",
+          "name": "Right first metacarpal bone",
+          "maxPlacementErrorMm": 3.7921475652789743e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0108",
+          "sourceId": "FJ3352",
+          "name": "Right second metacarpal bone",
+          "maxPlacementErrorMm": 3.6339338905265104e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0109",
+          "sourceId": "FJ3354",
+          "name": "Right third metacarpal bone",
+          "maxPlacementErrorMm": 3.593181555094494e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0110",
+          "sourceId": "FJ3356",
+          "name": "Right fourth metacarpal bone",
+          "maxPlacementErrorMm": 3.323596708131025e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0111",
+          "sourceId": "FJ3358",
+          "name": "Right fifth metacarpal bone",
+          "maxPlacementErrorMm": 3.2848755927919125e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0112",
+          "sourceId": "FJ3361",
+          "name": "Right capitate",
+          "maxPlacementErrorMm": 3.56541235923994e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0113",
+          "sourceId": "FJ3362",
+          "name": "Right clavicle",
+          "maxPlacementErrorMm": 6.827714449224457e-05,
+          "transformed": false
+        },
+        {
+          "id": "BM0114",
+          "sourceId": "FJ3367",
+          "name": "Right hamate",
+          "maxPlacementErrorMm": 3.419372002624939e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0115",
+          "sourceId": "FJ3368",
+          "name": "Right humerus",
+          "maxPlacementErrorMm": 6.461515539163915e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0116",
+          "sourceId": "FJ3374",
+          "name": "Right lunate",
+          "maxPlacementErrorMm": 3.245834796578605e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0117",
+          "sourceId": "FJ3382",
+          "name": "Right pisiform",
+          "maxPlacementErrorMm": 3.137216046133649e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0118",
+          "sourceId": "FJ3383",
+          "name": "Right scaphoid",
+          "maxPlacementErrorMm": 3.610576769327624e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0119",
+          "sourceId": "FJ3384",
+          "name": "Right scapula",
+          "maxPlacementErrorMm": 6.953462849371892e-05,
+          "transformed": false
+        },
+        {
+          "id": "BM0120",
+          "sourceId": "FJ3388",
+          "name": "Right trapezium",
+          "maxPlacementErrorMm": 3.595442093874093e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0121",
+          "sourceId": "FJ3389",
+          "name": "Right trapezoid",
+          "maxPlacementErrorMm": 3.500578228362061e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0122",
+          "sourceId": "FJ3390",
+          "name": "Right triquetral",
+          "maxPlacementErrorMm": 3.4599382992188865e-05,
+          "transformed": true
+        },
+        {
+          "id": "BM0123",
+          "sourceId": "FJ3391",
+          "name": "Right ulna",
+          "maxPlacementErrorMm": 6.231177132696472e-05,
+          "transformed": true
+        }
+      ],
+      "initialTwistDegrees": 60,
+      "iterations": 60,
+      "multistartScores": [
+        {
+          "twistDegrees": -60,
+          "symmetricMeanSquaredDistance": 0.0006271692355654372
+        },
+        {
+          "twistDegrees": -30,
+          "symmetricMeanSquaredDistance": 0.0006271043266931209
+        },
+        {
+          "twistDegrees": 0,
+          "symmetricMeanSquaredDistance": 0.0006273411994458885
+        },
+        {
+          "twistDegrees": 30,
+          "symmetricMeanSquaredDistance": 0.0006273411994560601
+        },
+        {
+          "twistDegrees": 60,
+          "symmetricMeanSquaredDistance": 0.0006269528166727978
+        }
+      ],
+      "pivot": [
+        -0.1780590906183998,
+        1.3555085084932603,
+        -0.10012175012486915
+      ],
+      "scale": 1.0909001584842148,
+      "rotationDegrees": 25.328897439498725,
+      "linear": [
+        [
+          1.0292533088027738,
+          0.20223680298397745,
+          0.2996682459291394
+        ],
+        [
+          -0.10929112539396231,
+          1.0359935173160348,
+          -0.3237839368624653
+        ],
+        [
+          -0.34461026103345865,
+          0.27546481332260137,
+          0.9977104090829567
+        ]
+      ],
+      "translation": [
+        0.118850885491663,
+        0.01480060146409401,
+        0.4920212988381856
+      ],
+      "before": {
+        "medianMm": 55.024098102421775,
+        "p95Mm": 89.67356563614771,
+        "maxMm": 98.50938415377705
+      },
+      "after": {
+        "medianMm": 11.556217163725918,
+        "p95Mm": 40.84176657415851,
+        "maxMm": 55.26136126761641
+      },
+      "reverseAfter": {
+        "medianMm": 11.94257647298603,
+        "p95Mm": 31.207508352823535,
+        "maxMm": 50.349917613496274
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": ".cache/male-details/atlas.json",
+      "sha256": "d6979fc62cf18fa4f08a9e6efae8fdac9ec383c5a1f3c757920125ac758429fe"
+    },
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": ".cache/arm-registration/body-10.bin.gz",
+      "sha256": "9d99c2eada1ab94e0a9c26757aa7f14428d2ea4a2548d6d1fe60c0711ee3c942"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": ".cache/arm-registration/body-12.bin.gz",
+      "sha256": "8450931fd0a984778d50982324d9de98ce433977e0d3bf262aca9d0088226374"
+    },
+    {
+      "path": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "path": ".cache/arm-registration/body-13.bin.gz",
+      "sha256": "43a63dc4cdd38c20a0dc3b21e23a631fb7e5a596464348105e12b9be27ed7956"
+    },
+    {
+      "path": "scripts/experiment-arm-registration.py",
+      "sha256": "2ac26c56cebc2df10db8d8c65a5c0018f4a80300b5e091caa5cf9c474fe16e1b"
+    }
+  ]
+}
