@@ -32,7 +32,21 @@ try {
     return {text:el.textContent.trim().slice(0,60),font:parseFloat(c.fontSize),color:c.color,background:bg,contrast:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};
    });
   });
-  records.push({name,samples});await page.getByRole('button',{name:'도구 패널 닫기',exact:true}).click();
+  records.push({name,samples});
+  if(name==='도움말'){
+   const note=page.locator('.viewer-help p').filter({hasText:'박리 백분율'});
+   await note.scrollIntoViewIfNeeded();
+   const sample=await note.evaluate(el=>{
+    const rgb=s=>s.match(/[\d.]+/g)?.map(Number)||[255,255,255];
+    const lum=v=>v.slice(0,3).map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4}).reduce((sum,x,i)=>sum+x*[.2126,.7152,.0722][i],0);
+    const c=getComputedStyle(el);let bg=[255,255,255],node=el;
+    while(node){const b=rgb(getComputedStyle(node).backgroundColor);if((b[3]??1)>.99){bg=b;break;}node=node.parentElement;}
+    const a=lum(rgb(c.color)),b=lum(bg);
+    return {text:el.textContent.trim(),font:parseFloat(c.fontSize),color:c.color,background:bg,contrast:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};
+   });
+   records.push({name:'도움말 박리 한계',samples:[sample]});
+  }
+  await page.getByRole('button',{name:'도구 패널 닫기',exact:true}).click();
  }
  await fs.writeFile('docs/acupoint-expansion/readability.json',JSON.stringify({origin,records},null,2)+'\n');
  const failures=records.flatMap(r=>r.samples.filter(s=>s.font<12||s.contrast<4.5).map(s=>({panel:r.name,...s})));

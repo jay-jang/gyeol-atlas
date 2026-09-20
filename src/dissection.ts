@@ -9,7 +9,9 @@ export function dissectionLayerOpacity(layer: AnatomyLayerName, depth: number, p
   if (!progressive) return 1;
   switch (layer) {
     case "skin": return 1 - ramp(depth, 8, 20);
-    case "muscle": return ramp(depth, 8, 18) * (1 - ramp(depth, 54, 68));
+    // Per-mesh schedules finish by 64. An earlier whole-layer fade would
+    // start fading a constrained deep muscle while its covering one remains.
+    case "muscle": return ramp(depth, 8, 18) * (1 - ramp(depth, 64, 68));
     case "bone": return ramp(depth, 34, 44) * (1 - ramp(depth, 56, 70) * .92);
     case "organ": return ramp(depth, 52, 62) * (1 - ramp(depth, 72, 84));
     case "vessel": return ramp(depth, 68, 78) * (1 - ramp(depth, 84, 94) * .88);

@@ -39,6 +39,8 @@ import PackedAtlas from "./PackedAtlas";
 import { clippingPlanes, configurePicking } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { framedDistance } from "./camera-framing";
+import { musclePeelRanks } from "./muscle-peel";
+import { musclePeelOpacity } from "./dissection";
 
 const structureById = new Map(structures.map(s => [s.id, s]));
 
@@ -142,9 +144,9 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
         muscleMeshes.push({ mesh: o, score: radius });
       }
     });
-    muscleMeshes.sort((a, b) => b.score - a.score || a.mesh.name.localeCompare(b.mesh.name));
-    muscleMeshes.forEach(({ mesh }, index) => {
-      mesh.userData.peelAt = 22 + (index / Math.max(1, muscleMeshes.length - 1)) * 46;
+    const ranks = musclePeelRanks(muscleMeshes.map(({ mesh, score }) => ({ id: mesh.name, score })));
+    muscleMeshes.forEach(({ mesh }) => {
+      mesh.userData.peelRank = ranks.get(mesh.name)!;
     });
     return clone;
   }, [model.scene, layer]);
@@ -175,8 +177,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       const selected = props.selectionIds.includes(id);
       let dissectionAlpha = selected || props.isolated ? 1 : dissectionLayerOpacity(layer, props.dissection, progressive);
       if (layer === "muscle" && progressive && !selected && !props.isolated) {
-        const peelAt = o.userData.peelAt as number;
-        dissectionAlpha *= 1 - clamp01((props.dissection - peelAt + 2) / 4);
+        dissectionAlpha *= musclePeelOpacity(props.dissection, o.userData.peelRank);
       }
       const unavailableForSex = props.sex === "female" && maleOnlyStructureIds.has(id);
       o.visible = !unavailableForSex && (!props.isolated || selected) && (selected || dissectionAlpha > .01) && (selected || inAnatomyRegion(o, props.anatomyRegion));

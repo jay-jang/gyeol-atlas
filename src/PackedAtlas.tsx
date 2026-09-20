@@ -6,6 +6,7 @@ import { assetUrl } from "./assets";
 import { dissectionLayerOpacity, layerKeys, structures, type Layer } from "./anatomy";
 import type { AtlasProps } from "./Atlas";
 import { musclePeelOpacity } from "./dissection";
+import { musclePeelRanks } from "./muscle-peel";
 import { clippingPlanes, configurePicking } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 
@@ -101,14 +102,11 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         group.add(mesh);
       }
       const muscles = group.children.filter(mesh => mesh.userData.layer === "muscle");
-      muscles.sort((a, b) => {
-        const score = (o: typeof a) => {
-          const [min, max] = o.userData.bounds as FemalePart["bounds"];
-          return Math.hypot((max[0] + min[0]) / 2, (max[2] + min[2]) / 2);
-        };
-        return score(b) - score(a);
-      });
-      muscles.forEach((mesh, rank) => { mesh.userData.peelRank = rank / Math.max(1, muscles.length - 1); });
+      const ranks = musclePeelRanks(muscles.map(mesh => {
+        const [min, max] = mesh.userData.bounds as FemalePart["bounds"];
+        return { id: mesh.name, score: Math.hypot((max[0] + min[0]) / 2, (max[2] + min[2]) / 2) };
+      }));
+      muscles.forEach(mesh => { mesh.userData.peelRank = ranks.get(mesh.name)!; });
       built = group;
       setManifest(atlas);
       setObject(group);
