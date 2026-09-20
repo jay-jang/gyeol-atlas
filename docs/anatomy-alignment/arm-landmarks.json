@@ -1,0 +1,5712 @@
+{
+  "status": "GEOMETRIC CANDIDATES ONLY: skin constriction is not an articular joint centre",
+  "method": "Triangle-plane intersections; convex hull area (not true possibly concave section area); PCA arm axis; distance measured from distal skin projection",
+  "profiles": [
+    {
+      "body": "source",
+      "side": "left",
+      "cutY": 1.22,
+      "axis": [
+        0.17407209348551902,
+        -0.9418020859134462,
+        0.2875895290838157
+      ],
+      "centre": [
+        0.2556733290674866,
+        0.8763743431337419,
+        0.03492902434007088
+      ],
+      "distalProjection": 0.16578421517363034,
+      "wristSearchWindowMm": [
+        140,
+        230
+      ],
+      "localMinima": [
+        {
+          "distanceFromDistalMm": 182.0000000000001,
+          "hullAreaMm2": 2272.592949670525,
+          "centroid": [
+            0.2543677678888611,
+            0.8877193171954316,
+            0.016486757544766403
+          ],
+          "sectionVertices": 70,
+          "hullVertices": 38
+        }
+      ],
+      "sections": [
+        {
+          "distanceFromDistalMm": 50.0,
+          "hullAreaMm2": 2086.950722627331,
+          "centroid": [
+            0.2636869009365001,
+            0.7641989817362377,
+            0.06532751143965733
+          ],
+          "sectionVertices": 144,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 52.00000000000001,
+          "hullAreaMm2": 2064.8630251450722,
+          "centroid": [
+            0.26381727329328186,
+            0.7658463552946834,
+            0.06368908483575447
+          ],
+          "sectionVertices": 164,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 54.00000000000001,
+          "hullAreaMm2": 2028.080527004901,
+          "centroid": [
+            0.26420077625798083,
+            0.7675416505244732,
+            0.06205437796111379
+          ],
+          "sectionVertices": 159,
+          "hullVertices": 29
+        },
+        {
+          "distanceFromDistalMm": 56.00000000000001,
+          "hullAreaMm2": 2024.2925204873359,
+          "centroid": [
+            0.2642926845291874,
+            0.7692570135366427,
+            0.060661885670127494
+          ],
+          "sectionVertices": 153,
+          "hullVertices": 29
+        },
+        {
+          "distanceFromDistalMm": 58.00000000000001,
+          "hullAreaMm2": 2048.1777200843508,
+          "centroid": [
+            0.26418923920171816,
+            0.7709967738477416,
+            0.05946753354472847
+          ],
+          "sectionVertices": 146,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 60.000000000000014,
+          "hullAreaMm2": 2075.7210232963985,
+          "centroid": [
+            0.26409745123499057,
+            0.7727495219397937,
+            0.05830865801695424
+          ],
+          "sectionVertices": 156,
+          "hullVertices": 34
+        },
+        {
+          "distanceFromDistalMm": 62.000000000000014,
+          "hullAreaMm2": 2105.2186110260027,
+          "centroid": [
+            0.26390153155435164,
+            0.7744945656495763,
+            0.05718758088254018
+          ],
+          "sectionVertices": 152,
+          "hullVertices": 32
+        },
+        {
+          "distanceFromDistalMm": 64.00000000000001,
+          "hullAreaMm2": 3590.4612569507717,
+          "centroid": [
+            0.275292156497342,
+            0.7801454262440398,
+            0.06184422596069514
+          ],
+          "sectionVertices": 175,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 66.00000000000001,
+          "hullAreaMm2": 3770.794723112267,
+          "centroid": [
+            0.2762002782058632,
+            0.7822924473287365,
+            0.06137129597848162
+          ],
+          "sectionVertices": 180,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 68.00000000000001,
+          "hullAreaMm2": 3872.0779838934786,
+          "centroid": [
+            0.276483175746496,
+            0.7842639276100477,
+            0.060701938069391545
+          ],
+          "sectionVertices": 183,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 70.00000000000001,
+          "hullAreaMm2": 3931.914506074603,
+          "centroid": [
+            0.2764801675264375,
+            0.7861414904201458,
+            0.05989807089596046
+          ],
+          "sectionVertices": 185,
+          "hullVertices": 32
+        },
+        {
+          "distanceFromDistalMm": 72.00000000000003,
+          "hullAreaMm2": 3963.7977031920705,
+          "centroid": [
+            0.27629880775964677,
+            0.7879620224203694,
+            0.05901539101798778
+          ],
+          "sectionVertices": 186,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 74.00000000000003,
+          "hullAreaMm2": 3980.7255137976545,
+          "centroid": [
+            0.2759943665024642,
+            0.789754274550749,
+            0.05811459856226193
+          ],
+          "sectionVertices": 205,
+          "hullVertices": 34
+        },
+        {
+          "distanceFromDistalMm": 76.00000000000003,
+          "hullAreaMm2": 3992.766257521113,
+          "centroid": [
+            0.2756930043310232,
+            0.7915339926569905,
+            0.057170895806503426
+          ],
+          "sectionVertices": 196,
+          "hullVertices": 34
+        },
+        {
+          "distanceFromDistalMm": 78.00000000000003,
+          "hullAreaMm2": 3990.7557249480674,
+          "centroid": [
+            0.2754140006283815,
+            0.7932836188449166,
+            0.05611511450250149
+          ],
+          "sectionVertices": 189,
+          "hullVertices": 34
+        },
+        {
+          "distanceFromDistalMm": 80.00000000000003,
+          "hullAreaMm2": 3960.015232417886,
+          "centroid": [
+            0.27530388718507015,
+            0.7950229871631829,
+            0.054923514748579066
+          ],
+          "sectionVertices": 168,
+          "hullVertices": 32
+        },
+        {
+          "distanceFromDistalMm": 82.00000000000003,
+          "hullAreaMm2": 3926.1272295223775,
+          "centroid": [
+            0.27523020769294043,
+            0.7967713534196054,
+            0.05373932883470518
+          ],
+          "sectionVertices": 162,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 84.00000000000003,
+          "hullAreaMm2": 3895.1176561570505,
+          "centroid": [
+            0.27522158200727476,
+            0.7985286286939952,
+            0.052544942547456557
+          ],
+          "sectionVertices": 157,
+          "hullVertices": 32
+        },
+        {
+          "distanceFromDistalMm": 86.00000000000003,
+          "hullAreaMm2": 3868.5067660799823,
+          "centroid": [
+            0.27528084315216883,
+            0.8003043582366257,
+            0.05136990002986908
+          ],
+          "sectionVertices": 146,
+          "hullVertices": 33
+        },
+        {
+          "distanceFromDistalMm": 88.00000000000004,
+          "hullAreaMm2": 3853.4816759303108,
+          "centroid": [
+            0.2754706214675447,
+            0.8021084867053075,
+            0.05020885931096978
+          ],
+          "sectionVertices": 146,
+          "hullVertices": 32
+        },
+        {
+          "distanceFromDistalMm": 90.00000000000004,
+          "hullAreaMm2": 3835.794682019352,
+          "centroid": [
+            0.2756365142565193,
+            0.8039131795908739,
+            0.049064124375521656
+          ],
+          "sectionVertices": 138,
+          "hullVertices": 34
+        },
+        {
+          "distanceFromDistalMm": 92.00000000000004,
+          "hullAreaMm2": 3804.2802997407443,
+          "centroid": [
+            0.275727490879583,
+            0.8057256621134831,
+            0.04799024428070793
+          ],
+          "sectionVertices": 130,
+          "hullVertices": 32
+        },
+        {
+          "distanceFromDistalMm": 94.00000000000004,
+          "hullAreaMm2": 3762.0613433003678,
+          "centroid": [
+            0.27568539122826524,
+            0.8075480291942638,
+            0.04702928263352539
+          ],
+          "sectionVertices": 123,
+          "hullVertices": 32
+        },
+        {
+          "distanceFromDistalMm": 96.00000000000004,
+          "hullAreaMm2": 3777.268114501269,
+          "centroid": [
+            0.27525756704498106,
+            0.8094013537590137,
+            0.04640317218927685
+          ],
+          "sectionVertices": 121,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 98.00000000000004,
+          "hullAreaMm2": 3790.6004033277627,
+          "centroid": [
+            0.27479542019189035,
+            0.8112606400054216,
+            0.045817359954928895
+          ],
+          "sectionVertices": 111,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 100.00000000000004,
+          "hullAreaMm2": 3795.8417527298393,
+          "centroid": [
+            0.2742164634639651,
+            0.8131125974720268,
+            0.045278249974970215
+          ],
+          "sectionVertices": 109,
+          "hullVertices": 38
+        },
+        {
+          "distanceFromDistalMm": 102.00000000000004,
+          "hullAreaMm2": 3787.0264958497883,
+          "centroid": [
+            0.2736426237843871,
+            0.8149493275357242,
+            0.044686175844374953
+          ],
+          "sectionVertices": 104,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 104.00000000000006,
+          "hullAreaMm2": 3772.2449206221195,
+          "centroid": [
+            0.2730166435438651,
+            0.8167745830856626,
+            0.044088084441872885
+          ],
+          "sectionVertices": 104,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 106.00000000000006,
+          "hullAreaMm2": 3751.624551609284,
+          "centroid": [
+            0.2724111301687589,
+            0.8186120461153384,
+            0.0435175820819746
+          ],
+          "sectionVertices": 103,
+          "hullVertices": 37
+        },
+        {
+          "distanceFromDistalMm": 108.00000000000006,
+          "hullAreaMm2": 3732.8203281200103,
+          "centroid": [
+            0.27182274758904346,
+            0.8204435236058445,
+            0.04291710927524018
+          ],
+          "sectionVertices": 110,
+          "hullVertices": 39
+        },
+        {
+          "distanceFromDistalMm": 110.00000000000006,
+          "hullAreaMm2": 3727.901109088799,
+          "centroid": [
+            0.2714127130723215,
+            0.8222852393985964,
+            0.042242214543788195
+          ],
+          "sectionVertices": 115,
+          "hullVertices": 40
+        },
+        {
+          "distanceFromDistalMm": 112.00000000000006,
+          "hullAreaMm2": 3726.3581041692223,
+          "centroid": [
+            0.27109379248991206,
+            0.8241375417822538,
+            0.04154683951212269
+          ],
+          "sectionVertices": 114,
+          "hullVertices": 40
+        },
+        {
+          "distanceFromDistalMm": 114.00000000000006,
+          "hullAreaMm2": 3722.9655962377824,
+          "centroid": [
+            0.2708014492131803,
+            0.8259948999564753,
+            0.04085193454924271
+          ],
+          "sectionVertices": 104,
+          "hullVertices": 38
+        },
+        {
+          "distanceFromDistalMm": 116.00000000000006,
+          "hullAreaMm2": 3739.2694680856243,
+          "centroid": [
+            0.27056047031946606,
+            0.8278761829913972,
+            0.040204289227816006
+          ],
+          "sectionVertices": 92,
+          "hullVertices": 39
+        },
+        {
+          "distanceFromDistalMm": 118.00000000000006,
+          "hullAreaMm2": 3768.206174072157,
+          "centroid": [
+            0.27032093502901655,
+            0.8297726144208777,
+            0.03960537829041185
+          ],
+          "sectionVertices": 91,
+          "hullVertices": 41
+        },
+        {
+          "distanceFromDistalMm": 120.00000000000007,
+          "hullAreaMm2": 3818.051405739035,
+          "centroid": [
+            0.27014763617024135,
+            0.8317150660701359,
+            0.03911708342708943
+          ],
+          "sectionVertices": 89,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 122.00000000000007,
+          "hullAreaMm2": 3880.8672428906502,
+          "centroid": [
+            0.2699936779167952,
+            0.8336861626511127,
+            0.038710888899129756
+          ],
+          "sectionVertices": 90,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 124.00000000000007,
+          "hullAreaMm2": 3937.338620240865,
+          "centroid": [
+            0.26981068236826866,
+            0.8356406885591497,
+            0.03826800419114277
+          ],
+          "sectionVertices": 87,
+          "hullVertices": 47
+        },
+        {
+          "distanceFromDistalMm": 126.00000000000006,
+          "hullAreaMm2": 3975.6860153324715,
+          "centroid": [
+            0.2696013041594414,
+            0.8375627324210911,
+            0.03773471572631483
+          ],
+          "sectionVertices": 87,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 128.00000000000006,
+          "hullAreaMm2": 4014.151850956419,
+          "centroid": [
+            0.26941034131880864,
+            0.8394877036885378,
+            0.03719986752082394
+          ],
+          "sectionVertices": 88,
+          "hullVertices": 47
+        },
+        {
+          "distanceFromDistalMm": 130.00000000000006,
+          "hullAreaMm2": 4049.0534265652095,
+          "centroid": [
+            0.26920163595642904,
+            0.8414102573644517,
+            0.0366678413414287
+          ],
+          "sectionVertices": 84,
+          "hullVertices": 48
+        },
+        {
+          "distanceFromDistalMm": 132.00000000000006,
+          "hullAreaMm2": 4068.4762439456003,
+          "centroid": [
+            0.26895572003355017,
+            0.8433168993508146,
+            0.036106230141080595
+          ],
+          "sectionVertices": 82,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 134.00000000000006,
+          "hullAreaMm2": 4069.365498839057,
+          "centroid": [
+            0.2686210064983378,
+            0.8451832742076818,
+            0.03546649898849042
+          ],
+          "sectionVertices": 78,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 136.00000000000006,
+          "hullAreaMm2": 4062.958303943341,
+          "centroid": [
+            0.26820468920695073,
+            0.8470232036232805,
+            0.0347895570406734
+          ],
+          "sectionVertices": 84,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 138.00000000000006,
+          "hullAreaMm2": 4044.1613086294406,
+          "centroid": [
+            0.26768803283076736,
+            0.8488401083050683,
+            0.0340979465901641
+          ],
+          "sectionVertices": 85,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 140.00000000000006,
+          "hullAreaMm2": 4008.6744421755284,
+          "centroid": [
+            0.2670260967512919,
+            0.850630039644867,
+            0.03340593832386247
+          ],
+          "sectionVertices": 86,
+          "hullVertices": 47
+        },
+        {
+          "distanceFromDistalMm": 142.00000000000006,
+          "hullAreaMm2": 3963.661167763038,
+          "centroid": [
+            0.2663321814004541,
+            0.8524113056267609,
+            0.032704909028721356
+          ],
+          "sectionVertices": 90,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 144.00000000000009,
+          "hullAreaMm2": 3906.531491498692,
+          "centroid": [
+            0.265601760941694,
+            0.8541839345080501,
+            0.03199769063896123
+          ],
+          "sectionVertices": 87,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 146.00000000000009,
+          "hullAreaMm2": 3843.475426386417,
+          "centroid": [
+            0.26486675879886673,
+            0.8559525217761274,
+            0.03128000991969408
+          ],
+          "sectionVertices": 86,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 148.00000000000009,
+          "hullAreaMm2": 3779.8801021072454,
+          "centroid": [
+            0.2641469548037769,
+            0.8577284951491876,
+            0.030577318187333884
+          ],
+          "sectionVertices": 84,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 150.00000000000009,
+          "hullAreaMm2": 3715.592133417428,
+          "centroid": [
+            0.2634542817909212,
+            0.8595083699550524,
+            0.029870981088169796
+          ],
+          "sectionVertices": 90,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 152.00000000000009,
+          "hullAreaMm2": 3645.581252717412,
+          "centroid": [
+            0.26279956156841305,
+            0.8612884377494215,
+            0.029142303938191373
+          ],
+          "sectionVertices": 85,
+          "hullVertices": 54
+        },
+        {
+          "distanceFromDistalMm": 154.00000000000009,
+          "hullAreaMm2": 3571.9348556534705,
+          "centroid": [
+            0.2621737343072988,
+            0.8630741351984595,
+            0.02841457453562915
+          ],
+          "sectionVertices": 84,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 156.00000000000009,
+          "hullAreaMm2": 3496.0663721922047,
+          "centroid": [
+            0.2615720838001314,
+            0.8648591437262577,
+            0.027669955346956446
+          ],
+          "sectionVertices": 85,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 158.00000000000009,
+          "hullAreaMm2": 3409.5187872881716,
+          "centroid": [
+            0.2610108724261806,
+            0.8666379013143853,
+            0.026880388511408476
+          ],
+          "sectionVertices": 84,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 160.00000000000009,
+          "hullAreaMm2": 3316.716056605334,
+          "centroid": [
+            0.2604935118655146,
+            0.8684238671578934,
+            0.026087885362708858
+          ],
+          "sectionVertices": 82,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 162.00000000000009,
+          "hullAreaMm2": 3219.4020062535687,
+          "centroid": [
+            0.2600117551815236,
+            0.870219464144772,
+            0.02530537211029008
+          ],
+          "sectionVertices": 81,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 164.00000000000009,
+          "hullAreaMm2": 3114.6035517838154,
+          "centroid": [
+            0.259547063457521,
+            0.872005018401508,
+            0.02447964171590339
+          ],
+          "sectionVertices": 79,
+          "hullVertices": 47
+        },
+        {
+          "distanceFromDistalMm": 166.00000000000009,
+          "hullAreaMm2": 3008.147537725116,
+          "centroid": [
+            0.25909023813286464,
+            0.873789492453786,
+            0.023645612481771765
+          ],
+          "sectionVertices": 80,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 168.00000000000009,
+          "hullAreaMm2": 2897.4572362729214,
+          "centroid": [
+            0.25861966885534826,
+            0.8755644271291733,
+            0.0227886625021322
+          ],
+          "sectionVertices": 77,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 170.00000000000009,
+          "hullAreaMm2": 2779.420474662177,
+          "centroid": [
+            0.2580989378868647,
+            0.8773156760534108,
+            0.021884507955194768
+          ],
+          "sectionVertices": 79,
+          "hullVertices": 47
+        },
+        {
+          "distanceFromDistalMm": 172.00000000000009,
+          "hullAreaMm2": 2660.275503557809,
+          "centroid": [
+            0.2574954733235101,
+            0.879055088067851,
+            0.02099166669818575
+          ],
+          "sectionVertices": 74,
+          "hullVertices": 43
+        },
+        {
+          "distanceFromDistalMm": 174.00000000000009,
+          "hullAreaMm2": 2539.97332795813,
+          "centroid": [
+            0.2568161498765716,
+            0.8807842147462958,
+            0.0201110587230744
+          ],
+          "sectionVertices": 80,
+          "hullVertices": 42
+        },
+        {
+          "distanceFromDistalMm": 176.0000000000001,
+          "hullAreaMm2": 2429.840968876537,
+          "centroid": [
+            0.25611377742456026,
+            0.8825066026257573,
+            0.019222333531801902
+          ],
+          "sectionVertices": 75,
+          "hullVertices": 37
+        },
+        {
+          "distanceFromDistalMm": 178.0000000000001,
+          "hullAreaMm2": 2334.2545915530095,
+          "centroid": [
+            0.2554349641623076,
+            0.8842234696323172,
+            0.0183012686127014
+          ],
+          "sectionVertices": 76,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 180.0000000000001,
+          "hullAreaMm2": 2279.2362278975556,
+          "centroid": [
+            0.25475241927716513,
+            0.8859241800560623,
+            0.017329552572768
+          ],
+          "sectionVertices": 69,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 182.0000000000001,
+          "hullAreaMm2": 2272.592949670525,
+          "centroid": [
+            0.2543677678888611,
+            0.8877193171954316,
+            0.016486757544766403
+          ],
+          "sectionVertices": 70,
+          "hullVertices": 38
+        },
+        {
+          "distanceFromDistalMm": 184.0000000000001,
+          "hullAreaMm2": 2277.1665185231823,
+          "centroid": [
+            0.2539795579029123,
+            0.8895158243149329,
+            0.015650602893047254
+          ],
+          "sectionVertices": 69,
+          "hullVertices": 41
+        },
+        {
+          "distanceFromDistalMm": 186.0000000000001,
+          "hullAreaMm2": 2295.0674743708914,
+          "centroid": [
+            0.25354194238632904,
+            0.8912939904281107,
+            0.014784289028321868
+          ],
+          "sectionVertices": 79,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 188.0000000000001,
+          "hullAreaMm2": 2318.038159288826,
+          "centroid": [
+            0.2530495154311758,
+            0.8930692414504943,
+            0.013941605033883553
+          ],
+          "sectionVertices": 71,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 190.0000000000001,
+          "hullAreaMm2": 2345.591245969758,
+          "centroid": [
+            0.2525960568838098,
+            0.8948686923860737,
+            0.013154584458257615
+          ],
+          "sectionVertices": 71,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 192.0000000000001,
+          "hullAreaMm2": 2373.903746192851,
+          "centroid": [
+            0.2521633787214976,
+            0.8966824078421062,
+            0.01240169958297799
+          ],
+          "sectionVertices": 73,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 194.0000000000001,
+          "hullAreaMm2": 2401.7767488456716,
+          "centroid": [
+            0.2517517843722242,
+            0.8985085661661198,
+            0.011676801177062417
+          ],
+          "sectionVertices": 69,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 196.0000000000001,
+          "hullAreaMm2": 2426.33699648869,
+          "centroid": [
+            0.25136425679523516,
+            0.9003488456715711,
+            0.010983579879585372
+          ],
+          "sectionVertices": 69,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 198.0000000000001,
+          "hullAreaMm2": 2446.967283421914,
+          "centroid": [
+            0.251020508797834,
+            0.9022134728392031,
+            0.010343593746847155
+          ],
+          "sectionVertices": 66,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 200.0000000000001,
+          "hullAreaMm2": 2464.79902347152,
+          "centroid": [
+            0.2507333702145192,
+            0.9041106122390552,
+            0.009775814585509886
+          ],
+          "sectionVertices": 65,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 202.0000000000001,
+          "hullAreaMm2": 2479.760722243528,
+          "centroid": [
+            0.250478472843129,
+            0.9060257087288291,
+            0.009247326595603638
+          ],
+          "sectionVertices": 61,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 204.0000000000001,
+          "hullAreaMm2": 2493.337854354217,
+          "centroid": [
+            0.25023440086131543,
+            0.907943849214002,
+            0.008722254734904256
+          ],
+          "sectionVertices": 62,
+          "hullVertices": 47
+        },
+        {
+          "distanceFromDistalMm": 206.0000000000001,
+          "hullAreaMm2": 2509.091045739869,
+          "centroid": [
+            0.24998943053588318,
+            0.9098716834417515,
+            0.008229471822842801
+          ],
+          "sectionVertices": 63,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 208.00000000000014,
+          "hullAreaMm2": 2528.247147851824,
+          "centroid": [
+            0.24970290982230908,
+            0.9117972336471549,
+            0.007754358768426296
+          ],
+          "sectionVertices": 58,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 210.00000000000014,
+          "hullAreaMm2": 2549.616282774168,
+          "centroid": [
+            0.2493862733385442,
+            0.9137202101236828,
+            0.007289045695078074
+          ],
+          "sectionVertices": 63,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 212.00000000000014,
+          "hullAreaMm2": 2570.6905272952663,
+          "centroid": [
+            0.24906687535801966,
+            0.9156434324507083,
+            0.006826209214100931
+          ],
+          "sectionVertices": 64,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 214.00000000000014,
+          "hullAreaMm2": 2593.1575672310987,
+          "centroid": [
+            0.24873386853233045,
+            0.9175691149298429,
+            0.006379666429805428
+          ],
+          "sectionVertices": 65,
+          "hullVertices": 43
+        },
+        {
+          "distanceFromDistalMm": 216.00000000000014,
+          "hullAreaMm2": 2617.5981319477005,
+          "centroid": [
+            0.24839556555349612,
+            0.919496148291169,
+            0.005940753186605953
+          ],
+          "sectionVertices": 71,
+          "hullVertices": 42
+        },
+        {
+          "distanceFromDistalMm": 218.00000000000014,
+          "hullAreaMm2": 2643.9893642386055,
+          "centroid": [
+            0.24805500514857773,
+            0.9214173517313445,
+            0.005484114412744675
+          ],
+          "sectionVertices": 67,
+          "hullVertices": 42
+        },
+        {
+          "distanceFromDistalMm": 220.00000000000014,
+          "hullAreaMm2": 2673.0111441048634,
+          "centroid": [
+            0.2477117966674045,
+            0.9233360354447309,
+            0.005020826830164268
+          ],
+          "sectionVertices": 69,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 222.00000000000014,
+          "hullAreaMm2": 2703.6319586325103,
+          "centroid": [
+            0.24737784874952568,
+            0.9252573158951869,
+            0.004560437846680417
+          ],
+          "sectionVertices": 80,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 224.00000000000014,
+          "hullAreaMm2": 2737.602313544957,
+          "centroid": [
+            0.24705028518181724,
+            0.9271758019051888,
+            0.0040870332744152235
+          ],
+          "sectionVertices": 72,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 226.00000000000014,
+          "hullAreaMm2": 2773.2066837163084,
+          "centroid": [
+            0.24673532397411496,
+            0.9290943318297695,
+            0.0036061445619796177
+          ],
+          "sectionVertices": 74,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 228.00000000000014,
+          "hullAreaMm2": 2810.0078472748564,
+          "centroid": [
+            0.2464267072557172,
+            0.9310149377398976,
+            0.003128214124785202
+          ],
+          "sectionVertices": 74,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 230.00000000000014,
+          "hullAreaMm2": 2848.4279421793135,
+          "centroid": [
+            0.2461204125094445,
+            0.9329372056037533,
+            0.002654320833665869
+          ],
+          "sectionVertices": 76,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 232.00000000000014,
+          "hullAreaMm2": 2888.7236744748807,
+          "centroid": [
+            0.24582181227617803,
+            0.9348602540043027,
+            0.002178326322439512
+          ],
+          "sectionVertices": 79,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 234.00000000000014,
+          "hullAreaMm2": 2930.093053761141,
+          "centroid": [
+            0.24551768601899876,
+            0.9367812487101845,
+            0.0016989511339897071
+          ],
+          "sectionVertices": 81,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 236.00000000000014,
+          "hullAreaMm2": 2974.143407249514,
+          "centroid": [
+            0.24522164771300958,
+            0.9387045364033281,
+            0.0012221895789109385
+          ],
+          "sectionVertices": 85,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 238.00000000000014,
+          "hullAreaMm2": 3021.439198513162,
+          "centroid": [
+            0.24492691808446115,
+            0.9406250294792127,
+            0.0007354840575321975
+          ],
+          "sectionVertices": 85,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 240.00000000000017,
+          "hullAreaMm2": 3070.3020561984467,
+          "centroid": [
+            0.24462856762121934,
+            0.9425457059424952,
+            0.0002515707132941282
+          ],
+          "sectionVertices": 85,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 242.00000000000017,
+          "hullAreaMm2": 3119.9194791571,
+          "centroid": [
+            0.2443237675462319,
+            0.9444655077528106,
+            -0.000231303137500697
+          ],
+          "sectionVertices": 87,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 244.00000000000017,
+          "hullAreaMm2": 3169.8812038585843,
+          "centroid": [
+            0.2440170251070911,
+            0.9463854308492835,
+            -0.0007126041252219096
+          ],
+          "sectionVertices": 86,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 246.00000000000017,
+          "hullAreaMm2": 3221.5404793705725,
+          "centroid": [
+            0.24370055156236473,
+            0.9483064663891653,
+            -0.0011843720278798021
+          ],
+          "sectionVertices": 82,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 248.00000000000017,
+          "hullAreaMm2": 3275.1461014054566,
+          "centroid": [
+            0.24338027736422224,
+            0.9502314608430713,
+            -0.0016408747670357323
+          ],
+          "sectionVertices": 83,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 250.00000000000017,
+          "hullAreaMm2": 3330.507334911431,
+          "centroid": [
+            0.24306042238391654,
+            0.9521598718754009,
+            -0.002086442592916401
+          ],
+          "sectionVertices": 87,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 252.00000000000017,
+          "hullAreaMm2": 3387.1885639342854,
+          "centroid": [
+            0.24274892280598398,
+            0.9540909422363796,
+            -0.0025283589684501444
+          ],
+          "sectionVertices": 81,
+          "hullVertices": 48
+        },
+        {
+          "distanceFromDistalMm": 254.00000000000017,
+          "hullAreaMm2": 3444.8402887169054,
+          "centroid": [
+            0.24243190793639893,
+            0.9560213036952273,
+            -0.002969258572408323
+          ],
+          "sectionVertices": 83,
+          "hullVertices": 48
+        },
+        {
+          "distanceFromDistalMm": 256.00000000000017,
+          "hullAreaMm2": 3503.182070452022,
+          "centroid": [
+            0.24211799780447774,
+            0.9579525930648365,
+            -0.003408998676203579
+          ],
+          "sectionVertices": 85,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 258.00000000000017,
+          "hullAreaMm2": 3561.5564842258623,
+          "centroid": [
+            0.24180584579769973,
+            0.9598858181109657,
+            -0.0038434639577031287
+          ],
+          "sectionVertices": 84,
+          "hullVertices": 48
+        },
+        {
+          "distanceFromDistalMm": 260.00000000000017,
+          "hullAreaMm2": 3621.002383673255,
+          "centroid": [
+            0.2414929437416412,
+            0.9618216055354938,
+            -0.00426908393813265
+          ],
+          "sectionVertices": 85,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 262.00000000000017,
+          "hullAreaMm2": 3681.9268156595917,
+          "centroid": [
+            0.2411808952641717,
+            0.9637604607269065,
+            -0.004685174207770282
+          ],
+          "sectionVertices": 81,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 264.00000000000017,
+          "hullAreaMm2": 3743.1435124303443,
+          "centroid": [
+            0.24086903780296445,
+            0.9656992301743851,
+            -0.005101660891063349
+          ],
+          "sectionVertices": 76,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 266.00000000000017,
+          "hullAreaMm2": 3804.6478334229796,
+          "centroid": [
+            0.24055735577914658,
+            0.9676379037037391,
+            -0.005518567877014206
+          ],
+          "sectionVertices": 77,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 268.00000000000017,
+          "hullAreaMm2": 3866.446292643799,
+          "centroid": [
+            0.24024573358866436,
+            0.9695764771676604,
+            -0.0059358387745015485
+          ],
+          "sectionVertices": 77,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 270.00000000000017,
+          "hullAreaMm2": 3928.533636547278,
+          "centroid": [
+            0.23993421547941746,
+            0.9715149496441349,
+            -0.006353503385302849
+          ],
+          "sectionVertices": 80,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 272.00000000000017,
+          "hullAreaMm2": 3990.891994343039,
+          "centroid": [
+            0.23962291705706593,
+            0.9734533073982276,
+            -0.006771676662524132
+          ],
+          "sectionVertices": 80,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 274.00000000000017,
+          "hullAreaMm2": 4053.8958709835742,
+          "centroid": [
+            0.23931487944876748,
+            0.9753925063653772,
+            -0.0071890688282640405
+          ],
+          "sectionVertices": 81,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 276.00000000000017,
+          "hullAreaMm2": 4117.600321160045,
+          "centroid": [
+            0.23900878694799585,
+            0.9773323332553175,
+            -0.007605581997972623
+          ],
+          "sectionVertices": 86,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 278.00000000000017,
+          "hullAreaMm2": 4183.34831633975,
+          "centroid": [
+            0.23869899849796455,
+            0.9792735178317787,
+            -0.008015411914544055
+          ],
+          "sectionVertices": 88,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 280.00000000000017,
+          "hullAreaMm2": 4249.422787322288,
+          "centroid": [
+            0.23838846875331376,
+            0.9812150775919171,
+            -0.008423564483969042
+          ],
+          "sectionVertices": 85,
+          "hullVertices": 53
+        },
+        {
+          "distanceFromDistalMm": 282.00000000000017,
+          "hullAreaMm2": 4316.384027065656,
+          "centroid": [
+            0.23807388989169687,
+            0.983157037575025,
+            -0.008827955549634862
+          ],
+          "sectionVertices": 77,
+          "hullVertices": 55
+        },
+        {
+          "distanceFromDistalMm": 284.00000000000017,
+          "hullAreaMm2": 4382.649547305712,
+          "centroid": [
+            0.23776146378792534,
+            0.9850984171669476,
+            -0.009235550308762537
+          ],
+          "sectionVertices": 90,
+          "hullVertices": 56
+        },
+        {
+          "distanceFromDistalMm": 286.00000000000017,
+          "hullAreaMm2": 4446.945865973076,
+          "centroid": [
+            0.23744588445146914,
+            0.9870379575540922,
+            -0.009647259532993559
+          ],
+          "sectionVertices": 80,
+          "hullVertices": 54
+        },
+        {
+          "distanceFromDistalMm": 288.0000000000002,
+          "hullAreaMm2": 4510.232319031284,
+          "centroid": [
+            0.23712856080518616,
+            0.9889758618669848,
+            -0.010063270800084269
+          ],
+          "sectionVertices": 81,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 290.0000000000002,
+          "hullAreaMm2": 4573.47902329475,
+          "centroid": [
+            0.23681137231768942,
+            0.9909134321997838,
+            -0.010480457598574659
+          ],
+          "sectionVertices": 87,
+          "hullVertices": 53
+        },
+        {
+          "distanceFromDistalMm": 292.0000000000002,
+          "hullAreaMm2": 4636.734054473633,
+          "centroid": [
+            0.23649413156115312,
+            0.992850744402791,
+            -0.010898458086617439
+          ],
+          "sectionVertices": 86,
+          "hullVertices": 53
+        },
+        {
+          "distanceFromDistalMm": 294.0000000000002,
+          "hullAreaMm2": 4700.098867568371,
+          "centroid": [
+            0.23617624890313135,
+            0.9947878951812038,
+            -0.011316598680193381
+          ],
+          "sectionVertices": 85,
+          "hullVertices": 53
+        },
+        {
+          "distanceFromDistalMm": 296.0000000000002,
+          "hullAreaMm2": 4764.200406219033,
+          "centroid": [
+            0.23585385244590443,
+            0.9967232387022941,
+            -0.011737925593667244
+          ],
+          "sectionVertices": 87,
+          "hullVertices": 53
+        },
+        {
+          "distanceFromDistalMm": 298.0000000000002,
+          "hullAreaMm2": 4828.628517807861,
+          "centroid": [
+            0.23553001574765678,
+            0.9986578609910598,
+            -0.012160742659927611
+          ],
+          "sectionVertices": 89,
+          "hullVertices": 53
+        },
+        {
+          "distanceFromDistalMm": 300.0000000000002,
+          "hullAreaMm2": 4893.19056886379,
+          "centroid": [
+            0.23520591386748058,
+            1.0005922517381032,
+            -0.012584157472928618
+          ],
+          "sectionVertices": 90,
+          "hullVertices": 53
+        }
+      ]
+    },
+    {
+      "body": "source",
+      "side": "right",
+      "cutY": 1.2,
+      "axis": [
+        -0.16200699171004795,
+        -0.9396812523401401,
+        0.301252184452705
+      ],
+      "centre": [
+        -0.2598743924872521,
+        0.8644214400977148,
+        0.0381057869360146
+      ],
+      "distalProjection": 0.1534268020738886,
+      "wristSearchWindowMm": [
+        140,
+        230
+      ],
+      "localMinima": [
+        {
+          "distanceFromDistalMm": 182.0000000000001,
+          "hullAreaMm2": 2272.416979306975,
+          "centroid": [
+            -0.25583558346926905,
+            0.8873038478123131,
+            0.016805648977304855
+          ],
+          "sectionVertices": 71,
+          "hullVertices": 35
+        }
+      ],
+      "sections": [
+        {
+          "distanceFromDistalMm": 50.0,
+          "hullAreaMm2": 2046.774354044034,
+          "centroid": [
+            -0.26527542826557776,
+            0.7640159304189047,
+            0.06533420837764276
+          ],
+          "sectionVertices": 134,
+          "hullVertices": 30
+        },
+        {
+          "distanceFromDistalMm": 52.00000000000001,
+          "hullAreaMm2": 2007.6598578852813,
+          "centroid": [
+            -0.26543033184394804,
+            0.7656212827286908,
+            0.06361944572864023
+          ],
+          "sectionVertices": 139,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 54.00000000000001,
+          "hullAreaMm2": 1963.2815864670415,
+          "centroid": [
+            -0.2657339199002022,
+            0.7672858351372988,
+            0.062009383724649876
+          ],
+          "sectionVertices": 139,
+          "hullVertices": 28
+        },
+        {
+          "distanceFromDistalMm": 56.00000000000001,
+          "hullAreaMm2": 1959.61859119887,
+          "centroid": [
+            -0.26584155444524965,
+            0.7689959585734817,
+            0.0606468488191378
+          ],
+          "sectionVertices": 149,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 58.00000000000001,
+          "hullAreaMm2": 1990.1088673070713,
+          "centroid": [
+            -0.265794173395062,
+            0.77074659991378,
+            0.05949406351344474
+          ],
+          "sectionVertices": 145,
+          "hullVertices": 33
+        },
+        {
+          "distanceFromDistalMm": 60.000000000000014,
+          "hullAreaMm2": 2030.0977034602495,
+          "centroid": [
+            -0.26557827152931723,
+            0.772482185551175,
+            0.05838494258360853
+          ],
+          "sectionVertices": 142,
+          "hullVertices": 33
+        },
+        {
+          "distanceFromDistalMm": 62.000000000000014,
+          "hullAreaMm2": 2068.600496261221,
+          "centroid": [
+            -0.2653651705225859,
+            0.7742159530972605,
+            0.05726864432802073
+          ],
+          "sectionVertices": 149,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 64.00000000000001,
+          "hullAreaMm2": 3469.1023023777584,
+          "centroid": [
+            -0.2760763038240397,
+            0.7795849128284001,
+            0.06161660390324069
+          ],
+          "sectionVertices": 173,
+          "hullVertices": 28
+        },
+        {
+          "distanceFromDistalMm": 66.00000000000001,
+          "hullAreaMm2": 3692.7810572597746,
+          "centroid": [
+            -0.2772960362968393,
+            0.7818323042893655,
+            0.06133188043732915
+          ],
+          "sectionVertices": 176,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 68.00000000000001,
+          "hullAreaMm2": 3827.182246880841,
+          "centroid": [
+            -0.2777926936062294,
+            0.7838702157579918,
+            0.06078259062584239
+          ],
+          "sectionVertices": 178,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 70.00000000000001,
+          "hullAreaMm2": 3897.963608668447,
+          "centroid": [
+            -0.27786498005025534,
+            0.7857815727412337,
+            0.060066763167037275
+          ],
+          "sectionVertices": 178,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 72.00000000000003,
+          "hullAreaMm2": 3932.308289779915,
+          "centroid": [
+            -0.27760523615034555,
+            0.7875848120631702,
+            0.05919224838689437
+          ],
+          "sectionVertices": 175,
+          "hullVertices": 30
+        },
+        {
+          "distanceFromDistalMm": 74.00000000000003,
+          "hullAreaMm2": 3963.9240182961403,
+          "centroid": [
+            -0.27732458464133697,
+            0.7893821984281956,
+            0.05831072042930294
+          ],
+          "sectionVertices": 188,
+          "hullVertices": 32
+        },
+        {
+          "distanceFromDistalMm": 76.00000000000003,
+          "hullAreaMm2": 3978.3361907905387,
+          "centroid": [
+            -0.27700585572922687,
+            0.7911559290396146,
+            0.057375881447015345
+          ],
+          "sectionVertices": 188,
+          "hullVertices": 33
+        },
+        {
+          "distanceFromDistalMm": 78.00000000000003,
+          "hullAreaMm2": 3957.3022634398353,
+          "centroid": [
+            -0.27682656635109715,
+            0.7929081838483855,
+            0.05629906643679987
+          ],
+          "sectionVertices": 178,
+          "hullVertices": 32
+        },
+        {
+          "distanceFromDistalMm": 80.00000000000003,
+          "hullAreaMm2": 3936.913714891763,
+          "centroid": [
+            -0.2767644434988519,
+            0.7946699910194548,
+            0.05518903798901772
+          ],
+          "sectionVertices": 165,
+          "hullVertices": 33
+        },
+        {
+          "distanceFromDistalMm": 82.00000000000003,
+          "hullAreaMm2": 3904.13154573631,
+          "centroid": [
+            -0.2767007427220271,
+            0.7964158843541699,
+            0.05403021886146883
+          ],
+          "sectionVertices": 159,
+          "hullVertices": 30
+        },
+        {
+          "distanceFromDistalMm": 84.00000000000003,
+          "hullAreaMm2": 3874.3142390236108,
+          "centroid": [
+            -0.276659681075112,
+            0.7981609574076429,
+            0.052856666230013796
+          ],
+          "sectionVertices": 146,
+          "hullVertices": 30
+        },
+        {
+          "distanceFromDistalMm": 86.00000000000003,
+          "hullAreaMm2": 3849.0523155014203,
+          "centroid": [
+            -0.2766569767802218,
+            0.7999084661494974,
+            0.05167008335776549
+          ],
+          "sectionVertices": 137,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 88.00000000000004,
+          "hullAreaMm2": 3831.3760744755778,
+          "centroid": [
+            -0.2767363267364521,
+            0.8016701014786645,
+            0.05048343783659782
+          ],
+          "sectionVertices": 129,
+          "hullVertices": 32
+        },
+        {
+          "distanceFromDistalMm": 90.00000000000004,
+          "hullAreaMm2": 3820.410358331694,
+          "centroid": [
+            -0.27693911614319056,
+            0.8034662178788413,
+            0.049337964338715866
+          ],
+          "sectionVertices": 127,
+          "hullVertices": 33
+        },
+        {
+          "distanceFromDistalMm": 92.00000000000004,
+          "hullAreaMm2": 3795.8159623523666,
+          "centroid": [
+            -0.2771088966371075,
+            0.8052817722799093,
+            0.04827087433780086
+          ],
+          "sectionVertices": 123,
+          "hullVertices": 34
+        },
+        {
+          "distanceFromDistalMm": 94.00000000000004,
+          "hullAreaMm2": 3760.2047594131495,
+          "centroid": [
+            -0.2771526425222952,
+            0.8070848757722666,
+            0.047232725545519244
+          ],
+          "sectionVertices": 121,
+          "hullVertices": 34
+        },
+        {
+          "distanceFromDistalMm": 96.00000000000004,
+          "hullAreaMm2": 3783.7228811728787,
+          "centroid": [
+            -0.27676594097239593,
+            0.8089306854125526,
+            0.04655927339706644
+          ],
+          "sectionVertices": 118,
+          "hullVertices": 38
+        },
+        {
+          "distanceFromDistalMm": 98.00000000000004,
+          "hullAreaMm2": 3808.5337448004784,
+          "centroid": [
+            -0.2762527252685525,
+            0.8107938160357372,
+            0.04600788635648348
+          ],
+          "sectionVertices": 116,
+          "hullVertices": 41
+        },
+        {
+          "distanceFromDistalMm": 100.00000000000004,
+          "hullAreaMm2": 3798.2732383847906,
+          "centroid": [
+            -0.27572584594724914,
+            0.8126204056432148,
+            0.04534986670874032
+          ],
+          "sectionVertices": 107,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 102.00000000000004,
+          "hullAreaMm2": 3794.8724288437907,
+          "centroid": [
+            -0.2751540822061057,
+            0.8144611106040149,
+            0.04476001427697144
+          ],
+          "sectionVertices": 104,
+          "hullVertices": 39
+        },
+        {
+          "distanceFromDistalMm": 104.00000000000006,
+          "hullAreaMm2": 3785.6100466458715,
+          "centroid": [
+            -0.27449916874848684,
+            0.8162995532560693,
+            0.04420782127772377
+          ],
+          "sectionVertices": 111,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 106.00000000000006,
+          "hullAreaMm2": 3774.528272581919,
+          "centroid": [
+            -0.27387247197738734,
+            0.8181420855175813,
+            0.04365321046642454
+          ],
+          "sectionVertices": 112,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 108.00000000000006,
+          "hullAreaMm2": 3757.180699902857,
+          "centroid": [
+            -0.27329686089888944,
+            0.8199843960191752,
+            0.043070435135651716
+          ],
+          "sectionVertices": 111,
+          "hullVertices": 39
+        },
+        {
+          "distanceFromDistalMm": 110.00000000000006,
+          "hullAreaMm2": 3745.5602724362316,
+          "centroid": [
+            -0.2728798753111693,
+            0.8218260139980715,
+            0.042400194251017556
+          ],
+          "sectionVertices": 115,
+          "hullVertices": 37
+        },
+        {
+          "distanceFromDistalMm": 112.00000000000006,
+          "hullAreaMm2": 3731.9574717334704,
+          "centroid": [
+            -0.27250757345289534,
+            0.8236754243853406,
+            0.041730229890427795
+          ],
+          "sectionVertices": 108,
+          "hullVertices": 39
+        },
+        {
+          "distanceFromDistalMm": 114.00000000000006,
+          "hullAreaMm2": 3724.198713737305,
+          "centroid": [
+            -0.27223287102266686,
+            0.825540531415266,
+            0.041056740413818016
+          ],
+          "sectionVertices": 110,
+          "hullVertices": 40
+        },
+        {
+          "distanceFromDistalMm": 116.00000000000006,
+          "hullAreaMm2": 3729.2473446811946,
+          "centroid": [
+            -0.27199723687366095,
+            0.8274097298625694,
+            0.0403750030086135
+          ],
+          "sectionVertices": 101,
+          "hullVertices": 41
+        },
+        {
+          "distanceFromDistalMm": 118.00000000000006,
+          "hullAreaMm2": 3746.809715145289,
+          "centroid": [
+            -0.27170694723146394,
+            0.8292871859059437,
+            0.03974841567735663
+          ],
+          "sectionVertices": 96,
+          "hullVertices": 41
+        },
+        {
+          "distanceFromDistalMm": 120.00000000000007,
+          "hullAreaMm2": 3784.2382768437137,
+          "centroid": [
+            -0.27154418899692284,
+            0.8312072594181219,
+            0.03918617927118736
+          ],
+          "sectionVertices": 88,
+          "hullVertices": 43
+        },
+        {
+          "distanceFromDistalMm": 122.00000000000007,
+          "hullAreaMm2": 3845.0957637642964,
+          "centroid": [
+            -0.27140377404515587,
+            0.8331692843073845,
+            0.03874278401000113
+          ],
+          "sectionVertices": 88,
+          "hullVertices": 43
+        },
+        {
+          "distanceFromDistalMm": 124.00000000000007,
+          "hullAreaMm2": 3911.604936556892,
+          "centroid": [
+            -0.27126643455809274,
+            0.8351462534602379,
+            0.03834434974242911
+          ],
+          "sectionVertices": 92,
+          "hullVertices": 47
+        },
+        {
+          "distanceFromDistalMm": 126.00000000000006,
+          "hullAreaMm2": 3970.8821541819193,
+          "centroid": [
+            -0.27109491907732197,
+            0.8371121544858839,
+            0.03792977032485735
+          ],
+          "sectionVertices": 88,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 128.00000000000006,
+          "hullAreaMm2": 4006.6300855416325,
+          "centroid": [
+            -0.27090328861359475,
+            0.8390362085353364,
+            0.03739547708285376
+          ],
+          "sectionVertices": 89,
+          "hullVertices": 47
+        },
+        {
+          "distanceFromDistalMm": 130.00000000000006,
+          "hullAreaMm2": 4038.6951941851526,
+          "centroid": [
+            -0.2706869963361472,
+            0.8409583426345101,
+            0.03686845763032444
+          ],
+          "sectionVertices": 90,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 132.00000000000006,
+          "hullAreaMm2": 4057.627064185318,
+          "centroid": [
+            -0.2704198073682406,
+            0.8428521947119285,
+            0.03628059059939317
+          ],
+          "sectionVertices": 81,
+          "hullVertices": 48
+        },
+        {
+          "distanceFromDistalMm": 134.00000000000006,
+          "hullAreaMm2": 4065.751014512591,
+          "centroid": [
+            -0.27011489214176665,
+            0.8447223301827333,
+            0.03563903388991474
+          ],
+          "sectionVertices": 85,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 136.00000000000006,
+          "hullAreaMm2": 4067.8518063724678,
+          "centroid": [
+            -0.26975799915869786,
+            0.8465792010438625,
+            0.034984054057687515
+          ],
+          "sectionVertices": 86,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 138.00000000000006,
+          "hullAreaMm2": 4055.963837497697,
+          "centroid": [
+            -0.2692843764091543,
+            0.8484148628333879,
+            0.034325692578094716
+          ],
+          "sectionVertices": 86,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 140.00000000000006,
+          "hullAreaMm2": 4020.351570136884,
+          "centroid": [
+            -0.26865460891527304,
+            0.8502122905169847,
+            0.03363204062497733
+          ],
+          "sectionVertices": 84,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 142.00000000000006,
+          "hullAreaMm2": 3975.4575268221406,
+          "centroid": [
+            -0.2679899251062955,
+            0.8519935205123859,
+            0.03290664126137846
+          ],
+          "sectionVertices": 79,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 144.00000000000009,
+          "hullAreaMm2": 3921.7281688468897,
+          "centroid": [
+            -0.2673063265107178,
+            0.8537718525156847,
+            0.03218237430061549
+          ],
+          "sectionVertices": 70,
+          "hullVertices": 47
+        },
+        {
+          "distanceFromDistalMm": 146.00000000000009,
+          "hullAreaMm2": 3862.234943671279,
+          "centroid": [
+            -0.26660645974268954,
+            0.8555502349258411,
+            0.0314670132472509
+          ],
+          "sectionVertices": 77,
+          "hullVertices": 48
+        },
+        {
+          "distanceFromDistalMm": 148.00000000000009,
+          "hullAreaMm2": 3797.4679252169276,
+          "centroid": [
+            -0.26588068373980805,
+            0.8573231901496021,
+            0.030748656869174336
+          ],
+          "sectionVertices": 69,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 150.00000000000009,
+          "hullAreaMm2": 3731.1073833860128,
+          "centroid": [
+            -0.2651633746666564,
+            0.8590969127040806,
+            0.03002814065439422
+          ],
+          "sectionVertices": 74,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 152.00000000000009,
+          "hullAreaMm2": 3665.3127900321592,
+          "centroid": [
+            -0.26447433707208956,
+            0.8608844692377696,
+            0.029335572299072583
+          ],
+          "sectionVertices": 74,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 154.00000000000009,
+          "hullAreaMm2": 3592.529333619511,
+          "centroid": [
+            -0.2638238375037247,
+            0.8626688653577839,
+            0.028612420891920697
+          ],
+          "sectionVertices": 68,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 156.00000000000009,
+          "hullAreaMm2": 3507.9970608173985,
+          "centroid": [
+            -0.26321678848789837,
+            0.8644473754742779,
+            0.027847542781650997
+          ],
+          "sectionVertices": 77,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 158.00000000000009,
+          "hullAreaMm2": 3417.505845692667,
+          "centroid": [
+            -0.262654620542011,
+            0.8662289274635424,
+            0.027068016955817228
+          ],
+          "sectionVertices": 74,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 160.00000000000009,
+          "hullAreaMm2": 3324.268639679018,
+          "centroid": [
+            -0.2621201678054018,
+            0.8680118524618028,
+            0.02627786924230118
+          ],
+          "sectionVertices": 75,
+          "hullVertices": 40
+        },
+        {
+          "distanceFromDistalMm": 162.00000000000009,
+          "hullAreaMm2": 3231.361594904028,
+          "centroid": [
+            -0.2616209345145589,
+            0.8698032912173321,
+            0.02549533781093334
+          ],
+          "sectionVertices": 78,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 164.00000000000009,
+          "hullAreaMm2": 3133.6907216554096,
+          "centroid": [
+            -0.26114403168936884,
+            0.8715958896857259,
+            0.024704414967792583
+          ],
+          "sectionVertices": 74,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 166.00000000000009,
+          "hullAreaMm2": 3026.4566485268124,
+          "centroid": [
+            -0.26067571069287643,
+            0.8733701919595099,
+            0.02385180657256729
+          ],
+          "sectionVertices": 73,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 168.00000000000009,
+          "hullAreaMm2": 2918.2929059345925,
+          "centroid": [
+            -0.26020783135367875,
+            0.8751439903958749,
+            0.02299738906798239
+          ],
+          "sectionVertices": 77,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 170.00000000000009,
+          "hullAreaMm2": 2807.0701214389323,
+          "centroid": [
+            -0.2597229744733368,
+            0.8769100990733115,
+            0.02212811543234297
+          ],
+          "sectionVertices": 78,
+          "hullVertices": 47
+        },
+        {
+          "distanceFromDistalMm": 172.00000000000009,
+          "hullAreaMm2": 2693.2299817077133,
+          "centroid": [
+            -0.2591575572026911,
+            0.8786617117081531,
+            0.021256948655326135
+          ],
+          "sectionVertices": 76,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 174.00000000000009,
+          "hullAreaMm2": 2574.5714294873446,
+          "centroid": [
+            -0.25849501700945426,
+            0.8803949892296357,
+            0.020380820686838566
+          ],
+          "sectionVertices": 76,
+          "hullVertices": 40
+        },
+        {
+          "distanceFromDistalMm": 176.0000000000001,
+          "hullAreaMm2": 2461.2238668229847,
+          "centroid": [
+            -0.2577157335099959,
+            0.8820990327756396,
+            0.019476286660944517
+          ],
+          "sectionVertices": 77,
+          "hullVertices": 41
+        },
+        {
+          "distanceFromDistalMm": 178.0000000000001,
+          "hullAreaMm2": 2357.1774633634896,
+          "centroid": [
+            -0.2568583821614097,
+            0.8837742107376974,
+            0.01852369684846157
+          ],
+          "sectionVertices": 73,
+          "hullVertices": 40
+        },
+        {
+          "distanceFromDistalMm": 180.0000000000001,
+          "hullAreaMm2": 2292.052886903061,
+          "centroid": [
+            -0.2562986927803852,
+            0.8855393223683866,
+            0.017691556494367662
+          ],
+          "sectionVertices": 72,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 182.0000000000001,
+          "hullAreaMm2": 2272.416979306975,
+          "centroid": [
+            -0.25583558346926905,
+            0.8873038478123131,
+            0.016805648977304855
+          ],
+          "sectionVertices": 71,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 184.0000000000001,
+          "hullAreaMm2": 2274.2209194187767,
+          "centroid": [
+            -0.255435332110883,
+            0.8890804019580473,
+            0.015923458338690234
+          ],
+          "sectionVertices": 64,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 186.0000000000001,
+          "hullAreaMm2": 2288.17612991738,
+          "centroid": [
+            -0.25497543119456256,
+            0.8908508649768975,
+            0.015054346203410748
+          ],
+          "sectionVertices": 63,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 188.0000000000001,
+          "hullAreaMm2": 2309.2858619187487,
+          "centroid": [
+            -0.2544903985003971,
+            0.8926228658006518,
+            0.014203546201446699
+          ],
+          "sectionVertices": 59,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 190.0000000000001,
+          "hullAreaMm2": 2331.1345161571508,
+          "centroid": [
+            -0.25400518312215015,
+            0.8944005213336859,
+            0.013370482902059132
+          ],
+          "sectionVertices": 66,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 192.0000000000001,
+          "hullAreaMm2": 2357.29533599128,
+          "centroid": [
+            -0.2535493488085694,
+            0.8962016795042775,
+            0.012594929725046564
+          ],
+          "sectionVertices": 65,
+          "hullVertices": 37
+        },
+        {
+          "distanceFromDistalMm": 194.0000000000001,
+          "hullAreaMm2": 2386.17018664149,
+          "centroid": [
+            -0.2531448464007382,
+            0.8980250433508838,
+            0.011861036427911963
+          ],
+          "sectionVertices": 59,
+          "hullVertices": 40
+        },
+        {
+          "distanceFromDistalMm": 196.0000000000001,
+          "hullAreaMm2": 2411.5340688606793,
+          "centroid": [
+            -0.2527929824587059,
+            0.8998729458681176,
+            0.01117537756691889
+          ],
+          "sectionVertices": 73,
+          "hullVertices": 43
+        },
+        {
+          "distanceFromDistalMm": 198.0000000000001,
+          "hullAreaMm2": 2432.7333320100483,
+          "centroid": [
+            -0.25248023981853085,
+            0.9017502336715614,
+            0.010560340195888971
+          ],
+          "sectionVertices": 69,
+          "hullVertices": 42
+        },
+        {
+          "distanceFromDistalMm": 200.0000000000001,
+          "hullAreaMm2": 2452.4973432201095,
+          "centroid": [
+            -0.25218166816578985,
+            0.9036360641643257,
+            0.00996432876475622
+          ],
+          "sectionVertices": 64,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 202.0000000000001,
+          "hullAreaMm2": 2470.2800645550114,
+          "centroid": [
+            -0.25189951549756695,
+            0.9055399924983822,
+            0.009415939268406984
+          ],
+          "sectionVertices": 74,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 204.0000000000001,
+          "hullAreaMm2": 2487.858353731176,
+          "centroid": [
+            -0.2516212120345016,
+            0.9074560124554709,
+            0.008903196561956437
+          ],
+          "sectionVertices": 72,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 206.0000000000001,
+          "hullAreaMm2": 2506.6559327152668,
+          "centroid": [
+            -0.2513351520517419,
+            0.9093775951720494,
+            0.008411976790641509
+          ],
+          "sectionVertices": 69,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 208.00000000000014,
+          "hullAreaMm2": 2525.8134572270947,
+          "centroid": [
+            -0.25104134930706257,
+            0.9112987657569502,
+            0.007923635369094965
+          ],
+          "sectionVertices": 73,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 210.00000000000014,
+          "hullAreaMm2": 2545.4603146059662,
+          "centroid": [
+            -0.25073945220940147,
+            0.9132204092129059,
+            0.007441121921358698
+          ],
+          "sectionVertices": 76,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 212.00000000000014,
+          "hullAreaMm2": 2566.40016485566,
+          "centroid": [
+            -0.25042684825082057,
+            0.9151453598004221,
+            0.006974682169033752
+          ],
+          "sectionVertices": 77,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 214.00000000000014,
+          "hullAreaMm2": 2589.394413813134,
+          "centroid": [
+            -0.25010307514422647,
+            0.9170756539324605,
+            0.006530916803918679
+          ],
+          "sectionVertices": 71,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 216.00000000000014,
+          "hullAreaMm2": 2612.576235202623,
+          "centroid": [
+            -0.24977493259035158,
+            0.9190058307858047,
+            0.006089135412530169
+          ],
+          "sectionVertices": 74,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 218.00000000000014,
+          "hullAreaMm2": 2635.8987744617016,
+          "centroid": [
+            -0.24943750315734806,
+            0.9209373983618561,
+            0.0056566863199609616
+          ],
+          "sectionVertices": 78,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 220.00000000000014,
+          "hullAreaMm2": 2662.604831340876,
+          "centroid": [
+            -0.24907926983822942,
+            0.9228628265400515,
+            0.005216274788663152
+          ],
+          "sectionVertices": 82,
+          "hullVertices": 42
+        },
+        {
+          "distanceFromDistalMm": 222.00000000000014,
+          "hullAreaMm2": 2695.134385057555,
+          "centroid": [
+            -0.24873704770480212,
+            0.924776285362588,
+            0.004729917356033765
+          ],
+          "sectionVertices": 83,
+          "hullVertices": 42
+        },
+        {
+          "distanceFromDistalMm": 224.00000000000014,
+          "hullAreaMm2": 2729.9579484451333,
+          "centroid": [
+            -0.2484119516738637,
+            0.9266908540472271,
+            0.004237811809953503
+          ],
+          "sectionVertices": 88,
+          "hullVertices": 43
+        },
+        {
+          "distanceFromDistalMm": 226.00000000000014,
+          "hullAreaMm2": 2765.8963716513063,
+          "centroid": [
+            -0.2480918218938592,
+            0.928608810316401,
+            0.0037536022474611175
+          ],
+          "sectionVertices": 80,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 228.00000000000014,
+          "hullAreaMm2": 2802.499284578179,
+          "centroid": [
+            -0.24777616832571203,
+            0.9305277991298028,
+            0.0032702062386905806
+          ],
+          "sectionVertices": 83,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 230.00000000000014,
+          "hullAreaMm2": 2840.9878552150863,
+          "centroid": [
+            -0.24747156995889694,
+            0.9324461709690126,
+            0.002778940481204084
+          ],
+          "sectionVertices": 91,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 232.00000000000014,
+          "hullAreaMm2": 2881.912463280189,
+          "centroid": [
+            -0.24718178921273629,
+            0.9343671113275054,
+            0.002287717980730776
+          ],
+          "sectionVertices": 88,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 234.00000000000014,
+          "hullAreaMm2": 2923.535264630429,
+          "centroid": [
+            -0.24689189262470684,
+            0.936288737545958,
+            0.0017986971470768925
+          ],
+          "sectionVertices": 86,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 236.00000000000014,
+          "hullAreaMm2": 2967.937348490032,
+          "centroid": [
+            -0.24659587286566934,
+            0.9382130670015519,
+            0.0013214012998607211
+          ],
+          "sectionVertices": 82,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 238.00000000000014,
+          "hullAreaMm2": 3013.8626407953416,
+          "centroid": [
+            -0.24631021764947292,
+            0.940139868308305,
+            0.0008462419476473072
+          ],
+          "sectionVertices": 83,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 240.00000000000017,
+          "hullAreaMm2": 3061.1148651161875,
+          "centroid": [
+            -0.24601499280348593,
+            0.942064647814052,
+            0.0003699224326694315
+          ],
+          "sectionVertices": 86,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 242.00000000000017,
+          "hullAreaMm2": 3109.717458172466,
+          "centroid": [
+            -0.24570908756735066,
+            0.9439883149351609,
+            -0.00010412320373218327
+          ],
+          "sectionVertices": 79,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 244.00000000000017,
+          "hullAreaMm2": 3161.9711227893536,
+          "centroid": [
+            -0.24538530019428936,
+            0.9459126873816134,
+            -0.0005663521218004976
+          ],
+          "sectionVertices": 84,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 246.00000000000017,
+          "hullAreaMm2": 3215.324193278403,
+          "centroid": [
+            -0.24506278056680322,
+            0.9478397480196247,
+            -0.0010208776614923504
+          ],
+          "sectionVertices": 85,
+          "hullVertices": 44
+        },
+        {
+          "distanceFromDistalMm": 248.00000000000017,
+          "hullAreaMm2": 3269.4483748973153,
+          "centroid": [
+            -0.24473869422032082,
+            0.9497679946725576,
+            -0.0014708611746398498
+          ],
+          "sectionVertices": 77,
+          "hullVertices": 45
+        },
+        {
+          "distanceFromDistalMm": 250.00000000000017,
+          "hullAreaMm2": 3324.238103917119,
+          "centroid": [
+            -0.24441396642820468,
+            0.9516973539219961,
+            -0.001917029263984852
+          ],
+          "sectionVertices": 73,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 252.00000000000017,
+          "hullAreaMm2": 3380.783080342361,
+          "centroid": [
+            -0.244102129134321,
+            0.9536299707654706,
+            -0.0023599683337463297
+          ],
+          "sectionVertices": 76,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 254.00000000000017,
+          "hullAreaMm2": 3437.958701558734,
+          "centroid": [
+            -0.24379173113966687,
+            0.9555635708194486,
+            -0.0028006145473075776
+          ],
+          "sectionVertices": 77,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 256.00000000000017,
+          "hullAreaMm2": 3496.128837728813,
+          "centroid": [
+            -0.2434795757621415,
+            0.9574989087905004,
+            -0.00323489467788801
+          ],
+          "sectionVertices": 78,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 258.00000000000017,
+          "hullAreaMm2": 3554.9892351816934,
+          "centroid": [
+            -0.24316668042627354,
+            0.9594353110826986,
+            -0.003665456989608261
+          ],
+          "sectionVertices": 81,
+          "hullVertices": 48
+        },
+        {
+          "distanceFromDistalMm": 260.00000000000017,
+          "hullAreaMm2": 3614.1202642342078,
+          "centroid": [
+            -0.24285383298541113,
+            0.9613721365986262,
+            -0.0040947249170938445
+          ],
+          "sectionVertices": 80,
+          "hullVertices": 48
+        },
+        {
+          "distanceFromDistalMm": 262.00000000000017,
+          "hullAreaMm2": 3673.915885571902,
+          "centroid": [
+            -0.24254039156305723,
+            0.9633103588018185,
+            -0.004519316795524014
+          ],
+          "sectionVertices": 71,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 264.00000000000017,
+          "hullAreaMm2": 3734.8917783804104,
+          "centroid": [
+            -0.24222451181930255,
+            0.9652507203799221,
+            -0.004935924148911688
+          ],
+          "sectionVertices": 74,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 266.00000000000017,
+          "hullAreaMm2": 3796.7719689816595,
+          "centroid": [
+            -0.24190218915823236,
+            0.9671902815537591,
+            -0.005351563300960012
+          ],
+          "sectionVertices": 75,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 268.00000000000017,
+          "hullAreaMm2": 3858.8484260316645,
+          "centroid": [
+            -0.24158022814020635,
+            0.9691297473264731,
+            -0.005767694516986683
+          ],
+          "sectionVertices": 78,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 270.00000000000017,
+          "hullAreaMm2": 3921.1249221024696,
+          "centroid": [
+            -0.241258590151508,
+            0.971069119363103,
+            -0.006184291837684463
+          ],
+          "sectionVertices": 84,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 272.00000000000017,
+          "hullAreaMm2": 3983.6014571940777,
+          "centroid": [
+            -0.24093726566951704,
+            0.9730083978324445,
+            -0.0066013496154765094
+          ],
+          "sectionVertices": 76,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 274.00000000000017,
+          "hullAreaMm2": 4046.2780313064845,
+          "centroid": [
+            -0.24061624566581324,
+            0.9749475829206388,
+            -0.007018862414449167
+          ],
+          "sectionVertices": 79,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 276.00000000000017,
+          "hullAreaMm2": 4110.202197391648,
+          "centroid": [
+            -0.24030385111517372,
+            0.9768892738512326,
+            -0.00743319744585548
+          ],
+          "sectionVertices": 82,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 278.00000000000017,
+          "hullAreaMm2": 4175.022369828107,
+          "centroid": [
+            -0.23999309499061183,
+            0.9788318096289328,
+            -0.007845778297427065
+          ],
+          "sectionVertices": 90,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 280.00000000000017,
+          "hullAreaMm2": 4240.86412131961,
+          "centroid": [
+            -0.239677025943294,
+            0.9807744656180599,
+            -0.0082551270029522
+          ],
+          "sectionVertices": 83,
+          "hullVertices": 55
+        },
+        {
+          "distanceFromDistalMm": 282.00000000000017,
+          "hullAreaMm2": 4306.735436437078,
+          "centroid": [
+            -0.23936164571161936,
+            0.9827169250128887,
+            -0.00866545936583164
+          ],
+          "sectionVertices": 91,
+          "hullVertices": 55
+        },
+        {
+          "distanceFromDistalMm": 284.00000000000017,
+          "hullAreaMm2": 4371.757228197186,
+          "centroid": [
+            -0.2390484352321233,
+            0.9846576252767242,
+            -0.009082445746644751
+          ],
+          "sectionVertices": 90,
+          "hullVertices": 56
+        },
+        {
+          "distanceFromDistalMm": 286.00000000000017,
+          "hullAreaMm2": 4435.678900087261,
+          "centroid": [
+            -0.23872877089515174,
+            0.9865993577039865,
+            -0.009492741803668995
+          ],
+          "sectionVertices": 93,
+          "hullVertices": 55
+        },
+        {
+          "distanceFromDistalMm": 288.0000000000002,
+          "hullAreaMm2": 4499.066952335518,
+          "centroid": [
+            -0.23840664769935047,
+            0.9885412468824979,
+            -0.009901226592393206
+          ],
+          "sectionVertices": 92,
+          "hullVertices": 55
+        },
+        {
+          "distanceFromDistalMm": 290.0000000000002,
+          "hullAreaMm2": 4562.394538181223,
+          "centroid": [
+            -0.23808445761670857,
+            0.9904826958082137,
+            -0.010311048669884842
+          ],
+          "sectionVertices": 84,
+          "hullVertices": 55
+        },
+        {
+          "distanceFromDistalMm": 292.0000000000002,
+          "hullAreaMm2": 4625.630956796307,
+          "centroid": [
+            -0.23776244045928688,
+            0.992423674506488,
+            -0.01072243050040116
+          ],
+          "sectionVertices": 93,
+          "hullVertices": 56
+        },
+        {
+          "distanceFromDistalMm": 294.0000000000002,
+          "hullAreaMm2": 4689.1426287450595,
+          "centroid": [
+            -0.237439575903865,
+            0.9943643748096788,
+            -0.01113422500258034
+          ],
+          "sectionVertices": 91,
+          "hullVertices": 57
+        },
+        {
+          "distanceFromDistalMm": 296.0000000000002,
+          "hullAreaMm2": 4753.057471513767,
+          "centroid": [
+            -0.2371148792016817,
+            0.9963041861806285,
+            -0.01154780701835819
+          ],
+          "sectionVertices": 89,
+          "hullVertices": 59
+        },
+        {
+          "distanceFromDistalMm": 298.0000000000002,
+          "hullAreaMm2": 4817.397915293772,
+          "centroid": [
+            -0.23678809883688065,
+            0.9982426067359229,
+            -0.011964606788344562
+          ],
+          "sectionVertices": 89,
+          "hullVertices": 58
+        },
+        {
+          "distanceFromDistalMm": 300.0000000000002,
+          "hullAreaMm2": 4881.59139488683,
+          "centroid": [
+            -0.23646407083145432,
+            1.0001812568607278,
+            -0.012382170633445239
+          ],
+          "sectionVertices": 95,
+          "hullVertices": 58
+        }
+      ]
+    },
+    {
+      "body": "target",
+      "side": "left",
+      "cutY": 1.17,
+      "axis": [
+        0.5090894530957082,
+        -0.8415882421290773,
+        0.1804360259393971
+      ],
+      "centre": [
+        0.3404664637504501,
+        0.9406882665922236,
+        -0.04898763802455187
+      ],
+      "distalProjection": 0.23210037653117413,
+      "wristSearchWindowMm": [
+        140,
+        230
+      ],
+      "localMinima": [
+        {
+          "distanceFromDistalMm": 184.0000000000001,
+          "hullAreaMm2": 1831.5492443893659,
+          "centroid": [
+            0.3617979257834511,
+            0.8965967161990175,
+            -0.048245969046857524
+          ],
+          "sectionVertices": 95,
+          "hullVertices": 56
+        }
+      ],
+      "sections": [
+        {
+          "distanceFromDistalMm": 50.0,
+          "hullAreaMm2": 1970.004502117908,
+          "centroid": [
+            0.4235153670800246,
+            0.7807001742010142,
+            -0.02029625951037798
+          ],
+          "sectionVertices": 191,
+          "hullVertices": 39
+        },
+        {
+          "distanceFromDistalMm": 52.00000000000001,
+          "hullAreaMm2": 1972.7869550169755,
+          "centroid": [
+            0.4225439378939934,
+            0.782305047828415,
+            -0.021154252648016132
+          ],
+          "sectionVertices": 180,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 54.00000000000001,
+          "hullAreaMm2": 1960.4676046364482,
+          "centroid": [
+            0.4216435172170977,
+            0.7839555237094991,
+            -0.021999894386193465
+          ],
+          "sectionVertices": 188,
+          "hullVertices": 34
+        },
+        {
+          "distanceFromDistalMm": 56.00000000000001,
+          "hullAreaMm2": 1933.4485122763815,
+          "centroid": [
+            0.4208114571116849,
+            0.7856395606334774,
+            -0.022881876244487537
+          ],
+          "sectionVertices": 184,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 58.00000000000001,
+          "hullAreaMm2": 1897.2832268936208,
+          "centroid": [
+            0.42005961451793045,
+            0.7873757358085736,
+            -0.023747004207051912
+          ],
+          "sectionVertices": 183,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 60.000000000000014,
+          "hullAreaMm2": 1857.830966324367,
+          "centroid": [
+            0.41933618670281614,
+            0.7891263784134916,
+            -0.02462482389940704
+          ],
+          "sectionVertices": 192,
+          "hullVertices": 33
+        },
+        {
+          "distanceFromDistalMm": 62.000000000000014,
+          "hullAreaMm2": 1817.7887147064034,
+          "centroid": [
+            0.418582417105324,
+            0.7908599102856508,
+            -0.02549684380822657
+          ],
+          "sectionVertices": 171,
+          "hullVertices": 33
+        },
+        {
+          "distanceFromDistalMm": 64.00000000000001,
+          "hullAreaMm2": 1777.1644590643489,
+          "centroid": [
+            0.4178096205778536,
+            0.7925826342503749,
+            -0.026365590526150482
+          ],
+          "sectionVertices": 168,
+          "hullVertices": 32
+        },
+        {
+          "distanceFromDistalMm": 66.00000000000001,
+          "hullAreaMm2": 1743.838320051518,
+          "centroid": [
+            0.4169889861170976,
+            0.7942800419883884,
+            -0.027217445115448095
+          ],
+          "sectionVertices": 165,
+          "hullVertices": 33
+        },
+        {
+          "distanceFromDistalMm": 68.00000000000001,
+          "hullAreaMm2": 1721.658561776314,
+          "centroid": [
+            0.4161934083287148,
+            0.7960016147941057,
+            -0.028027285094994987
+          ],
+          "sectionVertices": 156,
+          "hullVertices": 30
+        },
+        {
+          "distanceFromDistalMm": 70.00000000000001,
+          "hullAreaMm2": 1703.908626417783,
+          "centroid": [
+            0.41544440898081986,
+            0.7977492694157832,
+            -0.028846892764443424
+          ],
+          "sectionVertices": 147,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 72.00000000000003,
+          "hullAreaMm2": 1686.325106775301,
+          "centroid": [
+            0.4146986778838013,
+            0.799497694356533,
+            -0.02967212869228559
+          ],
+          "sectionVertices": 139,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 74.00000000000003,
+          "hullAreaMm2": 1669.1642550189795,
+          "centroid": [
+            0.4139705078112839,
+            0.8012564288218508,
+            -0.03049882639972052
+          ],
+          "sectionVertices": 137,
+          "hullVertices": 37
+        },
+        {
+          "distanceFromDistalMm": 76.00000000000003,
+          "hullAreaMm2": 1652.3357583705294,
+          "centroid": [
+            0.4133115603812468,
+            0.8030574978111779,
+            -0.03132337530988437
+          ],
+          "sectionVertices": 126,
+          "hullVertices": 34
+        },
+        {
+          "distanceFromDistalMm": 78.00000000000003,
+          "hullAreaMm2": 1652.1708523146651,
+          "centroid": [
+            0.41265912102203456,
+            0.8048889372278131,
+            -0.032024632852937746
+          ],
+          "sectionVertices": 137,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 80.00000000000003,
+          "hullAreaMm2": 1665.3711413828412,
+          "centroid": [
+            0.4119793633207344,
+            0.8067263052213742,
+            -0.03262116130783947
+          ],
+          "sectionVertices": 129,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 82.00000000000003,
+          "hullAreaMm2": 1680.204980035822,
+          "centroid": [
+            0.4112511998107173,
+            0.8085471201090865,
+            -0.03315832253062854
+          ],
+          "sectionVertices": 114,
+          "hullVertices": 40
+        },
+        {
+          "distanceFromDistalMm": 84.00000000000003,
+          "hullAreaMm2": 1693.9254613307814,
+          "centroid": [
+            0.4105222858661102,
+            0.8103777503802673,
+            -0.03364758561551027
+          ],
+          "sectionVertices": 108,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 86.00000000000003,
+          "hullAreaMm2": 1705.125205232533,
+          "centroid": [
+            0.40981690423226247,
+            0.8122268085067592,
+            -0.034117292654837164
+          ],
+          "sectionVertices": 107,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 88.00000000000004,
+          "hullAreaMm2": 1718.0457753420164,
+          "centroid": [
+            0.4090642499852416,
+            0.8140553301808836,
+            -0.03454940879786753
+          ],
+          "sectionVertices": 109,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 90.00000000000004,
+          "hullAreaMm2": 3262.0413126714834,
+          "centroid": [
+            0.41929013474476756,
+            0.825024495641172,
+            -0.02332309971045363
+          ],
+          "sectionVertices": 114,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 92.00000000000004,
+          "hullAreaMm2": 3565.02606094677,
+          "centroid": [
+            0.4202822845213331,
+            0.8283791872563235,
+            -0.021559726623049003
+          ],
+          "sectionVertices": 126,
+          "hullVertices": 40
+        },
+        {
+          "distanceFromDistalMm": 94.00000000000004,
+          "hullAreaMm2": 3690.5358510168817,
+          "centroid": [
+            0.4199354226216275,
+            0.8306379211759113,
+            -0.021130169148367833
+          ],
+          "sectionVertices": 136,
+          "hullVertices": 43
+        },
+        {
+          "distanceFromDistalMm": 96.00000000000004,
+          "hullAreaMm2": 3776.785878264422,
+          "centroid": [
+            0.41928534892980174,
+            0.832655931906181,
+            -0.02096789687942176
+          ],
+          "sectionVertices": 148,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 98.00000000000004,
+          "hullAreaMm2": 3805.300952114052,
+          "centroid": [
+            0.4183928998475613,
+            0.8344512217432938,
+            -0.021160589921166054
+          ],
+          "sectionVertices": 147,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 100.00000000000004,
+          "hullAreaMm2": 3816.8796556138705,
+          "centroid": [
+            0.4173887873310689,
+            0.8361559596831003,
+            -0.02146058268479525
+          ],
+          "sectionVertices": 149,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 102.00000000000004,
+          "hullAreaMm2": 3805.779471684563,
+          "centroid": [
+            0.41629800860148236,
+            0.8377669902387094,
+            -0.02195312113066485
+          ],
+          "sectionVertices": 157,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 104.00000000000006,
+          "hullAreaMm2": 3791.358837604748,
+          "centroid": [
+            0.4151744205271493,
+            0.8393491015330288,
+            -0.0224879749559566
+          ],
+          "sectionVertices": 162,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 106.00000000000006,
+          "hullAreaMm2": 3756.84813553418,
+          "centroid": [
+            0.41399253121727786,
+            0.8408610717374891,
+            -0.023185486832752494
+          ],
+          "sectionVertices": 164,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 108.00000000000006,
+          "hullAreaMm2": 3715.637208500956,
+          "centroid": [
+            0.41277414975139953,
+            0.8423409570758352,
+            -0.02392968824554485
+          ],
+          "sectionVertices": 160,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 110.00000000000006,
+          "hullAreaMm2": 3663.691988468669,
+          "centroid": [
+            0.41151350768955147,
+            0.8437781231538378,
+            -0.024753904740983497
+          ],
+          "sectionVertices": 161,
+          "hullVertices": 54
+        },
+        {
+          "distanceFromDistalMm": 112.00000000000006,
+          "hullAreaMm2": 3609.2885997010353,
+          "centroid": [
+            0.410239213796736,
+            0.845204857891148,
+            -0.0255882571863017
+          ],
+          "sectionVertices": 163,
+          "hullVertices": 55
+        },
+        {
+          "distanceFromDistalMm": 114.00000000000006,
+          "hullAreaMm2": 3551.019190752945,
+          "centroid": [
+            0.4089275070944831,
+            0.8466052182430742,
+            -0.02644006682133991
+          ],
+          "sectionVertices": 157,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 116.00000000000006,
+          "hullAreaMm2": 3492.628644086748,
+          "centroid": [
+            0.4076037642518314,
+            0.8479943995972061,
+            -0.027310058196707003
+          ],
+          "sectionVertices": 167,
+          "hullVertices": 55
+        },
+        {
+          "distanceFromDistalMm": 118.00000000000006,
+          "hullAreaMm2": 3432.2076997923796,
+          "centroid": [
+            0.4062447981573008,
+            0.8493557433081392,
+            -0.02821050938263957
+          ],
+          "sectionVertices": 170,
+          "hullVertices": 54
+        },
+        {
+          "distanceFromDistalMm": 120.00000000000007,
+          "hullAreaMm2": 3389.3787990229475,
+          "centroid": [
+            0.40492439368096456,
+            0.8507664087990786,
+            -0.028989713622995687
+          ],
+          "sectionVertices": 152,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 122.00000000000007,
+          "hullAreaMm2": 3344.3308931593256,
+          "centroid": [
+            0.40357153113022287,
+            0.852156406520003,
+            -0.02977373779265117
+          ],
+          "sectionVertices": 155,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 124.00000000000007,
+          "hullAreaMm2": 3295.6267658140973,
+          "centroid": [
+            0.4022138345751447,
+            0.8535436878109421,
+            -0.03055679305885802
+          ],
+          "sectionVertices": 142,
+          "hullVertices": 54
+        },
+        {
+          "distanceFromDistalMm": 126.00000000000006,
+          "hullAreaMm2": 3248.47293688948,
+          "centroid": [
+            0.400856315353234,
+            0.8549332055619728,
+            -0.03132991738105061
+          ],
+          "sectionVertices": 132,
+          "hullVertices": 54
+        },
+        {
+          "distanceFromDistalMm": 128.00000000000006,
+          "hullAreaMm2": 3205.247592500197,
+          "centroid": [
+            0.39952241937682237,
+            0.8563441243712806,
+            -0.032069874635566584
+          ],
+          "sectionVertices": 135,
+          "hullVertices": 57
+        },
+        {
+          "distanceFromDistalMm": 130.00000000000006,
+          "hullAreaMm2": 3162.2979385722115,
+          "centroid": [
+            0.39821209681629355,
+            0.8577710464230255,
+            -0.03280170067978772
+          ],
+          "sectionVertices": 128,
+          "hullVertices": 54
+        },
+        {
+          "distanceFromDistalMm": 132.00000000000006,
+          "hullAreaMm2": 3119.5559533171368,
+          "centroid": [
+            0.39690815200906027,
+            0.8592055512084628,
+            -0.03351615384869132
+          ],
+          "sectionVertices": 123,
+          "hullVertices": 59
+        },
+        {
+          "distanceFromDistalMm": 134.00000000000006,
+          "hullAreaMm2": 3076.6356472050547,
+          "centroid": [
+            0.3956061461107999,
+            0.8606442895424086,
+            -0.034216331450809476
+          ],
+          "sectionVertices": 121,
+          "hullVertices": 59
+        },
+        {
+          "distanceFromDistalMm": 136.00000000000006,
+          "hullAreaMm2": 3035.7584564233575,
+          "centroid": [
+            0.3943029925347621,
+            0.8620871112251998,
+            -0.034894225426319196
+          ],
+          "sectionVertices": 119,
+          "hullVertices": 58
+        },
+        {
+          "distanceFromDistalMm": 138.00000000000006,
+          "hullAreaMm2": 2996.5592054003587,
+          "centroid": [
+            0.39299277829868917,
+            0.8635321249722705,
+            -0.03554197396357156
+          ],
+          "sectionVertices": 112,
+          "hullVertices": 57
+        },
+        {
+          "distanceFromDistalMm": 140.00000000000006,
+          "hullAreaMm2": 2961.9234650762164,
+          "centroid": [
+            0.3916954032198039,
+            0.8650011643006075,
+            -0.036113887494361306
+          ],
+          "sectionVertices": 105,
+          "hullVertices": 60
+        },
+        {
+          "distanceFromDistalMm": 142.00000000000006,
+          "hullAreaMm2": 2923.355706203841,
+          "centroid": [
+            0.3903986366573618,
+            0.8664680303556584,
+            -0.036697654481447406
+          ],
+          "sectionVertices": 95,
+          "hullVertices": 61
+        },
+        {
+          "distanceFromDistalMm": 144.00000000000009,
+          "hullAreaMm2": 2877.1880667429555,
+          "centroid": [
+            0.3890663704494727,
+            0.8679095461866722,
+            -0.03729949965099345
+          ],
+          "sectionVertices": 106,
+          "hullVertices": 61
+        },
+        {
+          "distanceFromDistalMm": 146.00000000000009,
+          "hullAreaMm2": 2822.8656829814345,
+          "centroid": [
+            0.3877201636082604,
+            0.8693391742493287,
+            -0.03791745898989778
+          ],
+          "sectionVertices": 107,
+          "hullVertices": 63
+        },
+        {
+          "distanceFromDistalMm": 148.00000000000009,
+          "hullAreaMm2": 2760.9956107900844,
+          "centroid": [
+            0.38631270187905364,
+            0.8707274506215557,
+            -0.03855546354433113
+          ],
+          "sectionVertices": 99,
+          "hullVertices": 56
+        },
+        {
+          "distanceFromDistalMm": 150.00000000000009,
+          "hullAreaMm2": 2694.6889754834383,
+          "centroid": [
+            0.38487681468022783,
+            0.8720975298973395,
+            -0.0391981420856841
+          ],
+          "sectionVertices": 97,
+          "hullVertices": 56
+        },
+        {
+          "distanceFromDistalMm": 152.00000000000009,
+          "hullAreaMm2": 2625.6419311150885,
+          "centroid": [
+            0.383410764475033,
+            0.8734474774744715,
+            -0.03984961561381992
+          ],
+          "sectionVertices": 97,
+          "hullVertices": 55
+        },
+        {
+          "distanceFromDistalMm": 154.00000000000009,
+          "hullAreaMm2": 2554.1304874591033,
+          "centroid": [
+            0.3819265805930413,
+            0.874785250259174,
+            -0.040506711625330434
+          ],
+          "sectionVertices": 100,
+          "hullVertices": 60
+        },
+        {
+          "distanceFromDistalMm": 156.00000000000009,
+          "hullAreaMm2": 2481.3451555070387,
+          "centroid": [
+            0.3804540246059882,
+            0.8761300625256463,
+            -0.04116378155328412
+          ],
+          "sectionVertices": 108,
+          "hullVertices": 60
+        },
+        {
+          "distanceFromDistalMm": 158.00000000000009,
+          "hullAreaMm2": 2405.5499055154,
+          "centroid": [
+            0.37898038518815,
+            0.877472362679566,
+            -0.04182951162099211
+          ],
+          "sectionVertices": 98,
+          "hullVertices": 61
+        },
+        {
+          "distanceFromDistalMm": 160.00000000000009,
+          "hullAreaMm2": 2330.979860670949,
+          "centroid": [
+            0.3775341922560332,
+            0.8788340537990053,
+            -0.042482237122858854
+          ],
+          "sectionVertices": 101,
+          "hullVertices": 69
+        },
+        {
+          "distanceFromDistalMm": 162.00000000000009,
+          "hullAreaMm2": 2257.3691254981372,
+          "centroid": [
+            0.3760990831329919,
+            0.8802041355517876,
+            -0.043127099405295605
+          ],
+          "sectionVertices": 92,
+          "hullVertices": 64
+        },
+        {
+          "distanceFromDistalMm": 164.00000000000009,
+          "hullAreaMm2": 2185.8634433505135,
+          "centroid": [
+            0.3746689854907457,
+            0.8815807215996027,
+            -0.043755764001097486
+          ],
+          "sectionVertices": 95,
+          "hullVertices": 60
+        },
+        {
+          "distanceFromDistalMm": 166.00000000000009,
+          "hullAreaMm2": 2118.360911059698,
+          "centroid": [
+            0.3732482671574247,
+            0.8829646787126112,
+            -0.04437651169371872
+          ],
+          "sectionVertices": 88,
+          "hullVertices": 56
+        },
+        {
+          "distanceFromDistalMm": 168.00000000000009,
+          "hullAreaMm2": 2056.590766886132,
+          "centroid": [
+            0.37185435759793944,
+            0.8843698627941388,
+            -0.04497389208433153
+          ],
+          "sectionVertices": 90,
+          "hullVertices": 54
+        },
+        {
+          "distanceFromDistalMm": 170.00000000000009,
+          "hullAreaMm2": 2001.0067400190549,
+          "centroid": [
+            0.370496719716653,
+            0.885805109024767,
+            -0.04553339521421615
+          ],
+          "sectionVertices": 88,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 172.00000000000009,
+          "hullAreaMm2": 1953.837306704267,
+          "centroid": [
+            0.36917457074678733,
+            0.8872726069633171,
+            -0.04604260003132094
+          ],
+          "sectionVertices": 91,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 174.00000000000009,
+          "hullAreaMm2": 1913.7328315475,
+          "centroid": [
+            0.36787758261961795,
+            0.8887634635633428,
+            -0.04651384538236939
+          ],
+          "sectionVertices": 93,
+          "hullVertices": 55
+        },
+        {
+          "distanceFromDistalMm": 176.0000000000001,
+          "hullAreaMm2": 1882.9693085603124,
+          "centroid": [
+            0.3666104206554823,
+            0.8902845542110365,
+            -0.04692822606934012
+          ],
+          "sectionVertices": 86,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 178.0000000000001,
+          "hullAreaMm2": 1859.5085533729734,
+          "centroid": [
+            0.3653719428906154,
+            0.8918353627507932,
+            -0.04728492755855142
+          ],
+          "sectionVertices": 88,
+          "hullVertices": 54
+        },
+        {
+          "distanceFromDistalMm": 180.0000000000001,
+          "hullAreaMm2": 1841.191381138143,
+          "centroid": [
+            0.3641517316273746,
+            0.8933988265358124,
+            -0.0476341403975109
+          ],
+          "sectionVertices": 96,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 182.0000000000001,
+          "hullAreaMm2": 1832.3287171369807,
+          "centroid": [
+            0.3629582081098355,
+            0.8949860452132475,
+            -0.047947853738775414
+          ],
+          "sectionVertices": 107,
+          "hullVertices": 58
+        },
+        {
+          "distanceFromDistalMm": 184.0000000000001,
+          "hullAreaMm2": 1831.5492443893659,
+          "centroid": [
+            0.3617979257834511,
+            0.8965967161990175,
+            -0.048245969046857524
+          ],
+          "sectionVertices": 95,
+          "hullVertices": 56
+        },
+        {
+          "distanceFromDistalMm": 186.0000000000001,
+          "hullAreaMm2": 1836.123522491604,
+          "centroid": [
+            0.3606423958456419,
+            0.8982111668691105,
+            -0.04853986376217978
+          ],
+          "sectionVertices": 97,
+          "hullVertices": 59
+        },
+        {
+          "distanceFromDistalMm": 188.0000000000001,
+          "hullAreaMm2": 1846.1640900498896,
+          "centroid": [
+            0.35952084560439496,
+            0.899851566643868,
+            -0.04880859855604712
+          ],
+          "sectionVertices": 100,
+          "hullVertices": 56
+        },
+        {
+          "distanceFromDistalMm": 190.0000000000001,
+          "hullAreaMm2": 1862.1663370016297,
+          "centroid": [
+            0.35842934734574555,
+            0.9015149492703336,
+            -0.04905492679134601
+          ],
+          "sectionVertices": 103,
+          "hullVertices": 56
+        },
+        {
+          "distanceFromDistalMm": 192.0000000000001,
+          "hullAreaMm2": 1883.5423155392214,
+          "centroid": [
+            0.35735410128146367,
+            0.903185080467468,
+            -0.049315632992479125
+          ],
+          "sectionVertices": 95,
+          "hullVertices": 56
+        },
+        {
+          "distanceFromDistalMm": 194.0000000000001,
+          "hullAreaMm2": 1910.2321671749723,
+          "centroid": [
+            0.3563028514594294,
+            0.9048666833481701,
+            -0.0495905370225698
+          ],
+          "sectionVertices": 92,
+          "hullVertices": 60
+        },
+        {
+          "distanceFromDistalMm": 196.0000000000001,
+          "hullAreaMm2": 1941.3866270330543,
+          "centroid": [
+            0.3552503700007518,
+            0.9065482166263034,
+            -0.04986229070328592
+          ],
+          "sectionVertices": 99,
+          "hullVertices": 59
+        },
+        {
+          "distanceFromDistalMm": 198.0000000000001,
+          "hullAreaMm2": 1973.7109523373388,
+          "centroid": [
+            0.35421315379298196,
+            0.9082392953936986,
+            -0.050132592382989144
+          ],
+          "sectionVertices": 105,
+          "hullVertices": 57
+        },
+        {
+          "distanceFromDistalMm": 200.0000000000001,
+          "hullAreaMm2": 2007.8803457860517,
+          "centroid": [
+            0.3531861138090049,
+            0.9099361782652279,
+            -0.05040453421414508
+          ],
+          "sectionVertices": 103,
+          "hullVertices": 57
+        },
+        {
+          "distanceFromDistalMm": 202.0000000000001,
+          "hullAreaMm2": 2043.7876791084284,
+          "centroid": [
+            0.3521659529216218,
+            0.9116378249722654,
+            -0.05067366556205247
+          ],
+          "sectionVertices": 104,
+          "hullVertices": 59
+        },
+        {
+          "distanceFromDistalMm": 204.0000000000001,
+          "hullAreaMm2": 2083.0462631195574,
+          "centroid": [
+            0.3511542715909025,
+            0.9133457947522079,
+            -0.05093722944669196
+          ],
+          "sectionVertices": 110,
+          "hullVertices": 63
+        },
+        {
+          "distanceFromDistalMm": 206.0000000000001,
+          "hullAreaMm2": 2125.9600212943146,
+          "centroid": [
+            0.3501532737720824,
+            0.9150626612814764,
+            -0.05118944007532173
+          ],
+          "sectionVertices": 108,
+          "hullVertices": 66
+        },
+        {
+          "distanceFromDistalMm": 208.00000000000014,
+          "hullAreaMm2": 2174.1131289811965,
+          "centroid": [
+            0.34918797913198873,
+            0.9168026386158793,
+            -0.05143459185786416
+          ],
+          "sectionVertices": 106,
+          "hullVertices": 71
+        },
+        {
+          "distanceFromDistalMm": 210.00000000000014,
+          "hullAreaMm2": 2222.349915036661,
+          "centroid": [
+            0.34821162546004425,
+            0.9185326561952754,
+            -0.05169499545177408
+          ],
+          "sectionVertices": 113,
+          "hullVertices": 73
+        },
+        {
+          "distanceFromDistalMm": 212.00000000000014,
+          "hullAreaMm2": 2272.399689232488,
+          "centroid": [
+            0.34724471566479487,
+            0.9202688872762049,
+            -0.05195306341559557
+          ],
+          "sectionVertices": 111,
+          "hullVertices": 76
+        },
+        {
+          "distanceFromDistalMm": 214.00000000000014,
+          "hullAreaMm2": 2324.6206597319665,
+          "centroid": [
+            0.34628389870774806,
+            0.9220083619790813,
+            -0.052213193082860036
+          ],
+          "sectionVertices": 112,
+          "hullVertices": 76
+        },
+        {
+          "distanceFromDistalMm": 216.00000000000014,
+          "hullAreaMm2": 2377.8104064782933,
+          "centroid": [
+            0.34533335997368547,
+            0.9237533749340064,
+            -0.05247649067132431
+          ],
+          "sectionVertices": 110,
+          "hullVertices": 70
+        },
+        {
+          "distanceFromDistalMm": 218.00000000000014,
+          "hullAreaMm2": 2431.8383320169683,
+          "centroid": [
+            0.3443753920157592,
+            0.9254951136111862,
+            -0.05273409900867394
+          ],
+          "sectionVertices": 122,
+          "hullVertices": 73
+        },
+        {
+          "distanceFromDistalMm": 220.00000000000014,
+          "hullAreaMm2": 2486.2818274232673,
+          "centroid": [
+            0.3433975940361443,
+            0.9272241560284601,
+            -0.05299497591811859
+          ],
+          "sectionVertices": 103,
+          "hullVertices": 68
+        },
+        {
+          "distanceFromDistalMm": 222.00000000000014,
+          "hullAreaMm2": 2544.6909687105267,
+          "centroid": [
+            0.3424440990158166,
+            0.9289651846832623,
+            -0.05326851606191031
+          ],
+          "sectionVertices": 106,
+          "hullVertices": 70
+        },
+        {
+          "distanceFromDistalMm": 224.00000000000014,
+          "hullAreaMm2": 2605.3717307614133,
+          "centroid": [
+            0.3415112676954885,
+            0.930721056195797,
+            -0.053531127662993165
+          ],
+          "sectionVertices": 100,
+          "hullVertices": 73
+        },
+        {
+          "distanceFromDistalMm": 226.00000000000014,
+          "hullAreaMm2": 2665.087846489262,
+          "centroid": [
+            0.34057607226979614,
+            0.9324753794667157,
+            -0.05379429037814842
+          ],
+          "sectionVertices": 105,
+          "hullVertices": 74
+        },
+        {
+          "distanceFromDistalMm": 228.00000000000014,
+          "hullAreaMm2": 2724.5997370559267,
+          "centroid": [
+            0.33962631573788254,
+            0.9342185190460883,
+            -0.054068532686172385
+          ],
+          "sectionVertices": 111,
+          "hullVertices": 74
+        },
+        {
+          "distanceFromDistalMm": 230.00000000000014,
+          "hullAreaMm2": 2785.4408966708766,
+          "centroid": [
+            0.33868433447915314,
+            0.9359659808068416,
+            -0.05434455297916897
+          ],
+          "sectionVertices": 111,
+          "hullVertices": 73
+        },
+        {
+          "distanceFromDistalMm": 232.00000000000014,
+          "hullAreaMm2": 2846.4138724330214,
+          "centroid": [
+            0.3377363962538649,
+            0.9377096296119488,
+            -0.05462155040403801
+          ],
+          "sectionVertices": 107,
+          "hullVertices": 74
+        },
+        {
+          "distanceFromDistalMm": 234.00000000000014,
+          "hullAreaMm2": 2906.5760907460112,
+          "centroid": [
+            0.33677593980656917,
+            0.9394447361101671,
+            -0.05490307137257669
+          ],
+          "sectionVertices": 113,
+          "hullVertices": 74
+        },
+        {
+          "distanceFromDistalMm": 236.00000000000014,
+          "hullAreaMm2": 2967.187566916283,
+          "centroid": [
+            0.3358128432532998,
+            0.9411783546760264,
+            -0.0551840834420332
+          ],
+          "sectionVertices": 120,
+          "hullVertices": 75
+        },
+        {
+          "distanceFromDistalMm": 238.00000000000014,
+          "hullAreaMm2": 3026.5452572764743,
+          "centroid": [
+            0.3348599929085762,
+            0.9429181437480254,
+            -0.055465224151487136
+          ],
+          "sectionVertices": 128,
+          "hullVertices": 80
+        },
+        {
+          "distanceFromDistalMm": 240.00000000000017,
+          "hullAreaMm2": 3085.4773833562253,
+          "centroid": [
+            0.3339014451452795,
+            0.9446511915854922,
+            -0.0557617323464525
+          ],
+          "sectionVertices": 118,
+          "hullVertices": 76
+        },
+        {
+          "distanceFromDistalMm": 242.00000000000017,
+          "hullAreaMm2": 3143.4078026820425,
+          "centroid": [
+            0.33295447110428134,
+            0.9463898384126752,
+            -0.05606478034429761
+          ],
+          "sectionVertices": 115,
+          "hullVertices": 75
+        },
+        {
+          "distanceFromDistalMm": 244.00000000000017,
+          "hullAreaMm2": 3202.0246958628304,
+          "centroid": [
+            0.33199667259449334,
+            0.9481220686398474,
+            -0.0563672160044902
+          ],
+          "sectionVertices": 119,
+          "hullVertices": 77
+        },
+        {
+          "distanceFromDistalMm": 246.00000000000017,
+          "hullAreaMm2": 3260.9859425114864,
+          "centroid": [
+            0.33103244168063994,
+            0.9498508984714187,
+            -0.05666736311887078
+          ],
+          "sectionVertices": 120,
+          "hullVertices": 77
+        },
+        {
+          "distanceFromDistalMm": 248.00000000000017,
+          "hullAreaMm2": 3319.711790996557,
+          "centroid": [
+            0.3300633052573398,
+            0.9515774023122946,
+            -0.05696451849865643
+          ],
+          "sectionVertices": 122,
+          "hullVertices": 79
+        },
+        {
+          "distanceFromDistalMm": 250.00000000000017,
+          "hullAreaMm2": 3376.5782241771435,
+          "centroid": [
+            0.32908548654405,
+            0.9532982370344099,
+            -0.057263619174167536
+          ],
+          "sectionVertices": 113,
+          "hullVertices": 82
+        },
+        {
+          "distanceFromDistalMm": 252.00000000000017,
+          "hullAreaMm2": 3431.9705981221277,
+          "centroid": [
+            0.32810981458620275,
+            0.9550209760827456,
+            -0.057559894648892204
+          ],
+          "sectionVertices": 119,
+          "hullVertices": 82
+        },
+        {
+          "distanceFromDistalMm": 254.00000000000017,
+          "hullAreaMm2": 3485.6466079676147,
+          "centroid": [
+            0.327126222021688,
+            0.9567402151879422,
+            -0.057850147012008676
+          ],
+          "sectionVertices": 111,
+          "hullVertices": 79
+        },
+        {
+          "distanceFromDistalMm": 256.00000000000017,
+          "hullAreaMm2": 3539.1314038684145,
+          "centroid": [
+            0.326127618458268,
+            0.9584496865174604,
+            -0.0581436055194442
+          ],
+          "sectionVertices": 114,
+          "hullVertices": 80
+        },
+        {
+          "distanceFromDistalMm": 258.00000000000017,
+          "hullAreaMm2": 3590.470421723638,
+          "centroid": [
+            0.32512896500226063,
+            0.9601614836340924,
+            -0.05842607534062186
+          ],
+          "sectionVertices": 115,
+          "hullVertices": 81
+        },
+        {
+          "distanceFromDistalMm": 260.00000000000017,
+          "hullAreaMm2": 3640.5912232867354,
+          "centroid": [
+            0.32411929775030923,
+            0.9618673272973033,
+            -0.05870523844435654
+          ],
+          "sectionVertices": 110,
+          "hullVertices": 85
+        },
+        {
+          "distanceFromDistalMm": 262.00000000000017,
+          "hullAreaMm2": 3691.674158739182,
+          "centroid": [
+            0.32310066627507905,
+            0.9635685735863677,
+            -0.05898055256340798
+          ],
+          "sectionVertices": 115,
+          "hullVertices": 86
+        },
+        {
+          "distanceFromDistalMm": 264.00000000000017,
+          "hullAreaMm2": 3740.7035930110133,
+          "centroid": [
+            0.32208881630670544,
+            0.96527513915576,
+            -0.05925019015440232
+          ],
+          "sectionVertices": 120,
+          "hullVertices": 88
+        },
+        {
+          "distanceFromDistalMm": 266.00000000000017,
+          "hullAreaMm2": 3787.445703189108,
+          "centroid": [
+            0.3210832130436643,
+            0.9669868734553375,
+            -0.05951334450158112
+          ],
+          "sectionVertices": 117,
+          "hullVertices": 93
+        },
+        {
+          "distanceFromDistalMm": 268.00000000000017,
+          "hullAreaMm2": 3835.131250078866,
+          "centroid": [
+            0.32005237699061007,
+            0.9686847399168017,
+            -0.05976998829876438
+          ],
+          "sectionVertices": 132,
+          "hullVertices": 94
+        },
+        {
+          "distanceFromDistalMm": 270.00000000000017,
+          "hullAreaMm2": 3881.103112026307,
+          "centroid": [
+            0.3190099982274415,
+            0.9703770862534884,
+            -0.060019811950884426
+          ],
+          "sectionVertices": 133,
+          "hullVertices": 86
+        },
+        {
+          "distanceFromDistalMm": 272.00000000000017,
+          "hullAreaMm2": 3925.0143843725373,
+          "centroid": [
+            0.31795972101920594,
+            0.9720686790487284,
+            -0.06025086527462706
+          ],
+          "sectionVertices": 116,
+          "hullVertices": 84
+        },
+        {
+          "distanceFromDistalMm": 274.00000000000017,
+          "hullAreaMm2": 3968.36536849385,
+          "centroid": [
+            0.3169002384758587,
+            0.9737564852318975,
+            -0.06047360778120652
+          ],
+          "sectionVertices": 125,
+          "hullVertices": 85
+        },
+        {
+          "distanceFromDistalMm": 276.00000000000017,
+          "hullAreaMm2": 4010.24986771021,
+          "centroid": [
+            0.31583359433357056,
+            0.9754411081940279,
+            -0.060690991418432434
+          ],
+          "sectionVertices": 132,
+          "hullVertices": 83
+        },
+        {
+          "distanceFromDistalMm": 278.00000000000017,
+          "hullAreaMm2": 4051.347663587972,
+          "centroid": [
+            0.314754738690695,
+            0.9771186560179105,
+            -0.06090692083944239
+          ],
+          "sectionVertices": 123,
+          "hullVertices": 78
+        },
+        {
+          "distanceFromDistalMm": 280.00000000000017,
+          "hullAreaMm2": 4093.2950909220663,
+          "centroid": [
+            0.31367427988192537,
+            0.978795878608695,
+            -0.06111984397335378
+          ],
+          "sectionVertices": 119,
+          "hullVertices": 81
+        },
+        {
+          "distanceFromDistalMm": 282.00000000000017,
+          "hullAreaMm2": 4136.558419640355,
+          "centroid": [
+            0.3125854527518552,
+            0.9804690228972772,
+            -0.06132817837323248
+          ],
+          "sectionVertices": 116,
+          "hullVertices": 80
+        },
+        {
+          "distanceFromDistalMm": 284.00000000000017,
+          "hullAreaMm2": 4178.444225179937,
+          "centroid": [
+            0.3114954412669202,
+            0.9821428894924015,
+            -0.06152980221042223
+          ],
+          "sectionVertices": 118,
+          "hullVertices": 82
+        },
+        {
+          "distanceFromDistalMm": 286.00000000000017,
+          "hullAreaMm2": 4219.986535212891,
+          "centroid": [
+            0.3103937164581065,
+            0.9838126894258585,
+            -0.061717345295222215
+          ],
+          "sectionVertices": 122,
+          "hullVertices": 80
+        },
+        {
+          "distanceFromDistalMm": 288.0000000000002,
+          "hullAreaMm2": 4261.954470293062,
+          "centroid": [
+            0.3092983317752433,
+            0.9854869060474959,
+            -0.061902176385083975
+          ],
+          "sectionVertices": 122,
+          "hullVertices": 78
+        },
+        {
+          "distanceFromDistalMm": 290.0000000000002,
+          "hullAreaMm2": 4303.733175682734,
+          "centroid": [
+            0.3082004399496845,
+            0.9871578668824628,
+            -0.06209511933547521
+          ],
+          "sectionVertices": 124,
+          "hullVertices": 81
+        },
+        {
+          "distanceFromDistalMm": 292.0000000000002,
+          "hullAreaMm2": 4348.159988999861,
+          "centroid": [
+            0.30710008754090234,
+            0.9888293477379407,
+            -0.06227869442206955
+          ],
+          "sectionVertices": 117,
+          "hullVertices": 86
+        },
+        {
+          "distanceFromDistalMm": 294.0000000000002,
+          "hullAreaMm2": 4394.379488320751,
+          "centroid": [
+            0.3060121240733709,
+            0.9905100074409429,
+            -0.06245441225942753
+          ],
+          "sectionVertices": 130,
+          "hullVertices": 90
+        },
+        {
+          "distanceFromDistalMm": 296.0000000000002,
+          "hullAreaMm2": 4441.917855536616,
+          "centroid": [
+            0.3049421984622009,
+            0.9921988625352478,
+            -0.06264279795209912
+          ],
+          "sectionVertices": 131,
+          "hullVertices": 86
+        },
+        {
+          "distanceFromDistalMm": 298.0000000000002,
+          "hullAreaMm2": 4491.177937173151,
+          "centroid": [
+            0.3038909712571874,
+            0.9938977400789599,
+            -0.06283719345229095
+          ],
+          "sectionVertices": 127,
+          "hullVertices": 86
+        },
+        {
+          "distanceFromDistalMm": 300.0000000000002,
+          "hullAreaMm2": 4541.346017543144,
+          "centroid": [
+            0.30284115526465377,
+            0.9955973407113334,
+            -0.06303219797982915
+          ],
+          "sectionVertices": 122,
+          "hullVertices": 85
+        }
+      ]
+    },
+    {
+      "body": "target",
+      "side": "right",
+      "cutY": 1.17,
+      "axis": [
+        -0.5132204440870736,
+        -0.8370160705945863,
+        0.18976004146675654
+      ],
+      "centre": [
+        -0.35455309817887315,
+        0.9200748707790567,
+        -0.044219359486414395
+      ],
+      "distalProjection": 0.20760798472131547,
+      "wristSearchWindowMm": [
+        140,
+        230
+      ],
+      "localMinima": [
+        {
+          "distanceFromDistalMm": 184.0000000000001,
+          "hullAreaMm2": 1828.8955727983919,
+          "centroid": [
+            -0.36246671487075627,
+            0.8958398612614442,
+            -0.048111314732490446
+          ],
+          "sectionVertices": 90,
+          "hullVertices": 52
+        }
+      ],
+      "sections": [
+        {
+          "distanceFromDistalMm": 50.0,
+          "hullAreaMm2": 2034.805427992646,
+          "centroid": [
+            -0.42501771663629834,
+            0.7805654242115962,
+            -0.019596403402865344
+          ],
+          "sectionVertices": 176,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 52.00000000000001,
+          "hullAreaMm2": 2022.8707139471883,
+          "centroid": [
+            -0.4241069135977094,
+            0.7821946668720051,
+            -0.020486237580250134
+          ],
+          "sectionVertices": 165,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 54.00000000000001,
+          "hullAreaMm2": 2000.159000597346,
+          "centroid": [
+            -0.4232972923587047,
+            0.7838806510099423,
+            -0.021399443588297325
+          ],
+          "sectionVertices": 173,
+          "hullVertices": 38
+        },
+        {
+          "distanceFromDistalMm": 56.00000000000001,
+          "hullAreaMm2": 1968.960974817253,
+          "centroid": [
+            -0.4225249827494616,
+            0.7855881283217795,
+            -0.02231875709518596
+          ],
+          "sectionVertices": 176,
+          "hullVertices": 35
+        },
+        {
+          "distanceFromDistalMm": 58.00000000000001,
+          "hullAreaMm2": 1929.230771798039,
+          "centroid": [
+            -0.4217948115468461,
+            0.787324879204705,
+            -0.023222913787922995
+          ],
+          "sectionVertices": 164,
+          "hullVertices": 27
+        },
+        {
+          "distanceFromDistalMm": 60.000000000000014,
+          "hullAreaMm2": 1888.8945256884776,
+          "centroid": [
+            -0.4210847456646042,
+            0.789083698076486,
+            -0.024084106747071045
+          ],
+          "sectionVertices": 168,
+          "hullVertices": 28
+        },
+        {
+          "distanceFromDistalMm": 62.000000000000014,
+          "hullAreaMm2": 1850.0159286270782,
+          "centroid": [
+            -0.42038939170342576,
+            0.7908606798229567,
+            -0.024904974254756972
+          ],
+          "sectionVertices": 172,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 64.00000000000001,
+          "hullAreaMm2": 1808.144035755588,
+          "centroid": [
+            -0.4196209056991916,
+            0.7925947660426643,
+            -0.02571725926876135
+          ],
+          "sectionVertices": 159,
+          "hullVertices": 30
+        },
+        {
+          "distanceFromDistalMm": 66.00000000000001,
+          "hullAreaMm2": 1768.8913090593478,
+          "centroid": [
+            -0.4188435477183393,
+            0.7943203770352847,
+            -0.026542932883835628
+          ],
+          "sectionVertices": 157,
+          "hullVertices": 28
+        },
+        {
+          "distanceFromDistalMm": 68.00000000000001,
+          "hullAreaMm2": 1732.4415622611737,
+          "centroid": [
+            -0.4180389334049421,
+            0.7960320830413539,
+            -0.027356223439388844
+          ],
+          "sectionVertices": 158,
+          "hullVertices": 29
+        },
+        {
+          "distanceFromDistalMm": 70.00000000000001,
+          "hullAreaMm2": 1700.792185302571,
+          "centroid": [
+            -0.4171851933472223,
+            0.7977185234575337,
+            -0.028148094145349377
+          ],
+          "sectionVertices": 153,
+          "hullVertices": 28
+        },
+        {
+          "distanceFromDistalMm": 72.00000000000003,
+          "hullAreaMm2": 1673.577249830301,
+          "centroid": [
+            -0.41633502225218233,
+            0.7994020503313155,
+            -0.028962468779892274
+          ],
+          "sectionVertices": 139,
+          "hullVertices": 29
+        },
+        {
+          "distanceFromDistalMm": 74.00000000000003,
+          "hullAreaMm2": 1649.0308705815798,
+          "centroid": [
+            -0.4154609762874341,
+            0.8010677756719385,
+            -0.02979079312734839
+          ],
+          "sectionVertices": 142,
+          "hullVertices": 30
+        },
+        {
+          "distanceFromDistalMm": 76.00000000000003,
+          "hullAreaMm2": 1635.5672493774387,
+          "centroid": [
+            -0.41460153455330456,
+            0.8027509781359364,
+            -0.03058152555949118
+          ],
+          "sectionVertices": 132,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 78.00000000000003,
+          "hullAreaMm2": 1647.1695369578372,
+          "centroid": [
+            -0.41369552823385963,
+            0.8044367010346697,
+            -0.031235203102039096
+          ],
+          "sectionVertices": 113,
+          "hullVertices": 34
+        },
+        {
+          "distanceFromDistalMm": 80.00000000000003,
+          "hullAreaMm2": 1661.1902968222562,
+          "centroid": [
+            -0.4128522440167174,
+            0.8061679579555295,
+            -0.0318576704749686
+          ],
+          "sectionVertices": 112,
+          "hullVertices": 33
+        },
+        {
+          "distanceFromDistalMm": 82.00000000000003,
+          "hullAreaMm2": 1673.9467234820618,
+          "centroid": [
+            -0.41204186131837206,
+            0.807924607322718,
+            -0.03245711849394553
+          ],
+          "sectionVertices": 102,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 84.00000000000003,
+          "hullAreaMm2": 1689.7538584004442,
+          "centroid": [
+            -0.4112897475223675,
+            0.8097262070780346,
+            -0.033015886687773985
+          ],
+          "sectionVertices": 99,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 86.00000000000003,
+          "hullAreaMm2": 1709.2078400829223,
+          "centroid": [
+            -0.4104897134698484,
+            0.8115040153000707,
+            -0.033549993421829204
+          ],
+          "sectionVertices": 92,
+          "hullVertices": 36
+        },
+        {
+          "distanceFromDistalMm": 88.00000000000004,
+          "hullAreaMm2": 3406.816502536028,
+          "centroid": [
+            -0.4224077570649066,
+            0.8238839737488871,
+            -0.021715886878165197
+          ],
+          "sectionVertices": 119,
+          "hullVertices": 31
+        },
+        {
+          "distanceFromDistalMm": 90.00000000000004,
+          "hullAreaMm2": 3627.486615151666,
+          "centroid": [
+            -0.4228446436779814,
+            0.8267346720229186,
+            -0.02086290895430098
+          ],
+          "sectionVertices": 143,
+          "hullVertices": 43
+        },
+        {
+          "distanceFromDistalMm": 92.00000000000004,
+          "hullAreaMm2": 3764.224396502789,
+          "centroid": [
+            -0.42265695718648993,
+            0.8290768116989828,
+            -0.020563936143604047
+          ],
+          "sectionVertices": 148,
+          "hullVertices": 46
+        },
+        {
+          "distanceFromDistalMm": 94.00000000000004,
+          "hullAreaMm2": 3859.492528094962,
+          "centroid": [
+            -0.4221111795252861,
+            0.8311402868136754,
+            -0.02052564522698414
+          ],
+          "sectionVertices": 139,
+          "hullVertices": 49
+        },
+        {
+          "distanceFromDistalMm": 96.00000000000004,
+          "hullAreaMm2": 3906.838806022299,
+          "centroid": [
+            -0.421247464789024,
+            0.8329452740358737,
+            -0.020767638361777894
+          ],
+          "sectionVertices": 152,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 98.00000000000004,
+          "hullAreaMm2": 3923.992450190817,
+          "centroid": [
+            -0.42020205648296877,
+            0.8346171293336835,
+            -0.02110546150116533
+          ],
+          "sectionVertices": 158,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 100.00000000000004,
+          "hullAreaMm2": 3911.215374219768,
+          "centroid": [
+            -0.4189837285199656,
+            0.8361497205327583,
+            -0.021589892879846532
+          ],
+          "sectionVertices": 161,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 102.00000000000004,
+          "hullAreaMm2": 3879.5555500073224,
+          "centroid": [
+            -0.417648276187922,
+            0.8375825989245452,
+            -0.022197377569811282
+          ],
+          "sectionVertices": 160,
+          "hullVertices": 48
+        },
+        {
+          "distanceFromDistalMm": 104.00000000000006,
+          "hullAreaMm2": 3840.43402068406,
+          "centroid": [
+            -0.41628467457060575,
+            0.8389894479921073,
+            -0.022843543606690345
+          ],
+          "sectionVertices": 169,
+          "hullVertices": 54
+        },
+        {
+          "distanceFromDistalMm": 106.00000000000006,
+          "hullAreaMm2": 3791.0012733248022,
+          "centroid": [
+            -0.4148929749447457,
+            0.8403627373857426,
+            -0.023561745430831137
+          ],
+          "sectionVertices": 171,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 108.00000000000006,
+          "hullAreaMm2": 3742.1594773884517,
+          "centroid": [
+            -0.41357588173008186,
+            0.8417796009203822,
+            -0.024289523977178075
+          ],
+          "sectionVertices": 169,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 110.00000000000006,
+          "hullAreaMm2": 3688.5482464995657,
+          "centroid": [
+            -0.41228611767458695,
+            0.8432012117082299,
+            -0.025070276563270263
+          ],
+          "sectionVertices": 166,
+          "hullVertices": 48
+        },
+        {
+          "distanceFromDistalMm": 112.00000000000006,
+          "hullAreaMm2": 3637.786674916703,
+          "centroid": [
+            -0.41103119954829453,
+            0.8446462224546146,
+            -0.025842057302215466
+          ],
+          "sectionVertices": 158,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 114.00000000000006,
+          "hullAreaMm2": 3590.4946625568873,
+          "centroid": [
+            -0.4097603133702694,
+            0.8460818418941896,
+            -0.02661207552110997
+          ],
+          "sectionVertices": 157,
+          "hullVertices": 53
+        },
+        {
+          "distanceFromDistalMm": 116.00000000000006,
+          "hullAreaMm2": 3542.735920347677,
+          "centroid": [
+            -0.408480726827579,
+            0.8475105394826556,
+            -0.02738909466384984
+          ],
+          "sectionVertices": 169,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 118.00000000000006,
+          "hullAreaMm2": 3495.8793880825565,
+          "centroid": [
+            -0.4072109231713585,
+            0.8489477348347446,
+            -0.02815508942357529
+          ],
+          "sectionVertices": 158,
+          "hullVertices": 53
+        },
+        {
+          "distanceFromDistalMm": 120.00000000000007,
+          "hullAreaMm2": 3454.9227779915977,
+          "centroid": [
+            -0.4059469727033505,
+            0.8503993086466216,
+            -0.028873492361600632
+          ],
+          "sectionVertices": 155,
+          "hullVertices": 57
+        },
+        {
+          "distanceFromDistalMm": 122.00000000000007,
+          "hullAreaMm2": 3411.7105150578545,
+          "centroid": [
+            -0.40466104356701876,
+            0.8518366786523146,
+            -0.029595104152856943
+          ],
+          "sectionVertices": 155,
+          "hullVertices": 56
+        },
+        {
+          "distanceFromDistalMm": 124.00000000000007,
+          "hullAreaMm2": 3368.953840891295,
+          "centroid": [
+            -0.4033763869575435,
+            0.8532773403035341,
+            -0.03030563840961328
+          ],
+          "sectionVertices": 144,
+          "hullVertices": 58
+        },
+        {
+          "distanceFromDistalMm": 126.00000000000006,
+          "hullAreaMm2": 3325.8887267162727,
+          "centroid": [
+            -0.4020803485273929,
+            0.8547112430433388,
+            -0.03101520267507858
+          ],
+          "sectionVertices": 141,
+          "hullVertices": 53
+        },
+        {
+          "distanceFromDistalMm": 128.00000000000006,
+          "hullAreaMm2": 3296.416445011565,
+          "centroid": [
+            -0.4007991464402827,
+            0.8561736801229889,
+            -0.031639030310614574
+          ],
+          "sectionVertices": 129,
+          "hullVertices": 58
+        },
+        {
+          "distanceFromDistalMm": 130.00000000000006,
+          "hullAreaMm2": 3266.4183756048565,
+          "centroid": [
+            -0.3995168782668566,
+            0.8576368077297435,
+            -0.03225692877598762
+          ],
+          "sectionVertices": 128,
+          "hullVertices": 55
+        },
+        {
+          "distanceFromDistalMm": 132.00000000000006,
+          "hullAreaMm2": 3235.7879751300075,
+          "centroid": [
+            -0.3982376528845424,
+            0.8591025710093587,
+            -0.032871430962931214
+          ],
+          "sectionVertices": 124,
+          "hullVertices": 60
+        },
+        {
+          "distanceFromDistalMm": 134.00000000000006,
+          "hullAreaMm2": 3207.378675311485,
+          "centroid": [
+            -0.39697581474688187,
+            0.8605862695992248,
+            -0.03345384708243215
+          ],
+          "sectionVertices": 123,
+          "hullVertices": 62
+        },
+        {
+          "distanceFromDistalMm": 136.00000000000006,
+          "hullAreaMm2": 3180.0678958679932,
+          "centroid": [
+            -0.3957082018680105,
+            0.8620677210431711,
+            -0.03403055695317554
+          ],
+          "sectionVertices": 117,
+          "hullVertices": 62
+        },
+        {
+          "distanceFromDistalMm": 138.00000000000006,
+          "hullAreaMm2": 3140.31059687967,
+          "centroid": [
+            -0.3944026557173075,
+            0.8635105168270392,
+            -0.03467518037405393
+          ],
+          "sectionVertices": 110,
+          "hullVertices": 61
+        },
+        {
+          "distanceFromDistalMm": 140.00000000000006,
+          "hullAreaMm2": 3093.8734775574894,
+          "centroid": [
+            -0.39304380861275146,
+            0.8649177973825277,
+            -0.03533230209372852
+          ],
+          "sectionVertices": 114,
+          "hullVertices": 63
+        },
+        {
+          "distanceFromDistalMm": 142.00000000000006,
+          "hullAreaMm2": 3037.8294463443845,
+          "centroid": [
+            -0.3916552576900849,
+            0.8663002472939006,
+            -0.036018613527968105
+          ],
+          "sectionVertices": 111,
+          "hullVertices": 67
+        },
+        {
+          "distanceFromDistalMm": 144.00000000000009,
+          "hullAreaMm2": 2971.554710906974,
+          "centroid": [
+            -0.3902276414359307,
+            0.867653693931779,
+            -0.03672720088082292
+          ],
+          "sectionVertices": 107,
+          "hullVertices": 67
+        },
+        {
+          "distanceFromDistalMm": 146.00000000000009,
+          "hullAreaMm2": 2898.6084349147336,
+          "centroid": [
+            -0.38875677331712777,
+            0.8689766558806662,
+            -0.03745327575836726
+          ],
+          "sectionVertices": 114,
+          "hullVertices": 69
+        },
+        {
+          "distanceFromDistalMm": 148.00000000000009,
+          "hullAreaMm2": 2821.0001715064514,
+          "centroid": [
+            -0.387252698350929,
+            0.8702783506053706,
+            -0.03818334818694874
+          ],
+          "sectionVertices": 99,
+          "hullVertices": 65
+        },
+        {
+          "distanceFromDistalMm": 150.00000000000009,
+          "hullAreaMm2": 2744.5264904145793,
+          "centroid": [
+            -0.38570845030778517,
+            0.8715645023318238,
+            -0.038873328375827514
+          ],
+          "sectionVertices": 111,
+          "hullVertices": 67
+        },
+        {
+          "distanceFromDistalMm": 152.00000000000009,
+          "hullAreaMm2": 2665.3541530300167,
+          "centroid": [
+            -0.38417273221600484,
+            0.8728550236636243,
+            -0.03956710449309796
+          ],
+          "sectionVertices": 98,
+          "hullVertices": 60
+        },
+        {
+          "distanceFromDistalMm": 154.00000000000009,
+          "hullAreaMm2": 2584.4565197337097,
+          "centroid": [
+            -0.38264134215663376,
+            0.8741480123141738,
+            -0.04026170296089874
+          ],
+          "sectionVertices": 108,
+          "hullVertices": 63
+        },
+        {
+          "distanceFromDistalMm": 156.00000000000009,
+          "hullAreaMm2": 2507.936595126056,
+          "centroid": [
+            -0.38117104384588213,
+            0.875481607613545,
+            -0.04094241608561189
+          ],
+          "sectionVertices": 105,
+          "hullVertices": 64
+        },
+        {
+          "distanceFromDistalMm": 158.00000000000009,
+          "hullAreaMm2": 2433.4854359082465,
+          "centroid": [
+            -0.3797164622451366,
+            0.8768314510268821,
+            -0.04159396714029846
+          ],
+          "sectionVertices": 97,
+          "hullVertices": 61
+        },
+        {
+          "distanceFromDistalMm": 160.00000000000009,
+          "hullAreaMm2": 2358.8131634596853,
+          "centroid": [
+            -0.37825985406442353,
+            0.8781803554632915,
+            -0.04224417890621533
+          ],
+          "sectionVertices": 102,
+          "hullVertices": 65
+        },
+        {
+          "distanceFromDistalMm": 162.00000000000009,
+          "hullAreaMm2": 2286.1405374178817,
+          "centroid": [
+            -0.376826602783453,
+            0.8795473792579984,
+            -0.04287763816933512
+          ],
+          "sectionVertices": 106,
+          "hullVertices": 67
+        },
+        {
+          "distanceFromDistalMm": 164.00000000000009,
+          "hullAreaMm2": 2215.2948058899024,
+          "centroid": [
+            -0.3754091757639325,
+            0.8809259743791982,
+            -0.04350285517169305
+          ],
+          "sectionVertices": 104,
+          "hullVertices": 62
+        },
+        {
+          "distanceFromDistalMm": 166.00000000000009,
+          "hullAreaMm2": 2147.848249635316,
+          "centroid": [
+            -0.3739964166904346,
+            0.8823122824815764,
+            -0.04410667565750049
+          ],
+          "sectionVertices": 96,
+          "hullVertices": 64
+        },
+        {
+          "distanceFromDistalMm": 168.00000000000009,
+          "hullAreaMm2": 2083.7837629578444,
+          "centroid": [
+            -0.37260720813537096,
+            0.8837169515489682,
+            -0.04469320158944252
+          ],
+          "sectionVertices": 95,
+          "hullVertices": 58
+        },
+        {
+          "distanceFromDistalMm": 170.00000000000009,
+          "hullAreaMm2": 2022.8056513146366,
+          "centroid": [
+            -0.37123082916262234,
+            0.8851349380526455,
+            -0.0452556839755377
+          ],
+          "sectionVertices": 98,
+          "hullVertices": 58
+        },
+        {
+          "distanceFromDistalMm": 172.00000000000009,
+          "hullAreaMm2": 1968.9904548230668,
+          "centroid": [
+            -0.36988612272385835,
+            0.8865798869575259,
+            -0.04578489818197211
+          ],
+          "sectionVertices": 98,
+          "hullVertices": 60
+        },
+        {
+          "distanceFromDistalMm": 174.00000000000009,
+          "hullAreaMm2": 1928.594138965434,
+          "centroid": [
+            -0.36860197196475697,
+            0.8880747282738048,
+            -0.04625781846451071
+          ],
+          "sectionVertices": 101,
+          "hullVertices": 54
+        },
+        {
+          "distanceFromDistalMm": 176.0000000000001,
+          "hullAreaMm2": 1895.5485779406358,
+          "centroid": [
+            -0.36734948739659884,
+            0.8895967098927865,
+            -0.046696668703142874
+          ],
+          "sectionVertices": 89,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 178.0000000000001,
+          "hullAreaMm2": 1869.0891712402706,
+          "centroid": [
+            -0.36608539100391657,
+            0.8911203387466495,
+            -0.047096848061699004
+          ],
+          "sectionVertices": 86,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 180.0000000000001,
+          "hullAreaMm2": 1847.3460200419318,
+          "centroid": [
+            -0.3648529536850872,
+            0.8926682126964627,
+            -0.04747570864855828
+          ],
+          "sectionVertices": 87,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 182.0000000000001,
+          "hullAreaMm2": 1834.6227558864746,
+          "centroid": [
+            -0.3636511948218144,
+            0.8942463120759191,
+            -0.047804219542755995
+          ],
+          "sectionVertices": 96,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 184.0000000000001,
+          "hullAreaMm2": 1828.8955727983919,
+          "centroid": [
+            -0.36246671487075627,
+            0.8958398612614442,
+            -0.048111314732490446
+          ],
+          "sectionVertices": 90,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 186.0000000000001,
+          "hullAreaMm2": 1831.046111428304,
+          "centroid": [
+            -0.36132391061227986,
+            0.8974616288319195,
+            -0.04840665600281298
+          ],
+          "sectionVertices": 87,
+          "hullVertices": 48
+        },
+        {
+          "distanceFromDistalMm": 188.0000000000001,
+          "hullAreaMm2": 1841.4835254439215,
+          "centroid": [
+            -0.36019260202967834,
+            0.8990969041067128,
+            -0.0486735068192347
+          ],
+          "sectionVertices": 89,
+          "hullVertices": 47
+        },
+        {
+          "distanceFromDistalMm": 190.0000000000001,
+          "hullAreaMm2": 1856.532827425249,
+          "centroid": [
+            -0.35906936277901,
+            0.9007401236490067,
+            -0.0489271402405231
+          ],
+          "sectionVertices": 88,
+          "hullVertices": 47
+        },
+        {
+          "distanceFromDistalMm": 192.0000000000001,
+          "hullAreaMm2": 1877.1524604519157,
+          "centroid": [
+            -0.3579885718471887,
+            0.9024097522677003,
+            -0.04917909008130425
+          ],
+          "sectionVertices": 82,
+          "hullVertices": 50
+        },
+        {
+          "distanceFromDistalMm": 194.0000000000001,
+          "hullAreaMm2": 1900.309779656842,
+          "centroid": [
+            -0.3569186014316923,
+            0.904082098531596,
+            -0.04944831751888524
+          ],
+          "sectionVertices": 83,
+          "hullVertices": 51
+        },
+        {
+          "distanceFromDistalMm": 196.0000000000001,
+          "hullAreaMm2": 1926.1601626107308,
+          "centroid": [
+            -0.3558644843286104,
+            0.9057635921533024,
+            -0.049720073194460715
+          ],
+          "sectionVertices": 82,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 198.0000000000001,
+          "hullAreaMm2": 1956.293711380503,
+          "centroid": [
+            -0.3548360153754764,
+            0.9074621816550982,
+            -0.04998578770636061
+          ],
+          "sectionVertices": 79,
+          "hullVertices": 52
+        },
+        {
+          "distanceFromDistalMm": 200.0000000000001,
+          "hullAreaMm2": 1988.4267192604614,
+          "centroid": [
+            -0.353808192401685,
+            0.9091614750067931,
+            -0.050250144693938015
+          ],
+          "sectionVertices": 89,
+          "hullVertices": 53
+        },
+        {
+          "distanceFromDistalMm": 202.0000000000001,
+          "hullAreaMm2": 2027.4966459275768,
+          "centroid": [
+            -0.35279814841025287,
+            0.9108720521148068,
+            -0.05051281456050071
+          ],
+          "sectionVertices": 97,
+          "hullVertices": 56
+        },
+        {
+          "distanceFromDistalMm": 204.0000000000001,
+          "hullAreaMm2": 2069.7679981462857,
+          "centroid": [
+            -0.35179501898347787,
+            0.9125882771910084,
+            -0.05076927266516497
+          ],
+          "sectionVertices": 89,
+          "hullVertices": 55
+        },
+        {
+          "distanceFromDistalMm": 206.0000000000001,
+          "hullAreaMm2": 2113.7572085650063,
+          "centroid": [
+            -0.35079789439607517,
+            0.9143100649387568,
+            -0.05101743482333542
+          ],
+          "sectionVertices": 98,
+          "hullVertices": 58
+        },
+        {
+          "distanceFromDistalMm": 208.00000000000014,
+          "hullAreaMm2": 2159.806884209212,
+          "centroid": [
+            -0.34980270350563303,
+            0.916034312856792,
+            -0.05125997520125275
+          ],
+          "sectionVertices": 103,
+          "hullVertices": 58
+        },
+        {
+          "distanceFromDistalMm": 210.00000000000014,
+          "hullAreaMm2": 2208.855928027082,
+          "centroid": [
+            -0.3488075760907245,
+            0.9177596734812482,
+            -0.05149777919627621
+          ],
+          "sectionVertices": 97,
+          "hullVertices": 57
+        },
+        {
+          "distanceFromDistalMm": 212.00000000000014,
+          "hullAreaMm2": 2260.908705208091,
+          "centroid": [
+            -0.34782230631485506,
+            0.9194901089541885,
+            -0.05173985918187035
+          ],
+          "sectionVertices": 99,
+          "hullVertices": 63
+        },
+        {
+          "distanceFromDistalMm": 214.00000000000014,
+          "hullAreaMm2": 2315.9679472659204,
+          "centroid": [
+            -0.34684759868447684,
+            0.921224696567811,
+            -0.05199219053812355
+          ],
+          "sectionVertices": 97,
+          "hullVertices": 65
+        },
+        {
+          "distanceFromDistalMm": 216.00000000000014,
+          "hullAreaMm2": 2372.2981407492853,
+          "centroid": [
+            -0.34587263549281266,
+            0.92295830603287,
+            -0.05224814524302808
+          ],
+          "sectionVertices": 94,
+          "hullVertices": 65
+        },
+        {
+          "distanceFromDistalMm": 218.00000000000014,
+          "hullAreaMm2": 2429.2539064734638,
+          "centroid": [
+            -0.3448969316698777,
+            0.9246916356075187,
+            -0.05250333142818982
+          ],
+          "sectionVertices": 95,
+          "hullVertices": 64
+        },
+        {
+          "distanceFromDistalMm": 220.00000000000014,
+          "hullAreaMm2": 2487.0436667317185,
+          "centroid": [
+            -0.34391992962177914,
+            0.9264242510940414,
+            -0.05275815624929852
+          ],
+          "sectionVertices": 103,
+          "hullVertices": 66
+        },
+        {
+          "distanceFromDistalMm": 222.00000000000014,
+          "hullAreaMm2": 2545.694095056346,
+          "centroid": [
+            -0.3429410155950089,
+            0.928155941477122,
+            -0.05301189053473129
+          ],
+          "sectionVertices": 100,
+          "hullVertices": 66
+        },
+        {
+          "distanceFromDistalMm": 224.00000000000014,
+          "hullAreaMm2": 2604.916229919543,
+          "centroid": [
+            -0.34196051757652324,
+            0.9298862408848321,
+            -0.053267476273213744
+          ],
+          "sectionVertices": 102,
+          "hullVertices": 66
+        },
+        {
+          "distanceFromDistalMm": 226.00000000000014,
+          "hullAreaMm2": 2665.3933876848264,
+          "centroid": [
+            -0.3409722363024861,
+            0.9316111776450711,
+            -0.05352566580667744
+          ],
+          "sectionVertices": 106,
+          "hullVertices": 72
+        },
+        {
+          "distanceFromDistalMm": 228.00000000000014,
+          "hullAreaMm2": 2726.954300527797,
+          "centroid": [
+            -0.339975859155292,
+            0.9333302925329057,
+            -0.05378763924080294
+          ],
+          "sectionVertices": 103,
+          "hullVertices": 73
+        },
+        {
+          "distanceFromDistalMm": 230.00000000000014,
+          "hullAreaMm2": 2789.3359998151795,
+          "centroid": [
+            -0.3389744056611195,
+            0.9350452388568856,
+            -0.05405427050425994
+          ],
+          "sectionVertices": 107,
+          "hullVertices": 74
+        },
+        {
+          "distanceFromDistalMm": 232.00000000000014,
+          "hullAreaMm2": 2851.8561253258304,
+          "centroid": [
+            -0.3379723259372879,
+            0.9367585900664799,
+            -0.05432624400153786
+          ],
+          "sectionVertices": 99,
+          "hullVertices": 76
+        },
+        {
+          "distanceFromDistalMm": 234.00000000000014,
+          "hullAreaMm2": 2914.441871619933,
+          "centroid": [
+            -0.33697025045055257,
+            0.938471001886016,
+            -0.0546023725313177
+          ],
+          "sectionVertices": 97,
+          "hullVertices": 75
+        },
+        {
+          "distanceFromDistalMm": 236.00000000000014,
+          "hullAreaMm2": 2977.2948425737372,
+          "centroid": [
+            -0.33596753304587795,
+            0.9401821763582755,
+            -0.05488222278322626
+          ],
+          "sectionVertices": 93,
+          "hullVertices": 75
+        },
+        {
+          "distanceFromDistalMm": 238.00000000000014,
+          "hullAreaMm2": 3038.892568641075,
+          "centroid": [
+            -0.3349723247006078,
+            0.941894872702245,
+            -0.05517566900456823
+          ],
+          "sectionVertices": 99,
+          "hullVertices": 78
+        },
+        {
+          "distanceFromDistalMm": 240.00000000000017,
+          "hullAreaMm2": 3100.7268325194495,
+          "centroid": [
+            -0.3339747480099829,
+            0.9436049322861404,
+            -0.05547434038972304
+          ],
+          "sectionVertices": 102,
+          "hullVertices": 82
+        },
+        {
+          "distanceFromDistalMm": 242.00000000000017,
+          "hullAreaMm2": 3162.3798821108876,
+          "centroid": [
+            -0.33297602783783087,
+            0.9453134510806149,
+            -0.055776715438747224
+          ],
+          "sectionVertices": 102,
+          "hullVertices": 82
+        },
+        {
+          "distanceFromDistalMm": 244.00000000000017,
+          "hullAreaMm2": 3223.528188950553,
+          "centroid": [
+            -0.33197941943637505,
+            0.9470222898663788,
+            -0.05608339047651807
+          ],
+          "sectionVertices": 112,
+          "hullVertices": 83
+        },
+        {
+          "distanceFromDistalMm": 246.00000000000017,
+          "hullAreaMm2": 3284.2084170559665,
+          "centroid": [
+            -0.3309793222374762,
+            0.9487290702186405,
+            -0.05638970937897825
+          ],
+          "sectionVertices": 109,
+          "hullVertices": 86
+        },
+        {
+          "distanceFromDistalMm": 248.00000000000017,
+          "hullAreaMm2": 3343.721693385565,
+          "centroid": [
+            -0.32996777507289465,
+            0.950429155810457,
+            -0.056694591022101955
+          ],
+          "sectionVertices": 109,
+          "hullVertices": 84
+        },
+        {
+          "distanceFromDistalMm": 250.00000000000017,
+          "hullAreaMm2": 3402.710593704737,
+          "centroid": [
+            -0.328945020110137,
+            0.9521227062308544,
+            -0.05699798643212304
+          ],
+          "sectionVertices": 112,
+          "hullVertices": 85
+        },
+        {
+          "distanceFromDistalMm": 252.00000000000017,
+          "hullAreaMm2": 3460.752646893593,
+          "centroid": [
+            -0.32791212470306985,
+            0.9538103264673008,
+            -0.05730011379824315
+          ],
+          "sectionVertices": 110,
+          "hullVertices": 82
+        },
+        {
+          "distanceFromDistalMm": 254.00000000000017,
+          "hullAreaMm2": 3518.5677932412445,
+          "centroid": [
+            -0.3268683889153388,
+            0.9554911407466546,
+            -0.05760294305335366
+          ],
+          "sectionVertices": 109,
+          "hullVertices": 82
+        },
+        {
+          "distanceFromDistalMm": 256.00000000000017,
+          "hullAreaMm2": 3575.5028050186984,
+          "centroid": [
+            -0.32582149281893313,
+            0.9571699013811289,
+            -0.05790628347375104
+          ],
+          "sectionVertices": 107,
+          "hullVertices": 81
+        },
+        {
+          "distanceFromDistalMm": 258.00000000000017,
+          "hullAreaMm2": 3631.4603743409057,
+          "centroid": [
+            -0.32476751558746164,
+            0.9588451456324748,
+            -0.05820598290582945
+          ],
+          "sectionVertices": 112,
+          "hullVertices": 79
+        },
+        {
+          "distanceFromDistalMm": 260.00000000000017,
+          "hullAreaMm2": 3686.377538396836,
+          "centroid": [
+            -0.32370718275501886,
+            0.9605178464958467,
+            -0.05849971180935991
+          ],
+          "sectionVertices": 114,
+          "hullVertices": 82
+        },
+        {
+          "distanceFromDistalMm": 262.00000000000017,
+          "hullAreaMm2": 3740.388512908205,
+          "centroid": [
+            -0.3226406655018485,
+            0.9621892867347056,
+            -0.05878227498927682
+          ],
+          "sectionVertices": 114,
+          "hullVertices": 81
+        },
+        {
+          "distanceFromDistalMm": 264.00000000000017,
+          "hullAreaMm2": 3793.349865380234,
+          "centroid": [
+            -0.3215615819577222,
+            0.9638554085939554,
+            -0.05905431061973149
+          ],
+          "sectionVertices": 115,
+          "hullVertices": 79
+        },
+        {
+          "distanceFromDistalMm": 266.00000000000017,
+          "hullAreaMm2": 3845.229192805327,
+          "centroid": [
+            -0.3204708041692173,
+            0.9655169193312103,
+            -0.0593150575612524
+          ],
+          "sectionVertices": 120,
+          "hullVertices": 82
+        },
+        {
+          "distanceFromDistalMm": 268.00000000000017,
+          "hullAreaMm2": 3896.752345499714,
+          "centroid": [
+            -0.3193706555722955,
+            0.9671762198715499,
+            -0.05956020943809625
+          ],
+          "sectionVertices": 115,
+          "hullVertices": 86
+        },
+        {
+          "distanceFromDistalMm": 270.00000000000017,
+          "hullAreaMm2": 3946.4458190818787,
+          "centroid": [
+            -0.3182691226410452,
+            0.9688361719543396,
+            -0.05979874337698747
+          ],
+          "sectionVertices": 111,
+          "hullVertices": 83
+        },
+        {
+          "distanceFromDistalMm": 272.00000000000017,
+          "hullAreaMm2": 3995.2783825471274,
+          "centroid": [
+            -0.31716650528614454,
+            0.9704969624967289,
+            -0.06003064603282725
+          ],
+          "sectionVertices": 117,
+          "hullVertices": 83
+        },
+        {
+          "distanceFromDistalMm": 274.00000000000017,
+          "hullAreaMm2": 4043.4583424294483,
+          "centroid": [
+            -0.3160612871912796,
+            0.9721575695136272,
+            -0.060256324305889085
+          ],
+          "sectionVertices": 118,
+          "hullVertices": 80
+        },
+        {
+          "distanceFromDistalMm": 276.00000000000017,
+          "hullAreaMm2": 4090.6475875893143,
+          "centroid": [
+            -0.31495496024205333,
+            0.97381854464865,
+            -0.060477379859082754
+          ],
+          "sectionVertices": 121,
+          "hullVertices": 83
+        },
+        {
+          "distanceFromDistalMm": 278.00000000000017,
+          "hullAreaMm2": 4138.033210558652,
+          "centroid": [
+            -0.3138422345360137,
+            0.9754790419384793,
+            -0.06068323722468687
+          ],
+          "sectionVertices": 126,
+          "hullVertices": 86
+        },
+        {
+          "distanceFromDistalMm": 280.00000000000017,
+          "hullAreaMm2": 4185.335397757557,
+          "centroid": [
+            -0.31272214905143414,
+            0.9771395849683929,
+            -0.0608689877544858
+          ],
+          "sectionVertices": 127,
+          "hullVertices": 86
+        },
+        {
+          "distanceFromDistalMm": 282.00000000000017,
+          "hullAreaMm2": 4231.768741268829,
+          "centroid": [
+            -0.3116008791197572,
+            0.9788005382659682,
+            -0.06104972519994866
+          ],
+          "sectionVertices": 126,
+          "hullVertices": 86
+        },
+        {
+          "distanceFromDistalMm": 284.00000000000017,
+          "hullAreaMm2": 4277.3712200947375,
+          "centroid": [
+            -0.3104783950476191,
+            0.9804615522024968,
+            -0.06122691143684467
+          ],
+          "sectionVertices": 127,
+          "hullVertices": 87
+        },
+        {
+          "distanceFromDistalMm": 286.00000000000017,
+          "hullAreaMm2": 4322.505831891868,
+          "centroid": [
+            -0.30935789808965075,
+            0.9821243665802788,
+            -0.061401530375362376
+          ],
+          "sectionVertices": 120,
+          "hullVertices": 87
+        },
+        {
+          "distanceFromDistalMm": 288.0000000000002,
+          "hullAreaMm2": 4367.483172797363,
+          "centroid": [
+            -0.3082427493910492,
+            0.9837900570582351,
+            -0.0615779278441657
+          ],
+          "sectionVertices": 109,
+          "hullVertices": 82
+        },
+        {
+          "distanceFromDistalMm": 290.0000000000002,
+          "hullAreaMm2": 4414.1402282728095,
+          "centroid": [
+            -0.3071452099331343,
+            0.9854642099813942,
+            -0.06176462368600378
+          ],
+          "sectionVertices": 112,
+          "hullVertices": 82
+        },
+        {
+          "distanceFromDistalMm": 292.0000000000002,
+          "hullAreaMm2": 4461.448455088089,
+          "centroid": [
+            -0.3060557139577268,
+            0.9871422674680238,
+            -0.06195585102606488
+          ],
+          "sectionVertices": 109,
+          "hullVertices": 84
+        },
+        {
+          "distanceFromDistalMm": 294.0000000000002,
+          "hullAreaMm2": 4507.97498217857,
+          "centroid": [
+            -0.30497115622578724,
+            0.9888240820362602,
+            -0.06214386204000823
+          ],
+          "sectionVertices": 111,
+          "hullVertices": 82
+        },
+        {
+          "distanceFromDistalMm": 296.0000000000002,
+          "hullAreaMm2": 4553.4738488911935,
+          "centroid": [
+            -0.30389351661785335,
+            0.9905107796907414,
+            -0.06232904475046544
+          ],
+          "sectionVertices": 109,
+          "hullVertices": 81
+        },
+        {
+          "distanceFromDistalMm": 298.0000000000002,
+          "hullAreaMm2": 4599.018001393817,
+          "centroid": [
+            -0.30283091863103756,
+            0.9922065605301632,
+            -0.06251484347945728
+          ],
+          "sectionVertices": 115,
+          "hullVertices": 78
+        },
+        {
+          "distanceFromDistalMm": 300.0000000000002,
+          "hullAreaMm2": 4645.943358811374,
+          "centroid": [
+            -0.30179048377387785,
+            0.9939153063910051,
+            -0.06270339642348927
+          ],
+          "sectionVertices": 113,
+          "hullVertices": 78
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": ".cache/male-details/atlas.json",
+      "sha256": "d6979fc62cf18fa4f08a9e6efae8fdac9ec383c5a1f3c757920125ac758429fe"
+    },
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": ".cache/arm-registration/body-10.bin.gz",
+      "sha256": "9d99c2eada1ab94e0a9c26757aa7f14428d2ea4a2548d6d1fe60c0711ee3c942"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "scripts/experiment-arm-landmarks.py",
+      "sha256": "41586db95f1f94b6ba5054be4e89b1c7bf431afbcb348510f4220c8836d8ea24"
+    }
+  ]
+}

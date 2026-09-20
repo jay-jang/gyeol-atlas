@@ -31,3 +31,18 @@ test('a closed double skin shell demonstrates why parity is not automatically bo
   assert.equal(probe.classify(new Vector3()).kind,'outside','Outside the skin-shell solid can still be inside the body envelope');
   probe.dispose();outer.dispose();inner.dispose();shell.dispose();
 });
+test('one closed manifold component can still be a hollow tissue wall, not a filled body envelope',()=>{
+  const positions=[],indices=[],n=32;
+  for(const [radius,z] of [[2,-2],[2,2],[1,-2],[1,2]])for(let i=0;i<n;i++){
+    positions.push(radius*Math.cos(2*Math.PI*i/n),radius*Math.sin(2*Math.PI*i/n),z);
+  }
+  for(let i=0;i<n;i++)for(const [a,b] of [[0,1],[1,3],[3,2],[2,0]]){
+    const j=(i+1)%n;indices.push(a*n+i,a*n+j,b*n+j,a*n+i,b*n+j,b*n+i);
+  }
+  const g=new BufferGeometry();g.setAttribute('position',new BufferAttribute(new Float32Array(positions),3));g.setIndex(indices);
+  const topology=surfaceTopology(g),probe=surfaceProbe(g);
+  assert.equal(topology.connectedComponents,1);assert.equal(topology.boundaryEdges,0);assert.equal(topology.nonManifoldEdges,0);
+  assert.equal(probe.classify(new Vector3()).kind,'outside','A cavity is outside the tissue solid, but inside its outer envelope');
+  assert.equal(probe.classify(new Vector3(1.5,0,0)).kind,'inside');
+  probe.dispose();g.dispose();
+});

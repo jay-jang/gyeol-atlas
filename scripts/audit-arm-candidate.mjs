@@ -3,19 +3,21 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
-import {BufferGeometry,BufferAttribute,Vector3} from 'three';
+import {BufferGeometry,BufferAttribute,Vector3,Ray,DoubleSide} from 'three';
 import {MeshBVH} from 'three-mesh-bvh';
 import {surfaceProbe,surfaceTopology,referencedVertices} from './lib/surface-containment.mjs';
 
-const candidatePath='.cache/arm-registration/candidates.json';
+const handOnly=process.argv.includes('--hand');
+const candidatePath=handOnly?'.cache/arm-registration/hand-candidates.json':'.cache/arm-registration/candidates.json';
 const read=path=>JSON.parse(fs.readFileSync(path));
 const sha256=path=>createHash('sha256').update(fs.readFileSync(path)).digest('hex');
 const candidate=read(candidatePath);
 for(const file of candidate.files)assert.equal(sha256(file.path),file.sha256,`Stale candidate: ${file.path}`);
 const atlas=read('public/models/female/atlas-female.json'),buffers=new Map();
-function geometry(part) {
-  if(!buffers.has(part.chunk))buffers.set(part.chunk,gunzipSync(fs.readFileSync(`public/models/female/${atlas.chunks[part.chunk].gzip.split('/').pop()}`)));
-  const bytes=buffers.get(part.chunk),positions=new Float32Array(part.vertexCount*3),indices=new Uint32Array(part.indexCount);
+function geometry(part,manifest=atlas,folder='public/models/female') {
+  const path=`${folder}/${manifest.chunks[part.chunk].gzip.split('/').pop()}`;
+  if(!buffers.has(path))buffers.set(path,gunzipSync(fs.readFileSync(path)));
+  const bytes=buffers.get(path),positions=new Float32Array(part.vertexCount*3),indices=new Uint32Array(part.indexCount);
   for(let i=0;i<positions.length;i++)positions[i]=bytes.readFloatLE(part.positions+4*i);
   for(let i=0;i<indices.length;i++)indices[i]=bytes.readUInt32LE(part.indices+4*i);
   const g=new BufferGeometry();g.setAttribute('position',new BufferAttribute(positions,3));g.setIndex(new BufferAttribute(indices,1));return g;
@@ -23,11 +25,11 @@ function geometry(part) {
 const skin=geometry(atlas.parts.find(p=>p.name==='Skin')),topology=surfaceTopology(skin);
 assert.equal(topology.connectedComponents,1);assert.equal(topology.boundaryEdges,0);assert.equal(topology.nonManifoldEdges,0);
 const probe=surfaceProbe(skin);
-function containment(g) {
+function containment(g,classifier=probe) {
   const vertices=referencedVertices(g,Infinity),positions=g.getAttribute('position');
   const result={vertices:vertices.length,inside:0,outside:0,'surface-band':0,ambiguous:0,maxOutsideMm:0};
   for(const index of vertices){
-    const r=probe.classify(new Vector3().fromBufferAttribute(positions,index));result[r.kind]++;
+    const r=classifier.classify(new Vector3().fromBufferAttribute(positions,index));result[r.kind]++;
     if(r.kind==='outside')result.maxOutsideMm=Math.max(result.maxOutsideMm,r.distance*1000);
   }
   return result;
@@ -41,9 +43,35 @@ function vertexSurfaceGap(a,b) {
 }
 const report={status:'EXPERIMENT ONLY — not deployed; containment cannot establish correct anatomy',topology,arms:[],
   limitations:['Vertex-to-triangle joint minima are unsigned, one-way proxies; they do not detect all intersections or validate cartilage/contact regions.',
-    'Distal joint pairs share one similarity transform. Their scaled distance checks test transform implementation, not improved joint anatomy.',
-    'No elbow, wrist or finger articulation is fitted; the shoulder pivot is only an upstream geometric proxy.'],
+    handOnly?'Only the hand bones move; unchanged proximal pairs are implementation controls, and wrist continuity is not enforced.':'Distal joint pairs share one similarity transform. Their scaled distance checks test transform implementation, not improved joint anatomy.',
+    'No elbow, wrist or finger articulation is fitted; skin constrictions and the shoulder pivot are only geometric proxies.',
+    'A single closed manifold skin surface is not sufficient to prove it bounds the filled body: a tissue shell can enclose a hollow interior.'],
   files:[candidatePath,'scripts/audit-arm-candidate.mjs','scripts/lib/surface-containment.mjs'].map(path=>({path,sha256:sha256(path)}))};
+if(handOnly){
+  const donorAtlas=read('.cache/male-details/atlas.json');
+  const donorSkin=geometry(donorAtlas.parts.find(p=>p.name==='Skin'),donorAtlas,'.cache/arm-registration');
+  const donorTopology=surfaceTopology(donorSkin),donorProbe=surfaceProbe(donorSkin),rows=[];
+  for(const part of candidate.arms.flatMap(a=>a.parts).filter(p=>p.transformed)){
+    const donor=donorAtlas.parts.find(p=>p.id===part.sourceId);assert.ok(donor);
+    const g=geometry(donor,donorAtlas,'.cache/arm-registration');
+    rows.push({id:donor.id,name:donor.name,...containment(g,donorProbe)});g.dispose();
+  }
+  const topologyPass=donorTopology.connectedComponents===1&&donorTopology.boundaryEdges===0&&donorTopology.nonManifoldEdges===0;
+  const rayGeometry=donorSkin.clone(),rayTree=new MeshBVH(rayGeometry);
+  const rayDiagnostics=candidate.arms.map(arm=>({side:arm.side,origin:arm.sourceWrist,
+    rays:[[1,.137,.071],[.117,1,.193],[.073,.127,1]].map(d=>{
+      const direction=new Vector3(...d).normalize();
+      const hits=rayTree.raycast(new Ray(new Vector3(...arm.sourceWrist),direction),DoubleSide).sort((a,b)=>a.distance-b.distance);
+      return {direction:direction.toArray(),hits:hits.map(h=>({distanceMm:h.distance*1000,normalDotDirection:h.face.normal.dot(direction)}))};
+    })}));
+  rayGeometry.dispose();
+  report.donor={topology:donorTopology,topologyPass,interpretable:false,
+    interpretation:'Parity is NOT a body-exterior verdict. Topology alone cannot establish a filled-body envelope; inspect paired inner/outer crossings and the source-only scene.',
+    rayDiagnostics,
+    outsideVertices:rows.reduce((n,r)=>n+r.outside,0),maxOutsideMm:Math.max(...rows.map(r=>r.maxOutsideMm)),parts:rows};
+  console.log(JSON.stringify({donor:{...report.donor,parts:undefined}}));
+  donorProbe.dispose();donorSkin.dispose();
+}
 for(const arm of candidate.arms){
   const meshes=new Map(),rows=[];
   for(const part of arm.parts){
@@ -53,19 +81,20 @@ for(const arm of candidate.arms){
       const positions=after.getAttribute('position');
       for(let i=0;i<positions.count;i++){
         const p=[positions.getX(i),positions.getY(i),positions.getZ(i)];
-        const q=arm.translation.map((v,j)=>v+p.reduce((sum,c,k)=>sum+c*arm.linear[k][j],0));
+        const linear=part.linear||arm.linear,translation=part.translation||arm.translation;
+        const q=translation.map((v,j)=>v+p.reduce((sum,c,k)=>sum+c*linear[k][j],0));
         positions.setXYZ(i,...q);
       }
       rows.push({id:part.id,name:part.name,before:containment(before),after:containment(after)});
     }
-    meshes.set(part.name.toLowerCase(),{before,after});
+    meshes.set(part.name.toLowerCase(),{before,after,transformed:part.transformed});
   }
   const joints=[['scapula','humerus'],['humerus','radius'],['humerus','ulna'],['radius','scaphoid'],['radius','lunate']].map(([a,b])=>{
     const first=meshes.get(`${arm.side} ${a}`),second=meshes.get(`${arm.side} ${b}`);
     assert.ok(first&&second,`${arm.side}: missing joint pair ${a}/${b}`);
     const before=vertexSurfaceGap(first.before,second.before),after=vertexSurfaceGap(first.after,second.after);
-    const sharedTransform=a!=='scapula';
-    if(sharedTransform)assert.ok(Math.abs(after-before*arm.scale)<.001,`${a}/${b}: similarity must preserve scaled relative distances`);
+    const sharedTransform=handOnly?(!first.transformed&&!second.transformed):a!=='scapula';
+    if(sharedTransform)assert.ok(Math.abs(after-before*(handOnly?1:arm.scale))<.001,`${a}/${b}: similarity must preserve scaled relative distances`);
     return {pair:[a,b],sharedTransform,beforeVertexSurfaceMinimumMm:before,
       afterVertexSurfaceMinimumMm:after};
   });
@@ -80,4 +109,4 @@ for(const arm of candidate.arms){
   for(const pair of meshes.values()){pair.before.dispose();pair.after.dispose();}
 }
 probe.dispose();skin.dispose();
-fs.writeFileSync('.cache/arm-registration/candidate-audit.json',JSON.stringify(report,null,2)+'\n');
+fs.writeFileSync(handOnly?'.cache/arm-registration/hand-candidate-audit.json':'.cache/arm-registration/candidate-audit.json',JSON.stringify(report,null,2)+'\n');

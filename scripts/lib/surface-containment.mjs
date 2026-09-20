@@ -4,6 +4,8 @@ import {MeshBVH} from 'three-mesh-bvh';
 // A geometry diagnostic, not an anatomical registration or clinical validator.
 // Multiple oblique rays avoid most edge-aligned degeneracies. Disagreement is
 // reported rather than turning an open/ambiguous surface into an inside pass.
+// Even one closed manifold component can bound hollow skin tissue rather than
+// the filled body. Topology checks alone do not establish that interpretation.
 export function surfaceProbe(sourceGeometry, tolerance = .002) {
   const geometry=sourceGeometry.clone();
   const bvh=new MeshBVH(geometry);
