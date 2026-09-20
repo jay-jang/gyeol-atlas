@@ -55,7 +55,7 @@ import {
   type ViewState,
   type ViewAction,
 } from "./view-state";
-import { structures, detailForStructure } from "./anatomy";
+import { structures, detailForStructure, stageDescription } from "./anatomy";
 import { referenceSourceFor } from "./reference-source";
 
 const VIEW_KEY = "gyeol-view-v2";
@@ -524,6 +524,15 @@ function AtlasPage({
     .filter((l) => state.layers[l])
     .every((l) => loaded.layers.includes(l)) && !loadingReference;
   const selectionKey = state.selection?.ids.join("|") || "";
+  const framedSource = useRef(sourceKey);
+  useEffect(() => {
+    if (!ready || framedSource.current === sourceKey) return;
+    framedSource.current = sourceKey;
+    // A detail camera belongs to its own source coordinates and scale. Wait
+    // for the overview geometry before fitting it; ordinary peeling/layer
+    // changes within one source must still preserve the user's camera.
+    if (!selectionKey && !state.comparison) camera("fit");
+  }, [sourceKey, ready, selectionKey, state.comparison]);
   const focusedSelection = useRef(selectionKey);
   useEffect(() => {
     if (!selectionKey) { focusedSelection.current = ""; return; }
@@ -1093,7 +1102,7 @@ function AtlasPage({
                   표식은 체표 기준의 학습용 근사입니다. 장부 대응은 전통적
                   분류이며 압력 전달 경로가 아닙니다.
                 </p>
-                <p>{stages[state.stage].description}</p>
+                <p>{stageDescription(state.stage, state.sex)}</p>
                 <a href="#wiki/layer-guide">전체 탐색 가이드 ↗</a>
                 <a href="#wiki/massage-anatomy">마사지 해부학 참고 ↗</a>
                 <a href="#wiki/licenses">모델 출처·라이선스 ↗</a>

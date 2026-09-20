@@ -101,3 +101,19 @@ export const stages: { layer: Layer; description: string }[] = [
       "525개 좌우 전신 신경·감각기관 구성요소를 이름·TA2 라틴명·계통 경로로 검색하고 개별 선택할 수 있습니다.",
   },
 ];
+
+export function stageDescription(stage: number, sex: "male" | "female") {
+  if (sex === "male") return stages[stage].description;
+  const layer = stages[stage].layer;
+  const count = structuresForSex(sex).filter(s => s.layer === layer && !s.detailOnly).length;
+  const limitations: Record<Layer, string> = {
+    skin: "여성 표면의 경혈 좌표는 검수 전이므로 표식을 표시하지 않습니다.",
+    muscle: "별도 여성 기증자의 하체 근육을 포함합니다. 상체 근육 전체는 수록되어 있지 않습니다.",
+    bone: "남성 유래 보완 골격 180개를 회청색과 출처로 구분합니다. 여성 고유 골격으로 해석하지 마세요.",
+    organ: "여성 CT 자료는 전신에 합쳐지지 않은 별도 상세입니다. 전통적 장부 대응은 압력 전달 경로가 아닙니다.",
+    vessel: "여성 원본에 수록된 혈관을 검색·선택합니다. 전신 미세혈관 전체를 뜻하지 않습니다.",
+    lymph: "여성 원본에 명명된 림프 구조입니다. 남성 자료와 수록 범위가 다릅니다.",
+    nerve: "뇌·신경·감각기관의 수록 모형입니다. 전신 말초신경 전체를 포함하지 않습니다.",
+  };
+  return `여성 전신 참조의 ${layerNames[layer]} 모형 ${count}개. ${limitations[layer]}`;
+}

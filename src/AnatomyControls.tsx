@@ -1,5 +1,5 @@
 import { useState, type Dispatch } from "react";
-import { anatomyRegionNames, detailForStructure, layerKeys, layerNames, stages, structuresForSex } from "./anatomy";
+import { anatomyRegionNames, detailForStructure, layerKeys, layerNames, stageDescription, structuresForSex } from "./anatomy";
 import type { ViewState, ViewAction } from "./view-state";
 export default function AnatomyControls({
   mode,
@@ -83,7 +83,7 @@ export default function AnatomyControls({
           <output>{Math.round(state.alpha[l] * 100)}%</output>
         </div>
       ))}
-      <p className="coverage-description">{stages[state.stage].description}</p>
+      <p className="coverage-description">{stageDescription(state.stage, state.sex)}</p>
       <label className="setting-select">
         경혈 표식
         <select
