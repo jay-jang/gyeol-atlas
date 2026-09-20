@@ -30,7 +30,7 @@ test("manual combinations and selected organs are independent of peel depth", ()
   assert.equal(state.selection, null);
   assert.equal(state.displayMode, "dissection");
 });
-test("superficial muscles peel before deeper muscles and never reappear", () => {
+test("assigned peel ranks disappear in order and never reappear (not anatomical depth validation)", () => {
   assert.ok(musclePeelOpacity(40, 0) < musclePeelOpacity(40, 1));
   for (let rank = 0; rank <= 1; rank += .1) {
     let previous = 1;

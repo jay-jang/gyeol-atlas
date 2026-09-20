@@ -718,7 +718,7 @@ function AtlasPage({
             dispatch({ type: "anatomy-region", value });
             requestAnimationFrame(() => camera(value === "whole" ? "fit" : "anatomy-region"));
           }}>{Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}</select></label>
-          <small className="scope-source">{state.sex === "female" ? "HRA 전신 1,220개 + 여성 CT 별도 상세 11개" : "남성 참조 · 림프 142개 포함"}</small>
+          <small className="scope-source">{state.sex === "female" ? "HRA 전신 1,220개 + 여성 CT 별도 상세 11개 · 보완 골격·근육 정렬 미완료" : "남성 참조 · 림프 142개 포함"}</small>
         </div>
         <section
           className="depth-explorer"

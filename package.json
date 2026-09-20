@@ -18,6 +18,7 @@
     "test:production": "node scripts/smoke-production.mjs",
     "test:visual": "node scripts/capture-workspace.mjs",
     "test:geometry": "node scripts/audit-dissection-geometry.mjs",
+    "audit:containment": "node scripts/audit-body-containment.mjs",
     "check": "npm test && npm run build && npm run test:e2e && npm run test:production"
   },
   "keywords": [],
@@ -48,6 +49,7 @@
     "concurrently": "^10.0.5",
     "draco3dgltf": "^1.5.7",
     "prettier": "^3.9.6",
+    "three-mesh-bvh": "0.8.3",
     "typescript": "^7.0.2",
     "vite": "^8.2.2"
   }
