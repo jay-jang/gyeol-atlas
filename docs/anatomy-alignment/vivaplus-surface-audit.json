@@ -1,0 +1,518 @@
+{
+  "source": {
+    "url": "https://openvt.eu/fem/viva/vivaplus/-/archive/v2.0.2/vivaplus-v2.0.2.zip",
+    "tag": "v2.0.2",
+    "commit": "cc986b7df66b109c1c73d4d5986553877e28b0dd",
+    "archiveSha256": "94b9415ffdc844c14e6ff79ca5a7a79810bc7f7e8632966dedf20f7faddcf7d1",
+    "zipCrcVerified": true,
+    "variant": "50F-standing",
+    "files": [
+      {
+        "path": "model/50F-standing/vivaplus-50F-standing.key",
+        "bytes": 4048,
+        "sha256": "42e616651d58b314630d915fc6ca98367fdf51ea5450a235824597f9694460b1"
+      },
+      {
+        "path": "model/50F-standing/vivaplus_50F-standing_nodes.k",
+        "bytes": 41242445,
+        "sha256": "782a4dbf1a1af7b2a57db1971e07d3eb441f03f0c9cfaba4155261f56d0d8b04"
+      },
+      {
+        "path": "model/common/vivaplus-30-Upper-Extremity.k",
+        "bytes": 52205,
+        "sha256": "f8ba6d47718f1eb41a4f920688e2dd154a8710deca75e9d800af0c890b999954"
+      },
+      {
+        "path": "model/common/vivaplus-elements.k",
+        "bytes": 58930539,
+        "sha256": "f5b9df260cd1d3db4bd2d4db4b4cef90aa448cf697cd9e169f7f102057363edb"
+      },
+      {
+        "path": "model/common/vivaplus-joints.k",
+        "bytes": 33657,
+        "sha256": "2294ac569bfa4da6f43a202f6b3a249ec0ee5ebb8bb59652f46b2b7902c6e9bb"
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "scripts/extract-vivaplus-surfaces.py",
+      "sha256": "3725b14fc3c635f3e6fafdb4524fd415a625b39c9888344532725f21b00b6aaf"
+    },
+    {
+      "path": "scripts/audit-vivaplus-surfaces.mjs",
+      "sha256": "f859ed81f165fcd5d12c248c39a81580b71426edf1888b22450b612bd251c5a8"
+    },
+    {
+      "path": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "path": "scripts/lib/joint-geometry.mjs",
+      "sha256": "a008cae6f842a7f55239d4eed617465bf765eb87998d6668f6007998d23ad2db"
+    },
+    {
+      "path": "scripts/lib/triangle-crossings.mjs",
+      "sha256": "a55dd923c032c76591a7f2aa1af2863fe9e24bf0adb0ee6eb4aad5388238d512"
+    },
+    {
+      "path": ".cache/vivaplus/surfaces.json",
+      "sha256": "0e5129016adcbeba2de65b6d25193ea18178e205447aa88519f7abcedcf8e236"
+    }
+  ],
+  "topology": [
+    {
+      "id": "left-clavicle",
+      "weldedVertices": 486,
+      "connectedComponents": 1,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.00005947875969525285
+    },
+    {
+      "id": "left-scapula",
+      "weldedVertices": 3156,
+      "connectedComponents": 1,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.00005958557136587217
+    },
+    {
+      "id": "left-humerus",
+      "weldedVertices": 3696,
+      "connectedComponents": 2,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.00005957031246062172
+    },
+    {
+      "id": "left-ulna",
+      "weldedVertices": 2312,
+      "connectedComponents": 2,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.00005958557136587217
+    },
+    {
+      "id": "left-radius",
+      "weldedVertices": 2196,
+      "connectedComponents": 2,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.000059593200818497394
+    },
+    {
+      "id": "left-carpal-aggregate",
+      "weldedVertices": 344,
+      "connectedComponents": 1,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.000029460906936229492
+    },
+    {
+      "id": "left-phalangeal-aggregate",
+      "weldedVertices": 1676,
+      "connectedComponents": 19,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.000029796600298226394
+    },
+    {
+      "id": "left-humerus-null",
+      "weldedVertices": 2300,
+      "connectedComponents": 2,
+      "boundaryEdges": 64,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.0000595626832300411
+    },
+    {
+      "id": "left-ulna-null",
+      "weldedVertices": 1275,
+      "connectedComponents": 1,
+      "boundaryEdges": 40,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.00005958557136587217
+    },
+    {
+      "id": "left-radius-null",
+      "weldedVertices": 1184,
+      "connectedComponents": 1,
+      "boundaryEdges": 32,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.000059593200818497394
+    },
+    {
+      "id": "left-skin",
+      "weldedVertices": 4635,
+      "connectedComponents": 1,
+      "boundaryEdges": 48,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.000059547424324790654
+    },
+    {
+      "id": "left-subscapularis",
+      "weldedVertices": 2316,
+      "connectedComponents": 1,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.00005957031246062172
+    },
+    {
+      "id": "right-clavicle",
+      "weldedVertices": 486,
+      "connectedComponents": 1,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.00005947875969525285
+    },
+    {
+      "id": "right-scapula",
+      "weldedVertices": 3156,
+      "connectedComponents": 1,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.00005958557136587217
+    },
+    {
+      "id": "right-humerus",
+      "weldedVertices": 3696,
+      "connectedComponents": 2,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.00005957031246062172
+    },
+    {
+      "id": "right-ulna",
+      "weldedVertices": 2312,
+      "connectedComponents": 2,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.00005958557136587217
+    },
+    {
+      "id": "right-radius",
+      "weldedVertices": 2196,
+      "connectedComponents": 2,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.000059593200818497394
+    },
+    {
+      "id": "right-carpal-aggregate",
+      "weldedVertices": 344,
+      "connectedComponents": 1,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.000029460906936229492
+    },
+    {
+      "id": "right-phalangeal-aggregate",
+      "weldedVertices": 1676,
+      "connectedComponents": 19,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.000029796600298226394
+    },
+    {
+      "id": "right-humerus-null",
+      "weldedVertices": 2300,
+      "connectedComponents": 2,
+      "boundaryEdges": 64,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.0000595626832300411
+    },
+    {
+      "id": "right-ulna-null",
+      "weldedVertices": 1275,
+      "connectedComponents": 1,
+      "boundaryEdges": 40,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.00005958557136587217
+    },
+    {
+      "id": "right-radius-null",
+      "weldedVertices": 1184,
+      "connectedComponents": 1,
+      "boundaryEdges": 32,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.000059593200818497394
+    },
+    {
+      "id": "right-skin",
+      "weldedVertices": 4635,
+      "connectedComponents": 1,
+      "boundaryEdges": 48,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.000059547424324790654
+    },
+    {
+      "id": "right-subscapularis",
+      "weldedVertices": 2316,
+      "connectedComponents": 1,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "maxFloat32ErrorMm": 0.00005957031246062172
+    }
+  ],
+  "joints": [
+    {
+      "side": "left",
+      "ids": [
+        "left-clavicle",
+        "left-scapula"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 2.8103486337429695,
+      "triangleSurfacesIntersect": false,
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "side": "left",
+      "ids": [
+        "left-scapula",
+        "left-humerus"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 0.7979638370842063,
+      "triangleSurfacesIntersect": false,
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "side": "left",
+      "ids": [
+        "left-humerus",
+        "left-radius"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 5.70580530670104,
+      "triangleSurfacesIntersect": false,
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "side": "left",
+      "ids": [
+        "left-humerus",
+        "left-ulna"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 0.15576768493722035,
+      "triangleSurfacesIntersect": true,
+      "intersectingTrianglePairs": 32,
+      "strictPlaneStraddlingPairs": 32,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.8314575549912637
+    },
+    {
+      "side": "left",
+      "ids": [
+        "left-radius",
+        "left-ulna"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 1.3411648522865558,
+      "triangleSurfacesIntersect": false,
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "side": "left",
+      "ids": [
+        "left-radius",
+        "left-carpal-aggregate"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 0.6573783131137617,
+      "triangleSurfacesIntersect": false,
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "side": "left",
+      "ids": [
+        "left-ulna",
+        "left-carpal-aggregate"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 8.00972240226307,
+      "triangleSurfacesIntersect": false,
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "side": "left",
+      "ids": [
+        "left-carpal-aggregate",
+        "left-phalangeal-aggregate"
+      ],
+      "sharedSourceNodeCount": 80,
+      "vertexSurfaceMinimumMm": 0,
+      "triangleSurfacesIntersect": true,
+      "intersectingTrianglePairs": 1844,
+      "strictPlaneStraddlingPairs": 63,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4316213597820922
+    },
+    {
+      "side": "right",
+      "ids": [
+        "right-clavicle",
+        "right-scapula"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 2.8103486337429695,
+      "triangleSurfacesIntersect": false,
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "side": "right",
+      "ids": [
+        "right-scapula",
+        "right-humerus"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 0.7979638370842063,
+      "triangleSurfacesIntersect": false,
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "side": "right",
+      "ids": [
+        "right-humerus",
+        "right-radius"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 5.70580530670104,
+      "triangleSurfacesIntersect": false,
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "side": "right",
+      "ids": [
+        "right-humerus",
+        "right-ulna"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 0.15576768493722035,
+      "triangleSurfacesIntersect": true,
+      "intersectingTrianglePairs": 32,
+      "strictPlaneStraddlingPairs": 32,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.8314575549912637
+    },
+    {
+      "side": "right",
+      "ids": [
+        "right-radius",
+        "right-ulna"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 1.3411648522865558,
+      "triangleSurfacesIntersect": false,
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "side": "right",
+      "ids": [
+        "right-radius",
+        "right-carpal-aggregate"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 0.6573783131137617,
+      "triangleSurfacesIntersect": false,
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "side": "right",
+      "ids": [
+        "right-ulna",
+        "right-carpal-aggregate"
+      ],
+      "sharedSourceNodeCount": 0,
+      "vertexSurfaceMinimumMm": 8.00972240226307,
+      "triangleSurfacesIntersect": false,
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "side": "right",
+      "ids": [
+        "right-carpal-aggregate",
+        "right-phalangeal-aggregate"
+      ],
+      "sharedSourceNodeCount": 80,
+      "vertexSurfaceMinimumMm": 0,
+      "triangleSurfacesIntersect": true,
+      "intersectingTrianglePairs": 1858,
+      "strictPlaneStraddlingPairs": 68,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4137347832119869
+    }
+  ],
+  "deployed": false,
+  "hraRegistered": false,
+  "anatomicallyValidated": false,
+  "limitations": [
+    "Topology welds exact Float32 coordinate duplicates only for its diagnostics; extracted geometry is not altered.",
+    "Surface intersection also includes touching; it is not a penetration-volume or cartilage test.",
+    "Unsigned one-way vertex-to-surface minima do not establish anatomical joint gaps.",
+    "Plane straddle extent describes intersecting triangles, not solid penetration depth/volume.",
+    "Boundary extraction and triangulation are not physical shell thickness or finite-element interpolation.",
+    "Open skin is not used for parity containment. No source or HRA containment claim."
+  ]
+}

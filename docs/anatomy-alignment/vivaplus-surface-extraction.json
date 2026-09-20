@@ -1,0 +1,908 @@
+{
+  "source": {
+    "url": "https://openvt.eu/fem/viva/vivaplus/-/archive/v2.0.2/vivaplus-v2.0.2.zip",
+    "tag": "v2.0.2",
+    "commit": "cc986b7df66b109c1c73d4d5986553877e28b0dd",
+    "archiveSha256": "94b9415ffdc844c14e6ff79ca5a7a79810bc7f7e8632966dedf20f7faddcf7d1",
+    "zipCrcVerified": true,
+    "variant": "50F-standing",
+    "files": [
+      {
+        "path": "model/50F-standing/vivaplus-50F-standing.key",
+        "bytes": 4048,
+        "sha256": "42e616651d58b314630d915fc6ca98367fdf51ea5450a235824597f9694460b1"
+      },
+      {
+        "path": "model/50F-standing/vivaplus_50F-standing_nodes.k",
+        "bytes": 41242445,
+        "sha256": "782a4dbf1a1af7b2a57db1971e07d3eb441f03f0c9cfaba4155261f56d0d8b04"
+      },
+      {
+        "path": "model/common/vivaplus-30-Upper-Extremity.k",
+        "bytes": 52205,
+        "sha256": "f8ba6d47718f1eb41a4f920688e2dd154a8710deca75e9d800af0c890b999954"
+      },
+      {
+        "path": "model/common/vivaplus-elements.k",
+        "bytes": 58930539,
+        "sha256": "f5b9df260cd1d3db4bd2d4db4b4cef90aa448cf697cd9e169f7f102057363edb"
+      },
+      {
+        "path": "model/common/vivaplus-joints.k",
+        "bytes": 33657,
+        "sha256": "2294ac569bfa4da6f43a202f6b3a249ec0ee5ebb8bb59652f46b2b7902c6e9bb"
+      }
+    ]
+  },
+  "displayTransform": "(x,y,z) mm -> (y,z,x)/1000 m",
+  "geometryFileSha256": "0e5129016adcbeba2de65b6d25193ea18178e205447aa88519f7abcedcf8e236",
+  "groups": [
+    {
+      "id": "left-clavicle",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        301102
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Clavicle-Trabecular-L"
+      ],
+      "cells": 740,
+      "removedInternalFaces": 1978,
+      "boundaryQuads": 484,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 486,
+      "triangles": 968,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3101643,
+          "triangles": 968,
+          "vertices": 486,
+          "signedVolumeMm3": 12422.807114042474
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 1.4210854715202004e-14
+    },
+    {
+      "id": "left-scapula",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        301202
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Scapula-Trabecular-L"
+      ],
+      "cells": 2470,
+      "removedInternalFaces": 5833,
+      "boundaryQuads": 3154,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 3156,
+      "triangles": 6308,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3101603,
+          "triangles": 6308,
+          "vertices": 3156,
+          "signedVolumeMm3": 40572.41746841514
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 1.4210854715202004e-14
+    },
+    {
+      "id": "left-humerus",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        301311,
+        301312,
+        301321,
+        301331,
+        301332
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Humerus-proximal-Cortical-L",
+        "UX-Bone-Humerus-proximal-Trabecular-L",
+        "UX-Bone-Humerus-shaft-Cortical-L",
+        "UX-Bone-Humerus-distal-Cortical-L",
+        "UX-Bone-Humerus-distal-Trabecular-L"
+      ],
+      "cells": 5944,
+      "removedInternalFaces": 15986,
+      "boundaryQuads": 3692,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 3696,
+      "triangles": 7384,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3100259,
+          "triangles": 4648,
+          "vertices": 2326,
+          "signedVolumeMm3": 131826.7222487538
+        },
+        {
+          "minSourceNodeId": 3100279,
+          "triangles": 2736,
+          "vertices": 1370,
+          "signedVolumeMm3": -25063.350701740837
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 2.842170943040401e-14
+    },
+    {
+      "id": "left-ulna",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        301411,
+        301412,
+        301421,
+        301431,
+        301432
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Ulna-proximal-Cortical-L",
+        "UX-Bone-Ulna-proximal-Trabecular-L",
+        "UX-Bone-Ulna-shaft-Cortical-L",
+        "UX-Bone-Ulna-distal-Cortical-L",
+        "UX-Bone-Ulna-distal-Trabecular-L"
+      ],
+      "cells": 2852,
+      "removedInternalFaces": 7402,
+      "boundaryQuads": 2308,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 2312,
+      "triangles": 4616,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3100733,
+          "triangles": 2664,
+          "vertices": 1334,
+          "signedVolumeMm3": 43371.52481668813
+        },
+        {
+          "minSourceNodeId": 3100858,
+          "triangles": 1952,
+          "vertices": 978,
+          "signedVolumeMm3": -8739.321875486363
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 1.1368683772161603e-13
+    },
+    {
+      "id": "left-radius",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        301511,
+        301512,
+        301521,
+        301531,
+        301532
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Radius-proximal-Cortical-L",
+        "UX-Bone-Radius-proximal-Trabecular-L",
+        "UX-Bone-Radius-shaft-Cortical-L",
+        "UX-Bone-Radius-distal-Cortical-L",
+        "UX-Bone-Radius-distal-Trabecular-L"
+      ],
+      "cells": 2464,
+      "removedInternalFaces": 6296,
+      "boundaryQuads": 2192,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 2196,
+      "triangles": 4384,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3100563,
+          "triangles": 1952,
+          "vertices": 978,
+          "signedVolumeMm3": -8609.654217532348
+        },
+        {
+          "minSourceNodeId": 3101423,
+          "triangles": 2432,
+          "vertices": 1218,
+          "signedVolumeMm3": 37858.99971490086
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 1.1368683772161603e-13
+    },
+    {
+      "id": "left-carpal-aggregate",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        301603
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Carpal-Rigid-L"
+      ],
+      "cells": 333,
+      "removedInternalFaces": 828,
+      "boundaryQuads": 342,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 344,
+      "triangles": 684,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3100085,
+          "triangles": 684,
+          "vertices": 344,
+          "signedVolumeMm3": 18371.71564553233
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "left-phalangeal-aggregate",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        303001
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Phalanges-Cortical-L"
+      ],
+      "cells": 972,
+      "removedInternalFaces": 2097,
+      "boundaryQuads": 1638,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 1676,
+      "triangles": 3276,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3100003,
+          "triangles": 180,
+          "vertices": 92,
+          "signedVolumeMm3": 1385.3196972434978
+        },
+        {
+          "minSourceNodeId": 3100032,
+          "triangles": 156,
+          "vertices": 80,
+          "signedVolumeMm3": 900.4855013864978
+        },
+        {
+          "minSourceNodeId": 3100045,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 2999.9593826193345
+        },
+        {
+          "minSourceNodeId": 3100077,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 3710.212674485502
+        },
+        {
+          "minSourceNodeId": 3100081,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 2544.318209390327
+        },
+        {
+          "minSourceNodeId": 3100093,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 4643.560920895989
+        },
+        {
+          "minSourceNodeId": 3100109,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 3830.5985431525087
+        },
+        {
+          "minSourceNodeId": 3107576,
+          "triangles": 132,
+          "vertices": 68,
+          "signedVolumeMm3": 256.6449339298338
+        },
+        {
+          "minSourceNodeId": 3109354,
+          "triangles": 180,
+          "vertices": 92,
+          "signedVolumeMm3": 1041.207216171167
+        },
+        {
+          "minSourceNodeId": 3109357,
+          "triangles": 132,
+          "vertices": 68,
+          "signedVolumeMm3": 243.18929035666812
+        },
+        {
+          "minSourceNodeId": 3109514,
+          "triangles": 108,
+          "vertices": 56,
+          "signedVolumeMm3": 473.4472976953336
+        },
+        {
+          "minSourceNodeId": 3109554,
+          "triangles": 132,
+          "vertices": 68,
+          "signedVolumeMm3": 217.00708066316727
+        },
+        {
+          "minSourceNodeId": 3109705,
+          "triangles": 180,
+          "vertices": 92,
+          "signedVolumeMm3": 1112.0345358003315
+        },
+        {
+          "minSourceNodeId": 3109924,
+          "triangles": 132,
+          "vertices": 68,
+          "signedVolumeMm3": 833.7883975848343
+        },
+        {
+          "minSourceNodeId": 3109945,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 1632.1983496531705
+        },
+        {
+          "minSourceNodeId": 3109946,
+          "triangles": 180,
+          "vertices": 92,
+          "signedVolumeMm3": 923.2460483439992
+        },
+        {
+          "minSourceNodeId": 3110820,
+          "triangles": 156,
+          "vertices": 80,
+          "signedVolumeMm3": 972.6873686323346
+        },
+        {
+          "minSourceNodeId": 3110821,
+          "triangles": 180,
+          "vertices": 92,
+          "signedVolumeMm3": 746.9361981663324
+        },
+        {
+          "minSourceNodeId": 3113176,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 1577.054725951498
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "left-humerus-null",
+      "method": "source-shell",
+      "sourcePartIds": [
+        301309
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Humerus-whole-Null-L"
+      ],
+      "cells": 2268,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 2268,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 2300,
+      "triangles": 4536,
+      "solidBoundaryComponents": null,
+      "maxCoordinateRoundtripErrorMm": 2.842170943040401e-14
+    },
+    {
+      "id": "left-ulna-null",
+      "method": "source-shell",
+      "sourcePartIds": [
+        301409
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Ulna-whole-Null-L"
+      ],
+      "cells": 1256,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 1256,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 1275,
+      "triangles": 2512,
+      "solidBoundaryComponents": null,
+      "maxCoordinateRoundtripErrorMm": 1.1368683772161603e-13
+    },
+    {
+      "id": "left-radius-null",
+      "method": "source-shell",
+      "sourcePartIds": [
+        301509
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Radius-whole-Null-L"
+      ],
+      "cells": 1168,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 1168,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 1184,
+      "triangles": 2336,
+      "solidBoundaryComponents": null,
+      "maxCoordinateRoundtripErrorMm": 1.1368683772161603e-13
+    },
+    {
+      "id": "left-skin",
+      "method": "source-shell",
+      "sourcePartIds": [
+        305121,
+        305131,
+        305141,
+        305161
+      ],
+      "sourcePartNames": [
+        "UX-Soft-UpperArm-Skin-L",
+        "UX-Soft-Elbow-Skin-L",
+        "UX-Soft-LowerArm-Skin-L",
+        "UX-Soft-Hand-Skin-L"
+      ],
+      "cells": 4610,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 4610,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 4635,
+      "triangles": 9220,
+      "solidBoundaryComponents": null,
+      "maxCoordinateRoundtripErrorMm": 1.1368683772161603e-13
+    },
+    {
+      "id": "left-subscapularis",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        305201
+      ],
+      "sourcePartNames": [
+        "UX-Soft-Subscapularis-Muscle-L"
+      ],
+      "cells": 1092,
+      "removedInternalFaces": 2119,
+      "boundaryQuads": 2314,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 2316,
+      "triangles": 4628,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3100000,
+          "triangles": 4628,
+          "vertices": 2316,
+          "signedVolumeMm3": 14599.202185002343
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 1.4210854715202004e-14
+    },
+    {
+      "id": "right-clavicle",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        351102
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Clavicle-Trabecular-R"
+      ],
+      "cells": 740,
+      "removedInternalFaces": 1978,
+      "boundaryQuads": 484,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 486,
+      "triangles": 968,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3100904,
+          "triangles": 968,
+          "vertices": 486,
+          "signedVolumeMm3": 12422.807114042478
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 1.4210854715202004e-14
+    },
+    {
+      "id": "right-scapula",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        351202
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Scapula-Trabecular-R"
+      ],
+      "cells": 2470,
+      "removedInternalFaces": 5833,
+      "boundaryQuads": 3154,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 3156,
+      "triangles": 6308,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3100603,
+          "triangles": 6308,
+          "vertices": 3156,
+          "signedVolumeMm3": 40572.404649631
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 1.4210854715202004e-14
+    },
+    {
+      "id": "right-humerus",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        351311,
+        351312,
+        351321,
+        351331,
+        351332
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Humerus-proximal-Cortical-R",
+        "UX-Bone-Humerus-proximal-Trabecular-R",
+        "UX-Bone-Humerus-shaft-Cortical-R",
+        "UX-Bone-Humerus-distal-Cortical-R",
+        "UX-Bone-Humerus-distal-Trabecular-R"
+      ],
+      "cells": 5944,
+      "removedInternalFaces": 15986,
+      "boundaryQuads": 3692,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 3696,
+      "triangles": 7384,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3600259,
+          "triangles": 4648,
+          "vertices": 2326,
+          "signedVolumeMm3": 131763.96850560987
+        },
+        {
+          "minSourceNodeId": 3600279,
+          "triangles": 2736,
+          "vertices": 1370,
+          "signedVolumeMm3": -25063.350701740834
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 2.842170943040401e-14
+    },
+    {
+      "id": "right-ulna",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        351411,
+        351412,
+        351421,
+        351431,
+        351432
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Ulna-proximal-Cortical-R",
+        "UX-Bone-Ulna-proximal-Trabecular-R",
+        "UX-Bone-Ulna-shaft-Cortical-R",
+        "UX-Bone-Ulna-distal-Cortical-R",
+        "UX-Bone-Ulna-distal-Trabecular-R"
+      ],
+      "cells": 2852,
+      "removedInternalFaces": 7402,
+      "boundaryQuads": 2308,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 2312,
+      "triangles": 4616,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3600733,
+          "triangles": 2664,
+          "vertices": 1334,
+          "signedVolumeMm3": 43371.52481668822
+        },
+        {
+          "minSourceNodeId": 3600858,
+          "triangles": 1952,
+          "vertices": 978,
+          "signedVolumeMm3": -8739.321875486345
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 1.1368683772161603e-13
+    },
+    {
+      "id": "right-radius",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        351511,
+        351512,
+        351521,
+        351531,
+        351532
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Radius-proximal-Cortical-R",
+        "UX-Bone-Radius-proximal-Trabecular-R",
+        "UX-Bone-Radius-shaft-Cortical-R",
+        "UX-Bone-Radius-distal-Cortical-R",
+        "UX-Bone-Radius-distal-Trabecular-R"
+      ],
+      "cells": 2464,
+      "removedInternalFaces": 6296,
+      "boundaryQuads": 2192,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 2196,
+      "triangles": 4384,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3600563,
+          "triangles": 1952,
+          "vertices": 978,
+          "signedVolumeMm3": -8609.65421753233
+        },
+        {
+          "minSourceNodeId": 3601423,
+          "triangles": 2432,
+          "vertices": 1218,
+          "signedVolumeMm3": 37858.99971490089
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 1.1368683772161603e-13
+    },
+    {
+      "id": "right-carpal-aggregate",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        351603
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Carpal-Rigid-R"
+      ],
+      "cells": 333,
+      "removedInternalFaces": 828,
+      "boundaryQuads": 342,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 344,
+      "triangles": 684,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3600085,
+          "triangles": 684,
+          "vertices": 344,
+          "signedVolumeMm3": 18371.67632246833
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "right-phalangeal-aggregate",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        353001
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Phalanges-Cortical-R"
+      ],
+      "cells": 972,
+      "removedInternalFaces": 2097,
+      "boundaryQuads": 1638,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 1676,
+      "triangles": 3276,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3600003,
+          "triangles": 180,
+          "vertices": 92,
+          "signedVolumeMm3": 1385.3103879964974
+        },
+        {
+          "minSourceNodeId": 3600032,
+          "triangles": 156,
+          "vertices": 80,
+          "signedVolumeMm3": 900.4881129314978
+        },
+        {
+          "minSourceNodeId": 3600045,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 2999.9409751976673
+        },
+        {
+          "minSourceNodeId": 3600077,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 3710.2394416175034
+        },
+        {
+          "minSourceNodeId": 3600081,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 2544.318209390327
+        },
+        {
+          "minSourceNodeId": 3600093,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 4643.513406401156
+        },
+        {
+          "minSourceNodeId": 3600109,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 3830.6041996023428
+        },
+        {
+          "minSourceNodeId": 3607576,
+          "triangles": 132,
+          "vertices": 68,
+          "signedVolumeMm3": 256.6449339298338
+        },
+        {
+          "minSourceNodeId": 3609354,
+          "triangles": 180,
+          "vertices": 92,
+          "signedVolumeMm3": 1041.2072161711671
+        },
+        {
+          "minSourceNodeId": 3609357,
+          "triangles": 132,
+          "vertices": 68,
+          "signedVolumeMm3": 243.18929035666812
+        },
+        {
+          "minSourceNodeId": 3609514,
+          "triangles": 108,
+          "vertices": 56,
+          "signedVolumeMm3": 473.4472976953336
+        },
+        {
+          "minSourceNodeId": 3609554,
+          "triangles": 132,
+          "vertices": 68,
+          "signedVolumeMm3": 217.00722378333396
+        },
+        {
+          "minSourceNodeId": 3609705,
+          "triangles": 180,
+          "vertices": 92,
+          "signedVolumeMm3": 1112.0277023223314
+        },
+        {
+          "minSourceNodeId": 3609924,
+          "triangles": 132,
+          "vertices": 68,
+          "signedVolumeMm3": 833.7883975848343
+        },
+        {
+          "minSourceNodeId": 3609945,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 1632.1978066218373
+        },
+        {
+          "minSourceNodeId": 3609946,
+          "triangles": 180,
+          "vertices": 92,
+          "signedVolumeMm3": 923.2497449581659
+        },
+        {
+          "minSourceNodeId": 3610820,
+          "triangles": 156,
+          "vertices": 80,
+          "signedVolumeMm3": 972.6873686323346
+        },
+        {
+          "minSourceNodeId": 3610821,
+          "triangles": 180,
+          "vertices": 92,
+          "signedVolumeMm3": 746.9361981663324
+        },
+        {
+          "minSourceNodeId": 3613176,
+          "triangles": 204,
+          "vertices": 104,
+          "signedVolumeMm3": 1577.0458454589987
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "right-humerus-null",
+      "method": "source-shell",
+      "sourcePartIds": [
+        351309
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Humerus-whole-Null-R"
+      ],
+      "cells": 2268,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 2268,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 2300,
+      "triangles": 4536,
+      "solidBoundaryComponents": null,
+      "maxCoordinateRoundtripErrorMm": 2.842170943040401e-14
+    },
+    {
+      "id": "right-ulna-null",
+      "method": "source-shell",
+      "sourcePartIds": [
+        351409
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Ulna-whole-Null-R"
+      ],
+      "cells": 1256,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 1256,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 1275,
+      "triangles": 2512,
+      "solidBoundaryComponents": null,
+      "maxCoordinateRoundtripErrorMm": 1.1368683772161603e-13
+    },
+    {
+      "id": "right-radius-null",
+      "method": "source-shell",
+      "sourcePartIds": [
+        351509
+      ],
+      "sourcePartNames": [
+        "UX-Bone-Radius-whole-Null-R"
+      ],
+      "cells": 1168,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 1168,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 1184,
+      "triangles": 2336,
+      "solidBoundaryComponents": null,
+      "maxCoordinateRoundtripErrorMm": 1.1368683772161603e-13
+    },
+    {
+      "id": "right-skin",
+      "method": "source-shell",
+      "sourcePartIds": [
+        355121,
+        355131,
+        355141,
+        355161
+      ],
+      "sourcePartNames": [
+        "UX-Soft-UpperArm-Skin-R",
+        "UX-Soft-Elbow-Skin-R",
+        "UX-Soft-LowerArm-Skin-R",
+        "UX-Soft-Hand-Skin-R"
+      ],
+      "cells": 4610,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 4610,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 4635,
+      "triangles": 9220,
+      "solidBoundaryComponents": null,
+      "maxCoordinateRoundtripErrorMm": 1.1368683772161603e-13
+    },
+    {
+      "id": "right-subscapularis",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        355201
+      ],
+      "sourcePartNames": [
+        "UX-Soft-Subscapularis-Muscle-R"
+      ],
+      "cells": 1092,
+      "removedInternalFaces": 2119,
+      "boundaryQuads": 2314,
+      "duplicateQuadsByNodeIds": 0,
+      "vertices": 2316,
+      "triangles": 4628,
+      "solidBoundaryComponents": [
+        {
+          "minSourceNodeId": 3103699,
+          "triangles": 4628,
+          "vertices": 2316,
+          "signedVolumeMm3": 14622.026037241296
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 1.4210854715202004e-14
+    }
+  ],
+  "deployed": false,
+  "hraRegistered": false,
+  "anatomicallyValidated": false,
+  "limitations": [
+    "Solid boundary is finite-element geometry, not additional segmented tissue.",
+    "Clavicle/scapula trabecular boundary coincides with shell reference surface; shell thickness is not extruded.",
+    "Quads use a canonical source-node-ID diagonal; warped quads are not exact FE interpolation surfaces.",
+    "Shell null surfaces are alternate computational representations; do not render/count them as extra bones.",
+    "Source shell winding is preserved, not repaired; duplicate quad counts are reported without deleting geometry.",
+    "No coordinate welding, smoothing, repositioning, joint repair or HRA overlay."
+  ]
+}
