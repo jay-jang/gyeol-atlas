@@ -6,8 +6,16 @@ const records=[]; const origin=process.env.SMOKE_ORIGIN||'http://127.0.0.1:5174'
 try {
  const page=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});
  await page.goto(origin.replace(/\/$/,'')+'/#atlas/ST36'); await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
- for(const name of ['경혈 찾기','레이어 조절','구조 찾기','도움말','효능·오행']){
-  if(name==='효능·오행') {
+ for(const name of ['경혈 찾기','레이어 조절','구조 찾기','도움말','효능·오행','여성 CT 비교 안내']){
+  if(name==='여성 CT 비교 안내') {
+   await page.goto(origin.replace(/\/$/,'')+'/#atlas/CV12');
+   await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
+   await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
+   await page.locator('.point-summary').click();
+   await page.getByRole('button',{name:'대응 장부의 해부 구조 비교'}).click();
+   await page.getByRole('button',{name:'위 (여성 CT) 별도 상세 보기',exact:true}).waitFor({state:'visible'});
+   await page.locator('.comparison-feedback').scrollIntoViewIfNeeded();
+  } else if(name==='효능·오행') {
    await page.locator('.point-summary').click();
    await page.getByRole('tab',{name:'효능·오행'}).click();
    await page.locator('.point-tradition').scrollIntoViewIfNeeded();

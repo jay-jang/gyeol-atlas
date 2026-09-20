@@ -9,6 +9,7 @@ import {
   useReducer,
   type Dispatch,
   type FormEvent,
+  type ReactNode,
 } from "react";
 import {
   Search,
@@ -57,6 +58,7 @@ import {
 } from "./view-state";
 import { structures, detailForStructure, stageDescription } from "./anatomy";
 import { referenceSourceFor } from "./reference-source";
+import { comparisonReference } from "./comparison-reference";
 
 const VIEW_KEY = "gyeol-view-v2";
 function readView() {
@@ -161,13 +163,22 @@ function PointDetail({
   saved,
   onSave,
   onCompare,
+  comparisonFeedback,
 }: {
   point: Point;
   onFocus: () => void;
   saved: boolean;
   onSave: () => void;
   onCompare: () => void;
+  comparisonFeedback?: ReactNode;
 }) {
+  const feedbackRef = useRef<HTMLDivElement>(null);
+  const hasComparisonFeedback = Boolean(comparisonFeedback);
+  useEffect(() => {
+    if (!hasComparisonFeedback) return;
+    const frame=requestAnimationFrame(()=>feedbackRef.current?.scrollIntoView({block:"nearest"}));
+    return ()=>cancelAnimationFrame(frame);
+  },[hasComparisonFeedback,point.id]);
   const [tab, setTab] = useState("overview");
   const [copied, setCopied] = useState(false);
   const meridian = meridians.find((m) => m.id === point.meridian)!;
@@ -238,6 +249,7 @@ function PointDetail({
         {!!pointConcepts[point.id]?.organIds.length && (
           <button onClick={onCompare}>대응 장부의 해부 구조 비교</button>
         )}
+        {comparisonFeedback && <div ref={feedbackRef} className="comparison-feedback" role="status">{comparisonFeedback}</div>}
         {pointConcepts[point.id]?.traditionalName &&
           !pointConcepts[point.id]?.organIds.length && (
             <p>
@@ -418,6 +430,8 @@ function AtlasPage({
   const [loaded, setLoaded] = useState<{ source: string | null; layers: Layer[] }>({ source: null, layers: [] });
   const [loadingReference, setLoadingReference] = useState(false);
   const [comparisonNotice, setComparisonNotice] = useState("");
+  const [separateDetailIds, setSeparateDetailIds] = useState<string[]>([]);
+  useEffect(() => {setComparisonNotice("");setSeparateDetailIds([]);},[state.sex,state.pointId]);
   const { query, region, meridian, concept, onlySaved, bodyRegion, catalogue } = state.filters;
   const setQuery = (v: string) =>
     dispatch({ type: "filters", value: { query: v } });
@@ -451,6 +465,7 @@ function AtlasPage({
   const camera = (kind: CameraAction["kind"]) => {
     if (kind === "focus" && state.sex === "female") {
       setComparisonNotice("여성 표면의 경혈 좌표는 검수 전입니다. 남성 기준 좌표로 이동하지 않습니다.");
+      setSeparateDetailIds([]);
       setPanel("detail");
       return;
     }
@@ -498,13 +513,14 @@ function AtlasPage({
   const compare = () => {
     const c = pointConcepts[selected.id];
     if (!c?.organIds.length) return;
-    const femaleGroups = [...new Set(c.organIds.map(id => structures.find(s => s.id === id)?.group).filter(Boolean))];
-    const ids = state.sex === "male" ? c.organIds : [...new Set(organGroups.filter(g => g.sex === "female" && femaleGroups.includes(g.id)).flatMap(g => g.ids))];
+    const {overviewIds:ids,separateGroupIds} = comparisonReference(state.sex,c.organIds,structures,organGroups);
     if (!ids.length) {
-      setComparisonNotice("현재 여성 원본에는 이 기관 모형이 수록되어 있지 않습니다.");
+      setComparisonNotice("현재 여성 전신 원본에는 요청한 기관의 전체 비교 모형이 없습니다.");
+      setSeparateDetailIds(separateGroupIds);
       return;
     }
     setComparisonNotice("");
+    setSeparateDetailIds([]);
     dispatch({
       type: "compare",
       name: c.traditionalName || selected.name,
@@ -607,6 +623,7 @@ function AtlasPage({
       aria-label="인체 구조 탐색"
       data-panel={panel || "none"}
       data-detail={Boolean(state.detail)}
+      data-selection={Boolean(state.selection)}
       onWheelCapture={(event) => {
         if (!event.altKey || Math.abs(event.deltaY) < 2) return;
         event.preventDefault();
@@ -1079,8 +1096,14 @@ function AtlasPage({
                 saved={saved.includes(selected.id)}
                 onSave={() => toggle(selected.id)}
                 onCompare={compare}
+                comparisonFeedback={comparisonNotice ? <>
+                  <p>{comparisonNotice}</p>
+                  {separateDetailIds.length>0 && <p>전신에 합쳐지지 않은 별도 여성 CT 자료는 아래에서 열 수 있습니다. 경혈 위치와 겹쳐 표시하지 않습니다.</p>}
+                  {featuredAnatomy.filter(group=>separateDetailIds.includes(group.id)).map(group=><button key={group.id} onClick={()=>{
+                    setComparisonNotice("");setSeparateDetailIds([]);selectFeatured(group);
+                  }}>{group.name} 별도 상세 보기</button>)}
+                </> : undefined}
               />
-              {comparisonNotice && <p role="status">{comparisonNotice}</p>}
               </>
             )}
             {panel === "help" && (
@@ -1113,7 +1136,7 @@ function AtlasPage({
         </div>
       )}
       {state.selection && (
-        <section className="selection-card" data-detail={Boolean(state.detail)} aria-label="선택 구조 조작">
+        <section className="selection-card" data-detail={Boolean(state.detail)} data-selection="true" aria-label="선택 구조 조작">
           <div>
             <span className={`selection-kind ${state.selection.kind}`}>
               {state.comparison ? "전통 장부 비교" : state.detail ? `${state.detail.name} · 기관 상세 모델` : state.selection.kind === "bundle" ? "구조 묶음" : "선택 구조"}
