@@ -1,0 +1,2410 @@
+{
+  "source": {
+    "url": "https://openvt.eu/fem/viva/vivaplus/-/archive/v2.0.2/vivaplus-v2.0.2.zip",
+    "tag": "v2.0.2",
+    "commit": "cc986b7df66b109c1c73d4d5986553877e28b0dd",
+    "archiveSha256": "94b9415ffdc844c14e6ff79ca5a7a79810bc7f7e8632966dedf20f7faddcf7d1",
+    "zipCrcVerified": true,
+    "variant": "50F-standing",
+    "files": [
+      {
+        "path": "model/50F-standing/vivaplus-50F-standing.key",
+        "bytes": 4048,
+        "sha256": "42e616651d58b314630d915fc6ca98367fdf51ea5450a235824597f9694460b1"
+      },
+      {
+        "path": "model/50F-standing/vivaplus_50F-standing_nodes.k",
+        "bytes": 41242445,
+        "sha256": "782a4dbf1a1af7b2a57db1971e07d3eb441f03f0c9cfaba4155261f56d0d8b04"
+      },
+      {
+        "path": "model/common/vivaplus-30-Upper-Extremity.k",
+        "bytes": 52205,
+        "sha256": "f8ba6d47718f1eb41a4f920688e2dd154a8710deca75e9d800af0c890b999954"
+      },
+      {
+        "path": "model/common/vivaplus-elements.k",
+        "bytes": 58930539,
+        "sha256": "f5b9df260cd1d3db4bd2d4db4b4cef90aa448cf697cd9e169f7f102057363edb"
+      },
+      {
+        "path": "model/common/vivaplus-joints.k",
+        "bytes": 33657,
+        "sha256": "2294ac569bfa4da6f43a202f6b3a249ec0ee5ebb8bb59652f46b2b7902c6e9bb"
+      }
+    ]
+  },
+  "coordinateSystem": {
+    "lengthUnit": "mm",
+    "axes": [
+      "anterior",
+      "left",
+      "up"
+    ],
+    "proposedDisplayOnlyTransform": "(x,y,z) mm -> (y,z,x)/1000 m",
+    "transformApplied": false,
+    "hraRegistrationValidated": false
+  },
+  "scope": "Selected upper-extremity element references and spherical/revolute joint nodes only",
+  "nodeFileCount": 564960,
+  "partCount": 96,
+  "elementCounts": {
+    "*ELEMENT_SHELL": 35123,
+    "*ELEMENT_SOLID": 59678,
+    "*ELEMENT_DISCRETE": 4
+  },
+  "uniqueUpperExtremityReferencedNodes": 80456,
+  "joints": [
+    {
+      "id": 3091410,
+      "sourceName": "UX-Humeroulnar-L",
+      "keyword": "*CONSTRAINED_JOINT_REVOLUTE_ID",
+      "nodeIds": [
+        3091333,
+        3091411,
+        3091334,
+        3091412
+      ],
+      "sourcePositionsMm": [
+        [
+          -2.512,
+          242.63,
+          1042.459
+        ],
+        [
+          -2.512,
+          242.63,
+          1042.459
+        ],
+        [
+          -12.896,
+          279.208,
+          1058.436
+        ],
+        [
+          -12.896,
+          279.208,
+          1058.436
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0,
+        0.0
+      ],
+      "axisNodeDistancesMm": [
+        41.24369126302831,
+        41.24369126302831
+      ]
+    },
+    {
+      "id": 3591410,
+      "sourceName": "UX-Humeroulnar-R",
+      "keyword": "*CONSTRAINED_JOINT_REVOLUTE_ID",
+      "nodeIds": [
+        3591333,
+        3591411,
+        3591334,
+        3591412
+      ],
+      "sourcePositionsMm": [
+        [
+          -2.512,
+          -242.63,
+          1042.459
+        ],
+        [
+          -2.512,
+          -242.63,
+          1042.459
+        ],
+        [
+          -12.896,
+          -279.208,
+          1058.436
+        ],
+        [
+          -12.896,
+          -279.208,
+          1058.436
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0,
+        0.0
+      ],
+      "axisNodeDistancesMm": [
+        41.24369126302831,
+        41.24369126302831
+      ]
+    },
+    {
+      "id": 3091110,
+      "sourceName": "UX-Sternoclavicular-L",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3091110,
+        4093500
+      ],
+      "sourcePositionsMm": [
+        [
+          27.51,
+          16.515,
+          1310.911
+        ],
+        [
+          27.51,
+          16.515,
+          1310.911
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3091120,
+      "sourceName": "UX-Acromiumclaviclular-joint-L",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3091120,
+        3091210
+      ],
+      "sourcePositionsMm": [
+        [
+          -33.012,
+          132.348,
+          1318.084
+        ],
+        [
+          -33.012,
+          132.348,
+          1318.084
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3091220,
+      "sourceName": "UX-Glenohumeral-L",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3091220,
+        3091310
+      ],
+      "sourcePositionsMm": [
+        [
+          -26.978,
+          147.859,
+          1285.311
+        ],
+        [
+          -26.978,
+          147.859,
+          1285.311
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3091430,
+      "sourceName": "UX-Ulnar-Carpal-L",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3091430,
+        3091602
+      ],
+      "sourcePositionsMm": [
+        [
+          4.622,
+          388.454,
+          860.328
+        ],
+        [
+          4.622,
+          388.454,
+          860.328
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3091453,
+      "sourceName": "UX-Radioulnar-Distal-L",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3091435,
+        3091535
+      ],
+      "sourcePositionsMm": [
+        [
+          7.951,
+          386.175,
+          865.241
+        ],
+        [
+          7.951,
+          386.175,
+          865.241
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3091510,
+      "sourceName": "UX-Radioulnar-Proximal-L",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3091510,
+        3091335
+      ],
+      "sourcePositionsMm": [
+        [
+          -2.506,
+          277.975,
+          1055.282
+        ],
+        [
+          -2.506,
+          277.975,
+          1055.282
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3091530,
+      "sourceName": "UX-Radius-Carpal-L",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3091530,
+        3091601
+      ],
+      "sourcePositionsMm": [
+        [
+          42.286,
+          384.718,
+          853.852
+        ],
+        [
+          42.286,
+          384.718,
+          853.852
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3591110,
+      "sourceName": "UX-Sternoclavicular-R",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        4593500,
+        3591110
+      ],
+      "sourcePositionsMm": [
+        [
+          27.51,
+          -16.515,
+          1310.911
+        ],
+        [
+          27.51,
+          -16.515,
+          1310.911
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3591120,
+      "sourceName": "UX-Acromiumclaviclular-Joint-R",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3591120,
+        3591210
+      ],
+      "sourcePositionsMm": [
+        [
+          -33.012,
+          -132.348,
+          1318.084
+        ],
+        [
+          -33.012,
+          -132.348,
+          1318.084
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3591220,
+      "sourceName": "UX-Glenohumeral-R",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3591220,
+        3591310
+      ],
+      "sourcePositionsMm": [
+        [
+          -26.969,
+          -147.86,
+          1285.316
+        ],
+        [
+          -26.969,
+          -147.86,
+          1285.316
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3591430,
+      "sourceName": "UX-Ulna-Carpal-R",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3591430,
+        3591602
+      ],
+      "sourcePositionsMm": [
+        [
+          4.622,
+          -388.454,
+          860.328
+        ],
+        [
+          4.622,
+          -388.454,
+          860.328
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3591453,
+      "sourceName": "UX-Radioulnar_Distal-R",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3591435,
+        3591535
+      ],
+      "sourcePositionsMm": [
+        [
+          7.951,
+          -386.175,
+          865.241
+        ],
+        [
+          7.951,
+          -386.175,
+          865.241
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3591510,
+      "sourceName": "UX-Radioulnar-Proximal-R",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3591510,
+        3591335
+      ],
+      "sourcePositionsMm": [
+        [
+          -2.506,
+          -277.975,
+          1055.282
+        ],
+        [
+          -2.506,
+          -277.975,
+          1055.282
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    },
+    {
+      "id": 3591530,
+      "sourceName": "UX-Radius-Carpal-R",
+      "keyword": "*CONSTRAINED_JOINT_SPHERICAL_ID",
+      "nodeIds": [
+        3591530,
+        3591601
+      ],
+      "sourcePositionsMm": [
+        [
+          42.286,
+          -384.718,
+          853.852
+        ],
+        [
+          42.286,
+          -384.718,
+          853.852
+        ]
+      ],
+      "pairedNodeDistancesMm": [
+        0.0
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "id": 301101,
+      "sourceName": "UX-Bone-Clavicle-Cortical-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 468
+      },
+      "uniqueReferencedNodes": 480,
+      "boundsMm": {
+        "min": [
+          -38.588,
+          17.773,
+          1300.946
+        ],
+        "max": [
+          34.419,
+          131.429,
+          1326.302
+        ]
+      }
+    },
+    {
+      "id": 301102,
+      "sourceName": "UX-Bone-Clavicle-Trabecular-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 740
+      },
+      "uniqueReferencedNodes": 1026,
+      "boundsMm": {
+        "min": [
+          -38.588,
+          17.773,
+          1300.946
+        ],
+        "max": [
+          34.419,
+          131.429,
+          1326.302
+        ]
+      }
+    },
+    {
+      "id": 301113,
+      "sourceName": "UX-Bone-Clavicle-Medial-Rigid-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 8
+      },
+      "uniqueReferencedNodes": 15,
+      "boundsMm": {
+        "min": [
+          21.458,
+          17.773,
+          1304.753
+        ],
+        "max": [
+          32.689,
+          23.927,
+          1316.403
+        ]
+      }
+    },
+    {
+      "id": 301123,
+      "sourceName": "UX-Bone-Clavicle-Lateral-Rigid-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 8
+      },
+      "uniqueReferencedNodes": 15,
+      "boundsMm": {
+        "min": [
+          -37.909,
+          122.967,
+          1314.71
+        ],
+        "max": [
+          -27.021,
+          131.429,
+          1320.936
+        ]
+      }
+    },
+    {
+      "id": 301201,
+      "sourceName": "UX-Bone-Scapula-Cortical-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 3141
+      },
+      "uniqueReferencedNodes": 3154,
+      "boundsMm": {
+        "min": [
+          -121.714,
+          65.359,
+          1216.807
+        ],
+        "max": [
+          -13.862,
+          156.644,
+          1324.022
+        ]
+      }
+    },
+    {
+      "id": 301202,
+      "sourceName": "UX-Bone-Scapula-Trabecular-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 2470
+      },
+      "uniqueReferencedNodes": 4138,
+      "boundsMm": {
+        "min": [
+          -121.714,
+          65.359,
+          1216.807
+        ],
+        "max": [
+          -13.862,
+          156.644,
+          1324.022
+        ]
+      }
+    },
+    {
+      "id": 301213,
+      "sourceName": "UX-Bone-Scapula-Proximal-Rigid-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 6
+      },
+      "uniqueReferencedNodes": 12,
+      "boundsMm": {
+        "min": [
+          -36.069,
+          137.348,
+          1314.975
+        ],
+        "max": [
+          -26.767,
+          139.781,
+          1317.712
+        ]
+      }
+    },
+    {
+      "id": 301223,
+      "sourceName": "UX-Bone-Scapula-Rigid-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 7
+      },
+      "uniqueReferencedNodes": 16,
+      "boundsMm": {
+        "min": [
+          -45.583,
+          124.081,
+          1281.346
+        ],
+        "max": [
+          -41.231,
+          130.644,
+          1289.429
+        ]
+      }
+    },
+    {
+      "id": 301309,
+      "sourceName": "UX-Bone-Humerus-whole-Null-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 2268
+      },
+      "uniqueReferencedNodes": 2300,
+      "boundsMm": {
+        "min": [
+          -49.724,
+          123.927,
+          1035.665
+        ],
+        "max": [
+          5.8194847,
+          279.199,
+          1309.167
+        ]
+      }
+    },
+    {
+      "id": 301311,
+      "sourceName": "UX-Bone-Humerus-proximal-Cortical-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 276
+      },
+      "uniqueReferencedNodes": 578,
+      "boundsMm": {
+        "min": [
+          -49.724,
+          123.927,
+          1265.084
+        ],
+        "max": [
+          -7.7809095,
+          169.799,
+          1309.644
+        ]
+      }
+    },
+    {
+      "id": 301312,
+      "sourceName": "UX-Bone-Humerus-proximal-Trabecular-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 720
+      },
+      "uniqueReferencedNodes": 1029,
+      "boundsMm": {
+        "min": [
+          -46.274,
+          126.265,
+          1237.44
+        ],
+        "max": [
+          -10.546,
+          177.83,
+          1307.127
+        ]
+      }
+    },
+    {
+      "id": 301313,
+      "sourceName": "UX-Bone-Humerus-proximal-Rigid-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 48
+      },
+      "uniqueReferencedNodes": 72,
+      "boundsMm": {
+        "min": [
+          -47.995,
+          123.927,
+          1287.074
+        ],
+        "max": [
+          -13.496,
+          157.772,
+          1309.644
+        ]
+      }
+    },
+    {
+      "id": 301321,
+      "sourceName": "UX-Bone-Humerus-shaft-Cortical-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 2976
+      },
+      "uniqueReferencedNodes": 4512,
+      "boundsMm": {
+        "min": [
+          -38.937,
+          143.651,
+          1074.305
+        ],
+        "max": [
+          -8.615,
+          253.424,
+          1278.15
+        ]
+      }
+    },
+    {
+      "id": 301331,
+      "sourceName": "UX-Bone-Humerus-distal-Cortical-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 536
+      },
+      "uniqueReferencedNodes": 1134,
+      "boundsMm": {
+        "min": [
+          -30.931,
+          229.101,
+          1035.665
+        ],
+        "max": [
+          5.8194847,
+          279.209,
+          1084.287
+        ]
+      }
+    },
+    {
+      "id": 301332,
+      "sourceName": "UX-Bone-Humerus-distal-Trabecular-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1436
+      },
+      "uniqueReferencedNodes": 1804,
+      "boundsMm": {
+        "min": [
+          -29.953,
+          230.085,
+          1036.743
+        ],
+        "max": [
+          4.732,
+          278.23,
+          1083.36
+        ]
+      }
+    },
+    {
+      "id": 301333,
+      "sourceName": "UX-Bone-Humerus-distal-Rigid-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 8
+      },
+      "uniqueReferencedNodes": 18,
+      "boundsMm": {
+        "min": [
+          -19.249,
+          237.54,
+          1039.514
+        ],
+        "max": [
+          2.058,
+          279.209,
+          1062.928
+        ]
+      }
+    },
+    {
+      "id": 301409,
+      "sourceName": "UX-Bone-Ulna-whole-Null-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1256
+      },
+      "uniqueReferencedNodes": 1275,
+      "boundsMm": {
+        "min": [
+          -34.014,
+          239.85,
+          862.224
+        ],
+        "max": [
+          16.078,
+          393.199,
+          1061.862
+        ]
+      }
+    },
+    {
+      "id": 301411,
+      "sourceName": "UX-Bone-Ulna-proximal-Cortical-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 384
+      },
+      "uniqueReferencedNodes": 609,
+      "boundsMm": {
+        "min": [
+          -34.014,
+          239.85,
+          1016.152
+        ],
+        "max": [
+          -0.777,
+          281.19,
+          1062.42
+        ]
+      }
+    },
+    {
+      "id": 301412,
+      "sourceName": "UX-Bone-Ulna-proximal-Trabecular-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 152
+      },
+      "uniqueReferencedNodes": 275,
+      "boundsMm": {
+        "min": [
+          -30.492,
+          243.486,
+          1017.906
+        ],
+        "max": [
+          -7.09,
+          277.9,
+          1059.354
+        ]
+      }
+    },
+    {
+      "id": 301413,
+      "sourceName": "UX-Bone-Ulna-proximal-Rigid-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 56
+      },
+      "uniqueReferencedNodes": 74,
+      "boundsMm": {
+        "min": [
+          -28.179,
+          240.677,
+          1030.437
+        ],
+        "max": [
+          -0.777,
+          271.016,
+          1062.42
+        ]
+      }
+    },
+    {
+      "id": 301421,
+      "sourceName": "UX-Bone-Ulna-shaft-Cortical-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1888
+      },
+      "uniqueReferencedNodes": 2880,
+      "boundsMm": {
+        "min": [
+          -33.893,
+          267.288,
+          876.539
+        ],
+        "max": [
+          9.476,
+          378.224,
+          1028.226
+        ]
+      }
+    },
+    {
+      "id": 301431,
+      "sourceName": "UX-Bone-Ulna-distal-Cortical-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 300
+      },
+      "uniqueReferencedNodes": 488,
+      "boundsMm": {
+        "min": [
+          0.026,
+          366.864,
+          859.753
+        ],
+        "max": [
+          16.078,
+          393.199,
+          883.268
+        ]
+      }
+    },
+    {
+      "id": 301432,
+      "sourceName": "UX-Bone-Ulna-distal-Trabecular-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 128
+      },
+      "uniqueReferencedNodes": 225,
+      "boundsMm": {
+        "min": [
+          1.732,
+          368.703,
+          866.01
+        ],
+        "max": [
+          13.608,
+          390.007,
+          882.154
+        ]
+      }
+    },
+    {
+      "id": 301433,
+      "sourceName": "UX-Bone-Ulna-distal-Rigid-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 20
+      },
+      "uniqueReferencedNodes": 25,
+      "boundsMm": {
+        "min": [
+          2.456,
+          383.529,
+          859.753
+        ],
+        "max": [
+          8.962,
+          389.709,
+          866.471
+        ]
+      }
+    },
+    {
+      "id": 301509,
+      "sourceName": "UX-Bone-Radius-whole-Null-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1168
+      },
+      "uniqueReferencedNodes": 1184,
+      "boundsMm": {
+        "min": [
+          -30.836,
+          273.487,
+          856.247
+        ],
+        "max": [
+          44.422,
+          394.752,
+          1051.046
+        ]
+      }
+    },
+    {
+      "id": 301511,
+      "sourceName": "UX-Bone-Radius-proximal-Cortical-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 96
+      },
+      "uniqueReferencedNodes": 210,
+      "boundsMm": {
+        "min": [
+          -30.836,
+          273.487,
+          1024.29
+        ],
+        "max": [
+          -10.8,
+          297.822,
+          1051.046
+        ]
+      }
+    },
+    {
+      "id": 301512,
+      "sourceName": "UX-Bone-Radius-proximal-Trabecular-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 96
+      },
+      "uniqueReferencedNodes": 175,
+      "boundsMm": {
+        "min": [
+          -29.928,
+          274.719,
+          1024.796
+        ],
+        "max": [
+          -12.57,
+          296.235,
+          1050.089
+        ]
+      }
+    },
+    {
+      "id": 301513,
+      "sourceName": "UX-Bone-Radius-proximal-Rigid-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 16
+      },
+      "uniqueReferencedNodes": 25,
+      "boundsMm": {
+        "min": [
+          -30.836,
+          273.487,
+          1041.246
+        ],
+        "max": [
+          -11.847,
+          291.493,
+          1051.046
+        ]
+      }
+    },
+    {
+      "id": 301521,
+      "sourceName": "UX-Bone-Radius-shaft-Cortical-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1920
+      },
+      "uniqueReferencedNodes": 2912,
+      "boundsMm": {
+        "min": [
+          -25.719,
+          283.999,
+          885.079
+        ],
+        "max": [
+          37.451,
+          379.677,
+          1032.333
+        ]
+      }
+    },
+    {
+      "id": 301531,
+      "sourceName": "UX-Bone-Radius-distal-Cortical-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 176
+      },
+      "uniqueReferencedNodes": 370,
+      "boundsMm": {
+        "min": [
+          16.316,
+          368.937,
+          853.623
+        ],
+        "max": [
+          44.422,
+          394.752,
+          891.839
+        ]
+      }
+    },
+    {
+      "id": 301532,
+      "sourceName": "UX-Bone-Radius-distal-Trabecular-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 176
+      },
+      "uniqueReferencedNodes": 300,
+      "boundsMm": {
+        "min": [
+          17.294,
+          370.553,
+          855.306
+        ],
+        "max": [
+          42.161,
+          393.263,
+          891.33
+        ]
+      }
+    },
+    {
+      "id": 301533,
+      "sourceName": "UX-Bone-Radius-distal-Rigid-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 32
+      },
+      "uniqueReferencedNodes": 41,
+      "boundsMm": {
+        "min": [
+          16.316,
+          375.452,
+          853.623
+        ],
+        "max": [
+          43.4,
+          394.752,
+          866.659
+        ]
+      }
+    },
+    {
+      "id": 301603,
+      "sourceName": "UX-Bone-Carpal-Rigid-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 333
+      },
+      "uniqueReferencedNodes": 528,
+      "boundsMm": {
+        "min": [
+          11.561,
+          379.013,
+          829.191
+        ],
+        "max": [
+          62.591,
+          413.48,
+          861.511
+        ]
+      }
+    },
+    {
+      "id": 303001,
+      "sourceName": "UX-Bone-Phalanges-Cortical-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 972
+      },
+      "uniqueReferencedNodes": 2032,
+      "boundsMm": {
+        "min": [
+          12.903,
+          382.769,
+          720.733
+        ],
+        "max": [
+          124.546,
+          450.277,
+          851.253
+        ]
+      }
+    },
+    {
+      "id": 305112,
+      "sourceName": "UX-Soft-Torso-connect-Fat-Tissue-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 288
+      },
+      "uniqueReferencedNodes": 576,
+      "boundsMm": {
+        "min": [
+          -94.505,
+          105.298,
+          1178.116
+        ],
+        "max": [
+          32.805,
+          165.753,
+          1325.151
+        ]
+      }
+    },
+    {
+      "id": 305119,
+      "sourceName": "UX-Soft-Inner-surface-Null-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 3228
+      },
+      "uniqueReferencedNodes": 3261,
+      "boundsMm": {
+        "min": [
+          -54.656,
+          94.286,
+          843.806
+        ],
+        "max": [
+          53.937,
+          396.681,
+          1316.511
+        ]
+      }
+    },
+    {
+      "id": 305121,
+      "sourceName": "UX-Soft-UpperArm-Skin-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1728
+      },
+      "uniqueReferencedNodes": 1770,
+      "boundsMm": {
+        "min": [
+          -94.505,
+          148.431,
+          1052.15
+        ],
+        "max": [
+          32.805,
+          282.605,
+          1325.151
+        ]
+      }
+    },
+    {
+      "id": 305122,
+      "sourceName": "UX-Soft-UpperArm-Fat-Tissue-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 6174
+      },
+      "uniqueReferencedNodes": 8212,
+      "boundsMm": {
+        "min": [
+          -94.505,
+          134.658,
+          1024.632
+        ],
+        "max": [
+          32.805,
+          292.62,
+          1325.151
+        ]
+      }
+    },
+    {
+      "id": 305131,
+      "sourceName": "UX-Soft-Elbow-Skin-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 162
+      },
+      "uniqueReferencedNodes": 195,
+      "boundsMm": {
+        "min": [
+          -53.103,
+          212.901,
+          1024.632
+        ],
+        "max": [
+          20.79,
+          292.62,
+          1090.647
+        ]
+      }
+    },
+    {
+      "id": 305141,
+      "sourceName": "UX-Soft-LowerArm-Skin-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1080
+      },
+      "uniqueReferencedNodes": 1110,
+      "boundsMm": {
+        "min": [
+          -50.033,
+          227.308,
+          837.628
+        ],
+        "max": [
+          60.463,
+          402.882,
+          1070.59
+        ]
+      }
+    },
+    {
+      "id": 305142,
+      "sourceName": "UX-Soft-LowerArm-Fat-Tissue-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 3240
+      },
+      "uniqueReferencedNodes": 4440,
+      "boundsMm": {
+        "min": [
+          -50.033,
+          227.308,
+          837.628
+        ],
+        "max": [
+          60.463,
+          402.882,
+          1070.59
+        ]
+      }
+    },
+    {
+      "id": 305161,
+      "sourceName": "UX-Soft-Hand-Skin-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1640
+      },
+      "uniqueReferencedNodes": 1656,
+      "boundsMm": {
+        "min": [
+          4.641,
+          366.118,
+          717.465
+        ],
+        "max": [
+          129.338,
+          453.085,
+          870.417
+        ]
+      }
+    },
+    {
+      "id": 305162,
+      "sourceName": "UX-Soft-Hand-Fat-Tissue-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 3009
+      },
+      "uniqueReferencedNodes": 4830,
+      "boundsMm": {
+        "min": [
+          4.641,
+          366.118,
+          717.465
+        ],
+        "max": [
+          129.338,
+          453.085,
+          870.417
+        ]
+      }
+    },
+    {
+      "id": 305172,
+      "sourceName": "UX-Soft-Finger-Fat-Tissue-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 261
+      },
+      "uniqueReferencedNodes": 688,
+      "boundsMm": {
+        "min": [
+          14.905,
+          386.723,
+          729.344
+        ],
+        "max": [
+          116.043,
+          450.622,
+          826.626
+        ]
+      }
+    },
+    {
+      "id": 305201,
+      "sourceName": "UX-Soft-Subscapularis-Muscle-L",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1092
+      },
+      "uniqueReferencedNodes": 2316,
+      "boundsMm": {
+        "min": [
+          -118.91,
+          64.525,
+          1216.661
+        ],
+        "max": [
+          -13.721,
+          127.533,
+          1323.408
+        ]
+      }
+    },
+    {
+      "id": 305202,
+      "sourceName": "UX-Muscle_subscapularis_nulls-L",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1222
+      },
+      "uniqueReferencedNodes": 1288,
+      "boundsMm": {
+        "min": [
+          -118.91,
+          64.525,
+          1216.661
+        ],
+        "max": [
+          -13.721,
+          127.533,
+          1323.408
+        ]
+      }
+    },
+    {
+      "id": 306001,
+      "sourceName": "UX-Trapezoid-Ligament-L",
+      "elementCounts": {
+        "*ELEMENT_DISCRETE": 1
+      },
+      "uniqueReferencedNodes": 2,
+      "boundsMm": {
+        "min": [
+          -19.776,
+          112.43,
+          1305.564
+        ],
+        "max": [
+          -16.742,
+          115.132,
+          1319.497
+        ]
+      }
+    },
+    {
+      "id": 306002,
+      "sourceName": "UX-Conoid-Ligament-L",
+      "elementCounts": {
+        "*ELEMENT_DISCRETE": 1
+      },
+      "uniqueReferencedNodes": 2,
+      "boundsMm": {
+        "min": [
+          -36.543,
+          108.629,
+          1311.591
+        ],
+        "max": [
+          -34.078,
+          110.585,
+          1318.733
+        ]
+      }
+    },
+    {
+      "id": 351101,
+      "sourceName": "UX-Bone-Clavicle-Cortical-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 468
+      },
+      "uniqueReferencedNodes": 480,
+      "boundsMm": {
+        "min": [
+          -38.588,
+          -131.429,
+          1300.946
+        ],
+        "max": [
+          34.419,
+          -17.773,
+          1326.302
+        ]
+      }
+    },
+    {
+      "id": 351102,
+      "sourceName": "UX-Bone-Clavicle-Trabecular-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 740
+      },
+      "uniqueReferencedNodes": 1026,
+      "boundsMm": {
+        "min": [
+          -38.588,
+          -131.429,
+          1300.946
+        ],
+        "max": [
+          34.419,
+          -17.773,
+          1326.302
+        ]
+      }
+    },
+    {
+      "id": 351113,
+      "sourceName": "UX-Bone-Clavicle-Medial-Rigid-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 8
+      },
+      "uniqueReferencedNodes": 15,
+      "boundsMm": {
+        "min": [
+          21.458,
+          -23.927,
+          1304.753
+        ],
+        "max": [
+          32.689,
+          -17.773,
+          1316.403
+        ]
+      }
+    },
+    {
+      "id": 351123,
+      "sourceName": "UX-Bone-Clavicle-Lateral-Rigid-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 8
+      },
+      "uniqueReferencedNodes": 15,
+      "boundsMm": {
+        "min": [
+          -37.909,
+          -131.429,
+          1314.71
+        ],
+        "max": [
+          -27.021,
+          -122.967,
+          1320.936
+        ]
+      }
+    },
+    {
+      "id": 351201,
+      "sourceName": "UX-Bone-Scapula-Cortical-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 3141
+      },
+      "uniqueReferencedNodes": 3154,
+      "boundsMm": {
+        "min": [
+          -121.714,
+          -156.644,
+          1216.807
+        ],
+        "max": [
+          -13.862,
+          -65.359,
+          1324.022
+        ]
+      }
+    },
+    {
+      "id": 351202,
+      "sourceName": "UX-Bone-Scapula-Trabecular-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 2470
+      },
+      "uniqueReferencedNodes": 4138,
+      "boundsMm": {
+        "min": [
+          -121.714,
+          -156.644,
+          1216.807
+        ],
+        "max": [
+          -13.862,
+          -65.359,
+          1324.022
+        ]
+      }
+    },
+    {
+      "id": 351213,
+      "sourceName": "UX-Bone-Scapula-Proximal-Rigid-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 6
+      },
+      "uniqueReferencedNodes": 12,
+      "boundsMm": {
+        "min": [
+          -36.069,
+          -139.781,
+          1314.975
+        ],
+        "max": [
+          -26.767,
+          -137.348,
+          1317.712
+        ]
+      }
+    },
+    {
+      "id": 351223,
+      "sourceName": "UX-Bone-Scapula-Rigid-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 7
+      },
+      "uniqueReferencedNodes": 16,
+      "boundsMm": {
+        "min": [
+          -45.583,
+          -130.644,
+          1281.346
+        ],
+        "max": [
+          -41.231,
+          -124.081,
+          1289.429
+        ]
+      }
+    },
+    {
+      "id": 351309,
+      "sourceName": "UX-Bone-Humerus-whole-Null-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 2268
+      },
+      "uniqueReferencedNodes": 2300,
+      "boundsMm": {
+        "min": [
+          -49.724,
+          -279.199,
+          1035.665
+        ],
+        "max": [
+          5.8194985,
+          -123.927,
+          1309.167
+        ]
+      }
+    },
+    {
+      "id": 351311,
+      "sourceName": "UX-Bone-Humerus-proximal-Cortical-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 276
+      },
+      "uniqueReferencedNodes": 578,
+      "boundsMm": {
+        "min": [
+          -49.724,
+          -169.799,
+          1265.084
+        ],
+        "max": [
+          -7.780223,
+          -123.927,
+          1309.644
+        ]
+      }
+    },
+    {
+      "id": 351312,
+      "sourceName": "UX-Bone-Humerus-proximal-Trabecular-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 720
+      },
+      "uniqueReferencedNodes": 1029,
+      "boundsMm": {
+        "min": [
+          -46.274,
+          -177.83,
+          1237.44
+        ],
+        "max": [
+          -10.546,
+          -126.265,
+          1307.127
+        ]
+      }
+    },
+    {
+      "id": 351313,
+      "sourceName": "UX-Bone-Humerus-proximal-Rigid-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 48
+      },
+      "uniqueReferencedNodes": 72,
+      "boundsMm": {
+        "min": [
+          -47.995,
+          -157.772,
+          1287.074
+        ],
+        "max": [
+          -13.496,
+          -123.927,
+          1309.644
+        ]
+      }
+    },
+    {
+      "id": 351321,
+      "sourceName": "UX-Bone-Humerus-shaft-Cortical-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 2976
+      },
+      "uniqueReferencedNodes": 4512,
+      "boundsMm": {
+        "min": [
+          -38.937,
+          -253.244,
+          1074.305
+        ],
+        "max": [
+          -8.615,
+          -143.651,
+          1278.15
+        ]
+      }
+    },
+    {
+      "id": 351331,
+      "sourceName": "UX-Bone-Humerus-distal-Cortical-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 536
+      },
+      "uniqueReferencedNodes": 1134,
+      "boundsMm": {
+        "min": [
+          -30.931,
+          -279.209,
+          1035.665
+        ],
+        "max": [
+          5.8194985,
+          -229.101,
+          1084.124
+        ]
+      }
+    },
+    {
+      "id": 351332,
+      "sourceName": "UX-Bone-Humerus-distal-Trabecular-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1436
+      },
+      "uniqueReferencedNodes": 1804,
+      "boundsMm": {
+        "min": [
+          -29.953,
+          -278.23,
+          1036.743
+        ],
+        "max": [
+          4.732,
+          -230.085,
+          1083.36
+        ]
+      }
+    },
+    {
+      "id": 351333,
+      "sourceName": "UX-Bone-Humerus-distal-Rigid-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 8
+      },
+      "uniqueReferencedNodes": 18,
+      "boundsMm": {
+        "min": [
+          -19.249,
+          -279.209,
+          1039.514
+        ],
+        "max": [
+          2.058,
+          -237.54,
+          1062.928
+        ]
+      }
+    },
+    {
+      "id": 351409,
+      "sourceName": "UX-Bone-Ulna-whole-Null-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1256
+      },
+      "uniqueReferencedNodes": 1275,
+      "boundsMm": {
+        "min": [
+          -34.014,
+          -393.199,
+          862.224
+        ],
+        "max": [
+          16.078,
+          -239.85,
+          1061.862
+        ]
+      }
+    },
+    {
+      "id": 351411,
+      "sourceName": "UX-Bone-Ulna-proximal-Cortical-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 384
+      },
+      "uniqueReferencedNodes": 609,
+      "boundsMm": {
+        "min": [
+          -34.014,
+          -281.19,
+          1016.152
+        ],
+        "max": [
+          -0.777,
+          -239.85,
+          1062.42
+        ]
+      }
+    },
+    {
+      "id": 351412,
+      "sourceName": "UX-Bone-Ulna-proximal-Trabecular-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 152
+      },
+      "uniqueReferencedNodes": 275,
+      "boundsMm": {
+        "min": [
+          -30.492,
+          -277.9,
+          1017.906
+        ],
+        "max": [
+          -7.09,
+          -243.486,
+          1059.354
+        ]
+      }
+    },
+    {
+      "id": 351413,
+      "sourceName": "UX-Bone-Ulna-proximal-Rigid-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 56
+      },
+      "uniqueReferencedNodes": 74,
+      "boundsMm": {
+        "min": [
+          -28.179,
+          -271.016,
+          1030.437
+        ],
+        "max": [
+          -0.777,
+          -240.677,
+          1062.42
+        ]
+      }
+    },
+    {
+      "id": 351421,
+      "sourceName": "UX-Bone-Ulna-shaft-Cortical-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1888
+      },
+      "uniqueReferencedNodes": 2880,
+      "boundsMm": {
+        "min": [
+          -33.893,
+          -378.224,
+          876.539
+        ],
+        "max": [
+          9.476,
+          -267.288,
+          1028.226
+        ]
+      }
+    },
+    {
+      "id": 351431,
+      "sourceName": "UX-Bone-Ulna-distal-Cortical-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 300
+      },
+      "uniqueReferencedNodes": 488,
+      "boundsMm": {
+        "min": [
+          0.026,
+          -393.199,
+          859.753
+        ],
+        "max": [
+          16.078,
+          -366.864,
+          883.268
+        ]
+      }
+    },
+    {
+      "id": 351432,
+      "sourceName": "UX-Bone-Ulna-distal-Trabecular-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 128
+      },
+      "uniqueReferencedNodes": 225,
+      "boundsMm": {
+        "min": [
+          1.732,
+          -390.007,
+          866.01
+        ],
+        "max": [
+          13.608,
+          -368.703,
+          882.154
+        ]
+      }
+    },
+    {
+      "id": 351433,
+      "sourceName": "UX-Bone-Ulna-distal-Rigid-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 20
+      },
+      "uniqueReferencedNodes": 25,
+      "boundsMm": {
+        "min": [
+          2.456,
+          -389.709,
+          859.753
+        ],
+        "max": [
+          8.962,
+          -383.529,
+          866.471
+        ]
+      }
+    },
+    {
+      "id": 351509,
+      "sourceName": "UX-Bone-Radius-whole-Null-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1168
+      },
+      "uniqueReferencedNodes": 1184,
+      "boundsMm": {
+        "min": [
+          -30.836,
+          -394.752,
+          856.247
+        ],
+        "max": [
+          44.422,
+          -273.487,
+          1051.046
+        ]
+      }
+    },
+    {
+      "id": 351511,
+      "sourceName": "UX-Bone-Radius-proximal-Cortical-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 96
+      },
+      "uniqueReferencedNodes": 210,
+      "boundsMm": {
+        "min": [
+          -30.836,
+          -297.822,
+          1024.29
+        ],
+        "max": [
+          -10.8,
+          -273.487,
+          1051.046
+        ]
+      }
+    },
+    {
+      "id": 351512,
+      "sourceName": "UX-Bone-Radius-proximal-Trabecular-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 96
+      },
+      "uniqueReferencedNodes": 175,
+      "boundsMm": {
+        "min": [
+          -29.928,
+          -296.235,
+          1024.796
+        ],
+        "max": [
+          -12.57,
+          -274.719,
+          1050.089
+        ]
+      }
+    },
+    {
+      "id": 351513,
+      "sourceName": "UX-Bone-Radius-proximal-Rigid-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 16
+      },
+      "uniqueReferencedNodes": 25,
+      "boundsMm": {
+        "min": [
+          -30.836,
+          -291.493,
+          1041.246
+        ],
+        "max": [
+          -11.847,
+          -273.487,
+          1051.046
+        ]
+      }
+    },
+    {
+      "id": 351521,
+      "sourceName": "UX-Bone-Radius-shaft-Cortical-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1920
+      },
+      "uniqueReferencedNodes": 2912,
+      "boundsMm": {
+        "min": [
+          -25.719,
+          -379.677,
+          885.079
+        ],
+        "max": [
+          37.451,
+          -283.999,
+          1032.333
+        ]
+      }
+    },
+    {
+      "id": 351531,
+      "sourceName": "UX-Bone-Radius-distal-Cortical-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 176
+      },
+      "uniqueReferencedNodes": 370,
+      "boundsMm": {
+        "min": [
+          16.316,
+          -394.752,
+          853.623
+        ],
+        "max": [
+          44.422,
+          -368.937,
+          891.839
+        ]
+      }
+    },
+    {
+      "id": 351532,
+      "sourceName": "UX-Bone-Radius-distal-Trabecular-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 176
+      },
+      "uniqueReferencedNodes": 300,
+      "boundsMm": {
+        "min": [
+          17.294,
+          -393.263,
+          855.306
+        ],
+        "max": [
+          42.161,
+          -370.553,
+          891.33
+        ]
+      }
+    },
+    {
+      "id": 351533,
+      "sourceName": "UX-Bone-Radius-distal-Rigid-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 32
+      },
+      "uniqueReferencedNodes": 41,
+      "boundsMm": {
+        "min": [
+          16.316,
+          -394.752,
+          853.623
+        ],
+        "max": [
+          43.4,
+          -375.452,
+          866.659
+        ]
+      }
+    },
+    {
+      "id": 351603,
+      "sourceName": "UX-Bone-Carpal-Rigid-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 333
+      },
+      "uniqueReferencedNodes": 528,
+      "boundsMm": {
+        "min": [
+          11.561,
+          -413.48,
+          829.191
+        ],
+        "max": [
+          62.591,
+          -379.013,
+          861.511
+        ]
+      }
+    },
+    {
+      "id": 353001,
+      "sourceName": "UX-Bone-Phalanges-Cortical-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 972
+      },
+      "uniqueReferencedNodes": 2032,
+      "boundsMm": {
+        "min": [
+          12.903,
+          -450.277,
+          720.733
+        ],
+        "max": [
+          124.546,
+          -382.769,
+          851.253
+        ]
+      }
+    },
+    {
+      "id": 355112,
+      "sourceName": "UX-Soft-Torso-connect-Fat-Tissue-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 288
+      },
+      "uniqueReferencedNodes": 576,
+      "boundsMm": {
+        "min": [
+          -94.505,
+          -165.753,
+          1178.116
+        ],
+        "max": [
+          32.805,
+          -105.294,
+          1325.151
+        ]
+      }
+    },
+    {
+      "id": 355119,
+      "sourceName": "UX-Soft-Inner-surface-Null-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 3228
+      },
+      "uniqueReferencedNodes": 3261,
+      "boundsMm": {
+        "min": [
+          -54.656,
+          -396.681,
+          843.806
+        ],
+        "max": [
+          53.937,
+          -94.287,
+          1316.511
+        ]
+      }
+    },
+    {
+      "id": 355121,
+      "sourceName": "UX-Soft-UpperArm-Skin-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1728
+      },
+      "uniqueReferencedNodes": 1770,
+      "boundsMm": {
+        "min": [
+          -94.505,
+          -282.605,
+          1052.15
+        ],
+        "max": [
+          32.805,
+          -148.431,
+          1325.151
+        ]
+      }
+    },
+    {
+      "id": 355122,
+      "sourceName": "UX-Soft-UpperArm-Fat-Tissue-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 6174
+      },
+      "uniqueReferencedNodes": 8212,
+      "boundsMm": {
+        "min": [
+          -94.505,
+          -292.62,
+          1024.632
+        ],
+        "max": [
+          32.805,
+          -134.658,
+          1325.151
+        ]
+      }
+    },
+    {
+      "id": 355131,
+      "sourceName": "UX-Soft-Elbow-Skin-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 162
+      },
+      "uniqueReferencedNodes": 195,
+      "boundsMm": {
+        "min": [
+          -53.103,
+          -292.62,
+          1024.632
+        ],
+        "max": [
+          20.79,
+          -212.901,
+          1090.647
+        ]
+      }
+    },
+    {
+      "id": 355141,
+      "sourceName": "UX-Soft-LowerArm-Skin-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1080
+      },
+      "uniqueReferencedNodes": 1110,
+      "boundsMm": {
+        "min": [
+          -50.033,
+          -402.882,
+          837.628
+        ],
+        "max": [
+          60.463,
+          -227.308,
+          1070.59
+        ]
+      }
+    },
+    {
+      "id": 355142,
+      "sourceName": "UX-Soft-LowerArm-Fat-Tissue-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 3240
+      },
+      "uniqueReferencedNodes": 4440,
+      "boundsMm": {
+        "min": [
+          -50.033,
+          -402.882,
+          837.628
+        ],
+        "max": [
+          60.463,
+          -227.308,
+          1070.59
+        ]
+      }
+    },
+    {
+      "id": 355161,
+      "sourceName": "UX-Soft-Hand-Skin-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1640
+      },
+      "uniqueReferencedNodes": 1656,
+      "boundsMm": {
+        "min": [
+          4.641,
+          -453.085,
+          717.465
+        ],
+        "max": [
+          129.338,
+          -366.118,
+          870.417
+        ]
+      }
+    },
+    {
+      "id": 355162,
+      "sourceName": "UX-Soft-Hand-Fat-Tissue-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 3009
+      },
+      "uniqueReferencedNodes": 4830,
+      "boundsMm": {
+        "min": [
+          4.641,
+          -453.085,
+          717.465
+        ],
+        "max": [
+          129.338,
+          -366.118,
+          870.417
+        ]
+      }
+    },
+    {
+      "id": 355172,
+      "sourceName": "UX-Soft-Finger-Fat-Tissue-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 261
+      },
+      "uniqueReferencedNodes": 688,
+      "boundsMm": {
+        "min": [
+          14.905,
+          -450.622,
+          729.344
+        ],
+        "max": [
+          116.043,
+          -386.723,
+          826.626
+        ]
+      }
+    },
+    {
+      "id": 355201,
+      "sourceName": "UX-Soft-Subscapularis-Muscle-R",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1092
+      },
+      "uniqueReferencedNodes": 2316,
+      "boundsMm": {
+        "min": [
+          -118.91,
+          -127.647,
+          1216.305
+        ],
+        "max": [
+          -13.746,
+          -64.638,
+          1323.408
+        ]
+      }
+    },
+    {
+      "id": 355202,
+      "sourceName": "UX-Muscle_subscapularis_nulls-R",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1205
+      },
+      "uniqueReferencedNodes": 1272,
+      "boundsMm": {
+        "min": [
+          -118.91,
+          -127.647,
+          1216.305
+        ],
+        "max": [
+          -13.746,
+          -64.638,
+          1323.408
+        ]
+      }
+    },
+    {
+      "id": 356001,
+      "sourceName": "UX-Trapezoid-Ligament-L",
+      "elementCounts": {
+        "*ELEMENT_DISCRETE": 1
+      },
+      "uniqueReferencedNodes": 2,
+      "boundsMm": {
+        "min": [
+          -19.776,
+          -115.132,
+          1305.564
+        ],
+        "max": [
+          -16.742,
+          -112.43,
+          1319.497
+        ]
+      }
+    },
+    {
+      "id": 356002,
+      "sourceName": "UX-Conoid-Ligament-L",
+      "elementCounts": {
+        "*ELEMENT_DISCRETE": 1
+      },
+      "uniqueReferencedNodes": 2,
+      "boundsMm": {
+        "min": [
+          -36.543,
+          -110.585,
+          1311.591
+        ],
+        "max": [
+          -34.078,
+          -108.629,
+          1318.733
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "96 finite-element parts are not 96 anatomical bones or muscles.",
+    "Whole-Null surfaces are computational parts, not additional anatomical tissues.",
+    "Carpal and phalangeal parts are aggregates; individual hand bones are not established.",
+    "Joint definitions are simulation constraints, not HRA or BP4 registration landmarks.",
+    "No surface extraction, collision, containment, or anatomical accuracy validation performed.",
+    "Element material laws, continuation values, mass cards and whole-body completeness are not validated.",
+    "LGPL source obligations and VIVA+ naming restrictions require review before asset distribution."
+  ],
+  "deployed": false,
+  "anatomicallyValidated": false
+}
