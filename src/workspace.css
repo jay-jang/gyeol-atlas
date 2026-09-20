@@ -1274,6 +1274,8 @@ body:has(.anatomy-workspace) .site-footer {
 .anatomy-workspace .dock-body .muted { color:#a9bdc6; }
 .anatomy-workspace .dock-body .concept-reference { color:var(--ink); background:var(--surface-subtle); }
 .anatomy-workspace .dock-body .concept-reference button { color:var(--ink); background:var(--surface); border-color:var(--border-strong); }
+.anatomy-workspace .dock-body .concept-reference small { font-size:12px; }
+.comparison-feedback { scroll-margin-block:12px; }
 .anatomy-workspace .structure-path { color:#7f9ba8 !important; font-size:11px; }
 .anatomy-workspace .selection-card { width:min(430px,calc(100% - 180px)); left:calc(50% + 159px); }
 @media (min-width:701px) and (max-width:900px) {

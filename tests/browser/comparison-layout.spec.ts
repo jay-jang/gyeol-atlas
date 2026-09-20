@@ -46,6 +46,10 @@ test('female stomach comparison offers a separate CT detail without replacing th
   await compare(page);
   const link=page.getByRole('button',{name:'위 (여성 CT) 별도 상세 보기',exact:true});
   await expect(link).toBeVisible(); await expect(link).toBeInViewport();
+  await expect.poll(async()=>{
+    const button=await link.boundingBox(),dock=await page.locator('.dock-body').boundingBox();
+    return dock!.y+dock!.height-button!.y-button!.height;
+  }).toBeGreaterThan(4);
   await expect(page.locator('.comparison-feedback')).toContainText('전신에 합쳐지지 않은');
   await page.screenshot({path:'docs/anatomy-alignment/comparison-female-ct-mobile.png'});
   expect(requests.filter(u=>u.includes('/female-detail/'))).toHaveLength(0);

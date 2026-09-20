@@ -32,6 +32,12 @@ try {
     if(!button)return false;
     const b=button.getBoundingClientRect(),dock=document.querySelector('.dock-body').getBoundingClientRect();
     return b.top>=dock.top&&b.bottom<=dock.bottom;
+  },undefined,{timeout:10000}).catch(async error=>{
+    console.error(await page.evaluate(()=>Object.fromEntries(['.comparison-feedback button','.comparison-feedback','.dock-body','.floating-dock'].map(selector=>{
+      const el=document.querySelector(selector),b=el?.getBoundingClientRect();
+      return [selector,{top:b?.top,bottom:b?.bottom,height:b?.height,scrollTop:el?.scrollTop,scrollHeight:el?.scrollHeight,clientHeight:el?.clientHeight}];
+    }))));
+    throw error;
   });
   assert.equal(requests.filter(u=>u.includes('/female-detail/')).length,0);
   assert.equal((await state()).comparison,null);
