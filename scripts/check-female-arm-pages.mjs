@@ -50,6 +50,7 @@ try {
     checks.push({...row,actualTarget:actual.camera.target,errorMetres:Math.hypot(...row.target.map((v,j)=>v-actual.camera.target[j]))});
   }
   await page.getByRole('button',{name:'골격 빠른 보기',exact:true}).click();await ready();
+  await page.getByLabel('전신 부위 선택').selectOption({label:'전신'});await ready();
   await page.getByRole('button',{name:'계통 전체 보기',exact:true}).click();
   await page.screenshot({path:'docs/anatomy-alignment/pages-female-arms-registered.png'});
   assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
