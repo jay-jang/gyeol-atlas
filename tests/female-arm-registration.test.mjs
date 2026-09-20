@@ -58,3 +58,21 @@ test('registration excludes other source frames and rejects mismatched metadata'
   const g=geometry(p);assert.throws(()=>applyFemaleArmRegistration(g,'female',p.id,'skeletal'),/출처/);
   g.setIndex([0,1,2]);assert.throws(()=>applyFemaleArmRegistration(g,'female',p.id,'borrowed'),/버전/);g.dispose();
 });
+
+test('thumb refinement changes exactly six v1 records by two rigid group transforms',()=>{
+  const baseline=read('docs/anatomy-alignment/female-arm-registration-v1.json');
+  assert.equal(registration.version,'female-arm-partial-2');
+  assert.equal(registration.refinement.movedParts,6);
+  const changes=new Map(registration.refinement.hands.flatMap(h=>h.ids.map(id=>[id,h])));
+  assert.equal(changes.size,6);
+  for(const record of registration.records){
+    const old=baseline.records.find(r=>r.id===record.id),hand=changes.get(record.id);
+    if(!hand){assert.deepEqual(record,old);continue;}
+    const m=hand.linearFromRegistered,t=hand.translationFromRegistered;
+    for(let i=0;i<3;i++)for(let j=0;j<3;j++){
+      assert.ok(Math.abs(m[i].reduce((s,x,k)=>s+x*m[j][k],0)-(i===j?1:0))<1e-10,'No additional scale or shear');
+      assert.ok(Math.abs(record.linear[i][j]-old.linear[i].reduce((s,x,k)=>s+x*m[k][j],0))<1e-10);
+    }
+    for(let j=0;j<3;j++)assert.ok(Math.abs(record.translation[j]-(old.translation.reduce((s,x,k)=>s+x*m[k][j],0)+t[j]))<1e-10);
+  }
+});

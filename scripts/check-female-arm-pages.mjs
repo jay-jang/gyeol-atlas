@@ -9,8 +9,8 @@ import {chromium} from '@playwright/test';
 const origin=process.env.PAGES_ORIGIN||'http://127.0.0.1:5174/';
 const registration=JSON.parse(fs.readFileSync('data/catalog/female-arm-registration.json'));
 const atlas=JSON.parse(fs.readFileSync('public/models/female/atlas-female.json'));
-const records=registration.records.filter(r=>/^(Left|Right) (humerus|third metacarpal bone)$/.test(r.name));
-assert.equal(records.length,4);
+const records=registration.records.filter(r=>/^(Left|Right) (humerus|third metacarpal bone)$/.test(r.name)||/^Distal phalanx of (left|right) thumb$/.test(r.name));
+assert.equal(records.length,6);
 const expected=records.map(r=>{
   const p=atlas.parts.find(p=>p.id===r.id);
   const bytes=gunzipSync(fs.readFileSync(`public/models/female/${atlas.chunks[p.chunk].gzip.split('/').pop()}`));
@@ -56,7 +56,7 @@ try {
   assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
   const report={origin,checkedAt:new Date().toISOString(),registrationVersion:registration.version,
     registrationSha256:createHash('sha256').update(fs.readFileSync('data/catalog/female-arm-registration.json')).digest('hex'),
-    method:'Four real search/select/frame operations; camera target versus independent transformed bounding centre. Not a complete deployed vertex audit.',checks,errors,failures};
+    method:'Six real search/select/frame operations including refined thumb tips; camera target versus independent transformed bounding centre. Not a complete deployed vertex audit.',checks,errors,failures};
   fs.writeFileSync('docs/anatomy-alignment/pages-female-arm-verification.json',JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify(report));
 } finally {await browser.close();}

@@ -34,9 +34,9 @@
         "bone": {
           "meshes": 321,
           "samples": 241986,
-          "outsideSamples": 4471,
+          "outsideSamples": 5014,
           "ambiguousSamples": 0,
-          "maxOutsideMm": 14.246382782371596
+          "maxOutsideMm": 22.013357533626444
         },
         "muscle": {
           "meshes": 90,
@@ -16600,15 +16600,15 @@
           "defaultHidden": false,
           "vertices": 185,
           "samples": 185,
-          "inside": 93,
-          "outside": 14,
-          "surface-band": 78,
+          "inside": 0,
+          "outside": 185,
+          "surface-band": 0,
           "ambiguous": 0,
-          "maxOutsideMm": 2.8260883075544996,
+          "maxOutsideMm": 22.013357533626444,
           "worstPoint": [
-            0.46310362219810486,
-            0.8559427261352539,
-            0.010445235297083855
+            0.4544380009174347,
+            0.8364270329475403,
+            -0.0019861895125359297
           ]
         },
         {
@@ -16692,12 +16692,16 @@
           "defaultHidden": false,
           "vertices": 181,
           "samples": 181,
-          "inside": 115,
-          "outside": 0,
-          "surface-band": 66,
+          "inside": 0,
+          "outside": 181,
+          "surface-band": 0,
           "ambiguous": 0,
-          "maxOutsideMm": 0,
-          "worstPoint": null
+          "maxOutsideMm": 17.818747230884263,
+          "worstPoint": [
+            -0.45472732186317444,
+            0.8360705971717834,
+            -0.0016926268581300974
+          ]
         },
         {
           "id": "BM0070",
@@ -16724,9 +16728,9 @@
           "defaultHidden": false,
           "vertices": 293,
           "samples": 293,
-          "inside": 237,
+          "inside": 273,
           "outside": 0,
-          "surface-band": 56,
+          "surface-band": 20,
           "ambiguous": 0,
           "maxOutsideMm": 0,
           "worstPoint": null
@@ -17212,12 +17216,16 @@
           "defaultHidden": false,
           "vertices": 197,
           "samples": 197,
-          "inside": 184,
-          "outside": 0,
-          "surface-band": 13,
+          "inside": 83,
+          "outside": 91,
+          "surface-band": 23,
           "ambiguous": 0,
-          "maxOutsideMm": 0,
-          "worstPoint": null
+          "maxOutsideMm": 14.66094882896555,
+          "worstPoint": [
+            0.439751535654068,
+            0.8482446670532227,
+            -0.011638195253908634
+          ]
         },
         {
           "id": "BM0101",
@@ -17300,12 +17308,16 @@
           "defaultHidden": false,
           "vertices": 196,
           "samples": 196,
-          "inside": 187,
-          "outside": 0,
-          "surface-band": 9,
+          "inside": 89,
+          "outside": 100,
+          "surface-band": 7,
           "ambiguous": 0,
-          "maxOutsideMm": 0,
-          "worstPoint": null
+          "maxOutsideMm": 13.981741825738514,
+          "worstPoint": [
+            -0.4391975998878479,
+            0.848343014717102,
+            -0.0124427555128932
+          ]
         },
         {
           "id": "BM0106",
@@ -17332,9 +17344,9 @@
           "defaultHidden": false,
           "vertices": 287,
           "samples": 287,
-          "inside": 279,
+          "inside": 287,
           "outside": 0,
-          "surface-band": 8,
+          "surface-band": 0,
           "ambiguous": 0,
           "maxOutsideMm": 0,
           "worstPoint": null
@@ -19925,7 +19937,7 @@
     },
     {
       "path": "data/catalog/female-arm-registration.json",
-      "sha256": "c3b6283116775801e605399261a72154c581f4a682c527b3de66db328017a822"
+      "sha256": "3912f7fe9a731d16277beb0d02ff22bcb8072f842965bdd94deb5a3fdb319d86"
     },
     {
       "path": "public/models/female/atlas-female.json",

@@ -1,0 +1,388 @@
+{
+  "status": "CANDIDATE ONLY; not deployed or anatomically validated",
+  "parts": [
+    {
+      "id": "BM0064",
+      "name": "Distal phalanx of left thumb",
+      "vertices": 185,
+      "beforeOutside": 185,
+      "afterOutside": 4,
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "beforeMaxMm": 22.013357533626444,
+      "afterMaxMm": 2.1012355949488275
+    },
+    {
+      "id": "BM0069",
+      "name": "Distal phalanx of right thumb",
+      "vertices": 181,
+      "beforeOutside": 181,
+      "afterOutside": 0,
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "beforeMaxMm": 17.818747230884263,
+      "afterMaxMm": 0
+    },
+    {
+      "id": "BM0071",
+      "name": "Left first metacarpal bone",
+      "vertices": 293,
+      "beforeOutside": 0,
+      "afterOutside": 0,
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "beforeMaxMm": 0,
+      "afterMaxMm": 0
+    },
+    {
+      "id": "BM0100",
+      "name": "Proximal phalanx of left thumb",
+      "vertices": 197,
+      "beforeOutside": 91,
+      "afterOutside": 0,
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "beforeMaxMm": 14.66094882896555,
+      "afterMaxMm": 0
+    },
+    {
+      "id": "BM0105",
+      "name": "Proximal phalanx of right thumb",
+      "vertices": 196,
+      "beforeOutside": 100,
+      "afterOutside": 0,
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "beforeMaxMm": 13.981741825738514,
+      "afterMaxMm": 0
+    },
+    {
+      "id": "BM0107",
+      "name": "Right first metacarpal bone",
+      "vertices": 287,
+      "beforeOutside": 0,
+      "afterOutside": 0,
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "beforeMaxMm": 0,
+      "afterMaxMm": 0
+    }
+  ],
+  "pairs": [
+    {
+      "ids": [
+        "BM0064",
+        "BM0100"
+      ],
+      "names": [
+        "Distal phalanx of left thumb",
+        "Proximal phalanx of left thumb"
+      ],
+      "before": true,
+      "after": true,
+      "beforeCrossings": {
+        "intersectingTrianglePairs": 26,
+        "strictPlaneStraddlingPairs": 26,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7031529495467959
+      },
+      "afterCrossings": {
+        "intersectingTrianglePairs": 26,
+        "strictPlaneStraddlingPairs": 26,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7031090599288652
+      }
+    },
+    {
+      "ids": [
+        "BM0069",
+        "BM0105"
+      ],
+      "names": [
+        "Distal phalanx of right thumb",
+        "Proximal phalanx of right thumb"
+      ],
+      "before": true,
+      "after": true,
+      "beforeCrossings": {
+        "intersectingTrianglePairs": 40,
+        "strictPlaneStraddlingPairs": 40,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7780162730541444
+      },
+      "afterCrossings": {
+        "intersectingTrianglePairs": 40,
+        "strictPlaneStraddlingPairs": 40,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7780149040995942
+      }
+    },
+    {
+      "ids": [
+        "BM0071",
+        "BM0084"
+      ],
+      "names": [
+        "Left first metacarpal bone",
+        "Left trapezium"
+      ],
+      "before": true,
+      "after": true,
+      "beforeCrossings": {
+        "intersectingTrianglePairs": 54,
+        "strictPlaneStraddlingPairs": 54,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.6778639126887923
+      },
+      "afterCrossings": {
+        "intersectingTrianglePairs": 54,
+        "strictPlaneStraddlingPairs": 54,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7899768895331765
+      }
+    },
+    {
+      "ids": [
+        "BM0071",
+        "BM0100"
+      ],
+      "names": [
+        "Left first metacarpal bone",
+        "Proximal phalanx of left thumb"
+      ],
+      "before": true,
+      "after": true,
+      "beforeCrossings": {
+        "intersectingTrianglePairs": 45,
+        "strictPlaneStraddlingPairs": 45,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7627743891986117
+      },
+      "afterCrossings": {
+        "intersectingTrianglePairs": 45,
+        "strictPlaneStraddlingPairs": 45,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7627657515295008
+      }
+    },
+    {
+      "ids": [
+        "BM0105",
+        "BM0107"
+      ],
+      "names": [
+        "Proximal phalanx of right thumb",
+        "Right first metacarpal bone"
+      ],
+      "before": true,
+      "after": true,
+      "beforeCrossings": {
+        "intersectingTrianglePairs": 49,
+        "strictPlaneStraddlingPairs": 47,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.30635371972553
+      },
+      "afterCrossings": {
+        "intersectingTrianglePairs": 49,
+        "strictPlaneStraddlingPairs": 47,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.3063719506869087
+      }
+    },
+    {
+      "ids": [
+        "BM0107",
+        "BM0120"
+      ],
+      "names": [
+        "Right first metacarpal bone",
+        "Right trapezium"
+      ],
+      "before": true,
+      "after": true,
+      "beforeCrossings": {
+        "intersectingTrianglePairs": 48,
+        "strictPlaneStraddlingPairs": 48,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7067853385960837
+      },
+      "afterCrossings": {
+        "intersectingTrianglePairs": 52,
+        "strictPlaneStraddlingPairs": 52,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8165158202229771
+      }
+    }
+  ],
+  "joints": [
+    {
+      "ids": [
+        "BM0084",
+        "BM0071"
+      ],
+      "names": [
+        "Left trapezium",
+        "Left first metacarpal bone"
+      ],
+      "before": {
+        "vertexSurfaceMinimumMm": 0.02189686489580009,
+        "triangleSurfacesIntersect": true
+      },
+      "after": {
+        "vertexSurfaceMinimumMm": 0.03916758352739175,
+        "triangleSurfacesIntersect": true
+      }
+    },
+    {
+      "ids": [
+        "BM0071",
+        "BM0100"
+      ],
+      "names": [
+        "Left first metacarpal bone",
+        "Proximal phalanx of left thumb"
+      ],
+      "before": {
+        "vertexSurfaceMinimumMm": 0.05604660449946026,
+        "triangleSurfacesIntersect": true
+      },
+      "after": {
+        "vertexSurfaceMinimumMm": 0.0560402111232964,
+        "triangleSurfacesIntersect": true
+      }
+    },
+    {
+      "ids": [
+        "BM0100",
+        "BM0064"
+      ],
+      "names": [
+        "Proximal phalanx of left thumb",
+        "Distal phalanx of left thumb"
+      ],
+      "before": {
+        "vertexSurfaceMinimumMm": 0.11122191571441033,
+        "triangleSurfacesIntersect": true
+      },
+      "after": {
+        "vertexSurfaceMinimumMm": 0.11121182661129068,
+        "triangleSurfacesIntersect": true
+      }
+    },
+    {
+      "ids": [
+        "BM0120",
+        "BM0107"
+      ],
+      "names": [
+        "Right trapezium",
+        "Right first metacarpal bone"
+      ],
+      "before": {
+        "vertexSurfaceMinimumMm": 0.025136575012185015,
+        "triangleSurfacesIntersect": true
+      },
+      "after": {
+        "vertexSurfaceMinimumMm": 0.10379071738101896,
+        "triangleSurfacesIntersect": true
+      }
+    },
+    {
+      "ids": [
+        "BM0107",
+        "BM0105"
+      ],
+      "names": [
+        "Right first metacarpal bone",
+        "Proximal phalanx of right thumb"
+      ],
+      "before": {
+        "vertexSurfaceMinimumMm": 0.011729999435071331,
+        "triangleSurfacesIntersect": true
+      },
+      "after": {
+        "vertexSurfaceMinimumMm": 0.011736718586347934,
+        "triangleSurfacesIntersect": true
+      }
+    },
+    {
+      "ids": [
+        "BM0105",
+        "BM0069"
+      ],
+      "names": [
+        "Proximal phalanx of right thumb",
+        "Distal phalanx of right thumb"
+      ],
+      "before": {
+        "vertexSurfaceMinimumMm": 0.024882019260192192,
+        "triangleSurfacesIntersect": true
+      },
+      "after": {
+        "vertexSurfaceMinimumMm": 0.024813958704266344,
+        "triangleSurfacesIntersect": true
+      }
+    }
+  ],
+  "evaluatedPairs": 1905,
+  "newIntersections": [],
+  "resolvedIntersections": [],
+  "newOutside": 0,
+  "worsenedOutside": 0,
+  "limitations": [
+    "Triangle crossing extent is not solid penetration depth or cartilage contact accuracy.",
+    "Skin containment checks referenced vertices against a 2 mm boundary band, not every triangle interior."
+  ],
+  "beforeOutside": 557,
+  "afterOutside": 4,
+  "files": [
+    {
+      "path": ".cache/arm-registration/thumb-candidate.json",
+      "sha256": "c1d47265ce49ef96ffbac47d175713fcc784f14c3b0dd8fc9cf5b9338696d9b8"
+    },
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": "docs/anatomy-alignment/female-arm-registration-v1.json",
+      "sha256": "3912f7fe9a731d16277beb0d02ff22bcb8072f842965bdd94deb5a3fdb319d86"
+    },
+    {
+      "path": "scripts/lib/registration-baseline.mjs",
+      "sha256": "6e6296339736e42275844cc20fec48db5f296f039aad23e9516d71e2f997ab8f"
+    },
+    {
+      "path": "scripts/audit-thumb-candidate.mjs",
+      "sha256": "2366874269df0b797db8f40bb85f2e9b977cd8195f22a79874ad724e5655488a"
+    },
+    {
+      "path": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "path": "scripts/lib/joint-geometry.mjs",
+      "sha256": "a008cae6f842a7f55239d4eed617465bf765eb87998d6668f6007998d23ad2db"
+    },
+    {
+      "path": "scripts/lib/triangle-crossings.mjs",
+      "sha256": "a55dd923c032c76591a7f2aa1af2863fe9e24bf0adb0ee6eb4aad5388238d512"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "path": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "path": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    }
+  ]
+}

@@ -57,6 +57,8 @@ Male details are repacked without modifying their source vertices and displayed 
 
 The male Z-Anatomy overview overlay uses one uniform scale/translation fitted to four named neural centers; the measurements and 39 held-out vascular center differences are recorded in `data/catalog/male-registration.json`. Peeling does not change this transform. Residual local differences remain; this is not anatomical or clinical validation.
 
+2026-09-21 refinement: within those 60 bones, the first metacarpal and two thumb phalanges on each side receive a common rigid rotation and translation per side. No additional scale or local deformation is applied. The frozen v1 registration and diagnostic skin contours are model-derived CC BY 4.0 material under the same upstream attribution. Other bones and native HRA anatomy remain unchanged. Known residual finger/foot and donor-muscle mismatches remain; see `docs/anatomy-alignment/THUMB_REFINEMENT.md`.
+
 ## Independent female CT detail supplement
 
 **Jakob Wasserthal, University Hospital Basel**, *Dataset with segmentations of 117 important anatomical structures in 1228 CT images*, version 2.0.1, [DOI 10.5281/zenodo.10047292](https://zenodo.org/records/10047292), licensed **CC BY 4.0**. [License](https://creativecommons.org/licenses/by/4.0/). Citation: Wasserthal et al., *TotalSegmentator: Robust Segmentation of 104 Anatomic Structures in CT Images*, Radiology: Artificial Intelligence 5(5), e230024 (2023), [DOI](https://doi.org/10.1148/ryai.230024).

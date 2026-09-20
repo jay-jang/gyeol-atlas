@@ -1,5 +1,5 @@
 {
-  "version": "female-arm-partial-2",
+  "version": "female-arm-partial-1",
   "dataset": "female",
   "sourceManifestSha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f",
   "partial": true,
@@ -7,7 +7,7 @@
   "screening": {
     "checkedVertices": 14112,
     "beforeOutside": 13161,
-    "afterOutside": 372,
+    "afterOutside": 915,
     "newOutside": 0,
     "worsenedOutside": 0,
     "maxIncreaseMm": 0,
@@ -18,8 +18,7 @@
     "anatomicallyValidated": false
   },
   "limitations": [
-    "372 arm/hand referenced points remain outside the 2 mm skin band; other borrowed skeleton and donor muscles remain uncorrected.",
-    "Thumb CMC surface crossings removed, but existing internal MCP/IP surface crossings remain; no cartilage or anatomical validation is asserted.",
+    "915 referenced points remain outside the 2 mm skin band; other borrowed skeleton and donor muscles remain uncorrected.",
     "Geometry screening does not establish clinical anatomy, cartilage contact, nerve course, or muscle alignment.",
     "Native HRA organs, brain, vessels, nerves, skin, and source files are unchanged."
   ],
@@ -148,25 +147,25 @@
       "indexCount": 786,
       "linear": [
         [
-          0.9977253913376275,
-          0.29201246631230016,
-          0.20249181138445907
+          1.0148533028014495,
+          0.10327554987289027,
+          0.28484575698229264
         ],
         [
-          -0.28855748990574975,
-          1.0180004110696586,
-          -0.04626323937360643
+          -0.1724054448518017,
+          1.015618878038377,
+          0.24601871147040966
         ],
         [
-          -0.2073861310996426,
-          -0.01158743860845589,
-          1.0385503958529787
+          -0.24915751084983676,
+          -0.28210438844001606,
+          0.9899837623124732
         ]
       ],
       "translation": [
-        0.20992229609109195,
-        -0.16842035722618576,
-        0.029544948849857727
+        0.09082514257660335,
+        -0.11388359859299355,
+        -0.2786887441583956
       ]
     },
     {
@@ -177,25 +176,25 @@
       "indexCount": 1668,
       "linear": [
         [
-          0.9977256961220194,
-          0.2920127519195377,
-          0.20249177211182212
+          1.0148536385644926,
+          0.10327579706369731,
+          0.28484580353595584
         ],
         [
-          -0.2885570892248592,
-          1.0180010527510968,
-          -0.046263186966190036
+          -0.1724049782819383,
+          1.0156194267139294,
+          0.2460189487771362
         ],
         [
-          -0.207386058158858,
-          -0.011587477628703059,
-          1.038550733165213
+          -0.249157456336065,
+          -0.2821045300613615,
+          0.9899840747130566
         ]
       ],
       "translation": [
-        0.20992179940274625,
-        -0.16842106353407663,
-        0.029544945862681887
+        0.09082457154025697,
+        -0.11388421156067466,
+        -0.2786889533644799
       ]
     },
     {
@@ -873,25 +872,25 @@
       "indexCount": 1008,
       "linear": [
         [
-          0.997725934606195,
-          0.29201188265421824,
-          0.20249184077171367
+          1.0148537767447154,
+          0.10327492246698831,
+          0.2848456213330444
         ],
         [
-          -0.2885570550637005,
-          1.0180001818359392,
-          -0.04626320210806128
+          -0.17240503980908028,
+          1.0156185983392454,
+          0.24601868439244215
         ],
         [
-          -0.20738632009197597,
-          -0.011587097569514797,
-          1.0385505738836416
+          -0.24915766810440831,
+          -0.28210409241975165,
+          0.9899840294521017
         ]
       ],
       "translation": [
-        0.20992163871135366,
-        -0.16841984948152733,
-        0.029544914802645206
+        0.0908245471268363,
+        -0.11388302871418401,
+        -0.27868863557806345
       ]
     },
     {
@@ -1018,25 +1017,25 @@
       "indexCount": 684,
       "linear": [
         [
-          0.9509788312851741,
-          -0.344275739447592,
-          -0.4136088044312265
+          1.0468958546087381,
+          -0.07923662226388299,
+          -0.3028025639306592
         ],
         [
-          0.45569656873226383,
-          0.9618965552026083,
-          0.24709282114591888
+          0.15507268936104115,
+          1.0495378176794594,
+          0.2614995950318547
         ],
         [
-          0.2862492282372188,
-          -0.3875416904841562,
-          0.9807304517705899
+          0.27188253039313276,
+          -0.29351570551829426,
+          1.016802744804021
         ]
       ],
       "translation": [
-        -0.3745351797206082,
-        -0.20351402706098276,
-        -0.3425775482624958
+        -0.05124838302651957,
+        -0.16061039706131106,
+        -0.3043318024218778
       ]
     },
     {
@@ -1279,25 +1278,25 @@
       "indexCount": 948,
       "linear": [
         [
-          0.9509792708047086,
-          -0.3442756437985902,
-          -0.41360880680894724
+          1.0468962506526267,
+          -0.07923641270578881,
+          -0.3028025243522591
         ],
         [
-          0.45569624100638273,
-          0.9618965055886401,
-          0.2470928805932071
+          0.1550723821111553,
+          1.0495376825461011,
+          0.2614996221660063
         ],
         [
-          0.28624966786519684,
-          -0.3875417674630733,
-          0.9807303755085719
+          0.2718829802433357,
+          -0.29351566254935696,
+          1.0168027164689994
         ]
       ],
       "translation": [
-        -0.374534636008078,
-        -0.2035139449072579,
-        -0.3425776096791064
+        -0.051247877233118966,
+        -0.16061017288881563,
+        -0.30433181043924695
       ]
     },
     {
@@ -1337,25 +1336,25 @@
       "indexCount": 1578,
       "linear": [
         [
-          0.9509791162063477,
-          -0.3442759452831684,
-          -0.41360885896278093
+          1.0468961880574477,
+          -0.07923674471342458,
+          -0.3028025823729435
         ],
         [
-          0.45569636394736435,
-          0.9618967243331377,
-          0.24709288953115643
+          0.1550724409480545,
+          1.0495379262108782,
+          0.2614996366305441
         ],
         [
-          0.2862497532302712,
-          -0.38754139674932636,
-          0.980730517323992
+          0.2718829485238665,
+          -0.29351528200091775,
+          1.0168028543249104
         ]
       ],
       "translation": [
-        -0.3745348170126597,
-        -0.20351425682828525,
-        -0.3425776296870023
+        -0.05124796581093216,
+        -0.16061052189227285,
+        -0.3043318388691548
       ]
     },
     {
@@ -1767,130 +1766,24 @@
   ],
   "evidence": [
     {
-      "path": "docs/anatomy-alignment/female-arm-registration-v1.json",
-      "sha256": "3912f7fe9a731d16277beb0d02ff22bcb8072f842965bdd94deb5a3fdb319d86"
+      "path": ".cache/arm-registration/hand-clearance-candidates.json",
+      "sha256": "f2627461f9ac70d01a6a3cd6344fe83db3103af3533078e20170c1ce7b6f34f6"
     },
     {
-      "path": ".cache/arm-registration/thumb-clearance-candidate.json",
-      "sha256": "010c10f5e228284cfac5487c76de54c22ede39a40be9993718c2b987ad205e65"
+      "path": ".cache/arm-registration/all-bones-candidate-audit.json",
+      "sha256": "a7ab38a0a250eb36b0d0e9e199b0d40c2f872320ad539bc3964f798af77643cf"
     },
     {
-      "path": ".cache/arm-registration/thumb-clearance-candidate-audit.json",
-      "sha256": "ac56b999dd0cdac8e2521a9453d6b44bf3b85c9bb788ee12a4429e928cb7c22b"
+      "path": "scripts/build-female-arm-registration.mjs",
+      "sha256": "90f9c0c27e3f85630396935d331ee35c9a7b18de272a7cd1ec411e96a327f991"
     },
     {
-      "path": "scripts/build-thumb-refinement.mjs",
-      "sha256": "faa93ce0bee9b758c3ae206549dc51d2775832e0bafd20bd0fc4d205b8d45575"
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
     }
-  ],
-  "refinement": {
-    "baselineVersion": "female-arm-partial-1",
-    "method": "Rigid three-bone thumb rotation plus bounded common clearance translation; no scale or local deformation",
-    "movedParts": 6,
-    "checkedVertices": 1339,
-    "beforeOutside": 557,
-    "afterOutside": 14,
-    "newOutside": 0,
-    "worsenedOutside": 0,
-    "bonePairsChecked": 1905,
-    "newIntersections": 0,
-    "resolvedIntersections": [
-      [
-        "BM0071",
-        "BM0084"
-      ],
-      [
-        "BM0107",
-        "BM0120"
-      ]
-    ],
-    "hands": [
-      {
-        "side": "left",
-        "ids": [
-          "BM0064",
-          "BM0071",
-          "BM0100"
-        ],
-        "linearFromRegistered": [
-          [
-            0.9930778771646166,
-            0.11030138419614617,
-            -0.04037244766709987
-          ],
-          [
-            -0.11724652602828976,
-            0.9515004906365582,
-            -0.2844293733999472
-          ],
-          [
-            0.007041450171387586,
-            0.28719404757550804,
-            0.9578465414755543
-          ]
-        ],
-        "translationFromRegistered": [
-          0.10833577290663426,
-          0.009959552213077622,
-          0.26776099131733705
-        ],
-        "rotationNormDegrees": 17.97106450984213,
-        "clearance": {
-          "translationMm": [
-            1,
-            -0.25,
-            0.25
-          ],
-          "normMm": 1.0606601717798212,
-          "tested": 327,
-          "stepMm": 0.25,
-          "maximumNormMm": 3,
-          "scope": "All 3 moved thumb parts versus the other 318 bone-layer parts; internal thumb intersections are unchanged."
-        }
-      },
-      {
-        "side": "right",
-        "ids": [
-          "BM0069",
-          "BM0105",
-          "BM0107"
-        ],
-        "linearFromRegistered": [
-          [
-            0.958214141939245,
-            -0.2651877099579451,
-            -0.10724335259071957
-          ],
-          [
-            0.2670940736301645,
-            0.9636638944243563,
-            0.0035573043906184133
-          ],
-          [
-            0.10240319340372575,
-            -0.03205272328748447,
-            0.9942264374429878
-          ]
-        ],
-        "translationFromRegistered": [
-          -0.2513656207123022,
-          -0.07208469072829776,
-          -0.044927532879961166
-        ],
-        "rotationNormDegrees": 16.654131355283525,
-        "clearance": {
-          "translationMm": [
-            -1.25,
-            -0.5,
-            0
-          ],
-          "normMm": 1.3462912017836262,
-          "tested": 668,
-          "stepMm": 0.25,
-          "maximumNormMm": 3,
-          "scope": "All 3 moved thumb parts versus the other 318 bone-layer parts; internal thumb intersections are unchanged."
-        }
-      }
-    ]
-  }
+  ]
 }

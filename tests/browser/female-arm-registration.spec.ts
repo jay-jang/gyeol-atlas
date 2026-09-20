@@ -42,19 +42,24 @@ test('female arm rest pose matches calibrated geometry through peeling, search, 
     await page.getByLabel('연속 해부 박리 깊이').fill(depth);await ready(page);
     expect(await geometryHashes()).toEqual({hashes:expected,calibrated:60});
   }
-  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill('BM0078');
-  await page.locator('.structure-item').filter({hasText:'BM0078'}).click();await ready(page);
-  expect((await snapshot(page)).layers.bone).toBe(true);
-  await page.getByRole('button',{name:'선택 구조 확대',exact:true}).click();
-  await expect.poll(()=>page.evaluate(async url=>{
-    const module=await import(/* @vite-ignore */ url),s=module._roots.get(document.querySelector('canvas')).store.getState();
-    const mesh=s.scene.getObjectByName('BM0078');mesh.geometry.computeBoundingBox();
-    const centre=mesh.geometry.boundingBox.getCenter(s.controls.target.clone());
-    return centre.distanceTo(s.controls.target);
-  },fiberUrl)).toBeLessThan(.001);
-  await page.screenshot({path:'docs/anatomy-alignment/female-arm-selected.png'});
+  for(const id of ['BM0078','BM0064','BM0069']){
+    await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);
+    await page.locator('.structure-item').filter({hasText:id}).click();await ready(page);
+    expect((await snapshot(page)).layers.bone).toBe(true);
+    await page.getByRole('button',{name:'선택 구조 확대',exact:true}).click();
+    await expect.poll(()=>page.evaluate(async ({url,id})=>{
+      const module=await import(/* @vite-ignore */ url),s=module._roots.get(document.querySelector('canvas')).store.getState();
+      const mesh=s.scene.getObjectByName(id);mesh.geometry.computeBoundingBox();
+      const centre=mesh.geometry.boundingBox.getCenter(s.controls.target.clone());
+      return centre.distanceTo(s.controls.target);
+    },{url:fiberUrl,id})).toBeLessThan(.001);
+    await page.screenshot({path:id==='BM0078'?'docs/anatomy-alignment/female-arm-selected.png':`docs/anatomy-alignment/female-thumb-${id}.png`});
+  }
   const pose=(await snapshot(page)).camera;await page.reload();await ready(page);
-  expect((await snapshot(page)).camera).toEqual(pose);
+  const restored=(await snapshot(page)).camera;
+  // OrbitControls can round-trip spherical coordinates by one floating-point
+  // ULP. Keep sub-picometre camera tolerance; geometry hashes stay exact.
+  for(const key of ['position','target'])for(let i=0;i<3;i++)expect(restored[key][i]).toBeCloseTo(pose[key][i],12);
   expect(await geometryHashes()).toEqual({hashes:expected,calibrated:60});
   await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
   await expect.poll(()=>page.evaluate(async({url,ids})=>{
