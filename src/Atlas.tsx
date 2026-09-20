@@ -38,6 +38,7 @@ import { LoaderCircle, TriangleAlert } from "lucide-react";
 import PackedAtlas from "./PackedAtlas";
 import { clippingPlanes, configurePicking } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
+import { framedDistance } from "./camera-framing";
 
 const structureById = new Map(structures.map(s => [s.id, s]));
 
@@ -370,18 +371,40 @@ function Scene(props: Props) {
   const { camera, invalidate, scene, size, gl } = useThree();
   const keys = useRef(new Set<string>());
   const mobile = window.innerWidth <= 700;
-  const ctDetail = referenceSourceFor(props.sex, [...props.selectionIds, ...props.detailIds]) === "female-detail";
-  const observationTop = mobile ? 182 : ctDetail ? 40 : 0;
-  const observationBottom = mobile ? Math.max(observationTop + 120, size.height - (props.selectionIds.length ? 374 : 75)) : ctDetail ? Math.max(180, size.height - 340) : size.height;
+  const hasDetail = props.detailIds.length > 0;
+  const landscapeDetail = hasDetail && !mobile && window.innerHeight <= 550;
+  const [detailCard, setDetailCard] = useState<{top:number;right:number} | null>(null);
+  const detailCardTop = detailCard?.top ?? null;
+  useEffect(() => {
+    if (!hasDetail) { setDetailCard(null); return; }
+    const card = gl.domElement.closest('.anatomy-workspace')?.querySelector('.selection-card');
+    if (!card) return;
+    const measure = () => {
+      const bounds = card.getBoundingClientRect(), canvas = gl.domElement.getBoundingClientRect();
+      const top = Math.round(bounds.top - canvas.top), right = Math.round(bounds.right - canvas.left);
+      setDetailCard(previous => previous?.top === top && previous.right === right ? previous : {top,right});
+    };
+    const observer = new ResizeObserver(measure);
+    observer.observe(card); observer.observe(gl.domElement); measure();
+    return () => observer.disconnect();
+  }, [hasDetail, gl, size.width, size.height]);
+  const observationTop = mobile ? 182 : hasDetail ? 24 : 0;
+  const observationBottom = landscapeDetail ? size.height - 65 : hasDetail && detailCardTop !== null
+    ? Math.max(observationTop + 1, Math.min(size.height, detailCardTop - 16))
+    : mobile ? Math.max(observationTop + 120, size.height - (props.selectionIds.length ? 374 : 75)) : hasDetail ? Math.max(180, size.height - 340) : size.height;
   const observationHeight = observationBottom - observationTop;
-  const observationWidth = mobile && props.selectionIds.length ? Math.max(120, size.width - 160) : size.width;
+  const observationLeft = landscapeDetail ? Math.max(80, (detailCard?.right ?? 0) + 16) : 0;
+  const observationWidth = landscapeDetail ? Math.max(1,size.width - 200 - observationLeft)
+    : mobile && props.selectionIds.length ? Math.max(120, size.width - 160) : size.width;
   useEffect(() => {
     const cam = camera as PerspectiveCamera;
-    if (mobile || ctDetail) cam.setViewOffset(size.width, size.height, mobile && props.selectionIds.length ? 32.5 : 0, size.height / 2 - (observationTop + observationBottom) / 2, size.width, size.height);
+    if (mobile || hasDetail) cam.setViewOffset(size.width, size.height,
+      landscapeDetail ? size.width / 2 - (observationLeft + observationWidth / 2) : mobile && props.selectionIds.length ? 32.5 : 0,
+      size.height / 2 - (observationTop + observationBottom) / 2, size.width, size.height);
     else cam.clearViewOffset();
     cam.updateProjectionMatrix();
     invalidate();
-  }, [camera, mobile, ctDetail, size.width, size.height, observationTop, observationBottom, props.selectionIds.length, invalidate]);
+  }, [camera, mobile, hasDetail, landscapeDetail, size.width, size.height, observationTop, observationBottom, observationLeft, observationWidth, props.selectionIds.length, invalidate]);
   useEffect(() => {
     const canvas = gl.domElement;
     canvas.tabIndex = 0;
@@ -439,6 +462,9 @@ function Scene(props: Props) {
   );
   const initialPose = useRef(props.initialPose);
   const executed = useRef(-1);
+  const layoutKey = `${size.width}/${size.height}/${observationTop}/${observationBottom}/${observationLeft}/${observationWidth}`;
+  const framedLayout = useRef(layoutKey);
+  const restoringLayout = useRef(Boolean(props.initialPose));
   const poseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const emitPose = useCallback(() => {
     const c = controls.current;
@@ -501,15 +527,25 @@ function Scene(props: Props) {
   }, [revision, props.sex, props.layers, props.selectionIds, props.detailIds, props.isolated, props.dissection, props.anatomyRegion, scene, gl]);
   useEffect(() => {
     const c = controls.current;
-    if (!c || executed.current === action.tick) return;
-    if (action.kind.startsWith("move-")) {
-      translateView(camera, c.target, action.kind.slice(5) as MoveDirection, 0.12);
-    } else if (action.kind === "zoomIn" || action.kind === "zoomOut")
+    if (!c) return;
+    const pendingAction = executed.current !== action.tick;
+    const layoutChanged = framedLayout.current !== layoutKey;
+    // Initial restoration already has the user's saved framing. Measuring its
+    // card must not overwrite that pose; later resizing/toggling may re-fit.
+    if (!pendingAction && restoringLayout.current && hasDetail && detailCardTop !== null) {
+      restoringLayout.current = false; framedLayout.current = layoutKey; return;
+    }
+    if (!pendingAction && (!hasDetail || !layoutChanged)) { framedLayout.current = layoutKey; return; }
+    const kind = pendingAction ? action.kind : "structure";
+    const detailPreset = hasDetail && ["front", "back", "side", "reset"].includes(kind);
+    if (kind.startsWith("move-")) {
+      translateView(camera, c.target, kind.slice(5) as MoveDirection, 0.12);
+    } else if (kind === "zoomIn" || kind === "zoomOut")
       camera.position
         .sub(c.target)
-        .multiplyScalar(action.kind === "zoomIn" ? 0.8 : 1.25)
+        .multiplyScalar(kind === "zoomIn" ? 0.8 : 1.25)
         .add(c.target);
-    else if (action.kind === "restore") {
+    else if (kind === "restore") {
       if (initialPose.current) {
         camera.position.fromArray(initialPose.current.position);
         c.target.fromArray(initialPose.current.target);
@@ -517,15 +553,13 @@ function Scene(props: Props) {
         camera.position.set(0, 1, 3.3);
       }
     } else if (
-      action.kind === "structure" ||
-      action.kind === "fit" ||
-      action.kind === "comparison"
+      kind === "structure" || kind === "fit" || kind === "comparison" || detailPreset
     ) {
       const ids = props.selectionIds;
       const box = new Box3();
       let count = 0;
       scene.updateMatrixWorld(true);
-      if (action.kind === "fit") {
+      if (kind === "fit") {
         scene.traverse(obj => {
           if (obj instanceof Mesh && obj.visible && structureById.has(obj.name)) {
             box.union(new Box3().setFromObject(obj));
@@ -541,21 +575,16 @@ function Scene(props: Props) {
           }
         }
       }
-      if (!count || (action.kind !== "fit" && count !== ids.length) || box.isEmpty()) return;
-      const size = box.getSize(new Vector3());
-      const direction = camera.position.clone().sub(c.target).normalize();
+      if (!count || (kind !== "fit" && count !== ids.length) || box.isEmpty()) return;
+      const direction = detailPreset ? new Vector3(kind === "side" ? 1 : 0, 0, kind === "side" ? 0 : kind === "back" ? -1 : 1)
+        : camera.position.clone().sub(c.target).normalize();
       box.getCenter(c.target);
       const cam = camera as PerspectiveCamera;
-      const tangent = Math.tan((cam.fov * Math.PI) / 360);
-      const distance =
-        Math.max(
-          size.y / 2 / tangent / (mobile || ctDetail ? observationHeight / gl.domElement.clientHeight : 1),
-          size.x / 2 / (tangent * cam.aspect) / (mobile ? observationWidth / gl.domElement.clientWidth : 1),
-          0.12,
-        ) *
-          (mobile ? 1.15 : action.kind === "comparison" ? 2.6 : 1.65) +
-        size.z / 2;
       if (direction.lengthSq() < 0.1) direction.set(0, 0, 1);
+      const distance = framedDistance(box, direction, cam.fov, cam.aspect,
+        mobile || landscapeDetail ? observationWidth / gl.domElement.clientWidth : 1,
+        mobile || hasDetail ? observationHeight / gl.domElement.clientHeight : 1,
+        mobile ? 1.15 : kind === "comparison" ? 2.6 : 1.65);
       camera.position.copy(c.target).addScaledVector(direction, distance);
     } else if (action.kind === "region") {
       if (!markers.length) return;
@@ -612,10 +641,12 @@ function Scene(props: Props) {
       );
     }
     executed.current = action.tick;
+    framedLayout.current = layoutKey;
+    if (kind !== "restore") restoringLayout.current = false;
     c.update();
     emitPose();
     invalidate();
-  }, [action, camera, invalidate, scene, revision, emitPose, props.anatomyRegion]);
+  }, [action, camera, invalidate, scene, revision, emitPose, props.anatomyRegion, layoutKey, hasDetail, detailCardTop]);
   return (
     <>
       <color attach="background" args={["#07141c"]} />

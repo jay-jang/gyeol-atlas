@@ -1287,6 +1287,19 @@ body:has(.anatomy-workspace) .site-footer {
 .organ-detail-parts button { min-height:38px; padding:5px 7px; color:#263a40; text-align:left; background:#eef3eb; border:1px solid #ccd7c8; border-radius:6px; font-size:12px; }
 .organ-detail-parts button[aria-pressed="true"] { color:#fff; background:#286676; border-color:#286676; }
 .organ-detail-parts button small { display:block; margin-top:2px; color:inherit; font-size:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+@media (min-width:701px) {
+  .anatomy-workspace .selection-card[data-detail="true"] { max-height:min(42vh,420px); overflow:auto; }
+}
+@media (min-width:701px) and (max-height:550px) {
+  .anatomy-workspace[data-detail="true"] { background:#07141c; }
+  .anatomy-workspace[data-detail="true"] .explore-sidebar { visibility:hidden; }
+  .anatomy-workspace[data-detail="true"] .selection-card {
+    left:12px; top:12px; bottom:60px; width:248px; min-width:230px;
+    max-width:248px; max-height:none; transform:none; display:flex; flex-direction:column;
+  }
+  .anatomy-workspace[data-detail="true"] .selection-card>div:first-child { min-height:0; overflow:auto; }
+  .anatomy-workspace[data-detail="true"] .selection-actions { flex-shrink:0; }
+}
 .selection-actions { flex-wrap:wrap; }
 @media(max-width:700px){
   .anatomy-workspace .selection-card { left:10px; width:calc(100% - 84px); max-height:210px; overflow:auto; }

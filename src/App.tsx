@@ -606,6 +606,7 @@ function AtlasPage({
       className="anatomy-workspace"
       aria-label="인체 구조 탐색"
       data-panel={panel || "none"}
+      data-detail={Boolean(state.detail)}
       onWheelCapture={(event) => {
         if (!event.altKey || Math.abs(event.deltaY) < 2) return;
         event.preventDefault();
@@ -1112,7 +1113,7 @@ function AtlasPage({
         </div>
       )}
       {state.selection && (
-        <section className="selection-card" aria-label="선택 구조 조작">
+        <section className="selection-card" data-detail={Boolean(state.detail)} aria-label="선택 구조 조작">
           <div>
             <span className={`selection-kind ${state.selection.kind}`}>
               {state.comparison ? "전통 장부 비교" : state.detail ? `${state.detail.name} · 기관 상세 모델` : state.selection.kind === "bundle" ? "구조 묶음" : "선택 구조"}
