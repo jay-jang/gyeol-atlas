@@ -12,6 +12,9 @@ import {MeshBVH} from 'three-mesh-bvh';
 import {referencedVertices} from './lib/surface-containment.mjs';
 
 const root=process.argv[2];assert.ok(root,'Pass extracted donor STL directory');
+// Keep historical four-fit reports reproducible; joint diagnostics are opt-in.
+const jointAnalysis=process.argv.includes('--joint-analysis');
+for(const arg of process.argv.slice(3))assert.equal(arg,'--joint-analysis',`Unknown option: ${arg}`);
 const atlas=JSON.parse(fs.readFileSync('public/models/female/atlas-female.json'));
 const source=JSON.parse(fs.readFileSync('docs/anatomy-alignment/donor-source-comparison.json'));
 const buffers=atlas.chunks.map(c=>gunzipSync(fs.readFileSync(`public/models/female/${c.gzip.split('/').pop()}`)));
@@ -75,9 +78,10 @@ const report={createdAt:new Date().toISOString(),status:'BONE SURFACE FIT CANDID
     'Closest-point ICP is local and does not prove a global optimum. A lower bone residual cannot authorize muscle placement without a separate audit.']};
 for(const side of ['left','right']){
   const all=['Femur','Patella','Tibia','Fibula'].map(name=>geometries(name,side));
-  for(const mode of ['shank','whole-leg']){
-    const bones=mode==='shank'?all.filter(b=>['Tibia','Fibula'].includes(b.name)):all;
-    const initial=source.fits[`${side}-shank`],r=initial.rows,s=initial.scale,t=initial.offset;
+  for(const mode of jointAnalysis?['thigh','shank','whole-leg']:['shank','whole-leg']){
+    const names=mode==='thigh'?['Femur','Patella']:mode==='shank'?['Tibia','Fibula']:null;
+    const bones=names?all.filter(b=>names.includes(b.name)):all;
+    const initial=source.fits[`${side}-${mode==='thigh'?'thigh':'shank'}`],r=initial.rows,s=initial.scale,t=initial.offset;
     const transform=new Matrix4().set(...r[0].map(v=>v*s),t[0],...r[1].map(v=>v*s),t[1],...r[2].map(v=>v*s),t[2],0,0,0,1);
     const samples=bones.flatMap(b=>referencedVertices(b.donor,2000).map(i=>({p:new Vector3().fromBufferAttribute(b.donor.attributes.position,i),bone:b})));
     const initialTransform=transform.clone(),history=[];let previous=Infinity,converged=false;
@@ -100,7 +104,26 @@ for(const side of ['left','right']){
     report.fits.push({side,mode,samples:samples.length,iterations:history.length,converged,convergenceDeltaMetres:1e-8,finalSampleRmsMm,sampleRmsMm:history,sourceToAtlasMatrix:transform.toArray(),bones:rows});
     console.log(JSON.stringify({side,mode,converged,sampleRmsBefore:history[0],finalSampleRmsMm,bones:rows.map(b=>({name:b.name,forward95:b.after.forward.p95Mm,reverse95:b.after.reverse.p95Mm}))}));
   }
+  if(jointAnalysis){
+    // Apply both independently fitted frames to the SAME source bone vertices.
+    // Their disagreement is a transform diagnostic, not an anatomical gap or
+    // a claim that linear blending would preserve muscle attachment or shape.
+    const thigh=new Matrix4().fromArray(report.fits.find(f=>f.side===side&&f.mode==='thigh').sourceToAtlasMatrix);
+    const shank=new Matrix4().fromArray(report.fits.find(f=>f.side===side&&f.mode==='shank').sourceToAtlasMatrix);
+    report.jointFrameDisagreement??=[];
+    report.jointFrameDisagreement.push({side,bones:all.map(b=>{
+      let maximumWitness;
+      const distances=referencedVertices(b.donor,Infinity).map(i=>{
+        const p=new Vector3().fromBufferAttribute(b.donor.attributes.position,i);
+        const distanceMm=p.clone().applyMatrix4(thigh).distanceTo(p.clone().applyMatrix4(shank))*1000;
+        if(!maximumWitness||distanceMm>maximumWitness.distanceMm)maximumWitness={vertex:i,sourcePointMetres:p.toArray(),distanceMm};
+        return distanceMm;
+      }).sort((a,b)=>a-b);
+      return {name:b.name,vertices:distances.length,minimumMm:distances[0],medianMm:distances[Math.floor(distances.length*.5)],p95Mm:distances[Math.floor(distances.length*.95)],maximumMm:distances.at(-1),maximumWitness};
+    })});
+  }
   all.forEach(b=>{b.donor.dispose();b.target.dispose();});
 }
 report.provenance=['scripts/fit-donor-bone-surfaces.mjs','docs/anatomy-alignment/donor-source-comparison.json','data/catalog/female-atlas-source.json','public/models/female/atlas-female.json','package-lock.json'].map(file=>({file,sha256:sha(file)}));
-fs.mkdirSync('.cache/calf-registration',{recursive:true});fs.writeFileSync('.cache/calf-registration/bone-surface-fits.json',JSON.stringify(report,null,2)+'\n');
+const output=jointAnalysis?'joint-bone-surface-fits.json':'bone-surface-fits.json';
+fs.mkdirSync('.cache/calf-registration',{recursive:true});fs.writeFileSync(`.cache/calf-registration/${output}`,JSON.stringify(report,null,2)+'\n');
