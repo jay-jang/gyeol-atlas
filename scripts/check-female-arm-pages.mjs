@@ -7,10 +7,12 @@ import {gunzipSync} from 'node:zlib';
 import {chromium} from '@playwright/test';
 
 const origin=process.env.PAGES_ORIGIN||'http://127.0.0.1:5174/';
-const registration=JSON.parse(fs.readFileSync('data/catalog/female-arm-registration.json'));
+const feet=process.argv.includes('--feet');
+const registrationPath=`data/catalog/female-${feet?'foot':'arm'}-registration.json`;
+const registration=JSON.parse(fs.readFileSync(registrationPath));
 const atlas=JSON.parse(fs.readFileSync('public/models/female/atlas-female.json'));
-const records=registration.records.filter(r=>/^(Left|Right) (humerus|third metacarpal bone)$/.test(r.name)||/^Distal phalanx of (left|right) thumb$/.test(r.name));
-assert.equal(records.length,6);
+const records=registration.records.filter(r=>feet?/^Distal phalanx of (left|right) (third|fourth) toe$/.test(r.name):/^(Left|Right) (humerus|third metacarpal bone)$/.test(r.name)||/^Distal phalanx of (left|right) thumb$/.test(r.name));
+assert.equal(records.length,feet?4:6);
 const expected=records.map(r=>{
   const p=atlas.parts.find(p=>p.id===r.id);
   const bytes=gunzipSync(fs.readFileSync(`public/models/female/${atlas.chunks[p.chunk].gzip.split('/').pop()}`));
@@ -54,14 +56,20 @@ try {
     const actual=await view();assert.equal(actual.sex,'female');assert.equal(actual.layers.bone,true);
     checks.push({...row,actualTarget:actual.camera.target,errorMetres:Math.hypot(...row.target.map((v,j)=>v-actual.camera.target[j]))});
   }
-  await page.getByRole('button',{name:'골격 빠른 보기',exact:true}).click();await ready();
-  await page.getByLabel('전신 부위 선택').selectOption({label:'전신'});await ready();
-  await page.getByRole('button',{name:'계통 전체 보기',exact:true}).click();
-  await page.screenshot({path:'docs/anatomy-alignment/pages-female-arms-registered.png'});
+  if(feet){
+    await page.screenshot({path:'docs/anatomy-alignment/pages-female-toe-selected.png'});
+    await page.setViewportSize({width:390,height:844});
+    await page.screenshot({path:'docs/anatomy-alignment/pages-female-toe-selected-mobile.png'});
+  }else{
+    await page.getByRole('button',{name:'골격 빠른 보기',exact:true}).click();await ready();
+    await page.getByLabel('전신 부위 선택').selectOption({label:'전신'});await ready();
+    await page.getByRole('button',{name:'계통 전체 보기',exact:true}).click();
+    await page.screenshot({path:'docs/anatomy-alignment/pages-female-arms-registered.png'});
+  }
   assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
   const report={origin,checkedAt:new Date().toISOString(),registrationVersion:registration.version,
-    registrationSha256:createHash('sha256').update(fs.readFileSync('data/catalog/female-arm-registration.json')).digest('hex'),
-    method:'Six real search/select/frame operations including refined thumb tips; camera target versus independent transformed bounding centre. Not a complete deployed vertex audit.',checks,errors,failures};
-  fs.writeFileSync('docs/anatomy-alignment/pages-female-arm-verification.json',JSON.stringify(report,null,2)+'\n');
+    registrationSha256:createHash('sha256').update(fs.readFileSync(registrationPath)).digest('hex'),
+    method:`${records.length} real search/select/frame operations; camera target versus independent transformed bounding centre. Not a complete deployed vertex audit.`,checks,errors,failures};
+  fs.writeFileSync(`docs/anatomy-alignment/pages-female-${feet?'foot':'arm'}-verification.json`,JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify(report));
 } finally {await browser.close();}

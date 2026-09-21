@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
 import {BufferGeometry,BufferAttribute} from 'three';
 import {applyFemaleArmRegistration} from '../../src/female-arm-registration';
+import {applyFemaleFootRegistration} from '../../src/female-foot-registration';
 import {ready,snapshot,openTool} from './helpers';
 
 const atlas=JSON.parse(fs.readFileSync('public/models/female/atlas-female.json','utf8'));
@@ -13,11 +14,12 @@ const expected=Object.fromEntries(atlas.parts.map((p:any)=>{
   g.setAttribute('position',new BufferAttribute(Float32Array.from({length:p.vertexCount*3},(_,i)=>b.readFloatLE(p.positions+i*4)),3));
   g.setIndex(new BufferAttribute(Uint32Array.from({length:p.indexCount},(_,i)=>b.readUInt32LE(p.indices+i*4)),1));
   applyFemaleArmRegistration(g,'female',p.id,p.system);
+  applyFemaleFootRegistration(g,'female',p.id,p.system);
   const hash=createHash('sha256').update(Buffer.from(g.attributes.position.array.buffer)).digest('hex');
   g.dispose();return [p.id,hash];
 }));
 
-test('female arm rest pose matches calibrated geometry through peeling, search, reload and sex changes',async({page})=>{
+test('female arm and toe rest poses match calibrated geometry through peeling, search, reload and sex changes',async({page})=>{
   test.setTimeout(180000);let fiberUrl='';const errors:string[]=[];
   page.on('pageerror',e=>errors.push(e.message));
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
@@ -42,7 +44,7 @@ test('female arm rest pose matches calibrated geometry through peeling, search, 
     await page.getByLabel('연속 해부 박리 깊이').fill(depth);await ready(page);
     expect(await geometryHashes()).toEqual({hashes:expected,calibrated:60});
   }
-  for(const id of ['BM0078','BM0064','BM0069']){
+  for(const id of ['BM0078','BM0064','BM0069','BM0126','BM0154']){
     await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);
     await page.locator('.structure-item').filter({hasText:id}).click();await ready(page);
     expect((await snapshot(page)).layers.bone).toBe(true);
@@ -53,7 +55,13 @@ test('female arm rest pose matches calibrated geometry through peeling, search, 
       const centre=mesh.geometry.boundingBox.getCenter(s.controls.target.clone());
       return centre.distanceTo(s.controls.target);
     },{url:fiberUrl,id})).toBeLessThan(.001);
-    await page.screenshot({path:id==='BM0078'?'docs/anatomy-alignment/female-arm-selected.png':`docs/anatomy-alignment/female-thumb-${id}.png`});
+    await page.screenshot({path:id==='BM0078'?'docs/anatomy-alignment/female-arm-selected.png':`docs/anatomy-alignment/female-${['BM0126','BM0154'].includes(id)?'toe':'thumb'}-${id}.png`});
+    if(id==='BM0154'){
+      await page.setViewportSize({width:390,height:844});
+      await page.screenshot({path:'docs/anatomy-alignment/female-toe-selected-mobile.png'});
+      expect(await geometryHashes()).toEqual({hashes:expected,calibrated:60});
+      await page.setViewportSize({width:1440,height:1100});
+    }
   }
   const pose=(await snapshot(page)).camera;await page.reload();await ready(page);
   const restored=(await snapshot(page)).camera;

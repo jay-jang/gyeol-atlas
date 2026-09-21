@@ -57,7 +57,10 @@ test('female help and layer descriptions use the female overview inventory', asy
     await openTool(page,'레이어 조절');
     await expect(page.locator('.coverage-description')).toContainText(`여성 전신 참조의 ${label} 모형 ${count}개`);
     if(layer==='muscle')await expect(page.locator('.coverage-description')).toContainText('피부 밖으로 벗어나는 정렬 문제');
-    if(layer==='bone')await expect(page.locator('.coverage-description')).toContainText('팔·손뼈 60개의 위치를 부분 교정');
+    if(layer==='bone'){
+      await expect(page.locator('.coverage-description')).toContainText('팔·손뼈 60개와 발가락뼈 20개의 위치를 부분 교정');
+      await expect(page.locator('.coverage-description')).toContainText('새끼발가락·뒤꿈치와 다른 보완 골격의 정렬은 아직 미완료');
+    }
     await closeTool(page); await openTool(page,'도움말');
     await expect(page.locator('.viewer-help')).toContainText(`여성 전신 참조의 ${label} 모형 ${count}개`);
     await closeTool(page);

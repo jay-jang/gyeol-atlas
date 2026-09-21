@@ -10,6 +10,7 @@ import { musclePeelRanks } from "./muscle-peel";
 import { clippingPlanes, configurePicking } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { applyFemaleArmRegistration } from "./female-arm-registration";
+import { applyFemaleFootRegistration } from "./female-foot-registration";
 import { anatomyRegionMatches } from "./anatomy-region";
 
 type FemalePart = {
@@ -86,6 +87,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         geometry.setAttribute("normal", new Int16BufferAttribute(new Int16Array(buffer, part.normals, part.vertexCount * 3), 3, true));
         geometry.setIndex(new BufferAttribute(new Uint32Array(buffer, part.indices, part.indexCount), 1));
         applyFemaleArmRegistration(geometry, dataset, part.id, part.system);
+        applyFemaleFootRegistration(geometry, dataset, part.id, part.system);
         geometry.computeBoundingBox();
         geometry.computeBoundingSphere();
         const actualBounds = [geometry.boundingBox!.min.toArray(), geometry.boundingBox!.max.toArray()];
