@@ -76,7 +76,7 @@ function returnToAtlas() {
   const pointId = readView().pointId;
   return pointId ? `#atlas/${pointId}` : "#atlas";
 }
-import { anatomyRegionNames, layerKeys, layerNames, stages, structuresForSex, organGroups, type Layer } from "./anatomy";
+import { anatomyRegionNames, layerKeys, layerNames, stages, structuresForSex, organGroups, structureGroups, compositeGroups, type Layer } from "./anatomy";
 import conceptData from "../data/point-concepts.json";
 import concepts from "../data/concepts.json";
 const pointConcepts = conceptData as Record<
@@ -590,7 +590,7 @@ function AtlasPage({
     [state.sex],
   );
   const featuredAnatomy = organGroups.filter(group => group.sex === state.sex).map(group => ({ ...group, detail: group.ids.length > 1 ? `${group.ids.length}개 세부 모형` : "단일 원본 모형" }));
-  const selectFeatured = (item: (typeof featuredAnatomy)[number]) => {
+  const selectFeatured = (item: { id: string; name: string; ids: string[] }) => {
     dispatch({
       type: "detail",
       detail: { id: item.id, name: item.name, ids: item.ids, layers: Object.fromEntries(layerKeys.map(layer => [layer, structures.some(s => s.layer === layer && item.ids.includes(s.id))])) as Layers },
@@ -615,7 +615,11 @@ function AtlasPage({
     ? structures.find((item) => item.id === state.selection?.ids[0])
     : null;
   const selectedGroup = state.detail?.id || selectedAnatomy?.group;
-  const selectedOrgan = featuredAnatomy.find(group => group.id === selectedGroup);
+  const selectedOrgan = structureGroups.find(group => group.id === selectedGroup && group.sex === state.sex);
+  const selectedComposite = compositeGroups.find(group => group.id === selectedGroup && group.sex === state.sex);
+  const fullCompositeDetail = Boolean(selectedComposite && state.detail && state.selection?.kind === "bundle"
+    && state.selection.ids.length === selectedComposite.ids.length
+    && selectedComposite.ids.every(id => state.selection!.ids.includes(id)));
   const detailParts = selectedOrgan ? structuresForSex(state.sex).filter(item => selectedOrgan.ids.includes(item.id)) : [];
   return (
     <main
@@ -1144,7 +1148,7 @@ function AtlasPage({
         <section className="selection-card" data-detail={Boolean(state.detail)} data-selection="true" aria-label="선택 구조 조작">
           <div>
             <span className={`selection-kind ${state.selection.kind}`}>
-              {state.comparison ? "전통 장부 비교" : state.detail ? `${state.detail.name} · 기관 상세 모델` : state.selection.kind === "bundle" ? "구조 묶음" : "선택 구조"}
+              {state.comparison ? "전통 장부 비교" : state.detail ? `${state.detail.name} · ${selectedComposite ? "구조" : "기관"} 상세 모델` : state.selection.kind === "bundle" ? "구조 묶음" : "선택 구조"}
             </span>
             <strong>
               {state.selection.name}{" "}
@@ -1159,6 +1163,10 @@ function AtlasPage({
             {selectedAnatomy?.source && sourceKey !== "female-detail" && (
               <small className="selection-source">{selectedAnatomy.source} · 학습용 비진단 모델</small>
             )}
+            {selectedComposite && <details className="anatomy-source-details" data-composite-provenance>
+              <summary>원본 {selectedComposite.ids.length}조각 · 관절연골 포함</summary>
+              <p className="selection-description">{selectedComposite.description}</p>
+            </details>}
             {state.sex === "female" && selectedOrgan?.id === "brain" && <div data-brain-provenance>
               <p className="selection-description">Allen 기반 참조 뇌 · 원본 좌우 표기와 전신 방향 불일치</p>
               <details className="anatomy-source-details"><summary>뇌 출처·방향 주의</summary>
@@ -1184,7 +1192,7 @@ function AtlasPage({
           </div>
           <div className="selection-actions">
             {sourceKey === "female-detail" && state.detail?.id !== "abdomen-ct" && <button aria-label="같은 여성 CT의 주변 기관 보기" onClick={() => selectFeatured(featuredAnatomy.find(item => item.id === "abdomen-ct")!)}>주변 기관 함께 보기</button>}
-            {selectedOrgan && !(sourceKey === "female-detail" && selectedOrgan.ids.length === 1 && state.detail) && <button onClick={() => selectFeatured(selectedOrgan)}>{state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
+            {!fullCompositeDetail && selectedOrgan && !(sourceKey === "female-detail" && selectedOrgan.ids.length === 1 && state.detail) && <button onClick={() => selectFeatured(selectedOrgan)}>{selectedComposite ? `${selectedComposite.name} ${state.detail ? "전체 모형" : "전체 상세 보기"}` : state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
             {state.detail && <button onClick={() => { dispatch({ type: "detail-close" }); requestAnimationFrame(() => camera("fit")); }}>전신으로 돌아가기</button>}
             <button
               onClick={() => {
@@ -1194,7 +1202,7 @@ function AtlasPage({
             >
               확대
             </button>
-            <button
+            {!fullCompositeDetail && <button
               aria-pressed={state.isolated}
               onClick={() => { dispatch({ type: "isolate" }); requestAnimationFrame(() => camera("structure")); }}
             >
@@ -1203,7 +1211,7 @@ function AtlasPage({
                 : state.selection.kind === "bundle"
                   ? "비교 대상만 보기"
                   : "선택 구조만 보기"}
-            </button>
+            </button>}
             <button
               aria-label="구조 선택 해제"
               onClick={() => dispatch({ type: "clear-selection" })}

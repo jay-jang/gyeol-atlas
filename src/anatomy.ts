@@ -5,12 +5,17 @@ import fullSystemStructures from "../data/full-system-structures.json";
 import sexLymphStructures from "../data/sex-lymph-structures.json";
 import femaleAtlasStructures from "../data/female-atlas-structures.json";
 import femaleOrganGroups from "../data/female-organ-groups.json";
+import femaleCompositeGroups from "../data/female-composite-groups.json";
 import maleOrganGroups from "../data/male-organ-groups.json";
 import maleDetailGroups from "../data/male-detail-groups.json";
 import maleDetailStructures from "../data/male-detail-structures.json";
 import femaleDetailStructures from "../data/female-detail-structures.json";
 import femaleDetailGroups from "../data/female-detail-groups.json";
 export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.find(detail => detail.id === group.id) || group), ...femaleOrganGroups, ...femaleDetailGroups];
+// Source-defined composite structures are available from their selection card,
+// without changing the featured major-organ navigation or comparison bundles.
+export const compositeGroups = femaleCompositeGroups;
+export const structureGroups = [...organGroups, ...compositeGroups];
 export const layerNames = {
   skin: "체표",
   muscle: "근육",

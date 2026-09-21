@@ -34,7 +34,7 @@ const definitions = [
   ["spleen", "비장", ["HRA:spleen"]], ["intestine", "장", ["HRA:small_intestine", "HRA:colon"]],
   ["bladder", "방광", ["HRA:urinary_bladder"]],
 ];
-const groups = definitions.map(([id, name, concepts]) => ({
+const makeGroups = definitions => definitions.map(([id, name, concepts]) => ({
   id, name, sex: "female", sourceConcepts: concepts,
   ids: [...new Set(concepts.flatMap(id => {
     const concept = manifest.concepts.find(c => c.id === id);
@@ -42,15 +42,21 @@ const groups = definitions.map(([id, name, concepts]) => ({
     return concept.elements;
   }))],
 }));
+const groups = makeGroups(definitions);
+const compositeGroups = makeGroups([
+  ["femur-left", "왼쪽 대퇴골", ["HRA:femur_L"]],
+  ["femur-right", "오른쪽 대퇴골", ["HRA:femur_R"]],
+]).map(group => ({...group, description: `HRA 원본 계층의 대퇴골 본체·무릎 관절연골·부착면 등 ${group.ids.length}개 표면 묶음입니다. 순수 뼈 조직만의 분할이나 폐쇄된 하나의 표면을 뜻하지 않습니다.`}));
 const exactLabels = {
   Skin: "여성 전신 피부", "Body of uterus": "자궁몸통", "Fundus of uterus": "자궁바닥",
   Cervix: "자궁목", "Left ovary": "왼쪽 난소", "Right ovary": "오른쪽 난소",
   "Anterior wall of uterus": "자궁 앞벽", "Posterior wall of uterus": "자궁 뒤벽",
+  "Femur (left)": "왼쪽 대퇴골 본체", "Femur (right)": "오른쪽 대퇴골 본체",
 };
 const structures = manifest.parts.map((part) => {
   const layer = layerForSystem[part.system];
   if (!layer) throw new Error(`Unmapped female atlas system: ${part.system}`);
-  const group = groups.find(group => group.ids.includes(part.id));
+  const group = [...groups, ...compositeGroups].find(group => group.ids.includes(part.id));
   return {
     id: part.id,
     name: part.name,
@@ -67,6 +73,7 @@ const structures = manifest.parts.map((part) => {
 });
 fs.writeFileSync("data/female-atlas-structures.json", JSON.stringify(structures, null, 2) + "\n");
 fs.writeFileSync("data/female-organ-groups.json", JSON.stringify(groups, null, 2) + "\n");
+fs.writeFileSync("data/female-composite-groups.json", JSON.stringify(compositeGroups, null, 2) + "\n");
 const files = ["atlas-female.json", ...manifest.chunks.map(chunk => chunk.gzip.split("/").pop())];
 fs.writeFileSync("data/catalog/female-atlas-source.json", JSON.stringify({
   repository: "https://github.com/slorksmo/Human-Atlas",
