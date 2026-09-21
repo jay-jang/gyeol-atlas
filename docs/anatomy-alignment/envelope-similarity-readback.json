@@ -1,0 +1,43 @@
+{
+  "status": "SERIALIZATION VERIFIED; CANDIDATE REMAINS REJECTED",
+  "reportSha256": "bd739cb4bcb0bddb4c46fe746409d7734434657061b2611e2484e5d08769dea7",
+  "candidateSha256": "0ed6c6e71da6488144bdbb9f4995d1e012ec2b273b97f1b27411a6a112c76461",
+  "sourceSha256": "5c506d56f40971eca353cfc6612b269c4e0e1cd22888dc4f1007377944133720",
+  "vertices": 652173,
+  "triangles": 1304042,
+  "unchangedTriangleIndicesAndWinding": true,
+  "allPositionsEqualFloat32CommonSimilarity": true,
+  "bilateralFrameRotationDisagreement": [
+    {
+      "mode": "thigh",
+      "degrees": 15.559427946793774
+    },
+    {
+      "mode": "shank",
+      "degrees": 17.20338028378493
+    },
+    {
+      "mode": "whole-leg",
+      "degrees": 17.055502800965005
+    }
+  ],
+  "limitations": [
+    "Rotation differences describe independently estimated source-to-target frames, not measured clinical joint angles.",
+    "Different estimated left/right rotations motivate articulated correspondence; they are not proof of global impossibility or uniquely correct anatomy.",
+    "Serialization and transform checks do not approve the failed skin/bone candidate."
+  ],
+  "provenance": [
+    {
+      "file": "docs/anatomy-alignment/donor-fidelity-packing.json",
+      "sha256": "0aad0815b9914a4841a6aa5cf84aa7202ee04f4d508737939c034aeecbb8b432"
+    },
+    {
+      "file": "docs/anatomy-alignment/hierarchy-joint-bone-surface-fits.json",
+      "sha256": "f1146b7fb1fb339e3dc3cf22d46b456363945e01191bbf5463614e166ceba6a4"
+    },
+    {
+      "file": "scripts/verify-donor-envelope-fit.mjs",
+      "sha256": "7406b0036e402cdac530f5281f4eabba315031d66119efa764e214555566d06a"
+    }
+  ]
+}
