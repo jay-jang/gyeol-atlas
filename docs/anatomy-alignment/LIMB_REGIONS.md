@@ -42,6 +42,12 @@
 
 세 번째 동일 프로덕션 검사는 남성9 GLB·여성15청크·별도 CT1청크·성별 전환·위키 비교 복원·브라우저 오류0으로 통과했습니다. 최종 단위61/61·TypeScript·빌드도 통과했습니다. 공개 배포 결과는 후속 기록으로 구분합니다.
 
+## 공개 배포 확인
+
+구현 `9f393ddcaf6e86abaa75d7b509ff8ac5f866edae`는 [Pages 작업35563156664](https://github.com/jay-jang/gyeol-atlas/actions/runs/35563156664)으로 배포했습니다. [공개 페이지](https://jay-jang.github.io/gyeol-atlas/)에서 남녀8부위씩의 대상270개 가시 ID 대조와 엄지 양측·위팔뼈·엄지발가락8개 검색을 수행해 총24확인 모두 통과했습니다. 브라우저/HTTP 오류0입니다([측정 기록](pages-limb-region-verification.json), [여성 모바일](pages-female-limb-region-mobile.png), [남성 모바일](pages-male-limb-region-mobile.png)).
+
+공개 확인은 이 범위의 선택·가시성·모바일 화면 검사이지 전신 임상적 위치 검수가 아닙니다. 공개 기존 전체 Pages 스모크와201설정 좌표 검사는 이번에 반복하지 않았습니다. 앞선 로컬 시간 초과도 이 공개 통과로 해결됐다고 주장하지 않습니다.
+
 ## agy 제한 검토
 
 `a824a6cf-f006-45c8-bed9-227e5a8f9856`은 새 부위 함수·연결 코드·검사에 대한 읽기 전용 정적 검토입니다. 브라우저나 임상 검수는 하지 않았고, 후속 카메라 수정 전의 코드입니다.
