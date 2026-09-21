@@ -1,0 +1,163 @@
+{
+  "status": "DIAGNOSTIC ONLY; independently fitted source donor femur vs packed HRA target; not app UI or runtime correction",
+  "hierarchyTargets": true,
+  "colorKey": {
+    "donor": "orange wireframe",
+    "target": "cyan solid"
+  },
+  "measurements": [
+    {
+      "side": "left",
+      "id": "HRAF0937",
+      "targetIds": [
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0939",
+        "HRAF0940",
+        "HRAF0941",
+        "HRAF0942",
+        "HRAF0943",
+        "HRAF0944",
+        "HRAF0945",
+        "HRAF0946",
+        "HRAF0947",
+        "HRAF0948",
+        "HRAF0949",
+        "HRAF0950",
+        "HRAF0951",
+        "HRAF0952"
+      ],
+      "source": "Left/VHF_Left_Bone_Femur_smooth.stl",
+      "sourceSha256": "964b27ab140b4e72a2e7c4ae3f1ae24212554cc1a8f0552b632dafce8d66b242",
+      "vertices": 45945,
+      "over10mm": 0,
+      "over10mmBounds": null,
+      "maximum": {
+        "vertex": 23272,
+        "pointMetres": [
+          0.15490707755088806,
+          0.7938613891601562,
+          -0.06875932216644287
+        ],
+        "nearestMetres": [
+          0.15842525149879497,
+          0.7959185474513873,
+          -0.06496214501084632
+        ],
+        "distanceMm": 5.570278495182804
+      },
+      "previousWitnessWithSameCoordinates": {
+        "vertex": 11638,
+        "pointMetres": [
+          0.12494359910488129,
+          0.4216289222240448,
+          -0.07500582188367844
+        ],
+        "nearestMetres": [
+          0.11860116571187973,
+          0.4452272653579712,
+          -0.09189780056476593
+        ],
+        "distanceMm": 29.706012922866417,
+        "compositeDistanceMm": 5.2254907606433685
+      }
+    },
+    {
+      "side": "right",
+      "id": "HRAF0911",
+      "targetIds": [
+        "HRAF0911",
+        "HRAF0912",
+        "HRAF0913",
+        "HRAF0914",
+        "HRAF0915",
+        "HRAF0916",
+        "HRAF0917",
+        "HRAF0918",
+        "HRAF0919",
+        "HRAF0920",
+        "HRAF0921",
+        "HRAF0922",
+        "HRAF0923",
+        "HRAF0924",
+        "HRAF0925",
+        "HRAF0926"
+      ],
+      "source": "Right/VHF_Right_Bone_Femur_smooth.stl",
+      "sourceSha256": "012b293cbaa2cd467ea423b96bb257c8f558ff639c8342e37972af7c6febbd25",
+      "vertices": 44735,
+      "over10mm": 0,
+      "over10mmBounds": null,
+      "maximum": {
+        "vertex": 19064,
+        "pointMetres": [
+          -0.0953182652592659,
+          0.8031400442123413,
+          -0.05346475914120674
+        ],
+        "nearestMetres": [
+          -0.09070335563060528,
+          0.8010427125461936,
+          -0.04778487227209101
+        ],
+        "distanceMm": 7.612969581213604
+      },
+      "previousWitnessWithSameCoordinates": {
+        "vertex": 2022,
+        "pointMetres": [
+          -0.13373717665672302,
+          0.42125797271728516,
+          -0.071141816675663
+        ],
+        "nearestMetres": [
+          -0.1272863745689392,
+          0.4452272653579712,
+          -0.08816557377576828
+        ],
+        "distanceMm": 30.098972458773186,
+        "compositeDistanceMm": 4.858969703660563
+      }
+    }
+  ],
+  "captures": [
+    {
+      "side": "left",
+      "view": "anterior",
+      "file": ".cache/joint-bone-visual/hierarchy/femur-left-anterior.png",
+      "sha256": "d362a0d4c89fff1fa1af4d3da47de5a49bde0d48a73a36359eb444055c846214"
+    },
+    {
+      "side": "left",
+      "view": "lateral",
+      "file": ".cache/joint-bone-visual/hierarchy/femur-left-lateral.png",
+      "sha256": "acf859839c5f0d21d3b56f6812818798ed643a77a26587d02797fdfa8198a45e"
+    },
+    {
+      "side": "right",
+      "view": "anterior",
+      "file": ".cache/joint-bone-visual/hierarchy/femur-right-anterior.png",
+      "sha256": "b62795015ac21c0ba9fa43bf951d54b98471e0ebde144718bf990ab689de6035"
+    },
+    {
+      "side": "right",
+      "view": "lateral",
+      "file": ".cache/joint-bone-visual/hierarchy/femur-right-lateral.png",
+      "sha256": "0ca77517588df0bfaedee744193ecbff392c153fee283bd512ed82e55a4a47f6"
+    }
+  ],
+  "errors": [],
+  "provenance": [
+    {
+      "file": "scripts/capture-donor-bone-fit.mjs",
+      "sha256": "0b78e88d748b0967a2bc423b431c57d1318793d68f0740a9a1787242088ce976"
+    },
+    {
+      "file": "docs/anatomy-alignment/hierarchy-joint-bone-surface-fits.json",
+      "sha256": "f1146b7fb1fb339e3dc3cf22d46b456363945e01191bbf5463614e166ceba6a4"
+    },
+    {
+      "file": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    }
+  ]
+}

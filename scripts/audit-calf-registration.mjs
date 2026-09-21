@@ -18,7 +18,9 @@ const atlas=JSON.parse(read('public/models/female/atlas-female.json'));
 const sourceFit=JSON.parse(read('docs/anatomy-alignment/donor-source-comparison.json'));
 const surfaceMode=process.argv.find(a=>a.startsWith('--surface-fit='))?.split('=')[1];
 assert.ok(!surfaceMode||['shank','whole-leg'].includes(surfaceMode));
-const surfaceFits=surfaceMode?JSON.parse(read('.cache/calf-registration/bone-surface-fits.json')):null;
+const hierarchyTargets=process.argv.includes('--hierarchy-targets');
+assert.ok(!hierarchyTargets||surfaceMode,'Hierarchy targets require --surface-fit');
+const surfaceFits=surfaceMode?JSON.parse(read(`.cache/calf-registration/${hierarchyTargets?'hierarchy-joint-':''}bone-surface-fits.json`)):null;
 const chunks=atlas.chunks.map(c=>gunzipSync(fs.readFileSync(`public/models/female/${c.gzip.split('/').pop()}`)));
 const parts=atlas.parts.map(p=>{
   const b=chunks[p.chunk],g=new BufferGeometry();
@@ -61,6 +63,7 @@ for(const selectedPart of selected){
 const report={createdAt:new Date().toISOString(),status:'CANDIDATE SCREEN ONLY; no runtime mutation',
   sourceFitMethod:surfaceMode?`Recompose every selected source-group inverse then the common ${surfaceMode} surface-fit transform.`:'Recompose the reproduced source thigh inverse then source shank similarity transform, without further fitting.',
   candidateMode:surfaceMode||'original-shank',candidateMeshes:candidates.size,otherMeshesPerCandidate:parts.length-1,
+  hierarchyTargets,
   comparisons:[],limitations:['All indexed vertices checked against the female skin with a 2mm numeric band, not tissue thickness.',
     'All other atlas meshes are screened for surface intersection, including normally hidden parts.',
     'No intersection does not exclude containment. New or worse crossings require review; surface crossing is not solid penetration depth.',
@@ -95,5 +98,5 @@ for(const [id,candidate] of candidates){
 for(const p of ['scripts/audit-calf-registration.mjs','scripts/lib/surface-containment.mjs','scripts/lib/triangle-crossings.mjs',
   'src/female-arm-registration.ts','src/female-foot-registration.ts','data/catalog/female-arm-registration.json','data/catalog/female-foot-registration.json','package-lock.json'])read(p);
 report.files=[...files].map(([path,sha256])=>({path,sha256}));
-fs.mkdirSync('.cache/calf-registration',{recursive:true});fs.writeFileSync(`.cache/calf-registration/${surfaceMode?`surface-${surfaceMode}`:'shank'}-candidate.json`,JSON.stringify(report,null,2)+'\n');
+fs.mkdirSync('.cache/calf-registration',{recursive:true});fs.writeFileSync(`.cache/calf-registration/${hierarchyTargets?'hierarchy-':''}${surfaceMode?`surface-${surfaceMode}`:'shank'}-candidate.json`,JSON.stringify(report,null,2)+'\n');
 probe.dispose();parts.forEach(p=>p.g.dispose());candidates.forEach(p=>p.g.dispose());

@@ -7,18 +7,22 @@ import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
 import {BufferGeometry,BufferAttribute,Vector3,Matrix4,Quaternion} from 'three';
 import {STLLoader} from 'three/addons/loaders/STLLoader.js';
-import {mergeVertices} from 'three/addons/utils/BufferGeometryUtils.js';
+import {mergeVertices,mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import {MeshBVH} from 'three-mesh-bvh';
 import {referencedVertices} from './lib/surface-containment.mjs';
 
 const root=process.argv[2];assert.ok(root,'Pass extracted donor STL directory');
 // Keep historical four-fit reports reproducible; joint diagnostics are opt-in.
 const jointAnalysis=process.argv.includes('--joint-analysis');
-for(const arg of process.argv.slice(3))assert.equal(arg,'--joint-analysis',`Unknown option: ${arg}`);
+const hierarchyTargets=process.argv.includes('--hierarchy-targets');
+for(const arg of process.argv.slice(3))assert.ok(['--joint-analysis','--hierarchy-targets'].includes(arg),`Unknown option: ${arg}`);
+assert.ok(!hierarchyTargets||jointAnalysis,'Hierarchy targets require --joint-analysis');
 const atlas=JSON.parse(fs.readFileSync('public/models/female/atlas-female.json'));
 const source=JSON.parse(fs.readFileSync('docs/anatomy-alignment/donor-source-comparison.json'));
 const buffers=atlas.chunks.map(c=>gunzipSync(fs.readFileSync(`public/models/female/${c.gzip.split('/').pop()}`)));
 const sha=p=>createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const membership=hierarchyTargets?JSON.parse(fs.readFileSync('docs/anatomy-alignment/hra-bone-targets.json')):null;
+if(membership)assert.equal(sha('public/models/female/atlas-female.json'),membership.atlasSha256);
 const targetSource=JSON.parse(fs.readFileSync('data/catalog/female-atlas-source.json'));
 for(const f of targetSource.files)assert.equal(sha(f.path),f.sha256,f.path);
 for(const f of source.files)assert.equal(sha(path.join(root,f.file)),f.sha256,f.file);
@@ -27,9 +31,15 @@ function geometries(name,side){
   const d=source.files.find(p=>p.kind==='bone'&&p.structure===name&&p.side===side);assert.ok(d);
   const b=fs.readFileSync(path.join(root,d.file)),raw=loader.parse(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength));
   raw.scale(.001,.001,.001);raw.deleteAttribute('normal');const donor=mergeVertices(raw,1e-8);raw.dispose();
-  const p=atlas.parts.find(p=>p.name===`${name} (${side})`);assert.ok(p,`${name}/${side}`);const bytes=buffers[p.chunk],target=new BufferGeometry();
-  target.setAttribute('position',new BufferAttribute(Float32Array.from({length:p.vertexCount*3},(_,i)=>bytes.readFloatLE(p.positions+4*i)),3));
-  target.setIndex(new BufferAttribute(Uint32Array.from({length:p.indexCount},(_,i)=>bytes.readUInt32LE(p.indices+4*i)),1));
+  const p=atlas.parts.find(p=>p.name===`${name} (${side})`);assert.ok(p,`${name}/${side}`);
+  const members=membership?membership.targets.find(t=>t.side===side&&t.bone===name).members:[p];
+  const geometries=members.map(m=>{
+    const part=atlas.parts.find(p=>p.id===m.id);assert.ok(part);
+    const bytes=buffers[part.chunk],g=new BufferGeometry();
+    g.setAttribute('position',new BufferAttribute(Float32Array.from({length:part.vertexCount*3},(_,i)=>bytes.readFloatLE(part.positions+4*i)),3));
+    g.setIndex(new BufferAttribute(Uint32Array.from({length:part.indexCount},(_,i)=>bytes.readUInt32LE(part.indices+4*i)),1));return g;
+  });
+  const target=mergeGeometries(geometries);geometries.forEach(g=>g.dispose());
   target.boundsTree=new MeshBVH(target);return {name,side,id:p.id,donor,target};
 }
 // Largest eigenvector of a real symmetric matrix via Jacobi sweeps, not a
@@ -125,5 +135,6 @@ for(const side of ['left','right']){
   all.forEach(b=>{b.donor.dispose();b.target.dispose();});
 }
 report.provenance=['scripts/fit-donor-bone-surfaces.mjs','docs/anatomy-alignment/donor-source-comparison.json','data/catalog/female-atlas-source.json','public/models/female/atlas-female.json','package-lock.json'].map(file=>({file,sha256:sha(file)}));
-const output=jointAnalysis?'joint-bone-surface-fits.json':'bone-surface-fits.json';
+if(membership){report.targetMembership=membership;report.provenance.push({file:'docs/anatomy-alignment/hra-bone-targets.json',sha256:sha('docs/anatomy-alignment/hra-bone-targets.json')});}
+const output=hierarchyTargets?'hierarchy-joint-bone-surface-fits.json':jointAnalysis?'joint-bone-surface-fits.json':'bone-surface-fits.json';
 fs.mkdirSync('.cache/calf-registration',{recursive:true});fs.writeFileSync(`.cache/calf-registration/${output}`,JSON.stringify(report,null,2)+'\n');

@@ -1,0 +1,672 @@
+{
+  "status": "DIAGNOSTIC TARGET MEMBERSHIP; no runtime export",
+  "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+  "sourceSha256": "95f0c3d2f918582608692ca1139e8bdb18c147a16470e9ee9af8b276bd77c422",
+  "atlasFile": "public/models/female/atlas-female.json",
+  "atlasSha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f",
+  "targets": [
+    {
+      "side": "left",
+      "bone": "Femur",
+      "rootId": "HRAF0937",
+      "members": [
+        {
+          "id": "HRAF0937",
+          "name": "Femur (left)",
+          "system": "skeletal",
+          "conceptId": "HRA:femur_L",
+          "nodeIndex": 1141,
+          "parentIndex": null,
+          "sourceName": "VH_F_femur_L",
+          "sourceNodeType": "mesh",
+          "representation": "http://purl.org/sig/ont/fma/fma24475"
+        },
+        {
+          "id": "HRAF0938",
+          "name": "Intercondylar fossa (left)",
+          "system": "skeletal",
+          "conceptId": "HRA:intercondylar_fossa_L",
+          "nodeIndex": 1142,
+          "parentIndex": 1141,
+          "sourceName": "VH_F_intercondylar_fossa_L",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma43750"
+        },
+        {
+          "id": "HRAF0939",
+          "name": "Anterior cruciate enthesis (left)",
+          "system": "connective",
+          "conceptId": "HRA:anterior_cruciate_enthesis_L",
+          "nodeIndex": 1143,
+          "parentIndex": 1142,
+          "sourceName": "VH_F_anterior_cruciate_enthesis_L",
+          "sourceNodeType": "surface",
+          "representation": "-"
+        },
+        {
+          "id": "HRAF0940",
+          "name": "Posterior cruciate enthesis (left)",
+          "system": "connective",
+          "conceptId": "HRA:posterior_cruciate_enthesis_L",
+          "nodeIndex": 1144,
+          "parentIndex": 1142,
+          "sourceName": "VH_F_posterior_cruciate_enthesis_L",
+          "sourceNodeType": "surface",
+          "representation": "-"
+        },
+        {
+          "id": "HRAF0941",
+          "name": "Lateral perichondular surface (left)",
+          "system": "connective",
+          "conceptId": "HRA:lateral_perichondular_surface_L",
+          "nodeIndex": 1145,
+          "parentIndex": 1141,
+          "sourceName": "VH_F_lateral_perichondular_surface_L",
+          "sourceNodeType": "surface",
+          "representation": "-"
+        },
+        {
+          "id": "HRAF0942",
+          "name": "Lateral epicondylar enthesis (left)",
+          "system": "connective",
+          "conceptId": "HRA:lateral_epicondylar_enthesis_L",
+          "nodeIndex": 1146,
+          "parentIndex": 1141,
+          "sourceName": "VH_F_lateral_epicondylar_enthesis_L",
+          "sourceNodeType": "surface",
+          "representation": "-"
+        },
+        {
+          "id": "HRAF0943",
+          "name": "Medial epicondylar enthesis (left)",
+          "system": "connective",
+          "conceptId": "HRA:medial_epicondylar_enthesis_L",
+          "nodeIndex": 1147,
+          "parentIndex": 1141,
+          "sourceName": "VH_F_medial_epicondylar_enthesis_L",
+          "sourceNodeType": "surface",
+          "representation": "-"
+        },
+        {
+          "id": "HRAF0944",
+          "name": "Trochlear groove (left)",
+          "system": "skeletal",
+          "conceptId": "HRA:trochlear_groove_L",
+          "nodeIndex": 1148,
+          "parentIndex": 1141,
+          "sourceName": "VH_F_trochlear_groove_L",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma43747"
+        },
+        {
+          "id": "HRAF0945",
+          "name": "Medial perichondular surface (left)",
+          "system": "connective",
+          "conceptId": "HRA:medial_perichondular_surface_L",
+          "nodeIndex": 1149,
+          "parentIndex": 1141,
+          "sourceName": "VH_F_medial_perichondular_surface_L",
+          "sourceNodeType": "surface",
+          "representation": "-"
+        },
+        {
+          "id": "HRAF0946",
+          "name": "Articular cartilage of knee (left)",
+          "system": "connective",
+          "conceptId": "HRA:articular_cartilage_of_knee_L",
+          "nodeIndex": 1150,
+          "parentIndex": 1141,
+          "sourceName": "VH_F_articular_cartilage_of_knee_L",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma33190"
+        },
+        {
+          "id": "HRAF0947",
+          "name": "Medial condyle of left femur inferior",
+          "system": "skeletal",
+          "conceptId": "HRA:medial_condyle_of_left_femur_inf",
+          "nodeIndex": 1151,
+          "parentIndex": 1150,
+          "sourceName": "VH_F_medial_condyle_of_left_femur_inf",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma32863"
+        },
+        {
+          "id": "HRAF0948",
+          "name": "Lateral condyle of femur inferior (left)",
+          "system": "skeletal",
+          "conceptId": "HRA:lateral_condyle_of_femur_inf_L",
+          "nodeIndex": 1152,
+          "parentIndex": 1150,
+          "sourceName": "VH_F_lateral_condyle_of_femur_inf_L",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma32861"
+        },
+        {
+          "id": "HRAF0949",
+          "name": "Lateral condyle of femur frontal (left)",
+          "system": "skeletal",
+          "conceptId": "HRA:lateral_condyle_of_femur_frontal_L",
+          "nodeIndex": 1153,
+          "parentIndex": 1150,
+          "sourceName": "VH_F_lateral_condyle_of_femur_frontal_L",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma32861"
+        },
+        {
+          "id": "HRAF0950",
+          "name": "Distal most point of medial condyle (left)",
+          "system": "skeletal",
+          "conceptId": "HRA:distal_most_point_of_medial_condyle_L",
+          "nodeIndex": 1154,
+          "parentIndex": 1150,
+          "sourceName": "VH_F_distal_most_point_of_medial_condyle_L",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.obolibrary.org/obo/UBERON_7500033"
+        },
+        {
+          "id": "HRAF0951",
+          "name": "Lateral condyle of femur superior (left)",
+          "system": "skeletal",
+          "conceptId": "HRA:lateral_condyle_of_femur_sup_L",
+          "nodeIndex": 1155,
+          "parentIndex": 1150,
+          "sourceName": "VH_F_lateral_condyle_of_femur_sup_L",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma32861"
+        },
+        {
+          "id": "HRAF0952",
+          "name": "Medial condyle of left femur superior",
+          "system": "skeletal",
+          "conceptId": "HRA:medial_condyle_of_left_femur_sup",
+          "nodeIndex": 1156,
+          "parentIndex": 1150,
+          "sourceName": "VH_F_medial_condyle_of_left_femur_sup",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma32863"
+        }
+      ],
+      "topology": {
+        "root": {
+          "weldedVertices": 1030,
+          "connectedComponents": 1,
+          "boundaryEdges": 101,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedExact": {
+          "weldedVertices": 1671,
+          "connectedComponents": 1,
+          "boundaryEdges": 71,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedWelded1Micrometre": {
+          "weldedVertices": 1671,
+          "connectedComponents": 1,
+          "boundaryEdges": 71,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        }
+      }
+    },
+    {
+      "side": "left",
+      "bone": "Patella",
+      "rootId": "HRAF0953",
+      "members": [
+        {
+          "id": "HRAF0953",
+          "name": "Patella (left)",
+          "system": "skeletal",
+          "conceptId": "HRA:patella_L",
+          "nodeIndex": 1157,
+          "parentIndex": null,
+          "sourceName": "VH_F_patella_L",
+          "sourceNodeType": "mesh",
+          "representation": "http://purl.org/sig/ont/fma/fma24487"
+        }
+      ],
+      "topology": {
+        "root": {
+          "weldedVertices": 204,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedExact": {
+          "weldedVertices": 204,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedWelded1Micrometre": {
+          "weldedVertices": 204,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        }
+      }
+    },
+    {
+      "side": "left",
+      "bone": "Tibia",
+      "rootId": "HRAF0954",
+      "members": [
+        {
+          "id": "HRAF0954",
+          "name": "Tibia (left)",
+          "system": "skeletal",
+          "conceptId": "HRA:tibia_L",
+          "nodeIndex": 1158,
+          "parentIndex": null,
+          "sourceName": "VH_F_tibia_L",
+          "sourceNodeType": "mesh",
+          "representation": "http://purl.org/sig/ont/fma/fma24478"
+        }
+      ],
+      "topology": {
+        "root": {
+          "weldedVertices": 385,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedExact": {
+          "weldedVertices": 385,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedWelded1Micrometre": {
+          "weldedVertices": 385,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        }
+      }
+    },
+    {
+      "side": "left",
+      "bone": "Fibula",
+      "rootId": "HRAF0955",
+      "members": [
+        {
+          "id": "HRAF0955",
+          "name": "Fibula (left)",
+          "system": "skeletal",
+          "conceptId": "HRA:fibula_L",
+          "nodeIndex": 1159,
+          "parentIndex": null,
+          "sourceName": "VH_F_fibula_L",
+          "sourceNodeType": "mesh",
+          "representation": "http://purl.org/sig/ont/fma/fma24481"
+        }
+      ],
+      "topology": {
+        "root": {
+          "weldedVertices": 169,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedExact": {
+          "weldedVertices": 169,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedWelded1Micrometre": {
+          "weldedVertices": 169,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        }
+      }
+    },
+    {
+      "side": "right",
+      "bone": "Femur",
+      "rootId": "HRAF0911",
+      "members": [
+        {
+          "id": "HRAF0911",
+          "name": "Femur (right)",
+          "system": "skeletal",
+          "conceptId": "HRA:femur_R",
+          "nodeIndex": 1111,
+          "parentIndex": null,
+          "sourceName": "VH_F_femur_R",
+          "sourceNodeType": "mesh",
+          "representation": "http://purl.org/sig/ont/fma/fma24474"
+        },
+        {
+          "id": "HRAF0912",
+          "name": "Trochlear groove (right)",
+          "system": "skeletal",
+          "conceptId": "HRA:trochlear_groove_R",
+          "nodeIndex": 1112,
+          "parentIndex": 1111,
+          "sourceName": "VH_F_trochlear_groove_R",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma43746"
+        },
+        {
+          "id": "HRAF0913",
+          "name": "Medial perichondular surface (right)",
+          "system": "connective",
+          "conceptId": "HRA:medial_perichondular_surface_R",
+          "nodeIndex": 1113,
+          "parentIndex": 1111,
+          "sourceName": "VH_F_medial_perichondular_surface_R",
+          "sourceNodeType": "surface",
+          "representation": "-"
+        },
+        {
+          "id": "HRAF0914",
+          "name": "Articular cartilage of knee (right)",
+          "system": "connective",
+          "conceptId": "HRA:articular_cartilage_of_knee_R",
+          "nodeIndex": 1114,
+          "parentIndex": 1111,
+          "sourceName": "VH_F_articular_cartilage_of_knee_R",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma33189"
+        },
+        {
+          "id": "HRAF0915",
+          "name": "Medial condyle of right femur superior",
+          "system": "skeletal",
+          "conceptId": "HRA:medial_condyle_of_right_femur_sup",
+          "nodeIndex": 1115,
+          "parentIndex": 1114,
+          "sourceName": "VH_F_medial_condyle_of_right_femur_sup",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma32862"
+        },
+        {
+          "id": "HRAF0916",
+          "name": "Lateral condyle of femur superior (right)",
+          "system": "skeletal",
+          "conceptId": "HRA:lateral_condyle_of_femur_sup_R",
+          "nodeIndex": 1116,
+          "parentIndex": 1114,
+          "sourceName": "VH_F_lateral_condyle_of_femur_sup_R",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma32860"
+        },
+        {
+          "id": "HRAF0917",
+          "name": "Medial condyle of right femur inferior",
+          "system": "skeletal",
+          "conceptId": "HRA:medial_condyle_of_right_femur_inf",
+          "nodeIndex": 1117,
+          "parentIndex": 1114,
+          "sourceName": "VH_F_medial_condyle_of_right_femur_inf",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma32862"
+        },
+        {
+          "id": "HRAF0918",
+          "name": "Lateral condyle of femur inferior (right)",
+          "system": "skeletal",
+          "conceptId": "HRA:lateral_condyle_of_femur_inf_R",
+          "nodeIndex": 1118,
+          "parentIndex": 1114,
+          "sourceName": "VH_F_lateral_condyle_of_femur_inf_R",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma32860"
+        },
+        {
+          "id": "HRAF0919",
+          "name": "Lateral condyle of femur frontal (right)",
+          "system": "skeletal",
+          "conceptId": "HRA:lateral_condyle_of_femur_frontal_R",
+          "nodeIndex": 1119,
+          "parentIndex": 1114,
+          "sourceName": "VH_F_lateral_condyle_of_femur_frontal_R",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma32860"
+        },
+        {
+          "id": "HRAF0920",
+          "name": "Distal most point of medial condyle (right)",
+          "system": "skeletal",
+          "conceptId": "HRA:distal_most_point_of_medial_condyle_R",
+          "nodeIndex": 1120,
+          "parentIndex": 1114,
+          "sourceName": "VH_F_distal_most_point_of_medial_condyle_R",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.obolibrary.org/obo/UBERON_7500033"
+        },
+        {
+          "id": "HRAF0921",
+          "name": "Intercondylar fossa (right)",
+          "system": "skeletal",
+          "conceptId": "HRA:intercondylar_fossa_R",
+          "nodeIndex": 1121,
+          "parentIndex": 1111,
+          "sourceName": "VH_F_intercondylar_fossa_R",
+          "sourceNodeType": "surface",
+          "representation": "http://purl.org/sig/ont/fma/fma43749"
+        },
+        {
+          "id": "HRAF0922",
+          "name": "Posterior cruciate enthesis (right)",
+          "system": "connective",
+          "conceptId": "HRA:posterior_cruciate_enthesis_R",
+          "nodeIndex": 1122,
+          "parentIndex": 1121,
+          "sourceName": "VH_F_posterior_cruciate_enthesis_R",
+          "sourceNodeType": "surface",
+          "representation": "-"
+        },
+        {
+          "id": "HRAF0923",
+          "name": "Anterior cruciate enthesis (right)",
+          "system": "connective",
+          "conceptId": "HRA:anterior_cruciate_enthesis_R",
+          "nodeIndex": 1123,
+          "parentIndex": 1121,
+          "sourceName": "VH_F_anterior_cruciate_enthesis_R",
+          "sourceNodeType": "surface",
+          "representation": "-"
+        },
+        {
+          "id": "HRAF0924",
+          "name": "Lateral perichondular surface (right)",
+          "system": "connective",
+          "conceptId": "HRA:lateral_perichondular_surface_R",
+          "nodeIndex": 1124,
+          "parentIndex": 1111,
+          "sourceName": "VH_F_lateral_perichondular_surface_R",
+          "sourceNodeType": "surface",
+          "representation": "-"
+        },
+        {
+          "id": "HRAF0925",
+          "name": "Lateral epicondylar enthesis (right)",
+          "system": "connective",
+          "conceptId": "HRA:lateral_epicondylar_enthesis_R",
+          "nodeIndex": 1125,
+          "parentIndex": 1111,
+          "sourceName": "VH_F_lateral_epicondylar_enthesis_R",
+          "sourceNodeType": "surface",
+          "representation": "-"
+        },
+        {
+          "id": "HRAF0926",
+          "name": "Medial epicondylar enthesis (right)",
+          "system": "connective",
+          "conceptId": "HRA:medial_epicondylar_enthesis_R",
+          "nodeIndex": 1126,
+          "parentIndex": 1111,
+          "sourceName": "VH_F_medial_epicondylar_enthesis_R",
+          "sourceNodeType": "surface",
+          "representation": "-"
+        }
+      ],
+      "topology": {
+        "root": {
+          "weldedVertices": 1029,
+          "connectedComponents": 1,
+          "boundaryEdges": 100,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedExact": {
+          "weldedVertices": 1671,
+          "connectedComponents": 1,
+          "boundaryEdges": 74,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedWelded1Micrometre": {
+          "weldedVertices": 1671,
+          "connectedComponents": 1,
+          "boundaryEdges": 74,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        }
+      }
+    },
+    {
+      "side": "right",
+      "bone": "Patella",
+      "rootId": "HRAF0929",
+      "members": [
+        {
+          "id": "HRAF0929",
+          "name": "Patella (right)",
+          "system": "skeletal",
+          "conceptId": "HRA:patella_R",
+          "nodeIndex": 1129,
+          "parentIndex": null,
+          "sourceName": "VH_F_patella_R",
+          "sourceNodeType": "mesh",
+          "representation": "http://purl.org/sig/ont/fma/fma24486"
+        }
+      ],
+      "topology": {
+        "root": {
+          "weldedVertices": 204,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedExact": {
+          "weldedVertices": 204,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedWelded1Micrometre": {
+          "weldedVertices": 204,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        }
+      }
+    },
+    {
+      "side": "right",
+      "bone": "Tibia",
+      "rootId": "HRAF0927",
+      "members": [
+        {
+          "id": "HRAF0927",
+          "name": "Tibia (right)",
+          "system": "skeletal",
+          "conceptId": "HRA:tibia_R",
+          "nodeIndex": 1127,
+          "parentIndex": null,
+          "sourceName": "VH_F_tibia_R",
+          "sourceNodeType": "mesh",
+          "representation": "http://purl.org/sig/ont/fma/fma24477"
+        }
+      ],
+      "topology": {
+        "root": {
+          "weldedVertices": 385,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedExact": {
+          "weldedVertices": 385,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedWelded1Micrometre": {
+          "weldedVertices": 385,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        }
+      }
+    },
+    {
+      "side": "right",
+      "bone": "Fibula",
+      "rootId": "HRAF0928",
+      "members": [
+        {
+          "id": "HRAF0928",
+          "name": "Fibula (right)",
+          "system": "skeletal",
+          "conceptId": "HRA:fibula_R",
+          "nodeIndex": 1128,
+          "parentIndex": null,
+          "sourceName": "VH_F_fibula_R",
+          "sourceNodeType": "mesh",
+          "representation": "http://purl.org/sig/ont/fma/fma24480"
+        }
+      ],
+      "topology": {
+        "root": {
+          "weldedVertices": 168,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedExact": {
+          "weldedVertices": 168,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        },
+        "combinedWelded1Micrometre": {
+          "weldedVertices": 168,
+          "connectedComponents": 1,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "degenerateTriangles": 0
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Femur descendants include source-labelled cartilage and attachment surfaces; this is the source-defined composite envelope, not bone-only tissue.",
+    "Joining members does not prove source anatomical validity or authorize muscle placement. Topology welding is diagnostic only and is not applied to fit coordinates."
+  ],
+  "scriptSha256": "2a59de2fd9984ccf9ac1b5308c975dbc18e8ce1a5ba74eda81dd409f9570c5d6"
+}
