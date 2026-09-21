@@ -1,0 +1,3631 @@
+{
+  "status": "REJECTED BY SKIN/JACOBIAN SCREEN; no runtime export",
+  "kernel": "inverse-square",
+  "regularizationMm": 20,
+  "summary": {
+    "meshes": 76,
+    "vertices": 652173,
+    "skinOutsideBefore": 17567,
+    "skinOutsideAfter": 30823,
+    "newOutside": 19948,
+    "worsenedOutside": 8597,
+    "nonpositiveJacobians": 0
+  },
+  "minimumJacobianWitness": {
+    "id": "VHF0027",
+    "vertex": 1481,
+    "pointMetres": [
+      0.4106893539428711,
+      0.4368959069252014,
+      0.8876480460166931
+    ],
+    "jacobian": [
+      -0.6648343121123933,
+      0.030580991751942344,
+      0.09949074947037886,
+      -0.16781745187062158,
+      0.0009570620509944233,
+      0.949009051707385,
+      0.14997848157521218,
+      1.0136939186099954,
+      0.06482177559272476
+    ],
+    "determinant": 0.6272785763379426,
+    "weights": [
+      0.46301127074123277,
+      0.5099183487403446,
+      0.0019626311974330186,
+      0.016087418337414044,
+      0.007393759324090423,
+      0.0016265716594852124
+    ],
+    "finiteDifference": {
+      "stepMetres": 0.000001,
+      "jacobian": [
+        -0.6648343125748024,
+        0.030580991752793274,
+        0.09949074930570845,
+        -0.16781745176830398,
+        0.0009570620407295394,
+        0.9490090518426975,
+        0.1499784813979721,
+        1.0136939185556582,
+        0.06482177550282131
+      ],
+      "determinant": 0.6272785768745381,
+      "maximumElementResidual": 4.624091110017048e-10
+    }
+  },
+  "frames": [
+    {
+      "side": "left",
+      "group": "hip",
+      "bones": [
+        "Pelvis"
+      ],
+      "matrix": [
+        -1.0035486851509043,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1.0035486851509043,
+        0,
+        0,
+        1.0035486851509043,
+        0,
+        0,
+        0.5571159209228307,
+        -0.0759849946689728,
+        -0.526588651020115,
+        1
+      ],
+      "fit": "original coarse bounding-box fit"
+    },
+    {
+      "side": "left",
+      "group": "thigh",
+      "bones": [
+        "Femur",
+        "Patella"
+      ],
+      "matrix": [
+        -0.9979487671885094,
+        -0.15193711285204325,
+        0.035622371665031655,
+        0,
+        0.034045329282477686,
+        0.013047479275436497,
+        1.009418773550665,
+        0,
+        -0.15229824417538054,
+        0.9984991029443455,
+        -0.007769671701792099,
+        0,
+        0.65784833739991,
+        -0.010207817302969203,
+        -0.5434446768268912,
+        1
+      ],
+      "fit": "hierarchical bone surface fit"
+    },
+    {
+      "side": "left",
+      "group": "shank",
+      "bones": [
+        "Tibia",
+        "Fibula"
+      ],
+      "matrix": [
+        -1.008745032442996,
+        -0.14491282205033462,
+        0.04420504687108185,
+        0,
+        0.037964293643008136,
+        0.04635617513785551,
+        1.018297682446869,
+        0,
+        -0.1466714852030002,
+        1.0086484678389616,
+        -0.040448688437939945,
+        0,
+        0.6584814821565524,
+        -0.031471587757722644,
+        -0.5383569406430548,
+        1
+      ],
+      "fit": "hierarchical bone surface fit"
+    },
+    {
+      "side": "right",
+      "group": "hip",
+      "bones": [
+        "Pelvis"
+      ],
+      "matrix": [
+        -1.0084085891492027,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1.0084085891492027,
+        0,
+        0,
+        1.0084085891492027,
+        0,
+        0,
+        0.5252534553144128,
+        -0.08085411926291997,
+        -0.51683832838895,
+        1
+      ],
+      "fit": "original coarse bounding-box fit"
+    },
+    {
+      "side": "right",
+      "group": "thigh",
+      "bones": [
+        "Femur",
+        "Patella"
+      ],
+      "matrix": [
+        -0.9940937497056715,
+        0.09849386907464176,
+        0.14517841571799733,
+        0,
+        0.1474770309629575,
+        0.01672821321047091,
+        0.9984842963515744,
+        0,
+        0.09501757718459904,
+        1.0044995383159983,
+        -0.030863172041713547,
+        0,
+        0.37426706180895664,
+        -0.1466373400277925,
+        -0.5813979001202059,
+        1
+      ],
+      "fit": "hierarchical bone surface fit"
+    },
+    {
+      "side": "right",
+      "group": "shank",
+      "bones": [
+        "Tibia",
+        "Fibula"
+      ],
+      "matrix": [
+        -0.9763616416056589,
+        0.1215117989866624,
+        0.18388440247501564,
+        0,
+        0.18919500344221168,
+        0.0336701803555021,
+        0.9823096332586759,
+        0,
+        0.11306565101333899,
+        0.9929561156603647,
+        -0.055811798923497496,
+        0,
+        0.33514174744672204,
+        -0.16112299978930858,
+        -0.5881623758161123,
+        1
+      ],
+      "fit": "hierarchical bone surface fit"
+    }
+  ],
+  "rows": [
+    {
+      "id": "VHF0000",
+      "name": "Adductor brevis (left)",
+      "vertices": 5562,
+      "skinBefore": {
+        "inside": 5562,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 5562,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8595758227626678,
+      "maximumJacobianDeterminant": 1.4258078853513525,
+      "maximumJacobianFrobeniusNorm": 2.0080708506804306
+    },
+    {
+      "id": "VHF0001",
+      "name": "Adductor longus (left)",
+      "vertices": 6222,
+      "skinBefore": {
+        "inside": 6222,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 6222,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9914686889315166,
+      "maximumJacobianDeterminant": 1.3834163415277507,
+      "maximumJacobianFrobeniusNorm": 1.9676449715384459
+    },
+    {
+      "id": "VHF0002",
+      "name": "Adductor magnus (left)",
+      "vertices": 15752,
+      "skinBefore": {
+        "inside": 15752,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 15644,
+        "outside": 0,
+        "surface-band": 108,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8445964177593775,
+      "maximumJacobianDeterminant": 1.436668824720999,
+      "maximumJacobianFrobeniusNorm": 2.0071615641246696
+    },
+    {
+      "id": "VHF0003",
+      "name": "Biceps femoris long (left)",
+      "vertices": 8895,
+      "skinBefore": {
+        "inside": 7661,
+        "outside": 85,
+        "surface-band": 1149,
+        "ambiguous": 0,
+        "maxOutsideMm": 2.5552057427121855
+      },
+      "skinAfter": {
+        "inside": 8036,
+        "outside": 185,
+        "surface-band": 674,
+        "ambiguous": 0,
+        "maxOutsideMm": 3.494193606171785
+      },
+      "newOutside": 163,
+      "worsenedOutside": 16,
+      "resolvedOutside": 63,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9611927258195315,
+      "maximumJacobianDeterminant": 1.2587178004070643,
+      "maximumJacobianFrobeniusNorm": 1.917081754741599,
+      "maximumOutsideWitness": {
+        "vertex": 5207,
+        "sourcePointMetres": [
+          0.45055967569351196,
+          0.3780393600463867,
+          0.6552655696868896
+        ],
+        "beforePointMetres": [
+          0.1325359046459198,
+          0.5789256691932678,
+          -0.1463182419538498
+        ],
+        "candidatePointMetres": [
+          0.10436487942934036,
+          0.5776304006576538,
+          -0.15237842500209808
+        ],
+        "distanceMm": 3.494193606171785,
+        "weights": [
+          0.10930162665835606,
+          0.5678619691278716,
+          0.1049190701745752,
+          0.0659259645585161,
+          0.08822046269290224,
+          0.06377090678777883
+        ],
+        "anchorDistancesMetres": [
+          0.17096011813662895,
+          0.07281930658097176,
+          0.1745420334739212,
+          0.2207272937013962,
+          0.19054426560293022,
+          0.22445602048695074
+        ]
+      }
+    },
+    {
+      "id": "VHF0004",
+      "name": "Biceps femoris short (left)",
+      "vertices": 6121,
+      "skinBefore": {
+        "inside": 6121,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 5988,
+        "outside": 0,
+        "surface-band": 133,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9235869276395163,
+      "maximumJacobianDeterminant": 1.1785284676730592,
+      "maximumJacobianFrobeniusNorm": 1.8682926235870312
+    },
+    {
+      "id": "VHF0016",
+      "name": "Extensor digitorum longus (left)",
+      "vertices": 4428,
+      "skinBefore": {
+        "inside": 4131,
+        "outside": 24,
+        "surface-band": 273,
+        "ambiguous": 0,
+        "maxOutsideMm": 3.3429879577311494
+      },
+      "skinAfter": {
+        "inside": 4428,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 24,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.7472016613621663,
+      "maximumJacobianDeterminant": 1.306411770670986,
+      "maximumJacobianFrobeniusNorm": 1.9315469481407752
+    },
+    {
+      "id": "VHF0017",
+      "name": "Extensor hallucis longus (left)",
+      "vertices": 2033,
+      "skinBefore": {
+        "inside": 2033,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 2033,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8091298268820252,
+      "maximumJacobianDeterminant": 1.3138371688879655,
+      "maximumJacobianFrobeniusNorm": 1.9318617985072455
+    },
+    {
+      "id": "VHF0018",
+      "name": "Flexor digitorum longus (left)",
+      "vertices": 3134,
+      "skinBefore": {
+        "inside": 2886,
+        "outside": 141,
+        "surface-band": 107,
+        "ambiguous": 0,
+        "maxOutsideMm": 12.084882240234998
+      },
+      "skinAfter": {
+        "inside": 2872,
+        "outside": 180,
+        "surface-band": 82,
+        "ambiguous": 0,
+        "maxOutsideMm": 23.941210872281765
+      },
+      "newOutside": 39,
+      "worsenedOutside": 141,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.1392714906505084,
+      "maximumJacobianDeterminant": 2.754538993139602,
+      "maximumJacobianFrobeniusNorm": 3.096442820198933,
+      "maximumOutsideWitness": {
+        "vertex": 1761,
+        "sourcePointMetres": [
+          0.5313857793807983,
+          0.41729676723480225,
+          0.16942210495471954
+        ],
+        "beforePointMetres": [
+          0.08608338236808777,
+          0.090064637362957,
+          -0.10670801252126694
+        ],
+        "candidatePointMetres": [
+          0.07588942348957062,
+          0.08251522481441498,
+          -0.09555160999298096
+        ],
+        "distanceMm": 23.941210872281765,
+        "weights": [
+          0.0007898178143247523,
+          0.0032137841277759763,
+          0.8071810191364417,
+          0.0007849461716980495,
+          0.0031697080946806854,
+          0.18486072465507872
+        ],
+        "anchorDistancesMetres": [
+          0.6497534831303159,
+          0.3216409902871265,
+          0.003672807360142903,
+          0.6517685642462079,
+          0.32387812873380434,
+          0.037489627033116486
+        ]
+      }
+    },
+    {
+      "id": "VHF0019",
+      "name": "Flexor hallucis longus (left)",
+      "vertices": 4610,
+      "skinBefore": {
+        "inside": 4610,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 4610,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.0355618994123985,
+      "maximumJacobianDeterminant": 2.6188363515001796,
+      "maximumJacobianFrobeniusNorm": 2.9437398287537335
+    },
+    {
+      "id": "VHF0020",
+      "name": "Gastrocnemius lateral (left)",
+      "vertices": 5659,
+      "skinBefore": {
+        "inside": 3827,
+        "outside": 1077,
+        "surface-band": 755,
+        "ambiguous": 0,
+        "maxOutsideMm": 11.97133777215176
+      },
+      "skinAfter": {
+        "inside": 3865,
+        "outside": 1045,
+        "surface-band": 749,
+        "ambiguous": 0,
+        "maxOutsideMm": 11.62403932106595
+      },
+      "newOutside": 993,
+      "worsenedOutside": 27,
+      "resolvedOutside": 1025,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.0280842946755424,
+      "maximumJacobianDeterminant": 2.0731547727039965,
+      "maximumJacobianFrobeniusNorm": 2.4976122452284972,
+      "maximumOutsideWitness": {
+        "vertex": 228,
+        "sourcePointMetres": [
+          0.49843597412109375,
+          0.3694935739040375,
+          0.3788953125476837
+        ],
+        "beforePointMetres": [
+          0.11919725686311722,
+          0.30058085918426514,
+          -0.15474922955036163
+        ],
+        "candidatePointMetres": [
+          0.08024566620588303,
+          0.29437312483787537,
+          -0.15493853390216827
+        ],
+        "distanceMm": 11.62403932106595,
+        "weights": [
+          0.009631261315630116,
+          0.11037827442005954,
+          0.6531299219647693,
+          0.009204100520194892,
+          0.08093961573573612,
+          0.13671682604361
+        ],
+        "anchorDistancesMetres": [
+          0.4424202420364383,
+          0.12928334066823904,
+          0.049922729357654294,
+          0.4525906482277209,
+          0.15145562007652827,
+          0.11583232745122947
+        ]
+      }
+    },
+    {
+      "id": "VHF0005",
+      "name": "Gastrocnemius medial (left)",
+      "vertices": 9931,
+      "skinBefore": {
+        "inside": 4736,
+        "outside": 4303,
+        "surface-band": 892,
+        "ambiguous": 0,
+        "maxOutsideMm": 21.342952037069974
+      },
+      "skinAfter": {
+        "inside": 4599,
+        "outside": 4731,
+        "surface-band": 601,
+        "ambiguous": 0,
+        "maxOutsideMm": 47.02585771154514
+      },
+      "newOutside": 529,
+      "worsenedOutside": 4113,
+      "resolvedOutside": 101,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9552636186265281,
+      "maximumJacobianDeterminant": 2.57043257418144,
+      "maximumJacobianFrobeniusNorm": 2.93076732100314,
+      "maximumOutsideWitness": {
+        "vertex": 3727,
+        "sourcePointMetres": [
+          0.5278227925300598,
+          0.382127583026886,
+          0.3758902847766876
+        ],
+        "beforePointMetres": [
+          0.05686924234032631,
+          0.30532294511795044,
+          -0.14231449365615845
+        ],
+        "candidatePointMetres": [
+          0.027996648102998734,
+          0.2893379032611847,
+          -0.1392611861228943
+        ],
+        "distanceMm": 47.02585771154514,
+        "weights": [
+          0.010035181893852215,
+          0.11790863761639622,
+          0.4852386221427484,
+          0.009905164684768125,
+          0.10695275584404751,
+          0.26995963781818755
+        ],
+        "anchorDistancesMetres": [
+          0.44600699674464633,
+          0.12870228562250752,
+          0.06100957006064092,
+          0.44893049069912355,
+          0.13528504029229552,
+          0.08372207117146492
+        ]
+      }
+    },
+    {
+      "id": "VHF0025",
+      "name": "Gluteus maximus (left)",
+      "vertices": 22890,
+      "skinBefore": {
+        "inside": 21981,
+        "outside": 30,
+        "surface-band": 879,
+        "ambiguous": 0,
+        "maxOutsideMm": 2.358439427277294
+      },
+      "skinAfter": {
+        "inside": 22890,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 30,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.7203848999318831,
+      "maximumJacobianDeterminant": 1.4071374441939846,
+      "maximumJacobianFrobeniusNorm": 1.987106967182685
+    },
+    {
+      "id": "VHF0026",
+      "name": "Gluteus medius (left)",
+      "vertices": 15038,
+      "skinBefore": {
+        "inside": 14759,
+        "outside": 0,
+        "surface-band": 279,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 15038,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.6437179107439782,
+      "maximumJacobianDeterminant": 1.0568067010842068,
+      "maximumJacobianFrobeniusNorm": 1.7652188020175903
+    },
+    {
+      "id": "VHF0027",
+      "name": "Gluteus minimus (left)",
+      "vertices": 8499,
+      "skinBefore": {
+        "inside": 8499,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 8499,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.6272785763379426,
+      "maximumJacobianDeterminant": 1.0496996677501942,
+      "maximumJacobianFrobeniusNorm": 1.7728592399550804
+    },
+    {
+      "id": "VHF0006",
+      "name": "Gracilis (left)",
+      "vertices": 6680,
+      "skinBefore": {
+        "inside": 6680,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 4789,
+        "outside": 1343,
+        "surface-band": 548,
+        "ambiguous": 0,
+        "maxOutsideMm": 14.003165271198444
+      },
+      "newOutside": 1343,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.1486825442161661,
+      "maximumJacobianDeterminant": 1.5879017784449165,
+      "maximumJacobianFrobeniusNorm": 2.132225474044155,
+      "maximumOutsideWitness": {
+        "vertex": 3566,
+        "sourcePointMetres": [
+          0.5079782009124756,
+          0.4023507237434387,
+          0.6012998223304749
+        ],
+        "beforePointMetres": [
+          0.07630379498004913,
+          0.5260749459266663,
+          -0.12250921130180359
+        ],
+        "candidatePointMetres": [
+          0.04459454491734505,
+          0.5177793502807617,
+          -0.1254110336303711
+        ],
+        "distanceMm": 14.003165271198444,
+        "weights": [
+          0.0456543288032468,
+          0.4772463045137087,
+          0.15498351748962422,
+          0.03991725388301062,
+          0.17816057131831947,
+          0.10403802399209007
+        ],
+        "anchorDistancesMetres": [
+          0.21892030516261995,
+          0.06498438775916171,
+          0.11762516461835211,
+          0.23424715477172692,
+          0.10947030752751334,
+          0.1442450272139259
+        ]
+      }
+    },
+    {
+      "id": "VHF0028",
+      "name": "Iliacus (left)",
+      "vertices": 11167,
+      "skinBefore": {
+        "inside": 11167,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 11167,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.877540948870726,
+      "maximumJacobianDeterminant": 1.2357830709073225,
+      "maximumJacobianFrobeniusNorm": 1.8771781998013326
+    },
+    {
+      "id": "VHF0029",
+      "name": "Inferior gemellus (left)",
+      "vertices": 579,
+      "skinBefore": {
+        "inside": 579,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 579,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.6677160708422171,
+      "maximumJacobianDeterminant": 1.0025284703984805,
+      "maximumJacobianFrobeniusNorm": 1.734733944427129
+    },
+    {
+      "id": "VHF0030",
+      "name": "Obturator externus (left)",
+      "vertices": 7281,
+      "skinBefore": {
+        "inside": 7281,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 7281,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.7424925736083777,
+      "maximumJacobianDeterminant": 1.3393939344742822,
+      "maximumJacobianFrobeniusNorm": 1.947324257158748
+    },
+    {
+      "id": "VHF0031",
+      "name": "Obturator internus (left)",
+      "vertices": 9133,
+      "skinBefore": {
+        "inside": 9133,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 9133,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8518041089321959,
+      "maximumJacobianDeterminant": 1.3938021198808919,
+      "maximumJacobianFrobeniusNorm": 1.9822128969449602
+    },
+    {
+      "id": "VHF0032",
+      "name": "Pectineus (left)",
+      "vertices": 22230,
+      "skinBefore": {
+        "inside": 22230,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 22230,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8961713917347347,
+      "maximumJacobianDeterminant": 1.188418703291343,
+      "maximumJacobianFrobeniusNorm": 1.8478119259613555
+    },
+    {
+      "id": "VHF0021",
+      "name": "Peroneus longus (left)",
+      "vertices": 8110,
+      "skinBefore": {
+        "inside": 6309,
+        "outside": 1208,
+        "surface-band": 593,
+        "ambiguous": 0,
+        "maxOutsideMm": 9.91465933226813
+      },
+      "skinAfter": {
+        "inside": 8110,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 1208,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8006154130369858,
+      "maximumJacobianDeterminant": 2.012563666326809,
+      "maximumJacobianFrobeniusNorm": 2.483008372241065
+    },
+    {
+      "id": "VHF0033",
+      "name": "Piriformis (left)",
+      "vertices": 3245,
+      "skinBefore": {
+        "inside": 3245,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 3245,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8587858378379032,
+      "maximumJacobianDeterminant": 1.4752461580147433,
+      "maximumJacobianFrobeniusNorm": 2.040766206304714
+    },
+    {
+      "id": "VHF0007",
+      "name": "Plantaris (left)",
+      "vertices": 942,
+      "skinBefore": {
+        "inside": 942,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 942,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.0211595236310396,
+      "maximumJacobianDeterminant": 1.2066851722897627,
+      "maximumJacobianFrobeniusNorm": 1.865421179836939
+    },
+    {
+      "id": "VHF0008",
+      "name": "Popliteus (left)",
+      "vertices": 1530,
+      "skinBefore": {
+        "inside": 1530,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 1530,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.1076578903663783,
+      "maximumJacobianDeterminant": 1.405766276305428,
+      "maximumJacobianFrobeniusNorm": 1.9799750298517733
+    },
+    {
+      "id": "VHF0034",
+      "name": "Psoas major (left)",
+      "vertices": 9848,
+      "skinBefore": {
+        "inside": 9848,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 9848,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9000920600515245,
+      "maximumJacobianDeterminant": 1.2613520022586093,
+      "maximumJacobianFrobeniusNorm": 1.9004839202159196
+    },
+    {
+      "id": "VHF0035",
+      "name": "Quadratus femoris (left)",
+      "vertices": 2698,
+      "skinBefore": {
+        "inside": 2698,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 2698,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.6992609146255899,
+      "maximumJacobianDeterminant": 1.0068208070780158,
+      "maximumJacobianFrobeniusNorm": 1.7373519861396665
+    },
+    {
+      "id": "VHF0009",
+      "name": "Rectus femoris (left)",
+      "vertices": 8143,
+      "skinBefore": {
+        "inside": 8143,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 8143,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9161587084851093,
+      "maximumJacobianDeterminant": 1.211759398385404,
+      "maximumJacobianFrobeniusNorm": 1.8612048890299846
+    },
+    {
+      "id": "VHF0010",
+      "name": "Sartorius (left)",
+      "vertices": 9449,
+      "skinBefore": {
+        "inside": 9449,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 8383,
+        "outside": 726,
+        "surface-band": 340,
+        "ambiguous": 0,
+        "maxOutsideMm": 10.81761808150739
+      },
+      "newOutside": 726,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8826400899729905,
+      "maximumJacobianDeterminant": 1.9566625405582483,
+      "maximumJacobianFrobeniusNorm": 2.4166454822537533,
+      "maximumOutsideWitness": {
+        "vertex": 4127,
+        "sourcePointMetres": [
+          0.5160399675369263,
+          0.41591382026672363,
+          0.5740272998809814
+        ],
+        "beforePointMetres": [
+          0.06840860843658447,
+          0.4993659555912018,
+          -0.10922636091709137
+        ],
+        "candidatePointMetres": [
+          0.03989763557910919,
+          0.48983335494995117,
+          -0.11089948564767838
+        ],
+        "distanceMm": 10.81761808150739,
+        "weights": [
+          0.023279195971826205,
+          0.4967661061953968,
+          0.16253079608610396,
+          0.021393165992243963,
+          0.19259846069409844,
+          0.10343227506033066
+        ],
+        "anchorDistancesMetres": [
+          0.24584535757083104,
+          0.04950807761465688,
+          0.09118152725031048,
+          0.25652214916247523,
+          0.08338864836957194,
+          0.11529555569788554
+        ]
+      }
+    },
+    {
+      "id": "VHF0011",
+      "name": "Semimembranosus (left)",
+      "vertices": 10307,
+      "skinBefore": {
+        "inside": 10170,
+        "outside": 0,
+        "surface-band": 137,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 6899,
+        "outside": 2440,
+        "surface-band": 968,
+        "ambiguous": 0,
+        "maxOutsideMm": 13.57783909519835
+      },
+      "newOutside": 2440,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9928605761107806,
+      "maximumJacobianDeterminant": 1.6155262017489072,
+      "maximumJacobianFrobeniusNorm": 2.153928026645729,
+      "maximumOutsideWitness": {
+        "vertex": 5104,
+        "sourcePointMetres": [
+          0.48490041494369507,
+          0.38421303033828735,
+          0.6086726784706116
+        ],
+        "beforePointMetres": [
+          0.09890473634004593,
+          0.5332954525947571,
+          -0.1402721405029297
+        ],
+        "candidatePointMetres": [
+          0.06854929774999619,
+          0.5268260836601257,
+          -0.1451299786567688
+        ],
+        "distanceMm": 13.57783909519835,
+        "weights": [
+          0.05931839330610619,
+          0.48801764307235324,
+          0.16192816464822524,
+          0.047090325047804256,
+          0.14740199084007224,
+          0.09624348308543881
+        ],
+        "anchorDistancesMetres": [
+          0.21292505076493043,
+          0.07182845931493924,
+          0.12788530530884604,
+          0.23919394660726692,
+          0.13418565111855055,
+          0.16670165105678347
+        ]
+      }
+    },
+    {
+      "id": "VHF0012",
+      "name": "Semitendinosus (left)",
+      "vertices": 6815,
+      "skinBefore": {
+        "inside": 6643,
+        "outside": 0,
+        "surface-band": 171,
+        "ambiguous": 1,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 5506,
+        "outside": 819,
+        "surface-band": 490,
+        "ambiguous": 0,
+        "maxOutsideMm": 8.786777852448994
+      },
+      "newOutside": 819,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9167354381331626,
+      "maximumJacobianDeterminant": 1.3821272810345737,
+      "maximumJacobianFrobeniusNorm": 1.9889842511238383,
+      "maximumOutsideWitness": {
+        "vertex": 520,
+        "sourcePointMetres": [
+          0.4740399718284607,
+          0.3838009238243103,
+          0.6102690696716309
+        ],
+        "beforePointMetres": [
+          0.10954077541828156,
+          0.5348588824272156,
+          -0.14067572355270386
+        ],
+        "candidatePointMetres": [
+          0.08164965361356735,
+          0.5295566320419312,
+          -0.1460707038640976
+        ],
+        "distanceMm": 8.786777852448994,
+        "weights": [
+          0.06001658652773114,
+          0.5180010343254645,
+          0.15917398724870044,
+          0.045545367604123324,
+          0.12949419656983227,
+          0.08776882772414828
+        ],
+        "anchorDistancesMetres": [
+          0.2114935691384238,
+          0.06948951923887398,
+          0.12890344846494697,
+          0.24304037472353904,
+          0.14323460558870718,
+          0.17452709603934008
+        ]
+      }
+    },
+    {
+      "id": "VHF0022",
+      "name": "Soleus (left)",
+      "vertices": 14228,
+      "skinBefore": {
+        "inside": 13067,
+        "outside": 515,
+        "surface-band": 646,
+        "ambiguous": 0,
+        "maxOutsideMm": 7.163613832574656
+      },
+      "skinAfter": {
+        "inside": 11590,
+        "outside": 2034,
+        "surface-band": 604,
+        "ambiguous": 0,
+        "maxOutsideMm": 21.056403752411203
+      },
+      "newOutside": 2014,
+      "worsenedOutside": 20,
+      "resolvedOutside": 495,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9296549224671049,
+      "maximumJacobianDeterminant": 3.080532606508097,
+      "maximumJacobianFrobeniusNorm": 3.336183156232121,
+      "maximumOutsideWitness": {
+        "vertex": 10381,
+        "sourcePointMetres": [
+          0.5173097848892212,
+          0.38676267862319946,
+          0.2285650223493576
+        ],
+        "beforePointMetres": [
+          0.10022946447134018,
+          0.14950203895568848,
+          -0.13739414513111115
+        ],
+        "candidatePointMetres": [
+          0.07529894262552261,
+          0.14204716682434082,
+          -0.12990224361419678
+        ],
+        "distanceMm": 21.056403752411203,
+        "weights": [
+          0.0034475216841980518,
+          0.01687968097817727,
+          0.7535373570022721,
+          0.003395924808669792,
+          0.01613976318819837,
+          0.20659975233848435
+        ],
+        "anchorDistancesMetres": [
+          0.5911020544873958,
+          0.26654044880478145,
+          0.0346465507143344,
+          0.5955807601785447,
+          0.2726153143644674,
+          0.07373686834470958
+        ]
+      }
+    },
+    {
+      "id": "VHF0036",
+      "name": "Superior gemellus (left)",
+      "vertices": 454,
+      "skinBefore": {
+        "inside": 454,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 454,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.6475140466907288,
+      "maximumJacobianDeterminant": 1.0013070030080322,
+      "maximumJacobianFrobeniusNorm": 1.7356211211107497
+    },
+    {
+      "id": "VHF0037",
+      "name": "Tensor fasciae latae (left)",
+      "vertices": 4643,
+      "skinBefore": {
+        "inside": 4475,
+        "outside": 0,
+        "surface-band": 168,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 4643,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8518340583946505,
+      "maximumJacobianDeterminant": 1.0677623592223755,
+      "maximumJacobianFrobeniusNorm": 1.7729650728665982
+    },
+    {
+      "id": "VHF0023",
+      "name": "Tibialis anterior (left)",
+      "vertices": 6212,
+      "skinBefore": {
+        "inside": 5961,
+        "outside": 1,
+        "surface-band": 250,
+        "ambiguous": 0,
+        "maxOutsideMm": 2.1164402338437722
+      },
+      "skinAfter": {
+        "inside": 6212,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 1,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.734324717643913,
+      "maximumJacobianDeterminant": 1.308446967194502,
+      "maximumJacobianFrobeniusNorm": 1.9344928500352243
+    },
+    {
+      "id": "VHF0024",
+      "name": "Tibialis posterior (left)",
+      "vertices": 5313,
+      "skinBefore": {
+        "inside": 5313,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 5313,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9061362441580189,
+      "maximumJacobianDeterminant": 1.7860937716709342,
+      "maximumJacobianFrobeniusNorm": 2.2510123950756884
+    },
+    {
+      "id": "VHF0013",
+      "name": "Vastus intermedius (left)",
+      "vertices": 18644,
+      "skinBefore": {
+        "inside": 18644,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 18644,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8880292536166322,
+      "maximumJacobianDeterminant": 1.1676276108256478,
+      "maximumJacobianFrobeniusNorm": 1.8315295469044184
+    },
+    {
+      "id": "VHF0014",
+      "name": "Vastus lateralis (left)",
+      "vertices": 21077,
+      "skinBefore": {
+        "inside": 18821,
+        "outside": 71,
+        "surface-band": 2185,
+        "ambiguous": 0,
+        "maxOutsideMm": 2.487543162630905
+      },
+      "skinAfter": {
+        "inside": 21077,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 71,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8446380657397113,
+      "maximumJacobianDeterminant": 1.081741418862281,
+      "maximumJacobianFrobeniusNorm": 1.7819652234793781
+    },
+    {
+      "id": "VHF0015",
+      "name": "Vastus medialis (left)",
+      "vertices": 13652,
+      "skinBefore": {
+        "inside": 13652,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 13652,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.0138514927585986,
+      "maximumJacobianDeterminant": 1.8295854372546492,
+      "maximumJacobianFrobeniusNorm": 2.2953138136029856
+    },
+    {
+      "id": "VHF0038",
+      "name": "Adductor brevis (right)",
+      "vertices": 5471,
+      "skinBefore": {
+        "inside": 5471,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 5471,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8934177038677052,
+      "maximumJacobianDeterminant": 1.3130567235982753,
+      "maximumJacobianFrobeniusNorm": 1.9682847142924196
+    },
+    {
+      "id": "VHF0039",
+      "name": "Adductor longus (right)",
+      "vertices": 6427,
+      "skinBefore": {
+        "inside": 6427,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 6427,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9357534800400036,
+      "maximumJacobianDeterminant": 1.4069475575541215,
+      "maximumJacobianFrobeniusNorm": 1.9840198361173327
+    },
+    {
+      "id": "VHF0040",
+      "name": "Adductor magnus (right)",
+      "vertices": 15817,
+      "skinBefore": {
+        "inside": 15817,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 15817,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8911045585976965,
+      "maximumJacobianDeterminant": 1.4439957170307187,
+      "maximumJacobianFrobeniusNorm": 2.0108540089944116
+    },
+    {
+      "id": "VHF0041",
+      "name": "Biceps femoris long head (right)",
+      "vertices": 8719,
+      "skinBefore": {
+        "inside": 8719,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 7233,
+        "outside": 717,
+        "surface-band": 769,
+        "ambiguous": 0,
+        "maxOutsideMm": 7.163220589854569
+      },
+      "newOutside": 717,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.0070613367758043,
+      "maximumJacobianDeterminant": 1.289068560028961,
+      "maximumJacobianFrobeniusNorm": 1.9305096712589527,
+      "maximumOutsideWitness": {
+        "vertex": 3738,
+        "sourcePointMetres": [
+          0.6240208148956299,
+          0.36883190274238586,
+          0.6134265065193176
+        ],
+        "beforePointMetres": [
+          -0.12196411937475204,
+          0.5394085049629211,
+          -0.13631664216518402
+        ],
+        "candidatePointMetres": [
+          -0.11273246258497238,
+          0.532615065574646,
+          -0.14569300413131714
+        ],
+        "distanceMm": 7.163220589854569,
+        "weights": [
+          0.042316408250066204,
+          0.11029051508576893,
+          0.07793127048075954,
+          0.060658946393925856,
+          0.5554238508238183,
+          0.15337900896566112
+        ],
+        "anchorDistancesMetres": [
+          0.2535784963222399,
+          0.1562848941500856,
+          0.1863678880596389,
+          0.21151105987080038,
+          0.06730151535733843,
+          0.13210198227147976
+        ]
+      }
+    },
+    {
+      "id": "VHF0042",
+      "name": "Biceps femoris short head (right)",
+      "vertices": 5551,
+      "skinBefore": {
+        "inside": 5551,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 5291,
+        "outside": 0,
+        "surface-band": 260,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9167597535942205,
+      "maximumJacobianDeterminant": 1.2031289498510649,
+      "maximumJacobianFrobeniusNorm": 1.8816935271516158
+    },
+    {
+      "id": "VHF0054",
+      "name": "Extensor digitorum longus (right)",
+      "vertices": 4962,
+      "skinBefore": {
+        "inside": 4957,
+        "outside": 0,
+        "surface-band": 5,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 4962,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.6967439686811712,
+      "maximumJacobianDeterminant": 1.2369055855892128,
+      "maximumJacobianFrobeniusNorm": 1.8803627348190632
+    },
+    {
+      "id": "VHF0055",
+      "name": "Extensor hallucis longus (right)",
+      "vertices": 1839,
+      "skinBefore": {
+        "inside": 1839,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 1839,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.7624502121017381,
+      "maximumJacobianDeterminant": 1.2786548878779316,
+      "maximumJacobianFrobeniusNorm": 1.9216535179317908
+    },
+    {
+      "id": "VHF0056",
+      "name": "Flexor digitorum longus (right)",
+      "vertices": 3143,
+      "skinBefore": {
+        "inside": 2851,
+        "outside": 121,
+        "surface-band": 171,
+        "ambiguous": 0,
+        "maxOutsideMm": 4.675120513866078
+      },
+      "skinAfter": {
+        "inside": 2800,
+        "outside": 239,
+        "surface-band": 104,
+        "ambiguous": 0,
+        "maxOutsideMm": 12.238886374916092
+      },
+      "newOutside": 118,
+      "worsenedOutside": 121,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.0873155777666133,
+      "maximumJacobianDeterminant": 2.595718508204783,
+      "maximumJacobianFrobeniusNorm": 2.982391375378137,
+      "maximumOutsideWitness": {
+        "vertex": 1765,
+        "sourcePointMetres": [
+          0.5737781524658203,
+          0.39412689208984375,
+          0.19498948752880096
+        ],
+        "beforePointMetres": [
+          -0.10709820687770844,
+          0.12139289081096649,
+          -0.10767386108636856
+        ],
+        "candidatePointMetres": [
+          -0.09797636419534683,
+          0.11313126981258392,
+          -0.10853378474712372
+        ],
+        "distanceMm": 12.238886374916092,
+        "weights": [
+          0.0012644221410482485,
+          0.00534395162428679,
+          0.14981986806729583,
+          0.0012884943287537996,
+          0.005731929155538635,
+          0.8365513346830767
+        ],
+        "anchorDistancesMetres": [
+          0.6298572445737142,
+          0.3058787937101289,
+          0.054328091452123785,
+          0.6239398885526074,
+          0.29529956715944533,
+          0.014150446677546337
+        ]
+      }
+    },
+    {
+      "id": "VHF0057",
+      "name": "Flexor hallucis longus (right)",
+      "vertices": 4539,
+      "skinBefore": {
+        "inside": 4535,
+        "outside": 0,
+        "surface-band": 4,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 4489,
+        "outside": 0,
+        "surface-band": 50,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.0569817604294305,
+      "maximumJacobianDeterminant": 2.7106969987146825,
+      "maximumJacobianFrobeniusNorm": 3.0506562065518463
+    },
+    {
+      "id": "VHF0058",
+      "name": "Gastrocnemius lateral (right)",
+      "vertices": 6021,
+      "skinBefore": {
+        "inside": 3140,
+        "outside": 1675,
+        "surface-band": 1206,
+        "ambiguous": 0,
+        "maxOutsideMm": 7.557743071220324
+      },
+      "skinAfter": {
+        "inside": 2699,
+        "outside": 2427,
+        "surface-band": 895,
+        "ambiguous": 0,
+        "maxOutsideMm": 14.788435572158331
+      },
+      "newOutside": 1282,
+      "worsenedOutside": 800,
+      "resolvedOutside": 530,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9954423171644394,
+      "maximumJacobianDeterminant": 1.9060589525811404,
+      "maximumJacobianFrobeniusNorm": 2.3838033328745807,
+      "maximumOutsideWitness": {
+        "vertex": 3059,
+        "sourcePointMetres": [
+          0.6022422313690186,
+          0.3458011746406555,
+          0.4055001139640808
+        ],
+        "beforePointMetres": [
+          -0.1352727711200714,
+          0.32976236939430237,
+          -0.15550804138183594
+        ],
+        "candidatePointMetres": [
+          -0.11432820558547974,
+          0.32305774092674255,
+          -0.1633893996477127
+        ],
+        "distanceMm": 14.788435572158331,
+        "weights": [
+          0.009588359542310009,
+          0.07707358813721572,
+          0.09146346035235281,
+          0.010422467900782563,
+          0.1378915784313475,
+          0.6735605456359914
+        ],
+        "anchorDistancesMetres": [
+          0.43653330927198153,
+          0.15282864049013645,
+          0.14006779695159002,
+          0.41866302305780273,
+          0.11348388053175665,
+          0.04814974946461881
+        ]
+      }
+    },
+    {
+      "id": "VHF0043",
+      "name": "Gastrocnemius medial (right)",
+      "vertices": 9542,
+      "skinBefore": {
+        "inside": 3972,
+        "outside": 4814,
+        "surface-band": 756,
+        "ambiguous": 0,
+        "maxOutsideMm": 24.704028715785377
+      },
+      "skinAfter": {
+        "inside": 4463,
+        "outside": 4484,
+        "surface-band": 595,
+        "ambiguous": 0,
+        "maxOutsideMm": 39.86071389787667
+      },
+      "newOutside": 151,
+      "worsenedOutside": 3143,
+      "resolvedOutside": 481,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9453300627619401,
+      "maximumJacobianDeterminant": 2.418019159775424,
+      "maximumJacobianFrobeniusNorm": 2.814849728551338,
+      "maximumOutsideWitness": {
+        "vertex": 3343,
+        "sourcePointMetres": [
+          0.5651773810386658,
+          0.37078607082366943,
+          0.37440142035484314
+        ],
+        "beforePointMetres": [
+          -0.06361062079668045,
+          0.3023735284805298,
+          -0.13437874615192413
+        ],
+        "candidatePointMetres": [
+          -0.05189114809036255,
+          0.2886004149913788,
+          -0.14442282915115356
+        ],
+        "distanceMm": 39.86071389787667,
+        "weights": [
+          0.010249940306233385,
+          0.09887186770063928,
+          0.2284919324601759,
+          0.010565627152177896,
+          0.12398386557577117,
+          0.5278367668050025
+        ],
+        "anchorDistancesMetres": [
+          0.45412824780231364,
+          0.14498746741577476,
+          0.09417719731766973,
+          0.44727906614198487,
+          0.12916125375905246,
+          0.06010447686121729
+        ]
+      }
+    },
+    {
+      "id": "VHF0063",
+      "name": "Gluteus maximus (right)",
+      "vertices": 24220,
+      "skinBefore": {
+        "inside": 22747,
+        "outside": 678,
+        "surface-band": 795,
+        "ambiguous": 0,
+        "maxOutsideMm": 6.018362232792743
+      },
+      "skinAfter": {
+        "inside": 23411,
+        "outside": 206,
+        "surface-band": 603,
+        "ambiguous": 0,
+        "maxOutsideMm": 3.444198306498623
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 472,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9060394945633807,
+      "maximumJacobianDeterminant": 1.433048417614149,
+      "maximumJacobianFrobeniusNorm": 1.9952065033070219,
+      "maximumOutsideWitness": {
+        "vertex": 7197,
+        "sourcePointMetres": [
+          0.7071061134338379,
+          0.3709636330604553,
+          0.8962579965591431
+        ],
+        "beforePointMetres": [
+          -0.1877984255552292,
+          0.8229401707649231,
+          -0.1427554190158844
+        ],
+        "candidatePointMetres": [
+          -0.1860385239124298,
+          0.8255652785301208,
+          -0.1395929902791977
+        ],
+        "distanceMm": 3.444198306498623,
+        "weights": [
+          0.0487755741634373,
+          0.02899453575675532,
+          0.009018302804775308,
+          0.28392229685352843,
+          0.618180386970383,
+          0.01110890345112079
+        ],
+        "anchorDistancesMetres": [
+          0.19862354683634012,
+          0.25814570923729413,
+          0.46382776655658786,
+          0.08028783291684759,
+          0.05238646981605427,
+          0.4178206883603634
+        ]
+      }
+    },
+    {
+      "id": "VHF0064",
+      "name": "Gluteus medius (right)",
+      "vertices": 13081,
+      "skinBefore": {
+        "inside": 12598,
+        "outside": 0,
+        "surface-band": 483,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 13048,
+        "outside": 0,
+        "surface-band": 32,
+        "ambiguous": 1,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.7903676262124505,
+      "maximumJacobianDeterminant": 1.0536914842263592,
+      "maximumJacobianFrobeniusNorm": 1.7643236564643396
+    },
+    {
+      "id": "VHF0065",
+      "name": "Gluteus minimus (right)",
+      "vertices": 7959,
+      "skinBefore": {
+        "inside": 7959,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 7959,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.7853894565378127,
+      "maximumJacobianDeterminant": 1.049706036693034,
+      "maximumJacobianFrobeniusNorm": 1.7633328991388102
+    },
+    {
+      "id": "VHF0044",
+      "name": "Gracilis (right)",
+      "vertices": 6508,
+      "skinBefore": {
+        "inside": 6508,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 4720,
+        "outside": 1365,
+        "surface-band": 423,
+        "ambiguous": 0,
+        "maxOutsideMm": 19.346473380676294
+      },
+      "newOutside": 1365,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.1431648269171784,
+      "maximumJacobianDeterminant": 1.676364143789385,
+      "maximumJacobianFrobeniusNorm": 2.1867333902791524,
+      "maximumOutsideWitness": {
+        "vertex": 4104,
+        "sourcePointMetres": [
+          0.5760381817817688,
+          0.3983193337917328,
+          0.5846065282821655
+        ],
+        "beforePointMetres": [
+          -0.07438099384307861,
+          0.51082843542099,
+          -0.10707472264766693
+        ],
+        "candidatePointMetres": [
+          -0.053330209106206894,
+          0.5004042387008667,
+          -0.12204766273498535
+        ],
+        "distanceMm": 19.346473380676294,
+        "weights": [
+          0.0291923248141936,
+          0.19868186608040284,
+          0.11060679524380752,
+          0.03338693403505801,
+          0.4601954949290297,
+          0.1679365848975082
+        ],
+        "anchorDistancesMetres": [
+          0.25167065306179565,
+          0.09468390070813622,
+          0.12814963283494932,
+          0.23522393474505715,
+          0.0603589517638827,
+          0.10334196711131316
+        ]
+      }
+    },
+    {
+      "id": "VHF0066",
+      "name": "Iliacus (right)",
+      "vertices": 10270,
+      "skinBefore": {
+        "inside": 10270,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 10270,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8688384809342319,
+      "maximumJacobianDeterminant": 1.193416251153979,
+      "maximumJacobianFrobeniusNorm": 1.8536856738784249
+    },
+    {
+      "id": "VHF0067",
+      "name": "Inferior gemellus (right)",
+      "vertices": 1041,
+      "skinBefore": {
+        "inside": 1041,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 1041,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9493140420531776,
+      "maximumJacobianDeterminant": 1.025106434516667,
+      "maximumJacobianFrobeniusNorm": 1.7468275843582373
+    },
+    {
+      "id": "VHF0068",
+      "name": "Obturator externus (right)",
+      "vertices": 7724,
+      "skinBefore": {
+        "inside": 7724,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 7724,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8905764743201946,
+      "maximumJacobianDeterminant": 1.3293305530460298,
+      "maximumJacobianFrobeniusNorm": 1.937006809788313
+    },
+    {
+      "id": "VHF0069",
+      "name": "Obturator internus (right)",
+      "vertices": 12752,
+      "skinBefore": {
+        "inside": 12751,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 1,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 12752,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9707499277233423,
+      "maximumJacobianDeterminant": 1.379881835623606,
+      "maximumJacobianFrobeniusNorm": 1.977210619472121
+    },
+    {
+      "id": "VHF0070",
+      "name": "Pectineus (right)",
+      "vertices": 3237,
+      "skinBefore": {
+        "inside": 3237,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 3237,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9232566883538457,
+      "maximumJacobianDeterminant": 1.188948861591505,
+      "maximumJacobianFrobeniusNorm": 1.8494652211824774
+    },
+    {
+      "id": "VHF0059",
+      "name": "Peroneus longus (right)",
+      "vertices": 8255,
+      "skinBefore": {
+        "inside": 6235,
+        "outside": 983,
+        "surface-band": 1037,
+        "ambiguous": 0,
+        "maxOutsideMm": 6.897543728225721
+      },
+      "skinAfter": {
+        "inside": 7597,
+        "outside": 0,
+        "surface-band": 658,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 983,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.7251661878436865,
+      "maximumJacobianDeterminant": 1.987602185306786,
+      "maximumJacobianFrobeniusNorm": 2.4657395539871017
+    },
+    {
+      "id": "VHF0071",
+      "name": "Piriformis (right)",
+      "vertices": 3096,
+      "skinBefore": {
+        "inside": 3096,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 3096,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9921420786260332,
+      "maximumJacobianDeterminant": 1.4520026306966223,
+      "maximumJacobianFrobeniusNorm": 2.019226795621606
+    },
+    {
+      "id": "VHF0045",
+      "name": "Plantaris (right)",
+      "vertices": 838,
+      "skinBefore": {
+        "inside": 838,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 838,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9571178105658584,
+      "maximumJacobianDeterminant": 1.258052587395125,
+      "maximumJacobianFrobeniusNorm": 1.90028772794613
+    },
+    {
+      "id": "VHF0046",
+      "name": "Popliteus (right)",
+      "vertices": 1552,
+      "skinBefore": {
+        "inside": 1552,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 1552,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.0721256185255947,
+      "maximumJacobianDeterminant": 1.4414694274496822,
+      "maximumJacobianFrobeniusNorm": 2.02363939899256
+    },
+    {
+      "id": "VHF0072",
+      "name": "Psoas major (right)",
+      "vertices": 8880,
+      "skinBefore": {
+        "inside": 8880,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 8880,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9011769570511486,
+      "maximumJacobianDeterminant": 1.2193189461400968,
+      "maximumJacobianFrobeniusNorm": 1.8756774738714432
+    },
+    {
+      "id": "VHF0073",
+      "name": "Quadratus femoris (right)",
+      "vertices": 34576,
+      "skinBefore": {
+        "inside": 34575,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 1,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 34576,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9523119504572539,
+      "maximumJacobianDeterminant": 1.1115839249965167,
+      "maximumJacobianFrobeniusNorm": 1.7970723549758707
+    },
+    {
+      "id": "VHF0047",
+      "name": "Rectus femoris (right)",
+      "vertices": 7650,
+      "skinBefore": {
+        "inside": 7650,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 7650,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9004286238903612,
+      "maximumJacobianDeterminant": 1.142845312804881,
+      "maximumJacobianFrobeniusNorm": 1.8229945140435788
+    },
+    {
+      "id": "VHF0048",
+      "name": "Sartorius (right)",
+      "vertices": 9764,
+      "skinBefore": {
+        "inside": 9214,
+        "outside": 225,
+        "surface-band": 325,
+        "ambiguous": 0,
+        "maxOutsideMm": 4.996928335521084
+      },
+      "skinAfter": {
+        "inside": 8000,
+        "outside": 1351,
+        "surface-band": 413,
+        "ambiguous": 0,
+        "maxOutsideMm": 19.820660268970094
+      },
+      "newOutside": 1351,
+      "worsenedOutside": 0,
+      "resolvedOutside": 225,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.869982295968147,
+      "maximumJacobianDeterminant": 2.0543398404535873,
+      "maximumJacobianFrobeniusNorm": 2.495627918973647,
+      "maximumOutsideWitness": {
+        "vertex": 953,
+        "sourcePointMetres": [
+          0.5711707472801208,
+          0.4083096981048584,
+          0.5776755213737488
+        ],
+        "beforePointMetres": [
+          -0.06955408304929733,
+          0.5039551854133606,
+          -0.09716753661632538
+        ],
+        "candidatePointMetres": [
+          -0.046669069677591324,
+          0.4933493733406067,
+          -0.11242146790027618
+        ],
+        "distanceMm": 19.820660268970094,
+        "weights": [
+          0.024048632123837493,
+          0.21245393347889688,
+          0.11118170174534728,
+          0.026768047949052673,
+          0.46470167635388526,
+          0.16084600834898036
+        ],
+        "anchorDistancesMetres": [
+          0.2553014396518626,
+          0.08380433792349812,
+          0.11740833694020714,
+          0.24190194327351497,
+          0.05471516617334406,
+          0.09697892818212854
+        ]
+      }
+    },
+    {
+      "id": "VHF0049",
+      "name": "Semimembranosus (right)",
+      "vertices": 9934,
+      "skinBefore": {
+        "inside": 9910,
+        "outside": 0,
+        "surface-band": 24,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 6173,
+        "outside": 2974,
+        "surface-band": 787,
+        "ambiguous": 0,
+        "maxOutsideMm": 16.960465814511927
+      },
+      "newOutside": 2974,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.97500025174506,
+      "maximumJacobianDeterminant": 1.6729785871185092,
+      "maximumJacobianFrobeniusNorm": 2.1867151170865227,
+      "maximumOutsideWitness": {
+        "vertex": 2197,
+        "sourcePointMetres": [
+          0.5899347066879272,
+          0.38082262873649597,
+          0.6009405255317688
+        ],
+        "beforePointMetres": [
+          -0.08816181123256683,
+          0.5270264744758606,
+          -0.1244257465004921
+        ],
+        "candidatePointMetres": [
+          -0.0715029165148735,
+          0.5174976587295532,
+          -0.13817201554775238
+        ],
+        "distanceMm": 16.960465814511927,
+        "weights": [
+          0.04049567480421422,
+          0.16363187692326348,
+          0.10196754256244495,
+          0.05010081975397723,
+          0.4776206411061513,
+          0.1661834448499489
+        ],
+        "anchorDistancesMetres": [
+          0.24520789612713098,
+          0.12074444782244007,
+          0.15374598239964898,
+          0.22027917568670569,
+          0.06878845401274802,
+          0.11978827928351088
+        ]
+      }
+    },
+    {
+      "id": "VHF0050",
+      "name": "Semitendinosus (right)",
+      "vertices": 6860,
+      "skinBefore": {
+        "inside": 6860,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 5248,
+        "outside": 1158,
+        "surface-band": 454,
+        "ambiguous": 0,
+        "maxOutsideMm": 14.024753358429427
+      },
+      "newOutside": 1158,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.093902996021319,
+      "maximumJacobianDeterminant": 1.436061681963793,
+      "maximumJacobianFrobeniusNorm": 2.021433850317038,
+      "maximumOutsideWitness": {
+        "vertex": 307,
+        "sourcePointMetres": [
+          0.6032349467277527,
+          0.3739832937717438,
+          0.5970441699028015
+        ],
+        "beforePointMetres": [
+          -0.10135132074356079,
+          0.5231625437736511,
+          -0.131208136677742
+        ],
+        "candidatePointMetres": [
+          -0.08822176605463028,
+          0.5142945647239685,
+          -0.14314453303813934
+        ],
+        "distanceMm": 14.024753358429427,
+        "weights": [
+          0.037765314025060885,
+          0.144090417863623,
+          0.09522511794619364,
+          0.048680775465398195,
+          0.49506731902012546,
+          0.17917105567959896
+        ],
+        "anchorDistancesMetres": [
+          0.25586751966691257,
+          0.12986028398816488,
+          0.16038283513537496,
+          0.22516410359670738,
+          0.0680046720946409,
+          0.11611874887233029
+        ]
+      }
+    },
+    {
+      "id": "VHF0060",
+      "name": "Soleus (right)",
+      "vertices": 14282,
+      "skinBefore": {
+        "inside": 11553,
+        "outside": 1414,
+        "surface-band": 1315,
+        "ambiguous": 0,
+        "maxOutsideMm": 7.885160344119253
+      },
+      "skinAfter": {
+        "inside": 9251,
+        "outside": 2399,
+        "surface-band": 2632,
+        "ambiguous": 0,
+        "maxOutsideMm": 26.613013700763442
+      },
+      "newOutside": 1766,
+      "worsenedOutside": 216,
+      "resolvedOutside": 781,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8540402837033229,
+      "maximumJacobianDeterminant": 3.061887294600827,
+      "maximumJacobianFrobeniusNorm": 3.3703891188655897,
+      "maximumOutsideWitness": {
+        "vertex": 11374,
+        "sourcePointMetres": [
+          0.5731807351112366,
+          0.3740844130516052,
+          0.20540288090705872
+        ],
+        "beforePointMetres": [
+          -0.10650686919689178,
+          0.13170036673545837,
+          -0.12751248478889465
+        ],
+        "candidatePointMetres": [
+          -0.08555413782596588,
+          0.12166687101125717,
+          -0.13009817898273468
+        ],
+        "distanceMm": 26.613013700763442,
+        "weights": [
+          0.002828605869193663,
+          0.012105153033401846,
+          0.21489983796798248,
+          0.0028861100437835266,
+          0.01307630844529112,
+          0.7542039846403473
+        ],
+        "anchorDistancesMetres": [
+          0.6208817084005199,
+          0.29961926894735147,
+          0.06840546211281866,
+          0.6146587391589461,
+          0.28822700344742486,
+          0.032361664003659606
+        ]
+      }
+    },
+    {
+      "id": "VHF0074",
+      "name": "Superior gemellus (right)",
+      "vertices": 532,
+      "skinBefore": {
+        "inside": 532,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 532,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.9290835776857019,
+      "maximumJacobianDeterminant": 1.020853636314346,
+      "maximumJacobianFrobeniusNorm": 1.7442198790879402
+    },
+    {
+      "id": "VHF0075",
+      "name": "Tensor fasciae latae (right)",
+      "vertices": 4666,
+      "skinBefore": {
+        "inside": 3989,
+        "outside": 202,
+        "surface-band": 475,
+        "ambiguous": 0,
+        "maxOutsideMm": 3.2421813353180817
+      },
+      "skinAfter": {
+        "inside": 4566,
+        "outside": 0,
+        "surface-band": 100,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 202,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8061881867075545,
+      "maximumJacobianDeterminant": 1.0132772158143273,
+      "maximumJacobianFrobeniusNorm": 1.752576546590746
+    },
+    {
+      "id": "VHF0061",
+      "name": "Tibialis anterior (right)",
+      "vertices": 5945,
+      "skinBefore": {
+        "inside": 5879,
+        "outside": 0,
+        "surface-band": 66,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 5945,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.709179237286713,
+      "maximumJacobianDeterminant": 1.1918049869031744,
+      "maximumJacobianFrobeniusNorm": 1.8603749524410937
+    },
+    {
+      "id": "VHF0062",
+      "name": "Tibialis posterior (right)",
+      "vertices": 4979,
+      "skinBefore": {
+        "inside": 4979,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 4979,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8558868108889419,
+      "maximumJacobianDeterminant": 1.5969038268971145,
+      "maximumJacobianFrobeniusNorm": 2.1432291444484903
+    },
+    {
+      "id": "VHF0051",
+      "name": "Vastus intermedius (right)",
+      "vertices": 17837,
+      "skinBefore": {
+        "inside": 17837,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 17837,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.886591436112659,
+      "maximumJacobianDeterminant": 1.1497979857163925,
+      "maximumJacobianFrobeniusNorm": 1.8222544918497299
+    },
+    {
+      "id": "VHF0052",
+      "name": "Vastus lateralis (right)",
+      "vertices": 20369,
+      "skinBefore": {
+        "inside": 20369,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 20369,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 0.8425171298777284,
+      "maximumJacobianDeterminant": 1.0710620685255825,
+      "maximumJacobianFrobeniusNorm": 1.7811299528230962
+    },
+    {
+      "id": "VHF0053",
+      "name": "Vastus medialis (right)",
+      "vertices": 12181,
+      "skinBefore": {
+        "inside": 12181,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinAfter": {
+        "inside": 12181,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "newOutside": 0,
+      "worsenedOutside": 0,
+      "resolvedOutside": 0,
+      "nonpositiveJacobians": 0,
+      "minimumJacobianDeterminant": 1.0047389671541997,
+      "maximumJacobianDeterminant": 1.8756769715046981,
+      "maximumJacobianFrobeniusNorm": 2.337192247073716
+    }
+  ],
+  "binary": {
+    "path": ".cache/donor-continuous/surface-weighted-inverse-square-20mm.bin.gz",
+    "bytes": 23474580,
+    "gzipBytes": 12542026,
+    "sha256": "2455c78754c88476c1cbd753107aa02a68f7554d2b9925bf0a65f0c1198bd136",
+    "parts": [
+      {
+        "id": "VHF0000",
+        "name": "Adductor brevis (left)",
+        "vertexCount": 5562,
+        "indexCount": 33360,
+        "positions": 0,
+        "indices": 66744
+      },
+      {
+        "id": "VHF0001",
+        "name": "Adductor longus (left)",
+        "vertexCount": 6222,
+        "indexCount": 37320,
+        "positions": 200184,
+        "indices": 274848
+      },
+      {
+        "id": "VHF0002",
+        "name": "Adductor magnus (left)",
+        "vertexCount": 15752,
+        "indexCount": 94500,
+        "positions": 424128,
+        "indices": 613152
+      },
+      {
+        "id": "VHF0003",
+        "name": "Biceps femoris long (left)",
+        "vertexCount": 8895,
+        "indexCount": 53358,
+        "positions": 991152,
+        "indices": 1097892
+      },
+      {
+        "id": "VHF0004",
+        "name": "Biceps femoris short (left)",
+        "vertexCount": 6121,
+        "indexCount": 36714,
+        "positions": 1311324,
+        "indices": 1384776
+      },
+      {
+        "id": "VHF0016",
+        "name": "Extensor digitorum longus (left)",
+        "vertexCount": 4428,
+        "indexCount": 26556,
+        "positions": 1531632,
+        "indices": 1584768
+      },
+      {
+        "id": "VHF0017",
+        "name": "Extensor hallucis longus (left)",
+        "vertexCount": 2033,
+        "indexCount": 12186,
+        "positions": 1690992,
+        "indices": 1715388
+      },
+      {
+        "id": "VHF0018",
+        "name": "Flexor digitorum longus (left)",
+        "vertexCount": 3134,
+        "indexCount": 18792,
+        "positions": 1764132,
+        "indices": 1801740
+      },
+      {
+        "id": "VHF0019",
+        "name": "Flexor hallucis longus (left)",
+        "vertexCount": 4610,
+        "indexCount": 27648,
+        "positions": 1876908,
+        "indices": 1932228
+      },
+      {
+        "id": "VHF0020",
+        "name": "Gastrocnemius lateral (left)",
+        "vertexCount": 5659,
+        "indexCount": 33942,
+        "positions": 2042820,
+        "indices": 2110728
+      },
+      {
+        "id": "VHF0005",
+        "name": "Gastrocnemius medial (left)",
+        "vertexCount": 9931,
+        "indexCount": 59574,
+        "positions": 2246496,
+        "indices": 2365668
+      },
+      {
+        "id": "VHF0025",
+        "name": "Gluteus maximus (left)",
+        "vertexCount": 22890,
+        "indexCount": 137328,
+        "positions": 2603964,
+        "indices": 2878644
+      },
+      {
+        "id": "VHF0026",
+        "name": "Gluteus medius (left)",
+        "vertexCount": 15038,
+        "indexCount": 90216,
+        "positions": 3427956,
+        "indices": 3608412
+      },
+      {
+        "id": "VHF0027",
+        "name": "Gluteus minimus (left)",
+        "vertexCount": 8499,
+        "indexCount": 50982,
+        "positions": 3969276,
+        "indices": 4071264
+      },
+      {
+        "id": "VHF0006",
+        "name": "Gracilis (left)",
+        "vertexCount": 6680,
+        "indexCount": 40068,
+        "positions": 4275192,
+        "indices": 4355352
+      },
+      {
+        "id": "VHF0028",
+        "name": "Iliacus (left)",
+        "vertexCount": 11167,
+        "indexCount": 66990,
+        "positions": 4515624,
+        "indices": 4649628
+      },
+      {
+        "id": "VHF0029",
+        "name": "Inferior gemellus (left)",
+        "vertexCount": 579,
+        "indexCount": 3462,
+        "positions": 4917588,
+        "indices": 4924536
+      },
+      {
+        "id": "VHF0030",
+        "name": "Obturator externus (left)",
+        "vertexCount": 7281,
+        "indexCount": 43674,
+        "positions": 4938384,
+        "indices": 5025756
+      },
+      {
+        "id": "VHF0031",
+        "name": "Obturator internus (left)",
+        "vertexCount": 9133,
+        "indexCount": 54786,
+        "positions": 5200452,
+        "indices": 5310048
+      },
+      {
+        "id": "VHF0032",
+        "name": "Pectineus (left)",
+        "vertexCount": 22230,
+        "indexCount": 133368,
+        "positions": 5529192,
+        "indices": 5795952
+      },
+      {
+        "id": "VHF0021",
+        "name": "Peroneus longus (left)",
+        "vertexCount": 8110,
+        "indexCount": 48648,
+        "positions": 6329424,
+        "indices": 6426744
+      },
+      {
+        "id": "VHF0033",
+        "name": "Piriformis (left)",
+        "vertexCount": 3245,
+        "indexCount": 19458,
+        "positions": 6621336,
+        "indices": 6660276
+      },
+      {
+        "id": "VHF0007",
+        "name": "Plantaris (left)",
+        "vertexCount": 942,
+        "indexCount": 5640,
+        "positions": 6738108,
+        "indices": 6749412
+      },
+      {
+        "id": "VHF0008",
+        "name": "Popliteus (left)",
+        "vertexCount": 1530,
+        "indexCount": 9168,
+        "positions": 6771972,
+        "indices": 6790332
+      },
+      {
+        "id": "VHF0034",
+        "name": "Psoas major (left)",
+        "vertexCount": 9848,
+        "indexCount": 59076,
+        "positions": 6827004,
+        "indices": 6945180
+      },
+      {
+        "id": "VHF0035",
+        "name": "Quadratus femoris (left)",
+        "vertexCount": 2698,
+        "indexCount": 16176,
+        "positions": 7181484,
+        "indices": 7213860
+      },
+      {
+        "id": "VHF0009",
+        "name": "Rectus femoris (left)",
+        "vertexCount": 8143,
+        "indexCount": 48846,
+        "positions": 7278564,
+        "indices": 7376280
+      },
+      {
+        "id": "VHF0010",
+        "name": "Sartorius (left)",
+        "vertexCount": 9449,
+        "indexCount": 56682,
+        "positions": 7571664,
+        "indices": 7685052
+      },
+      {
+        "id": "VHF0011",
+        "name": "Semimembranosus (left)",
+        "vertexCount": 10307,
+        "indexCount": 61830,
+        "positions": 7911780,
+        "indices": 8035464
+      },
+      {
+        "id": "VHF0012",
+        "name": "Semitendinosus (left)",
+        "vertexCount": 6815,
+        "indexCount": 40878,
+        "positions": 8282784,
+        "indices": 8364564
+      },
+      {
+        "id": "VHF0022",
+        "name": "Soleus (left)",
+        "vertexCount": 14228,
+        "indexCount": 85356,
+        "positions": 8528076,
+        "indices": 8698812
+      },
+      {
+        "id": "VHF0036",
+        "name": "Superior gemellus (left)",
+        "vertexCount": 454,
+        "indexCount": 2712,
+        "positions": 9040236,
+        "indices": 9045684
+      },
+      {
+        "id": "VHF0037",
+        "name": "Tensor fasciae latae (left)",
+        "vertexCount": 4643,
+        "indexCount": 27846,
+        "positions": 9056532,
+        "indices": 9112248
+      },
+      {
+        "id": "VHF0023",
+        "name": "Tibialis anterior (left)",
+        "vertexCount": 6212,
+        "indexCount": 37260,
+        "positions": 9223632,
+        "indices": 9298176
+      },
+      {
+        "id": "VHF0024",
+        "name": "Tibialis posterior (left)",
+        "vertexCount": 5313,
+        "indexCount": 31866,
+        "positions": 9447216,
+        "indices": 9510972
+      },
+      {
+        "id": "VHF0013",
+        "name": "Vastus intermedius (left)",
+        "vertexCount": 18644,
+        "indexCount": 111852,
+        "positions": 9638436,
+        "indices": 9862164
+      },
+      {
+        "id": "VHF0014",
+        "name": "Vastus lateralis (left)",
+        "vertexCount": 21077,
+        "indexCount": 126450,
+        "positions": 10309572,
+        "indices": 10562496
+      },
+      {
+        "id": "VHF0015",
+        "name": "Vastus medialis (left)",
+        "vertexCount": 13652,
+        "indexCount": 81900,
+        "positions": 11068296,
+        "indices": 11232120
+      },
+      {
+        "id": "VHF0038",
+        "name": "Adductor brevis (right)",
+        "vertexCount": 5471,
+        "indexCount": 32814,
+        "positions": 11559720,
+        "indices": 11625372
+      },
+      {
+        "id": "VHF0039",
+        "name": "Adductor longus (right)",
+        "vertexCount": 6427,
+        "indexCount": 38550,
+        "positions": 11756628,
+        "indices": 11833752
+      },
+      {
+        "id": "VHF0040",
+        "name": "Adductor magnus (right)",
+        "vertexCount": 15817,
+        "indexCount": 94890,
+        "positions": 11987952,
+        "indices": 12177756
+      },
+      {
+        "id": "VHF0041",
+        "name": "Biceps femoris long head (right)",
+        "vertexCount": 8719,
+        "indexCount": 52302,
+        "positions": 12557316,
+        "indices": 12661944
+      },
+      {
+        "id": "VHF0042",
+        "name": "Biceps femoris short head (right)",
+        "vertexCount": 5551,
+        "indexCount": 33294,
+        "positions": 12871152,
+        "indices": 12937764
+      },
+      {
+        "id": "VHF0054",
+        "name": "Extensor digitorum longus (right)",
+        "vertexCount": 4962,
+        "indexCount": 29760,
+        "positions": 13070940,
+        "indices": 13130484
+      },
+      {
+        "id": "VHF0055",
+        "name": "Extensor hallucis longus (right)",
+        "vertexCount": 1839,
+        "indexCount": 11022,
+        "positions": 13249524,
+        "indices": 13271592
+      },
+      {
+        "id": "VHF0056",
+        "name": "Flexor digitorum longus (right)",
+        "vertexCount": 3143,
+        "indexCount": 18846,
+        "positions": 13315680,
+        "indices": 13353396
+      },
+      {
+        "id": "VHF0057",
+        "name": "Flexor hallucis longus (right)",
+        "vertexCount": 4539,
+        "indexCount": 27222,
+        "positions": 13428780,
+        "indices": 13483248
+      },
+      {
+        "id": "VHF0058",
+        "name": "Gastrocnemius lateral (right)",
+        "vertexCount": 6021,
+        "indexCount": 36114,
+        "positions": 13592136,
+        "indices": 13664388
+      },
+      {
+        "id": "VHF0043",
+        "name": "Gastrocnemius medial (right)",
+        "vertexCount": 9542,
+        "indexCount": 57240,
+        "positions": 13808844,
+        "indices": 13923348
+      },
+      {
+        "id": "VHF0063",
+        "name": "Gluteus maximus (right)",
+        "vertexCount": 24220,
+        "indexCount": 145308,
+        "positions": 14152308,
+        "indices": 14442948
+      },
+      {
+        "id": "VHF0064",
+        "name": "Gluteus medius (right)",
+        "vertexCount": 13081,
+        "indexCount": 78474,
+        "positions": 15024180,
+        "indices": 15181152
+      },
+      {
+        "id": "VHF0065",
+        "name": "Gluteus minimus (right)",
+        "vertexCount": 7959,
+        "indexCount": 47742,
+        "positions": 15495048,
+        "indices": 15590556
+      },
+      {
+        "id": "VHF0044",
+        "name": "Gracilis (right)",
+        "vertexCount": 6508,
+        "indexCount": 39036,
+        "positions": 15781524,
+        "indices": 15859620
+      },
+      {
+        "id": "VHF0066",
+        "name": "Iliacus (right)",
+        "vertexCount": 10270,
+        "indexCount": 61608,
+        "positions": 16015764,
+        "indices": 16139004
+      },
+      {
+        "id": "VHF0067",
+        "name": "Inferior gemellus (right)",
+        "vertexCount": 1041,
+        "indexCount": 6234,
+        "positions": 16385436,
+        "indices": 16397928
+      },
+      {
+        "id": "VHF0068",
+        "name": "Obturator externus (right)",
+        "vertexCount": 7724,
+        "indexCount": 46332,
+        "positions": 16422864,
+        "indices": 16515552
+      },
+      {
+        "id": "VHF0069",
+        "name": "Obturator internus (right)",
+        "vertexCount": 12752,
+        "indexCount": 76500,
+        "positions": 16700880,
+        "indices": 16853904
+      },
+      {
+        "id": "VHF0070",
+        "name": "Pectineus (right)",
+        "vertexCount": 3237,
+        "indexCount": 19410,
+        "positions": 17159904,
+        "indices": 17198748
+      },
+      {
+        "id": "VHF0059",
+        "name": "Peroneus longus (right)",
+        "vertexCount": 8255,
+        "indexCount": 49518,
+        "positions": 17276388,
+        "indices": 17375448
+      },
+      {
+        "id": "VHF0071",
+        "name": "Piriformis (right)",
+        "vertexCount": 3096,
+        "indexCount": 18564,
+        "positions": 17573520,
+        "indices": 17610672
+      },
+      {
+        "id": "VHF0045",
+        "name": "Plantaris (right)",
+        "vertexCount": 838,
+        "indexCount": 5016,
+        "positions": 17684928,
+        "indices": 17694984
+      },
+      {
+        "id": "VHF0046",
+        "name": "Popliteus (right)",
+        "vertexCount": 1552,
+        "indexCount": 9300,
+        "positions": 17715048,
+        "indices": 17733672
+      },
+      {
+        "id": "VHF0072",
+        "name": "Psoas major (right)",
+        "vertexCount": 8880,
+        "indexCount": 53268,
+        "positions": 17770872,
+        "indices": 17877432
+      },
+      {
+        "id": "VHF0073",
+        "name": "Quadratus femoris (right)",
+        "vertexCount": 34576,
+        "indexCount": 207444,
+        "positions": 18090504,
+        "indices": 18505416
+      },
+      {
+        "id": "VHF0047",
+        "name": "Rectus femoris (right)",
+        "vertexCount": 7650,
+        "indexCount": 45888,
+        "positions": 19335192,
+        "indices": 19426992
+      },
+      {
+        "id": "VHF0048",
+        "name": "Sartorius (right)",
+        "vertexCount": 9764,
+        "indexCount": 58572,
+        "positions": 19610544,
+        "indices": 19727712
+      },
+      {
+        "id": "VHF0049",
+        "name": "Semimembranosus (right)",
+        "vertexCount": 9934,
+        "indexCount": 59592,
+        "positions": 19962000,
+        "indices": 20081208
+      },
+      {
+        "id": "VHF0050",
+        "name": "Semitendinosus (right)",
+        "vertexCount": 6860,
+        "indexCount": 41148,
+        "positions": 20319576,
+        "indices": 20401896
+      },
+      {
+        "id": "VHF0060",
+        "name": "Soleus (right)",
+        "vertexCount": 14282,
+        "indexCount": 85680,
+        "positions": 20566488,
+        "indices": 20737872
+      },
+      {
+        "id": "VHF0074",
+        "name": "Superior gemellus (right)",
+        "vertexCount": 532,
+        "indexCount": 3180,
+        "positions": 21080592,
+        "indices": 21086976
+      },
+      {
+        "id": "VHF0075",
+        "name": "Tensor fasciae latae (right)",
+        "vertexCount": 4666,
+        "indexCount": 27984,
+        "positions": 21099696,
+        "indices": 21155688
+      },
+      {
+        "id": "VHF0061",
+        "name": "Tibialis anterior (right)",
+        "vertexCount": 5945,
+        "indexCount": 35658,
+        "positions": 21267624,
+        "indices": 21338964
+      },
+      {
+        "id": "VHF0062",
+        "name": "Tibialis posterior (right)",
+        "vertexCount": 4979,
+        "indexCount": 29862,
+        "positions": 21481596,
+        "indices": 21541344
+      },
+      {
+        "id": "VHF0051",
+        "name": "Vastus intermedius (right)",
+        "vertexCount": 17837,
+        "indexCount": 107010,
+        "positions": 21660792,
+        "indices": 21874836
+      },
+      {
+        "id": "VHF0052",
+        "name": "Vastus lateralis (right)",
+        "vertexCount": 20369,
+        "indexCount": 122202,
+        "positions": 22302876,
+        "indices": 22547304
+      },
+      {
+        "id": "VHF0053",
+        "name": "Vastus medialis (right)",
+        "vertexCount": 12181,
+        "indexCount": 73074,
+        "positions": 23036112,
+        "indices": 23182284
+      }
+    ]
+  },
+  "limitations": [
+    "Same common source-space map applied to all 76 muscles; no mesh-ID or side branch in field evaluation.",
+    "20mm default is an experimental numerical regularization length, not a biological tissue thickness or validated registration parameter.",
+    "Hip frame estimates remain the coarse original box fits; thigh and shank frames use corrected composite surface fits.",
+    "Blended frames are soft influences, not exact bone constraints. Resulting bone residuals are not measured by this muscle-only screen.",
+    "Baseline is unsimplified source muscles in old group frames, not the lower-density public packed muscles. Counts cannot be compared directly to old public vertex counts.",
+    "Analytic Jacobians are evaluated only at indexed source vertices. Closest-surface switches can be nondifferentiable; positive sampled determinants do not prove global injectivity or triangle validity.",
+    "Skin 2mm band is numerical. Triangle intersection, attachment, internal tissue and clinical validation are NOT performed by this script."
+  ],
+  "files": [
+    {
+      "path": "docs/anatomy-alignment/donor-source-comparison.json",
+      "sha256": "ea0c9cbc5d0edc0a3859fb9f5786a638eeb3e92bb5a60649325561dc14c69959"
+    },
+    {
+      "path": "docs/anatomy-alignment/hierarchy-joint-bone-surface-fits.json",
+      "sha256": "f1146b7fb1fb339e3dc3cf22d46b456363945e01191bbf5463614e166ceba6a4"
+    },
+    {
+      "path": "docs/anatomy-alignment/donor-fidelity-packing.json",
+      "sha256": "0aad0815b9914a4841a6aa5cf84aa7202ee04f4d508737939c034aeecbb8b432"
+    },
+    {
+      "path": ".cache/donor-fidelity/source-full.bin.gz",
+      "sha256": "5c506d56f40971eca353cfc6612b269c4e0e1cd22888dc4f1007377944133720"
+    },
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "path": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "path": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "path": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "path": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "path": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "path": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "path": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "path": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "path": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "path": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "path": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "path": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "path": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "path": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Pelvis_smooth.stl",
+      "sha256": "8a54af941e90d601320747d8e44a9bef8ca748291653480c1ca25355e6c89e08"
+    },
+    {
+      "path": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Femur_smooth.stl",
+      "sha256": "964b27ab140b4e72a2e7c4ae3f1ae24212554cc1a8f0552b632dafce8d66b242"
+    },
+    {
+      "path": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Patella_smooth.stl",
+      "sha256": "4a57158e9ec1716a78e27d4370865fcbc5e7ff4be203f38e9aa59ca84761153c"
+    },
+    {
+      "path": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Tibia_smooth.stl",
+      "sha256": "148107a0157932b94cab2b382b805af7c3c178400be76349ed20cea0bb56c3eb"
+    },
+    {
+      "path": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Fibula_smooth.stl",
+      "sha256": "3f5573f86c10eac6b25ed63604ea15ada1d389b54e0ceaecc48e5c5d33a62549"
+    },
+    {
+      "path": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Pelvis_smooth.stl",
+      "sha256": "007280b01294f728e3e81a4e708986f6bbb921140d88b4260543a5babc6fac5b"
+    },
+    {
+      "path": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Femur_smooth.stl",
+      "sha256": "012b293cbaa2cd467ea423b96bb257c8f558ff639c8342e37972af7c6febbd25"
+    },
+    {
+      "path": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Patella_smooth.stl",
+      "sha256": "bca69eb33e240c0ec6ea3fafb4f782edbc8ca714203860d972c74aabc6202613"
+    },
+    {
+      "path": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Tibia_smooth.stl",
+      "sha256": "589b64fe38d602eb95a0dad900bcd1059043d3d8451d3d74c7231fccc62ffae1"
+    },
+    {
+      "path": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Fibula_smooth.stl",
+      "sha256": "5e62c5c1aeedb2b0c287e4efbaf881ef9c8c721ccc546a69c74784e520581a24"
+    },
+    {
+      "path": "scripts/build-continuous-donor-candidate.mjs",
+      "sha256": "3975c1bfcb4c75b03d81aa3a6cdae201e61b744032145d540cab6b34890b29f2"
+    },
+    {
+      "path": "scripts/lib/surface-frame-field.mjs",
+      "sha256": "e14c3c9f084ba76a9142d2aac7a958d7142bd01ae18c45ed77778357fd5aeb36"
+    },
+    {
+      "path": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    }
+  ]
+}
