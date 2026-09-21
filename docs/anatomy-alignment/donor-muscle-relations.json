@@ -1,0 +1,3787 @@
+{
+  "status": "GEOMETRY DIAGNOSTIC ONLY; no anatomy correction or clinical approval",
+  "createdAt": "2026-09-21T08:54:33.245Z",
+  "source": "https://github.com/slorksmo/Human-Atlas",
+  "sourceCommit": "5bb5713aab18d7fe9380c3339eb09f173491ea06",
+  "sourceFit": {
+    "from": "Visible Human Female lower extremity, Andreassen et al. 2023",
+    "muscles": 76,
+    "method": "per-group fit of an axis rotation, a uniform scale and a translation onto the hip, femur, patella, tibia and fibula this body models",
+    "groups": {
+      "left-hip": {
+        "scale": 1.0035,
+        "boneAgreementMillimetres": 36.1
+      },
+      "left-thigh": {
+        "scale": 0.9793,
+        "boneAgreementMillimetres": 33.8
+      },
+      "left-shank": {
+        "scale": 1.005,
+        "boneAgreementMillimetres": 27.5
+      },
+      "right-hip": {
+        "scale": 1.0084,
+        "boneAgreementMillimetres": 25.9
+      },
+      "right-thigh": {
+        "scale": 0.9917,
+        "boneAgreementMillimetres": 17.4
+      },
+      "right-shank": {
+        "scale": 0.9898,
+        "boneAgreementMillimetres": 27
+      }
+    }
+  },
+  "scope": {
+    "donorMuscles": 76,
+    "boneLayerParts": 321,
+    "evaluatedPairs": 24396,
+    "broadPhasePairs": 445
+  },
+  "limitations": [
+    "All 76 donor meshes include two rectus femoris meshes hidden by default; results separate these cases.",
+    "Bone-layer parts include cartilage/connective meshes, not 321 distinct bones.",
+    "Triangle intersection and plane-straddle extent are not penetration depth, volume, or an attachment diagnosis.",
+    "No surface intersection does not exclude solid containment or prove anatomical alignment.",
+    "Skin classification covers indexed vertices, not triangle interiors. The 2 mm band is numerical, not tissue thickness.",
+    "The imported group names describe fitting groups chosen by nearest bone-box centre, not validated anatomical compartments.",
+    "Unsigned nearest distances do not identify tendon attachment sites; meshes may not include full tendons."
+  ],
+  "muscles": [
+    {
+      "id": "VHF0000",
+      "name": "Adductor brevis (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 1225,
+      "skin": {
+        "inside": 1225,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0001",
+      "name": "Adductor longus (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 1370,
+      "skin": {
+        "inside": 1370,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0002",
+      "name": "Adductor magnus (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 3467,
+      "skin": {
+        "inside": 3467,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0003",
+      "name": "Biceps femoris long (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 1958,
+      "skin": {
+        "inside": 1731,
+        "outside": 19,
+        "surface-band": 208,
+        "ambiguous": 0,
+        "maxOutsideMm": 2.527512253045757
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0004",
+      "name": "Biceps femoris short (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 1348,
+      "skin": {
+        "inside": 1348,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937",
+        "HRAF0946",
+        "HRAF0948"
+      ]
+    },
+    {
+      "id": "VHF0005",
+      "name": "Gastrocnemius medial (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 2186,
+      "skin": {
+        "inside": 1068,
+        "outside": 913,
+        "surface-band": 205,
+        "ambiguous": 0,
+        "maxOutsideMm": 21.342940212620313
+      },
+      "intersectingBoneIds": [
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0946",
+        "HRAF0947"
+      ]
+    },
+    {
+      "id": "VHF0006",
+      "name": "Gracilis (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 1471,
+      "skin": {
+        "inside": 1471,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0007",
+      "name": "Plantaris (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 482,
+      "skin": {
+        "inside": 482,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937",
+        "HRAF0946",
+        "HRAF0948"
+      ]
+    },
+    {
+      "id": "VHF0008",
+      "name": "Popliteus (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 523,
+      "skin": {
+        "inside": 523,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0936",
+        "HRAF0954"
+      ]
+    },
+    {
+      "id": "VHF0009",
+      "name": "Rectus femoris (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": true,
+      "referencedVertices": 1793,
+      "skin": {
+        "inside": 1793,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0010",
+      "name": "Sartorius (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 2080,
+      "skin": {
+        "inside": 2080,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0011",
+      "name": "Semimembranosus (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 2269,
+      "skin": {
+        "inside": 2207,
+        "outside": 0,
+        "surface-band": 62,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0012",
+      "name": "Semitendinosus (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 1500,
+      "skin": {
+        "inside": 1459,
+        "outside": 0,
+        "surface-band": 41,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0013",
+      "name": "Vastus intermedius (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 4103,
+      "skin": {
+        "inside": 4103,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0014",
+      "name": "Vastus lateralis (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 4638,
+      "skin": {
+        "inside": 4288,
+        "outside": 18,
+        "surface-band": 332,
+        "ambiguous": 0,
+        "maxOutsideMm": 2.487553863646858
+      },
+      "intersectingBoneIds": [
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0015",
+      "name": "Vastus medialis (left)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 3005,
+      "skin": {
+        "inside": 3005,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0016",
+      "name": "Extensor digitorum longus (left)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 975,
+      "skin": {
+        "inside": 871,
+        "outside": 11,
+        "surface-band": 93,
+        "ambiguous": 0,
+        "maxOutsideMm": 3.3429816989879955
+      },
+      "intersectingBoneIds": [
+        "HRAF0954",
+        "BM0141"
+      ]
+    },
+    {
+      "id": "VHF0017",
+      "name": "Extensor hallucis longus (left)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 448,
+      "skin": {
+        "inside": 448,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0954"
+      ]
+    },
+    {
+      "id": "VHF0018",
+      "name": "Flexor digitorum longus (left)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 691,
+      "skin": {
+        "inside": 613,
+        "outside": 49,
+        "surface-band": 29,
+        "ambiguous": 0,
+        "maxOutsideMm": 12.084904366818694
+      },
+      "intersectingBoneIds": [
+        "HRAF0954"
+      ]
+    },
+    {
+      "id": "VHF0019",
+      "name": "Flexor hallucis longus (left)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 1015,
+      "skin": {
+        "inside": 1015,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0955"
+      ]
+    },
+    {
+      "id": "VHF0020",
+      "name": "Gastrocnemius lateral (left)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 1246,
+      "skin": {
+        "inside": 720,
+        "outside": 334,
+        "surface-band": 192,
+        "ambiguous": 0,
+        "maxOutsideMm": 11.930054745231585
+      },
+      "intersectingBoneIds": [
+        "HRAF0931",
+        "HRAF0936",
+        "HRAF0954",
+        "HRAF0955"
+      ]
+    },
+    {
+      "id": "VHF0021",
+      "name": "Peroneus longus (left)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 1785,
+      "skin": {
+        "inside": 1371,
+        "outside": 276,
+        "surface-band": 138,
+        "ambiguous": 0,
+        "maxOutsideMm": 9.914657104931967
+      },
+      "intersectingBoneIds": [
+        "HRAF0955"
+      ]
+    },
+    {
+      "id": "VHF0022",
+      "name": "Soleus (left)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 3131,
+      "skin": {
+        "inside": 2765,
+        "outside": 177,
+        "surface-band": 189,
+        "ambiguous": 0,
+        "maxOutsideMm": 7.127857905369068
+      },
+      "intersectingBoneIds": [
+        "HRAF0931",
+        "HRAF0954",
+        "HRAF0955"
+      ]
+    },
+    {
+      "id": "VHF0023",
+      "name": "Tibialis anterior (left)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 1368,
+      "skin": {
+        "inside": 1305,
+        "outside": 1,
+        "surface-band": 62,
+        "ambiguous": 0,
+        "maxOutsideMm": 2.1164402338437722
+      },
+      "intersectingBoneIds": [
+        "HRAF0954"
+      ]
+    },
+    {
+      "id": "VHF0024",
+      "name": "Tibialis posterior (left)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 1170,
+      "skin": {
+        "inside": 1170,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0955"
+      ]
+    },
+    {
+      "id": "VHF0025",
+      "name": "Gluteus maximus (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 5037,
+      "skin": {
+        "inside": 4847,
+        "outside": 9,
+        "surface-band": 181,
+        "ambiguous": 0,
+        "maxOutsideMm": 2.358444775529808
+      },
+      "intersectingBoneIds": [
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0026",
+      "name": "Gluteus medius (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 3309,
+      "skin": {
+        "inside": 3253,
+        "outside": 0,
+        "surface-band": 56,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0027",
+      "name": "Gluteus minimus (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 1871,
+      "skin": {
+        "inside": 1871,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0028",
+      "name": "Iliacus (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 2458,
+      "skin": {
+        "inside": 2458,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0828",
+        "HRAF0829",
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0029",
+      "name": "Inferior gemellus (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 362,
+      "skin": {
+        "inside": 362,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0030",
+      "name": "Obturator externus (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 1603,
+      "skin": {
+        "inside": 1603,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0031",
+      "name": "Obturator internus (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 2010,
+      "skin": {
+        "inside": 2010,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0828",
+        "HRAF0829",
+        "HRAF0937",
+        "HRAF0956",
+        "HRAF0959",
+        "HRAF0961",
+        "HRAF0963"
+      ]
+    },
+    {
+      "id": "VHF0032",
+      "name": "Pectineus (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 4892,
+      "skin": {
+        "inside": 4892,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937",
+        "HRAF0956",
+        "HRAF0959"
+      ]
+    },
+    {
+      "id": "VHF0033",
+      "name": "Piriformis (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 715,
+      "skin": {
+        "inside": 715,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0825",
+        "HRAF0828",
+        "HRAF0829"
+      ]
+    },
+    {
+      "id": "VHF0034",
+      "name": "Psoas major (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 2168,
+      "skin": {
+        "inside": 2168,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0828",
+        "HRAF0829"
+      ]
+    },
+    {
+      "id": "VHF0035",
+      "name": "Quadratus femoris (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 885,
+      "skin": {
+        "inside": 885,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0036",
+      "name": "Superior gemellus (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 324,
+      "skin": {
+        "inside": 324,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0937"
+      ]
+    },
+    {
+      "id": "VHF0037",
+      "name": "Tensor fasciae latae (left)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 1023,
+      "skin": {
+        "inside": 990,
+        "outside": 0,
+        "surface-band": 33,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0038",
+      "name": "Adductor brevis (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 1205,
+      "skin": {
+        "inside": 1205,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0911"
+      ]
+    },
+    {
+      "id": "VHF0039",
+      "name": "Adductor longus (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 1415,
+      "skin": {
+        "inside": 1415,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0040",
+      "name": "Adductor magnus (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 3481,
+      "skin": {
+        "inside": 3481,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0911"
+      ]
+    },
+    {
+      "id": "VHF0041",
+      "name": "Biceps femoris long head (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 1919,
+      "skin": {
+        "inside": 1919,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0042",
+      "name": "Biceps femoris short head (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 1222,
+      "skin": {
+        "inside": 1222,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0911",
+        "HRAF0914",
+        "HRAF0918"
+      ]
+    },
+    {
+      "id": "VHF0043",
+      "name": "Gastrocnemius medial (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 2100,
+      "skin": {
+        "inside": 950,
+        "outside": 1001,
+        "surface-band": 149,
+        "ambiguous": 0,
+        "maxOutsideMm": 24.661353266565925
+      },
+      "intersectingBoneIds": [
+        "HRAF0911",
+        "HRAF0914",
+        "HRAF0917",
+        "HRAF0921"
+      ]
+    },
+    {
+      "id": "VHF0044",
+      "name": "Gracilis (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 1433,
+      "skin": {
+        "inside": 1433,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0045",
+      "name": "Plantaris (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 521,
+      "skin": {
+        "inside": 521,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0911"
+      ]
+    },
+    {
+      "id": "VHF0046",
+      "name": "Popliteus (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 506,
+      "skin": {
+        "inside": 506,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0910",
+        "HRAF0927"
+      ]
+    },
+    {
+      "id": "VHF0047",
+      "name": "Rectus femoris (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": true,
+      "referencedVertices": 1684,
+      "skin": {
+        "inside": 1684,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0048",
+      "name": "Sartorius (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 2149,
+      "skin": {
+        "inside": 1988,
+        "outside": 57,
+        "surface-band": 104,
+        "ambiguous": 0,
+        "maxOutsideMm": 4.996958162092911
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0049",
+      "name": "Semimembranosus (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 2187,
+      "skin": {
+        "inside": 2173,
+        "outside": 0,
+        "surface-band": 14,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0050",
+      "name": "Semitendinosus (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 1510,
+      "skin": {
+        "inside": 1510,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0051",
+      "name": "Vastus intermedius (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 3925,
+      "skin": {
+        "inside": 3925,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0911"
+      ]
+    },
+    {
+      "id": "VHF0052",
+      "name": "Vastus lateralis (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 4482,
+      "skin": {
+        "inside": 4482,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0911"
+      ]
+    },
+    {
+      "id": "VHF0053",
+      "name": "Vastus medialis (right)",
+      "fitGroup": "VHF:group-thigh",
+      "defaultHidden": false,
+      "referencedVertices": 2681,
+      "skin": {
+        "inside": 2681,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0911"
+      ]
+    },
+    {
+      "id": "VHF0054",
+      "name": "Extensor digitorum longus (right)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 1093,
+      "skin": {
+        "inside": 1089,
+        "outside": 0,
+        "surface-band": 4,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0927"
+      ]
+    },
+    {
+      "id": "VHF0055",
+      "name": "Extensor hallucis longus (right)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 434,
+      "skin": {
+        "inside": 434,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0927"
+      ]
+    },
+    {
+      "id": "VHF0056",
+      "name": "Flexor digitorum longus (right)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 693,
+      "skin": {
+        "inside": 625,
+        "outside": 31,
+        "surface-band": 37,
+        "ambiguous": 0,
+        "maxOutsideMm": 4.579520671083726
+      },
+      "intersectingBoneIds": [
+        "HRAF0927"
+      ]
+    },
+    {
+      "id": "VHF0057",
+      "name": "Flexor hallucis longus (right)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 1000,
+      "skin": {
+        "inside": 997,
+        "outside": 0,
+        "surface-band": 3,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0058",
+      "name": "Gastrocnemius lateral (right)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 1326,
+      "skin": {
+        "inside": 663,
+        "outside": 375,
+        "surface-band": 288,
+        "ambiguous": 0,
+        "maxOutsideMm": 7.543042951193807
+      },
+      "intersectingBoneIds": [
+        "HRAF0910",
+        "HRAF0927",
+        "HRAF0928"
+      ]
+    },
+    {
+      "id": "VHF0059",
+      "name": "Peroneus longus (right)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 1817,
+      "skin": {
+        "inside": 1404,
+        "outside": 199,
+        "surface-band": 214,
+        "ambiguous": 0,
+        "maxOutsideMm": 6.89752722933414
+      },
+      "intersectingBoneIds": [
+        "HRAF0928"
+      ]
+    },
+    {
+      "id": "VHF0060",
+      "name": "Soleus (right)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 3143,
+      "skin": {
+        "inside": 2434,
+        "outside": 385,
+        "surface-band": 324,
+        "ambiguous": 0,
+        "maxOutsideMm": 7.885146866996002
+      },
+      "intersectingBoneIds": [
+        "HRAF0908",
+        "HRAF0927",
+        "HRAF0928"
+      ]
+    },
+    {
+      "id": "VHF0061",
+      "name": "Tibialis anterior (right)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 1309,
+      "skin": {
+        "inside": 1295,
+        "outside": 0,
+        "surface-band": 14,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0927"
+      ]
+    },
+    {
+      "id": "VHF0062",
+      "name": "Tibialis posterior (right)",
+      "fitGroup": "VHF:group-shank",
+      "defaultHidden": false,
+      "referencedVertices": 1096,
+      "skin": {
+        "inside": 1096,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0927"
+      ]
+    },
+    {
+      "id": "VHF0063",
+      "name": "Gluteus maximus (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 5329,
+      "skin": {
+        "inside": 4982,
+        "outside": 166,
+        "surface-band": 181,
+        "ambiguous": 0,
+        "maxOutsideMm": 5.984162045739537
+      },
+      "intersectingBoneIds": [
+        "HRAF0825",
+        "HRAF0960",
+        "HRAF0962"
+      ]
+    },
+    {
+      "id": "VHF0064",
+      "name": "Gluteus medius (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 2879,
+      "skin": {
+        "inside": 2783,
+        "outside": 0,
+        "surface-band": 96,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0827"
+      ]
+    },
+    {
+      "id": "VHF0065",
+      "name": "Gluteus minimus (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 1752,
+      "skin": {
+        "inside": 1752,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0827",
+        "HRAF0830",
+        "HRAF0960",
+        "HRAF0962"
+      ]
+    },
+    {
+      "id": "VHF0066",
+      "name": "Iliacus (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 2260,
+      "skin": {
+        "inside": 2260,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0827",
+        "HRAF0830",
+        "HRAF0911"
+      ]
+    },
+    {
+      "id": "VHF0067",
+      "name": "Inferior gemellus (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 463,
+      "skin": {
+        "inside": 463,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0068",
+      "name": "Obturator externus (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 1700,
+      "skin": {
+        "inside": 1700,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0911"
+      ]
+    },
+    {
+      "id": "VHF0069",
+      "name": "Obturator internus (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 2807,
+      "skin": {
+        "inside": 2807,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0827",
+        "HRAF0830",
+        "HRAF0957",
+        "HRAF0958",
+        "HRAF0960",
+        "HRAF0962"
+      ]
+    },
+    {
+      "id": "VHF0070",
+      "name": "Pectineus (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 737,
+      "skin": {
+        "inside": 737,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0957",
+        "HRAF0958"
+      ]
+    },
+    {
+      "id": "VHF0071",
+      "name": "Piriformis (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 737,
+      "skin": {
+        "inside": 737,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0825",
+        "HRAF0827",
+        "HRAF0830"
+      ]
+    },
+    {
+      "id": "VHF0072",
+      "name": "Psoas major (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 1955,
+      "skin": {
+        "inside": 1955,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "VHF0073",
+      "name": "Quadratus femoris (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 7608,
+      "skin": {
+        "inside": 7608,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0911"
+      ]
+    },
+    {
+      "id": "VHF0074",
+      "name": "Superior gemellus (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 357,
+      "skin": {
+        "inside": 357,
+        "outside": 0,
+        "surface-band": 0,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "intersectingBoneIds": [
+        "HRAF0960"
+      ]
+    },
+    {
+      "id": "VHF0075",
+      "name": "Tensor fasciae latae (right)",
+      "fitGroup": "VHF:group-hip",
+      "defaultHidden": false,
+      "referencedVertices": 1028,
+      "skin": {
+        "inside": 870,
+        "outside": 39,
+        "surface-band": 119,
+        "ambiguous": 0,
+        "maxOutsideMm": 3.2383709539757324
+      },
+      "intersectingBoneIds": []
+    }
+  ],
+  "pairs": [
+    {
+      "muscleId": "VHF0000",
+      "muscleName": "Adductor brevis (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 261,
+      "strictPlaneStraddlingPairs": 261,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.1681882982624923
+    },
+    {
+      "muscleId": "VHF0001",
+      "muscleName": "Adductor longus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 122,
+      "strictPlaneStraddlingPairs": 122,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.894826435558018
+    },
+    {
+      "muscleId": "VHF0002",
+      "muscleName": "Adductor magnus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 405,
+      "strictPlaneStraddlingPairs": 404,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 4.4371930549031395
+    },
+    {
+      "muscleId": "VHF0004",
+      "muscleName": "Biceps femoris short (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 112,
+      "strictPlaneStraddlingPairs": 112,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.922435968836191
+    },
+    {
+      "muscleId": "VHF0004",
+      "muscleName": "Biceps femoris short (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0946",
+      "boneName": "Articular cartilage of knee (left)",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 5,
+      "strictPlaneStraddlingPairs": 5,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.731238194795025
+    },
+    {
+      "muscleId": "VHF0004",
+      "muscleName": "Biceps femoris short (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0948",
+      "boneName": "Lateral condyle of femur inferior (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 90,
+      "strictPlaneStraddlingPairs": 90,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.713563823669379
+    },
+    {
+      "muscleId": "VHF0005",
+      "muscleName": "Gastrocnemius medial (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 18,
+      "strictPlaneStraddlingPairs": 18,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4211459390791605
+    },
+    {
+      "muscleId": "VHF0005",
+      "muscleName": "Gastrocnemius medial (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0938",
+      "boneName": "Intercondylar fossa (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 18,
+      "strictPlaneStraddlingPairs": 18,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2491996928055462
+    },
+    {
+      "muscleId": "VHF0005",
+      "muscleName": "Gastrocnemius medial (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0946",
+      "boneName": "Articular cartilage of knee (left)",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 7,
+      "strictPlaneStraddlingPairs": 7,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.1941645669215903
+    },
+    {
+      "muscleId": "VHF0005",
+      "muscleName": "Gastrocnemius medial (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0947",
+      "boneName": "Medial condyle of left femur inferior",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 72,
+      "strictPlaneStraddlingPairs": 72,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4812144991365384
+    },
+    {
+      "muscleId": "VHF0007",
+      "muscleName": "Plantaris (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 46,
+      "strictPlaneStraddlingPairs": 46,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.747424390135037
+    },
+    {
+      "muscleId": "VHF0007",
+      "muscleName": "Plantaris (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0946",
+      "boneName": "Articular cartilage of knee (left)",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 7,
+      "strictPlaneStraddlingPairs": 7,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.4197223564460498
+    },
+    {
+      "muscleId": "VHF0007",
+      "muscleName": "Plantaris (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0948",
+      "boneName": "Lateral condyle of femur inferior (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 33,
+      "strictPlaneStraddlingPairs": 33,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.8659276414740632
+    },
+    {
+      "muscleId": "VHF0008",
+      "muscleName": "Popliteus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0936",
+      "boneName": "Meniscus (left)",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 42,
+      "strictPlaneStraddlingPairs": 42,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.162238622977543
+    },
+    {
+      "muscleId": "VHF0008",
+      "muscleName": "Popliteus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0954",
+      "boneName": "Tibia (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 100,
+      "strictPlaneStraddlingPairs": 100,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.054736860382868
+    },
+    {
+      "muscleId": "VHF0013",
+      "muscleName": "Vastus intermedius (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 409,
+      "strictPlaneStraddlingPairs": 409,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.6628955996312986
+    },
+    {
+      "muscleId": "VHF0014",
+      "muscleName": "Vastus lateralis (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 68,
+      "strictPlaneStraddlingPairs": 68,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.711336744383446
+    },
+    {
+      "muscleId": "VHF0015",
+      "muscleName": "Vastus medialis (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 524,
+      "strictPlaneStraddlingPairs": 524,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 4.46593138862543
+    },
+    {
+      "muscleId": "VHF0016",
+      "muscleName": "Extensor digitorum longus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0954",
+      "boneName": "Tibia (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 91,
+      "strictPlaneStraddlingPairs": 91,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.224756767737611
+    },
+    {
+      "muscleId": "VHF0016",
+      "muscleName": "Extensor digitorum longus (left)",
+      "defaultHidden": false,
+      "boneId": "BM0141",
+      "boneName": "Left talus",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 24,
+      "strictPlaneStraddlingPairs": 24,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.3604750808216686
+    },
+    {
+      "muscleId": "VHF0017",
+      "muscleName": "Extensor hallucis longus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0954",
+      "boneName": "Tibia (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 36,
+      "strictPlaneStraddlingPairs": 36,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.7107641714553683
+    },
+    {
+      "muscleId": "VHF0018",
+      "muscleName": "Flexor digitorum longus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0954",
+      "boneName": "Tibia (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 22,
+      "strictPlaneStraddlingPairs": 22,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.6628549315792073
+    },
+    {
+      "muscleId": "VHF0019",
+      "muscleName": "Flexor hallucis longus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0955",
+      "boneName": "Fibula (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 60,
+      "strictPlaneStraddlingPairs": 60,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.3131984054005215
+    },
+    {
+      "muscleId": "VHF0020",
+      "muscleName": "Gastrocnemius lateral (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0931",
+      "boneName": "Fibular collateral ligament (left)",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 80,
+      "strictPlaneStraddlingPairs": 80,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.8976092995479745
+    },
+    {
+      "muscleId": "VHF0020",
+      "muscleName": "Gastrocnemius lateral (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0936",
+      "boneName": "Meniscus (left)",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 36,
+      "strictPlaneStraddlingPairs": 36,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.7229043531546329
+    },
+    {
+      "muscleId": "VHF0020",
+      "muscleName": "Gastrocnemius lateral (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0954",
+      "boneName": "Tibia (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 43,
+      "strictPlaneStraddlingPairs": 43,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.170420979043095
+    },
+    {
+      "muscleId": "VHF0020",
+      "muscleName": "Gastrocnemius lateral (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0955",
+      "boneName": "Fibula (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 53,
+      "strictPlaneStraddlingPairs": 53,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.8874139864217767
+    },
+    {
+      "muscleId": "VHF0021",
+      "muscleName": "Peroneus longus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0955",
+      "boneName": "Fibula (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 209,
+      "strictPlaneStraddlingPairs": 209,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.520920774208457
+    },
+    {
+      "muscleId": "VHF0022",
+      "muscleName": "Soleus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0931",
+      "boneName": "Fibular collateral ligament (left)",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 68,
+      "strictPlaneStraddlingPairs": 68,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.2346205524127543
+    },
+    {
+      "muscleId": "VHF0022",
+      "muscleName": "Soleus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0954",
+      "boneName": "Tibia (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 106,
+      "strictPlaneStraddlingPairs": 106,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.288217140406505
+    },
+    {
+      "muscleId": "VHF0022",
+      "muscleName": "Soleus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0955",
+      "boneName": "Fibula (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 232,
+      "strictPlaneStraddlingPairs": 232,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.665377564384
+    },
+    {
+      "muscleId": "VHF0023",
+      "muscleName": "Tibialis anterior (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0954",
+      "boneName": "Tibia (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 226,
+      "strictPlaneStraddlingPairs": 226,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.7651645522366985
+    },
+    {
+      "muscleId": "VHF0024",
+      "muscleName": "Tibialis posterior (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0955",
+      "boneName": "Fibula (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 33,
+      "strictPlaneStraddlingPairs": 33,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.7854889197713305
+    },
+    {
+      "muscleId": "VHF0025",
+      "muscleName": "Gluteus maximus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 61,
+      "strictPlaneStraddlingPairs": 61,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.0542735330410133
+    },
+    {
+      "muscleId": "VHF0027",
+      "muscleName": "Gluteus minimus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 31,
+      "strictPlaneStraddlingPairs": 31,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.5162561575415758
+    },
+    {
+      "muscleId": "VHF0028",
+      "muscleName": "Iliacus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0828",
+      "boneName": "Ilium compact bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 1225,
+      "strictPlaneStraddlingPairs": 1223,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.7038598538964873
+    },
+    {
+      "muscleId": "VHF0028",
+      "muscleName": "Iliacus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0829",
+      "boneName": "Ilium spongy bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 630,
+      "strictPlaneStraddlingPairs": 628,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.7038598538964873
+    },
+    {
+      "muscleId": "VHF0028",
+      "muscleName": "Iliacus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 89,
+      "strictPlaneStraddlingPairs": 89,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.9191537257228741
+    },
+    {
+      "muscleId": "VHF0029",
+      "muscleName": "Inferior gemellus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 50,
+      "strictPlaneStraddlingPairs": 50,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2591173206062318
+    },
+    {
+      "muscleId": "VHF0030",
+      "muscleName": "Obturator externus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 173,
+      "strictPlaneStraddlingPairs": 173,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.1617205089516425
+    },
+    {
+      "muscleId": "VHF0031",
+      "muscleName": "Obturator internus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0828",
+      "boneName": "Ilium compact bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 53,
+      "strictPlaneStraddlingPairs": 53,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.5330522135943567
+    },
+    {
+      "muscleId": "VHF0031",
+      "muscleName": "Obturator internus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0829",
+      "boneName": "Ilium spongy bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 25,
+      "strictPlaneStraddlingPairs": 25,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.3742228889702024
+    },
+    {
+      "muscleId": "VHF0031",
+      "muscleName": "Obturator internus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 102,
+      "strictPlaneStraddlingPairs": 102,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.7655737163614587
+    },
+    {
+      "muscleId": "VHF0031",
+      "muscleName": "Obturator internus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0956",
+      "boneName": "Pubis spongy bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 95,
+      "strictPlaneStraddlingPairs": 95,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.321950240759284
+    },
+    {
+      "muscleId": "VHF0031",
+      "muscleName": "Obturator internus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0959",
+      "boneName": "Pubis compact bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 211,
+      "strictPlaneStraddlingPairs": 211,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.805864903369509
+    },
+    {
+      "muscleId": "VHF0031",
+      "muscleName": "Obturator internus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0961",
+      "boneName": "Ischium compact bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 840,
+      "strictPlaneStraddlingPairs": 840,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.72206076550974
+    },
+    {
+      "muscleId": "VHF0031",
+      "muscleName": "Obturator internus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0963",
+      "boneName": "Ischium spongy bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 416,
+      "strictPlaneStraddlingPairs": 416,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.72206076550974
+    },
+    {
+      "muscleId": "VHF0032",
+      "muscleName": "Pectineus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 57,
+      "strictPlaneStraddlingPairs": 57,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.4243890146783365
+    },
+    {
+      "muscleId": "VHF0032",
+      "muscleName": "Pectineus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0956",
+      "boneName": "Pubis spongy bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 88,
+      "strictPlaneStraddlingPairs": 88,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.6340436031915719
+    },
+    {
+      "muscleId": "VHF0032",
+      "muscleName": "Pectineus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0959",
+      "boneName": "Pubis compact bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 193,
+      "strictPlaneStraddlingPairs": 193,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.7659542642950771
+    },
+    {
+      "muscleId": "VHF0033",
+      "muscleName": "Piriformis (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0825",
+      "boneName": "Sacrum",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 151,
+      "strictPlaneStraddlingPairs": 151,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.1056788816032963
+    },
+    {
+      "muscleId": "VHF0033",
+      "muscleName": "Piriformis (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0828",
+      "boneName": "Ilium compact bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 215,
+      "strictPlaneStraddlingPairs": 215,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.17956013461544
+    },
+    {
+      "muscleId": "VHF0033",
+      "muscleName": "Piriformis (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0829",
+      "boneName": "Ilium spongy bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 95,
+      "strictPlaneStraddlingPairs": 95,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.1795601346154405
+    },
+    {
+      "muscleId": "VHF0034",
+      "muscleName": "Psoas major (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0828",
+      "boneName": "Ilium compact bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 233,
+      "strictPlaneStraddlingPairs": 233,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.451202136268402
+    },
+    {
+      "muscleId": "VHF0034",
+      "muscleName": "Psoas major (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0829",
+      "boneName": "Ilium spongy bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 109,
+      "strictPlaneStraddlingPairs": 109,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.441553242041668
+    },
+    {
+      "muscleId": "VHF0035",
+      "muscleName": "Quadratus femoris (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 211,
+      "strictPlaneStraddlingPairs": 211,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.0231804186864415
+    },
+    {
+      "muscleId": "VHF0036",
+      "muscleName": "Superior gemellus (left)",
+      "defaultHidden": false,
+      "boneId": "HRAF0937",
+      "boneName": "Femur (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 16,
+      "strictPlaneStraddlingPairs": 16,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.5694241561339489
+    },
+    {
+      "muscleId": "VHF0038",
+      "muscleName": "Adductor brevis (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0911",
+      "boneName": "Femur (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 144,
+      "strictPlaneStraddlingPairs": 144,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.222006907257479
+    },
+    {
+      "muscleId": "VHF0040",
+      "muscleName": "Adductor magnus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0911",
+      "boneName": "Femur (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 520,
+      "strictPlaneStraddlingPairs": 520,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.2701526135627335
+    },
+    {
+      "muscleId": "VHF0042",
+      "muscleName": "Biceps femoris short head (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0911",
+      "boneName": "Femur (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 97,
+      "strictPlaneStraddlingPairs": 97,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.108700711715086
+    },
+    {
+      "muscleId": "VHF0042",
+      "muscleName": "Biceps femoris short head (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0914",
+      "boneName": "Articular cartilage of knee (right)",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 5,
+      "strictPlaneStraddlingPairs": 5,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.0098925567240984
+    },
+    {
+      "muscleId": "VHF0042",
+      "muscleName": "Biceps femoris short head (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0918",
+      "boneName": "Lateral condyle of femur inferior (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 71,
+      "strictPlaneStraddlingPairs": 71,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.004439986060317
+    },
+    {
+      "muscleId": "VHF0043",
+      "muscleName": "Gastrocnemius medial (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0911",
+      "boneName": "Femur (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 58,
+      "strictPlaneStraddlingPairs": 58,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.930431362061453
+    },
+    {
+      "muscleId": "VHF0043",
+      "muscleName": "Gastrocnemius medial (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0914",
+      "boneName": "Articular cartilage of knee (right)",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 11,
+      "strictPlaneStraddlingPairs": 11,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.8192623913191042
+    },
+    {
+      "muscleId": "VHF0043",
+      "muscleName": "Gastrocnemius medial (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0917",
+      "boneName": "Medial condyle of right femur inferior",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 77,
+      "strictPlaneStraddlingPairs": 77,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.9653358831729193
+    },
+    {
+      "muscleId": "VHF0043",
+      "muscleName": "Gastrocnemius medial (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0921",
+      "boneName": "Intercondylar fossa (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 12,
+      "strictPlaneStraddlingPairs": 12,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.85410005569611
+    },
+    {
+      "muscleId": "VHF0045",
+      "muscleName": "Plantaris (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0911",
+      "boneName": "Femur (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 29,
+      "strictPlaneStraddlingPairs": 29,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.1433335545859493
+    },
+    {
+      "muscleId": "VHF0046",
+      "muscleName": "Popliteus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0910",
+      "boneName": "Meniscus (right)",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 34,
+      "strictPlaneStraddlingPairs": 34,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2734277025371927
+    },
+    {
+      "muscleId": "VHF0046",
+      "muscleName": "Popliteus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0927",
+      "boneName": "Tibia (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 76,
+      "strictPlaneStraddlingPairs": 76,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.2637399458694736
+    },
+    {
+      "muscleId": "VHF0051",
+      "muscleName": "Vastus intermedius (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0911",
+      "boneName": "Femur (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 394,
+      "strictPlaneStraddlingPairs": 394,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2801755116669302
+    },
+    {
+      "muscleId": "VHF0052",
+      "muscleName": "Vastus lateralis (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0911",
+      "boneName": "Femur (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 73,
+      "strictPlaneStraddlingPairs": 73,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.0396411099865426
+    },
+    {
+      "muscleId": "VHF0053",
+      "muscleName": "Vastus medialis (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0911",
+      "boneName": "Femur (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 372,
+      "strictPlaneStraddlingPairs": 372,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.0608131683125555
+    },
+    {
+      "muscleId": "VHF0054",
+      "muscleName": "Extensor digitorum longus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0927",
+      "boneName": "Tibia (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 50,
+      "strictPlaneStraddlingPairs": 50,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.4639727868435988
+    },
+    {
+      "muscleId": "VHF0055",
+      "muscleName": "Extensor hallucis longus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0927",
+      "boneName": "Tibia (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 34,
+      "strictPlaneStraddlingPairs": 34,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.5674617526501482
+    },
+    {
+      "muscleId": "VHF0056",
+      "muscleName": "Flexor digitorum longus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0927",
+      "boneName": "Tibia (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 79,
+      "strictPlaneStraddlingPairs": 79,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.3183014666113306
+    },
+    {
+      "muscleId": "VHF0058",
+      "muscleName": "Gastrocnemius lateral (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0910",
+      "boneName": "Meniscus (right)",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 20,
+      "strictPlaneStraddlingPairs": 20,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.9738079044533697
+    },
+    {
+      "muscleId": "VHF0058",
+      "muscleName": "Gastrocnemius lateral (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0927",
+      "boneName": "Tibia (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 42,
+      "strictPlaneStraddlingPairs": 42,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.128988820017431
+    },
+    {
+      "muscleId": "VHF0058",
+      "muscleName": "Gastrocnemius lateral (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0928",
+      "boneName": "Fibula (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 36,
+      "strictPlaneStraddlingPairs": 36,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.442899683818637
+    },
+    {
+      "muscleId": "VHF0059",
+      "muscleName": "Peroneus longus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0928",
+      "boneName": "Fibula (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 259,
+      "strictPlaneStraddlingPairs": 259,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.8721382024857816
+    },
+    {
+      "muscleId": "VHF0060",
+      "muscleName": "Soleus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0908",
+      "boneName": "Fibular collateral ligament (right)",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 42,
+      "strictPlaneStraddlingPairs": 42,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.777853044965256
+    },
+    {
+      "muscleId": "VHF0060",
+      "muscleName": "Soleus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0927",
+      "boneName": "Tibia (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 142,
+      "strictPlaneStraddlingPairs": 142,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.409260368402215
+    },
+    {
+      "muscleId": "VHF0060",
+      "muscleName": "Soleus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0928",
+      "boneName": "Fibula (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 191,
+      "strictPlaneStraddlingPairs": 191,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.386472024131795
+    },
+    {
+      "muscleId": "VHF0061",
+      "muscleName": "Tibialis anterior (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0927",
+      "boneName": "Tibia (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 140,
+      "strictPlaneStraddlingPairs": 140,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.863166360231055
+    },
+    {
+      "muscleId": "VHF0062",
+      "muscleName": "Tibialis posterior (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0927",
+      "boneName": "Tibia (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 46,
+      "strictPlaneStraddlingPairs": 46,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.8913783399927995
+    },
+    {
+      "muscleId": "VHF0063",
+      "muscleName": "Gluteus maximus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0825",
+      "boneName": "Sacrum",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 102,
+      "strictPlaneStraddlingPairs": 102,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2307563706429216
+    },
+    {
+      "muscleId": "VHF0063",
+      "muscleName": "Gluteus maximus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0960",
+      "boneName": "Ischium compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 195,
+      "strictPlaneStraddlingPairs": 195,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.865994821159888
+    },
+    {
+      "muscleId": "VHF0063",
+      "muscleName": "Gluteus maximus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0962",
+      "boneName": "Ischium spongy bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 90,
+      "strictPlaneStraddlingPairs": 90,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.849926832786537
+    },
+    {
+      "muscleId": "VHF0064",
+      "muscleName": "Gluteus medius (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0827",
+      "boneName": "Ilium compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 17,
+      "strictPlaneStraddlingPairs": 17,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.6313040299986924
+    },
+    {
+      "muscleId": "VHF0065",
+      "muscleName": "Gluteus minimus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0827",
+      "boneName": "Ilium compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 109,
+      "strictPlaneStraddlingPairs": 109,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4233421320076103
+    },
+    {
+      "muscleId": "VHF0065",
+      "muscleName": "Gluteus minimus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0830",
+      "boneName": "Ilium spongy bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 40,
+      "strictPlaneStraddlingPairs": 40,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.7970242002919957
+    },
+    {
+      "muscleId": "VHF0065",
+      "muscleName": "Gluteus minimus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0960",
+      "boneName": "Ischium compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 58,
+      "strictPlaneStraddlingPairs": 53,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.1043607263789543
+    },
+    {
+      "muscleId": "VHF0065",
+      "muscleName": "Gluteus minimus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0962",
+      "boneName": "Ischium spongy bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 15,
+      "strictPlaneStraddlingPairs": 15,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.784181050636261
+    },
+    {
+      "muscleId": "VHF0066",
+      "muscleName": "Iliacus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0827",
+      "boneName": "Ilium compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 773,
+      "strictPlaneStraddlingPairs": 773,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.2560085456815377
+    },
+    {
+      "muscleId": "VHF0066",
+      "muscleName": "Iliacus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0830",
+      "boneName": "Ilium spongy bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 371,
+      "strictPlaneStraddlingPairs": 371,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.2560085456815377
+    },
+    {
+      "muscleId": "VHF0066",
+      "muscleName": "Iliacus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0911",
+      "boneName": "Femur (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 109,
+      "strictPlaneStraddlingPairs": 109,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.1749257283857453
+    },
+    {
+      "muscleId": "VHF0068",
+      "muscleName": "Obturator externus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0911",
+      "boneName": "Femur (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 151,
+      "strictPlaneStraddlingPairs": 151,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.4200689113278275
+    },
+    {
+      "muscleId": "VHF0069",
+      "muscleName": "Obturator internus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0827",
+      "boneName": "Ilium compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 128,
+      "strictPlaneStraddlingPairs": 128,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.8702288801212434
+    },
+    {
+      "muscleId": "VHF0069",
+      "muscleName": "Obturator internus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0830",
+      "boneName": "Ilium spongy bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 75,
+      "strictPlaneStraddlingPairs": 75,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.338134787291199
+    },
+    {
+      "muscleId": "VHF0069",
+      "muscleName": "Obturator internus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0957",
+      "boneName": "Pubis spongy bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 186,
+      "strictPlaneStraddlingPairs": 186,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.658522874167906
+    },
+    {
+      "muscleId": "VHF0069",
+      "muscleName": "Obturator internus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0958",
+      "boneName": "Pubis compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 374,
+      "strictPlaneStraddlingPairs": 374,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.658522874167906
+    },
+    {
+      "muscleId": "VHF0069",
+      "muscleName": "Obturator internus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0960",
+      "boneName": "Ischium compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 746,
+      "strictPlaneStraddlingPairs": 746,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.07927493531058
+    },
+    {
+      "muscleId": "VHF0069",
+      "muscleName": "Obturator internus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0962",
+      "boneName": "Ischium spongy bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 401,
+      "strictPlaneStraddlingPairs": 401,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.97923011503492
+    },
+    {
+      "muscleId": "VHF0070",
+      "muscleName": "Pectineus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0957",
+      "boneName": "Pubis spongy bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 29,
+      "strictPlaneStraddlingPairs": 29,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.8722666252264621
+    },
+    {
+      "muscleId": "VHF0070",
+      "muscleName": "Pectineus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0958",
+      "boneName": "Pubis compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 66,
+      "strictPlaneStraddlingPairs": 66,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.8722666252264621
+    },
+    {
+      "muscleId": "VHF0071",
+      "muscleName": "Piriformis (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0825",
+      "boneName": "Sacrum",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 110,
+      "strictPlaneStraddlingPairs": 110,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.478727019464407
+    },
+    {
+      "muscleId": "VHF0071",
+      "muscleName": "Piriformis (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0827",
+      "boneName": "Ilium compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 134,
+      "strictPlaneStraddlingPairs": 134,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.8673870262760695
+    },
+    {
+      "muscleId": "VHF0071",
+      "muscleName": "Piriformis (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0830",
+      "boneName": "Ilium spongy bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 49,
+      "strictPlaneStraddlingPairs": 49,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.7996296364702667
+    },
+    {
+      "muscleId": "VHF0073",
+      "muscleName": "Quadratus femoris (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0911",
+      "boneName": "Femur (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 62,
+      "strictPlaneStraddlingPairs": 62,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.27585398502664504
+    },
+    {
+      "muscleId": "VHF0074",
+      "muscleName": "Superior gemellus (right)",
+      "defaultHidden": false,
+      "boneId": "HRAF0960",
+      "boneName": "Ischium compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 10,
+      "strictPlaneStraddlingPairs": 10,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.11973782351226091
+    }
+  ],
+  "calfRelations": [
+    {
+      "ids": [
+        "VHF0005",
+        "VHF0020"
+      ],
+      "names": [
+        "Gastrocnemius medial (left)",
+        "Gastrocnemius lateral (left)"
+      ],
+      "forward": {
+        "minimumMm": 33.1905352241255,
+        "from": [
+          0.10316984355449677,
+          0.3846111297607422,
+          -0.1337895691394806
+        ],
+        "onto": [
+          0.13461013230514274,
+          0.3759751771694115,
+          -0.12758149418985185
+        ],
+        "vertex": 1532
+      },
+      "reverse": {
+        "minimumMm": 33.190608983997585,
+        "from": [
+          0.13462881743907928,
+          0.37604260444641113,
+          -0.12758232653141022
+        ],
+        "onto": [
+          0.10316984355449677,
+          0.3846111297607422,
+          -0.1337895691394806
+        ],
+        "vertex": 617
+      },
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "ids": [
+        "VHF0005",
+        "VHF0022"
+      ],
+      "names": [
+        "Gastrocnemius medial (left)",
+        "Soleus (left)"
+      ],
+      "forward": {
+        "minimumMm": 28.312903468598464,
+        "from": [
+          0.07971756905317307,
+          0.28005412220954895,
+          -0.14652319252490997
+        ],
+        "onto": [
+          0.10467340520927491,
+          0.274919957022948,
+          -0.13417543595099463
+        ],
+        "vertex": 2048
+      },
+      "reverse": {
+        "minimumMm": 28.315332887036277,
+        "from": [
+          0.10479441285133362,
+          0.2752543091773987,
+          -0.1342809796333313
+        ],
+        "onto": [
+          0.07971756905317307,
+          0.28005412220954895,
+          -0.14652319252490997
+        ],
+        "vertex": 2031
+      },
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "ids": [
+        "VHF0020",
+        "VHF0022"
+      ],
+      "names": [
+        "Gastrocnemius lateral (left)",
+        "Soleus (left)"
+      ],
+      "forward": {
+        "minimumMm": 0.001081816581177848,
+        "from": [
+          0.15027324855327606,
+          0.36135318875312805,
+          -0.13162343204021454
+        ],
+        "onto": [
+          0.1502733076707018,
+          0.3613535473369688,
+          -0.13162445098568631
+        ],
+        "vertex": 1066
+      },
+      "reverse": {
+        "minimumMm": 0.0007025053518910419,
+        "from": [
+          0.16582617163658142,
+          0.3904322385787964,
+          -0.12168654054403305
+        ],
+        "onto": [
+          0.16582636343353646,
+          0.390431692519203,
+          -0.12168614236490508
+        ],
+        "vertex": 1519
+      },
+      "intersectingTrianglePairs": 113,
+      "strictPlaneStraddlingPairs": 109,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.4777209328329662
+    },
+    {
+      "ids": [
+        "VHF0005",
+        "HRAF0937"
+      ],
+      "names": [
+        "Gastrocnemius medial (left)",
+        "Femur (left)"
+      ],
+      "forward": {
+        "minimumMm": 0.12490375610086862,
+        "from": [
+          0.10629067569971085,
+          0.44830745458602905,
+          -0.09164012968540192
+        ],
+        "onto": [
+          0.1062392565545511,
+          0.44822859660896847,
+          -0.09155804168839225
+        ],
+        "vertex": 924
+      },
+      "reverse": {
+        "minimumMm": 0.07181697478655581,
+        "from": [
+          0.09929297119379044,
+          0.44817930459976196,
+          -0.09652768075466156
+        ],
+        "onto": [
+          0.09923385758684967,
+          0.44816316234761916,
+          -0.09649022829095483
+        ],
+        "vertex": 252
+      },
+      "intersectingTrianglePairs": 18,
+      "strictPlaneStraddlingPairs": 18,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4211459390791605
+    },
+    {
+      "ids": [
+        "VHF0005",
+        "HRAF0954"
+      ],
+      "names": [
+        "Gastrocnemius medial (left)",
+        "Tibia (left)"
+      ],
+      "forward": {
+        "minimumMm": 2.522779096328676,
+        "from": [
+          0.0998382493853569,
+          0.38975945115089417,
+          -0.1102515459060669
+        ],
+        "onto": [
+          0.10102429967399612,
+          0.3907088329701405,
+          -0.10823750190382257
+        ],
+        "vertex": 776
+      },
+      "reverse": {
+        "minimumMm": 1.9823267045177908,
+        "from": [
+          0.10089787095785141,
+          0.39176079630851746,
+          -0.10865892469882965
+        ],
+        "onto": [
+          0.10008740857393589,
+          0.39166396807516207,
+          -0.11046541139430449
+        ],
+        "vertex": 110
+      },
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "ids": [
+        "VHF0005",
+        "HRAF0955"
+      ],
+      "names": [
+        "Gastrocnemius medial (left)",
+        "Fibula (left)"
+      ],
+      "forward": {
+        "minimumMm": 42.518679611015834,
+        "from": [
+          0.10575719177722931,
+          0.3954622745513916,
+          -0.12163114547729492
+        ],
+        "onto": [
+          0.1472582072019577,
+          0.38634324073791504,
+          -0.12009913474321365
+        ],
+        "vertex": 40
+      },
+      "reverse": {
+        "minimumMm": 42.518679611015834,
+        "from": [
+          0.1472582072019577,
+          0.38634324073791504,
+          -0.12009913474321365
+        ],
+        "onto": [
+          0.10575719177722931,
+          0.3954622745513916,
+          -0.12163114547729492
+        ],
+        "vertex": 131
+      },
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "ids": [
+        "VHF0020",
+        "HRAF0937"
+      ],
+      "names": [
+        "Gastrocnemius lateral (left)",
+        "Femur (left)"
+      ],
+      "forward": {
+        "minimumMm": 10.03651148695051,
+        "from": [
+          0.16264843940734863,
+          0.42451801896095276,
+          -0.10942967236042023
+        ],
+        "onto": [
+          0.15812214861071394,
+          0.4298176456247153,
+          -0.10220760813495625
+        ],
+        "vertex": 305
+      },
+      "reverse": {
+        "minimumMm": 10.13814617746586,
+        "from": [
+          0.15807968378067017,
+          0.4309907853603363,
+          -0.10309508442878723
+        ],
+        "onto": [
+          0.1628515903297042,
+          0.42477265930789143,
+          -0.10952515629454877
+        ],
+        "vertex": 229
+      },
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "ids": [
+        "VHF0020",
+        "HRAF0954"
+      ],
+      "names": [
+        "Gastrocnemius lateral (left)",
+        "Tibia (left)"
+      ],
+      "forward": {
+        "minimumMm": 0.09057348764860033,
+        "from": [
+          0.15131616592407227,
+          0.40124937891960144,
+          -0.11436967551708221
+        ],
+        "onto": [
+          0.1513653410834652,
+          0.401298489833396,
+          -0.11442775717089626
+        ],
+        "vertex": 49
+      },
+      "reverse": {
+        "minimumMm": 0.02129725542515659,
+        "from": [
+          0.14376388490200043,
+          0.3918285369873047,
+          -0.11769825965166092
+        ],
+        "onto": [
+          0.14377288070114785,
+          0.39182563540144033,
+          -0.11771734444890415
+        ],
+        "vertex": 383
+      },
+      "intersectingTrianglePairs": 43,
+      "strictPlaneStraddlingPairs": 43,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.170420979043095
+    },
+    {
+      "ids": [
+        "VHF0020",
+        "HRAF0955"
+      ],
+      "names": [
+        "Gastrocnemius lateral (left)",
+        "Fibula (left)"
+      ],
+      "forward": {
+        "minimumMm": 0.025468644986021752,
+        "from": [
+          0.16484731435775757,
+          0.38342270255088806,
+          -0.12825699150562286
+        ],
+        "onto": [
+          0.16484405331147775,
+          0.3834286580190605,
+          -0.12823244461471114
+        ],
+        "vertex": 813
+      },
+      "reverse": {
+        "minimumMm": 1.0546370342524547,
+        "from": [
+          0.14842860400676727,
+          0.38686877489089966,
+          -0.11667691171169281
+        ],
+        "onto": [
+          0.14829975199633535,
+          0.3873914164522098,
+          -0.11758383079949268
+        ],
+        "vertex": 129
+      },
+      "intersectingTrianglePairs": 53,
+      "strictPlaneStraddlingPairs": 53,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.8874139864217767
+    },
+    {
+      "ids": [
+        "VHF0022",
+        "HRAF0937"
+      ],
+      "names": [
+        "Soleus (left)",
+        "Femur (left)"
+      ],
+      "forward": {
+        "minimumMm": 39.6623685909746,
+        "from": [
+          0.16985328495502472,
+          0.393423855304718,
+          -0.11834260821342468
+        ],
+        "onto": [
+          0.1581543623677648,
+          0.42543503584837017,
+          -0.09805657822366734
+        ],
+        "vertex": 2581
+      },
+      "reverse": {
+        "minimumMm": 39.711481357832774,
+        "from": [
+          0.15824174880981445,
+          0.42651355266571045,
+          -0.09970807284116745
+        ],
+        "onto": [
+          0.16985328495502472,
+          0.393423855304718,
+          -0.11834260821342468
+        ],
+        "vertex": 228
+      },
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "ids": [
+        "VHF0022",
+        "HRAF0954"
+      ],
+      "names": [
+        "Soleus (left)",
+        "Tibia (left)"
+      ],
+      "forward": {
+        "minimumMm": 0.005190070451034972,
+        "from": [
+          0.12298966199159622,
+          0.33275920152664185,
+          -0.09301672130823135
+        ],
+        "onto": [
+          0.12298558034628042,
+          0.33275985290827165,
+          -0.09301986021007357
+        ],
+        "vertex": 662
+      },
+      "reverse": {
+        "minimumMm": 0.24615460762708863,
+        "from": [
+          0.12426213920116425,
+          0.33458393812179565,
+          -0.09430129081010818
+        ],
+        "onto": [
+          0.12430790233377872,
+          0.3344603530181594,
+          -0.09450919595364382
+        ],
+        "vertex": 241
+      },
+      "intersectingTrianglePairs": 106,
+      "strictPlaneStraddlingPairs": 106,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.288217140406505
+    },
+    {
+      "ids": [
+        "VHF0022",
+        "HRAF0955"
+      ],
+      "names": [
+        "Soleus (left)",
+        "Fibula (left)"
+      ],
+      "forward": {
+        "minimumMm": 0.06065903854607347,
+        "from": [
+          0.1746198534965515,
+          0.38412460684776306,
+          -0.12176017463207245
+        ],
+        "onto": [
+          0.17467825300445194,
+          0.3841213883669706,
+          -0.12177625747434954
+        ],
+        "vertex": 100
+      },
+      "reverse": {
+        "minimumMm": 0.11411537178752941,
+        "from": [
+          0.14878593385219574,
+          0.37909621000289917,
+          -0.11449217796325684
+        ],
+        "onto": [
+          0.1487892685607653,
+          0.379116403764742,
+          -0.11437991305431554
+        ],
+        "vertex": 130
+      },
+      "intersectingTrianglePairs": 232,
+      "strictPlaneStraddlingPairs": 232,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.665377564384
+    },
+    {
+      "ids": [
+        "VHF0043",
+        "VHF0058"
+      ],
+      "names": [
+        "Gastrocnemius medial (right)",
+        "Gastrocnemius lateral (right)"
+      ],
+      "forward": {
+        "minimumMm": 31.536101244761333,
+        "from": [
+          -0.10539806634187698,
+          0.3814530372619629,
+          -0.1100539118051529
+        ],
+        "onto": [
+          -0.1342695587401717,
+          0.37065686940461023,
+          -0.11671764709483183
+        ],
+        "vertex": 1217
+      },
+      "reverse": {
+        "minimumMm": 31.529980821858253,
+        "from": [
+          -0.13422055542469025,
+          0.3705019950866699,
+          -0.11667904257774353
+        ],
+        "onto": [
+          -0.10525424296450211,
+          0.3808811445893013,
+          -0.10979676906621218
+        ],
+        "vertex": 531
+      },
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "ids": [
+        "VHF0043",
+        "VHF0060"
+      ],
+      "names": [
+        "Gastrocnemius medial (right)",
+        "Soleus (right)"
+      ],
+      "forward": {
+        "minimumMm": 32.393796201098006,
+        "from": [
+          -0.09648625552654266,
+          0.3351237177848816,
+          -0.08944499492645264
+        ],
+        "onto": [
+          -0.12639135975490262,
+          0.3230605091131283,
+          -0.09253073145942739
+        ],
+        "vertex": 1808
+      },
+      "reverse": {
+        "minimumMm": 32.51551523958562,
+        "from": [
+          -0.12687507271766663,
+          0.3235228955745697,
+          -0.08965050429105759
+        ],
+        "onto": [
+          -0.0967311204349554,
+          0.3356803182417508,
+          -0.08875722596664604
+        ],
+        "vertex": 314
+      },
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "ids": [
+        "VHF0058",
+        "VHF0060"
+      ],
+      "names": [
+        "Gastrocnemius lateral (right)",
+        "Soleus (right)"
+      ],
+      "forward": {
+        "minimumMm": 0.026541706160472776,
+        "from": [
+          -0.1605331301689148,
+          0.3750433623790741,
+          -0.12906235456466675
+        ],
+        "onto": [
+          -0.16054771746080224,
+          0.3750330655352644,
+          -0.1290427166399073
+        ],
+        "vertex": 268
+      },
+      "reverse": {
+        "minimumMm": 0.030928482174274297,
+        "from": [
+          -0.15975596010684967,
+          0.38490283489227295,
+          -0.12320557236671448
+        ],
+        "onto": [
+          -0.1597384620072821,
+          0.3849179975715188,
+          -0.12322607799226493
+        ],
+        "vertex": 2814
+      },
+      "intersectingTrianglePairs": 30,
+      "strictPlaneStraddlingPairs": 30,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.39712873981723706
+    },
+    {
+      "ids": [
+        "VHF0043",
+        "HRAF0911"
+      ],
+      "names": [
+        "Gastrocnemius medial (right)",
+        "Femur (right)"
+      ],
+      "forward": {
+        "minimumMm": 0.019577009482475073,
+        "from": [
+          -0.10765814781188965,
+          0.4591103792190552,
+          -0.0801437497138977
+        ],
+        "onto": [
+          -0.10765227730463357,
+          0.4591207802708411,
+          -0.08015926146965198
+        ],
+        "vertex": 1068
+      },
+      "reverse": {
+        "minimumMm": 0.22700110182596905,
+        "from": [
+          -0.08821812272071838,
+          0.42957958579063416,
+          -0.10061358660459518
+        ],
+        "onto": [
+          -0.08826716450081558,
+          0.4295331541981,
+          -0.10083030880292716
+        ],
+        "vertex": 276
+      },
+      "intersectingTrianglePairs": 58,
+      "strictPlaneStraddlingPairs": 58,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.930431362061453
+    },
+    {
+      "ids": [
+        "VHF0043",
+        "HRAF0927"
+      ],
+      "names": [
+        "Gastrocnemius medial (right)",
+        "Tibia (right)"
+      ],
+      "forward": {
+        "minimumMm": 2.687085739262924,
+        "from": [
+          -0.10242607444524765,
+          0.3948589563369751,
+          -0.10392583161592484
+        ],
+        "onto": [
+          -0.10358497738191172,
+          0.3943769689346695,
+          -0.10154989771584254
+        ],
+        "vertex": 1939
+      },
+      "reverse": {
+        "minimumMm": 2.6832119466825124,
+        "from": [
+          -0.10308339446783066,
+          0.3943539559841156,
+          -0.10130991041660309
+        ],
+        "onto": [
+          -0.10190943417965087,
+          0.39482916552521524,
+          -0.10367541659597453
+        ],
+        "vertex": 113
+      },
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "ids": [
+        "VHF0043",
+        "HRAF0928"
+      ],
+      "names": [
+        "Gastrocnemius medial (right)",
+        "Fibula (right)"
+      ],
+      "forward": {
+        "minimumMm": 48.39874573464449,
+        "from": [
+          -0.109511598944664,
+          0.39926931262016296,
+          -0.11195755004882812
+        ],
+        "onto": [
+          -0.15594340860843658,
+          0.38634324073791504,
+          -0.11636689305305481
+        ],
+        "vertex": 937
+      },
+      "reverse": {
+        "minimumMm": 48.39874573464449,
+        "from": [
+          -0.15594340860843658,
+          0.38634324073791504,
+          -0.11636689305305481
+        ],
+        "onto": [
+          -0.109511598944664,
+          0.39926931262016296,
+          -0.11195755004882812
+        ],
+        "vertex": 134
+      },
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "ids": [
+        "VHF0058",
+        "HRAF0911"
+      ],
+      "names": [
+        "Gastrocnemius lateral (right)",
+        "Femur (right)"
+      ],
+      "forward": {
+        "minimumMm": 4.622857015606239,
+        "from": [
+          -0.1670529842376709,
+          0.4464620351791382,
+          -0.10397528856992722
+        ],
+        "onto": [
+          -0.1638397045469312,
+          0.4449187502595648,
+          -0.1010318361288579
+        ],
+        "vertex": 246
+      },
+      "reverse": {
+        "minimumMm": 4.684655087792836,
+        "from": [
+          -0.16352730989456177,
+          0.44560950994491577,
+          -0.10101069509983063
+        ],
+        "onto": [
+          -0.1670529842376709,
+          0.4464620351791382,
+          -0.10397528856992722
+        ],
+        "vertex": 173
+      },
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "ids": [
+        "VHF0058",
+        "HRAF0927"
+      ],
+      "names": [
+        "Gastrocnemius lateral (right)",
+        "Tibia (right)"
+      ],
+      "forward": {
+        "minimumMm": 0.03402495870902358,
+        "from": [
+          -0.15612632036209106,
+          0.39767128229141235,
+          -0.11454212665557861
+        ],
+        "onto": [
+          -0.156124348766602,
+          0.397653066194989,
+          -0.11451345638426015
+        ],
+        "vertex": 921
+      },
+      "reverse": {
+        "minimumMm": 0.005356873565179315,
+        "from": [
+          -0.15991395711898804,
+          0.3987555205821991,
+          -0.11355239152908325
+        ],
+        "onto": [
+          -0.15991545603737378,
+          0.39875525078905816,
+          -0.11355752733960617
+        ],
+        "vertex": 24
+      },
+      "intersectingTrianglePairs": 42,
+      "strictPlaneStraddlingPairs": 42,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.128988820017431
+    },
+    {
+      "ids": [
+        "VHF0058",
+        "HRAF0928"
+      ],
+      "names": [
+        "Gastrocnemius lateral (right)",
+        "Fibula (right)"
+      ],
+      "forward": {
+        "minimumMm": 0.09783608503065006,
+        "from": [
+          -0.16158409416675568,
+          0.3924558758735657,
+          -0.11739619076251984
+        ],
+        "onto": [
+          -0.1615354601578196,
+          0.39253953082079135,
+          -0.11738175183895883
+        ],
+        "vertex": 1054
+      },
+      "reverse": {
+        "minimumMm": 0.09047622688823327,
+        "from": [
+          -0.17055538296699524,
+          0.39624133706092834,
+          -0.12154919654130936
+        ],
+        "onto": [
+          -0.17051781032105473,
+          0.39631670611824965,
+          -0.12158226841920369
+        ],
+        "vertex": 7
+      },
+      "intersectingTrianglePairs": 36,
+      "strictPlaneStraddlingPairs": 36,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.442899683818637
+    },
+    {
+      "ids": [
+        "VHF0060",
+        "HRAF0911"
+      ],
+      "names": [
+        "Soleus (right)",
+        "Femur (right)"
+      ],
+      "forward": {
+        "minimumMm": 37.21414346735918,
+        "from": [
+          -0.17189574241638184,
+          0.3967092037200928,
+          -0.11769919842481613
+        ],
+        "onto": [
+          -0.16692695021629333,
+          0.42651355266571045,
+          -0.0959758386015892
+        ],
+        "vertex": 1088
+      },
+      "reverse": {
+        "minimumMm": 37.21414346735918,
+        "from": [
+          -0.16692695021629333,
+          0.42651355266571045,
+          -0.0959758386015892
+        ],
+        "onto": [
+          -0.17189574241638184,
+          0.3967092037200928,
+          -0.11769919842481613
+        ],
+        "vertex": 231
+      },
+      "intersectingTrianglePairs": 0,
+      "strictPlaneStraddlingPairs": 0,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0
+    },
+    {
+      "ids": [
+        "VHF0060",
+        "HRAF0927"
+      ],
+      "names": [
+        "Soleus (right)",
+        "Tibia (right)"
+      ],
+      "forward": {
+        "minimumMm": 0.029471323772556075,
+        "from": [
+          -0.13056929409503937,
+          0.292034387588501,
+          -0.07832486182451248
+        ],
+        "onto": [
+          -0.13054263815881226,
+          0.29203221087229175,
+          -0.07831248111793702
+        ],
+        "vertex": 1468
+      },
+      "reverse": {
+        "minimumMm": 0.20462223654066464,
+        "from": [
+          -0.13721302151679993,
+          0.34628432989120483,
+          -0.09261273592710495
+        ],
+        "onto": [
+          -0.137316912424476,
+          0.3461922421399795,
+          -0.09276305819778834
+        ],
+        "vertex": 269
+      },
+      "intersectingTrianglePairs": 142,
+      "strictPlaneStraddlingPairs": 142,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.409260368402215
+    },
+    {
+      "ids": [
+        "VHF0060",
+        "HRAF0928"
+      ],
+      "names": [
+        "Soleus (right)",
+        "Fibula (right)"
+      ],
+      "forward": {
+        "minimumMm": 0.024073409027964163,
+        "from": [
+          -0.1708844006061554,
+          0.3950878083705902,
+          -0.11652395874261856
+        ],
+        "onto": [
+          -0.1708769343199122,
+          0.39506642466001973,
+          -0.11653211475354304
+        ],
+        "vertex": 1038
+      },
+      "reverse": {
+        "minimumMm": 0.09467891880714491,
+        "from": [
+          -0.15747113525867462,
+          0.37909621000289917,
+          -0.11075994372367859
+        ],
+        "onto": [
+          -0.15743364352998634,
+          0.3790739674580827,
+          -0.11084398976550414
+        ],
+        "vertex": 132
+      },
+      "intersectingTrianglePairs": 191,
+      "strictPlaneStraddlingPairs": 191,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.386472024131795
+    }
+  ],
+  "summary": {
+    "defaultMuscles": 74,
+    "outsideSkinMeshes": 18,
+    "outsideSkinVertices": 4060,
+    "maxOutsideSkinMm": 24.661353266565925,
+    "intersectingMuscleMeshes": 57,
+    "intersectingPairs": 109,
+    "strictPlaneStraddlingPairs": 109
+  },
+  "files": [
+    {
+      "path": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "path": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "path": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "path": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "path": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "path": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "path": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "path": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "path": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "path": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "path": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "path": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "path": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "path": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "path": "scripts/audit-donor-muscle-relations.mjs",
+      "sha256": "833054898106089d52c164c86452e65778d2bae60f8e286c50a29756aa9ff6ef"
+    },
+    {
+      "path": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "path": "scripts/lib/triangle-crossings.mjs",
+      "sha256": "a55dd923c032c76591a7f2aa1af2863fe9e24bf0adb0ee6eb4aad5388238d512"
+    },
+    {
+      "path": "src/female-arm-registration.ts",
+      "sha256": "b0ba7383abfcabc4e2561d74b8cfcda56b46850595be20e5d16fed7d288555dd"
+    },
+    {
+      "path": "src/female-foot-registration.ts",
+      "sha256": "6545d3024a6ee781dc6f9f282f12d54531de15c0de7631cbc5cfef44a0103ba8"
+    },
+    {
+      "path": "data/catalog/female-arm-registration.json",
+      "sha256": "c3b6283116775801e605399261a72154c581f4a682c527b3de66db328017a822"
+    },
+    {
+      "path": "data/catalog/female-foot-registration.json",
+      "sha256": "c8d8400067825ed5c70172d252d4a4ca291a2005bfe0488e633dfe56b5bb220a"
+    }
+  ]
+}

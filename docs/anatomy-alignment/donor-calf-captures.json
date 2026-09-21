@@ -1,0 +1,100 @@
+{
+  "status": "LOCAL DIAGNOSTIC; recolored and restricted to three calf muscles and three native bones per side plus whole skin; source coordinates unchanged",
+  "captureMethod": "WebGL canvas toDataURL; not a screenshot of app UI",
+  "colorKey": {
+    "medialGastrocnemius": "#4bbcff",
+    "lateralGastrocnemius": "#61dc92",
+    "soleus": "#ee9455",
+    "bone": "#eeeecc",
+    "skin": "#eac4a7"
+  },
+  "errors": [],
+  "captures": [
+    {
+      "side": "left",
+      "view": "posterior",
+      "path": ".cache/donor-muscle/calf-left-posterior.png",
+      "sha256": "52880c86bf4eb50a3fe8ffda6330406e87dd2734f40782ccd5a7abbcb4ec8445",
+      "ids": [
+        "HRAF0003",
+        "HRAF0937",
+        "HRAF0954",
+        "HRAF0955",
+        "VHF0005",
+        "VHF0020",
+        "VHF0022"
+      ]
+    },
+    {
+      "side": "left",
+      "view": "medial",
+      "path": ".cache/donor-muscle/calf-left-medial.png",
+      "sha256": "3e8d5d5e42bd028b721c24db6b398edfae2c17ad9139e2d66bb45c26ddc3bc29",
+      "ids": [
+        "HRAF0003",
+        "HRAF0937",
+        "HRAF0954",
+        "HRAF0955",
+        "VHF0005",
+        "VHF0020",
+        "VHF0022"
+      ]
+    },
+    {
+      "side": "right",
+      "view": "posterior",
+      "path": ".cache/donor-muscle/calf-right-posterior.png",
+      "sha256": "c3c04ab48826abb5a47af42e99d3a9d2c53c66b0f7ecc4be6ee4369fa98e1418",
+      "ids": [
+        "HRAF0003",
+        "HRAF0911",
+        "HRAF0927",
+        "HRAF0928",
+        "VHF0043",
+        "VHF0058",
+        "VHF0060"
+      ]
+    },
+    {
+      "side": "right",
+      "view": "medial",
+      "path": ".cache/donor-muscle/calf-right-medial.png",
+      "sha256": "e516d6c4831eeed65df060642f2c0c1de5e70265555cf0139fee6b7a89fbc753",
+      "ids": [
+        "HRAF0003",
+        "HRAF0911",
+        "HRAF0927",
+        "HRAF0928",
+        "VHF0043",
+        "VHF0058",
+        "VHF0060"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": "scripts/capture-donor-calf.mjs",
+      "sha256": "25580d3be1dd005013cbfce7e0f998f697c522d8f85c80446037adbc8abd12c2"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "path": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "path": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    }
+  ]
+}
