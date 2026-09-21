@@ -1,0 +1,3511 @@
+{
+  "createdAt": "2026-09-21T09:22:25.122Z",
+  "status": "SOURCE FIT REPRODUCED; no runtime correction applied",
+  "sourceUrl": "https://digitalcommons.du.edu/visiblehuman/1/",
+  "license": "CC-BY-4.0",
+  "archive": {
+    "file": "Final 3D STL Models-stl.zip",
+    "bytes": 92019989,
+    "sha256": "9886eda040f6087bbb65182530f8bd262be456f366b155025c12b3dc56da774e"
+  },
+  "inventory": {
+    "bone": 28,
+    "muscle": 76,
+    "cartilage": 16,
+    "ligament": 8
+  },
+  "frame": {
+    "rows": [
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "scale": 1.0674309963581694,
+    "offset": [
+      0.5777152069976327,
+      -0.11378575469004437,
+      -0.5455753455474415
+    ],
+    "error": 0.07887208390757647
+  },
+  "fits": {
+    "left-hip": {
+      "rows": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "scale": 1.0035486851509043,
+      "offset": [
+        0.5571159209228307,
+        -0.0759849946689728,
+        -0.526588651020115
+      ],
+      "error": 0.0361075917338364
+    },
+    "left-thigh": {
+      "rows": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "scale": 0.9793374892856133,
+      "offset": [
+        0.5737858925461516,
+        -0.06280049127164311,
+        -0.5165463576888248
+      ],
+      "error": 0.033811016563627366
+    },
+    "left-shank": {
+      "rows": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "scale": 1.0049792041161996,
+      "offset": [
+        0.6201150426298516,
+        -0.08020105127520805,
+        -0.5260825872175175
+      ],
+      "error": 0.027459762972222218
+    },
+    "right-hip": {
+      "rows": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "scale": 1.0084085891492027,
+      "offset": [
+        0.5252534553144128,
+        -0.08085411926291997,
+        -0.51683832838895
+      ],
+      "error": 0.02594786171032834
+    },
+    "right-thigh": {
+      "rows": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "scale": 0.9916739901314783,
+      "offset": [
+        0.4968610895605245,
+        -0.0689106314104867,
+        -0.5020776423797736
+      ],
+      "error": 0.01740390730338856
+    },
+    "right-shank": {
+      "rows": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "scale": 0.9898288573935704,
+      "offset": [
+        0.4608439640993753,
+        -0.07161333023105826,
+        -0.49779202872251577
+      ],
+      "error": 0.027048022134501665
+    }
+  },
+  "maximumManifestBoundResidualMm": 0.000029052948935515133,
+  "files": [
+    {
+      "file": "Left/VHF_Left_Bone_Calcaneous_smooth.stl",
+      "sha256": "e39565fce885e6d53d1abac45c259eb12a4293d4fa19b4068e1222a449d7f67c",
+      "side": "left",
+      "kind": "bone",
+      "structure": "Calcaneous",
+      "triangles": 17472,
+      "bounds": [
+        [
+          0.4900071716308594,
+          0.354578857421875,
+          0.09901204681396485
+        ],
+        [
+          0.5404947509765625,
+          0.43861502075195313,
+          0.15153656005859376
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_Coccyx_smooth.stl",
+      "sha256": "ebff09245fb63d7721ba753298e4a412971063685ab0040bb3482e0442e96583",
+      "side": "left",
+      "kind": "bone",
+      "structure": "Coccyx",
+      "triangles": 2342,
+      "bounds": [
+        [
+          0.5204575805664062,
+          0.34148089599609377,
+          0.8784574584960938
+        ],
+        [
+          0.547612548828125,
+          0.3722423706054688,
+          0.9056028442382813
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_Cuboid_smooth.stl",
+      "sha256": "a7ee7acebdf33e4b45fc0c56d3e79d1377bfac4ea8a296f2a74400dfef5d849d",
+      "side": "left",
+      "kind": "bone",
+      "structure": "Cuboid",
+      "triangles": 4926,
+      "bounds": [
+        [
+          0.4877890625,
+          0.41950454711914065,
+          0.08307485961914063
+        ],
+        [
+          0.5205753784179687,
+          0.4516795349121094,
+          0.1170045623779297
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_Femur_smooth.stl",
+      "sha256": "964b27ab140b4e72a2e7c4ae3f1ae24212554cc1a8f0552b632dafce8d66b242",
+      "side": "left",
+      "kind": "bone",
+      "structure": "Femur",
+      "triangles": 91886,
+      "bounds": [
+        [
+          0.37575192260742185,
+          0.41796408081054687,
+          0.48826702880859374
+        ],
+        [
+          0.517482666015625,
+          0.4822778015136719,
+          0.9052905883789063
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_Fibula_smooth.stl",
+      "sha256": "3f5573f86c10eac6b25ed63604ea15ada1d389b54e0ceaecc48e5c5d33a62549",
+      "side": "left",
+      "kind": "bone",
+      "structure": "Fibula",
+      "triangles": 18918,
+      "bounds": [
+        [
+          0.4299722595214844,
+          0.3965501708984375,
+          0.14032600402832032
+        ],
+        [
+          0.4978377685546875,
+          0.42399432373046875,
+          0.4694984436035156
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_IntermediateCuneiform_smooth.stl",
+      "sha256": "38f08693bd04bbed5d21b54319cd6c1a3546d0930cfbcb51a7b8e1207507cff6",
+      "side": "left",
+      "kind": "bone",
+      "structure": "IntermediateCuneiform",
+      "triangles": 2328,
+      "bounds": [
+        [
+          0.5031149291992187,
+          0.44786666870117187,
+          0.09288722229003907
+        ],
+        [
+          0.5230028076171875,
+          0.4743551330566406,
+          0.11772880554199219
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_LateralCuneiform_smooth.stl",
+      "sha256": "f131c0d95e9a58181745aa2e2ab58682c4d1d1dc3d991de4811e187ab71cd52b",
+      "side": "left",
+      "kind": "bone",
+      "structure": "LateralCuneiform",
+      "triangles": 2698,
+      "bounds": [
+        [
+          0.49514508056640627,
+          0.44264495849609375,
+          0.08673297882080078
+        ],
+        [
+          0.5185291748046875,
+          0.4675038452148437,
+          0.1126427001953125
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_MedialCuneiform_smooth.stl",
+      "sha256": "9416e8ee8dc8e84756471178de642bec5d66c5f94255db6b78616645a895abeb",
+      "side": "left",
+      "kind": "bone",
+      "structure": "MedialCuneiform",
+      "triangles": 4090,
+      "bounds": [
+        [
+          0.5158767700195312,
+          0.4432586669921875,
+          0.08551004791259766
+        ],
+        [
+          0.5418541870117187,
+          0.4809537658691406,
+          0.1150674819946289
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_Navicular_smooth.stl",
+      "sha256": "83781105ca69f198893bf10671564f774b36ae115012a082fb6cc9b94cf125d7",
+      "side": "left",
+      "kind": "bone",
+      "structure": "Navicular",
+      "triangles": 4610,
+      "bounds": [
+        [
+          0.4998556823730469,
+          0.4351885681152344,
+          0.10656217956542968
+        ],
+        [
+          0.5405182495117188,
+          0.4632322998046875,
+          0.13209756469726563
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_Patella_smooth.stl",
+      "sha256": "4a57158e9ec1716a78e27d4370865fcbc5e7ff4be203f38e9aa59ca84761153c",
+      "side": "left",
+      "kind": "bone",
+      "structure": "Patella",
+      "triangles": 6524,
+      "bounds": [
+        [
+          0.44315396118164063,
+          0.4811357421875,
+          0.4900610656738281
+        ],
+        [
+          0.48593023681640624,
+          0.5051454772949219,
+          0.5370046997070312
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_Pelvis_smooth.stl",
+      "sha256": "8a54af941e90d601320747d8e44a9bef8ca748291653480c1ca25355e6c89e08",
+      "side": "left",
+      "kind": "bone",
+      "structure": "Pelvis",
+      "triangles": 99308,
+      "bounds": [
+        [
+          0.3901241760253906,
+          0.35524447631835937,
+          0.8171968383789062
+        ],
+        [
+          0.540900634765625,
+          0.5125238037109375,
+          1.0274359130859374
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_Phalanges_smooth.stl",
+      "sha256": "16047970237adbac5adce9bbe6e3240c0a500771f4bcbc55c72375f1c17e2f65",
+      "side": "left",
+      "kind": "bone",
+      "structure": "Phalanges",
+      "triangles": 34940,
+      "bounds": [
+        [
+          0.48516058349609376,
+          0.4249686584472656,
+          0.013494780540466308
+        ],
+        [
+          0.5585067138671875,
+          0.5542308959960938,
+          0.10189602661132813
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_Sacrum_smooth.stl",
+      "sha256": "8b9da6d7e73ed339b69c35118aff0809a39872adc4f5d4855683356a9e66f89b",
+      "side": "left",
+      "kind": "bone",
+      "structure": "Sacrum",
+      "triangles": 51074,
+      "bounds": [
+        [
+          0.47718267822265625,
+          0.33730435180664065,
+          0.9030020751953125
+        ],
+        [
+          0.59575927734375,
+          0.42955477905273437,
+          1.00321484375
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_Talus_smooth.stl",
+      "sha256": "1f905e13b8a9bf3d7b30964a6f151cc8df2f07891614364e4d46c856e50b9fbd",
+      "side": "left",
+      "kind": "bone",
+      "structure": "Talus",
+      "triangles": 11074,
+      "bounds": [
+        [
+          0.48916815185546875,
+          0.39544891357421874,
+          0.11998930358886718
+        ],
+        [
+          0.5325099487304688,
+          0.454979248046875,
+          0.16631462097167968
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Bone_Tibia_smooth.stl",
+      "sha256": "148107a0157932b94cab2b382b805af7c3c178400be76349ed20cea0bb56c3eb",
+      "side": "left",
+      "kind": "bone",
+      "structure": "Tibia",
+      "triangles": 59456,
+      "bounds": [
+        [
+          0.4378517761230469,
+          0.40021807861328124,
+          0.15664569091796876
+        ],
+        [
+          0.53314453125,
+          0.47181854248046873,
+          0.49184274291992186
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Cartilage_FemurDistal_smooth.stl",
+      "sha256": "08dd773b911d0805adea4ee365353e2ec502ba1d7fbf084c820d71fdf1639b6c",
+      "side": "left",
+      "kind": "cartilage",
+      "structure": "FemurDistal",
+      "triangles": 28144,
+      "bounds": [
+        [
+          0.44329483032226563,
+          0.41586618041992185,
+          0.4862762756347656
+        ],
+        [
+          0.5122596435546874,
+          0.4818644714355469,
+          0.5289625244140626
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Cartilage_FemurHead_smooth.stl",
+      "sha256": "0f6c2b87ae46414805e48483a378cabdb7b37568ac0fa91f639ac78105e79020",
+      "side": "left",
+      "kind": "cartilage",
+      "structure": "FemurHead",
+      "triangles": 16574,
+      "bounds": [
+        [
+          0.4261058044433594,
+          0.4359793395996094,
+          0.8663225708007812
+        ],
+        [
+          0.4646079406738281,
+          0.4825982360839844,
+          0.90801171875
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Cartilage_Patella_smooth.stl",
+      "sha256": "d82498a7cb9ee95eb7dd5de8df117ac19169ffd0935585079f9748900cf068e3",
+      "side": "left",
+      "kind": "cartilage",
+      "structure": "Patella",
+      "triangles": 6574,
+      "bounds": [
+        [
+          0.4433518676757813,
+          0.47914459228515627,
+          0.5072776794433593
+        ],
+        [
+          0.4852156982421875,
+          0.49499627685546876,
+          0.5372681884765625
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Cartilage_PelvisAcetabulum_smooth.stl",
+      "sha256": "4940474031323660ac4e078914ae6da582eec3f566508fc6961010fda7a69a83",
+      "side": "left",
+      "kind": "cartilage",
+      "structure": "PelvisAcetabulum",
+      "triangles": 45930,
+      "bounds": [
+        [
+          0.42399969482421873,
+          0.43445425415039063,
+          0.8787443237304687
+        ],
+        [
+          0.4666929931640625,
+          0.4784540100097656,
+          0.9079210815429688
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Cartilage_Talus_smooth.stl",
+      "sha256": "a062fc2285a7011d43687a8e912e717c10f4da1615b68813dd7311a9eac15c00",
+      "side": "left",
+      "kind": "cartilage",
+      "structure": "Talus",
+      "triangles": 39988,
+      "bounds": [
+        [
+          0.49297805786132814,
+          0.41434686279296873,
+          0.15834478759765624
+        ],
+        [
+          0.49985134887695315,
+          0.4222326965332031,
+          0.16291622924804688
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Cartilage_TibiaDistal_smooth.stl",
+      "sha256": "af008c155ef0c8cb286214c6cab54c13cd44df0035150fb37b0f7d676bdf6500",
+      "side": "left",
+      "kind": "cartilage",
+      "structure": "TibiaDistal",
+      "triangles": 2708,
+      "bounds": [
+        [
+          0.49347418212890626,
+          0.40792385864257813,
+          0.16227845764160156
+        ],
+        [
+          0.520440185546875,
+          0.4357739868164062,
+          0.1695791778564453
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Cartilage_TibiaLateral_smooth.stl",
+      "sha256": "9858e6370a0028a716ec00aa676bcb3c147fcc66e7a5f5e86e5330e0ff621ad6",
+      "side": "left",
+      "kind": "cartilage",
+      "structure": "TibiaLateral",
+      "triangles": 3810,
+      "bounds": [
+        [
+          0.44394921875,
+          0.418027099609375,
+          0.48068588256835937
+        ],
+        [
+          0.4703746032714844,
+          0.4447940673828125,
+          0.49105560302734375
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Cartilage_TibiaMedial_smooth.stl",
+      "sha256": "8be5799e2416c12b1b4da4c20ddca2462e76b6dd467e6c49504fd13b343d3d4c",
+      "side": "left",
+      "kind": "cartilage",
+      "structure": "TibiaMedial",
+      "triangles": 5772,
+      "bounds": [
+        [
+          0.4790064697265625,
+          0.4242578125,
+          0.47944281005859374
+        ],
+        [
+          0.5103156433105469,
+          0.4659681701660156,
+          0.48964385986328124
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Ligament_ACL_smooth.stl",
+      "sha256": "13ed6f421bd7997094c97bfcd03a889a438d6c7abd35724f83eaca9f4b1a5a72",
+      "side": "left",
+      "kind": "ligament",
+      "structure": "ACL",
+      "triangles": 3606,
+      "bounds": [
+        [
+          0.4651674499511719,
+          0.42585885620117186,
+          0.4840484313964844
+        ],
+        [
+          0.4765814208984375,
+          0.45326657104492185,
+          0.5184566650390625
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Ligament_LCL_smooth.stl",
+      "sha256": "1580c6cbdb7a8f3957211cb4bdc3af259842d64edc6094729fd436f5f0cb0a1a",
+      "side": "left",
+      "kind": "ligament",
+      "structure": "LCL",
+      "triangles": 2050,
+      "bounds": [
+        [
+          0.427041748046875,
+          0.40938229370117185,
+          0.4554891662597656
+        ],
+        [
+          0.437646484375,
+          0.4395034484863281,
+          0.5085152282714843
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Ligament_MCL_smooth.stl",
+      "sha256": "c8fa7c6a7180c0d899ac0a875dae6f0823f9e05b33b01ff38a250ade41436fa6",
+      "side": "left",
+      "kind": "ligament",
+      "structure": "MCL",
+      "triangles": 4284,
+      "bounds": [
+        [
+          0.5005413818359375,
+          0.43654571533203124,
+          0.4534490966796875
+        ],
+        [
+          0.5194965209960938,
+          0.4539128723144531,
+          0.5127520141601563
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Ligament_PCL_smooth.stl",
+      "sha256": "5a1ac2122c2f72c1fd3beb1e9eb82eeb6246776323031eccc3c9f83b5411b48c",
+      "side": "left",
+      "kind": "ligament",
+      "structure": "PCL",
+      "triangles": 3814,
+      "bounds": [
+        [
+          0.4741396179199219,
+          0.4178363952636719,
+          0.4760517578125
+        ],
+        [
+          0.4905838623046875,
+          0.4435011901855469,
+          0.5048777465820312
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_AdductorBrevis_smooth.stl",
+      "sha256": "15b4794fa304270c3a8730f91ed95bcdfef0e32f2380c5b5536a2a80dd59a004",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "AdductorBrevis",
+      "triangles": 11120,
+      "bounds": [
+        [
+          0.42208026123046877,
+          0.4345613708496094,
+          0.7476599731445313
+        ],
+        [
+          0.5230825805664062,
+          0.49367776489257814,
+          0.8544938354492188
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_AdductorLongus_smooth.stl",
+      "sha256": "f021a61619f2248aa8a8079f08588a72a19707105b22d51627acc0bdb20c8e69",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "AdductorLongus",
+      "triangles": 12440,
+      "bounds": [
+        [
+          0.4566190185546875,
+          0.4398561096191406,
+          0.6474354248046875
+        ],
+        [
+          0.5130733032226562,
+          0.5010021362304687,
+          0.8494131469726562
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_AdductorMagnus_smooth.stl",
+      "sha256": "3c3528cd4f9a5b65be1ce8dfca6274c55964a8a6340cd947a8d706fa6fcb0003",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "AdductorMagnus",
+      "triangles": 31500,
+      "bounds": [
+        [
+          0.41739181518554686,
+          0.38773516845703127,
+          0.5830238037109375
+        ],
+        [
+          0.5122284545898438,
+          0.4722962951660156,
+          0.8459869384765625
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_BicepsFemorisLong_smooth.stl",
+      "sha256": "88c4aada17b1dd8aecfa4eb4d77944b8402e86a3516d79d81754b1d6cf5b78a8",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "BicepsFemorisLong",
+      "triangles": 17786,
+      "bounds": [
+        [
+          0.4169184265136719,
+          0.37323333740234377,
+          0.5468604125976563
+        ],
+        [
+          0.46213272094726565,
+          0.4266211547851563,
+          0.8000263061523437
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_BicepsFemorisShort_smooth.stl",
+      "sha256": "30a3faf67820587d5eab827539ec165adf3f72bcc8038d6fc0eaac691127cf78",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "BicepsFemorisShort",
+      "triangles": 12238,
+      "bounds": [
+        [
+          0.42134158325195314,
+          0.3994701843261719,
+          0.48447671508789064
+        ],
+        [
+          0.4591356201171875,
+          0.45188531494140627,
+          0.7060824584960937
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_ExtensorDigitorumLongus_smooth.stl",
+      "sha256": "988d708cfbd7b5e1e38e80beb02789262a1b7296473a02ca812bb1257a7e9437",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "ExtensorDigitorumLongus",
+      "triangles": 8852,
+      "bounds": [
+        [
+          0.435731689453125,
+          0.4085703125,
+          0.15534396362304687
+        ],
+        [
+          0.4903395690917969,
+          0.4388565673828125,
+          0.45822747802734376
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_ExtensorHallucisLongus_smooth.stl",
+      "sha256": "dd5068a58ed9fa27ccd354b143fca4c8d85675626cf881c8f0eee04a79c1e394",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "ExtensorHallucisLongus",
+      "triangles": 4062,
+      "bounds": [
+        [
+          0.4584809875488281,
+          0.40954925537109377,
+          0.16250205993652345
+        ],
+        [
+          0.49594232177734376,
+          0.44253536987304687,
+          0.35038229370117185
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_FlexorDigitorumLongus_smooth.stl",
+      "sha256": "71f15fc4623f80d56b56ded4a8d145fb490f1fd99a2681f35d3344b63bf384df",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "FlexorDigitorumLongus",
+      "triangles": 6264,
+      "bounds": [
+        [
+          0.4851273193359375,
+          0.4045328369140625,
+          0.16665589904785155
+        ],
+        [
+          0.5313858032226563,
+          0.43126089477539065,
+          0.3922940368652344
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_FlexorHallucisLongus_smooth.stl",
+      "sha256": "ced4fa960a6e22dd4cc130ff6da7790be29037f09cb3b81e117ed0f25a3ae506",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "FlexorHallucisLongus",
+      "triangles": 9216,
+      "bounds": [
+        [
+          0.4573624267578125,
+          0.38460043334960936,
+          0.16302818298339844
+        ],
+        [
+          0.516698486328125,
+          0.41394921875,
+          0.36601690673828124
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_GastrocnemiusLateral_smooth.stl",
+      "sha256": "e459713f0fe63fa41951827272a8397e2bfb4e4c80ac064d0522c84103a25d8f",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "GastrocnemiusLateral",
+      "triangles": 11314,
+      "bounds": [
+        [
+          0.44028662109375,
+          0.3650482177734375,
+          0.34396896362304685
+        ],
+        [
+          0.5006793823242187,
+          0.41730465698242186,
+          0.5222911987304687
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_GastrocnemiusMedial_smooth.stl",
+      "sha256": "bb6cf40d353a1ac4eea853eb87148be23cd41510380b31bae9fca985bf55e89d",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "GastrocnemiusMedial",
+      "triangles": 19858,
+      "bounds": [
+        [
+          0.46199261474609377,
+          0.3660699157714844,
+          0.3364891357421875
+        ],
+        [
+          0.5311720581054687,
+          0.4392750244140625,
+          0.5442785034179688
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_GluteusMaximus_smooth.stl",
+      "sha256": "3493e50dc3328b0607af760fc621121e620da4f947bc1f9e63e9297aadaf12b0",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "GluteusMaximus",
+      "triangles": 45776,
+      "bounds": [
+        [
+          0.36872125244140624,
+          0.33951715087890627,
+          0.7557122802734375
+        ],
+        [
+          0.5181463623046875,
+          0.4320452880859375,
+          0.9916646118164063
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_GluteusMedius_smooth.stl",
+      "sha256": "1f9410b9dee34f891b3a0947cd2ddeb601ed2612f20e271e47d04c2e8159ebaa",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "GluteusMedius",
+      "triangles": 30072,
+      "bounds": [
+        [
+          0.3692491149902344,
+          0.3787997741699219,
+          0.8402015380859374
+        ],
+        [
+          0.46089352416992185,
+          0.5010426940917969,
+          1.0214476928710938
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_GluteusMinimus_smooth.stl",
+      "sha256": "2ac60bb240503a678961f82cc42c5ccd4be499e06c1a85d756ffdbcdb7c4b346",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "GluteusMinimus",
+      "triangles": 16994,
+      "bounds": [
+        [
+          0.39211886596679685,
+          0.4134190979003906,
+          0.8545404663085937
+        ],
+        [
+          0.459803955078125,
+          0.5062261962890625,
+          0.9922492065429688
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_Gracilis_smooth.stl",
+      "sha256": "b66ba0a32a911122bd0f903a0dca98144cc64a8d8103709fff56ed7851a6a807",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "Gracilis",
+      "triangles": 13356,
+      "bounds": [
+        [
+          0.4952579040527344,
+          0.39670355224609377,
+          0.5548179931640626
+        ],
+        [
+          0.5171820678710938,
+          0.4742548828125,
+          0.8263321533203125
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_Illiacus_smooth.stl",
+      "sha256": "fb50d03c8bac552e3edfca3a9be4cc33a994ee3bc396f344b7390c4f4db2ab0a",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "Illiacus",
+      "triangles": 22330,
+      "bounds": [
+        [
+          0.41013015747070314,
+          0.4042179870605469,
+          0.8045106201171875
+        ],
+        [
+          0.4836767578125,
+          0.5137655639648437,
+          1.0207711791992187
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_InferiorGemellus_smooth.stl",
+      "sha256": "c676a8a24bc1b7eb1807760e7c18783351363d8579ab97239cecb530faa20cd2",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "InferiorGemellus",
+      "triangles": 1154,
+      "bounds": [
+        [
+          0.4114403076171875,
+          0.4014529113769531,
+          0.8628851318359375
+        ],
+        [
+          0.4536475830078125,
+          0.4363048400878906,
+          0.8759588012695313
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_ObturatorExternus_smooth.stl",
+      "sha256": "e4cbae1bc8c07454ffc668e63ed8047e43f495cad8c452b86a834ad9a466060a",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "ObturatorExternus",
+      "triangles": 14558,
+      "bounds": [
+        [
+          0.42643133544921874,
+          0.43146035766601565,
+          0.8284547729492188
+        ],
+        [
+          0.5203089599609375,
+          0.4907586669921875,
+          0.8679409790039062
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_ObturatorInternus_smooth.stl",
+      "sha256": "9c260c77cc07391e9018322a4a73540cab1ee70fe322cf846e8cf83d11a6f10f",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "ObturatorInternus",
+      "triangles": 18262,
+      "bounds": [
+        [
+          0.4521722412109375,
+          0.3958432312011719,
+          0.8361840209960938
+        ],
+        [
+          0.51384423828125,
+          0.4737518615722656,
+          0.9291343994140625
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_Pectineus_smooth.stl",
+      "sha256": "d82bdfa384d63e9eaa9138616ae327a58c1dd4e73f04c5c7b6f2bdd09e2ab3c3",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "Pectineus",
+      "triangles": 44456,
+      "bounds": [
+        [
+          0.43270651245117187,
+          0.4439102783203125,
+          0.796212646484375
+        ],
+        [
+          0.5101029663085938,
+          0.5037391357421875,
+          0.8905308227539063
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_PeroneusLongus_smooth.stl",
+      "sha256": "bc125fe4a4055dde00aac1e3309609940945d1e7626a2b7b2b8fab5ad34aae22",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "PeroneusLongus",
+      "triangles": 16216,
+      "bounds": [
+        [
+          0.4272696228027344,
+          0.3812347412109375,
+          0.152104248046875
+        ],
+        [
+          0.5010841979980468,
+          0.42956100463867186,
+          0.46940185546875
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_Piriformis_smooth.stl",
+      "sha256": "23c72ff771159995ceb1539218f4f3117ff9175cb6a87357764495efcf99af5a",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "Piriformis",
+      "triangles": 6486,
+      "bounds": [
+        [
+          0.4258651428222656,
+          0.36394198608398437,
+          0.889514404296875
+        ],
+        [
+          0.5236416625976562,
+          0.42329452514648436,
+          0.9556915283203125
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_Plantaris_smooth.stl",
+      "sha256": "08d51e045d28aef3ed1c513dd989f207e93658b244ce4e993cc5650da8413862",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "Plantaris",
+      "triangles": 1880,
+      "bounds": [
+        [
+          0.4409085388183594,
+          0.40634194946289065,
+          0.49156900024414063
+        ],
+        [
+          0.4646756591796875,
+          0.431187255859375,
+          0.528459716796875
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_Popliteus_smooth.stl",
+      "sha256": "6484bbd3ad41beaf9d1857f278c620e22ad759dc7fcd048d2c11de7abd0a93de",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "Popliteus",
+      "triangles": 3056,
+      "bounds": [
+        [
+          0.46118093872070315,
+          0.4125402526855469,
+          0.403817626953125
+        ],
+        [
+          0.4978896484375,
+          0.4391507568359375,
+          0.4772901611328125
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_PsoasMajor_smooth.stl",
+      "sha256": "54a71a56f4523919d60e99a670a57a5e875676fe3b920f9be8705ea71c0590c3",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "PsoasMajor",
+      "triangles": 19692,
+      "bounds": [
+        [
+          0.4544263916015625,
+          0.38468692016601563,
+          0.85437109375
+        ],
+        [
+          0.5065096740722657,
+          0.4983226318359375,
+          1.1745999755859375
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_QuadratusFemoris_smooth.stl",
+      "sha256": "12cf071c242f0e94cabfdf277688d3c1d55f0f6876c3e6922d5156ae24de7176",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "QuadratusFemoris",
+      "triangles": 5392,
+      "bounds": [
+        [
+          0.40153363037109374,
+          0.4098608703613281,
+          0.8128544921875
+        ],
+        [
+          0.4725097961425781,
+          0.43921542358398435,
+          0.87035888671875
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_RectusFemoris_smooth.stl",
+      "sha256": "a25b1a38060bfc0b2defe0eb3174ef8406984712867fbe4b3f64b84cd0a1f332",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "RectusFemoris",
+      "triangles": 16282,
+      "bounds": [
+        [
+          0.40721026611328126,
+          0.4820666198730469,
+          0.6162188720703125
+        ],
+        [
+          0.46573831176757813,
+          0.5145833129882813,
+          0.9019318237304688
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_Sartorius_smooth.stl",
+      "sha256": "d10edad03ed74c673b1477158946d5042d2aea2939ff801b0263a239f9f71b77",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "Sartorius",
+      "triangles": 18894,
+      "bounds": [
+        [
+          0.41819659423828126,
+          0.4115229797363281,
+          0.4760997619628906
+        ],
+        [
+          0.5238519287109376,
+          0.5158522338867187,
+          0.9329796142578125
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_Semimembranosus_smooth.stl",
+      "sha256": "b9e14c7ba014498f4c6a041eee98a5e44e13102ccccb59bfdc3a615cbc42e876",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "Semimembranosus",
+      "triangles": 20610,
+      "bounds": [
+        [
+          0.4612257385253906,
+          0.3750010986328125,
+          0.507118408203125
+        ],
+        [
+          0.5072308349609375,
+          0.43727401733398436,
+          0.7766017456054688
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_Semitendinosus_smooth.stl",
+      "sha256": "e1b3af2f2956e9cc89702b5e51ce05f1ff0a0abf519c9db3268ed819342d3c36",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "Semitendinosus",
+      "triangles": 13626,
+      "bounds": [
+        [
+          0.43585427856445313,
+          0.37391702270507815,
+          0.567918212890625
+        ],
+        [
+          0.48160916137695314,
+          0.41125128173828124,
+          0.831319091796875
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_Soleus_smooth.stl",
+      "sha256": "ed927cc3dd452404646a8684d3a7e0c7ff00d2870ce2b2f79fa30bd91ae50165",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "Soleus",
+      "triangles": 28452,
+      "bounds": [
+        [
+          0.4352322998046875,
+          0.37124261474609377,
+          0.19014549255371094
+        ],
+        [
+          0.5192028198242188,
+          0.44258807373046877,
+          0.47170205688476563
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_SuperiorGemellus_smooth.stl",
+      "sha256": "7066e13389af6aa3e4dd660449244eb022ff178b928e5a2cdc560715cc543402",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "SuperiorGemellus",
+      "triangles": 904,
+      "bounds": [
+        [
+          0.4112052917480469,
+          0.413593017578125,
+          0.8705980834960938
+        ],
+        [
+          0.44797921752929687,
+          0.44003448486328123,
+          0.87964111328125
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_TensorFasciaeLatae_smooth.stl",
+      "sha256": "c817efac886b1bbea59a358c5cacb59d9640b64c39493975b98edc07270b3e5b",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "TensorFasciaeLatae",
+      "triangles": 9282,
+      "bounds": [
+        [
+          0.37023828125,
+          0.4651625671386719,
+          0.800226318359375
+        ],
+        [
+          0.4205907287597656,
+          0.5118634338378907,
+          0.9432319946289063
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_TibialisAnterior_smooth.stl",
+      "sha256": "69071e5eee3bf9cf937a03cc2406a6d098814e9372eb9663c39984c2a5fa33ab",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "TibialisAnterior",
+      "triangles": 12420,
+      "bounds": [
+        [
+          0.439250732421875,
+          0.4178797302246094,
+          0.21141459655761718
+        ],
+        [
+          0.48838870239257814,
+          0.457740966796875,
+          0.45626287841796875
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_TibialisPosterior_smooth.stl",
+      "sha256": "7b5ac8d4a00a4fa87df9e33eb8e8e745f1b673c912359026ee1dec7ab447cb36",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "TibialisPosterior",
+      "triangles": 10622,
+      "bounds": [
+        [
+          0.45140167236328127,
+          0.4045335083007813,
+          0.21063179016113281
+        ],
+        [
+          0.507936767578125,
+          0.43567657470703125,
+          0.45176718139648436
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_VastusIntermedius_smooth.stl",
+      "sha256": "7cf7051ea2a38ecf876a9983a7ebefbbcd833afdcfdcd5940c536a0c8b3a94e0",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "VastusIntermedius",
+      "triangles": 37284,
+      "bounds": [
+        [
+          0.3919435119628906,
+          0.42386981201171875,
+          0.5365422973632813
+        ],
+        [
+          0.4716247253417969,
+          0.49327008056640625,
+          0.8458328857421875
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_VastusLateralis_smooth.stl",
+      "sha256": "9ac51463d3338508e8e5d094e6459e2f1a73270a339c7239e87c98396ecd51ba",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "VastusLateralis",
+      "triangles": 42150,
+      "bounds": [
+        [
+          0.375251708984375,
+          0.41187075805664064,
+          0.52563134765625
+        ],
+        [
+          0.4470982971191406,
+          0.5078331909179687,
+          0.8595105590820312
+        ]
+      ]
+    },
+    {
+      "file": "Left/VHF_Left_Muscle_VastusMedialis_smooth.stl",
+      "sha256": "c3ec509cb22deee113d0047b1a9d7577fe6196abb9c4749e969dcbb86da292d7",
+      "side": "left",
+      "kind": "muscle",
+      "structure": "VastusMedialis",
+      "triangles": 27300,
+      "bounds": [
+        [
+          0.4259443054199219,
+          0.4398511047363281,
+          0.5220704956054687
+        ],
+        [
+          0.5165297241210938,
+          0.49787890625,
+          0.8145411376953124
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_Calcaneous_smooth.stl",
+      "sha256": "e2b7ac7099289a1aaa9f16d7e693b05d13a1f57912793a9e063f9d4c55ac83d9",
+      "side": "right",
+      "kind": "bone",
+      "structure": "Calcaneous",
+      "triangles": 17574,
+      "bounds": [
+        [
+          0.5491439208984376,
+          0.3430106506347656,
+          0.09258084869384765
+        ],
+        [
+          0.6097350463867187,
+          0.4238707885742187,
+          0.14605409240722655
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_Cuboid_smooth.stl",
+      "sha256": "a89932159a0dd53d603529b644bca95505aeb697f53cf164329ebeea51c40fb0",
+      "side": "right",
+      "kind": "bone",
+      "structure": "Cuboid",
+      "triangles": 5042,
+      "bounds": [
+        [
+          0.582339599609375,
+          0.40267962646484373,
+          0.07833274841308593
+        ],
+        [
+          0.6171118774414063,
+          0.43228793334960935,
+          0.1109330825805664
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_Femur_smooth.stl",
+      "sha256": "012b293cbaa2cd467ea423b96bb257c8f558ff639c8342e37972af7c6febbd25",
+      "side": "right",
+      "kind": "bone",
+      "structure": "Femur",
+      "triangles": 89466,
+      "bounds": [
+        [
+          0.5770431518554687,
+          0.39868344116210935,
+          0.487313720703125
+        ],
+        [
+          0.7007717895507812,
+          0.46922955322265625,
+          0.9042706298828125
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_Fibula_smooth.stl",
+      "sha256": "5e62c5c1aeedb2b0c287e4efbaf881ef9c8c721ccc546a69c74784e520581a24",
+      "side": "right",
+      "kind": "bone",
+      "structure": "Fibula",
+      "triangles": 19480,
+      "bounds": [
+        [
+          0.59579931640625,
+          0.3765648193359375,
+          0.1336714630126953
+        ],
+        [
+          0.6576326904296875,
+          0.40242352294921874,
+          0.47080615234375
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_IntermediateCuneiform_smooth.stl",
+      "sha256": "d84ff954c393d538e227cede60b116a6de4dce7f943ea8523cc243e45ae0c878",
+      "side": "right",
+      "kind": "bone",
+      "structure": "IntermediateCuneiform",
+      "triangles": 2314,
+      "bounds": [
+        [
+          0.5858096313476563,
+          0.43468569946289065,
+          0.0870740737915039
+        ],
+        [
+          0.608148681640625,
+          0.4598778381347656,
+          0.10967542266845703
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_LateralCuneiform_smooth.stl",
+      "sha256": "1711df66029087a9e356f225f7f0943232426e8935cbdfc173fa3b6150b66ccc",
+      "side": "right",
+      "kind": "bone",
+      "structure": "LateralCuneiform",
+      "triangles": 2808,
+      "bounds": [
+        [
+          0.5892030639648438,
+          0.4281166076660156,
+          0.08149610137939453
+        ],
+        [
+          0.614979248046875,
+          0.44994613647460935,
+          0.10572056579589843
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_MedialCuneiform_smooth.stl",
+      "sha256": "95f8bbb0e6efa335a620ac8517b0577fb6c470c7e52d7da7f09afd82d782b13e",
+      "side": "right",
+      "kind": "bone",
+      "structure": "MedialCuneiform",
+      "triangles": 4216,
+      "bounds": [
+        [
+          0.5692054443359374,
+          0.431890869140625,
+          0.07722470092773437
+        ],
+        [
+          0.5977101440429687,
+          0.46711920166015625,
+          0.10690149688720703
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_Navicular_smooth.stl",
+      "sha256": "ccb9e9c5a8299a609e09c97a58f10ecb3585000b2270dcfc6e2caa85435d4194",
+      "side": "right",
+      "kind": "bone",
+      "structure": "Navicular",
+      "triangles": 4498,
+      "bounds": [
+        [
+          0.5670235595703125,
+          0.42318377685546876,
+          0.10016245269775391
+        ],
+        [
+          0.607688720703125,
+          0.44992733764648435,
+          0.12442731475830078
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_Patella_smooth.stl",
+      "sha256": "bca69eb33e240c0ec6ea3fafb4f782edbc8ca714203860d972c74aabc6202613",
+      "side": "right",
+      "kind": "bone",
+      "structure": "Patella",
+      "triangles": 6588,
+      "bounds": [
+        [
+          0.61714501953125,
+          0.4626136169433594,
+          0.48913864135742186
+        ],
+        [
+          0.6589677734375,
+          0.48922149658203123,
+          0.5344334106445312
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_Pelvis_smooth.stl",
+      "sha256": "007280b01294f728e3e81a4e708986f6bbb921140d88b4260543a5babc6fac5b",
+      "side": "right",
+      "kind": "bone",
+      "structure": "Pelvis",
+      "triangles": 98422,
+      "bounds": [
+        [
+          0.5409413452148437,
+          0.35284512329101564,
+          0.81797021484375
+        ],
+        [
+          0.6873468017578125,
+          0.5031739807128907,
+          1.031539306640625
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_Phalanges_smooth.stl",
+      "sha256": "4d9e624efe54152d60506117fa897cef795f34834f779936718353890d347699",
+      "side": "right",
+      "kind": "bone",
+      "structure": "Phalanges",
+      "triangles": 36202,
+      "bounds": [
+        [
+          0.5616859130859375,
+          0.40522415161132813,
+          0.008035740852355956
+        ],
+        [
+          0.6308231201171876,
+          0.5411359252929687,
+          0.09476502227783203
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_Talus_smooth.stl",
+      "sha256": "dc7dfeb876a6e3ca0d7c877d2aaec5aa95e721aa146d6e576bd6e6ee5f5c37b5",
+      "side": "right",
+      "kind": "bone",
+      "structure": "Talus",
+      "triangles": 10676,
+      "bounds": [
+        [
+          0.5653025512695312,
+          0.3826085205078125,
+          0.11101625061035156
+        ],
+        [
+          0.6124468994140625,
+          0.4406876220703125,
+          0.15636134338378907
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Bone_Tibia_smooth.stl",
+      "sha256": "589b64fe38d602eb95a0dad900bcd1059043d3d8451d3d74c7231fccc62ffae1",
+      "side": "right",
+      "kind": "bone",
+      "structure": "Tibia",
+      "triangles": 60362,
+      "bounds": [
+        [
+          0.5677767944335937,
+          0.38504547119140625,
+          0.14792074584960938
+        ],
+        [
+          0.6556962890625,
+          0.4552113037109375,
+          0.4904704284667969
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Cartilage_FemurDistal_smooth.stl",
+      "sha256": "52072ebb86cfc8e81396cd095fee3dbfd918d250836e0df14b04843f10d4a7c0",
+      "side": "right",
+      "kind": "cartilage",
+      "structure": "FemurDistal",
+      "triangles": 24628,
+      "bounds": [
+        [
+          0.5805406494140625,
+          0.3978814697265625,
+          0.4853266906738281
+        ],
+        [
+          0.6512075805664063,
+          0.4662279052734375,
+          0.5274402465820313
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Cartilage_FemurHead_smooth.stl",
+      "sha256": "5062d22c9bac6f14bd81b42baab74700f0825da968d52d76532b1d7efed976e5",
+      "side": "right",
+      "kind": "cartilage",
+      "structure": "FemurHead",
+      "triangles": 22948,
+      "bounds": [
+        [
+          0.6138236083984375,
+          0.42649136352539063,
+          0.8637571411132813
+        ],
+        [
+          0.6568465576171875,
+          0.4720373840332031,
+          0.9066194458007812
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Cartilage_Patella_smooth.stl",
+      "sha256": "acf4b7a0a11ad5cadc0c3973b2ccd76bab56c31e2663129dd5283627310dbab8",
+      "side": "right",
+      "kind": "cartilage",
+      "structure": "Patella",
+      "triangles": 5666,
+      "bounds": [
+        [
+          0.6182847900390624,
+          0.46074493408203127,
+          0.5067474670410156
+        ],
+        [
+          0.656076904296875,
+          0.47993112182617187,
+          0.5339000854492187
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Cartilage_PelvisAcetabulum_smooth.stl",
+      "sha256": "a77d63e720471c4c99bff2fbea3aa59237568de67199edaeaddf40376fe8ca3c",
+      "side": "right",
+      "kind": "cartilage",
+      "structure": "PelvisAcetabulum",
+      "triangles": 12912,
+      "bounds": [
+        [
+          0.6114871215820312,
+          0.42227706909179685,
+          0.8677039184570312
+        ],
+        [
+          0.6496642456054688,
+          0.4734459228515625,
+          0.9102298583984375
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Cartilage_Talus_smooth.stl",
+      "sha256": "1d3f41b69120327151662496523866e65b0aa7c9b31647a24f4629ee072050eb",
+      "side": "right",
+      "kind": "cartilage",
+      "structure": "Talus",
+      "triangles": 4484,
+      "bounds": [
+        [
+          0.576091064453125,
+          0.3929734802246094,
+          0.14780386352539063
+        ],
+        [
+          0.6036876831054687,
+          0.4265155944824219,
+          0.1592654266357422
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Cartilage_TibiaDistal_smooth.stl",
+      "sha256": "88d60579c76789f2eb21ab7080f5140ceeff584f12886fdb656ac7871cfc79dd",
+      "side": "right",
+      "kind": "cartilage",
+      "structure": "TibiaDistal",
+      "triangles": 3524,
+      "bounds": [
+        [
+          0.576523681640625,
+          0.39081768798828126,
+          0.15461134338378907
+        ],
+        [
+          0.605527587890625,
+          0.42238650512695314,
+          0.16188217163085938
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Cartilage_TibiaLateral_smooth.stl",
+      "sha256": "85caed0f32af79d4f7b944a43e734993de31dd7234c0c8815f9ca6037084089b",
+      "side": "right",
+      "kind": "cartilage",
+      "structure": "TibiaLateral",
+      "triangles": 5104,
+      "bounds": [
+        [
+          0.6198814086914063,
+          0.3955001220703125,
+          0.4794556884765625
+        ],
+        [
+          0.6518700561523437,
+          0.42847283935546876,
+          0.49249063110351565
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Cartilage_TibiaMedial_smooth.stl",
+      "sha256": "2f096975aa9bc7742a041c9d2ab11cf24bfeadb1812a6f4b45adef86105662bd",
+      "side": "right",
+      "kind": "cartilage",
+      "structure": "TibiaMedial",
+      "triangles": 6494,
+      "bounds": [
+        [
+          0.5815836181640625,
+          0.41066766357421874,
+          0.47865274047851564
+        ],
+        [
+          0.6171629638671875,
+          0.4531818237304687,
+          0.4885294189453125
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Ligament_ACL_smooth.stl",
+      "sha256": "b018eb5925ee8e2be58770989aee1dba64ab98b58248e2d19484c27746f5b832",
+      "side": "right",
+      "kind": "ligament",
+      "structure": "ACL",
+      "triangles": 4296,
+      "bounds": [
+        [
+          0.6151106567382812,
+          0.40905538940429687,
+          0.481552734375
+        ],
+        [
+          0.6342354736328125,
+          0.4367615051269531,
+          0.5189454345703125
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Ligament_LCL_smooth.stl",
+      "sha256": "a5370fcb734c7bfa8f3cb1012258fef029195ef1626be59b8fbc513ebe7693b8",
+      "side": "right",
+      "kind": "ligament",
+      "structure": "LCL",
+      "triangles": 2022,
+      "bounds": [
+        [
+          0.6463726806640625,
+          0.3893479919433594,
+          0.46574859619140624
+        ],
+        [
+          0.6571124267578125,
+          0.4137734375,
+          0.5084497375488282
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Ligament_MCL_smooth.stl",
+      "sha256": "41e05f732998266e8cc14396a74395f33360f7398b17d6e43711f58ce93f0c69",
+      "side": "right",
+      "kind": "ligament",
+      "structure": "MCL",
+      "triangles": 3110,
+      "bounds": [
+        [
+          0.57690625,
+          0.4342699279785156,
+          0.44883798217773435
+        ],
+        [
+          0.5979942626953125,
+          0.4440875854492187,
+          0.5162398071289063
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Ligament_PCL_smooth.stl",
+      "sha256": "d793f59ecf04a087dbe57713a292561e8c89e8310f4a2d8b902b5d191773dc46",
+      "side": "right",
+      "kind": "ligament",
+      "structure": "PCL",
+      "triangles": 3612,
+      "bounds": [
+        [
+          0.602455078125,
+          0.4026841735839844,
+          0.47577859497070313
+        ],
+        [
+          0.6182322998046875,
+          0.42978497314453123,
+          0.5038128356933593
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_AdductorBrevis_smooth.stl",
+      "sha256": "ae9dd6d6ff3c7648785077da0b20de47367fc4079a2f147016c175872a7c327e",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "AdductorBrevis",
+      "triangles": 10938,
+      "bounds": [
+        [
+          0.5585722045898438,
+          0.41777777099609376,
+          0.7433583984375
+        ],
+        [
+          0.6554985961914063,
+          0.48684384155273436,
+          0.8501467895507813
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_AdductorLongus_smooth.stl",
+      "sha256": "68aa1c86d554f3a8182294b235381b80aa0ed3371645d5642ad1367303077b41",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "AdductorLongus",
+      "triangles": 12850,
+      "bounds": [
+        [
+          0.5679224243164063,
+          0.42986712646484376,
+          0.6487112426757813
+        ],
+        [
+          0.6260534057617188,
+          0.49586383056640626,
+          0.8512432861328125
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_AdductorMagnus_smooth.stl",
+      "sha256": "964660d52fe040148850ba4c0e1fcae5734dc177fc4496ddaa7dcdae8232efdb",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "AdductorMagnus",
+      "triangles": 31630,
+      "bounds": [
+        [
+          0.5668867797851562,
+          0.3813259887695313,
+          0.5752346801757813
+        ],
+        [
+          0.657851806640625,
+          0.46917425537109375,
+          0.8433658447265625
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_BicepsFemorisLongHead_smooth.stl",
+      "sha256": "c3f763614bc4b09d06d658c278f649ec997c7127984f4aa347ee588d1dfc57c2",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "BicepsFemorisLongHead",
+      "triangles": 17434,
+      "bounds": [
+        [
+          0.616342529296875,
+          0.3579276123046875,
+          0.5503729248046875
+        ],
+        [
+          0.6616427001953125,
+          0.40847900390625,
+          0.7903018188476563
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_BicepsFemorisShortHead_smooth.stl",
+      "sha256": "a977a28551f94921241720956ae76d6bbec0a2a540482171dbd646fd2e622d30",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "BicepsFemorisShortHead",
+      "triangles": 11098,
+      "bounds": [
+        [
+          0.629842529296875,
+          0.3805418090820312,
+          0.48448159790039064
+        ],
+        [
+          0.6598964233398438,
+          0.43426449584960936,
+          0.6974661865234375
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_ExtensorDigitorumLongus_smooth.stl",
+      "sha256": "84060610d5646e13bf03fb25a8d036c12a03619e4d80320fc6b24f9560ef948b",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "ExtensorDigitorumLongus",
+      "triangles": 9920,
+      "bounds": [
+        [
+          0.6109827270507813,
+          0.3866997985839844,
+          0.15903997802734374
+        ],
+        [
+          0.6583602905273438,
+          0.4163092346191406,
+          0.4545888671875
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_ExtensorHallucisLongus_smooth.stl",
+      "sha256": "f7845628718a4a06a51f113cb4eb80c57abe0b0766070f16a5bdc52968a2f58a",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "ExtensorHallucisLongus",
+      "triangles": 3674,
+      "bounds": [
+        [
+          0.608145263671875,
+          0.3880186767578125,
+          0.16602090454101562
+        ],
+        [
+          0.6332437744140625,
+          0.4198935241699219,
+          0.34058828735351565
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_FlexorDigitorumLongus_smooth.stl",
+      "sha256": "f9fa7ba65ee797d5259519f939b9e63babb200fbbb17565186e44d3e457b2b10",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "FlexorDigitorumLongus",
+      "triangles": 6282,
+      "bounds": [
+        [
+          0.569037109375,
+          0.3894107971191406,
+          0.16462042236328125
+        ],
+        [
+          0.6124044189453125,
+          0.41448492431640627,
+          0.40011358642578126
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_FlexorHallucisLongus_smooth.stl",
+      "sha256": "154a32d31e4a48b3fb4667e0e2fec8397f4cb52ec3cf2209ecce1d7d78eeb17e",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "FlexorHallucisLongus",
+      "triangles": 9074,
+      "bounds": [
+        [
+          0.578188232421875,
+          0.3674591064453125,
+          0.16002537536621095
+        ],
+        [
+          0.6294479370117188,
+          0.3960077209472656,
+          0.3601243896484375
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_GastrocnemiusLateral_smooth.stl",
+      "sha256": "34e25153cbd4b6f50446394567a6007f3ec9a24fabc0afd5cca7c8b48a619bc9",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "GastrocnemiusLateral",
+      "triangles": 12038,
+      "bounds": [
+        [
+          0.5897568969726562,
+          0.3432786865234375,
+          0.33774761962890626
+        ],
+        [
+          0.6456824951171874,
+          0.40001177978515623,
+          0.5270385131835937
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_GastrocnemiusMedial_smooth.stl",
+      "sha256": "10abf1d57dc16b89657b43cd61d65921ffd3179e1ee89f7105ddf706d5f14edd",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "GastrocnemiusMedial",
+      "triangles": 19080,
+      "bounds": [
+        [
+          0.5637385864257812,
+          0.35408480834960937,
+          0.33122079467773435
+        ],
+        [
+          0.6223458251953125,
+          0.42744085693359374,
+          0.54169091796875
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_GluteusMaximus_smooth.stl",
+      "sha256": "95f8e77df68e81fd714432dafd6fc7455e64f3a89cc8320ef75057f564165153",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "GluteusMaximus",
+      "triangles": 48436,
+      "bounds": [
+        [
+          0.5512711791992188,
+          0.3376244201660156,
+          0.7489995727539063
+        ],
+        [
+          0.71126171875,
+          0.41737850952148436,
+          1.0000687866210938
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_GluteusMedius_smooth.stl",
+      "sha256": "1e7f545ab8c180d0a0f0e1272a9ef9f881fc6b447f4936edf9760ad6919c5c09",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "GluteusMedius",
+      "triangles": 26158,
+      "bounds": [
+        [
+          0.6147728881835938,
+          0.37639273071289064,
+          0.8476045532226563
+        ],
+        [
+          0.7087347412109375,
+          0.4824934387207031,
+          1.0229833984375
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_GluteusMinimus_smooth.stl",
+      "sha256": "86832a41fa939245a6bb6037dd24e12bc8e75cee21b770f31ebf5de57d2efbb2",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "GluteusMinimus",
+      "triangles": 15914,
+      "bounds": [
+        [
+          0.6162266845703125,
+          0.40447259521484374,
+          0.8630349731445313
+        ],
+        [
+          0.6869971313476563,
+          0.49096917724609374,
+          0.9876409301757813
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_Gracilis_smooth.stl",
+      "sha256": "7c6650d608327ae38a636c0e99a0e8f84d660a7742d35eda2c4d64c1049bcbee",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "Gracilis",
+      "triangles": 13012,
+      "bounds": [
+        [
+          0.561060791015625,
+          0.39457907104492185,
+          0.56290625
+        ],
+        [
+          0.5849540405273438,
+          0.47308465576171876,
+          0.8280648803710937
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_Illiacus_smooth.stl",
+      "sha256": "9ca4dbef90d5fe3e5b2aa1a987d89a65766cb43951593564e155c962b9e22277",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "Illiacus",
+      "triangles": 20536,
+      "bounds": [
+        [
+          0.5945368041992187,
+          0.4105704345703125,
+          0.8000853881835938
+        ],
+        [
+          0.6647642211914062,
+          0.5030663146972656,
+          1.0181571655273438
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_InferiorGemellus_smooth.stl",
+      "sha256": "c965c45e3c4a8e778071ea3e900b92c9c3513a3b692bc7346f88131bbb2eb922",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "InferiorGemellus",
+      "triangles": 2078,
+      "bounds": [
+        [
+          0.6187586059570312,
+          0.39311181640625,
+          0.8612725830078125
+        ],
+        [
+          0.6600431518554688,
+          0.4179291076660156,
+          0.8798457641601563
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_ObturatorExternus_smooth.stl",
+      "sha256": "2a543b783f37a530fb8b5fa7bad8c03eefa2f0a506fa8e8b80afe8c1f1afd6d3",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "ObturatorExternus",
+      "triangles": 15444,
+      "bounds": [
+        [
+          0.55950341796875,
+          0.42199710083007813,
+          0.8258646850585938
+        ],
+        [
+          0.6537802734375,
+          0.4877070617675781,
+          0.8671390991210938
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_ObturatorInternus_smooth.stl",
+      "sha256": "3449473382c880eebdcd04eb8e4d02298d2f5a78e7fe4d509d4d3f3a03a59633",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "ObturatorInternus",
+      "triangles": 25500,
+      "bounds": [
+        [
+          0.5670103149414063,
+          0.38968878173828125,
+          0.8325220947265625
+        ],
+        [
+          0.6117871704101563,
+          0.467689453125,
+          0.9320240478515625
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_Pectineus_smooth.stl",
+      "sha256": "a6ef5f42d8a8495f40b5b21243efff022dc1500c5e460746d28c70deb8407d0a",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "Pectineus",
+      "triangles": 6470,
+      "bounds": [
+        [
+          0.5767021484375,
+          0.429229736328125,
+          0.805352294921875
+        ],
+        [
+          0.6456044311523438,
+          0.4970372314453125,
+          0.899703857421875
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_PeroneusLongus_smooth.stl",
+      "sha256": "6edd38330d1710e9623bd1ad73da1cb56210faf108ee05b5a12881d159f6f986",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "PeroneusLongus",
+      "triangles": 16506,
+      "bounds": [
+        [
+          0.5910111083984375,
+          0.3600780944824219,
+          0.1510146789550781
+        ],
+        [
+          0.6629022827148437,
+          0.4106488342285156,
+          0.4721931762695312
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_Piriformis_smooth.stl",
+      "sha256": "82ab5a0cd94f65efaf7a8769ab14a7b9af5ad80d7db6c98350268380a86ad9b8",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "Piriformis",
+      "triangles": 6188,
+      "bounds": [
+        [
+          0.5490753784179687,
+          0.3579184265136719,
+          0.8925800170898438
+        ],
+        [
+          0.636828125,
+          0.4056997375488281,
+          0.9564349365234375
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_Plantaris_smooth.stl",
+      "sha256": "9d2a5ea9175d38e91e8a241fcf382478f7f98d5c22f848fcb2091c964b669b63",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "Plantaris",
+      "triangles": 1672,
+      "bounds": [
+        [
+          0.6165172729492188,
+          0.38563742065429685,
+          0.46846087646484375
+        ],
+        [
+          0.6576744384765625,
+          0.42310150146484377,
+          0.532173583984375
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_Popliteus_smooth.stl",
+      "sha256": "98eca5dd4573fb39be01fde9a2c623dc0b0ea9a90cc7d3b101678acf20f96f19",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "Popliteus",
+      "triangles": 3100,
+      "bounds": [
+        [
+          0.5983309936523438,
+          0.3925516662597656,
+          0.4071728515625
+        ],
+        [
+          0.6303863525390625,
+          0.42143060302734375,
+          0.4828459167480469
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_PsoasMajor_smooth.stl",
+      "sha256": "1123b9cb0d62856f23f478c26ec7bb91d92154f5bb77eb11840374bfeee4e497",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "PsoasMajor",
+      "triangles": 17756,
+      "bounds": [
+        [
+          0.5518275756835938,
+          0.38639901733398435,
+          0.8630845947265625
+        ],
+        [
+          0.6236541137695313,
+          0.4877823486328125,
+          1.1700955810546876
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_QuadratisFemoris_smooth.stl",
+      "sha256": "49532d7cb27df2dc114cfb3d8ff71dad9fc5dc4e79e5b95ecc7a183788050b5e",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "QuadratisFemoris",
+      "triangles": 69148,
+      "bounds": [
+        [
+          0.6060911865234375,
+          0.39858456420898436,
+          0.8136258544921875
+        ],
+        [
+          0.6697550659179687,
+          0.43056787109375,
+          0.8733248291015625
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_RectusFemoris_smooth.stl",
+      "sha256": "e40b0f8b15dc53974cbdf8cd2b64a347759f95721698b94669a4e70866fcc42e",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "RectusFemoris",
+      "triangles": 15296,
+      "bounds": [
+        [
+          0.62431298828125,
+          0.4691546630859375,
+          0.6150471801757813
+        ],
+        [
+          0.6788983764648437,
+          0.4992064208984375,
+          0.8953381958007812
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_Sartorius_smooth.stl",
+      "sha256": "d3e9a8cdf6a50332f64697e8fcbe6acfa424244fc2b849f41703c11aa4c37cb7",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "Sartorius",
+      "triangles": 19524,
+      "bounds": [
+        [
+          0.5670687866210937,
+          0.40067529296875,
+          0.4809893798828125
+        ],
+        [
+          0.6661380004882812,
+          0.5041435241699219,
+          0.9269114379882812
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_Semimembranosus_smooth.stl",
+      "sha256": "bd70234a1b0cc9d2e51059168bf820ce10069683111baa8bf7fa758af0776a82",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "Semimembranosus",
+      "triangles": 19864,
+      "bounds": [
+        [
+          0.5734169921875,
+          0.36463446044921877,
+          0.510010986328125
+        ],
+        [
+          0.6230833129882812,
+          0.4252851257324219,
+          0.7741673583984375
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_Semitendonosus_smooth.stl",
+      "sha256": "b16187c78985efd7e41103d269f12a80151d2db640dbb1164af9b2d64635d98a",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "Semitendonosus",
+      "triangles": 13716,
+      "bounds": [
+        [
+          0.5993768920898438,
+          0.36190420532226564,
+          0.5597607421875
+        ],
+        [
+          0.6336245727539063,
+          0.3996645202636719,
+          0.8237959594726563
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_Soleus_smooth.stl",
+      "sha256": "8cc32bfe0017c557e912821e69b39f6befb91bb2b7ea5f113bb1a6f088466647",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "Soleus",
+      "triangles": 28560,
+      "bounds": [
+        [
+          0.5724237060546875,
+          0.3492742614746094,
+          0.18339967346191408
+        ],
+        [
+          0.6535421142578125,
+          0.42506494140625,
+          0.47339215087890624
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_SuperiorGemellus_smooth.stl",
+      "sha256": "1cdbd081fba6d8da105a208329de38564694ea920ab576eb5644fed5fbab67c6",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "SuperiorGemellus",
+      "triangles": 1060,
+      "bounds": [
+        [
+          0.623922119140625,
+          0.40462149047851564,
+          0.869998046875
+        ],
+        [
+          0.6637780151367187,
+          0.42713174438476564,
+          0.8859561767578125
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_TensorFasciaeLatae_smooth.stl",
+      "sha256": "82287447f6139f1d32bbee0fb98a1e723729eddf456de38787e58347ced6cc38",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "TensorFasciaeLatae",
+      "triangles": 9328,
+      "bounds": [
+        [
+          0.6609236450195313,
+          0.4445874328613281,
+          0.8028771362304687
+        ],
+        [
+          0.7103291625976562,
+          0.4976787414550781,
+          0.942494140625
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_TibialisAnterior_smooth.stl",
+      "sha256": "7aa382247eda888d8958ae74c256a2e236c4347bb06180c66fa99d65d194dd06",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "TibialisAnterior",
+      "triangles": 11886,
+      "bounds": [
+        [
+          0.6077220458984375,
+          0.39683673095703126,
+          0.18983287048339845
+        ],
+        [
+          0.6567139282226563,
+          0.4354546508789062,
+          0.459558837890625
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_TibialisPosterior_smooth.stl",
+      "sha256": "9257f1346df96775616931a232c99edda7bac1e477cf765b537367153591a38c",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "TibialisPosterior",
+      "triangles": 9954,
+      "bounds": [
+        [
+          0.601011962890625,
+          0.3833658752441406,
+          0.22373204040527345
+        ],
+        [
+          0.6400061645507813,
+          0.4151921691894531,
+          0.4492342834472656
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_VastusIntermedius_smooth.stl",
+      "sha256": "ac839eb106a27d3f605403509e9b506bb955b5a3b1db170f1b0212da37fe3848",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "VastusIntermedius",
+      "triangles": 35670,
+      "bounds": [
+        [
+          0.6230264282226563,
+          0.39233084106445315,
+          0.529362060546875
+        ],
+        [
+          0.684143798828125,
+          0.474451416015625,
+          0.8378870849609374
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_VastusLateralis_smooth.stl",
+      "sha256": "857cc80dd71f99150d802c53b54f1b7c0a35a2d2c3369985ea78e806ef46a5e8",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "VastusLateralis",
+      "triangles": 40734,
+      "bounds": [
+        [
+          0.6459854736328124,
+          0.3917528076171875,
+          0.5280117797851562
+        ],
+        [
+          0.705155029296875,
+          0.48987210083007815,
+          0.8611619873046875
+        ]
+      ]
+    },
+    {
+      "file": "Right/VHF_Right_Muscle_VastusMedialis_smooth.stl",
+      "sha256": "4d26e341ff41cb02cd3e5a1128e2ab8d10c3896dbdde681d9a49419780baa0b5",
+      "side": "right",
+      "kind": "muscle",
+      "structure": "VastusMedialis",
+      "triangles": 24358,
+      "bounds": [
+        [
+          0.5796971435546875,
+          0.4314315185546875,
+          0.5191790771484375
+        ],
+        [
+          0.6543883056640625,
+          0.48498297119140626,
+          0.8136566772460937
+        ]
+      ]
+    }
+  ],
+  "muscles": [
+    {
+      "id": "VHF0000",
+      "name": "Adductor brevis (left)",
+      "source": "Left/VHF_Left_Muscle_AdductorBrevis_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0001",
+      "name": "Adductor longus (left)",
+      "source": "Left/VHF_Left_Muscle_AdductorLongus_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0002",
+      "name": "Adductor magnus (left)",
+      "source": "Left/VHF_Left_Muscle_AdductorMagnus_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0003",
+      "name": "Biceps femoris long (left)",
+      "source": "Left/VHF_Left_Muscle_BicepsFemorisLong_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0004",
+      "name": "Biceps femoris short (left)",
+      "source": "Left/VHF_Left_Muscle_BicepsFemorisShort_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0016",
+      "name": "Extensor digitorum longus (left)",
+      "source": "Left/VHF_Left_Muscle_ExtensorDigitorumLongus_smooth.stl",
+      "fitGroup": "left-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0017",
+      "name": "Extensor hallucis longus (left)",
+      "source": "Left/VHF_Left_Muscle_ExtensorHallucisLongus_smooth.stl",
+      "fitGroup": "left-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0018",
+      "name": "Flexor digitorum longus (left)",
+      "source": "Left/VHF_Left_Muscle_FlexorDigitorumLongus_smooth.stl",
+      "fitGroup": "left-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0019",
+      "name": "Flexor hallucis longus (left)",
+      "source": "Left/VHF_Left_Muscle_FlexorHallucisLongus_smooth.stl",
+      "fitGroup": "left-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0020",
+      "name": "Gastrocnemius lateral (left)",
+      "source": "Left/VHF_Left_Muscle_GastrocnemiusLateral_smooth.stl",
+      "fitGroup": "left-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0005",
+      "name": "Gastrocnemius medial (left)",
+      "source": "Left/VHF_Left_Muscle_GastrocnemiusMedial_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0025",
+      "name": "Gluteus maximus (left)",
+      "source": "Left/VHF_Left_Muscle_GluteusMaximus_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0026",
+      "name": "Gluteus medius (left)",
+      "source": "Left/VHF_Left_Muscle_GluteusMedius_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0027",
+      "name": "Gluteus minimus (left)",
+      "source": "Left/VHF_Left_Muscle_GluteusMinimus_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0006",
+      "name": "Gracilis (left)",
+      "source": "Left/VHF_Left_Muscle_Gracilis_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0028",
+      "name": "Iliacus (left)",
+      "source": "Left/VHF_Left_Muscle_Illiacus_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0029",
+      "name": "Inferior gemellus (left)",
+      "source": "Left/VHF_Left_Muscle_InferiorGemellus_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0030",
+      "name": "Obturator externus (left)",
+      "source": "Left/VHF_Left_Muscle_ObturatorExternus_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0031",
+      "name": "Obturator internus (left)",
+      "source": "Left/VHF_Left_Muscle_ObturatorInternus_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0032",
+      "name": "Pectineus (left)",
+      "source": "Left/VHF_Left_Muscle_Pectineus_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0021",
+      "name": "Peroneus longus (left)",
+      "source": "Left/VHF_Left_Muscle_PeroneusLongus_smooth.stl",
+      "fitGroup": "left-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0033",
+      "name": "Piriformis (left)",
+      "source": "Left/VHF_Left_Muscle_Piriformis_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0007",
+      "name": "Plantaris (left)",
+      "source": "Left/VHF_Left_Muscle_Plantaris_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0008",
+      "name": "Popliteus (left)",
+      "source": "Left/VHF_Left_Muscle_Popliteus_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0034",
+      "name": "Psoas major (left)",
+      "source": "Left/VHF_Left_Muscle_PsoasMajor_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0035",
+      "name": "Quadratus femoris (left)",
+      "source": "Left/VHF_Left_Muscle_QuadratusFemoris_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0009",
+      "name": "Rectus femoris (left)",
+      "source": "Left/VHF_Left_Muscle_RectusFemoris_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0010",
+      "name": "Sartorius (left)",
+      "source": "Left/VHF_Left_Muscle_Sartorius_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0011",
+      "name": "Semimembranosus (left)",
+      "source": "Left/VHF_Left_Muscle_Semimembranosus_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0012",
+      "name": "Semitendinosus (left)",
+      "source": "Left/VHF_Left_Muscle_Semitendinosus_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0022",
+      "name": "Soleus (left)",
+      "source": "Left/VHF_Left_Muscle_Soleus_smooth.stl",
+      "fitGroup": "left-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0036",
+      "name": "Superior gemellus (left)",
+      "source": "Left/VHF_Left_Muscle_SuperiorGemellus_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0037",
+      "name": "Tensor fasciae latae (left)",
+      "source": "Left/VHF_Left_Muscle_TensorFasciaeLatae_smooth.stl",
+      "fitGroup": "left-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0023",
+      "name": "Tibialis anterior (left)",
+      "source": "Left/VHF_Left_Muscle_TibialisAnterior_smooth.stl",
+      "fitGroup": "left-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0024",
+      "name": "Tibialis posterior (left)",
+      "source": "Left/VHF_Left_Muscle_TibialisPosterior_smooth.stl",
+      "fitGroup": "left-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0013",
+      "name": "Vastus intermedius (left)",
+      "source": "Left/VHF_Left_Muscle_VastusIntermedius_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0014",
+      "name": "Vastus lateralis (left)",
+      "source": "Left/VHF_Left_Muscle_VastusLateralis_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0015",
+      "name": "Vastus medialis (left)",
+      "source": "Left/VHF_Left_Muscle_VastusMedialis_smooth.stl",
+      "fitGroup": "left-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0038",
+      "name": "Adductor brevis (right)",
+      "source": "Right/VHF_Right_Muscle_AdductorBrevis_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0039",
+      "name": "Adductor longus (right)",
+      "source": "Right/VHF_Right_Muscle_AdductorLongus_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0040",
+      "name": "Adductor magnus (right)",
+      "source": "Right/VHF_Right_Muscle_AdductorMagnus_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0041",
+      "name": "Biceps femoris long head (right)",
+      "source": "Right/VHF_Right_Muscle_BicepsFemorisLongHead_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0.000029052948935515133
+    },
+    {
+      "id": "VHF0042",
+      "name": "Biceps femoris short head (right)",
+      "source": "Right/VHF_Right_Muscle_BicepsFemorisShortHead_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0.000029052948935515133
+    },
+    {
+      "id": "VHF0054",
+      "name": "Extensor digitorum longus (right)",
+      "source": "Right/VHF_Right_Muscle_ExtensorDigitorumLongus_smooth.stl",
+      "fitGroup": "right-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0055",
+      "name": "Extensor hallucis longus (right)",
+      "source": "Right/VHF_Right_Muscle_ExtensorHallucisLongus_smooth.stl",
+      "fitGroup": "right-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0056",
+      "name": "Flexor digitorum longus (right)",
+      "source": "Right/VHF_Right_Muscle_FlexorDigitorumLongus_smooth.stl",
+      "fitGroup": "right-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0057",
+      "name": "Flexor hallucis longus (right)",
+      "source": "Right/VHF_Right_Muscle_FlexorHallucisLongus_smooth.stl",
+      "fitGroup": "right-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0058",
+      "name": "Gastrocnemius lateral (right)",
+      "source": "Right/VHF_Right_Muscle_GastrocnemiusLateral_smooth.stl",
+      "fitGroup": "right-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0043",
+      "name": "Gastrocnemius medial (right)",
+      "source": "Right/VHF_Right_Muscle_GastrocnemiusMedial_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0063",
+      "name": "Gluteus maximus (right)",
+      "source": "Right/VHF_Right_Muscle_GluteusMaximus_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0064",
+      "name": "Gluteus medius (right)",
+      "source": "Right/VHF_Right_Muscle_GluteusMedius_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0065",
+      "name": "Gluteus minimus (right)",
+      "source": "Right/VHF_Right_Muscle_GluteusMinimus_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0044",
+      "name": "Gracilis (right)",
+      "source": "Right/VHF_Right_Muscle_Gracilis_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0066",
+      "name": "Iliacus (right)",
+      "source": "Right/VHF_Right_Muscle_Illiacus_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0067",
+      "name": "Inferior gemellus (right)",
+      "source": "Right/VHF_Right_Muscle_InferiorGemellus_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0068",
+      "name": "Obturator externus (right)",
+      "source": "Right/VHF_Right_Muscle_ObturatorExternus_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0069",
+      "name": "Obturator internus (right)",
+      "source": "Right/VHF_Right_Muscle_ObturatorInternus_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0070",
+      "name": "Pectineus (right)",
+      "source": "Right/VHF_Right_Muscle_Pectineus_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0059",
+      "name": "Peroneus longus (right)",
+      "source": "Right/VHF_Right_Muscle_PeroneusLongus_smooth.stl",
+      "fitGroup": "right-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0071",
+      "name": "Piriformis (right)",
+      "source": "Right/VHF_Right_Muscle_Piriformis_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0045",
+      "name": "Plantaris (right)",
+      "source": "Right/VHF_Right_Muscle_Plantaris_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0046",
+      "name": "Popliteus (right)",
+      "source": "Right/VHF_Right_Muscle_Popliteus_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0072",
+      "name": "Psoas major (right)",
+      "source": "Right/VHF_Right_Muscle_PsoasMajor_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0073",
+      "name": "Quadratus femoris (right)",
+      "source": "Right/VHF_Right_Muscle_QuadratisFemoris_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0047",
+      "name": "Rectus femoris (right)",
+      "source": "Right/VHF_Right_Muscle_RectusFemoris_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0048",
+      "name": "Sartorius (right)",
+      "source": "Right/VHF_Right_Muscle_Sartorius_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0049",
+      "name": "Semimembranosus (right)",
+      "source": "Right/VHF_Right_Muscle_Semimembranosus_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0050",
+      "name": "Semitendinosus (right)",
+      "source": "Right/VHF_Right_Muscle_Semitendonosus_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0060",
+      "name": "Soleus (right)",
+      "source": "Right/VHF_Right_Muscle_Soleus_smooth.stl",
+      "fitGroup": "right-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0074",
+      "name": "Superior gemellus (right)",
+      "source": "Right/VHF_Right_Muscle_SuperiorGemellus_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0075",
+      "name": "Tensor fasciae latae (right)",
+      "source": "Right/VHF_Right_Muscle_TensorFasciaeLatae_smooth.stl",
+      "fitGroup": "right-hip",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0061",
+      "name": "Tibialis anterior (right)",
+      "source": "Right/VHF_Right_Muscle_TibialisAnterior_smooth.stl",
+      "fitGroup": "right-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0062",
+      "name": "Tibialis posterior (right)",
+      "source": "Right/VHF_Right_Muscle_TibialisPosterior_smooth.stl",
+      "fitGroup": "right-shank",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0051",
+      "name": "Vastus intermedius (right)",
+      "source": "Right/VHF_Right_Muscle_VastusIntermedius_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0052",
+      "name": "Vastus lateralis (right)",
+      "source": "Right/VHF_Right_Muscle_VastusLateralis_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    },
+    {
+      "id": "VHF0053",
+      "name": "Vastus medialis (right)",
+      "source": "Right/VHF_Right_Muscle_VastusMedialis_smooth.stl",
+      "fitGroup": "right-thigh",
+      "importManifestBoundResidualMm": 0
+    }
+  ],
+  "calf": [
+    {
+      "side": "left",
+      "ids": [
+        "VHF0005",
+        "VHF0020"
+      ],
+      "names": [
+        "Gastrocnemius medial (left)",
+        "Gastrocnemius lateral (left)"
+      ],
+      "fitGroups": [
+        "left-thigh",
+        "left-shank"
+      ],
+      "raw": {
+        "forwardVertexToSurfaceMm": 0.04998593023430912,
+        "reverseVertexToSurfaceMm": 0.049988588614975724,
+        "intersectingTrianglePairs": 0,
+        "strictPlaneStraddlingPairs": 0,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0
+      },
+      "fittedBeforeSimplification": {
+        "forwardVertexToSurfaceMm": 33.17251739693152,
+        "reverseVertexToSurfaceMm": 33.17635086428031,
+        "intersectingTrianglePairs": 0,
+        "strictPlaneStraddlingPairs": 0,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0
+      }
+    },
+    {
+      "side": "left",
+      "ids": [
+        "VHF0005",
+        "VHF0022"
+      ],
+      "names": [
+        "Gastrocnemius medial (left)",
+        "Soleus (left)"
+      ],
+      "fitGroups": [
+        "left-thigh",
+        "left-shank"
+      ],
+      "raw": {
+        "forwardVertexToSurfaceMm": 0.0499581402435346,
+        "reverseVertexToSurfaceMm": 0.04995110412621392,
+        "intersectingTrianglePairs": 0,
+        "strictPlaneStraddlingPairs": 0,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0
+      },
+      "fittedBeforeSimplification": {
+        "forwardVertexToSurfaceMm": 28.315332887036277,
+        "reverseVertexToSurfaceMm": 28.315332887036277,
+        "intersectingTrianglePairs": 0,
+        "strictPlaneStraddlingPairs": 0,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0
+      }
+    },
+    {
+      "side": "left",
+      "ids": [
+        "VHF0020",
+        "VHF0022"
+      ],
+      "names": [
+        "Gastrocnemius lateral (left)",
+        "Soleus (left)"
+      ],
+      "fitGroups": [
+        "left-shank",
+        "left-shank"
+      ],
+      "raw": {
+        "forwardVertexToSurfaceMm": 0.05232943160574911,
+        "reverseVertexToSurfaceMm": 0.049986104442520496,
+        "intersectingTrianglePairs": 0,
+        "strictPlaneStraddlingPairs": 0,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0
+      },
+      "fittedBeforeSimplification": {
+        "forwardVertexToSurfaceMm": 0.05258055656366095,
+        "reverseVertexToSurfaceMm": 0.05024002146885381,
+        "intersectingTrianglePairs": 0,
+        "strictPlaneStraddlingPairs": 0,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0
+      }
+    },
+    {
+      "side": "right",
+      "ids": [
+        "VHF0043",
+        "VHF0058"
+      ],
+      "names": [
+        "Gastrocnemius medial (right)",
+        "Gastrocnemius lateral (right)"
+      ],
+      "fitGroups": [
+        "right-thigh",
+        "right-shank"
+      ],
+      "raw": {
+        "forwardVertexToSurfaceMm": 0.059989017046826576,
+        "reverseVertexToSurfaceMm": 0.060846588815315204,
+        "intersectingTrianglePairs": 0,
+        "strictPlaneStraddlingPairs": 0,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0
+      },
+      "fittedBeforeSimplification": {
+        "forwardVertexToSurfaceMm": 31.49649310482696,
+        "reverseVertexToSurfaceMm": 31.49590770130801,
+        "intersectingTrianglePairs": 0,
+        "strictPlaneStraddlingPairs": 0,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0
+      }
+    },
+    {
+      "side": "right",
+      "ids": [
+        "VHF0043",
+        "VHF0060"
+      ],
+      "names": [
+        "Gastrocnemius medial (right)",
+        "Soleus (right)"
+      ],
+      "fitGroups": [
+        "right-thigh",
+        "right-shank"
+      ],
+      "raw": {
+        "forwardVertexToSurfaceMm": 0.05006101205341393,
+        "reverseVertexToSurfaceMm": 0.049989466033980995,
+        "intersectingTrianglePairs": 0,
+        "strictPlaneStraddlingPairs": 0,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0
+      },
+      "fittedBeforeSimplification": {
+        "forwardVertexToSurfaceMm": 32.43812737339608,
+        "reverseVertexToSurfaceMm": 32.43025463881819,
+        "intersectingTrianglePairs": 0,
+        "strictPlaneStraddlingPairs": 0,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0
+      }
+    },
+    {
+      "side": "right",
+      "ids": [
+        "VHF0058",
+        "VHF0060"
+      ],
+      "names": [
+        "Gastrocnemius lateral (right)",
+        "Soleus (right)"
+      ],
+      "fitGroups": [
+        "right-shank",
+        "right-shank"
+      ],
+      "raw": {
+        "forwardVertexToSurfaceMm": 0.04999877201765132,
+        "reverseVertexToSurfaceMm": 0.04998054018001869,
+        "intersectingTrianglePairs": 0,
+        "strictPlaneStraddlingPairs": 0,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0
+      },
+      "fittedBeforeSimplification": {
+        "forwardVertexToSurfaceMm": 0.049488095642730205,
+        "reverseVertexToSurfaceMm": 0.04949099103487441,
+        "intersectingTrianglePairs": 0,
+        "strictPlaneStraddlingPairs": 0,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0
+      }
+    }
+  ],
+  "limitations": [
+    "Pre-simplification manifest bounds and grouping are reproduced, not every packed vertex.",
+    "Raw and fitted calf measurements use the same STL geometry; their change isolates the recorded similarity transforms, not anatomical attachment validity.",
+    "Nearest vertex-to-surface distances are not exact continuous triangle minima or tendon attachment lengths.",
+    "Crossing counts are surface diagnostics, not solid penetration depths or clinical approval.",
+    "Only six calf muscle-pair relations are measured here; 76 bounds checks are not all-muscle anatomical validation."
+  ],
+  "provenance": [
+    {
+      "file": "atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "file": "audit-donor-source.mjs",
+      "sha256": "d963735af528905e85c31ae8948f3bb1e65cd8ec78a9c44b252943799687d648"
+    },
+    {
+      "file": "upstream-import-lower-limb.mjs",
+      "sha256": "2388091af0f75ac9a8e4f15c6e15e13437e6fc955085843bf27745848cea57c9"
+    },
+    {
+      "file": "README.txt",
+      "sha256": "e91a46952ff48e16773afc3eb1a5e9aa80cac3c727a9ae61e5a011bcee13fdb1"
+    }
+  ]
+}

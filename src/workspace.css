@@ -1283,8 +1283,8 @@ body:has(.anatomy-workspace) .site-footer {
 }
 .selection-description { margin:7px 0 3px; color:#40544c; font-size:12px; line-height:1.5; }
 .selection-latin,.selection-source { display:block; margin-top:3px; color:#4f6258; font-size:12px; line-height:1.4; }
-.ct-source-details { margin-top:6px; color:#40544c; font-size:12px; line-height:1.4; }
-.ct-source-details summary { cursor:pointer; }
+.ct-source-details, .anatomy-source-details { margin-top:6px; color:#40544c; font-size:12px; line-height:1.4; }
+.ct-source-details summary, .anatomy-source-details summary { cursor:pointer; }
 .organ-detail-parts { margin-top:8px; border-top:1px solid #d7dfd1; padding-top:7px; }
 .organ-detail-parts summary { cursor:pointer; color:#315f68; font-size:12px; font-weight:700; }
 .organ-detail-parts>div { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; max-height:190px; margin-top:7px; overflow:auto; }
@@ -1306,6 +1306,7 @@ body:has(.anatomy-workspace) .site-footer {
 }
 .selection-actions { flex-wrap:wrap; }
 @media(max-width:700px){
-  .anatomy-workspace .selection-card { left:10px; width:calc(100% - 84px); max-height:210px; overflow:auto; }
+  .anatomy-workspace .selection-card { left:10px; width:calc(100% - 84px); max-height:210px; overflow:hidden; display:grid; grid-template-rows:minmax(0,1fr) auto; }
+  .anatomy-workspace .selection-card>div:first-child { min-height:0; overflow:auto; }
   .organ-detail-parts>div { grid-template-columns:1fr; max-height:130px; }
 }

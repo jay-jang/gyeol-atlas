@@ -61,8 +61,8 @@ const structures = manifest.parts.map((part) => {
     bodyRegion: limbSkeletonRegion({ layer, name: part.name }) || (part.bounds[1][1] > 1.42 ? "head" : part.bounds[0][1] < .55 ? "lower-limb" : part.bounds[0][1] < .82 ? "pelvis" : part.bounds[0][1] < 1.08 ? "abdomen" : "chest"),
     hierarchy: [part.system, ...(group ? [group.name, group.id] : [])],
     group: group?.id,
-    source: part.system === "donor-muscle" ? "Andreassen et al. · 여성 기증자 하체 근육" : part.system === "borrowed" ? "BodyParts3D · 남성 유래 보완 골격" : "NIH Human Reference Atlas",
-    description: `${part.name} · 여성 참조 아틀라스의 ${part.system} 세부 구조`,
+    source: part.system === "brain" ? "HRA · Allen 기반 여성 신체용 참조 뇌" : part.system === "donor-muscle" ? "Andreassen et al. · 여성 기증자 하체 근육" : part.system === "borrowed" ? "BodyParts3D · 남성 유래 보완 골격" : "NIH Human Reference Atlas",
+    description: part.system === "brain" ? `${part.name} · Allen 참조 뇌를 여성 신체에 맞춘 세부 구조. 여성 기증자 뇌 스캔이 아닙니다.` : `${part.name} · 여성 참조 아틀라스의 ${part.system} 세부 구조`,
   };
 });
 fs.writeFileSync("data/female-atlas-structures.json", JSON.stringify(structures, null, 2) + "\n");

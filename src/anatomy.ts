@@ -117,7 +117,7 @@ export function stageDescription(stage: number, sex: "male" | "female") {
     organ: "여성 CT 자료는 전신에 합쳐지지 않은 별도 상세입니다. 전통적 장부 대응은 압력 전달 경로가 아닙니다.",
     vessel: "여성 원본에 수록된 혈관을 검색·선택합니다. 전신 미세혈관 전체를 뜻하지 않습니다.",
     lymph: "여성 원본에 명명된 림프 구조입니다. 남성 자료와 수록 범위가 다릅니다.",
-    nerve: "뇌·신경·감각기관의 수록 모형입니다. 전신 말초신경 전체를 포함하지 않습니다.",
+    nerve: "뇌는 Allen 기반 여성 신체용 참조 모델이며 원본 좌우 표기와 전신 방향의 불일치가 확인됐습니다. 전신 말초신경 전체를 포함하지 않습니다.",
   };
   return `여성 전신 참조의 ${layerNames[layer]} 모형 ${count}개. ${limitations[layer]}`;
 }
