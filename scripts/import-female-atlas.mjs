@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import { createHash } from "node:crypto";
+import { limbSkeletonRegion } from "../src/anatomy-region.ts";
 
 const manifest = JSON.parse(fs.readFileSync("public/models/female/atlas-female.json", "utf8"));
 const layerForSystem = {
@@ -57,7 +58,7 @@ const structures = manifest.parts.map((part) => {
     layer,
     sex: "female",
     model: "HRA female whole-body atlas",
-    bodyRegion: part.bounds[1][1] > 1.42 ? "head" : part.bounds[0][1] < .55 ? "lower-limb" : part.bounds[0][1] < .82 ? "pelvis" : part.bounds[0][1] < 1.08 ? "abdomen" : "chest",
+    bodyRegion: limbSkeletonRegion({ layer, name: part.name }) || (part.bounds[1][1] > 1.42 ? "head" : part.bounds[0][1] < .55 ? "lower-limb" : part.bounds[0][1] < .82 ? "pelvis" : part.bounds[0][1] < 1.08 ? "abdomen" : "chest"),
     hierarchy: [part.system, ...(group ? [group.name, group.id] : [])],
     group: group?.id,
     source: part.system === "donor-muscle" ? "Andreassen et al. · 여성 기증자 하체 근육" : part.system === "borrowed" ? "BodyParts3D · 남성 유래 보완 골격" : "NIH Human Reference Atlas",

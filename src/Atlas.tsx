@@ -1,4 +1,5 @@
 import { assetUrl } from "./assets";
+import { anatomyRegionMatches } from "./anatomy-region";
 import {
   Suspense,
   useEffect,
@@ -84,17 +85,10 @@ function clinicalColor(layer: Layer, name: string) {
   }
   return { skin: "#b9826f", bone: "#e8dec5", muscle: "#b43f3f", organ: "#a94d60", vessel: "#d33f49", lymph: "#58b99f", nerve: "#f0c94f" }[layer];
 }
-function inAnatomyRegion(mesh: Mesh, region: Props["anatomyRegion"]) {
+function inAnatomyRegion(mesh: Mesh, region: Props["anatomyRegion"], id = mesh.name) {
   if (region === "whole") return true;
   const box = new Box3().setFromObject(mesh);
-  if (region === "head") return box.max.y >= 1.42;
-  if (region === "upper-body") return box.max.y >= .82;
-  if (region === "lower-body") return box.min.y < .92;
-  if (region === "upper-limb") return (box.max.x >= .18 || box.min.x <= -.18) && box.max.y >= .72;
-  if (region === "lower-limb") return (box.max.x >= .07 || box.min.x <= -.07) && box.min.y < .82;
-  if (region === "chest") return box.max.y >= 1.05 && box.min.y < 1.42;
-  if (region === "abdomen") return box.max.y >= .78 && box.min.y < 1.08;
-  return box.max.y >= .55 && box.min.y < .82;
+  return anatomyRegionMatches([box.min.toArray(), box.max.toArray()], region, structureById.get(id));
 }
 function taggedRegionMatches(tag: string | undefined, region: Props["anatomyRegion"]) {
   if (region === "whole") return true;
@@ -180,7 +174,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
         dissectionAlpha *= musclePeelOpacity(props.dissection, o.userData.peelRank);
       }
       const unavailableForSex = props.sex === "female" && maleOnlyStructureIds.has(id);
-      o.visible = !unavailableForSex && (!props.isolated || selected) && (selected || dissectionAlpha > .01) && (selected || inAnatomyRegion(o, props.anatomyRegion));
+      o.visible = !unavailableForSex && (!props.isolated || selected) && (selected || dissectionAlpha > .01) && (selected || inAnatomyRegion(o, props.anatomyRegion, id));
       o.visible = o.visible && (!props.detailIds.length || props.detailIds.includes(id));
       // Use a single whole-body vascular/neural source in the overview. Retain
       // original BodyParts3D meshes for explicit searches and organ details.
@@ -375,6 +369,7 @@ function Scene(props: Props) {
   // Card-aware framing is shared by explicit details, ordinary selections,
   // and traditional comparison bundles. It never changes their memberships.
   const hasSelection = props.selectionIds.length > 0;
+  const limbScope = props.anatomyRegion === "upper-limb" || props.anatomyRegion === "lower-limb";
   const landscapeSelection = hasSelection && !mobile && window.innerHeight <= 550;
   const [selectionCard, setSelectionCard] = useState<{top:number;right:number} | null>(null);
   const selectionCardTop = selectionCard?.top ?? null;
@@ -398,16 +393,16 @@ function Scene(props: Props) {
   const observationHeight = observationBottom - observationTop;
   const observationLeft = landscapeSelection ? Math.max(80, (selectionCard?.right ?? 0) + 16) : 0;
   const observationWidth = landscapeSelection ? Math.max(1,size.width - 200 - observationLeft)
-    : mobile && props.selectionIds.length ? Math.max(120, size.width - 160) : size.width;
+    : mobile && (hasSelection || limbScope) ? Math.max(120, size.width - 160) : size.width;
   useEffect(() => {
     const cam = camera as PerspectiveCamera;
     if (mobile || hasSelection) cam.setViewOffset(size.width, size.height,
-      landscapeSelection ? size.width / 2 - (observationLeft + observationWidth / 2) : mobile && props.selectionIds.length ? 32.5 : 0,
+      landscapeSelection ? size.width / 2 - (observationLeft + observationWidth / 2) : mobile && (hasSelection || limbScope) ? 32.5 : 0,
       size.height / 2 - (observationTop + observationBottom) / 2, size.width, size.height);
     else cam.clearViewOffset();
     cam.updateProjectionMatrix();
     invalidate();
-  }, [camera, mobile, hasSelection, landscapeSelection, size.width, size.height, observationTop, observationBottom, observationLeft, observationWidth, props.selectionIds.length, invalidate]);
+  }, [camera, mobile, hasSelection, limbScope, landscapeSelection, size.width, size.height, observationTop, observationBottom, observationLeft, observationWidth, props.selectionIds.length, invalidate]);
   useEffect(() => {
     const canvas = gl.domElement;
     canvas.tabIndex = 0;
@@ -467,6 +462,8 @@ function Scene(props: Props) {
   const executed = useRef(-1);
   const layoutKey = `${size.width}/${size.height}/${observationTop}/${observationBottom}/${observationLeft}/${observationWidth}`;
   const framedLayout = useRef(layoutKey);
+  const viewportKey = `${size.width}/${size.height}`;
+  const framedViewport = useRef(viewportKey);
   const restoringLayout = useRef(Boolean(props.initialPose));
   const poseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const emitPose = useCallback(() => {
@@ -533,13 +530,20 @@ function Scene(props: Props) {
     if (!c) return;
     const pendingAction = executed.current !== action.tick;
     const layoutChanged = framedLayout.current !== layoutKey;
+    // Removing a selection card also changes layoutKey. It must not refit a
+    // regional view during an ordinary layer/peel transition (Q2).
+    const refitLimb = !hasSelection && limbScope && framedViewport.current !== viewportKey;
+    framedViewport.current = viewportKey;
     // Initial restoration already has the user's saved framing. Measuring its
     // card must not overwrite that pose; later resizing/toggling may re-fit.
     if (!pendingAction && restoringLayout.current && hasSelection && selectionCardTop !== null) {
       restoringLayout.current = false; framedLayout.current = layoutKey; return;
     }
-    if (!pendingAction && (!hasSelection || !layoutChanged)) { framedLayout.current = layoutKey; return; }
-    const kind = pendingAction ? action.kind : props.highlight.length && !props.isolated ? "comparison" : "structure";
+    if (!pendingAction && restoringLayout.current && !hasSelection) {
+      restoringLayout.current = false; framedLayout.current = layoutKey; return;
+    }
+    if (!pendingAction && !refitLimb && (!hasSelection || !layoutChanged)) { framedLayout.current = layoutKey; return; }
+    const kind = pendingAction ? action.kind : refitLimb ? "anatomy-region" : props.highlight.length && !props.isolated ? "comparison" : "structure";
     const selectionPreset = hasSelection && ["front", "back", "side", "reset"].includes(kind);
     if (kind.startsWith("move-")) {
       translateView(camera, c.target, kind.slice(5) as MoveDirection, 0.12);
@@ -599,7 +603,7 @@ function Scene(props: Props) {
       const distance = Math.max(size.y / (2 * tangent), size.x / (2 * tangent * cam.aspect), .25) * 1.7 + size.z;
       const back = points.filter(p => p.surface === "back").length > points.length / 2;
       camera.position.copy(c.target).add(new Vector3(0, .08, (back ? -1 : 1) * distance));
-    } else if (action.kind === "anatomy-region") {
+    } else if (kind === "anatomy-region") {
       const views: Record<Props["anatomyRegion"], [number, number]> = {
         whole: [.83, 3], head: [1.55, .72], "upper-body": [1.18, 1.65],
         "lower-body": [.46, 1.45], "upper-limb": [1.1, 1.75], "lower-limb": [.43, 1.45],
@@ -608,6 +612,22 @@ function Scene(props: Props) {
       const [height, distance] = views[props.anatomyRegion];
       c.target.set(0, height, 0);
       camera.position.set(0, height + .04, distance);
+      if (limbScope) {
+        const box = new Box3();
+        scene.updateMatrixWorld(true);
+        scene.traverseVisible(obj => {
+          if (obj instanceof Mesh && structureById.has(obj.name) && (obj.material as MeshStandardMaterial).opacity > .01)
+            box.union(new Box3().setFromObject(obj));
+        });
+        if (!box.isEmpty()) {
+          box.getCenter(c.target);
+          const cam = camera as PerspectiveCamera;
+          const distance = framedDistance(box, new Vector3(0, 0, 1), cam.fov, cam.aspect,
+            mobile ? observationWidth / gl.domElement.clientWidth : 1,
+            mobile ? observationHeight / gl.domElement.clientHeight : 1, 1.15);
+          camera.position.copy(c.target).add(new Vector3(0, 0, distance));
+        }
+      }
     } else if (action.kind === "head") {
       c.target.set(0, 1.55, 0);
       camera.position.set(0, 1.55, 0.65);

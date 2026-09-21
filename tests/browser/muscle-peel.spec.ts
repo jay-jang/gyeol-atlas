@@ -25,8 +25,14 @@ for(const sex of ['male','female'] as const)test(`${sex}: actual meshes obey sou
   const relations=musclePeelRelations.filter(([outer,inner])=>ids.includes(outer as typeof ids[number])&&ids.includes(inner as typeof ids[number]));
   const depths=[...new Set([20,64,...relations.flatMap(([outer,inner])=>[28+baseline[outer].rank*36,24+baseline[inner].rank*36+.5])])].sort((a,b)=>a-b);
   for(const value of depths){
+    if(process.env.DEBUG_PEEL)console.log(sex,'request depth',Math.round(value*2)/2,Date.now());
     await depth.fill(String(Math.round(value*2)/2));await ready(page);
-    await expect.poll(async()=>(await snapshot(page)).dissection).toBe(Math.round(value*2)/2);
+    if(process.env.DEBUG_PEEL)console.log(sex,'ready',Date.now());
+    await expect.poll(async()=>{
+      const actual=(await snapshot(page)).dissection;
+      if(process.env.DEBUG_PEEL)console.log(sex,'stored depth',actual,Date.now());
+      return actual;
+    }).toBe(Math.round(value*2)/2);
     const actual=await inspect();
     for(const id of ids)expect(actual[id].bounds).toEqual(baseline[id].bounds);
     for(const [outer,inner] of relations){

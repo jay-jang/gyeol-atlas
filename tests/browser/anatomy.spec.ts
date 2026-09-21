@@ -35,8 +35,31 @@ test('whole-body vessels and nerves expose names, hierarchy, descriptions and is
  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill('복부대동맥');const aorta=page.locator('.structure-item').filter({has:page.getByText('복부대동맥',{exact:true})});await expect(aorta).toHaveCount(1);await aorta.click();await ready(page);await expect(page.locator('.selection-card')).toContainText('동맥계 가지');await expect(page.locator('.selection-card')).toContainText('전신동맥 › 대동맥');selected=await snapshot(page);expect(selected.selection.ids[0]).toMatch(/^ZA_vessel_/);expect(selected.stage).toBe(4);expect(selected.dissection).toBe(78);expect(selected.layers).toEqual({skin:false,muscle:false,bone:false,organ:false,vessel:true,lymph:false,nerve:false});await page.reload();await ready(page);await expect(page.locator('.selection-card')).toContainText('복부대동맥');
 });
 test('male and female references, body regions and lymph structures are independently explorable',async({page})=>{
- test.setTimeout(180000);await page.goto('/');await ready(page);
- const region=page.getByLabel('전신 부위 선택');for(const [value,target] of Object.entries({head:1.55,'upper-body':1.18,'lower-body':.46,'upper-limb':1.1,'lower-limb':.43,chest:1.18,abdomen:.91,pelvis:.68})){await region.selectOption(value);await expect.poll(async()=>(await snapshot(page)).anatomyRegion).toBe(value);await expect.poll(async()=>(await snapshot(page)).camera.target[1]).toBeCloseTo(target,2);}await region.selectOption('whole');await ready(page);
+ test.setTimeout(180000);let fiberUrl='';page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});await page.goto('/');await ready(page);
+ const region=page.getByLabel('전신 부위 선택');
+ for(const [value,target] of Object.entries({head:1.55,'upper-body':1.18,'lower-body':.46,'upper-limb':1.1,'lower-limb':.43,chest:1.18,abdomen:.91,pelvis:.68})) {
+  await region.selectOption(value);await expect.poll(async()=>(await snapshot(page)).anatomyRegion).toBe(value);
+  if(value==='upper-limb'||value==='lower-limb') {
+   // Limb views now fit the visible model bounds, not the former fixed Y.
+   // A whole-body skin mesh is not segmented by this mesh-level filter.
+   await expect.poll(()=>page.evaluate(async url=>{
+    const module=await import(/* @vite-ignore */url),s=module._roots.get(document.querySelector('canvas')).store.getState();
+    const ids=new Set((document.querySelector('canvas')?.dataset.visibleStructureIds||'').split(','));
+    const min=[Infinity,Infinity,Infinity],max=[-Infinity,-Infinity,-Infinity];let count=0;
+    s.scene.updateMatrixWorld(true);
+    s.scene.traverseVisible((mesh:any)=>{
+     if(!mesh.isMesh||!ids.has(mesh.name)||mesh.material.opacity<=.01)return;
+     mesh.geometry.computeBoundingBox();const box=mesh.geometry.boundingBox;count++;
+     for(let x=0;x<2;x++)for(let y=0;y<2;y++)for(let z=0;z<2;z++) {
+      const p=box.min.clone().set(x?box.max.x:box.min.x,y?box.max.y:box.min.y,z?box.max.z:box.min.z).applyMatrix4(mesh.matrixWorld).toArray();
+      for(let i=0;i<3;i++){min[i]=Math.min(min[i],p[i]);max[i]=Math.max(max[i],p[i]);}
+     }
+    });
+    return count?Math.max(...s.controls.target.toArray().map((v:number,i:number)=>Math.abs(v-(min[i]+max[i])/2))):Infinity;
+   },fiberUrl)).toBeLessThan(1e-6);
+  } else await expect.poll(async()=>(await snapshot(page)).camera.target[1]).toBeCloseTo(target,2);
+ }
+ await region.selectOption('whole');await ready(page);
  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await expect.poll(async()=>(await snapshot(page)).sex).toBe('female');const canvas=page.locator('canvas');await expect.poll(async()=>Number(await canvas.getAttribute('data-female-atlas-parts')),{timeout:120000}).toBe(1220);await expect(page.getByLabel('연속 해부 박리 깊이')).toHaveAttribute('step','0.5');for(const name of ['체표','근육','골격','장기','혈관','림프','신경'])await expect(page.getByRole('button',{name:`${name} 빠른 보기`,exact:true})).toBeEnabled();
  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill('prostate');await expect(page.locator('.structure-item')).toHaveCount(0);await closeTool(page);
  await page.getByRole('button',{name:/전체 인체 구조 보기/}).click();let all=await snapshot(page);expect(Object.values(all.layers).every(Boolean)).toBe(true);for(const layer of ['skin','muscle','bone','organ','vessel','lymph','nerve'])await expect.poll(async()=>Number(await canvas.getAttribute(`data-visible-${layer}`))).toBeGreaterThan(0);await page.screenshot({path:'docs/ui-renewal/female-all-systems.png'});

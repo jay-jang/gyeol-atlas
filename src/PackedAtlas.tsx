@@ -10,6 +10,7 @@ import { musclePeelRanks } from "./muscle-peel";
 import { clippingPlanes, configurePicking } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { applyFemaleArmRegistration } from "./female-arm-registration";
+import { anatomyRegionMatches } from "./anatomy-region";
 
 type FemalePart = {
   id: string;
@@ -40,18 +41,6 @@ const layerColor: Record<Layer, string> = {
   vessel: "#d33f49", lymph: "#58b99f", nerve: "#f0c94f",
 };
 const catalogById = new Map(structures.map(structure => [structure.id, structure]));
-function regionMatches(bounds: FemalePart["bounds"], region: AtlasProps["anatomyRegion"]) {
-  if (region === "whole") return true;
-  const [min, max] = bounds;
-  if (region === "head") return max[1] >= 1.42;
-  if (region === "upper-body") return max[1] >= .82;
-  if (region === "lower-body") return min[1] < .92;
-  if (region === "upper-limb") return (max[0] >= .18 || min[0] <= -.18) && max[1] >= .72;
-  if (region === "lower-limb") return (max[0] >= .07 || min[0] <= -.07) && min[1] < .82;
-  if (region === "chest") return max[1] >= 1.05 && min[1] < 1.42;
-  if (region === "abdomen") return max[1] >= .78 && min[1] < 1.08;
-  return max[1] >= .55 && min[1] < .82;
-}
 async function inflate(response: Response, expectedBytes: number) {
   const compressed = await response.arrayBuffer();
   if (compressed.byteLength === expectedBytes) return compressed;
@@ -139,7 +128,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       const depthAlpha = dissectionLayerOpacity(layer, props.dissection, progressive) * (progressive && layer === "muscle" ? musclePeelOpacity(props.dissection, item.userData.peelRank) : 1);
       const duplicateDonor = part?.system === "donor-muscle" && (part.name === "Rectus femoris (left)" || part.name === "Rectus femoris (right)");
       const donorSelected = (item.name === "HRAF0394" && props.selectionIds.includes("VHF0009")) || (item.name === "HRAF0396" && props.selectionIds.includes("VHF0047"));
-      item.visible = (!duplicateDonor || selected) && (part?.system !== "pregnancy" || selected) && props.layers[layer] && (!props.isolated || selected) && (selected || depthAlpha > .01) && (!part || selected || regionMatches(item.userData.bounds, props.anatomyRegion));
+      item.visible = (!duplicateDonor || selected) && (part?.system !== "pregnancy" || selected) && props.layers[layer] && (!props.isolated || selected) && (selected || depthAlpha > .01) && (!part || selected || anatomyRegionMatches(item.userData.bounds, props.anatomyRegion, catalogById.get(item.name)));
       item.visible = item.visible && !donorSelected;
       item.visible = item.visible && (!props.detailIds.length || props.detailIds.includes(item.name));
       if (props.sex === "male" && !props.detailIds.length) item.visible = item.visible && selected;
