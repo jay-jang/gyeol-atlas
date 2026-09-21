@@ -46,6 +46,8 @@ v1.5와v1.10에 공통으로 있는 엉덩뼈4개는 원본 참조 정점의 양
 
 뼈 잔차와 피부 이탈을 구분하기 위해 근육과 같은 원본에서 만든 피부/지방 자료가 필요한지 확인하고 있습니다. [공식 설명](https://digitalcommons.du.edu/visiblehuman/1/)에는 외피/지방 모형이 있지만 제공된 Final ZIP128개에는 없습니다. `Metadata`와 `Original 3D STL Models` 자동 요청은403 challenge였으며, 사용자에게 추가 다운로드를 요청했습니다. **원본 ZIP에 해당 모형이 실제 들어 있다고 확인한 상태는 아닙니다.** 이 자료 요청이 현재 여성 전신 정합 완료를 뜻하지 않습니다.
 
+후속: 사용자가 두 ZIP을 제공했고 [실제 수록 검사](DONOR_ORIGINAL_RECEIPT.md)에서 `Fat_Outer`·`Fat_InterMuscular`를 확인했습니다. 위 문단은 요청 당시 상태입니다. 자료 확보 제약은 해소됐지만 현재 HRA와의 정합·포함 검증은 아직 완료되지 않았습니다.
+
 ```sh
 npm exec --yes --package=node@24.14.0 -- node scripts/fit-donor-hip-surfaces.mjs '추출한/Final 3D STL Models-stl'
 # 생성된 hip-surface-fits.json을 docs/anatomy-alignment에 보존한 뒤
