@@ -12,7 +12,18 @@ async function observe(page:Page) {
     const {_roots}=await import(/* @vite-ignore */url),state=_roots.get(document.querySelector('canvas')).store.getState();
     const renderer=state.gl,render=renderer.render;
     (window as any).__drawSamples=[];
-    renderer.render=function(scene:any,camera:any){
+    const audit={submissions:0,lastStart:0,lastEnd:0,contextEvents:[] as string[]};
+    renderer.domElement.addEventListener('webglcontextlost',()=>audit.contextEvents.push('lost'));
+    renderer.domElement.addEventListener('webglcontextrestored',()=>audit.contextEvents.push('restored'));
+    (window as any).__drawState=()=>{
+      const canvas=document.querySelector('canvas'),current=_roots.get(canvas)?.store.getState();
+      return {...audit,at:performance.now(),sampleCount:(window as any).__drawSamples.length,
+        rendererSame:current?.gl===renderer,hookPresent:current?.gl.render===observedRender,
+        contextLost:current?.gl.getContext().isContextLost(),
+        internal:current?{frames:current.internal.frames,active:current.internal.active,priority:current.internal.priority,frameloop:current.frameloop}:null,
+        view:JSON.parse(sessionStorage.getItem('gyeol-view-v2')||'null')};
+    };
+    const observedRender=function(this:any,scene:any,camera:any){
       const sample:Record<string,{alpha:number;transparent:boolean}[]>={};
       scene.traverseVisible((mesh:any)=>{
         if(!mesh.isMesh)return;const id=layerById[mesh.name]?mesh.name:mesh.parent?.name;
@@ -20,8 +31,10 @@ async function observe(page:Page) {
         (sample[id]??=[]).push({alpha:mesh.material.opacity,transparent:mesh.material.transparent});
       });
       (window as any).__drawSamples.push(sample);
-      return render.call(this,scene,camera);
+      audit.submissions++;audit.lastStart=performance.now();
+      try{return render.call(this,scene,camera);}finally{audit.lastEnd=performance.now();}
     };
+    renderer.render=observedRender;
   },{url,layerById});
 }
 const take=(page:Page)=>page.evaluate(()=>(window as any).__drawSamples.splice(0) as Record<string,{alpha:number;transparent:boolean}[]>[]);
@@ -50,9 +63,12 @@ test('new male bone, vessel, lymph and nerve meshes use their peel opacity on th
   }
 });
 
-test('female and independent CT source mounts never draw the default all-visible packed scene',async({page})=>{
+test('female and independent CT source mounts never draw the default all-visible packed scene',async({page},testInfo)=>{
   test.setTimeout(180000);await observe(page);
+  const completed:string[]=[];let currentStep='install';
+  try{
   for(const step of ['female','ct','return','ct','return']) {
+    currentStep=step;
     await take(page);
     if(step==='female')await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
     else if(step==='ct')await page.locator('.featured-anatomy > button').filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
@@ -60,14 +76,27 @@ test('female and independent CT source mounts never draw the default all-visible
     await ready(page);
     const expected=step==='ct'?['CTF_stomach']:catalog.filter(s=>s.sex==='female'&&s.model==='HRA female whole-body atlas'&&s.layer===(step==='female'?'skin':'organ')&&!s.hierarchy.includes('pregnancy')).map(s=>s.id).sort();
     const isTarget=(id:string)=>step==='ct'?id.startsWith('CTF_'):/^(HRAF|BM|VHF)/.test(id);
-    await expect.poll(async()=>(await page.evaluate(()=>(window as any).__drawSamples as Record<string,unknown>[])).some(f=>Object.keys(f).some(isTarget))).toBe(true);
+    // Transfer one boolean while waiting, not every frame/material snapshot.
+    // The complete samples are still checked below once the target appears.
+    await expect.poll(()=>page.evaluate(ct=>(window as any).__drawSamples.some((f:Record<string,unknown>)=>
+      Object.keys(f).some(id=>ct?id.startsWith('CTF_'):/^(HRAF|BM|VHF)/.test(id))),step==='ct')).toBe(true);
     const relevant=(await take(page)).map(f=>Object.keys(f).filter(isTarget).sort()).filter(ids=>ids.length);
     for(const ids of relevant)expect(ids,`${step} every target-source frame`).toEqual(expected);
+    completed.push(step);
   }
   await page.screenshot({path:'docs/anatomy-alignment/first-frame-female-return-desktop.png'});
   await page.setViewportSize({width:390,height:844});
   await page.getByRole('button',{name:'계통 전체 보기',exact:true}).click();
   await page.screenshot({path:'docs/anatomy-alignment/first-frame-female-return-mobile.png'});
+  }catch(error){
+    let timer:ReturnType<typeof setTimeout>|undefined;
+    const state=await Promise.race([
+      page.evaluate(()=>(window as any).__drawState()).catch(e=>({snapshotError:String(e)})),
+      new Promise(resolve=>{timer=setTimeout(()=>resolve({snapshotError:'Browser diagnostic query did not return within 3 seconds'}),3000);}),
+    ]);if(timer)clearTimeout(timer);
+    await testInfo.attach('source-draw-failure',{body:JSON.stringify({currentStep,completed,state},null,2),contentType:'application/json'});
+    throw error;
+  }
 });
 
 test('cancelled female and CT downloads cannot expose a late source after switching back',async({page})=>{

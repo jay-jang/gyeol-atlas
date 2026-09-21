@@ -1,0 +1,3206 @@
+{
+  "status": "target submissions observed in every requested transition",
+  "startedAt": "2026-09-21T08:45:17.572Z",
+  "rounds": 5,
+  "errors": [],
+  "console": [
+    {
+      "type": "warning",
+      "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+    }
+  ],
+  "steps": [
+    {
+      "key": "0/female",
+      "readyMs": 521,
+      "observedMs": 943,
+      "failure": null,
+      "at": 2472.800000011921,
+      "step": "0/female",
+      "view": {
+        "version": 4,
+        "pointId": "",
+        "sex": "female",
+        "anatomyRegion": "whole",
+        "stage": 0,
+        "dissection": 0,
+        "displayMode": "dissection",
+        "layers": {
+          "skin": true,
+          "muscle": false,
+          "bone": false,
+          "organ": false,
+          "vessel": false,
+          "lymph": false,
+          "nerve": false
+        },
+        "alpha": {
+          "skin": 1,
+          "muscle": 1,
+          "bone": 1,
+          "organ": 1,
+          "vessel": 1,
+          "lymph": 1,
+          "nerve": 1
+        },
+        "markers": "selected",
+        "labels": false,
+        "selection": null,
+        "detail": null,
+        "comparison": null,
+        "isolated": false,
+        "cutaway": 0,
+        "selectionTarget": "visible",
+        "camera": {
+          "position": [
+            1.4901161193847656e-8,
+            1.0564423066545112,
+            3.9541015287468095
+          ],
+          "target": [
+            1.4901161193847656e-8,
+            0.8288460996793967,
+            -0.0623021237552166
+          ]
+        },
+        "filters": {
+          "query": "",
+          "region": "전체",
+          "meridian": "all",
+          "concept": "all",
+          "onlySaved": false,
+          "bodyRegion": "전체",
+          "catalogue": "all"
+        }
+      },
+      "frames": [
+        {
+          "step": "0/female",
+          "start": 1659.0999999642372,
+          "end": 1659.199999988079,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "0/female",
+          "start": 1858,
+          "end": 1860.699999988079,
+          "counts": {
+            "female": 20,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "0/female",
+          "start": 2051.5,
+          "end": 2051.899999976158,
+          "counts": {
+            "female": 20,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "0/female",
+          "start": 2131.800000011921,
+          "end": 2132.099999964237,
+          "counts": {
+            "female": 20,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "0/female",
+          "start": 2223.399999976158,
+          "end": 2223.800000011921,
+          "counts": {
+            "female": 20,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "0/female",
+          "start": 2315.099999964237,
+          "end": 2315.399999976158,
+          "counts": {
+            "female": 20,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "0/female",
+          "start": 2394.399999976158,
+          "end": 2394.699999988079,
+          "counts": {
+            "female": 20,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        }
+      ],
+      "longTasks": [
+        {
+          "t": 468.39999997615814,
+          "duration": 53
+        },
+        {
+          "t": 757.0999999642372,
+          "duration": 58
+        },
+        {
+          "t": 890.5,
+          "duration": 129
+        },
+        {
+          "t": 1021.6999999880791,
+          "duration": 105
+        },
+        {
+          "t": 1575.8999999761581,
+          "duration": 76
+        },
+        {
+          "t": 1857.800000011921,
+          "duration": 177
+        },
+        {
+          "t": 2051.399999976158,
+          "duration": 76
+        },
+        {
+          "t": 2131.599999964237,
+          "duration": 78
+        },
+        {
+          "t": 2223.399999976158,
+          "duration": 77
+        },
+        {
+          "t": 2315,
+          "duration": 77
+        },
+        {
+          "t": 2394.300000011921,
+          "duration": 77
+        }
+      ],
+      "events": [],
+      "canvasConnected": true,
+      "documentVisible": "visible",
+      "rendererSame": true,
+      "hookPresent": true,
+      "contextLost": false,
+      "internal": {
+        "frames": 0,
+        "active": true,
+        "priority": 0,
+        "frameloop": "demand"
+      },
+      "groups": [
+        {
+          "name": "female-atlas",
+          "visible": true,
+          "children": 1220
+        }
+      ],
+      "memory": {
+        "geometries": 22,
+        "textures": 1
+      },
+      "programs": 2
+    },
+    {
+      "key": "1/ct",
+      "readyMs": 278,
+      "observedMs": 423,
+      "failure": null,
+      "at": 2896.5,
+      "step": "1/ct",
+      "view": {
+        "version": 4,
+        "pointId": "",
+        "sex": "female",
+        "anatomyRegion": "whole",
+        "stage": 3,
+        "dissection": 66,
+        "displayMode": "layers",
+        "layers": {
+          "skin": false,
+          "muscle": false,
+          "bone": false,
+          "organ": true,
+          "vessel": false,
+          "lymph": false,
+          "nerve": false
+        },
+        "alpha": {
+          "skin": 1,
+          "muscle": 1,
+          "bone": 1,
+          "organ": 1,
+          "vessel": 1,
+          "lymph": 1,
+          "nerve": 1
+        },
+        "markers": "selected",
+        "labels": false,
+        "selection": {
+          "kind": "bundle",
+          "ids": [
+            "CTF_stomach"
+          ],
+          "name": "위 (여성 CT)"
+        },
+        "detail": {
+          "id": "stomach-ct",
+          "name": "위 (여성 CT)",
+          "ids": [
+            "CTF_stomach"
+          ],
+          "layers": {
+            "skin": false,
+            "muscle": false,
+            "bone": false,
+            "organ": true,
+            "vessel": false,
+            "lymph": false,
+            "nerve": false
+          }
+        },
+        "comparison": null,
+        "isolated": false,
+        "cutaway": 0,
+        "selectionTarget": "visible",
+        "camera": {
+          "position": [
+            0.023249998688697815,
+            1.1254747371874545,
+            0.7143928410306462
+          ],
+          "target": [
+            0.023249998688697815,
+            1.087499976158142,
+            0.04424999933689833
+          ]
+        },
+        "filters": {
+          "query": "",
+          "region": "전체",
+          "meridian": "all",
+          "concept": "all",
+          "onlySaved": false,
+          "bodyRegion": "전체",
+          "catalogue": "all"
+        }
+      },
+      "frames": [
+        {
+          "step": "1/ct",
+          "start": 2566.300000011921,
+          "end": 2566.300000011921,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "1/ct",
+          "start": 2588.5,
+          "end": 2588.5,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "1/ct",
+          "start": 2632.300000011921,
+          "end": 2633.899999976158,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "1/ct",
+          "start": 2754.199999988079,
+          "end": 2754.300000011921,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "1/ct",
+          "start": 2796.399999976158,
+          "end": 2796.5,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "1/ct",
+          "start": 2826.599999964237,
+          "end": 2826.699999988079,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "1/ct",
+          "start": 2867.800000011921,
+          "end": 2867.899999976158,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        }
+      ],
+      "longTasks": [
+        {
+          "t": 468.39999997615814,
+          "duration": 53
+        },
+        {
+          "t": 757.0999999642372,
+          "duration": 58
+        },
+        {
+          "t": 890.5,
+          "duration": 129
+        },
+        {
+          "t": 1021.6999999880791,
+          "duration": 105
+        },
+        {
+          "t": 1575.8999999761581,
+          "duration": 76
+        },
+        {
+          "t": 1857.800000011921,
+          "duration": 177
+        },
+        {
+          "t": 2051.399999976158,
+          "duration": 76
+        },
+        {
+          "t": 2131.599999964237,
+          "duration": 78
+        },
+        {
+          "t": 2223.399999976158,
+          "duration": 77
+        },
+        {
+          "t": 2315,
+          "duration": 77
+        },
+        {
+          "t": 2394.300000011921,
+          "duration": 77
+        },
+        {
+          "t": 2505.199999988079,
+          "duration": 60
+        },
+        {
+          "t": 2632.199999988079,
+          "duration": 106
+        }
+      ],
+      "events": [],
+      "canvasConnected": true,
+      "documentVisible": "visible",
+      "rendererSame": true,
+      "hookPresent": true,
+      "contextLost": false,
+      "internal": {
+        "frames": 1,
+        "active": true,
+        "priority": 0,
+        "frameloop": "demand"
+      },
+      "groups": [
+        {
+          "name": "female-detail-atlas",
+          "visible": true,
+          "children": 11
+        }
+      ],
+      "memory": {
+        "geometries": 3,
+        "textures": 1
+      },
+      "programs": 2
+    },
+    {
+      "key": "2/return",
+      "readyMs": 558,
+      "observedMs": 1020,
+      "failure": null,
+      "at": 3944.699999988079,
+      "step": "2/return",
+      "view": {
+        "version": 4,
+        "pointId": "",
+        "sex": "female",
+        "anatomyRegion": "whole",
+        "stage": 3,
+        "dissection": 66,
+        "displayMode": "layers",
+        "layers": {
+          "skin": false,
+          "muscle": false,
+          "bone": false,
+          "organ": true,
+          "vessel": false,
+          "lymph": false,
+          "nerve": false
+        },
+        "alpha": {
+          "skin": 1,
+          "muscle": 1,
+          "bone": 1,
+          "organ": 1,
+          "vessel": 1,
+          "lymph": 1,
+          "nerve": 1
+        },
+        "markers": "selected",
+        "labels": false,
+        "selection": null,
+        "detail": null,
+        "comparison": null,
+        "isolated": false,
+        "cutaway": 0,
+        "selectionTarget": "visible",
+        "camera": {
+          "position": [
+            -0.0010346770286560059,
+            1.256514127003057,
+            1.9377138417986035
+          ],
+          "target": [
+            -0.0010346770286560059,
+            1.1436338424682617,
+            -0.05429117940366268
+          ]
+        },
+        "filters": {
+          "query": "",
+          "region": "전체",
+          "meridian": "all",
+          "concept": "all",
+          "onlySaved": false,
+          "bodyRegion": "전체",
+          "catalogue": "all"
+        }
+      },
+      "frames": [
+        {
+          "step": "2/return",
+          "start": 2970.899999976158,
+          "end": 2970.899999976158,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "2/return",
+          "start": 2987.300000011921,
+          "end": 2987.300000011921,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "2/return",
+          "start": 3153.899999976158,
+          "end": 3166,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "2/return",
+          "start": 3483.399999976158,
+          "end": 3484.800000011921,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "2/return",
+          "start": 3716.199999988079,
+          "end": 3717,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        }
+      ],
+      "longTasks": [
+        {
+          "t": 468.39999997615814,
+          "duration": 53
+        },
+        {
+          "t": 757.0999999642372,
+          "duration": 58
+        },
+        {
+          "t": 890.5,
+          "duration": 129
+        },
+        {
+          "t": 1021.6999999880791,
+          "duration": 105
+        },
+        {
+          "t": 1575.8999999761581,
+          "duration": 76
+        },
+        {
+          "t": 1857.800000011921,
+          "duration": 177
+        },
+        {
+          "t": 2051.399999976158,
+          "duration": 76
+        },
+        {
+          "t": 2131.599999964237,
+          "duration": 78
+        },
+        {
+          "t": 2223.399999976158,
+          "duration": 77
+        },
+        {
+          "t": 2315,
+          "duration": 77
+        },
+        {
+          "t": 2394.300000011921,
+          "duration": 77
+        },
+        {
+          "t": 2505.199999988079,
+          "duration": 60
+        },
+        {
+          "t": 2632.199999988079,
+          "duration": 106
+        },
+        {
+          "t": 3153.899999976158,
+          "duration": 311
+        },
+        {
+          "t": 3483.399999976158,
+          "duration": 231
+        },
+        {
+          "t": 3716.099999964237,
+          "duration": 225
+        }
+      ],
+      "events": [],
+      "canvasConnected": true,
+      "documentVisible": "visible",
+      "rendererSame": true,
+      "hookPresent": true,
+      "contextLost": false,
+      "internal": {
+        "frames": 0,
+        "active": true,
+        "priority": 0,
+        "frameloop": "demand"
+      },
+      "groups": [
+        {
+          "name": "female-atlas",
+          "visible": true,
+          "children": 1220
+        }
+      ],
+      "memory": {
+        "geometries": 295,
+        "textures": 1
+      },
+      "programs": 2
+    },
+    {
+      "key": "3/ct",
+      "readyMs": 263,
+      "observedMs": 351,
+      "failure": null,
+      "at": 4296.099999964237,
+      "step": "3/ct",
+      "view": {
+        "version": 4,
+        "pointId": "",
+        "sex": "female",
+        "anatomyRegion": "whole",
+        "stage": 3,
+        "dissection": 66,
+        "displayMode": "layers",
+        "layers": {
+          "skin": false,
+          "muscle": false,
+          "bone": false,
+          "organ": true,
+          "vessel": false,
+          "lymph": false,
+          "nerve": false
+        },
+        "alpha": {
+          "skin": 1,
+          "muscle": 1,
+          "bone": 1,
+          "organ": 1,
+          "vessel": 1,
+          "lymph": 1,
+          "nerve": 1
+        },
+        "markers": "selected",
+        "labels": false,
+        "selection": {
+          "kind": "bundle",
+          "ids": [
+            "CTF_stomach"
+          ],
+          "name": "위 (여성 CT)"
+        },
+        "detail": {
+          "id": "stomach-ct",
+          "name": "위 (여성 CT)",
+          "ids": [
+            "CTF_stomach"
+          ],
+          "layers": {
+            "skin": false,
+            "muscle": false,
+            "bone": false,
+            "organ": true,
+            "vessel": false,
+            "lymph": false,
+            "nerve": false
+          }
+        },
+        "comparison": null,
+        "isolated": false,
+        "cutaway": 0,
+        "selectionTarget": "visible",
+        "camera": {
+          "position": [
+            0.023249998688697815,
+            1.1254747371874547,
+            0.7143928410306463
+          ],
+          "target": [
+            0.023249998688697815,
+            1.087499976158142,
+            0.04424999933689833
+          ]
+        },
+        "filters": {
+          "query": "",
+          "region": "전체",
+          "meridian": "all",
+          "concept": "all",
+          "onlySaved": false,
+          "bodyRegion": "전체",
+          "catalogue": "all"
+        }
+      },
+      "frames": [
+        {
+          "step": "3/ct",
+          "start": 4026.800000011921,
+          "end": 4026.800000011921,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "3/ct",
+          "start": 4048.399999976158,
+          "end": 4048.5,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "3/ct",
+          "start": 4090.199999988079,
+          "end": 4091.699999988079,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "3/ct",
+          "start": 4209.099999964237,
+          "end": 4209.199999988079,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "3/ct",
+          "start": 4266.599999964237,
+          "end": 4266.699999988079,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        }
+      ],
+      "longTasks": [
+        {
+          "t": 468.39999997615814,
+          "duration": 53
+        },
+        {
+          "t": 757.0999999642372,
+          "duration": 58
+        },
+        {
+          "t": 890.5,
+          "duration": 129
+        },
+        {
+          "t": 1021.6999999880791,
+          "duration": 105
+        },
+        {
+          "t": 1575.8999999761581,
+          "duration": 76
+        },
+        {
+          "t": 1857.800000011921,
+          "duration": 177
+        },
+        {
+          "t": 2051.399999976158,
+          "duration": 76
+        },
+        {
+          "t": 2131.599999964237,
+          "duration": 78
+        },
+        {
+          "t": 2223.399999976158,
+          "duration": 77
+        },
+        {
+          "t": 2315,
+          "duration": 77
+        },
+        {
+          "t": 2394.300000011921,
+          "duration": 77
+        },
+        {
+          "t": 2505.199999988079,
+          "duration": 60
+        },
+        {
+          "t": 2632.199999988079,
+          "duration": 106
+        },
+        {
+          "t": 3153.899999976158,
+          "duration": 311
+        },
+        {
+          "t": 3483.399999976158,
+          "duration": 231
+        },
+        {
+          "t": 3716.099999964237,
+          "duration": 225
+        },
+        {
+          "t": 3971.800000011921,
+          "duration": 54
+        },
+        {
+          "t": 4090.099999964237,
+          "duration": 104
+        }
+      ],
+      "events": [],
+      "canvasConnected": true,
+      "documentVisible": "visible",
+      "rendererSame": true,
+      "hookPresent": true,
+      "contextLost": false,
+      "internal": {
+        "frames": 1,
+        "active": true,
+        "priority": 0,
+        "frameloop": "demand"
+      },
+      "groups": [
+        {
+          "name": "female-detail-atlas",
+          "visible": true,
+          "children": 11
+        }
+      ],
+      "memory": {
+        "geometries": 3,
+        "textures": 1
+      },
+      "programs": 2
+    },
+    {
+      "key": "4/return",
+      "readyMs": 251,
+      "observedMs": 1030,
+      "failure": null,
+      "at": 5325.300000011921,
+      "step": "4/return",
+      "view": {
+        "version": 4,
+        "pointId": "",
+        "sex": "female",
+        "anatomyRegion": "whole",
+        "stage": 3,
+        "dissection": 66,
+        "displayMode": "layers",
+        "layers": {
+          "skin": false,
+          "muscle": false,
+          "bone": false,
+          "organ": true,
+          "vessel": false,
+          "lymph": false,
+          "nerve": false
+        },
+        "alpha": {
+          "skin": 1,
+          "muscle": 1,
+          "bone": 1,
+          "organ": 1,
+          "vessel": 1,
+          "lymph": 1,
+          "nerve": 1
+        },
+        "markers": "selected",
+        "labels": false,
+        "selection": null,
+        "detail": null,
+        "comparison": null,
+        "isolated": false,
+        "cutaway": 0,
+        "selectionTarget": "visible",
+        "camera": {
+          "position": [
+            -0.0010346770286560059,
+            1.2565141270030575,
+            1.937713841798604
+          ],
+          "target": [
+            -0.0010346770286560059,
+            1.1436338424682617,
+            -0.05429117940366268
+          ]
+        },
+        "filters": {
+          "query": "",
+          "region": "전체",
+          "meridian": "all",
+          "concept": "all",
+          "onlySaved": false,
+          "bodyRegion": "전체",
+          "catalogue": "all"
+        }
+      },
+      "frames": [
+        {
+          "step": "4/return",
+          "start": 4304,
+          "end": 4304,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "4/return",
+          "start": 4350.199999988079,
+          "end": 4350.300000011921,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "4/return",
+          "start": 4370.599999964237,
+          "end": 4370.599999964237,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "4/return",
+          "start": 4549.199999988079,
+          "end": 4556.399999976158,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "4/return",
+          "start": 4873,
+          "end": 4873.800000011921,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "4/return",
+          "start": 5097.800000011921,
+          "end": 5098.699999988079,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        }
+      ],
+      "longTasks": [
+        {
+          "t": 468.39999997615814,
+          "duration": 53
+        },
+        {
+          "t": 757.0999999642372,
+          "duration": 58
+        },
+        {
+          "t": 890.5,
+          "duration": 129
+        },
+        {
+          "t": 1021.6999999880791,
+          "duration": 105
+        },
+        {
+          "t": 1575.8999999761581,
+          "duration": 76
+        },
+        {
+          "t": 1857.800000011921,
+          "duration": 177
+        },
+        {
+          "t": 2051.399999976158,
+          "duration": 76
+        },
+        {
+          "t": 2131.599999964237,
+          "duration": 78
+        },
+        {
+          "t": 2223.399999976158,
+          "duration": 77
+        },
+        {
+          "t": 2315,
+          "duration": 77
+        },
+        {
+          "t": 2394.300000011921,
+          "duration": 77
+        },
+        {
+          "t": 2505.199999988079,
+          "duration": 60
+        },
+        {
+          "t": 2632.199999988079,
+          "duration": 106
+        },
+        {
+          "t": 3153.899999976158,
+          "duration": 311
+        },
+        {
+          "t": 3483.399999976158,
+          "duration": 231
+        },
+        {
+          "t": 3716.099999964237,
+          "duration": 225
+        },
+        {
+          "t": 3971.800000011921,
+          "duration": 54
+        },
+        {
+          "t": 4090.099999964237,
+          "duration": 104
+        },
+        {
+          "t": 4549.099999964237,
+          "duration": 307
+        },
+        {
+          "t": 4872.899999976158,
+          "duration": 223
+        },
+        {
+          "t": 5097.699999988079,
+          "duration": 227
+        }
+      ],
+      "events": [],
+      "canvasConnected": true,
+      "documentVisible": "visible",
+      "rendererSame": true,
+      "hookPresent": true,
+      "contextLost": false,
+      "internal": {
+        "frames": 0,
+        "active": true,
+        "priority": 0,
+        "frameloop": "demand"
+      },
+      "groups": [
+        {
+          "name": "female-atlas",
+          "visible": true,
+          "children": 1220
+        }
+      ],
+      "memory": {
+        "geometries": 295,
+        "textures": 1
+      },
+      "programs": 2
+    },
+    {
+      "key": "5/ct",
+      "readyMs": 156,
+      "observedMs": 319,
+      "failure": null,
+      "at": 5645.899999976158,
+      "step": "5/ct",
+      "view": {
+        "version": 4,
+        "pointId": "",
+        "sex": "female",
+        "anatomyRegion": "whole",
+        "stage": 3,
+        "dissection": 66,
+        "displayMode": "layers",
+        "layers": {
+          "skin": false,
+          "muscle": false,
+          "bone": false,
+          "organ": true,
+          "vessel": false,
+          "lymph": false,
+          "nerve": false
+        },
+        "alpha": {
+          "skin": 1,
+          "muscle": 1,
+          "bone": 1,
+          "organ": 1,
+          "vessel": 1,
+          "lymph": 1,
+          "nerve": 1
+        },
+        "markers": "selected",
+        "labels": false,
+        "selection": {
+          "kind": "bundle",
+          "ids": [
+            "CTF_stomach"
+          ],
+          "name": "위 (여성 CT)"
+        },
+        "detail": {
+          "id": "stomach-ct",
+          "name": "위 (여성 CT)",
+          "ids": [
+            "CTF_stomach"
+          ],
+          "layers": {
+            "skin": false,
+            "muscle": false,
+            "bone": false,
+            "organ": true,
+            "vessel": false,
+            "lymph": false,
+            "nerve": false
+          }
+        },
+        "comparison": null,
+        "isolated": false,
+        "cutaway": 0,
+        "selectionTarget": "visible",
+        "camera": {
+          "position": [
+            0.023249998688697815,
+            1.1254747371874547,
+            0.7143928410306465
+          ],
+          "target": [
+            0.023249998688697815,
+            1.087499976158142,
+            0.04424999933689833
+          ]
+        },
+        "filters": {
+          "query": "",
+          "region": "전체",
+          "meridian": "all",
+          "concept": "all",
+          "onlySaved": false,
+          "bodyRegion": "전체",
+          "catalogue": "all"
+        }
+      },
+      "frames": [
+        {
+          "step": "5/ct",
+          "start": 5407.800000011921,
+          "end": 5407.800000011921,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "5/ct",
+          "start": 5429.399999976158,
+          "end": 5429.5,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "5/ct",
+          "start": 5483.899999976158,
+          "end": 5485.300000011921,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "5/ct",
+          "start": 5615.800000011921,
+          "end": 5615.899999976158,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        }
+      ],
+      "longTasks": [
+        {
+          "t": 468.39999997615814,
+          "duration": 53
+        },
+        {
+          "t": 757.0999999642372,
+          "duration": 58
+        },
+        {
+          "t": 890.5,
+          "duration": 129
+        },
+        {
+          "t": 1021.6999999880791,
+          "duration": 105
+        },
+        {
+          "t": 1575.8999999761581,
+          "duration": 76
+        },
+        {
+          "t": 1857.800000011921,
+          "duration": 177
+        },
+        {
+          "t": 2051.399999976158,
+          "duration": 76
+        },
+        {
+          "t": 2131.599999964237,
+          "duration": 78
+        },
+        {
+          "t": 2223.399999976158,
+          "duration": 77
+        },
+        {
+          "t": 2315,
+          "duration": 77
+        },
+        {
+          "t": 2394.300000011921,
+          "duration": 77
+        },
+        {
+          "t": 2505.199999988079,
+          "duration": 60
+        },
+        {
+          "t": 2632.199999988079,
+          "duration": 106
+        },
+        {
+          "t": 3153.899999976158,
+          "duration": 311
+        },
+        {
+          "t": 3483.399999976158,
+          "duration": 231
+        },
+        {
+          "t": 3716.099999964237,
+          "duration": 225
+        },
+        {
+          "t": 3971.800000011921,
+          "duration": 54
+        },
+        {
+          "t": 4090.099999964237,
+          "duration": 104
+        },
+        {
+          "t": 4549.099999964237,
+          "duration": 307
+        },
+        {
+          "t": 4872.899999976158,
+          "duration": 223
+        },
+        {
+          "t": 5097.699999988079,
+          "duration": 227
+        },
+        {
+          "t": 5355,
+          "duration": 52
+        },
+        {
+          "t": 5483.699999988079,
+          "duration": 104
+        }
+      ],
+      "events": [],
+      "canvasConnected": true,
+      "documentVisible": "visible",
+      "rendererSame": true,
+      "hookPresent": true,
+      "contextLost": false,
+      "internal": {
+        "frames": 1,
+        "active": true,
+        "priority": 0,
+        "frameloop": "demand"
+      },
+      "groups": [
+        {
+          "name": "female-detail-atlas",
+          "visible": true,
+          "children": 11
+        }
+      ],
+      "memory": {
+        "geometries": 3,
+        "textures": 1
+      },
+      "programs": 2
+    },
+    {
+      "key": "6/return",
+      "readyMs": 871,
+      "observedMs": 1815,
+      "failure": null,
+      "at": 7473.699999988079,
+      "step": "6/return",
+      "view": {
+        "version": 4,
+        "pointId": "",
+        "sex": "female",
+        "anatomyRegion": "whole",
+        "stage": 3,
+        "dissection": 66,
+        "displayMode": "layers",
+        "layers": {
+          "skin": false,
+          "muscle": false,
+          "bone": false,
+          "organ": true,
+          "vessel": false,
+          "lymph": false,
+          "nerve": false
+        },
+        "alpha": {
+          "skin": 1,
+          "muscle": 1,
+          "bone": 1,
+          "organ": 1,
+          "vessel": 1,
+          "lymph": 1,
+          "nerve": 1
+        },
+        "markers": "selected",
+        "labels": false,
+        "selection": null,
+        "detail": null,
+        "comparison": null,
+        "isolated": false,
+        "cutaway": 0,
+        "selectionTarget": "visible",
+        "camera": {
+          "position": [
+            -0.0010346770286560059,
+            1.2565141270030575,
+            1.9377138417986042
+          ],
+          "target": [
+            -0.0010346770286560059,
+            1.1436338424682617,
+            -0.05429117940366268
+          ]
+        },
+        "filters": {
+          "query": "",
+          "region": "전체",
+          "meridian": "all",
+          "concept": "all",
+          "onlySaved": false,
+          "bodyRegion": "전체",
+          "catalogue": "all"
+        }
+      },
+      "frames": [
+        {
+          "step": "6/return",
+          "start": 5660.099999964237,
+          "end": 5660.099999964237,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "6/return",
+          "start": 5704,
+          "end": 5704,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "6/return",
+          "start": 5781.399999976158,
+          "end": 5781.5,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "6/return",
+          "start": 5803.899999976158,
+          "end": 5804,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "6/return",
+          "start": 5976.399999976158,
+          "end": 5982.899999976158,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "6/return",
+          "start": 6302.399999976158,
+          "end": 6303.099999964237,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "6/return",
+          "start": 6532.199999988079,
+          "end": 6533.099999964237,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "6/return",
+          "start": 6771.099999964237,
+          "end": 6771.899999976158,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "6/return",
+          "start": 7011.599999964237,
+          "end": 7012.399999976158,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "6/return",
+          "start": 7245.099999964237,
+          "end": 7245.800000011921,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        }
+      ],
+      "longTasks": [
+        {
+          "t": 468.39999997615814,
+          "duration": 53
+        },
+        {
+          "t": 757.0999999642372,
+          "duration": 58
+        },
+        {
+          "t": 890.5,
+          "duration": 129
+        },
+        {
+          "t": 1021.6999999880791,
+          "duration": 105
+        },
+        {
+          "t": 1575.8999999761581,
+          "duration": 76
+        },
+        {
+          "t": 1857.800000011921,
+          "duration": 177
+        },
+        {
+          "t": 2051.399999976158,
+          "duration": 76
+        },
+        {
+          "t": 2131.599999964237,
+          "duration": 78
+        },
+        {
+          "t": 2223.399999976158,
+          "duration": 77
+        },
+        {
+          "t": 2315,
+          "duration": 77
+        },
+        {
+          "t": 2394.300000011921,
+          "duration": 77
+        },
+        {
+          "t": 2505.199999988079,
+          "duration": 60
+        },
+        {
+          "t": 2632.199999988079,
+          "duration": 106
+        },
+        {
+          "t": 3153.899999976158,
+          "duration": 311
+        },
+        {
+          "t": 3483.399999976158,
+          "duration": 231
+        },
+        {
+          "t": 3716.099999964237,
+          "duration": 225
+        },
+        {
+          "t": 3971.800000011921,
+          "duration": 54
+        },
+        {
+          "t": 4090.099999964237,
+          "duration": 104
+        },
+        {
+          "t": 4549.099999964237,
+          "duration": 307
+        },
+        {
+          "t": 4872.899999976158,
+          "duration": 223
+        },
+        {
+          "t": 5097.699999988079,
+          "duration": 227
+        },
+        {
+          "t": 5355,
+          "duration": 52
+        },
+        {
+          "t": 5483.699999988079,
+          "duration": 104
+        },
+        {
+          "t": 5976.300000011921,
+          "duration": 311
+        },
+        {
+          "t": 6302.199999988079,
+          "duration": 227
+        },
+        {
+          "t": 6532.199999988079,
+          "duration": 225
+        },
+        {
+          "t": 6771.099999964237,
+          "duration": 223
+        },
+        {
+          "t": 7011.5,
+          "duration": 231
+        },
+        {
+          "t": 7245.099999964237,
+          "duration": 228
+        }
+      ],
+      "events": [],
+      "canvasConnected": true,
+      "documentVisible": "visible",
+      "rendererSame": true,
+      "hookPresent": true,
+      "contextLost": false,
+      "internal": {
+        "frames": 0,
+        "active": true,
+        "priority": 0,
+        "frameloop": "demand"
+      },
+      "groups": [
+        {
+          "name": "female-atlas",
+          "visible": true,
+          "children": 1220
+        }
+      ],
+      "memory": {
+        "geometries": 295,
+        "textures": 1
+      },
+      "programs": 2
+    },
+    {
+      "key": "7/ct",
+      "readyMs": 159,
+      "observedMs": 320,
+      "failure": null,
+      "at": 7795,
+      "step": "7/ct",
+      "view": {
+        "version": 4,
+        "pointId": "",
+        "sex": "female",
+        "anatomyRegion": "whole",
+        "stage": 3,
+        "dissection": 66,
+        "displayMode": "layers",
+        "layers": {
+          "skin": false,
+          "muscle": false,
+          "bone": false,
+          "organ": true,
+          "vessel": false,
+          "lymph": false,
+          "nerve": false
+        },
+        "alpha": {
+          "skin": 1,
+          "muscle": 1,
+          "bone": 1,
+          "organ": 1,
+          "vessel": 1,
+          "lymph": 1,
+          "nerve": 1
+        },
+        "markers": "selected",
+        "labels": false,
+        "selection": {
+          "kind": "bundle",
+          "ids": [
+            "CTF_stomach"
+          ],
+          "name": "위 (여성 CT)"
+        },
+        "detail": {
+          "id": "stomach-ct",
+          "name": "위 (여성 CT)",
+          "ids": [
+            "CTF_stomach"
+          ],
+          "layers": {
+            "skin": false,
+            "muscle": false,
+            "bone": false,
+            "organ": true,
+            "vessel": false,
+            "lymph": false,
+            "nerve": false
+          }
+        },
+        "comparison": null,
+        "isolated": false,
+        "cutaway": 0,
+        "selectionTarget": "visible",
+        "camera": {
+          "position": [
+            0.023249998688697815,
+            1.1254747371874547,
+            0.7143928410306465
+          ],
+          "target": [
+            0.023249998688697815,
+            1.087499976158142,
+            0.04424999933689833
+          ]
+        },
+        "filters": {
+          "query": "",
+          "region": "전체",
+          "meridian": "all",
+          "concept": "all",
+          "onlySaved": false,
+          "bodyRegion": "전체",
+          "catalogue": "all"
+        }
+      },
+      "frames": [
+        {
+          "step": "7/ct",
+          "start": 7557.800000011921,
+          "end": 7557.899999976158,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "7/ct",
+          "start": 7579.599999964237,
+          "end": 7579.599999964237,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "7/ct",
+          "start": 7635.300000011921,
+          "end": 7636.599999964237,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "7/ct",
+          "start": 7765.699999988079,
+          "end": 7765.800000011921,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        }
+      ],
+      "longTasks": [
+        {
+          "t": 468.39999997615814,
+          "duration": 53
+        },
+        {
+          "t": 757.0999999642372,
+          "duration": 58
+        },
+        {
+          "t": 890.5,
+          "duration": 129
+        },
+        {
+          "t": 1021.6999999880791,
+          "duration": 105
+        },
+        {
+          "t": 1575.8999999761581,
+          "duration": 76
+        },
+        {
+          "t": 1857.800000011921,
+          "duration": 177
+        },
+        {
+          "t": 2051.399999976158,
+          "duration": 76
+        },
+        {
+          "t": 2131.599999964237,
+          "duration": 78
+        },
+        {
+          "t": 2223.399999976158,
+          "duration": 77
+        },
+        {
+          "t": 2315,
+          "duration": 77
+        },
+        {
+          "t": 2394.300000011921,
+          "duration": 77
+        },
+        {
+          "t": 2505.199999988079,
+          "duration": 60
+        },
+        {
+          "t": 2632.199999988079,
+          "duration": 106
+        },
+        {
+          "t": 3153.899999976158,
+          "duration": 311
+        },
+        {
+          "t": 3483.399999976158,
+          "duration": 231
+        },
+        {
+          "t": 3716.099999964237,
+          "duration": 225
+        },
+        {
+          "t": 3971.800000011921,
+          "duration": 54
+        },
+        {
+          "t": 4090.099999964237,
+          "duration": 104
+        },
+        {
+          "t": 4549.099999964237,
+          "duration": 307
+        },
+        {
+          "t": 4872.899999976158,
+          "duration": 223
+        },
+        {
+          "t": 5097.699999988079,
+          "duration": 227
+        },
+        {
+          "t": 5355,
+          "duration": 52
+        },
+        {
+          "t": 5483.699999988079,
+          "duration": 104
+        },
+        {
+          "t": 5976.300000011921,
+          "duration": 311
+        },
+        {
+          "t": 6302.199999988079,
+          "duration": 227
+        },
+        {
+          "t": 6532.199999988079,
+          "duration": 225
+        },
+        {
+          "t": 6771.099999964237,
+          "duration": 223
+        },
+        {
+          "t": 7011.5,
+          "duration": 231
+        },
+        {
+          "t": 7245.099999964237,
+          "duration": 228
+        },
+        {
+          "t": 7505,
+          "duration": 52
+        },
+        {
+          "t": 7635.099999964237,
+          "duration": 104
+        }
+      ],
+      "events": [],
+      "canvasConnected": true,
+      "documentVisible": "visible",
+      "rendererSame": true,
+      "hookPresent": true,
+      "contextLost": false,
+      "internal": {
+        "frames": 1,
+        "active": true,
+        "priority": 0,
+        "frameloop": "demand"
+      },
+      "groups": [
+        {
+          "name": "female-detail-atlas",
+          "visible": true,
+          "children": 11
+        }
+      ],
+      "memory": {
+        "geometries": 3,
+        "textures": 1
+      },
+      "programs": 2
+    },
+    {
+      "key": "8/return",
+      "readyMs": 652,
+      "observedMs": 1818,
+      "failure": null,
+      "at": 9625.399999976158,
+      "step": "8/return",
+      "view": {
+        "version": 4,
+        "pointId": "",
+        "sex": "female",
+        "anatomyRegion": "whole",
+        "stage": 3,
+        "dissection": 66,
+        "displayMode": "layers",
+        "layers": {
+          "skin": false,
+          "muscle": false,
+          "bone": false,
+          "organ": true,
+          "vessel": false,
+          "lymph": false,
+          "nerve": false
+        },
+        "alpha": {
+          "skin": 1,
+          "muscle": 1,
+          "bone": 1,
+          "organ": 1,
+          "vessel": 1,
+          "lymph": 1,
+          "nerve": 1
+        },
+        "markers": "selected",
+        "labels": false,
+        "selection": null,
+        "detail": null,
+        "comparison": null,
+        "isolated": false,
+        "cutaway": 0,
+        "selectionTarget": "visible",
+        "camera": {
+          "position": [
+            -0.0010346770286560059,
+            1.2565141270030575,
+            1.9377138417986042
+          ],
+          "target": [
+            -0.0010346770286560059,
+            1.1436338424682617,
+            -0.05429117940366268
+          ]
+        },
+        "filters": {
+          "query": "",
+          "region": "전체",
+          "meridian": "all",
+          "concept": "all",
+          "onlySaved": false,
+          "bodyRegion": "전체",
+          "catalogue": "all"
+        }
+      },
+      "frames": [
+        {
+          "step": "8/return",
+          "start": 7808.800000011921,
+          "end": 7808.800000011921,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "8/return",
+          "start": 7838.899999976158,
+          "end": 7839,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "8/return",
+          "start": 7935.699999988079,
+          "end": 7935.699999988079,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "8/return",
+          "start": 7954.300000011921,
+          "end": 7954.300000011921,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "8/return",
+          "start": 8139.5,
+          "end": 8145.699999988079,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "8/return",
+          "start": 8460.399999976158,
+          "end": 8461.399999976158,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "8/return",
+          "start": 8687,
+          "end": 8687.800000011921,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "8/return",
+          "start": 8928.800000011921,
+          "end": 8929.399999976158,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "8/return",
+          "start": 9172.800000011921,
+          "end": 9173.5,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "8/return",
+          "start": 9400.5,
+          "end": 9401.199999988079,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        }
+      ],
+      "longTasks": [
+        {
+          "t": 468.39999997615814,
+          "duration": 53
+        },
+        {
+          "t": 757.0999999642372,
+          "duration": 58
+        },
+        {
+          "t": 890.5,
+          "duration": 129
+        },
+        {
+          "t": 1021.6999999880791,
+          "duration": 105
+        },
+        {
+          "t": 1575.8999999761581,
+          "duration": 76
+        },
+        {
+          "t": 1857.800000011921,
+          "duration": 177
+        },
+        {
+          "t": 2051.399999976158,
+          "duration": 76
+        },
+        {
+          "t": 2131.599999964237,
+          "duration": 78
+        },
+        {
+          "t": 2223.399999976158,
+          "duration": 77
+        },
+        {
+          "t": 2315,
+          "duration": 77
+        },
+        {
+          "t": 2394.300000011921,
+          "duration": 77
+        },
+        {
+          "t": 2505.199999988079,
+          "duration": 60
+        },
+        {
+          "t": 2632.199999988079,
+          "duration": 106
+        },
+        {
+          "t": 3153.899999976158,
+          "duration": 311
+        },
+        {
+          "t": 3483.399999976158,
+          "duration": 231
+        },
+        {
+          "t": 3716.099999964237,
+          "duration": 225
+        },
+        {
+          "t": 3971.800000011921,
+          "duration": 54
+        },
+        {
+          "t": 4090.099999964237,
+          "duration": 104
+        },
+        {
+          "t": 4549.099999964237,
+          "duration": 307
+        },
+        {
+          "t": 4872.899999976158,
+          "duration": 223
+        },
+        {
+          "t": 5097.699999988079,
+          "duration": 227
+        },
+        {
+          "t": 5355,
+          "duration": 52
+        },
+        {
+          "t": 5483.699999988079,
+          "duration": 104
+        },
+        {
+          "t": 5976.300000011921,
+          "duration": 311
+        },
+        {
+          "t": 6302.199999988079,
+          "duration": 227
+        },
+        {
+          "t": 6532.199999988079,
+          "duration": 225
+        },
+        {
+          "t": 6771.099999964237,
+          "duration": 223
+        },
+        {
+          "t": 7011.5,
+          "duration": 231
+        },
+        {
+          "t": 7245.099999964237,
+          "duration": 228
+        },
+        {
+          "t": 7505,
+          "duration": 52
+        },
+        {
+          "t": 7635.099999964237,
+          "duration": 104
+        },
+        {
+          "t": 8139.300000011921,
+          "duration": 307
+        },
+        {
+          "t": 8460.399999976158,
+          "duration": 223
+        },
+        {
+          "t": 8686.899999976158,
+          "duration": 227
+        },
+        {
+          "t": 8928.599999964237,
+          "duration": 230
+        },
+        {
+          "t": 9172.699999988079,
+          "duration": 225
+        },
+        {
+          "t": 9400.399999976158,
+          "duration": 224
+        }
+      ],
+      "events": [],
+      "canvasConnected": true,
+      "documentVisible": "visible",
+      "rendererSame": true,
+      "hookPresent": true,
+      "contextLost": false,
+      "internal": {
+        "frames": 0,
+        "active": true,
+        "priority": 0,
+        "frameloop": "demand"
+      },
+      "groups": [
+        {
+          "name": "female-atlas",
+          "visible": true,
+          "children": 1220
+        }
+      ],
+      "memory": {
+        "geometries": 295,
+        "textures": 1
+      },
+      "programs": 2
+    },
+    {
+      "key": "9/ct",
+      "readyMs": 270,
+      "observedMs": 415,
+      "failure": null,
+      "at": 10040.699999988079,
+      "step": "9/ct",
+      "view": {
+        "version": 4,
+        "pointId": "",
+        "sex": "female",
+        "anatomyRegion": "whole",
+        "stage": 3,
+        "dissection": 66,
+        "displayMode": "layers",
+        "layers": {
+          "skin": false,
+          "muscle": false,
+          "bone": false,
+          "organ": true,
+          "vessel": false,
+          "lymph": false,
+          "nerve": false
+        },
+        "alpha": {
+          "skin": 1,
+          "muscle": 1,
+          "bone": 1,
+          "organ": 1,
+          "vessel": 1,
+          "lymph": 1,
+          "nerve": 1
+        },
+        "markers": "selected",
+        "labels": false,
+        "selection": {
+          "kind": "bundle",
+          "ids": [
+            "CTF_stomach"
+          ],
+          "name": "위 (여성 CT)"
+        },
+        "detail": {
+          "id": "stomach-ct",
+          "name": "위 (여성 CT)",
+          "ids": [
+            "CTF_stomach"
+          ],
+          "layers": {
+            "skin": false,
+            "muscle": false,
+            "bone": false,
+            "organ": true,
+            "vessel": false,
+            "lymph": false,
+            "nerve": false
+          }
+        },
+        "comparison": null,
+        "isolated": false,
+        "cutaway": 0,
+        "selectionTarget": "visible",
+        "camera": {
+          "position": [
+            0.023249998688697815,
+            1.1254747371874547,
+            0.7143928410306465
+          ],
+          "target": [
+            0.023249998688697815,
+            1.087499976158142,
+            0.04424999933689833
+          ]
+        },
+        "filters": {
+          "query": "",
+          "region": "전체",
+          "meridian": "all",
+          "concept": "all",
+          "onlySaved": false,
+          "bodyRegion": "전체",
+          "catalogue": "all"
+        }
+      },
+      "frames": [
+        {
+          "step": "9/ct",
+          "start": 9709.099999964237,
+          "end": 9709.300000011921,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "9/ct",
+          "start": 9731.599999964237,
+          "end": 9731.599999964237,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "9/ct",
+          "start": 9773.800000011921,
+          "end": 9775.199999988079,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "9/ct",
+          "start": 9896.5,
+          "end": 9896.599999964237,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "9/ct",
+          "start": 9940,
+          "end": 9940.099999964237,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "9/ct",
+          "start": 9982.800000011921,
+          "end": 9982.899999976158,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        },
+        {
+          "step": "9/ct",
+          "start": 10012.699999988079,
+          "end": 10012.699999988079,
+          "counts": {
+            "female": 0,
+            "ct": 1,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-detail-atlas"
+          ]
+        }
+      ],
+      "longTasks": [
+        {
+          "t": 468.39999997615814,
+          "duration": 53
+        },
+        {
+          "t": 757.0999999642372,
+          "duration": 58
+        },
+        {
+          "t": 890.5,
+          "duration": 129
+        },
+        {
+          "t": 1021.6999999880791,
+          "duration": 105
+        },
+        {
+          "t": 1575.8999999761581,
+          "duration": 76
+        },
+        {
+          "t": 1857.800000011921,
+          "duration": 177
+        },
+        {
+          "t": 2051.399999976158,
+          "duration": 76
+        },
+        {
+          "t": 2131.599999964237,
+          "duration": 78
+        },
+        {
+          "t": 2223.399999976158,
+          "duration": 77
+        },
+        {
+          "t": 2315,
+          "duration": 77
+        },
+        {
+          "t": 2394.300000011921,
+          "duration": 77
+        },
+        {
+          "t": 2505.199999988079,
+          "duration": 60
+        },
+        {
+          "t": 2632.199999988079,
+          "duration": 106
+        },
+        {
+          "t": 3153.899999976158,
+          "duration": 311
+        },
+        {
+          "t": 3483.399999976158,
+          "duration": 231
+        },
+        {
+          "t": 3716.099999964237,
+          "duration": 225
+        },
+        {
+          "t": 3971.800000011921,
+          "duration": 54
+        },
+        {
+          "t": 4090.099999964237,
+          "duration": 104
+        },
+        {
+          "t": 4549.099999964237,
+          "duration": 307
+        },
+        {
+          "t": 4872.899999976158,
+          "duration": 223
+        },
+        {
+          "t": 5097.699999988079,
+          "duration": 227
+        },
+        {
+          "t": 5355,
+          "duration": 52
+        },
+        {
+          "t": 5483.699999988079,
+          "duration": 104
+        },
+        {
+          "t": 5976.300000011921,
+          "duration": 311
+        },
+        {
+          "t": 6302.199999988079,
+          "duration": 227
+        },
+        {
+          "t": 6532.199999988079,
+          "duration": 225
+        },
+        {
+          "t": 6771.099999964237,
+          "duration": 223
+        },
+        {
+          "t": 7011.5,
+          "duration": 231
+        },
+        {
+          "t": 7245.099999964237,
+          "duration": 228
+        },
+        {
+          "t": 7505,
+          "duration": 52
+        },
+        {
+          "t": 7635.099999964237,
+          "duration": 104
+        },
+        {
+          "t": 8139.300000011921,
+          "duration": 307
+        },
+        {
+          "t": 8460.399999976158,
+          "duration": 223
+        },
+        {
+          "t": 8686.899999976158,
+          "duration": 227
+        },
+        {
+          "t": 8928.599999964237,
+          "duration": 230
+        },
+        {
+          "t": 9172.699999988079,
+          "duration": 225
+        },
+        {
+          "t": 9400.399999976158,
+          "duration": 224
+        },
+        {
+          "t": 9655.300000011921,
+          "duration": 53
+        },
+        {
+          "t": 9773.699999988079,
+          "duration": 106
+        }
+      ],
+      "events": [],
+      "canvasConnected": true,
+      "documentVisible": "visible",
+      "rendererSame": true,
+      "hookPresent": true,
+      "contextLost": false,
+      "internal": {
+        "frames": 0,
+        "active": true,
+        "priority": 0,
+        "frameloop": "demand"
+      },
+      "groups": [
+        {
+          "name": "female-detail-atlas",
+          "visible": true,
+          "children": 11
+        }
+      ],
+      "memory": {
+        "geometries": 3,
+        "textures": 1
+      },
+      "programs": 2
+    },
+    {
+      "key": "10/return",
+      "readyMs": 608,
+      "observedMs": 1781,
+      "failure": null,
+      "at": 11821.899999976158,
+      "step": "10/return",
+      "view": {
+        "version": 4,
+        "pointId": "",
+        "sex": "female",
+        "anatomyRegion": "whole",
+        "stage": 3,
+        "dissection": 66,
+        "displayMode": "layers",
+        "layers": {
+          "skin": false,
+          "muscle": false,
+          "bone": false,
+          "organ": true,
+          "vessel": false,
+          "lymph": false,
+          "nerve": false
+        },
+        "alpha": {
+          "skin": 1,
+          "muscle": 1,
+          "bone": 1,
+          "organ": 1,
+          "vessel": 1,
+          "lymph": 1,
+          "nerve": 1
+        },
+        "markers": "selected",
+        "labels": false,
+        "selection": null,
+        "detail": null,
+        "comparison": null,
+        "isolated": false,
+        "cutaway": 0,
+        "selectionTarget": "visible",
+        "camera": {
+          "position": [
+            -0.0010346770286560059,
+            1.2565141270030575,
+            1.9377138417986042
+          ],
+          "target": [
+            -0.0010346770286560059,
+            1.1436338424682617,
+            -0.05429117940366268
+          ]
+        },
+        "filters": {
+          "query": "",
+          "region": "전체",
+          "meridian": "all",
+          "concept": "all",
+          "onlySaved": false,
+          "bodyRegion": "전체",
+          "catalogue": "all"
+        }
+      },
+      "frames": [
+        {
+          "step": "10/return",
+          "start": 10119,
+          "end": 10119.099999964237,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "10/return",
+          "start": 10137.699999988079,
+          "end": 10137.699999988079,
+          "counts": {
+            "female": 0,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": []
+        },
+        {
+          "step": "10/return",
+          "start": 10323.699999988079,
+          "end": 10330,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "10/return",
+          "start": 10649.300000011921,
+          "end": 10650.099999964237,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "10/return",
+          "start": 10877.399999976158,
+          "end": 10878.300000011921,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "10/return",
+          "start": 11118.199999988079,
+          "end": 11118.699999988079,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "10/return",
+          "start": 11364.699999988079,
+          "end": 11365.599999964237,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        },
+        {
+          "step": "10/return",
+          "start": 11596.5,
+          "end": 11597.199999988079,
+          "counts": {
+            "female": 293,
+            "ct": 0,
+            "maleDetail": 0
+          },
+          "groups": [
+            "female-atlas"
+          ]
+        }
+      ],
+      "longTasks": [
+        {
+          "t": 468.39999997615814,
+          "duration": 53
+        },
+        {
+          "t": 757.0999999642372,
+          "duration": 58
+        },
+        {
+          "t": 890.5,
+          "duration": 129
+        },
+        {
+          "t": 1021.6999999880791,
+          "duration": 105
+        },
+        {
+          "t": 1575.8999999761581,
+          "duration": 76
+        },
+        {
+          "t": 1857.800000011921,
+          "duration": 177
+        },
+        {
+          "t": 2051.399999976158,
+          "duration": 76
+        },
+        {
+          "t": 2131.599999964237,
+          "duration": 78
+        },
+        {
+          "t": 2223.399999976158,
+          "duration": 77
+        },
+        {
+          "t": 2315,
+          "duration": 77
+        },
+        {
+          "t": 2394.300000011921,
+          "duration": 77
+        },
+        {
+          "t": 2505.199999988079,
+          "duration": 60
+        },
+        {
+          "t": 2632.199999988079,
+          "duration": 106
+        },
+        {
+          "t": 3153.899999976158,
+          "duration": 311
+        },
+        {
+          "t": 3483.399999976158,
+          "duration": 231
+        },
+        {
+          "t": 3716.099999964237,
+          "duration": 225
+        },
+        {
+          "t": 3971.800000011921,
+          "duration": 54
+        },
+        {
+          "t": 4090.099999964237,
+          "duration": 104
+        },
+        {
+          "t": 4549.099999964237,
+          "duration": 307
+        },
+        {
+          "t": 4872.899999976158,
+          "duration": 223
+        },
+        {
+          "t": 5097.699999988079,
+          "duration": 227
+        },
+        {
+          "t": 5355,
+          "duration": 52
+        },
+        {
+          "t": 5483.699999988079,
+          "duration": 104
+        },
+        {
+          "t": 5976.300000011921,
+          "duration": 311
+        },
+        {
+          "t": 6302.199999988079,
+          "duration": 227
+        },
+        {
+          "t": 6532.199999988079,
+          "duration": 225
+        },
+        {
+          "t": 6771.099999964237,
+          "duration": 223
+        },
+        {
+          "t": 7011.5,
+          "duration": 231
+        },
+        {
+          "t": 7245.099999964237,
+          "duration": 228
+        },
+        {
+          "t": 7505,
+          "duration": 52
+        },
+        {
+          "t": 7635.099999964237,
+          "duration": 104
+        },
+        {
+          "t": 8139.300000011921,
+          "duration": 307
+        },
+        {
+          "t": 8460.399999976158,
+          "duration": 223
+        },
+        {
+          "t": 8686.899999976158,
+          "duration": 227
+        },
+        {
+          "t": 8928.599999964237,
+          "duration": 230
+        },
+        {
+          "t": 9172.699999988079,
+          "duration": 225
+        },
+        {
+          "t": 9400.399999976158,
+          "duration": 224
+        },
+        {
+          "t": 9655.300000011921,
+          "duration": 53
+        },
+        {
+          "t": 9773.699999988079,
+          "duration": 106
+        },
+        {
+          "t": 10323.599999964237,
+          "duration": 311
+        },
+        {
+          "t": 10649.300000011921,
+          "duration": 225
+        },
+        {
+          "t": 10877.399999976158,
+          "duration": 224
+        },
+        {
+          "t": 11118.099999964237,
+          "duration": 232
+        },
+        {
+          "t": 11364.699999988079,
+          "duration": 229
+        },
+        {
+          "t": 11596.5,
+          "duration": 224
+        }
+      ],
+      "events": [],
+      "canvasConnected": true,
+      "documentVisible": "visible",
+      "rendererSame": true,
+      "hookPresent": true,
+      "contextLost": false,
+      "internal": {
+        "frames": 0,
+        "active": true,
+        "priority": 0,
+        "frameloop": "demand"
+      },
+      "groups": [
+        {
+          "name": "female-atlas",
+          "visible": true,
+          "children": 1220
+        }
+      ],
+      "memory": {
+        "geometries": 295,
+        "textures": 1
+      },
+      "programs": 2
+    }
+  ],
+  "limitations": [
+    "Timing is from headless software rendering on this machine, not end-user latency or GPU completion.",
+    "Observer wraps renderer submission but never requests a scene render or edits anatomy."
+  ],
+  "prelude": [
+    {
+      "depth": "34.5",
+      "elapsedMs": 2838
+    },
+    {
+      "depth": "68.5",
+      "elapsedMs": 10167
+    },
+    {
+      "depth": "80.5",
+      "elapsedMs": 4299
+    },
+    {
+      "depth": "88.5",
+      "elapsedMs": 17300
+    }
+  ],
+  "files": [
+    {
+      "path": "scripts/audit-source-scheduling.mjs",
+      "sha256": "c6ef6f9832000381d2c58dac687215291739e7f499ef2cf4a631e8b45cbf3969"
+    },
+    {
+      "path": "src/PackedAtlas.tsx",
+      "sha256": "4e2b698df884b503565954e046a506315a7d9c9c7f5fb4ed067a100cc548bd5c"
+    },
+    {
+      "path": "src/Atlas.tsx",
+      "sha256": "58672679dfbae6fbb25e63bdf7629a30ad9007ccae28b878d9689bb7df0d4987"
+    }
+  ]
+}

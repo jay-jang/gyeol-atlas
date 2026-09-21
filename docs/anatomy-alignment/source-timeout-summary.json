@@ -1,0 +1,359 @@
+{
+  "status": "The trace does not establish missing target rendering",
+  "finding": "The final full __drawSamples evaluation has a before event but no recorded after/result; no returned false observation proves draw absence.",
+  "limitations": [
+    "An incomplete traced operation does not identify GPU, main-thread, serialization, transport or test-runner causality.",
+    "Earlier successful frame snapshots do not establish the final transition state."
+  ],
+  "source": {
+    "path": ".cache/foot-registration/first-frame-failure/trace.zip",
+    "sha256": "b8ede23b3519f053a03a1f95d0c3cbb89f5f76827cec1427bcfaeb91f8d7b900",
+    "entry": "1-trace.trace",
+    "entrySha256": "d8cdc0c9c686ab6344aacaa651b2f87753d8ad508f8bb4563f9dc49473d035d8"
+  },
+  "pending": [
+    {
+      "callId": "call@308",
+      "method": "evaluateExpression",
+      "startMs": 166150.478,
+      "endMs": null,
+      "elapsedMs": null,
+      "expression": "() => window.__drawSamples",
+      "hasRecordedCompletion": false,
+      "hasRecordedResult": false,
+      "error": null
+    }
+  ],
+  "operations": [
+    {
+      "callId": "call@266",
+      "method": "expect",
+      "startMs": 158698.81,
+      "endMs": 159617.846,
+      "elapsedMs": 919.0359999999928,
+      "expression": "to.be.visible",
+      "selector": "internal:text=\"해부 모델 로드 완료\"i",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": false,
+      "error": null
+    },
+    {
+      "callId": "call@268",
+      "method": "evaluateExpression",
+      "startMs": 159774.642,
+      "endMs": 160048.899,
+      "elapsedMs": 274.25700000001234,
+      "expression": "() => window.__drawSamples",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": true,
+      "error": null,
+      "frameSizes": [
+        0,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ]
+    },
+    {
+      "callId": "call@270",
+      "method": "evaluateExpression",
+      "startMs": 160052.102,
+      "endMs": 160055.885,
+      "elapsedMs": 3.782999999995809,
+      "expression": "() => window.__drawSamples.splice(0)",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": true,
+      "error": null,
+      "frameSizes": [
+        0,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ]
+    },
+    {
+      "callId": "call@272",
+      "method": "evaluateExpression",
+      "startMs": 160059.656,
+      "endMs": 160060.933,
+      "elapsedMs": 1.2770000000018626,
+      "expression": "() => window.__drawSamples.splice(0)",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": true,
+      "error": null,
+      "frameSizes": []
+    },
+    {
+      "callId": "call@274",
+      "method": "click",
+      "startMs": 160062.456,
+      "endMs": 160248.732,
+      "elapsedMs": 186.27599999998347,
+      "selector": ".featured-anatomy > button >> internal:has=\"internal:text=\\\"위 (여성 CT)\\\"s\"",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": false,
+      "error": null
+    },
+    {
+      "callId": "call@276",
+      "method": "expect",
+      "startMs": 160254.603,
+      "endMs": 160673.908,
+      "elapsedMs": 419.304999999993,
+      "expression": "to.be.visible",
+      "selector": "internal:text=\"해부 모델 로드 완료\"i",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": false,
+      "error": null
+    },
+    {
+      "callId": "call@278",
+      "method": "evaluateExpression",
+      "startMs": 160719.031,
+      "endMs": 160837.81,
+      "elapsedMs": 118.77900000000955,
+      "expression": "() => window.__drawSamples",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": true,
+      "error": null,
+      "frameSizes": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "callId": "call@280",
+      "method": "evaluateExpression",
+      "startMs": 160884.982,
+      "endMs": 160930.59,
+      "elapsedMs": 45.60800000000745,
+      "expression": "() => window.__drawSamples.splice(0)",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": true,
+      "error": null,
+      "frameSizes": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "callId": "call@282",
+      "method": "evaluateExpression",
+      "startMs": 160933.095,
+      "endMs": 160934.223,
+      "elapsedMs": 1.1279999999969732,
+      "expression": "() => window.__drawSamples.splice(0)",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": true,
+      "error": null,
+      "frameSizes": []
+    },
+    {
+      "callId": "call@284",
+      "method": "click",
+      "startMs": 160935.568,
+      "endMs": 161073.187,
+      "elapsedMs": 137.61900000000605,
+      "selector": "internal:role=button[name=\"전신으로 돌아가기\"s]",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": false,
+      "error": null
+    },
+    {
+      "callId": "call@286",
+      "method": "expect",
+      "startMs": 161092.622,
+      "endMs": 162824.149,
+      "elapsedMs": 1731.5270000000019,
+      "expression": "to.be.visible",
+      "selector": "internal:text=\"해부 모델 로드 완료\"i",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": false,
+      "error": null
+    },
+    {
+      "callId": "call@288",
+      "method": "evaluateExpression",
+      "startMs": 163199.76,
+      "endMs": 163604.797,
+      "elapsedMs": 405.0369999999821,
+      "expression": "() => window.__drawSamples",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": true,
+      "error": null,
+      "frameSizes": [
+        0,
+        0,
+        293,
+        293,
+        293,
+        293,
+        293
+      ]
+    },
+    {
+      "callId": "call@290",
+      "method": "evaluateExpression",
+      "startMs": 163617.953,
+      "endMs": 163643.044,
+      "elapsedMs": 25.090999999985797,
+      "expression": "() => window.__drawSamples.splice(0)",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": true,
+      "error": null,
+      "frameSizes": [
+        0,
+        0,
+        293,
+        293,
+        293,
+        293,
+        293
+      ]
+    },
+    {
+      "callId": "call@292",
+      "method": "evaluateExpression",
+      "startMs": 163656.959,
+      "endMs": 163658.027,
+      "elapsedMs": 1.0679999999993015,
+      "expression": "() => window.__drawSamples.splice(0)",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": true,
+      "error": null,
+      "frameSizes": []
+    },
+    {
+      "callId": "call@294",
+      "method": "click",
+      "startMs": 163659.242,
+      "endMs": 163820.62,
+      "elapsedMs": 161.37799999999697,
+      "selector": ".featured-anatomy > button >> internal:has=\"internal:text=\\\"위 (여성 CT)\\\"s\"",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": false,
+      "error": null
+    },
+    {
+      "callId": "call@296",
+      "method": "expect",
+      "startMs": 163824.736,
+      "endMs": 164187.218,
+      "elapsedMs": 362.48199999998906,
+      "expression": "to.be.visible",
+      "selector": "internal:text=\"해부 모델 로드 완료\"i",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": false,
+      "error": null
+    },
+    {
+      "callId": "call@298",
+      "method": "evaluateExpression",
+      "startMs": 164229.687,
+      "endMs": 164341.929,
+      "elapsedMs": 112.24199999999837,
+      "expression": "() => window.__drawSamples",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": true,
+      "error": null,
+      "frameSizes": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "callId": "call@300",
+      "method": "evaluateExpression",
+      "startMs": 164387.449,
+      "endMs": 164388.937,
+      "elapsedMs": 1.4880000000121072,
+      "expression": "() => window.__drawSamples.splice(0)",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": true,
+      "error": null,
+      "frameSizes": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "callId": "call@302",
+      "method": "evaluateExpression",
+      "startMs": 164391.226,
+      "endMs": 164392.392,
+      "elapsedMs": 1.1659999999974389,
+      "expression": "() => window.__drawSamples.splice(0)",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": true,
+      "error": null,
+      "frameSizes": []
+    },
+    {
+      "callId": "call@304",
+      "method": "click",
+      "startMs": 164393.626,
+      "endMs": 164544.803,
+      "elapsedMs": 151.17700000002515,
+      "selector": "internal:role=button[name=\"전신으로 돌아가기\"s]",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": false,
+      "error": null
+    },
+    {
+      "callId": "call@306",
+      "method": "expect",
+      "startMs": 164560.011,
+      "endMs": 165776.306,
+      "elapsedMs": 1216.2950000000128,
+      "expression": "to.be.visible",
+      "selector": "internal:text=\"해부 모델 로드 완료\"i",
+      "hasRecordedCompletion": true,
+      "hasRecordedResult": false,
+      "error": null
+    },
+    {
+      "callId": "call@308",
+      "method": "evaluateExpression",
+      "startMs": 166150.478,
+      "endMs": null,
+      "elapsedMs": null,
+      "expression": "() => window.__drawSamples",
+      "hasRecordedCompletion": false,
+      "hasRecordedResult": false,
+      "error": null
+    }
+  ]
+}
