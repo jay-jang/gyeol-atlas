@@ -112,7 +112,7 @@ export function stageDescription(stage: number, sex: "male" | "female") {
   const count = structuresForSex(sex).filter(s => s.layer === layer && !s.detailOnly).length;
   const limitations: Record<Layer, string> = {
     skin: "여성 표면의 경혈 좌표는 검수 전이므로 표식을 표시하지 않습니다.",
-    muscle: "별도 여성 기증자의 하체 근육을 포함하며 일부는 피부 밖으로 벗어나는 정렬 문제가 남아 있습니다. 상체 근육 전체는 수록되어 있지 않습니다.",
+    muscle: "별도 제작된 Visible Human Female 하체 근육을 포함하며 일부는 피부 밖으로 벗어나는 정렬 문제가 남아 있습니다. 상체 근육 전체는 수록되어 있지 않습니다.",
     bone: "남성 유래 보완 골격 180개를 회청색과 출처로 구분합니다. 팔·손뼈 60개와 발가락뼈 20개의 위치를 부분 교정했지만 새끼발가락·뒤꿈치와 다른 보완 골격의 정렬은 아직 미완료입니다. 여성 고유 골격으로 해석하지 마세요.",
     organ: "여성 CT 자료는 전신에 합쳐지지 않은 별도 상세입니다. 전통적 장부 대응은 압력 전달 경로가 아닙니다.",
     vessel: "여성 원본에 수록된 혈관을 검색·선택합니다. 전신 미세혈관 전체를 뜻하지 않습니다.",

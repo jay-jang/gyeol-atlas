@@ -55,6 +55,8 @@ test('female help and layer descriptions use the female overview inventory', asy
     await page.getByRole('button',{name:`${label} 빠른 보기`,exact:true}).click(); await ready(page);
     const count=femaleStructures.filter(s=>s.layer===layer).length;
     await openTool(page,'레이어 조절');
+    await expect(page.locator('.anatomy-scope-controls')).toContainText('별도 제작된 Visible Human Female 자료');
+    await expect(page.locator('.anatomy-scope-controls')).not.toContainText('다른 여성 기증자');
     await expect(page.locator('.coverage-description')).toContainText(`여성 전신 참조의 ${label} 모형 ${count}개`);
     if(layer==='muscle')await expect(page.locator('.coverage-description')).toContainText('피부 밖으로 벗어나는 정렬 문제');
     if(layer==='bone'){
@@ -63,6 +65,7 @@ test('female help and layer descriptions use the female overview inventory', asy
     }
     await closeTool(page); await openTool(page,'도움말');
     await expect(page.locator('.viewer-help')).toContainText(`여성 전신 참조의 ${label} 모형 ${count}개`);
+    await expect(page.locator('.viewer-help')).not.toContainText('다른 여성 기증자');
     await closeTool(page);
   }
   await page.setViewportSize({width:390,height:844});
@@ -71,4 +74,7 @@ test('female help and layer descriptions use the female overview inventory', asy
   await page.locator('.coverage-description').scrollIntoViewIfNeeded();
   await expect(page.locator('.coverage-description')).toBeInViewport();
   await page.screenshot({path:'docs/anatomy-alignment/female-coverage-mobile.png'});
+  const donorHint=page.locator('.anatomy-scope-controls .control-hint').filter({hasText:'Visible Human Female'});
+  await donorHint.scrollIntoViewIfNeeded();await expect(donorHint).toBeInViewport();
+  await page.screenshot({path:'docs/anatomy-alignment/female-donor-help-mobile.png'});
 });

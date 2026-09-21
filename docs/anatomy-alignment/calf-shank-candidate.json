@@ -1,0 +1,744 @@
+{
+  "createdAt": "2026-09-21T09:38:18.192Z",
+  "status": "CANDIDATE SCREEN ONLY; no runtime mutation",
+  "sourceFitMethod": "Recompose the reproduced source thigh inverse then source shank similarity transform, without further fitting.",
+  "candidateMode": "original-shank",
+  "candidateMeshes": 2,
+  "otherMeshesPerCandidate": 1219,
+  "comparisons": [
+    {
+      "id": "VHF0005",
+      "name": "Gastrocnemius medial (left)",
+      "side": "left",
+      "sourceToCandidateMatrix": [
+        1.0261827154695067,
+        0,
+        0,
+        0,
+        0,
+        1.0261827154695067,
+        0,
+        0,
+        0,
+        0,
+        1.0261827154695067,
+        0,
+        0.03130587731874723,
+        -0.01575627260925426,
+        0.003988356781483904,
+        1
+      ],
+      "defaultHidden": false,
+      "referencedVertices": 2186,
+      "skinBefore": {
+        "inside": 1068,
+        "outside": 913,
+        "surface-band": 205,
+        "ambiguous": 0,
+        "maxOutsideMm": 21.342940212620313
+      },
+      "skinAfter": {
+        "inside": 2029,
+        "outside": 2,
+        "surface-band": 155,
+        "ambiguous": 0,
+        "maxOutsideMm": 2.1633910765337885
+      },
+      "skinPointwise": {
+        "newOutside": 2,
+        "worsenedOutside": 0,
+        "resolvedOutside": 913
+      },
+      "pairs": [
+        {
+          "otherId": "HRAF0003",
+          "name": "Skin",
+          "system": "integumentary",
+          "before": {
+            "intersectingTrianglePairs": 278,
+            "strictPlaneStraddlingPairs": 278,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 2.2752014835949486
+          },
+          "after": {
+            "intersectingTrianglePairs": 101,
+            "strictPlaneStraddlingPairs": 101,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.0478638772943916
+          }
+        },
+        {
+          "otherId": "HRAF0933",
+          "name": "Left tibial collateral ligament",
+          "system": "connective",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 35,
+            "strictPlaneStraddlingPairs": 35,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.713452974270724
+          }
+        },
+        {
+          "otherId": "HRAF0934",
+          "name": "Anterior cruciate ligament of knee (left)",
+          "system": "connective",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 26,
+            "strictPlaneStraddlingPairs": 26,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.8703085881315206
+          }
+        },
+        {
+          "otherId": "HRAF0935",
+          "name": "Posterior cruciate ligament of knee (left)",
+          "system": "connective",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 72,
+            "strictPlaneStraddlingPairs": 72,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.414632826808818
+          }
+        },
+        {
+          "otherId": "HRAF0936",
+          "name": "Meniscus (left)",
+          "system": "connective",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 72,
+            "strictPlaneStraddlingPairs": 72,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 2.2110853523328418
+          }
+        },
+        {
+          "otherId": "HRAF0937",
+          "name": "Femur (left)",
+          "system": "skeletal",
+          "before": {
+            "intersectingTrianglePairs": 18,
+            "strictPlaneStraddlingPairs": 18,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.4211459390791605
+          },
+          "after": {
+            "intersectingTrianglePairs": 64,
+            "strictPlaneStraddlingPairs": 64,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 2.965083617462074
+          }
+        },
+        {
+          "otherId": "HRAF0938",
+          "name": "Intercondylar fossa (left)",
+          "system": "skeletal",
+          "before": {
+            "intersectingTrianglePairs": 18,
+            "strictPlaneStraddlingPairs": 18,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.2491996928055462
+          },
+          "after": null
+        },
+        {
+          "otherId": "HRAF0939",
+          "name": "Anterior cruciate enthesis (left)",
+          "system": "connective",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 21,
+            "strictPlaneStraddlingPairs": 21,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.6753563291868834
+          }
+        },
+        {
+          "otherId": "HRAF0946",
+          "name": "Articular cartilage of knee (left)",
+          "system": "connective",
+          "before": {
+            "intersectingTrianglePairs": 7,
+            "strictPlaneStraddlingPairs": 7,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.1941645669215903
+          },
+          "after": {
+            "intersectingTrianglePairs": 8,
+            "strictPlaneStraddlingPairs": 8,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.4783253499185658
+          }
+        },
+        {
+          "otherId": "HRAF0947",
+          "name": "Medial condyle of left femur inferior",
+          "system": "skeletal",
+          "before": {
+            "intersectingTrianglePairs": 72,
+            "strictPlaneStraddlingPairs": 72,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.4812144991365384
+          },
+          "after": null
+        },
+        {
+          "otherId": "HRAF0948",
+          "name": "Lateral condyle of femur inferior (left)",
+          "system": "skeletal",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 57,
+            "strictPlaneStraddlingPairs": 54,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 2.5366091557915778
+          }
+        },
+        {
+          "otherId": "HRAF0954",
+          "name": "Tibia (left)",
+          "system": "skeletal",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 202,
+            "strictPlaneStraddlingPairs": 202,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 2.6393850295765864
+          }
+        },
+        {
+          "otherId": "VHF0004",
+          "name": "Biceps femoris short (left)",
+          "system": "donor-muscle",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 193,
+            "strictPlaneStraddlingPairs": 193,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 2.397467836648551
+          }
+        },
+        {
+          "otherId": "VHF0007",
+          "name": "Plantaris (left)",
+          "system": "donor-muscle",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 10,
+            "strictPlaneStraddlingPairs": 10,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.029054783668995835
+          }
+        },
+        {
+          "otherId": "VHF0008",
+          "name": "Popliteus (left)",
+          "system": "donor-muscle",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 180,
+            "strictPlaneStraddlingPairs": 180,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.6497847177527387
+          }
+        },
+        {
+          "otherId": "VHF0020",
+          "name": "Gastrocnemius lateral (left)",
+          "system": "donor-muscle",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 30,
+            "strictPlaneStraddlingPairs": 30,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.41408461618914383
+          }
+        },
+        {
+          "otherId": "VHF0022",
+          "name": "Soleus (left)",
+          "system": "donor-muscle",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 172,
+            "strictPlaneStraddlingPairs": 172,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.37701822837698734
+          }
+        }
+      ],
+      "nearest": [
+        {
+          "id": "VHF0020",
+          "name": "Gastrocnemius lateral (left)",
+          "beforeMm": 33.1905352241255,
+          "afterMm": 0.010907574439858816
+        },
+        {
+          "id": "VHF0022",
+          "name": "Soleus (left)",
+          "beforeMm": 28.312903468598464,
+          "afterMm": 0.01002141690671629
+        },
+        {
+          "id": "HRAF0937",
+          "name": "Femur (left)",
+          "beforeMm": 0.12490375610086862,
+          "afterMm": 0.009376743304317979
+        },
+        {
+          "id": "HRAF0954",
+          "name": "Tibia (left)",
+          "beforeMm": 2.522779096328676,
+          "afterMm": 0.009145906119087216
+        },
+        {
+          "id": "HRAF0955",
+          "name": "Fibula (left)",
+          "beforeMm": 42.518679611015834,
+          "afterMm": 8.336313648289202
+        }
+      ],
+      "summary": {
+        "beforePairs": 5,
+        "afterPairs": 15,
+        "newPairs": [
+          "HRAF0933",
+          "HRAF0934",
+          "HRAF0935",
+          "HRAF0936",
+          "HRAF0939",
+          "HRAF0948",
+          "HRAF0954",
+          "VHF0004",
+          "VHF0007",
+          "VHF0008",
+          "VHF0020",
+          "VHF0022"
+        ],
+        "removedPairs": [
+          "HRAF0938",
+          "HRAF0947"
+        ]
+      }
+    },
+    {
+      "id": "VHF0043",
+      "name": "Gastrocnemius medial (right)",
+      "side": "right",
+      "sourceToCandidateMatrix": [
+        0.9981393756856894,
+        0,
+        0,
+        0,
+        0,
+        0.9981393756856894,
+        0,
+        0,
+        0,
+        0,
+        0.9981393756856894,
+        0,
+        -0.035092653637078086,
+        -0.002830915616888391,
+        0.0033514357881743173,
+        0.9999999999999999
+      ],
+      "defaultHidden": false,
+      "referencedVertices": 2100,
+      "skinBefore": {
+        "inside": 950,
+        "outside": 1001,
+        "surface-band": 149,
+        "ambiguous": 0,
+        "maxOutsideMm": 24.661353266565925
+      },
+      "skinAfter": {
+        "inside": 2089,
+        "outside": 0,
+        "surface-band": 11,
+        "ambiguous": 0,
+        "maxOutsideMm": 0
+      },
+      "skinPointwise": {
+        "newOutside": 0,
+        "worsenedOutside": 0,
+        "resolvedOutside": 1001
+      },
+      "pairs": [
+        {
+          "otherId": "HRAF0003",
+          "name": "Skin",
+          "system": "integumentary",
+          "before": {
+            "intersectingTrianglePairs": 268,
+            "strictPlaneStraddlingPairs": 268,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 3.054762394416857
+          },
+          "after": null
+        },
+        {
+          "otherId": "HRAF0904",
+          "name": "Right tibial collateral ligament",
+          "system": "connective",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 49,
+            "strictPlaneStraddlingPairs": 49,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.9880355822924686
+          }
+        },
+        {
+          "otherId": "HRAF0905",
+          "name": "Anterior cruciate ligament of knee (right)",
+          "system": "connective",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 42,
+            "strictPlaneStraddlingPairs": 42,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.9850158997870084
+          }
+        },
+        {
+          "otherId": "HRAF0906",
+          "name": "Posterior cruciate ligament of knee (right)",
+          "system": "connective",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 56,
+            "strictPlaneStraddlingPairs": 56,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.6710795452921376
+          }
+        },
+        {
+          "otherId": "HRAF0910",
+          "name": "Meniscus (right)",
+          "system": "connective",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 115,
+            "strictPlaneStraddlingPairs": 115,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 2.8934812152728817
+          }
+        },
+        {
+          "otherId": "HRAF0911",
+          "name": "Femur (right)",
+          "system": "skeletal",
+          "before": {
+            "intersectingTrianglePairs": 58,
+            "strictPlaneStraddlingPairs": 58,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.930431362061453
+          },
+          "after": {
+            "intersectingTrianglePairs": 62,
+            "strictPlaneStraddlingPairs": 62,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 2.9388942215989093
+          }
+        },
+        {
+          "otherId": "HRAF0914",
+          "name": "Articular cartilage of knee (right)",
+          "system": "connective",
+          "before": {
+            "intersectingTrianglePairs": 11,
+            "strictPlaneStraddlingPairs": 11,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.8192623913191042
+          },
+          "after": {
+            "intersectingTrianglePairs": 6,
+            "strictPlaneStraddlingPairs": 6,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.3695133165250678
+          }
+        },
+        {
+          "otherId": "HRAF0917",
+          "name": "Medial condyle of right femur inferior",
+          "system": "skeletal",
+          "before": {
+            "intersectingTrianglePairs": 77,
+            "strictPlaneStraddlingPairs": 77,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.9653358831729193
+          },
+          "after": null
+        },
+        {
+          "otherId": "HRAF0918",
+          "name": "Lateral condyle of femur inferior (right)",
+          "system": "skeletal",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 53,
+            "strictPlaneStraddlingPairs": 53,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.5755036213237312
+          }
+        },
+        {
+          "otherId": "HRAF0921",
+          "name": "Intercondylar fossa (right)",
+          "system": "skeletal",
+          "before": {
+            "intersectingTrianglePairs": 12,
+            "strictPlaneStraddlingPairs": 12,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.85410005569611
+          },
+          "after": null
+        },
+        {
+          "otherId": "HRAF0923",
+          "name": "Anterior cruciate enthesis (right)",
+          "system": "connective",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 32,
+            "strictPlaneStraddlingPairs": 32,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.7895507764062963
+          }
+        },
+        {
+          "otherId": "HRAF0927",
+          "name": "Tibia (right)",
+          "system": "skeletal",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 210,
+            "strictPlaneStraddlingPairs": 210,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 2.7258672348150745
+          }
+        },
+        {
+          "otherId": "VHF0042",
+          "name": "Biceps femoris short head (right)",
+          "system": "donor-muscle",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 202,
+            "strictPlaneStraddlingPairs": 200,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 2.7033927320937026
+          }
+        },
+        {
+          "otherId": "VHF0045",
+          "name": "Plantaris (right)",
+          "system": "donor-muscle",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 231,
+            "strictPlaneStraddlingPairs": 230,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.683336322902888
+          }
+        },
+        {
+          "otherId": "VHF0046",
+          "name": "Popliteus (right)",
+          "system": "donor-muscle",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 173,
+            "strictPlaneStraddlingPairs": 171,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 2.2076375361028227
+          }
+        },
+        {
+          "otherId": "VHF0058",
+          "name": "Gastrocnemius lateral (right)",
+          "system": "donor-muscle",
+          "before": null,
+          "after": {
+            "intersectingTrianglePairs": 12,
+            "strictPlaneStraddlingPairs": 12,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.03359923152574144
+          }
+        }
+      ],
+      "nearest": [
+        {
+          "id": "VHF0058",
+          "name": "Gastrocnemius lateral (right)",
+          "beforeMm": 31.536101244761333,
+          "afterMm": 0.0051219225188605605
+        },
+        {
+          "id": "VHF0060",
+          "name": "Soleus (right)",
+          "beforeMm": 32.393796201098006,
+          "afterMm": 0.19770212611879512
+        },
+        {
+          "id": "HRAF0911",
+          "name": "Femur (right)",
+          "beforeMm": 0.019577009482475073,
+          "afterMm": 0.028890785972296815
+        },
+        {
+          "id": "HRAF0927",
+          "name": "Tibia (right)",
+          "beforeMm": 2.687085739262924,
+          "afterMm": 0.0393229197745531
+        },
+        {
+          "id": "HRAF0928",
+          "name": "Fibula (right)",
+          "beforeMm": 48.39874573464449,
+          "afterMm": 15.359226812930045
+        }
+      ],
+      "summary": {
+        "beforePairs": 5,
+        "afterPairs": 13,
+        "newPairs": [
+          "HRAF0904",
+          "HRAF0905",
+          "HRAF0906",
+          "HRAF0910",
+          "HRAF0918",
+          "HRAF0923",
+          "HRAF0927",
+          "VHF0042",
+          "VHF0045",
+          "VHF0046",
+          "VHF0058"
+        ],
+        "removedPairs": [
+          "HRAF0003",
+          "HRAF0917",
+          "HRAF0921"
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "All indexed vertices checked against the female skin with a 2mm numeric band, not tissue thickness.",
+    "All other atlas meshes are screened for surface intersection, including normally hidden parts.",
+    "No intersection does not exclude containment. New or worse crossings require review; surface crossing is not solid penetration depth.",
+    "Nearest vertex-to-surface distances are not tendon attachment validation or exact triangle distance.",
+    "Identical donor shank frame restores source-relative placement only; it does not prove alignment to the HRA bones."
+  ],
+  "files": [
+    {
+      "path": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "path": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "path": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "path": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "path": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "path": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "path": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "path": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "path": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "path": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "path": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "path": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "path": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "path": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "path": "docs/anatomy-alignment/donor-source-comparison.json",
+      "sha256": "ea0c9cbc5d0edc0a3859fb9f5786a638eeb3e92bb5a60649325561dc14c69959"
+    },
+    {
+      "path": "scripts/audit-calf-registration.mjs",
+      "sha256": "0912b0d57ff3555b1072d258a96e0c2e6256230cfa2bb2033c8bbc0a5e482b46"
+    },
+    {
+      "path": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "path": "scripts/lib/triangle-crossings.mjs",
+      "sha256": "a55dd923c032c76591a7f2aa1af2863fe9e24bf0adb0ee6eb4aad5388238d512"
+    },
+    {
+      "path": "src/female-arm-registration.ts",
+      "sha256": "b0ba7383abfcabc4e2561d74b8cfcda56b46850595be20e5d16fed7d288555dd"
+    },
+    {
+      "path": "src/female-foot-registration.ts",
+      "sha256": "6545d3024a6ee781dc6f9f282f12d54531de15c0de7631cbc5cfef44a0103ba8"
+    },
+    {
+      "path": "data/catalog/female-arm-registration.json",
+      "sha256": "c3b6283116775801e605399261a72154c581f4a682c527b3de66db328017a822"
+    },
+    {
+      "path": "data/catalog/female-foot-registration.json",
+      "sha256": "c8d8400067825ed5c70172d252d4a4ca291a2005bfe0488e633dfe56b5bb220a"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    }
+  ]
+}

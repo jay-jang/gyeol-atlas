@@ -39,7 +39,7 @@ export default function AnatomyControls({
     <label>표시 부위<select aria-label="해부 표시 부위" value={state.anatomyRegion} onChange={e => { const value = e.target.value as ViewState["anatomyRegion"]; dispatch({ type: "anatomy-region", value }); onRegion(value); }}>
       {Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}
     </select></label>
-    {state.sex === "female" && <p className="control-hint">HRA 여성 전신과 여성 CT 보완 상세는 서로 다른 신체 자료입니다. 위·부신·식도 구간·등 근육군 구간은 검색하거나 주요 기관에서 별도 CT 모형으로 볼 수 있습니다. 하체 근육은 다른 여성 기증자 자료이고, 회청색 보완 골격 180개는 남성 유래입니다. 상체 근육 전체·일부 말초신경은 아직 미수록입니다. 여성 경혈 좌표는 검수 전이므로 표식을 숨깁니다.</p>}
+    {state.sex === "female" && <p className="control-hint">HRA 여성 전신과 여성 CT 보완 상세는 서로 다른 신체 자료입니다. 위·부신·식도 구간·등 근육군 구간은 검색하거나 주요 기관에서 별도 CT 모형으로 볼 수 있습니다. 하체 근육은 별도 제작된 Visible Human Female 자료이며 전신 정합은 미완료입니다. 회청색 보완 골격 180개는 남성 유래입니다. 상체 근육 전체·일부 말초신경은 아직 미수록입니다. 여성 경혈 좌표는 검수 전이므로 표식을 숨깁니다.</p>}
   </div>;
   return mode === "layers" ? (
     <div className="layer-settings">

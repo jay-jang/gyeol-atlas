@@ -33,3 +33,5 @@ npm exec --yes --package=node@24.14.0 -- node scripts/audit-donor-source.mjs \
 출력은 `.cache/donor-muscle/source-comparison.json`이며 앱에 변환을 쓰는 경로가 없습니다. 다운로드 접근 제한은 사용자 제공 파일로 해소됐습니다. 전체 목표와 실제 위치 교정은 계속 진행 중입니다.
 
 agy가 원본 비교 스크립트·상위 코드·출력의 제한 범위를 읽기 전용 검토했습니다. 양의 간격을 실제 연결로 부르거나 변환 결과를 기계적 파열로 일반화한 최초 표현은 정정 요청했으며, [검토 범위와 정정](NEURAL_BONE_RELATIONS.md#agy와-화면-확인)을 구분해 기록합니다.
+
+후속으로 [세 실제 정합 후보](CALF_REGISTRATION_CANDIDATES.md)를 계산했습니다. 근육 간 간격이나 뼈 잔차 개선과 별개로 새 피부 이탈·조직 교차가 남아 세 후보 모두 런타임 적용을 보류했습니다.
