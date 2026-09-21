@@ -41,6 +41,12 @@
 
 원시 후보/수치: [회전 후보](forefoot-candidate.json.gz), [회전 감사](forefoot-candidate-audit.json.gz), [이동 포함 후보](forefoot-clearance-candidate.json.gz), [최종 감사](forefoot-clearance-candidate-audit.json.gz). 배포 결과는 별도 후속으로 기록합니다.
 
+## 공개 반영
+
+구현 `d8787830923f0f22d598a7fdb7651c3e1c68a224`의 [Pages 배포35577910270](https://github.com/jay-jang/gyeol-atlas/actions/runs/35577910270)가 성공했습니다. 공개 발가락4개의 검색·선택·확대 타깃이 교정 경계 중심과 일치했고 브라우저/HTTP 오류0입니다([공개 좌표 검사](pages-female-foot-verification.json)). 원본 중심과5mm 이상 차이가 있는 대상으로 구분했으며, 공개 모든 정점의 해시 감사는 아닙니다. 공개 [데스크톱](pages-female-toe-selected.png)·[모바일](pages-female-toe-selected-mobile.png)도 직접 검토했습니다.
+
+기본 Pages 검사에서는 위키 최초3D 요청0·정적 질문·409경혈·여성1,220개·여성 뇌283개·남성 심장83개와 오류0을 확인했습니다([결과](../acupoint-expansion/pages-verification.json)). 첫 시도는 환경변수 이름을 잘못 지정해 로컬4184 연결이 거절됐으며, `PAGES_ORIGIN`을 공개 주소로 지정한 실행이 통과했습니다. 이는 공개 사이트 장애가 아니었습니다. 전체 목표와 간헐적 전환 지연은 미완료 상태로 유지합니다.
+
 ## agy 제한 검토
 
 `500ae581-4984-4aad-823c-65f0beefe625`에서 후보 생성/감사와 후속 런타임·검사 코드를 읽기 전용 검토했습니다. 임상 검증이나 agy의 브라우저 실행은 아닙니다. 순차 이동의 순서 의존성, 묶음 내부 교차 유지, 정점 검사와 삼각형 내부의 차이를 제한으로 반영했습니다.
