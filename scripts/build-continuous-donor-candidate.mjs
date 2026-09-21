@@ -13,12 +13,15 @@ import {surfaceFrameField} from './lib/surface-frame-field.mjs';
 import {surfaceProbe,referencedVertices} from './lib/surface-containment.mjs';
 const root=process.argv[2];assert.ok(root,'Pass extracted STL directory');
 const regularizationMm=Number(process.argv[3]??20);assert.ok(Number.isFinite(regularizationMm)&&regularizationMm>0);
-const kernel=process.argv[4]??'inverse-square';assert.ok(['inverse-square','gaussian'].includes(kernel));assert.ok(process.argv.length<=5);
+const kernel=process.argv[4]??'inverse-square';assert.ok(['inverse-square','gaussian'].includes(kernel));
+const options=process.argv.slice(5);for(const o of options)assert.ok(['--hip-surface','--per-side'].includes(o));
+const hipSurface=options.includes('--hip-surface'),perSide=options.includes('--per-side');
 const files=new Map(),sha=b=>createHash('sha256').update(b).digest('hex');
 const read=p=>{const b=fs.readFileSync(p);files.set(p,sha(b));return b;};
 const json=p=>JSON.parse(read(p));
 const source=json('docs/anatomy-alignment/donor-source-comparison.json');
 const fitReport=json('docs/anatomy-alignment/hierarchy-joint-bone-surface-fits.json');
+const hipFits=hipSurface?json('docs/anatomy-alignment/hip-surface-fits.json'):null;
 const packing=json('docs/anatomy-alignment/donor-fidelity-packing.json').unsimplifiedAlternative;
 const packed=read('.cache/donor-fidelity/source-full.bin.gz');assert.equal(sha(packed),packing.sha256);
 const data=gunzipSync(packed),candidate=Buffer.from(data);assert.equal(data.length,packing.bytes);
@@ -34,11 +37,13 @@ for(const side of ['left','right'])for(const [group,bones] of [['hip',['Pelvis']
     const g=mergeVertices(raw,1e-8);raw.dispose();return g;
   });
   const geometry=mergeGeometries(geometries);geometries.forEach(g=>g.dispose());geometry.boundsTree=new MeshBVH(geometry);
-  const matrix=group==='hip'?groupMatrix(source.fits[`${side}-hip`]):new Matrix4().fromArray(fitReport.fits.find(f=>f.side===side&&f.mode===group).sourceToAtlasMatrix);
-  frames.push({matrix,geometry,nearest:point=>geometry.boundsTree.closestPointToPoint(point)});
-  frameRecords.push({side,group,bones,matrix:matrix.toArray(),fit:group==='hip'?'original coarse bounding-box fit':'hierarchical bone surface fit'});
+  const hipFit=hipFits?.fits.find(f=>f.side===side);if(hipFit)assert.equal(hipFit.converged,true);
+  const matrix=group==='hip'?(hipFit?new Matrix4().fromArray(hipFit.sourceToAtlasMatrix):groupMatrix(source.fits[`${side}-hip`])):new Matrix4().fromArray(fitReport.fits.find(f=>f.side===side&&f.mode===group).sourceToAtlasMatrix);
+  frames.push({side,matrix,geometry,nearest:point=>geometry.boundsTree.closestPointToPoint(point)});
+  frameRecords.push({side,group,bones,matrix:matrix.toArray(),fit:group==='hip'?(hipFit?'six-component pelvic surface fit':'original coarse bounding-box fit'):'hierarchical bone surface fit'});
 }
-const field=surfaceFrameField(frames,regularizationMm/1000,kernel);
+const globalField=surfaceFrameField(frames,regularizationMm/1000,kernel);
+const sideFields=Object.fromEntries(['left','right'].map(side=>[side,surfaceFrameField(frames.filter(f=>f.side===side),regularizationMm/1000,kernel)]));
 const skinPart=atlas.parts.find(p=>p.id==='HRAF0003'),skinBytes=gunzipSync(read(`public/models/female/${atlas.chunks[skinPart.chunk].gzip.split('/').pop()}`)),skin=new BufferGeometry();
 skin.setAttribute('position',new BufferAttribute(Float32Array.from({length:skinPart.vertexCount*3},(_,i)=>skinBytes.readFloatLE(skinPart.positions+4*i)),3));
 skin.setIndex(new BufferAttribute(Uint32Array.from({length:skinPart.indexCount},(_,i)=>skinBytes.readUInt32LE(skinPart.indices+4*i)),1));
@@ -48,10 +53,13 @@ const count=(row,c)=>{row[c.kind]++;if(c.kind==='outside')row.maxOutsideMm=Math.
 let minimum;
 for(const part of packing.parts){
   const original=source.muscles.find(m=>m.id===part.id);assert.equal(original.name,part.name);
+  const sourceSide=source.files.find(f=>f.file===original.source)?.side;assert.ok(['left','right'].includes(sourceSide));
+  const field=perSide?sideFields[sourceSide]:globalField;
+  const anchorFrameIndices=frames.map((f,i)=>({f,i})).filter(({f})=>!perSide||f.side===sourceSide).map(({i})=>i);
   const initial=groupMatrix(source.fits[original.fitGroup]);
   const g=new BufferGeometry();g.setAttribute('position',new BufferAttribute(Float32Array.from({length:part.vertexCount*3},(_,i)=>data.readFloatLE(part.positions+4*i)),3));
   g.setIndex(new BufferAttribute(Uint32Array.from({length:part.indexCount},(_,i)=>data.readUInt32LE(part.indices+4*i)),1));
-  const row={id:part.id,name:part.name,vertices:0,skinBefore:tally(),skinAfter:tally(),newOutside:0,worsenedOutside:0,resolvedOutside:0,nonpositiveJacobians:0,minimumJacobianDeterminant:Infinity,maximumJacobianDeterminant:-Infinity,maximumJacobianFrobeniusNorm:0};
+  const row={id:part.id,name:part.name,sourceSide,anchorFrameIndices,vertices:0,skinBefore:tally(),skinAfter:tally(),newOutside:0,worsenedOutside:0,resolvedOutside:0,nonpositiveJacobians:0,minimumJacobianDeterminant:Infinity,maximumJacobianDeterminant:-Infinity,maximumJacobianFrobeniusNorm:0};
   for(const i of referencedVertices(g,Infinity)){
     row.vertices++;point.fromBufferAttribute(g.attributes.position,i);
     const mapped=field(point);assert.ok(mapped.point.toArray().every(Number.isFinite)&&Number.isFinite(mapped.determinant));
@@ -67,7 +75,7 @@ for(const part of packing.parts){
     row.minimumJacobianDeterminant=Math.min(row.minimumJacobianDeterminant,mapped.determinant);
     row.maximumJacobianDeterminant=Math.max(row.maximumJacobianDeterminant,mapped.determinant);
     row.maximumJacobianFrobeniusNorm=Math.max(row.maximumJacobianFrobeniusNorm,Math.hypot(...mapped.jacobian));
-    if(!minimum||mapped.determinant<minimum.determinant)minimum={id:part.id,vertex:i,pointMetres:point.toArray(),jacobian:mapped.jacobian,determinant:mapped.determinant,weights:mapped.weights};
+    if(!minimum||mapped.determinant<minimum.determinant)minimum={id:part.id,sourceSide,anchorFrameIndices,vertex:i,pointMetres:point.toArray(),jacobian:mapped.jacobian,determinant:mapped.determinant,weights:mapped.weights};
   }
   assert.equal(row.vertices,part.vertexCount,'Unexpected unused source vertices');
   assert.equal(row.skinAfter.outside-row.skinBefore.outside,row.newOutside-row.resolvedOutside);
@@ -75,6 +83,7 @@ for(const part of packing.parts){
 }
 // Verify the most adverse sampled derivative by an independent finite difference.
 const centre=new Vector3(...minimum.pointMetres),step=1e-6,numerical=Array(9).fill(0);
+const field=perSide?sideFields[minimum.sourceSide]:globalField;
 for(let axis=0;axis<3;axis++){
   const a=centre.clone(),b=centre.clone();a.setComponent(axis,a.getComponent(axis)-step);b.setComponent(axis,b.getComponent(axis)+step);
   const derivative=field(b).point.sub(field(a).point).multiplyScalar(1/(2*step));
@@ -84,14 +93,14 @@ minimum.finiteDifference={stepMetres:step,jacobian:numerical,determinant:new Mat
 const sum=f=>rows.reduce((s,r)=>s+f(r),0);
 const summary={meshes:rows.length,vertices:sum(r=>r.vertices),skinOutsideBefore:sum(r=>r.skinBefore.outside),skinOutsideAfter:sum(r=>r.skinAfter.outside),newOutside:sum(r=>r.newOutside),worsenedOutside:sum(r=>r.worsenedOutside),nonpositiveJacobians:sum(r=>r.nonpositiveJacobians)};
 const rejected=summary.nonpositiveJacobians>0||summary.newOutside>0||summary.worsenedOutside>0;
-const out='.cache/donor-continuous',stem=`surface-weighted-${kernel}-${regularizationMm}mm`;fs.mkdirSync(out,{recursive:true});
+const out='.cache/donor-continuous',stem=`surface-weighted-${kernel}-${regularizationMm}mm${hipSurface?'-hip-surface':''}${perSide?'-per-side':''}`;fs.mkdirSync(out,{recursive:true});
 const compressed=gzipSync(candidate,{level:9});fs.writeFileSync(`${out}/${stem}.bin.gz`,compressed);
 for(const p of ['scripts/build-continuous-donor-candidate.mjs','scripts/lib/surface-frame-field.mjs','scripts/lib/surface-containment.mjs','package-lock.json'])read(p);
-const report={status:rejected?'REJECTED BY SKIN/JACOBIAN SCREEN; no runtime export':'NOT APPROVED; further anatomical and intersection checks required',kernel,regularizationMm,summary,minimumJacobianWitness:minimum,frames:frameRecords,rows,
+const report={status:rejected?'REJECTED BY SKIN/JACOBIAN SCREEN; no runtime export':'NOT APPROVED; further anatomical and intersection checks required',kernel,regularizationMm,hipSurface,perSide,summary,minimumJacobianWitness:minimum,frames:frameRecords,rows,
   binary:{path:`${out}/${stem}.bin.gz`,bytes:candidate.length,gzipBytes:compressed.length,sha256:sha(compressed),parts:packing.parts},
-  limitations:['Same common source-space map applied to all 76 muscles; no mesh-ID or side branch in field evaluation.',
+  limitations:[perSide?'Each original side uses its own three frames, shared by all 38 muscles on that side. This excludes contralateral influence but does not establish attachment-specific weights.':'Same common source-space map applied to all 76 muscles; no mesh-ID or side branch in field evaluation.',
     '20mm default is an experimental numerical regularization length, not a biological tissue thickness or validated registration parameter.',
-    'Hip frame estimates remain the coarse original box fits; thigh and shank frames use corrected composite surface fits.',
+    hipSurface?'All six frames use surface fits; pelvic targets include the six source-labelled compact/spongy components per side.':'Hip frame estimates remain the coarse original box fits; thigh and shank frames use corrected composite surface fits.',
     'Blended frames are soft influences, not exact bone constraints. Resulting bone residuals are not measured by this muscle-only screen.',
     'Baseline is unsimplified source muscles in old group frames, not the lower-density public packed muscles. Counts cannot be compared directly to old public vertex counts.',
     'Analytic Jacobians are evaluated only at indexed source vertices. Closest-surface switches can be nondifferentiable; positive sampled determinants do not prove global injectivity or triangle validity.',

@@ -1,0 +1,1300 @@
+{
+  "status": "HIP SURFACE FIT CANDIDATES ONLY; no runtime export",
+  "sourceUrl": "https://cdn.humanatlas.io/digital-objects/ref-organ/united-female/v1.5/assets/3d-vh-f-united.glb",
+  "translationFromSkin": [
+    0.006095477878158062,
+    0.792612790744339,
+    -0.0067982234284331144
+  ],
+  "versionComparison": [
+    {
+      "name": "VH_F_ilium_compact_bone_R",
+      "forward": {
+        "vertices": 5907,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      },
+      "reverse": {
+        "vertices": 5907,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "name": "VH_F_ilium_compact_bone_L",
+      "forward": {
+        "vertices": 6344,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      },
+      "reverse": {
+        "vertices": 6344,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "name": "VH_F_ilium_spongy_bone_L",
+      "forward": {
+        "vertices": 3052,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      },
+      "reverse": {
+        "vertices": 3052,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "name": "VH_F_ilium_spongy_bone_R",
+      "forward": {
+        "vertices": 2838,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      },
+      "reverse": {
+        "vertices": 2838,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    }
+  ],
+  "targetComponents": [
+    {
+      "id": "HRAF0956",
+      "name": "Pubis spongy bone (left)",
+      "conceptId": "HRA:pubis_spongy_bone_L",
+      "sourceName": "VH_F_pubis_spongy_bone_L",
+      "nodeIndex": 967,
+      "ancestry": [
+        "VH_F",
+        "VH_F_skeletal_system",
+        "VH_F_pelvis",
+        "VH_F_pubis",
+        "VH_F_pubis_spongy_bone",
+        "VH_F_pubis_spongy_bone_L"
+      ],
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          -0.0028979596355510062,
+          0.7555478286552773,
+          -0.0835831396505286
+        ],
+        [
+          0.0890852897754359,
+          0.8446729850578651,
+          -0.016648162923758203
+        ]
+      ],
+      "boundResidualMm": 2.7755575615628914e-14,
+      "sourceToPacked": {
+        "vertices": 1203,
+        "meanMm": 0.025454949674540955,
+        "p95Mm": 0.12398405143518858,
+        "maximumMm": 0.23125767879004175
+      },
+      "packedToSource": {
+        "vertices": 740,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "id": "HRAF0957",
+      "name": "Pubis spongy bone (right)",
+      "conceptId": "HRA:pubis_spongy_bone_R",
+      "sourceName": "VH_F_pubis_spongy_bone_R",
+      "nodeIndex": 968,
+      "ancestry": [
+        "VH_F",
+        "VH_F_skeletal_system",
+        "VH_F_pelvis",
+        "VH_F_pubis",
+        "VH_F_pubis_spongy_bone",
+        "VH_F_pubis_spongy_bone_R"
+      ],
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          -0.09471598124593023,
+          0.7537766915369377,
+          -0.08549033182114857
+        ],
+        [
+          -0.0032120677316141433,
+          0.8447741862941132,
+          -0.01639159566164511
+        ]
+      ],
+      "boundResidualMm": 2.7755575615628914e-14,
+      "sourceToPacked": {
+        "vertices": 1132,
+        "meanMm": 0.027398542074342683,
+        "p95Mm": 0.1288582399462062,
+        "maximumMm": 0.2799217655691017
+      },
+      "packedToSource": {
+        "vertices": 701,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "id": "HRAF0958",
+      "name": "Pubis compact bone (right)",
+      "conceptId": "HRA:pubis_compact_bone_R",
+      "sourceName": "VH_F_pubis_compact_bone_R",
+      "nodeIndex": 970,
+      "ancestry": [
+        "VH_F",
+        "VH_F_skeletal_system",
+        "VH_F_pelvis",
+        "VH_F_pubis",
+        "VH_F_pubis_compact_bone",
+        "VH_F_pubis_compact_bone_R"
+      ],
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          -0.09554441875308278,
+          0.7525179345715389,
+          -0.085742153994744
+        ],
+        [
+          -0.0019995332369160956,
+          0.8454871882307873,
+          -0.01517846977711218
+        ]
+      ],
+      "boundResidualMm": 2.7755575615628914e-14,
+      "sourceToPacked": {
+        "vertices": 2540,
+        "meanMm": 0.02630745292950337,
+        "p95Mm": 0.12587542388017708,
+        "maximumMm": 0.3043376372683775
+      },
+      "packedToSource": {
+        "vertices": 1402,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "id": "HRAF0959",
+      "name": "Pubis compact bone (left)",
+      "conceptId": "HRA:pubis_compact_bone_L",
+      "sourceName": "VH_F_pubis_compact_bone_L",
+      "nodeIndex": 971,
+      "ancestry": [
+        "VH_F",
+        "VH_F_skeletal_system",
+        "VH_F_pelvis",
+        "VH_F_pubis",
+        "VH_F_pubis_compact_bone",
+        "VH_F_pubis_compact_bone_L"
+      ],
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          -0.004098036759490997,
+          0.7543119710493431,
+          -0.0838195316717078
+        ],
+        [
+          0.08963399523407695,
+          0.8454495851505146,
+          -0.01543088334054249
+        ]
+      ],
+      "boundResidualMm": 2.7755575615628914e-14,
+      "sourceToPacked": {
+        "vertices": 2688,
+        "meanMm": 0.026453090657230793,
+        "p95Mm": 0.1294666052466084,
+        "maximumMm": 0.29122946904696106
+      },
+      "packedToSource": {
+        "vertices": 1469,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "id": "HRAF0827",
+      "name": "Ilium compact bone (right)",
+      "conceptId": "HRA:ilium_compact_bone_R",
+      "sourceName": "VH_F_ilium_compact_bone_R",
+      "nodeIndex": 974,
+      "ancestry": [
+        "VH_F",
+        "VH_F_skeletal_system",
+        "VH_F_pelvis",
+        "VH_F_ilium",
+        "VH_F_ilium_compact_bone",
+        "VH_F_ilium_compact_bone_R"
+      ],
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          -0.1609006882318807,
+          0.8173618555623636,
+          -0.17234848516434925
+        ],
+        [
+          -0.045915635735685856,
+          0.9572712328839645,
+          -0.010738824795936519
+        ]
+      ],
+      "boundResidualMm": 2.7755575615628914e-14,
+      "sourceToPacked": {
+        "vertices": 5907,
+        "meanMm": 0.08229321499742294,
+        "p95Mm": 0.2745399919106357,
+        "maximumMm": 0.5839271273303919
+      },
+      "packedToSource": {
+        "vertices": 2036,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "id": "HRAF0828",
+      "name": "Ilium compact bone (left)",
+      "conceptId": "HRA:ilium_compact_bone_L",
+      "sourceName": "VH_F_ilium_compact_bone_L",
+      "nodeIndex": 975,
+      "ancestry": [
+        "VH_F",
+        "VH_F_skeletal_system",
+        "VH_F_pelvis",
+        "VH_F_ilium",
+        "VH_F_ilium_compact_bone",
+        "VH_F_ilium_compact_bone_L"
+      ],
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          0.03719457195610282,
+          0.818255519177352,
+          -0.1722594954296996
+        ],
+        [
+          0.1559372037044215,
+          0.9566166099715576,
+          -0.0065083016632174195
+        ]
+      ],
+      "boundResidualMm": 2.7755575615628914e-14,
+      "sourceToPacked": {
+        "vertices": 6344,
+        "meanMm": 0.08633369466378524,
+        "p95Mm": 0.2838473355343713,
+        "maximumMm": 0.5718207474238386
+      },
+      "packedToSource": {
+        "vertices": 2103,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "id": "HRAF0829",
+      "name": "Ilium spongy bone (left)",
+      "conceptId": "HRA:ilium_spongy_bone_L",
+      "sourceName": "VH_F_ilium_spongy_bone_L",
+      "nodeIndex": 977,
+      "ancestry": [
+        "VH_F",
+        "VH_F_skeletal_system",
+        "VH_F_pelvis",
+        "VH_F_ilium",
+        "VH_F_ilium_spongy_bone",
+        "VH_F_ilium_spongy_bone_L"
+      ],
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          0.03840087869674441,
+          0.8195649475413904,
+          -0.17103241460770863
+        ],
+        [
+          0.15471873575360057,
+          0.9552790519404755,
+          -0.007733014946808392
+        ]
+      ],
+      "boundResidualMm": 2.7755575615628914e-14,
+      "sourceToPacked": {
+        "vertices": 3052,
+        "meanMm": 0.09053554269845811,
+        "p95Mm": 0.30017921931935426,
+        "maximumMm": 0.5718207474238386
+      },
+      "packedToSource": {
+        "vertices": 1059,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "id": "HRAF0830",
+      "name": "Ilium spongy bone (right)",
+      "conceptId": "HRA:ilium_spongy_bone_R",
+      "sourceName": "VH_F_ilium_spongy_bone_R",
+      "nodeIndex": 978,
+      "ancestry": [
+        "VH_F",
+        "VH_F_skeletal_system",
+        "VH_F_pelvis",
+        "VH_F_ilium",
+        "VH_F_ilium_spongy_bone",
+        "VH_F_ilium_spongy_bone_R"
+      ],
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          -0.15971425777762654,
+          0.8180890881079779,
+          -0.17113384681195515
+        ],
+        [
+          -0.0471219406136823,
+          0.9559184905696259,
+          -0.011954930912708217
+        ]
+      ],
+      "boundResidualMm": 2.7755575615628914e-14,
+      "sourceToPacked": {
+        "vertices": 2838,
+        "meanMm": 0.08347917226236085,
+        "p95Mm": 0.2760072916829918,
+        "maximumMm": 0.4782972908852911
+      },
+      "packedToSource": {
+        "vertices": 1024,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "id": "HRAF0960",
+      "name": "Ischium compact bone (right)",
+      "conceptId": "HRA:ischium_compact_bone_R",
+      "sourceName": "VH_F_ischium_compact_bone_R",
+      "nodeIndex": 981,
+      "ancestry": [
+        "VH_F",
+        "VH_F_skeletal_system",
+        "VH_F_pelvis",
+        "VH_F_ischium",
+        "VH_F_ischium_compact_bone",
+        "VH_F_ischium_compact_bone_R"
+      ],
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          -0.12089534705966237,
+          0.7457783628809795,
+          -0.1330606498047759
+        ],
+        [
+          -0.04007661199658635,
+          0.8407767374623165,
+          -0.06533639209718006
+        ]
+      ],
+      "boundResidualMm": 2.7755575615628914e-14,
+      "sourceToPacked": {
+        "vertices": 2695,
+        "meanMm": 0.02982153662493959,
+        "p95Mm": 0.14520801732964364,
+        "maximumMm": 0.29654633279543835
+      },
+      "packedToSource": {
+        "vertices": 1475,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "id": "HRAF0961",
+      "name": "Ischium compact bone (left)",
+      "conceptId": "HRA:ischium_compact_bone_L",
+      "sourceName": "VH_F_ischium_compact_bone_L",
+      "nodeIndex": 982,
+      "ancestry": [
+        "VH_F",
+        "VH_F_skeletal_system",
+        "VH_F_pelvis",
+        "VH_F_ischium",
+        "VH_F_ischium_compact_bone",
+        "VH_F_ischium_compact_bone_L"
+      ],
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          0.03307557248980281,
+          0.7472442720640049,
+          -0.13075719105452793
+        ],
+        [
+          0.11588502073199031,
+          0.8419915099251614,
+          -0.06601740124077099
+        ]
+      ],
+      "boundResidualMm": 2.7755575615628914e-14,
+      "sourceToPacked": {
+        "vertices": 2696,
+        "meanMm": 0.025873100846323497,
+        "p95Mm": 0.1213593341611036,
+        "maximumMm": 0.2530890259016188
+      },
+      "packedToSource": {
+        "vertices": 1472,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "id": "HRAF0962",
+      "name": "Ischium spongy bone (right)",
+      "conceptId": "HRA:ischium_spongy_bone_R",
+      "sourceName": "VH_F_ischium_spongy_bone_R",
+      "nodeIndex": 984,
+      "ancestry": [
+        "VH_F",
+        "VH_F_skeletal_system",
+        "VH_F_pelvis",
+        "VH_F_ischium",
+        "VH_F_ischium_spongy_bone",
+        "VH_F_ischium_spongy_bone_R"
+      ],
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          -0.11975920802443746,
+          0.7471181858885632,
+          -0.1318590797707488
+        ],
+        [
+          -0.04100321462839368,
+          0.840260266940628,
+          -0.06620159821957844
+        ]
+      ],
+      "boundResidualMm": 2.7755575615628914e-14,
+      "sourceToPacked": {
+        "vertices": 1196,
+        "meanMm": 0.028677312191233012,
+        "p95Mm": 0.13759405737796984,
+        "maximumMm": 0.24917657545441838
+      },
+      "packedToSource": {
+        "vertices": 746,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    },
+    {
+      "id": "HRAF0963",
+      "name": "Ischium spongy bone (left)",
+      "conceptId": "HRA:ischium_spongy_bone_L",
+      "sourceName": "VH_F_ischium_spongy_bone_L",
+      "nodeIndex": 985,
+      "ancestry": [
+        "VH_F",
+        "VH_F_skeletal_system",
+        "VH_F_pelvis",
+        "VH_F_ischium",
+        "VH_F_ischium_spongy_bone",
+        "VH_F_ischium_spongy_bone_L"
+      ],
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "bounds": [
+        [
+          0.033871966912453144,
+          0.7485888299155579,
+          -0.1295310117527892
+        ],
+        [
+          0.11469562494665858,
+          0.8415956866550789,
+          -0.06688617619127529
+        ]
+      ],
+      "boundResidualMm": 2.7755575615628914e-14,
+      "sourceToPacked": {
+        "vertices": 1198,
+        "meanMm": 0.025137075121818064,
+        "p95Mm": 0.11934983914209579,
+        "maximumMm": 0.240655674080963
+      },
+      "packedToSource": {
+        "vertices": 749,
+        "meanMm": 0,
+        "p95Mm": 0,
+        "maximumMm": 0
+      }
+    }
+  ],
+  "fits": [
+    {
+      "side": "left",
+      "mode": "hip",
+      "sourceFile": "Left/VHF_Left_Bone_Pelvis_smooth.stl",
+      "targetIds": [
+        "HRAF0956",
+        "HRAF0959",
+        "HRAF0828",
+        "HRAF0829",
+        "HRAF0961",
+        "HRAF0963"
+      ],
+      "samples": 5000,
+      "converged": true,
+      "iterations": 75,
+      "sampleRmsMm": [
+        7.61395400854548,
+        5.7998612770142115,
+        4.774591135209303,
+        3.6923201785787607,
+        2.878259980841412,
+        2.3749068050463817,
+        2.052308840797528,
+        1.799513563293901,
+        1.616938427921525,
+        1.4716897971342202,
+        1.3567857605939555,
+        1.2637432492517142,
+        1.1884520926406006,
+        1.1254002940680552,
+        1.0725062963669614,
+        1.026751098512055,
+        0.9886043362481525,
+        0.9566739113527882,
+        0.9293117938089951,
+        0.9061595014969609,
+        0.8865264260170433,
+        0.8699430086477431,
+        0.8554787467847248,
+        0.8433131389001645,
+        0.8332766457204352,
+        0.8252312581477455,
+        0.8184888809323733,
+        0.8128362085211022,
+        0.8079777880503246,
+        0.8039054364909097,
+        0.8004124584487929,
+        0.7973547417308104,
+        0.7948050401873966,
+        0.7926051407802296,
+        0.7906864355270025,
+        0.7890174756339313,
+        0.7875974711051674,
+        0.7863988339898276,
+        0.7853296305619205,
+        0.7843504945836295,
+        0.7835087763889871,
+        0.782814274145515,
+        0.7821810850021459,
+        0.781605349354268,
+        0.7811159850758971,
+        0.7806851646436042,
+        0.7803040379031386,
+        0.7799639366273606,
+        0.7796480624277589,
+        0.7793574368739989,
+        0.7791138900700831,
+        0.778895785426655,
+        0.778676102731475,
+        0.7784693333793125,
+        0.7782911710860876,
+        0.7781397425106934,
+        0.7780055343764393,
+        0.7778860078434727,
+        0.7777863843831699,
+        0.7777034215964683,
+        0.7776311226790206,
+        0.7775726609801537,
+        0.7775221445517372,
+        0.7774787428060275,
+        0.7774396580754054,
+        0.7774076008698929,
+        0.777381284352411,
+        0.7773555238820253,
+        0.7773346257318073,
+        0.77731739077563,
+        0.7773020510407583,
+        0.7772899404447491,
+        0.7772781400986183,
+        0.7772678670512398,
+        0.7772590398611566
+      ],
+      "finalSampleRmsMm": 0.7772590398611566,
+      "sourceToAtlasMatrix": [
+        -1.023651124696492,
+        0.01388086858510679,
+        0.04483730886353634,
+        0,
+        0.044501481258706885,
+        -0.024193544399026094,
+        1.0234739754612177,
+        0,
+        0.014922497933728093,
+        1.0243469538041932,
+        0.023565338076983553,
+        0,
+        0.518339093808295,
+        -0.08899477212487998,
+        -0.5767205398380015,
+        1
+      ],
+      "before": {
+        "forward": {
+          "vertices": 49654,
+          "meanMm": 6.348292694714568,
+          "p95Mm": 13.311177153395573,
+          "maximumMm": 17.322242461415023
+        },
+        "reverse": {
+          "vertices": 7592,
+          "meanMm": 8.440313185881537,
+          "p95Mm": 17.71336217216291,
+          "maximumMm": 28.876489270951915
+        }
+      },
+      "after": {
+        "forward": {
+          "vertices": 49654,
+          "meanMm": 0.5530168605554664,
+          "p95Mm": 1.726095990178959,
+          "maximumMm": 4.110361176653404
+        },
+        "reverse": {
+          "vertices": 7592,
+          "meanMm": 1.325201589420274,
+          "p95Mm": 3.1453874632338894,
+          "maximumMm": 16.465684946964195
+        }
+      },
+      "components": [
+        {
+          "id": "HRAF0956",
+          "name": "Pubis spongy bone (left)",
+          "after": {
+            "vertices": 740,
+            "meanMm": 0.8331962644964175,
+            "p95Mm": 1.744436135681518,
+            "maximumMm": 2.652064881734899
+          }
+        },
+        {
+          "id": "HRAF0959",
+          "name": "Pubis compact bone (left)",
+          "after": {
+            "vertices": 1469,
+            "meanMm": 1.111127258637352,
+            "p95Mm": 2.69156972738181,
+            "maximumMm": 3.8739213957959078
+          }
+        },
+        {
+          "id": "HRAF0828",
+          "name": "Ilium compact bone (left)",
+          "after": {
+            "vertices": 2103,
+            "meanMm": 1.8074630152436653,
+            "p95Mm": 4.478640379998753,
+            "maximumMm": 16.465684946964195
+          }
+        },
+        {
+          "id": "HRAF0829",
+          "name": "Ilium spongy bone (left)",
+          "after": {
+            "vertices": 1059,
+            "meanMm": 1.351350579510811,
+            "p95Mm": 3.5463398395429278,
+            "maximumMm": 15.240216579956046
+          }
+        },
+        {
+          "id": "HRAF0961",
+          "name": "Ischium compact bone (left)",
+          "after": {
+            "vertices": 1472,
+            "meanMm": 1.233740966066227,
+            "p95Mm": 3.0529864821300317,
+            "maximumMm": 4.025426066761468
+          }
+        },
+        {
+          "id": "HRAF0963",
+          "name": "Ischium spongy bone (left)",
+          "after": {
+            "vertices": 749,
+            "meanMm": 1.0198632862539887,
+            "p95Mm": 2.3596380740987493,
+            "maximumMm": 3.9672822574684425
+          }
+        }
+      ]
+    },
+    {
+      "side": "right",
+      "mode": "hip",
+      "sourceFile": "Right/VHF_Right_Bone_Pelvis_smooth.stl",
+      "targetIds": [
+        "HRAF0957",
+        "HRAF0958",
+        "HRAF0827",
+        "HRAF0830",
+        "HRAF0960",
+        "HRAF0962"
+      ],
+      "samples": 5000,
+      "converged": true,
+      "iterations": 83,
+      "sampleRmsMm": [
+        5.544984730298781,
+        4.337707925061302,
+        3.5220534537895034,
+        2.9840710872840863,
+        2.600646685927529,
+        2.3130815421677866,
+        2.092853923585299,
+        1.9133053325037281,
+        1.7587265930173188,
+        1.616120271381185,
+        1.500212452522114,
+        1.406914345086178,
+        1.3298608769982618,
+        1.2638575882603398,
+        1.2071031309929139,
+        1.1577167343601882,
+        1.114678089114615,
+        1.0784561679815654,
+        1.0484981679025445,
+        1.0238756102456432,
+        1.0037266650504209,
+        0.9871796781405553,
+        0.9734697495696949,
+        0.9620842330951369,
+        0.9525131953832932,
+        0.94426545125304,
+        0.9374112679936367,
+        0.9315593453001171,
+        0.9264095562945284,
+        0.9220047426453147,
+        0.9182775814717713,
+        0.9151557239790984,
+        0.9125470207096985,
+        0.9103424768037124,
+        0.9084406428194399,
+        0.9067992582017386,
+        0.9053526648464261,
+        0.9039684546887355,
+        0.9027706848444009,
+        0.9017574474209668,
+        0.9008668753339455,
+        0.9000853232027811,
+        0.8994091975738676,
+        0.898824910983081,
+        0.8983268226317699,
+        0.8978802228788914,
+        0.8974606285943688,
+        0.8970972226381086,
+        0.8967747773545317,
+        0.896455295463771,
+        0.896156275953312,
+        0.8958876366482104,
+        0.8956339297830355,
+        0.8954247549159443,
+        0.8952489038298238,
+        0.8950957602971964,
+        0.89496467600896,
+        0.8948490993309487,
+        0.894742617874928,
+        0.8946496845003018,
+        0.8945608512509509,
+        0.8944807051832668,
+        0.894409081001267,
+        0.8943424473112886,
+        0.8942858523583194,
+        0.8942321189650447,
+        0.8941860372745897,
+        0.8941473132517239,
+        0.894111818627759,
+        0.8940796273921713,
+        0.8940525577862736,
+        0.8940259492865195,
+        0.8940036112988805,
+        0.8939852556106346,
+        0.8939679103577126,
+        0.893951129651243,
+        0.8939241391604235,
+        0.8939011370452101,
+        0.8938849919397222,
+        0.8938721288604413,
+        0.8938614773614826,
+        0.8938503183064735,
+        0.8938412409466672
+      ],
+      "finalSampleRmsMm": 0.8938412409466672,
+      "sourceToAtlasMatrix": [
+        -1.0223858777789587,
+        -0.03359151387938332,
+        0.009752336266831214,
+        0,
+        0.009695486097727581,
+        0.0018901006618431775,
+        1.022936364598521,
+        0,
+        -0.033607966565963536,
+        1.0224306424711664,
+        -0.0015706267926459572,
+        0,
+        0.5721402105129982,
+        -0.07431455062342121,
+        -0.5337178395268544,
+        1
+      ],
+      "before": {
+        "forward": {
+          "vertices": 49211,
+          "meanMm": 4.429885320527262,
+          "p95Mm": 11.205850767299523,
+          "maximumMm": 15.475323845028415
+        },
+        "reverse": {
+          "vertices": 7384,
+          "meanMm": 7.2115316446599165,
+          "p95Mm": 15.542147651045825,
+          "maximumMm": 20.151508211205677
+        }
+      },
+      "after": {
+        "forward": {
+          "vertices": 49211,
+          "meanMm": 0.6024253838173199,
+          "p95Mm": 2.011563279522539,
+          "maximumMm": 5.187587983163452
+        },
+        "reverse": {
+          "vertices": 7384,
+          "meanMm": 1.3595689099762733,
+          "p95Mm": 3.5204626645868173,
+          "maximumMm": 8.622545429053485
+        }
+      },
+      "components": [
+        {
+          "id": "HRAF0957",
+          "name": "Pubis spongy bone (right)",
+          "after": {
+            "vertices": 701,
+            "meanMm": 0.9815394336834885,
+            "p95Mm": 2.2381272719014307,
+            "maximumMm": 4.348377811104369
+          }
+        },
+        {
+          "id": "HRAF0958",
+          "name": "Pubis compact bone (right)",
+          "after": {
+            "vertices": 1402,
+            "meanMm": 1.2828845194699288,
+            "p95Mm": 3.141065341523341,
+            "maximumMm": 5.6202540022583864
+          }
+        },
+        {
+          "id": "HRAF0827",
+          "name": "Ilium compact bone (right)",
+          "after": {
+            "vertices": 2036,
+            "meanMm": 1.3741990663477444,
+            "p95Mm": 3.482645018498168,
+            "maximumMm": 5.674222575768608
+          }
+        },
+        {
+          "id": "HRAF0830",
+          "name": "Ilium spongy bone (right)",
+          "after": {
+            "vertices": 1024,
+            "meanMm": 0.9766433403734136,
+            "p95Mm": 2.7925487047872544,
+            "maximumMm": 4.444490334567567
+          }
+        },
+        {
+          "id": "HRAF0960",
+          "name": "Ischium compact bone (right)",
+          "after": {
+            "vertices": 1475,
+            "meanMm": 1.7747629925615929,
+            "p95Mm": 4.598470242235859,
+            "maximumMm": 8.622545429053485
+          }
+        },
+        {
+          "id": "HRAF0962",
+          "name": "Ischium spongy bone (right)",
+          "after": {
+            "vertices": 746,
+            "meanMm": 1.5236810969183487,
+            "p95Mm": 4.151141501261911,
+            "maximumMm": 7.312561216124102
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Six source-labelled compact/spongy components per side form the correspondence target; not one undifferentiated bone-only surface claim.",
+    "Version comparison measures all indexed shared ilium vertices in both directions, not all skeletal structures.",
+    "ICP samples are deterministic indexed source pelvis vertices, not anatomical landmarks or area-uniform samples.",
+    "All referenced vertex distances are measured, but not continuous triangle-interior Hausdorff bounds or clinical accuracy.",
+    "A lower pelvis residual does not authorize muscle placement; no muscle or skin coordinate is changed by this script."
+  ],
+  "files": [
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": "docs/anatomy-alignment/donor-source-comparison.json",
+      "sha256": "ea0c9cbc5d0edc0a3859fb9f5786a638eeb3e92bb5a60649325561dc14c69959"
+    },
+    {
+      "path": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "path": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "path": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "path": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "path": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "path": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "path": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "path": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "path": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "path": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "path": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "path": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "path": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "path": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "path": "docs/anatomy-alignment/hra-brain-source.json",
+      "sha256": "c562a9c6ac5003160cb6b917da96bf96d1b37b5e1b78f5b9fac33644cd9c74c2"
+    },
+    {
+      "path": ".cache/hip-registration/hra-united-female-v1.5.glb",
+      "sha256": "472567a56896b9b7890508da6501fbf858e56aaa30745365f7a71ade782b529c"
+    },
+    {
+      "path": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "sha256": "95f0c3d2f918582608692ca1139e8bdb18c147a16470e9ee9af8b276bd77c422"
+    },
+    {
+      "path": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Pelvis_smooth.stl",
+      "sha256": "8a54af941e90d601320747d8e44a9bef8ca748291653480c1ca25355e6c89e08"
+    },
+    {
+      "path": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Pelvis_smooth.stl",
+      "sha256": "007280b01294f728e3e81a4e708986f6bbb921140d88b4260543a5babc6fac5b"
+    },
+    {
+      "path": "scripts/fit-donor-hip-surfaces.mjs",
+      "sha256": "8f37591f02b638ca8a8f7ac3fee69cce2c903c2f2136ce71d76c8995cafbd795"
+    },
+    {
+      "path": "scripts/lib/similarity-fit.mjs",
+      "sha256": "72472e690233c9575af2191adb9cd22d99a8dd8dccf254197709daf061b45042"
+    },
+    {
+      "path": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    }
+  ]
+}
