@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useThree } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import { BufferAttribute, BufferGeometry, DoubleSide, FrontSide, Group, Int16BufferAttribute, Mesh, MeshStandardMaterial } from "three";
@@ -74,6 +74,9 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       if (abort.signal.aborted) return;
       const group = new Group();
       group.name = `${dataset}-atlas`;
+      // A downloaded scene is not display-ready until its current view state
+      // has been applied. Never render its default all-visible materials.
+      group.visible = false;
       for (const part of atlas.parts) {
         const layer = catalogById.get(part.id)?.layer || systemLayer[part.system];
         if (!layer) continue;
@@ -115,7 +118,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
     };
   }, [props.onLoading, dataset]);
   const partById = useMemo(() => new Map(manifest?.parts.map(part => [part.id, part]) || []), [manifest]);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!object) return;
     const progressive = props.displayMode === "dissection";
     const counts = Object.fromEntries(layerKeys.map(layer => [layer, 0])) as Record<Layer, number>;
@@ -146,6 +149,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
     for (const layer of layerKeys) gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(counts[layer]);
     for (const [source, key] of [["female", "femaleAtlasParts"], ["female-detail", "femaleDetailParts"], ["male-detail", "maleDetailParts"]])
       gl.domElement.dataset[key] = source === dataset ? String(object.children.length) : "0";
+    object.visible = true;
     invalidate();
   }, [object, partById, props.layers, props.isolated, props.selectionIds, props.detailIds, props.highlight, props.dissection, props.displayMode, props.selectionTarget, props.layerOpacity, props.anatomyRegion, props.cutaway, gl, invalidate]);
   useEffect(() => { if (object) { layerKeys.forEach(props.onReady); props.onLoading(false); } }, [object, props.onReady, props.onLoading]);

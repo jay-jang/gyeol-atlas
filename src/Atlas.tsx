@@ -3,6 +3,7 @@ import { anatomyRegionMatches } from "./anatomy-region";
 import {
   Suspense,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -124,6 +125,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
   const model = useGLTF(assetUrl(`models/${layer}.glb`));
   const object = useMemo(() => {
     const clone = model.scene.clone(true);
+    clone.visible = false;
     clone.updateMatrixWorld(true);
     const muscleMeshes: { mesh: Mesh; score: number }[] = [];
     clone.traverse(o => {
@@ -148,7 +150,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     if (o instanceof Mesh && o.material instanceof MeshStandardMaterial) o.material.dispose();
   }), [object]);
   const { invalidate, gl } = useThree();
-  useEffect(() => {
+  useLayoutEffect(() => {
     const progressive = props.displayMode === "dissection";
     const mirrored = props.selected.structures.flatMap((id) => [
       id,
@@ -195,6 +197,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       material.clippingPlanes = planes;
     });
     gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(visibleCount);
+    object.visible = true;
     invalidate();
 
   }, [
@@ -239,6 +242,7 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
   );
   const object = useMemo(() => {
     const clone = model.scene.clone(true);
+    clone.visible = false;
     clone.scale.multiplyScalar(maleRegistration.scale);
     clone.position.multiplyScalar(maleRegistration.scale).add(new Vector3(...maleRegistration.translation));
     clone.updateMatrixWorld(true);
@@ -258,9 +262,8 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
     return clone;
   }, [model.scene]);
   const { invalidate } = useThree();
-  useEffect(() => {
+  useLayoutEffect(() => {
     const progressive = props.displayMode === "dissection";
-    object.visible = true;
     object.traverse((item) => {
       if (!(item instanceof Mesh)) return;
       const selected = props.selectionIds.includes(item.name);
@@ -282,6 +285,7 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
         : [];
       configurePicking(item, layer, props.selectionTarget);
     });
+    object.visible = true;
     invalidate();
   }, [object, layer, props.isolated, props.selectionIds, props.detailIds, props.layerOpacity, props.cutaway, props.dissection, props.displayMode, props.selectionTarget, props.anatomyRegion, props.layers, invalidate]);
   useEffect(() => {
@@ -309,6 +313,7 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
   const entries = useMemo(() => sexLymphStructures.filter(item => item.sex === props.sex && item.layer === layer && item.model === modelName), [layer, modelName, props.sex]);
   const object = useMemo(() => {
     const clone = model.scene.clone(true);
+    clone.visible = false;
     clone.scale.multiplyScalar(maleRegistration.scale);
     clone.position.multiplyScalar(maleRegistration.scale).add(new Vector3(...maleRegistration.translation));
     clone.updateMatrixWorld(true);
@@ -324,7 +329,7 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
     return clone;
   }, [entries, layer, model.scene, props.sex]);
   const { invalidate, gl } = useThree();
-  useEffect(() => {
+  useLayoutEffect(() => {
     const progressive = props.displayMode === "dissection";
     const depthAlpha = dissectionLayerOpacity(layer, props.dissection, progressive);
     let visibleCount = 0;
@@ -348,6 +353,7 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
     gl.domElement.dataset[key] = String(visibleCount);
     const bounds = new Box3().setFromObject(object);
     gl.domElement.dataset[`boundsReference${modelName.replace(/[^a-z0-9]/gi, "")}`] = JSON.stringify([bounds.min.toArray(), bounds.max.toArray()]);
+    object.visible = true;
     invalidate();
   }, [object, layer, modelName, props.anatomyRegion, props.isolated, props.layerOpacity, props.selectionIds, props.detailIds, props.layers, props.dissection, props.displayMode, props.cutaway, props.selectionTarget, gl, invalidate]);
   useEffect(() => { props.onReady(layer); }, [layer, object, props.onReady]);
