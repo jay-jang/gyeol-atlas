@@ -1,0 +1,60 @@
+{
+  "status": "SOURCE-FRAME VISUAL DIAGNOSTIC; not HRA registration or application UI verification",
+  "sourceAllSha256": "d7dfa848ccbb8e9ccf5672729a2d56f710dda91ba9c6cb57975e85f05ec2f983",
+  "sourceMusclePackingSha256": "5c506d56f40971eca353cfc6612b269c4e0e1cd22888dc4f1007377944133720",
+  "scriptSha256": "691dc680ac4ea7a7ddb1e6a9a876a155dbed110b1caf385334e062eea0cb63e0",
+  "colors": {
+    "surface": "cyan; opaque or 13% opacity",
+    "muscles": "salmon"
+  },
+  "commonRotationRows": [
+    [
+      -1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0
+    ]
+  ],
+  "captures": [
+    {
+      "mode": "surface",
+      "file": ".cache/donor-original-envelope/source-surface.png",
+      "sha256": "020a57694b5e6be8884f3f2d785405fa66c85460e1de9bd4ef44c0a77ff236da",
+      "camera": [
+        0.32427209428657755,
+        0.5891894553788005,
+        2.920225595766864
+      ],
+      "target": [
+        -0.5376159846782684,
+        0.5891894553788005,
+        0.45768822729587566
+      ]
+    },
+    {
+      "mode": "muscles-with-envelope",
+      "file": ".cache/donor-original-envelope/source-muscles-with-envelope.png",
+      "sha256": "13d330ff569f5e7e9ec78379dd6898c04fb6675fef97369dd383c51088b6dee4",
+      "camera": [
+        0.32427209428657755,
+        0.5891894553788005,
+        2.920225595766864
+      ],
+      "target": [
+        -0.5376159846782684,
+        0.5891894553788005,
+        0.45768822729587566
+      ]
+    }
+  ],
+  "errors": []
+}
