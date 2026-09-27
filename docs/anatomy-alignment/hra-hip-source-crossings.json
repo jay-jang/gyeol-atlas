@@ -1,0 +1,4687 @@
+{
+  "createdAt": "2026-09-27T05:15:53.498Z",
+  "status": "SOURCE/DELIVERY DIAGNOSTIC ONLY; no geometry changes",
+  "summary": {
+    "parts": 44,
+    "pairs": 192,
+    "originalWitnessPairs": 5,
+    "packedWitnessPairs": 6,
+    "newPackedWitnessPairs": 1
+  },
+  "translationFromSkin": [
+    0.006095477878158062,
+    0.792612790744339,
+    -0.0067982234284331144
+  ],
+  "sourceRecords": [
+    {
+      "id": "HRAF0956",
+      "name": "Pubis spongy bone (left)",
+      "conceptId": "HRA:pubis_spongy_bone_L",
+      "sourceName": "VH_F_pubis_spongy_bone_L",
+      "sourceFile": ".cache/hip-registration/hra-united-female-v1.5.glb",
+      "nodeIndex": 967,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.0000071335182205700676,
+      "sourceVertices": 1203,
+      "sourceTriangles": 2312,
+      "packedVertices": 740,
+      "packedTriangles": 1405
+    },
+    {
+      "id": "HRAF0959",
+      "name": "Pubis compact bone (left)",
+      "conceptId": "HRA:pubis_compact_bone_L",
+      "sourceName": "VH_F_pubis_compact_bone_L",
+      "sourceFile": ".cache/hip-registration/hra-united-female-v1.5.glb",
+      "nodeIndex": 971,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.00001830938911595581,
+      "sourceVertices": 2688,
+      "sourceTriangles": 5376,
+      "packedVertices": 1469,
+      "packedTriangles": 2938
+    },
+    {
+      "id": "HRAF0828",
+      "name": "Ilium compact bone (left)",
+      "conceptId": "HRA:ilium_compact_bone_L",
+      "sourceName": "VH_F_ilium_compact_bone_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1012,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000029485260011341552,
+      "sourceVertices": 6344,
+      "sourceTriangles": 12684,
+      "packedVertices": 2103,
+      "packedTriangles": 4202
+    },
+    {
+      "id": "HRAF0829",
+      "name": "Ilium spongy bone (left)",
+      "conceptId": "HRA:ilium_spongy_bone_L",
+      "sourceName": "VH_F_ilium_spongy_bone_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1014,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000008996163369801025,
+      "sourceVertices": 3052,
+      "sourceTriangles": 6022,
+      "packedVertices": 1059,
+      "packedTriangles": 2064
+    },
+    {
+      "id": "HRAF0961",
+      "name": "Ischium compact bone (left)",
+      "conceptId": "HRA:ischium_compact_bone_L",
+      "sourceName": "VH_F_ischium_compact_bone_L",
+      "sourceFile": ".cache/hip-registration/hra-united-female-v1.5.glb",
+      "nodeIndex": 982,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.00002639409446558716,
+      "sourceVertices": 2696,
+      "sourceTriangles": 5392,
+      "packedVertices": 1472,
+      "packedTriangles": 2944
+    },
+    {
+      "id": "HRAF0963",
+      "name": "Ischium spongy bone (left)",
+      "conceptId": "HRA:ischium_spongy_bone_L",
+      "sourceName": "VH_F_ischium_spongy_bone_L",
+      "sourceFile": ".cache/hip-registration/hra-united-female-v1.5.glb",
+      "nodeIndex": 985,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000029485260011341552,
+      "sourceVertices": 1198,
+      "sourceTriangles": 2296,
+      "packedVertices": 749,
+      "packedTriangles": 1424
+    },
+    {
+      "id": "HRAF0937",
+      "name": "Femur (left)",
+      "conceptId": "HRA:femur_L",
+      "sourceName": "VH_F_femur_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1141,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000022034679414417724,
+      "sourceVertices": 4517,
+      "sourceTriangles": 8916,
+      "packedVertices": 1030,
+      "packedTriangles": 1961
+    },
+    {
+      "id": "HRAF0938",
+      "name": "Intercondylar fossa (left)",
+      "conceptId": "HRA:intercondylar_fossa_L",
+      "sourceName": "VH_F_intercondylar_fossa_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1142,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.0000014296221151344213,
+      "sourceVertices": 42,
+      "sourceTriangles": 58,
+      "packedVertices": 40,
+      "packedTriangles": 54
+    },
+    {
+      "id": "HRAF0939",
+      "name": "Anterior cruciate enthesis (left)",
+      "conceptId": "HRA:anterior_cruciate_enthesis_L",
+      "sourceName": "VH_F_anterior_cruciate_enthesis_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1143,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 53,
+      "sourceTriangles": 78,
+      "packedVertices": 51,
+      "packedTriangles": 74
+    },
+    {
+      "id": "HRAF0940",
+      "name": "Posterior cruciate enthesis (left)",
+      "conceptId": "HRA:posterior_cruciate_enthesis_L",
+      "sourceName": "VH_F_posterior_cruciate_enthesis_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1144,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 55,
+      "sourceTriangles": 80,
+      "packedVertices": 55,
+      "packedTriangles": 80
+    },
+    {
+      "id": "HRAF0941",
+      "name": "Lateral perichondular surface (left)",
+      "conceptId": "HRA:lateral_perichondular_surface_L",
+      "sourceName": "VH_F_lateral_perichondular_surface_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1145,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 49,
+      "sourceTriangles": 75,
+      "packedVertices": 49,
+      "packedTriangles": 75
+    },
+    {
+      "id": "HRAF0942",
+      "name": "Lateral epicondylar enthesis (left)",
+      "conceptId": "HRA:lateral_epicondylar_enthesis_L",
+      "sourceName": "VH_F_lateral_epicondylar_enthesis_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1146,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 32,
+      "sourceTriangles": 40,
+      "packedVertices": 29,
+      "packedTriangles": 34
+    },
+    {
+      "id": "HRAF0943",
+      "name": "Medial epicondylar enthesis (left)",
+      "conceptId": "HRA:medial_epicondylar_enthesis_L",
+      "sourceName": "VH_F_medial_epicondylar_enthesis_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1147,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000002957875541720334,
+      "sourceVertices": 36,
+      "sourceTriangles": 47,
+      "packedVertices": 35,
+      "packedTriangles": 45
+    },
+    {
+      "id": "HRAF0944",
+      "name": "Trochlear groove (left)",
+      "conceptId": "HRA:trochlear_groove_L",
+      "sourceName": "VH_F_trochlear_groove_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1148,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 25,
+      "sourceTriangles": 26,
+      "packedVertices": 25,
+      "packedTriangles": 26
+    },
+    {
+      "id": "HRAF0945",
+      "name": "Medial perichondular surface (left)",
+      "conceptId": "HRA:medial_perichondular_surface_L",
+      "sourceName": "VH_F_medial_perichondular_surface_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1149,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.0000014296221151344213,
+      "sourceVertices": 44,
+      "sourceTriangles": 66,
+      "packedVertices": 43,
+      "packedTriangles": 64
+    },
+    {
+      "id": "HRAF0946",
+      "name": "Articular cartilage of knee (left)",
+      "conceptId": "HRA:articular_cartilage_of_knee_L",
+      "sourceName": "VH_F_articular_cartilage_of_knee_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1150,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 278,
+      "sourceTriangles": 328,
+      "packedVertices": 253,
+      "packedTriangles": 288
+    },
+    {
+      "id": "HRAF0947",
+      "name": "Medial condyle of left femur inferior",
+      "conceptId": "HRA:medial_condyle_of_left_femur_inf",
+      "sourceName": "VH_F_medial_condyle_of_left_femur_inf",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1151,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.0000014296221151344213,
+      "sourceVertices": 96,
+      "sourceTriangles": 158,
+      "packedVertices": 95,
+      "packedTriangles": 157
+    },
+    {
+      "id": "HRAF0948",
+      "name": "Lateral condyle of femur inferior (left)",
+      "conceptId": "HRA:lateral_condyle_of_femur_inf_L",
+      "sourceName": "VH_F_lateral_condyle_of_femur_inf_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1152,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 85,
+      "sourceTriangles": 140,
+      "packedVertices": 85,
+      "packedTriangles": 140
+    },
+    {
+      "id": "HRAF0949",
+      "name": "Lateral condyle of femur frontal (left)",
+      "conceptId": "HRA:lateral_condyle_of_femur_frontal_L",
+      "sourceName": "VH_F_lateral_condyle_of_femur_frontal_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1153,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 56,
+      "sourceTriangles": 88,
+      "packedVertices": 51,
+      "packedTriangles": 79
+    },
+    {
+      "id": "HRAF0950",
+      "name": "Distal most point of medial condyle (left)",
+      "conceptId": "HRA:distal_most_point_of_medial_condyle_L",
+      "sourceName": "VH_F_distal_most_point_of_medial_condyle_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1154,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000002957875541720334,
+      "sourceVertices": 58,
+      "sourceTriangles": 88,
+      "packedVertices": 55,
+      "packedTriangles": 82
+    },
+    {
+      "id": "HRAF0951",
+      "name": "Lateral condyle of femur superior (left)",
+      "conceptId": "HRA:lateral_condyle_of_femur_sup_L",
+      "sourceName": "VH_F_lateral_condyle_of_femur_sup_L",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1155,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 45,
+      "sourceTriangles": 68,
+      "packedVertices": 45,
+      "packedTriangles": 68
+    },
+    {
+      "id": "HRAF0952",
+      "name": "Medial condyle of left femur superior",
+      "conceptId": "HRA:medial_condyle_of_left_femur_sup",
+      "sourceName": "VH_F_medial_condyle_of_left_femur_sup",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1156,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 58,
+      "sourceTriangles": 90,
+      "packedVertices": 56,
+      "packedTriangles": 86
+    },
+    {
+      "id": "HRAF0957",
+      "name": "Pubis spongy bone (right)",
+      "conceptId": "HRA:pubis_spongy_bone_R",
+      "sourceName": "VH_F_pubis_spongy_bone_R",
+      "sourceFile": ".cache/hip-registration/hra-united-female-v1.5.glb",
+      "nodeIndex": 968,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000022034679414417724,
+      "sourceVertices": 1132,
+      "sourceTriangles": 2172,
+      "packedVertices": 701,
+      "packedTriangles": 1328
+    },
+    {
+      "id": "HRAF0958",
+      "name": "Pubis compact bone (right)",
+      "conceptId": "HRA:pubis_compact_bone_R",
+      "sourceName": "VH_F_pubis_compact_bone_R",
+      "sourceFile": ".cache/hip-registration/hra-united-female-v1.5.glb",
+      "nodeIndex": 970,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000010858808519031982,
+      "sourceVertices": 2540,
+      "sourceTriangles": 5080,
+      "packedVertices": 1402,
+      "packedTriangles": 2804
+    },
+    {
+      "id": "HRAF0827",
+      "name": "Ilium compact bone (right)",
+      "conceptId": "HRA:ilium_compact_bone_R",
+      "sourceName": "VH_F_ilium_compact_bone_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1011,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.00002389732456364868,
+      "sourceVertices": 5907,
+      "sourceTriangles": 11810,
+      "packedVertices": 2036,
+      "packedTriangles": 4068
+    },
+    {
+      "id": "HRAF0830",
+      "name": "Ilium spongy bone (right)",
+      "conceptId": "HRA:ilium_spongy_bone_R",
+      "sourceName": "VH_F_ilium_spongy_bone_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1015,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000020172034265186767,
+      "sourceVertices": 2838,
+      "sourceTriangles": 5597,
+      "packedVertices": 1024,
+      "packedTriangles": 1997
+    },
+    {
+      "id": "HRAF0960",
+      "name": "Ischium compact bone (right)",
+      "conceptId": "HRA:ischium_compact_bone_R",
+      "sourceName": "VH_F_ischium_compact_bone_R",
+      "sourceFile": ".cache/hip-registration/hra-united-female-v1.5.glb",
+      "nodeIndex": 981,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.00001894351386866333,
+      "sourceVertices": 2695,
+      "sourceTriangles": 5390,
+      "packedVertices": 1475,
+      "packedTriangles": 2950
+    },
+    {
+      "id": "HRAF0962",
+      "name": "Ischium spongy bone (right)",
+      "conceptId": "HRA:ischium_spongy_bone_R",
+      "sourceName": "VH_F_ischium_spongy_bone_R",
+      "sourceFile": ".cache/hip-registration/hra-united-female-v1.5.glb",
+      "nodeIndex": 984,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000010858808519031982,
+      "sourceVertices": 1196,
+      "sourceTriangles": 2291,
+      "packedVertices": 746,
+      "packedTriangles": 1415
+    },
+    {
+      "id": "HRAF0911",
+      "name": "Femur (right)",
+      "conceptId": "HRA:femur_R",
+      "sourceName": "VH_F_femur_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1111,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000022034679414417724,
+      "sourceVertices": 4517,
+      "sourceTriangles": 8916,
+      "packedVertices": 1029,
+      "packedTriangles": 1960
+    },
+    {
+      "id": "HRAF0912",
+      "name": "Trochlear groove (right)",
+      "conceptId": "HRA:trochlear_groove_R",
+      "sourceName": "VH_F_trochlear_groove_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1112,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 25,
+      "sourceTriangles": 26,
+      "packedVertices": 25,
+      "packedTriangles": 26
+    },
+    {
+      "id": "HRAF0913",
+      "name": "Medial perichondular surface (right)",
+      "conceptId": "HRA:medial_perichondular_surface_R",
+      "sourceName": "VH_F_medial_perichondular_surface_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1113,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000002957875541720334,
+      "sourceVertices": 44,
+      "sourceTriangles": 66,
+      "packedVertices": 43,
+      "packedTriangles": 64
+    },
+    {
+      "id": "HRAF0914",
+      "name": "Articular cartilage of knee (right)",
+      "conceptId": "HRA:articular_cartilage_of_knee_R",
+      "sourceName": "VH_F_articular_cartilage_of_knee_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1114,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 278,
+      "sourceTriangles": 328,
+      "packedVertices": 253,
+      "packedTriangles": 288
+    },
+    {
+      "id": "HRAF0915",
+      "name": "Medial condyle of right femur superior",
+      "conceptId": "HRA:medial_condyle_of_right_femur_sup",
+      "sourceName": "VH_F_medial_condyle_of_right_femur_sup",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1115,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 58,
+      "sourceTriangles": 90,
+      "packedVertices": 56,
+      "packedTriangles": 86
+    },
+    {
+      "id": "HRAF0916",
+      "name": "Lateral condyle of femur superior (right)",
+      "conceptId": "HRA:lateral_condyle_of_femur_sup_R",
+      "sourceName": "VH_F_lateral_condyle_of_femur_sup_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1116,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 45,
+      "sourceTriangles": 68,
+      "packedVertices": 45,
+      "packedTriangles": 68
+    },
+    {
+      "id": "HRAF0917",
+      "name": "Medial condyle of right femur inferior",
+      "conceptId": "HRA:medial_condyle_of_right_femur_inf",
+      "sourceName": "VH_F_medial_condyle_of_right_femur_inf",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1117,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.0000014296221151344213,
+      "sourceVertices": 96,
+      "sourceTriangles": 158,
+      "packedVertices": 95,
+      "packedTriangles": 157
+    },
+    {
+      "id": "HRAF0918",
+      "name": "Lateral condyle of femur inferior (right)",
+      "conceptId": "HRA:lateral_condyle_of_femur_inf_R",
+      "sourceName": "VH_F_lateral_condyle_of_femur_inf_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1118,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 85,
+      "sourceTriangles": 140,
+      "packedVertices": 85,
+      "packedTriangles": 140
+    },
+    {
+      "id": "HRAF0919",
+      "name": "Lateral condyle of femur frontal (right)",
+      "conceptId": "HRA:lateral_condyle_of_femur_frontal_R",
+      "sourceName": "VH_F_lateral_condyle_of_femur_frontal_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1119,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 56,
+      "sourceTriangles": 88,
+      "packedVertices": 51,
+      "packedTriangles": 79
+    },
+    {
+      "id": "HRAF0920",
+      "name": "Distal most point of medial condyle (right)",
+      "conceptId": "HRA:distal_most_point_of_medial_condyle_R",
+      "sourceName": "VH_F_distal_most_point_of_medial_condyle_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1120,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 58,
+      "sourceTriangles": 88,
+      "packedVertices": 55,
+      "packedTriangles": 82
+    },
+    {
+      "id": "HRAF0921",
+      "name": "Intercondylar fossa (right)",
+      "conceptId": "HRA:intercondylar_fossa_R",
+      "sourceName": "VH_F_intercondylar_fossa_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1121,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.0000014296221151344213,
+      "sourceVertices": 42,
+      "sourceTriangles": 58,
+      "packedVertices": 40,
+      "packedTriangles": 54
+    },
+    {
+      "id": "HRAF0922",
+      "name": "Posterior cruciate enthesis (right)",
+      "conceptId": "HRA:posterior_cruciate_enthesis_R",
+      "sourceName": "VH_F_posterior_cruciate_enthesis_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1122,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 55,
+      "sourceTriangles": 80,
+      "packedVertices": 55,
+      "packedTriangles": 80
+    },
+    {
+      "id": "HRAF0923",
+      "name": "Anterior cruciate enthesis (right)",
+      "conceptId": "HRA:anterior_cruciate_enthesis_R",
+      "sourceName": "VH_F_anterior_cruciate_enthesis_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1123,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 53,
+      "sourceTriangles": 78,
+      "packedVertices": 51,
+      "packedTriangles": 74
+    },
+    {
+      "id": "HRAF0924",
+      "name": "Lateral perichondular surface (right)",
+      "conceptId": "HRA:lateral_perichondular_surface_R",
+      "sourceName": "VH_F_lateral_perichondular_surface_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1124,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 49,
+      "sourceTriangles": 75,
+      "packedVertices": 49,
+      "packedTriangles": 75
+    },
+    {
+      "id": "HRAF0925",
+      "name": "Lateral epicondylar enthesis (right)",
+      "conceptId": "HRA:lateral_epicondylar_enthesis_R",
+      "sourceName": "VH_F_lateral_epicondylar_enthesis_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1125,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000006020958481789407,
+      "sourceVertices": 32,
+      "sourceTriangles": 40,
+      "packedVertices": 29,
+      "packedTriangles": 34
+    },
+    {
+      "id": "HRAF0926",
+      "name": "Medial epicondylar enthesis (right)",
+      "conceptId": "HRA:medial_epicondylar_enthesis_R",
+      "sourceName": "VH_F_medial_epicondylar_enthesis_R",
+      "sourceFile": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "nodeIndex": 1126,
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "boundsResidualMm": 0.000002957875541720334,
+      "sourceVertices": 36,
+      "sourceTriangles": 47,
+      "packedVertices": 35,
+      "packedTriangles": 45
+    }
+  ],
+  "pairs": [
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0937"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0938"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0939"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0940"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0941"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0942"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0943"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0944"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0945"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0946"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0947"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0948"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0949"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0950"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0951"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0956",
+        "HRAF0952"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0937"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0938"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0939"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0940"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0941"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0942"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0943"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0944"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0945"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0946"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0947"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0948"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0949"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0950"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0951"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0959",
+        "HRAF0952"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0937"
+      ],
+      "original": {
+        "point": [
+          0.08418833252922715,
+          0.8224241850811943,
+          -0.08301019392009103
+        ],
+        "segmentFraction": 0.6960808389440158,
+        "barycentric": [
+          0.10798366215450406,
+          0.5690155546416725,
+          0.3230007832038234
+        ],
+        "direction": "a-to-b",
+        "edge": 1,
+        "planeStraddleExtentMm": 0.09360537470579403,
+        "a": [
+          [
+            0.08195245265960693,
+            0.823005199432373,
+            -0.08188802003860474
+          ],
+          [
+            0.08412390947341919,
+            0.8225818872451782,
+            -0.08315513283014297
+          ],
+          [
+            0.08421646058559418,
+            0.822355329990387,
+            -0.08294691145420074
+          ]
+        ],
+        "b": [
+          [
+            0.08194580674171448,
+            0.8228424787521362,
+            -0.08002790063619614
+          ],
+          [
+            0.0857919380068779,
+            0.8232240676879883,
+            -0.08362428843975067
+          ],
+          [
+            0.08211304247379303,
+            0.8208752274513245,
+            -0.08292539417743683
+          ]
+        ]
+      },
+      "packed": {
+        "point": [
+          0.08474123586304573,
+          0.8224355363102054,
+          -0.08326389454699087
+        ],
+        "segmentFraction": 0.9192342145033677,
+        "barycentric": [
+          0.10827354218970742,
+          0.6998973109989035,
+          0.19182914681138907
+        ],
+        "direction": "a-to-b",
+        "edge": 2,
+        "planeStraddleExtentMm": 0.5543571519647578,
+        "a": [
+          [
+            0.08421646058559418,
+            0.822355329990387,
+            -0.08294691145420074
+          ],
+          [
+            0.08741477131843567,
+            0.8237593770027161,
+            -0.0862724781036377
+          ],
+          [
+            0.09071395546197891,
+            0.8233484029769897,
+            -0.08687163144350052
+          ]
+        ],
+        "b": [
+          [
+            0.08187725394964218,
+            0.8243247270584106,
+            -0.07691359519958496
+          ],
+          [
+            0.0857919380068779,
+            0.8232240676879883,
+            -0.08362428843975067
+          ],
+          [
+            0.08252421021461487,
+            0.8184922337532043,
+            -0.0855332612991333
+          ]
+        ]
+      },
+      "originalPelvisPackedFemur": {
+        "point": [
+          0.08516932689892709,
+          0.8225755717390116,
+          -0.08365162877646708
+        ],
+        "segmentFraction": 0.4905932158388048,
+        "barycentric": [
+          0.03738577252484185,
+          0.8168684216562048,
+          0.14574580581895338
+        ],
+        "direction": "a-to-b",
+        "edge": 0,
+        "planeStraddleExtentMm": 0.41173090187413647,
+        "a": [
+          [
+            0.08617613464593887,
+            0.8225694894790649,
+            -0.08412978798151016
+          ],
+          [
+            0.08412390947341919,
+            0.8225818872451782,
+            -0.08315513283014297
+          ],
+          [
+            0.08600709587335587,
+            0.8227660059928894,
+            -0.08431368321180344
+          ]
+        ],
+        "b": [
+          [
+            0.08187725394964218,
+            0.8243247270584106,
+            -0.07691359519958496
+          ],
+          [
+            0.0857919380068779,
+            0.8232240676879883,
+            -0.08362428843975067
+          ],
+          [
+            0.08252421021461487,
+            0.8184922337532043,
+            -0.0855332612991333
+          ]
+        ]
+      },
+      "packedPelvisOriginalFemur": {
+        "point": [
+          0.0840169932814526,
+          0.8224156868246364,
+          -0.08283823443031037
+        ],
+        "segmentFraction": 0.0401753479578731,
+        "barycentric": [
+          0.156630894699388,
+          0.5246534109606134,
+          0.31871569433999863
+        ],
+        "direction": "a-to-b",
+        "edge": 0,
+        "planeStraddleExtentMm": 0.09360537470579403,
+        "a": [
+          [
+            0.08421646058559418,
+            0.822355329990387,
+            -0.08294691145420074
+          ],
+          [
+            0.07925154268741608,
+            0.8238576650619507,
+            -0.0802418440580368
+          ],
+          [
+            0.07882322371006012,
+            0.8247809410095215,
+            -0.08103111386299133
+          ]
+        ],
+        "b": [
+          [
+            0.08194580674171448,
+            0.8228424787521362,
+            -0.08002790063619614
+          ],
+          [
+            0.0857919380068779,
+            0.8232240676879883,
+            -0.08362428843975067
+          ],
+          [
+            0.08211304247379303,
+            0.8208752274513245,
+            -0.08292539417743683
+          ]
+        ]
+      }
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0938"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0939"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0940"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0941"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0942"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0943"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0944"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0945"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0946"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0947"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0948"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0949"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0950"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0951"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0828",
+        "HRAF0952"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0937"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0938"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0939"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0940"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0941"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0942"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0943"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0944"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0945"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0946"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0947"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0948"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0949"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0950"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0951"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0829",
+        "HRAF0952"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0937"
+      ],
+      "original": {
+        "point": [
+          0.08030929729852632,
+          0.7928626596849832,
+          -0.07793110773758713
+        ],
+        "segmentFraction": 0.8736635725096454,
+        "barycentric": [
+          0.5112220837627156,
+          0.2465171283037594,
+          0.24226078793352498
+        ],
+        "direction": "a-to-b",
+        "edge": 0,
+        "planeStraddleExtentMm": 0.097366361865908,
+        "a": [
+          [
+            0.07881848514080048,
+            0.7936458587646484,
+            -0.0782664343714714
+          ],
+          [
+            0.08052487671375275,
+            0.7927494049072266,
+            -0.07788261771202087
+          ],
+          [
+            0.07958906143903732,
+            0.7925402522087097,
+            -0.07889227569103241
+          ]
+        ],
+        "b": [
+          [
+            0.07967415452003479,
+            0.7939650416374207,
+            -0.07883638143539429
+          ],
+          [
+            0.08220409601926804,
+            0.7913529872894287,
+            -0.07950884848833084
+          ],
+          [
+            0.07972149550914764,
+            0.792072594165802,
+            -0.07441532611846924
+          ]
+        ]
+      },
+      "packed": {
+        "point": [
+          0.08194466598041578,
+          0.7916284670922563,
+          -0.07936779871695025
+        ],
+        "segmentFraction": 0.9890228127189264,
+        "barycentric": [
+          0.9396785879032044,
+          0.008817731429153357,
+          0.05150368066764229
+        ],
+        "direction": "a-to-b",
+        "edge": 0,
+        "planeStraddleExtentMm": 0.01270464886736484,
+        "a": [
+          [
+            0.07958906143903732,
+            0.7925402522087097,
+            -0.07889227569103241
+          ],
+          [
+            0.08197081089019775,
+            0.7916183471679688,
+            -0.0793730765581131
+          ],
+          [
+            0.0784563347697258,
+            0.7908564805984497,
+            -0.08370029926300049
+          ]
+        ],
+        "b": [
+          [
+            0.08220409601926804,
+            0.7913529872894287,
+            -0.07950884848833084
+          ],
+          [
+            0.07972149550914764,
+            0.792072594165802,
+            -0.07441532611846924
+          ],
+          [
+            0.07759201526641846,
+            0.7965785264968872,
+            -0.07764225453138351
+          ]
+        ]
+      },
+      "originalPelvisPackedFemur": {
+        "point": [
+          0.08024016357104599,
+          0.7930938337217496,
+          -0.07776797949570152
+        ],
+        "segmentFraction": 0.7684223693393275,
+        "barycentric": [
+          0.4673475611708194,
+          0.23137270915881045,
+          0.30127972967037014
+        ],
+        "direction": "a-to-b",
+        "edge": 0,
+        "planeStraddleExtentMm": 0.04087728341472911,
+        "a": [
+          [
+            0.07929542660713196,
+            0.7942367196083069,
+            -0.07738758623600006
+          ],
+          [
+            0.08052487671375275,
+            0.7927494049072266,
+            -0.07788261771202087
+          ],
+          [
+            0.07881848514080048,
+            0.7936458587646484,
+            -0.0782664343714714
+          ]
+        ],
+        "b": [
+          [
+            0.08220409601926804,
+            0.7913529872894287,
+            -0.07950884848833084
+          ],
+          [
+            0.07972149550914764,
+            0.792072594165802,
+            -0.07441532611846924
+          ],
+          [
+            0.07759201526641846,
+            0.7965785264968872,
+            -0.07764225453138351
+          ]
+        ]
+      },
+      "packedPelvisOriginalFemur": {
+        "point": [
+          0.08188870130056676,
+          0.791650129370978,
+          -0.079356501195045
+        ],
+        "segmentFraction": 0.9655255133612042,
+        "barycentric": [
+          0.10950070317146385,
+          0.8750460068625628,
+          0.015453289965973312
+        ],
+        "direction": "a-to-b",
+        "edge": 0,
+        "planeStraddleExtentMm": 0.035041208949215794,
+        "a": [
+          [
+            0.07958906143903732,
+            0.7925402522087097,
+            -0.07889227569103241
+          ],
+          [
+            0.08197081089019775,
+            0.7916183471679688,
+            -0.0793730765581131
+          ],
+          [
+            0.0784563347697258,
+            0.7908564805984497,
+            -0.08370029926300049
+          ]
+        ],
+        "b": [
+          [
+            0.07967415452003479,
+            0.7939650416374207,
+            -0.07883638143539429
+          ],
+          [
+            0.08220409601926804,
+            0.7913529872894287,
+            -0.07950884848833084
+          ],
+          [
+            0.07972149550914764,
+            0.792072594165802,
+            -0.07441532611846924
+          ]
+        ]
+      }
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0938"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0939"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0940"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0941"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0942"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0943"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0944"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0945"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0946"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0947"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0948"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0949"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0950"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0951"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0961",
+        "HRAF0952"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0937"
+      ],
+      "original": {
+        "point": [
+          0.08194143879168456,
+          0.7916100072208669,
+          -0.0794049743188401
+        ],
+        "segmentFraction": 0.9684720383154685,
+        "barycentric": [
+          0.09628128469011644,
+          0.8960367665755943,
+          0.007681948734289275
+        ],
+        "direction": "a-to-b",
+        "edge": 0,
+        "planeStraddleExtentMm": 0.035041208949215794,
+        "a": [
+          [
+            0.0810391902923584,
+            0.7913538217544556,
+            -0.08038480579853058
+          ],
+          [
+            0.08197081089019775,
+            0.7916183471679688,
+            -0.0793730765581131
+          ],
+          [
+            0.07958906143903732,
+            0.7925402522087097,
+            -0.07889227569103241
+          ]
+        ],
+        "b": [
+          [
+            0.07967415452003479,
+            0.7939650416374207,
+            -0.07883638143539429
+          ],
+          [
+            0.08220409601926804,
+            0.7913529872894287,
+            -0.07950884848833084
+          ],
+          [
+            0.07972149550914764,
+            0.792072594165802,
+            -0.07441532611846924
+          ]
+        ]
+      },
+      "packed": {
+        "point": [
+          0.0853726017526738,
+          0.791062132708051,
+          -0.08245812698569781
+        ],
+        "segmentFraction": 0.5883379845040226,
+        "barycentric": [
+          0.6086319539296675,
+          0.257422603642448,
+          0.1339454424278844
+        ],
+        "direction": "a-to-b",
+        "edge": 1,
+        "planeStraddleExtentMm": 0.5472903143184947,
+        "a": [
+          [
+            0.0807683914899826,
+            0.789920449256897,
+            -0.08618883788585663
+          ],
+          [
+            0.08641491830348969,
+            0.7907490134239197,
+            -0.08459041267633438
+          ],
+          [
+            0.08464328944683075,
+            0.7912812232971191,
+            -0.08096615970134735
+          ]
+        ],
+        "b": [
+          [
+            0.08782574534416199,
+            0.7897980213165283,
+            -0.08364887535572052
+          ],
+          [
+            0.08220409601926804,
+            0.7913529872894287,
+            -0.07950884848833084
+          ],
+          [
+            0.08031519502401352,
+            0.796247124671936,
+            -0.08271557092666626
+          ]
+        ]
+      },
+      "originalPelvisPackedFemur": {
+        "point": [
+          0.0819606198161872,
+          0.7916154535028083,
+          -0.07938414394712495
+        ],
+        "segmentFraction": 0.9890609181095863,
+        "barycentric": [
+          0.9442543631167881,
+          0.006399296678186128,
+          0.04934634020502569
+        ],
+        "direction": "a-to-b",
+        "edge": 0,
+        "planeStraddleExtentMm": 0.01270464886736484,
+        "a": [
+          [
+            0.0810391902923584,
+            0.7913538217544556,
+            -0.08038480579853058
+          ],
+          [
+            0.08197081089019775,
+            0.7916183471679688,
+            -0.0793730765581131
+          ],
+          [
+            0.07958906143903732,
+            0.7925402522087097,
+            -0.07889227569103241
+          ]
+        ],
+        "b": [
+          [
+            0.08220409601926804,
+            0.7913529872894287,
+            -0.07950884848833084
+          ],
+          [
+            0.07972149550914764,
+            0.792072594165802,
+            -0.07441532611846924
+          ],
+          [
+            0.07759201526641846,
+            0.7965785264968872,
+            -0.07764225453138351
+          ]
+        ]
+      },
+      "packedPelvisOriginalFemur": {
+        "point": [
+          0.08572867424244947,
+          0.7909551660068026,
+          -0.08318655087399132
+        ],
+        "segmentFraction": 0.3873520452440511,
+        "barycentric": [
+          0.8289340056870638,
+          0.0711661642270609,
+          0.09989983008587536
+        ],
+        "direction": "a-to-b",
+        "edge": 1,
+        "planeStraddleExtentMm": 0.36902687242156906,
+        "a": [
+          [
+            0.0807683914899826,
+            0.789920449256897,
+            -0.08618883788585663
+          ],
+          [
+            0.08641491830348969,
+            0.7907490134239197,
+            -0.08459041267633438
+          ],
+          [
+            0.08464328944683075,
+            0.7912812232971191,
+            -0.08096615970134735
+          ]
+        ],
+        "b": [
+          [
+            0.08567114919424057,
+            0.7912569046020508,
+            -0.08355246484279633
+          ],
+          [
+            0.08782574534416199,
+            0.7897980213165283,
+            -0.08364887535572052
+          ],
+          [
+            0.08471209555864334,
+            0.7892757654190063,
+            -0.07982097566127777
+          ]
+        ]
+      }
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0938"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0939"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0940"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0941"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0942"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0943"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0944"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0945"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0946"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0947"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0948"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0949"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0950"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0951"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "left",
+      "ids": [
+        "HRAF0963",
+        "HRAF0952"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0911"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0912"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0913"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0914"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0915"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0916"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0917"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0918"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0919"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0920"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0921"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0922"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0923"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0924"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0925"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0957",
+        "HRAF0926"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0911"
+      ],
+      "original": {
+        "point": [
+          -0.08482714443046056,
+          0.8033958647610863,
+          -0.05458635059375036
+        ],
+        "segmentFraction": 0.20387625204213244,
+        "barycentric": [
+          0.05550850428940998,
+          0.7744000081618595,
+          0.17009148754873052
+        ],
+        "direction": "a-to-b",
+        "edge": 2,
+        "planeStraddleExtentMm": 0.3653289177738626,
+        "a": [
+          [
+            -0.08485407382249832,
+            0.8046978712081909,
+            -0.05541307106614113
+          ],
+          [
+            -0.08272618800401688,
+            0.8018215298652649,
+            -0.057047970592975616
+          ],
+          [
+            -0.08482024818658829,
+            0.8030624389648438,
+            -0.05437463894486427
+          ]
+        ],
+        "b": [
+          [
+            -0.08574321866035461,
+            0.8059232831001282,
+            -0.052347127348184586
+          ],
+          [
+            -0.08491724729537964,
+            0.8025028109550476,
+            -0.054590631276369095
+          ],
+          [
+            -0.08411796391010284,
+            0.8066369891166687,
+            -0.055297620594501495
+          ]
+        ]
+      },
+      "packed": {
+        "point": [
+          -0.08352010740350214,
+          0.8053787419460571,
+          -0.05731749587973093
+        ],
+        "segmentFraction": 0.7370821498349411,
+        "barycentric": [
+          0.2521018781355918,
+          0.47199850649937725,
+          0.27589961536503094
+        ],
+        "direction": "a-to-b",
+        "edge": 1,
+        "planeStraddleExtentMm": 0.6012501472898899,
+        "a": [
+          [
+            -0.08267191797494888,
+            0.8057489991188049,
+            -0.05885520577430725
+          ],
+          [
+            -0.08098777383565903,
+            0.8013889193534851,
+            -0.059618085622787476
+          ],
+          [
+            -0.08442339301109314,
+            0.8068019151687622,
+            -0.05649687349796295
+          ]
+        ],
+        "b": [
+          [
+            -0.08411796391010284,
+            0.8066369891166687,
+            -0.055297620594501495
+          ],
+          [
+            -0.08336757123470306,
+            0.8035330772399902,
+            -0.05790894851088524
+          ],
+          [
+            -0.0832347720861435,
+            0.8073865175247192,
+            -0.05815131217241287
+          ]
+        ]
+      },
+      "originalPelvisPackedFemur": {
+        "point": [
+          -0.08451436342706331,
+          0.8042386722011179,
+          -0.055674077723516104
+        ],
+        "segmentFraction": 0.8403530901496178,
+        "barycentric": [
+          0.4881314673976347,
+          0.3688508333743395,
+          0.14301769922802585
+        ],
+        "direction": "a-to-b",
+        "edge": 1,
+        "planeStraddleExtentMm": 0.25440802013836195,
+        "a": [
+          [
+            -0.08280984312295914,
+            0.8034899830818176,
+            -0.05790488049387932
+          ],
+          [
+            -0.08272618800401688,
+            0.8018215298652649,
+            -0.057047970592975616
+          ],
+          [
+            -0.08485407382249832,
+            0.8046978712081909,
+            -0.05541307106614113
+          ]
+        ],
+        "b": [
+          [
+            -0.08336757123470306,
+            0.8035330772399902,
+            -0.05790894851088524
+          ],
+          [
+            -0.08411796391010284,
+            0.8066369891166687,
+            -0.055297620594501495
+          ],
+          [
+            -0.08945079892873764,
+            0.8004615306854248,
+            -0.049017179757356644
+          ]
+        ]
+      },
+      "packedPelvisOriginalFemur": {
+        "point": [
+          -0.08352010740350214,
+          0.8053787419460571,
+          -0.05731749587973093
+        ],
+        "segmentFraction": 0.7370821498349411,
+        "barycentric": [
+          0.2521018781355918,
+          0.47199850649937725,
+          0.27589961536503094
+        ],
+        "direction": "a-to-b",
+        "edge": 1,
+        "planeStraddleExtentMm": 0.6012501472898899,
+        "a": [
+          [
+            -0.08267191797494888,
+            0.8057489991188049,
+            -0.05885520577430725
+          ],
+          [
+            -0.08098777383565903,
+            0.8013889193534851,
+            -0.059618085622787476
+          ],
+          [
+            -0.08442339301109314,
+            0.8068019151687622,
+            -0.05649687349796295
+          ]
+        ],
+        "b": [
+          [
+            -0.08411796391010284,
+            0.8066369891166687,
+            -0.055297620594501495
+          ],
+          [
+            -0.08336757123470306,
+            0.8035330772399902,
+            -0.05790894851088524
+          ],
+          [
+            -0.0832347720861435,
+            0.8073865175247192,
+            -0.05815131217241287
+          ]
+        ]
+      }
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0912"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0913"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0914"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0915"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0916"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0917"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0918"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0919"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0920"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0921"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0922"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0923"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0924"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0925"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0958",
+        "HRAF0926"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0911"
+      ],
+      "original": null,
+      "packed": {
+        "point": [
+          -0.10127277177503852,
+          0.8248304095345468,
+          -0.0490100775062723
+        ],
+        "segmentFraction": 0.6709282158201388,
+        "barycentric": [
+          0.18305455715894436,
+          0.23996144271975003,
+          0.5769840001213056
+        ],
+        "direction": "b-to-a",
+        "edge": 0,
+        "planeStraddleExtentMm": 0.1701221967913793,
+        "a": [
+          [
+            -0.10878247767686844,
+            0.8272773027420044,
+            -0.049302056431770325
+          ],
+          [
+            -0.10618538409471512,
+            0.8302521109580994,
+            -0.05269821360707283
+          ],
+          [
+            -0.09684713184833527,
+            0.8217992782592773,
+            -0.047383587807416916
+          ]
+        ],
+        "b": [
+          [
+            -0.10242817550897598,
+            0.8269736170768738,
+            -0.05115070566534996
+          ],
+          [
+            -0.1007060781121254,
+            0.8237792253494263,
+            -0.04796015843749046
+          ],
+          [
+            -0.09880751371383667,
+            0.8268871307373047,
+            -0.05280354246497154
+          ]
+        ]
+      },
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": {
+        "point": [
+          -0.10127277177503852,
+          0.8248304095345468,
+          -0.0490100775062723
+        ],
+        "segmentFraction": 0.6709282158201388,
+        "barycentric": [
+          0.18305455715894436,
+          0.23996144271975003,
+          0.5769840001213056
+        ],
+        "direction": "b-to-a",
+        "edge": 0,
+        "planeStraddleExtentMm": 0.1701221967913793,
+        "a": [
+          [
+            -0.10878247767686844,
+            0.8272773027420044,
+            -0.049302056431770325
+          ],
+          [
+            -0.10618538409471512,
+            0.8302521109580994,
+            -0.05269821360707283
+          ],
+          [
+            -0.09684713184833527,
+            0.8217992782592773,
+            -0.047383587807416916
+          ]
+        ],
+        "b": [
+          [
+            -0.10242817550897598,
+            0.8269736170768738,
+            -0.05115070566534996
+          ],
+          [
+            -0.1007060781121254,
+            0.8237792253494263,
+            -0.04796015843749046
+          ],
+          [
+            -0.09880751371383667,
+            0.8268871307373047,
+            -0.05280354246497154
+          ]
+        ]
+      }
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0912"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0913"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0914"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0915"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0916"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0917"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0918"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0919"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0920"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0921"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0922"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0923"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0924"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0925"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0827",
+        "HRAF0926"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0911"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0912"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0913"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0914"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0915"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0916"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0917"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0918"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0919"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0920"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0921"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0922"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0923"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0924"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0925"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0830",
+        "HRAF0926"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0911"
+      ],
+      "original": {
+        "point": [
+          -0.09161998923427449,
+          0.7943232627999318,
+          -0.08012383691017193
+        ],
+        "segmentFraction": 0.16021829197467838,
+        "barycentric": [
+          0.2165435029867736,
+          0.11732726643493709,
+          0.6661292305782893
+        ],
+        "direction": "a-to-b",
+        "edge": 0,
+        "planeStraddleExtentMm": 0.09841944483350443,
+        "a": [
+          [
+            -0.09145596623420715,
+            0.7943357825279236,
+            -0.07981175929307938
+          ],
+          [
+            -0.09247971326112747,
+            0.794257640838623,
+            -0.08175958693027496
+          ],
+          [
+            -0.09166565537452698,
+            0.7927459478378296,
+            -0.07950714975595474
+          ]
+        ],
+        "b": [
+          [
+            -0.09283742308616638,
+            0.7959532737731934,
+            -0.08258503675460815
+          ],
+          [
+            -0.0890004113316536,
+            0.796247124671936,
+            -0.07898333668708801
+          ],
+          [
+            -0.09168562293052673,
+            0.7934545278549194,
+            -0.07952463626861572
+          ]
+        ]
+      },
+      "packed": {
+        "point": [
+          -0.09112180029799109,
+          0.7948516225256076,
+          -0.0796021495021151
+        ],
+        "segmentFraction": 0.6487201209972004,
+        "barycentric": [
+          0.12267377995422238,
+          0.7368781849282927,
+          0.1404480351174849
+        ],
+        "direction": "a-to-b",
+        "edge": 1,
+        "planeStraddleExtentMm": 0.6148641154452897,
+        "a": [
+          [
+            -0.08986377716064453,
+            0.7957428097724915,
+            -0.07833553850650787
+          ],
+          [
+            -0.09179025143384933,
+            0.7955346703529358,
+            -0.08183551579713821
+          ],
+          [
+            -0.09075983613729477,
+            0.7944817543029785,
+            -0.07839278876781464
+          ]
+        ],
+        "b": [
+          [
+            -0.09769458323717117,
+            0.7922549247741699,
+            -0.08295918256044388
+          ],
+          [
+            -0.0890004113316536,
+            0.796247124671936,
+            -0.07898333668708801
+          ],
+          [
+            -0.09651096165180206,
+            0.7897980213165283,
+            -0.07991664111614227
+          ]
+        ]
+      },
+      "originalPelvisPackedFemur": {
+        "point": [
+          -0.09119457871589974,
+          0.7943905929723991,
+          -0.07927895488511683
+        ],
+        "segmentFraction": 0.6245134070962161,
+        "barycentric": [
+          0.007929062695874345,
+          0.7091048882760996,
+          0.282966049028026
+        ],
+        "direction": "a-to-b",
+        "edge": 1,
+        "planeStraddleExtentMm": 0.3852633659884985,
+        "a": [
+          [
+            -0.09166565537452698,
+            0.7927459478378296,
+            -0.07950714975595474
+          ],
+          [
+            -0.09075983613729477,
+            0.7944817543029785,
+            -0.07839278876781464
+          ],
+          [
+            -0.09145596623420715,
+            0.7943357825279236,
+            -0.07981175929307938
+          ]
+        ],
+        "b": [
+          [
+            -0.09769458323717117,
+            0.7922549247741699,
+            -0.08295918256044388
+          ],
+          [
+            -0.0890004113316536,
+            0.796247124671936,
+            -0.07898333668708801
+          ],
+          [
+            -0.09651096165180206,
+            0.7897980213165283,
+            -0.07991664111614227
+          ]
+        ]
+      },
+      "packedPelvisOriginalFemur": {
+        "point": [
+          -0.09110850453226443,
+          0.7956083273990503,
+          -0.08059693259533125
+        ],
+        "segmentFraction": 0.6461167890652517,
+        "barycentric": [
+          0.42027755180255044,
+          0.3951994503098613,
+          0.18452299788758827
+        ],
+        "direction": "a-to-b",
+        "edge": 0,
+        "planeStraddleExtentMm": 0.38292399257592474,
+        "a": [
+          [
+            -0.08986377716064453,
+            0.7957428097724915,
+            -0.07833553850650787
+          ],
+          [
+            -0.09179025143384933,
+            0.7955346703529358,
+            -0.08183551579713821
+          ],
+          [
+            -0.09075983613729477,
+            0.7944817543029785,
+            -0.07839278876781464
+          ]
+        ],
+        "b": [
+          [
+            -0.09283742308616638,
+            0.7959532737731934,
+            -0.08258503675460815
+          ],
+          [
+            -0.0890004113316536,
+            0.796247124671936,
+            -0.07898333668708801
+          ],
+          [
+            -0.09168562293052673,
+            0.7934545278549194,
+            -0.07952463626861572
+          ]
+        ]
+      }
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0912"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0913"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0914"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0915"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0916"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0917"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0918"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0919"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0920"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0921"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0922"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0923"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0924"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0925"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0960",
+        "HRAF0926"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0911"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0912"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0913"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0914"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0915"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0916"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0917"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0918"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0919"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0920"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0921"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0922"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0923"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0924"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0925"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    },
+    {
+      "side": "right",
+      "ids": [
+        "HRAF0962",
+        "HRAF0926"
+      ],
+      "original": null,
+      "packed": null,
+      "originalPelvisPackedFemur": null,
+      "packedPelvisOriginalFemur": null
+    }
+  ],
+  "limitations": [
+    "Same-side pelvic six-part versus femoral sixteen-part composites only; femoral hierarchy includes cartilage and attachment surfaces.",
+    "Each positive result is the first segment/triangle interior witness with >1 micrometre plane straddling, not total crossing triangles or penetration depth.",
+    "No witness does not prove disjoint solids; coplanar contacts, sub-tolerance intersections and containment are outside this predicate.",
+    "Official geometry is in its original scene world frame plus the existing common skin translation, serialized to Float32 for comparison.",
+    "No donor fitting, clinical anatomical assessment, muscle attachment or organ/nerve verification is performed here."
+  ],
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/hip-surface-fits.json",
+      "sha256": "c299a1666c8c2b176233acab35e3e2d71837b43c05433498ee75253b7c19b99e"
+    },
+    {
+      "file": "docs/anatomy-alignment/hra-bone-targets.json",
+      "sha256": "94c3e05a112656f1f3859c88627c49b7cd3ed394a21dfd2d5f5aebff14b3e87a"
+    },
+    {
+      "file": "docs/anatomy-alignment/hra-brain-source.json",
+      "sha256": "c562a9c6ac5003160cb6b917da96bf96d1b37b5e1b78f5b9fac33644cd9c74c2"
+    },
+    {
+      "file": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "file": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "file": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "file": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "file": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "file": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "file": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "file": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "file": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "file": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "file": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "file": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "file": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "file": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "file": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "file": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "file": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "file": ".cache/hip-registration/hra-united-female-v1.5.glb",
+      "sha256": "472567a56896b9b7890508da6501fbf858e56aaa30745365f7a71ade782b529c"
+    },
+    {
+      "file": ".cache/neural-bone/hra-united-female-v1.10.glb",
+      "sha256": "95f0c3d2f918582608692ca1139e8bdb18c147a16470e9ee9af8b276bd77c422"
+    },
+    {
+      "file": "scripts/audit-hra-hip-crossings.mjs",
+      "sha256": "ed6c5a5bd89c659ff18b9dd14b7414ae5fa2ff9233c065b36618f5163230984f"
+    },
+    {
+      "file": "scripts/lib/official-meshes.mjs",
+      "sha256": "0ef3eb94746c8a67a4e257459a0eb3a0cc718706f7ce3f2eda994a0aa603cb39"
+    },
+    {
+      "file": "scripts/lib/triangle-witness.mjs",
+      "sha256": "309654844ad1f9e21270c25bd0a78d767ba44b34aa2bb6962d6ad32667361c17"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    }
+  ]
+}

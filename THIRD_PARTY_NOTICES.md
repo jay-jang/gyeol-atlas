@@ -89,3 +89,17 @@ The font stylesheet loads DM Sans and Noto Sans KR via Google Fonts. Text falls 
 KMCRIC (https://www.kmcric.com/database/acupoint) supplies the factual 361 + 48 catalogue and short location excerpts. Its original rights remain reserved; per-point links and editorial limitations are recorded in data/acupoint-content.json. No full source books or pages are redistributed.
 
 Traditional indication excerpts and Korean adaptations attributed to TCM Wiki are licensed CC BY-SA 4.0 (https://tcmwiki.com/wiki/copyrights; https://creativecommons.org/licenses/by-sa/4.0/). These sections in data/acupoint-content.json, data/points.json and generated wiki copies retain that license. Changes: selected historical indications, shortened Korean paraphrases, and explicit separation from clinical efficacy. Each record retains its source URL and license. EX-UE6 uses a short independently written eLotus summary with its own source attribution, not the TCM Wiki license. The original five-phase explanatory prose cites the physician-authored Five Shu table.
+
+## Native right ilium source restoration (2026-09-27)
+
+`public/models/female-source-restoration/right-ilium.bin.gz` restores
+`VH_F_ilium_compact_bone_R` (`HRAF0827`) directly from the NIH Human Reference
+Atlas united-female v1.10 / Visible Human Female source, CC BY 4.0:
+https://cdn.humanatlas.io/digital-objects/ref-organ/united-female/v1.10/assets/3d-vh-f-united.glb
+https://creativecommons.org/licenses/by/4.0/
+
+Changes: source scene world transform plus the existing common skin translation,
+Float32 positions and transformed/normalized normals, Uint32 triangle indices,
+gzip packaging. No surface simplification or local registration. Source hash,
+node identity and binary layout: `data/catalog/female-source-restoration.json`.
+This does not establish clinical anatomical accuracy or remove source overlaps.

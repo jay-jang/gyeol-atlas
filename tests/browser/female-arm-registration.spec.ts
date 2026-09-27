@@ -9,7 +9,11 @@ import {ready,snapshot,openTool} from './helpers';
 
 const atlas=JSON.parse(fs.readFileSync('public/models/female/atlas-female.json','utf8'));
 const buffers=atlas.chunks.map((c:any)=>gunzipSync(fs.readFileSync(`public/models/female/${c.gzip.split('/').pop()}`)));
+const sourceRestoration=JSON.parse(fs.readFileSync('data/catalog/female-source-restoration.json','utf8'));
+const restoredBytes=gunzipSync(fs.readFileSync(`public/${sourceRestoration.url}`));
 const expected=Object.fromEntries(atlas.parts.map((p:any)=>{
+  const restored=sourceRestoration.records.find((r:any)=>r.id===p.id);
+  if(restored)return [p.id,createHash('sha256').update(restoredBytes.subarray(restored.positions,restored.positions+restored.vertexCount*12)).digest('hex')];
   const b=buffers[p.chunk],g=new BufferGeometry();
   g.setAttribute('position',new BufferAttribute(Float32Array.from({length:p.vertexCount*3},(_,i)=>b.readFloatLE(p.positions+i*4)),3));
   g.setIndex(new BufferAttribute(Uint32Array.from({length:p.indexCount},(_,i)=>b.readUInt32LE(p.indices+i*4)),1));

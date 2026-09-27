@@ -1,0 +1,21 @@
+Right compact ilium (HRAF0827) source restoration
+
+Derived from the NIH Human Reference Atlas 3D Reference Organ Library,
+united-female v1.10, based on the U.S. National Library of Medicine
+Visible Human Female dataset.
+
+Creative Commons Attribution 4.0 International:
+https://creativecommons.org/licenses/by/4.0/
+
+Source:
+https://cdn.humanatlas.io/digital-objects/ref-organ/united-female/v1.10/assets/3d-vh-f-united.glb
+Source SHA-256:
+95f0c3d2f918582608692ca1139e8bdb18c147a16470e9ee9af8b276bd77c422
+
+GYEOL modifications: source world coordinates plus the existing shared skin
+translation; Float32 positions and transformed/normalized normals; Uint32
+original triangle indices; gzip packaging. No local fitting or simplification.
+Layout, exact source node and hashes: data/catalog/female-source-restoration.json
+Reproduction: scripts/build-hra-ilium-restoration.mjs
+
+Source fidelity restoration is not clinical anatomical validation.

@@ -11,6 +11,7 @@ import { clippingPlanes, configurePicking } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { applyFemaleArmRegistration } from "./female-arm-registration";
 import { applyFemaleFootRegistration } from "./female-foot-registration";
+import { applyFemaleSourceRestoration, femaleSourceRestoration } from "./female-source-restoration";
 import { anatomyRegionMatches } from "./anatomy-region";
 
 type FemalePart = {
@@ -66,12 +67,16 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         if (!r.ok) throw new Error(`참조 모델 목록 ${r.status}`);
         return r.json() as Promise<FemaleManifest>;
       });
-      const buffers = await Promise.all(atlas.chunks.map(async (chunk) => {
+      const [buffers,restoredSource] = await Promise.all([Promise.all(atlas.chunks.map(async (chunk) => {
         const file = chunk.gzip.split("/").pop()!;
         const response = await fetch(assetUrl(`models/${dataset}/${file}`), { signal: abort.signal });
         if (!response.ok) throw new Error(`참조 모델 ${file} ${response.status}`);
         return inflate(response, chunk.bytes);
-      }));
+      })),dataset === "female" ? (async () => {
+        const response=await fetch(assetUrl(femaleSourceRestoration.url),{signal:abort.signal});
+        if(!response.ok)throw new Error(`원본 복원 모형 ${response.status}`);
+        return inflate(response,femaleSourceRestoration.bytes);
+      })() : Promise.resolve(null)]);
       if (abort.signal.aborted) return;
       const group = new Group();
       group.name = `${dataset}-atlas`;
@@ -86,6 +91,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         geometry.setAttribute("position", new BufferAttribute(new Float32Array(buffer, part.positions, part.vertexCount * 3), 3));
         geometry.setAttribute("normal", new Int16BufferAttribute(new Int16Array(buffer, part.normals, part.vertexCount * 3), 3, true));
         geometry.setIndex(new BufferAttribute(new Uint32Array(buffer, part.indices, part.indexCount), 1));
+        applyFemaleSourceRestoration(geometry,dataset,part.id,part.system,restoredSource);
         applyFemaleArmRegistration(geometry, dataset, part.id, part.system);
         applyFemaleFootRegistration(geometry, dataset, part.id, part.system);
         geometry.computeBoundingBox();
