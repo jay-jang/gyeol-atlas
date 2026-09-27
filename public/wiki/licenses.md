@@ -17,7 +17,7 @@ STL 제공: [Kevin Mattheus Moerman의 BodyParts3D 미러](https://github.com/Ke
 
 HRA 전신1,220개 구조에는 위·상체 근육·일부 말초신경이 없습니다. 아래 여성 CT 보완은 별도 상세로 제공하며 HRA에 합성하지 않습니다. 여성 경혈 좌표는 검수 전이라 표식을 숨깁니다. 임상적으로 정합한 단일 기증자 모델이나 모든 기관을 수록한 모델이 아닙니다.
 
-남성 심장·간·폐의 독립 상세 모형423개는 BodyParts3D 4.0의 원본 하위 관계를 따릅니다. **BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International**. [현행 라이선스](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html). 전신 모형과 좌표계가 다르므로 별도 상세 보기로 표시합니다.
+남성 심장83개·간60개 상세는 BodyParts3D 4.0, 폐 상세563개는 공식4.3 하위 관계를 따릅니다. 전체706개는 기관 수가 아닌 모형 수입니다. 폐는 원본 묶음명 기준2014 자료285개(폐실질18조각 포함)와2011–2012 자료278개를 겹치지 않는 별도 보기로 제공합니다. **BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International**. [현행 라이선스](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html). 전신 모형과 좌표계가 다르므로 별도 상세 보기로 표시하며 해부학적 정합·임상 검증 완료를 뜻하지 않습니다.
 
 변경: 정점 병합, 표면 단순화, 법선 재계산, 좌표축 변환, STL→GLB. 모델은 임상 정확도를 검증하지 않았습니다.
 

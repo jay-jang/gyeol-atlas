@@ -7,7 +7,7 @@ const read = path => JSON.parse(fs.readFileSync(path, 'utf8'));
 const female = read('data/female-atlas-structures.json');
 const groups = read('data/female-organ-groups.json');
 const atlas = read('public/models/female/atlas-female.json');
-const expected = {brain:'head', heart:'chest', lung:'chest', breast:'chest', liver:'abdomen', kidney:'abdomen', stomach:'abdomen', pancreas:'abdomen', spleen:'abdomen', uterus:'pelvis', ovary:'pelvis', bladder:'pelvis'};
+const expected = {brain:'head', heart:'chest', lung:'chest', 'lung-branches':'chest', breast:'chest', liver:'abdomen', kidney:'abdomen', stomach:'abdomen', pancreas:'abdomen', spleen:'abdomen', uterus:'pelvis', ovary:'pelvis', bladder:'pelvis'};
 const regions = ['whole','head','upper-body','lower-body','upper-limb','lower-limb','chest','abdomen','pelvis'];
 
 test('448 female source-defined organ meshes share a stable UI scope, retaining names and source membership', () => {
@@ -28,11 +28,11 @@ test('448 female source-defined organ meshes share a stable UI scope, retaining 
   assert.equal(count,448);
 });
 
-test('male overview 111 and detail 423 source members use the same mapping without changing their layer', () => {
+test('male overview 111 and detail 706 source members use the same mapping without changing their layer', () => {
   const assets = read('scripts/model-inputs.json').assets;
   const details = read('data/male-detail-structures.json');
   for (const [groupPath,catalog,expectedCount] of [
-    ['data/male-organ-groups.json', assets,111], ['data/male-detail-groups.json', details,423],
+    ['data/male-organ-groups.json', assets,111], ['data/male-detail-groups.json', details,706],
   ]) {
     let count=0;
     for (const g of read(groupPath)) for (const id of g.ids) {

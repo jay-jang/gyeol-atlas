@@ -7,13 +7,21 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import subprocess
 import zipfile
 import numpy as np
 from scipy.spatial import cKDTree
 
 root = Path('.cache/bp4-official')
-sha = lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
-read = lambda p: json.loads(Path(p).read_text())
+baseline_ref = '66db40fadf2fcb19237abb57202bfbd2ed9da4a6'
+baseline_files = {'data/catalog/male-detail-source.json','data/male-detail-groups.json',
+                  'public/models/male-detail/atlas.json','public/models/male-detail/organs.bin.gz'}
+def contents(path):
+    if str(path) in baseline_files:
+        return subprocess.check_output(['git','show',f'{baseline_ref}:{path}'])
+    return Path(path).read_bytes()
+sha = lambda p: hashlib.sha256(contents(p)).hexdigest()
+read = lambda p: json.loads(contents(p))
 source = read('data/catalog/male-detail-source.json')
 for f in source['files']:
     assert sha(f['path']) == f['sha256'], f['path']
@@ -22,7 +30,7 @@ for f in source['sources']:
 upstream = read('.cache/male-details/atlas.json')
 runtime = read('public/models/male-detail/atlas.json')
 groups = read('data/male-detail-groups.json')
-packed = gzip.decompress(Path('public/models/male-detail/organs.bin.gz').read_bytes())
+packed = gzip.decompress(contents('public/models/male-detail/organs.bin.gz'))
 chunks = {n: gzip.decompress((Path('.cache/male-details')/upstream['chunks'][n]['gzip'].split('/')[-1]).read_bytes()) for n in {p['chunk'] for p in upstream['parts'] if 'BP4_'+p['id'] in {p['id'] for p in runtime['parts']}}}
 relations = {}
 for line in (root/'partof_element_parts.txt').read_text().splitlines()[1:]:
@@ -69,7 +77,8 @@ with zipfile.ZipFile(root/'isa_BP3D_4.0_obj_99.zip') as z:
                      'exactSourceVertices': int((distances == 0).sum()), 'maximumNearestSourceDistanceMm': float(distances.max()*1000),
                      'rawBoundsMm': [points.min(axis=0).tolist(), points.max(axis=0).tolist()],
                      'runtimeBoundsMetres': [actual.min(axis=0).tolist(), actual.max(axis=0).tolist()]})
-report = {'status': 'Source coordinate and membership diagnostic; not anatomical approval or runtime correction',
+report = {'status': 'Historical source coordinate and membership diagnostic; not anatomical approval or runtime correction',
+          'baselineRef': baseline_ref,
           'officialArchiveUrl': 'https://dbarchive.biosciencedbc.jp/data/bodyparts3d/20130619/isa_BP3D_4.0_obj_99.zip',
           'officialLicenseUrl': 'https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html',
           'licenseNote': 'Official license page updated 2025-02-27 states CC BY 4.0; historical OBJ headers still say CC BY-SA 2.1 JP.',
@@ -79,7 +88,7 @@ report = {'status': 'Source coordinate and membership diagnostic; not anatomical
                       'maximumNearestSourceDistanceMm': max(r['maximumNearestSourceDistanceMm'] for r in rows)},
           'limitations': ['Source vertex membership does not verify simplification triangles, normals, anatomical placement or connections.',
                          'Different release membership is not a one-to-one replacement map or permission to translate individual parts.'],
-          'files': [{'file': str(p), 'sha256': sha(p)} for p in [root/'isa_BP3D_4.0_obj_99.zip',root/'partof_element_parts.txt',root/'isa_element_parts.txt',root/'v43-FMA2Obj.zip',
+          'files': [{'file': str(p), 'sha256': sha(p), **({'gitRef':baseline_ref} if str(p) in baseline_files else {})} for p in [root/'isa_BP3D_4.0_obj_99.zip',root/'partof_element_parts.txt',root/'isa_element_parts.txt',root/'v43-FMA2Obj.zip',
                     'data/catalog/v43-FMA2Obj.txt','data/catalog/male-detail-source.json','public/models/male-detail/atlas.json','public/models/male-detail/organs.bin.gz',Path(__file__).resolve().relative_to(Path.cwd())]]}
 Path('docs/anatomy-alignment/male-detail-source-audit.json').write_text(json.dumps(report, indent=2)+'\n')
 print(json.dumps(report['summary']))

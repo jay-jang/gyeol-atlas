@@ -1,5 +1,6 @@
 {
-  "status": "Source coordinate and membership diagnostic; not anatomical approval or runtime correction",
+  "status": "Historical source coordinate and membership diagnostic; not anatomical approval or runtime correction",
+  "baselineRef": "66db40fadf2fcb19237abb57202bfbd2ed9da4a6",
   "officialArchiveUrl": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/20130619/isa_BP3D_4.0_obj_99.zip",
   "officialLicenseUrl": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html",
   "licenseNote": "Official license page updated 2025-02-27 states CC BY 4.0; historical OBJ headers still say CC BY-SA 2.1 JP.",
@@ -19850,19 +19851,22 @@
     },
     {
       "file": "data/catalog/male-detail-source.json",
-      "sha256": "9850621a9d2bab1a32c1de302cece79eda140453e02a024fb5fcfab71b945e6f"
+      "sha256": "9850621a9d2bab1a32c1de302cece79eda140453e02a024fb5fcfab71b945e6f",
+      "gitRef": "66db40fadf2fcb19237abb57202bfbd2ed9da4a6"
     },
     {
       "file": "public/models/male-detail/atlas.json",
-      "sha256": "1bcd1674d0ef76c46ad5611616b41208d9bfcda84bf37bb00bfce714ecdf7c28"
+      "sha256": "1bcd1674d0ef76c46ad5611616b41208d9bfcda84bf37bb00bfce714ecdf7c28",
+      "gitRef": "66db40fadf2fcb19237abb57202bfbd2ed9da4a6"
     },
     {
       "file": "public/models/male-detail/organs.bin.gz",
-      "sha256": "a99e4aaa17a49289180b3b9277969d7c60f383c4f5494dce9640edac0c3f8da0"
+      "sha256": "a99e4aaa17a49289180b3b9277969d7c60f383c4f5494dce9640edac0c3f8da0",
+      "gitRef": "66db40fadf2fcb19237abb57202bfbd2ed9da4a6"
     },
     {
       "file": "scripts/audit-male-detail-source.py",
-      "sha256": "9abec09c3beda5ce2769b745158f386f5145f9fc028c75a387f2a322608e3231"
+      "sha256": "ae41c5245b6315918661d81e43fce80267fa236fd66a9d7feabc44c1c1697dc0"
     }
   ]
 }

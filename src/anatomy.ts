@@ -15,7 +15,12 @@ export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.fin
 // Source-defined composite structures are available from their selection card,
 // without changing the featured major-organ navigation or comparison bundles.
 export const compositeGroups = femaleCompositeGroups;
-export const structureGroups = [...organGroups, ...compositeGroups];
+const lung = maleDetailGroups.find(group => group.id === "lung")!;
+export const maleLungViews = [lung, {
+  ...lung, id: "lung-internal", name: "폐 · 혈관·기관지",
+  ids: lung.ids.filter(id => !maleDetailStructures.find(s => s.id === id)?.name.startsWith("Parenchyma of ")),
+}, maleDetailGroups.find(group => group.id === "lung-branches")!];
+export const structureGroups = [...organGroups, ...compositeGroups, ...maleLungViews.slice(1)];
 export const layerNames = {
   skin: "체표",
   muscle: "근육",
@@ -68,7 +73,7 @@ export const structuresForSex = (sex: "male" | "female") =>
 // scope even when reached from search so isolation/return controls remain honest.
 export function detailForStructure(structure: (typeof structures)[number]) {
   if (!structure.detailOnly) return undefined;
-  const group = organGroups.find(g => g.id === structure.group && g.sex === structure.sex);
+  const group = structureGroups.find(g => g.id === structure.group && g.sex === structure.sex);
   if (!group) return undefined;
   return { id: group.id, name: group.name, ids: group.ids,
     layers: Object.fromEntries(layerKeys.map(layer => [layer, structures.some(s => s.layer === layer && group.ids.includes(s.id))])) as Record<Layer, boolean> };

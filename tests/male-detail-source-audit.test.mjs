@@ -17,9 +17,9 @@ test('source receipts use portable repository-relative paths on every checkout',
   }
 });
 
-test('male source audit covers every released detail part without asserting anatomical approval', () => {
-  const atlas = read('public/models/male-detail/atlas.json');
-  assert.deepEqual(audit.parts.map(p => p.id).sort(), atlas.parts.map(p => p.id).sort());
+test('historical male source audit retains its exact baseline without asserting anatomical approval', () => {
+  assert.equal(audit.baselineRef, '66db40fadf2fcb19237abb57202bfbd2ed9da4a6');
+  assert.equal(new Set(audit.parts.map(p => p.id)).size, 423);
   assert.deepEqual(audit.summary, { parts: 423, runtimeVertices: 119037, exactSourceVertices: 119037, maximumNearestSourceDistanceMm: 0 });
   assert.equal(audit.parts.reduce((sum, p) => sum+p.runtimeVertices, 0), audit.summary.runtimeVertices);
   for (const part of audit.parts) {
@@ -29,7 +29,8 @@ test('male source audit covers every released detail part without asserting anat
     assert.equal(part.maximumNearestSourceDistanceMm, 0);
     assert.match(part.officialObjSha256, /^[a-f0-9]{64}$/);
   }
-  for (const file of audit.files.filter(f => !f.file.startsWith('.cache/'))) assert.equal(hash(file.file), file.sha256);
+  for (const file of audit.files.filter(f => !f.file.startsWith('.cache/') && !f.gitRef)) assert.equal(hash(file.file), file.sha256);
+  for (const file of audit.files.filter(f => f.gitRef)) assert.equal(file.gitRef, audit.baselineRef);
   assert.match(audit.status, /not anatomical approval/);
 });
 

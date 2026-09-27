@@ -4,6 +4,7 @@ import { dissectionLayers, quantizeDepth, stageDepth } from "./dissection.ts";
 import { hasMixedReferenceFrames } from "./reference-source.ts";
 import { sourceOrganRegion } from "./anatomy-region.ts";
 import femaleBrainBindings from "../data/catalog/female-brain-bindings.json" with {type:"json"};
+import maleDetailGroups from "../data/male-detail-groups.json" with {type:"json"};
 export type CameraPose = {
   position: [number, number, number];
   target: [number, number, number];
@@ -339,6 +340,25 @@ export function restoreView(
       s.cutaway > 1
     )
       return base;
+    // Only migrate the exact historical 280-member lung scope. The old fine
+    // branches remain a separate source view; retired fragments are not mapped
+    // to a guessed replacement. Preserve camera, alpha and marker preferences.
+    const branchGroup = maleDetailGroups.find(group => group.id === "lung-branches");
+    const retiredLungIds = ["BP4_FJ2041", "BP4_FJ2044"];
+    const legacyLungIds = branchGroup ? [...branchGroup.ids, ...retiredLungIds] : [];
+    const isLegacyLung = (ids: unknown): boolean => Array.isArray(ids)
+      && ids.length === 280 && new Set(ids).size === 280 && ids.every(id => legacyLungIds.includes(id));
+    if (branchGroup && s.sex === "male" && s.detail?.id === "lung" && typeof s.detail.name === "string"
+      && keys.every(key => typeof s.detail!.layers?.[key] === "boolean") && isLegacyLung(s.detail.ids)) {
+      const layers = Object.fromEntries(keys.map(key => [key, assets.some(a => branchGroup.ids.includes(a.id) && a.layer === key)])) as Layers;
+      s.detail = { id: branchGroup.id, name: branchGroup.name, ids: branchGroup.ids, layers };
+      if (s.selection && ["structure","bundle"].includes(s.selection.kind) && typeof s.selection.name === "string"
+        && (isLegacyLung(s.selection.ids) || (Array.isArray(s.selection.ids) && s.selection.ids.length === 1 && retiredLungIds.includes(s.selection.ids[0])))) {
+        s.selection = { kind: "bundle", ids: branchGroup.ids, name: branchGroup.name };
+        s.layers = layers;
+        s.isolated = false;
+      }
+    }
     const validSelection = (x: Selection | null) =>
       x === null ||
       (["structure", "bundle"].includes(x.kind) &&
@@ -358,6 +378,10 @@ export function restoreView(
       return base;
     if (s.detail && (!s.detail.ids?.length || typeof s.detail.name !== "string" || typeof s.detail.id !== "string" || !keys.every(key => typeof s.detail!.layers?.[key] === "boolean") || !s.detail.ids.every(id => assets.some(a => a.id === id && (!a.sex || a.sex === s.sex))))) return base;
     if (hasMixedReferenceFrames(s.sex, [...(s.selection?.ids || []), ...(s.detail?.ids || [])])) return base;
+    const currentLungIds = maleDetailGroups.find(group => group.id === "lung")?.ids || [];
+    const lungViewIds = [...(s.selection?.ids || []), ...(s.detail?.ids || [])];
+    if (s.sex === "male" && lungViewIds.some(id => currentLungIds.includes(id))
+      && lungViewIds.some(id => branchGroup?.ids.includes(id))) return base;
     if (
       s.camera &&
       ![s.camera.position, s.camera.target].every(

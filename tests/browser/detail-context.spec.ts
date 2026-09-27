@@ -18,7 +18,7 @@ async function geometry(page:Page,url:string,ids:string[]){
 const samples=[
   {sex:'male',group:maleGroups.find(g=>g.id==='heart')!,child:'BP4_FJ2631'},
   {sex:'male',group:maleGroups.find(g=>g.id==='liver')!,child:'BP4_FJ1893'},
-  {sex:'male',group:maleGroups.find(g=>g.id==='lung')!,child:'BP4_FJ2041'},
+  {sex:'male',group:maleGroups.find(g=>g.id==='lung')!,child:'BP4_FJ6044'},
   {sex:'female',group:femaleGroups.find(g=>g.id==='abdomen-ct')!,child:'CTF_autochthon_left'},
 ];
 for(const sample of samples)test(`${sample.sex} ${sample.group.id}: restoring detail context keeps every original member and the selected child`,async({page})=>{

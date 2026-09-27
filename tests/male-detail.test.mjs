@@ -13,8 +13,8 @@ test("male organ detail buffers are pinned, indexed correctly and mapped to sepa
   const groups = read("data/male-detail-groups.json");
   const bytes = gunzipSync(fs.readFileSync("public/models/male-detail/organs.bin.gz"));
   assert.equal(bytes.length, atlas.chunks[0].bytes);
-  assert.equal(atlas.parts.length, 423);
-  assert.equal(new Set(atlas.parts.map(p => p.id)).size, 423);
+  assert.equal(atlas.parts.length, 706);
+  assert.equal(new Set(atlas.parts.map(p => p.id)).size, 706);
   for (const part of atlas.parts) {
     const item = catalog.find(s => s.id === part.id);
     assert.equal(item.sex, "male"); assert.equal(item.detailOnly, true);
@@ -23,5 +23,5 @@ test("male organ detail buffers are pinned, indexed correctly and mapped to sepa
     for (let i = 0; i < part.vertexCount * 3; i++) assert.ok(Number.isFinite(bytes.readFloatLE(part.positions + i * 4)));
     for (let i = 0; i < part.indexCount; i++) assert.ok(bytes.readUInt32LE(part.indices + i * 4) < part.vertexCount);
   }
-  assert.deepEqual(groups.map(g => [g.id, g.ids.length]), [["heart",83],["liver",60],["lung",280]]);
+  assert.deepEqual(groups.map(g => [g.id, g.ids.length]), [["heart",83],["liver",60],["lung",285],["lung-branches",278]]);
 });

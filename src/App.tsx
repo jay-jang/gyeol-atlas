@@ -57,7 +57,7 @@ import {
   type ViewState,
   type ViewAction,
 } from "./view-state";
-import { structures, detailForStructure, stageDescription } from "./anatomy";
+import { structures, detailForStructure, stageDescription, maleLungViews } from "./anatomy";
 import { referenceSourceFor } from "./reference-source";
 import { comparisonReference } from "./comparison-reference";
 
@@ -636,6 +636,9 @@ function AtlasPage({
   const selectedGroup = state.detail?.id || selectedAnatomy?.group;
   const selectedOrgan = structureGroups.find(group => group.id === selectedGroup && group.sex === state.sex);
   const selectedComposite = compositeGroups.find(group => group.id === selectedGroup && group.sex === state.sex);
+  const fullLungDetail = Boolean(state.sex === "male" && state.detail && state.selection?.kind === "bundle"
+    && maleLungViews.some(view => view.id === state.detail!.id && view.ids.length === state.selection!.ids.length
+      && view.ids.every(id => state.selection!.ids.includes(id))));
   const fullCompositeDetail = Boolean(selectedComposite && state.detail && state.selection?.kind === "bundle"
     && state.selection.ids.length === selectedComposite.ids.length
     && selectedComposite.ids.every(id => state.selection!.ids.includes(id)));
@@ -1171,6 +1174,10 @@ function AtlasPage({
               <summary>{selectedComposite.sourceSummary}</summary>
               <p className="selection-description">{selectedComposite.description}</p>
             </details>}
+            {state.sex === "male" && maleLungViews.some(view => view.id === selectedGroup) && <details className="anatomy-source-details" data-lung-provenance>
+              <summary>폐 자료·원본 묶음 구분</summary>
+              <p className="selection-description">BodyParts3D 4.3 공식 원본입니다. 기본 보기는 2014 표기 원본의 폐실질 18조각과 혈관·기관지 267조각입니다. 이전 세부 가지 278조각은 2011–2012 표기 원본으로, 겹치는 대체 형상과 일부 위치 차이가 있어 별도로 표시합니다. 연도는 원본 묶음명 기준입니다. 공식 목록에서 제외된 이전 혈관 2조각은 수록하지 않습니다. 미세 구조 전체나 임상적 위치 검증을 뜻하지 않습니다.</p>
+            </details>}
             {state.sex === "female" && selectedOrgan?.id === "brain" && <div data-brain-provenance>
               <p className="selection-description">뇌 묶음: Allen 참조 282개 + Visible Human 시신경교차 1개 · Allen 좌우 선택 연결 교정 · 위치 검증 미완료</p>
               <details className="anatomy-source-details"><summary>뇌 출처·방향 주의</summary>
@@ -1200,7 +1207,8 @@ function AtlasPage({
               <span>주변 반투명 <small id="selection-context-help">관찰 보조 · 실제 박리 아님</small></span>
             </label>}
             {sourceKey === "female-detail" && state.detail?.id !== "abdomen-ct" && <button aria-label="같은 여성 CT의 주변 기관 보기" onClick={() => selectFeatured(featuredAnatomy.find(item => item.id === "abdomen-ct")!)}>주변 기관 함께 보기</button>}
-            {!fullCompositeDetail && selectedOrgan && !(sourceKey === "female-detail" && selectedOrgan.ids.length === 1 && state.detail) && <button onClick={() => selectFeatured(selectedOrgan)}>{selectedComposite ? `${selectedComposite.name} ${state.detail ? "전체 모형" : "전체 상세 보기"}` : state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
+            {state.sex === "male" && maleLungViews.some(view => view.id === selectedGroup) && maleLungViews.filter(view => view.id !== selectedGroup).map(view => <button key={view.id} onClick={() => selectFeatured(view)}>{view.id === "lung" ? "폐실질 함께 보기" : view.id === "lung-internal" ? "혈관·기관지 보기" : "이전 세부 가지 별도 보기"}</button>)}
+            {!fullCompositeDetail && !fullLungDetail && selectedOrgan && !(sourceKey === "female-detail" && selectedOrgan.ids.length === 1 && state.detail) && <button onClick={() => selectFeatured(selectedOrgan)}>{selectedComposite ? `${selectedComposite.name} ${state.detail ? "전체 모형" : "전체 상세 보기"}` : state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
             {state.detail && <button onClick={() => { dispatch({ type: "detail-close" }); requestAnimationFrame(() => camera("fit")); }}>전신으로 돌아가기</button>}
             <button
               onClick={() => {
@@ -1210,7 +1218,7 @@ function AtlasPage({
             >
               확대
             </button>
-            {!fullCompositeDetail && <button
+            {!fullCompositeDetail && !fullLungDetail && <button
               aria-pressed={state.isolated}
               onClick={() => {
                 const kind = state.isolated && state.detail ? "fit" : "structure";
