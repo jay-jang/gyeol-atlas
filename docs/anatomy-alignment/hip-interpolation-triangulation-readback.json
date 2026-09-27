@@ -1,0 +1,27 @@
+{
+  "createdAt": "2026-09-27T20:01:10.620Z",
+  "reportSha256": "6c40b4cfde82eca61bb4ba26dc1ef8e0a2d26b8d3235fe12696e8fde91e07c1f",
+  "levels": [
+    {
+      "level": 0,
+      "vertices": 24159,
+      "triangles": 48310
+    },
+    {
+      "level": 1,
+      "vertices": 96624,
+      "triangles": 193240
+    },
+    {
+      "level": 2,
+      "vertices": 386484,
+      "triangles": 772960
+    }
+  ],
+  "closestPoints": 12,
+  "triangles": 12,
+  "maximumPlaneResidualMm": 1.1008426873611398e-14,
+  "maximumDistanceResidualMm": 1.734723475976807e-18,
+  "limits": "Reconstructs all stored closest-pair triangles from source subdivision indices and the shared nonlinear evaluator, then independently checks point/plane/barycentric/distance arithmetic. Does not rescan complete pair intersections, independently verify global distance minima, or replay every mapped vertex/chord maximum at refined levels.",
+  "scriptSha256": "b6f71bbaf7a0f706db759b65fa67ecf74d2963328861d80764330be488837da0"
+}

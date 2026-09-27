@@ -1,0 +1,3852 @@
+{
+  "createdAt": "2026-09-27T19:53:16.186Z",
+  "status": "PRESCRIBED PIVOT BONE COMPATIBILITY DIAGNOSTIC; NO RUNTIME EXPORT",
+  "root": [
+    -0.9943807571219706,
+    -0.012150480739191921,
+    0.036827664464579545,
+    0,
+    0.037007714231701155,
+    -0.014867183811443911,
+    0.9943371647079442,
+    0,
+    -0.011590519378089682,
+    0.9949514228593757,
+    0.015307749580616347,
+    0,
+    0.5276238357734465,
+    -0.05198933379005173,
+    -0.5616904046582394,
+    1.0000000000000002
+  ],
+  "frames": [
+    {
+      "name": "root",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "members": [
+        "left-Pelvis",
+        "right-Pelvis",
+        "VERTEBRA_L2",
+        "VERTEBRA_L3",
+        "VERTEBRA_L4",
+        "VERTEBRA_L5"
+      ]
+    },
+    {
+      "name": "left",
+      "matrix": [
+        0.9893724278638538,
+        0.14462298838318366,
+        -0.015046269102375689,
+        0,
+        -0.14505898061141553,
+        0.9888488956826621,
+        -0.03370094436594789,
+        0,
+        0.010004555300489559,
+        0.03552538160663817,
+        0.9993186959798872,
+        0,
+        0.11990841574964567,
+        -0.002102966981640031,
+        0.02883679699194247,
+        1
+      ],
+      "members": [
+        "left-Femur",
+        "left-Tibia",
+        "left-Fibula"
+      ]
+    },
+    {
+      "name": "right",
+      "matrix": [
+        0.9818099367886053,
+        -0.13708659715527977,
+        -0.1313640472257941,
+        0,
+        0.12850256405934135,
+        0.9891085316244896,
+        -0.07177327983184839,
+        0,
+        0.13977245455857706,
+        0.053587102441091015,
+        0.988732564143934,
+        0,
+        -0.09519943753084888,
+        -0.0005938067407699199,
+        0.044328748751511826,
+        1
+      ],
+      "members": [
+        "right-Femur",
+        "right-Tibia",
+        "right-Fibula"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "names": [
+        "left-Pelvis",
+        "left-Femur"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "left"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null,
+        "closest": {
+          "minimumDistanceMm": 1.3077668502776798,
+          "closest": {
+            "a": [
+              0.08891639055139837,
+              0.806622211806578,
+              -0.0990666147150275
+            ],
+            "b": [
+              0.08934983611106873,
+              0.8070654273033142,
+              -0.09791512042284012
+            ],
+            "faceA": 38284,
+            "faceB": 76014,
+            "triangleA": [
+              [
+                0.08903130143880844,
+                0.8066490888595581,
+                -0.09912021458148956
+              ],
+              [
+                0.0879877507686615,
+                0.8064050078392029,
+                -0.09863345324993134
+              ],
+              [
+                0.08885670453310013,
+                0.8056700229644775,
+                -0.09871762990951538
+              ]
+            ],
+            "triangleB": [
+              [
+                0.08934983611106873,
+                0.8070654273033142,
+                -0.09791512042284012
+              ],
+              [
+                0.09036234021186829,
+                0.8068937659263611,
+                -0.09814951568841934
+              ],
+              [
+                0.08975116163492203,
+                0.8060587644577026,
+                -0.0976736769080162
+              ]
+            ]
+          }
+        }
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null,
+        "closest": {
+          "minimumDistanceMm": 1.3427749371771986,
+          "closest": {
+            "a": [
+              0.09047218963294092,
+              0.8059229713976366,
+              -0.09926499870522734
+            ],
+            "b": [
+              0.09079620242118835,
+              0.8063549995422363,
+              -0.09803560376167297
+            ],
+            "faceA": 80923,
+            "faceB": 77767,
+            "triangleA": [
+              [
+                0.09011265635490417,
+                0.8067984580993652,
+                -0.09949012845754623
+              ],
+              [
+                0.08970607817173004,
+                0.8059722781181335,
+                -0.0990804135799408
+              ],
+              [
+                0.0907386988401413,
+                0.805905818939209,
+                -0.09932921081781387
+              ]
+            ],
+            "triangleB": [
+              [
+                0.08969827741384506,
+                0.8063815832138062,
+                -0.09761103242635727
+              ],
+              [
+                0.09016628563404083,
+                0.8075703978538513,
+                -0.09805288910865784
+              ],
+              [
+                0.09079620242118835,
+                0.8063549995422363,
+                -0.09803560376167297
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "left-Patella"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "left"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "left-Tibia"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "left"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "left-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "left"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "right-Pelvis"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "right-Femur"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "right-Patella"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "right"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "right-Tibia"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "right-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "VERTEBRA_L1"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "VERTEBRA_L2"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "VERTEBRA_L3"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Pelvis",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "left-Patella"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "left"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "left-Tibia"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "left"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "left-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "left"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "right-Pelvis"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "right-Femur"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "right-Patella"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "right-Tibia"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "right-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "VERTEBRA_L1"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "VERTEBRA_L2"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "VERTEBRA_L3"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Femur",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "left-Tibia"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "left"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "left-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "left"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "right-Pelvis"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "right-Femur"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "right-Patella"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        false,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "right-Tibia"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "right-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "VERTEBRA_L1"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        false,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "VERTEBRA_L2"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "VERTEBRA_L3"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Patella",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        false,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Tibia",
+        "left-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "left"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Tibia",
+        "right-Pelvis"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Tibia",
+        "right-Femur"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Tibia",
+        "right-Patella"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Tibia",
+        "right-Tibia"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Tibia",
+        "right-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Tibia",
+        "VERTEBRA_L1"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Tibia",
+        "VERTEBRA_L2"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Tibia",
+        "VERTEBRA_L3"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Tibia",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Tibia",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Tibia",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Fibula",
+        "right-Pelvis"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Fibula",
+        "right-Femur"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Fibula",
+        "right-Patella"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Fibula",
+        "right-Tibia"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Fibula",
+        "right-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "left",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Fibula",
+        "VERTEBRA_L1"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Fibula",
+        "VERTEBRA_L2"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Fibula",
+        "VERTEBRA_L3"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Fibula",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Fibula",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "left-Fibula",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "left",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Pelvis",
+        "right-Femur"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null,
+        "closest": {
+          "minimumDistanceMm": 0.43831593712530054,
+          "closest": {
+            "a": [
+              -0.10409578363821798,
+              0.8142649178257685,
+              -0.10154870894650697
+            ],
+            "b": [
+              -0.10400103722931787,
+              0.814163288917683,
+              -0.10113299805684937
+            ],
+            "faceA": 57718,
+            "faceB": 83534,
+            "triangleA": [
+              [
+                -0.10424623638391495,
+                0.8138601183891296,
+                -0.10161338001489639
+              ],
+              [
+                -0.10381517559289932,
+                0.8150199055671692,
+                -0.1014280915260315
+              ],
+              [
+                -0.10499395430088043,
+                0.8147685527801514,
+                -0.10127907991409302
+              ]
+            ],
+            "triangleB": [
+              [
+                -0.10494823008775711,
+                0.8142209649085999,
+                -0.10090301930904388
+              ],
+              [
+                -0.10396302491426468,
+                0.8151465654373169,
+                -0.1008138656616211
+              ],
+              [
+                -0.10379023104906082,
+                0.8141504526138306,
+                -0.10118418186903
+              ]
+            ]
+          }
+        }
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null,
+        "closest": {
+          "minimumDistanceMm": 0.5847909475284435,
+          "closest": {
+            "a": [
+              -0.10382698281493347,
+              0.8132619601737195,
+              -0.10185667328523677
+            ],
+            "b": [
+              -0.1037381961941719,
+              0.813098669052124,
+              -0.10130220651626587
+            ],
+            "faceA": 23576,
+            "faceB": 65463,
+            "triangleA": [
+              [
+                -0.1036086305975914,
+                0.8129504323005676,
+                -0.10198338329792023
+              ],
+              [
+                -0.10424623638391495,
+                0.8138601183891296,
+                -0.10161338001489639
+              ],
+              [
+                -0.10468695312738419,
+                0.8129810094833374,
+                -0.10187369585037231
+              ]
+            ],
+            "triangleB": [
+              [
+                -0.10279461741447449,
+                0.8126915097236633,
+                -0.10134562849998474
+              ],
+              [
+                -0.1037381961941719,
+                0.813098669052124,
+                -0.10130220651626587
+              ],
+              [
+                -0.10271430760622025,
+                0.8137521743774414,
+                -0.10113070160150528
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "names": [
+        "right-Pelvis",
+        "right-Patella"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "right"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Pelvis",
+        "right-Tibia"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Pelvis",
+        "right-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "root",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Pelvis",
+        "VERTEBRA_L1"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Pelvis",
+        "VERTEBRA_L2"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Pelvis",
+        "VERTEBRA_L3"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Pelvis",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Pelvis",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Pelvis",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Femur",
+        "right-Patella"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "right",
+        "right"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Femur",
+        "right-Tibia"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "right",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Femur",
+        "right-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "right",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Femur",
+        "VERTEBRA_L1"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Femur",
+        "VERTEBRA_L2"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Femur",
+        "VERTEBRA_L3"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Femur",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Femur",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Femur",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Patella",
+        "right-Tibia"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "right",
+        "right"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Patella",
+        "right-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "right",
+        "right"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Patella",
+        "VERTEBRA_L1"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        false,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Patella",
+        "VERTEBRA_L2"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Patella",
+        "VERTEBRA_L3"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Patella",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Patella",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Patella",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        false,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Tibia",
+        "right-Fibula"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "same-frame-denver"
+      ],
+      "frames": [
+        "right",
+        "right"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Tibia",
+        "VERTEBRA_L1"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Tibia",
+        "VERTEBRA_L2"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Tibia",
+        "VERTEBRA_L3"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Tibia",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Tibia",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Tibia",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Fibula",
+        "VERTEBRA_L1"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Fibula",
+        "VERTEBRA_L2"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Fibula",
+        "VERTEBRA_L3"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Fibula",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Fibula",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "right-Fibula",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "same-frame-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "right",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L1",
+        "VERTEBRA_L2"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L1",
+        "VERTEBRA_L3"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L1",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L1",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        false,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L1",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        false,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L2",
+        "VERTEBRA_L3"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L2",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L2",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L2",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L3",
+        "VERTEBRA_L4"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": true,
+        "witness": {
+          "point": [
+            -0.012641343436698186,
+            1.001770531579217,
+            -0.14331924664682089
+          ],
+          "segmentFraction": 0.6509960719872058,
+          "barycentric": [
+            0.5882965713854904,
+            0.06080472678500704,
+            0.3508987018295026
+          ],
+          "direction": "b-to-a",
+          "edge": 0,
+          "planeStraddleExtentMm": 0.031138401788258708,
+          "a": [
+            [
+              -0.012484168633818626,
+              1.0016154050827026,
+              -0.1432264894247055
+            ],
+            [
+              -0.013012840412557125,
+              1.0014946460723877,
+              -0.14294612407684326
+            ],
+            [
+              -0.012840479612350464,
+              1.0020784139633179,
+              -0.1435394138097763
+            ]
+          ],
+          "b": [
+            [
+              -0.01240681391209364,
+              1.002113699913025,
+              -0.1433311104774475
+            ],
+            [
+              -0.01276707649230957,
+              1.0015865564346313,
+              -0.14331288635730743
+            ],
+            [
+              -0.012894613668322563,
+              1.0020290613174438,
+              -0.1435299813747406
+            ]
+          ]
+        }
+      },
+      "prescribed": {
+        "crossing": true,
+        "witness": {
+          "point": [
+            -0.012641343436698186,
+            1.001770531579217,
+            -0.14331924664682089
+          ],
+          "segmentFraction": 0.6509960719872058,
+          "barycentric": [
+            0.5882965713854904,
+            0.06080472678500704,
+            0.3508987018295026
+          ],
+          "direction": "b-to-a",
+          "edge": 0,
+          "planeStraddleExtentMm": 0.031138401788258708,
+          "a": [
+            [
+              -0.012484168633818626,
+              1.0016154050827026,
+              -0.1432264894247055
+            ],
+            [
+              -0.013012840412557125,
+              1.0014946460723877,
+              -0.14294612407684326
+            ],
+            [
+              -0.012840479612350464,
+              1.0020784139633179,
+              -0.1435394138097763
+            ]
+          ],
+          "b": [
+            [
+              -0.01240681391209364,
+              1.002113699913025,
+              -0.1433311104774475
+            ],
+            [
+              -0.01276707649230957,
+              1.0015865564346313,
+              -0.14331288635730743
+            ],
+            [
+              -0.012894613668322563,
+              1.0020290613174438,
+              -0.1435299813747406
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L3",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L3",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L4",
+        "VERTEBRA_L5"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        true
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L4",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": false,
+        "witness": null
+      },
+      "prescribed": {
+        "crossing": false,
+        "witness": null
+      }
+    },
+    {
+      "names": [
+        "VERTEBRA_L5",
+        "VERTEBRA_L6"
+      ],
+      "kinds": [
+        "approximate-bonehub-to-denver",
+        "approximate-bonehub-to-denver"
+      ],
+      "frames": [
+        "root",
+        "root"
+      ],
+      "anchors": [
+        true,
+        false
+      ],
+      "source": {
+        "crossing": true,
+        "witness": {
+          "point": [
+            -0.019777705821190244,
+            0.943720060795964,
+            -0.13108735395463847
+          ],
+          "segmentFraction": 0.9001320471685964,
+          "barycentric": [
+            0.027295481293718227,
+            0.7754067850670133,
+            0.19729773363926845
+          ],
+          "direction": "b-to-a",
+          "edge": 0,
+          "planeStraddleExtentMm": 0.00583475705574234,
+          "a": [
+            [
+              -0.019353315234184265,
+              0.9436532855033875,
+              -0.1308319866657257
+            ],
+            [
+              -0.019910313189029694,
+              0.9438066482543945,
+              -0.13101442158222198
+            ],
+            [
+              -0.01931525394320488,
+              0.9433889985084534,
+              -0.13140931725502014
+            ]
+          ],
+          "b": [
+            [
+              -0.020287351682782173,
+              0.9433935880661011,
+              -0.13147246837615967
+            ],
+            [
+              -0.01972116157412529,
+              0.9437562823295593,
+              -0.13104462623596191
+            ],
+            [
+              -0.019661875441670418,
+              0.9433229565620422,
+              -0.13149891793727875
+            ]
+          ]
+        }
+      },
+      "prescribed": {
+        "crossing": true,
+        "witness": {
+          "point": [
+            -0.019777705821190244,
+            0.943720060795964,
+            -0.13108735395463847
+          ],
+          "segmentFraction": 0.9001320471685964,
+          "barycentric": [
+            0.027295481293718227,
+            0.7754067850670133,
+            0.19729773363926845
+          ],
+          "direction": "b-to-a",
+          "edge": 0,
+          "planeStraddleExtentMm": 0.00583475705574234,
+          "a": [
+            [
+              -0.019353315234184265,
+              0.9436532855033875,
+              -0.1308319866657257
+            ],
+            [
+              -0.019910313189029694,
+              0.9438066482543945,
+              -0.13101442158222198
+            ],
+            [
+              -0.01931525394320488,
+              0.9433889985084534,
+              -0.13140931725502014
+            ]
+          ],
+          "b": [
+            [
+              -0.020287351682782173,
+              0.9433935880661011,
+              -0.13147246837615967
+            ],
+            [
+              -0.01972116157412529,
+              0.9437562823295593,
+              -0.13104462623596191
+            ],
+            [
+              -0.019661875441670418,
+              0.9433229565620422,
+              -0.13149891793727875
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "summary": {
+    "examinedPairs": 120,
+    "sourceBroadPairs": 2,
+    "prescribedBroadPairs": 2,
+    "sourceWitnessPairs": 2,
+    "prescribedWitnessPairs": 2,
+    "newBroadPairs": 0,
+    "newWitnessPairs": 0
+  },
+  "limits": [
+    "The16 diagnostic bones include10 same-coordinate Denver and6 approximately framed BoneHub lumbar surfaces. All120 pair combinations are examined, but these are not runtime HRA bones.",
+    "Prescribed means source cartilage-pivot rotations applied exactly per bone frame, before any common muscle interpolation. Anatomical joint centres and pose accuracy are not certified.",
+    "Strict witnesses exclude coplanar/edge-only contacts and require1micrometre plane straddle. Broad pair hits, witness pairs, triangle count, penetration depth and clinical meaning are distinct.",
+    "Closest hip distances are geometric minima of source surfaces, not cartilage thickness or anatomical clearances."
+  ],
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/donor-source-comparison.json",
+      "sha256": "ea0c9cbc5d0edc0a3859fb9f5786a638eeb3e92bb5a60649325561dc14c69959"
+    },
+    {
+      "file": "docs/anatomy-alignment/lower-body-bone-flow.json",
+      "sha256": "b8029be75ed2802c67e2def3c6facbfb6e43247cbab0b4fffb1c4a51c64af876"
+    },
+    {
+      "file": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "file": "data/female-atlas-structures.json",
+      "sha256": "4affd375a4413c840060b480668d6a4efd9a5102be3a70551e831597daf34035"
+    },
+    {
+      "file": "docs/anatomy-alignment/donor-fidelity-packing.json",
+      "sha256": "0aad0815b9914a4841a6aa5cf84aa7202ee04f4d508737939c034aeecbb8b432"
+    },
+    {
+      "file": ".cache/donor-fidelity/source-full.bin.gz",
+      "sha256": "5c506d56f40971eca353cfc6612b269c4e0e1cd22888dc4f1007377944133720"
+    },
+    {
+      "file": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "file": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "file": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "file": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "file": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "file": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "file": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "file": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "file": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "file": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "file": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "file": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "file": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "file": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "file": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "file": "data/catalog/female-source-restoration.json",
+      "sha256": "6b4776f1c3d395b584cf72568fafe8063924455e5bf4e28c2882399495ca5f79"
+    },
+    {
+      "file": "public/models/female-source-restoration/right-ilium.bin.gz",
+      "sha256": "cb8f1642b7b4be63f5ebd276d620917a3d70905c97e338d57f978bf0943b3fa8"
+    },
+    {
+      "file": "data/catalog/female-knee-source-restoration.json",
+      "sha256": "03f9d1ab022e7ec620fc41d159872bd3dad92384e97f9fde140bc5a759629ad3"
+    },
+    {
+      "file": "public/models/female-source-restoration/knee-native.bin.gz",
+      "sha256": "61dc640f26d4f7de3d9b2978d2e23d9ef9be351f179b7bdbc5b4bb1afb205a25"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Pelvis_smooth.stl",
+      "sha256": "8a54af941e90d601320747d8e44a9bef8ca748291653480c1ca25355e6c89e08"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Femur_smooth.stl",
+      "sha256": "964b27ab140b4e72a2e7c4ae3f1ae24212554cc1a8f0552b632dafce8d66b242"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Patella_smooth.stl",
+      "sha256": "4a57158e9ec1716a78e27d4370865fcbc5e7ff4be203f38e9aa59ca84761153c"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Tibia_smooth.stl",
+      "sha256": "148107a0157932b94cab2b382b805af7c3c178400be76349ed20cea0bb56c3eb"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Fibula_smooth.stl",
+      "sha256": "3f5573f86c10eac6b25ed63604ea15ada1d389b54e0ceaecc48e5c5d33a62549"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Pelvis_smooth.stl",
+      "sha256": "007280b01294f728e3e81a4e708986f6bbb921140d88b4260543a5babc6fac5b"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Femur_smooth.stl",
+      "sha256": "012b293cbaa2cd467ea423b96bb257c8f558ff639c8342e37972af7c6febbd25"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Patella_smooth.stl",
+      "sha256": "bca69eb33e240c0ec6ea3fafb4f782edbc8ca714203860d972c74aabc6202613"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Tibia_smooth.stl",
+      "sha256": "589b64fe38d602eb95a0dad900bcd1059043d3d8451d3d74c7231fccc62ffae1"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Fibula_smooth.stl",
+      "sha256": "5e62c5c1aeedb2b0c287e4efbaf881ef9c8c721ccc546a69c74784e520581a24"
+    },
+    {
+      "file": "scripts/lib/lower-body-pose-context.mjs",
+      "sha256": "f6c9d6647e378bcfe09b4881475185f86ec78a32b40d958faad9c585fd60c1e5"
+    },
+    {
+      "file": "src/female-arm-registration.ts",
+      "sha256": "b0ba7383abfcabc4e2561d74b8cfcda56b46850595be20e5d16fed7d288555dd"
+    },
+    {
+      "file": "src/female-foot-registration.ts",
+      "sha256": "6545d3024a6ee781dc6f9f282f12d54531de15c0de7631cbc5cfef44a0103ba8"
+    },
+    {
+      "file": "src/female-source-restoration.ts",
+      "sha256": "8ee57aa49d29bef60f8af42277f179fd792505f9b6327e9c1ff4b32c4c5f6cde"
+    },
+    {
+      "file": "src/female-knee-source-restoration.ts",
+      "sha256": "e088ba5b4efb8615ee47aaa8578693fa893c650be93219f9ba84a8f81195be8d"
+    },
+    {
+      "file": "src/female-brain-bindings.ts",
+      "sha256": "da642893a3841f453ed178704dccc8732e24b79d8f02def4de85f5d6cece0bdd"
+    },
+    {
+      "file": "data/catalog/female-arm-registration.json",
+      "sha256": "1e4fa09616f0da44b0353fbc18e44f738e00344860426d3b047c0c1e06ecaf0d"
+    },
+    {
+      "file": "data/catalog/female-foot-registration.json",
+      "sha256": "c8d8400067825ed5c70172d252d4a4ca291a2005bfe0488e633dfe56b5bb220a"
+    },
+    {
+      "file": "data/catalog/female-brain-bindings.json",
+      "sha256": "74b98859803bae43cbeb172e55d64272accba34fadd08df64dd9bae97dae7294"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    },
+    {
+      "file": "docs/anatomy-alignment/hip-pivot-legs.json",
+      "sha256": "dddf0b73862d539b95789affc4a34855e8650c2501cc401c221c1560b82b3291"
+    },
+    {
+      "file": "docs/anatomy-alignment/lumbar-source-frames.json",
+      "sha256": "4d906f32bf5774af4a4d5d40afe8ad468a546b7d12bb63c0f2df3de5b157f611"
+    },
+    {
+      "file": ".cache/lumbar-source-frames/parts.json.gz",
+      "sha256": "8f344f9a31ef010f75e34c4a16cc949354e042a6077b4af34eecdd10133a6b5c"
+    },
+    {
+      "file": "scripts/lib/hip-pivot-context.mjs",
+      "sha256": "d3602738547c2087efe2168264b49023b281f2a244919f4c7ca350f205f59209"
+    },
+    {
+      "file": "scripts/audit-hip-pivot-bone-crossings.mjs",
+      "sha256": "639589bf02499f58835a0823870992dc49cbaa395d86cd3a269cb59ed28e3d7c"
+    },
+    {
+      "file": "scripts/lib/triangle-witness.mjs",
+      "sha256": "309654844ad1f9e21270c25bd0a78d767ba44b34aa2bb6962d6ad32667361c17"
+    },
+    {
+      "file": "scripts/lib/closest-surface-pair.mjs",
+      "sha256": "7209d7f7e09d6a17c414bff9e4119b2c9c68433af229c0448b2b337d8edeffca"
+    }
+  ]
+}

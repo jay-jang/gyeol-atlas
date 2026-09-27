@@ -1,0 +1,157 @@
+{
+  "createdAt": "2026-09-27T19:57:20.326Z",
+  "reportSha256": "c1c362c82933442797219e9f6f5b5130d237bda4c3c28182757bf5b309b3f6af",
+  "candidates": [
+    {
+      "mode": "inverse-fourth",
+      "binarySha256": "4b8d6921e9d09162518c7f488a567d6b20814b64d0f00645ebe48eb3b76b465e",
+      "vertices": 652173,
+      "indexReferences": 3912126,
+      "coordinateDifferences": 0,
+      "maximumCoordinateDifferenceMm": 0,
+      "jacobianVertices": {
+        "count": 652173,
+        "minimum": 0.1314620480817353,
+        "maximum": 3.435369583722262,
+        "nonPositive": 0
+      },
+      "finiteDifference": {
+        "points": 228,
+        "stepMetres": 1e-7,
+        "maximumJacobianDifference": 2.4628982025275505e-9
+      },
+      "witnesses": 110,
+      "missingWitnesses": 0,
+      "maximumWitnessResidualMm": 2.2377932840100812e-13,
+      "boneFrameChecks": [
+        {
+          "name": "left-Pelvis",
+          "anchor": true,
+          "vertices": 49654,
+          "ownFrameFloat32Differences": 0
+        },
+        {
+          "name": "left-Femur",
+          "anchor": true,
+          "vertices": 45945,
+          "ownFrameFloat32Differences": 0
+        },
+        {
+          "name": "left-Patella",
+          "anchor": false,
+          "vertices": 3264,
+          "ownFrameFloat32Differences": 3264
+        },
+        {
+          "name": "left-Tibia",
+          "anchor": true,
+          "vertices": 29730,
+          "ownFrameFloat32Differences": 0
+        },
+        {
+          "name": "left-Fibula",
+          "anchor": true,
+          "vertices": 9461,
+          "ownFrameFloat32Differences": 0
+        },
+        {
+          "name": "right-Pelvis",
+          "anchor": true,
+          "vertices": 49211,
+          "ownFrameFloat32Differences": 0
+        },
+        {
+          "name": "right-Femur",
+          "anchor": true,
+          "vertices": 44735,
+          "ownFrameFloat32Differences": 0
+        },
+        {
+          "name": "right-Patella",
+          "anchor": false,
+          "vertices": 3296,
+          "ownFrameFloat32Differences": 3296
+        },
+        {
+          "name": "right-Tibia",
+          "anchor": true,
+          "vertices": 30183,
+          "ownFrameFloat32Differences": 0
+        },
+        {
+          "name": "right-Fibula",
+          "anchor": true,
+          "vertices": 9742,
+          "ownFrameFloat32Differences": 0
+        },
+        {
+          "name": "VERTEBRA_L1",
+          "anchor": false,
+          "vertices": 26378,
+          "ownFrameFloat32Differences": 25373
+        },
+        {
+          "name": "VERTEBRA_L2",
+          "anchor": true,
+          "vertices": 30412,
+          "ownFrameFloat32Differences": 0
+        },
+        {
+          "name": "VERTEBRA_L3",
+          "anchor": true,
+          "vertices": 34482,
+          "ownFrameFloat32Differences": 0
+        },
+        {
+          "name": "VERTEBRA_L4",
+          "anchor": true,
+          "vertices": 35156,
+          "ownFrameFloat32Differences": 0
+        },
+        {
+          "name": "VERTEBRA_L5",
+          "anchor": true,
+          "vertices": 33958,
+          "ownFrameFloat32Differences": 0
+        },
+        {
+          "name": "VERTEBRA_L6",
+          "anchor": false,
+          "vertices": 35604,
+          "ownFrameFloat32Differences": 33937
+        }
+      ],
+      "minimumChecks": [
+        {
+          "kind": "vertex",
+          "id": "VHF0027",
+          "sourcePointResidualMm": 0,
+          "determinant": 0.1314620480817353,
+          "finiteDifferenceDeterminant": 0.13146204945824255,
+          "maximumJacobianDifference": 1.1603904503942886e-9
+        },
+        {
+          "kind": "centroid",
+          "id": "VHF0027",
+          "sourcePointResidualMm": 1.1188630228279524e-13,
+          "determinant": 0.15320769498355558,
+          "finiteDifferenceDeterminant": 0.1532076953476444,
+          "maximumJacobianDifference": 1.3255815334289878e-9
+        }
+      ],
+      "boneCompatibility": {
+        "reportSha256": "2d7b965ef94a742a11364581f1aa4b7d7a5d5739d715400ff6dee3a8926e059f",
+        "pairs": 120,
+        "witnesses": 4,
+        "closestPoints": 8,
+        "maximumPointPlaneResidualMm": 1.2260101559759402e-14
+      }
+    }
+  ],
+  "limits": [
+    "Full serialized coordinates/indices are compared with separate scalar root/blend arithmetic; nearest source points still use the same BVH/context implementation. No independent nearest-minimum or registration approval.",
+    "All muscle vertex Jacobians and all16 bone own-frame Float32 differences are replayed. Three vertices per muscle and the recorded worst vertex/centroid receive central differences. Full centroid counts are not independently replayed.",
+    "Every saved new-crossing witness is checked for actual triangle membership and segment/plane/barycentric arithmetic. Absence of a witness is retained; no independent full crossing or containment search is made."
+  ],
+  "scriptSha256": "fdc1d353b3f3752fbd4d56193b772fc0161585a44cd0c3d56ceff455df1f1f94"
+}
