@@ -80,7 +80,7 @@ report = {'status': 'Source coordinate and membership diagnostic; not anatomical
           'limitations': ['Source vertex membership does not verify simplification triangles, normals, anatomical placement or connections.',
                          'Different release membership is not a one-to-one replacement map or permission to translate individual parts.'],
           'files': [{'file': str(p), 'sha256': sha(p)} for p in [root/'isa_BP3D_4.0_obj_99.zip',root/'partof_element_parts.txt',root/'isa_element_parts.txt',root/'v43-FMA2Obj.zip',
-                    'data/catalog/v43-FMA2Obj.txt','data/catalog/male-detail-source.json','public/models/male-detail/atlas.json','public/models/male-detail/organs.bin.gz',__file__]]}
+                    'data/catalog/v43-FMA2Obj.txt','data/catalog/male-detail-source.json','public/models/male-detail/atlas.json','public/models/male-detail/organs.bin.gz',Path(__file__).resolve().relative_to(Path.cwd())]]}
 Path('docs/anatomy-alignment/male-detail-source-audit.json').write_text(json.dumps(report, indent=2)+'\n')
 print(json.dumps(report['summary']))
 print(json.dumps([{k: v for k, v in r.items() if k != 'addedIn43'} for r in group_rows]))

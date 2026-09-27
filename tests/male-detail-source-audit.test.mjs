@@ -2,11 +2,20 @@ import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import path from 'node:path';
 
 const read = p => JSON.parse(fs.readFileSync(p));
 const hash = p => createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 const audit = read('docs/anatomy-alignment/male-detail-source-audit.json');
 const probe = read('docs/anatomy-alignment/pulmonary-source-probe.json');
+
+test('source receipts use portable repository-relative paths on every checkout', () => {
+  for (const file of [...audit.files, ...probe.files]) {
+    assert.equal(path.posix.isAbsolute(file.file), false, file.file);
+    assert.equal(path.win32.isAbsolute(file.file), false, file.file);
+    assert.ok(!file.file.split('/').includes('..'), file.file);
+  }
+});
 
 test('male source audit covers every released detail part without asserting anatomical approval', () => {
   const atlas = read('public/models/male-detail/atlas.json');

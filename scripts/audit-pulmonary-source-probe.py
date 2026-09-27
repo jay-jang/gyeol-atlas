@@ -74,7 +74,7 @@ def main():
                              'Official part_of membership includes the old seven branch IDs and seven added parent-concept IDs. Automatic union can overlay closely matching geometry.',
                              'Exporter representation IDs differ from upload-list IDs; actual OBJ 4.3 headers are preserved.'],
               'files': [{'file': str(path), 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
-                        for path in [archive, root/'v43-pulmonary-source.json', root/'v43-upload-list.html', Path(__file__)]]}
+                        for path in [archive, root/'v43-pulmonary-source.json', root/'v43-upload-list.html', Path(__file__).resolve().relative_to(Path.cwd())]]}
     output = Path('docs/anatomy-alignment/pulmonary-source-probe.json')
     output.write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps({'parts': len(records), 'versionPairs': pairs, 'detached': detached}, indent=2))
