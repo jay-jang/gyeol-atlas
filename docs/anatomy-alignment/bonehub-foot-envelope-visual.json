@@ -1,0 +1,210 @@
+{
+  "status": "Offline source-coordinate diagnostic, not application UI or clinical review",
+  "captures": [
+    {
+      "mode": "bones-through-envelope",
+      "file": ".cache/bonehub-ct-inspection/bones-through-envelope.png",
+      "sha256": "da9311ba3a5ca647ff6e1fcdabf5701ce3a2da460c502123347bd38bafa0844e",
+      "views": [
+        {
+          "threshold": 500,
+          "view": "anterior-oblique",
+          "visibleBones": 34,
+          "position": [
+            237.03118133544922,
+            267.5200426342416,
+            434.855641270609
+          ],
+          "target": [
+            237.03118133544922,
+            100,
+            -235.22452926635742
+          ]
+        },
+        {
+          "threshold": 500,
+          "view": "left-oblique",
+          "visibleBones": 34,
+          "position": [
+            886.7897475458084,
+            294.9275698631077,
+            -105.27281602428559
+          ],
+          "target": [
+            237.03118133544922,
+            100,
+            -235.22452926635742
+          ]
+        },
+        {
+          "threshold": 650,
+          "view": "anterior-oblique",
+          "visibleBones": 34,
+          "position": [
+            237.03118133544922,
+            266.71426009100657,
+            432.35516734766884
+          ],
+          "target": [
+            237.03118133544922,
+            100,
+            -234.50187301635742
+          ]
+        },
+        {
+          "threshold": 650,
+          "view": "left-oblique",
+          "visibleBones": 34,
+          "position": [
+            883.6643656408331,
+            293.98995529161516,
+            -105.17523615528063
+          ],
+          "target": [
+            237.03118133544922,
+            100,
+            -234.50187301635742
+          ]
+        },
+        {
+          "threshold": 800,
+          "view": "anterior-oblique",
+          "visibleBones": 34,
+          "position": [
+            236.30852508544922,
+            266.3762223997497,
+            431.0030165826413
+          ],
+          "target": [
+            236.30852508544922,
+            100,
+            -234.50187301635742
+          ]
+        },
+        {
+          "threshold": 800,
+          "view": "left-oblique",
+          "visibleBones": 34,
+          "position": [
+            881.6305654695311,
+            293.59661211522456,
+            -105.43746493954103
+          ],
+          "target": [
+            236.30852508544922,
+            100,
+            -234.50187301635742
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "opaque-envelope",
+      "file": ".cache/bonehub-ct-inspection/opaque-envelope.png",
+      "sha256": "4160c8701037d337363fc6324a552de68a5f75554e0ed297b07dc610efd57a32",
+      "views": [
+        {
+          "threshold": 500,
+          "view": "anterior-oblique",
+          "visibleBones": 34,
+          "position": [
+            237.03118133544922,
+            267.5200426342416,
+            434.855641270609
+          ],
+          "target": [
+            237.03118133544922,
+            100,
+            -235.22452926635742
+          ]
+        },
+        {
+          "threshold": 500,
+          "view": "left-oblique",
+          "visibleBones": 34,
+          "position": [
+            886.7897475458084,
+            294.9275698631077,
+            -105.27281602428559
+          ],
+          "target": [
+            237.03118133544922,
+            100,
+            -235.22452926635742
+          ]
+        },
+        {
+          "threshold": 650,
+          "view": "anterior-oblique",
+          "visibleBones": 34,
+          "position": [
+            237.03118133544922,
+            266.71426009100657,
+            432.35516734766884
+          ],
+          "target": [
+            237.03118133544922,
+            100,
+            -234.50187301635742
+          ]
+        },
+        {
+          "threshold": 650,
+          "view": "left-oblique",
+          "visibleBones": 34,
+          "position": [
+            883.6643656408331,
+            293.98995529161516,
+            -105.17523615528063
+          ],
+          "target": [
+            237.03118133544922,
+            100,
+            -234.50187301635742
+          ]
+        },
+        {
+          "threshold": 800,
+          "view": "anterior-oblique",
+          "visibleBones": 34,
+          "position": [
+            236.30852508544922,
+            266.3762223997497,
+            431.0030165826413
+          ],
+          "target": [
+            236.30852508544922,
+            100,
+            -234.50187301635742
+          ]
+        },
+        {
+          "threshold": 800,
+          "view": "left-oblique",
+          "visibleBones": 34,
+          "position": [
+            881.6305654695311,
+            293.59661211522456,
+            -105.43746493954103
+          ],
+          "target": [
+            236.30852508544922,
+            100,
+            -234.50187301635742
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "files": [
+    {
+      "file": ".cache/bonehub-ct-inspection/envelope.json",
+      "sha256": "694cf0093739ab8c2a46c1e2a0773a81f485566d59434985b99148b5cef7ac2a"
+    },
+    {
+      "file": "scripts/capture-bonehub-foot-envelope.mjs",
+      "sha256": "d8ad5c2726197e80be253c652256783b243c4958a62ffe3c1eb1a26f886835fd"
+    }
+  ]
+}

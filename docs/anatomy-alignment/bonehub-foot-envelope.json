@@ -1,0 +1,1250 @@
+{
+  "status": "CACHE-ONLY INTENSITY ENVELOPE CANDIDATES; not skin, HRA registration or clinical validation",
+  "spacingXyzMm": [
+    0.7226560115814209,
+    0.7226560115814209,
+    1.0
+  ],
+  "coordinateSystem": "Source LPS mm; no registration or deformation",
+  "connectivity": 6,
+  "thresholdsStored": [
+    500,
+    650,
+    800
+  ],
+  "seedUniqueVoxels": 764098,
+  "seedVoxelOccurrences": 764287,
+  "sourceParts": [
+    {
+      "name": "CALCANEUS_LEFT",
+      "kind": "bone",
+      "positions": 0,
+      "indices": 292560,
+      "vertices": 24380,
+      "triangles": 48756
+    },
+    {
+      "name": "CUBOID_LEFT",
+      "kind": "bone",
+      "positions": 877632,
+      "indices": 958800,
+      "vertices": 6764,
+      "triangles": 13524
+    },
+    {
+      "name": "INTERMEDIATE_CUNEIFORM_LEFT",
+      "kind": "bone",
+      "positions": 1121088,
+      "indices": 1161384,
+      "vertices": 3358,
+      "triangles": 6712
+    },
+    {
+      "name": "LATERAL_CUNEIFORM_LEFT",
+      "kind": "bone",
+      "positions": 1241928,
+      "indices": 1287180,
+      "vertices": 3771,
+      "triangles": 7544
+    },
+    {
+      "name": "MEDIAL_CUNEIFORM_LEFT",
+      "kind": "bone",
+      "positions": 1377708,
+      "indices": 1445388,
+      "vertices": 5640,
+      "triangles": 11276
+    },
+    {
+      "name": "METATARSAL_1_LEFT",
+      "kind": "bone",
+      "positions": 1580700,
+      "indices": 1702092,
+      "vertices": 10116,
+      "triangles": 20228
+    },
+    {
+      "name": "METATARSAL_2_LEFT",
+      "kind": "bone",
+      "positions": 1944828,
+      "indices": 2026896,
+      "vertices": 6839,
+      "triangles": 13676
+    },
+    {
+      "name": "METATARSAL_3_LEFT",
+      "kind": "bone",
+      "positions": 2191008,
+      "indices": 2265840,
+      "vertices": 6236,
+      "triangles": 12468
+    },
+    {
+      "name": "METATARSAL_4_LEFT",
+      "kind": "bone",
+      "positions": 2415456,
+      "indices": 2486520,
+      "vertices": 5922,
+      "triangles": 11840
+    },
+    {
+      "name": "METATARSAL_5_LEFT",
+      "kind": "bone",
+      "positions": 2628600,
+      "indices": 2704080,
+      "vertices": 6290,
+      "triangles": 12576
+    },
+    {
+      "name": "NAVICULAR_LEFT",
+      "kind": "bone",
+      "positions": 2854992,
+      "indices": 2932944,
+      "vertices": 6496,
+      "triangles": 12988
+    },
+    {
+      "name": "PHALANGE_FOOT_1_LEFT",
+      "kind": "bone",
+      "positions": 3088800,
+      "indices": 3182088,
+      "vertices": 7774,
+      "triangles": 15544
+    },
+    {
+      "name": "PHALANGE_FOOT_2_LEFT",
+      "kind": "bone",
+      "positions": 3368616,
+      "indices": 3413304,
+      "vertices": 3724,
+      "triangles": 7444
+    },
+    {
+      "name": "PHALANGE_FOOT_3_LEFT",
+      "kind": "bone",
+      "positions": 3502632,
+      "indices": 3538320,
+      "vertices": 2974,
+      "triangles": 5944
+    },
+    {
+      "name": "PHALANGE_FOOT_4_LEFT",
+      "kind": "bone",
+      "positions": 3609648,
+      "indices": 3641016,
+      "vertices": 2614,
+      "triangles": 5224
+    },
+    {
+      "name": "PHALANGE_FOOT_5_LEFT",
+      "kind": "bone",
+      "positions": 3703704,
+      "indices": 3735744,
+      "vertices": 2670,
+      "triangles": 5336
+    },
+    {
+      "name": "TALUS_LEFT",
+      "kind": "bone",
+      "positions": 3799776,
+      "indices": 3988032,
+      "vertices": 15688,
+      "triangles": 31372
+    },
+    {
+      "name": "CALCANEUS_RIGHT",
+      "kind": "bone",
+      "positions": 4364496,
+      "indices": 4663656,
+      "vertices": 24930,
+      "triangles": 49856
+    },
+    {
+      "name": "CUBOID_RIGHT",
+      "kind": "bone",
+      "positions": 5261928,
+      "indices": 5343264,
+      "vertices": 6778,
+      "triangles": 13552
+    },
+    {
+      "name": "INTERMEDIATE_CUNEIFORM_RIGHT",
+      "kind": "bone",
+      "positions": 5505888,
+      "indices": 5543160,
+      "vertices": 3106,
+      "triangles": 6208
+    },
+    {
+      "name": "LATERAL_CUNEIFORM_RIGHT",
+      "kind": "bone",
+      "positions": 5617656,
+      "indices": 5663256,
+      "vertices": 3800,
+      "triangles": 7596
+    },
+    {
+      "name": "MEDIAL_CUNEIFORM_RIGHT",
+      "kind": "bone",
+      "positions": 5754408,
+      "indices": 5822784,
+      "vertices": 5698,
+      "triangles": 11392
+    },
+    {
+      "name": "METATARSAL_1_RIGHT",
+      "kind": "bone",
+      "positions": 5959488,
+      "indices": 6090552,
+      "vertices": 10922,
+      "triangles": 21840
+    },
+    {
+      "name": "METATARSAL_2_RIGHT",
+      "kind": "bone",
+      "positions": 6352632,
+      "indices": 6431424,
+      "vertices": 6566,
+      "triangles": 13128
+    },
+    {
+      "name": "METATARSAL_3_RIGHT",
+      "kind": "bone",
+      "positions": 6588960,
+      "indices": 6664248,
+      "vertices": 6274,
+      "triangles": 12544
+    },
+    {
+      "name": "METATARSAL_4_RIGHT",
+      "kind": "bone",
+      "positions": 6814776,
+      "indices": 6885312,
+      "vertices": 5878,
+      "triangles": 11752
+    },
+    {
+      "name": "METATARSAL_5_RIGHT",
+      "kind": "bone",
+      "positions": 7026336,
+      "indices": 7100952,
+      "vertices": 6218,
+      "triangles": 12428
+    },
+    {
+      "name": "NAVICULAR_RIGHT",
+      "kind": "bone",
+      "positions": 7250088,
+      "indices": 7324440,
+      "vertices": 6196,
+      "triangles": 12388
+    },
+    {
+      "name": "PHALANGE_FOOT_1_RIGHT",
+      "kind": "bone",
+      "positions": 7473096,
+      "indices": 7559832,
+      "vertices": 7228,
+      "triangles": 14452
+    },
+    {
+      "name": "PHALANGE_FOOT_2_RIGHT",
+      "kind": "bone",
+      "positions": 7733256,
+      "indices": 7776048,
+      "vertices": 3566,
+      "triangles": 7124
+    },
+    {
+      "name": "PHALANGE_FOOT_3_RIGHT",
+      "kind": "bone",
+      "positions": 7861536,
+      "indices": 7900848,
+      "vertices": 3276,
+      "triangles": 6548
+    },
+    {
+      "name": "PHALANGE_FOOT_4_RIGHT",
+      "kind": "bone",
+      "positions": 7979424,
+      "indices": 8013840,
+      "vertices": 2868,
+      "triangles": 5732
+    },
+    {
+      "name": "PHALANGE_FOOT_5_RIGHT",
+      "kind": "bone",
+      "positions": 8082624,
+      "indices": 8112456,
+      "vertices": 2486,
+      "triangles": 4968
+    },
+    {
+      "name": "TALUS_RIGHT",
+      "kind": "bone",
+      "positions": 8172072,
+      "indices": 8360280,
+      "vertices": 15684,
+      "triangles": 31364
+    }
+  ],
+  "candidates": [
+    {
+      "thresholdStored": 500,
+      "foregroundComponentCount": 2664,
+      "selectedComponents": [
+        {
+          "label": 22,
+          "voxels": 3620823,
+          "boundsIndexZyx": [
+            [
+              1,
+              172,
+              216
+            ],
+            [
+              199,
+              479,
+              440
+            ]
+          ],
+          "seededLeft": true,
+          "seededRight": true
+        }
+      ],
+      "selectedVoxels": 3620823,
+      "filledVoxelsAdded": 80,
+      "envelopeVoxels": 3620903,
+      "stlMembership": [
+        {
+          "name": "CALCANEUS_LEFT",
+          "vertices": 24380,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "CUBOID_LEFT",
+          "vertices": 6764,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "INTERMEDIATE_CUNEIFORM_LEFT",
+          "vertices": 3358,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "LATERAL_CUNEIFORM_LEFT",
+          "vertices": 3771,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "MEDIAL_CUNEIFORM_LEFT",
+          "vertices": 5640,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_1_LEFT",
+          "vertices": 10116,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_2_LEFT",
+          "vertices": 6839,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_3_LEFT",
+          "vertices": 6236,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_4_LEFT",
+          "vertices": 5922,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_5_LEFT",
+          "vertices": 6290,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "NAVICULAR_LEFT",
+          "vertices": 6496,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_1_LEFT",
+          "vertices": 7774,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_2_LEFT",
+          "vertices": 3724,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_3_LEFT",
+          "vertices": 2974,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_4_LEFT",
+          "vertices": 2614,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_5_LEFT",
+          "vertices": 2670,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "TALUS_LEFT",
+          "vertices": 15688,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "CALCANEUS_RIGHT",
+          "vertices": 24930,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "CUBOID_RIGHT",
+          "vertices": 6778,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "INTERMEDIATE_CUNEIFORM_RIGHT",
+          "vertices": 3106,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "LATERAL_CUNEIFORM_RIGHT",
+          "vertices": 3800,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "MEDIAL_CUNEIFORM_RIGHT",
+          "vertices": 5698,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_1_RIGHT",
+          "vertices": 10922,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_2_RIGHT",
+          "vertices": 6566,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_3_RIGHT",
+          "vertices": 6274,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_4_RIGHT",
+          "vertices": 5878,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_5_RIGHT",
+          "vertices": 6218,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "NAVICULAR_RIGHT",
+          "vertices": 6196,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_1_RIGHT",
+          "vertices": 7228,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_2_RIGHT",
+          "vertices": 3566,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_3_RIGHT",
+          "vertices": 3276,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_4_RIGHT",
+          "vertices": 2868,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_5_RIGHT",
+          "vertices": 2486,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "TALUS_RIGHT",
+          "vertices": 15684,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        }
+      ],
+      "surface": {
+        "name": "envelope-500",
+        "kind": "envelope",
+        "positions": 8736648,
+        "indices": 12367860,
+        "vertices": 302601,
+        "triangles": 576270
+      },
+      "artificialClosures": {
+        "name": "crop-closures-500",
+        "kind": "artificial-caps",
+        "positions": 19283100,
+        "indices": 22914312,
+        "vertices": 302601,
+        "triangles": 29810
+      },
+      "voxelVolumeMm3": 1890950.369325756,
+      "mask": {
+        "file": ".cache/bonehub-ct-inspection/envelope-500.npy",
+        "sha256": "d47ca91ca41cdbd90c49d3aa080510146f413c7fe37314a2fecade1c181681a1"
+      },
+      "cropFacesTouched": [
+        0,
+        14905
+      ]
+    },
+    {
+      "thresholdStored": 650,
+      "foregroundComponentCount": 1065,
+      "selectedComponents": [
+        {
+          "label": 15,
+          "voxels": 3558014,
+          "boundsIndexZyx": [
+            [
+              1,
+              172,
+              217
+            ],
+            [
+              199,
+              477,
+              439
+            ]
+          ],
+          "seededLeft": true,
+          "seededRight": true
+        }
+      ],
+      "selectedVoxels": 3558014,
+      "filledVoxelsAdded": 52,
+      "envelopeVoxels": 3558066,
+      "stlMembership": [
+        {
+          "name": "CALCANEUS_LEFT",
+          "vertices": 24380,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "CUBOID_LEFT",
+          "vertices": 6764,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "INTERMEDIATE_CUNEIFORM_LEFT",
+          "vertices": 3358,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "LATERAL_CUNEIFORM_LEFT",
+          "vertices": 3771,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "MEDIAL_CUNEIFORM_LEFT",
+          "vertices": 5640,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_1_LEFT",
+          "vertices": 10116,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_2_LEFT",
+          "vertices": 6839,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_3_LEFT",
+          "vertices": 6236,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_4_LEFT",
+          "vertices": 5922,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_5_LEFT",
+          "vertices": 6290,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "NAVICULAR_LEFT",
+          "vertices": 6496,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_1_LEFT",
+          "vertices": 7774,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_2_LEFT",
+          "vertices": 3724,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_3_LEFT",
+          "vertices": 2974,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_4_LEFT",
+          "vertices": 2614,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_5_LEFT",
+          "vertices": 2670,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "TALUS_LEFT",
+          "vertices": 15688,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "CALCANEUS_RIGHT",
+          "vertices": 24930,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "CUBOID_RIGHT",
+          "vertices": 6778,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "INTERMEDIATE_CUNEIFORM_RIGHT",
+          "vertices": 3106,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "LATERAL_CUNEIFORM_RIGHT",
+          "vertices": 3800,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "MEDIAL_CUNEIFORM_RIGHT",
+          "vertices": 5698,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_1_RIGHT",
+          "vertices": 10922,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_2_RIGHT",
+          "vertices": 6566,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_3_RIGHT",
+          "vertices": 6274,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_4_RIGHT",
+          "vertices": 5878,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_5_RIGHT",
+          "vertices": 6218,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "NAVICULAR_RIGHT",
+          "vertices": 6196,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_1_RIGHT",
+          "vertices": 7228,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_2_RIGHT",
+          "vertices": 3566,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_3_RIGHT",
+          "vertices": 3276,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_4_RIGHT",
+          "vertices": 2868,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_5_RIGHT",
+          "vertices": 2486,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "TALUS_RIGHT",
+          "vertices": 15684,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        }
+      ],
+      "surface": {
+        "name": "envelope-650",
+        "kind": "envelope",
+        "positions": 23272032,
+        "indices": 26861460,
+        "vertices": 299119,
+        "triangles": 569356
+      },
+      "artificialClosures": {
+        "name": "crop-closures-650",
+        "kind": "artificial-caps",
+        "positions": 33693732,
+        "indices": 37283160,
+        "vertices": 299119,
+        "triangles": 29328
+      },
+      "voxelVolumeMm3": 1858134.895296951,
+      "mask": {
+        "file": ".cache/bonehub-ct-inspection/envelope-650.npy",
+        "sha256": "7d92a454e01ee988bcf11db091f4699d8878d6df7e21c07dc92fb5fcc812fd72"
+      },
+      "cropFacesTouched": [
+        0,
+        14664
+      ]
+    },
+    {
+      "thresholdStored": 800,
+      "foregroundComponentCount": 104,
+      "selectedComponents": [
+        {
+          "label": 4,
+          "voxels": 3498160,
+          "boundsIndexZyx": [
+            [
+              1,
+              172,
+              217
+            ],
+            [
+              199,
+              477,
+              437
+            ]
+          ],
+          "seededLeft": true,
+          "seededRight": true
+        }
+      ],
+      "selectedVoxels": 3498160,
+      "filledVoxelsAdded": 15,
+      "envelopeVoxels": 3498175,
+      "stlMembership": [
+        {
+          "name": "CALCANEUS_LEFT",
+          "vertices": 24380,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "CUBOID_LEFT",
+          "vertices": 6764,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "INTERMEDIATE_CUNEIFORM_LEFT",
+          "vertices": 3358,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "LATERAL_CUNEIFORM_LEFT",
+          "vertices": 3771,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "MEDIAL_CUNEIFORM_LEFT",
+          "vertices": 5640,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_1_LEFT",
+          "vertices": 10116,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_2_LEFT",
+          "vertices": 6839,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_3_LEFT",
+          "vertices": 6236,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_4_LEFT",
+          "vertices": 5922,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_5_LEFT",
+          "vertices": 6290,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "NAVICULAR_LEFT",
+          "vertices": 6496,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_1_LEFT",
+          "vertices": 7774,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_2_LEFT",
+          "vertices": 3724,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_3_LEFT",
+          "vertices": 2974,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_4_LEFT",
+          "vertices": 2614,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_5_LEFT",
+          "vertices": 2670,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "TALUS_LEFT",
+          "vertices": 15688,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "CALCANEUS_RIGHT",
+          "vertices": 24930,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "CUBOID_RIGHT",
+          "vertices": 6778,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "INTERMEDIATE_CUNEIFORM_RIGHT",
+          "vertices": 3106,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "LATERAL_CUNEIFORM_RIGHT",
+          "vertices": 3800,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "MEDIAL_CUNEIFORM_RIGHT",
+          "vertices": 5698,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_1_RIGHT",
+          "vertices": 10922,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_2_RIGHT",
+          "vertices": 6566,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_3_RIGHT",
+          "vertices": 6274,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_4_RIGHT",
+          "vertices": 5878,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "METATARSAL_5_RIGHT",
+          "vertices": 6218,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "NAVICULAR_RIGHT",
+          "vertices": 6196,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_1_RIGHT",
+          "vertices": 7228,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_2_RIGHT",
+          "vertices": 3566,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_3_RIGHT",
+          "vertices": 3276,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_4_RIGHT",
+          "vertices": 2868,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "PHALANGE_FOOT_5_RIGHT",
+          "vertices": 2486,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        },
+        {
+          "name": "TALUS_RIGHT",
+          "vertices": 15684,
+          "outsideUnfilled": 0,
+          "outsideFilled": 0
+        }
+      ],
+      "surface": {
+        "name": "envelope-800",
+        "kind": "envelope",
+        "positions": 37635096,
+        "indices": 41204496,
+        "vertices": 297450,
+        "triangles": 566510
+      },
+      "artificialClosures": {
+        "name": "crop-closures-800",
+        "kind": "artificial-caps",
+        "positions": 48002616,
+        "indices": 51572016,
+        "vertices": 297450,
+        "triangles": 28886
+      },
+      "voxelVolumeMm3": 1826857.915888972,
+      "mask": {
+        "file": ".cache/bonehub-ct-inspection/envelope-800.npy",
+        "sha256": "0af8e63e6990ac933d7cdf506ba252a72a218d24f11ace089ae3599fdd0abef1"
+      },
+      "cropFacesTouched": [
+        0,
+        14443
+      ]
+    }
+  ],
+  "binary": {
+    "file": ".cache/bonehub-ct-inspection/envelope-parts.bin.gz",
+    "sha256": "772f775147d3de6011aea81827e6328c8e78064f799c9023b8cfd78d69d1e5e2",
+    "uncompressedBytes": 51918648
+  },
+  "limitations": [
+    "Empirical stored intensities, not calibrated HU or tissue labels.",
+    "Bone-mask seeds select connected components; inclusion of all seed voxels is by construction.",
+    "3D hole filling adds enclosed background cells; no dilation, closing, smoothing or anatomical completion.",
+    "Two feet may touch and remain connected; scan support or wrapping may also connect. Not a verified isolated skin surface.",
+    "Z crop planes have artificial cell-face closures stored separately, not anatomical skin. Open non-cap surfaces must not be used alone for parity containment.",
+    "Only first 200 image slices used. Exact voxel cells produce stair steps. No whole-body or organ completeness claim."
+  ],
+  "files": [
+    {
+      "file": ".cache/bonehub-ct-inspection/report.json",
+      "sha256": "b4c070e3cb79fdc880614493680e73a525b3cd65fedcf9066767c93c67916f42"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/ct-receipt.json",
+      "sha256": "2e3af1b7fe0e6c4bf6c453a3570cc896d21d8f918b642806196438ead6b552ce"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/inventory.json",
+      "sha256": "3e82a5e58d9c3a90e55a83a236e20fb82424a9796a7a8f7fe0f2ffbadbcad4c4"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/foot-labels.json",
+      "sha256": "aa8d1dada5f644ae5b3a24f0e99aeccf96bfe335bbbfcb757770f0874788b3bc"
+    },
+    {
+      "file": ".cache/bonehub-ct-inspection/foot-stored-values.npy",
+      "sha256": "0630394ffd2c9ea66e25e1a7662f70ee68d2bfac2fc5c4480d767cc36377445c"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Segmentation/02_Female/FOOT_LEFT.seg.nrrd",
+      "sha256": "1fe34cff43db5869ae0109d6ba9ba32676d0b07963d03b074a52641c588fab94"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Segmentation/02_Female/FOOT_RIGHT.seg.nrrd",
+      "sha256": "af75e5f2370a30284fa72e47a9b54b2d9ec97fd21dd3d4116af4510bf1eb6293"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/CALCANEUS_LEFT.stl",
+      "sha256": "adb7e828535941c2db0993eef9721c8064e2580f571800f22fcbe67a76d6340b"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/CUBOID_LEFT.stl",
+      "sha256": "4e9a717a9781768c008333c603edc6352c4319315a6c4aa00476580ff4efe88a"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/INTERMEDIATE_CUNEIFORM_LEFT.stl",
+      "sha256": "6790f11a8d5d8f52fd55bc84da2289507208ce93ee39fd0f174c166048ec8031"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/LATERAL_CUNEIFORM_LEFT.stl",
+      "sha256": "3bc962ca0dcf7489a17ee0b5111229354e71ef51ceee002b357b737a85f93161"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/MEDIAL_CUNEIFORM_LEFT.stl",
+      "sha256": "abf07a9cbd051051059b4352cd1f62c3b1312a31bf2a701441c1debf367be17d"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_1_LEFT.stl",
+      "sha256": "c412c53641198b306d71c40829cd5870f0152a8e08d9d32c65254754c9a28829"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_2_LEFT.stl",
+      "sha256": "8f169c2ccf8ea4b21dd84779c6bfd942d0d6886272afad47ae2f877baf732db9"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_3_LEFT.stl",
+      "sha256": "96928a79d69add1d25f27630f18600133e0c075be469e3c723275eeb96c193bd"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_4_LEFT.stl",
+      "sha256": "7c0dde1053f3e36f33308c7497a093633a227a522c22a347ab55b92861805765"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_5_LEFT.stl",
+      "sha256": "d62ce0ac0450838c3b53e7a1ef09198aebca56f0d8c78d32f052c813e1bcf7fa"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/NAVICULAR_LEFT.stl",
+      "sha256": "0c13d5e5affea6f013872ad0d5212f7d9b6873a1dc5fa6307d6af347bd35a59f"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_1_LEFT.stl",
+      "sha256": "cfd130f3f6f2d039b00a0063b26d56eddb762b190a3ba6df63fbc63d1a5bf1bf"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_2_LEFT.stl",
+      "sha256": "af26d8729ef1832d980877934a5071672cac5a333f28c8014b750a8c11f8f4d0"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_3_LEFT.stl",
+      "sha256": "434e9345a05df10b61d16b12a145c12b387dc7a6ec0c3cfdc4ac1b1ce2b9119f"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_4_LEFT.stl",
+      "sha256": "7bd329b35596dada0eb6881e43ac2069283af10f45deb78bd69c59b3f4b2651e"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_5_LEFT.stl",
+      "sha256": "17b00eab0123d080deaf2356f64eb14185e6d602853f76dc92f4a352cce7d528"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/TALUS_LEFT.stl",
+      "sha256": "3f322768cd56a4489683ad7bbbf1d8d537532675ac73c8269c9328b888394d56"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/CALCANEUS_RIGHT.stl",
+      "sha256": "5e6875d292ca36454775cee7ec5ceae4746c2ff682d797087d13a1ecd4112968"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/CUBOID_RIGHT.stl",
+      "sha256": "6d45623a8dc16401bb77f93c6f4b568c07b72ae2c8077632318c7f267cab2ccd"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/INTERMEDIATE_CUNEIFORM_RIGHT.stl",
+      "sha256": "a16080c692c95a9c5471fd42c99c79fcbca16152703a77d6d583d1e4d17b668c"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/LATERAL_CUNEIFORM_RIGHT.stl",
+      "sha256": "e610db2cb0f1384b0832b2c829701763c76e2b2b51e460f5da5395da960cc41c"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/MEDIAL_CUNEIFORM_RIGHT.stl",
+      "sha256": "46cffc714d5dda411465f806502cb72841578e14dafa4a317353bb05f45b6b70"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_1_RIGHT.stl",
+      "sha256": "eecfd229f6863b46b20c783ccdd37f734c409e8ee1d02ebea504a534cf861d56"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_2_RIGHT.stl",
+      "sha256": "6374d1cfad544598a9c09b8e40208f7d8d081836a5fae60a09d6d03cd51fc779"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_3_RIGHT.stl",
+      "sha256": "fd82d0fa2994ec1d196ee2109a7a3e465c1bddcc97758d9db5e6ebb4ccba2870"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_4_RIGHT.stl",
+      "sha256": "e5297330b496b9bbf2bb7675db86b94f98a6083c0595433da67f07c0ed0aaaf0"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_5_RIGHT.stl",
+      "sha256": "9c7a09a1802b9852bd1345031e2c073281b6d83706dc646a29559db2f891565a"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/NAVICULAR_RIGHT.stl",
+      "sha256": "e51a30c6573922455aab5069cf3289557e991e9c61cb917a42f20aad878eeba8"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_1_RIGHT.stl",
+      "sha256": "c6eab5b830ef3f9c0ae0e79dcc5c8c499a30341391eaadfe99ef647c4e4c42a5"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_2_RIGHT.stl",
+      "sha256": "fe1d23922d28a4226f46cc4e449fd0fda11faa934d985d392c813cf7b7c7b5c4"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_3_RIGHT.stl",
+      "sha256": "55fa37d8c6c7814e2029675fb0c58564aa7cbeaf71e934138504c256dff225f5"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_4_RIGHT.stl",
+      "sha256": "09360d17aec16e9374a8718080a6bf3fd4e0d63d2ac8f844fb8f5de1e5e7bbac"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_5_RIGHT.stl",
+      "sha256": "f7b034a87dda2221fb0e4d5f73333095540ad703fad81c376f46a45891f4115f"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/TALUS_RIGHT.stl",
+      "sha256": "6af24dab667e03f174101154f03d7be5cc99406d1dd08a131b1d320cf9299145"
+    },
+    {
+      "file": "/Users/nuinuri/workspace/anatomy/scripts/build-bonehub-foot-envelope.py",
+      "sha256": "a6ad7b97d950005662c9b7f61f5d13f015e5285796043fc56142e5970e1769e2"
+    }
+  ]
+}

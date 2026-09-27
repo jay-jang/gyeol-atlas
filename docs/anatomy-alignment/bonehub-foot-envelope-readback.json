@@ -1,0 +1,260 @@
+{
+  "status": "Serialized envelope geometry matches derived masks, not anatomical accuracy",
+  "rows": [
+    {
+      "thresholdStored": 500,
+      "triangles": 606080,
+      "artificialCapTriangles": 29810,
+      "expectedBoundaryTriangles": 606080,
+      "sourceVoxels": 3620903,
+      "gridVolume": 3620903.0,
+      "maximumFloat32RoundtripMm": 1.5139579772949219e-05,
+      "uniqueTriangles": true,
+      "allTriangleSidesMatchMask": true
+    },
+    {
+      "thresholdStored": 650,
+      "triangles": 598684,
+      "artificialCapTriangles": 29328,
+      "expectedBoundaryTriangles": 598684,
+      "sourceVoxels": 3558066,
+      "gridVolume": 3558066.0,
+      "maximumFloat32RoundtripMm": 1.5139579772949219e-05,
+      "uniqueTriangles": true,
+      "allTriangleSidesMatchMask": true
+    },
+    {
+      "thresholdStored": 800,
+      "triangles": 595396,
+      "artificialCapTriangles": 28886,
+      "expectedBoundaryTriangles": 595396,
+      "sourceVoxels": 3498175,
+      "gridVolume": 3498175.0,
+      "maximumFloat32RoundtripMm": 1.5139579772949219e-05,
+      "uniqueTriangles": true,
+      "allTriangleSidesMatchMask": true
+    }
+  ],
+  "sourceBones": [
+    {
+      "name": "CALCANEUS_LEFT",
+      "vertices": 24380,
+      "triangles": 48756,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "CUBOID_LEFT",
+      "vertices": 6764,
+      "triangles": 13524,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "INTERMEDIATE_CUNEIFORM_LEFT",
+      "vertices": 3358,
+      "triangles": 6712,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "LATERAL_CUNEIFORM_LEFT",
+      "vertices": 3771,
+      "triangles": 7544,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "MEDIAL_CUNEIFORM_LEFT",
+      "vertices": 5640,
+      "triangles": 11276,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "METATARSAL_1_LEFT",
+      "vertices": 10116,
+      "triangles": 20228,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "METATARSAL_2_LEFT",
+      "vertices": 6839,
+      "triangles": 13676,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "METATARSAL_3_LEFT",
+      "vertices": 6236,
+      "triangles": 12468,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "METATARSAL_4_LEFT",
+      "vertices": 5922,
+      "triangles": 11840,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "METATARSAL_5_LEFT",
+      "vertices": 6290,
+      "triangles": 12576,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "NAVICULAR_LEFT",
+      "vertices": 6496,
+      "triangles": 12988,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "PHALANGE_FOOT_1_LEFT",
+      "vertices": 7774,
+      "triangles": 15544,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "PHALANGE_FOOT_2_LEFT",
+      "vertices": 3724,
+      "triangles": 7444,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "PHALANGE_FOOT_3_LEFT",
+      "vertices": 2974,
+      "triangles": 5944,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "PHALANGE_FOOT_4_LEFT",
+      "vertices": 2614,
+      "triangles": 5224,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "PHALANGE_FOOT_5_LEFT",
+      "vertices": 2670,
+      "triangles": 5336,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "TALUS_LEFT",
+      "vertices": 15688,
+      "triangles": 31372,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "CALCANEUS_RIGHT",
+      "vertices": 24930,
+      "triangles": 49856,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "CUBOID_RIGHT",
+      "vertices": 6778,
+      "triangles": 13552,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "INTERMEDIATE_CUNEIFORM_RIGHT",
+      "vertices": 3106,
+      "triangles": 6208,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "LATERAL_CUNEIFORM_RIGHT",
+      "vertices": 3800,
+      "triangles": 7596,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "MEDIAL_CUNEIFORM_RIGHT",
+      "vertices": 5698,
+      "triangles": 11392,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "METATARSAL_1_RIGHT",
+      "vertices": 10922,
+      "triangles": 21840,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "METATARSAL_2_RIGHT",
+      "vertices": 6566,
+      "triangles": 13128,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "METATARSAL_3_RIGHT",
+      "vertices": 6274,
+      "triangles": 12544,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "METATARSAL_4_RIGHT",
+      "vertices": 5878,
+      "triangles": 11752,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "METATARSAL_5_RIGHT",
+      "vertices": 6218,
+      "triangles": 12428,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "NAVICULAR_RIGHT",
+      "vertices": 6196,
+      "triangles": 12388,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "PHALANGE_FOOT_1_RIGHT",
+      "vertices": 7228,
+      "triangles": 14452,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "PHALANGE_FOOT_2_RIGHT",
+      "vertices": 3566,
+      "triangles": 7124,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "PHALANGE_FOOT_3_RIGHT",
+      "vertices": 3276,
+      "triangles": 6548,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "PHALANGE_FOOT_4_RIGHT",
+      "vertices": 2868,
+      "triangles": 5732,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "PHALANGE_FOOT_5_RIGHT",
+      "vertices": 2486,
+      "triangles": 4968,
+      "maximumCoordinateResidualMm": 0
+    },
+    {
+      "name": "TALUS_RIGHT",
+      "vertices": 15684,
+      "triangles": 31364,
+      "maximumCoordinateResidualMm": 0
+    }
+  ],
+  "sourceTriangleCornerOccurrences": 1455972,
+  "files": [
+    {
+      "file": ".cache/bonehub-ct-inspection/envelope.json",
+      "sha256": "694cf0093739ab8c2a46c1e2a0773a81f485566d59434985b99148b5cef7ac2a"
+    },
+    {
+      "file": "/Users/nuinuri/workspace/anatomy/scripts/verify-bonehub-foot-envelope.py",
+      "sha256": "d7f08dc560b3795b46fc3a9608b3d594b92ed5792d3eaaec2a2f10ddcbbcbda6"
+    }
+  ],
+  "limitations": [
+    "Masks are algorithmic intensity candidates, not independent ground truth.",
+    "Closed volumes include artificial crop caps; not anatomical tissue volumes.",
+    "No HRA fit, manifold topology, tissue identification or clinical approval."
+  ]
+}
