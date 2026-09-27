@@ -423,7 +423,9 @@ function AtlasPage({
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const dockRef = useRef<HTMLDivElement>(null);
   const [action, setAction] = useState<CameraAction>({
-    kind: "restore",
+    // A validated selection with a deliberately cleared migration pose must
+    // wait for its real meshes and frame them, not consume a no-op restore.
+    kind: state.selection && !state.camera ? "structure" : "restore",
     tick: 0,
   });
   const sourceKey = referenceSourceFor(state.sex, [...(state.selection?.ids || []), ...(state.detail?.ids || [])]);
@@ -1169,9 +1171,9 @@ function AtlasPage({
               <p className="selection-description">{selectedComposite.description}</p>
             </details>}
             {state.sex === "female" && selectedOrgan?.id === "brain" && <div data-brain-provenance>
-              <p className="selection-description">뇌 묶음: Allen 참조 282개 + Visible Human 시신경교차 1개 · 위치 검증 미완료</p>
+              <p className="selection-description">뇌 묶음: Allen 참조 282개 + Visible Human 시신경교차 1개 · Allen 좌우 선택 연결 교정 · 위치 검증 미완료</p>
               <details className="anatomy-source-details"><summary>뇌 출처·방향 주의</summary>
-                <p className="selection-description">282개는 Allen 참조 구조를 대칭 복제하고 여성 신체에 맞춰 크기를 조정한 모델로, 여성 기증자 뇌 스캔이 아닙니다. 시신경교차 1개는 원본 메타데이터상 Visible Human 여성 자료입니다. Allen 구조의 좌우 이름과 전신의 눈·뼈 방향이 일치하지 않아 좌우 위치 학습에 사용하지 마세요. 원문 이름·ID·좌표는 보존했으며 위치·연결 교정은 아직 완료되지 않았습니다.</p>
+                <p className="selection-description">282개는 Allen 참조 구조를 대칭 복제하고 여성 신체에 맞춰 크기를 조정한 모델로, 여성 기증자 뇌 스캔이 아닙니다. 시신경교차 1개는 Visible Human 여성 자료로 그대로 유지합니다. Allen 원본의 좌우 표기가 전신의 눈·대퇴골 기준과 반대여서, 원문 이름·ID는 유지하고 대응하는 반대쪽 원본 형상을 연결했습니다. 전체 뇌 형상은 바꾸지 않았습니다. 개별 설명에 실제 형상 출처를 표시하며, 일반적인 위치·신경 연결 교정이나 임상적 좌우 검증이 완료된 것은 아닙니다.</p>
                 <p className="selection-source"><a href="https://3d.nih.gov/entries/3DPX-020959" target="_blank" rel="noreferrer">HRA / NIH 3D 출처 설명</a> · CC BY 4.0 · 학습용 비진단 모델</p>
               </details>
             </div>}

@@ -122,7 +122,7 @@ export function stageDescription(stage: number, sex: "male" | "female") {
     organ: "여성 CT 자료는 전신에 합쳐지지 않은 별도 상세입니다. 전통적 장부 대응은 압력 전달 경로가 아닙니다.",
     vessel: "여성 원본에 수록된 혈관을 검색·선택합니다. 전신 미세혈관 전체를 뜻하지 않습니다.",
     lymph: "여성 원본에 명명된 림프 구조입니다. 남성 자료와 수록 범위가 다릅니다.",
-    nerve: "뇌 묶음은 Allen 참조 282개와 Visible Human 시신경교차 1개입니다. Allen 구조의 원본 좌우 표기와 전신 방향이 불일치하며, 전신 말초신경 전체를 포함하지 않습니다.",
+    nerve: "뇌 묶음은 Allen 참조 282개와 Visible Human 시신경교차 1개입니다. Allen 좌우 선택 연결을 전신 기준에 맞췄으나 위치·신경 연결 검증은 미완료이며, 전신 말초신경 전체를 포함하지 않습니다.",
   };
   return `여성 전신 참조의 ${layerNames[layer]} 모형 ${count}개. ${limitations[layer]}`;
 }

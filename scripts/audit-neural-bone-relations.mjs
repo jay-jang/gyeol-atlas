@@ -11,6 +11,8 @@ import {BufferGeometry,BufferAttribute,Matrix4} from 'three';
 import {MeshBVH} from 'three-mesh-bvh';
 import {applyFemaleArmRegistration} from '../src/female-arm-registration.ts';
 import {applyFemaleFootRegistration} from '../src/female-foot-registration.ts';
+import {resolveFemaleBrainGeometryPart} from '../src/female-brain-bindings.ts';
+import {applyFemaleSourceRestoration} from '../src/female-source-restoration.ts';
 import {triangleCrossings} from './lib/triangle-crossings.mjs';
 const out='.cache/neural-bone';fs.mkdirSync(out,{recursive:true});
 const hashes=new Map();
@@ -25,16 +27,22 @@ function female(){
   const source=read('data/catalog/female-atlas-source.json');
   for(const f of source.files)assert.equal(createHash('sha256').update(bytes(f.path)).digest('hex'),f.sha256,f.path);
   const atlas=read('public/models/female/atlas-female.json'),catalog=read('data/female-atlas-structures.json'),buffer=new Map();
+  const partsById=new Map(atlas.parts.map(p=>[p.id,p]));
+  const restoration=read('data/catalog/female-source-restoration.json'),restored=gunzipSync(bytes(`public/${restoration.url}`));
+  const restoredBuffer=restored.buffer.slice(restored.byteOffset,restored.byteOffset+restored.byteLength);
+  for(const file of ['src/female-brain-bindings.ts','data/catalog/female-brain-bindings.json','src/female-source-restoration.ts'])bytes(file);
   const selected=new Map(catalog.filter(p=>['bone','nerve'].includes(p.layer)).map(p=>[p.id,p]));
   return atlas.parts.filter(p=>selected.has(p.id)).map(p=>{
-    if(!buffer.has(p.chunk)){
-      const c=atlas.chunks[p.chunk],zip=bytes(`public/models/female/${c.gzip.split('/').pop()}`);
-      assert.equal(zip.length,c.gzipBytes);const b=gunzipSync(zip);assert.equal(b.length,c.bytes);buffer.set(p.chunk,b);
+    const q=resolveFemaleBrainGeometryPart(p,'female',partsById);
+    if(!buffer.has(q.chunk)){
+      const c=atlas.chunks[q.chunk],zip=bytes(`public/models/female/${c.gzip.split('/').pop()}`);
+      assert.equal(zip.length,c.gzipBytes);const b=gunzipSync(zip);assert.equal(b.length,c.bytes);buffer.set(q.chunk,b);
     }
-    const b=buffer.get(p.chunk),g=mesh(Float32Array.from({length:p.vertexCount*3},(_,i)=>b.readFloatLE(p.positions+4*i)),
-      Uint32Array.from({length:p.indexCount},(_,i)=>b.readUInt32LE(p.indices+4*i)));
+    const b=buffer.get(q.chunk),g=mesh(Float32Array.from({length:q.vertexCount*3},(_,i)=>b.readFloatLE(q.positions+4*i)),
+      Uint32Array.from({length:q.indexCount},(_,i)=>b.readUInt32LE(q.indices+4*i)));
+    applyFemaleSourceRestoration(g,'female',p.id,p.system,restoredBuffer);
     applyFemaleArmRegistration(g,'female',p.id,p.system);applyFemaleFootRegistration(g,'female',p.id,p.system);
-    return {id:p.id,name:p.name,layer:selected.get(p.id).layer,sourceSystem:p.system,g:finish(g)};
+    return {id:p.id,name:p.name,layer:selected.get(p.id).layer,sourceSystem:p.system,sourceGeometryId:q.id,g:finish(g)};
   });
 }
 const io=new NodeIO().registerExtensions([KHRDracoMeshCompression]).registerDependencies({'draco3d.decoder':await draco.createDecoderModule()});
@@ -69,11 +77,11 @@ for(const sex of ['female','male']){
   assert.equal(new Set(parts.map(p=>p.id)).size,parts.length);
   const body={sex,neuralMeshes:neural.length,boneMeshes:bones.length,evaluatedPairs:0,broadPhasePairs:0,pairs:[],rows:[]};
   for(const n of neural){
-    const row={id:n.id,name:n.name,sourceSystem:n.sourceSystem,inFemaleBrain:sex==='female'&&brainIds.has(n.id),intersectingBoneIds:[]};
+    const row={id:n.id,name:n.name,sourceSystem:n.sourceSystem,sourceGeometryId:n.sourceGeometryId??n.id,inFemaleBrain:sex==='female'&&brainIds.has(n.id),intersectingBoneIds:[]};
     for(const b of bones){
       body.evaluatedPairs++;if(!n.g.boundingBox.intersectsBox(b.g.boundingBox))continue;body.broadPhasePairs++;
       if(!n.g.boundsTree.intersectsGeometry(b.g,new Matrix4()))continue;
-      row.intersectingBoneIds.push(b.id);body.pairs.push({neuralId:n.id,neuralName:n.name,sourceSystem:n.sourceSystem,boneId:b.id,boneName:b.name,boneSourceSystem:b.sourceSystem,...triangleCrossings(n.g,b.g)});
+      row.intersectingBoneIds.push(b.id);body.pairs.push({neuralId:n.id,neuralName:n.name,sourceSystem:n.sourceSystem,neuralSourceGeometryId:n.sourceGeometryId??n.id,boneId:b.id,boneName:b.name,boneSourceSystem:b.sourceSystem,...triangleCrossings(n.g,b.g)});
     }
     body.rows.push(row);
     if(body.rows.length%50===0)console.log(JSON.stringify({sex,processed:body.rows.length,intersectingPairs:body.pairs.length}));

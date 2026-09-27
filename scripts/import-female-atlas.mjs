@@ -5,6 +5,8 @@ import { femaleSpinalLabel } from "./lib/female-spinal-labels.mjs";
 
 const manifest = JSON.parse(fs.readFileSync("public/models/female/atlas-female.json", "utf8"));
 const brainProvenance = JSON.parse(fs.readFileSync("data/catalog/female-brain-provenance.json", "utf8"));
+const brainBindings = JSON.parse(fs.readFileSync("data/catalog/female-brain-bindings.json", "utf8"));
+if (brainBindings.atlasSha256 !== brainProvenance.atlasSha256) throw new Error("Brain provenance/binding version mismatch");
 if (brainProvenance.atlasSha256 !== createHash("sha256").update(fs.readFileSync("public/models/female/atlas-female.json")).digest("hex")) throw new Error("Re-audit brain provenance for changed atlas");
 const layerForSystem = {
   integumentary: "skin",
@@ -67,6 +69,8 @@ const structures = manifest.parts.map((part) => {
   const group = [...groups, ...compositeGroups].find(group => group.ids.includes(part.id));
   const spinal = group?.id === "spinal-cord" ? femaleSpinalLabel(part.conceptId) : null;
   const brainOrigin = brainProvenance.parts.find(p => p.id === part.id);
+  const brainBinding = brainBindings.records.find(p => p.id === part.id);
+  if (brainOrigin?.origin === "allen-reference" && (!brainBinding || brainBinding.name !== part.name)) throw new Error(`Missing brain geometry provenance: ${part.id}`);
   if (part.system === "brain" && (!brainOrigin || brainOrigin.name !== part.name || brainOrigin.conceptId !== part.conceptId || !["allen-reference", "visible-human"].includes(brainOrigin.origin))) throw new Error(`Unverified brain provenance: ${part.id}`);
   return {
     id: part.id,
@@ -79,7 +83,7 @@ const structures = manifest.parts.map((part) => {
     hierarchy: [part.system, ...(group ? [group.name, group.id] : [])],
     group: group?.id,
     source: brainOrigin?.origin === "visible-human" ? "HRA · Visible Human 여성 시신경교차" : brainOrigin?.origin === "allen-reference" ? "HRA · Allen 기반 여성 신체용 참조 뇌" : part.system === "donor-muscle" ? "Andreassen et al. · 여성 기증자 하체 근육" : part.system === "borrowed" ? "BodyParts3D · 남성 유래 보완 골격" : "NIH Human Reference Atlas",
-    description: brainOrigin?.origin === "visible-human" ? `${part.name} · 원본 메타데이터상 Visible Human 여성 뇌 자료의 시신경교차입니다. Allen 기반 282개 참조 구조와 출처가 다르며, 주변 구조와의 위치·연결 검증은 미완료입니다.` : brainOrigin?.origin === "allen-reference" ? `${part.name} · Allen 참조 뇌를 여성 신체에 맞춘 세부 구조. 여성 기증자 뇌 스캔이 아닙니다.` : `${part.name} · 여성 참조 아틀라스의 ${part.system} 세부 구조`,
+    description: brainOrigin?.origin === "visible-human" ? `${part.name} · 원본 메타데이터상 Visible Human 여성 뇌 자료의 시신경교차입니다. Allen 기반 282개 참조 구조와 출처가 다르며, 주변 구조와의 위치·연결 검증은 미완료입니다.` : brainOrigin?.origin === "allen-reference" ? `${part.name} · Allen 참조 뇌를 여성 신체에 맞춘 세부 구조. 여성 기증자 뇌 스캔이 아닙니다. 전신 좌우 기준으로 원본 ${brainBinding.partnerId} (${brainBinding.partnerName}) 형상을 연결했습니다. 원문 ID·이름과 형상 출처를 구분하며 위치·연결 교정은 미완료입니다.` : `${part.name} · 여성 참조 아틀라스의 ${part.system} 세부 구조`,
   };
 });
 fs.writeFileSync("data/female-atlas-structures.json", JSON.stringify(structures, null, 2) + "\n");

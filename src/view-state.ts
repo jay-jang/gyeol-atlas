@@ -2,6 +2,7 @@ import type { Layer } from "./anatomy";
 import type { Layers } from "./types";
 import { dissectionLayers, quantizeDepth, stageDepth } from "./dissection.ts";
 import { hasMixedReferenceFrames } from "./reference-source.ts";
+import femaleBrainBindings from "../data/catalog/female-brain-bindings.json" with {type:"json"};
 export type CameraPose = {
   position: [number, number, number];
   target: [number, number, number];
@@ -13,6 +14,7 @@ export type Selection = {
 };
 export type ViewState = {
   version: 4;
+  brainBindingVersion?: string;
   pointId: string;
   sex: "male" | "female";
   anatomyRegion: "whole" | "head" | "upper-body" | "lower-body" | "upper-limb" | "lower-limb" | "chest" | "abdomen" | "pelvis";
@@ -46,6 +48,7 @@ const singleLayer = (index: number) =>
 export function initialView(pointId = ""): ViewState {
   return {
     version: 4,
+    brainBindingVersion: femaleBrainBindings.version,
     pointId,
     sex: "male",
     anatomyRegion: "whole",
@@ -386,6 +389,14 @@ export function restoreView(
     const bodyRegions = ["전체", "머리·얼굴", "목", "가슴", "배·골반", "등·허리", "어깨·위팔", "팔꿈치·아래팔", "손목·손", "넓적다리", "무릎·종아리", "발목·발"];
     if (s.filters.bodyRegion !== undefined && !bodyRegions.includes(s.filters.bodyRegion)) return base;
     if (s.filters.catalogue !== undefined && !["all", "classical", "extra"].includes(s.filters.catalogue)) return base;
+    // A saved close-up may point to the pre-correction opposite hemisphere.
+    // Refit only an affected selection on its first source-version migration.
+    // Complete pair/bundle selections have unchanged bounds and keep the pose.
+    if(s.brainBindingVersion!==femaleBrainBindings.version&&s.sex==="female"){
+      const selected=new Set(s.selection?.ids||[]);
+      if(femaleBrainBindings.records.some(r=>selected.has(r.id)!==selected.has(r.partnerId)))s.camera=null;
+    }
+    s.brainBindingVersion=femaleBrainBindings.version;
     return { ...s, filters: { ...base.filters, ...s.filters } };
   } catch {
     return base;

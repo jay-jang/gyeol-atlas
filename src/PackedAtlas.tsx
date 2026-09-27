@@ -13,6 +13,7 @@ import { applyFemaleArmRegistration } from "./female-arm-registration";
 import { applyFemaleFootRegistration } from "./female-foot-registration";
 import { applyFemaleSourceRestoration, femaleSourceRestoration } from "./female-source-restoration";
 import { anatomyRegionMatches } from "./anatomy-region";
+import { femaleBrainBindings, resolveFemaleBrainGeometryPart, verifyFemaleBrainManifest } from "./female-brain-bindings";
 
 type FemalePart = {
   id: string;
@@ -63,9 +64,10 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
     props.onLoading(true);
     let built: Group | null = null;
     (async () => {
-      const atlas = await fetch(assetUrl(`models/${dataset}/${dataset === "female" ? "atlas-female.json" : "atlas.json"}`), { signal: abort.signal }).then(r => {
+      const atlas = await fetch(assetUrl(`models/${dataset}/${dataset === "female" ? "atlas-female.json" : "atlas.json"}`), { signal: abort.signal }).then(async r => {
         if (!r.ok) throw new Error(`참조 모델 목록 ${r.status}`);
-        return r.json() as Promise<FemaleManifest>;
+        const text=await r.text();await verifyFemaleBrainManifest(dataset,text);
+        return JSON.parse(text) as FemaleManifest;
       });
       const [buffers,restoredSource] = await Promise.all([Promise.all(atlas.chunks.map(async (chunk) => {
         const file = chunk.gzip.split("/").pop()!;
@@ -83,14 +85,17 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       // A downloaded scene is not display-ready until its current view state
       // has been applied. Never render its default all-visible materials.
       group.visible = false;
+      const geometryParts=new Map(atlas.parts.map(part=>[part.id,part]));
       for (const part of atlas.parts) {
         const layer = catalogById.get(part.id)?.layer || systemLayer[part.system];
         if (!layer) continue;
-        const buffer = buffers[part.chunk];
+        const geometryPart=resolveFemaleBrainGeometryPart(part,dataset,geometryParts);
+        const buffer = buffers[geometryPart.chunk];
         const geometry = new BufferGeometry();
-        geometry.setAttribute("position", new BufferAttribute(new Float32Array(buffer, part.positions, part.vertexCount * 3), 3));
-        geometry.setAttribute("normal", new Int16BufferAttribute(new Int16Array(buffer, part.normals, part.vertexCount * 3), 3, true));
-        geometry.setIndex(new BufferAttribute(new Uint32Array(buffer, part.indices, part.indexCount), 1));
+        geometry.setAttribute("position", new BufferAttribute(new Float32Array(buffer, geometryPart.positions, geometryPart.vertexCount * 3), 3));
+        geometry.setAttribute("normal", new Int16BufferAttribute(new Int16Array(buffer, geometryPart.normals, geometryPart.vertexCount * 3), 3, true));
+        geometry.setIndex(new BufferAttribute(new Uint32Array(buffer, geometryPart.indices, geometryPart.indexCount), 1));
+        if(geometryPart!==part)geometry.userData.femaleBrainBinding={version:femaleBrainBindings.version,canonicalId:part.id,sourceGeometryId:geometryPart.id};
         applyFemaleSourceRestoration(geometry,dataset,part.id,part.system,restoredSource);
         applyFemaleArmRegistration(geometry, dataset, part.id, part.system);
         applyFemaleFootRegistration(geometry, dataset, part.id, part.system);
@@ -100,7 +105,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         const material = new MeshStandardMaterial({ color: layerColor[layer], roughness: .72, metalness: .01, side: layer === "skin" ? FrontSide : DoubleSide });
         const mesh = new Mesh(geometry, material);
         mesh.name = part.id;
-        mesh.userData = { layer, system: part.system, bounds: actualBounds, sourceName: part.name };
+        mesh.userData = { layer, system: part.system, bounds: actualBounds, sourceName: geometryPart.name, sourceGeometryId:geometryPart.id };
         group.add(mesh);
       }
       const muscles = group.children.filter(mesh => mesh.userData.layer === "muscle");

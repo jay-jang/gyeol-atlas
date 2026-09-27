@@ -9,6 +9,8 @@ import {BufferGeometry,BufferAttribute,Matrix4,Vector3} from 'three';
 import {surfaceProbe,surfaceTopology,referencedVertices} from './lib/surface-containment.mjs';
 import {applyFemaleArmRegistration} from '../src/female-arm-registration.ts';
 import {applyFemaleFootRegistration} from '../src/female-foot-registration.ts';
+import {resolveFemaleBrainGeometryPart} from '../src/female-brain-bindings.ts';
+import {applyFemaleSourceRestoration} from '../src/female-source-restoration.ts';
 
 const read=file=>JSON.parse(fs.readFileSync(file));
 const allFemale=process.argv.includes('--all-female-vertices');
@@ -44,24 +46,31 @@ async function glb(file,entries,registered=false) {
 function female() {
   const manifest=read(hash('public/models/female/atlas-female.json'));
   const buffers=manifest.chunks.map(c=>gunzipSync(fs.readFileSync(hash(`public/models/female/${c.gzip.split('/').pop()}`))));
+  const partsById=new Map(manifest.parts.map(p=>[p.id,p]));
+  const restoration=sourceFemale?null:read(hash('data/catalog/female-source-restoration.json'));
+  const restored=restoration?gunzipSync(fs.readFileSync(hash(`public/${restoration.url}`))):null;
+  const restoredBuffer=restored?.buffer.slice(restored.byteOffset,restored.byteOffset+restored.byteLength)??null;
   return manifest.parts.map(part=>{
-    const bytes=buffers[part.chunk],geometry=new BufferGeometry();
-    const positions=new Float32Array(part.vertexCount*3),indices=new Uint32Array(part.indexCount);
-    for(let i=0;i<positions.length;i++)positions[i]=bytes.readFloatLE(part.positions+i*4);
-    for(let i=0;i<indices.length;i++)indices[i]=bytes.readUInt32LE(part.indices+i*4);
+    const sourcePart=sourceFemale?part:resolveFemaleBrainGeometryPart(part,'female',partsById);
+    const bytes=buffers[sourcePart.chunk],geometry=new BufferGeometry();
+    const positions=new Float32Array(sourcePart.vertexCount*3),indices=new Uint32Array(sourcePart.indexCount);
+    for(let i=0;i<positions.length;i++)positions[i]=bytes.readFloatLE(sourcePart.positions+i*4);
+    for(let i=0;i<indices.length;i++)indices[i]=bytes.readUInt32LE(sourcePart.indices+i*4);
     geometry.setAttribute('position',new BufferAttribute(positions,3));geometry.setIndex(new BufferAttribute(indices,1));
+    if(!sourceFemale)applyFemaleSourceRestoration(geometry,'female',part.id,part.system,restoredBuffer);
     if(!sourceFemale)applyFemaleArmRegistration(geometry,'female',part.id,part.system);
     if(!sourceFemale)applyFemaleFootRegistration(geometry,'female',part.id,part.system);
     const entry=catalog.find(c=>c.id===part.id);
     if(!entry)throw new Error(`Missing female catalog ${part.id}`);
     const defaultHidden=part.system==='pregnancy'||(part.system==='donor-muscle'&&/^Rectus femoris /.test(part.name));
-    return {...entry,geometry,system:part.system,defaultHidden};
+    return {...entry,geometry,system:part.system,sourceGeometryId:sourcePart.id,defaultHidden};
   });
 }
 for(const file of ['src/Atlas.tsx','src/PackedAtlas.tsx','src/anatomy.ts','scripts/audit-body-containment.mjs','scripts/lib/surface-containment.mjs'])hash(file);
 if(!sourceFemale)for(const file of ['src/female-arm-registration.ts','data/catalog/female-arm-registration.json','src/female-foot-registration.ts','data/catalog/female-foot-registration.json'])hash(file);
+if(!sourceFemale)for(const file of ['src/female-brain-bindings.ts','data/catalog/female-brain-bindings.json','src/female-source-restoration.ts'])hash(file);
 const report={method:'Referenced vertex sampling, nearest skin-triangle distance and consensus of three oblique ray parities; not clinical validation',
-  femaleGeometry:sourceFemale?'Unmodified source coordinates':'Runtime partial arm and toe registration applied; other source coordinates unchanged',
+  femaleGeometry:sourceFemale?'Unmodified packed baseline':'Current runtime arm/foot registration, ilium restoration and Allen brain geometry bindings',
   sampling:allFemale?'Every triangle-referenced female vertex':'Deterministic subsample of triangle-referenced vertices',
   toleranceMm:2,maxSamplesPerMesh:allFemale?null:maxSamples,limitations:[allFemale?'All triangle-referenced vertices are checked; this does not test triangle interiors.':'Not every vertex/triangle is sampled.',
     'Fractions are vertex fractions, not tissue volumes or surface areas.',
@@ -89,7 +98,7 @@ for(const sex of allFemale?['female']:['male','female']){
       counts[result.kind]++;
       if(result.kind==='outside'&&result.distance*1000>maxOutsideMm){maxOutsideMm=result.distance*1000;worstPoint=point.toArray();}
     }
-    rows.push({id:part.id,name:part.name,layer:part.layer,source:part.source,system:part.system,defaultHidden:Boolean(part.defaultHidden),
+    rows.push({id:part.id,name:part.name,layer:part.layer,source:part.source,sourceGeometryId:part.sourceGeometryId??part.id,system:part.system,defaultHidden:Boolean(part.defaultHidden),
       vertices:positions.count,samples,...counts,maxOutsideMm,worstPoint});
   }
   const summary=Object.fromEntries(['skin','bone','muscle','organ','vessel','lymph','nerve'].map(layer=>{

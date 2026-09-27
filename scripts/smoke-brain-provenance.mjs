@@ -1,5 +1,7 @@
 import fs from 'node:fs';
 import {chromium,expect} from '@playwright/test';
+const bindings=JSON.parse(fs.readFileSync('data/catalog/female-brain-bindings.json'));
+const atlas=JSON.parse(fs.readFileSync('public/models/female/atlas-female.json'));
 
 const origin=process.env.SMOKE_ORIGIN||'https://jay-jang.github.io/gyeol-atlas/';
 const browser=await chromium.launch({headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']});
@@ -37,6 +39,30 @@ try{
   await parts.locator('button').nth(1).click();await ready();
   expect((await snapshot()).selection.ids).toEqual(['HRAF0071']);
   await expect(source).toContainText('Allen 기반');
+  const binding=bindings.records.find(r=>r.id==='HRAF0071'),geometry=atlas.parts.find(p=>p.id===binding.partnerId);
+  await expect(page.locator('.selection-card > div > .selection-description')).toContainText(binding.partnerId);
+  await expect.poll(async()=>{
+    const bounds=JSON.parse(await page.locator('canvas').getAttribute('data-selected-world-bounds'));
+    return Math.max(...bounds.flatMap((row,i)=>row.map((v,j)=>Math.abs(v-geometry.bounds[i][j]))));
+  }).toBeLessThan(2e-7);
+  report.geometryBinding={canonicalId:binding.id,sourceGeometryId:binding.partnerId,
+    selectedWorldBounds:JSON.parse(await page.locator('canvas').getAttribute('data-selected-world-bounds')),
+    scope:'Rendered selected world AABB matches paired source; full buffer and 201-stage verification performed separately in local browser tests.'};
+  const previous=atlas.parts.find(p=>p.id===binding.id),oldTarget=previous.bounds[0].map((v,i)=>(v+previous.bounds[1][i])/2);
+  await page.evaluate(target=>{
+    const state=JSON.parse(sessionStorage.getItem('gyeol-view-v2'));delete state.brainBindingVersion;
+    state.camera={target,position:[target[0],target[1],target[2]+.4]};state.markers='hidden';
+    sessionStorage.setItem('gyeol-view-v2',JSON.stringify(state));
+  },oldTarget);
+  await page.reload();await ready();
+  await expect.poll(async()=>{
+    const state=await snapshot();
+    return state.camera?Math.max(...state.camera.target.map((v,i)=>Math.abs(v-(geometry.bounds[0][i]+geometry.bounds[1][i])/2))):Infinity;
+  }).toBeLessThan(.001);
+  expect((await snapshot()).brainBindingVersion).toBe(bindings.version);
+  expect((await snapshot()).markers).toBe('hidden');
+  expect((await snapshot()).selection.ids).toEqual([binding.id]);
+  report.legacySelectionCameraMigration=true;
   await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();await ready();
   await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();await ready();
   await expect(page.locator('[data-brain-provenance]')).toHaveCount(0);
