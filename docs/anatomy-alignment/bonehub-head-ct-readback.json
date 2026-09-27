@@ -1,0 +1,66 @@
+{
+  "status": "Independent streamed crop, inverse-map membership and complete selected-plane section readback; not clinical approval",
+  "maskReadback": {
+    "sourceDecompressedBytes": 778721570,
+    "cropBytes": 15454160,
+    "histogram": [
+      777459906,
+      1169213,
+      92451
+    ],
+    "bounds": [
+      [
+        [
+          231,
+          175,
+          1563
+        ],
+        [
+          425,
+          437,
+          1723
+        ]
+      ],
+      [
+        [
+          248,
+          186,
+          1516
+        ],
+        [
+          413,
+          310,
+          1596
+        ]
+      ]
+    ]
+  },
+  "imageReadback": {
+    "sourceDecompressedBytes": 1557443492,
+    "cropBytes": 30908320,
+    "histogram": null,
+    "bounds": null
+  },
+  "brainMeshes": 283,
+  "planes": 8,
+  "vertexOccurrences": 717909,
+  "segments": 44471,
+  "pointContacts": 0,
+  "coplanarTriangles": 0,
+  "maximumEndpointDifferenceMm": 9.490008778811898e-11,
+  "maskVoxelIntensitiesVerified": 1261664,
+  "files": [
+    {
+      "file": ".cache/bonehub-head-ct/report.json",
+      "sha256": "9ea3d84fba080d8e30ed4b8e5e5dab40c03f547b403a87c0954362854fe68c46"
+    },
+    {
+      "file": ".cache/bonehub-head-ct/sections.json.gz",
+      "sha256": "2f9687831eeedd56512c37aefc1175115eb875900b8d385a4d9c7c7ff2f3fcc6"
+    },
+    {
+      "file": "scripts/verify-bonehub-head-ct.mjs",
+      "sha256": "f122b4e7e1fa6d8758d3810a4a740d240c66df6675ee925d9f3d9de086515b34"
+    }
+  ]
+}
