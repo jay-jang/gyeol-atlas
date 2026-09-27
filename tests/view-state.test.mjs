@@ -21,6 +21,18 @@ test("relative peel inputs compose without stale absolute depth and preserve pre
   for(let i=0;i<200;i++)s=viewReducer(s,{type:'dissection-step',amount:-.5});
   assert.equal(s.dissection,0);assert.equal(s.camera,camera);assert.equal(s.markers,'hidden');
 });
+test("clamped peel inputs enter progressive mode from layers but preserve progressive boundaries", () => {
+  for(const sex of ['male','female'])for(const [depth,amount] of [[0,-.5],[100,.5]]) {
+    const initial={...initialView(),sex,camera:{position:[0,1,3],target:[0,1,0]},markers:'hidden'};
+    const s={...viewReducer(initial,{type:'compare',name:'bundle',ids:['x']}),dissection:depth};
+    const n=viewReducer(s,{type:'dissection-step',amount});
+    assert.equal(n.dissection,depth);assert.equal(n.displayMode,'dissection');
+    assert.equal(n.selection,null);assert.equal(n.comparison,null);assert.equal(n.detail,null);assert.equal(n.isolated,false);
+    for(const key of ['camera','markers','alpha','pointId','sex'])assert.deepEqual(n[key],s[key]);
+    assert.equal(viewReducer(n,{type:'dissection-step',amount}),n);
+    assert.equal(viewReducer(s,{type:'dissection-step',amount:0}),s);
+  }
+});
 test("organ detail scopes selection, restores safely and resets on sex/layer/peel changes", () => {
   const initial = initialView();
   const layers = { ...initial.layers, skin: false, organ: true, vessel: true };

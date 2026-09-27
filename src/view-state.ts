@@ -147,9 +147,11 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         selectionTarget: "visible",
       };
     case "dissection-step": {
-      if (!Number.isFinite(a.amount)) return s;
+      if (!Number.isFinite(a.amount) || a.amount === 0) return s;
       const depth = quantizeDepth(s.dissection + a.amount);
-      return depth === s.dissection ? s : viewReducer(s, { type: "dissection", value: depth });
+      // A clamped depth can still be a real transition out of layer/detail
+      // mode. Only an already progressive boundary is a no-op.
+      return depth === s.dissection && s.displayMode === "dissection" ? s : viewReducer(s, { type: "dissection", value: depth });
     }
     case "dissection": {
       const depth = quantizeDepth(a.value);

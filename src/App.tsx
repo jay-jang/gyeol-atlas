@@ -754,10 +754,13 @@ function AtlasPage({
         <section
           className="depth-explorer"
           aria-label="인체 깊이 탐색"
+          data-mode={state.displayMode}
         >
           <div className="depth-heading">
-            <span>연속 박리 깊이</span>
-            <strong>{state.dissection.toFixed(1)}% · {state.dissection < 8 ? "체표" : state.dissection < 38 ? "근육 박리" : state.dissection < 56 ? "골격 노출" : state.dissection < 70 ? "장기 노출" : state.dissection < 82 ? "혈관 노출" : state.dissection < 90 ? "림프 노출" : "신경 노출"}</strong>
+            <span>{state.displayMode === "dissection" ? "연속 박리 깊이" : "계통별 보기"}</span>
+            {state.displayMode === "dissection"
+              ? <strong>{state.dissection.toFixed(1)}% · {state.dissection < 8 ? "체표" : state.dissection < 38 ? "근육 박리" : state.dissection < 56 ? "골격 노출" : state.dissection < 70 ? "장기 노출" : state.dissection < 82 ? "혈관 노출" : state.dissection < 90 ? "림프 노출" : "신경 노출"}</strong>
+              : <button className="peel-entry" aria-label={`현재 기준 ${state.dissection.toFixed(1)}%에서 연속 박리 시작`} onClick={() => dispatch({ type: "dissection", value: state.dissection })}>박리 시작 · {state.dissection.toFixed(1)}%</button>}
           </div>
           <input
             type="range"
@@ -766,12 +769,12 @@ function AtlasPage({
             step="0.5"
             value={state.dissection}
             aria-label="연속 해부 박리 깊이"
-            aria-valuetext={`${state.dissection.toFixed(1)}% 해부 깊이`}
+            aria-valuetext={state.displayMode === "dissection" ? `${state.dissection.toFixed(1)}% 해부 깊이` : `계통별 보기 중 · 박리 시작 기준 ${state.dissection.toFixed(1)}%`}
             onChange={(event) => dispatch({ type: "dissection", value: Number(event.target.value) })}
           />
           <div className="depth-steps" aria-hidden="true">
             {stages.map((stage, index) => (
-              <span key={stage.layer} className={index === state.stage ? "active" : ""}>
+              <span key={stage.layer} className={(state.displayMode === "dissection" ? index === state.stage : state.layers[stage.layer]) ? "active" : ""}>
                 <i className={`layer-dot ${stage.layer}`} />
                 {layerNames[stage.layer]}
               </span>
