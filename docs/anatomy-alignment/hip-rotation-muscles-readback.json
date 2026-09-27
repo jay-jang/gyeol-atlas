@@ -1,0 +1,56 @@
+{
+  "createdAt": "2026-09-27T19:41:33.072Z",
+  "reportSha256": "5cacb2cff2abcd76424cae3ca8ef88cfcf7cf1df46836a912acd92afdf94afa7",
+  "candidates": [
+    {
+      "mode": "gaussian-20mm",
+      "binarySha256": "873c517b0548f75704b5dd53e67417dba4fde98fcd96d564582982a3c18f8de7",
+      "vertices": 652173,
+      "indexReferences": 3912126,
+      "coordinateDifferences": 0,
+      "maximumCoordinateDifferenceMm": 0,
+      "jacobianVertices": {
+        "count": 652173,
+        "minimum": 0.27039152541844447,
+        "maximum": 3.521291987473002,
+        "nonPositive": 0
+      },
+      "finiteDifference": {
+        "points": 228,
+        "stepMetres": 1e-7,
+        "maximumJacobianDifference": 1.9020425234828053e-9
+      },
+      "witnesses": 106,
+      "missingWitnesses": 0,
+      "maximumWitnessResidualMm": 1.1443916996305594e-13
+    },
+    {
+      "mode": "gaussian-40mm",
+      "binarySha256": "2de157649c3ff5387e42889d748fe808eb737dd9c333ec8a84fcbbedf7f4b8ac",
+      "vertices": 652173,
+      "indexReferences": 3912126,
+      "coordinateDifferences": 0,
+      "maximumCoordinateDifferenceMm": 0,
+      "jacobianVertices": {
+        "count": 652173,
+        "minimum": 0.8089945906795715,
+        "maximum": 3.0654337153936306,
+        "nonPositive": 0
+      },
+      "finiteDifference": {
+        "points": 228,
+        "stepMetres": 1e-7,
+        "maximumJacobianDifference": 2.101832152767713e-9
+      },
+      "witnesses": 108,
+      "missingWitnesses": 0,
+      "maximumWitnessResidualMm": 2.2377260456559047e-13
+    }
+  ],
+  "limits": [
+    "Full serialized coordinates/indices are compared with separate scalar root/blend arithmetic; nearest source points still use the same BVH/context implementation. No independent nearest-minimum or registration approval.",
+    "All muscle vertex Jacobians are replayed, plus three deterministic vertices per muscle checked by central differences. Recorded full centroid Jacobian counts are not independently replayed here.",
+    "Every saved new-crossing witness is checked for actual triangle membership and segment/plane/barycentric arithmetic. Absence of a witness is retained; no independent full crossing or containment search is made."
+  ],
+  "scriptSha256": "3f798cfe20c095c0e33438066099518f4838f582f38a6e03ee54fcaa16f42a0a"
+}
