@@ -28,6 +28,7 @@
 | [CheRa 여성 근육](https://sketchfab.com/3d-models/female-anatomy-by-chera-muscles-132188d5be9b47eabb0e64b378d81603) | 공식 API에서 CC BY 4.0, isDownloadable=true, 여성 해부 공부용 모델 확인. 정식 다운로드 API는 로그인 부재401 | 후보 확보, 원본 파일은 미확보. 사용자에게 로그인 후 원본 ZIP 첨부 요청. 우회 추출·가입·구매하지 않음 |
 | [HRA 공식 ref-organ 목록](https://github.com/hubmapconsortium/hra-kg/tree/main/digital-objects/ref-organ) | 여성 united v1.10까지 확인. 위·전신 상체 근육·말초신경 표면 패키지 없음. ASCT-B 말초신경 목록은 명명 관계표이지3D 모형이 아님 | 기존 HRA 유지 |
 | [FHS 여성 상체 OpenSim](https://zenodo.org/records/18259702) | 여성 상체 생체역학 모델은 있으나 근육은 다수 선형 작용선/Hill-type 표현 | 완전한 근육 표면으로 간주하지 않음 |
+| [2026년 전신 MRI 근육 70종 연구](https://journals.physiology.org/doi/10.1152/japplphysiol.00772.2025) | 여성53명을 포함해 상지·몸통·하지 근육을 3D 분할했으나, 논문은 생성·분석 자료를 책임저자에게 요청해야 한다고 명시. 공개된 개별 여성 표면 파일과 그 재배포 조건은 확인되지 않음. 논문 자체는 CC BY-NC-ND 4.0 | 논문의 그림이나 통계값을 여성 전신 근육 메쉬로 대체하지 않음. 자료·라이선스 확보 전 미도입 |
 | [NIH 일반 위 모형](https://3d.nih.gov/entries/21124?version=1) | CC BY 4.0의 공개 GLB이지만 기증자 성별 미확인 | 여성 CT 근거가 확인되는 s0255를 선택, 이 모델은 미도입 |
 | [Zygote 여성 소화계](https://www.zygote.com/poly-models/3d-female-systems/3d-female-digestive-system), [SciePro 여성 신경계](https://library.sciepro.com/en/3d-models/female-nervous-system-9213796945381) | 유료 상용 모델. 무료 재배포 허가는 확인하지 못함 | 구매·파일 취득·통합하지 않음 |
 

@@ -11,12 +11,30 @@ test('female reference brain exposes provenance for bundle and individual select
   await page.locator('.featured-anatomy > button').filter({has:page.getByText('뇌',{exact:true})}).click();await ready(page);
   const notice=page.locator('[data-brain-provenance]');await expect(notice).toBeVisible();
   await expect(notice).toContainText('Allen 참조 282개 + Visible Human 시신경교차 1개');
+  await expect(notice).toContainText('차용 머리뼈와 뇌 모형 35개 표면 교차');
   expect((await snapshot(page)).selection.ids).toHaveLength(283);
   const fit=async()=>{
     await expect.poll(async()=>(await detailProjection(page,fiberUrl)).clearance).toBeGreaterThan(4);
     await expect.poll(async()=>(await detailProjection(page,fiberUrl)).canvasClearance).toBeGreaterThan(0);
   };
+  for(const [label,width,height] of [['desktop',1440,900],['mobile',390,844],['landscape',844,390]] as const){
+    await page.setViewportSize({width,height});await fit();
+    const warning=notice.locator('p').first();await warning.scrollIntoViewIfNeeded();
+    await expect(warning).toBeInViewport();
+    await expect(page.getByRole('button',{name:'전신으로 돌아가기',exact:true})).toBeInViewport();
+    const readability=await warning.evaluate(el=>{
+      const rgb=(value:string)=>value.match(/[\d.]+/g)!.slice(0,3).map(Number);
+      const luminance=(v:number[])=>v.map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4;}).reduce((n,x,i)=>n+x*[.2126,.7152,.0722][i],0);
+      const fg=luminance(rgb(getComputedStyle(el).color));
+      const bg=luminance(rgb(getComputedStyle(el.closest('.selection-card')!).backgroundColor));
+      return {font:parseFloat(getComputedStyle(el).fontSize),contrast:(Math.max(fg,bg)+.05)/(Math.min(fg,bg)+.05)};
+    });
+    expect(readability.font).toBeGreaterThanOrEqual(12);expect(readability.contrast).toBeGreaterThanOrEqual(4.5);
+    await page.screenshot({path:`docs/anatomy-alignment/brain-skull-warning-${label}.png`});
+  }
+  await page.setViewportSize({width:1440,height:900});
   await notice.locator('summary').click();
+  await expect(notice).toContainText('표면 교차 55쌍');
   await expect(notice.getByRole('link')).toHaveAttribute('href','https://3d.nih.gov/entries/3DPX-020959');
   for(const [label,width,height] of [['desktop',1440,900],['mobile',390,844],['landscape',844,390]] as const){
     await page.setViewportSize({width,height});await fit();

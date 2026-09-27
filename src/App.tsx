@@ -1191,9 +1191,9 @@ function AtlasPage({
               {!fullLungDetail && <div className="selection-actions">{lungViewOptions}</div>}
             </details>}
             {state.sex === "female" && selectedOrgan?.id === "brain" && <div data-brain-provenance>
-              <p className="selection-description">뇌 묶음: Allen 참조 282개 + Visible Human 시신경교차 1개 · Allen 좌우 선택 연결 교정 · 위치 검증 미완료</p>
+              <p className="selection-description">뇌 묶음: Allen 참조 282개 + Visible Human 시신경교차 1개 · 차용 머리뼈와 뇌 모형 35개 표면 교차 · 위치 검증 미완료</p>
               <details className="anatomy-source-details"><summary>뇌 출처·방향 주의</summary>
-                <p className="selection-description">282개는 Allen 참조 구조를 대칭 복제하고 여성 신체에 맞춰 크기를 조정한 모델로, 여성 기증자 뇌 스캔이 아닙니다. 시신경교차 1개는 Visible Human 여성 자료로 그대로 유지합니다. Allen 원본의 좌우 표기가 전신의 눈·대퇴골 기준과 반대여서, 원문 이름·ID는 유지하고 대응하는 반대쪽 원본 형상을 연결했습니다. 전체 뇌 형상은 바꾸지 않았습니다. 개별 설명에 실제 형상 출처를 표시하며, 일반적인 위치·신경 연결 교정이나 임상적 좌우 검증이 완료된 것은 아닙니다.</p>
+                <p className="selection-description">282개는 Allen 참조 구조를 대칭 복제하고 여성 신체에 맞춰 크기를 조정한 모델로, 여성 기증자 뇌 스캔이 아닙니다. 시신경교차 1개는 Visible Human 여성 자료로 그대로 유지합니다. Allen 원본의 좌우 표기가 전신의 눈·대퇴골 기준과 반대여서, 원문 이름·ID는 유지하고 대응하는 반대쪽 원본 형상을 연결했습니다. 전체 뇌 형상은 바꾸지 않았습니다. 현재 뇌 모형 35개와 남성 유래 보완 머리뼈 6개 사이에 표면 교차 55쌍이 남아 있습니다. 이 수치는 모형 쌍의 기하 교차로, 뇌 손상이나 임상적 관통 깊이가 아닙니다. 개별 설명에 실제 형상 출처를 표시하며, 일반적인 위치·신경 연결 교정이나 임상적 좌우 검증이 완료된 것은 아닙니다.</p>
                 <p className="selection-source"><a href="https://3d.nih.gov/entries/3DPX-020959" target="_blank" rel="noreferrer">HRA / NIH 3D 출처 설명</a> · CC BY 4.0 · 학습용 비진단 모델</p>
               </details>
             </div>}
