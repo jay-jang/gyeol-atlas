@@ -1,0 +1,130 @@
+{
+  "status": "Source/candidate scalar arithmetic, fixed packed targets and reported witness coordinates verified; no clinical/containment approval",
+  "sourceChecks": [
+    {
+      "id": "VERTEBRA_C1",
+      "triangles": 31712,
+      "vertices": 15852,
+      "components": 1
+    },
+    {
+      "id": "VERTEBRA_C2",
+      "triangles": 28184,
+      "vertices": 14088,
+      "components": 1
+    },
+    {
+      "id": "VERTEBRA_C3",
+      "triangles": 20956,
+      "vertices": 10474,
+      "components": 1
+    },
+    {
+      "id": "VERTEBRA_C4",
+      "triangles": 21248,
+      "vertices": 10620,
+      "components": 1
+    },
+    {
+      "id": "VERTEBRA_C5",
+      "triangles": 24308,
+      "vertices": 12150,
+      "components": 1
+    },
+    {
+      "id": "VERTEBRA_C6",
+      "triangles": 25336,
+      "vertices": 12664,
+      "components": 1
+    },
+    {
+      "id": "VERTEBRA_C7",
+      "triangles": 29192,
+      "vertices": 14594,
+      "components": 1
+    },
+    {
+      "id": "SKULL_CRANIAL_MAXILLA",
+      "triangles": 831288,
+      "vertices": 415457,
+      "components": 56
+    },
+    {
+      "id": "SKULL_MANDIBLE",
+      "triangles": 75944,
+      "vertices": 37926,
+      "components": 9
+    }
+  ],
+  "candidateChecks": [
+    {
+      "mode": "initial",
+      "id": "SKULL_CRANIAL_MAXILLA",
+      "vertices": 415457,
+      "triangleCorners": 2493864,
+      "maximumCoordinateResidualMetres": 0
+    },
+    {
+      "mode": "initial",
+      "id": "SKULL_MANDIBLE",
+      "vertices": 37926,
+      "triangleCorners": 227832,
+      "maximumCoordinateResidualMetres": 0
+    },
+    {
+      "mode": "rigid",
+      "id": "SKULL_CRANIAL_MAXILLA",
+      "vertices": 415457,
+      "triangleCorners": 2493864,
+      "maximumCoordinateResidualMetres": 0
+    },
+    {
+      "mode": "rigid",
+      "id": "SKULL_MANDIBLE",
+      "vertices": 37926,
+      "triangleCorners": 227832,
+      "maximumCoordinateResidualMetres": 0
+    },
+    {
+      "mode": "similarity",
+      "id": "SKULL_CRANIAL_MAXILLA",
+      "vertices": 415457,
+      "triangleCorners": 2493864,
+      "maximumCoordinateResidualMetres": 0
+    },
+    {
+      "mode": "similarity",
+      "id": "SKULL_MANDIBLE",
+      "vertices": 37926,
+      "triangleCorners": 227832,
+      "maximumCoordinateResidualMetres": 0
+    }
+  ],
+  "sourceTriangleCorners": 3264504,
+  "transformedTriangleCorners": 8165088,
+  "fixedVertices": 447528,
+  "crossingWitnesses": 294,
+  "maximumWitnessResidualMetres": 2.220446049250313e-16,
+  "files": [
+    {
+      "file": ".cache/bonehub-head/frame.json",
+      "sha256": "5dd33407a37b77e5d3ad5ac01814239d36cf9dfd1e96759dc13fd5e928e841a2"
+    },
+    {
+      "file": ".cache/bonehub-head/audit.json",
+      "sha256": "8af3388d9545ba7961553a9c25fb37ed6bd1750993165bc7ebc30df4b781eba0"
+    },
+    {
+      "file": ".cache/bonehub-head/parts.json.gz",
+      "sha256": "dcb08a9f4dba8fb5f351d6770b8a9977d2fcbb9d8d308a381f4e0f972ae3958e"
+    },
+    {
+      "file": ".cache/bonehub-head/placed.json.gz",
+      "sha256": "3ae274c41120e485a144aafbaa51091665dddec25ba4408aff199443b2e415bb"
+    },
+    {
+      "file": "scripts/verify-bonehub-head-frame.mjs",
+      "sha256": "54c7e768d4db165db78e6d63b381f92214a2f715c753339867d743bea82d7278"
+    }
+  ]
+}

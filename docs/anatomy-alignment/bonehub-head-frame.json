@@ -1,0 +1,1371 @@
+{
+  "createdAt": "2026-09-27T11:44:12.232Z",
+  "status": "OFFLINE cervical frame diagnostic; no runtime export or anatomical approval",
+  "sourceRevision": "ac8de2b38f5ae1a0996053ca0639dd6ae43358f1",
+  "sourceUnits": "source STL millimetres -> Float32 metres once, then candidate matrix",
+  "sampling": "Exactly 1024 deterministic vertex-index samples per bone/direction, closest 819 retained; equal counts but not uniform surface-area sampling",
+  "heldOut": "C1 never participates in initialization translation or ICP",
+  "borrowedSkullIds": [
+    "BM0003",
+    "BM0004",
+    "BM0006",
+    "BM0007",
+    "BM0008",
+    "BM0009",
+    "BM0010",
+    "BM0011",
+    "BM0012",
+    "BM0013",
+    "BM0014",
+    "BM0015",
+    "BM0016",
+    "BM0017",
+    "BM0018",
+    "BM0019",
+    "BM0020",
+    "BM0021"
+  ],
+  "neuralMeshes": 362,
+  "parts": ".cache/bonehub-head/parts.json.gz",
+  "candidates": [
+    {
+      "mode": "initial",
+      "matrixColumnMajor": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -0.24157107761129734,
+        -0.07146292924880981,
+        0.16058735456317663,
+        1
+      ],
+      "uniformScale": 1,
+      "iterations": [],
+      "stopReason": "initial only",
+      "bones": [
+        {
+          "sourceName": "VERTEBRA_C1",
+          "targetId": "HRAF0843",
+          "training": false,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 15852,
+            "p95Mm": 3.199349393814397,
+            "maxMm": 3.754252548627322,
+            "rmsMm": 1.530442110850148
+          },
+          "reverse": {
+            "vertices": 1750,
+            "p95Mm": 3.301543291250433,
+            "maxMm": 4.321141370976785,
+            "rmsMm": 1.8159919832323606
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C2",
+          "targetId": "HRAF0844",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 14088,
+            "p95Mm": 2.7732024946147202,
+            "maxMm": 3.582354639981892,
+            "rmsMm": 1.356083293283255
+          },
+          "reverse": {
+            "vertices": 1692,
+            "p95Mm": 3.189723303403202,
+            "maxMm": 4.27110060029158,
+            "rmsMm": 1.6765387786321588
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C3",
+          "targetId": "HRAF0845",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 10474,
+            "p95Mm": 2.511385790573798,
+            "maxMm": 3.270366797475297,
+            "rmsMm": 1.2875836390910298
+          },
+          "reverse": {
+            "vertices": 1967,
+            "p95Mm": 3.6379887506768367,
+            "maxMm": 4.835237869657025,
+            "rmsMm": 1.9625627126328462
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C4",
+          "targetId": "HRAF0846",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 10620,
+            "p95Mm": 2.03533107490723,
+            "maxMm": 2.911497810701692,
+            "rmsMm": 1.0376824260560444
+          },
+          "reverse": {
+            "vertices": 2165,
+            "p95Mm": 2.6845300489427615,
+            "maxMm": 3.3974688278903153,
+            "rmsMm": 1.5899893097186062
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C5",
+          "targetId": "HRAF0847",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 12150,
+            "p95Mm": 1.6851005352891844,
+            "maxMm": 2.6798899625593977,
+            "rmsMm": 0.9006486973301319
+          },
+          "reverse": {
+            "vertices": 2137,
+            "p95Mm": 2.4073983867400637,
+            "maxMm": 3.1565703954279134,
+            "rmsMm": 1.3877579011140035
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C6",
+          "targetId": "HRAF0848",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 12664,
+            "p95Mm": 1.7281788463552343,
+            "maxMm": 2.5834656854952853,
+            "rmsMm": 0.8593579018748563
+          },
+          "reverse": {
+            "vertices": 2069,
+            "p95Mm": 2.5343199502458114,
+            "maxMm": 4.246561845924939,
+            "rmsMm": 1.3729005745596887
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C7",
+          "targetId": "HRAF0849",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 14594,
+            "p95Mm": 1.9686316244198714,
+            "maxMm": 3.5567473439898336,
+            "rmsMm": 1.0190163109026429
+          },
+          "reverse": {
+            "vertices": 1835,
+            "p95Mm": 2.8384396353944377,
+            "maxMm": 4.132026303243683,
+            "rmsMm": 1.5085214288150877
+          }
+        }
+      ]
+    },
+    {
+      "mode": "rigid",
+      "matrixColumnMajor": [
+        0.9999598291985297,
+        -0.007320938556083454,
+        -0.005171445436774782,
+        0,
+        -0.005112844944161581,
+        0.008000717965199966,
+        -0.9999549226483254,
+        0,
+        0.007361983823973629,
+        0.9999411944563038,
+        0.007962965746263984,
+        0,
+        -0.25150736757829045,
+        -0.07121700824653909,
+        0.1501774817055994,
+        1
+      ],
+      "uniformScale": 1,
+      "iterations": [
+        {
+          "iteration": 0,
+          "maximumSampleChangeMm": 0.18642292072395988,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 1,
+          "maximumSampleChangeMm": 0.14704004806907572,
+          "uniformScale": 1.0000000000000002,
+          "matches": 9828
+        },
+        {
+          "iteration": 2,
+          "maximumSampleChangeMm": 0.11768363790806181,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 3,
+          "maximumSampleChangeMm": 0.09658500767828934,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 4,
+          "maximumSampleChangeMm": 0.07910816856888887,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 5,
+          "maximumSampleChangeMm": 0.06835244069083704,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 6,
+          "maximumSampleChangeMm": 0.05634054752454669,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 7,
+          "maximumSampleChangeMm": 0.05009228157074211,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 8,
+          "maximumSampleChangeMm": 0.0383143573664783,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 9,
+          "maximumSampleChangeMm": 0.034441700797914546,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 10,
+          "maximumSampleChangeMm": 0.029336972199709103,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 11,
+          "maximumSampleChangeMm": 0.024192376450084683,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 12,
+          "maximumSampleChangeMm": 0.020865452709044517,
+          "uniformScale": 1.0000000000000002,
+          "matches": 9828
+        },
+        {
+          "iteration": 13,
+          "maximumSampleChangeMm": 0.016737524270007284,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 14,
+          "maximumSampleChangeMm": 0.016673822153507243,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 15,
+          "maximumSampleChangeMm": 0.015371887170258253,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 16,
+          "maximumSampleChangeMm": 0.012539722428899853,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 17,
+          "maximumSampleChangeMm": 0.011949228880463908,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 18,
+          "maximumSampleChangeMm": 0.010368032477098103,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 19,
+          "maximumSampleChangeMm": 0.009006028257067733,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 20,
+          "maximumSampleChangeMm": 0.006967576538447635,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 21,
+          "maximumSampleChangeMm": 0.00586604658625962,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 22,
+          "maximumSampleChangeMm": 0.004651938105888277,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 23,
+          "maximumSampleChangeMm": 0.0038275894977567206,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 24,
+          "maximumSampleChangeMm": 0.0038045207633409526,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 25,
+          "maximumSampleChangeMm": 0.0026404945994506564,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 26,
+          "maximumSampleChangeMm": 0.0034235559147540334,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 27,
+          "maximumSampleChangeMm": 0.0038346826360698785,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 28,
+          "maximumSampleChangeMm": 0.00407075479786744,
+          "uniformScale": 1.0000000000000002,
+          "matches": 9828
+        },
+        {
+          "iteration": 29,
+          "maximumSampleChangeMm": 0.004584675286210813,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 30,
+          "maximumSampleChangeMm": 0.004175450159335761,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 31,
+          "maximumSampleChangeMm": 0.002981344199621505,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 32,
+          "maximumSampleChangeMm": 0.002213454536845719,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 33,
+          "maximumSampleChangeMm": 0.002047726537836266,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 34,
+          "maximumSampleChangeMm": 0.001756564855893185,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 35,
+          "maximumSampleChangeMm": 0.002675099511731927,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 36,
+          "maximumSampleChangeMm": 0.0032776967647079585,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 37,
+          "maximumSampleChangeMm": 0.0031266648099945865,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 38,
+          "maximumSampleChangeMm": 0.003337903268749424,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 39,
+          "maximumSampleChangeMm": 0.0027712830769333193,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 40,
+          "maximumSampleChangeMm": 0.002050513273299165,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 41,
+          "maximumSampleChangeMm": 0.001804722377620977,
+          "uniformScale": 1.0000000000000002,
+          "matches": 9828
+        },
+        {
+          "iteration": 42,
+          "maximumSampleChangeMm": 0.0013224292991694663,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 43,
+          "maximumSampleChangeMm": 0.002232804652041184,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 44,
+          "maximumSampleChangeMm": 0.002052226531199574,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 45,
+          "maximumSampleChangeMm": 0.0014442313187047393,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 46,
+          "maximumSampleChangeMm": 0.0014379678542039386,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 47,
+          "maximumSampleChangeMm": 0.0018989045811419573,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 48,
+          "maximumSampleChangeMm": 0.0012088722943258794,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 49,
+          "maximumSampleChangeMm": 0.0011829719598041707,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 50,
+          "maximumSampleChangeMm": 0.0007383820120740925,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 51,
+          "maximumSampleChangeMm": 0.0005650076324605663,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 52,
+          "maximumSampleChangeMm": 0.0003744210829110027,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 53,
+          "maximumSampleChangeMm": 0.00023666732950283133,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 54,
+          "maximumSampleChangeMm": 0.00015019691085871718,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 55,
+          "maximumSampleChangeMm": 0.00009731249968393763,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 56,
+          "maximumSampleChangeMm": 0.00006206206213697803,
+          "uniformScale": 1.0000000000000002,
+          "matches": 9828
+        },
+        {
+          "iteration": 57,
+          "maximumSampleChangeMm": 0.000039649559721882964,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 58,
+          "maximumSampleChangeMm": 0.000025380118377710924,
+          "uniformScale": 0.9999999999999999,
+          "matches": 9828
+        },
+        {
+          "iteration": 59,
+          "maximumSampleChangeMm": 0.000016278579505827313,
+          "uniformScale": 1,
+          "matches": 9828
+        },
+        {
+          "iteration": 60,
+          "maximumSampleChangeMm": 0.00001046213481125822,
+          "uniformScale": 1.0000000000000002,
+          "matches": 9828
+        },
+        {
+          "iteration": 61,
+          "maximumSampleChangeMm": 0.000006737878061082129,
+          "uniformScale": 1,
+          "matches": 9828
+        }
+      ],
+      "stopReason": "sample-change threshold",
+      "bones": [
+        {
+          "sourceName": "VERTEBRA_C1",
+          "targetId": "HRAF0843",
+          "training": false,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 15852,
+            "p95Mm": 2.4875082682698006,
+            "maxMm": 3.3821907751261073,
+            "rmsMm": 1.252954513117859
+          },
+          "reverse": {
+            "vertices": 1750,
+            "p95Mm": 2.66260170182121,
+            "maxMm": 4.594717559445986,
+            "rmsMm": 1.510902606149894
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C2",
+          "targetId": "HRAF0844",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 14088,
+            "p95Mm": 2.2372527696814903,
+            "maxMm": 2.911876256182527,
+            "rmsMm": 1.1268207553845824
+          },
+          "reverse": {
+            "vertices": 1692,
+            "p95Mm": 2.629265929294862,
+            "maxMm": 4.066652653122903,
+            "rmsMm": 1.4385751789667827
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C3",
+          "targetId": "HRAF0845",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 10474,
+            "p95Mm": 2.1023120406256677,
+            "maxMm": 2.954944390664315,
+            "rmsMm": 1.110367760838343
+          },
+          "reverse": {
+            "vertices": 1967,
+            "p95Mm": 3.2060308644414808,
+            "maxMm": 4.742947703374694,
+            "rmsMm": 1.752245135445808
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C4",
+          "targetId": "HRAF0846",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 10620,
+            "p95Mm": 1.7992197968105517,
+            "maxMm": 2.9105990601293814,
+            "rmsMm": 0.9245459625730634
+          },
+          "reverse": {
+            "vertices": 2165,
+            "p95Mm": 2.4434235604452184,
+            "maxMm": 3.398994048059873,
+            "rmsMm": 1.4275061211272981
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C5",
+          "targetId": "HRAF0847",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 12150,
+            "p95Mm": 1.6976845856071368,
+            "maxMm": 2.7144431950335672,
+            "rmsMm": 0.8946399623226715
+          },
+          "reverse": {
+            "vertices": 2137,
+            "p95Mm": 2.4754938867798897,
+            "maxMm": 3.1139439363688663,
+            "rmsMm": 1.391292428280342
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C6",
+          "targetId": "HRAF0848",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 12664,
+            "p95Mm": 1.9231249895888203,
+            "maxMm": 2.885897362578002,
+            "rmsMm": 0.9802708301882592
+          },
+          "reverse": {
+            "vertices": 2069,
+            "p95Mm": 2.776837332011596,
+            "maxMm": 4.088632158633556,
+            "rmsMm": 1.5139553880177297
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C7",
+          "targetId": "HRAF0849",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 14594,
+            "p95Mm": 2.2494592547230043,
+            "maxMm": 3.723043148787397,
+            "rmsMm": 1.179717936948429
+          },
+          "reverse": {
+            "vertices": 1835,
+            "p95Mm": 3.183205558850326,
+            "maxMm": 4.365833926335174,
+            "rmsMm": 1.7204941642049503
+          }
+        }
+      ]
+    },
+    {
+      "mode": "similarity",
+      "matrixColumnMajor": [
+        1.05783116070126,
+        -0.004575231606846731,
+        -0.004632159902432794,
+        0,
+        -0.004531065953725341,
+        0.023128203380137338,
+        -1.0575886297847208,
+        0,
+        0.004675370674180451,
+        1.0575884396419732,
+        0.02310816835900885,
+        0,
+        -0.2612908930340944,
+        -0.16291904520167022,
+        0.14111923853795733,
+        1
+      ],
+      "uniformScale": 1.0578511966246447,
+      "iterations": [
+        {
+          "iteration": 0,
+          "maximumSampleChangeMm": 0.9210415726125967,
+          "uniformScale": 1.0119183839971913,
+          "matches": 9828
+        },
+        {
+          "iteration": 1,
+          "maximumSampleChangeMm": 0.7139733966878443,
+          "uniformScale": 1.0212370720823907,
+          "matches": 9828
+        },
+        {
+          "iteration": 2,
+          "maximumSampleChangeMm": 0.5437157626035015,
+          "uniformScale": 1.0283049942752616,
+          "matches": 9828
+        },
+        {
+          "iteration": 3,
+          "maximumSampleChangeMm": 0.4147607464902819,
+          "uniformScale": 1.033660648976531,
+          "matches": 9828
+        },
+        {
+          "iteration": 4,
+          "maximumSampleChangeMm": 0.31999917303226366,
+          "uniformScale": 1.0377572336308045,
+          "matches": 9828
+        },
+        {
+          "iteration": 5,
+          "maximumSampleChangeMm": 0.25104041509497155,
+          "uniformScale": 1.0408825984142767,
+          "matches": 9828
+        },
+        {
+          "iteration": 6,
+          "maximumSampleChangeMm": 0.2009774382579043,
+          "uniformScale": 1.0433532253931208,
+          "matches": 9828
+        },
+        {
+          "iteration": 7,
+          "maximumSampleChangeMm": 0.17383900964259605,
+          "uniformScale": 1.0454429748025953,
+          "matches": 9828
+        },
+        {
+          "iteration": 8,
+          "maximumSampleChangeMm": 0.14997563365716127,
+          "uniformScale": 1.047219313207183,
+          "matches": 9828
+        },
+        {
+          "iteration": 9,
+          "maximumSampleChangeMm": 0.13425713032140982,
+          "uniformScale": 1.0487678985049893,
+          "matches": 9828
+        },
+        {
+          "iteration": 10,
+          "maximumSampleChangeMm": 0.12213421414487087,
+          "uniformScale": 1.0501015246380345,
+          "matches": 9828
+        },
+        {
+          "iteration": 11,
+          "maximumSampleChangeMm": 0.11347246778547303,
+          "uniformScale": 1.051288811224445,
+          "matches": 9828
+        },
+        {
+          "iteration": 12,
+          "maximumSampleChangeMm": 0.09754104746086613,
+          "uniformScale": 1.0522874245535128,
+          "matches": 9828
+        },
+        {
+          "iteration": 13,
+          "maximumSampleChangeMm": 0.08449596917814871,
+          "uniformScale": 1.0531751660845494,
+          "matches": 9828
+        },
+        {
+          "iteration": 14,
+          "maximumSampleChangeMm": 0.07303255476758401,
+          "uniformScale": 1.05390651402468,
+          "matches": 9828
+        },
+        {
+          "iteration": 15,
+          "maximumSampleChangeMm": 0.06443152003710623,
+          "uniformScale": 1.0545489195021707,
+          "matches": 9828
+        },
+        {
+          "iteration": 16,
+          "maximumSampleChangeMm": 0.05339423217891129,
+          "uniformScale": 1.0550775064306457,
+          "matches": 9828
+        },
+        {
+          "iteration": 17,
+          "maximumSampleChangeMm": 0.04583478165513008,
+          "uniformScale": 1.0555497799357914,
+          "matches": 9828
+        },
+        {
+          "iteration": 18,
+          "maximumSampleChangeMm": 0.039502237229781655,
+          "uniformScale": 1.0559564075802865,
+          "matches": 9828
+        },
+        {
+          "iteration": 19,
+          "maximumSampleChangeMm": 0.03161170759536031,
+          "uniformScale": 1.0563052378508706,
+          "matches": 9828
+        },
+        {
+          "iteration": 20,
+          "maximumSampleChangeMm": 0.024680196642261933,
+          "uniformScale": 1.0565724479961256,
+          "matches": 9828
+        },
+        {
+          "iteration": 21,
+          "maximumSampleChangeMm": 0.01984832315712728,
+          "uniformScale": 1.0567901120975143,
+          "matches": 9828
+        },
+        {
+          "iteration": 22,
+          "maximumSampleChangeMm": 0.016255115070406844,
+          "uniformScale": 1.056963997164022,
+          "matches": 9828
+        },
+        {
+          "iteration": 23,
+          "maximumSampleChangeMm": 0.013597087137318647,
+          "uniformScale": 1.0571217779282212,
+          "matches": 9828
+        },
+        {
+          "iteration": 24,
+          "maximumSampleChangeMm": 0.010772204088749135,
+          "uniformScale": 1.0572525102290729,
+          "matches": 9828
+        },
+        {
+          "iteration": 25,
+          "maximumSampleChangeMm": 0.009214387779635999,
+          "uniformScale": 1.057358486614065,
+          "matches": 9828
+        },
+        {
+          "iteration": 26,
+          "maximumSampleChangeMm": 0.007320711738963644,
+          "uniformScale": 1.0574360038799433,
+          "matches": 9828
+        },
+        {
+          "iteration": 27,
+          "maximumSampleChangeMm": 0.006309179274196119,
+          "uniformScale": 1.057499158141551,
+          "matches": 9828
+        },
+        {
+          "iteration": 28,
+          "maximumSampleChangeMm": 0.004710846023438751,
+          "uniformScale": 1.057544107570405,
+          "matches": 9828
+        },
+        {
+          "iteration": 29,
+          "maximumSampleChangeMm": 0.004013603094399988,
+          "uniformScale": 1.0575800811837783,
+          "matches": 9828
+        },
+        {
+          "iteration": 30,
+          "maximumSampleChangeMm": 0.003875073515892639,
+          "uniformScale": 1.0576140288943425,
+          "matches": 9828
+        },
+        {
+          "iteration": 31,
+          "maximumSampleChangeMm": 0.0033647369270577965,
+          "uniformScale": 1.0576446797324197,
+          "matches": 9828
+        },
+        {
+          "iteration": 32,
+          "maximumSampleChangeMm": 0.0027087880437476047,
+          "uniformScale": 1.0576678047928072,
+          "matches": 9828
+        },
+        {
+          "iteration": 33,
+          "maximumSampleChangeMm": 0.0025495381734498153,
+          "uniformScale": 1.0576933091932301,
+          "matches": 9828
+        },
+        {
+          "iteration": 34,
+          "maximumSampleChangeMm": 0.002442612616336535,
+          "uniformScale": 1.057719919520018,
+          "matches": 9828
+        },
+        {
+          "iteration": 35,
+          "maximumSampleChangeMm": 0.0018216984962955251,
+          "uniformScale": 1.0577392174675775,
+          "matches": 9828
+        },
+        {
+          "iteration": 36,
+          "maximumSampleChangeMm": 0.0017140876011136354,
+          "uniformScale": 1.0577577667730789,
+          "matches": 9828
+        },
+        {
+          "iteration": 37,
+          "maximumSampleChangeMm": 0.0015441452415105457,
+          "uniformScale": 1.0577730473130098,
+          "matches": 9828
+        },
+        {
+          "iteration": 38,
+          "maximumSampleChangeMm": 0.001401978808409335,
+          "uniformScale": 1.057787371273064,
+          "matches": 9828
+        },
+        {
+          "iteration": 39,
+          "maximumSampleChangeMm": 0.001161774244119439,
+          "uniformScale": 1.0578008480606553,
+          "matches": 9828
+        },
+        {
+          "iteration": 40,
+          "maximumSampleChangeMm": 0.0009761784935774192,
+          "uniformScale": 1.0578112651638554,
+          "matches": 9828
+        },
+        {
+          "iteration": 41,
+          "maximumSampleChangeMm": 0.0010583138859255642,
+          "uniformScale": 1.057822256461859,
+          "matches": 9828
+        },
+        {
+          "iteration": 42,
+          "maximumSampleChangeMm": 0.000940595730453108,
+          "uniformScale": 1.0578315410431491,
+          "matches": 9828
+        },
+        {
+          "iteration": 43,
+          "maximumSampleChangeMm": 0.0006227135013205479,
+          "uniformScale": 1.0578376083009007,
+          "matches": 9828
+        },
+        {
+          "iteration": 44,
+          "maximumSampleChangeMm": 0.0005336000402192226,
+          "uniformScale": 1.0578419043397318,
+          "matches": 9828
+        },
+        {
+          "iteration": 45,
+          "maximumSampleChangeMm": 0.0003863673921870134,
+          "uniformScale": 1.057845094880621,
+          "matches": 9828
+        },
+        {
+          "iteration": 46,
+          "maximumSampleChangeMm": 0.00025965922551768084,
+          "uniformScale": 1.0578471895521648,
+          "matches": 9828
+        },
+        {
+          "iteration": 47,
+          "maximumSampleChangeMm": 0.0001750097886352145,
+          "uniformScale": 1.057848569965644,
+          "matches": 9828
+        },
+        {
+          "iteration": 48,
+          "maximumSampleChangeMm": 0.0001182492490834328,
+          "uniformScale": 1.0578494829020417,
+          "matches": 9828
+        },
+        {
+          "iteration": 49,
+          "maximumSampleChangeMm": 0.00008005782153986891,
+          "uniformScale": 1.0578500883924267,
+          "matches": 9828
+        },
+        {
+          "iteration": 50,
+          "maximumSampleChangeMm": 0.00005429370241934254,
+          "uniformScale": 1.0578504909622843,
+          "matches": 9828
+        },
+        {
+          "iteration": 51,
+          "maximumSampleChangeMm": 0.000036876302759743915,
+          "uniformScale": 1.057850759175719,
+          "matches": 9828
+        },
+        {
+          "iteration": 52,
+          "maximumSampleChangeMm": 0.0000250753833799262,
+          "uniformScale": 1.0578509381236434,
+          "matches": 9828
+        },
+        {
+          "iteration": 53,
+          "maximumSampleChangeMm": 0.00001707187838042654,
+          "uniformScale": 1.0578510576866218,
+          "matches": 9828
+        },
+        {
+          "iteration": 54,
+          "maximumSampleChangeMm": 0.000012031513600382327,
+          "uniformScale": 1.057851140902276,
+          "matches": 9828
+        },
+        {
+          "iteration": 55,
+          "maximumSampleChangeMm": 0.000008214610305493142,
+          "uniformScale": 1.0578511966246447,
+          "matches": 9828
+        }
+      ],
+      "stopReason": "sample-change threshold",
+      "bones": [
+        {
+          "sourceName": "VERTEBRA_C1",
+          "targetId": "HRAF0843",
+          "training": false,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 15852,
+            "p95Mm": 2.55472436364377,
+            "maxMm": 3.65444798223664,
+            "rmsMm": 1.5300024020761582
+          },
+          "reverse": {
+            "vertices": 1750,
+            "p95Mm": 2.4915191047148566,
+            "maxMm": 3.914659157609644,
+            "rmsMm": 1.5362199987371212
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C2",
+          "targetId": "HRAF0844",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 14088,
+            "p95Mm": 1.4666164536170758,
+            "maxMm": 2.7865578660268637,
+            "rmsMm": 0.7805161936976415
+          },
+          "reverse": {
+            "vertices": 1692,
+            "p95Mm": 1.699720901881848,
+            "maxMm": 3.3995292627685396,
+            "rmsMm": 0.9139351015062247
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C3",
+          "targetId": "HRAF0845",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 10474,
+            "p95Mm": 1.1258107567408178,
+            "maxMm": 2.2504584247615176,
+            "rmsMm": 0.5605630396448463
+          },
+          "reverse": {
+            "vertices": 1967,
+            "p95Mm": 1.7709568834038776,
+            "maxMm": 3.3973326863626534,
+            "rmsMm": 0.9024496681339055
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C4",
+          "targetId": "HRAF0846",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 10620,
+            "p95Mm": 1.1165760445329427,
+            "maxMm": 1.890172957871057,
+            "rmsMm": 0.570341590658044
+          },
+          "reverse": {
+            "vertices": 2165,
+            "p95Mm": 1.4125687315294457,
+            "maxMm": 1.9226783043477151,
+            "rmsMm": 0.7498883564047109
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C5",
+          "targetId": "HRAF0847",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 12150,
+            "p95Mm": 1.0745141923141854,
+            "maxMm": 1.7280416748223235,
+            "rmsMm": 0.5431943433975821
+          },
+          "reverse": {
+            "vertices": 2137,
+            "p95Mm": 1.258135531537965,
+            "maxMm": 1.8710572774386507,
+            "rmsMm": 0.6913822790551233
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C6",
+          "targetId": "HRAF0848",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 12664,
+            "p95Mm": 0.8683189961217684,
+            "maxMm": 1.762954486147971,
+            "rmsMm": 0.4369351686820462
+          },
+          "reverse": {
+            "vertices": 2069,
+            "p95Mm": 1.1144947380689698,
+            "maxMm": 2.717961628577171,
+            "rmsMm": 0.5805723335136921
+          }
+        },
+        {
+          "sourceName": "VERTEBRA_C7",
+          "targetId": "HRAF0849",
+          "training": true,
+          "sourceSamples": 1024,
+          "targetSamples": 1024,
+          "forward": {
+            "vertices": 14594,
+            "p95Mm": 1.0850444282783784,
+            "maxMm": 2.8137657670695617,
+            "rmsMm": 0.5223674810974109
+          },
+          "reverse": {
+            "vertices": 1835,
+            "p95Mm": 1.0940045809970913,
+            "maxMm": 2.5093682904090695,
+            "rmsMm": 0.5321778828481025
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Low-resolution HRA cervical surfaces are not clinical landmarks. ICP termination is not global optimality.",
+    "Skull cranium/maxilla and mandible are two source labels, not equivalent membership to eighteen separate borrowed bones; no individual bone/FMA labels are inferred.",
+    "Skin/brain/neural checks are not part of the fitting objective and must be evaluated separately. No source fragments are removed.",
+    "No arm/foot/ilium geometry is loaded; these parts need runtime-specific transforms outside this head scope."
+  ],
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/bonehub-female-inventory.json",
+      "sha256": "3e82a5e58d9c3a90e55a83a236e20fb82424a9796a7a8f7fe0f2ffbadbcad4c4"
+    },
+    {
+      "file": "docs/anatomy-alignment/bonehub-female-receipt.json",
+      "sha256": "4146adce0c4d8389b23bb4a4eb30024912c92f8cccd9e56995cbb9a4b935cd02"
+    },
+    {
+      "file": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "file": "data/female-atlas-structures.json",
+      "sha256": "4affd375a4413c840060b480668d6a4efd9a5102be3a70551e831597daf34035"
+    },
+    {
+      "file": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "file": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "file": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "file": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "file": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "file": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "file": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "file": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "file": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "file": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "file": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "file": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "file": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "file": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "file": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "file": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C1.stl",
+      "sha256": "db86c1604d54634e551eff6892864a782e493feaaac742854988342bb18b5ff6"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C2.stl",
+      "sha256": "ff9037102f7aeb1cdc44fd6c415f7cd1ecfebdb66eabe9ff05dde797ef2cc081"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C3.stl",
+      "sha256": "974d319aad043677dc9dbf68262897a01417940cb73afefa993eb4054a435d72"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C4.stl",
+      "sha256": "8052b72552b2e2f4fb70baee06a872afc5523ccc56834916169879953b2874d3"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C5.stl",
+      "sha256": "c3e502c01e8b478d5578476661220ba341dbcbee2b7dcbf9ab760bc080aadaaa"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C6.stl",
+      "sha256": "77161e4e1309cccd047c00e667ae8f579e347f3d1e1623ce8b77699a5b410b71"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C7.stl",
+      "sha256": "1e1c99c78f1b1ef1bbaaccdea3e6fc955d7b3b320dd923bd058636cc3dc1d1d3"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SKULL/SKULL_CRANIAL_MAXILLA.stl",
+      "sha256": "4fa5023f7b3f2dc10f1a5c45d58f58b7b17f1160c78899e9a4bd0fd85dec1e2f"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SKULL/SKULL_MANDIBLE.stl",
+      "sha256": "1507a95eb5a26470a1b98de94df691862525d942ba5d3111db317fc2b36545b9"
+    },
+    {
+      "file": ".cache/bonehub-head/parts.json.gz",
+      "sha256": "dcb08a9f4dba8fb5f351d6770b8a9977d2fcbb9d8d308a381f4e0f972ae3958e"
+    },
+    {
+      "file": "scripts/fit-bonehub-head-frame.mjs",
+      "sha256": "24969955c16ac5db7e7a8bdd4fb862ee8917f6ccc273760a57d279eeed15fdc4"
+    },
+    {
+      "file": "scripts/lib/similarity-fit.mjs",
+      "sha256": "72472e690233c9575af2191adb9cd22d99a8dd8dccf254197709daf061b45042"
+    },
+    {
+      "file": "scripts/lib/exact-position-components.mjs",
+      "sha256": "8e9aee660f8edf3f357b9ac9156c47d532ac6f2dc4679c9e6770ad2d51f805cd"
+    },
+    {
+      "file": "src/female-brain-bindings.ts",
+      "sha256": "da642893a3841f453ed178704dccc8732e24b79d8f02def4de85f5d6cece0bdd"
+    },
+    {
+      "file": "data/catalog/female-brain-bindings.json",
+      "sha256": "74b98859803bae43cbeb172e55d64272accba34fadd08df64dd9bae97dae7294"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    }
+  ]
+}
