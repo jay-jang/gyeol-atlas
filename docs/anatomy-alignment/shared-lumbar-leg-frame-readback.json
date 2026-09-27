@@ -1,0 +1,48 @@
+{
+  "createdAt": "2026-09-27T19:05:55.668Z",
+  "reportSha256": "27be056efe6fe9f7e65b815a75c277dd8355a0d82cc71ded1223b2c067160290",
+  "sampling": {
+    "surfaces": 28,
+    "samples": 14336,
+    "maximumPointResidualMm": 0,
+    "maximumAreaResidualSquareMetres": 2.7755575615628914e-17
+  },
+  "candidates": [
+    {
+      "mode": "rigid",
+      "binarySha256": "cddad3a96d107fdb3407581a2a680802ebacef2b3188f1b5b4694f0214305805",
+      "scale": 1.0000000000000002,
+      "determinant": 1.0000000000000002,
+      "maximumGramError": 6.661338147750939e-16,
+      "vertices": 652173,
+      "indexReferences": 3912126,
+      "edgeOccurrences": 3912126,
+      "coordinateDifferences": 0,
+      "maximumScaledEdgeResidualMm": 0.00011434013947632382,
+      "witnesses": 125,
+      "missingWitnesses": 0,
+      "maximumWitnessResidualMm": 2.220446049250313e-13
+    },
+    {
+      "mode": "similarity",
+      "binarySha256": "a7d5e2e18d51b1de387d7158381c931ca9f54a20ebfc7b6c13bc3d8fba22a738",
+      "scale": 1.1054477497230069,
+      "determinant": 1.3508734304969519,
+      "maximumGramError": 6.661338147750939e-16,
+      "vertices": 652173,
+      "indexReferences": 3912126,
+      "edgeOccurrences": 3912126,
+      "coordinateDifferences": 0,
+      "maximumScaledEdgeResidualMm": 0.00011686803141897073,
+      "witnesses": 93,
+      "missingWitnesses": 0,
+      "maximumWitnessResidualMm": 2.220446049250313e-13
+    }
+  ],
+  "limitations": [
+    "Every stored muscle coordinate/index and every triangle-edge occurrence is replayed using scalar matrix arithmetic. This is not an independent anatomy, skin or full crossing search.",
+    "Sampling audit independently sums triangle areas, counts exact duplicates and checks the selected area strata/barycentric points. Overlapping nonidentical/internal surfaces are not unioned.",
+    "Witness checks below verify point/segment/face arithmetic, but not a new search or membership of all witness triangles in runtime meshes. Source coordinate decoding still uses the shared context."
+  ],
+  "scriptSha256": "6373f79dd819c92b9e942628f2d40919db62a459d6fdd11c06af472e46a1808d"
+}
