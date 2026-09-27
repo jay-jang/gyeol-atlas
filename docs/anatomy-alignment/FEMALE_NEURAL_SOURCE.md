@@ -55,3 +55,7 @@ npm exec --yes --package=node@24.14.0 -- playwright test tests/browser/spinal-de
 ```
 
 여성 보완 골격·근육 정합, 뇌의 원본 좌우 문제, 남녀 기관·신경의 위치/연결, 실제 근육 층서의 전체 목표는 계속 미완료입니다. 이번 변경은 상세 접근과 원인 구분이며 새로운 위치 교정이 아닙니다.
+
+## 공개 배포 확인
+
+`5689f12e118be3c29914bf7a4a4f804e4da7d088`의 [빌드·Pages 배포](https://github.com/jay-jang/gyeol-atlas/actions/runs/36298385807) 성공 후, 2026-09-27 14:52 KST에 `scripts/smoke-female-spinal.mjs`를 실제 HTTPS에서 실행했습니다.29개 전체/각각 단독 선택, T6·T7·T8 순서, S4 단독 상태 새로고침, 전체 복귀, 모바일 조작 가시성,50.5% 박리·남성 복귀가 통과했습니다. 페이지 오류·HTTP 오류0입니다([공개 실행 결과](female-spinal-public.json)). 이 공개 검사는 원본 정점/교차 검사나 임상 위치 검증을 반복한 것이 아닙니다.
