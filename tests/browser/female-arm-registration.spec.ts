@@ -5,6 +5,7 @@ import {gunzipSync} from 'node:zlib';
 import {BufferGeometry,BufferAttribute} from 'three';
 import {applyFemaleArmRegistration} from '../../src/female-arm-registration';
 import {applyFemaleFootRegistration} from '../../src/female-foot-registration';
+import {applyFemaleCordRegistration} from '../../src/female-cord-registration';
 import {ready,snapshot,openTool} from './helpers';
 
 const atlas=JSON.parse(fs.readFileSync('public/models/female/atlas-female.json','utf8'));
@@ -25,6 +26,7 @@ const expected=Object.fromEntries(atlas.parts.map((p:any)=>{
   g.setIndex(new BufferAttribute(Uint32Array.from({length:q.indexCount},(_,i)=>b.readUInt32LE(q.indices+i*4)),1));
   applyFemaleArmRegistration(g,'female',p.id,p.system);
   applyFemaleFootRegistration(g,'female',p.id,p.system);
+  applyFemaleCordRegistration(g,'female',p.id,p.system);
   const hash=createHash('sha256').update(Buffer.from(g.attributes.position.array.buffer)).digest('hex');
   g.dispose();return [p.id,hash];
 }));

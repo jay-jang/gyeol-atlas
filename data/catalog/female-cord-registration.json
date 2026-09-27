@@ -1,0 +1,33 @@
+{
+  "version": "hra-female-cord-geometric-clearance-1",
+  "partial": true,
+  "sourceManifestSha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f",
+  "source": "HRA female spinal cord v1.1, exact same Float32 world geometry as female united v1.10; see docs/anatomy-alignment/NEURAL_COMPONENT_SOURCE.md",
+  "evidence": "docs/anatomy-alignment/CORD_SECTION_GRID.md",
+  "screening": {
+    "purpose": "Resolve seven confirmed original cord/vertebra transverse mesh intersections",
+    "anatomicallyValidated": false,
+    "clinicalTolerance": false
+  },
+  "spacing": 0.01,
+  "centres": [1.1300000000000001, 1.1400000000000001, 1.1500000000000001, 1.1600000000000001, 1.1700000000000002, 1.1800000000000002, 1.1900000000000002, 1.2000000000000002, 1.2100000000000002, 1.2200000000000002, 1.23, 1.2400000000000002, 1.25, 1.26, 1.27, 1.28, 1.29],
+  "dxMetres": -0.0015,
+  "dzMetres": 0.0025,
+  "records": [
+    {"id":"HRAF0365","vertexCount":1175,"indexCount":6588},
+    {"id":"HRAF0366","vertexCount":1174,"indexCount":6588},
+    {"id":"HRAF0367","vertexCount":1196,"indexCount":6657},
+    {"id":"HRAF0368","vertexCount":1162,"indexCount":6558},
+    {"id":"HRAF0369","vertexCount":1177,"indexCount":6603},
+    {"id":"HRAF0370","vertexCount":1188,"indexCount":6618},
+    {"id":"HRAF0371","vertexCount":1184,"indexCount":6552},
+    {"id":"HRAF0372","vertexCount":1190,"indexCount":6576},
+    {"id":"HRAF0373","vertexCount":1189,"indexCount":6510},
+    {"id":"HRAF0374","vertexCount":1230,"indexCount":6588},
+    {"id":"HRAF0375","vertexCount":1203,"indexCount":6483},
+    {"id":"HRAF0376","vertexCount":1204,"indexCount":6489},
+    {"id":"HRAF0377","vertexCount":1237,"indexCount":6603},
+    {"id":"HRAF0378","vertexCount":1214,"indexCount":6537},
+    {"id":"HRAF0379","vertexCount":1232,"indexCount":6648}
+  ]
+}

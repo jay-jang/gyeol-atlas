@@ -9,6 +9,7 @@ import {BufferGeometry,BufferAttribute,Matrix4,Vector3} from 'three';
 import {surfaceProbe,surfaceTopology,referencedVertices} from './lib/surface-containment.mjs';
 import {applyFemaleArmRegistration} from '../src/female-arm-registration.ts';
 import {applyFemaleFootRegistration} from '../src/female-foot-registration.ts';
+import {applyFemaleCordRegistration} from '../src/female-cord-registration.ts';
 import {resolveFemaleBrainGeometryPart} from '../src/female-brain-bindings.ts';
 import {applyFemaleSourceRestoration} from '../src/female-source-restoration.ts';
 import {applyFemaleKneeSourceRestoration} from '../src/female-knee-source-restoration.ts';
@@ -65,6 +66,7 @@ function female() {
     if(!sourceFemale)applyFemaleKneeSourceRestoration(geometry,'female',part.id,part.system,kneeBuffer);
     if(!sourceFemale)applyFemaleArmRegistration(geometry,'female',part.id,part.system);
     if(!sourceFemale)applyFemaleFootRegistration(geometry,'female',part.id,part.system);
+    if(!sourceFemale)applyFemaleCordRegistration(geometry,'female',part.id,part.system);
     const entry=catalog.find(c=>c.id===part.id);
     if(!entry)throw new Error(`Missing female catalog ${part.id}`);
     const defaultHidden=part.system==='pregnancy'||(part.system==='donor-muscle'&&/^Rectus femoris /.test(part.name));
@@ -72,10 +74,10 @@ function female() {
   });
 }
 for(const file of ['src/Atlas.tsx','src/PackedAtlas.tsx','src/anatomy.ts','scripts/audit-body-containment.mjs','scripts/lib/surface-containment.mjs'])hash(file);
-if(!sourceFemale)for(const file of ['src/female-arm-registration.ts','data/catalog/female-arm-registration.json','src/female-foot-registration.ts','data/catalog/female-foot-registration.json'])hash(file);
+if(!sourceFemale)for(const file of ['src/female-arm-registration.ts','data/catalog/female-arm-registration.json','src/female-foot-registration.ts','data/catalog/female-foot-registration.json','src/female-cord-registration.ts','data/catalog/female-cord-registration.json'])hash(file);
 if(!sourceFemale)for(const file of ['src/female-brain-bindings.ts','data/catalog/female-brain-bindings.json','src/female-source-restoration.ts','src/female-knee-source-restoration.ts'])hash(file);
 const report={method:'Referenced vertex sampling, nearest skin-triangle distance and consensus of three oblique ray parities; not clinical validation',
-  femaleGeometry:sourceFemale?'Unmodified packed baseline':'Current runtime arm/foot registration, ilium and knee source restorations, and Allen brain geometry bindings',
+  femaleGeometry:sourceFemale?'Unmodified packed baseline':'Current runtime arm/foot/cord registration, ilium and knee source restorations, and Allen brain geometry bindings',
   sampling:allFemale?'Every triangle-referenced female vertex':'Deterministic subsample of triangle-referenced vertices',
   toleranceMm:2,maxSamplesPerMesh:allFemale?null:maxSamples,limitations:[allFemale?'All triangle-referenced vertices are checked; this does not test triangle interiors.':'Not every vertex/triangle is sampled.',
     'Fractions are vertex fractions, not tissue volumes or surface areas.',

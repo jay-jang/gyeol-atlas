@@ -3,7 +3,7 @@ import {ready,snapshot,openTool,closeTool} from './helpers';
 import {detailProjection} from './detail-projection';
 import fs from 'node:fs';
 
-test('female source spinal cord has whole and individually selectable segments without moving them',async({page})=>{
+test('female spinal cord partial rest pose retains whole and individually selectable segments',async({page})=>{
   test.setTimeout(180000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   let fiberUrl='';page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
@@ -19,7 +19,7 @@ test('female source spinal cord has whole and individually selectable segments w
   await expect.poll(visible).toEqual([...group.ids].sort());
   expect((await snapshot(page)).stage).toBe(6);
   await card.locator('[data-composite-provenance] summary').click();
-  await expect(card.locator('[data-composite-provenance]')).toContainText('원본 척추와 표면 교차');
+  await expect(card.locator('[data-composite-provenance]')).toContainText('표시용 15분절의 국소 이동');
   await card.locator('[data-composite-provenance] summary').click();
   await card.locator('.organ-detail-parts summary').click();
   const buttons=card.locator('.organ-detail-parts button');expect(await buttons.count()).toBe(29);

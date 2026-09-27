@@ -12,6 +12,7 @@ import { clippingPlanes, configurePicking } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { applyFemaleArmRegistration } from "./female-arm-registration";
 import { applyFemaleFootRegistration } from "./female-foot-registration";
+import { applyFemaleCordRegistration } from "./female-cord-registration";
 import { applyFemaleSourceRestoration, femaleSourceRestoration } from "./female-source-restoration";
 import { applyFemaleKneeSourceRestoration, femaleKneeSourceRestoration } from "./female-knee-source-restoration";
 import { anatomyRegionMatches } from "./anatomy-region";
@@ -106,6 +107,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         applyFemaleKneeSourceRestoration(geometry,dataset,part.id,part.system,restoredKnee);
         applyFemaleArmRegistration(geometry, dataset, part.id, part.system);
         applyFemaleFootRegistration(geometry, dataset, part.id, part.system);
+        applyFemaleCordRegistration(geometry,dataset,part.id,part.system);
         geometry.computeBoundingBox();
         geometry.computeBoundingSphere();
         const actualBounds = [geometry.boundingBox!.min.toArray(), geometry.boundingBox!.max.toArray()];

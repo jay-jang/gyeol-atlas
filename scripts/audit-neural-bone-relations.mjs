@@ -11,8 +11,10 @@ import {BufferGeometry,BufferAttribute,Matrix4} from 'three';
 import {MeshBVH} from 'three-mesh-bvh';
 import {applyFemaleArmRegistration} from '../src/female-arm-registration.ts';
 import {applyFemaleFootRegistration} from '../src/female-foot-registration.ts';
+import {applyFemaleCordRegistration} from '../src/female-cord-registration.ts';
 import {resolveFemaleBrainGeometryPart} from '../src/female-brain-bindings.ts';
 import {applyFemaleSourceRestoration} from '../src/female-source-restoration.ts';
+import {applyFemaleKneeSourceRestoration} from '../src/female-knee-source-restoration.ts';
 import {triangleCrossings} from './lib/triangle-crossings.mjs';
 const out='.cache/neural-bone';fs.mkdirSync(out,{recursive:true});
 const hashes=new Map();
@@ -30,6 +32,8 @@ function female(){
   const partsById=new Map(atlas.parts.map(p=>[p.id,p]));
   const restoration=read('data/catalog/female-source-restoration.json'),restored=gunzipSync(bytes(`public/${restoration.url}`));
   const restoredBuffer=restored.buffer.slice(restored.byteOffset,restored.byteOffset+restored.byteLength);
+  const knee=read('data/catalog/female-knee-source-restoration.json'),kneeBytes=gunzipSync(bytes(`public/${knee.url}`));
+  const kneeBuffer=kneeBytes.buffer.slice(kneeBytes.byteOffset,kneeBytes.byteOffset+kneeBytes.byteLength);
   for(const file of ['src/female-brain-bindings.ts','data/catalog/female-brain-bindings.json','src/female-source-restoration.ts'])bytes(file);
   const selected=new Map(catalog.filter(p=>['bone','nerve'].includes(p.layer)).map(p=>[p.id,p]));
   return atlas.parts.filter(p=>selected.has(p.id)).map(p=>{
@@ -41,7 +45,9 @@ function female(){
     const b=buffer.get(q.chunk),g=mesh(Float32Array.from({length:q.vertexCount*3},(_,i)=>b.readFloatLE(q.positions+4*i)),
       Uint32Array.from({length:q.indexCount},(_,i)=>b.readUInt32LE(q.indices+4*i)));
     applyFemaleSourceRestoration(g,'female',p.id,p.system,restoredBuffer);
+    applyFemaleKneeSourceRestoration(g,'female',p.id,p.system,kneeBuffer);
     applyFemaleArmRegistration(g,'female',p.id,p.system);applyFemaleFootRegistration(g,'female',p.id,p.system);
+    applyFemaleCordRegistration(g,'female',p.id,p.system);
     return {id:p.id,name:p.name,layer:selected.get(p.id).layer,sourceSystem:p.system,sourceGeometryId:q.id,g:finish(g)};
   });
 }
@@ -93,6 +99,8 @@ for(const sex of ['female','male']){
   console.log(JSON.stringify({sex,...body.summary}));report.bodies.push(body);parts.forEach(p=>p.g.dispose());
 }
 for(const p of ['scripts/audit-neural-bone-relations.mjs','scripts/lib/triangle-crossings.mjs','src/female-arm-registration.ts','src/female-foot-registration.ts',
-  'data/catalog/female-arm-registration.json','data/catalog/female-foot-registration.json','package-lock.json'])bytes(p);
+  'src/female-cord-registration.ts','data/catalog/female-arm-registration.json','data/catalog/female-foot-registration.json',
+  'data/catalog/female-cord-registration.json','src/female-knee-source-restoration.ts',
+  'data/catalog/female-knee-source-restoration.json','package-lock.json'])bytes(p);
 report.files=[...hashes].map(([path,sha256])=>({path,sha256}));
 fs.writeFileSync(`${out}/relations.json`,JSON.stringify(report,null,2)+'\n');

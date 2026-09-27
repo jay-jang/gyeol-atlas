@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
-import {BufferGeometry,BufferAttribute,Vector3} from 'three';
+import {BufferGeometry,BufferAttribute,Vector3,Matrix4} from 'three';
 import {MeshBVH} from 'three-mesh-bvh';
 import {surfaceProbe,referencedVertices} from './lib/surface-containment.mjs';
 import {meshCrossingWitness} from './lib/triangle-witness.mjs';
@@ -10,11 +10,13 @@ const files=new Map(),hash=b=>createHash('sha256').update(b).digest('hex');
 const read=f=>{const b=fs.readFileSync(f);files.set(f,hash(b));return b;},json=f=>JSON.parse(read(f));
 const sourceReport=json('docs/anatomy-alignment/neural-component-source.json');
 const baseline=JSON.parse(gunzipSync(read(sourceReport.geometryFile)));
-const candidates=['cord-shear','cord-shear-seeded'].map(tag=>{
-  const fit=json(`docs/anatomy-alignment/${tag}-fit.json`),parts=JSON.parse(gunzipSync(read(fit.geometryFile)));
+const gridShift=process.argv.includes('--grid-shift');
+const candidates=(gridShift?['cord-section-grid-shift']:['cord-shear','cord-shear-seeded']).map(tag=>{
+  const fit=json(`docs/anatomy-alignment/${tag}${gridShift?'':'-fit'}.json`),parts=JSON.parse(gunzipSync(read(fit.geometryFile)));
   assert.equal(files.get(fit.geometryFile),fit.files.find(f=>f.file===fit.geometryFile).sha256);return {tag,fit,parts};
 });
 const states=[{tag:'baseline',parts:baseline},...candidates],modes=[];
+const identity=new Matrix4();
 function geometry(p){const g=new BufferGeometry();g.setAttribute('position',new BufferAttribute(Float32Array.from(p.positions),3));g.setIndex(p.indices);g.computeBoundingBox();g.boundsTree=new MeshBVH(g);return g;}
 for(const mode of ['source','runtime']){
   const bones=baseline.filter(p=>p.kind==='bone').map(p=>({id:p.id,geometry:geometry(p[mode])}));
@@ -31,7 +33,9 @@ for(const mode of ['source','runtime']){
           const r=b.probe.classify(point);counts[r.kind]++;if(r.kind==='inside')maxInsideMm=Math.max(maxInsideMm,r.distance*1000);
         }
         const witness=c.geometry.boundingBox.intersectsBox(b.geometry.boundingBox)?meshCrossingWitness(c.geometry,b.geometry):null;
-        rows.push({cordId:c.id,boneId:b.id,vertices:vertices.length,...counts,maxInsideMm,witness});
+        const nearby=gridShift&&c.geometry.boundingBox.clone().expandByScalar(.02).intersectsBox(b.geometry.boundingBox);
+        const surfaceDistanceMm=nearby?b.geometry.boundsTree.closestPointToGeometry(c.geometry,identity,{},{}).distance*1000:null;
+        rows.push({cordId:c.id,boneId:b.id,vertices:vertices.length,...counts,maxInsideMm,witness,...(gridShift?{surfaceDistanceMm}:{})});
       }
     }
     const internal=[];
@@ -54,7 +58,7 @@ for(const mode of ['source','runtime']){
   modes.push({mode,runs});bones.forEach(b=>{b.geometry.dispose();b.probe.dispose();});
 }
 for(const file of ['scripts/audit-cord-shear.mjs','scripts/lib/surface-containment.mjs','scripts/lib/triangle-witness.mjs'])read(file);
-const report={status:'REJECTED: both linearized fits failed convergence; no public model changes',modes,
+const report={status:gridShift?'OFFLINE GRID-SECTION CANDIDATE ONLY; 3-D audit is diagnostic, not public anatomy approval':'REJECTED: both linearized fits failed convergence; no public model changes',modes,
   scope:'Stored Float32 source/runtime cord vertices and all cord/bone plus cord/cord transverse witnesses. Other fixed tissues, complete surface containment, source gap attachment and clinical anatomy are NOT validated.',
   files:[...files].map(([file,sha256])=>({file,sha256}))};
-fs.writeFileSync('docs/anatomy-alignment/cord-shear-audit.json',JSON.stringify(report,null,2)+'\n');
+fs.writeFileSync(`docs/anatomy-alignment/${gridShift?'cord-section-grid-audit':'cord-shear-audit'}.json`,JSON.stringify(report,null,2)+'\n');

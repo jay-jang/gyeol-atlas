@@ -1,0 +1,454 @@
+{
+  "status": "OFFLINE DIAGNOSTIC ONLY; NOT APPLIED OR ANATOMICALLY VALIDATED",
+  "method": "Smallest common safe 0.5 mm-grid translation in 11 transverse source planes, spread to all cord pieces with cubic height field and taper; actual 3-D audit required.",
+  "planes": 11,
+  "commonSafeGridPositions": 18,
+  "chosen": {
+    "dxMm": -1.5,
+    "dzMm": 2.5,
+    "hits": []
+  },
+  "field": {
+    "centres": [
+      1.1300000000000001,
+      1.1400000000000001,
+      1.1500000000000001,
+      1.1600000000000001,
+      1.1700000000000002,
+      1.1800000000000002,
+      1.1900000000000002,
+      1.2000000000000002,
+      1.2100000000000002,
+      1.2200000000000002,
+      1.23,
+      1.2400000000000002,
+      1.25,
+      1.26,
+      1.27,
+      1.28,
+      1.29
+    ],
+    "spacing": 0.01,
+    "coefficients": [
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025,
+      -0.0015,
+      0.0025
+    ]
+  },
+  "supportY": [
+    1.11,
+    1.31
+  ],
+  "geometryFile": ".cache/cord-section-grid-shift/candidate.json.gz",
+  "changed": [
+    {
+      "id": "HRAF0353",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0353",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0354",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0354",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0355",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0355",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0356",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0356",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0357",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0357",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0358",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0358",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0359",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0359",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0360",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0360",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0361",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0361",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0362",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0362",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0363",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0363",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0364",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0364",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0365",
+      "mode": "source",
+      "moved": 570,
+      "maximumDisplacementMm": 0.017795419703697968
+    },
+    {
+      "id": "HRAF0365",
+      "mode": "runtime",
+      "moved": 143,
+      "maximumDisplacementMm": 0.017795419703697968
+    },
+    {
+      "id": "HRAF0366",
+      "mode": "source",
+      "moved": 5070,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0366",
+      "mode": "runtime",
+      "moved": 1174,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0367",
+      "mode": "source",
+      "moved": 5133,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0367",
+      "mode": "runtime",
+      "moved": 1196,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0368",
+      "mode": "source",
+      "moved": 5041,
+      "maximumDisplacementMm": 2.9135599789120366
+    },
+    {
+      "id": "HRAF0368",
+      "mode": "runtime",
+      "moved": 1162,
+      "maximumDisplacementMm": 2.9135599789120366
+    },
+    {
+      "id": "HRAF0369",
+      "mode": "source",
+      "moved": 5082,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0369",
+      "mode": "runtime",
+      "moved": 1177,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0370",
+      "mode": "source",
+      "moved": 5100,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0370",
+      "mode": "runtime",
+      "moved": 1188,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0371",
+      "mode": "source",
+      "moved": 5060,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0371",
+      "mode": "runtime",
+      "moved": 1184,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0372",
+      "mode": "source",
+      "moved": 5076,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0372",
+      "mode": "runtime",
+      "moved": 1190,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0373",
+      "mode": "source",
+      "moved": 5040,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0373",
+      "mode": "runtime",
+      "moved": 1189,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0374",
+      "mode": "source",
+      "moved": 5130,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0374",
+      "mode": "runtime",
+      "moved": 1230,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0375",
+      "mode": "source",
+      "moved": 5040,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0375",
+      "mode": "runtime",
+      "moved": 1203,
+      "maximumDisplacementMm": 2.915473939656341
+    },
+    {
+      "id": "HRAF0376",
+      "mode": "source",
+      "moved": 5043,
+      "maximumDisplacementMm": 2.6353788870276973
+    },
+    {
+      "id": "HRAF0376",
+      "mode": "runtime",
+      "moved": 1204,
+      "maximumDisplacementMm": 2.6353788870276973
+    },
+    {
+      "id": "HRAF0377",
+      "mode": "source",
+      "moved": 5143,
+      "maximumDisplacementMm": 1.0850923884573942
+    },
+    {
+      "id": "HRAF0377",
+      "mode": "runtime",
+      "moved": 1237,
+      "maximumDisplacementMm": 1.0850923884573942
+    },
+    {
+      "id": "HRAF0378",
+      "mode": "source",
+      "moved": 5080,
+      "maximumDisplacementMm": 0.192944355190723
+    },
+    {
+      "id": "HRAF0378",
+      "mode": "runtime",
+      "moved": 1214,
+      "maximumDisplacementMm": 0.192944355190723
+    },
+    {
+      "id": "HRAF0379",
+      "mode": "source",
+      "moved": 1055,
+      "maximumDisplacementMm": 0.0007667062187954368
+    },
+    {
+      "id": "HRAF0379",
+      "mode": "runtime",
+      "moved": 310,
+      "maximumDisplacementMm": 0.0007667062187954368
+    },
+    {
+      "id": "HRAF0380",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0380",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0381",
+      "mode": "source",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0381",
+      "mode": "runtime",
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    }
+  ],
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/cord-section-clearance.json",
+      "sha256": "6f392af18604af5ec8e7fb1c99d6464c473bdccba6aabaa73e63f19b1ab245d7"
+    },
+    {
+      "file": "docs/anatomy-alignment/neural-component-source.json",
+      "sha256": "7fe5e9fbe941612304ee766826a9d7e73394ca0ff8fca2363184eabe0b5a1417"
+    },
+    {
+      "file": ".cache/neural-component-source/geometry.json.gz",
+      "sha256": "ca38c92e1cad76ee148a4bbcf48409599e60afe48e1ef4d7b9e15f9f5c550988"
+    },
+    {
+      "file": "docs/anatomy-alignment/cord-shear-fit.json",
+      "sha256": "5470fdc7b5097f1b039efe5d66430f7d6d563af79c1cf73d4acf460098d5150e"
+    },
+    {
+      "file": ".cache/cord-section-grid-shift/candidate.json.gz",
+      "sha256": "a9e02a969fe1c234abde927ad88c45ef885dfb072f915a1f4028d97bf228c1f3"
+    },
+    {
+      "file": "scripts/generate-cord-section-grid-shift.mjs",
+      "sha256": "3cbd299497a75195f471bdfcb8193a9357d690ac7467190ba95559081596a89c"
+    },
+    {
+      "file": "scripts/lib/cord-shear.mjs",
+      "sha256": "d0710998b55380386d14645fab4104c64c9af7c9557e10690c6ebbd128dbdae2"
+    }
+  ]
+}

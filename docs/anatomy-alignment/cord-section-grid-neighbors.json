@@ -1,0 +1,213 @@
+{
+  "status": "OFFLINE GEOMETRY DIAGNOSTIC; NOT ANATOMICAL APPROVAL OR A PUBLIC MODEL CHANGE",
+  "summary": {
+    "candidateCordParts": 15,
+    "fixedParts": 1191,
+    "evaluatedPairs": 17865,
+    "broadPhasePairs": 91,
+    "beforeCrossingPairs": 7,
+    "afterCrossingPairs": 0,
+    "newCrossingPairs": 0,
+    "resolvedCrossingPairs": 7
+  },
+  "rows": [
+    {
+      "cordId": "HRAF0366",
+      "partId": "HRAF0837",
+      "partName": "Thoracic vertebra 7",
+      "layer": "bone",
+      "before": true,
+      "after": false,
+      "newWitness": null
+    },
+    {
+      "cordId": "HRAF0370",
+      "partId": "HRAF0839",
+      "partName": "Thoracic vertebra 9",
+      "layer": "bone",
+      "before": true,
+      "after": false,
+      "newWitness": null
+    },
+    {
+      "cordId": "HRAF0370",
+      "partId": "HRAF0840",
+      "partName": "Thoracic vertebra 10",
+      "layer": "bone",
+      "before": true,
+      "after": false,
+      "newWitness": null
+    },
+    {
+      "cordId": "HRAF0371",
+      "partId": "HRAF0840",
+      "partName": "Thoracic vertebra 10",
+      "layer": "bone",
+      "before": true,
+      "after": false,
+      "newWitness": null
+    },
+    {
+      "cordId": "HRAF0372",
+      "partId": "HRAF0840",
+      "partName": "Thoracic vertebra 10",
+      "layer": "bone",
+      "before": true,
+      "after": false,
+      "newWitness": null
+    },
+    {
+      "cordId": "HRAF0372",
+      "partId": "HRAF0841",
+      "partName": "Thoracic vertebra 11",
+      "layer": "bone",
+      "before": true,
+      "after": false,
+      "newWitness": null
+    },
+    {
+      "cordId": "HRAF0373",
+      "partId": "HRAF0841",
+      "partName": "Thoracic vertebra 11",
+      "layer": "bone",
+      "before": true,
+      "after": false,
+      "newWitness": null
+    }
+  ],
+  "limitations": [
+    "Only strict transverse triangle surface crossings; complete containment, gap/attachment and distances are not checked.",
+    "All 1191 fixed HRA parts are included, but independently displayed CT/male sources and clinical soft-tissue boundaries are not.",
+    "Moved cord segments are compared against the exact pre-cord runtime geometry and the live registration output is independently matched to the offline candidate."
+  ],
+  "files": [
+    {
+      "file": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "file": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "file": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "file": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "file": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "file": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "file": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "file": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "file": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "file": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "file": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "file": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "file": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "file": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "file": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "file": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "file": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "file": "data/female-atlas-structures.json",
+      "sha256": "4affd375a4413c840060b480668d6a4efd9a5102be3a70551e831597daf34035"
+    },
+    {
+      "file": "data/catalog/female-source-restoration.json",
+      "sha256": "6b4776f1c3d395b584cf72568fafe8063924455e5bf4e28c2882399495ca5f79"
+    },
+    {
+      "file": "public/models/female-source-restoration/right-ilium.bin.gz",
+      "sha256": "cb8f1642b7b4be63f5ebd276d620917a3d70905c97e338d57f978bf0943b3fa8"
+    },
+    {
+      "file": "docs/anatomy-alignment/cord-section-grid-shift.json",
+      "sha256": "0b90d50aee28b6920ac35565081d1a13ef64db85866f5f33f671b5989e748b85"
+    },
+    {
+      "file": ".cache/cord-section-grid-shift/candidate.json.gz",
+      "sha256": "a9e02a969fe1c234abde927ad88c45ef885dfb072f915a1f4028d97bf228c1f3"
+    },
+    {
+      "file": "docs/anatomy-alignment/neural-component-source.json",
+      "sha256": "7fe5e9fbe941612304ee766826a9d7e73394ca0ff8fca2363184eabe0b5a1417"
+    },
+    {
+      "file": ".cache/neural-component-source/geometry.json.gz",
+      "sha256": "ca38c92e1cad76ee148a4bbcf48409599e60afe48e1ef4d7b9e15f9f5c550988"
+    },
+    {
+      "file": "scripts/audit-cord-grid-neighbors.mjs",
+      "sha256": "5423e1d465eb5428835c2f856c549a011bd7f46cafc11dbdd163973688432a82"
+    },
+    {
+      "file": "scripts/lib/triangle-witness.mjs",
+      "sha256": "309654844ad1f9e21270c25bd0a78d767ba44b34aa2bb6962d6ad32667361c17"
+    },
+    {
+      "file": "src/female-brain-bindings.ts",
+      "sha256": "da642893a3841f453ed178704dccc8732e24b79d8f02def4de85f5d6cece0bdd"
+    },
+    {
+      "file": "src/female-arm-registration.ts",
+      "sha256": "b0ba7383abfcabc4e2561d74b8cfcda56b46850595be20e5d16fed7d288555dd"
+    },
+    {
+      "file": "src/female-foot-registration.ts",
+      "sha256": "6545d3024a6ee781dc6f9f282f12d54531de15c0de7631cbc5cfef44a0103ba8"
+    },
+    {
+      "file": "src/female-cord-registration.ts",
+      "sha256": "3bc3fad57cf25c17443971399d35e341831daeae99f92acba7b6887704036082"
+    },
+    {
+      "file": "data/catalog/female-cord-registration.json",
+      "sha256": "55df91e00da5a8df203b640866fecee247c953ef008b96a8af3dad8f86660940"
+    },
+    {
+      "file": "src/female-source-restoration.ts",
+      "sha256": "8ee57aa49d29bef60f8af42277f179fd792505f9b6327e9c1ff4b32c4c5f6cde"
+    }
+  ]
+}
