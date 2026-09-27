@@ -1,0 +1,48 @@
+{
+  "status": "Scalar saved geometry/topology, anchor and recorded witness arithmetic verified; not clinical approval",
+  "checks": [
+    {
+      "mode": "baseline",
+      "parts": 282,
+      "maximumAnchorDisplacementMm": 0,
+      "maximumPairedDistanceIncreaseMm": 4.440892098500626e-16
+    },
+    {
+      "mode": "unconstrained",
+      "parts": 282,
+      "maximumAnchorDisplacementMm": 15.920290820511902,
+      "maximumPairedDistanceIncreaseMm": 15.824483826974994
+    },
+    {
+      "mode": "anchored",
+      "parts": 282,
+      "maximumAnchorDisplacementMm": 2.0000000341423094,
+      "maximumPairedDistanceIncreaseMm": 1.0000330273431504
+    }
+  ],
+  "vertices": 716157,
+  "triangleCorners": 4293639,
+  "maximumCoordinateDifferenceMetres": 0,
+  "bitwiseDifferentCoordinates": 0,
+  "witnesses": 435,
+  "maxWitnessResidualMetres": 4.440892098500626e-16,
+  "limitation": "Nearest target points and crossing witnesses are arithmetically checked, not independently rediscovered against all triangle surfaces in this verifier. Float32 coordinate comparison allows2e-7m and reports any nonidentical scalars.",
+  "files": [
+    {
+      "file": ".cache/brain-pose-full/fit.json",
+      "sha256": "03dc34f0bdbb108e3671182eb8de3b1967fcd3c2c62068d7343d728485b81ca9"
+    },
+    {
+      "file": ".cache/brain-pose-full/audit.json",
+      "sha256": "7887ee88fffe27d88caf8088dabf04bcfb2b1370382911c66f2f2e57fc62c386"
+    },
+    {
+      "file": ".cache/brain-pose-full/candidate-parts.json.gz",
+      "sha256": "82d03589acbe135313dd0b07c318de4899501ab534024d2c1c15bedb95777da9"
+    },
+    {
+      "file": "scripts/verify-reference-brain-pose.mjs",
+      "sha256": "a94c7bc29f140be35446a57ff2a257c58f66103ebf08904b685d1a04c969aac7"
+    }
+  ]
+}
