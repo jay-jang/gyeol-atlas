@@ -10,7 +10,7 @@ const compressed=fs.readFileSync(`public/${spec.url}`),data=gunzipSync(compresse
 const buffer=data.buffer.slice(data.byteOffset,data.byteOffset+data.byteLength);
 const atlas=JSON.parse(fs.readFileSync('public/models/female/atlas-female.json'));
 const geometry=p=>{const g=new BufferGeometry();g.setAttribute('position',new BufferAttribute(new Float32Array(p.vertexCount*3),3));g.setIndex(new BufferAttribute(new Uint32Array(p.indexCount),1));return g;};
-test('native source restoration is pinned and changes only right compact ilium among all 1220 parts',()=>{
+test('the original ilium restoration patch is pinned and independently affects only right compact ilium',()=>{
   assert.equal(sha(compressed),spec.sha256);assert.equal(compressed.length,spec.gzipBytes);assert.equal(data.length,spec.bytes);
   assert.equal(sha(fs.readFileSync('public/models/female/atlas-female.json')),spec.baselineAtlasSha256);
   assert.equal(spec.records.length,1);assert.equal(spec.records[0].id,'HRAF0827');let changed=0;

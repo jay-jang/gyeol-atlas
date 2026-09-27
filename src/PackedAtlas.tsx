@@ -13,6 +13,7 @@ import { referenceSourceFor } from "./reference-source";
 import { applyFemaleArmRegistration } from "./female-arm-registration";
 import { applyFemaleFootRegistration } from "./female-foot-registration";
 import { applyFemaleSourceRestoration, femaleSourceRestoration } from "./female-source-restoration";
+import { applyFemaleKneeSourceRestoration, femaleKneeSourceRestoration } from "./female-knee-source-restoration";
 import { anatomyRegionMatches } from "./anatomy-region";
 import { femaleBrainBindings, resolveFemaleBrainGeometryPart, verifyFemaleBrainManifest } from "./female-brain-bindings";
 
@@ -70,7 +71,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         const text=await r.text();await verifyFemaleBrainManifest(dataset,text);
         return JSON.parse(text) as FemaleManifest;
       });
-      const [buffers,restoredSource] = await Promise.all([Promise.all(atlas.chunks.map(async (chunk) => {
+      const [buffers,restoredSource,restoredKnee] = await Promise.all([Promise.all(atlas.chunks.map(async (chunk) => {
         const file = chunk.gzip.split("/").pop()!;
         const response = await fetch(assetUrl(`models/${dataset}/${file}`), { signal: abort.signal });
         if (!response.ok) throw new Error(`참조 모델 ${file} ${response.status}`);
@@ -79,6 +80,10 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         const response=await fetch(assetUrl(femaleSourceRestoration.url),{signal:abort.signal});
         if(!response.ok)throw new Error(`원본 복원 모형 ${response.status}`);
         return inflate(response,femaleSourceRestoration.bytes);
+      })() : Promise.resolve(null),dataset === "female" ? (async () => {
+        const response=await fetch(assetUrl(femaleKneeSourceRestoration.url),{signal:abort.signal});
+        if(!response.ok)throw new Error(`무릎 원본 모형 ${response.status}`);
+        return inflate(response,femaleKneeSourceRestoration.bytes);
       })() : Promise.resolve(null)]);
       if (abort.signal.aborted) return;
       const group = new Group();
@@ -98,6 +103,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         geometry.setIndex(new BufferAttribute(new Uint32Array(buffer, geometryPart.indices, geometryPart.indexCount), 1));
         if(geometryPart!==part)geometry.userData.femaleBrainBinding={version:femaleBrainBindings.version,canonicalId:part.id,sourceGeometryId:geometryPart.id};
         applyFemaleSourceRestoration(geometry,dataset,part.id,part.system,restoredSource);
+        applyFemaleKneeSourceRestoration(geometry,dataset,part.id,part.system,restoredKnee);
         applyFemaleArmRegistration(geometry, dataset, part.id, part.system);
         applyFemaleFootRegistration(geometry, dataset, part.id, part.system);
         geometry.computeBoundingBox();

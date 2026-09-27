@@ -11,8 +11,12 @@ const atlas=JSON.parse(fs.readFileSync('public/models/female/atlas-female.json',
 const buffers=atlas.chunks.map((c:any)=>gunzipSync(fs.readFileSync(`public/models/female/${c.gzip.split('/').pop()}`)));
 const sourceRestoration=JSON.parse(fs.readFileSync('data/catalog/female-source-restoration.json','utf8'));
 const restoredBytes=gunzipSync(fs.readFileSync(`public/${sourceRestoration.url}`));
+const kneeRestoration=JSON.parse(fs.readFileSync('data/catalog/female-knee-source-restoration.json','utf8'));
+const kneeBytes=gunzipSync(fs.readFileSync(`public/${kneeRestoration.url}`));
 const brainBindings=JSON.parse(fs.readFileSync('data/catalog/female-brain-bindings.json','utf8'));
 const expected=Object.fromEntries(atlas.parts.map((p:any)=>{
+  const knee=kneeRestoration.records.find((r:any)=>r.id===p.id);
+  if(knee)return [p.id,createHash('sha256').update(kneeBytes.subarray(knee.positions,knee.positions+knee.vertexCount*12)).digest('hex')];
   const restored=sourceRestoration.records.find((r:any)=>r.id===p.id);
   if(restored)return [p.id,createHash('sha256').update(restoredBytes.subarray(restored.positions,restored.positions+restored.vertexCount*12)).digest('hex')];
   const binding=brainBindings.records.find((r:any)=>r.id===p.id),q=binding?atlas.parts.find((r:any)=>r.id===binding.partnerId):p;
