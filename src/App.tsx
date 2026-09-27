@@ -620,7 +620,8 @@ function AtlasPage({
   const fullCompositeDetail = Boolean(selectedComposite && state.detail && state.selection?.kind === "bundle"
     && state.selection.ids.length === selectedComposite.ids.length
     && selectedComposite.ids.every(id => state.selection!.ids.includes(id)));
-  const detailParts = selectedOrgan ? structuresForSex(state.sex).filter(item => selectedOrgan.ids.includes(item.id)) : [];
+  const detailParts = selectedOrgan ? structuresForSex(state.sex).filter(item => selectedOrgan.ids.includes(item.id))
+    .sort((a,b) => selectedOrgan.ids.indexOf(a.id)-selectedOrgan.ids.indexOf(b.id)) : [];
   return (
     <main
       className="anatomy-workspace"
@@ -1164,7 +1165,7 @@ function AtlasPage({
               <small className="selection-source">{selectedAnatomy.source} · 학습용 비진단 모델</small>
             )}
             {selectedComposite && <details className="anatomy-source-details" data-composite-provenance>
-              <summary>원본 {selectedComposite.ids.length}조각 · 관절연골 포함</summary>
+              <summary>{selectedComposite.sourceSummary}</summary>
               <p className="selection-description">{selectedComposite.description}</p>
             </details>}
             {state.sex === "female" && selectedOrgan?.id === "brain" && <div data-brain-provenance>
