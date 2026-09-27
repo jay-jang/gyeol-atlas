@@ -1,0 +1,1723 @@
+{
+  "source": {
+    "url": "https://openvt.eu/fem/viva/vivaplus/-/archive/v2.0.2/vivaplus-v2.0.2.zip",
+    "tag": "v2.0.2",
+    "commit": "cc986b7df66b109c1c73d4d5986553877e28b0dd",
+    "archiveSha256": "94b9415ffdc844c14e6ff79ca5a7a79810bc7f7e8632966dedf20f7faddcf7d1",
+    "variant": "50F-standing",
+    "zipCrcVerified": true,
+    "files": [
+      {
+        "path": "model/50F-standing/vivaplus-50F-standing.key",
+        "bytes": 4048,
+        "sha256": "42e616651d58b314630d915fc6ca98367fdf51ea5450a235824597f9694460b1"
+      },
+      {
+        "path": "model/50F-standing/vivaplus_50F-standing_nodes.k",
+        "bytes": 41242445,
+        "sha256": "782a4dbf1a1af7b2a57db1971e07d3eb441f03f0c9cfaba4155261f56d0d8b04"
+      },
+      {
+        "path": "model/common/vivaplus-10-Head.k",
+        "bytes": 41335,
+        "sha256": "ce5d7e16ad54535364b209f205ca872a20dd9c2423399a968e17105e22cabb94"
+      },
+      {
+        "path": "model/common/vivaplus-elements.k",
+        "bytes": 58930539,
+        "sha256": "f5b9df260cd1d3db4bd2d4db4b4cef90aa448cf697cd9e169f7f102057363edb"
+      }
+    ]
+  },
+  "status": "INCOMPLETE SOURCE EXTRACTION",
+  "geometrySha256": "9f86792b1ec9b2d92f49894fe9f32f75b3bdcdf4c4ad33bac59a5170d57d2208",
+  "groups": [
+    {
+      "id": "101101",
+      "name": "HE-Bone-Cortical-Frontal",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101101
+      ],
+      "cells": 251,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 251,
+      "duplicateQuads": 0,
+      "vertices": 282,
+      "triangles": 502,
+      "components": [
+        {
+          "minSourceNodeId": 1000360,
+          "triangles": 502,
+          "vertices": 282,
+          "signedVolumeMm3": 35450.70833068773
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101102",
+      "name": "HE-Bone-Trabecular-Frontal",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        101102
+      ],
+      "cells": 554,
+      "removedInternalFaces": 1315,
+      "boundaryQuads": 694,
+      "duplicateQuads": 0,
+      "vertices": 696,
+      "triangles": 1388,
+      "components": [
+        {
+          "minSourceNodeId": 1000033,
+          "triangles": 1388,
+          "vertices": 696,
+          "signedVolumeMm3": 49659.820113087335
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101105",
+      "name": "HE-Bone-Cortical-Frontal-Inner",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101105
+      ],
+      "cells": 366,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 366,
+      "duplicateQuads": 0,
+      "vertices": 402,
+      "triangles": 732,
+      "components": [
+        {
+          "minSourceNodeId": 1000041,
+          "triangles": 732,
+          "vertices": 402,
+          "signedVolumeMm3": -59360.22434544295
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101201",
+      "name": "HE-Bone-Cortical-Parietal",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101201
+      ],
+      "cells": 551,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 551,
+      "duplicateQuads": 0,
+      "vertices": 598,
+      "triangles": 1102,
+      "components": [
+        {
+          "minSourceNodeId": 1000014,
+          "triangles": 1102,
+          "vertices": 598,
+          "signedVolumeMm3": 164886.9651465417
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101202",
+      "name": "HE-Bone-Trabecular-Parietal",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        101202
+      ],
+      "cells": 1102,
+      "removedInternalFaces": 2663,
+      "boundaryQuads": 1286,
+      "duplicateQuads": 0,
+      "vertices": 1288,
+      "triangles": 2572,
+      "components": [
+        {
+          "minSourceNodeId": 1000012,
+          "triangles": 2572,
+          "vertices": 1288,
+          "signedVolumeMm3": 54953.83571928693
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101205",
+      "name": "HE-Bone-Cortical-Parietal-Inner",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101205
+      ],
+      "cells": 551,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 551,
+      "duplicateQuads": 0,
+      "vertices": 598,
+      "triangles": 1102,
+      "components": [
+        {
+          "minSourceNodeId": 1000012,
+          "triangles": 1102,
+          "vertices": 598,
+          "signedVolumeMm3": -144882.43714923735
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101302",
+      "name": "HE-Bone-Trabecular-Nasal",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        101302
+      ],
+      "cells": 24,
+      "removedInternalFaces": 44,
+      "boundaryQuads": 56,
+      "duplicateQuads": 0,
+      "vertices": 58,
+      "triangles": 112,
+      "components": [
+        {
+          "minSourceNodeId": 1000033,
+          "triangles": 112,
+          "vertices": 58,
+          "signedVolumeMm3": 1186.0247405719915
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 8.881784197001252e-16
+    },
+    {
+      "id": "101402",
+      "name": "HE-Bone-Trabecular-Sphenoid",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        101402
+      ],
+      "cells": 432,
+      "removedInternalFaces": 1028,
+      "boundaryQuads": 536,
+      "duplicateQuads": 0,
+      "vertices": 538,
+      "triangles": 1072,
+      "components": [
+        {
+          "minSourceNodeId": 1000033,
+          "triangles": 1072,
+          "vertices": 538,
+          "signedVolumeMm3": 27397.951207699174
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101501",
+      "name": "HE-Bone-Cortical-Temporal",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101501
+      ],
+      "cells": 331,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 331,
+      "duplicateQuads": 0,
+      "vertices": 375,
+      "triangles": 662,
+      "components": [
+        {
+          "minSourceNodeId": 1000162,
+          "triangles": 662,
+          "vertices": 375,
+          "signedVolumeMm3": 36121.776929017105
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101502",
+      "name": "HE-Bone-Trabecular-Temporal",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        101502
+      ],
+      "cells": 502,
+      "removedInternalFaces": 1182,
+      "boundaryQuads": 648,
+      "duplicateQuads": 0,
+      "vertices": 650,
+      "triangles": 1296,
+      "components": [
+        {
+          "minSourceNodeId": 1000162,
+          "triangles": 1296,
+          "vertices": 650,
+          "signedVolumeMm3": 43751.65147326667
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101503",
+      "name": "HE-Bone-Temporal-Rigid",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101503
+      ],
+      "cells": 2,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 2,
+      "duplicateQuads": 0,
+      "vertices": 6,
+      "triangles": 4,
+      "components": [
+        {
+          "minSourceNodeId": 1015469,
+          "triangles": 4,
+          "vertices": 6,
+          "signedVolumeMm3": -41.636985056782734
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 0.0
+    },
+    {
+      "id": "101505",
+      "name": "HE-Bone-Cortical-Temporal-Inner",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101505
+      ],
+      "cells": 244,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 244,
+      "duplicateQuads": 0,
+      "vertices": 278,
+      "triangles": 488,
+      "components": [
+        {
+          "minSourceNodeId": 1000259,
+          "triangles": 488,
+          "vertices": 278,
+          "signedVolumeMm3": -43680.96276823055
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101601",
+      "name": "HE-Bone-Cortical-Occiput",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101601
+      ],
+      "cells": 145,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 145,
+      "duplicateQuads": 0,
+      "vertices": 190,
+      "triangles": 290,
+      "components": [
+        {
+          "minSourceNodeId": 1000031,
+          "triangles": 242,
+          "vertices": 148,
+          "signedVolumeMm3": 10453.173121079348
+        },
+        {
+          "minSourceNodeId": 1000042,
+          "triangles": 44,
+          "vertices": 36,
+          "signedVolumeMm3": -640.0993019207094
+        },
+        {
+          "minSourceNodeId": 1000274,
+          "triangles": 4,
+          "vertices": 6,
+          "signedVolumeMm3": -12.69037768355519
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101602",
+      "name": "HE-Bone-Trabecular-Occiput",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        101602
+      ],
+      "cells": 300,
+      "removedInternalFaces": 686,
+      "boundaryQuads": 428,
+      "duplicateQuads": 0,
+      "vertices": 430,
+      "triangles": 856,
+      "components": [
+        {
+          "minSourceNodeId": 1000024,
+          "triangles": 856,
+          "vertices": 430,
+          "signedVolumeMm3": 19927.36741577667
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101603",
+      "name": "HE-Bone-Occipital-rigid",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101603
+      ],
+      "cells": 56,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 56,
+      "duplicateQuads": 0,
+      "vertices": 81,
+      "triangles": 112,
+      "components": [
+        {
+          "minSourceNodeId": 1000048,
+          "triangles": 112,
+          "vertices": 81,
+          "signedVolumeMm3": 4195.562603890302
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 8.881784197001252e-16
+    },
+    {
+      "id": "101605",
+      "name": "HE-Bone-Cortical-Occiput-Inner",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101605
+      ],
+      "cells": 150,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 150,
+      "duplicateQuads": 0,
+      "vertices": 183,
+      "triangles": 300,
+      "components": [
+        {
+          "minSourceNodeId": 1000024,
+          "triangles": 300,
+          "vertices": 183,
+          "signedVolumeMm3": -20169.466759800292
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101701",
+      "name": "HE-Bone-Cortical-Maxilla",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101701
+      ],
+      "cells": 535,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 535,
+      "duplicateQuads": 0,
+      "vertices": 606,
+      "triangles": 1070,
+      "components": [
+        {
+          "minSourceNodeId": 1000033,
+          "triangles": 1070,
+          "vertices": 606,
+          "signedVolumeMm3": 13502.998957084477
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101702",
+      "name": "HE-Bone-Trabecular-Maxilla",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        101702
+      ],
+      "cells": 513,
+      "removedInternalFaces": 1301,
+      "boundaryQuads": 476,
+      "duplicateQuads": 0,
+      "vertices": 478,
+      "triangles": 952,
+      "components": [
+        {
+          "minSourceNodeId": 1000420,
+          "triangles": 952,
+          "vertices": 478,
+          "signedVolumeMm3": 45285.62826721749
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101703",
+      "name": "HE-Bone-Maxilla-rigid",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101703
+      ],
+      "cells": 52,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 52,
+      "duplicateQuads": 0,
+      "vertices": 76,
+      "triangles": 104,
+      "components": [
+        {
+          "minSourceNodeId": 1000162,
+          "triangles": 32,
+          "vertices": 27,
+          "signedVolumeMm3": 283.7045717711526
+        },
+        {
+          "minSourceNodeId": 1000420,
+          "triangles": 72,
+          "vertices": 49,
+          "signedVolumeMm3": -283.85105848953145
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 4.440892098500626e-16
+    },
+    {
+      "id": "101801",
+      "name": "HE-Zygo-Cortical",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101801
+      ],
+      "cells": 140,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 140,
+      "duplicateQuads": 0,
+      "vertices": 162,
+      "triangles": 280,
+      "components": [
+        {
+          "minSourceNodeId": 1008500,
+          "triangles": 280,
+          "vertices": 162,
+          "signedVolumeMm3": 4597.6676865151085
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101802",
+      "name": "HE-Bone-Trabecular-Zygomatic",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        101802
+      ],
+      "cells": 124,
+      "removedInternalFaces": 272,
+      "boundaryQuads": 200,
+      "duplicateQuads": 0,
+      "vertices": 202,
+      "triangles": 400,
+      "components": [
+        {
+          "minSourceNodeId": 1008500,
+          "triangles": 400,
+          "vertices": 202,
+          "signedVolumeMm3": 7013.487905318002
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101901",
+      "name": "HE-Bone-Cortical-Mandible",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101901
+      ],
+      "cells": 374,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 374,
+      "duplicateQuads": 0,
+      "vertices": 397,
+      "triangles": 748,
+      "components": [
+        {
+          "minSourceNodeId": 1000544,
+          "triangles": 748,
+          "vertices": 397,
+          "signedVolumeMm3": 29396.025190274482
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101902",
+      "name": "HE-Bone-Trabecular-Mandible",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        101902
+      ],
+      "cells": 684,
+      "removedInternalFaces": 1838,
+      "boundaryQuads": 428,
+      "duplicateQuads": 0,
+      "vertices": 430,
+      "triangles": 856,
+      "components": [
+        {
+          "minSourceNodeId": 1000406,
+          "triangles": 856,
+          "vertices": 430,
+          "signedVolumeMm3": 34475.226891217986
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101903",
+      "name": "HE-Bone-Mandible-Rigid",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101903
+      ],
+      "cells": 2,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 2,
+      "duplicateQuads": 0,
+      "vertices": 6,
+      "triangles": 4,
+      "components": [
+        {
+          "minSourceNodeId": 1004751,
+          "triangles": 4,
+          "vertices": 6,
+          "signedVolumeMm3": 11.651242115644568
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 8.881784197001252e-16
+    },
+    {
+      "id": "101991",
+      "name": "HE-Teeth",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        101991
+      ],
+      "cells": 96,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 96,
+      "duplicateQuads": 0,
+      "vertices": 127,
+      "triangles": 192,
+      "components": [
+        {
+          "minSourceNodeId": 1000541,
+          "triangles": 100,
+          "vertices": 66,
+          "signedVolumeMm3": 1173.5819063917277
+        },
+        {
+          "minSourceNodeId": 1000547,
+          "triangles": 92,
+          "vertices": 61,
+          "signedVolumeMm3": 1770.2598105668487
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "101992",
+      "name": "HE-Teeth",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        101992
+      ],
+      "cells": 46,
+      "removedInternalFaces": 65,
+      "boundaryQuads": 146,
+      "duplicateQuads": 0,
+      "vertices": 150,
+      "triangles": 292,
+      "components": [
+        {
+          "minSourceNodeId": 1000541,
+          "triangles": 152,
+          "vertices": 78,
+          "signedVolumeMm3": 1809.4817423486675
+        },
+        {
+          "minSourceNodeId": 1000547,
+          "triangles": 140,
+          "vertices": 72,
+          "signedVolumeMm3": 2206.3583426779956
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "103003",
+      "name": "HE-Oral_Cavity",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        103003
+      ],
+      "cells": 352,
+      "removedInternalFaces": 886,
+      "boundaryQuads": 340,
+      "duplicateQuads": 0,
+      "vertices": 342,
+      "triangles": 680,
+      "components": [
+        {
+          "minSourceNodeId": 1000064,
+          "triangles": 680,
+          "vertices": 342,
+          "signedVolumeMm3": 74792.944564323
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "104000",
+      "name": "HE-Scalp",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        104000
+      ],
+      "cells": 2012,
+      "removedInternalFaces": 4922,
+      "boundaryQuads": 2228,
+      "duplicateQuads": 0,
+      "vertices": 2230,
+      "triangles": 4456,
+      "components": [
+        {
+          "minSourceNodeId": 1000014,
+          "triangles": 4456,
+          "vertices": 2230,
+          "signedVolumeMm3": 215885.08058108966
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "104002",
+      "name": "HE-Head-Skin",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        104002
+      ],
+      "cells": 1537,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 1537,
+      "duplicateQuads": 0,
+      "vertices": 1595,
+      "triangles": 3074,
+      "components": [
+        {
+          "minSourceNodeId": 1000025,
+          "triangles": 3074,
+          "vertices": 1595,
+          "signedVolumeMm3": 1120363.8946972743
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "105059",
+      "name": "HE-Soft-Tissue-Nulls",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        105059
+      ],
+      "cells": 488,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 488,
+      "duplicateQuads": 0,
+      "vertices": 534,
+      "triangles": 976,
+      "components": [
+        {
+          "minSourceNodeId": 1000058,
+          "triangles": 976,
+          "vertices": 534,
+          "signedVolumeMm3": 168207.7434673395
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "105069",
+      "name": "HE-Soft-Tissue-Nulls-Connecting-Edge",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        105069
+      ],
+      "cells": 9,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 9,
+      "duplicateQuads": 0,
+      "vertices": 20,
+      "triangles": 18,
+      "components": [
+        {
+          "minSourceNodeId": 1001631,
+          "triangles": 18,
+          "vertices": 20,
+          "signedVolumeMm3": 654.7445073222132
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 0.0
+    },
+    {
+      "id": "106000",
+      "name": "HE-Brain-Cerebellum",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        106000
+      ],
+      "cells": 680,
+      "removedInternalFaces": 1846,
+      "boundaryQuads": 388,
+      "duplicateQuads": 0,
+      "vertices": 390,
+      "triangles": 776,
+      "components": [
+        {
+          "minSourceNodeId": 1000009,
+          "triangles": 776,
+          "vertices": 390,
+          "signedVolumeMm3": 51776.71738864332
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "107000",
+      "name": "HE-Brain-Corpus-Callosum",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        107000
+      ],
+      "cells": 54,
+      "removedInternalFaces": 95,
+      "boundaryQuads": 134,
+      "duplicateQuads": 0,
+      "vertices": 136,
+      "triangles": 268,
+      "components": [
+        {
+          "minSourceNodeId": 1000452,
+          "triangles": 268,
+          "vertices": 136,
+          "signedVolumeMm3": 4546.6687139883325
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 1.7763568394002505e-15
+    },
+    {
+      "id": "151101",
+      "name": "HE-Bone-Cortical-Frontal",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151101
+      ],
+      "cells": 251,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 251,
+      "duplicateQuads": 0,
+      "vertices": 282,
+      "triangles": 502,
+      "components": [
+        {
+          "minSourceNodeId": 1000360,
+          "triangles": 502,
+          "vertices": 282,
+          "signedVolumeMm3": 35439.0069185903
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151102",
+      "name": "HE-Bone-Trabecular-Frontal",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        151102
+      ],
+      "cells": 554,
+      "removedInternalFaces": 1315,
+      "boundaryQuads": 694,
+      "duplicateQuads": 0,
+      "vertices": 696,
+      "triangles": 1388,
+      "components": [
+        {
+          "minSourceNodeId": 1000033,
+          "triangles": 1388,
+          "vertices": 696,
+          "signedVolumeMm3": 49687.58684005383
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151105",
+      "name": "HE-Bone-Cortical-Frontal-Inner",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151105
+      ],
+      "cells": 366,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 366,
+      "duplicateQuads": 0,
+      "vertices": 402,
+      "triangles": 732,
+      "components": [
+        {
+          "minSourceNodeId": 1000041,
+          "triangles": 732,
+          "vertices": 402,
+          "signedVolumeMm3": -59332.36338860171
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151201",
+      "name": "HE-Bone-Cortical-Parietal",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151201
+      ],
+      "cells": 551,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 551,
+      "duplicateQuads": 0,
+      "vertices": 598,
+      "triangles": 1102,
+      "components": [
+        {
+          "minSourceNodeId": 1000014,
+          "triangles": 1102,
+          "vertices": 598,
+          "signedVolumeMm3": 164942.80450281777
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151202",
+      "name": "HE-Bone-Trabecular-Parietal",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        151202
+      ],
+      "cells": 1102,
+      "removedInternalFaces": 2663,
+      "boundaryQuads": 1286,
+      "duplicateQuads": 0,
+      "vertices": 1288,
+      "triangles": 2572,
+      "components": [
+        {
+          "minSourceNodeId": 1000012,
+          "triangles": 2572,
+          "vertices": 1288,
+          "signedVolumeMm3": 54956.14488600283
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151205",
+      "name": "HE-Bone-Cortical-Parietal-Inner",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151205
+      ],
+      "cells": 551,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 551,
+      "duplicateQuads": 0,
+      "vertices": 598,
+      "triangles": 1102,
+      "components": [
+        {
+          "minSourceNodeId": 1000012,
+          "triangles": 1102,
+          "vertices": 598,
+          "signedVolumeMm3": -144871.1442819205
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151302",
+      "name": "HE-Bone-Trabecular-Nasal",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        151302
+      ],
+      "cells": 24,
+      "removedInternalFaces": 44,
+      "boundaryQuads": 56,
+      "duplicateQuads": 0,
+      "vertices": 58,
+      "triangles": 112,
+      "components": [
+        {
+          "minSourceNodeId": 1000033,
+          "triangles": 112,
+          "vertices": 58,
+          "signedVolumeMm3": 1186.0247405719915
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 8.881784197001252e-16
+    },
+    {
+      "id": "151402",
+      "name": "HE-Bone-Trabecular-Sphenoid",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        151402
+      ],
+      "cells": 432,
+      "removedInternalFaces": 1028,
+      "boundaryQuads": 536,
+      "duplicateQuads": 0,
+      "vertices": 538,
+      "triangles": 1072,
+      "components": [
+        {
+          "minSourceNodeId": 1000033,
+          "triangles": 1072,
+          "vertices": 538,
+          "signedVolumeMm3": 27397.70329715351
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151501",
+      "name": "HE-Bone-Cortical-Temporal",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151501
+      ],
+      "cells": 331,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 331,
+      "duplicateQuads": 0,
+      "vertices": 375,
+      "triangles": 662,
+      "components": [
+        {
+          "minSourceNodeId": 1000162,
+          "triangles": 662,
+          "vertices": 375,
+          "signedVolumeMm3": 36117.63959214075
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151503",
+      "name": "HE-Bone-Temporal-Rigid",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151503
+      ],
+      "cells": 2,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 2,
+      "duplicateQuads": 0,
+      "vertices": 6,
+      "triangles": 4,
+      "components": [
+        {
+          "minSourceNodeId": 1033727,
+          "triangles": 4,
+          "vertices": 6,
+          "signedVolumeMm3": -41.636985056782734
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 0.0
+    },
+    {
+      "id": "151505",
+      "name": "HE-Bone-Cortical-Temporal-Inner",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151505
+      ],
+      "cells": 244,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 244,
+      "duplicateQuads": 0,
+      "vertices": 278,
+      "triangles": 488,
+      "components": [
+        {
+          "minSourceNodeId": 1000259,
+          "triangles": 488,
+          "vertices": 278,
+          "signedVolumeMm3": -43645.137578062735
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151601",
+      "name": "HE-Bone-Cortical-Occiput",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151601
+      ],
+      "cells": 145,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 145,
+      "duplicateQuads": 0,
+      "vertices": 190,
+      "triangles": 290,
+      "components": [
+        {
+          "minSourceNodeId": 1000031,
+          "triangles": 242,
+          "vertices": 148,
+          "signedVolumeMm3": 10452.432929757884
+        },
+        {
+          "minSourceNodeId": 1000042,
+          "triangles": 44,
+          "vertices": 36,
+          "signedVolumeMm3": -640.2161649206923
+        },
+        {
+          "minSourceNodeId": 1000274,
+          "triangles": 4,
+          "vertices": 6,
+          "signedVolumeMm3": -12.63582747755173
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151602",
+      "name": "HE-Bone-Trabecular-Occiput",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        151602
+      ],
+      "cells": 300,
+      "removedInternalFaces": 686,
+      "boundaryQuads": 428,
+      "duplicateQuads": 0,
+      "vertices": 430,
+      "triangles": 856,
+      "components": [
+        {
+          "minSourceNodeId": 1000024,
+          "triangles": 856,
+          "vertices": 430,
+          "signedVolumeMm3": 19921.80207500466
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151605",
+      "name": "HE-Bone-Cortical-Occiput-Inner",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151605
+      ],
+      "cells": 150,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 150,
+      "duplicateQuads": 0,
+      "vertices": 183,
+      "triangles": 300,
+      "components": [
+        {
+          "minSourceNodeId": 1000024,
+          "triangles": 300,
+          "vertices": 183,
+          "signedVolumeMm3": -20169.452558139255
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151701",
+      "name": "HE-Bone-Cortical-Maxilla",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151701
+      ],
+      "cells": 535,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 535,
+      "duplicateQuads": 0,
+      "vertices": 606,
+      "triangles": 1070,
+      "components": [
+        {
+          "minSourceNodeId": 1000033,
+          "triangles": 1070,
+          "vertices": 606,
+          "signedVolumeMm3": 13433.656838653627
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151702",
+      "name": "HE-Bone-Trabecular-Maxilla",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        151702
+      ],
+      "cells": 513,
+      "removedInternalFaces": 1301,
+      "boundaryQuads": 476,
+      "duplicateQuads": 0,
+      "vertices": 478,
+      "triangles": 952,
+      "components": [
+        {
+          "minSourceNodeId": 1000420,
+          "triangles": 952,
+          "vertices": 478,
+          "signedVolumeMm3": 45285.564507317154
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151801",
+      "name": "HE-Zygo-Cortical",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151801
+      ],
+      "cells": 140,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 140,
+      "duplicateQuads": 0,
+      "vertices": 162,
+      "triangles": 280,
+      "components": [
+        {
+          "minSourceNodeId": 1026813,
+          "triangles": 280,
+          "vertices": 162,
+          "signedVolumeMm3": 4599.238998575102
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151802",
+      "name": "HE-Bone-Trabecular-Zygomatic",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        151802
+      ],
+      "cells": 124,
+      "removedInternalFaces": 272,
+      "boundaryQuads": 200,
+      "duplicateQuads": 0,
+      "vertices": 202,
+      "triangles": 400,
+      "components": [
+        {
+          "minSourceNodeId": 1026813,
+          "triangles": 400,
+          "vertices": 202,
+          "signedVolumeMm3": 7016.919589454335
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151901",
+      "name": "HE-Bone-Cortical-Mandible",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151901
+      ],
+      "cells": 374,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 374,
+      "duplicateQuads": 0,
+      "vertices": 397,
+      "triangles": 748,
+      "components": [
+        {
+          "minSourceNodeId": 1000544,
+          "triangles": 748,
+          "vertices": 397,
+          "signedVolumeMm3": 29398.488173096586
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151902",
+      "name": "HE-Bone-Trabecular-Mandible",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        151902
+      ],
+      "cells": 684,
+      "removedInternalFaces": 1838,
+      "boundaryQuads": 428,
+      "duplicateQuads": 0,
+      "vertices": 430,
+      "triangles": 856,
+      "components": [
+        {
+          "minSourceNodeId": 1000406,
+          "triangles": 856,
+          "vertices": 430,
+          "signedVolumeMm3": 34474.71560832517
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151903",
+      "name": "HE-Bone-Mandible-Rigid",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151903
+      ],
+      "cells": 2,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 2,
+      "duplicateQuads": 0,
+      "vertices": 6,
+      "triangles": 4,
+      "components": [
+        {
+          "minSourceNodeId": 1023075,
+          "triangles": 4,
+          "vertices": 6,
+          "signedVolumeMm3": 11.666373987776687
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 8.881784197001252e-16
+    },
+    {
+      "id": "151991",
+      "name": "HE-Teeth",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        151991
+      ],
+      "cells": 96,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 96,
+      "duplicateQuads": 0,
+      "vertices": 127,
+      "triangles": 192,
+      "components": [
+        {
+          "minSourceNodeId": 1000541,
+          "triangles": 100,
+          "vertices": 66,
+          "signedVolumeMm3": 1173.5835053705607
+        },
+        {
+          "minSourceNodeId": 1000547,
+          "triangles": 92,
+          "vertices": 61,
+          "signedVolumeMm3": 1770.251093898983
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "151992",
+      "name": "HE-Teeth",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        151992
+      ],
+      "cells": 46,
+      "removedInternalFaces": 65,
+      "boundaryQuads": 146,
+      "duplicateQuads": 0,
+      "vertices": 150,
+      "triangles": 292,
+      "components": [
+        {
+          "minSourceNodeId": 1000541,
+          "triangles": 152,
+          "vertices": 78,
+          "signedVolumeMm3": 1809.484188742334
+        },
+        {
+          "minSourceNodeId": 1000547,
+          "triangles": 140,
+          "vertices": 72,
+          "signedVolumeMm3": 2206.369080992162
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "153003",
+      "name": "HE-Oral_Cavity",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        153003
+      ],
+      "cells": 352,
+      "removedInternalFaces": 886,
+      "boundaryQuads": 340,
+      "duplicateQuads": 0,
+      "vertices": 342,
+      "triangles": 680,
+      "components": [
+        {
+          "minSourceNodeId": 1002475,
+          "triangles": 680,
+          "vertices": 342,
+          "signedVolumeMm3": 74872.05909628198
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "154000",
+      "name": "HE-Scalp",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        154000
+      ],
+      "cells": 2012,
+      "removedInternalFaces": 4922,
+      "boundaryQuads": 2228,
+      "duplicateQuads": 0,
+      "vertices": 2230,
+      "triangles": 4456,
+      "components": [
+        {
+          "minSourceNodeId": 1000014,
+          "triangles": 4456,
+          "vertices": 2230,
+          "signedVolumeMm3": 215810.42124231416
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "154002",
+      "name": "HE-Head-Skin",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        154002
+      ],
+      "cells": 1537,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 1537,
+      "duplicateQuads": 0,
+      "vertices": 1595,
+      "triangles": 3074,
+      "components": [
+        {
+          "minSourceNodeId": 1001850,
+          "triangles": 3074,
+          "vertices": 1595,
+          "signedVolumeMm3": 1120472.59276495
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "155059",
+      "name": "HE-Soft-Tissue-Nulls",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        155059
+      ],
+      "cells": 488,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 488,
+      "duplicateQuads": 0,
+      "vertices": 534,
+      "triangles": 976,
+      "components": [
+        {
+          "minSourceNodeId": 1002468,
+          "triangles": 976,
+          "vertices": 534,
+          "signedVolumeMm3": 168103.73016528616
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "155069",
+      "name": "HE-Soft-Tissue-Nulls-Connecting-Edge",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        155069
+      ],
+      "cells": 9,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 9,
+      "duplicateQuads": 0,
+      "vertices": 20,
+      "triangles": 18,
+      "components": [
+        {
+          "minSourceNodeId": 1002988,
+          "triangles": 18,
+          "vertices": 20,
+          "signedVolumeMm3": 649.9937968769058
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 0.0
+    },
+    {
+      "id": "156000",
+      "name": "HE-Brain-Cerebellum",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        156000
+      ],
+      "cells": 680,
+      "removedInternalFaces": 1846,
+      "boundaryQuads": 388,
+      "duplicateQuads": 0,
+      "vertices": 390,
+      "triangles": 776,
+      "components": [
+        {
+          "minSourceNodeId": 1000009,
+          "triangles": 776,
+          "vertices": 390,
+          "signedVolumeMm3": 51778.59157449433
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    },
+    {
+      "id": "157000",
+      "name": "HE-Brain-Corpus-Callosum",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        157000
+      ],
+      "cells": 54,
+      "removedInternalFaces": 95,
+      "boundaryQuads": 134,
+      "duplicateQuads": 0,
+      "vertices": 136,
+      "triangles": 268,
+      "components": [
+        {
+          "minSourceNodeId": 1000452,
+          "triangles": 268,
+          "vertices": 136,
+          "signedVolumeMm3": 4546.685460802332
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 1.7763568394002505e-15
+    },
+    {
+      "id": "head-skin-union",
+      "name": "head-skin-union",
+      "method": "shell-reference",
+      "sourcePartIds": [
+        104002,
+        154002
+      ],
+      "cells": 3074,
+      "removedInternalFaces": 0,
+      "boundaryQuads": 3074,
+      "duplicateQuads": 0,
+      "vertices": 3099,
+      "triangles": 6148,
+      "components": [
+        {
+          "minSourceNodeId": 1000025,
+          "triangles": 6148,
+          "vertices": 3099,
+          "signedVolumeMm3": 3130065.947855812
+        }
+      ],
+      "maxCoordinateRoundtripErrorMm": 7.105427357601002e-15
+    }
+  ],
+  "failures": [
+    {
+      "id": "103000",
+      "name": "HE-Brain",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        103000
+      ],
+      "error": "Boundary triangles disagree about outward direction"
+    },
+    {
+      "id": "103001",
+      "name": "HE-Face",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        103001
+      ],
+      "error": "Boundary triangles disagree about outward direction"
+    },
+    {
+      "id": "105000",
+      "name": "HE-Brain-Cerebrum",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        105000
+      ],
+      "error": "Boundary triangles disagree about outward direction"
+    },
+    {
+      "id": "105003",
+      "name": "HE-Brain-Cerebrum-CSF",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        105003
+      ],
+      "error": "Boundary triangles disagree about outward direction"
+    },
+    {
+      "id": "106003",
+      "name": "HE-Brain-Cerebellum-CSF",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        106003
+      ],
+      "error": "Boundary triangles disagree about outward direction"
+    },
+    {
+      "id": "151502",
+      "name": "HE-Bone-Trabecular-Temporal",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        151502
+      ],
+      "error": "Boundary triangles disagree about outward direction"
+    },
+    {
+      "id": "153000",
+      "name": "HE-Brain",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        153000
+      ],
+      "error": "Boundary triangles disagree about outward direction"
+    },
+    {
+      "id": "155000",
+      "name": "HE-Brain-Cerebrum",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        155000
+      ],
+      "error": "Boundary triangles disagree about outward direction"
+    },
+    {
+      "id": "155003",
+      "name": "HE-Brain-Cerebrum-CSF",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        155003
+      ],
+      "error": "Boundary triangles disagree about outward direction"
+    },
+    {
+      "id": "156003",
+      "name": "HE-Brain-Cerebellum-CSF",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        156003
+      ],
+      "error": "Boundary triangles disagree about outward direction"
+    },
+    {
+      "id": "brain-tissue-union",
+      "name": "brain-tissue-union",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        103000,
+        105000,
+        106000,
+        107000,
+        153000,
+        155000,
+        156000,
+        157000
+      ],
+      "error": "Boundary triangles disagree about outward direction"
+    },
+    {
+      "id": "skull-trabecular-union",
+      "name": "skull-trabecular-union",
+      "method": "solid-boundary",
+      "sourcePartIds": [
+        101102,
+        101202,
+        101302,
+        101402,
+        101502,
+        101602,
+        101702,
+        101802,
+        151102,
+        151202,
+        151302,
+        151402,
+        151502,
+        151602,
+        151702,
+        151802
+      ],
+      "error": "Boundary triangles disagree about outward direction"
+    }
+  ],
+  "displayTransform": "(x,y,z) mm -> (y,z,x)/1000 m",
+  "code": [
+    {
+      "path": "/Users/nuinuri/workspace/anatomy/scripts/extract-vivaplus-head.py",
+      "sha256": "a751b9ddae2c6bc631e275e984abce5c9ae6144d8fd911f91723d2ec14293075"
+    },
+    {
+      "path": "/Users/nuinuri/workspace/anatomy/scripts/audit-vivaplus-head.py",
+      "sha256": "ecf185e28d1f02463c3f2962e822dc91bf59a6bfaa1251aa0ce081d911bb7dd9"
+    },
+    {
+      "path": "/Users/nuinuri/workspace/anatomy/scripts/extract-vivaplus-surfaces.py",
+      "sha256": "3725b14fc3c635f3e6fafdb4524fd415a625b39c9888344532725f21b00b6aaf"
+    },
+    {
+      "path": "/Users/nuinuri/workspace/anatomy/scripts/audit-vivaplus.py",
+      "sha256": "172890b64fe209f937fe6caa4679e6fa115cf9194662b7439fe240f822c613ac"
+    }
+  ],
+  "limitations": [
+    "73 PART surfaces and three union diagnostics are not 76 anatomical organs.",
+    "The skull union is trabecular solid boundaries only: cortical shell thickness, mandible and teeth are excluded.",
+    "Eight brain-labelled source partitions are grouped without CSF, oral cavity or nulls; this does not certify their biological fidelity.",
+    "Shared solid faces are removed by original node ID, no coordinate welding/smoothing/fitting.",
+    "Shell reference surfaces omit section/per-element thickness; no physical inner/outer shell geometry is invented.",
+    "Canonical quad triangulation approximates warped FE faces; not exact finite-element interpolation.",
+    "Not registered to HRA, not a complete female skeletal replacement, not deployed."
+  ]
+}

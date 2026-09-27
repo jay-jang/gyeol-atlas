@@ -1,0 +1,1742 @@
+{
+  "source": {
+    "url": "https://openvt.eu/fem/viva/vivaplus/-/archive/v2.0.2/vivaplus-v2.0.2.zip",
+    "tag": "v2.0.2",
+    "commit": "cc986b7df66b109c1c73d4d5986553877e28b0dd",
+    "archiveSha256": "94b9415ffdc844c14e6ff79ca5a7a79810bc7f7e8632966dedf20f7faddcf7d1",
+    "variant": "50F-standing",
+    "zipCrcVerified": true,
+    "files": [
+      {
+        "path": "model/50F-standing/vivaplus-50F-standing.key",
+        "bytes": 4048,
+        "sha256": "42e616651d58b314630d915fc6ca98367fdf51ea5450a235824597f9694460b1"
+      },
+      {
+        "path": "model/50F-standing/vivaplus_50F-standing_nodes.k",
+        "bytes": 41242445,
+        "sha256": "782a4dbf1a1af7b2a57db1971e07d3eb441f03f0c9cfaba4155261f56d0d8b04"
+      },
+      {
+        "path": "model/common/vivaplus-10-Head.k",
+        "bytes": 41335,
+        "sha256": "ce5d7e16ad54535364b209f205ca872a20dd9c2423399a968e17105e22cabb94"
+      },
+      {
+        "path": "model/common/vivaplus-elements.k",
+        "bytes": 58930539,
+        "sha256": "f5b9df260cd1d3db4bd2d4db4b4cef90aa448cf697cd9e169f7f102057363edb"
+      }
+    ]
+  },
+  "status": "HEAD SOURCE INVENTORY ONLY; not exported, registered, or anatomically validated",
+  "nodeFileCount": 564960,
+  "declaredParts": 73,
+  "nonemptyParts": 73,
+  "elementCounts": {
+    "*ELEMENT_SHELL_THICKNESS": 5272,
+    "*ELEMENT_SOLID": 36650,
+    "*ELEMENT_SHELL": 6380
+  },
+  "parts": [
+    {
+      "id": 101101,
+      "name": "HE-Bone-Cortical-Frontal",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 251
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 251
+      },
+      "referencedNodes": 282,
+      "boundsMm": [
+        [
+          36.176,
+          0.0,
+          1498.823
+        ],
+        [
+          98.414,
+          57.506,
+          1585.457
+        ]
+      ]
+    },
+    {
+      "id": 101102,
+      "name": "HE-Bone-Trabecular-Frontal",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 554
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 554
+      },
+      "referencedNodes": 939,
+      "boundsMm": [
+        [
+          35.801,
+          -0.04,
+          1487.94
+        ],
+        [
+          98.414,
+          57.506,
+          1585.457
+        ]
+      ]
+    },
+    {
+      "id": 101105,
+      "name": "HE-Bone-Cortical-Frontal-Inner",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 366
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 366
+      },
+      "referencedNodes": 402,
+      "boundsMm": [
+        [
+          30.057,
+          -0.04,
+          1489.808
+        ],
+        [
+          90.259,
+          55.745,
+          1579.5
+        ]
+      ]
+    },
+    {
+      "id": 101201,
+      "name": "HE-Bone-Cortical-Parietal",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 551
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 551
+      },
+      "referencedNodes": 598,
+      "boundsMm": [
+        [
+          -83.172,
+          -0.005,
+          1483.316
+        ],
+        [
+          49.115,
+          67.987,
+          1596.213
+        ]
+      ]
+    },
+    {
+      "id": 101202,
+      "name": "HE-Bone-Trabecular-Parietal",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1102
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 1102
+      },
+      "referencedNodes": 1794,
+      "boundsMm": [
+        [
+          -83.172,
+          -0.034,
+          1483.316
+        ],
+        [
+          49.115,
+          67.987,
+          1596.213
+        ]
+      ]
+    },
+    {
+      "id": 101205,
+      "name": "HE-Bone-Cortical-Parietal-Inner",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 551
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 551
+      },
+      "referencedNodes": 598,
+      "boundsMm": [
+        [
+          -79.626,
+          -0.034,
+          1485.145
+        ],
+        [
+          45.834,
+          64.504,
+          1593.152
+        ]
+      ]
+    },
+    {
+      "id": 101302,
+      "name": "HE-Bone-Trabecular-Nasal",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 24
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 24
+      },
+      "referencedNodes": 63,
+      "boundsMm": [
+        [
+          81.827,
+          0.0,
+          1474.938
+        ],
+        [
+          97.341,
+          12.228,
+          1499.311
+        ]
+      ]
+    },
+    {
+      "id": 101402,
+      "name": "HE-Bone-Trabecular-Sphenoid",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 432
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 432
+      },
+      "referencedNodes": 735,
+      "boundsMm": [
+        [
+          19.224,
+          0.0,
+          1466.161
+        ],
+        [
+          84.515,
+          62.414,
+          1535.588
+        ]
+      ]
+    },
+    {
+      "id": 101501,
+      "name": "HE-Bone-Cortical-Temporal",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 331
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 331
+      },
+      "referencedNodes": 375,
+      "boundsMm": [
+        [
+          -58.53,
+          0.0,
+          1459.946
+        ],
+        [
+          49.613,
+          68.695,
+          1535.196
+        ]
+      ]
+    },
+    {
+      "id": 101502,
+      "name": "HE-Bone-Trabecular-Temporal",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 502
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 502
+      },
+      "referencedNodes": 864,
+      "boundsMm": [
+        [
+          -58.53,
+          0.0,
+          1459.407
+        ],
+        [
+          37.104,
+          68.695,
+          1533.308
+        ]
+      ]
+    },
+    {
+      "id": 101503,
+      "name": "HE-Bone-Temporal-Rigid",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 2
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 2
+      },
+      "referencedNodes": 6,
+      "boundsMm": [
+        [
+          3.606,
+          36.829,
+          1471.356
+        ],
+        [
+          14.632,
+          43.978,
+          1476.061
+        ]
+      ]
+    },
+    {
+      "id": 101505,
+      "name": "HE-Bone-Cortical-Temporal-Inner",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 244
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 244
+      },
+      "referencedNodes": 278,
+      "boundsMm": [
+        [
+          -55.625,
+          0.0,
+          1469.978
+        ],
+        [
+          43.702,
+          66.186,
+          1535.588
+        ]
+      ]
+    },
+    {
+      "id": 101601,
+      "name": "HE-Bone-Cortical-Occiput",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 145
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 145
+      },
+      "referencedNodes": 190,
+      "boundsMm": [
+        [
+          -82.023,
+          0.0,
+          1456.781
+        ],
+        [
+          14.409,
+          56.577,
+          1505.012
+        ]
+      ]
+    },
+    {
+      "id": 101602,
+      "name": "HE-Bone-Trabecular-Occiput",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 300
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 300
+      },
+      "referencedNodes": 549,
+      "boundsMm": [
+        [
+          -82.023,
+          0.0,
+          1456.697
+        ],
+        [
+          14.409,
+          56.577,
+          1506.588
+        ]
+      ]
+    },
+    {
+      "id": 101603,
+      "name": "HE-Bone-Occipital-rigid",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 56
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 56
+      },
+      "referencedNodes": 81,
+      "boundsMm": [
+        [
+          -46.506,
+          -24.705,
+          1456.697
+        ],
+        [
+          11.309,
+          24.705,
+          1466.619
+        ]
+      ]
+    },
+    {
+      "id": 101605,
+      "name": "HE-Bone-Cortical-Occiput-Inner",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 150
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 150
+      },
+      "referencedNodes": 183,
+      "boundsMm": [
+        [
+          -76.615,
+          0.0,
+          1464.077
+        ],
+        [
+          12.81,
+          51.686,
+          1506.588
+        ]
+      ]
+    },
+    {
+      "id": 101701,
+      "name": "HE-Bone-Cortical-Maxilla",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 516,
+        "*ELEMENT_SHELL_THICKNESS": 19
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 516,
+        "*ELEMENT_SHELL_THICKNESS:4": 19
+      },
+      "referencedNodes": 606,
+      "boundsMm": [
+        [
+          22.421,
+          0.0,
+          1421.584
+        ],
+        [
+          97.872,
+          61.458,
+          1512.197
+        ]
+      ]
+    },
+    {
+      "id": 101702,
+      "name": "HE-Bone-Trabecular-Maxilla",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 513
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 513
+      },
+      "referencedNodes": 782,
+      "boundsMm": [
+        [
+          39.522,
+          0.0,
+          1421.584
+        ],
+        [
+          97.872,
+          45.856,
+          1499.794
+        ]
+      ]
+    },
+    {
+      "id": 101703,
+      "name": "HE-Bone-Maxilla-rigid",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 52
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 52
+      },
+      "referencedNodes": 76,
+      "boundsMm": [
+        [
+          24.309,
+          -16.684,
+          1440.06
+        ],
+        [
+          77.998,
+          16.684,
+          1472.1
+        ]
+      ]
+    },
+    {
+      "id": 101801,
+      "name": "HE-Zygo-Cortical",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 140
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 140
+      },
+      "referencedNodes": 162,
+      "boundsMm": [
+        [
+          32.47,
+          32.153,
+          1449.486
+        ],
+        [
+          79.128,
+          65.044,
+          1499.26
+        ]
+      ]
+    },
+    {
+      "id": 101802,
+      "name": "HE-Bone-Trabecular-Zygomatic",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 124
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 124
+      },
+      "referencedNodes": 246,
+      "boundsMm": [
+        [
+          32.47,
+          29.216,
+          1449.486
+        ],
+        [
+          79.128,
+          65.044,
+          1499.453
+        ]
+      ]
+    },
+    {
+      "id": 101901,
+      "name": "HE-Bone-Cortical-Mandible",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 374
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 374
+      },
+      "referencedNodes": 397,
+      "boundsMm": [
+        [
+          5.617,
+          0.0,
+          1380.147
+        ],
+        [
+          92.698,
+          54.731,
+          1472.795
+        ]
+      ]
+    },
+    {
+      "id": 101902,
+      "name": "HE-Bone-Trabecular-Mandible",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 684
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 684
+      },
+      "referencedNodes": 934,
+      "boundsMm": [
+        [
+          5.617,
+          0.0,
+          1380.147
+        ],
+        [
+          92.698,
+          54.731,
+          1472.795
+        ]
+      ]
+    },
+    {
+      "id": 101903,
+      "name": "HE-Bone-Mandible-Rigid",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 2
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 2
+      },
+      "referencedNodes": 6,
+      "boundsMm": [
+        [
+          5.617,
+          37.663,
+          1470.729
+        ],
+        [
+          14.054,
+          46.359,
+          1472.795
+        ]
+      ]
+    },
+    {
+      "id": 101991,
+      "name": "HE-Teeth",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 96
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 96
+      },
+      "referencedNodes": 127,
+      "boundsMm": [
+        [
+          51.436,
+          0.0,
+          1410.507
+        ],
+        [
+          97.872,
+          31.149,
+          1436.447
+        ]
+      ]
+    },
+    {
+      "id": 101992,
+      "name": "HE-Teeth",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 46
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 46
+      },
+      "referencedNodes": 150,
+      "boundsMm": [
+        [
+          51.436,
+          0.0,
+          1410.507
+        ],
+        [
+          97.872,
+          31.149,
+          1436.447
+        ]
+      ]
+    },
+    {
+      "id": 103000,
+      "name": "HE-Brain",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 299
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 299
+      },
+      "referencedNodes": 560,
+      "boundsMm": [
+        [
+          -23.073,
+          0.0,
+          1460.009
+        ],
+        [
+          44.035,
+          16.517,
+          1544.917
+        ]
+      ]
+    },
+    {
+      "id": 103001,
+      "name": "HE-Face",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1608
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 1608
+      },
+      "referencedNodes": 2533,
+      "boundsMm": [
+        [
+          -24.313,
+          -76.168,
+          1374.589
+        ],
+        [
+          119.072,
+          76.168,
+          1512.197
+        ]
+      ]
+    },
+    {
+      "id": 103003,
+      "name": "HE-Oral_Cavity",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 352
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 352
+      },
+      "referencedNodes": 547,
+      "boundsMm": [
+        [
+          -2.377,
+          0.0,
+          1380.322
+        ],
+        [
+          87.395,
+          35.412,
+          1468.417
+        ]
+      ]
+    },
+    {
+      "id": 104000,
+      "name": "HE-Scalp",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 2012
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 2012
+      },
+      "referencedNodes": 3183,
+      "boundsMm": [
+        [
+          -86.448,
+          -0.124,
+          1451.477
+        ],
+        [
+          108.061,
+          77.235,
+          1602.763
+        ]
+      ]
+    },
+    {
+      "id": 104002,
+      "name": "HE-Head-Skin",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1537
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 1537
+      },
+      "referencedNodes": 1595,
+      "boundsMm": [
+        [
+          -86.448,
+          -0.042,
+          1374.589
+        ],
+        [
+          119.072,
+          77.235,
+          1602.763
+        ]
+      ]
+    },
+    {
+      "id": 105000,
+      "name": "HE-Brain-Cerebrum",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 7395
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 7395
+      },
+      "referencedNodes": 8510,
+      "boundsMm": [
+        [
+          -78.207,
+          0.0,
+          1476.578
+        ],
+        [
+          88.326,
+          64.778,
+          1591.304
+        ]
+      ]
+    },
+    {
+      "id": 105003,
+      "name": "HE-Brain-Cerebrum-CSF",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1948
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 1948
+      },
+      "referencedNodes": 3936,
+      "boundsMm": [
+        [
+          -79.626,
+          -0.04,
+          1475.57
+        ],
+        [
+          90.259,
+          66.186,
+          1593.152
+        ]
+      ]
+    },
+    {
+      "id": 105059,
+      "name": "HE-Soft-Tissue-Nulls",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 488
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 488
+      },
+      "referencedNodes": 534,
+      "boundsMm": [
+        [
+          -17.615,
+          0.0,
+          1377.327
+        ],
+        [
+          100.027,
+          66.797,
+          1512.197
+        ]
+      ]
+    },
+    {
+      "id": 105069,
+      "name": "HE-Soft-Tissue-Nulls-Connecting-Edge",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 9
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 9
+      },
+      "referencedNodes": 20,
+      "boundsMm": [
+        [
+          -48.112,
+          39.044,
+          1466.828
+        ],
+        [
+          -6.434,
+          60.262,
+          1480.596
+        ]
+      ]
+    },
+    {
+      "id": 106000,
+      "name": "HE-Brain-Cerebellum",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 680
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 680
+      },
+      "referencedNodes": 902,
+      "boundsMm": [
+        [
+          -64.98,
+          0.0,
+          1463.657
+        ],
+        [
+          0.231,
+          52.742,
+          1513.132
+        ]
+      ]
+    },
+    {
+      "id": 106003,
+      "name": "HE-Brain-Cerebellum-CSF",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 500
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 500
+      },
+      "referencedNodes": 1050,
+      "boundsMm": [
+        [
+          -66.211,
+          0.0,
+          1459.393
+        ],
+        [
+          32.69,
+          55.026,
+          1541.199
+        ]
+      ]
+    },
+    {
+      "id": 107000,
+      "name": "HE-Brain-Corpus-Callosum",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 54
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 54
+      },
+      "referencedNodes": 144,
+      "boundsMm": [
+        [
+          -23.073,
+          0.0,
+          1512.465
+        ],
+        [
+          45.867,
+          11.314,
+          1545.372
+        ]
+      ]
+    },
+    {
+      "id": 151101,
+      "name": "HE-Bone-Cortical-Frontal",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 251
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 251
+      },
+      "referencedNodes": 282,
+      "boundsMm": [
+        [
+          36.176,
+          -57.506,
+          1498.823
+        ],
+        [
+          98.414,
+          0.045,
+          1585.457
+        ]
+      ]
+    },
+    {
+      "id": 151102,
+      "name": "HE-Bone-Trabecular-Frontal",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 554
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 554
+      },
+      "referencedNodes": 939,
+      "boundsMm": [
+        [
+          35.801,
+          -57.506,
+          1487.94
+        ],
+        [
+          98.414,
+          0.045,
+          1585.457
+        ]
+      ]
+    },
+    {
+      "id": 151105,
+      "name": "HE-Bone-Cortical-Frontal-Inner",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 366
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 366
+      },
+      "referencedNodes": 402,
+      "boundsMm": [
+        [
+          30.057,
+          -55.745,
+          1489.808
+        ],
+        [
+          90.259,
+          0.005,
+          1579.5
+        ]
+      ]
+    },
+    {
+      "id": 151201,
+      "name": "HE-Bone-Cortical-Parietal",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 551
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 551
+      },
+      "referencedNodes": 598,
+      "boundsMm": [
+        [
+          -83.172,
+          -67.987,
+          1483.316
+        ],
+        [
+          49.115,
+          0.04,
+          1596.213
+        ]
+      ]
+    },
+    {
+      "id": 151202,
+      "name": "HE-Bone-Trabecular-Parietal",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1102
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 1102
+      },
+      "referencedNodes": 1794,
+      "boundsMm": [
+        [
+          -83.172,
+          -67.987,
+          1483.316
+        ],
+        [
+          49.115,
+          0.04,
+          1596.213
+        ]
+      ]
+    },
+    {
+      "id": 151205,
+      "name": "HE-Bone-Cortical-Parietal-Inner",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 551
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 551
+      },
+      "referencedNodes": 598,
+      "boundsMm": [
+        [
+          -79.626,
+          -64.504,
+          1485.145
+        ],
+        [
+          45.834,
+          0.037,
+          1593.152
+        ]
+      ]
+    },
+    {
+      "id": 151302,
+      "name": "HE-Bone-Trabecular-Nasal",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 24
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 24
+      },
+      "referencedNodes": 63,
+      "boundsMm": [
+        [
+          81.827,
+          -12.228,
+          1474.938
+        ],
+        [
+          97.341,
+          0.0,
+          1499.311
+        ]
+      ]
+    },
+    {
+      "id": 151402,
+      "name": "HE-Bone-Trabecular-Sphenoid",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 432
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 432
+      },
+      "referencedNodes": 735,
+      "boundsMm": [
+        [
+          19.224,
+          -62.414,
+          1466.161
+        ],
+        [
+          84.515,
+          0.0,
+          1535.588
+        ]
+      ]
+    },
+    {
+      "id": 151501,
+      "name": "HE-Bone-Cortical-Temporal",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 331
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 331
+      },
+      "referencedNodes": 375,
+      "boundsMm": [
+        [
+          -58.53,
+          -68.695,
+          1459.946
+        ],
+        [
+          49.613,
+          0.0,
+          1535.196
+        ]
+      ]
+    },
+    {
+      "id": 151502,
+      "name": "HE-Bone-Trabecular-Temporal",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 502
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 502
+      },
+      "referencedNodes": 864,
+      "boundsMm": [
+        [
+          -58.53,
+          -68.695,
+          1459.463
+        ],
+        [
+          37.104,
+          0.0,
+          1533.308
+        ]
+      ]
+    },
+    {
+      "id": 151503,
+      "name": "HE-Bone-Temporal-Rigid",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 2
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 2
+      },
+      "referencedNodes": 6,
+      "boundsMm": [
+        [
+          3.606,
+          -43.978,
+          1471.356
+        ],
+        [
+          14.632,
+          -36.829,
+          1476.061
+        ]
+      ]
+    },
+    {
+      "id": 151505,
+      "name": "HE-Bone-Cortical-Temporal-Inner",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 244
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 244
+      },
+      "referencedNodes": 278,
+      "boundsMm": [
+        [
+          -55.625,
+          -66.186,
+          1469.978
+        ],
+        [
+          43.702,
+          0.0,
+          1535.588
+        ]
+      ]
+    },
+    {
+      "id": 151601,
+      "name": "HE-Bone-Cortical-Occiput",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 145
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 145
+      },
+      "referencedNodes": 190,
+      "boundsMm": [
+        [
+          -82.023,
+          -56.577,
+          1456.812
+        ],
+        [
+          14.409,
+          0.0,
+          1505.012
+        ]
+      ]
+    },
+    {
+      "id": 151602,
+      "name": "HE-Bone-Trabecular-Occiput",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 300
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 300
+      },
+      "referencedNodes": 549,
+      "boundsMm": [
+        [
+          -82.023,
+          -56.577,
+          1456.812
+        ],
+        [
+          14.409,
+          0.0,
+          1506.588
+        ]
+      ]
+    },
+    {
+      "id": 151605,
+      "name": "HE-Bone-Cortical-Occiput-Inner",
+      "elementCounts": {
+        "*ELEMENT_SHELL_THICKNESS": 150
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL_THICKNESS:4": 150
+      },
+      "referencedNodes": 183,
+      "boundsMm": [
+        [
+          -76.615,
+          -51.686,
+          1464.077
+        ],
+        [
+          12.81,
+          0.0,
+          1506.588
+        ]
+      ]
+    },
+    {
+      "id": 151701,
+      "name": "HE-Bone-Cortical-Maxilla",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 516,
+        "*ELEMENT_SHELL_THICKNESS": 19
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 516,
+        "*ELEMENT_SHELL_THICKNESS:4": 19
+      },
+      "referencedNodes": 606,
+      "boundsMm": [
+        [
+          22.421,
+          -61.458,
+          1421.584
+        ],
+        [
+          97.872,
+          0.0,
+          1512.197
+        ]
+      ]
+    },
+    {
+      "id": 151702,
+      "name": "HE-Bone-Trabecular-Maxilla",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 513
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 513
+      },
+      "referencedNodes": 782,
+      "boundsMm": [
+        [
+          39.522,
+          -45.856,
+          1421.584
+        ],
+        [
+          97.872,
+          0.0,
+          1499.794
+        ]
+      ]
+    },
+    {
+      "id": 151801,
+      "name": "HE-Zygo-Cortical",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 140
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 140
+      },
+      "referencedNodes": 162,
+      "boundsMm": [
+        [
+          32.47,
+          -65.044,
+          1449.486
+        ],
+        [
+          79.127,
+          -32.153,
+          1499.26
+        ]
+      ]
+    },
+    {
+      "id": 151802,
+      "name": "HE-Bone-Trabecular-Zygomatic",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 124
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 124
+      },
+      "referencedNodes": 246,
+      "boundsMm": [
+        [
+          32.47,
+          -65.044,
+          1449.486
+        ],
+        [
+          79.127,
+          -29.216,
+          1499.453
+        ]
+      ]
+    },
+    {
+      "id": 151901,
+      "name": "HE-Bone-Cortical-Mandible",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 374
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 374
+      },
+      "referencedNodes": 397,
+      "boundsMm": [
+        [
+          5.617,
+          -54.731,
+          1380.147
+        ],
+        [
+          92.698,
+          0.0,
+          1472.782
+        ]
+      ]
+    },
+    {
+      "id": 151902,
+      "name": "HE-Bone-Trabecular-Mandible",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 684
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 684
+      },
+      "referencedNodes": 934,
+      "boundsMm": [
+        [
+          5.617,
+          -54.731,
+          1380.147
+        ],
+        [
+          92.698,
+          0.0,
+          1472.782
+        ]
+      ]
+    },
+    {
+      "id": 151903,
+      "name": "HE-Bone-Mandible-Rigid",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 2
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 2
+      },
+      "referencedNodes": 6,
+      "boundsMm": [
+        [
+          5.617,
+          -46.359,
+          1470.729
+        ],
+        [
+          14.049,
+          -37.663,
+          1472.782
+        ]
+      ]
+    },
+    {
+      "id": 151991,
+      "name": "HE-Teeth",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 96
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 96
+      },
+      "referencedNodes": 127,
+      "boundsMm": [
+        [
+          51.436,
+          -31.149,
+          1410.507
+        ],
+        [
+          97.872,
+          0.0,
+          1436.447
+        ]
+      ]
+    },
+    {
+      "id": 151992,
+      "name": "HE-Teeth",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 46
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 46
+      },
+      "referencedNodes": 150,
+      "boundsMm": [
+        [
+          51.436,
+          -31.149,
+          1410.507
+        ],
+        [
+          97.872,
+          0.0,
+          1436.447
+        ]
+      ]
+    },
+    {
+      "id": 153000,
+      "name": "HE-Brain",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 299
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 299
+      },
+      "referencedNodes": 560,
+      "boundsMm": [
+        [
+          -23.073,
+          -16.517,
+          1460.009
+        ],
+        [
+          44.035,
+          0.0,
+          1544.917
+        ]
+      ]
+    },
+    {
+      "id": 153003,
+      "name": "HE-Oral_Cavity",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 352
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 352
+      },
+      "referencedNodes": 547,
+      "boundsMm": [
+        [
+          -2.377,
+          -35.412,
+          1380.322
+        ],
+        [
+          87.395,
+          0.0,
+          1468.417
+        ]
+      ]
+    },
+    {
+      "id": 154000,
+      "name": "HE-Scalp",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 2012
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 2012
+      },
+      "referencedNodes": 3183,
+      "boundsMm": [
+        [
+          -86.448,
+          -77.235,
+          1451.477
+        ],
+        [
+          108.061,
+          0.045,
+          1602.763
+        ]
+      ]
+    },
+    {
+      "id": 154002,
+      "name": "HE-Head-Skin",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 1537
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 1537
+      },
+      "referencedNodes": 1595,
+      "boundsMm": [
+        [
+          -86.448,
+          -77.235,
+          1374.589
+        ],
+        [
+          119.072,
+          0.036,
+          1602.763
+        ]
+      ]
+    },
+    {
+      "id": 155000,
+      "name": "HE-Brain-Cerebrum",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 7395
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 7395
+      },
+      "referencedNodes": 8510,
+      "boundsMm": [
+        [
+          -78.207,
+          -64.778,
+          1476.578
+        ],
+        [
+          88.326,
+          0.0,
+          1591.304
+        ]
+      ]
+    },
+    {
+      "id": 155003,
+      "name": "HE-Brain-Cerebrum-CSF",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 1948
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 1948
+      },
+      "referencedNodes": 3936,
+      "boundsMm": [
+        [
+          -79.626,
+          -66.186,
+          1475.57
+        ],
+        [
+          90.259,
+          0.037,
+          1593.152
+        ]
+      ]
+    },
+    {
+      "id": 155059,
+      "name": "HE-Soft-Tissue-Nulls",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 488
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 488
+      },
+      "referencedNodes": 534,
+      "boundsMm": [
+        [
+          -17.616,
+          -66.797,
+          1377.327
+        ],
+        [
+          100.027,
+          0.0,
+          1512.197
+        ]
+      ]
+    },
+    {
+      "id": 155069,
+      "name": "HE-Soft-Tissue-Nulls-Connecting-Edge",
+      "elementCounts": {
+        "*ELEMENT_SHELL": 9
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SHELL:4": 9
+      },
+      "referencedNodes": 20,
+      "boundsMm": [
+        [
+          -48.112,
+          -60.262,
+          1466.828
+        ],
+        [
+          -6.434,
+          -39.044,
+          1480.596
+        ]
+      ]
+    },
+    {
+      "id": 156000,
+      "name": "HE-Brain-Cerebellum",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 680
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 680
+      },
+      "referencedNodes": 902,
+      "boundsMm": [
+        [
+          -64.98,
+          -52.742,
+          1463.657
+        ],
+        [
+          0.231,
+          0.0,
+          1513.132
+        ]
+      ]
+    },
+    {
+      "id": 156003,
+      "name": "HE-Brain-Cerebellum-CSF",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 500
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 500
+      },
+      "referencedNodes": 1050,
+      "boundsMm": [
+        [
+          -66.211,
+          -55.026,
+          1459.393
+        ],
+        [
+          32.69,
+          0.0,
+          1541.199
+        ]
+      ]
+    },
+    {
+      "id": 157000,
+      "name": "HE-Brain-Corpus-Callosum",
+      "elementCounts": {
+        "*ELEMENT_SOLID": 54
+      },
+      "distinctNodeCounts": {
+        "*ELEMENT_SOLID:8": 54
+      },
+      "referencedNodes": 144,
+      "boundsMm": [
+        [
+          -23.073,
+          -11.314,
+          1512.465
+        ],
+        [
+          45.867,
+          0.0,
+          1545.372
+        ]
+      ]
+    }
+  ],
+  "limitations": [
+    "PART names describe FE materials/regions, not independent anatomical structures or verified left/right labels.",
+    "CSF, oral cavity and computational null parts must not be relabelled as neural tissue.",
+    "Shell reference surfaces omit assigned thickness. Solid mesh boundaries and topology are not yet checked.",
+    "No HRA fitting, landmark correspondence, containment, source pose agreement or whole-body completion is claimed."
+  ],
+  "code": [
+    {
+      "path": "/Users/nuinuri/workspace/anatomy/scripts/audit-vivaplus-head.py",
+      "sha256": "ecf185e28d1f02463c3f2962e822dc91bf59a6bfaa1251aa0ce081d911bb7dd9"
+    },
+    {
+      "path": "/Users/nuinuri/workspace/anatomy/scripts/audit-vivaplus.py",
+      "sha256": "172890b64fe209f937fe6caa4679e6fa115cf9194662b7439fe240f822c613ac"
+    }
+  ]
+}
