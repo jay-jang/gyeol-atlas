@@ -268,7 +268,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         ...(s.isolated && s.detail ? { layers: s.detail.layers, anatomyRegion: "whole" as const } : {}),
       } : s;
     case "clear-selection":
-      return { ...s, selection: null, detail: null, isolated: false };
+      return { ...s, selection: null, detail: null, comparison: null, isolated: false };
     case "cutaway":
       return { ...s, cutaway: Math.max(0, Math.min(1, a.value)) };
     case "camera":
@@ -376,6 +376,9 @@ export function restoreView(
       (s.isolated && !s.selection)
     )
       return base;
+    // Older explicit deselections could leave a comparison highlight without
+    // its selection card. Keep valid selections within a comparison intact.
+    if (!s.selection) s.comparison = null;
     if (s.detail && (!s.detail.ids?.length || typeof s.detail.name !== "string" || typeof s.detail.id !== "string" || !keys.every(key => typeof s.detail!.layers?.[key] === "boolean") || !s.detail.ids.every(id => assets.some(a => a.id === id && (!a.sex || a.sex === s.sex))))) return base;
     if (hasMixedReferenceFrames(s.sex, [...(s.selection?.ids || []), ...(s.detail?.ids || [])])) return base;
     const currentLungIds = maleDetailGroups.find(group => group.id === "lung")?.ids || [];

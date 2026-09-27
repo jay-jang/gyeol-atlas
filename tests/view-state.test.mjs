@@ -92,6 +92,24 @@ test("comparison retains the entire kidney/lung bundle; explicit selection and p
     assert.equal(s.comparison, null);
   }
 });
+test("explicit deselection ends comparisons without changing viewing preferences; old orphaned highlights are repaired", () => {
+  for (const sex of ['male', 'female']) {
+    const base = {...initialView('KI3'),sex,camera:{position:[0,1,3],target:[0,1,0]},markers:'hidden'};
+    const compared = viewReducer(base,{type:'compare',name:'콩팥',ids:['kidney-left','kidney-right']});
+    const assets = ['kidney-left','kidney-right'].map(id=>({id,layer:'organ',sex}));
+    for (const isolated of [false,true]) {
+      const before = {...compared,isolated};
+      const next = viewReducer(before,{type:'clear-selection'});
+      assert.deepEqual(next,{...before,selection:null,detail:null,comparison:null,isolated:false});
+      assert.deepEqual(restoreView(JSON.stringify(next),['KI3'],assets),next);
+      const legacy = {...next,comparison:compared.comparison};
+      assert.deepEqual(restoreView(JSON.stringify(legacy),['KI3'],assets),next);
+    }
+    const child=viewReducer(compared,{type:'select',selection:{kind:'structure',ids:['kidney-left'],name:'왼 콩팥'}});
+    assert.deepEqual(restoreView(JSON.stringify(child),['KI3'],assets).comparison,compared.comparison);
+    assert.equal(viewReducer(child,{type:'clear-selection'}).comparison,null);
+  }
+});
 test("continuous dissection keeps overlapping systems and advances through muscle depth", () => {
   let s = initialView();
   s = viewReducer(s, { type: "dissection", value: 20 });
