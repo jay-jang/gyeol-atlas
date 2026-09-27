@@ -1,0 +1,175 @@
+{
+  "createdAt": "2026-09-27T21:59:47.916Z",
+  "scope": "Independent world-coordinate/index reading of 312 component meshes; only 14 deepest inside witnesses and the recorded ambiguous query are independently classified. Selected-plane sections are fully recounted. Not full independent containment or clinical verification.",
+  "meshes": 312,
+  "vertices": 472148,
+  "indexReferences": 2835540,
+  "checks": [
+    {
+      "mode": "source",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0366",
+      "boneId": "HRAF0837",
+      "triangles": 15848,
+      "winding": 0.999999999999997,
+      "distanceMm": 0.022820659953073908,
+      "differenceMm": 0
+    },
+    {
+      "mode": "source",
+      "kind": "ambiguous",
+      "cordId": "HRAF0367",
+      "boneId": "HRAF0837",
+      "triangles": 15848,
+      "winding": -5.745687907228268e-16,
+      "distanceMm": 1.148073186346392,
+      "differenceMm": 0
+    },
+    {
+      "mode": "source",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0370",
+      "boneId": "HRAF0839",
+      "triangles": 16486,
+      "winding": 1,
+      "distanceMm": 0.6565823148186141,
+      "differenceMm": 0
+    },
+    {
+      "mode": "source",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0370",
+      "boneId": "HRAF0840",
+      "triangles": 16402,
+      "winding": 1.000000000000004,
+      "distanceMm": 0.08540253822048799,
+      "differenceMm": 0
+    },
+    {
+      "mode": "source",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0371",
+      "boneId": "HRAF0840",
+      "triangles": 16402,
+      "winding": 0.9999999999999983,
+      "distanceMm": 2.200675999881733,
+      "differenceMm": 0
+    },
+    {
+      "mode": "source",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0372",
+      "boneId": "HRAF0840",
+      "triangles": 16402,
+      "winding": 0.9999999999999988,
+      "distanceMm": 0.025565300198018587,
+      "differenceMm": 0
+    },
+    {
+      "mode": "source",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0372",
+      "boneId": "HRAF0841",
+      "triangles": 15614,
+      "winding": 1.0000000000000013,
+      "distanceMm": 2.4457876550204816,
+      "differenceMm": 0
+    },
+    {
+      "mode": "source",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0373",
+      "boneId": "HRAF0841",
+      "triangles": 15614,
+      "winding": 1.0000000000000007,
+      "distanceMm": 1.8378791523394014,
+      "differenceMm": 0
+    },
+    {
+      "mode": "runtime",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0366",
+      "boneId": "HRAF0837",
+      "triangles": 3486,
+      "winding": 0.9999999999999953,
+      "distanceMm": 0.028871441158459164,
+      "differenceMm": 0
+    },
+    {
+      "mode": "runtime",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0370",
+      "boneId": "HRAF0839",
+      "triangles": 3626,
+      "winding": 0.9999999999999999,
+      "distanceMm": 0.6433076637590557,
+      "differenceMm": 0
+    },
+    {
+      "mode": "runtime",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0370",
+      "boneId": "HRAF0840",
+      "triangles": 3608,
+      "winding": 0.999999999999998,
+      "distanceMm": 0.03235153708376843,
+      "differenceMm": 0
+    },
+    {
+      "mode": "runtime",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0371",
+      "boneId": "HRAF0840",
+      "triangles": 3608,
+      "winding": 0.9999999999999999,
+      "distanceMm": 2.1871136004491474,
+      "differenceMm": 0
+    },
+    {
+      "mode": "runtime",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0372",
+      "boneId": "HRAF0840",
+      "triangles": 3608,
+      "winding": 0.9999999999999996,
+      "distanceMm": 0.08312045356714903,
+      "differenceMm": 0
+    },
+    {
+      "mode": "runtime",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0372",
+      "boneId": "HRAF0841",
+      "triangles": 3434,
+      "winding": 0.9999999999999991,
+      "distanceMm": 2.4440709179754943,
+      "differenceMm": 0
+    },
+    {
+      "mode": "runtime",
+      "kind": "deepest-inside",
+      "cordId": "HRAF0373",
+      "boneId": "HRAF0841",
+      "triangles": 3434,
+      "winding": 0.9999999999999994,
+      "distanceMm": 1.8327299444657965,
+      "differenceMm": 0
+    }
+  ],
+  "sectionSegments": 6580,
+  "maxSectionEndpointDifferenceM": 0,
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/neural-component-source.json",
+      "sha256": "7fe5e9fbe941612304ee766826a9d7e73394ca0ff8fca2363184eabe0b5a1417"
+    },
+    {
+      "file": "docs/anatomy-alignment/neural-component-sections.json",
+      "sha256": "e36c7ae400795e2c3fa7bd5ff178321a7da7edfa9d5ed41f08487464d64f65bb"
+    },
+    {
+      "file": "scripts/verify-neural-component-source.mjs",
+      "sha256": "0c0ca869931f8d146b5faeac9ceb04b015e113130a7637b3c3ee11f52f29851b"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "scope": "Seven SVG-based geometric diagnostics, not application screenshots or medical images",
+  "viewport": {
+    "width": 1100,
+    "height": 800
+  },
+  "images": [
+    {
+      "pair": "HRAF0366-HRAF0837",
+      "file": "docs/anatomy-alignment/neural-section-HRAF0366-HRAF0837.png",
+      "sha256": "dd2a6138f58df107fd8a2a5969ccc77a05eb7617b96a6549c3ae210e1824a53a"
+    },
+    {
+      "pair": "HRAF0370-HRAF0839",
+      "file": "docs/anatomy-alignment/neural-section-HRAF0370-HRAF0839.png",
+      "sha256": "b8867abec67d8e2bcb0c622e212c309f4ee1f7e51e3ed5d955c0dba79c51bc0f"
+    },
+    {
+      "pair": "HRAF0370-HRAF0840",
+      "file": "docs/anatomy-alignment/neural-section-HRAF0370-HRAF0840.png",
+      "sha256": "5678dcaf954e60c1c60e1ec4a7f9e8360fcd38518d1f0c4e744f06e0597a3a21"
+    },
+    {
+      "pair": "HRAF0371-HRAF0840",
+      "file": "docs/anatomy-alignment/neural-section-HRAF0371-HRAF0840.png",
+      "sha256": "8d5f26c2762b499e47a609f0d27a3f9d65f14c7484530c7c11e2fa22d96eba6e"
+    },
+    {
+      "pair": "HRAF0372-HRAF0840",
+      "file": "docs/anatomy-alignment/neural-section-HRAF0372-HRAF0840.png",
+      "sha256": "972a70f09aca05e6a6d63eabd3f7458f1426417c65be3140dd1ca5a1136a4844"
+    },
+    {
+      "pair": "HRAF0372-HRAF0841",
+      "file": "docs/anatomy-alignment/neural-section-HRAF0372-HRAF0841.png",
+      "sha256": "e9d9cc9180bcc104218586a07e8d911879f01fd5321cdfd8d6f34a94473ab0f3"
+    },
+    {
+      "pair": "HRAF0373-HRAF0841",
+      "file": "docs/anatomy-alignment/neural-section-HRAF0373-HRAF0841.png",
+      "sha256": "4ab0caf966a38f19755e1277cbef8dc8d7b3921234d3c47c627d7b6cbac8e20f"
+    }
+  ],
+  "errors": [],
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/neural-component-sections.json",
+      "sha256": "e36c7ae400795e2c3fa7bd5ff178321a7da7edfa9d5ed41f08487464d64f65bb"
+    },
+    {
+      "file": "scripts/capture-neural-component-source.mjs",
+      "sha256": "de35ab6551ee29c5cc589845949a2e14a2b1f5c9536c50f81773f80113cc1493"
+    },
+    {
+      "file": "scripts/section-neural-component-source.py",
+      "sha256": "89b939a276896088d513bf3c4acd43967bf50eff10a5f34d3091a50f29a164a9"
+    },
+    {
+      "file": "scripts/lib/mesh_plane_sections.py",
+      "sha256": "41f0ed94a857f8cf34cc4690ddd90b2702f23359dd2e1b66769c3d8faa83770b"
+    }
+  ]
+}
