@@ -1,0 +1,535 @@
+{
+  "createdAt": "2026-09-27T22:13:54.656Z",
+  "strategy": "First exit toward validated bone-exterior source section mean",
+  "status": "OFFLINE CANDIDATE, NOT APPLIED; source-derived collision objective is not anatomical ground truth",
+  "field": {
+    "centres": [
+      1.1300000000000001,
+      1.1400000000000001,
+      1.1500000000000001,
+      1.1600000000000001,
+      1.1700000000000002,
+      1.1800000000000002,
+      1.1900000000000002,
+      1.2000000000000002,
+      1.2100000000000002,
+      1.2200000000000002,
+      1.23,
+      1.2400000000000002,
+      1.25,
+      1.26,
+      1.27,
+      1.28,
+      1.29
+    ],
+    "spacing": 0.01,
+    "coefficients": [
+      -0.0002083214241383968,
+      0.0009802495319717042,
+      0.0006386016594492525,
+      0.0024976241838199895,
+      0.0015376050990716682,
+      0.003769936452675336,
+      0.0023811188359009554,
+      0.003927717909589635,
+      -0.0038804519927234738,
+      -0.0005676065779407354,
+      -0.004000000000000005,
+      -0.002066002788795679,
+      0.0003425852188701493,
+      0.003999999999999985,
+      -0.0018269399635519462,
+      -0.003124840103620611,
+      0.0008065293618514824,
+      0.00111162759523717,
+      0.0019377204592132722,
+      0.0032897207834515895,
+      0.001756997495247961,
+      0.003098330970575482,
+      0.001148594228110977,
+      0.0021178501952010247,
+      0.0005574950421457977,
+      0.001154087753277521,
+      0.00014153576466818127,
+      0.00048339039195341514,
+      -0.00008156769094680537,
+      0.0000940269919371401,
+      -0.00016656303541759317,
+      -0.00012451325631781507,
+      -0.0002012467039107144,
+      -0.0002744428036582249
+    ]
+  },
+  "supportY": [
+    1.11,
+    1.31
+  ],
+  "clearanceMm": 0.1,
+  "coefficientBoundMm": 4,
+  "smoothingSecondDifferenceWeight": 4,
+  "termination": "quadratic-sweep-limit-or-infeasible",
+  "history": [
+    {
+      "iteration": 0,
+      "constraints": 4055,
+      "converged": false,
+      "sweeps": 1500,
+      "maximumViolation": 0.0011753248808836058,
+      "maximumUpdate": 0.0013490555527091897,
+      "beforeInside": 3772,
+      "afterInside": 1895,
+      "afterMaximumDistanceMm": 1.6794972868152713,
+      "ambiguous": 0
+    }
+  ],
+  "changed": [
+    {
+      "id": "HRAF0353",
+      "mode": "source",
+      "vertices": 5048,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0353",
+      "mode": "runtime",
+      "vertices": 1149,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0354",
+      "mode": "source",
+      "vertices": 5130,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0354",
+      "mode": "runtime",
+      "vertices": 1216,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0355",
+      "mode": "source",
+      "vertices": 5096,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0355",
+      "mode": "runtime",
+      "vertices": 1195,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0356",
+      "mode": "source",
+      "vertices": 5088,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0356",
+      "mode": "runtime",
+      "vertices": 1200,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0357",
+      "mode": "source",
+      "vertices": 5096,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0357",
+      "mode": "runtime",
+      "vertices": 1199,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0358",
+      "mode": "source",
+      "vertices": 5088,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0358",
+      "mode": "runtime",
+      "vertices": 1201,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0359",
+      "mode": "source",
+      "vertices": 5016,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0359",
+      "mode": "runtime",
+      "vertices": 1172,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0360",
+      "mode": "source",
+      "vertices": 5115,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0360",
+      "mode": "runtime",
+      "vertices": 1196,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0361",
+      "mode": "source",
+      "vertices": 5084,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0361",
+      "mode": "runtime",
+      "vertices": 1182,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0362",
+      "mode": "source",
+      "vertices": 5100,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0362",
+      "mode": "runtime",
+      "vertices": 1187,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0363",
+      "mode": "source",
+      "vertices": 5022,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0363",
+      "mode": "runtime",
+      "vertices": 1167,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0364",
+      "mode": "source",
+      "vertices": 5092,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0364",
+      "mode": "runtime",
+      "vertices": 1179,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0365",
+      "mode": "source",
+      "vertices": 5070,
+      "moved": 547,
+      "maximumDisplacementMm": 0.002072345452599461
+    },
+    {
+      "id": "HRAF0365",
+      "mode": "runtime",
+      "vertices": 1175,
+      "moved": 140,
+      "maximumDisplacementMm": 0.002072345452599461
+    },
+    {
+      "id": "HRAF0366",
+      "mode": "source",
+      "vertices": 5070,
+      "moved": 5070,
+      "maximumDisplacementMm": 0.549751419331811
+    },
+    {
+      "id": "HRAF0366",
+      "mode": "runtime",
+      "vertices": 1174,
+      "moved": 1174,
+      "maximumDisplacementMm": 0.549751419331811
+    },
+    {
+      "id": "HRAF0367",
+      "mode": "source",
+      "vertices": 5133,
+      "moved": 5133,
+      "maximumDisplacementMm": 2.238420323463886
+    },
+    {
+      "id": "HRAF0367",
+      "mode": "runtime",
+      "vertices": 1196,
+      "moved": 1196,
+      "maximumDisplacementMm": 2.238420323463886
+    },
+    {
+      "id": "HRAF0368",
+      "mode": "source",
+      "vertices": 5041,
+      "moved": 5041,
+      "maximumDisplacementMm": 0.27161568910416256
+    },
+    {
+      "id": "HRAF0368",
+      "mode": "runtime",
+      "vertices": 1162,
+      "moved": 1162,
+      "maximumDisplacementMm": 0.27161568910416256
+    },
+    {
+      "id": "HRAF0369",
+      "mode": "source",
+      "vertices": 5082,
+      "moved": 5082,
+      "maximumDisplacementMm": 3.6149329745326857
+    },
+    {
+      "id": "HRAF0369",
+      "mode": "runtime",
+      "vertices": 1177,
+      "moved": 1177,
+      "maximumDisplacementMm": 3.6149289684114887
+    },
+    {
+      "id": "HRAF0370",
+      "mode": "source",
+      "vertices": 5100,
+      "moved": 5100,
+      "maximumDisplacementMm": 3.1902250170215414
+    },
+    {
+      "id": "HRAF0370",
+      "mode": "runtime",
+      "vertices": 1188,
+      "moved": 1188,
+      "maximumDisplacementMm": 3.1902250170215414
+    },
+    {
+      "id": "HRAF0371",
+      "mode": "source",
+      "vertices": 5060,
+      "moved": 5060,
+      "maximumDisplacementMm": 3.0208693024649986
+    },
+    {
+      "id": "HRAF0371",
+      "mode": "runtime",
+      "vertices": 1184,
+      "moved": 1184,
+      "maximumDisplacementMm": 3.0208693024649986
+    },
+    {
+      "id": "HRAF0372",
+      "mode": "source",
+      "vertices": 5076,
+      "moved": 5076,
+      "maximumDisplacementMm": 3.903513061688428
+    },
+    {
+      "id": "HRAF0372",
+      "mode": "runtime",
+      "vertices": 1190,
+      "moved": 1190,
+      "maximumDisplacementMm": 3.9034858441859117
+    },
+    {
+      "id": "HRAF0373",
+      "mode": "source",
+      "vertices": 5040,
+      "moved": 5040,
+      "maximumDisplacementMm": 4.154104897834746
+    },
+    {
+      "id": "HRAF0373",
+      "mode": "runtime",
+      "vertices": 1189,
+      "moved": 1189,
+      "maximumDisplacementMm": 4.154100928219222
+    },
+    {
+      "id": "HRAF0374",
+      "mode": "source",
+      "vertices": 5130,
+      "moved": 5130,
+      "maximumDisplacementMm": 3.8784221030183543
+    },
+    {
+      "id": "HRAF0374",
+      "mode": "runtime",
+      "vertices": 1230,
+      "moved": 1230,
+      "maximumDisplacementMm": 3.8784221030183543
+    },
+    {
+      "id": "HRAF0375",
+      "mode": "source",
+      "vertices": 5040,
+      "moved": 5040,
+      "maximumDisplacementMm": 2.7074680662369475
+    },
+    {
+      "id": "HRAF0375",
+      "mode": "runtime",
+      "vertices": 1203,
+      "moved": 1203,
+      "maximumDisplacementMm": 2.7074680662369475
+    },
+    {
+      "id": "HRAF0376",
+      "mode": "source",
+      "vertices": 5043,
+      "moved": 5043,
+      "maximumDisplacementMm": 1.2866894885983473
+    },
+    {
+      "id": "HRAF0376",
+      "mode": "runtime",
+      "vertices": 1204,
+      "moved": 1204,
+      "maximumDisplacementMm": 1.2866894885983473
+    },
+    {
+      "id": "HRAF0377",
+      "mode": "source",
+      "vertices": 5143,
+      "moved": 5143,
+      "maximumDisplacementMm": 0.3806901183025529
+    },
+    {
+      "id": "HRAF0377",
+      "mode": "runtime",
+      "vertices": 1237,
+      "moved": 1237,
+      "maximumDisplacementMm": 0.3806901183025529
+    },
+    {
+      "id": "HRAF0378",
+      "mode": "source",
+      "vertices": 5080,
+      "moved": 5080,
+      "maximumDisplacementMm": 0.06632831161015555
+    },
+    {
+      "id": "HRAF0378",
+      "mode": "runtime",
+      "vertices": 1214,
+      "moved": 1214,
+      "maximumDisplacementMm": 0.06632831161015555
+    },
+    {
+      "id": "HRAF0379",
+      "mode": "source",
+      "vertices": 5166,
+      "moved": 991,
+      "maximumDisplacementMm": 0.0002592601365706864
+    },
+    {
+      "id": "HRAF0379",
+      "mode": "runtime",
+      "vertices": 1232,
+      "moved": 293,
+      "maximumDisplacementMm": 0.0002592601365706864
+    },
+    {
+      "id": "HRAF0380",
+      "mode": "source",
+      "vertices": 5104,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0380",
+      "mode": "runtime",
+      "vertices": 1211,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0381",
+      "mode": "source",
+      "vertices": 4940,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "id": "HRAF0381",
+      "mode": "runtime",
+      "vertices": 1157,
+      "moved": 0,
+      "maximumDisplacementMm": 0
+    }
+  ],
+  "remainingAmbiguous": [],
+  "unavailableSeeds": [],
+  "geometryFile": ".cache/cord-shear-seeded/candidate.json.gz",
+  "constraintsFile": ".cache/cord-shear-seeded/constraints.json.gz",
+  "limitations": [
+    "Fit uses original cord vertices versus original 26 bone meshes, not CT-segmented neural boundaries.",
+    "Cubic height-only shear is globally invertible and has unit determinant as a continuous map; straight triangles between transformed vertices are only an approximation.",
+    "All 29 cord pieces use one field; matching coordinates stay matched, but existing gaps/overlaps and nearby fixed neural structures require separate audits.",
+    "Numerical margin, support width, coefficient bounds and smoothing weight are not clinical tolerances.",
+    "Optional seed is an unweighted source-vertex mean in a 2 mm height band, checked outside this bone; not a verified anatomical canal centre or neural landmark.",
+    "Surface-band and ambiguous points are not fitting targets; final triangle, containment, topology and surrounding-tissue checks are required."
+  ],
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/neural-component-source.json",
+      "sha256": "7fe5e9fbe941612304ee766826a9d7e73394ca0ff8fca2363184eabe0b5a1417"
+    },
+    {
+      "file": ".cache/neural-component-source/geometry.json.gz",
+      "sha256": "ca38c92e1cad76ee148a4bbcf48409599e60afe48e1ef4d7b9e15f9f5c550988"
+    },
+    {
+      "file": ".cache/cord-shear-seeded/candidate.json.gz",
+      "sha256": "d8cb66f486461f9963b5899e0fbadefe86db9bdf6914dacff768808cf5d27c38"
+    },
+    {
+      "file": ".cache/cord-shear-seeded/constraints.json.gz",
+      "sha256": "98e46dd7aa1e9629eff4b486a36ae3e5da6f6f878fc0953ff08ec9c762927b65"
+    },
+    {
+      "file": "scripts/fit-cord-shear.mjs",
+      "sha256": "0669c444808a4ad9d82c16dcff1a9ef54631718e81a53457bcd717938341692b"
+    },
+    {
+      "file": "scripts/lib/cord-shear.mjs",
+      "sha256": "d0710998b55380386d14645fab4104c64c9af7c9557e10690c6ebbd128dbdae2"
+    },
+    {
+      "file": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "scope": "Scalar reconstruction of all saved cord positions/indices, every linear row, and bounded finite-system contradiction certificates; not clinical or full independent collision validation.",
+  "results": [
+    {
+      "tag": "cord-shear",
+      "points": 181859,
+      "maxScalarDifferenceM": 0,
+      "maxInverseRoundingM": 7.450495081995356e-9,
+      "fixedOutsideSupport": 98077,
+      "constraints": 4055,
+      "maxRowDifference": 3.84472834030598e-16,
+      "certificateRows": 9,
+      "certificateRhsM": 0.002046995927424441,
+      "residualBoundM": 2.037359877701296e-19,
+      "strictContradictionMarginM": 0.002046995927424441
+    },
+    {
+      "tag": "cord-shear-seeded",
+      "points": 181859,
+      "maxScalarDifferenceM": 0,
+      "maxInverseRoundingM": 7.450392636165759e-9,
+      "fixedOutsideSupport": 98077,
+      "constraints": 4055,
+      "maxRowDifference": 4.053178119367139e-16,
+      "certificateRows": 17,
+      "certificateRhsM": 0.00037087017563890444,
+      "residualBoundM": 3.1268390654481947e-19,
+      "strictContradictionMarginM": 0.0003708701756389041
+    }
+  ],
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/neural-component-source.json",
+      "sha256": "7fe5e9fbe941612304ee766826a9d7e73394ca0ff8fca2363184eabe0b5a1417"
+    },
+    {
+      "file": ".cache/neural-component-source/geometry.json.gz",
+      "sha256": "ca38c92e1cad76ee148a4bbcf48409599e60afe48e1ef4d7b9e15f9f5c550988"
+    },
+    {
+      "file": "docs/anatomy-alignment/cord-shear-fit.json",
+      "sha256": "5470fdc7b5097f1b039efe5d66430f7d6d563af79c1cf73d4acf460098d5150e"
+    },
+    {
+      "file": "docs/anatomy-alignment/cord-shear-feasibility.json",
+      "sha256": "8466122f655fb80a5d8d4b9748d2a2193c35b60e90c8e4e7c15ca540cd76a9b6"
+    },
+    {
+      "file": ".cache/cord-shear/candidate.json.gz",
+      "sha256": "3500f5625f6db9d8f1bedd2be17e14593f9e1dddb7305f05a0a227f264a4e40a"
+    },
+    {
+      "file": ".cache/cord-shear/constraints.json.gz",
+      "sha256": "d7ba3fa89882604ba5ccc291be35181ba0703ace21d8eb162f9189a64b92325a"
+    },
+    {
+      "file": "docs/anatomy-alignment/cord-shear-seeded-fit.json",
+      "sha256": "6c32f0d48407d4b90d68019f7503a243531a7d2cac7431daf4a2958e3ed87734"
+    },
+    {
+      "file": "docs/anatomy-alignment/cord-shear-seeded-feasibility.json",
+      "sha256": "489dc87797ce134687fe159921184ab2f6ed3bf63dc9692765bdf70aab1ea304"
+    },
+    {
+      "file": ".cache/cord-shear-seeded/candidate.json.gz",
+      "sha256": "d8cb66f486461f9963b5899e0fbadefe86db9bdf6914dacff768808cf5d27c38"
+    },
+    {
+      "file": ".cache/cord-shear-seeded/constraints.json.gz",
+      "sha256": "98e46dd7aa1e9629eff4b486a36ae3e5da6f6f878fc0953ff08ec9c762927b65"
+    },
+    {
+      "file": "scripts/verify-cord-shear.mjs",
+      "sha256": "a989fb48102215b9b733bfe8767aef7c40635c7157788aa64c2d95da2d5377c3"
+    }
+  ]
+}

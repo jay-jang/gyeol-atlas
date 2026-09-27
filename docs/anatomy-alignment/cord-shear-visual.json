@@ -1,0 +1,60 @@
+{
+  "scope": "Two exact selected-plane geometric diagnostics of three source-resolution states; not application screenshots.",
+  "records": [
+    {
+      "pair": "HRAF0372-HRAF0841",
+      "planeYmeters": 1.1692736148834229,
+      "svg": ".cache/cord-shear/candidate-HRAF0372-HRAF0841.svg",
+      "svgSha256": "c968a7f9c51e60b625da3031f5f935d4f2e1459b2c0467632f39bfd566349d8e",
+      "segments": 1992
+    },
+    {
+      "pair": "HRAF0376-HRAF0842",
+      "planeYmeters": 1.1306086863232825,
+      "svg": ".cache/cord-shear/candidate-HRAF0376-HRAF0842.svg",
+      "svgSha256": "cffe53b40a11c2dc1fe4faa3e10fba1ef00ec37a87782abd59fd5263867942b0",
+      "segments": 2097
+    }
+  ],
+  "files": [
+    {
+      "file": ".cache/neural-component-source/geometry.json.gz",
+      "sha256": "ca38c92e1cad76ee148a4bbcf48409599e60afe48e1ef4d7b9e15f9f5c550988"
+    },
+    {
+      "file": ".cache/cord-shear/candidate.json.gz",
+      "sha256": "3500f5625f6db9d8f1bedd2be17e14593f9e1dddb7305f05a0a227f264a4e40a"
+    },
+    {
+      "file": ".cache/cord-shear-seeded/candidate.json.gz",
+      "sha256": "d8cb66f486461f9963b5899e0fbadefe86db9bdf6914dacff768808cf5d27c38"
+    },
+    {
+      "file": "scripts/capture-cord-shear.py",
+      "sha256": "51244b18aff5b2f5b31a4452b472bd26667c50185dc93b9cc6c988fcccc75f85"
+    },
+    {
+      "file": "scripts/lib/mesh_plane_sections.py",
+      "sha256": "41f0ed94a857f8cf34cc4690ddd90b2702f23359dd2e1b66769c3d8faa83770b"
+    },
+    {
+      "file": ".cache/cord-shear/visual-input.json",
+      "sha256": "74ad9280739f87f184398a8c0e27a3394e334ad541faeb4865d5383708b7a7f6"
+    },
+    {
+      "file": "scripts/capture-cord-shear.mjs",
+      "sha256": "4028123d24bb81db44264caf0653808e151c23b0ae541e035a4912caa0950d37"
+    }
+  ],
+  "images": [
+    {
+      "file": "docs/anatomy-alignment/cord-shear-HRAF0372-HRAF0841.png",
+      "sha256": "cbff7f4ffbb54c25919c73c4b083f452f9b5a8a725ff051b1656bd3bd2f0ef74"
+    },
+    {
+      "file": "docs/anatomy-alignment/cord-shear-HRAF0376-HRAF0842.png",
+      "sha256": "2f50675cf8705a6028ca330cc03f82945ab475083e0085ad9fc38f86e32c7760"
+    }
+  ],
+  "errors": []
+}
