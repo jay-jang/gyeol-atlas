@@ -1,0 +1,4377 @@
+{
+  "createdAt": "2026-09-27T15:25:22.861Z",
+  "status": "FULL PAIR SCREEN; not anatomical approval or runtime export",
+  "candidateSha256": "be610c4a2df5f534199b578d27ddcaeea11f57fc7115facda7815969492370a3",
+  "readback": {
+    "vertices": 132027,
+    "indexReferences": 791874,
+    "differentFloat32Coordinates": 0,
+    "maximumCoordinateResidualMetres": 0,
+    "minimumWitnesses": [
+      {
+        "id": "VHF0016",
+        "vertex": 2218,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9164055101845703,
+          -0.20298637584681423,
+          0.021549947111509926,
+          0.12582924438508947,
+          0.007962585979459647,
+          0.9255874733604674,
+          -0.17547178103594074,
+          0.9948063690312647,
+          -0.09950278800213708
+        ],
+        "maximumElementResidual": 2.9778990384699e-10
+      },
+      {
+        "id": "VHF0017",
+        "vertex": 1684,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9864682354726595,
+          -0.18262230450094563,
+          0.08082457415847788,
+          0.07406780566654447,
+          0.010152020613052315,
+          1.0303025015090395,
+          -0.0907537672373282,
+          0.9749444904449955,
+          -0.04716142958105518
+        ],
+        "maximumElementResidual": 1.035035390728467e-10
+      },
+      {
+        "id": "VHF0018",
+        "vertex": 2195,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -1.000046171185931,
+          -0.13805972047531423,
+          0.07021172768878481,
+          0.06507896935931123,
+          0.02505510580952386,
+          1.1016663468907395,
+          -0.11518864528881068,
+          0.9625815229896695,
+          0.029471964715921395
+        ],
+        "maximumElementResidual": 7.640824084553799e-11
+      },
+      {
+        "id": "VHF0019",
+        "vertex": 3738,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9767869225268955,
+          -0.18211532615275416,
+          0.08907901250659878,
+          0.09228642065817194,
+          0.0032754258472156295,
+          0.9291167163416603,
+          -0.11752411954724096,
+          0.9819496067375866,
+          -0.031188427986050815
+        ],
+        "maximumElementResidual": 1.7455747958194934e-10
+      },
+      {
+        "id": "VHF0020",
+        "vertex": 1758,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.8573932887417923,
+          -0.11037379515910217,
+          -0.045610398742568226,
+          0.060360709014384284,
+          0.08664716746875634,
+          0.7545422216273523,
+          -0.21562105836925305,
+          1.0088099813010398,
+          0.08481960764999963
+        ],
+        "maximumElementResidual": 2.0840804082489228e-10
+      },
+      {
+        "id": "VHF0005",
+        "vertex": 9821,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.8960243370742527,
+          -0.11624140461297117,
+          0.005318526848097083,
+          0.07718888526964118,
+          0.09383911028781888,
+          0.7018004686484836,
+          -0.19899217373886557,
+          0.9989012141609077,
+          0.13382912404658054
+        ],
+        "maximumElementResidual": 2.06672123859164e-10
+      },
+      {
+        "id": "VHF0021",
+        "vertex": 164,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9494616960842306,
+          -0.19945332105364422,
+          0.06172667771364715,
+          0.07553284105121794,
+          0.00891718476836445,
+          0.8558602738323318,
+          -0.18856548471279932,
+          1.0011365203510536,
+          -0.04647946229285882
+        ],
+        "maximumElementResidual": 1.6816772974159733e-10
+      },
+      {
+        "id": "VHF0007",
+        "vertex": 511,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.8636735988193367,
+          -0.10651295911934255,
+          -0.05829805124757392,
+          0.08085243487221394,
+          0.08807867610260978,
+          0.7334214353962865,
+          -0.21059480599661118,
+          1.0015571341726037,
+          0.11164897593257672
+        ],
+        "maximumElementResidual": 1.5060974689617979e-10
+      },
+      {
+        "id": "VHF0008",
+        "vertex": 45,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9920674950911201,
+          -0.14253621391513427,
+          0.0921281437180066,
+          0.08550632272369407,
+          0.06659489040772293,
+          0.7557367425331529,
+          -0.10183066618402181,
+          1.1074042888803426,
+          -0.10703876469203566
+        ],
+        "maximumElementResidual": 5.7358187643963277e-11
+      },
+      {
+        "id": "VHF0022",
+        "vertex": 8834,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9119999228174303,
+          -0.17795090398453617,
+          0.26180027273836615,
+          0.0025659384617071623,
+          0.012380956287971756,
+          0.7751208746104021,
+          -0.16999952463792045,
+          0.9996855417082617,
+          0.012467950338823641
+        ],
+        "maximumElementResidual": 9.04560870651494e-11
+      },
+      {
+        "id": "VHF0023",
+        "vertex": 1444,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9233580539891317,
+          -0.19872980616675306,
+          0.043078651840167126,
+          0.11538111929776385,
+          0.01308909597375063,
+          0.9720187853917706,
+          -0.15478841887406336,
+          0.9903647470999033,
+          -0.11459262604096576
+        ],
+        "maximumElementResidual": 2.0017704160935068e-10
+      },
+      {
+        "id": "VHF0024",
+        "vertex": 1270,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9280650593440631,
+          -0.19466854339622586,
+          0.09967101002872347,
+          0.12676217932272582,
+          0.002188361325483612,
+          0.8525974385387158,
+          -0.18516369826304668,
+          0.9957666519122554,
+          -0.07132770570711378
+        ],
+        "maximumElementResidual": 1.384193593079175e-10
+      },
+      {
+        "id": "VHF0054",
+        "vertex": 2609,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.8717892573117947,
+          0.13381160474112974,
+          0.359354097298481,
+          0.13435975740327954,
+          0.02331733683913484,
+          0.9429419013801121,
+          0.11078082334803341,
+          0.9329551742542908,
+          -0.06120348636923234
+        ],
+        "maximumElementResidual": 1.8368451204509029e-10
+      },
+      {
+        "id": "VHF0055",
+        "vertex": 1681,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9069162623109861,
+          0.12546269481661376,
+          0.29306237947501756,
+          0.14044142888913758,
+          0.02732396744975496,
+          0.9332398948763698,
+          0.09308031467814004,
+          0.940515335112746,
+          -0.06032769156449902
+        ],
+        "maximumElementResidual": 1.622061096551164e-10
+      },
+      {
+        "id": "VHF0056",
+        "vertex": 520,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -1.0103535270089559,
+          0.11840521625672285,
+          0.17141267502629454,
+          0.11471915965788337,
+          0.03232400963559812,
+          0.9454891360879958,
+          0.1253264069883686,
+          0.9857673197166683,
+          -0.019922101808511616
+        ],
+        "maximumElementResidual": 8.565149284267548e-11
+      },
+      {
+        "id": "VHF0057",
+        "vertex": 2035,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9399246013036544,
+          0.12551492978296608,
+          0.20370620758963787,
+          0.036320981763870996,
+          0.015121124907757633,
+          0.7051916288067228,
+          0.12567303081523207,
+          0.9364199216876923,
+          -0.021190951049465667
+        ],
+        "maximumElementResidual": 1.4440675391580449e-10
+      },
+      {
+        "id": "VHF0058",
+        "vertex": 143,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9695842592277737,
+          0.13380095936765812,
+          0.09641900487744604,
+          0.06957606273061412,
+          -0.01024426637963316,
+          0.6378507293042235,
+          0.07802708579252027,
+          0.975954225018727,
+          -0.07196167998990699
+        ],
+        "maximumElementResidual": 1.3003726914706526e-10
+      },
+      {
+        "id": "VHF0043",
+        "vertex": 7044,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9695317719771168,
+          0.13811692495258043,
+          0.06215331572329008,
+          0.13997308540014686,
+          0.10089082588815579,
+          0.6860816480283582,
+          0.1192503625430108,
+          1.022094091335246,
+          0.05999544112900157
+        ],
+        "maximumElementResidual": 1.411407934970299e-10
+      },
+      {
+        "id": "VHF0059",
+        "vertex": 664,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9006671515404685,
+          0.13105144219816012,
+          0.30014692243424124,
+          0.03314819561894833,
+          0.012867369975078091,
+          0.6862227270726384,
+          0.12300834026368612,
+          0.940584287428825,
+          -0.032172453853784866
+        ],
+        "maximumElementResidual": 1.407269058228966e-10
+      },
+      {
+        "id": "VHF0045",
+        "vertex": 58,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9839943887202107,
+          0.1130946283289802,
+          0.16300179465217335,
+          0.1307083322410474,
+          0.10168502342922103,
+          0.6805672397858231,
+          0.13708503183995635,
+          1.0431388007547948,
+          0.02584845938680136
+        ],
+        "maximumElementResidual": 1.5794947294534012e-10
+      },
+      {
+        "id": "VHF0046",
+        "vertex": 995,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9895007159060887,
+          0.13930785525140266,
+          0.1532395813505505,
+          0.10413165847655836,
+          0.020323833394009228,
+          0.7319546017625633,
+          0.1710519680342415,
+          1.0607923237870853,
+          0.024316299640503303
+        ],
+        "maximumElementResidual": 2.0502222142226856e-10
+      },
+      {
+        "id": "VHF0060",
+        "vertex": 5442,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.8981438140709397,
+          0.1326411609714473,
+          0.308451887087724,
+          0.03523663874571703,
+          0.011620080453411674,
+          0.6840539002739288,
+          0.12242658110894755,
+          0.9417691700097652,
+          -0.03665039490646782
+        ],
+        "maximumElementResidual": 2.2591239989822043e-10
+      },
+      {
+        "id": "VHF0061",
+        "vertex": 229,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -1.011199405265284,
+          0.09498987012940274,
+          0.138638194278895,
+          0.19394089599555908,
+          0.10428430907011288,
+          1.0275480232038725,
+          0.12021307135845483,
+          0.8608646912128259,
+          -0.06778514474725661
+        ],
+        "maximumElementResidual": 9.975287262875554e-11
+      },
+      {
+        "id": "VHF0062",
+        "vertex": 3456,
+        "finiteDifferenceStepMetres": 0.000001,
+        "jacobianColumnMajor": [
+          -0.9396326813015943,
+          0.13699940334954697,
+          0.14833882718001679,
+          0.07371315438597925,
+          0.01229865262408758,
+          0.8017635125742717,
+          0.12123493019211562,
+          0.9427981111920225,
+          -0.10155743150608298
+        ],
+        "maximumElementResidual": 1.528741543077583e-10
+      }
+    ]
+  },
+  "ambiguities": [
+    {
+      "id": "VHF0020",
+      "vertex": 4793,
+      "pointMetres": [
+        0.13020920753479004,
+        0.33358949422836304,
+        -0.14773844182491302
+      ],
+      "original": {
+        "kind": "ambiguous",
+        "distance": 0.013692865537833073
+      },
+      "rays": [
+        {
+          "direction": [
+            0.9883034613655369,
+            0.13539757420707857,
+            0.07016954575695311
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.03792839311139872,
+              "faceIndex": 48797,
+              "pointMetres": [
+                0.16769396973081818,
+                0.3387249066492189,
+                -0.14507702370899503
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.11412934214210836,
+            0.9754644627530629,
+            0.18826464131134113
+          ],
+          "crossings": 4,
+          "parity": 0,
+          "hits": [
+            {
+              "distanceMetres": 0.13790733750363066,
+              "faceIndex": 42468,
+              "pointMetres": [
+                0.1459484812406491,
+                0.46811320111604743,
+                -0.12177536639558993
+              ]
+            },
+            {
+              "distanceMetres": 0.13790739855785086,
+              "faceIndex": 42469,
+              "pointMetres": [
+                0.1459484882087271,
+                0.46811326067226955,
+                -0.12177535490123907
+              ]
+            },
+            {
+              "distanceMetres": 0.1417509815595188,
+              "faceIndex": 42252,
+              "pointMetres": [
+                0.14638715380817605,
+                0.47186253930003835,
+                -0.12105174412607969
+              ]
+            },
+            {
+              "distanceMetres": 0.14656047379222317,
+              "faceIndex": 41843,
+              "pointMetres": [
+                0.14693605799273218,
+                0.47655402805692837,
+                -0.12014628679599991
+              ]
+            },
+            {
+              "distanceMetres": 0.5129240685494036,
+              "faceIndex": 50022,
+              "pointMetres": [
+                0.1887488940471872,
+                0.8339286951890224,
+                -0.05117297603950578
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.07222916646146856,
+            0.12565896083022612,
+            0.9894406364584735
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.10707414257867437,
+              "faceIndex": 41676,
+              "pointMetres": [
+                0.13794308360282412,
+                0.3470443197165867,
+                -0.04179493404362411
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.24803918541230538,
+            0,
+            0.96875
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.10047500710402117,
+              "faceIndex": 42281,
+              "pointMetres": [
+                0.15513094645116704,
+                0.33358949422836304,
+                -0.05040327869289252
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.3117169154263086,
+            0.2855582289780976,
+            0.90625
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.11668170534154046,
+              "faceIndex": 50417,
+              "pointMetres": [
+                0.09383754625904361,
+                0.36690891535983755,
+                -0.04199564635914198
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.04692456666828283,
+            -0.5346812345154764,
+            0.8437500000000002
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.11129413631286146,
+              "faceIndex": 43087,
+              "pointMetres": [
+                0.13543163665399185,
+                0.27408260803026857,
+                -0.053834014310936165
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.379798647790419,
+            0.4953800809848629,
+            0.7812500000000002
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.10642916139103052,
+              "faceIndex": 41810,
+              "pointMetres": [
+                0.1706308591165717,
+                0.38631238081740277,
+                -0.06459065948817043
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.6846403743767794,
+            -0.12110324220772714,
+            0.71875
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.08669292260957241,
+              "faceIndex": 50408,
+              "pointMetres": [
+                0.07085573254355522,
+                0.32309070022388026,
+                -0.08542790369928285
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.6366500979526434,
+            -0.4049846790643933,
+            0.65625
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.07907024022556379,
+              "faceIndex": 47419,
+              "pointMetres": [
+                0.18054928371953427,
+                0.3015672583670686,
+                -0.0958485966768868
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.20889049343814645,
+            0.7770622235388668,
+            0.59375
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.23148910851578022,
+              "faceIndex": 49339,
+              "pointMetres": [
+                0.08185333343137208,
+                0.5134709356166652,
+                -0.010291783643668506
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.39048739425169726,
+            -0.7518597159247993,
+            0.5312500000000001
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.11599227983359364,
+              "faceIndex": 41791,
+              "pointMetres": [
+                0.08491568442925637,
+                0.2463795716632075,
+                -0.0861175431633164
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.8297315040618287,
+            0.3030166145070195,
+            0.46875
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.058614136049447124,
+              "faceIndex": 46197,
+              "pointMetres": [
+                0.17884320279838245,
+                0.35135055129632037,
+                -0.12026306555173469
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.8446318161762424,
+            0.34865173540773076,
+            0.40625
+          ],
+          "crossings": 3,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.0683948330471711,
+              "faceIndex": 37467,
+              "pointMetres": [
+                0.07244075548108703,
+                0.3574354714631813,
+                -0.11995304089949976
+              ]
+            },
+            {
+              "distanceMetres": 0.23746416594268577,
+              "faceIndex": 28810,
+              "pointMetres": [
+                -0.07036058222215724,
+                0.41638178778142976,
+                -0.051268624410696934
+              ]
+            },
+            {
+              "distanceMetres": 0.3439187135065854,
+              "faceIndex": 19050,
+              "pointMetres": [
+                -0.160275480071274,
+                0.4534973505316282,
+                -0.008021464462862699
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.3980173287597625,
+            -0.8505399129417403,
+            0.34375
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.12095166373197333,
+              "faceIndex": 48016,
+              "pointMetres": [
+                0.1783500656424391,
+                0.2307152766876118,
+                -0.10616130741704718
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.2872031315804817,
+            0.9156488402823239,
+            0.28125
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.10818786764385574,
+              "faceIndex": 43122,
+              "pointMetres": [
+                0.16128110192112008,
+                0.4326515897690771,
+                -0.1173106040500786
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.8442566051719965,
+            -0.4892639595591072,
+            0.21875
+          ],
+          "crossings": 3,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.06342446511499797,
+              "faceIndex": 54130,
+              "pointMetres": [
+                0.07666268393195214,
+                0.30255818929328065,
+                -0.13386434008100723
+              ]
+            },
+            {
+              "distanceMetres": 0.2816481826489867,
+              "faceIndex": 20561,
+              "pointMetres": [
+                -0.10757413100130592,
+                0.19578918918289318,
+                -0.08612790187044718
+              ]
+            },
+            {
+              "distanceMetres": 0.3615854684365615,
+              "faceIndex": 27810,
+              "pointMetres": [
+                -0.17506171252698743,
+                0.1566787562220564,
+                -0.0686416206044152
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.9646797918511919,
+            -0.21208214609896178,
+            0.15625000000000003
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.043533585891259274,
+              "faceIndex": 48591,
+              "pointMetres": [
+                0.17220517811090602,
+                0.3243567979051613,
+                -0.14093631902940376
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.5725964269285843,
+            0.8144594952289638,
+            0.09375
+          ],
+          "crossings": 5,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.05226792861444302,
+              "faceIndex": 47972,
+              "pointMetres": [
+                0.10028077836720165,
+                0.3761596049843458,
+                -0.142838323517309
+              ]
+            },
+            {
+              "distanceMetres": 0.31862282517525525,
+              "faceIndex": 17176,
+              "pointMetres": [
+                -0.05223308369845209,
+                0.5930948795890278,
+                -0.11786755196473284
+              ]
+            },
+            {
+              "distanceMetres": 0.5802170111834533,
+              "faceIndex": 18972,
+              "pointMetres": [
+                -0.2020209799120377,
+                0.8061527482800964,
+                -0.09334309702646429
+              ]
+            },
+            {
+              "distanceMetres": 0.7491158760920618,
+              "faceIndex": 36047,
+              "pointMetres": [
+                -0.2987318664710006,
+                0.9437140325383067,
+                -0.07750882844128223
+              ]
+            },
+            {
+              "distanceMetres": 0.8191383308434679,
+              "faceIndex": 53257,
+              "pointMetres": [
+                -0.3388264738664242,
+                1.0007444856898298,
+                -0.0709442233083379
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.12844792511158692,
+            -0.9912237729365293,
+            0.03125
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.20329857986963348,
+              "faceIndex": 42989,
+              "pointMetres": [
+                0.10409592677240338,
+                0.13207510885734658,
+                -0.14138536120398698
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.7642755404909315,
+            0.6441322346438614,
+            -0.03125
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.037685619338890065,
+              "faceIndex": 48802,
+              "pointMetres": [
+                0.15901140462375574,
+                0.3578640164270602,
+                -0.14891611742925334
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.9947455851113559,
+            0.04113585299305787,
+            -0.09375000000000003
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.03324685311971951,
+              "faceIndex": 38984,
+              "pointMetres": [
+                0.09713704717510335,
+                0.3349571318907776,
+                -0.15085533430488673
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.7001232449004547,
+            -0.6967161397944344,
+            -0.15625
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.0474513182004749,
+              "faceIndex": 47171,
+              "pointMetres": [
+                0.16343097840811055,
+                0.3005293949835708,
+                -0.15515271029373723
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.04507273241260193,
+            0.9747393940396901,
+            -0.21875000000000006
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.03251943796877351,
+              "faceIndex": 49084,
+              "pointMetres": [
+                0.1287434676090153,
+                0.3652874714885566,
+                -0.15485206888058223
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.6148466213076436,
+            -0.7367917411090975,
+            -0.28125
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.03703265578813082,
+              "faceIndex": 35109,
+              "pointMetres": [
+                0.10743980424540885,
+                0.30630413929233224,
+                -0.15815387626532482
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.9306748320860583,
+            0.12522098235354798,
+            -0.34375000000000006
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.02596948935763295,
+              "faceIndex": 49079,
+              "pointMetres": [
+                0.15437835768206576,
+                0.3368414191969458,
+                -0.15666545379159935
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.7500691309339076,
+            0.5218785647256003,
+            -0.40625
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.021787858939431207,
+              "faceIndex": 45365,
+              "pointMetres": [
+                0.11386680711518031,
+                0.34496011078011724,
+                -0.15658975951905696
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.1938746702869452,
+            -0.8617923472166182,
+            -0.46875
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.035893357432720395,
+              "faceIndex": 38992,
+              "pointMetres": [
+                0.1371680203725502,
+                0.3026568734769339,
+                -0.1645634531215007
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.4212191481735607,
+            0.7350835780453403,
+            -0.53125
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.020582711059949375,
+              "faceIndex": 47978,
+              "pointMetres": [
+                0.13887903955456446,
+                0.348719507120184,
+                -0.15867300707551113
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.7665838376566679,
+            -0.24456115256429295,
+            -0.59375
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.019642921087057764,
+              "faceIndex": 38988,
+              "pointMetres": [
+                0.11515126170508622,
+                0.32878559880758274,
+                -0.15940142622035358
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.6849679257367471,
+            -0.3164725552269866,
+            -0.65625
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.02122784185800156,
+              "faceIndex": 47160,
+              "pointMetres": [
+                0.14474959834013307,
+                0.3268714648736069,
+                -0.16166921304422655
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.26841615129103763,
+            0.6413666714338272,
+            -0.7187500000000001
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.016315026285004853,
+              "faceIndex": 45368,
+              "pointMetres": [
+                0.12582999097115694,
+                0.344053408331132,
+                -0.15946486696726025
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.21126809336161528,
+            -0.5873791196725908,
+            -0.78125
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.018840944345225454,
+              "faceIndex": 43669,
+              "pointMetres": [
+                0.12622871714584194,
+                0.32252271692506423,
+                -0.1624579295946204
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.47511337085238026,
+            0.24970627212244495,
+            -0.84375
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.015742476927623098,
+              "faceIndex": 47159,
+              "pointMetres": [
+                0.13768866881343889,
+                0.3375204894559334,
+                -0.161021156732595
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            -0.4087789928439255,
+            0.10775283063338019,
+            -0.90625
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.014309288417687862,
+              "faceIndex": 45369,
+              "pointMetres": [
+                0.12435987102709435,
+                0.33513136055971837,
+                -0.16070623445344265
+              ]
+            }
+          ]
+        },
+        {
+          "direction": [
+            0.1341489520625505,
+            -0.20863244273247517,
+            -0.96875
+          ],
+          "crossings": 1,
+          "parity": 1,
+          "hits": [
+            {
+              "distanceMetres": 0.014875811414306496,
+              "faceIndex": 47156,
+              "pointMetres": [
+                0.13220478204709937,
+                0.33048591735536864,
+                -0.16214938413252244
+              ]
+            }
+          ]
+        }
+      ],
+      "signedSolidAngleWinding": 0.9999999999999988,
+      "interpretation": "Additional numerical evidence only; original ambiguous classification is retained"
+    }
+  ],
+  "summary": {
+    "meshes": 1220,
+    "changedMeshes": 24,
+    "uniquePairs": 28980,
+    "beforePairs": 80,
+    "afterPairs": 66,
+    "newPairs": 23,
+    "removedPairs": 37,
+    "newByOtherLayer": {
+      "bone": 18,
+      "muscle": 4
+    },
+    "withUnchangedMeshes": {
+      "beforePairs": 56,
+      "afterPairs": 52,
+      "newPairs": 22,
+      "removedPairs": 26
+    },
+    "withinChangedMeshes": {
+      "beforePairs": 24,
+      "afterPairs": 14,
+      "newPairs": 1,
+      "removedPairs": 11
+    }
+  },
+  "relations": [
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0005"
+      ],
+      "names": [
+        "Skin",
+        "Gastrocnemius medial (left)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 278,
+        "strictPlaneStraddlingPairs": 278,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.2752014835949486
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0016"
+      ],
+      "names": [
+        "Skin",
+        "Extensor digitorum longus (left)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 98,
+        "strictPlaneStraddlingPairs": 98,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.6972376719123392
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0018"
+      ],
+      "names": [
+        "Skin",
+        "Flexor digitorum longus (left)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 49,
+        "strictPlaneStraddlingPairs": 49,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 3.140671896033646
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0020"
+      ],
+      "names": [
+        "Skin",
+        "Gastrocnemius lateral (left)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 227,
+        "strictPlaneStraddlingPairs": 227,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.4846186112783142
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0021"
+      ],
+      "names": [
+        "Skin",
+        "Peroneus longus (left)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 212,
+        "strictPlaneStraddlingPairs": 212,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.8973035568726622
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0022"
+      ],
+      "names": [
+        "Skin",
+        "Soleus (left)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 229,
+        "strictPlaneStraddlingPairs": 228,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.4426210938208706
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0023"
+      ],
+      "names": [
+        "Skin",
+        "Tibialis anterior (left)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 64,
+        "strictPlaneStraddlingPairs": 62,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.0585408676936
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0043"
+      ],
+      "names": [
+        "Skin",
+        "Gastrocnemius medial (right)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 268,
+        "strictPlaneStraddlingPairs": 268,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 3.054762394416857
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0056"
+      ],
+      "names": [
+        "Skin",
+        "Flexor digitorum longus (right)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 72,
+        "strictPlaneStraddlingPairs": 72,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.9220085195217185
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0058"
+      ],
+      "names": [
+        "Skin",
+        "Gastrocnemius lateral (right)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 355,
+        "strictPlaneStraddlingPairs": 355,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.9524485255526953
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0059"
+      ],
+      "names": [
+        "Skin",
+        "Peroneus longus (right)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 242,
+        "strictPlaneStraddlingPairs": 242,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.374810833298939
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0060"
+      ],
+      "names": [
+        "Skin",
+        "Soleus (right)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 371,
+        "strictPlaneStraddlingPairs": 367,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.8712967998170154
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0003",
+        "VHF0061"
+      ],
+      "names": [
+        "Skin",
+        "Tibialis anterior (right)"
+      ],
+      "systems": [
+        "integumentary",
+        "donor-muscle"
+      ],
+      "layers": [
+        "skin",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 4,
+        "strictPlaneStraddlingPairs": 4,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.050644873095442376
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0904",
+        "VHF0043"
+      ],
+      "names": [
+        "Right tibial collateral ligament",
+        "Gastrocnemius medial (right)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 82,
+        "strictPlaneStraddlingPairs": 82,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.0282424998818134
+      }
+    },
+    {
+      "ids": [
+        "HRAF0906",
+        "VHF0045"
+      ],
+      "names": [
+        "Posterior cruciate ligament of knee (right)",
+        "Plantaris (right)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 24,
+        "strictPlaneStraddlingPairs": 24,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.19408942962036158
+      }
+    },
+    {
+      "ids": [
+        "HRAF0906",
+        "VHF0046"
+      ],
+      "names": [
+        "Posterior cruciate ligament of knee (right)",
+        "Popliteus (right)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 35,
+        "strictPlaneStraddlingPairs": 35,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.5636020794280591
+      }
+    },
+    {
+      "ids": [
+        "HRAF0908",
+        "VHF0060"
+      ],
+      "names": [
+        "Fibular collateral ligament (right)",
+        "Soleus (right)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 42,
+        "strictPlaneStraddlingPairs": 42,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.777853044965256
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0910",
+        "VHF0043"
+      ],
+      "names": [
+        "Meniscus (right)",
+        "Gastrocnemius medial (right)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 78,
+        "strictPlaneStraddlingPairs": 78,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.1209312112625416
+      }
+    },
+    {
+      "ids": [
+        "HRAF0910",
+        "VHF0045"
+      ],
+      "names": [
+        "Meniscus (right)",
+        "Plantaris (right)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 61,
+        "strictPlaneStraddlingPairs": 61,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7450604065743468
+      }
+    },
+    {
+      "ids": [
+        "HRAF0910",
+        "VHF0046"
+      ],
+      "names": [
+        "Meniscus (right)",
+        "Popliteus (right)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 34,
+        "strictPlaneStraddlingPairs": 34,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.2734277025371927
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0910",
+        "VHF0058"
+      ],
+      "names": [
+        "Meniscus (right)",
+        "Gastrocnemius lateral (right)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 20,
+        "strictPlaneStraddlingPairs": 20,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.9738079044533697
+      },
+      "after": {
+        "intersectingTrianglePairs": 110,
+        "strictPlaneStraddlingPairs": 110,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8857143203644495
+      }
+    },
+    {
+      "ids": [
+        "HRAF0911",
+        "VHF0043"
+      ],
+      "names": [
+        "Femur (right)",
+        "Gastrocnemius medial (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 58,
+        "strictPlaneStraddlingPairs": 58,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.930431362061453
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0911",
+        "VHF0045"
+      ],
+      "names": [
+        "Femur (right)",
+        "Plantaris (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 29,
+        "strictPlaneStraddlingPairs": 29,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.1433335545859493
+      },
+      "after": {
+        "intersectingTrianglePairs": 95,
+        "strictPlaneStraddlingPairs": 95,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7855934270830534
+      }
+    },
+    {
+      "ids": [
+        "HRAF0914",
+        "VHF0043"
+      ],
+      "names": [
+        "Articular cartilage of knee (right)",
+        "Gastrocnemius medial (right)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 11,
+        "strictPlaneStraddlingPairs": 11,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8192623913191042
+      },
+      "after": {
+        "intersectingTrianglePairs": 27,
+        "strictPlaneStraddlingPairs": 27,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.49052231672476554
+      }
+    },
+    {
+      "ids": [
+        "HRAF0914",
+        "VHF0045"
+      ],
+      "names": [
+        "Articular cartilage of knee (right)",
+        "Plantaris (right)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 8,
+        "strictPlaneStraddlingPairs": 8,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.4229410805226468
+      }
+    },
+    {
+      "ids": [
+        "HRAF0917",
+        "VHF0043"
+      ],
+      "names": [
+        "Medial condyle of right femur inferior",
+        "Gastrocnemius medial (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 77,
+        "strictPlaneStraddlingPairs": 77,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.9653358831729193
+      },
+      "after": {
+        "intersectingTrianglePairs": 104,
+        "strictPlaneStraddlingPairs": 104,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8730008674005598
+      }
+    },
+    {
+      "ids": [
+        "HRAF0918",
+        "VHF0045"
+      ],
+      "names": [
+        "Lateral condyle of femur inferior (right)",
+        "Plantaris (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 67,
+        "strictPlaneStraddlingPairs": 67,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.5909137944668098
+      }
+    },
+    {
+      "ids": [
+        "HRAF0918",
+        "VHF0058"
+      ],
+      "names": [
+        "Lateral condyle of femur inferior (right)",
+        "Gastrocnemius lateral (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 126,
+        "strictPlaneStraddlingPairs": 126,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7791387903882924
+      }
+    },
+    {
+      "ids": [
+        "HRAF0921",
+        "VHF0043"
+      ],
+      "names": [
+        "Intercondylar fossa (right)",
+        "Gastrocnemius medial (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 12,
+        "strictPlaneStraddlingPairs": 12,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.85410005569611
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0927",
+        "VHF0043"
+      ],
+      "names": [
+        "Tibia (right)",
+        "Gastrocnemius medial (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 147,
+        "strictPlaneStraddlingPairs": 147,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7932843866076064
+      }
+    },
+    {
+      "ids": [
+        "HRAF0927",
+        "VHF0045"
+      ],
+      "names": [
+        "Tibia (right)",
+        "Plantaris (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 59,
+        "strictPlaneStraddlingPairs": 59,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7345951645368526
+      }
+    },
+    {
+      "ids": [
+        "HRAF0927",
+        "VHF0046"
+      ],
+      "names": [
+        "Tibia (right)",
+        "Popliteus (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 76,
+        "strictPlaneStraddlingPairs": 76,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.2637399458694736
+      },
+      "after": {
+        "intersectingTrianglePairs": 267,
+        "strictPlaneStraddlingPairs": 265,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.9245615680041083
+      }
+    },
+    {
+      "ids": [
+        "HRAF0927",
+        "VHF0054"
+      ],
+      "names": [
+        "Tibia (right)",
+        "Extensor digitorum longus (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 50,
+        "strictPlaneStraddlingPairs": 50,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.4639727868435988
+      },
+      "after": {
+        "intersectingTrianglePairs": 103,
+        "strictPlaneStraddlingPairs": 103,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.154262529009151
+      }
+    },
+    {
+      "ids": [
+        "HRAF0927",
+        "VHF0055"
+      ],
+      "names": [
+        "Tibia (right)",
+        "Extensor hallucis longus (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 34,
+        "strictPlaneStraddlingPairs": 34,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.5674617526501482
+      },
+      "after": {
+        "intersectingTrianglePairs": 143,
+        "strictPlaneStraddlingPairs": 143,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.9159192836863619
+      }
+    },
+    {
+      "ids": [
+        "HRAF0927",
+        "VHF0056"
+      ],
+      "names": [
+        "Tibia (right)",
+        "Flexor digitorum longus (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 79,
+        "strictPlaneStraddlingPairs": 79,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.3183014666113306
+      },
+      "after": {
+        "intersectingTrianglePairs": 457,
+        "strictPlaneStraddlingPairs": 457,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.0638851184495695
+      }
+    },
+    {
+      "ids": [
+        "HRAF0927",
+        "VHF0058"
+      ],
+      "names": [
+        "Tibia (right)",
+        "Gastrocnemius lateral (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 42,
+        "strictPlaneStraddlingPairs": 42,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.128988820017431
+      },
+      "after": {
+        "intersectingTrianglePairs": 90,
+        "strictPlaneStraddlingPairs": 90,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7370362000726545
+      }
+    },
+    {
+      "ids": [
+        "HRAF0927",
+        "VHF0059"
+      ],
+      "names": [
+        "Tibia (right)",
+        "Peroneus longus (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 26,
+        "strictPlaneStraddlingPairs": 26,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.4716752053553968
+      }
+    },
+    {
+      "ids": [
+        "HRAF0927",
+        "VHF0060"
+      ],
+      "names": [
+        "Tibia (right)",
+        "Soleus (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 142,
+        "strictPlaneStraddlingPairs": 142,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.409260368402215
+      },
+      "after": {
+        "intersectingTrianglePairs": 221,
+        "strictPlaneStraddlingPairs": 221,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8817568997611296
+      }
+    },
+    {
+      "ids": [
+        "HRAF0927",
+        "VHF0061"
+      ],
+      "names": [
+        "Tibia (right)",
+        "Tibialis anterior (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 140,
+        "strictPlaneStraddlingPairs": 140,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.863166360231055
+      },
+      "after": {
+        "intersectingTrianglePairs": 648,
+        "strictPlaneStraddlingPairs": 645,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.064860144888876
+      }
+    },
+    {
+      "ids": [
+        "HRAF0927",
+        "VHF0062"
+      ],
+      "names": [
+        "Tibia (right)",
+        "Tibialis posterior (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 46,
+        "strictPlaneStraddlingPairs": 46,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8913783399927995
+      },
+      "after": {
+        "intersectingTrianglePairs": 454,
+        "strictPlaneStraddlingPairs": 452,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.0598885594775833
+      }
+    },
+    {
+      "ids": [
+        "HRAF0928",
+        "VHF0057"
+      ],
+      "names": [
+        "Fibula (right)",
+        "Flexor hallucis longus (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 192,
+        "strictPlaneStraddlingPairs": 192,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8897103985423148
+      }
+    },
+    {
+      "ids": [
+        "HRAF0928",
+        "VHF0058"
+      ],
+      "names": [
+        "Fibula (right)",
+        "Gastrocnemius lateral (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 36,
+        "strictPlaneStraddlingPairs": 36,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.442899683818637
+      },
+      "after": {
+        "intersectingTrianglePairs": 59,
+        "strictPlaneStraddlingPairs": 59,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.627940734798016
+      }
+    },
+    {
+      "ids": [
+        "HRAF0928",
+        "VHF0059"
+      ],
+      "names": [
+        "Fibula (right)",
+        "Peroneus longus (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 259,
+        "strictPlaneStraddlingPairs": 259,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.8721382024857816
+      },
+      "after": {
+        "intersectingTrianglePairs": 916,
+        "strictPlaneStraddlingPairs": 916,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.905876807901633
+      }
+    },
+    {
+      "ids": [
+        "HRAF0928",
+        "VHF0060"
+      ],
+      "names": [
+        "Fibula (right)",
+        "Soleus (right)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 191,
+        "strictPlaneStraddlingPairs": 191,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.386472024131795
+      },
+      "after": {
+        "intersectingTrianglePairs": 534,
+        "strictPlaneStraddlingPairs": 531,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8269942667815495
+      }
+    },
+    {
+      "ids": [
+        "HRAF0931",
+        "VHF0020"
+      ],
+      "names": [
+        "Fibular collateral ligament (left)",
+        "Gastrocnemius lateral (left)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 80,
+        "strictPlaneStraddlingPairs": 80,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.8976092995479745
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0931",
+        "VHF0022"
+      ],
+      "names": [
+        "Fibular collateral ligament (left)",
+        "Soleus (left)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 68,
+        "strictPlaneStraddlingPairs": 68,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.2346205524127543
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0933",
+        "VHF0005"
+      ],
+      "names": [
+        "Left tibial collateral ligament",
+        "Gastrocnemius medial (left)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 38,
+        "strictPlaneStraddlingPairs": 38,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.47234013344112324
+      }
+    },
+    {
+      "ids": [
+        "HRAF0933",
+        "VHF0008"
+      ],
+      "names": [
+        "Left tibial collateral ligament",
+        "Popliteus (left)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 161,
+        "strictPlaneStraddlingPairs": 160,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8819099906836284
+      }
+    },
+    {
+      "ids": [
+        "HRAF0936",
+        "VHF0005"
+      ],
+      "names": [
+        "Meniscus (left)",
+        "Gastrocnemius medial (left)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 65,
+        "strictPlaneStraddlingPairs": 62,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.0148083113599085
+      }
+    },
+    {
+      "ids": [
+        "HRAF0936",
+        "VHF0008"
+      ],
+      "names": [
+        "Meniscus (left)",
+        "Popliteus (left)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 42,
+        "strictPlaneStraddlingPairs": 42,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.162238622977543
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0936",
+        "VHF0020"
+      ],
+      "names": [
+        "Meniscus (left)",
+        "Gastrocnemius lateral (left)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 36,
+        "strictPlaneStraddlingPairs": 36,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7229043531546329
+      },
+      "after": {
+        "intersectingTrianglePairs": 98,
+        "strictPlaneStraddlingPairs": 98,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8940864198579428
+      }
+    },
+    {
+      "ids": [
+        "HRAF0937",
+        "VHF0005"
+      ],
+      "names": [
+        "Femur (left)",
+        "Gastrocnemius medial (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 18,
+        "strictPlaneStraddlingPairs": 18,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.4211459390791605
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0937",
+        "VHF0007"
+      ],
+      "names": [
+        "Femur (left)",
+        "Plantaris (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 46,
+        "strictPlaneStraddlingPairs": 46,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.747424390135037
+      },
+      "after": {
+        "intersectingTrianglePairs": 34,
+        "strictPlaneStraddlingPairs": 34,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.44704516291188134
+      }
+    },
+    {
+      "ids": [
+        "HRAF0938",
+        "VHF0005"
+      ],
+      "names": [
+        "Intercondylar fossa (left)",
+        "Gastrocnemius medial (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 18,
+        "strictPlaneStraddlingPairs": 18,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.2491996928055462
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0946",
+        "VHF0005"
+      ],
+      "names": [
+        "Articular cartilage of knee (left)",
+        "Gastrocnemius medial (left)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 7,
+        "strictPlaneStraddlingPairs": 7,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.1941645669215903
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0946",
+        "VHF0007"
+      ],
+      "names": [
+        "Articular cartilage of knee (left)",
+        "Plantaris (left)"
+      ],
+      "systems": [
+        "connective",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 7,
+        "strictPlaneStraddlingPairs": 7,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.4197223564460498
+      },
+      "after": {
+        "intersectingTrianglePairs": 10,
+        "strictPlaneStraddlingPairs": 10,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.3716328227651553
+      }
+    },
+    {
+      "ids": [
+        "HRAF0947",
+        "VHF0005"
+      ],
+      "names": [
+        "Medial condyle of left femur inferior",
+        "Gastrocnemius medial (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 72,
+        "strictPlaneStraddlingPairs": 72,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.4812144991365384
+      },
+      "after": {
+        "intersectingTrianglePairs": 63,
+        "strictPlaneStraddlingPairs": 63,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7014690100068165
+      }
+    },
+    {
+      "ids": [
+        "HRAF0948",
+        "VHF0007"
+      ],
+      "names": [
+        "Lateral condyle of femur inferior (left)",
+        "Plantaris (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 33,
+        "strictPlaneStraddlingPairs": 33,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8659276414740632
+      },
+      "after": {
+        "intersectingTrianglePairs": 102,
+        "strictPlaneStraddlingPairs": 102,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.42010077842790305
+      }
+    },
+    {
+      "ids": [
+        "HRAF0948",
+        "VHF0020"
+      ],
+      "names": [
+        "Lateral condyle of femur inferior (left)",
+        "Gastrocnemius lateral (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 69,
+        "strictPlaneStraddlingPairs": 69,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.47913119884304883
+      }
+    },
+    {
+      "ids": [
+        "HRAF0954",
+        "VHF0005"
+      ],
+      "names": [
+        "Tibia (left)",
+        "Gastrocnemius medial (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 95,
+        "strictPlaneStraddlingPairs": 95,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8635458738101452
+      }
+    },
+    {
+      "ids": [
+        "HRAF0954",
+        "VHF0008"
+      ],
+      "names": [
+        "Tibia (left)",
+        "Popliteus (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 100,
+        "strictPlaneStraddlingPairs": 100,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.054736860382868
+      },
+      "after": {
+        "intersectingTrianglePairs": 299,
+        "strictPlaneStraddlingPairs": 299,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.3142137067798803
+      }
+    },
+    {
+      "ids": [
+        "HRAF0954",
+        "VHF0016"
+      ],
+      "names": [
+        "Tibia (left)",
+        "Extensor digitorum longus (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 91,
+        "strictPlaneStraddlingPairs": 91,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 3.224756767737611
+      },
+      "after": {
+        "intersectingTrianglePairs": 120,
+        "strictPlaneStraddlingPairs": 120,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.071845230658618
+      }
+    },
+    {
+      "ids": [
+        "HRAF0954",
+        "VHF0017"
+      ],
+      "names": [
+        "Tibia (left)",
+        "Extensor hallucis longus (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 36,
+        "strictPlaneStraddlingPairs": 36,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 3.7107641714553683
+      },
+      "after": {
+        "intersectingTrianglePairs": 140,
+        "strictPlaneStraddlingPairs": 140,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.0263414050804012
+      }
+    },
+    {
+      "ids": [
+        "HRAF0954",
+        "VHF0018"
+      ],
+      "names": [
+        "Tibia (left)",
+        "Flexor digitorum longus (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 22,
+        "strictPlaneStraddlingPairs": 22,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.6628549315792073
+      },
+      "after": {
+        "intersectingTrianglePairs": 373,
+        "strictPlaneStraddlingPairs": 373,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.1122770195407157
+      }
+    },
+    {
+      "ids": [
+        "HRAF0954",
+        "VHF0020"
+      ],
+      "names": [
+        "Tibia (left)",
+        "Gastrocnemius lateral (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 43,
+        "strictPlaneStraddlingPairs": 43,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.170420979043095
+      },
+      "after": {
+        "intersectingTrianglePairs": 70,
+        "strictPlaneStraddlingPairs": 70,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.6730135809036735
+      }
+    },
+    {
+      "ids": [
+        "HRAF0954",
+        "VHF0022"
+      ],
+      "names": [
+        "Tibia (left)",
+        "Soleus (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 106,
+        "strictPlaneStraddlingPairs": 106,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.288217140406505
+      },
+      "after": {
+        "intersectingTrianglePairs": 54,
+        "strictPlaneStraddlingPairs": 54,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.609905795245288
+      }
+    },
+    {
+      "ids": [
+        "HRAF0954",
+        "VHF0023"
+      ],
+      "names": [
+        "Tibia (left)",
+        "Tibialis anterior (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 226,
+        "strictPlaneStraddlingPairs": 226,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.7651645522366985
+      },
+      "after": {
+        "intersectingTrianglePairs": 738,
+        "strictPlaneStraddlingPairs": 736,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.1492133746228048
+      }
+    },
+    {
+      "ids": [
+        "HRAF0954",
+        "VHF0024"
+      ],
+      "names": [
+        "Tibia (left)",
+        "Tibialis posterior (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 494,
+        "strictPlaneStraddlingPairs": 494,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.9315422708048582
+      }
+    },
+    {
+      "ids": [
+        "HRAF0955",
+        "VHF0019"
+      ],
+      "names": [
+        "Fibula (left)",
+        "Flexor hallucis longus (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 60,
+        "strictPlaneStraddlingPairs": 60,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.3131984054005215
+      },
+      "after": {
+        "intersectingTrianglePairs": 127,
+        "strictPlaneStraddlingPairs": 127,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8094563732666031
+      }
+    },
+    {
+      "ids": [
+        "HRAF0955",
+        "VHF0020"
+      ],
+      "names": [
+        "Fibula (left)",
+        "Gastrocnemius lateral (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 53,
+        "strictPlaneStraddlingPairs": 53,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 2.8874139864217767
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "HRAF0955",
+        "VHF0021"
+      ],
+      "names": [
+        "Fibula (left)",
+        "Peroneus longus (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 209,
+        "strictPlaneStraddlingPairs": 209,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 3.520920774208457
+      },
+      "after": {
+        "intersectingTrianglePairs": 723,
+        "strictPlaneStraddlingPairs": 721,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.1376580081943113
+      }
+    },
+    {
+      "ids": [
+        "HRAF0955",
+        "VHF0022"
+      ],
+      "names": [
+        "Fibula (left)",
+        "Soleus (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 232,
+        "strictPlaneStraddlingPairs": 232,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 3.665377564384
+      },
+      "after": {
+        "intersectingTrianglePairs": 333,
+        "strictPlaneStraddlingPairs": 333,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8212604475930939
+      }
+    },
+    {
+      "ids": [
+        "HRAF0955",
+        "VHF0024"
+      ],
+      "names": [
+        "Fibula (left)",
+        "Tibialis posterior (left)"
+      ],
+      "systems": [
+        "skeletal",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 33,
+        "strictPlaneStraddlingPairs": 33,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7854889197713305
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "BM0141",
+        "VHF0016"
+      ],
+      "names": [
+        "Left talus",
+        "Extensor digitorum longus (left)"
+      ],
+      "systems": [
+        "borrowed",
+        "donor-muscle"
+      ],
+      "layers": [
+        "bone",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": {
+        "intersectingTrianglePairs": 24,
+        "strictPlaneStraddlingPairs": 24,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.3604750808216686
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "VHF0004",
+        "VHF0007"
+      ],
+      "names": [
+        "Biceps femoris short (left)",
+        "Plantaris (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 105,
+        "strictPlaneStraddlingPairs": 105,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.4442455327263316
+      }
+    },
+    {
+      "ids": [
+        "VHF0004",
+        "VHF0020"
+      ],
+      "names": [
+        "Biceps femoris short (left)",
+        "Gastrocnemius lateral (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 182,
+        "strictPlaneStraddlingPairs": 180,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7248007370245629
+      }
+    },
+    {
+      "ids": [
+        "VHF0016",
+        "VHF0017"
+      ],
+      "names": [
+        "Extensor digitorum longus (left)",
+        "Extensor hallucis longus (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 214,
+        "strictPlaneStraddlingPairs": 214,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7858166428882442
+      },
+      "after": {
+        "intersectingTrianglePairs": 20,
+        "strictPlaneStraddlingPairs": 20,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.21163936266387526
+      }
+    },
+    {
+      "ids": [
+        "VHF0016",
+        "VHF0021"
+      ],
+      "names": [
+        "Extensor digitorum longus (left)",
+        "Peroneus longus (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 15,
+        "strictPlaneStraddlingPairs": 15,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.26264711260096063
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "VHF0016",
+        "VHF0023"
+      ],
+      "names": [
+        "Extensor digitorum longus (left)",
+        "Tibialis anterior (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 134,
+        "strictPlaneStraddlingPairs": 130,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7116699804961251
+      },
+      "after": {
+        "intersectingTrianglePairs": 16,
+        "strictPlaneStraddlingPairs": 16,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.2160276328170385
+      }
+    },
+    {
+      "ids": [
+        "VHF0017",
+        "VHF0023"
+      ],
+      "names": [
+        "Extensor hallucis longus (left)",
+        "Tibialis anterior (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 13,
+        "strictPlaneStraddlingPairs": 13,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7065020149797335
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "VHF0018",
+        "VHF0022"
+      ],
+      "names": [
+        "Flexor digitorum longus (left)",
+        "Soleus (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 154,
+        "strictPlaneStraddlingPairs": 154,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7421516248271212
+      },
+      "after": {
+        "intersectingTrianglePairs": 24,
+        "strictPlaneStraddlingPairs": 24,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.2211588173003877
+      }
+    },
+    {
+      "ids": [
+        "VHF0018",
+        "VHF0024"
+      ],
+      "names": [
+        "Flexor digitorum longus (left)",
+        "Tibialis posterior (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 74,
+        "strictPlaneStraddlingPairs": 74,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7323800046681
+      },
+      "after": {
+        "intersectingTrianglePairs": 4,
+        "strictPlaneStraddlingPairs": 4,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.21689773866362003
+      }
+    },
+    {
+      "ids": [
+        "VHF0019",
+        "VHF0022"
+      ],
+      "names": [
+        "Flexor hallucis longus (left)",
+        "Soleus (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 171,
+        "strictPlaneStraddlingPairs": 168,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.6126676737443593
+      },
+      "after": {
+        "intersectingTrianglePairs": 16,
+        "strictPlaneStraddlingPairs": 16,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.16922649136653228
+      }
+    },
+    {
+      "ids": [
+        "VHF0019",
+        "VHF0024"
+      ],
+      "names": [
+        "Flexor hallucis longus (left)",
+        "Tibialis posterior (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 35,
+        "strictPlaneStraddlingPairs": 35,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.42306121082757153
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "VHF0020",
+        "VHF0022"
+      ],
+      "names": [
+        "Gastrocnemius lateral (left)",
+        "Soleus (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 113,
+        "strictPlaneStraddlingPairs": 109,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.4777209328329662
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "VHF0021",
+        "VHF0022"
+      ],
+      "names": [
+        "Peroneus longus (left)",
+        "Soleus (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 47,
+        "strictPlaneStraddlingPairs": 41,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.5808651846727375
+      },
+      "after": {
+        "intersectingTrianglePairs": 4,
+        "strictPlaneStraddlingPairs": 4,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.3096097010846102
+      }
+    },
+    {
+      "ids": [
+        "VHF0022",
+        "VHF0024"
+      ],
+      "names": [
+        "Soleus (left)",
+        "Tibialis posterior (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 12,
+        "strictPlaneStraddlingPairs": 12,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.2893620954492232
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "VHF0023",
+        "VHF0024"
+      ],
+      "names": [
+        "Tibialis anterior (left)",
+        "Tibialis posterior (left)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 20,
+        "strictPlaneStraddlingPairs": 20,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.4127654977118979
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "VHF0042",
+        "VHF0045"
+      ],
+      "names": [
+        "Biceps femoris short head (right)",
+        "Plantaris (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 142,
+        "strictPlaneStraddlingPairs": 142,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.7838199275492291
+      }
+    },
+    {
+      "ids": [
+        "VHF0042",
+        "VHF0058"
+      ],
+      "names": [
+        "Biceps femoris short head (right)",
+        "Gastrocnemius lateral (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": false,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 209,
+        "strictPlaneStraddlingPairs": 209,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.6665621652748215
+      }
+    },
+    {
+      "ids": [
+        "VHF0045",
+        "VHF0058"
+      ],
+      "names": [
+        "Plantaris (right)",
+        "Gastrocnemius lateral (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": null,
+      "after": {
+        "intersectingTrianglePairs": 14,
+        "strictPlaneStraddlingPairs": 14,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.18762849933105363
+      }
+    },
+    {
+      "ids": [
+        "VHF0054",
+        "VHF0055"
+      ],
+      "names": [
+        "Extensor digitorum longus (right)",
+        "Extensor hallucis longus (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 378,
+        "strictPlaneStraddlingPairs": 378,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 1.1942267102442727
+      },
+      "after": {
+        "intersectingTrianglePairs": 102,
+        "strictPlaneStraddlingPairs": 102,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.3076773081606831
+      }
+    },
+    {
+      "ids": [
+        "VHF0054",
+        "VHF0059"
+      ],
+      "names": [
+        "Extensor digitorum longus (right)",
+        "Peroneus longus (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 163,
+        "strictPlaneStraddlingPairs": 158,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.8834539267320624
+      },
+      "after": {
+        "intersectingTrianglePairs": 18,
+        "strictPlaneStraddlingPairs": 18,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.3727739005547616
+      }
+    },
+    {
+      "ids": [
+        "VHF0054",
+        "VHF0061"
+      ],
+      "names": [
+        "Extensor digitorum longus (right)",
+        "Tibialis anterior (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 282,
+        "strictPlaneStraddlingPairs": 282,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.5631159176280655
+      },
+      "after": {
+        "intersectingTrianglePairs": 16,
+        "strictPlaneStraddlingPairs": 16,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.1384530554539231
+      }
+    },
+    {
+      "ids": [
+        "VHF0054",
+        "VHF0062"
+      ],
+      "names": [
+        "Extensor digitorum longus (right)",
+        "Tibialis posterior (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 6,
+        "strictPlaneStraddlingPairs": 6,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.6141037350740512
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "VHF0055",
+        "VHF0061"
+      ],
+      "names": [
+        "Extensor hallucis longus (right)",
+        "Tibialis anterior (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 60,
+        "strictPlaneStraddlingPairs": 60,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.5598255436289284
+      },
+      "after": {
+        "intersectingTrianglePairs": 8,
+        "strictPlaneStraddlingPairs": 8,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.10912715399676368
+      }
+    },
+    {
+      "ids": [
+        "VHF0056",
+        "VHF0060"
+      ],
+      "names": [
+        "Flexor digitorum longus (right)",
+        "Soleus (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 131,
+        "strictPlaneStraddlingPairs": 131,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.763214824751126
+      },
+      "after": {
+        "intersectingTrianglePairs": 4,
+        "strictPlaneStraddlingPairs": 4,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.09910172429439104
+      }
+    },
+    {
+      "ids": [
+        "VHF0056",
+        "VHF0062"
+      ],
+      "names": [
+        "Flexor digitorum longus (right)",
+        "Tibialis posterior (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 186,
+        "strictPlaneStraddlingPairs": 186,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.4829899042788471
+      },
+      "after": {
+        "intersectingTrianglePairs": 18,
+        "strictPlaneStraddlingPairs": 18,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.18750824253474876
+      }
+    },
+    {
+      "ids": [
+        "VHF0057",
+        "VHF0060"
+      ],
+      "names": [
+        "Flexor hallucis longus (right)",
+        "Soleus (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 273,
+        "strictPlaneStraddlingPairs": 273,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.49530663981700196
+      },
+      "after": {
+        "intersectingTrianglePairs": 8,
+        "strictPlaneStraddlingPairs": 8,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.15607554074793123
+      }
+    },
+    {
+      "ids": [
+        "VHF0058",
+        "VHF0060"
+      ],
+      "names": [
+        "Gastrocnemius lateral (right)",
+        "Soleus (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 30,
+        "strictPlaneStraddlingPairs": 30,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.39712873981723706
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "VHF0059",
+        "VHF0060"
+      ],
+      "names": [
+        "Peroneus longus (right)",
+        "Soleus (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 10,
+        "strictPlaneStraddlingPairs": 10,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.35667210481815537
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "VHF0060",
+        "VHF0062"
+      ],
+      "names": [
+        "Soleus (right)",
+        "Tibialis posterior (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 4,
+        "strictPlaneStraddlingPairs": 4,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.2804545141149421
+      },
+      "after": null
+    },
+    {
+      "ids": [
+        "VHF0061",
+        "VHF0062"
+      ],
+      "names": [
+        "Tibialis anterior (right)",
+        "Tibialis posterior (right)"
+      ],
+      "systems": [
+        "donor-muscle",
+        "donor-muscle"
+      ],
+      "layers": [
+        "muscle",
+        "muscle"
+      ],
+      "bothChanged": true,
+      "before": {
+        "intersectingTrianglePairs": 28,
+        "strictPlaneStraddlingPairs": 28,
+        "toleranceMm": 0.001,
+        "maxTrianglePlaneStraddleExtentMm": 0.4139077781010979
+      },
+      "after": null
+    }
+  ],
+  "limitations": [
+    "Baseline is actual current low-resolution runtime geometry; candidate restores full source triangles and changes coordinates. Cross-count differences combine those effects.",
+    "All 1,220 overview meshes are present, including normally hidden meshes; separately loaded CT and male details are not part of this frame.",
+    "Surface intersections do not measure solid penetration, containment or correct attachments. No crossing does not prove anatomically valid separation.",
+    "Readback arithmetic and 24 derivative examples are independent checks of saved numbers, not a second independent fit.",
+    "Additional rays and solid-angle winding do not overwrite the original three-ray ambiguous result."
+  ],
+  "files": [
+    {
+      "file": ".cache/calf-common-displacement/report.json",
+      "sha256": "be610c4a2df5f534199b578d27ddcaeea11f57fc7115facda7815969492370a3"
+    },
+    {
+      "file": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "file": "docs/anatomy-alignment/donor-source-comparison.json",
+      "sha256": "ea0c9cbc5d0edc0a3859fb9f5786a638eeb3e92bb5a60649325561dc14c69959"
+    },
+    {
+      "file": "docs/anatomy-alignment/hierarchy-joint-bone-surface-fits.json",
+      "sha256": "f1146b7fb1fb339e3dc3cf22d46b456363945e01191bbf5463614e166ceba6a4"
+    },
+    {
+      "file": "docs/anatomy-alignment/hra-bone-targets.json",
+      "sha256": "94c3e05a112656f1f3859c88627c49b7cd3ed394a21dfd2d5f5aebff14b3e87a"
+    },
+    {
+      "file": "docs/anatomy-alignment/donor-original-receipt.json",
+      "sha256": "cf308310cb04f3bc6be1a81d3bd21a6ca09a4b0f32773ecb1c938f83482ea6d4"
+    },
+    {
+      "file": "docs/anatomy-alignment/donor-fidelity-packing.json",
+      "sha256": "0aad0815b9914a4841a6aa5cf84aa7202ee04f4d508737939c034aeecbb8b432"
+    },
+    {
+      "file": ".cache/donor-fidelity/source-full.bin.gz",
+      "sha256": "5c506d56f40971eca353cfc6612b269c4e0e1cd22888dc4f1007377944133720"
+    },
+    {
+      "file": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "file": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "file": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "file": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "file": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "file": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "file": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "file": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "file": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "file": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "file": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "file": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "file": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "file": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "file": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "file": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "file": ".cache/donor-original-zGjXMX/Original 3D STL Models-stl/Both/VHF_Both_All.stl",
+      "sha256": "d7dfa848ccbb8e9ccf5672729a2d56f710dda91ba9c6cb57975e85f05ec2f983"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Tibia_smooth.stl",
+      "sha256": "148107a0157932b94cab2b382b805af7c3c178400be76349ed20cea0bb56c3eb"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Fibula_smooth.stl",
+      "sha256": "3f5573f86c10eac6b25ed63604ea15ada1d389b54e0ceaecc48e5c5d33a62549"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Tibia_smooth.stl",
+      "sha256": "589b64fe38d602eb95a0dad900bcd1059043d3d8451d3d74c7231fccc62ffae1"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Fibula_smooth.stl",
+      "sha256": "5e62c5c1aeedb2b0c287e4efbaf881ef9c8c721ccc546a69c74784e520581a24"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Femur_smooth.stl",
+      "sha256": "964b27ab140b4e72a2e7c4ae3f1ae24212554cc1a8f0552b632dafce8d66b242"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Patella_smooth.stl",
+      "sha256": "4a57158e9ec1716a78e27d4370865fcbc5e7ff4be203f38e9aa59ca84761153c"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Femur_smooth.stl",
+      "sha256": "012b293cbaa2cd467ea423b96bb257c8f558ff639c8342e37972af7c6febbd25"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Patella_smooth.stl",
+      "sha256": "bca69eb33e240c0ec6ea3fafb4f782edbc8ca714203860d972c74aabc6202613"
+    },
+    {
+      "file": "scripts/fit-calf-common-displacement.mjs",
+      "sha256": "ad4fb79f2de2d4f5973ce056b343c6a8cc1f9fe712aa5188dc2aa92217eccf3d"
+    },
+    {
+      "file": "scripts/lib/gaussian-displacement.mjs",
+      "sha256": "523fce8df2ea380f631eb6467b0580465a424794938b197a9106e1a59fb9812d"
+    },
+    {
+      "file": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "file": "scripts/lib/triangle-crossings.mjs",
+      "sha256": "a55dd923c032c76591a7f2aa1af2863fe9e24bf0adb0ee6eb4aad5388238d512"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    },
+    {
+      "file": ".cache/calf-common-displacement/candidate.bin.gz",
+      "sha256": "459da6b5f4a9c70e926068fd285d4c06ef26182f70cfe3a75e26b46b27a6ffdf"
+    },
+    {
+      "file": "data/female-atlas-structures.json",
+      "sha256": "4affd375a4413c840060b480668d6a4efd9a5102be3a70551e831597daf34035"
+    },
+    {
+      "file": "data/catalog/female-source-restoration.json",
+      "sha256": "6b4776f1c3d395b584cf72568fafe8063924455e5bf4e28c2882399495ca5f79"
+    },
+    {
+      "file": "public/models/female-source-restoration/right-ilium.bin.gz",
+      "sha256": "cb8f1642b7b4be63f5ebd276d620917a3d70905c97e338d57f978bf0943b3fa8"
+    },
+    {
+      "file": "scripts/audit-calf-common-displacement.mjs",
+      "sha256": "8786ffa0b577f64446429132c382730a8b6d5f4c01e429a15c37abdf809c5913"
+    },
+    {
+      "file": "src/female-arm-registration.ts",
+      "sha256": "b0ba7383abfcabc4e2561d74b8cfcda56b46850595be20e5d16fed7d288555dd"
+    },
+    {
+      "file": "src/female-foot-registration.ts",
+      "sha256": "6545d3024a6ee781dc6f9f282f12d54531de15c0de7631cbc5cfef44a0103ba8"
+    },
+    {
+      "file": "src/female-source-restoration.ts",
+      "sha256": "8ee57aa49d29bef60f8af42277f179fd792505f9b6327e9c1ff4b32c4c5f6cde"
+    },
+    {
+      "file": "src/female-brain-bindings.ts",
+      "sha256": "da642893a3841f453ed178704dccc8732e24b79d8f02def4de85f5d6cece0bdd"
+    },
+    {
+      "file": "data/catalog/female-arm-registration.json",
+      "sha256": "1e4fa09616f0da44b0353fbc18e44f738e00344860426d3b047c0c1e06ecaf0d"
+    },
+    {
+      "file": "data/catalog/female-foot-registration.json",
+      "sha256": "c8d8400067825ed5c70172d252d4a4ca291a2005bfe0488e633dfe56b5bb220a"
+    },
+    {
+      "file": "data/catalog/female-brain-bindings.json",
+      "sha256": "74b98859803bae43cbeb172e55d64272accba34fadd08df64dd9bae97dae7294"
+    }
+  ]
+}
