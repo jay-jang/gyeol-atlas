@@ -1,0 +1,214 @@
+{
+  "createdAt": "2026-09-27T08:40:19.589Z",
+  "status": "Original aggregate connectivity inspected; no separately named toe-bone segmentation supplied",
+  "archive": {
+    "file": "Original 3D STL Models-stl.zip",
+    "sha256": "cabc34be5b6d9ebed92983257aec8c394bbca658bb7d218cb4a48d84ba4cc5eb"
+  },
+  "parts": [
+    {
+      "side": "left",
+      "entry": "Original 3D STL Models-stl/Left/VHF_Left_Bone_Phalanges.stl",
+      "bytes": 51310806,
+      "sha256": "397e6e67f389ed2d3ad0e66e2dba6388abe89afa5b12d1bc830c312644311623",
+      "ascii": {
+        "triangles": 248168,
+        "triangleVertexOccurrences": 744504,
+        "boundsSourceMillimetres": [
+          [
+            485.181,
+            424.575012,
+            13.4864998
+          ],
+          [
+            558.440979,
+            554.445007,
+            102.064499
+          ]
+        ],
+        "extentMillimetres": [
+          73.25997899999999,
+          129.86999500000002,
+          88.5779992
+        ]
+      },
+      "components": [
+        {
+          "triangles": 248072,
+          "vertices": 124028,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              485.181,
+              424.575012,
+              13.4864998
+            ],
+            [
+              558.440979,
+              554.445007,
+              102.064499
+            ]
+          ]
+        },
+        {
+          "triangles": 64,
+          "vertices": 34,
+          "firstTriangle": 13862,
+          "bounds": [
+            [
+              502.496979,
+              527.804993,
+              23.8094997
+            ],
+            [
+              503.162994,
+              529.137024,
+              26.140501
+            ]
+          ]
+        },
+        {
+          "triangles": 8,
+          "vertices": 6,
+          "firstTriangle": 23489,
+          "bounds": [
+            [
+              501.830994,
+              525.807007,
+              27.4724998
+            ],
+            [
+              502.496979,
+              526.473022,
+              27.8055
+            ]
+          ]
+        },
+        {
+          "triangles": 8,
+          "vertices": 6,
+          "firstTriangle": 24231,
+          "bounds": [
+            [
+              495.17099,
+              515.151001,
+              27.8055
+            ],
+            [
+              495.837006,
+              515.817017,
+              28.1385002
+            ]
+          ]
+        },
+        {
+          "triangles": 8,
+          "vertices": 6,
+          "firstTriangle": 24446,
+          "bounds": [
+            [
+              502.496979,
+              526.473022,
+              27.8055
+            ],
+            [
+              503.162994,
+              527.138977,
+              28.1385002
+            ]
+          ]
+        },
+        {
+          "triangles": 8,
+          "vertices": 6,
+          "firstTriangle": 25153,
+          "bounds": [
+            [
+              495.17099,
+              515.817017,
+              28.1385002
+            ],
+            [
+              495.837006,
+              516.483032,
+              28.4715004
+            ]
+          ]
+        }
+      ],
+      "float32ComponentCountsAgree": true,
+      "vertices": 124086
+    },
+    {
+      "side": "right",
+      "entry": "Original 3D STL Models-stl/Right/VHF_Right_Bone_Phalanges.stl",
+      "bytes": 52669856,
+      "sha256": "fa1ff641d45559f1a0b475ecc4f08fe3e4853ff8ec8ab9563f5bc60f43491ea4",
+      "ascii": {
+        "triangles": 255720,
+        "triangleVertexOccurrences": 767160,
+        "boundsSourceMillimetres": [
+          [
+            561.770996,
+            405.260986,
+            7.82550001
+          ],
+          [
+            631.034973,
+            541.125,
+            95.4044952
+          ]
+        ],
+        "extentMillimetres": [
+          69.26397700000007,
+          135.864014,
+          87.57899519
+        ]
+      },
+      "components": [
+        {
+          "triangles": 255720,
+          "vertices": 127852,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              561.770996,
+              405.260986,
+              7.82550001
+            ],
+            [
+              631.034973,
+              541.125,
+              95.4044952
+            ]
+          ]
+        }
+      ],
+      "float32ComponentCountsAgree": true,
+      "vertices": 127852
+    }
+  ],
+  "limitations": [
+    "Only two Original STL files were inspected here; the remaining source meshes retain their prior verification scope.",
+    "Connectivity is not a clinical or anatomical identity claim. Tiny components are not automatically individual bones.",
+    "Both readers use the same component algorithm; ASCII grammar and Float32/Float64 parsing are separate checks."
+  ],
+  "files": [
+    {
+      "file": "scripts/audit-donor-foot-originals.mjs",
+      "sha256": "161a9572cad2b0f7f47b51432b9c9d1a2044aacbe65e58d89dda58bf5910683f"
+    },
+    {
+      "file": "scripts/lib/exact-position-components.mjs",
+      "sha256": "8e9aee660f8edf3f357b9ac9156c47d532ac6f2dc4679c9e6770ad2d51f805cd"
+    },
+    {
+      "file": "scripts/audit-donor-original.mjs",
+      "sha256": "b0ee741863c0068ed4dc824d1e8374762f4fca9c26328c8959f56a39ed8264c3"
+    },
+    {
+      "file": "docs/anatomy-alignment/donor-original-receipt.json",
+      "sha256": "cf308310cb04f3bc6be1a81d3bd21a6ca09a4b0f32773ecb1c938f83482ea6d4"
+    }
+  ]
+}

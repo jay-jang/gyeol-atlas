@@ -8,7 +8,7 @@
 
 확인한 자료:
 
-- [Human-Atlas 원본 설명](https://github.com/slorksmo/Human-Atlas): 여성 원본의 근육은 눈·무릎 중심이며, 별도 여성 기증자의 하체 근육을 보완합니다. 현재 보관한 manifest와 출처는 `data/catalog/female-atlas-source.json`, `public/models/female/ATTRIBUTION.md`입니다.
+- [Human-Atlas 원본 설명](https://github.com/slorksmo/Human-Atlas): 여성 원본의 근육은 눈·무릎 중심이며, 별도 제작된 Visible Human Female 하체 근육을 보완합니다. 종전의 “별도 여성 기증자” 표기는 근거가 부족해 정정합니다. 대학 자료와 HRA 피부·무릎의 공식 설명이 같은 NLM Visible Human Female을 지목하지만, 서로 다른 후처리·자세·좌표까지 일치한다는 뜻은 아닙니다. [출처 재대조와 여성 발뼈 검사](DONOR_FOOT_SOURCE.md). 현재 보관한 manifest와 출처는 `data/catalog/female-atlas-source.json`, `public/models/female/ATTRIBUTION.md`입니다.
 - [NLM Visible Human Project](https://www.nlm.nih.gov/research/visible/visible_human.html): 여성의 CT·MRI·절단면 사진을 공개하지만 이는 즉시 사용할 수 있는 기관별 GLB 패키지가 아닙니다. 공식 설명의 여성 영상 자료는 약40GB·절단면5189장입니다. 이를 여성 위·상체 근육 등의 검증된 표면 모형으로 만드는 데에는 기관 분할과 해부 검수가 필요합니다.
 
 이 확인은 ‘어디에도 공개 여성 모형이 없다’는 결론이 아닙니다. 현재 바로 통합할 수 있는, 성별·좌표·재배포 조건이 확인된 전체 여성 기관 패키지를 확보하지 못했다는 뜻입니다.

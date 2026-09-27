@@ -1,5 +1,7 @@
 # Anatomy data attribution
 
+> GYEOL correction (2026-09-27): the upstream text retained below calls the Andreassen lower-limb source a “second woman.” That donor-identity claim is not supported by the primary sources. The [University of Denver dataset](https://digitalcommons.du.edu/visiblehuman/1/) and HRA's [female knee](https://3d.nih.gov/entries/20969?version=1) and [female skin](https://3d.nih.gov/entries/3DPX-020986?version=1) descriptions all cite NLM Visible Human Female. These are separately processed reconstructions, not interchangeable coordinate frames; this does not make the composite HRA atlas a single-person scan. The Denver package also contains female foot bones, although its `Phalanges` mesh is an aggregate, not separately labelled toe bones. GYEOL has not applied the tested foot replacements because they fail skin/ankle placement checks. Statements below about default visibility and original placement describe upstream behavior; current GYEOL adaptations and limitations are recorded in `THIRD_PARTY_NOTICES.md` and `docs/anatomy-alignment/` in the GYEOL repository.
+
 BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.
 
 - License: https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html (updated 2025-02-27)

@@ -1,0 +1,95 @@
+{
+  "status": "Independent candidate rendering, not UI or clinical validation",
+  "mode": "surface-shank",
+  "skinOpacity": 0.17,
+  "clipping": "All surfaces above atlas y=0.24m clipped for ankle inspection; lower body not removed from data",
+  "captures": [
+    {
+      "side": "left",
+      "view": "anterior",
+      "file": ".cache/donor-feet/foot-left-anterior.png",
+      "sha256": "3d7e60f1fd68a3bcda49b885104ca7402ed904415fabea6b858804964b4087d4",
+      "camera": {
+        "position": [
+          0.14507975801825523,
+          0.0054832398891448975,
+          0.5579037043425636
+        ],
+        "target": [
+          0.14507975801825523,
+          0.0054832398891448975,
+          -0.05543787032365799
+        ]
+      }
+    },
+    {
+      "side": "left",
+      "view": "lateral",
+      "file": ".cache/donor-feet/foot-left-lateral.png",
+      "sha256": "a5223a6c58d6fb0445ea5bf91ba41c6ae6fe2b1317d8772d41158725cb5eb4d8",
+      "camera": {
+        "position": [
+          0.7584213326844769,
+          0.0054832398891448975,
+          -0.05543787032365799
+        ],
+        "target": [
+          0.14507975801825523,
+          0.0054832398891448975,
+          -0.05543787032365799
+        ]
+      }
+    },
+    {
+      "side": "right",
+      "view": "anterior",
+      "file": ".cache/donor-feet/foot-right-anterior.png",
+      "sha256": "8a65ee28f69f0215106ee2070fb204d92d42ec924db412fbf779affedadc22a7",
+      "camera": {
+        "position": [
+          -0.15036646649241447,
+          0.008198820054531097,
+          0.5435700981857856
+        ],
+        "target": [
+          -0.15036646649241447,
+          0.008198820054531097,
+          -0.05091816373169422
+        ]
+      }
+    },
+    {
+      "side": "right",
+      "view": "lateral",
+      "file": ".cache/donor-feet/foot-right-lateral.png",
+      "sha256": "e29de9c73bca81f406d5223b11b4efe03d04b851ddf32401f69ec73071880a79",
+      "camera": {
+        "position": [
+          -0.7448547284098943,
+          0.008198820054531097,
+          -0.05091816373169422
+        ],
+        "target": [
+          -0.15036646649241447,
+          0.008198820054531097,
+          -0.05091816373169422
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "files": [
+    {
+      "file": "scripts/capture-donor-feet.mjs",
+      "sha256": "c33f41ad07402718804075066e8ecab0951c6250fa3c8d137ace6f4c96e48ea4"
+    },
+    {
+      "file": ".cache/donor-feet/audit.json",
+      "sha256": "25e5247c1dc2cf5d784498395eb4664caeb1c5d4a51280ea817d99bba33ff14c"
+    },
+    {
+      "file": ".cache/donor-feet/visual-parts.json",
+      "sha256": "6834c90bee06bb8552caa3f7c3c490f9f9c64ec1b4e84f8b8c0fc8860713d91e"
+    }
+  ]
+}

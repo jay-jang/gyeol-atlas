@@ -1,0 +1,4260 @@
+{
+  "createdAt": "2026-09-27T08:37:31.924Z",
+  "status": "OFFLINE SOURCE FOOT CANDIDATES; not runtime replacement or clinical approval",
+  "sourceUrl": "https://digitalcommons.du.edu/visiblehuman/1/",
+  "license": "CC-BY-4.0",
+  "skin": {
+    "id": "HRAF0003",
+    "topology": {
+      "weldedVertices": 29338,
+      "connectedComponents": 1,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0
+    },
+    "toleranceMm": 2
+  },
+  "inventory": [
+    {
+      "side": "left",
+      "structure": "Talus",
+      "file": "Left/VHF_Left_Bone_Talus_smooth.stl",
+      "sha256": "1f905e13b8a9bf3d7b30964a6f151cc8df2f07891614364e4d46c856e50b9fbd",
+      "triangles": 11074,
+      "vertices": 5539,
+      "componentsMillimetres": [
+        {
+          "triangles": 11074,
+          "vertices": 5539,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              489.16815185546875,
+              395.44891357421875,
+              119.98930358886719
+            ],
+            [
+              532.5099487304688,
+              454.979248046875,
+              166.3146209716797
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 5539,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "left",
+      "structure": "Calcaneous",
+      "file": "Left/VHF_Left_Bone_Calcaneous_smooth.stl",
+      "sha256": "e39565fce885e6d53d1abac45c259eb12a4293d4fa19b4068e1222a449d7f67c",
+      "triangles": 17472,
+      "vertices": 8738,
+      "componentsMillimetres": [
+        {
+          "triangles": 17472,
+          "vertices": 8738,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              490.0071716308594,
+              354.578857421875,
+              99.01204681396484
+            ],
+            [
+              540.4947509765625,
+              438.6150207519531,
+              151.53656005859375
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 8738,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "left",
+      "structure": "Navicular",
+      "file": "Left/VHF_Left_Bone_Navicular_smooth.stl",
+      "sha256": "83781105ca69f198893bf10671564f774b36ae115012a082fb6cc9b94cf125d7",
+      "triangles": 4610,
+      "vertices": 2307,
+      "componentsMillimetres": [
+        {
+          "triangles": 4610,
+          "vertices": 2307,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              499.8556823730469,
+              435.1885681152344,
+              106.56217956542969
+            ],
+            [
+              540.5182495117188,
+              463.2322998046875,
+              132.09756469726562
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 2307,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "left",
+      "structure": "Cuboid",
+      "file": "Left/VHF_Left_Bone_Cuboid_smooth.stl",
+      "sha256": "a7ee7acebdf33e4b45fc0c56d3e79d1377bfac4ea8a296f2a74400dfef5d849d",
+      "triangles": 4926,
+      "vertices": 2465,
+      "componentsMillimetres": [
+        {
+          "triangles": 4926,
+          "vertices": 2465,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              487.7890625,
+              419.5045471191406,
+              83.07485961914062
+            ],
+            [
+              520.5753784179688,
+              451.6795349121094,
+              117.00456237792969
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 2465,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "left",
+      "structure": "LateralCuneiform",
+      "file": "Left/VHF_Left_Bone_LateralCuneiform_smooth.stl",
+      "sha256": "f131c0d95e9a58181745aa2e2ab58682c4d1d1dc3d991de4811e187ab71cd52b",
+      "triangles": 2698,
+      "vertices": 1351,
+      "componentsMillimetres": [
+        {
+          "triangles": 2698,
+          "vertices": 1351,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              495.14508056640625,
+              442.64495849609375,
+              86.73297882080078
+            ],
+            [
+              518.5291748046875,
+              467.50384521484375,
+              112.6427001953125
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 1351,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "left",
+      "structure": "MedialCuneiform",
+      "file": "Left/VHF_Left_Bone_MedialCuneiform_smooth.stl",
+      "sha256": "9416e8ee8dc8e84756471178de642bec5d66c5f94255db6b78616645a895abeb",
+      "triangles": 4090,
+      "vertices": 2047,
+      "componentsMillimetres": [
+        {
+          "triangles": 4090,
+          "vertices": 2047,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              515.8767700195312,
+              443.2586669921875,
+              85.51004791259766
+            ],
+            [
+              541.8541870117188,
+              480.9537658691406,
+              115.0674819946289
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 2047,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "left",
+      "structure": "IntermediateCuneiform",
+      "file": "Left/VHF_Left_Bone_IntermediateCuneiform_smooth.stl",
+      "sha256": "38f08693bd04bbed5d21b54319cd6c1a3546d0930cfbcb51a7b8e1207507cff6",
+      "triangles": 2328,
+      "vertices": 1166,
+      "componentsMillimetres": [
+        {
+          "triangles": 2328,
+          "vertices": 1166,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              503.11492919921875,
+              447.8666687011719,
+              92.88722229003906
+            ],
+            [
+              523.0028076171875,
+              474.3551330566406,
+              117.72880554199219
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 1166,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "left",
+      "structure": "Phalanges",
+      "file": "Left/VHF_Left_Bone_Phalanges_smooth.stl",
+      "sha256": "16047970237adbac5adce9bbe6e3240c0a500771f4bcbc55c72375f1c17e2f65",
+      "triangles": 34940,
+      "vertices": 17470,
+      "componentsMillimetres": [
+        {
+          "triangles": 34932,
+          "vertices": 17458,
+          "firstTriangle": 8,
+          "bounds": [
+            [
+              485.16058349609375,
+              424.9686584472656,
+              13.494780540466309
+            ],
+            [
+              558.5067138671875,
+              554.2308959960938,
+              101.89602661132812
+            ]
+          ]
+        },
+        {
+          "triangles": 2,
+          "vertices": 3,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              502.82391357421875,
+              528.7426147460938,
+              24.967424392700195
+            ],
+            [
+              502.82647705078125,
+              528.7460327148438,
+              24.967924118041992
+            ]
+          ]
+        },
+        {
+          "triangles": 2,
+          "vertices": 3,
+          "firstTriangle": 2,
+          "bounds": [
+            [
+              502.1649169921875,
+              526.142333984375,
+              27.638690948486328
+            ],
+            [
+              502.16510009765625,
+              526.1425170898438,
+              27.639278411865234
+            ]
+          ]
+        },
+        {
+          "triangles": 2,
+          "vertices": 3,
+          "firstTriangle": 4,
+          "bounds": [
+            [
+              502.82952880859375,
+              526.8070678710938,
+              27.97128677368164
+            ],
+            [
+              502.8297119140625,
+              526.807373046875,
+              27.972854614257812
+            ]
+          ]
+        },
+        {
+          "triangles": 2,
+          "vertices": 3,
+          "firstTriangle": 6,
+          "bounds": [
+            [
+              495.5036926269531,
+              516.1517333984375,
+              28.304332733154297
+            ],
+            [
+              495.5041809082031,
+              516.1521606445312,
+              28.305593490600586
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 17470,
+        "connectedComponents": 5,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "left",
+      "structure": "Tibia",
+      "file": "Left/VHF_Left_Bone_Tibia_smooth.stl",
+      "sha256": "148107a0157932b94cab2b382b805af7c3c178400be76349ed20cea0bb56c3eb",
+      "triangles": 59456,
+      "vertices": 29730,
+      "componentsMillimetres": [
+        {
+          "triangles": 59456,
+          "vertices": 29730,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              437.8517761230469,
+              400.21807861328125,
+              156.64569091796875
+            ],
+            [
+              533.14453125,
+              471.81854248046875,
+              491.8427429199219
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 29730,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "left",
+      "structure": "Fibula",
+      "file": "Left/VHF_Left_Bone_Fibula_smooth.stl",
+      "sha256": "3f5573f86c10eac6b25ed63604ea15ada1d389b54e0ceaecc48e5c5d33a62549",
+      "triangles": 18918,
+      "vertices": 9461,
+      "componentsMillimetres": [
+        {
+          "triangles": 18918,
+          "vertices": 9461,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              429.9722595214844,
+              396.5501708984375,
+              140.3260040283203
+            ],
+            [
+              497.8377685546875,
+              423.99432373046875,
+              469.4984436035156
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 9461,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "right",
+      "structure": "Talus",
+      "file": "Right/VHF_Right_Bone_Talus_smooth.stl",
+      "sha256": "dc7dfeb876a6e3ca0d7c877d2aaec5aa95e721aa146d6e576bd6e6ee5f5c37b5",
+      "triangles": 10676,
+      "vertices": 5344,
+      "componentsMillimetres": [
+        {
+          "triangles": 10672,
+          "vertices": 5338,
+          "firstTriangle": 4,
+          "bounds": [
+            [
+              565.3025512695312,
+              382.6085205078125,
+              111.01625061035156
+            ],
+            [
+              612.4468994140625,
+              440.6876220703125,
+              156.36134338378906
+            ]
+          ]
+        },
+        {
+          "triangles": 2,
+          "vertices": 3,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              602.6592407226562,
+              417.0076904296875,
+              145.2212371826172
+            ],
+            [
+              602.6663208007812,
+              417.0204772949219,
+              145.23812866210938
+            ]
+          ]
+        },
+        {
+          "triangles": 2,
+          "vertices": 3,
+          "firstTriangle": 2,
+          "bounds": [
+            [
+              602.7305908203125,
+              416.2507629394531,
+              146.52064514160156
+            ],
+            [
+              602.7311401367188,
+              416.25091552734375,
+              146.52078247070312
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 5344,
+        "connectedComponents": 3,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "right",
+      "structure": "Calcaneous",
+      "file": "Right/VHF_Right_Bone_Calcaneous_smooth.stl",
+      "sha256": "e2b7ac7099289a1aaa9f16d7e693b05d13a1f57912793a9e063f9d4c55ac83d9",
+      "triangles": 17574,
+      "vertices": 8789,
+      "componentsMillimetres": [
+        {
+          "triangles": 17574,
+          "vertices": 8789,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              549.1439208984375,
+              343.0106506347656,
+              92.58084869384766
+            ],
+            [
+              609.7350463867188,
+              423.87078857421875,
+              146.05409240722656
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 8789,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "right",
+      "structure": "Navicular",
+      "file": "Right/VHF_Right_Bone_Navicular_smooth.stl",
+      "sha256": "ccb9e9c5a8299a609e09c97a58f10ecb3585000b2270dcfc6e2caa85435d4194",
+      "triangles": 4498,
+      "vertices": 2251,
+      "componentsMillimetres": [
+        {
+          "triangles": 4498,
+          "vertices": 2251,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              567.0235595703125,
+              423.18377685546875,
+              100.1624526977539
+            ],
+            [
+              607.688720703125,
+              449.9273376464844,
+              124.42731475830078
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 2251,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "right",
+      "structure": "Cuboid",
+      "file": "Right/VHF_Right_Bone_Cuboid_smooth.stl",
+      "sha256": "a89932159a0dd53d603529b644bca95505aeb697f53cf164329ebeea51c40fb0",
+      "triangles": 5042,
+      "vertices": 2523,
+      "componentsMillimetres": [
+        {
+          "triangles": 5042,
+          "vertices": 2523,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              582.339599609375,
+              402.67962646484375,
+              78.33274841308594
+            ],
+            [
+              617.1118774414062,
+              432.2879333496094,
+              110.9330825805664
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 2523,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "right",
+      "structure": "LateralCuneiform",
+      "file": "Right/VHF_Right_Bone_LateralCuneiform_smooth.stl",
+      "sha256": "1711df66029087a9e356f225f7f0943232426e8935cbdfc173fa3b6150b66ccc",
+      "triangles": 2808,
+      "vertices": 1406,
+      "componentsMillimetres": [
+        {
+          "triangles": 2808,
+          "vertices": 1406,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              589.2030639648438,
+              428.1166076660156,
+              81.49610137939453
+            ],
+            [
+              614.979248046875,
+              449.9461364746094,
+              105.72056579589844
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 1406,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "right",
+      "structure": "MedialCuneiform",
+      "file": "Right/VHF_Right_Bone_MedialCuneiform_smooth.stl",
+      "sha256": "95f8bbb0e6efa335a620ac8517b0577fb6c470c7e52d7da7f09afd82d782b13e",
+      "triangles": 4216,
+      "vertices": 2110,
+      "componentsMillimetres": [
+        {
+          "triangles": 4216,
+          "vertices": 2110,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              569.2054443359375,
+              431.890869140625,
+              77.22470092773438
+            ],
+            [
+              597.7101440429688,
+              467.11920166015625,
+              106.90149688720703
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 2110,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "right",
+      "structure": "IntermediateCuneiform",
+      "file": "Right/VHF_Right_Bone_IntermediateCuneiform_smooth.stl",
+      "sha256": "d84ff954c393d538e227cede60b116a6de4dce7f943ea8523cc243e45ae0c878",
+      "triangles": 2314,
+      "vertices": 1159,
+      "componentsMillimetres": [
+        {
+          "triangles": 2314,
+          "vertices": 1159,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              585.8096313476562,
+              434.6856994628906,
+              87.0740737915039
+            ],
+            [
+              608.148681640625,
+              459.8778381347656,
+              109.67542266845703
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 1159,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "right",
+      "structure": "Phalanges",
+      "file": "Right/VHF_Right_Bone_Phalanges_smooth.stl",
+      "sha256": "4d9e624efe54152d60506117fa897cef795f34834f779936718353890d347699",
+      "triangles": 36202,
+      "vertices": 18093,
+      "componentsMillimetres": [
+        {
+          "triangles": 36202,
+          "vertices": 18093,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              561.6859130859375,
+              405.2241516113281,
+              8.035740852355957
+            ],
+            [
+              630.8231201171875,
+              541.1359252929688,
+              94.76502227783203
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 18093,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "right",
+      "structure": "Tibia",
+      "file": "Right/VHF_Right_Bone_Tibia_smooth.stl",
+      "sha256": "589b64fe38d602eb95a0dad900bcd1059043d3d8451d3d74c7231fccc62ffae1",
+      "triangles": 60362,
+      "vertices": 30183,
+      "componentsMillimetres": [
+        {
+          "triangles": 60362,
+          "vertices": 30183,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              567.7767944335938,
+              385.04547119140625,
+              147.92074584960938
+            ],
+            [
+              655.6962890625,
+              455.2113037109375,
+              490.4704284667969
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 30183,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "side": "right",
+      "structure": "Fibula",
+      "file": "Right/VHF_Right_Bone_Fibula_smooth.stl",
+      "sha256": "5e62c5c1aeedb2b0c287e4efbaf881ef9c8c721ccc546a69c74784e520581a24",
+      "triangles": 19480,
+      "vertices": 9742,
+      "componentsMillimetres": [
+        {
+          "triangles": 19480,
+          "vertices": 9742,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              595.79931640625,
+              376.5648193359375,
+              133.6714630126953
+            ],
+            [
+              657.6326904296875,
+              402.42352294921875,
+              470.80615234375
+            ]
+          ]
+        }
+      ],
+      "topology": {
+        "weldedVertices": 9742,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    }
+  ],
+  "sourceFootCrossings": [
+    {
+      "side": "left",
+      "structures": [
+        "Calcaneous",
+        "Cuboid"
+      ],
+      "intersectingTrianglePairs": 12,
+      "strictPlaneStraddlingPairs": 12,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.12885064213974726
+    },
+    {
+      "side": "right",
+      "structures": [
+        "Talus",
+        "Calcaneous"
+      ],
+      "intersectingTrianglePairs": 12,
+      "strictPlaneStraddlingPairs": 12,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.12043032384009014
+    },
+    {
+      "side": "right",
+      "structures": [
+        "MedialCuneiform",
+        "IntermediateCuneiform"
+      ],
+      "intersectingTrianglePairs": 8,
+      "strictPlaneStraddlingPairs": 8,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.20184149045141395
+    }
+  ],
+  "baseline": [
+    {
+      "id": "BM0124",
+      "name": "Distal phalanx of left second toe",
+      "side": "left",
+      "vertices": 168,
+      "inside": 72,
+      "surface-band": 96,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0125",
+      "name": "Distal phalanx of left third toe",
+      "side": "left",
+      "vertices": 188,
+      "inside": 96,
+      "surface-band": 92,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0126",
+      "name": "Distal phalanx of left fourth toe",
+      "side": "left",
+      "vertices": 146,
+      "inside": 75,
+      "surface-band": 71,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0127",
+      "name": "Distal phalanx of left big toe",
+      "side": "left",
+      "vertices": 249,
+      "inside": 183,
+      "surface-band": 65,
+      "outside": 1,
+      "ambiguous": 0,
+      "maximum": {
+        "vertex": 0,
+        "pointMetres": [
+          0.11767076700925827,
+          0.015534230507910252,
+          0.06754183769226074
+        ],
+        "distanceMm": 2.031871130578132
+      }
+    },
+    {
+      "id": "BM0128",
+      "name": "Distal phalanx of left little toe",
+      "side": "left",
+      "vertices": 160,
+      "inside": 0,
+      "surface-band": 0,
+      "outside": 160,
+      "ambiguous": 0,
+      "maximum": {
+        "vertex": 138,
+        "pointMetres": [
+          0.19563031196594238,
+          0.00992279127240181,
+          0.04791170358657837
+        ],
+        "distanceMm": 14.246382782371596
+      }
+    },
+    {
+      "id": "BM0129",
+      "name": "Left first metatarsal bone",
+      "side": "left",
+      "vertices": 497,
+      "inside": 446,
+      "surface-band": 51,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0130",
+      "name": "Left second metatarsal bone",
+      "side": "left",
+      "vertices": 401,
+      "inside": 401,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0131",
+      "name": "Left third metatarsal bone",
+      "side": "left",
+      "vertices": 367,
+      "inside": 367,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0132",
+      "name": "Left fourth metatarsal bone",
+      "side": "left",
+      "vertices": 353,
+      "inside": 353,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0133",
+      "name": "Left fifth metatarsal bone",
+      "side": "left",
+      "vertices": 366,
+      "inside": 111,
+      "surface-band": 80,
+      "outside": 175,
+      "ambiguous": 0,
+      "maximum": {
+        "vertex": 295,
+        "pointMetres": [
+          0.18969473242759705,
+          0.01452589500695467,
+          -0.0031458772718906403
+        ],
+        "distanceMm": 10.038245949315543
+      }
+    },
+    {
+      "id": "BM0134",
+      "name": "Left calcaneus",
+      "side": "left",
+      "vertices": 632,
+      "inside": 578,
+      "surface-band": 23,
+      "outside": 31,
+      "ambiguous": 0,
+      "maximum": {
+        "vertex": 19,
+        "pointMetres": [
+          0.12545259296894073,
+          0.004650244023650885,
+          -0.13283979892730713
+        ],
+        "distanceMm": 5.755129489961427
+      }
+    },
+    {
+      "id": "BM0135",
+      "name": "Left cuboid bone",
+      "side": "left",
+      "vertices": 449,
+      "inside": 436,
+      "surface-band": 13,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0136",
+      "name": "Left intermediate cuneiform bone",
+      "side": "left",
+      "vertices": 291,
+      "inside": 291,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0137",
+      "name": "Sesamoid bone of left foot",
+      "side": "left",
+      "vertices": 78,
+      "inside": 41,
+      "surface-band": 37,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0138",
+      "name": "Left lateral cuneiform bone",
+      "side": "left",
+      "vertices": 389,
+      "inside": 389,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0139",
+      "name": "Sesamoid bone of left foot",
+      "side": "left",
+      "vertices": 95,
+      "inside": 90,
+      "surface-band": 5,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0140",
+      "name": "Left medial cuneiform bone",
+      "side": "left",
+      "vertices": 513,
+      "inside": 505,
+      "surface-band": 8,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0141",
+      "name": "Left talus",
+      "side": "left",
+      "vertices": 666,
+      "inside": 666,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0142",
+      "name": "Middle phalanx of left second toe",
+      "side": "left",
+      "vertices": 196,
+      "inside": 139,
+      "surface-band": 57,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0143",
+      "name": "Middle phalanx of left third toe",
+      "side": "left",
+      "vertices": 181,
+      "inside": 166,
+      "surface-band": 15,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0144",
+      "name": "Middle phalanx of left fourth toe",
+      "side": "left",
+      "vertices": 181,
+      "inside": 141,
+      "surface-band": 40,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0145",
+      "name": "Middle phalanx of left little toe",
+      "side": "left",
+      "vertices": 142,
+      "inside": 0,
+      "surface-band": 0,
+      "outside": 142,
+      "ambiguous": 0,
+      "maximum": {
+        "vertex": 121,
+        "pointMetres": [
+          0.19545643031597137,
+          0.00916585884988308,
+          0.03712388873100281
+        ],
+        "distanceMm": 13.036243910055697
+      }
+    },
+    {
+      "id": "BM0146",
+      "name": "Navicular bone of left foot",
+      "side": "left",
+      "vertices": 396,
+      "inside": 382,
+      "surface-band": 14,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0147",
+      "name": "Proximal phalanx of left third toe",
+      "side": "left",
+      "vertices": 237,
+      "inside": 237,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0148",
+      "name": "Proximal phalanx of left fourth toe",
+      "side": "left",
+      "vertices": 245,
+      "inside": 219,
+      "surface-band": 26,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0149",
+      "name": "Proximal phalanx of left little toe",
+      "side": "left",
+      "vertices": 226,
+      "inside": 20,
+      "surface-band": 30,
+      "outside": 176,
+      "ambiguous": 0,
+      "maximum": {
+        "vertex": 212,
+        "pointMetres": [
+          0.19475862383842468,
+          0.009146627970039845,
+          0.03243092820048332
+        ],
+        "distanceMm": 11.88355329889849
+      }
+    },
+    {
+      "id": "BM0150",
+      "name": "Proximal phalanx of left second toe",
+      "side": "left",
+      "vertices": 230,
+      "inside": 217,
+      "surface-band": 13,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0151",
+      "name": "Proximal phalanx of left big toe",
+      "side": "left",
+      "vertices": 310,
+      "inside": 270,
+      "surface-band": 40,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0152",
+      "name": "Distal phalanx of right second toe",
+      "side": "right",
+      "vertices": 168,
+      "inside": 75,
+      "surface-band": 93,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0153",
+      "name": "Distal phalanx of right third toe",
+      "side": "right",
+      "vertices": 161,
+      "inside": 72,
+      "surface-band": 87,
+      "outside": 2,
+      "ambiguous": 0,
+      "maximum": {
+        "vertex": 61,
+        "pointMetres": [
+          -0.17150352895259857,
+          0.024060700088739395,
+          0.08624035865068436
+        ],
+        "distanceMm": 2.0120590907115004
+      }
+    },
+    {
+      "id": "BM0154",
+      "name": "Distal phalanx of right fourth toe",
+      "side": "right",
+      "vertices": 142,
+      "inside": 80,
+      "surface-band": 62,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0155",
+      "name": "Distal phalanx of right big toe",
+      "side": "right",
+      "vertices": 271,
+      "inside": 229,
+      "surface-band": 42,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0156",
+      "name": "Distal phalanx of right little toe",
+      "side": "right",
+      "vertices": 178,
+      "inside": 0,
+      "surface-band": 0,
+      "outside": 178,
+      "ambiguous": 0,
+      "maximum": {
+        "vertex": 3,
+        "pointMetres": [
+          -0.20867927372455597,
+          0.011766730807721615,
+          0.04937463998794556
+        ],
+        "distanceMm": 13.3166014654037
+      }
+    },
+    {
+      "id": "BM0157",
+      "name": "Middle phalanx of right second toe",
+      "side": "right",
+      "vertices": 189,
+      "inside": 189,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0158",
+      "name": "Middle phalanx of right third toe",
+      "side": "right",
+      "vertices": 190,
+      "inside": 190,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0159",
+      "name": "Middle phalanx of right fourth toe",
+      "side": "right",
+      "vertices": 216,
+      "inside": 216,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0160",
+      "name": "Middle phalanx of right little toe",
+      "side": "right",
+      "vertices": 102,
+      "inside": 0,
+      "surface-band": 0,
+      "outside": 102,
+      "ambiguous": 0,
+      "maximum": {
+        "vertex": 8,
+        "pointMetres": [
+          -0.20825278759002686,
+          0.01091894879937172,
+          0.03888439014554024
+        ],
+        "distanceMm": 12.142912314257162
+      }
+    },
+    {
+      "id": "BM0161",
+      "name": "Navicular bone of right foot",
+      "side": "right",
+      "vertices": 404,
+      "inside": 381,
+      "surface-band": 23,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0162",
+      "name": "Proximal phalanx of right big toe",
+      "side": "right",
+      "vertices": 272,
+      "inside": 272,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0163",
+      "name": "Proximal phalanx of right second toe",
+      "side": "right",
+      "vertices": 225,
+      "inside": 225,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0164",
+      "name": "Proximal phalanx of right third toe",
+      "side": "right",
+      "vertices": 264,
+      "inside": 264,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0165",
+      "name": "Proximal phalanx of right fourth toe",
+      "side": "right",
+      "vertices": 244,
+      "inside": 244,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0166",
+      "name": "Proximal phalanx of right little toe",
+      "side": "right",
+      "vertices": 228,
+      "inside": 24,
+      "surface-band": 36,
+      "outside": 168,
+      "ambiguous": 0,
+      "maximum": {
+        "vertex": 66,
+        "pointMetres": [
+          -0.2078387290239334,
+          0.01192463282495737,
+          0.034540146589279175
+        ],
+        "distanceMm": 11.157868581382681
+      }
+    },
+    {
+      "id": "BM0167",
+      "name": "Right first metatarsal bone",
+      "side": "right",
+      "vertices": 492,
+      "inside": 492,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0168",
+      "name": "Right second metatarsal bone",
+      "side": "right",
+      "vertices": 434,
+      "inside": 434,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0169",
+      "name": "Right third metatarsal bone",
+      "side": "right",
+      "vertices": 381,
+      "inside": 381,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0170",
+      "name": "Right fourth metatarsal bone",
+      "side": "right",
+      "vertices": 333,
+      "inside": 333,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0171",
+      "name": "Right fifth metatarsal bone",
+      "side": "right",
+      "vertices": 371,
+      "inside": 211,
+      "surface-band": 87,
+      "outside": 73,
+      "ambiguous": 0,
+      "maximum": {
+        "vertex": 42,
+        "pointMetres": [
+          -0.20146054029464722,
+          0.016644345596432686,
+          -0.0009373947395943105
+        ],
+        "distanceMm": 8.6626221494619
+      }
+    },
+    {
+      "id": "BM0172",
+      "name": "Right calcaneus",
+      "side": "right",
+      "vertices": 641,
+      "inside": 582,
+      "surface-band": 34,
+      "outside": 25,
+      "ambiguous": 0,
+      "maximum": {
+        "vertex": 45,
+        "pointMetres": [
+          -0.14921823143959045,
+          0.015049765817821026,
+          -0.1445101946592331
+        ],
+        "distanceMm": 5.363889939688643
+      }
+    },
+    {
+      "id": "BM0173",
+      "name": "Right cuboid bone",
+      "side": "right",
+      "vertices": 488,
+      "inside": 488,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0174",
+      "name": "Right intermediate cuneiform bone",
+      "side": "right",
+      "vertices": 278,
+      "inside": 278,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0175",
+      "name": "Sesamoid bone of right foot",
+      "side": "right",
+      "vertices": 73,
+      "inside": 73,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0176",
+      "name": "Right lateral cuneiform bone",
+      "side": "right",
+      "vertices": 380,
+      "inside": 380,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0177",
+      "name": "Sesamoid bone of right foot",
+      "side": "right",
+      "vertices": 103,
+      "inside": 103,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0178",
+      "name": "Right medial cuneiform bone",
+      "side": "right",
+      "vertices": 553,
+      "inside": 553,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    },
+    {
+      "id": "BM0179",
+      "name": "Right talus",
+      "side": "right",
+      "vertices": 709,
+      "inside": 709,
+      "surface-band": 0,
+      "outside": 0,
+      "ambiguous": 0,
+      "maximum": null
+    }
+  ],
+  "candidates": [
+    {
+      "side": "left",
+      "mode": "import-shank",
+      "sourceToAtlasMatrix": [
+        -1.0049792041161996,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1.0049792041161996,
+        0,
+        0,
+        1.0049792041161996,
+        0,
+        0,
+        0.6201150426298516,
+        -0.08020105127520805,
+        -0.5260825872175175,
+        1
+      ],
+      "uniformScale": 1.0049792041161996,
+      "parts": [
+        {
+          "structure": "Talus",
+          "vertices": 5539,
+          "inside": 3064,
+          "surface-band": 540,
+          "outside": 1935,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 2893,
+            "pointMetres": [
+              0.08709823340177536,
+              0.05360204353928566,
+              -0.08366309851408005
+            ],
+            "distanceMm": 17.16248259765433
+          },
+          "boundsMetres": [
+            [
+              0.08495364338159561,
+              0.04038570448756218,
+              -0.12866464257240295
+            ],
+            [
+              0.1285112351179123,
+              0.0869416818022728,
+              -0.06883791089057922
+            ]
+          ]
+        },
+        {
+          "structure": "Calcaneous",
+          "vertices": 8738,
+          "inside": 3691,
+          "surface-band": 1009,
+          "outside": 4038,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 6119,
+            "pointMetres": [
+              0.078844353556633,
+              0.04371337965130806,
+              -0.15985526144504547
+            ],
+            "distanceMm": 25.55453980779227
+          },
+          "boundsMetres": [
+            [
+              0.07692907005548477,
+              0.019303996115922928,
+              -0.16973821818828583
+            ],
+            [
+              0.12766803801059723,
+              0.0720900371670723,
+              -0.08528360724449158
+            ]
+          ]
+        },
+        {
+          "structure": "Navicular",
+          "vertices": 2307,
+          "inside": 463,
+          "surface-band": 257,
+          "outside": 1587,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1615,
+            "pointMetres": [
+              0.07699741423130035,
+              0.0376250296831131,
+              -0.07768810540437698
+            ],
+            "distanceMm": 27.81271631258383
+          },
+          "boundsMetres": [
+            [
+              0.07690546661615372,
+              0.02689172513782978,
+              -0.08872713148593903
+            ],
+            [
+              0.11777046322822571,
+              0.052554260939359665,
+              -0.06054374948143959
+            ]
+          ]
+        },
+        {
+          "structure": "Cuboid",
+          "vertices": 2465,
+          "inside": 1073,
+          "surface-band": 426,
+          "outside": 966,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 599,
+            "pointMetres": [
+              0.10649503767490387,
+              0.009134284220635891,
+              -0.08423721790313721
+            ],
+            "distanceMm": 10.60147693806355
+          },
+          "boundsMetres": [
+            [
+              0.09694758802652359,
+              0.003287455765530467,
+              -0.10448923707008362
+            ],
+            [
+              0.12989717721939087,
+              0.037386104464530945,
+              -0.07215405255556107
+            ]
+          ]
+        },
+        {
+          "structure": "LateralCuneiform",
+          "vertices": 1351,
+          "inside": 274,
+          "surface-band": 238,
+          "outside": 839,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1219,
+            "pointMetres": [
+              0.10133890062570572,
+              0.008429955691099167,
+              -0.07073289155960083
+            ],
+            "distanceMm": 18.283740440945532
+          },
+          "boundsMetres": [
+            [
+              0.09900400042533875,
+              0.006963786203414202,
+              -0.08123361319303513
+            ],
+            [
+              0.12250453233718872,
+              0.033002518117427826,
+              -0.05625094473361969
+            ]
+          ]
+        },
+        {
+          "structure": "MedialCuneiform",
+          "vertices": 2047,
+          "inside": 0,
+          "surface-band": 0,
+          "outside": 2047,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1146,
+            "pointMetres": [
+              0.07731429487466812,
+              0.012235568836331367,
+              -0.060702938586473465
+            ],
+            "distanceMm": 38.389470539550445
+          },
+          "boundsMetres": [
+            [
+              0.07556283473968506,
+              0.005734765902161598,
+              -0.08061683923006058
+            ],
+            [
+              0.10166961699724197,
+              0.035439375787973404,
+              -0.042734067887067795
+            ]
+          ]
+        },
+        {
+          "structure": "IntermediateCuneiform",
+          "vertices": 1166,
+          "inside": 0,
+          "surface-band": 100,
+          "outside": 1066,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 400,
+            "pointMetres": [
+              0.09628830850124359,
+              0.014284990727901459,
+              -0.06616786867380142
+            ],
+            "distanceMm": 19.941965466554404
+          },
+          "boundsMetres": [
+            [
+              0.0945081040263176,
+              0.013148675672709942,
+              -0.07598588615655899
+            ],
+            [
+              0.11449499428272247,
+              0.038113951683044434,
+              -0.04936554655432701
+            ]
+          ]
+        },
+        {
+          "structure": "Phalanges",
+          "vertices": 17470,
+          "inside": 0,
+          "surface-band": 0,
+          "outside": 17470,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 14821,
+            "pointMetres": [
+              0.0757954940199852,
+              -0.06585739552974701,
+              0.024309827014803886
+            ],
+            "distanceMm": 86.29507980184727
+          },
+          "boundsMetres": [
+            [
+              0.05882739648222923,
+              -0.06663908064365387,
+              -0.09899792075157166
+            ],
+            [
+              0.13253873586654663,
+              0.02220233529806137,
+              0.03090791031718254
+            ]
+          ]
+        }
+      ],
+      "ankle": [
+        {
+          "foot": "Talus",
+          "targetId": "HRAF0954",
+          "targetName": "Tibia (left)",
+          "sourceCommonFrame": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 4581,
+              "pointMetres": [
+                0.09544669836759567,
+                0.07908113300800323,
+                -0.09020352363586426
+              ],
+              "nearestMetres": [
+                0.09540424873937059,
+                0.07909542425842997,
+                -0.0901807427691984
+              ],
+              "distanceMm": 0.05025115582009316
+            },
+            "reverseMinimum": {
+              "vertex": 8111,
+              "pointMetres": [
+                0.09787408262491226,
+                0.08092282712459564,
+                -0.08872482925653458
+              ],
+              "nearestMetres": [
+                0.0979200865548568,
+                0.08088931246621107,
+                -0.0887735855517937
+              ],
+              "distanceMm": 0.0749451147465326
+            }
+          },
+          "hra": {
+            "intersectingTrianglePairs": 97,
+            "strictPlaneStraddlingPairs": 97,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.5321239194023856,
+            "forwardMinimum": {
+              "vertex": 2010,
+              "pointMetres": [
+                0.11761549860239029,
+                0.07953112572431564,
+                -0.09166934341192245
+              ],
+              "nearestMetres": [
+                0.11761866614155747,
+                0.07951974354356967,
+                -0.09167130501579918
+              ],
+              "distanceMm": 0.011976444909859848
+            },
+            "reverseMinimum": {
+              "vertex": 216,
+              "pointMetres": [
+                0.11235462874174118,
+                0.07900458574295044,
+                -0.0889175534248352
+              ],
+              "nearestMetres": [
+                0.1125949625977487,
+                0.07930066068109706,
+                -0.08860651043470927
+              ],
+              "distanceMm": 0.4921061603439402
+            }
+          }
+        },
+        {
+          "foot": "Talus",
+          "targetId": "HRAF0955",
+          "targetName": "Fibula (left)",
+          "sourceCommonFrame": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 3289,
+              "pointMetres": [
+                0.12391526997089386,
+                0.06823205202817917,
+                -0.10955024510622025
+              ],
+              "nearestMetres": [
+                0.12532574964476279,
+                0.06899850071706494,
+                -0.11035426271495295
+              ],
+              "distanceMm": 1.795366485775082
+            },
+            "reverseMinimum": {
+              "vertex": 1916,
+              "pointMetres": [
+                0.12519937753677368,
+                0.06901451200246811,
+                -0.11056069284677505
+              ],
+              "nearestMetres": [
+                0.12377770911318221,
+                0.06832296299548311,
+                -0.1097053909558646
+              ],
+              "distanceMm": 1.79747669255932
+            }
+          },
+          "hra": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 1340,
+              "pointMetres": [
+                0.12752984464168549,
+                0.06321825832128525,
+                -0.11015666276216507
+              ],
+              "nearestMetres": [
+                0.1487944440025035,
+                0.07397670554610017,
+                -0.11454583160529092
+              ],
+              "distanceMm": 24.23204852666601
+            },
+            "reverseMinimum": {
+              "vertex": 45,
+              "pointMetres": [
+                0.14835534989833832,
+                0.07437580823898315,
+                -0.11569489538669586
+              ],
+              "nearestMetres": [
+                0.12752984464168549,
+                0.06321825832128525,
+                -0.11015666276216507
+              ],
+              "distanceMm": 24.266532714094375
+            }
+          }
+        }
+      ],
+      "footCrossings": [
+        {
+          "structures": [
+            "Calcaneous",
+            "Cuboid"
+          ],
+          "intersectingTrianglePairs": 12,
+          "strictPlaneStraddlingPairs": 12,
+          "toleranceMm": 0.001,
+          "maxTrianglePlaneStraddleExtentMm": 0.12949707607263822
+        }
+      ],
+      "evaluatedFootPairs": 28,
+      "summary": {
+        "vertices": 41083,
+        "outside": 29948,
+        "ambiguous": 0,
+        "outsideMeshes": 8,
+        "maxOutsideMm": 86.29507980184727,
+        "ankleCrossingPairs": 1
+      }
+    },
+    {
+      "side": "left",
+      "mode": "surface-shank",
+      "sourceToAtlasMatrix": [
+        -1.008745032442996,
+        -0.14491282205033462,
+        0.04420504687108185,
+        0,
+        0.037964293643008136,
+        0.04635617513785551,
+        1.018297682446869,
+        0,
+        -0.1466714852030002,
+        1.0086484678389616,
+        -0.040448688437939945,
+        0,
+        0.6584814821565524,
+        -0.031471587757722644,
+        -0.5383569406430548,
+        1
+      ],
+      "uniformScale": 1.020058994687017,
+      "parts": [
+        {
+          "structure": "Talus",
+          "vertices": 5539,
+          "inside": 5539,
+          "surface-band": 0,
+          "outside": 0,
+          "ambiguous": 0,
+          "maximum": null,
+          "boundsMetres": [
+            [
+              0.11492323130369186,
+              0.03451572358608246,
+              -0.11930627375841141
+            ],
+            [
+              0.15936179459095,
+              0.08151832222938538,
+              -0.057562895119190216
+            ]
+          ]
+        },
+        {
+          "structure": "Calcaneous",
+          "vertices": 8738,
+          "inside": 8724,
+          "surface-band": 14,
+          "outside": 0,
+          "ambiguous": 0,
+          "maximum": null,
+          "boundsMetres": [
+            [
+              0.10975160449743271,
+              0.015149150975048542,
+              -0.15967954695224762
+            ],
+            [
+              0.16358555853366852,
+              0.06461896002292633,
+              -0.07411016523838043
+            ]
+          ]
+        },
+        {
+          "structure": "Navicular",
+          "vertices": 2307,
+          "inside": 2216,
+          "surface-band": 91,
+          "outside": 0,
+          "ambiguous": 0,
+          "maximum": null,
+          "boundsMetres": [
+            [
+              0.1128120943903923,
+              0.02158833108842373,
+              -0.07698633521795273
+            ],
+            [
+              0.154141366481781,
+              0.04913637414574623,
+              -0.048607103526592255
+            ]
+          ]
+        },
+        {
+          "structure": "Cuboid",
+          "vertices": 2465,
+          "inside": 1196,
+          "surface-band": 303,
+          "outside": 966,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 963,
+            "pointMetres": [
+              0.1674925684928894,
+              0.004227067343890667,
+              -0.08014004677534103
+            ],
+            "distanceMm": 13.734745545992416
+          },
+          "boundsMetres": [
+            [
+              0.13388898968696594,
+              0.00038779040914960206,
+              -0.09275472909212112
+            ],
+            [
+              0.16956369578838348,
+              0.03425496816635132,
+              -0.06012224778532982
+            ]
+          ]
+        },
+        {
+          "structure": "LateralCuneiform",
+          "vertices": 1351,
+          "inside": 703,
+          "surface-band": 255,
+          "outside": 393,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1061,
+            "pointMetres": [
+              0.14596378803253174,
+              0.002723545301705599,
+              -0.05836180970072746
+            ],
+            "distanceMm": 9.760212895859608
+          },
+          "boundsMetres": [
+            [
+              0.1378273367881775,
+              0.002723545301705599,
+              -0.06895043700933456
+            ],
+            [
+              0.16232603788375854,
+              0.0306412186473608,
+              -0.04412422329187393
+            ]
+          ]
+        },
+        {
+          "structure": "MedialCuneiform",
+          "vertices": 2047,
+          "inside": 595,
+          "surface-band": 317,
+          "outside": 1135,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 400,
+            "pointMetres": [
+              0.12154343724250793,
+              0.0005195843987166882,
+              -0.04874226823449135
+            ],
+            "distanceMm": 19.086619275601837
+          },
+          "boundsMetres": [
+            [
+              0.11472131311893463,
+              -0.0010904514929279685,
+              -0.06765064597129822
+            ],
+            [
+              0.1408131867647171,
+              0.03015449456870556,
+              -0.029570268467068672
+            ]
+          ]
+        },
+        {
+          "structure": "IntermediateCuneiform",
+          "vertices": 1166,
+          "inside": 876,
+          "surface-band": 190,
+          "outside": 100,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1153,
+            "pointMetres": [
+              0.13736450672149658,
+              0.008344903588294983,
+              -0.05306774377822876
+            ],
+            "distanceMm": 6.255800680130735
+          },
+          "boundsMetres": [
+            [
+              0.1328449845314026,
+              0.008205194026231766,
+              -0.0635938048362732
+            ],
+            [
+              0.15396560728549957,
+              0.034541621804237366,
+              -0.03686325624585152
+            ]
+          ]
+        },
+        {
+          "structure": "Phalanges",
+          "vertices": 17470,
+          "inside": 89,
+          "surface-band": 175,
+          "outside": 17206,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1910,
+            "pointMetres": [
+              0.1326683759689331,
+              -0.07020869851112366,
+              0.04590614140033722
+            ],
+            "distanceMm": 78.10670676747688
+          },
+          "boundsMetres": [
+            [
+              0.10699497908353806,
+              -0.07055184245109558,
+              -0.08714278042316437
+            ],
+            [
+              0.1831645369529724,
+              0.019051510840654373,
+              0.04880380630493164
+            ]
+          ]
+        }
+      ],
+      "ankle": [
+        {
+          "foot": "Talus",
+          "targetId": "HRAF0954",
+          "targetName": "Tibia (left)",
+          "sourceCommonFrame": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 4581,
+              "pointMetres": [
+                0.12506656348705292,
+                0.07284325361251831,
+                -0.08003415167331696
+              ],
+              "nearestMetres": [
+                0.12502272990881225,
+                0.07285252677968726,
+                -0.08000977738903735
+              ],
+              "distanceMm": 0.05100470512479607
+            },
+            "reverseMinimum": {
+              "vertex": 8111,
+              "pointMetres": [
+                0.12729011476039886,
+                0.07510989904403687,
+                -0.07871675491333008
+              ],
+              "nearestMetres": [
+                0.12733934402364702,
+                0.07508064487755972,
+                -0.07876683541616321
+              ],
+              "distanceMm": 0.07607485379708584
+            }
+          },
+          "hra": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 1706,
+              "pointMetres": [
+                0.13733729720115662,
+                0.08052489161491394,
+                -0.0989290401339531
+              ],
+              "nearestMetres": [
+                0.13733035639008814,
+                0.08160248987456858,
+                -0.09913334711725079
+              ],
+              "distanceMm": 1.0968169981784612
+            },
+            "reverseMinimum": {
+              "vertex": 207,
+              "pointMetres": [
+                0.1395632028579712,
+                0.08288973569869995,
+                -0.09241974353790283
+              ],
+              "nearestMetres": [
+                0.1396463037364894,
+                0.08121341277696269,
+                -0.09242706511282485
+              ],
+              "distanceMm": 1.6783974199847882
+            }
+          }
+        },
+        {
+          "foot": "Talus",
+          "targetId": "HRAF0955",
+          "targetName": "Fibula (left)",
+          "sourceCommonFrame": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 3289,
+              "pointMetres": [
+                0.15449433028697968,
+                0.06516718864440918,
+                -0.10045282542705536
+              ],
+              "nearestMetres": [
+                0.15576786768205278,
+                0.06610273335176375,
+                -0.10136038659183828
+              ],
+              "distanceMm": 1.8223086083127862
+            },
+            "reverseMinimum": {
+              "vertex": 1916,
+              "pointMetres": [
+                0.15563088655471802,
+                0.06609106063842773,
+                -0.10156463831663132
+              ],
+              "nearestMetres": [
+                0.15433712393492685,
+                0.06523145631034144,
+                -0.10060762211470886
+              ],
+              "distanceMm": 1.8244509661746668
+            }
+          },
+          "hra": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 4414,
+              "pointMetres": [
+                0.157497838139534,
+                0.06075279414653778,
+                -0.10253345221281052
+              ],
+              "nearestMetres": [
+                0.1585281105107454,
+                0.06386950680091051,
+                -0.1038712752051313
+              ],
+              "distanceMm": 3.5447326115788753
+            },
+            "reverseMinimum": {
+              "vertex": 41,
+              "pointMetres": [
+                0.1582389771938324,
+                0.06412374973297119,
+                -0.10350163280963898
+              ],
+              "nearestMetres": [
+                0.1573796837542519,
+                0.060778147607532806,
+                -0.1025510270003568
+              ],
+              "distanceMm": 3.582609412381559
+            }
+          }
+        }
+      ],
+      "footCrossings": [
+        {
+          "structures": [
+            "Calcaneous",
+            "Cuboid"
+          ],
+          "intersectingTrianglePairs": 12,
+          "strictPlaneStraddlingPairs": 12,
+          "toleranceMm": 0.001,
+          "maxTrianglePlaneStraddleExtentMm": 0.1314356029914432
+        }
+      ],
+      "evaluatedFootPairs": 28,
+      "summary": {
+        "vertices": 41083,
+        "outside": 19800,
+        "ambiguous": 0,
+        "outsideMeshes": 5,
+        "maxOutsideMm": 78.10670676747688,
+        "ankleCrossingPairs": 0
+      }
+    },
+    {
+      "side": "left",
+      "mode": "surface-whole-leg",
+      "sourceToAtlasMatrix": [
+        -0.999461848384309,
+        -0.14782226555820788,
+        0.036399102517711016,
+        0,
+        0.03353815182285765,
+        0.021986234950051784,
+        1.0101940907962517,
+        0,
+        -0.14849750580788604,
+        0.9998827363809197,
+        -0.01683174057776239,
+        0,
+        0.6564183160383632,
+        -0.016918807970586126,
+        -0.5388732243876191,
+        1
+      ],
+      "uniformScale": 1.010989764159181,
+      "parts": [
+        {
+          "structure": "Talus",
+          "vertices": 5539,
+          "inside": 5539,
+          "surface-band": 0,
+          "outside": 0,
+          "ambiguous": 0,
+          "maximum": null,
+          "boundsMetres": [
+            [
+              0.11570955067873001,
+              0.03582731634378433,
+              -0.12336811423301697
+            ],
+            [
+              0.15976032614707947,
+              0.08290570229291916,
+              -0.0627133846282959
+            ]
+          ]
+        },
+        {
+          "structure": "Calcaneous",
+          "vertices": 8738,
+          "inside": 8734,
+          "surface-band": 4,
+          "outside": 0,
+          "ambiguous": 0,
+          "maximum": null,
+          "boundsMetres": [
+            [
+              0.11083530634641647,
+              0.017017681151628494,
+              -0.1639825701713562
+            ],
+            [
+              0.16399340331554413,
+              0.0666554719209671,
+              -0.07933282852172852
+            ]
+          ]
+        },
+        {
+          "structure": "Navicular",
+          "vertices": 2307,
+          "inside": 2307,
+          "surface-band": 0,
+          "outside": 0,
+          "ambiguous": 0,
+          "maximum": null,
+          "boundsMetres": [
+            [
+              0.11358412355184555,
+              0.02272004820406437,
+              -0.08232004940509796
+            ],
+            [
+              0.15452070534229279,
+              0.049914292991161346,
+              -0.054118383675813675
+            ]
+          ]
+        },
+        {
+          "structure": "Cuboid",
+          "vertices": 2465,
+          "inside": 1275,
+          "surface-band": 317,
+          "outside": 873,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 963,
+            "pointMetres": [
+              0.16791309416294098,
+              0.006068501155823469,
+              -0.08595557510852814
+            ],
+            "distanceMm": 12.505574461506558
+          },
+          "boundsMetres": [
+            [
+              0.1345428079366684,
+              0.002039708197116852,
+              -0.0983850508928299
+            ],
+            [
+              0.16994401812553406,
+              0.035729922354221344,
+              -0.066038116812706
+            ]
+          ]
+        },
+        {
+          "structure": "LateralCuneiform",
+          "vertices": 1351,
+          "inside": 782,
+          "surface-band": 251,
+          "outside": 318,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1061,
+            "pointMetres": [
+              0.1464967131614685,
+              0.0039959256537258625,
+              -0.06449766457080841
+            ],
+            "distanceMm": 7.743207605992593
+          },
+          "boundsMetres": [
+            [
+              0.13842089474201202,
+              0.0039959256537258625,
+              -0.07470717281103134
+            ],
+            [
+              0.16266444325447083,
+              0.03162800520658493,
+              -0.050039708614349365
+            ]
+          ]
+        },
+        {
+          "structure": "MedialCuneiform",
+          "vertices": 2047,
+          "inside": 743,
+          "surface-band": 329,
+          "outside": 975,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 400,
+            "pointMetres": [
+              0.12226378917694092,
+              0.0015075193950906396,
+              -0.05511477217078209
+            ],
+            "distanceMm": 16.380767058253078
+          },
+          "boundsMetres": [
+            [
+              0.11547565460205078,
+              -0.000018243048543808982,
+              -0.07346981018781662
+            ],
+            [
+              0.141245499253273,
+              0.03085901401937008,
+              -0.035713959485292435
+            ]
+          ]
+        },
+        {
+          "structure": "IntermediateCuneiform",
+          "vertices": 1166,
+          "inside": 975,
+          "surface-band": 153,
+          "outside": 38,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1153,
+            "pointMetres": [
+              0.13793520629405975,
+              0.009413347579538822,
+              -0.05915332958102226
+            ],
+            "distanceMm": 3.8798192582767443
+          },
+          "boundsMetres": [
+            [
+              0.1334509551525116,
+              0.009282957762479782,
+              -0.0693182721734047
+            ],
+            [
+              0.1543150693178177,
+              0.03528773784637451,
+              -0.04275515303015709
+            ]
+          ]
+        },
+        {
+          "structure": "Phalanges",
+          "vertices": 17470,
+          "inside": 112,
+          "surface-band": 188,
+          "outside": 17170,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 10163,
+            "pointMetres": [
+              0.13239209353923798,
+              -0.07087108492851257,
+              0.035893939435482025
+            ],
+            "distanceMm": 77.01107461022751
+          },
+          "boundsMetres": [
+            [
+              0.10776564478874207,
+              -0.07106444984674454,
+              -0.09303457289934158
+            ],
+            [
+              0.1833317130804062,
+              0.019634244963526726,
+              0.03999985754489899
+            ]
+          ]
+        }
+      ],
+      "ankle": [
+        {
+          "foot": "Talus",
+          "targetId": "HRAF0954",
+          "targetName": "Tibia (left)",
+          "sourceCommonFrame": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 4581,
+              "pointMetres": [
+                0.12564074993133545,
+                0.07391807436943054,
+                -0.08439724147319794
+              ],
+              "nearestMetres": [
+                0.12559717382777552,
+                0.07392654938229126,
+                -0.0843730393950153
+              ],
+              "distanceMm": 0.05056128195381971
+            },
+            "reverseMinimum": {
+              "vertex": 8111,
+              "pointMetres": [
+                0.12783201038837433,
+                0.07613983005285263,
+                -0.08302962779998779
+              ],
+              "nearestMetres": [
+                0.12788109348886215,
+                0.07611218187142864,
+                -0.08307974798445766
+              ],
+              "distanceMm": 0.07540295472224591
+            }
+          },
+          "hra": {
+            "intersectingTrianglePairs": 90,
+            "strictPlaneStraddlingPairs": 90,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.4026223184997123,
+            "forwardMinimum": {
+              "vertex": 95,
+              "pointMetres": [
+                0.13519883155822754,
+                0.08251776546239853,
+                -0.09421397000551224
+              ],
+              "nearestMetres": [
+                0.1351988086577001,
+                0.08252132089248916,
+                -0.09421464409642658
+              ],
+              "distanceMm": 0.003618840439190709
+            },
+            "reverseMinimum": {
+              "vertex": 60,
+              "pointMetres": [
+                0.1358650177717209,
+                0.0803632140159607,
+                -0.10562001168727875
+              ],
+              "nearestMetres": [
+                0.13574959023319827,
+                0.0808605320298157,
+                -0.10580432657076834
+              ],
+              "distanceMm": 0.5427897381397928
+            }
+          }
+        },
+        {
+          "foot": "Talus",
+          "targetId": "HRAF0955",
+          "targetName": "Fibula (left)",
+          "sourceCommonFrame": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 3289,
+              "pointMetres": [
+                0.15491046011447906,
+                0.06688819825649261,
+                -0.10469374805688858
+              ],
+              "nearestMetres": [
+                0.15617311483024138,
+                0.067840641252189,
+                -0.10556585882182988
+              ],
+              "distanceMm": 1.8061068012757189
+            },
+            "reverseMinimum": {
+              "vertex": 1916,
+              "pointMetres": [
+                0.15603817999362946,
+                0.06783346831798553,
+                -0.10576905310153961
+              ],
+              "nearestMetres": [
+                0.15475504150908692,
+                0.06695503535655856,
+                -0.10484622717318182
+              ],
+              "distanceMm": 1.8082302210407029
+            }
+          },
+          "hra": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 915,
+              "pointMetres": [
+                0.15835170447826385,
+                0.06274013966321945,
+                -0.10596214979887009
+              ],
+              "nearestMetres": [
+                0.1585368516364749,
+                0.06293859857394705,
+                -0.10603327102020306
+              ],
+              "distanceMm": 0.280577329028396
+            },
+            "reverseMinimum": {
+              "vertex": 48,
+              "pointMetres": [
+                0.15880407392978668,
+                0.06187540292739868,
+                -0.10830439627170563
+              ],
+              "nearestMetres": [
+                0.15821715610989256,
+                0.06160712543915709,
+                -0.10788443878889276
+              ],
+              "distanceMm": 0.7699413129433978
+            }
+          }
+        }
+      ],
+      "footCrossings": [
+        {
+          "structures": [
+            "Calcaneous",
+            "Cuboid"
+          ],
+          "intersectingTrianglePairs": 12,
+          "strictPlaneStraddlingPairs": 12,
+          "toleranceMm": 0.001,
+          "maxTrianglePlaneStraddleExtentMm": 0.13026005991247377
+        }
+      ],
+      "evaluatedFootPairs": 28,
+      "summary": {
+        "vertices": 41083,
+        "outside": 19374,
+        "ambiguous": 0,
+        "outsideMeshes": 5,
+        "maxOutsideMm": 77.01107461022751,
+        "ankleCrossingPairs": 1
+      }
+    },
+    {
+      "side": "right",
+      "mode": "import-shank",
+      "sourceToAtlasMatrix": [
+        -0.9898288573935704,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.9898288573935704,
+        0,
+        0,
+        0.9898288573935704,
+        0,
+        0,
+        0.4608439640993753,
+        -0.07161333023105826,
+        -0.49779202872251577,
+        1
+      ],
+      "uniformScale": 0.9898288573935704,
+      "parts": [
+        {
+          "structure": "Talus",
+          "vertices": 5344,
+          "inside": 4153,
+          "surface-band": 521,
+          "outside": 670,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1453,
+            "pointMetres": [
+              -0.09870881587266922,
+              0.06998004764318466,
+              -0.10187407582998276
+            ],
+            "distanceMm": 7.6050474629324585
+          },
+          "boundsMetres": [
+            [
+              -0.1453736573457718,
+              0.03827375918626785,
+              -0.11907505989074707
+            ],
+            [
+              -0.09870881587266922,
+              0.08315763622522354,
+              -0.06158670037984848
+            ]
+          ]
+        },
+        {
+          "structure": "Calcaneous",
+          "vertices": 8789,
+          "inside": 4577,
+          "surface-band": 647,
+          "outside": 3565,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 8037,
+            "pointMetres": [
+              -0.08528301864862442,
+              0.054515182971954346,
+              -0.1463741809129715
+            ],
+            "distanceMm": 26.373538531585105
+          },
+          "boundsMetres": [
+            [
+              -0.14268940687179565,
+              0.020025864243507385,
+              -0.15827018022537231
+            ],
+            [
+              -0.08271452784538269,
+              0.07295522093772888,
+              -0.07823247462511063
+            ]
+          ]
+        },
+        {
+          "structure": "Navicular",
+          "vertices": 2251,
+          "inside": 1484,
+          "surface-band": 235,
+          "outside": 532,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1730,
+            "pointMetres": [
+              -0.10056903213262558,
+              0.03920815512537956,
+              -0.06577316671609879
+            ],
+            "distanceMm": 12.775877922998983
+          },
+          "boundsMetres": [
+            [
+              -0.14066387712955475,
+              0.027530357241630554,
+              -0.07891251891851425
+            ],
+            [
+              -0.10041233152151108,
+              0.051548413932323456,
+              -0.05244097486138344
+            ]
+          ]
+        },
+        {
+          "structure": "Cuboid",
+          "vertices": 2523,
+          "inside": 2064,
+          "surface-band": 448,
+          "outside": 11,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 156,
+            "pointMetres": [
+              -0.13913652300834656,
+              0.006157007534056902,
+              -0.07532698661088943
+            ],
+            "distanceMm": 2.4065911312209427
+          },
+          "boundsMetres": [
+            [
+              -0.14999116957187653,
+              0.0059226881712675095,
+              -0.09920811653137207
+            ],
+            [
+              -0.11557256430387497,
+              0.03819143399596214,
+              -0.06990095973014832
+            ]
+          ]
+        },
+        {
+          "structure": "LateralCuneiform",
+          "vertices": 1406,
+          "inside": 981,
+          "surface-band": 266,
+          "outside": 159,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 741,
+            "pointMetres": [
+              -0.12613722681999207,
+              0.00957209337502718,
+              -0.06365736573934555
+            ],
+            "distanceMm": 5.520733025206124
+          },
+          "boundsMetres": [
+            [
+              -0.14788025617599487,
+              0.009053865447640419,
+              -0.0740298479795456
+            ],
+            [
+              -0.12236622720956802,
+              0.03303193673491478,
+              -0.052422359585762024
+            ]
+          ]
+        },
+        {
+          "structure": "MedialCuneiform",
+          "vertices": 2110,
+          "inside": 238,
+          "surface-band": 322,
+          "outside": 1550,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 874,
+            "pointMetres": [
+              -0.10748529434204102,
+              0.007873794995248318,
+              -0.051850754767656326
+            ],
+            "distanceMm": 20.215805529094713
+          },
+          "boundsMetres": [
+            [
+              -0.13078677654266357,
+              0.00482590775936842,
+              -0.07029397785663605
+            ],
+            [
+              -0.10257203131914139,
+              0.03420085459947586,
+              -0.03542397916316986
+            ]
+          ]
+        },
+        {
+          "structure": "IntermediateCuneiform",
+          "vertices": 1159,
+          "inside": 797,
+          "surface-band": 264,
+          "outside": 98,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1097,
+            "pointMetres": [
+              -0.12385859340429306,
+              0.014879530295729637,
+              -0.05544399097561836
+            ],
+            "distanceMm": 4.5654627765541695
+          },
+          "boundsMetres": [
+            [
+              -0.14111916720867157,
+              0.01457509770989418,
+              -0.06752756983041763
+            ],
+            [
+              -0.11900733411312103,
+              0.03694656863808632,
+              -0.04259166494011879
+            ]
+          ]
+        },
+        {
+          "structure": "Phalanges",
+          "vertices": 18093,
+          "inside": 0,
+          "surface-band": 479,
+          "outside": 17614,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 14058,
+            "pointMetres": [
+              -0.12613192200660706,
+              -0.06363452225923538,
+              0.03286091610789299
+            ],
+            "distanceMm": 71.22299195431188
+          },
+          "boundsMetres": [
+            [
+              -0.16356298327445984,
+              -0.06365932524204254,
+              -0.09668947756290436
+            ],
+            [
+              -0.09512896835803986,
+              0.022187823429703712,
+              0.03783990815281868
+            ]
+          ]
+        }
+      ],
+      "ankle": [
+        {
+          "foot": "Talus",
+          "targetId": "HRAF0927",
+          "targetName": "Tibia (right)",
+          "sourceCommonFrame": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 495,
+              "pointMetres": [
+                -0.11456174403429031,
+                0.07327675074338913,
+                -0.07840118557214737
+              ],
+              "nearestMetres": [
+                -0.11307153722534298,
+                0.07535587609869786,
+                -0.07697724572791936
+              ],
+              "distanceMm": 2.9276412445005477
+            },
+            "reverseMinimum": {
+              "vertex": 403,
+              "pointMetres": [
+                -0.11302979290485382,
+                0.07532418519258499,
+                -0.07697466015815735
+              ],
+              "nearestMetres": [
+                -0.11456174403429031,
+                0.07327675074338913,
+                -0.07840118557214737
+              ],
+              "distanceMm": 2.92811148071502
+            }
+          },
+          "hra": {
+            "intersectingTrianglePairs": 116,
+            "strictPlaneStraddlingPairs": 116,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.5485901196337251,
+            "forwardMinimum": {
+              "vertex": 1356,
+              "pointMetres": [
+                -0.12790457904338837,
+                0.08101300150156021,
+                -0.09112758189439774
+              ],
+              "nearestMetres": [
+                -0.1279038879335701,
+                0.08101936748958687,
+                -0.09112481882275493
+              ],
+              "distanceMm": 0.0069740950122354805
+            },
+            "reverseMinimum": {
+              "vertex": 210,
+              "pointMetres": [
+                -0.12424101680517197,
+                0.07291263341903687,
+                -0.07336345314979553
+              ],
+              "nearestMetres": [
+                -0.12425532497445013,
+                0.07296139503291006,
+                -0.07332263262191267
+              ],
+              "distanceMm": 0.06518231502675143
+            }
+          }
+        },
+        {
+          "foot": "Talus",
+          "targetId": "HRAF0928",
+          "targetName": "Fibula (right)",
+          "sourceCommonFrame": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 795,
+              "pointMetres": [
+                -0.1337059587240219,
+                0.07365383952856064,
+                -0.10532165318727493
+              ],
+              "nearestMetres": [
+                -0.13429389295205407,
+                0.07368319531356893,
+                -0.10607022885262228
+              ],
+              "distanceMm": 0.9523097948438054
+            },
+            "reverseMinimum": {
+              "vertex": 6007,
+              "pointMetres": [
+                -0.13400259613990784,
+                0.07361844927072525,
+                -0.10630155354738235
+              ],
+              "nearestMetres": [
+                -0.13337590558861878,
+                0.07355702940090282,
+                -0.10564648543336641
+              ],
+              "distanceMm": 0.9086405678178751
+            }
+          },
+          "hra": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 166,
+              "pointMetres": [
+                -0.14421245455741882,
+                0.07272551208734512,
+                -0.09347262233495712
+              ],
+              "nearestMetres": [
+                -0.15944575178214102,
+                0.07609033070389923,
+                -0.1031932152291304
+              ],
+              "distanceMm": 18.381111905249092
+            },
+            "reverseMinimum": {
+              "vertex": 40,
+              "pointMetres": [
+                -0.1592804342508316,
+                0.07943159341812134,
+                -0.10229569673538208
+              ],
+              "nearestMetres": [
+                -0.1436503678560257,
+                0.07362740486860275,
+                -0.09403755515813828
+              ],
+              "distanceMm": 18.606033498148022
+            }
+          }
+        }
+      ],
+      "footCrossings": [
+        {
+          "structures": [
+            "Talus",
+            "Calcaneous"
+          ],
+          "intersectingTrianglePairs": 12,
+          "strictPlaneStraddlingPairs": 12,
+          "toleranceMm": 0.001,
+          "maxTrianglePlaneStraddleExtentMm": 0.11921121112220753
+        },
+        {
+          "structures": [
+            "MedialCuneiform",
+            "IntermediateCuneiform"
+          ],
+          "intersectingTrianglePairs": 8,
+          "strictPlaneStraddlingPairs": 8,
+          "toleranceMm": 0.001,
+          "maxTrianglePlaneStraddleExtentMm": 0.19978744539017038
+        }
+      ],
+      "evaluatedFootPairs": 28,
+      "summary": {
+        "vertices": 41675,
+        "outside": 24199,
+        "ambiguous": 0,
+        "outsideMeshes": 8,
+        "maxOutsideMm": 71.22299195431188,
+        "ankleCrossingPairs": 1
+      }
+    },
+    {
+      "side": "right",
+      "mode": "surface-shank",
+      "sourceToAtlasMatrix": [
+        -0.9763616416056589,
+        0.1215117989866624,
+        0.18388440247501564,
+        0,
+        0.18919500344221168,
+        0.0336701803555021,
+        0.9823096332586759,
+        0,
+        0.11306565101333899,
+        0.9929561156603647,
+        -0.055811798923497496,
+        0,
+        0.33514174744672204,
+        -0.16112299978930858,
+        -0.5881623758161123,
+        1
+      ],
+      "uniformScale": 1.0009298906344368,
+      "parts": [
+        {
+          "structure": "Talus",
+          "vertices": 5344,
+          "inside": 5344,
+          "surface-band": 0,
+          "outside": 0,
+          "ambiguous": 0,
+          "maximum": null,
+          "boundsMetres": [
+            [
+              -0.1687476634979248,
+              0.035662729293107986,
+              -0.11321404576301575
+            ],
+            [
+              -0.12488976120948792,
+              0.0794084444642067,
+              -0.05245047062635422
+            ]
+          ]
+        },
+        {
+          "structure": "Calcaneous",
+          "vertices": 8789,
+          "inside": 8114,
+          "surface-band": 500,
+          "outside": 175,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 5770,
+            "pointMetres": [
+              -0.14081260561943054,
+              0.04489409923553467,
+              -0.15361852943897247
+            ],
+            "distanceMm": 4.513783916961866
+          },
+          "boundsMetres": [
+            [
+              -0.17166543006896973,
+              0.015552670694887638,
+              -0.15396015346050262
+            ],
+            [
+              -0.11939152330160141,
+              0.06710740178823471,
+              -0.06926880776882172
+            ]
+          ]
+        },
+        {
+          "structure": "Navicular",
+          "vertices": 2251,
+          "inside": 2251,
+          "surface-band": 0,
+          "outside": 0,
+          "ambiguous": 0,
+          "maximum": null,
+          "boundsMetres": [
+            [
+              -0.1638088822364807,
+              0.02404165267944336,
+              -0.07089083641767502
+            ],
+            [
+              -0.12338908016681671,
+              0.05012708529829979,
+              -0.043911442160606384
+            ]
+          ]
+        },
+        {
+          "structure": "Cuboid",
+          "vertices": 2523,
+          "inside": 1803,
+          "surface-band": 472,
+          "outside": 248,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1250,
+            "pointMetres": [
+              -0.17619171738624573,
+              0.005290265195071697,
+              -0.07407723367214203
+            ],
+            "distanceMm": 5.174696859446151
+          },
+          "boundsMetres": [
+            [
+              -0.17790845036506653,
+              0.003543365513905883,
+              -0.08738043904304504
+            ],
+            [
+              -0.14232712984085083,
+              0.03644499182701111,
+              -0.055307842791080475
+            ]
+          ]
+        },
+        {
+          "structure": "LateralCuneiform",
+          "vertices": 1406,
+          "inside": 1062,
+          "surface-band": 257,
+          "outside": 87,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 741,
+            "pointMetres": [
+              -0.15159949660301208,
+              0.007144569419324398,
+              -0.05285746976733208
+            ],
+            "distanceMm": 5.0099209531652855
+          },
+          "boundsMetres": [
+            [
+              -0.17254936695098877,
+              0.006680009420961142,
+              -0.06380891799926758
+            ],
+            [
+              -0.14768610894680023,
+              0.03243718296289444,
+              -0.03888486325740814
+            ]
+          ]
+        },
+        {
+          "structure": "MedialCuneiform",
+          "vertices": 2110,
+          "inside": 885,
+          "surface-band": 317,
+          "outside": 908,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 193,
+            "pointMetres": [
+              -0.1336464136838913,
+              0.0012490864610299468,
+              -0.046464547514915466
+            ],
+            "distanceMm": 16.71829002980019
+          },
+          "boundsMetres": [
+            [
+              -0.15059924125671387,
+              0.0007449067197740078,
+              -0.06353935599327087
+            ],
+            [
+              -0.1256129890680313,
+              0.031470153480768204,
+              -0.02582602947950363
+            ]
+          ]
+        },
+        {
+          "structure": "IntermediateCuneiform",
+          "vertices": 1159,
+          "inside": 994,
+          "surface-band": 146,
+          "outside": 19,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 932,
+            "pointMetres": [
+              -0.14700493216514587,
+              0.012290977872908115,
+              -0.04653959348797798
+            ],
+            "distanceMm": 2.9993693318914554
+          },
+          "boundsMetres": [
+            [
+              -0.16257870197296143,
+              0.012184764258563519,
+              -0.05820271000266075
+            ],
+            [
+              -0.14273907244205475,
+              0.035502366721630096,
+              -0.03126972168684006
+            ]
+          ]
+        },
+        {
+          "structure": "Phalanges",
+          "vertices": 18093,
+          "inside": 217,
+          "surface-band": 369,
+          "outside": 17507,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 14058,
+            "pointMetres": [
+              -0.1415080428123474,
+              -0.0630108043551445,
+              0.04705440253019333
+            ],
+            "distanceMm": 70.58549373740654
+          },
+          "boundsMetres": [
+            [
+              -0.18661732971668243,
+              -0.0630108043551445,
+              -0.08194904029369354
+            ],
+            [
+              -0.11411560326814651,
+              0.021275924518704414,
+              0.05212382599711418
+            ]
+          ]
+        }
+      ],
+      "ankle": [
+        {
+          "foot": "Talus",
+          "targetId": "HRAF0927",
+          "targetName": "Tibia (right)",
+          "sourceCommonFrame": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 495,
+              "pointMetres": [
+                -0.1357228010892868,
+                0.06912795454263687,
+                -0.07323171943426132
+              ],
+              "nearestMetres": [
+                -0.13374320563166586,
+                0.0710791501928215,
+                -0.07221266903155592
+              ],
+              "distanceMm": 2.9604773879202217
+            },
+            "reverseMinimum": {
+              "vertex": 403,
+              "pointMetres": [
+                -0.13370515406131744,
+                0.07104232162237167,
+                -0.07221607118844986
+              ],
+              "nearestMetres": [
+                -0.1357228010892868,
+                0.06912795454263687,
+                -0.07323171943426132
+              ],
+              "distanceMm": 2.9609529217239925
+            }
+          },
+          "hra": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 4307,
+              "pointMetres": [
+                -0.14692841470241547,
+                0.07896248251199722,
+                -0.09328727424144745
+              ],
+              "nearestMetres": [
+                -0.14690950161185462,
+                0.08189896896429631,
+                -0.0938440169151714
+              ],
+              "distanceMm": 2.9888581087559087
+            },
+            "reverseMinimum": {
+              "vertex": 219,
+              "pointMetres": [
+                -0.14894646406173706,
+                0.08288973569869995,
+                -0.08868750929832458
+              ],
+              "nearestMetres": [
+                -0.14871202409267426,
+                0.07927541434764862,
+                -0.08894552290439606
+              ],
+              "distanceMm": 3.6310951445366575
+            }
+          }
+        },
+        {
+          "foot": "Talus",
+          "targetId": "HRAF0928",
+          "targetName": "Fibula (right)",
+          "sourceCommonFrame": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 795,
+              "pointMetres": [
+                -0.15970902144908905,
+                0.07094065099954605,
+                -0.09641245007514954
+              ],
+              "nearestMetres": [
+                -0.16042868809608474,
+                0.07101682112883347,
+                -0.09704777259709907
+              ],
+              "distanceMm": 0.9629936024138431
+            },
+            "reverseMinimum": {
+              "vertex": 6007,
+              "pointMetres": [
+                -0.16019296646118164,
+                0.07090824097394943,
+                -0.0973278060555458
+              ],
+              "nearestMetres": [
+                -0.15945660172528905,
+                0.07079198218278646,
+                -0.0967906793237487
+              ],
+              "distanceMm": 0.9188330951809893
+            }
+          },
+          "hra": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 768,
+              "pointMetres": [
+                -0.16421228647232056,
+                0.06098795309662819,
+                -0.09956182539463043
+              ],
+              "nearestMetres": [
+                -0.16701402028238538,
+                0.06376635648846879,
+                -0.10053284364923322
+              ],
+              "distanceMm": 4.063510083785143
+            },
+            "reverseMinimum": {
+              "vertex": 41,
+              "pointMetres": [
+                -0.16692419350147247,
+                0.06412374973297119,
+                -0.09976940602064133
+              ],
+              "nearestMetres": [
+                -0.16440132135513133,
+                0.06111766427564193,
+                -0.09872880934637963
+              ],
+              "distanceMm": 4.060083137330436
+            }
+          }
+        }
+      ],
+      "footCrossings": [
+        {
+          "structures": [
+            "Talus",
+            "Calcaneous"
+          ],
+          "intersectingTrianglePairs": 12,
+          "strictPlaneStraddlingPairs": 12,
+          "toleranceMm": 0.001,
+          "maxTrianglePlaneStraddleExtentMm": 0.1205461436556405
+        },
+        {
+          "structures": [
+            "MedialCuneiform",
+            "IntermediateCuneiform"
+          ],
+          "intersectingTrianglePairs": 8,
+          "strictPlaneStraddlingPairs": 8,
+          "toleranceMm": 0.001,
+          "maxTrianglePlaneStraddleExtentMm": 0.20202051546783728
+        }
+      ],
+      "evaluatedFootPairs": 28,
+      "summary": {
+        "vertices": 41675,
+        "outside": 18944,
+        "ambiguous": 0,
+        "outsideMeshes": 6,
+        "maxOutsideMm": 70.58549373740654,
+        "ankleCrossingPairs": 0
+      }
+    },
+    {
+      "side": "right",
+      "mode": "surface-whole-leg",
+      "sourceToAtlasMatrix": [
+        -0.9794921205014796,
+        0.11072200928024775,
+        0.18464994597509202,
+        0,
+        0.18790585136459792,
+        0.019756603409715037,
+        0.9849166704126802,
+        0,
+        0.10510165037051225,
+        0.996549092265304,
+        -0.04004160095124399,
+        0,
+        0.3401963663510331,
+        -0.15054050502921806,
+        -0.5950804670397047,
+        1
+      ],
+      "uniformScale": 1.002875755022597,
+      "parts": [
+        {
+          "structure": "Talus",
+          "vertices": 5344,
+          "inside": 5344,
+          "surface-band": 0,
+          "outside": 0,
+          "ambiguous": 0,
+          "maximum": null,
+          "boundsMetres": [
+            [
+              -0.16728420555591583,
+              0.03432589769363403,
+              -0.116366907954216
+            ],
+            [
+              -0.12326749414205551,
+              0.07852159440517426,
+              -0.055789243429899216
+            ]
+          ]
+        },
+        {
+          "structure": "Calcaneous",
+          "vertices": 8789,
+          "inside": 7516,
+          "surface-band": 765,
+          "outside": 508,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 5770,
+            "pointMetres": [
+              -0.13898581266403198,
+              0.045021507889032364,
+              -0.1572156399488449
+            ],
+            "distanceMm": 7.468575898196048
+          },
+          "boundsMetres": [
+            [
+              -0.16986481845378876,
+              0.01460210233926773,
+              -0.1575535088777542
+            ],
+            [
+              -0.11746262013912201,
+              0.06645964086055756,
+              -0.07287410646677017
+            ]
+          ]
+        },
+        {
+          "structure": "Navicular",
+          "vertices": 2251,
+          "inside": 2251,
+          "surface-band": 0,
+          "outside": 0,
+          "ambiguous": 0,
+          "maximum": null,
+          "boundsMetres": [
+            [
+              -0.162090003490448,
+              0.022604921832680702,
+              -0.07454606890678406
+            ],
+            [
+              -0.12155724316835403,
+              0.04853898659348488,
+              -0.047476477921009064
+            ]
+          ]
+        },
+        {
+          "structure": "Cuboid",
+          "vertices": 2523,
+          "inside": 1760,
+          "surface-band": 373,
+          "outside": 390,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 2517,
+            "pointMetres": [
+              -0.1741507649421692,
+              0.003913850989192724,
+              -0.07962515950202942
+            ],
+            "distanceMm": 5.876174549966487
+          },
+          "boundsMetres": [
+            [
+              -0.17597518861293793,
+              0.002214394509792328,
+              -0.09141328185796738
+            ],
+            [
+              -0.1404453068971634,
+              0.0350969061255455,
+              -0.05928865820169449
+            ]
+          ]
+        },
+        {
+          "structure": "LateralCuneiform",
+          "vertices": 1406,
+          "inside": 986,
+          "surface-band": 257,
+          "outside": 163,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 741,
+            "pointMetres": [
+              -0.1496199071407318,
+              0.005520840175449848,
+              -0.056884683668613434
+            ],
+            "distanceMm": 5.851222981098145
+          },
+          "boundsMetres": [
+            [
+              -0.17067046463489532,
+              0.005077029578387737,
+              -0.06766929477453232
+            ],
+            [
+              -0.14577776193618774,
+              0.030749652534723282,
+              -0.042767200618982315
+            ]
+          ]
+        },
+        {
+          "structure": "MedialCuneiform",
+          "vertices": 2110,
+          "inside": 766,
+          "surface-band": 320,
+          "outside": 1024,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 191,
+            "pointMetres": [
+              -0.13227984309196472,
+              -0.0001991871977224946,
+              -0.04959686100482941
+            ],
+            "distanceMm": 17.484938582897705
+          },
+          "boundsMetres": [
+            [
+              -0.14876718819141388,
+              -0.0008082382846623659,
+              -0.06735719740390778
+            ],
+            [
+              -0.12364326417446136,
+              0.02980937249958515,
+              -0.029642917215824127
+            ]
+          ]
+        },
+        {
+          "structure": "IntermediateCuneiform",
+          "vertices": 1159,
+          "inside": 904,
+          "surface-band": 190,
+          "outside": 65,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 1097,
+            "pointMetres": [
+              -0.14524231851100922,
+              0.01077335886657238,
+              -0.04935184493660927
+            ],
+            "distanceMm": 4.196179201657656
+          },
+          "boundsMetres": [
+            [
+              -0.16076065599918365,
+              0.010501135140657425,
+              -0.06197049468755722
+            ],
+            [
+              -0.140872061252594,
+              0.0337739996612072,
+              -0.03504117578268051
+            ]
+          ]
+        },
+        {
+          "structure": "Phalanges",
+          "vertices": 18093,
+          "inside": 92,
+          "surface-band": 277,
+          "outside": 17724,
+          "ambiguous": 0,
+          "maximum": {
+            "vertex": 14058,
+            "pointMetres": [
+              -0.13906514644622803,
+              -0.06625691801309586,
+              0.04211505129933357
+            ],
+            "distanceMm": 73.4729530924677
+          },
+          "boundsMetres": [
+            [
+              -0.18430420756340027,
+              -0.06625691801309586,
+              -0.08616488426923752
+            ],
+            [
+              -0.11176831275224686,
+              0.019315263256430626,
+              0.04727327451109886
+            ]
+          ]
+        }
+      ],
+      "ankle": [
+        {
+          "foot": "Talus",
+          "targetId": "HRAF0927",
+          "targetName": "Tibia (right)",
+          "sourceCommonFrame": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 495,
+              "pointMetres": [
+                -0.13419996201992035,
+                0.06806889176368713,
+                -0.0762917548418045
+              ],
+              "nearestMetres": [
+                -0.13223422963884834,
+                0.0700238609842544,
+                -0.07523698549522974
+              ],
+              "distanceMm": 2.9662344515958496
+            },
+            "reverseMinimum": {
+              "vertex": 403,
+              "pointMetres": [
+                -0.13219580054283142,
+                0.06998734176158905,
+                -0.07524091750383377
+              ],
+              "nearestMetres": [
+                -0.13419996201992035,
+                0.06806889176368713,
+                -0.0762917548418045
+              ],
+              "distanceMm": 2.966710759674855
+            }
+          },
+          "hra": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 2518,
+              "pointMetres": [
+                -0.14666366577148438,
+                0.07808138430118561,
+                -0.09664121270179749
+              ],
+              "nearestMetres": [
+                -0.1465563072169055,
+                0.08125683119209033,
+                -0.09721891336140062
+              ],
+              "distanceMm": 3.2293539397693216
+            },
+            "reverseMinimum": {
+              "vertex": 64,
+              "pointMetres": [
+                -0.14524827897548676,
+                0.0803632140159607,
+                -0.1018877774477005
+              ],
+              "nearestMetres": [
+                -0.14519988512385806,
+                0.07678628306075246,
+                -0.09998631477732378
+              ],
+              "distanceMm": 4.051214300680543
+            }
+          }
+        },
+        {
+          "foot": "Talus",
+          "targetId": "HRAF0928",
+          "targetName": "Fibula (right)",
+          "sourceCommonFrame": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 795,
+              "pointMetres": [
+                -0.15821470320224762,
+                0.07005268335342407,
+                -0.09952257573604584
+              ],
+              "nearestMetres": [
+                -0.15893550092257938,
+                0.07013307456473715,
+                -0.1001589535392566
+              ],
+              "distanceMm": 0.9648776134366539
+            },
+            "reverseMinimum": {
+              "vertex": 6007,
+              "pointMetres": [
+                -0.15869803726673126,
+                0.07003068923950195,
+                -0.1004408523440361
+              ],
+              "nearestMetres": [
+                -0.15796004057200652,
+                0.06991182224102177,
+                -0.09990345763344158
+              ],
+              "distanceMm": 0.9206310660233568
+            }
+          },
+          "hra": {
+            "intersectingTrianglePairs": 0,
+            "strictPlaneStraddlingPairs": 0,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0,
+            "forwardMinimum": {
+              "vertex": 216,
+              "pointMetres": [
+                -0.15918514132499695,
+                0.07285204529762268,
+                -0.09741012006998062
+              ],
+              "nearestMetres": [
+                -0.16238997725492468,
+                0.07355994795592055,
+                -0.09945517340990288
+              ],
+              "distanceMm": 3.867084518666248
+            },
+            "reverseMinimum": {
+              "vertex": 39,
+              "pointMetres": [
+                -0.16368456184864044,
+                0.07219189405441284,
+                -0.09789996594190598
+              ],
+              "nearestMetres": [
+                -0.15981942675570396,
+                0.0717616468260886,
+                -0.09652848303964211
+              ],
+              "distanceMm": 4.123754031866103
+            }
+          }
+        }
+      ],
+      "footCrossings": [
+        {
+          "structures": [
+            "Talus",
+            "Calcaneous"
+          ],
+          "intersectingTrianglePairs": 12,
+          "strictPlaneStraddlingPairs": 12,
+          "toleranceMm": 0.001,
+          "maxTrianglePlaneStraddleExtentMm": 0.12077643087265558
+        },
+        {
+          "structures": [
+            "MedialCuneiform",
+            "IntermediateCuneiform"
+          ],
+          "intersectingTrianglePairs": 8,
+          "strictPlaneStraddlingPairs": 8,
+          "toleranceMm": 0.001,
+          "maxTrianglePlaneStraddleExtentMm": 0.20242484183806403
+        }
+      ],
+      "evaluatedFootPairs": 28,
+      "summary": {
+        "vertices": 41675,
+        "outside": 19874,
+        "ambiguous": 0,
+        "outsideMeshes": 6,
+        "maxOutsideMm": 73.4729530924677,
+        "ankleCrossingPairs": 0
+      }
+    }
+  ],
+  "limitations": [
+    "Exact-coordinate components are geometric connectivity, not independent anatomical labels.",
+    "Phalanges remains an aggregate with the original label; no per-toe FMA mapping is inferred.",
+    "Containment tests every referenced vertex, not triangle interiors, anatomical placement or connections.",
+    "Surface crossings do not detect a fully enclosed solid, and are not penetration depths or volumes.",
+    "Ankle checks cover tibia/fibula target hierarchy only; other bone, muscle, nerve, vessel and cartilage relations remain unvalidated.",
+    "The three candidate frames were fitted to lower-leg bones, not validated foot landmarks; none is auto-approved."
+  ],
+  "visual": {
+    "file": ".cache/donor-feet/visual-parts.json",
+    "sha256": "6834c90bee06bb8552caa3f7c3c490f9f9c64ec1b4e84f8b8c0fc8860713d91e"
+  },
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/donor-source-comparison.json",
+      "sha256": "ea0c9cbc5d0edc0a3859fb9f5786a638eeb3e92bb5a60649325561dc14c69959"
+    },
+    {
+      "file": "docs/anatomy-alignment/hierarchy-joint-bone-surface-fits.json",
+      "sha256": "f1146b7fb1fb339e3dc3cf22d46b456363945e01191bbf5463614e166ceba6a4"
+    },
+    {
+      "file": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "file": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "file": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "file": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "file": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "file": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "file": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "file": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "file": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "file": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "file": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "file": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "file": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "file": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "file": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "file": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "file": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Talus_smooth.stl",
+      "sha256": "1f905e13b8a9bf3d7b30964a6f151cc8df2f07891614364e4d46c856e50b9fbd"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Calcaneous_smooth.stl",
+      "sha256": "e39565fce885e6d53d1abac45c259eb12a4293d4fa19b4068e1222a449d7f67c"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Navicular_smooth.stl",
+      "sha256": "83781105ca69f198893bf10671564f774b36ae115012a082fb6cc9b94cf125d7"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Cuboid_smooth.stl",
+      "sha256": "a7ee7acebdf33e4b45fc0c56d3e79d1377bfac4ea8a296f2a74400dfef5d849d"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_LateralCuneiform_smooth.stl",
+      "sha256": "f131c0d95e9a58181745aa2e2ab58682c4d1d1dc3d991de4811e187ab71cd52b"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_MedialCuneiform_smooth.stl",
+      "sha256": "9416e8ee8dc8e84756471178de642bec5d66c5f94255db6b78616645a895abeb"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_IntermediateCuneiform_smooth.stl",
+      "sha256": "38f08693bd04bbed5d21b54319cd6c1a3546d0930cfbcb51a7b8e1207507cff6"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Phalanges_smooth.stl",
+      "sha256": "16047970237adbac5adce9bbe6e3240c0a500771f4bcbc55c72375f1c17e2f65"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Tibia_smooth.stl",
+      "sha256": "148107a0157932b94cab2b382b805af7c3c178400be76349ed20cea0bb56c3eb"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Fibula_smooth.stl",
+      "sha256": "3f5573f86c10eac6b25ed63604ea15ada1d389b54e0ceaecc48e5c5d33a62549"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Talus_smooth.stl",
+      "sha256": "dc7dfeb876a6e3ca0d7c877d2aaec5aa95e721aa146d6e576bd6e6ee5f5c37b5"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Calcaneous_smooth.stl",
+      "sha256": "e2b7ac7099289a1aaa9f16d7e693b05d13a1f57912793a9e063f9d4c55ac83d9"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Navicular_smooth.stl",
+      "sha256": "ccb9e9c5a8299a609e09c97a58f10ecb3585000b2270dcfc6e2caa85435d4194"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Cuboid_smooth.stl",
+      "sha256": "a89932159a0dd53d603529b644bca95505aeb697f53cf164329ebeea51c40fb0"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_LateralCuneiform_smooth.stl",
+      "sha256": "1711df66029087a9e356f225f7f0943232426e8935cbdfc173fa3b6150b66ccc"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_MedialCuneiform_smooth.stl",
+      "sha256": "95f8bbb0e6efa335a620ac8517b0577fb6c470c7e52d7da7f09afd82d782b13e"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_IntermediateCuneiform_smooth.stl",
+      "sha256": "d84ff954c393d538e227cede60b116a6de4dce7f943ea8523cc243e45ae0c878"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Phalanges_smooth.stl",
+      "sha256": "4d9e624efe54152d60506117fa897cef795f34834f779936718353890d347699"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Tibia_smooth.stl",
+      "sha256": "589b64fe38d602eb95a0dad900bcd1059043d3d8451d3d74c7231fccc62ffae1"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Fibula_smooth.stl",
+      "sha256": "5e62c5c1aeedb2b0c287e4efbaf881ef9c8c721ccc546a69c74784e520581a24"
+    },
+    {
+      "file": "scripts/audit-donor-feet.mjs",
+      "sha256": "9669d9c15d625586b7399b8979a7d1c1a3b5c089fc726c6ade16ec6718f27a89"
+    },
+    {
+      "file": "scripts/lib/exact-position-components.mjs",
+      "sha256": "8e9aee660f8edf3f357b9ac9156c47d532ac6f2dc4679c9e6770ad2d51f805cd"
+    },
+    {
+      "file": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "file": "scripts/lib/triangle-crossings.mjs",
+      "sha256": "a55dd923c032c76591a7f2aa1af2863fe9e24bf0adb0ee6eb4aad5388238d512"
+    },
+    {
+      "file": "src/female-foot-registration.ts",
+      "sha256": "6545d3024a6ee781dc6f9f282f12d54531de15c0de7631cbc5cfef44a0103ba8"
+    },
+    {
+      "file": "data/catalog/female-foot-registration.json",
+      "sha256": "c8d8400067825ed5c70172d252d4a4ca291a2005bfe0488e633dfe56b5bb220a"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    },
+    {
+      "file": ".cache/donor-feet/visual-parts.json",
+      "sha256": "6834c90bee06bb8552caa3f7c3c490f9f9c64ec1b4e84f8b8c0fc8860713d91e"
+    }
+  ]
+}
