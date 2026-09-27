@@ -1,0 +1,5687 @@
+{
+  "createdAt": "2026-09-27T09:03:23.122Z",
+  "status": "SOURCE MESH MEMBERSHIP AND COORDINATE INVENTORY; not HRA placement or clinical validation",
+  "repository": "https://huggingface.co/datasets/BoneHub/visible-human-3d-models",
+  "revision": "ac8de2b38f5ae1a0996053ca0639dd6ae43358f1",
+  "license": "CC-BY-4.0",
+  "doi": "10.57967/HF/10464",
+  "subject": {
+    "gender": "female",
+    "age": 59,
+    "height": 1.57,
+    "weight": 88,
+    "BMI": 35.7
+  },
+  "summary": {
+    "meshes": 143,
+    "masks": 11,
+    "totalTriangles": 6072988,
+    "triangleVertexOccurrences": 18218964,
+    "totalZeroNormals": 582,
+    "boundsSourceLps": [
+      [
+        6.372609615325928,
+        91.30207061767578,
+        6.428065299987793
+      ],
+      [
+        481.7980651855469,
+        341.2975769042969,
+        1723.7093505859375
+      ]
+    ],
+    "statusTags": {
+      "inprogress": 142,
+      "completed": 1
+    }
+  },
+  "parts": [
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/CALCANEUS_LEFT.stl",
+      "sha256": "adb7e828535941c2db0993eef9721c8064e2580f571800f22fcbe67a76d6340b",
+      "name": "CALCANEUS_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 48756,
+      "triangleVertexOccurrences": 146268,
+      "boundsSourceLps": [
+        [
+          246.38272094726562,
+          245.44834899902344,
+          102.32816314697266
+        ],
+        [
+          297.1883544921875,
+          328.4858093261719,
+          153.6521453857422
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "CALCANEUS_LEFT",
+        "id": "Segment_2",
+        "layer": 0,
+        "labelValue": 2,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/CUBOID_LEFT.stl",
+      "sha256": "4e9a717a9781768c008333c603edc6352c4319315a6c4aa00476580ff4efe88a",
+      "name": "CUBOID_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 13524,
+      "triangleVertexOccurrences": 40572,
+      "boundsSourceLps": [
+        [
+          266.9771423339844,
+          233.18057250976562,
+          84.41788482666016
+        ],
+        [
+          298.9865417480469,
+          263.82196044921875,
+          117.44975280761719
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "CUBOID_LEFT",
+        "id": "Segment_4",
+        "layer": 0,
+        "labelValue": 4,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/INTERMEDIATE_CUNEIFORM_LEFT.stl",
+      "sha256": "6790f11a8d5d8f52fd55bc84da2289507208ce93ee39fd0f174c166048ec8031",
+      "name": "INTERMEDIATE_CUNEIFORM_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 6712,
+      "triangleVertexOccurrences": 20136,
+      "boundsSourceLps": [
+        [
+          264.9450988769531,
+          209.98858642578125,
+          94.02350616455078
+        ],
+        [
+          284.2091064453125,
+          235.46755981445312,
+          118.19889068603516
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "INTERMEDIATE_CUNEIFORM_LEFT",
+        "id": "Segment_6",
+        "layer": 1,
+        "labelValue": 1,
+        "extent": [
+          352,
+          403,
+          181,
+          326,
+          15,
+          118
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/LATERAL_CUNEIFORM_LEFT.stl",
+      "sha256": "3bc962ca0dcf7489a17ee0b5111229354e71ef51ceee002b357b737a85f93161",
+      "name": "LATERAL_CUNEIFORM_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 7544,
+      "triangleVertexOccurrences": 22632,
+      "boundsSourceLps": [
+        [
+          269.0707702636719,
+          217.71282958984375,
+          89.83204650878906
+        ],
+        [
+          291.7077941894531,
+          241.08071899414062,
+          113.53205871582031
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 12,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "LATERAL_CUNEIFORM_LEFT",
+        "id": "Segment_5",
+        "layer": 0,
+        "labelValue": 5,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/MEDIAL_CUNEIFORM_LEFT.stl",
+      "sha256": "abf07a9cbd051051059b4352cd1f62c3b1312a31bf2a701441c1debf367be17d",
+      "name": "MEDIAL_CUNEIFORM_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 11276,
+      "triangleVertexOccurrences": 33828,
+      "boundsSourceLps": [
+        [
+          246.1676483154297,
+          203.12603759765625,
+          87.12004089355469
+        ],
+        [
+          271.2769775390625,
+          239.6339569091797,
+          116.35427856445312
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "MEDIAL_CUNEIFORM_LEFT",
+        "id": "Segment_7",
+        "layer": 0,
+        "labelValue": 6,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_1_LEFT.stl",
+      "sha256": "c412c53641198b306d71c40829cd5870f0152a8e08d9d32c65254754c9a28829",
+      "name": "METATARSAL_1_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 20228,
+      "triangleVertexOccurrences": 60684,
+      "boundsSourceLps": [
+        [
+          232.9071502685547,
+          169.2049102783203,
+          50.481964111328125
+        ],
+        [
+          268.22088623046875,
+          225.01632690429688,
+          100.15347290039062
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "METATARSAL_1_LEFT",
+        "id": "Segment_8",
+        "layer": 0,
+        "labelValue": 7,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "completed"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_2_LEFT.stl",
+      "sha256": "8f169c2ccf8ea4b21dd84779c6bfd942d0d6886272afad47ae2f877baf732db9",
+      "name": "METATARSAL_2_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 13676,
+      "triangleVertexOccurrences": 41028,
+      "boundsSourceLps": [
+        [
+          252.43116760253906,
+          164.0430145263672,
+          38.68772506713867
+        ],
+        [
+          284.58447265625,
+          225.43638610839844,
+          103.50973510742188
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 8,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "METATARSAL_2_LEFT",
+        "id": "Segment_9",
+        "layer": 0,
+        "labelValue": 8,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_3_LEFT.stl",
+      "sha256": "96928a79d69add1d25f27630f18600133e0c075be469e3c723275eeb96c193bd",
+      "name": "METATARSAL_3_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 12468,
+      "triangleVertexOccurrences": 37404,
+      "boundsSourceLps": [
+        [
+          262.8347473144531,
+          182.0205535888672,
+          36.363582611083984
+        ],
+        [
+          291.5534362792969,
+          231.87451171875,
+          94.04218292236328
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "METATARSAL_3_LEFT",
+        "id": "Segment_10",
+        "layer": 1,
+        "labelValue": 2,
+        "extent": [
+          352,
+          403,
+          181,
+          326,
+          15,
+          118
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_4_LEFT.stl",
+      "sha256": "7c0dde1053f3e36f33308c7497a093633a227a522c22a347ab55b92861805765",
+      "name": "METATARSAL_4_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 11840,
+      "triangleVertexOccurrences": 35520,
+      "boundsSourceLps": [
+        [
+          270.3525085449219,
+          193.30712890625,
+          33.38951873779297
+        ],
+        [
+          296.3773193359375,
+          239.30764770507812,
+          89.23700714111328
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "METATARSAL_4_LEFT",
+        "id": "Segment_11",
+        "layer": 0,
+        "labelValue": 9,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_5_LEFT.stl",
+      "sha256": "d62ce0ac0450838c3b53e7a1ef09198aebca56f0d8c78d32f052c813e1bcf7fa",
+      "name": "METATARSAL_5_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 12576,
+      "triangleVertexOccurrences": 37728,
+      "boundsSourceLps": [
+        [
+          284.5057678222656,
+          201.50509643554688,
+          34.57722854614258
+        ],
+        [
+          300.9769592285156,
+          259.0210266113281,
+          86.34693908691406
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "METATARSAL_5_LEFT",
+        "id": "Segment_12",
+        "layer": 0,
+        "labelValue": 10,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/NAVICULAR_LEFT.stl",
+      "sha256": "0c13d5e5affea6f013872ad0d5212f7d9b6873a1dc5fa6307d6af347bd35a59f",
+      "name": "NAVICULAR_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 12988,
+      "triangleVertexOccurrences": 38964,
+      "boundsSourceLps": [
+        [
+          247.8522491455078,
+          220.80416870117188,
+          109.34168243408203
+        ],
+        [
+          287.2887878417969,
+          248.21917724609375,
+          131.29702758789062
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "NAVICULAR_LEFT",
+        "id": "Segment_3",
+        "layer": 0,
+        "labelValue": 3,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_1_LEFT.stl",
+      "sha256": "cfd130f3f6f2d039b00a0063b26d56eddb762b190a3ba6df63fbc63d1a5bf1bf",
+      "name": "PHALANGE_FOOT_1_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 15544,
+      "triangleVertexOccurrences": 46632,
+      "boundsSourceLps": [
+        [
+          229.3974151611328,
+          130.48406982421875,
+          14.384990692138672
+        ],
+        [
+          254.4921112060547,
+          181.93087768554688,
+          59.31999206542969
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "PHALANGE_FOOT_1_LEFT",
+        "id": "2.25.208681064083115712803825660002168765119",
+        "layer": 0,
+        "labelValue": 11,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_2_LEFT.stl",
+      "sha256": "af26d8729ef1832d980877934a5071672cac5a333f28c8014b750a8c11f8f4d0",
+      "name": "PHALANGE_FOOT_2_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 7444,
+      "triangleVertexOccurrences": 22332,
+      "boundsSourceLps": [
+        [
+          253.9716796875,
+          130.6750030517578,
+          14.846969604492188
+        ],
+        [
+          272.0121154785156,
+          178.02146911621094,
+          47.458011627197266
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "PHALANGE_FOOT_2_LEFT",
+        "id": "2.25.333203787186704985279072326911484149831",
+        "layer": 1,
+        "labelValue": 3,
+        "extent": [
+          352,
+          403,
+          181,
+          326,
+          15,
+          118
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_3_LEFT.stl",
+      "sha256": "434e9345a05df10b61d16b12a145c12b387dc7a6ec0c3cfdc4ac1b1ce2b9119f",
+      "name": "PHALANGE_FOOT_3_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 5944,
+      "triangleVertexOccurrences": 17832,
+      "boundsSourceLps": [
+        [
+          266.17181396484375,
+          145.1292266845703,
+          15.451030731201172
+        ],
+        [
+          284.1700439453125,
+          184.44454956054688,
+          45.1962776184082
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "PHALANGE_FOOT_3_LEFT",
+        "id": "2.25.102398300864638991102130633446817325081",
+        "layer": 0,
+        "labelValue": 12,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_4_LEFT.stl",
+      "sha256": "7bd329b35596dada0eb6881e43ac2069283af10f45deb78bd69c59b3f4b2651e",
+      "name": "PHALANGE_FOOT_4_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 5224,
+      "triangleVertexOccurrences": 15672,
+      "boundsSourceLps": [
+        [
+          274.9179382324219,
+          156.90737915039062,
+          21.291988372802734
+        ],
+        [
+          293.43646240234375,
+          195.38209533691406,
+          42.528690338134766
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "PHALANGE_FOOT_4_LEFT",
+        "id": "2.25.63436522618590025460201684428177383619",
+        "layer": 0,
+        "labelValue": 13,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_5_LEFT.stl",
+      "sha256": "17b00eab0123d080deaf2356f64eb14185e6d602853f76dc92f4a352cce7d528",
+      "name": "PHALANGE_FOOT_5_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 5336,
+      "triangleVertexOccurrences": 16008,
+      "boundsSourceLps": [
+        [
+          286.0401611328125,
+          169.56381225585938,
+          17.47488021850586
+        ],
+        [
+          300.7152404785156,
+          204.66053771972656,
+          41.669219970703125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "PHALANGE_FOOT_5_LEFT",
+        "id": "2.25.52296589442399547873580179975212196041",
+        "layer": 0,
+        "labelValue": 14,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/TALUS_LEFT.stl",
+      "sha256": "3f322768cd56a4489683ad7bbbf1d8d537532675ac73c8269c9328b888394d56",
+      "name": "TALUS_LEFT",
+      "group": "FOOT_LEFT",
+      "triangles": 31372,
+      "triangleVertexOccurrences": 94116,
+      "boundsSourceLps": [
+        [
+          256.09765625,
+          228.95924377441406,
+          121.54630279541016
+        ],
+        [
+          298.8463439941406,
+          287.69158935546875,
+          168.51744079589844
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_LEFT",
+        "name": "TALUS_LEFT",
+        "id": "Segment_1",
+        "layer": 0,
+        "labelValue": 1,
+        "extent": [
+          318,
+          416,
+          181,
+          454,
+          15,
+          168
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/CALCANEUS_RIGHT.stl",
+      "sha256": "5e6875d292ca36454775cee7ec5ceae4746c2ff682d797087d13a1ecd4112968",
+      "name": "CALCANEUS_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 49856,
+      "triangleVertexOccurrences": 149568,
+      "boundsSourceLps": [
+        [
+          178.0269012451172,
+          259.2016296386719,
+          93.44646453857422
+        ],
+        [
+          236.6876220703125,
+          339.3224792480469,
+          145.59536743164062
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "CALCANEUS_RIGHT",
+        "id": "Segment_1",
+        "layer": 0,
+        "labelValue": 2,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/CUBOID_RIGHT.stl",
+      "sha256": "6d45623a8dc16401bb77f93c6f4b568c07b72ae2c8077632318c7f267cab2ccd",
+      "name": "CUBOID_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 13552,
+      "triangleVertexOccurrences": 40656,
+      "boundsSourceLps": [
+        [
+          171.07717895507812,
+          249.05833435058594,
+          77.48046875
+        ],
+        [
+          205.4584197998047,
+          278.5530090332031,
+          110.04174041748047
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "CUBOID_RIGHT",
+        "id": "Segment_3",
+        "layer": 0,
+        "labelValue": 4,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/INTERMEDIATE_CUNEIFORM_RIGHT.stl",
+      "sha256": "a16080c692c95a9c5471fd42c99c79fcbca16152703a77d6d583d1e4d17b668c",
+      "name": "INTERMEDIATE_CUNEIFORM_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 6208,
+      "triangleVertexOccurrences": 18624,
+      "boundsSourceLps": [
+        [
+          181.15748596191406,
+          223.7947540283203,
+          87.40391540527344
+        ],
+        [
+          202.4351806640625,
+          247.1476287841797,
+          110.22179412841797
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "INTERMEDIATE_CUNEIFORM_RIGHT",
+        "id": "Segment_5",
+        "layer": 0,
+        "labelValue": 6,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/LATERAL_CUNEIFORM_RIGHT.stl",
+      "sha256": "e610db2cb0f1384b0832b2c829701763c76e2b2b51e460f5da5395da960cc41c",
+      "name": "LATERAL_CUNEIFORM_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 7596,
+      "triangleVertexOccurrences": 22788,
+      "boundsSourceLps": [
+        [
+          173.94479370117188,
+          232.48397827148438,
+          81.61958312988281
+        ],
+        [
+          198.6976776123047,
+          253.3633575439453,
+          106.26238250732422
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "LATERAL_CUNEIFORM_RIGHT",
+        "id": "Segment_4",
+        "layer": 0,
+        "labelValue": 5,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/MEDIAL_CUNEIFORM_RIGHT.stl",
+      "sha256": "46cffc714d5dda411465f806502cb72841578e14dafa4a317353bb05f45b6b70",
+      "name": "MEDIAL_CUNEIFORM_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 11392,
+      "triangleVertexOccurrences": 34176,
+      "boundsSourceLps": [
+        [
+          191.33547973632812,
+          216.04673767089844,
+          78.34127807617188
+        ],
+        [
+          218.94857788085938,
+          250.26101684570312,
+          107.45692443847656
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "MEDIAL_CUNEIFORM_RIGHT",
+        "id": "Segment_6",
+        "layer": 0,
+        "labelValue": 7,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_1_RIGHT.stl",
+      "sha256": "eecfd229f6863b46b20c783ccdd37f734c409e8ee1d02ebea504a534cf861d56",
+      "name": "METATARSAL_1_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 21840,
+      "triangleVertexOccurrences": 65520,
+      "boundsSourceLps": [
+        [
+          194.10891723632812,
+          179.9251708984375,
+          35.75341796875
+        ],
+        [
+          227.9700927734375,
+          239.18592834472656,
+          89.56051635742188
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "METATARSAL_1_RIGHT",
+        "id": "Segment_7",
+        "layer": 0,
+        "labelValue": 8,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_2_RIGHT.stl",
+      "sha256": "6374d1cfad544598a9c09b8e40208f7d8d081836a5fae60a09d6d03cd51fc779",
+      "name": "METATARSAL_2_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 13128,
+      "triangleVertexOccurrences": 39384,
+      "boundsSourceLps": [
+        [
+          180.86154174804688,
+          191.42410278320312,
+          28.572376251220703
+        ],
+        [
+          204.94680786132812,
+          238.7063751220703,
+          95.133544921875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "METATARSAL_2_RIGHT",
+        "id": "Segment_8",
+        "layer": 1,
+        "labelValue": 1,
+        "extent": [
+          229,
+          314,
+          200,
+          384,
+          7,
+          95
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_3_RIGHT.stl",
+      "sha256": "fd82d0fa2994ec1d196ee2109a7a3e465c1bddcc97758d9db5e6ebb4ccba2870",
+      "name": "METATARSAL_3_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 12544,
+      "triangleVertexOccurrences": 37632,
+      "boundsSourceLps": [
+        [
+          173.86566162109375,
+          199.03494262695312,
+          25.57852554321289
+        ],
+        [
+          195.77975463867188,
+          245.33978271484375,
+          85.64636993408203
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "METATARSAL_3_RIGHT",
+        "id": "Segment_9",
+        "layer": 1,
+        "labelValue": 2,
+        "extent": [
+          229,
+          314,
+          200,
+          384,
+          7,
+          95
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_4_RIGHT.stl",
+      "sha256": "e5297330b496b9bbf2bb7675db86b94f98a6083c0595433da67f07c0ed0aaaf0",
+      "name": "METATARSAL_4_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 11752,
+      "triangleVertexOccurrences": 35256,
+      "boundsSourceLps": [
+        [
+          172.433349609375,
+          212.80450439453125,
+          23.384601593017578
+        ],
+        [
+          191.6914520263672,
+          255.93499755859375,
+          82.30658721923828
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "METATARSAL_4_RIGHT",
+        "id": "Segment_10",
+        "layer": 0,
+        "labelValue": 9,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_5_RIGHT.stl",
+      "sha256": "9c7a09a1802b9852bd1345031e2c073281b6d83706dc646a29559db2f891565a",
+      "name": "METATARSAL_5_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 12428,
+      "triangleVertexOccurrences": 37284,
+      "boundsSourceLps": [
+        [
+          165.80247497558594,
+          208.37254333496094,
+          23.43584632873535
+        ],
+        [
+          185.2417755126953,
+          277.52734375,
+          79.37744140625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "METATARSAL_5_RIGHT",
+        "id": "Segment_11",
+        "layer": 1,
+        "labelValue": 3,
+        "extent": [
+          229,
+          314,
+          200,
+          384,
+          7,
+          95
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/NAVICULAR_RIGHT.stl",
+      "sha256": "e51a30c6573922455aab5069cf3289557e991e9c61cb917a42f20aad878eeba8",
+      "name": "NAVICULAR_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 12388,
+      "triangleVertexOccurrences": 37164,
+      "boundsSourceLps": [
+        [
+          181.33030700683594,
+          233.24530029296875,
+          101.66853332519531
+        ],
+        [
+          220.9296417236328,
+          259.04949951171875,
+          125.26981353759766
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "NAVICULAR_RIGHT",
+        "id": "Segment_2",
+        "layer": 0,
+        "labelValue": 3,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_1_RIGHT.stl",
+      "sha256": "c6eab5b830ef3f9c0ae0e79dcc5c8c499a30341391eaadfe99ef647c4e4c42a5",
+      "name": "PHALANGE_FOOT_1_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 14452,
+      "triangleVertexOccurrences": 43356,
+      "boundsSourceLps": [
+        [
+          189.9224090576172,
+          144.2625732421875,
+          6.432373046875
+        ],
+        [
+          227.31106567382812,
+          192.9596710205078,
+          44.519737243652344
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "PHALANGE_FOOT_1_RIGHT",
+        "id": "2.25.121271023705715220211664310871558986708",
+        "layer": 1,
+        "labelValue": 4,
+        "extent": [
+          229,
+          314,
+          200,
+          384,
+          7,
+          95
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_2_RIGHT.stl",
+      "sha256": "fe1d23922d28a4226f46cc4e449fd0fda11faa934d985d392c813cf7b7c7b5c4",
+      "name": "PHALANGE_FOOT_2_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 7124,
+      "triangleVertexOccurrences": 21372,
+      "boundsSourceLps": [
+        [
+          174.73782348632812,
+          151.79171752929688,
+          7.743368148803711
+        ],
+        [
+          200.65829467773438,
+          195.13754272460938,
+          37.403411865234375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "PHALANGE_FOOT_2_RIGHT",
+        "id": "Segment_12",
+        "layer": 0,
+        "labelValue": 10,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_3_RIGHT.stl",
+      "sha256": "55fa37d8c6c7814e2029675fb0c58564aa7cbeaf71e934138504c256dff225f5",
+      "name": "PHALANGE_FOOT_3_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 6548,
+      "triangleVertexOccurrences": 19644,
+      "boundsSourceLps": [
+        [
+          162.42050170898438,
+          161.27093505859375,
+          6.428065299987793
+        ],
+        [
+          190.23468017578125,
+          202.5615234375,
+          34.37553024291992
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "PHALANGE_FOOT_3_RIGHT",
+        "id": "Segment_13",
+        "layer": 0,
+        "labelValue": 11,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_4_RIGHT.stl",
+      "sha256": "09360d17aec16e9374a8718080a6bf3fd4e0d63d2ac8f844fb8f5de1e5e7bbac",
+      "name": "PHALANGE_FOOT_4_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 5732,
+      "triangleVertexOccurrences": 17196,
+      "boundsSourceLps": [
+        [
+          159.08364868164062,
+          176.41555786132812,
+          11.63985824584961
+        ],
+        [
+          184.6768341064453,
+          216.1832275390625,
+          32.73860549926758
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "PHALANGE_FOOT_4_RIGHT",
+        "id": "Segment_14",
+        "layer": 0,
+        "labelValue": 12,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_5_RIGHT.stl",
+      "sha256": "f7b034a87dda2221fb0e4d5f73333095540ad703fad81c376f46a45891f4115f",
+      "name": "PHALANGE_FOOT_5_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 4968,
+      "triangleVertexOccurrences": 14904,
+      "boundsSourceLps": [
+        [
+          160.34634399414062,
+          193.535888671875,
+          8.726555824279785
+        ],
+        [
+          176.55728149414062,
+          227.98963928222656,
+          31.598857879638672
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "PHALANGE_FOOT_5_RIGHT",
+        "id": "Segment_15",
+        "layer": 0,
+        "labelValue": 13,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/TALUS_RIGHT.stl",
+      "sha256": "6af24dab667e03f174101154f03d7be5cc99406d1dd08a131b1d320cf9299145",
+      "name": "TALUS_RIGHT",
+      "group": "FOOT_RIGHT",
+      "triangles": 31364,
+      "triangleVertexOccurrences": 94092,
+      "boundsSourceLps": [
+        [
+          175.46893310546875,
+          242.72421264648438,
+          112.95758056640625
+        ],
+        [
+          221.4570770263672,
+          299.51153564453125,
+          159.6956329345703
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "FOOT_RIGHT",
+        "name": "TALUS_RIGHT",
+        "id": "2.25.132141133827049345466299504822842455063",
+        "layer": 0,
+        "labelValue": 1,
+        "extent": [
+          220,
+          327,
+          210,
+          469,
+          7,
+          159
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/CAPITATE_LEFT.stl",
+      "sha256": "5dc1ba8cba0162ea6135471a945fa8d3f194bcfcf744d8b6cd0c2feae0a1331e",
+      "name": "CAPITATE_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 5880,
+      "triangleVertexOccurrences": 17640,
+      "boundsSourceLps": [
+        [
+          403.6517333984375,
+          142.15988159179688,
+          1018.4308471679688
+        ],
+        [
+          422.6834716796875,
+          164.07046508789062,
+          1042.1885986328125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "CAPITATE_LEFT",
+        "id": "Segment_4",
+        "layer": 0,
+        "labelValue": 10,
+        "extent": [
+          447,
+          592,
+          137,
+          243,
+          913,
+          1052
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/HAMATE_LEFT.stl",
+      "sha256": "9eeed90311f4f0b9ac1687e2edd80a4557eeb62e1c6d9d869649db33d139f611",
+      "name": "HAMATE_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 4684,
+      "triangleVertexOccurrences": 14052,
+      "boundsSourceLps": [
+        [
+          403.14630126953125,
+          153.8028106689453,
+          1012.6367797851562
+        ],
+        [
+          424.7200622558594,
+          167.32098388671875,
+          1032.4378662109375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "HAMATE_LEFT",
+        "id": "Segment_5",
+        "layer": 1,
+        "labelValue": 1,
+        "extent": [
+          448,
+          587,
+          127,
+          250,
+          916,
+          1045
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/LUNATE_LEFT.stl",
+      "sha256": "3f79cefc23f08b90f6f816e53eb2be313d57b7bed5d7395533ebb102b94055ab",
+      "name": "LUNATE_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 4032,
+      "triangleVertexOccurrences": 12096,
+      "boundsSourceLps": [
+        [
+          407.18121337890625,
+          156.65882873535156,
+          1036.3497314453125
+        ],
+        [
+          426.5670166015625,
+          175.90420532226562,
+          1048.8848876953125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "LUNATE_LEFT",
+        "id": "Segment_2",
+        "layer": 0,
+        "labelValue": 9,
+        "extent": [
+          447,
+          592,
+          137,
+          243,
+          913,
+          1052
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/METACARPAL_1_LEFT.stl",
+      "sha256": "597004e6042a69101bb598fd6417a3605fa93f99422779898c62476686ad6cbe",
+      "name": "METACARPAL_1_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 9564,
+      "triangleVertexOccurrences": 28692,
+      "boundsSourceLps": [
+        [
+          358.02349853515625,
+          110.94715881347656,
+          1009.3514404296875
+        ],
+        [
+          395.0519104003906,
+          141.96096801757812,
+          1040.646728515625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "METACARPAL_1_LEFT",
+        "id": "Segment_11",
+        "layer": 0,
+        "labelValue": 5,
+        "extent": [
+          447,
+          592,
+          137,
+          243,
+          913,
+          1052
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/METACARPAL_2_LEFT.stl",
+      "sha256": "783b9ef1f2a0b69b0d555b8cfad52e94331d9b6682da230e6df4a22e8343538d",
+      "name": "METACARPAL_2_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 12336,
+      "triangleVertexOccurrences": 37008,
+      "boundsSourceLps": [
+        [
+          382.0504150390625,
+          98.75234985351562,
+          978.8423461914062
+        ],
+        [
+          414.0649108886719,
+          142.8435516357422,
+          1034.9501953125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "METACARPAL_2_LEFT",
+        "id": "2.25.85094334848377414997051312465439028281",
+        "layer": 0,
+        "labelValue": 3,
+        "extent": [
+          447,
+          592,
+          137,
+          243,
+          913,
+          1052
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/METACARPAL_3_LEFT.stl",
+      "sha256": "bab79c0f34bbbd1404ed67d12753968ea56ceefbf7e847e97a0d465f808ab9f2",
+      "name": "METACARPAL_3_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 12328,
+      "triangleVertexOccurrences": 36984,
+      "boundsSourceLps": [
+        [
+          390.8877868652344,
+          113.6487808227539,
+          967.5097045898438
+        ],
+        [
+          420.9116516113281,
+          149.95623779296875,
+          1027.4967041015625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "METACARPAL_3_LEFT",
+        "id": "Segment_8",
+        "layer": 1,
+        "labelValue": 5,
+        "extent": [
+          448,
+          587,
+          127,
+          250,
+          916,
+          1045
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/METACARPAL_4_LEFT.stl",
+      "sha256": "12d3f53f9067c8aa52da0e00e7570154965e5f3941cae31573b665f704da1a87",
+      "name": "METACARPAL_4_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 8308,
+      "triangleVertexOccurrences": 24924,
+      "boundsSourceLps": [
+        [
+          394.2896728515625,
+          130.59922790527344,
+          965.3216552734375
+        ],
+        [
+          422.3578186035156,
+          156.56288146972656,
+          1016.6207275390625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "METACARPAL_4_LEFT",
+        "id": "Segment_9",
+        "layer": 0,
+        "labelValue": 4,
+        "extent": [
+          447,
+          592,
+          137,
+          243,
+          913,
+          1052
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/METACARPAL_5_LEFT.stl",
+      "sha256": "6834e803e4da6e9ecd298c738b04330fe42b6507cb8bc8260230636c80fd187e",
+      "name": "METACARPAL_5_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 7940,
+      "triangleVertexOccurrences": 23820,
+      "boundsSourceLps": [
+        [
+          396.2598571777344,
+          146.4216766357422,
+          964.781005859375
+        ],
+        [
+          421.560791015625,
+          169.35447692871094,
+          1013.6927490234375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "METACARPAL_5_LEFT",
+        "id": "Segment_10",
+        "layer": 1,
+        "labelValue": 6,
+        "extent": [
+          448,
+          587,
+          127,
+          250,
+          916,
+          1045
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/PHALANGE_HAND_1_LEFT.stl",
+      "sha256": "443b8610a4c6b9a42d1dfec70e9a458c36e02bd0e6514f8bb0a8a53659e7e2a9",
+      "name": "PHALANGE_HAND_1_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 8608,
+      "triangleVertexOccurrences": 25824,
+      "boundsSourceLps": [
+        [
+          335.438720703125,
+          109.9145278930664,
+          964.3697509765625
+        ],
+        [
+          367.47454833984375,
+          124.40023040771484,
+          1012.6538696289062
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "PHALANGE_HAND_1_LEFT",
+        "id": "Segment_16",
+        "layer": 0,
+        "labelValue": 8,
+        "extent": [
+          447,
+          592,
+          137,
+          243,
+          913,
+          1052
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/PHALANGE_HAND_2_LEFT.stl",
+      "sha256": "a730faae85e8bb992a77382a3031778092714b75e62967101b7779b11616cf38",
+      "name": "PHALANGE_HAND_2_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 12780,
+      "triangleVertexOccurrences": 38340,
+      "boundsSourceLps": [
+        [
+          323.6287536621094,
+          91.30207061767578,
+          928.8153076171875
+        ],
+        [
+          388.2119140625,
+          110.70398712158203,
+          984.6692504882812
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "PHALANGE_HAND_2_LEFT",
+        "id": "Segment_12",
+        "layer": 1,
+        "labelValue": 7,
+        "extent": [
+          448,
+          587,
+          127,
+          250,
+          916,
+          1045
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/PHALANGE_HAND_3_LEFT.stl",
+      "sha256": "ee41cad3e3bb2f852e3d19302610f11ffa036061671a2f8f6f2a2b1dc07af2b1",
+      "name": "PHALANGE_HAND_3_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 14960,
+      "triangleVertexOccurrences": 44880,
+      "boundsSourceLps": [
+        [
+          323.03057861328125,
+          104.5796890258789,
+          912.8056640625
+        ],
+        [
+          397.62408447265625,
+          126.59156799316406,
+          973.7463989257812
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "PHALANGE_HAND_3_LEFT",
+        "id": "Segment_13",
+        "layer": 0,
+        "labelValue": 6,
+        "extent": [
+          447,
+          592,
+          137,
+          243,
+          913,
+          1052
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/PHALANGE_HAND_4_LEFT.stl",
+      "sha256": "efa2354c3e88375f5667c2358bf5cf4609d641f1f55b6f10354b13644f62ddc2",
+      "name": "PHALANGE_HAND_4_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 13256,
+      "triangleVertexOccurrences": 39768,
+      "boundsSourceLps": [
+        [
+          329.2314758300781,
+          122.83332824707031,
+          915.620361328125
+        ],
+        [
+          401.4328918457031,
+          143.43789672851562,
+          969.6287231445312
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "PHALANGE_HAND_4_LEFT",
+        "id": "Segment_14",
+        "layer": 1,
+        "labelValue": 8,
+        "extent": [
+          448,
+          587,
+          127,
+          250,
+          916,
+          1045
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/PHALANGE_HAND_5_LEFT.stl",
+      "sha256": "cd4c884318547ef1b8c9a9470da0ab6bc834898f020bcde59a44fc89daf3ac07",
+      "name": "PHALANGE_HAND_5_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 9140,
+      "triangleVertexOccurrences": 27420,
+      "boundsSourceLps": [
+        [
+          339.4560241699219,
+          132.81094360351562,
+          937.571044921875
+        ],
+        [
+          401.2878723144531,
+          160.01852416992188,
+          968.168701171875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "PHALANGE_HAND_5_LEFT",
+        "id": "Segment_15",
+        "layer": 0,
+        "labelValue": 7,
+        "extent": [
+          447,
+          592,
+          137,
+          243,
+          913,
+          1052
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/PISIFORM_LEFT.stl",
+      "sha256": "dc4055eaf7f482e3795c8631435590e1c51ba3cbe9cc7961c0e4b383f27286bf",
+      "name": "PISIFORM_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 2036,
+      "triangleVertexOccurrences": 6108,
+      "boundsSourceLps": [
+        [
+          405.86114501953125,
+          169.36334228515625,
+          1019.4191284179688
+        ],
+        [
+          418.1398620605469,
+          180.7685089111328,
+          1030.6949462890625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "PISIFORM_LEFT",
+        "id": "Segment_6",
+        "layer": 1,
+        "labelValue": 2,
+        "extent": [
+          448,
+          587,
+          127,
+          250,
+          916,
+          1045
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/SCAPHOID_LEFT.stl",
+      "sha256": "2aa68194f499b73e2e26cc784fd0528730d59c421948eb0a68cfb3ed94cd09ef",
+      "name": "SCAPHOID_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 5492,
+      "triangleVertexOccurrences": 16476,
+      "boundsSourceLps": [
+        [
+          394.2825927734375,
+          145.73043823242188,
+          1033.806396484375
+        ],
+        [
+          422.162109375,
+          162.86929321289062,
+          1052.6337890625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "SCAPHOID_LEFT",
+        "id": "Segment_1",
+        "layer": 0,
+        "labelValue": 1,
+        "extent": [
+          447,
+          592,
+          137,
+          243,
+          913,
+          1052
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/TRAPEZIUM_LEFT.stl",
+      "sha256": "11d499a075fedf4e48c7b852e1e550074bec481488fca61d16d41f961f771f4f",
+      "name": "TRAPEZIUM_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 4564,
+      "triangleVertexOccurrences": 13692,
+      "boundsSourceLps": [
+        [
+          385.7557678222656,
+          133.2829132080078,
+          1027.6468505859375
+        ],
+        [
+          402.8385009765625,
+          154.93081665039062,
+          1045.567626953125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "TRAPEZIUM_LEFT",
+        "id": "2.25.275768153560631155073687948246067632206",
+        "layer": 1,
+        "labelValue": 3,
+        "extent": [
+          448,
+          587,
+          127,
+          250,
+          916,
+          1045
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/TRAPEZOID_LEFT.stl",
+      "sha256": "32aefbfb3b4e0bfe188ee485bcf3780e28e187534011830aefc0d8b74d7d6fd6",
+      "name": "TRAPEZOID_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 1848,
+      "triangleVertexOccurrences": 5544,
+      "boundsSourceLps": [
+        [
+          401.6192626953125,
+          136.3656768798828,
+          1028.8157958984375
+        ],
+        [
+          413.4521789550781,
+          146.84800720214844,
+          1040.23828125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "TRAPEZOID_LEFT",
+        "id": "Segment_17",
+        "layer": 1,
+        "labelValue": 4,
+        "extent": [
+          448,
+          587,
+          127,
+          250,
+          916,
+          1045
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_LEFT/TRIQUETRUM_LEFT.stl",
+      "sha256": "1c9b17c9895a82147750e07083e3e387ad876f66e95f1953bc3f940d3b5fd279",
+      "name": "TRIQUETRUM_LEFT",
+      "group": "HAND_LEFT",
+      "triangles": 3172,
+      "triangleVertexOccurrences": 9516,
+      "boundsSourceLps": [
+        [
+          413.425048828125,
+          163.5420684814453,
+          1020.4069213867188
+        ],
+        [
+          427.9832458496094,
+          176.00750732421875,
+          1038.4354248046875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_LEFT",
+        "name": "TRIQUETRUM_LEFT",
+        "id": "Segment_3",
+        "layer": 0,
+        "labelValue": 2,
+        "extent": [
+          447,
+          592,
+          137,
+          243,
+          913,
+          1052
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/CAPITATE_RIGHT.stl",
+      "sha256": "4daa50bcfc4231a04950ea3a19e3d498f5fba923e8ec41e4bef25a4da08501b0",
+      "name": "CAPITATE_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 5600,
+      "triangleVertexOccurrences": 16800,
+      "boundsSourceLps": [
+        [
+          46.49886703491211,
+          155.2455596923828,
+          990.6077880859375
+        ],
+        [
+          65.42314147949219,
+          175.7569580078125,
+          1012.137451171875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "CAPITATE_RIGHT",
+        "id": "Segment_4",
+        "layer": 0,
+        "labelValue": 2,
+        "extent": [
+          62,
+          186,
+          151,
+          268,
+          891,
+          1021
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/HAMATE_RIGHT.stl",
+      "sha256": "982c51cc2b4891240ae9d56aa891675f1159b5da45492ec42649be4474b4b4ce",
+      "name": "HAMATE_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 4652,
+      "triangleVertexOccurrences": 13956,
+      "boundsSourceLps": [
+        [
+          43.22048568725586,
+          165.74075317382812,
+          982.5088500976562
+        ],
+        [
+          64.45619201660156,
+          179.54299926757812,
+          1004.3499145507812
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "HAMATE_RIGHT",
+        "id": "Segment_5",
+        "layer": 2,
+        "labelValue": 1,
+        "extent": [
+          60,
+          89,
+          230,
+          248,
+          983,
+          1004
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/LUNATE_RIGHT.stl",
+      "sha256": "7f9cbe72f588c1b7cf5fd54014ffd1070e77548908ac5c327d9b6ca2f487ecec",
+      "name": "LUNATE_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 4008,
+      "triangleVertexOccurrences": 12024,
+      "boundsSourceLps": [
+        [
+          45.95435333251953,
+          168.25860595703125,
+          1006.3714599609375
+        ],
+        [
+          64.08135223388672,
+          187.45327758789062,
+          1019.59033203125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "LUNATE_RIGHT",
+        "id": "Segment_2",
+        "layer": 0,
+        "labelValue": 10,
+        "extent": [
+          62,
+          186,
+          151,
+          268,
+          891,
+          1021
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/METACARPAL_1_RIGHT.stl",
+      "sha256": "af6f4c1afa577afd7a656fddbfe5d83b3023a82bd30eb6a2809794bfb8d248f0",
+      "name": "METACARPAL_1_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 9644,
+      "triangleVertexOccurrences": 28932,
+      "boundsSourceLps": [
+        [
+          75.38802337646484,
+          123.67311096191406,
+          971.8577270507812
+        ],
+        [
+          108.7400131225586,
+          155.1222686767578,
+          1007.2936401367188
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "METACARPAL_1_RIGHT",
+        "id": "Segment_8",
+        "layer": 0,
+        "labelValue": 4,
+        "extent": [
+          62,
+          186,
+          151,
+          268,
+          891,
+          1021
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/METACARPAL_2_RIGHT.stl",
+      "sha256": "6dba487e13a466d244493ef44f02de0c450867710ab89c169ed50cce36f70796",
+      "name": "METACARPAL_2_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 12312,
+      "triangleVertexOccurrences": 36936,
+      "boundsSourceLps": [
+        [
+          54.75093460083008,
+          113.98217010498047,
+          944.3038330078125
+        ],
+        [
+          82.3651123046875,
+          157.70596313476562,
+          1001.4906005859375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "METACARPAL_2_RIGHT",
+        "id": "Segment_9",
+        "layer": 0,
+        "labelValue": 12,
+        "extent": [
+          62,
+          186,
+          151,
+          268,
+          891,
+          1021
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/METACARPAL_3_RIGHT.stl",
+      "sha256": "0e21fbaec791736f80abc88ea2b42f5ac280b6ba2618b489c7bbfd012ff47275",
+      "name": "METACARPAL_3_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 11932,
+      "triangleVertexOccurrences": 35796,
+      "boundsSourceLps": [
+        [
+          47.47892379760742,
+          128.50601196289062,
+          935.4019775390625
+        ],
+        [
+          71.2972640991211,
+          162.54632568359375,
+          997.778076171875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "METACARPAL_3_RIGHT",
+        "id": "Segment_10",
+        "layer": 1,
+        "labelValue": 2,
+        "extent": [
+          59,
+          161,
+          178,
+          261,
+          887,
+          1010
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/METACARPAL_4_RIGHT.stl",
+      "sha256": "780db34c6ce25b1665698bfc9aaa1fde4cb9aec79c67dc3f83fc028711ff5efb",
+      "name": "METACARPAL_4_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 8128,
+      "triangleVertexOccurrences": 24384,
+      "boundsSourceLps": [
+        [
+          44.26231384277344,
+          145.682861328125,
+          933.6900634765625
+        ],
+        [
+          66.40625762939453,
+          170.42489624023438,
+          988.2649536132812
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "METACARPAL_4_RIGHT",
+        "id": "Segment_11",
+        "layer": 0,
+        "labelValue": 5,
+        "extent": [
+          62,
+          186,
+          151,
+          268,
+          891,
+          1021
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/METACARPAL_5_RIGHT.stl",
+      "sha256": "d0665a4b2869ebec58f64514d4522cf369ffb741927bdc532493a1771b6853ac",
+      "name": "METACARPAL_5_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 7732,
+      "triangleVertexOccurrences": 23196,
+      "boundsSourceLps": [
+        [
+          44.452816009521484,
+          160.79879760742188,
+          933.481201171875
+        ],
+        [
+          62.460731506347656,
+          180.8953857421875,
+          984.8193359375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "METACARPAL_5_RIGHT",
+        "id": "Segment_12",
+        "layer": 1,
+        "labelValue": 3,
+        "extent": [
+          59,
+          161,
+          178,
+          261,
+          887,
+          1010
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/PHALANGE_HAND_1_RIGHT.stl",
+      "sha256": "76c153aba4eddab71a0fa20a90804659e6f9708cffe2af887a8570a97b3b119f",
+      "name": "PHALANGE_HAND_1_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 8172,
+      "triangleVertexOccurrences": 24516,
+      "boundsSourceLps": [
+        [
+          96.49677276611328,
+          119.71759033203125,
+          924.7078247070312
+        ],
+        [
+          121.0373764038086,
+          135.50534057617188,
+          974.9638671875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "PHALANGE_HAND_1_RIGHT",
+        "id": "2.25.49442322427604605173550861171224995401",
+        "layer": 0,
+        "labelValue": 6,
+        "extent": [
+          62,
+          186,
+          151,
+          268,
+          891,
+          1021
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/PHALANGE_HAND_2_RIGHT.stl",
+      "sha256": "e1afc8c737df28f40f3b63aa6fb83c70b0f8556dd602145776ad8ad3c681d29b",
+      "name": "PHALANGE_HAND_2_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 13044,
+      "triangleVertexOccurrences": 39132,
+      "boundsSourceLps": [
+        [
+          73.45597076416016,
+          108.96420288085938,
+          899.5587158203125
+        ],
+        [
+          134.7379150390625,
+          137.559326171875,
+          947.6686401367188
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "PHALANGE_HAND_2_RIGHT",
+        "id": "Segment_13",
+        "layer": 0,
+        "labelValue": 7,
+        "extent": [
+          62,
+          186,
+          151,
+          268,
+          891,
+          1021
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/PHALANGE_HAND_3_RIGHT.stl",
+      "sha256": "120fd8b4ffa4712c9066b9cfa0a5f322453e497f156fe5a3ee81df48a604e62e",
+      "name": "PHALANGE_HAND_3_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 14236,
+      "triangleVertexOccurrences": 42708,
+      "boundsSourceLps": [
+        [
+          62.53239440917969,
+          122.61710357666016,
+          890.8209838867188
+        ],
+        [
+          130.2985076904297,
+          151.99810791015625,
+          939.703369140625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "PHALANGE_HAND_3_RIGHT",
+        "id": "Segment_14",
+        "layer": 0,
+        "labelValue": 8,
+        "extent": [
+          62,
+          186,
+          151,
+          268,
+          891,
+          1021
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/PHALANGE_HAND_4_RIGHT.stl",
+      "sha256": "c04ccc76ec8db07f271bcc2af6bd599673d71d296fbc1669e12f670dcc835a78",
+      "name": "PHALANGE_HAND_4_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 12304,
+      "triangleVertexOccurrences": 36912,
+      "boundsSourceLps": [
+        [
+          55.99258041381836,
+          139.12330627441406,
+          886.3433227539062
+        ],
+        [
+          116.60812377929688,
+          160.56573486328125,
+          935.7346801757812
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "PHALANGE_HAND_4_RIGHT",
+        "id": "Segment_15",
+        "layer": 1,
+        "labelValue": 5,
+        "extent": [
+          59,
+          161,
+          178,
+          261,
+          887,
+          1010
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/PHALANGE_HAND_5_RIGHT.stl",
+      "sha256": "291032ac33644e45b29ff86f0a79bac1f20f013a2ac409e1ed1e69770cf172e7",
+      "name": "PHALANGE_HAND_5_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 9020,
+      "triangleVertexOccurrences": 27060,
+      "boundsSourceLps": [
+        [
+          52.60090637207031,
+          156.51602172851562,
+          891.2807006835938
+        ],
+        [
+          99.15486145019531,
+          175.15151977539062,
+          934.8007202148438
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "PHALANGE_HAND_5_RIGHT",
+        "id": "Segment_16",
+        "layer": 0,
+        "labelValue": 9,
+        "extent": [
+          62,
+          186,
+          151,
+          268,
+          891,
+          1021
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/PISIFORM_RIGHT.stl",
+      "sha256": "7267c8c55ff19ca3e53ea610a879277e3e7a62b668e27eeacd9dd3202b74806b",
+      "name": "PISIFORM_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 2192,
+      "triangleVertexOccurrences": 6576,
+      "boundsSourceLps": [
+        [
+          49.18821334838867,
+          181.8331756591797,
+          989.4010620117188
+        ],
+        [
+          62.5002555847168,
+          193.87808227539062,
+          1001.497314453125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "PISIFORM_RIGHT",
+        "id": "Segment_6",
+        "layer": 0,
+        "labelValue": 3,
+        "extent": [
+          62,
+          186,
+          151,
+          268,
+          891,
+          1021
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/SCAPHOID_RIGHT.stl",
+      "sha256": "0629328e1ec69a66dda0fa0d34925ebe1109f87dd65e90c4c9a1bf32e25b023e",
+      "name": "SCAPHOID_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 5304,
+      "triangleVertexOccurrences": 15912,
+      "boundsSourceLps": [
+        [
+          51.033477783203125,
+          158.1578826904297,
+          1002.4491577148438
+        ],
+        [
+          76.96749877929688,
+          174.29429626464844,
+          1021.6576538085938
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "SCAPHOID_RIGHT",
+        "id": "Segment_1",
+        "layer": 0,
+        "labelValue": 1,
+        "extent": [
+          62,
+          186,
+          151,
+          268,
+          891,
+          1021
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/TRAPEZIUM_RIGHT.stl",
+      "sha256": "ace4883521d10d406b77d77bb7bf9a560da9c02fb943a09dae55679507195957",
+      "name": "TRAPEZIUM_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 4008,
+      "triangleVertexOccurrences": 12024,
+      "boundsSourceLps": [
+        [
+          67.9560775756836,
+          146.36610412597656,
+          996.3560180664062
+        ],
+        [
+          84.65548706054688,
+          166.3126220703125,
+          1012.1578369140625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "TRAPEZIUM_RIGHT",
+        "id": "Segment_7",
+        "layer": 0,
+        "labelValue": 11,
+        "extent": [
+          62,
+          186,
+          151,
+          268,
+          891,
+          1021
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/TRAPEZOID_RIGHT.stl",
+      "sha256": "e8a9aae5ddc926c892a950c74f09a22c525cc248b2684cf5d871598f064cd10d",
+      "name": "TRAPEZOID_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 2652,
+      "triangleVertexOccurrences": 7956,
+      "boundsSourceLps": [
+        [
+          54.17694854736328,
+          147.12954711914062,
+          996.488037109375
+        ],
+        [
+          69.58513641357422,
+          159.44918823242188,
+          1009.3517456054688
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "TRAPEZOID_RIGHT",
+        "id": "2.25.313424924614333935926291509285267463515",
+        "layer": 1,
+        "labelValue": 4,
+        "extent": [
+          59,
+          161,
+          178,
+          261,
+          887,
+          1010
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/HAND_RIGHT/TRIQUETRUM_RIGHT.stl",
+      "sha256": "35d56b41d5ae831574bd670262c697538b9d2cef062347de1dd0a8eda64e0180",
+      "name": "TRIQUETRUM_RIGHT",
+      "group": "HAND_RIGHT",
+      "triangles": 3200,
+      "triangleVertexOccurrences": 9600,
+      "boundsSourceLps": [
+        [
+          42.21405792236328,
+          175.86732482910156,
+          991.9227294921875
+        ],
+        [
+          56.597110748291016,
+          188.89138793945312,
+          1010.2816162109375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "HAND_RIGHT",
+        "name": "TRIQUETRUM_RIGHT",
+        "id": "Segment_3",
+        "layer": 1,
+        "labelValue": 1,
+        "extent": [
+          59,
+          161,
+          178,
+          261,
+          887,
+          1010
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/FEMUR_LEFT.stl",
+      "sha256": "0b4966022c37708c8e7ebc62836003b2e6be8a2e29841db326d20d68ad538ff4",
+      "name": "FEMUR_LEFT",
+      "group": "LOWER_EXTREMITY_LEFT",
+      "triangles": 250256,
+      "triangleVertexOccurrences": 750768,
+      "boundsSourceLps": [
+        [
+          268.3651428222656,
+          201.1621551513672,
+          491.33001708984375
+        ],
+        [
+          401.99237060546875,
+          270.3458251953125,
+          906.6547241210938
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "LOWER_EXTREMITY_LEFT",
+        "name": "FEMUR_LEFT",
+        "id": "Segment_2",
+        "layer": 0,
+        "labelValue": 3,
+        "extent": [
+          0,
+          672,
+          0,
+          669,
+          0,
+          1726
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/FIBULA_LEFT.stl",
+      "sha256": "83ef606e5dee7bc1b3f35a61736c566b5d90ccd25ea5332fb73e0b2d95edc3a8",
+      "name": "FIBULA_LEFT",
+      "group": "LOWER_EXTREMITY_LEFT",
+      "triangles": 60884,
+      "triangleVertexOccurrences": 182652,
+      "boundsSourceLps": [
+        [
+          287.8554992675781,
+          262.0138244628906,
+          140.6275634765625
+        ],
+        [
+          355.7734069824219,
+          290.480224609375,
+          476.3265686035156
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "LOWER_EXTREMITY_LEFT",
+        "name": "FIBULA_LEFT",
+        "id": "Segment_1",
+        "layer": 0,
+        "labelValue": 2,
+        "extent": [
+          0,
+          672,
+          0,
+          669,
+          0,
+          1726
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/HIP_LEFT.stl",
+      "sha256": "2741340e19380df5f89aa2c402d6f2f9046ac74e5c4118f0e3456f21b77004a0",
+      "name": "HIP_LEFT",
+      "group": "LOWER_EXTREMITY_LEFT",
+      "triangles": 284940,
+      "triangleVertexOccurrences": 854820,
+      "boundsSourceLps": [
+        [
+          238.19277954101562,
+          169.338134765625,
+          817.7811279296875
+        ],
+        [
+          387.4036560058594,
+          323.9894104003906,
+          1028.61572265625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "LOWER_EXTREMITY_LEFT",
+        "name": "HIP_LEFT",
+        "id": "Segment_4",
+        "layer": 0,
+        "labelValue": 5,
+        "extent": [
+          0,
+          672,
+          0,
+          669,
+          0,
+          1726
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/PATELLA_LEFT.stl",
+      "sha256": "1ef6861750145e6b4a1e3c578c993790be90e823f3a89190214788ffeba126a8",
+      "name": "PATELLA_LEFT",
+      "group": "LOWER_EXTREMITY_LEFT",
+      "triangles": 19916,
+      "triangleVertexOccurrences": 59748,
+      "boundsSourceLps": [
+        [
+          300.114501953125,
+          182.1339874267578,
+          493.7977294921875
+        ],
+        [
+          343.5725402832031,
+          207.17393493652344,
+          541.679931640625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "LOWER_EXTREMITY_LEFT",
+        "name": "PATELLA_LEFT",
+        "id": "Segment_3",
+        "layer": 0,
+        "labelValue": 4,
+        "extent": [
+          0,
+          672,
+          0,
+          669,
+          0,
+          1726
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/TIBIA_LEFT.stl",
+      "sha256": "4dd60dfba89bf4822da9b5dc123e8f5cef17d6e2f9b57583e7f9def6e11bb276",
+      "name": "TIBIA_LEFT",
+      "group": "LOWER_EXTREMITY_LEFT",
+      "triangles": 163704,
+      "triangleVertexOccurrences": 491112,
+      "boundsSourceLps": [
+        [
+          253.63365173339844,
+          217.35720825195312,
+          156.8590087890625
+        ],
+        [
+          348.5669860839844,
+          284.8955383300781,
+          498.9678955078125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "LOWER_EXTREMITY_LEFT",
+        "name": "TIBIA_LEFT",
+        "id": "2.25.236724738724849281635350499100344113547",
+        "layer": 0,
+        "labelValue": 1,
+        "extent": [
+          0,
+          672,
+          0,
+          669,
+          0,
+          1726
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/FEMUR_RIGHT.stl",
+      "sha256": "0136d11c03268b71b2e4011367d56caaad63e8ca9c7b81416b116df3d93a25de",
+      "name": "FEMUR_RIGHT",
+      "group": "LOWER_EXTREMITY_RIGHT",
+      "triangles": 251096,
+      "triangleVertexOccurrences": 753288,
+      "boundsSourceLps": [
+        [
+          75.5564193725586,
+          203.555908203125,
+          487.3475036621094
+        ],
+        [
+          207.1332244873047,
+          285.1079406738281,
+          904.9011840820312
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "LOWER_EXTREMITY_RIGHT",
+        "name": "FEMUR_RIGHT",
+        "id": "Segment_2",
+        "layer": 0,
+        "labelValue": 3,
+        "extent": [
+          0,
+          672,
+          0,
+          669,
+          0,
+          1726
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/FIBULA_RIGHT.stl",
+      "sha256": "8536f9936175e5cecb595c4b84ac1ce8af59fa42595a488dfc7c3b8eab0cf40d",
+      "name": "FIBULA_RIGHT",
+      "group": "LOWER_EXTREMITY_RIGHT",
+      "triangles": 61192,
+      "triangleVertexOccurrences": 183576,
+      "boundsSourceLps": [
+        [
+          124.54840087890625,
+          279.18438720703125,
+          131.7654266357422
+        ],
+        [
+          191.9745330810547,
+          307.504150390625,
+          473.03009033203125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "LOWER_EXTREMITY_RIGHT",
+        "name": "FIBULA_RIGHT",
+        "id": "2.25.196259919206410423702266133534889869189",
+        "layer": 0,
+        "labelValue": 2,
+        "extent": [
+          0,
+          672,
+          0,
+          669,
+          0,
+          1726
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/HIP_RIGHT.stl",
+      "sha256": "ad1783ea8749aaf7c84d53bbfbbec5eb494f38a0cbfa48b4bd7e89b30aa044e6",
+      "name": "HIP_RIGHT",
+      "group": "LOWER_EXTREMITY_RIGHT",
+      "triangles": 281504,
+      "triangleVertexOccurrences": 844512,
+      "boundsSourceLps": [
+        [
+          90.73796844482422,
+          172.3607940673828,
+          816.3521728515625
+        ],
+        [
+          238.2562713623047,
+          324.23480224609375,
+          1029.66357421875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "LOWER_EXTREMITY_RIGHT",
+        "name": "HIP_RIGHT",
+        "id": "Segment_3",
+        "layer": 0,
+        "labelValue": 5,
+        "extent": [
+          0,
+          672,
+          0,
+          669,
+          0,
+          1726
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/PATELLA_RIGHT.stl",
+      "sha256": "61c4946fdfedefd5c584d935f93a987fe366490d2dae5f2fd2bf061e4aa5191a",
+      "name": "PATELLA_RIGHT",
+      "group": "LOWER_EXTREMITY_RIGHT",
+      "triangles": 20412,
+      "triangleVertexOccurrences": 61236,
+      "boundsSourceLps": [
+        [
+          125.45853424072266,
+          192.8881072998047,
+          489.5650939941406
+        ],
+        [
+          168.05523681640625,
+          221.3949432373047,
+          536.4230346679688
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "LOWER_EXTREMITY_RIGHT",
+        "name": "PATELLA_RIGHT",
+        "id": "2.25.145288289500952223339132287123571013566",
+        "layer": 0,
+        "labelValue": 4,
+        "extent": [
+          0,
+          672,
+          0,
+          669,
+          0,
+          1726
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/TIBIA_RIGHT.stl",
+      "sha256": "0c262cf9c7a188934a1296382eb6bf3ffb72cc41b14d76e0457025225d54d68b",
+      "name": "TIBIA_RIGHT",
+      "group": "LOWER_EXTREMITY_RIGHT",
+      "triangles": 165408,
+      "triangleVertexOccurrences": 496224,
+      "boundsSourceLps": [
+        [
+          127.49640655517578,
+          228.9808807373047,
+          147.63595581054688
+        ],
+        [
+          220.19171142578125,
+          298.8106689453125,
+          494.6680603027344
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "LOWER_EXTREMITY_RIGHT",
+        "name": "TIBIA_RIGHT",
+        "id": "Segment_1",
+        "layer": 0,
+        "labelValue": 1,
+        "extent": [
+          0,
+          672,
+          0,
+          669,
+          0,
+          1726
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SKULL/SKULL_CRANIAL_MAXILLA.stl",
+      "sha256": "4fa5023f7b3f2dc10f1a5c45d58f58b7b17f1160c78899e9a4bd0fd85dec1e2f",
+      "name": "SKULL_CRANIAL_MAXILLA",
+      "group": "SKULL",
+      "triangles": 831288,
+      "triangleVertexOccurrences": 2493864,
+      "boundsSourceLps": [
+        [
+          166.47909545898438,
+          126.41311645507812,
+          1562.6531982421875
+        ],
+        [
+          307.37353515625,
+          316.2377014160156,
+          1723.7093505859375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 460,
+      "label": {
+        "group": "SKULL",
+        "name": "SKULL_CRANIAL_MAXILLA",
+        "id": "2.25.16146028073992261722547419440898410120",
+        "layer": 0,
+        "labelValue": 1,
+        "extent": [
+          0,
+          672,
+          0,
+          669,
+          0,
+          1726
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SKULL/SKULL_MANDIBLE.stl",
+      "sha256": "1507a95eb5a26470a1b98de94df691862525d942ba5d3111db317fc2b36545b9",
+      "name": "SKULL_MANDIBLE",
+      "group": "SKULL",
+      "triangles": 75944,
+      "triangleVertexOccurrences": 227832,
+      "boundsSourceLps": [
+        [
+          178.78208923339844,
+          134.14498901367188,
+          1515.3995361328125
+        ],
+        [
+          298.79638671875,
+          224.0627899169922,
+          1596.66064453125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 48,
+      "label": {
+        "group": "SKULL",
+        "name": "SKULL_MANDIBLE",
+        "id": "2.25.85566850062533198064901525677338301748",
+        "layer": 0,
+        "labelValue": 2,
+        "extent": [
+          0,
+          672,
+          0,
+          669,
+          0,
+          1726
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/SACRUM.stl",
+      "sha256": "d37a016c1161b79f3f154a37516df0447eaa3396967e623f88fb3251e008ae95",
+      "name": "SACRUM",
+      "group": "SPINAL_COLUMN",
+      "triangles": 191552,
+      "triangleVertexOccurrences": 574656,
+      "boundsSourceLps": [
+        [
+          178.8276824951172,
+          241.93560791015625,
+          884.1405639648438
+        ],
+        [
+          299.1800842285156,
+          341.2975769042969,
+          1008.2132568359375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 46,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "SACRUM",
+        "id": "2.25.46916792681504442250708722067434443718",
+        "layer": 0,
+        "labelValue": 21,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C1.stl",
+      "sha256": "db86c1604d54634e551eff6892864a782e493feaaac742854988342bb18b5ff6",
+      "name": "VERTEBRA_C1",
+      "group": "SPINAL_COLUMN",
+      "triangles": 31712,
+      "triangleVertexOccurrences": 95136,
+      "boundsSourceLps": [
+        [
+          195.64491271972656,
+          210.8543701171875,
+          1551.6973876953125
+        ],
+        [
+          275.6413879394531,
+          257.5925598144531,
+          1581.2288818359375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_C1",
+        "id": "Segment_1",
+        "layer": 0,
+        "labelValue": 2,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C2.stl",
+      "sha256": "ff9037102f7aeb1cdc44fd6c415f7cd1ecfebdb66eabe9ff05dde797ef2cc081",
+      "name": "VERTEBRA_C2",
+      "group": "SPINAL_COLUMN",
+      "triangles": 28184,
+      "triangleVertexOccurrences": 84552,
+      "boundsSourceLps": [
+        [
+          206.41561889648438,
+          213.47421264648438,
+          1532.02783203125
+        ],
+        [
+          260.3978271484375,
+          264.02825927734375,
+          1576.0601806640625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_C2",
+        "id": "Segment_2",
+        "layer": 0,
+        "labelValue": 3,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C3.stl",
+      "sha256": "974d319aad043677dc9dbf68262897a01417940cb73afefa993eb4054a435d72",
+      "name": "VERTEBRA_C3",
+      "group": "SPINAL_COLUMN",
+      "triangles": 20956,
+      "triangleVertexOccurrences": 62868,
+      "boundsSourceLps": [
+        [
+          207.26104736328125,
+          216.40966796875,
+          1517.6927490234375
+        ],
+        [
+          261.67254638671875,
+          259.5628662109375,
+          1539.3404541015625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_C3",
+        "id": "2.25.142398478435994807132169070611606633141",
+        "layer": 0,
+        "labelValue": 4,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C4.stl",
+      "sha256": "8052b72552b2e2f4fb70baee06a872afc5523ccc56834916169879953b2874d3",
+      "name": "VERTEBRA_C4",
+      "group": "SPINAL_COLUMN",
+      "triangles": 21248,
+      "triangleVertexOccurrences": 63744,
+      "boundsSourceLps": [
+        [
+          206.69534301757812,
+          220.0364227294922,
+          1502.5201416015625
+        ],
+        [
+          263.10504150390625,
+          259.6060485839844,
+          1525.5137939453125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_C4",
+        "id": "Segment_3",
+        "layer": 1,
+        "labelValue": 1,
+        "extent": [
+          261,
+          398,
+          305,
+          463,
+          987,
+          1525
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C5.stl",
+      "sha256": "c3e502c01e8b478d5578476661220ba341dbcbee2b7dcbf9ab760bc080aadaaa",
+      "name": "VERTEBRA_C5",
+      "group": "SPINAL_COLUMN",
+      "triangles": 24308,
+      "triangleVertexOccurrences": 72924,
+      "boundsSourceLps": [
+        [
+          207.3062286376953,
+          223.08802795410156,
+          1488.425048828125
+        ],
+        [
+          264.62103271484375,
+          264.5926208496094,
+          1513.55078125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_C5",
+        "id": "Segment_4",
+        "layer": 0,
+        "labelValue": 5,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C6.stl",
+      "sha256": "77161e4e1309cccd047c00e667ae8f579e347f3d1e1623ce8b77699a5b410b71",
+      "name": "VERTEBRA_C6",
+      "group": "SPINAL_COLUMN",
+      "triangles": 25336,
+      "triangleVertexOccurrences": 76008,
+      "boundsSourceLps": [
+        [
+          207.76901245117188,
+          229.10800170898438,
+          1473.646484375
+        ],
+        [
+          263.93634033203125,
+          276.006591796875,
+          1500.51318359375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_C6",
+        "id": "Segment_5",
+        "layer": 0,
+        "labelValue": 6,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_C7.stl",
+      "sha256": "1e1c99c78f1b1ef1bbaaccdea3e6fc955d7b3b320dd923bd058636cc3dc1d1d3",
+      "name": "VERTEBRA_C7",
+      "group": "SPINAL_COLUMN",
+      "triangles": 29192,
+      "triangleVertexOccurrences": 87576,
+      "boundsSourceLps": [
+        [
+          204.1807403564453,
+          234.8739471435547,
+          1455.8828125
+        ],
+        [
+          271.38702392578125,
+          293.73443603515625,
+          1487.068603515625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_C7",
+        "id": "Segment_6",
+        "layer": 0,
+        "labelValue": 7,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_L1.stl",
+      "sha256": "d1eddbd549bd69184cbf01ebac069e4f17c6066e22d015900494516744090daa",
+      "name": "VERTEBRA_L1",
+      "group": "SPINAL_COLUMN",
+      "triangles": 52756,
+      "triangleVertexOccurrences": 158268,
+      "boundsSourceLps": [
+        [
+          200.64845275878906,
+          254.39971923828125,
+          1147.4417724609375
+        ],
+        [
+          273.74591064453125,
+          331.1436767578125,
+          1195.212890625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_L1",
+        "id": "Segment_19",
+        "layer": 0,
+        "labelValue": 20,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_L2.stl",
+      "sha256": "965f8ff63c4cfd5ff8c70fc99b44948957fb4965a617e8542aa7f2fd5e3b720a",
+      "name": "VERTEBRA_L2",
+      "group": "SPINAL_COLUMN",
+      "triangles": 60824,
+      "triangleVertexOccurrences": 182472,
+      "boundsSourceLps": [
+        [
+          204.8907928466797,
+          243.1411590576172,
+          1110.5743408203125
+        ],
+        [
+          280.6652526855469,
+          329.9201354980469,
+          1162.7569580078125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_L2",
+        "id": "Segment_20",
+        "layer": 0,
+        "labelValue": 17,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_L3.stl",
+      "sha256": "96b0a7422798df5cd16bb01029b98b57b646e4e4604228853d94b3176eb2b6fc",
+      "name": "VERTEBRA_L3",
+      "group": "SPINAL_COLUMN",
+      "triangles": 68964,
+      "triangleVertexOccurrences": 206892,
+      "boundsSourceLps": [
+        [
+          197.67807006835938,
+          239.13839721679688,
+          1071.0040283203125
+        ],
+        [
+          285.16632080078125,
+          328.30474853515625,
+          1126.97314453125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_L3",
+        "id": "Segment_21",
+        "layer": 0,
+        "labelValue": 18,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_L4.stl",
+      "sha256": "8a213cd1dae985202b754daf9395740ab5438636d6ceca07feb1f304a20a4dec",
+      "name": "VERTEBRA_L4",
+      "group": "SPINAL_COLUMN",
+      "triangles": 70312,
+      "triangleVertexOccurrences": 210936,
+      "boundsSourceLps": [
+        [
+          195.77919006347656,
+          234.9435272216797,
+          1041.462646484375
+        ],
+        [
+          287.9449462890625,
+          322.5679626464844,
+          1095.1590576171875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_L4",
+        "id": "Segment_22",
+        "layer": 1,
+        "labelValue": 5,
+        "extent": [
+          261,
+          398,
+          305,
+          463,
+          987,
+          1525
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_L5.stl",
+      "sha256": "e4b7078556a2aea42f9a59135841f4ed015a862f1a316a7d06ccb896b55516fa",
+      "name": "VERTEBRA_L5",
+      "group": "SPINAL_COLUMN",
+      "triangles": 67916,
+      "triangleVertexOccurrences": 203748,
+      "boundsSourceLps": [
+        [
+          195.81825256347656,
+          231.88671875,
+          1012.7133178710938
+        ],
+        [
+          287.1500244140625,
+          318.16448974609375,
+          1064.0106201171875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_L5",
+        "id": "Segment_23",
+        "layer": 0,
+        "labelValue": 16,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_L6.stl",
+      "sha256": "d7a6b34ca7d43f8792c8b9f332731a197e01fbede364738a9c50a8ffb2e47de3",
+      "name": "VERTEBRA_L6",
+      "group": "SPINAL_COLUMN",
+      "triangles": 71208,
+      "triangleVertexOccurrences": 213624,
+      "boundsSourceLps": [
+        [
+          188.37722778320312,
+          233.35060119628906,
+          986.8264770507812
+        ],
+        [
+          287.70538330078125,
+          314.81732177734375,
+          1033.132080078125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_L6",
+        "id": "Segment_24",
+        "layer": 1,
+        "labelValue": 6,
+        "extent": [
+          261,
+          398,
+          305,
+          463,
+          987,
+          1525
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T1.stl",
+      "sha256": "7ce598e2ec43c4a662d3146741f247471ac057acb3959d4be22ca83c3e33fe15",
+      "name": "VERTEBRA_T1",
+      "group": "SPINAL_COLUMN",
+      "triangles": 32152,
+      "triangleVertexOccurrences": 96456,
+      "boundsSourceLps": [
+        [
+          200.42254638671875,
+          241.82611083984375,
+          1438.43359375
+        ],
+        [
+          275.0017395019531,
+          305.5821533203125,
+          1472.1177978515625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_T1",
+        "id": "Segment_7",
+        "layer": 1,
+        "labelValue": 2,
+        "extent": [
+          261,
+          398,
+          305,
+          463,
+          987,
+          1525
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T10.stl",
+      "sha256": "b9e3ae571ffbdf0f2ed26795a4163d9c8f82ffd8cd8ade00bdb90f94143cddfd",
+      "name": "VERTEBRA_T10",
+      "group": "SPINAL_COLUMN",
+      "triangles": 41572,
+      "triangleVertexOccurrences": 124716,
+      "boundsSourceLps": [
+        [
+          209.45938110351562,
+          260.998779296875,
+          1235.704833984375
+        ],
+        [
+          272.8609619140625,
+          334.8460998535156,
+          1277.411865234375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_T10",
+        "id": "Segment_16",
+        "layer": 1,
+        "labelValue": 4,
+        "extent": [
+          261,
+          398,
+          305,
+          463,
+          987,
+          1525
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T11.stl",
+      "sha256": "53f57a9dc8ff69bb40c627d4fbe7433454e72a01d2c2a065d241a46537d7a3e1",
+      "name": "VERTEBRA_T11",
+      "group": "SPINAL_COLUMN",
+      "triangles": 42932,
+      "triangleVertexOccurrences": 128796,
+      "boundsSourceLps": [
+        [
+          213.8436279296875,
+          261.443603515625,
+          1211.9158935546875
+        ],
+        [
+          269.61865234375,
+          332.82830810546875,
+          1252.4619140625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_T11",
+        "id": "Segment_17",
+        "layer": 0,
+        "labelValue": 14,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T12.stl",
+      "sha256": "5ead35770cfd1cfdba3207315c8af640fb48630eb067e6fb47f09e54443c3c8f",
+      "name": "VERTEBRA_T12",
+      "group": "SPINAL_COLUMN",
+      "triangles": 45712,
+      "triangleVertexOccurrences": 137136,
+      "boundsSourceLps": [
+        [
+          215.9362030029297,
+          259.0899353027344,
+          1183.418212890625
+        ],
+        [
+          266.8129577636719,
+          330.80670166015625,
+          1228.299072265625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_T12",
+        "id": "Segment_18",
+        "layer": 0,
+        "labelValue": 15,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T2.stl",
+      "sha256": "85805affdec76150347b5686ea2b99d0d5cea07ebaa3a30f01ea4312928d2b2d",
+      "name": "VERTEBRA_T2",
+      "group": "SPINAL_COLUMN",
+      "triangles": 33156,
+      "triangleVertexOccurrences": 99468,
+      "boundsSourceLps": [
+        [
+          205.06466674804688,
+          249.01901245117188,
+          1416.7347412109375
+        ],
+        [
+          272.6360168457031,
+          313.3072509765625,
+          1456.614990234375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_T2",
+        "id": "Segment_8",
+        "layer": 0,
+        "labelValue": 19,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T3.stl",
+      "sha256": "fc62b0795b538bb368574cb496b88f64122e009058a5c126355e650032e3ad3b",
+      "name": "VERTEBRA_T3",
+      "group": "SPINAL_COLUMN",
+      "triangles": 33688,
+      "triangleVertexOccurrences": 101064,
+      "boundsSourceLps": [
+        [
+          207.80618286132812,
+          252.9880828857422,
+          1396.0181884765625
+        ],
+        [
+          270.3061218261719,
+          321.44659423828125,
+          1435.2288818359375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_T3",
+        "id": "Segment_9",
+        "layer": 0,
+        "labelValue": 9,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T4.stl",
+      "sha256": "7d37a54c8e0c08f4692e9fe8a9e9380bac872693074a04ddca7388626a9b8075",
+      "name": "VERTEBRA_T4",
+      "group": "SPINAL_COLUMN",
+      "triangles": 33240,
+      "triangleVertexOccurrences": 99720,
+      "boundsSourceLps": [
+        [
+          209.30226135253906,
+          255.17098999023438,
+          1370.75048828125
+        ],
+        [
+          270.3752746582031,
+          329.6130676269531,
+          1414.6446533203125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_T4",
+        "id": "Segment_10",
+        "layer": 1,
+        "labelValue": 3,
+        "extent": [
+          261,
+          398,
+          305,
+          463,
+          987,
+          1525
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T5.stl",
+      "sha256": "9d459d13e5ea54c2871d1796b6e1dce1dff8d860a0bd7e4850e976e69d237f84",
+      "name": "VERTEBRA_T5",
+      "group": "SPINAL_COLUMN",
+      "triangles": 33196,
+      "triangleVertexOccurrences": 99588,
+      "boundsSourceLps": [
+        [
+          209.30838012695312,
+          261.48272705078125,
+          1347.8140869140625
+        ],
+        [
+          270.9822998046875,
+          331.923828125,
+          1393.0986328125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_T5",
+        "id": "Segment_11",
+        "layer": 0,
+        "labelValue": 10,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T6.stl",
+      "sha256": "5e7ba74cf452806727a80162a536da133b9c922ee3854d3708f2798afee565ab",
+      "name": "VERTEBRA_T6",
+      "group": "SPINAL_COLUMN",
+      "triangles": 34224,
+      "triangleVertexOccurrences": 102672,
+      "boundsSourceLps": [
+        [
+          208.73709106445312,
+          260.98748779296875,
+          1324.3316650390625
+        ],
+        [
+          269.1206970214844,
+          333.7255859375,
+          1370.4195556640625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_T6",
+        "id": "Segment_12",
+        "layer": 0,
+        "labelValue": 8,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T7.stl",
+      "sha256": "d189cd005da68a09b2d095c5933b2301aafc664300bd2b9eb414b9ee31066473",
+      "name": "VERTEBRA_T7",
+      "group": "SPINAL_COLUMN",
+      "triangles": 35696,
+      "triangleVertexOccurrences": 107088,
+      "boundsSourceLps": [
+        [
+          208.0650177001953,
+          265.9726867675781,
+          1297.9974365234375
+        ],
+        [
+          271.1976623535156,
+          334.0439758300781,
+          1347.45751953125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_T7",
+        "id": "Segment_13",
+        "layer": 0,
+        "labelValue": 11,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T8.stl",
+      "sha256": "571a6ce962b45ea2fba56dd3c582228ca043963c15e02c7dff9a2c92f82ebf62",
+      "name": "VERTEBRA_T8",
+      "group": "SPINAL_COLUMN",
+      "triangles": 37368,
+      "triangleVertexOccurrences": 112104,
+      "boundsSourceLps": [
+        [
+          209.57472229003906,
+          265.8681640625,
+          1275.8817138671875
+        ],
+        [
+          271.4375915527344,
+          334.7501220703125,
+          1324.3167724609375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_T8",
+        "id": "Segment_14",
+        "layer": 0,
+        "labelValue": 12,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T9.stl",
+      "sha256": "9b6c3c5a8c9e43996e2c0bf181e0897ce5dc8ef238ed38598858806180c082ed",
+      "name": "VERTEBRA_T9",
+      "group": "SPINAL_COLUMN",
+      "triangles": 37596,
+      "triangleVertexOccurrences": 112788,
+      "boundsSourceLps": [
+        [
+          210.2652587890625,
+          264.2911376953125,
+          1256.732666015625
+        ],
+        [
+          275.0522155761719,
+          334.0079650878906,
+          1300.5101318359375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "SPINAL_COLUMN",
+        "name": "VERTEBRA_T9",
+        "id": "Segment_15",
+        "layer": 0,
+        "labelValue": 13,
+        "extent": [
+          240,
+          424,
+          288,
+          472,
+          884,
+          1602
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_1_LEFT.stl",
+      "sha256": "d7ded36f9b97192ddb095d4af95b1e360fb96d9179989954a54a78839b85c094",
+      "name": "RIB_1_LEFT",
+      "group": "THORAX",
+      "triangles": 26436,
+      "triangleVertexOccurrences": 79308,
+      "boundsSourceLps": [
+        [
+          264.5089416503906,
+          189.90786743164062,
+          1398.4620361328125
+        ],
+        [
+          316.0130310058594,
+          267.0111083984375,
+          1469.326904296875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_1_LEFT",
+        "id": "Segment_1",
+        "layer": 1,
+        "labelValue": 1,
+        "extent": [
+          366,
+          437,
+          263,
+          369,
+          1399,
+          1469
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_1_RIGHT.stl",
+      "sha256": "78b274915e3cb0aedabf916552b2e35ea0392f9b20ee2bcd99f703d5d5c21823",
+      "name": "RIB_1_RIGHT",
+      "group": "THORAX",
+      "triangles": 28760,
+      "triangleVertexOccurrences": 86280,
+      "boundsSourceLps": [
+        [
+          163.79815673828125,
+          189.70101928710938,
+          1393.8675537109375
+        ],
+        [
+          215.17481994628906,
+          264.7776184082031,
+          1464.6820068359375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_1_RIGHT",
+        "id": "2.25.221063793080937096215343727426481838718",
+        "layer": 0,
+        "labelValue": 13,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_10_LEFT.stl",
+      "sha256": "c20d9de58952891d01f01867b360b3a2b54f16f8505ca23e472d202055985755",
+      "name": "RIB_10_LEFT",
+      "group": "THORAX",
+      "triangles": 32932,
+      "triangleVertexOccurrences": 98796,
+      "boundsSourceLps": [
+        [
+          263.8343811035156,
+          226.72767639160156,
+          1140.6893310546875
+        ],
+        [
+          376.28875732421875,
+          322.5132141113281,
+          1278.0247802734375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_10_LEFT",
+        "id": "Segment_10",
+        "layer": 0,
+        "labelValue": 11,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_10_RIGHT.stl",
+      "sha256": "eaa70da63ff816ff65ad0a4f297bb1f05e4711dfea80f3ff440b8a1e5a566ef4",
+      "name": "RIB_10_RIGHT",
+      "group": "THORAX",
+      "triangles": 29384,
+      "triangleVertexOccurrences": 88152,
+      "boundsSourceLps": [
+        [
+          105.12633514404297,
+          219.7550811767578,
+          1134.5054931640625
+        ],
+        [
+          207.33004760742188,
+          321.9278564453125,
+          1272.2470703125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_10_RIGHT",
+        "id": "Segment_20",
+        "layer": 0,
+        "labelValue": 23,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_11_LEFT.stl",
+      "sha256": "c6b354984eda5e7933eec690b661b4e7e3d04d693da32a328b60bc24b4f3a324",
+      "name": "RIB_11_LEFT",
+      "group": "THORAX",
+      "triangles": 24276,
+      "triangleVertexOccurrences": 72828,
+      "boundsSourceLps": [
+        [
+          274.2469787597656,
+          247.8287353515625,
+          1120.605224609375
+        ],
+        [
+          371.16082763671875,
+          322.3692626953125,
+          1244.5140380859375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_11_LEFT",
+        "id": "Segment_11",
+        "layer": 0,
+        "labelValue": 17,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_11_RIGHT.stl",
+      "sha256": "f8d1ca4fbc7ece390c23167475ca9573015988f355572ee29bff476128f560d2",
+      "name": "RIB_11_RIGHT",
+      "group": "THORAX",
+      "triangles": 25440,
+      "triangleVertexOccurrences": 76320,
+      "boundsSourceLps": [
+        [
+          113.01619720458984,
+          246.51075744628906,
+          1114.2362060546875
+        ],
+        [
+          211.73223876953125,
+          321.3405456542969,
+          1243.5408935546875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_11_RIGHT",
+        "id": "Segment_21",
+        "layer": 0,
+        "labelValue": 24,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_12_LEFT.stl",
+      "sha256": "729e133e437eb15e90b58dfc582ac4e13f7432b57029fc6756f4492c8de43375",
+      "name": "RIB_12_LEFT",
+      "group": "THORAX",
+      "triangles": 14488,
+      "triangleVertexOccurrences": 43464,
+      "boundsSourceLps": [
+        [
+          273.85711669921875,
+          284.5257873535156,
+          1116.550537109375
+        ],
+        [
+          349.97784423828125,
+          314.8294677734375,
+          1209.260986328125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_12_LEFT",
+        "id": "2.25.160744478652337127510004284637943051414",
+        "layer": 0,
+        "labelValue": 12,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_12_RIGHT.stl",
+      "sha256": "d408d07bf5d3a0d7e59a20a50c789ac9e4fdff27cafec03bd7b7006cb1408b95",
+      "name": "RIB_12_RIGHT",
+      "group": "THORAX",
+      "triangles": 18248,
+      "triangleVertexOccurrences": 54744,
+      "boundsSourceLps": [
+        [
+          132.94415283203125,
+          278.2906799316406,
+          1103.8638916015625
+        ],
+        [
+          216.44012451171875,
+          313.9151611328125,
+          1213.2462158203125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_12_RIGHT",
+        "id": "2.25.152732609378510093025953732310398855080",
+        "layer": 0,
+        "labelValue": 2,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_2_LEFT.stl",
+      "sha256": "34139f952f62ea72d638f9b9ace2ab8d53e0ba1bd53fe6aa5c08fecfbfba3199",
+      "name": "RIB_2_LEFT",
+      "group": "THORAX",
+      "triangles": 32536,
+      "triangleVertexOccurrences": 97608,
+      "boundsSourceLps": [
+        [
+          264.1302795410156,
+          179.68695068359375,
+          1373.532470703125
+        ],
+        [
+          344.9961853027344,
+          287.0680236816406,
+          1455.601318359375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_2_LEFT",
+        "id": "Segment_2",
+        "layer": 0,
+        "labelValue": 3,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_2_RIGHT.stl",
+      "sha256": "4a938b074321ac87bbd216d53c85aed7c99c5b2d5641c8d8ff8bff9f33c52a3d",
+      "name": "RIB_2_RIGHT",
+      "group": "THORAX",
+      "triangles": 30656,
+      "triangleVertexOccurrences": 91968,
+      "boundsSourceLps": [
+        [
+          135.44261169433594,
+          182.5838165283203,
+          1369.39208984375
+        ],
+        [
+          212.37911987304688,
+          283.9718933105469,
+          1450.2158203125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_2_RIGHT",
+        "id": "Segment_12",
+        "layer": 0,
+        "labelValue": 18,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_3_LEFT.stl",
+      "sha256": "3ff40c96475e4588af439bc98b9775e5554a747624562a613f99da2cb8cf969a",
+      "name": "RIB_3_LEFT",
+      "group": "THORAX",
+      "triangles": 35420,
+      "triangleVertexOccurrences": 106260,
+      "boundsSourceLps": [
+        [
+          267.23150634765625,
+          174.66876220703125,
+          1349.83837890625
+        ],
+        [
+          362.80181884765625,
+          303.6530456542969,
+          1437.5330810546875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_3_LEFT",
+        "id": "Segment_3",
+        "layer": 0,
+        "labelValue": 4,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_3_RIGHT.stl",
+      "sha256": "0ec17eaa0600b383b7b313454909a14c599b05ca083a1401c1b1402f53fc6a27",
+      "name": "RIB_3_RIGHT",
+      "group": "THORAX",
+      "triangles": 33988,
+      "triangleVertexOccurrences": 101964,
+      "boundsSourceLps": [
+        [
+          121.84391784667969,
+          179.19911193847656,
+          1337.358642578125
+        ],
+        [
+          213.1678924560547,
+          298.6429443359375,
+          1430.6895751953125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_3_RIGHT",
+        "id": "Segment_13",
+        "layer": 0,
+        "labelValue": 19,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_4_LEFT.stl",
+      "sha256": "b1247d97d64b19fe6f84b18cbf9d1ed01cb43344d0ad7253d8bd4d1067b4e112",
+      "name": "RIB_4_LEFT",
+      "group": "THORAX",
+      "triangles": 37280,
+      "triangleVertexOccurrences": 111840,
+      "boundsSourceLps": [
+        [
+          269.6883239746094,
+          168.2823486328125,
+          1321.4586181640625
+        ],
+        [
+          368.04083251953125,
+          313.6502380371094,
+          1419.542236328125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_4_LEFT",
+        "id": "Segment_4",
+        "layer": 0,
+        "labelValue": 5,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_4_RIGHT.stl",
+      "sha256": "7fa72e530e830975db16e7655ce8f293878ec2b65e1105cefeb1e3569d4663cc",
+      "name": "RIB_4_RIGHT",
+      "group": "THORAX",
+      "triangles": 36372,
+      "triangleVertexOccurrences": 109116,
+      "boundsSourceLps": [
+        [
+          116.00220489501953,
+          174.44046020507812,
+          1305.5030517578125
+        ],
+        [
+          213.90174865722656,
+          308.2424621582031,
+          1411.651611328125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_4_RIGHT",
+        "id": "Segment_14",
+        "layer": 0,
+        "labelValue": 20,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_5_LEFT.stl",
+      "sha256": "89fd3da4ce2bae0eeebaa5f66a63b31974ab5e91df264b0c53c0d765b5ae4031",
+      "name": "RIB_5_LEFT",
+      "group": "THORAX",
+      "triangles": 39392,
+      "triangleVertexOccurrences": 118176,
+      "boundsSourceLps": [
+        [
+          265.746337890625,
+          166.67469787597656,
+          1286.4696044921875
+        ],
+        [
+          369.9578552246094,
+          319.8070983886719,
+          1398.592041015625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_5_LEFT",
+        "id": "Segment_5",
+        "layer": 0,
+        "labelValue": 6,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_5_RIGHT.stl",
+      "sha256": "07a520e8724b3a3e3d51d9abc092fc0ec69a6e8cb25f7b785011537925a9da96",
+      "name": "RIB_5_RIGHT",
+      "group": "THORAX",
+      "triangles": 38752,
+      "triangleVertexOccurrences": 116256,
+      "boundsSourceLps": [
+        [
+          113.7685775756836,
+          171.66958618164062,
+          1274.3460693359375
+        ],
+        [
+          211.1062774658203,
+          313.7766418457031,
+          1392.4359130859375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_5_RIGHT",
+        "id": "Segment_15",
+        "layer": 0,
+        "labelValue": 21,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_6_LEFT.stl",
+      "sha256": "a4616ed649e5cd548bbad43461b435fc27fa017cd4892cd773da07ed5e107532",
+      "name": "RIB_6_LEFT",
+      "group": "THORAX",
+      "triangles": 39196,
+      "triangleVertexOccurrences": 117588,
+      "boundsSourceLps": [
+        [
+          264.2561340332031,
+          172.80697631835938,
+          1260.3865966796875
+        ],
+        [
+          373.3551330566406,
+          323.3581237792969,
+          1376.5654296875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_6_LEFT",
+        "id": "Segment_6",
+        "layer": 0,
+        "labelValue": 7,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_6_RIGHT.stl",
+      "sha256": "8aa4bf1aa772ca37327def0dca22c78e94c5ae7f74a9a5b9f253cb4410347646",
+      "name": "RIB_6_RIGHT",
+      "group": "THORAX",
+      "triangles": 40068,
+      "triangleVertexOccurrences": 120204,
+      "boundsSourceLps": [
+        [
+          111.68572998046875,
+          175.5580291748047,
+          1248.205810546875
+        ],
+        [
+          216.37696838378906,
+          318.4625244140625,
+          1368.647216796875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_6_RIGHT",
+        "id": "Segment_16",
+        "layer": 0,
+        "labelValue": 14,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_7_LEFT.stl",
+      "sha256": "31fb748a498754579ad00058bfb2527c69d293befa077f565815c21c06269184",
+      "name": "RIB_7_LEFT",
+      "group": "THORAX",
+      "triangles": 42300,
+      "triangleVertexOccurrences": 126900,
+      "boundsSourceLps": [
+        [
+          262.8204650878906,
+          177.1571502685547,
+          1220.3394775390625
+        ],
+        [
+          373.2920227050781,
+          323.0382995605469,
+          1353.4990234375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_7_LEFT",
+        "id": "Segment_7",
+        "layer": 0,
+        "labelValue": 8,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_7_RIGHT.stl",
+      "sha256": "e7fc7b8e365586b2feabcb007873f9a1b3f5f1d48e5627e858a87eea22d5180d",
+      "name": "RIB_7_RIGHT",
+      "group": "THORAX",
+      "triangles": 42824,
+      "triangleVertexOccurrences": 128472,
+      "boundsSourceLps": [
+        [
+          112.34708404541016,
+          175.38262939453125,
+          1216.3983154296875
+        ],
+        [
+          215.4640350341797,
+          320.4644775390625,
+          1345.1998291015625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_7_RIGHT",
+        "id": "Segment_17",
+        "layer": 0,
+        "labelValue": 15,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_8_LEFT.stl",
+      "sha256": "406cd2042ddb0135f815f64756db47e9b2964d4786b6fe1cb624647bf8a82be7",
+      "name": "RIB_8_LEFT",
+      "group": "THORAX",
+      "triangles": 40976,
+      "triangleVertexOccurrences": 122928,
+      "boundsSourceLps": [
+        [
+          264.8040466308594,
+          188.43492126464844,
+          1187.8330078125
+        ],
+        [
+          376.1697082519531,
+          324.1951599121094,
+          1324.1922607421875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_8_LEFT",
+        "id": "Segment_8",
+        "layer": 0,
+        "labelValue": 9,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_8_RIGHT.stl",
+      "sha256": "92bcd56e58471e6bede8559ef6b143c8289fe4da60504bf1efe9cb0a14e4fe7a",
+      "name": "RIB_8_RIGHT",
+      "group": "THORAX",
+      "triangles": 39952,
+      "triangleVertexOccurrences": 119856,
+      "boundsSourceLps": [
+        [
+          111.54756927490234,
+          179.30667114257812,
+          1182.8369140625
+        ],
+        [
+          215.00604248046875,
+          321.9089660644531,
+          1322.429931640625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_8_RIGHT",
+        "id": "Segment_18",
+        "layer": 0,
+        "labelValue": 16,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_9_LEFT.stl",
+      "sha256": "9ecff2bcad56c682a97f1c9d238550099fc105bccc1f7e002be7124e922117e2",
+      "name": "RIB_9_LEFT",
+      "group": "THORAX",
+      "triangles": 37384,
+      "triangleVertexOccurrences": 112152,
+      "boundsSourceLps": [
+        [
+          270.6764221191406,
+          204.40711975097656,
+          1153.728515625
+        ],
+        [
+          377.6621398925781,
+          322.76904296875,
+          1300.1629638671875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_9_LEFT",
+        "id": "Segment_9",
+        "layer": 0,
+        "labelValue": 10,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_9_RIGHT.stl",
+      "sha256": "8f3b621a81dd49244c67f05b22bd88c2b030ab7d4d4e2cdb51d21ec44d7f1f6f",
+      "name": "RIB_9_RIGHT",
+      "group": "THORAX",
+      "triangles": 37680,
+      "triangleVertexOccurrences": 113040,
+      "boundsSourceLps": [
+        [
+          105.264404296875,
+          198.0452423095703,
+          1154.8070068359375
+        ],
+        [
+          214.9032745361328,
+          322.7300109863281,
+          1299.49951171875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "THORAX",
+        "name": "RIB_9_RIGHT",
+        "id": "Segment_19",
+        "layer": 0,
+        "labelValue": 22,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/THORAX/STERNUM.stl",
+      "sha256": "651cf285e48ba1a1cc74cf34bfa68b9488b34affb5456098f46609b4f145e3a8",
+      "name": "STERNUM",
+      "group": "THORAX",
+      "triangles": 61792,
+      "triangleVertexOccurrences": 185376,
+      "boundsSourceLps": [
+        [
+          208.68890380859375,
+          160.21656799316406,
+          1244.4173583984375
+        ],
+        [
+          276.24542236328125,
+          213.57017517089844,
+          1421.5765380859375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 8,
+      "label": {
+        "group": "THORAX",
+        "name": "STERNUM",
+        "id": "2.25.86917387343052939767027602078450539306",
+        "layer": 0,
+        "labelValue": 1,
+        "extent": [
+          146,
+          522,
+          222,
+          448,
+          1104,
+          1464
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_LEFT/CLAVICLE_LEFT.stl",
+      "sha256": "c11627952ad8692a41d1a916fc1c06ec81b208a7654b1aaafc40d9f6e2894b5e",
+      "name": "CLAVICLE_LEFT",
+      "group": "UPPER_EXTREMITY_LEFT",
+      "triangles": 37584,
+      "triangleVertexOccurrences": 112752,
+      "boundsSourceLps": [
+        [
+          255.79844665527344,
+          191.9143524169922,
+          1414.423828125
+        ],
+        [
+          377.6915588378906,
+          257.62677001953125,
+          1495.6378173828125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "UPPER_EXTREMITY_LEFT",
+        "name": "CLAVICLE_LEFT",
+        "id": "Segment_1",
+        "layer": 0,
+        "labelValue": 1,
+        "extent": [
+          354,
+          666,
+          204,
+          463,
+          1045,
+          1496
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_LEFT/HUMERUS_LEFT.stl",
+      "sha256": "3ecf33ee2ae5b3249a514ef74f0d622de7161084402de88d870c6fe9c3086d2d",
+      "name": "HUMERUS_LEFT",
+      "group": "UPPER_EXTREMITY_LEFT",
+      "triangles": 114436,
+      "triangleVertexOccurrences": 343308,
+      "boundsSourceLps": [
+        [
+          381.0965881347656,
+          222.4756622314453,
+          1203.2724609375
+        ],
+        [
+          480.9421691894531,
+          326.8859558105469,
+          1482.6273193359375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "UPPER_EXTREMITY_LEFT",
+        "name": "HUMERUS_LEFT",
+        "id": "Segment_3",
+        "layer": 0,
+        "labelValue": 4,
+        "extent": [
+          354,
+          666,
+          204,
+          463,
+          1045,
+          1496
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_LEFT/RADIUS_LEFT.stl",
+      "sha256": "8d005a271885a4996725f1dd612e24c6ff28e52bebddae711f11f9e0a423490c",
+      "name": "RADIUS_LEFT",
+      "group": "UPPER_EXTREMITY_LEFT",
+      "triangles": 51476,
+      "triangleVertexOccurrences": 154428,
+      "boundsSourceLps": [
+        [
+          407.3711242675781,
+          147.34027099609375,
+          1044.5216064453125
+        ],
+        [
+          481.7980651855469,
+          292.75665283203125,
+          1213.8948974609375
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "UPPER_EXTREMITY_LEFT",
+        "name": "RADIUS_LEFT",
+        "id": "Segment_4",
+        "layer": 0,
+        "labelValue": 3,
+        "extent": [
+          354,
+          666,
+          204,
+          463,
+          1045,
+          1496
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_LEFT/SCAPULA_LEFT.stl",
+      "sha256": "292960ac0a6bb78574769cc13603c56050e939070900de12ea197139343d51c4",
+      "name": "SCAPULA_LEFT",
+      "group": "UPPER_EXTREMITY_LEFT",
+      "triangles": 147652,
+      "triangleVertexOccurrences": 442956,
+      "boundsSourceLps": [
+        [
+          291.0782775878906,
+          225.1164093017578,
+          1349.3702392578125
+        ],
+        [
+          405.65716552734375,
+          334.8072814941406,
+          1496.61767578125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "UPPER_EXTREMITY_LEFT",
+        "name": "SCAPULA_LEFT",
+        "id": "Segment_2",
+        "layer": 0,
+        "labelValue": 2,
+        "extent": [
+          354,
+          666,
+          204,
+          463,
+          1045,
+          1496
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_LEFT/ULNA_LEFT.stl",
+      "sha256": "a9c7225af62c7728125cc6b21ef731aaf9ebc2c33caa1a1e3abcf71e0338ef2b",
+      "name": "ULNA_LEFT",
+      "group": "UPPER_EXTREMITY_LEFT",
+      "triangles": 57000,
+      "triangleVertexOccurrences": 171000,
+      "boundsSourceLps": [
+        [
+          421.44818115234375,
+          174.61749267578125,
+          1035.309326171875
+        ],
+        [
+          479.94586181640625,
+          328.2829895019531,
+          1223.5360107421875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "UPPER_EXTREMITY_LEFT",
+        "name": "ULNA_LEFT",
+        "id": "Segment_5",
+        "layer": 1,
+        "labelValue": 1,
+        "extent": [
+          584,
+          664,
+          242,
+          454,
+          1036,
+          1223
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_RIGHT/CLAVICLE_RIGHT.stl",
+      "sha256": "1c97829c44bfd3cf0c5438c3c7aed7511bbbb21aaae83324ffd677971b59fc34",
+      "name": "CLAVICLE_RIGHT",
+      "group": "UPPER_EXTREMITY_RIGHT",
+      "triangles": 39768,
+      "triangleVertexOccurrences": 119304,
+      "boundsSourceLps": [
+        [
+          103.20630645751953,
+          195.15066528320312,
+          1409.937255859375
+        ],
+        [
+          226.81394958496094,
+          262.6244812011719,
+          1486.398681640625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "UPPER_EXTREMITY_RIGHT",
+        "name": "CLAVICLE_RIGHT",
+        "id": "2.25.158321560604188913174485305281120226208",
+        "layer": 0,
+        "labelValue": 1,
+        "extent": [
+          9,
+          314,
+          221,
+          463,
+          1008,
+          1486
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_RIGHT/HUMERUS_RIGHT.stl",
+      "sha256": "5ada1affb294075b164753926288cde0f03f08ea615f01115dfe4fbb041555c4",
+      "name": "HUMERUS_RIGHT",
+      "group": "UPPER_EXTREMITY_RIGHT",
+      "triangles": 103084,
+      "triangleVertexOccurrences": 309252,
+      "boundsSourceLps": [
+        [
+          11.277138710021973,
+          221.38050842285156,
+          1195.258056640625
+        ],
+        [
+          102.36803436279297,
+          321.6619567871094,
+          1471.62158203125
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "UPPER_EXTREMITY_RIGHT",
+        "name": "HUMERUS_RIGHT",
+        "id": "Segment_2",
+        "layer": 0,
+        "labelValue": 3,
+        "extent": [
+          9,
+          314,
+          221,
+          463,
+          1008,
+          1486
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_RIGHT/RADIUS_RIGHT.stl",
+      "sha256": "e2ceeef48f53414f6a4be459d33f9b4b3f2f56415ae901831e360f3b5cf40af2",
+      "name": "RADIUS_RIGHT",
+      "group": "UPPER_EXTREMITY_RIGHT",
+      "triangles": 43800,
+      "triangleVertexOccurrences": 131400,
+      "boundsSourceLps": [
+        [
+          6.7260518074035645,
+          159.3819580078125,
+          1015.69970703125
+        ],
+        [
+          68.6031494140625,
+          274.7074890136719,
+          1180.8671875
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "UPPER_EXTREMITY_RIGHT",
+        "name": "RADIUS_RIGHT",
+        "id": "Segment_3",
+        "layer": 0,
+        "labelValue": 4,
+        "extent": [
+          9,
+          314,
+          221,
+          463,
+          1008,
+          1486
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_RIGHT/SCAPULA_RIGHT.stl",
+      "sha256": "f0a06280b203ab3593c4eee6221968419ed712e6b22668b094690a976f717763",
+      "name": "SCAPULA_RIGHT",
+      "group": "UPPER_EXTREMITY_RIGHT",
+      "triangles": 147092,
+      "triangleVertexOccurrences": 441276,
+      "boundsSourceLps": [
+        [
+          74.92940521240234,
+          225.98492431640625,
+          1332.765625
+        ],
+        [
+          185.93222045898438,
+          334.5306396484375,
+          1485.5552978515625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "UPPER_EXTREMITY_RIGHT",
+        "name": "SCAPULA_RIGHT",
+        "id": "Segment_1",
+        "layer": 0,
+        "labelValue": 2,
+        "extent": [
+          9,
+          314,
+          221,
+          463,
+          1008,
+          1486
+        ],
+        "status": "inprogress"
+      }
+    },
+    {
+      "file": "visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_RIGHT/ULNA_RIGHT.stl",
+      "sha256": "53d1f9368f1cd5decaf5c7da97b9e432a0dd886a2b3a1536c62b3ff72d6b80c6",
+      "name": "ULNA_RIGHT",
+      "group": "UPPER_EXTREMITY_RIGHT",
+      "triangles": 28628,
+      "triangleVertexOccurrences": 85884,
+      "boundsSourceLps": [
+        [
+          6.372609615325928,
+          182.442626953125,
+          1007.7531127929688
+        ],
+        [
+          48.850547790527344,
+          274.6545715332031,
+          1132.82666015625
+        ]
+      ],
+      "header": "3D Slicer output. SPACE=LPS",
+      "zeroNormals": 0,
+      "label": {
+        "group": "UPPER_EXTREMITY_RIGHT",
+        "name": "ULNA_RIGHT",
+        "id": "Segment_4",
+        "layer": 0,
+        "labelValue": 5,
+        "extent": [
+          9,
+          314,
+          221,
+          463,
+          1008,
+          1486
+        ],
+        "status": "inprogress"
+      }
+    }
+  ],
+  "masks": [
+    {
+      "file": "visible_human_3d_models/CT/Segmentation/02_Female/FOOT_LEFT.seg.nrrd",
+      "sha256": "1fe34cff43db5869ae0109d6ba9ba32676d0b07963d03b074a52641c588fab94",
+      "group": "FOOT_LEFT",
+      "space": "left-posterior-superior",
+      "directions": "none (0.7226560115814209,0,0) (0,0.7226560115814209,0) (0,0,1)",
+      "origin": "(0,0,0)",
+      "sizes": [
+        2,
+        673,
+        670,
+        1727
+      ],
+      "labels": 17,
+      "uncompressedBytes": 1557443140,
+      "headerOnly": true,
+      "voxelPayloadInspected": false
+    },
+    {
+      "file": "visible_human_3d_models/CT/Segmentation/02_Female/FOOT_RIGHT.seg.nrrd",
+      "sha256": "af75e5f2370a30284fa72e47a9b54b2d9ec97fd21dd3d4116af4510bf1eb6293",
+      "group": "FOOT_RIGHT",
+      "space": "left-posterior-superior",
+      "directions": "none (0.7226560115814209,0,0) (0,0.7226560115814209,0) (0,0,1)",
+      "origin": "(0,0,0)",
+      "sizes": [
+        2,
+        673,
+        670,
+        1727
+      ],
+      "labels": 17,
+      "uncompressedBytes": 1557443140,
+      "headerOnly": true,
+      "voxelPayloadInspected": false
+    },
+    {
+      "file": "visible_human_3d_models/CT/Segmentation/02_Female/HAND_LEFT.seg.nrrd",
+      "sha256": "c7b877afafb65cd9b7c3c9cf17646207f9255062acdb508164cb120dc4da00b8",
+      "group": "HAND_LEFT",
+      "space": "left-posterior-superior",
+      "directions": "none (0.7226560115814209,0,0) (0,0.7226560115814209,0) (0,0,1)",
+      "origin": "(0,0,0)",
+      "sizes": [
+        2,
+        673,
+        670,
+        1727
+      ],
+      "labels": 18,
+      "uncompressedBytes": 1557443140,
+      "headerOnly": true,
+      "voxelPayloadInspected": false
+    },
+    {
+      "file": "visible_human_3d_models/CT/Segmentation/02_Female/HAND_RIGHT.seg.nrrd",
+      "sha256": "7d09322eb86736dccddd3805c9043aa6bef04bf042c180586ad2ce4f4c60a090",
+      "group": "HAND_RIGHT",
+      "space": "left-posterior-superior",
+      "directions": "none (0.7226560115814209,0,0) (0,0.7226560115814209,0) (0,0,1)",
+      "origin": "(0,0,0)",
+      "sizes": [
+        3,
+        673,
+        670,
+        1727
+      ],
+      "labels": 18,
+      "uncompressedBytes": 2336164710,
+      "headerOnly": true,
+      "voxelPayloadInspected": false
+    },
+    {
+      "file": "visible_human_3d_models/CT/Segmentation/02_Female/LOWER_EXTREMITY_LEFT.seg.nrrd",
+      "sha256": "edca5d18deae91f4ddb05302a1168b43a4b538796bbd10a34ceb3fe18377114f",
+      "group": "LOWER_EXTREMITY_LEFT",
+      "space": "left-posterior-superior",
+      "directions": "(0.7226560115814209,0,0) (0,0.7226560115814209,0) (0,0,1)",
+      "origin": "(0,0,0)",
+      "sizes": [
+        673,
+        670,
+        1727
+      ],
+      "labels": 5,
+      "uncompressedBytes": 778721570,
+      "headerOnly": true,
+      "voxelPayloadInspected": false
+    },
+    {
+      "file": "visible_human_3d_models/CT/Segmentation/02_Female/LOWER_EXTREMITY_RIGHT.seg.nrrd",
+      "sha256": "c9e69629b80dcd1a01c1db4993c78f5b034518ec8f76e169967d10358965b63e",
+      "group": "LOWER_EXTREMITY_RIGHT",
+      "space": "left-posterior-superior",
+      "directions": "(0.7226560115814209,0,0) (0,0.7226560115814209,0) (0,0,1)",
+      "origin": "(0,0,0)",
+      "sizes": [
+        673,
+        670,
+        1727
+      ],
+      "labels": 5,
+      "uncompressedBytes": 778721570,
+      "headerOnly": true,
+      "voxelPayloadInspected": false
+    },
+    {
+      "file": "visible_human_3d_models/CT/Segmentation/02_Female/SKULL.seg.nrrd",
+      "sha256": "d5bbf9409a2b8d525364553d3d33fe5fae7f52c6cad620eb725d6b3445eb8483",
+      "group": "SKULL",
+      "space": "left-posterior-superior",
+      "directions": "(0.7226560115814209,0,0) (0,0.7226560115814209,0) (0,0,1)",
+      "origin": "(0,0,0)",
+      "sizes": [
+        673,
+        670,
+        1727
+      ],
+      "labels": 2,
+      "uncompressedBytes": 778721570,
+      "headerOnly": true,
+      "voxelPayloadInspected": false
+    },
+    {
+      "file": "visible_human_3d_models/CT/Segmentation/02_Female/SPINAL_COLUMN.seg.nrrd",
+      "sha256": "fe8a037fd95e7fcc692c611b9f7801087b0f64ee5adbf44019cd8335f4ddddc0",
+      "group": "SPINAL_COLUMN",
+      "space": "left-posterior-superior",
+      "directions": "none (0.7226560115814209,0,0) (0,0.7226560115814209,0) (0,0,1)",
+      "origin": "(0,0,0)",
+      "sizes": [
+        2,
+        673,
+        670,
+        1727
+      ],
+      "labels": 26,
+      "uncompressedBytes": 1557443140,
+      "headerOnly": true,
+      "voxelPayloadInspected": false
+    },
+    {
+      "file": "visible_human_3d_models/CT/Segmentation/02_Female/THORAX.seg.nrrd",
+      "sha256": "fd1d2a17b667c283442dcf3c7ed6e73cd52700e954033525d68ca70065811a60",
+      "group": "THORAX",
+      "space": "left-posterior-superior",
+      "directions": "none (0.7226560115814209,0,0) (0,0.7226560115814209,0) (0,0,1)",
+      "origin": "(0,0,0)",
+      "sizes": [
+        2,
+        673,
+        670,
+        1727
+      ],
+      "labels": 25,
+      "uncompressedBytes": 1557443140,
+      "headerOnly": true,
+      "voxelPayloadInspected": false
+    },
+    {
+      "file": "visible_human_3d_models/CT/Segmentation/02_Female/UPPER_EXTREMITY_LEFT.seg.nrrd",
+      "sha256": "93bab71ae3dd2c46fdff2f7a052d313b40b04aca0ff36a53a5c3d1629daab68f",
+      "group": "UPPER_EXTREMITY_LEFT",
+      "space": "left-posterior-superior",
+      "directions": "none (0.7226560115814209,0,0) (0,0.7226560115814209,0) (0,0,1)",
+      "origin": "(0,0,0)",
+      "sizes": [
+        2,
+        673,
+        670,
+        1727
+      ],
+      "labels": 5,
+      "uncompressedBytes": 1557443140,
+      "headerOnly": true,
+      "voxelPayloadInspected": false
+    },
+    {
+      "file": "visible_human_3d_models/CT/Segmentation/02_Female/UPPER_EXTREMITY_RIGHT.seg.nrrd",
+      "sha256": "a40f0f7f6c1ccb0d46128ab90a466794900ebc570bd55d7a81cacc6cb4a15838",
+      "group": "UPPER_EXTREMITY_RIGHT",
+      "space": "left-posterior-superior",
+      "directions": "(0.7226560115814209,0,0) (0,0.7226560115814209,0) (0,0,1)",
+      "origin": "(0,0,0)",
+      "sizes": [
+        673,
+        670,
+        1727
+      ],
+      "labels": 5,
+      "uncompressedBytes": 778721570,
+      "headerOnly": true,
+      "voxelPayloadInspected": false
+    }
+  ],
+  "limitations": [
+    "All binary STL vertex occurrences and finite normals were read; topology, surface crossings and voxel-to-mesh correspondence were not validated here.",
+    "NRRD headers and hashes are checked, not their compressed voxel payload. Extent fields are shared layer extents, not confirmed per-bone bounds.",
+    "Header inprogress/completed tags are recorded verbatim; neither proves or disproves the authors stated human review.",
+    "Source labels are not independent anatomical bones: digits and other structures include compounds, and known elbow/hyoid/sesamoid/cartilage gaps remain.",
+    "LPS coordinates are source coordinates, not the atlas Y-up display frame; no placement is applied."
+  ],
+  "files": [
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/receipt.json",
+      "sha256": "4146adce0c4d8389b23bb4a4eb30024912c92f8cccd9e56995cbb9a4b935cd02"
+    },
+    {
+      "file": "scripts/audit-bonehub-female.mjs",
+      "sha256": "89f836e5d971300c06c1d7541bb5331cd6cea7d512ccf19b4a3ae36d435b24a2"
+    }
+  ]
+}

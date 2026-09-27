@@ -1,0 +1,7462 @@
+{
+  "createdAt": "2026-09-27T09:01:57.832Z",
+  "status": "BOUNDED RIGID REFINEMENT ONLY; no runtime export or anatomical approval",
+  "bounds": {
+    "translationNormMm": 12,
+    "pitchYawRollDegrees": 8
+  },
+  "sampling": "all referenced foot and talus vertices",
+  "sampleCountPerPart": null,
+  "ankleSampleCount": null,
+  "hardSurfaceClearance": false,
+  "sides": [
+    {
+      "side": "left",
+      "inputVariant": 2,
+      "inputRotation": [
+        0.9993908270190958,
+        0,
+        0.03489949670250097,
+        0,
+        0.017974569596985884,
+        0.8571673007021123,
+        -0.514724327630682,
+        0,
+        -0.029914707384345027,
+        0.5150380749100542,
+        0.85664513754241,
+        0,
+        -0.003815995088925328,
+        0.05551228312152917,
+        0.018447385986113285,
+        1
+      ],
+      "pivotMetres": [
+        0.1373557411134243,
+        0.06369432806968689,
+        -0.08198823779821396
+      ],
+      "initial": {
+        "parameters": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "skinExcess": 62417.76273740173,
+        "boneExcess": 0,
+        "outside": 3084,
+        "insideBone": 0,
+        "ambiguous": 0,
+        "cost": 62417.76273740173
+      },
+      "best": {
+        "parameters": [
+          -2,
+          2.75,
+          -2.25,
+          0,
+          -1,
+          8
+        ],
+        "skinExcess": 24786.458023454732,
+        "boneExcess": 40.47616793427614,
+        "outside": 1738,
+        "insideBone": 142,
+        "ambiguous": 0,
+        "cost": 28834.238066882346
+      },
+      "rigidMatrix": [
+        0.9901172461182299,
+        0.13917310096006544,
+        0.017282560817541693,
+        0,
+        -0.13915190422268917,
+        0.9902680687415704,
+        -0.002428905523092154,
+        0,
+        -0.01745240643728351,
+        0,
+        0.9998476951563913,
+        0,
+        0.00678974797362264,
+        -0.015746355603097145,
+        -0.004481638649928774,
+        1
+      ],
+      "trials": [
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 62417.76273740173,
+          "boneExcess": 0,
+          "outside": 3084,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 62417.76273740173
+        },
+        {
+          "parameters": [
+            -4,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 88100.32709103587,
+          "boneExcess": 0,
+          "outside": 3991,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 88100.35909103588
+        },
+        {
+          "parameters": [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 70014.44261755153,
+          "boneExcess": 0,
+          "outside": 2977,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 70014.47461755153
+        },
+        {
+          "parameters": [
+            0,
+            -4,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 183873.85364054274,
+          "boneExcess": 0,
+          "outside": 5557,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 183873.88564054275
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 15274.735673839452,
+          "boneExcess": 771.9897623192215,
+          "outside": 1886,
+          "insideBone": 318,
+          "ambiguous": 0,
+          "cost": 92473.7439057616
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            -4,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 66812.33095779082,
+          "boneExcess": 0,
+          "outside": 2994,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 66812.36295779083
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 64185.79192518274,
+          "boneExcess": 0,
+          "outside": 3468,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 64185.82392518274
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            -4,
+            0,
+            0
+          ],
+          "skinExcess": 85627.0739945732,
+          "boneExcess": 0,
+          "outside": 3397,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 85627.10599457321
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          "skinExcess": 208114.6024871735,
+          "boneExcess": 0,
+          "outside": 6806,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 208114.63448717352
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            -4,
+            0
+          ],
+          "skinExcess": 169666.27054998436,
+          "boneExcess": 0,
+          "outside": 4800,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 169666.30254998436
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          "skinExcess": 87755.03241828886,
+          "boneExcess": 0,
+          "outside": 3334,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 87755.06441828886
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 78676.39314636005,
+          "boneExcess": 0,
+          "outside": 3940,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 78676.42514636005
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 60091.6395596402,
+          "boneExcess": 0,
+          "outside": 2547,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 60091.6715596402
+        },
+        {
+          "parameters": [
+            -4,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 64368.009863567844,
+          "boneExcess": 0.0010105829257742497,
+          "outside": 2985,
+          "insideBone": 2,
+          "ambiguous": 0,
+          "cost": 64368.17492186042
+        },
+        {
+          "parameters": [
+            4,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 81795.61237587426,
+          "boneExcess": 0,
+          "outside": 3110,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 81795.67637587426
+        },
+        {
+          "parameters": [
+            0,
+            -4,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 170429.77545889994,
+          "boneExcess": 0,
+          "outside": 4985,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 170429.83945889995
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 15258.530413455715,
+          "boneExcess": 624.3328645305307,
+          "outside": 1386,
+          "insideBone": 330,
+          "ambiguous": 0,
+          "cost": 77691.88086650879
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            -4,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 66618.45202853529,
+          "boneExcess": 0,
+          "outside": 2480,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 66618.51602853529
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 59140.18521736358,
+          "boneExcess": 0,
+          "outside": 2926,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 59140.24921736358
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            -4,
+            0,
+            4
+          ],
+          "skinExcess": 82549.5114989989,
+          "boneExcess": 0,
+          "outside": 2811,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 82549.5754989989
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            4,
+            0,
+            4
+          ],
+          "skinExcess": 176915.2571823516,
+          "boneExcess": 0,
+          "outside": 6296,
+          "insideBone": 0,
+          "ambiguous": 1,
+          "cost": null
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            -4,
+            4
+          ],
+          "skinExcess": 112685.60961940711,
+          "boneExcess": 0,
+          "outside": 3877,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 112685.67361940711
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            4,
+            4
+          ],
+          "skinExcess": 97864.26074624676,
+          "boneExcess": 0,
+          "outside": 3613,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 97864.32474624676
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          "skinExcess": 66031.54717553774,
+          "boneExcess": 0,
+          "outside": 2564,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 66031.67517553773
+        },
+        {
+          "parameters": [
+            -4,
+            0,
+            4,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 67721.75903656502,
+          "boneExcess": 55.340295544559,
+          "outside": 3317,
+          "insideBone": 100,
+          "ambiguous": 0,
+          "cost": 73255.88459102093
+        },
+        {
+          "parameters": [
+            4,
+            0,
+            4,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 78915.69825274195,
+          "boneExcess": 0,
+          "outside": 3240,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 78915.79425274195
+        },
+        {
+          "parameters": [
+            0,
+            -4,
+            4,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 172048.08905148308,
+          "boneExcess": 0,
+          "outside": 5531,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 172048.18505148307
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            4,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 15655.714252392707,
+          "boneExcess": 878.8031701584457,
+          "outside": 1680,
+          "insideBone": 353,
+          "ambiguous": 0,
+          "cost": 103536.12726823728
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            8,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 70832.92675302624,
+          "boneExcess": 0.46750432496353744,
+          "outside": 3478,
+          "insideBone": 10,
+          "ambiguous": 0,
+          "cost": 70879.8371855226
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            -4,
+            0,
+            4
+          ],
+          "skinExcess": 96365.80945508952,
+          "boneExcess": 0,
+          "outside": 3231,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 96365.90545508952
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            4,
+            0,
+            4
+          ],
+          "skinExcess": 192501.55861175372,
+          "boneExcess": 0,
+          "outside": 6464,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 192501.6546117537
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            0,
+            -4,
+            4
+          ],
+          "skinExcess": 125724.21418745752,
+          "boneExcess": 0,
+          "outside": 4106,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 125724.31018745752
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            0,
+            4,
+            4
+          ],
+          "skinExcess": 102881.72545236335,
+          "boneExcess": 0,
+          "outside": 3759,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 102881.82145236335
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            0,
+            0,
+            8
+          ],
+          "skinExcess": 64105.678003397516,
+          "boneExcess": 0,
+          "outside": 2742,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 64105.83800339752
+        },
+        {
+          "parameters": [
+            -2,
+            0,
+            4,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 59552.16758010792,
+          "boneExcess": 0.13564709541526834,
+          "outside": 2953,
+          "insideBone": 14,
+          "ambiguous": 0,
+          "cost": 59565.804289649444
+        },
+        {
+          "parameters": [
+            2,
+            0,
+            4,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 65599.327971391,
+          "boneExcess": 0,
+          "outside": 2957,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 65599.399971391
+        },
+        {
+          "parameters": [
+            0,
+            -2,
+            4,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 103418.39613000622,
+          "boneExcess": 0,
+          "outside": 3987,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 103418.46813000622
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            4,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 31563.53373223094,
+          "boneExcess": 53.88487750517802,
+          "outside": 2205,
+          "insideBone": 86,
+          "ambiguous": 0,
+          "cost": 36952.09348274874
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 58545.48868195043,
+          "boneExcess": 0,
+          "outside": 2712,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 58545.52868195043
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            6,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 62870.33610420996,
+          "boneExcess": 0.0003377641100369342,
+          "outside": 3157,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 62870.47388062096
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            -2,
+            0,
+            4
+          ],
+          "skinExcess": 66752.27559205615,
+          "boneExcess": 0,
+          "outside": 2484,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 66752.34759205615
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            2,
+            0,
+            4
+          ],
+          "skinExcess": 83917.94616283003,
+          "boneExcess": 0,
+          "outside": 4614,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 83918.01816283003
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            0,
+            -2,
+            4
+          ],
+          "skinExcess": 68895.77775576091,
+          "boneExcess": 0,
+          "outside": 3412,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 68895.84975576091
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            0,
+            2,
+            4
+          ],
+          "skinExcess": 72353.74398308927,
+          "boneExcess": 0,
+          "outside": 3001,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 72353.81598308927
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            0,
+            0,
+            2
+          ],
+          "skinExcess": 60105.08088919451,
+          "boneExcess": 0,
+          "outside": 3168,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 60105.12088919451
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 60639.794210424334,
+          "boneExcess": 0,
+          "outside": 2779,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 60639.89821042433
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            4,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 32094.30995288871,
+          "boneExcess": 141.04137963071332,
+          "outside": 2314,
+          "insideBone": 149,
+          "ambiguous": 0,
+          "cost": 46198.52791596005
+        },
+        {
+          "parameters": [
+            2,
+            2,
+            4,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 36339.10008088861,
+          "boneExcess": 44.81567578745657,
+          "outside": 2205,
+          "insideBone": 78,
+          "ambiguous": 0,
+          "cost": 40820.74765963427
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            2,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 30967.58908078052,
+          "boneExcess": 28.768921063473666,
+          "outside": 2004,
+          "insideBone": 72,
+          "ambiguous": 0,
+          "cost": 33844.52918712789
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            6,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 34838.75261273265,
+          "boneExcess": 88.19053429010059,
+          "outside": 2403,
+          "insideBone": 111,
+          "ambiguous": 0,
+          "cost": 43657.918041742705
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            4,
+            -2,
+            0,
+            4
+          ],
+          "skinExcess": 40928.58122182615,
+          "boneExcess": 43.257124071615294,
+          "outside": 2234,
+          "insideBone": 77,
+          "ambiguous": 0,
+          "cost": 45254.37362898768
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            4,
+            2,
+            0,
+            4
+          ],
+          "skinExcess": 41981.483291734665,
+          "boneExcess": 65.38250254582607,
+          "outside": 3195,
+          "insideBone": 101,
+          "ambiguous": 0,
+          "cost": 48519.81354631727
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            4,
+            0,
+            -2,
+            4
+          ],
+          "skinExcess": 40772.973809320014,
+          "boneExcess": 51.46077140267015,
+          "outside": 2771,
+          "insideBone": 84,
+          "ambiguous": 0,
+          "cost": 45919.13094958703
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            4,
+            0,
+            2,
+            4
+          ],
+          "skinExcess": 41131.81797774465,
+          "boneExcess": 56.596659440190315,
+          "outside": 2358,
+          "insideBone": 87,
+          "ambiguous": 0,
+          "cost": 46791.563921763685
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            4,
+            0,
+            0,
+            2
+          ],
+          "skinExcess": 31659.75990351672,
+          "boneExcess": 66.15212805592184,
+          "outside": 2351,
+          "insideBone": 90,
+          "ambiguous": 0,
+          "cost": 38275.0207091089
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            4,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 33338.62761182507,
+          "boneExcess": 43.50038534328946,
+          "outside": 2067,
+          "insideBone": 87,
+          "ambiguous": 0,
+          "cost": 37688.778146154014
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            2,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 30615.743081514778,
+          "boneExcess": 59.10020708494734,
+          "outside": 2156,
+          "insideBone": 108,
+          "ambiguous": 0,
+          "cost": 36525.81979000951
+        },
+        {
+          "parameters": [
+            2,
+            2,
+            2,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 36105.83432018952,
+          "boneExcess": 32.050259540277644,
+          "outside": 2101,
+          "insideBone": 75,
+          "ambiguous": 0,
+          "cost": 39310.91627421728
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            2,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 14712.416913146491,
+          "boneExcess": 733.5427530807764,
+          "outside": 1473,
+          "insideBone": 344,
+          "ambiguous": 0,
+          "cost": 88066.76422122412
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 32092.08188451545,
+          "boneExcess": 16.461190996101156,
+          "outside": 1852,
+          "insideBone": 54,
+          "ambiguous": 0,
+          "cost": 33738.240984125565
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            2,
+            -2,
+            0,
+            4
+          ],
+          "skinExcess": 37539.208718031165,
+          "boneExcess": 22.429711193615447,
+          "outside": 2016,
+          "insideBone": 63,
+          "ambiguous": 0,
+          "cost": 39782.235837392705
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            2,
+            2,
+            0,
+            4
+          ],
+          "skinExcess": 40640.15939990584,
+          "boneExcess": 35.82669978747929,
+          "outside": 3032,
+          "insideBone": 85,
+          "ambiguous": 0,
+          "cost": 44222.885378653766
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            2,
+            0,
+            -2,
+            4
+          ],
+          "skinExcess": 37769.03298995844,
+          "boneExcess": 27.422736595618233,
+          "outside": 2647,
+          "insideBone": 71,
+          "ambiguous": 0,
+          "cost": 40511.36264952026
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            2,
+            0,
+            2,
+            4
+          ],
+          "skinExcess": 39518.36473968166,
+          "boneExcess": 30.218848700960418,
+          "outside": 2241,
+          "insideBone": 74,
+          "ambiguous": 0,
+          "cost": 42540.3056097777
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            2,
+            0,
+            0,
+            2
+          ],
+          "skinExcess": 30600.384674842335,
+          "boneExcess": 40.18630410055949,
+          "outside": 2184,
+          "insideBone": 76,
+          "ambiguous": 0,
+          "cost": 34619.03908489828
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            2,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 32928.48816152705,
+          "boneExcess": 19.629322527394596,
+          "outside": 1931,
+          "insideBone": 67,
+          "ambiguous": 0,
+          "cost": 34891.508414266515
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 30895.35741514286,
+          "boneExcess": 21.15575309313578,
+          "outside": 2041,
+          "insideBone": 71,
+          "ambiguous": 0,
+          "cost": 33010.980724456436
+        },
+        {
+          "parameters": [
+            2,
+            2,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 37792.86045561041,
+          "boneExcess": 23.420108067954377,
+          "outside": 2011,
+          "insideBone": 64,
+          "ambiguous": 0,
+          "cost": 40134.91926240585
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            -2,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 34174.51291967628,
+          "boneExcess": 10.076780720778679,
+          "outside": 1816,
+          "insideBone": 47,
+          "ambiguous": 0,
+          "cost": 35182.23899175415
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            0,
+            -2,
+            0,
+            4
+          ],
+          "skinExcess": 36629.36414198041,
+          "boneExcess": 12.780801243514222,
+          "outside": 1852,
+          "insideBone": 47,
+          "ambiguous": 0,
+          "cost": 37907.492266331836
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            0,
+            2,
+            0,
+            4
+          ],
+          "skinExcess": 41221.228076656094,
+          "boneExcess": 20.502048588594732,
+          "outside": 2922,
+          "insideBone": 68,
+          "ambiguous": 0,
+          "cost": 43271.48093551557
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            0,
+            0,
+            -2,
+            4
+          ],
+          "skinExcess": 36730.71954079646,
+          "boneExcess": 15.884835055894397,
+          "outside": 2543,
+          "insideBone": 55,
+          "ambiguous": 0,
+          "cost": 38319.2510463859
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            0,
+            0,
+            2,
+            4
+          ],
+          "skinExcess": 40227.31991489372,
+          "boneExcess": 17.099961894913424,
+          "outside": 2173,
+          "insideBone": 54,
+          "ambiguous": 0,
+          "cost": 41937.364104385066
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            0,
+            0,
+            0,
+            2
+          ],
+          "skinExcess": 31304.093417257627,
+          "boneExcess": 25.95717564395717,
+          "outside": 2039,
+          "insideBone": 61,
+          "ambiguous": 0,
+          "cost": 33899.82698165335
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 34300.846201767425,
+          "boneExcess": 9.458795922246695,
+          "outside": 1832,
+          "insideBone": 43,
+          "ambiguous": 0,
+          "cost": 35246.8057939921
+        },
+        {
+          "parameters": [
+            -4,
+            2,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 35724.09108306204,
+          "boneExcess": 119.98499085877746,
+          "outside": 2409,
+          "insideBone": 193,
+          "ambiguous": 0,
+          "cost": 47722.66216893979
+        },
+        {
+          "parameters": [
+            -2,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 58668.079394846114,
+          "boneExcess": 0,
+          "outside": 2638,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 58668.119394846115
+        },
+        {
+          "parameters": [
+            -2,
+            4,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 14282.08597126949,
+          "boneExcess": 739.2353874839292,
+          "outside": 1633,
+          "insideBone": 439,
+          "ambiguous": 0,
+          "cost": 88205.69671966242
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            -2,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 32200.497432302727,
+          "boneExcess": 9.5501993861274,
+          "outside": 1993,
+          "insideBone": 49,
+          "ambiguous": 0,
+          "cost": 33155.57337091547
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            -2,
+            0,
+            4
+          ],
+          "skinExcess": 37290.12123592274,
+          "boneExcess": 15.621481868993834,
+          "outside": 2260,
+          "insideBone": 64,
+          "ambiguous": 0,
+          "cost": 38852.32542282213
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            2,
+            0,
+            4
+          ],
+          "skinExcess": 38726.03654253484,
+          "boneExcess": 27.591688714851077,
+          "outside": 2919,
+          "insideBone": 81,
+          "ambiguous": 0,
+          "cost": 41485.261414019944
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            -2,
+            4
+          ],
+          "skinExcess": 48628.80125821954,
+          "boneExcess": 19.69214097232764,
+          "outside": 2869,
+          "insideBone": 70,
+          "ambiguous": 0,
+          "cost": 50598.071355452295
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            2,
+            4
+          ],
+          "skinExcess": 35205.08335078602,
+          "boneExcess": 22.838638252065444,
+          "outside": 1882,
+          "insideBone": 70,
+          "ambiguous": 0,
+          "cost": 37489.00317599256
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            0,
+            2
+          ],
+          "skinExcess": 33539.30127248746,
+          "boneExcess": 28.138739132438836,
+          "outside": 2362,
+          "insideBone": 73,
+          "ambiguous": 0,
+          "cost": 36353.19918573134
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 30511.429146718594,
+          "boneExcess": 16.05475080658549,
+          "outside": 1822,
+          "insideBone": 71,
+          "ambiguous": 0,
+          "cost": 32116.99222737714
+        },
+        {
+          "parameters": [
+            -4,
+            2,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 31394.844658916176,
+          "boneExcess": 129.73189095475047,
+          "outside": 2087,
+          "insideBone": 180,
+          "ambiguous": 0,
+          "cost": 44368.145754391226
+        },
+        {
+          "parameters": [
+            -2,
+            0,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 57456.25812685335,
+          "boneExcess": 0,
+          "outside": 2429,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 57456.33812685335
+        },
+        {
+          "parameters": [
+            -2,
+            4,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 14166.69710847921,
+          "boneExcess": 704.0208614293035,
+          "outside": 1392,
+          "insideBone": 463,
+          "ambiguous": 0,
+          "cost": 84568.89525140956
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            -2,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 32187.419017375672,
+          "boneExcess": 5.341362135380327,
+          "outside": 1767,
+          "insideBone": 39,
+          "ambiguous": 0,
+          "cost": 32721.651230913707
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            2,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 29771.732597225506,
+          "boneExcess": 56.60663626363006,
+          "outside": 1952,
+          "insideBone": 107,
+          "ambiguous": 0,
+          "cost": 35432.49222358851
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            -2,
+            0,
+            6
+          ],
+          "skinExcess": 36644.844977127286,
+          "boneExcess": 11.162430767503224,
+          "outside": 1929,
+          "insideBone": 59,
+          "ambiguous": 0,
+          "cost": 37761.18405387761
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            2,
+            0,
+            6
+          ],
+          "skinExcess": 36526.90936866806,
+          "boneExcess": 21.820143969553623,
+          "outside": 2697,
+          "insideBone": 76,
+          "ambiguous": 0,
+          "cost": 38709.019765623416
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            -2,
+            6
+          ],
+          "skinExcess": 39325.1702357619,
+          "boneExcess": 14.52415347572316,
+          "outside": 2612,
+          "insideBone": 71,
+          "ambiguous": 0,
+          "cost": 40777.68158333421
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            2,
+            6
+          ],
+          "skinExcess": 36506.10742913074,
+          "boneExcess": 17.776425319985982,
+          "outside": 1929,
+          "insideBone": 71,
+          "ambiguous": 0,
+          "cost": 38283.84596112934
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            0,
+            8
+          ],
+          "skinExcess": 31574.72625114232,
+          "boneExcess": 12.564591758335709,
+          "outside": 1716,
+          "insideBone": 66,
+          "ambiguous": 0,
+          "cost": 32831.32942697589
+        },
+        {
+          "parameters": [
+            -3,
+            2,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 30269.507461347413,
+          "boneExcess": 42.713612866859684,
+          "outside": 1936,
+          "insideBone": 113,
+          "ambiguous": 0,
+          "cost": 34540.96674803338
+        },
+        {
+          "parameters": [
+            -1,
+            2,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 31890.318790749974,
+          "boneExcess": 10.438016476249656,
+          "outside": 1769,
+          "insideBone": 49,
+          "ambiguous": 0,
+          "cost": 32934.202438374945
+        },
+        {
+          "parameters": [
+            -2,
+            1,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 42449.66044162809,
+          "boneExcess": 0,
+          "outside": 2091,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 42449.74244162809
+        },
+        {
+          "parameters": [
+            -2,
+            3,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 21205.062869994606,
+          "boneExcess": 160.7745091086963,
+          "outside": 1589,
+          "insideBone": 224,
+          "ambiguous": 0,
+          "cost": 37282.61178086423
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            -1,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 31265.93527381819,
+          "boneExcess": 8.882472806980068,
+          "outside": 1789,
+          "insideBone": 47,
+          "ambiguous": 0,
+          "cost": 32154.2725545162
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            1,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 29982.765814392573,
+          "boneExcess": 30.866023369885486,
+          "outside": 1882,
+          "insideBone": 88,
+          "ambiguous": 0,
+          "cost": 33069.45815138112
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            -1,
+            0,
+            6
+          ],
+          "skinExcess": 32645.119125660345,
+          "boneExcess": 13.49515372208118,
+          "outside": 1762,
+          "insideBone": 66,
+          "ambiguous": 0,
+          "cost": 33994.72449786846
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            1,
+            0,
+            6
+          ],
+          "skinExcess": 30882.189825250905,
+          "boneExcess": 18.84100462309719,
+          "outside": 2129,
+          "insideBone": 75,
+          "ambiguous": 0,
+          "cost": 32766.380287560623
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            -1,
+            6
+          ],
+          "skinExcess": 31484.712232023106,
+          "boneExcess": 15.268858056479115,
+          "outside": 2168,
+          "insideBone": 72,
+          "ambiguous": 0,
+          "cost": 33011.68803767102
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            1,
+            6
+          ],
+          "skinExcess": 32707.852577287562,
+          "boneExcess": 16.884877981586303,
+          "outside": 1764,
+          "insideBone": 72,
+          "ambiguous": 0,
+          "cost": 34396.43037544619
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            0,
+            5
+          ],
+          "skinExcess": 30478.73436788283,
+          "boneExcess": 18.379415580441385,
+          "outside": 1909,
+          "insideBone": 72,
+          "ambiguous": 0,
+          "cost": 32316.741925926966
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            0,
+            7
+          ],
+          "skinExcess": 30892.850302513587,
+          "boneExcess": 14.088725744718193,
+          "outside": 1743,
+          "insideBone": 70,
+          "ambiguous": 0,
+          "cost": 32301.836876985406
+        },
+        {
+          "parameters": [
+            -2.5,
+            2,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 30236.515609593487,
+          "boneExcess": 24.690977338681133,
+          "outside": 1867,
+          "insideBone": 87,
+          "ambiguous": 0,
+          "cost": 32705.705843461597
+        },
+        {
+          "parameters": [
+            -1.5,
+            2,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 31069.755324260153,
+          "boneExcess": 12.302676105531788,
+          "outside": 1782,
+          "insideBone": 53,
+          "ambiguous": 0,
+          "cost": 32300.107434813333
+        },
+        {
+          "parameters": [
+            -2,
+            1.5,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 36127.73879316561,
+          "boneExcess": 2.0664456363694064,
+          "outside": 1936,
+          "insideBone": 26,
+          "ambiguous": 0,
+          "cost": 36334.46785680255
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 25553.041742220765,
+          "boneExcess": 59.27729246075808,
+          "outside": 1697,
+          "insideBone": 137,
+          "ambiguous": 0,
+          "cost": 31480.86348829657
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            -0.5,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 30865.64959885226,
+          "boneExcess": 11.845711432814621,
+          "outside": 1802,
+          "insideBone": 54,
+          "ambiguous": 0,
+          "cost": 32050.30924213372
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0.5,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 30212.408891388448,
+          "boneExcess": 22.22973136107157,
+          "outside": 1849,
+          "insideBone": 80,
+          "ambiguous": 0,
+          "cost": 32435.470527495607
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            -0.5,
+            0,
+            6
+          ],
+          "skinExcess": 31354.549624569157,
+          "boneExcess": 14.746366984212322,
+          "outside": 1763,
+          "insideBone": 69,
+          "ambiguous": 0,
+          "cost": 32829.27482299039
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0.5,
+            0,
+            6
+          ],
+          "skinExcess": 30266.43117705622,
+          "boneExcess": 17.419330642505475,
+          "outside": 1933,
+          "insideBone": 75,
+          "ambiguous": 0,
+          "cost": 32008.45274130677
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            -0.5,
+            6
+          ],
+          "skinExcess": 30403.363854500098,
+          "boneExcess": 15.655517359078683,
+          "outside": 1989,
+          "insideBone": 72,
+          "ambiguous": 0,
+          "cost": 31969.00409040797
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            0.5,
+            6
+          ],
+          "skinExcess": 31377.85147014327,
+          "boneExcess": 16.461715451281787,
+          "outside": 1722,
+          "insideBone": 71,
+          "ambiguous": 0,
+          "cost": 33024.11151527145
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            0,
+            5.5
+          ],
+          "skinExcess": 30447.523619693766,
+          "boneExcess": 17.168455227509583,
+          "outside": 1856,
+          "insideBone": 71,
+          "ambiguous": 0,
+          "cost": 32164.445642444723
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            0,
+            0,
+            0,
+            6.5
+          ],
+          "skinExcess": 30662.650782303546,
+          "boneExcess": 15.037864553537606,
+          "outside": 1783,
+          "insideBone": 71,
+          "ambiguous": 0,
+          "cost": 32166.53773765731
+        },
+        {
+          "parameters": [
+            -2.5,
+            2.5,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 25283.997408654854,
+          "boneExcess": 79.84743498463749,
+          "outside": 1760,
+          "insideBone": 161,
+          "ambiguous": 0,
+          "cost": 33268.83790711861
+        },
+        {
+          "parameters": [
+            -1.5,
+            2.5,
+            0,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 26088.71004000715,
+          "boneExcess": 48.58117187167054,
+          "outside": 1662,
+          "insideBone": 124,
+          "ambiguous": 0,
+          "cost": 30946.916227174203
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -0.5,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 25867.58410202783,
+          "boneExcess": 48.131668938207795,
+          "outside": 1685,
+          "insideBone": 128,
+          "ambiguous": 0,
+          "cost": 30680.843995848612
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            0.5,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 25291.352383836627,
+          "boneExcess": 73.43600761425948,
+          "outside": 1736,
+          "insideBone": 150,
+          "ambiguous": 0,
+          "cost": 32635.046145262575
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            0,
+            -0.5,
+            0,
+            6
+          ],
+          "skinExcess": 26349.777566254805,
+          "boneExcess": 55.934855063023605,
+          "outside": 1664,
+          "insideBone": 132,
+          "ambiguous": 0,
+          "cost": 31943.356072557166
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            0,
+            0.5,
+            0,
+            6
+          ],
+          "skinExcess": 25262.697746940696,
+          "boneExcess": 62.8338870650827,
+          "outside": 1791,
+          "insideBone": 142,
+          "ambiguous": 0,
+          "cost": 31546.179453448967
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            0,
+            0,
+            -0.5,
+            6
+          ],
+          "skinExcess": 25430.882533597338,
+          "boneExcess": 58.51253430805438,
+          "outside": 1876,
+          "insideBone": 138,
+          "ambiguous": 0,
+          "cost": 31282.228964402777
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            0,
+            0,
+            0.5,
+            6
+          ],
+          "skinExcess": 26379.288744454014,
+          "boneExcess": 60.05906008168468,
+          "outside": 1620,
+          "insideBone": 137,
+          "ambiguous": 0,
+          "cost": 32385.287752622484
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            0,
+            0,
+            0,
+            5.5
+          ],
+          "skinExcess": 25470.402321767786,
+          "boneExcess": 61.85098573742935,
+          "outside": 1740,
+          "insideBone": 136,
+          "ambiguous": 0,
+          "cost": 31655.581895510717
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            0,
+            0,
+            0,
+            6.5
+          ],
+          "skinExcess": 25719.488844851923,
+          "boneExcess": 56.94164972017782,
+          "outside": 1662,
+          "insideBone": 138,
+          "ambiguous": 0,
+          "cost": 31413.758816869704
+        },
+        {
+          "parameters": [
+            -2.5,
+            2.5,
+            -0.5,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 25551.19390512717,
+          "boneExcess": 63.578585445556506,
+          "outside": 1731,
+          "insideBone": 148,
+          "ambiguous": 0,
+          "cost": 31909.149949682822
+        },
+        {
+          "parameters": [
+            -1.5,
+            2.5,
+            -0.5,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 26445.005479446794,
+          "boneExcess": 41.052947235955045,
+          "outside": 1644,
+          "insideBone": 112,
+          "ambiguous": 0,
+          "cost": 30550.389703042296
+        },
+        {
+          "parameters": [
+            -2,
+            3,
+            -0.5,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 21479.545571322094,
+          "boneExcess": 139.771099343225,
+          "outside": 1579,
+          "insideBone": 217,
+          "ambiguous": 0,
+          "cost": 35456.754005644594
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 26225.06731156452,
+          "boneExcess": 39.933677788381544,
+          "outside": 1680,
+          "insideBone": 118,
+          "ambiguous": 0,
+          "cost": 30218.52959040267
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -0.5,
+            -0.5,
+            0,
+            6
+          ],
+          "skinExcess": 26608.00798612309,
+          "boneExcess": 45.277633167049,
+          "outside": 1644,
+          "insideBone": 124,
+          "ambiguous": 0,
+          "cost": 31135.86480282799
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -0.5,
+            0.5,
+            0,
+            6
+          ],
+          "skinExcess": 25610.892580946336,
+          "boneExcess": 51.159588273643145,
+          "outside": 1763,
+          "insideBone": 132,
+          "ambiguous": 0,
+          "cost": 30726.94490831065
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -0.5,
+            0,
+            -0.5,
+            6
+          ],
+          "skinExcess": 25662.376288397554,
+          "boneExcess": 47.48023231606673,
+          "outside": 1849,
+          "insideBone": 127,
+          "ambiguous": 0,
+          "cost": 30410.493020004225
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -0.5,
+            0,
+            0.5,
+            6
+          ],
+          "skinExcess": 26742.295505318947,
+          "boneExcess": 48.80944894296396,
+          "outside": 1609,
+          "insideBone": 126,
+          "ambiguous": 0,
+          "cost": 31623.333899615343
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -0.5,
+            0,
+            0,
+            5.5
+          ],
+          "skinExcess": 25762.939661937766,
+          "boneExcess": 50.85522722803152,
+          "outside": 1729,
+          "insideBone": 128,
+          "ambiguous": 0,
+          "cost": 30848.543884740917
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -0.5,
+            0,
+            0,
+            6.5
+          ],
+          "skinExcess": 26050.8790645619,
+          "boneExcess": 45.618712977751855,
+          "outside": 1645,
+          "insideBone": 128,
+          "ambiguous": 0,
+          "cost": 30612.85586233709
+        },
+        {
+          "parameters": [
+            -2.5,
+            2.5,
+            -1,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 25863.782350333946,
+          "boneExcess": 51.03135011550392,
+          "outside": 1723,
+          "insideBone": 139,
+          "ambiguous": 0,
+          "cost": 30967.016361884336
+        },
+        {
+          "parameters": [
+            -1.5,
+            2.5,
+            -1,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 26845.94493263133,
+          "boneExcess": 35.328046296297146,
+          "outside": 1635,
+          "insideBone": 98,
+          "ambiguous": 0,
+          "cost": 30378.840562261044
+        },
+        {
+          "parameters": [
+            -2,
+            3,
+            -1,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 21795.269558879587,
+          "boneExcess": 123.33131606902478,
+          "outside": 1565,
+          "insideBone": 218,
+          "ambiguous": 0,
+          "cost": 34128.501165782065
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            0,
+            6
+          ],
+          "skinExcess": 26622.43016664417,
+          "boneExcess": 34.21407849093053,
+          "outside": 1661,
+          "insideBone": 100,
+          "ambiguous": 0,
+          "cost": 30043.935015737225
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            -0.5,
+            0,
+            6
+          ],
+          "skinExcess": 26917.06676732977,
+          "boneExcess": 37.5955141286125,
+          "outside": 1632,
+          "insideBone": 112,
+          "ambiguous": 0,
+          "cost": 30676.71318019102
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0.5,
+            0,
+            6
+          ],
+          "skinExcess": 26000.31658954647,
+          "boneExcess": 42.46399850418994,
+          "outside": 1752,
+          "insideBone": 122,
+          "ambiguous": 0,
+          "cost": 30246.811439965466
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            -0.5,
+            6
+          ],
+          "skinExcess": 25943.212260407534,
+          "boneExcess": 39.41385649170634,
+          "outside": 1835,
+          "insideBone": 117,
+          "ambiguous": 0,
+          "cost": 29884.69290957817
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            0.5,
+            6
+          ],
+          "skinExcess": 27149.50083527081,
+          "boneExcess": 40.48513641068916,
+          "outside": 1604,
+          "insideBone": 117,
+          "ambiguous": 0,
+          "cost": 31198.109476339727
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            0,
+            5.5
+          ],
+          "skinExcess": 26101.30147488701,
+          "boneExcess": 42.830727459193284,
+          "outside": 1716,
+          "insideBone": 118,
+          "ambiguous": 0,
+          "cost": 30384.457220806336
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            0,
+            6.5
+          ],
+          "skinExcess": 26426.315484623396,
+          "boneExcess": 37.27870064554932,
+          "outside": 1630,
+          "insideBone": 118,
+          "ambiguous": 0,
+          "cost": 30154.292549178328
+        },
+        {
+          "parameters": [
+            -2.5,
+            2.5,
+            -1,
+            0,
+            -0.5,
+            6
+          ],
+          "skinExcess": 25993.762833781628,
+          "boneExcess": 50.428003978646224,
+          "outside": 1906,
+          "insideBone": 139,
+          "ambiguous": 0,
+          "cost": 31036.66273164625
+        },
+        {
+          "parameters": [
+            -1.5,
+            2.5,
+            -1,
+            0,
+            -0.5,
+            6
+          ],
+          "skinExcess": 26228.936014701365,
+          "boneExcess": 34.932483809030764,
+          "outside": 1756,
+          "insideBone": 99,
+          "ambiguous": 0,
+          "cost": 29722.275895604438
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            -1,
+            0,
+            -0.5,
+            6
+          ],
+          "skinExcess": 30987.1982863304,
+          "boneExcess": 8.646703914585705,
+          "outside": 1957,
+          "insideBone": 48,
+          "ambiguous": 0,
+          "cost": 31851.95917778897
+        },
+        {
+          "parameters": [
+            -2,
+            3,
+            -1,
+            0,
+            -0.5,
+            6
+          ],
+          "skinExcess": 21519.021996247724,
+          "boneExcess": 122.71431278664893,
+          "outside": 1732,
+          "insideBone": 221,
+          "ambiguous": 0,
+          "cost": 33790.553774912616
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            -0.5,
+            6
+          ],
+          "skinExcess": 26263.145031935885,
+          "boneExcess": 33.77539856036717,
+          "outside": 1828,
+          "insideBone": 103,
+          "ambiguous": 0,
+          "cost": 29640.782387972602
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            -0.5,
+            -0.5,
+            6
+          ],
+          "skinExcess": 26617.974627251086,
+          "boneExcess": 37.107546570219185,
+          "outside": 1814,
+          "insideBone": 111,
+          "ambiguous": 0,
+          "cost": 30328.824784273
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0.5,
+            -0.5,
+            6
+          ],
+          "skinExcess": 25795.405094422968,
+          "boneExcess": 41.90437857858717,
+          "outside": 1908,
+          "insideBone": 121,
+          "ambiguous": 0,
+          "cost": 29985.938452281684
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            -1,
+            6
+          ],
+          "skinExcess": 26753.229648028788,
+          "boneExcess": 38.91822203483002,
+          "outside": 2026,
+          "insideBone": 118,
+          "ambiguous": 0,
+          "cost": 30645.14835151179
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            -0.5,
+            5.5
+          ],
+          "skinExcess": 26054.751994707472,
+          "boneExcess": 42.32358238261609,
+          "outside": 1894,
+          "insideBone": 117,
+          "ambiguous": 0,
+          "cost": 30287.19373296908
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 25944.86231559451,
+          "boneExcess": 36.746198251400216,
+          "outside": 1779,
+          "insideBone": 120,
+          "ambiguous": 0,
+          "cost": 29619.589640734528
+        },
+        {
+          "parameters": [
+            -2.5,
+            2.5,
+            -1,
+            0,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 25787.81503228243,
+          "boneExcess": 48.3564943242959,
+          "outside": 1865,
+          "insideBone": 139,
+          "ambiguous": 0,
+          "cost": 30623.57646471202
+        },
+        {
+          "parameters": [
+            -1.5,
+            2.5,
+            -1,
+            0,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 26412.27946555933,
+          "boneExcess": 32.04713254644856,
+          "outside": 1721,
+          "insideBone": 96,
+          "ambiguous": 0,
+          "cost": 29617.096720204187
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            -1,
+            0,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 30972.752640026352,
+          "boneExcess": 7.706817056437255,
+          "outside": 1891,
+          "insideBone": 45,
+          "ambiguous": 0,
+          "cost": 31743.537345670076
+        },
+        {
+          "parameters": [
+            -2,
+            3,
+            -1,
+            0,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 21530.339975406754,
+          "boneExcess": 117.82018928673463,
+          "outside": 1666,
+          "insideBone": 219,
+          "ambiguous": 0,
+          "cost": 33312.471904080216
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 26288.825170257544,
+          "boneExcess": 31.033617940126735,
+          "outside": 1772,
+          "insideBone": 100,
+          "ambiguous": 0,
+          "cost": 29392.29696427022
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -0.5,
+            0,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 25639.03615503011,
+          "boneExcess": 44.966518911027215,
+          "outside": 1790,
+          "insideBone": 128,
+          "ambiguous": 0,
+          "cost": 30135.794046132833
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            -0.5,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 26619.53332149969,
+          "boneExcess": 34.44715242069064,
+          "outside": 1756,
+          "insideBone": 113,
+          "ambiguous": 0,
+          "cost": 30064.356563568756
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0.5,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 25767.17371781155,
+          "boneExcess": 39.22980384960749,
+          "outside": 1840,
+          "insideBone": 124,
+          "ambiguous": 0,
+          "cost": 29690.2621027723
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            -1,
+            6.5
+          ],
+          "skinExcess": 26416.843228708345,
+          "boneExcess": 36.23292819077761,
+          "outside": 1964,
+          "insideBone": 121,
+          "ambiguous": 0,
+          "cost": 30040.245047786106
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            -0.5,
+            7
+          ],
+          "skinExcess": 26046.813119777788,
+          "boneExcess": 34.35019997995179,
+          "outside": 1714,
+          "insideBone": 121,
+          "ambiguous": 0,
+          "cost": 29481.954117772966
+        },
+        {
+          "parameters": [
+            -2.5,
+            2.5,
+            -1.5,
+            0,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 26079.642362174665,
+          "boneExcess": 38.77334050491365,
+          "outside": 1844,
+          "insideBone": 133,
+          "ambiguous": 0,
+          "cost": 29957.09091266603
+        },
+        {
+          "parameters": [
+            -1.5,
+            2.5,
+            -1.5,
+            0,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 26807.95160456024,
+          "boneExcess": 27.72096555769395,
+          "outside": 1711,
+          "insideBone": 92,
+          "ambiguous": 0,
+          "cost": 29580.154660329637
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            -1.5,
+            0,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 31357.588107967596,
+          "boneExcess": 5.735709067720992,
+          "outside": 1877,
+          "insideBone": 40,
+          "ambiguous": 0,
+          "cost": 31931.264514739698
+        },
+        {
+          "parameters": [
+            -2,
+            3,
+            -1.5,
+            0,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 21834.37052044137,
+          "boneExcess": 105.280741393241,
+          "outside": 1666,
+          "insideBone": 215,
+          "ambiguous": 0,
+          "cost": 32362.56015976547
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            0,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 26670.468859206143,
+          "boneExcess": 27.06155986171241,
+          "outside": 1764,
+          "insideBone": 97,
+          "ambiguous": 0,
+          "cost": 29376.738345377384
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            -0.5,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 26921.50649446423,
+          "boneExcess": 29.080540316027914,
+          "outside": 1754,
+          "insideBone": 94,
+          "ambiguous": 0,
+          "cost": 29829.67102606702
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0.5,
+            -0.5,
+            6.5
+          ],
+          "skinExcess": 26138.782498416957,
+          "boneExcess": 33.14617044187034,
+          "outside": 1826,
+          "insideBone": 103,
+          "ambiguous": 0,
+          "cost": 29453.51004260399
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            -1,
+            6.5
+          ],
+          "skinExcess": 26667.507295076055,
+          "boneExcess": 30.61129464592983,
+          "outside": 1957,
+          "insideBone": 101,
+          "ambiguous": 0,
+          "cost": 29728.74825966904
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            0,
+            6.5
+          ],
+          "skinExcess": 26840.745546067414,
+          "boneExcess": 31.47571320111917,
+          "outside": 1626,
+          "insideBone": 100,
+          "ambiguous": 0,
+          "cost": 29988.42636617933
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            -0.5,
+            7
+          ],
+          "skinExcess": 26414.016439524465,
+          "boneExcess": 28.48706265705228,
+          "outside": 1710,
+          "insideBone": 102,
+          "ambiguous": 0,
+          "cost": 29262.846205229693
+        },
+        {
+          "parameters": [
+            -2.5,
+            2.5,
+            -1.5,
+            0,
+            -0.5,
+            7
+          ],
+          "skinExcess": 26014.458905718246,
+          "boneExcess": 36.71416505821182,
+          "outside": 1785,
+          "insideBone": 131,
+          "ambiguous": 0,
+          "cost": 29686.003411539426
+        },
+        {
+          "parameters": [
+            -1.5,
+            2.5,
+            -1.5,
+            0,
+            -0.5,
+            7
+          ],
+          "skinExcess": 27104.56898018205,
+          "boneExcess": 25.105199386615897,
+          "outside": 1673,
+          "insideBone": 92,
+          "ambiguous": 0,
+          "cost": 29615.20891884364
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            -1.5,
+            0,
+            -0.5,
+            7
+          ],
+          "skinExcess": 31471.893374064584,
+          "boneExcess": 4.940413061221543,
+          "outside": 1824,
+          "insideBone": 37,
+          "ambiguous": 0,
+          "cost": 31966.05368018674
+        },
+        {
+          "parameters": [
+            -2,
+            3,
+            -1.5,
+            0,
+            -0.5,
+            7
+          ],
+          "skinExcess": 21967.822645346707,
+          "boneExcess": 100.33370965121391,
+          "outside": 1615,
+          "insideBone": 211,
+          "ambiguous": 0,
+          "cost": 32001.322610468098
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            0,
+            -0.5,
+            7
+          ],
+          "skinExcess": 26817.630403925697,
+          "boneExcess": 24.563753696982687,
+          "outside": 1710,
+          "insideBone": 96,
+          "ambiguous": 0,
+          "cost": 29274.132773623965
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            -0.5,
+            -0.5,
+            7
+          ],
+          "skinExcess": 27046.55079190575,
+          "boneExcess": 26.59797711462505,
+          "outside": 1696,
+          "insideBone": 96,
+          "ambiguous": 0,
+          "cost": 29706.472503368255
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0.5,
+            -0.5,
+            7
+          ],
+          "skinExcess": 26242.14804888221,
+          "boneExcess": 30.597716635191162,
+          "outside": 1787,
+          "insideBone": 106,
+          "ambiguous": 0,
+          "cost": 29302.043712401326
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            -1,
+            7
+          ],
+          "skinExcess": 26500.58983088245,
+          "boneExcess": 28.060612290539645,
+          "outside": 1900,
+          "insideBone": 104,
+          "ambiguous": 0,
+          "cost": 29306.776059936416
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            0,
+            7
+          ],
+          "skinExcess": 27129.34022017211,
+          "boneExcess": 28.943760306800506,
+          "outside": 1598,
+          "insideBone": 100,
+          "ambiguous": 0,
+          "cost": 30023.83925085216
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            -0.5,
+            7.5
+          ],
+          "skinExcess": 26632.58372447774,
+          "boneExcess": 26.225433814851186,
+          "outside": 1681,
+          "insideBone": 105,
+          "ambiguous": 0,
+          "cost": 29255.265105962855
+        },
+        {
+          "parameters": [
+            -2.5,
+            2.5,
+            -1.5,
+            0,
+            -0.5,
+            7.5
+          ],
+          "skinExcess": 26055.265681297806,
+          "boneExcess": 34.85810411584328,
+          "outside": 1721,
+          "insideBone": 128,
+          "ambiguous": 0,
+          "cost": 29541.218592882135
+        },
+        {
+          "parameters": [
+            -1.5,
+            2.5,
+            -1.5,
+            0,
+            -0.5,
+            7.5
+          ],
+          "skinExcess": 27484.856797470413,
+          "boneExcess": 22.6766844107946,
+          "outside": 1643,
+          "insideBone": 93,
+          "ambiguous": 0,
+          "cost": 29752.65973854987
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            -1.5,
+            0,
+            -0.5,
+            7.5
+          ],
+          "skinExcess": 31680.45289732532,
+          "boneExcess": 4.248324906510483,
+          "outside": 1794,
+          "insideBone": 36,
+          "ambiguous": 0,
+          "cost": 32105.418887976368
+        },
+        {
+          "parameters": [
+            -2,
+            3,
+            -1.5,
+            0,
+            -0.5,
+            7.5
+          ],
+          "skinExcess": 22189.304839816938,
+          "boneExcess": 95.95897379756788,
+          "outside": 1576,
+          "insideBone": 215,
+          "ambiguous": 0,
+          "cost": 31785.345719573725
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            0,
+            -0.5,
+            7.5
+          ],
+          "skinExcess": 27056.717586936516,
+          "boneExcess": 22.262477356100494,
+          "outside": 1665,
+          "insideBone": 93,
+          "ambiguous": 0,
+          "cost": 29283.106822546568
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            -0.5,
+            7.5
+          ],
+          "skinExcess": 26244.142248827462,
+          "boneExcess": 32.18811831185591,
+          "outside": 1680,
+          "insideBone": 122,
+          "ambiguous": 0,
+          "cost": 29463.089580013053
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            -0.5,
+            -0.5,
+            7.5
+          ],
+          "skinExcess": 27263.94938198369,
+          "boneExcess": 24.348462654473416,
+          "outside": 1664,
+          "insideBone": 99,
+          "ambiguous": 0,
+          "cost": 29698.93414743103
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0.5,
+            -0.5,
+            7.5
+          ],
+          "skinExcess": 26443.787979354012,
+          "boneExcess": 28.315078488639216,
+          "outside": 1756,
+          "insideBone": 111,
+          "ambiguous": 0,
+          "cost": 29275.434328217936
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            -1,
+            7.5
+          ],
+          "skinExcess": 26465.729855195463,
+          "boneExcess": 25.792883232012652,
+          "outside": 1855,
+          "insideBone": 105,
+          "ambiguous": 0,
+          "cost": 29045.15767839673
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            0,
+            7.5
+          ],
+          "skinExcess": 27484.710924074927,
+          "boneExcess": 26.682014503417555,
+          "outside": 1590,
+          "insideBone": 103,
+          "ambiguous": 0,
+          "cost": 30153.049874416683
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            -0.5,
+            8
+          ],
+          "skinExcess": 26936.213138168925,
+          "boneExcess": 24.205873923530334,
+          "outside": 1647,
+          "insideBone": 106,
+          "ambiguous": 0,
+          "cost": 29356.95403052196
+        },
+        {
+          "parameters": [
+            -2.5,
+            2.5,
+            -1.5,
+            0,
+            -1,
+            7.5
+          ],
+          "skinExcess": 26325.47164623124,
+          "boneExcess": 34.38381021566156,
+          "outside": 1910,
+          "insideBone": 131,
+          "ambiguous": 0,
+          "cost": 29763.996667797393
+        },
+        {
+          "parameters": [
+            -1.5,
+            2.5,
+            -1.5,
+            0,
+            -1,
+            7.5
+          ],
+          "skinExcess": 26960.63792028627,
+          "boneExcess": 22.380070429902975,
+          "outside": 1773,
+          "insideBone": 91,
+          "ambiguous": 0,
+          "cost": 29198.780963276567
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            -1.5,
+            0,
+            -1,
+            7.5
+          ],
+          "skinExcess": 31544.078876089883,
+          "boneExcess": 4.093770004221749,
+          "outside": 1955,
+          "insideBone": 36,
+          "ambiguous": 0,
+          "cost": 31953.590876512055
+        },
+        {
+          "parameters": [
+            -2,
+            3,
+            -1.5,
+            0,
+            -1,
+            7.5
+          ],
+          "skinExcess": 22004.329280682538,
+          "boneExcess": 95.44720055267588,
+          "outside": 1754,
+          "insideBone": 216,
+          "ambiguous": 0,
+          "cost": 31549.194335950127
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            0,
+            -1,
+            7.5
+          ],
+          "skinExcess": 26809.65213084895,
+          "boneExcess": 21.950093760268423,
+          "outside": 1841,
+          "insideBone": 92,
+          "ambiguous": 0,
+          "cost": 29004.804506875793
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            -1,
+            7.5
+          ],
+          "skinExcess": 26159.792141126658,
+          "boneExcess": 31.662991901131164,
+          "outside": 1855,
+          "insideBone": 122,
+          "ambiguous": 0,
+          "cost": 29326.228331239774
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            -0.5,
+            -1,
+            7.5
+          ],
+          "skinExcess": 27083.53940137605,
+          "boneExcess": 23.937226972448443,
+          "outside": 1842,
+          "insideBone": 100,
+          "ambiguous": 0,
+          "cost": 29477.402098620893
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0.5,
+            -1,
+            7.5
+          ],
+          "skinExcess": 26354.04700284001,
+          "boneExcess": 27.846736983289656,
+          "outside": 1896,
+          "insideBone": 109,
+          "ambiguous": 1,
+          "cost": null
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            -1.5,
+            7.5
+          ],
+          "skinExcess": 27435.48704489662,
+          "boneExcess": 25.37752264138283,
+          "outside": 2035,
+          "insideBone": 106,
+          "ambiguous": 0,
+          "cost": 29973.381309034903
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 26555.067775480155,
+          "boneExcess": 23.772407038975263,
+          "outside": 1792,
+          "insideBone": 104,
+          "ambiguous": 0,
+          "cost": 28932.46347937768
+        },
+        {
+          "parameters": [
+            -2.5,
+            2.5,
+            -1.5,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 26192.002598559247,
+          "boneExcess": 32.70526082448977,
+          "outside": 1867,
+          "insideBone": 127,
+          "ambiguous": 0,
+          "cost": 29462.688181008227
+        },
+        {
+          "parameters": [
+            -1.5,
+            2.5,
+            -1.5,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 27247.7162318501,
+          "boneExcess": 20.155762631858252,
+          "outside": 1732,
+          "insideBone": 90,
+          "ambiguous": 0,
+          "cost": 29263.443995035923
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            -1.5,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 31624.54726846034,
+          "boneExcess": 3.484812802359062,
+          "outside": 1888,
+          "insideBone": 35,
+          "ambiguous": 0,
+          "cost": 31973.179048696245
+        },
+        {
+          "parameters": [
+            -2,
+            3,
+            -1.5,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 22098.828805049314,
+          "boneExcess": 91.67672207293315,
+          "outside": 1704,
+          "insideBone": 218,
+          "ambiguous": 0,
+          "cost": 31266.66151234263
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 26923.561867019765,
+          "boneExcess": 19.86548804178962,
+          "outside": 1789,
+          "insideBone": 92,
+          "ambiguous": 0,
+          "cost": 28910.269171198728
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 26221.82946902024,
+          "boneExcess": 29.69758904465268,
+          "outside": 1797,
+          "insideBone": 123,
+          "ambiguous": 0,
+          "cost": 29191.740873485505
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            -0.5,
+            -1,
+            8
+          ],
+          "skinExcess": 27171.36089811815,
+          "boneExcess": 21.9222577014102,
+          "outside": 1780,
+          "insideBone": 99,
+          "ambiguous": 0,
+          "cost": 29363.74216825917
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0.5,
+            -1,
+            8
+          ],
+          "skinExcess": 26428.46962002504,
+          "boneExcess": 25.820027270667936,
+          "outside": 1825,
+          "insideBone": 111,
+          "ambiguous": 0,
+          "cost": 29010.627847091833
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.5,
+            0,
+            -1.5,
+            8
+          ],
+          "skinExcess": 27169.783702068195,
+          "boneExcess": 23.354930279275376,
+          "outside": 1980,
+          "insideBone": 107,
+          "ambiguous": 0,
+          "cost": 29505.434229995735
+        },
+        {
+          "parameters": [
+            -2.5,
+            2.5,
+            -2,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 26504.820363980536,
+          "boneExcess": 25.86207999007981,
+          "outside": 1857,
+          "insideBone": 121,
+          "ambiguous": 0,
+          "cost": 29091.191362988517
+        },
+        {
+          "parameters": [
+            -1.5,
+            2.5,
+            -2,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 27672.14516576908,
+          "boneExcess": 17.18620720908281,
+          "outside": 1736,
+          "insideBone": 86,
+          "ambiguous": 0,
+          "cost": 29390.920886677362
+        },
+        {
+          "parameters": [
+            -2,
+            2,
+            -2,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 32036.900927665,
+          "boneExcess": 2.3807739949179996,
+          "outside": 1882,
+          "insideBone": 31,
+          "ambiguous": 0,
+          "cost": 32275.1323271568
+        },
+        {
+          "parameters": [
+            -2,
+            3,
+            -2,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 22426.693051284445,
+          "boneExcess": 82.49279396378266,
+          "outside": 1697,
+          "insideBone": 215,
+          "ambiguous": 0,
+          "cost": 30676.13644766271
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2.5,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 27324.680204264998,
+          "boneExcess": 17.218364634029978,
+          "outside": 1789,
+          "insideBone": 93,
+          "ambiguous": 0,
+          "cost": 29046.679667667995
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            -0.5,
+            -1,
+            8
+          ],
+          "skinExcess": 27502.71620525711,
+          "boneExcess": 18.36010762235079,
+          "outside": 1781,
+          "insideBone": 83,
+          "ambiguous": 0,
+          "cost": 29338.88596749219
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            0.5,
+            -1,
+            8
+          ],
+          "skinExcess": 26823.863147973952,
+          "boneExcess": 21.552133751846323,
+          "outside": 1823,
+          "insideBone": 97,
+          "ambiguous": 0,
+          "cost": 28979.235523158583
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            0,
+            -1.5,
+            8
+          ],
+          "skinExcess": 27440.653322108123,
+          "boneExcess": 19.558481974161896,
+          "outside": 1975,
+          "insideBone": 93,
+          "ambiguous": 0,
+          "cost": 29396.66251952431
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            0,
+            -0.5,
+            8
+          ],
+          "skinExcess": 27379.649499402036,
+          "boneExcess": 20.189148750980472,
+          "outside": 1640,
+          "insideBone": 92,
+          "ambiguous": 0,
+          "cost": 29398.72137450008
+        },
+        {
+          "parameters": [
+            -2.25,
+            2.5,
+            -2,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 26670.84730464894,
+          "boneExcess": 22.206241372392537,
+          "outside": 1828,
+          "insideBone": 106,
+          "ambiguous": 0,
+          "cost": 28891.632066888196
+        },
+        {
+          "parameters": [
+            -1.75,
+            2.5,
+            -2,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 27258.850362729758,
+          "boneExcess": 18.266054106562624,
+          "outside": 1751,
+          "insideBone": 91,
+          "ambiguous": 0,
+          "cost": 29085.61239838602
+        },
+        {
+          "parameters": [
+            -2,
+            2.25,
+            -2,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 29400.48016264283,
+          "boneExcess": 7.980294260008775,
+          "outside": 1838,
+          "insideBone": 50,
+          "ambiguous": 0,
+          "cost": 30198.66571364371
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 24600.402408796133,
+          "boneExcess": 42.594793577156196,
+          "outside": 1746,
+          "insideBone": 154,
+          "ambiguous": 0,
+          "cost": 28860.04289151175
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2.25,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 27119.747450562478,
+          "boneExcess": 18.40913659827867,
+          "outside": 1790,
+          "insideBone": 92,
+          "ambiguous": 0,
+          "cost": 28960.821735390346
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -1.75,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 26734.85983373605,
+          "boneExcess": 21.6361399189353,
+          "outside": 1791,
+          "insideBone": 96,
+          "ambiguous": 0,
+          "cost": 28898.63045062958
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            -0.25,
+            -1,
+            8
+          ],
+          "skinExcess": 27160.741282463947,
+          "boneExcess": 19.095017580873492,
+          "outside": 1783,
+          "insideBone": 90,
+          "ambiguous": 0,
+          "cost": 29070.401665551297
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            0.25,
+            -1,
+            8
+          ],
+          "skinExcess": 26806.115284267664,
+          "boneExcess": 20.683450537677718,
+          "outside": 1795,
+          "insideBone": 95,
+          "ambiguous": 0,
+          "cost": 28874.618963035435
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            0,
+            -1.25,
+            8
+          ],
+          "skinExcess": 27030.174899853635,
+          "boneExcess": 19.709791268278707,
+          "outside": 1889,
+          "insideBone": 92,
+          "ambiguous": 0,
+          "cost": 29001.313651681507
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            0,
+            -0.75,
+            8
+          ],
+          "skinExcess": 27058.86657809484,
+          "boneExcess": 20.025185554213774,
+          "outside": 1706,
+          "insideBone": 92,
+          "ambiguous": 0,
+          "cost": 29061.542758516218
+        },
+        {
+          "parameters": [
+            -2,
+            2.5,
+            -2,
+            0,
+            -1,
+            7.75
+          ],
+          "skinExcess": 26852.17138822841,
+          "boneExcess": 20.875644082778045,
+          "outside": 1812,
+          "insideBone": 91,
+          "ambiguous": 0,
+          "cost": 28939.886421506213
+        },
+        {
+          "parameters": [
+            -2.25,
+            2.75,
+            -2,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 24353.47681643024,
+          "boneExcess": 46.70088616373615,
+          "outside": 1774,
+          "insideBone": 170,
+          "ambiguous": 0,
+          "cost": 29023.728682803856
+        },
+        {
+          "parameters": [
+            -1.75,
+            2.75,
+            -2,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 24928.72475652753,
+          "boneExcess": 40.0584415011689,
+          "outside": 1701,
+          "insideBone": 132,
+          "ambiguous": 0,
+          "cost": 28934.728156644418
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2.25,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 24786.458023454732,
+          "boneExcess": 40.47616793427614,
+          "outside": 1738,
+          "insideBone": 142,
+          "ambiguous": 0,
+          "cost": 28834.238066882346
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -1.75,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 24422.565536026366,
+          "boneExcess": 45.391079426917976,
+          "outside": 1748,
+          "insideBone": 157,
+          "ambiguous": 0,
+          "cost": 28961.832728718164
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2,
+            -0.25,
+            -1,
+            8
+          ],
+          "skinExcess": 24827.12133980445,
+          "boneExcess": 41.050566346254385,
+          "outside": 1728,
+          "insideBone": 147,
+          "ambiguous": 0,
+          "cost": 28932.33922442989
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2,
+            0.25,
+            -1,
+            8
+          ],
+          "skinExcess": 24485.866424967586,
+          "boneExcess": 44.23024882062753,
+          "outside": 1744,
+          "insideBone": 156,
+          "ambiguous": 0,
+          "cost": 28909.05255703034
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2,
+            0,
+            -1.25,
+            8
+          ],
+          "skinExcess": 24696.44070916267,
+          "boneExcess": 42.410454913622075,
+          "outside": 1838,
+          "insideBone": 153,
+          "ambiguous": 0,
+          "cost": 28937.64845052488
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2,
+            0,
+            -0.75,
+            8
+          ],
+          "skinExcess": 24742.062678120445,
+          "boneExcess": 42.792053743629324,
+          "outside": 1652,
+          "insideBone": 153,
+          "ambiguous": 0,
+          "cost": 29021.42830248338
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2,
+            0,
+            -1,
+            7.75
+          ],
+          "skinExcess": 24527.770636379526,
+          "boneExcess": 44.13606338731904,
+          "outside": 1767,
+          "insideBone": 151,
+          "ambiguous": 0,
+          "cost": 28941.53022511143
+        },
+        {
+          "parameters": [
+            -2.25,
+            2.75,
+            -2.25,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 24525.49579209713,
+          "boneExcess": 43.837964409696546,
+          "outside": 1773,
+          "insideBone": 164,
+          "ambiguous": 0,
+          "cost": 28909.457608066783
+        },
+        {
+          "parameters": [
+            -1.75,
+            2.75,
+            -2.25,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 25128.26339953994,
+          "boneExcess": 38.165426616289245,
+          "outside": 1702,
+          "insideBone": 133,
+          "ambiguous": 0,
+          "cost": 28944.967436168867
+        },
+        {
+          "parameters": [
+            -2,
+            3,
+            -2.25,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 22602.32704032651,
+          "boneExcess": 79.50027197040698,
+          "outside": 1691,
+          "insideBone": 212,
+          "ambiguous": 0,
+          "cost": 30552.520362367206
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2.5,
+            0,
+            -1,
+            8
+          ],
+          "skinExcess": 24980.53822861472,
+          "boneExcess": 38.85790212603292,
+          "outside": 1734,
+          "insideBone": 142,
+          "ambiguous": 0,
+          "cost": 28866.494066218016
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2.25,
+            -0.25,
+            -1,
+            8
+          ],
+          "skinExcess": 25004.93040655503,
+          "boneExcess": 38.98142669937162,
+          "outside": 1735,
+          "insideBone": 141,
+          "ambiguous": 0,
+          "cost": 28903.236451492194
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2.25,
+            0.25,
+            -1,
+            8
+          ],
+          "skinExcess": 24679.248559094216,
+          "boneExcess": 42.03287675507333,
+          "outside": 1750,
+          "insideBone": 148,
+          "ambiguous": 0,
+          "cost": 28882.69960960155
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2.25,
+            0,
+            -1.25,
+            8
+          ],
+          "skinExcess": 24860.22939717379,
+          "boneExcess": 40.311155813738864,
+          "outside": 1830,
+          "insideBone": 144,
+          "ambiguous": 0,
+          "cost": 28891.509353547677
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2.25,
+            0,
+            -0.75,
+            8
+          ],
+          "skinExcess": 24948.143856746574,
+          "boneExcess": 40.64644722388804,
+          "outside": 1645,
+          "insideBone": 142,
+          "ambiguous": 0,
+          "cost": 29012.950954135376
+        },
+        {
+          "parameters": [
+            -2,
+            2.75,
+            -2.25,
+            0,
+            -1,
+            7.75
+          ],
+          "skinExcess": 24706.969567262095,
+          "boneExcess": 42.043033001497655,
+          "outside": 1763,
+          "insideBone": 146,
+          "ambiguous": 0,
+          "cost": 28911.428242411857
+        }
+      ],
+      "parts": [
+        {
+          "structure": "Talus",
+          "vertices": 5539,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "Calcaneous",
+          "vertices": 8738,
+          "outside": 964,
+          "ambiguous": 0,
+          "maxOutsideMm": 8.979262742405819,
+          "worst": {
+            "index": 6754,
+            "pointMetres": [
+              0.12949499487876892,
+              -0.0009400567505508661,
+              -0.11514612287282944
+            ]
+          }
+        },
+        {
+          "structure": "Navicular",
+          "vertices": 2307,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "Cuboid",
+          "vertices": 2465,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "LateralCuneiform",
+          "vertices": 1351,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "MedialCuneiform",
+          "vertices": 2047,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "IntermediateCuneiform",
+          "vertices": 1166,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "Phalanges",
+          "vertices": 17470,
+          "outside": 774,
+          "ambiguous": 0,
+          "maxOutsideMm": 9.684881342866792,
+          "worst": {
+            "index": 840,
+            "pointMetres": [
+              0.1743403971195221,
+              0.013112849555909634,
+              -0.04359019175171852
+            ]
+          }
+        }
+      ],
+      "collisions": [
+        {
+          "foot": "Talus",
+          "target": "Tibia (left)",
+          "intersectingTrianglePairs": 177,
+          "strictPlaneStraddlingPairs": 174,
+          "toleranceMm": 0.001,
+          "maxTrianglePlaneStraddleExtentMm": 0.3794926662281764
+        }
+      ],
+      "summary": {
+        "vertices": 41083,
+        "outside": 1738,
+        "ambiguous": 0,
+        "maxOutsideMm": 9.684881342866792,
+        "strictCrossingPairs": 1
+      },
+      "targetTopology": [
+        {
+          "name": "Tibia (left)",
+          "topology": {
+            "weldedVertices": 385,
+            "connectedComponents": 1,
+            "boundaryEdges": 0,
+            "nonManifoldEdges": 0,
+            "degenerateTriangles": 0
+          }
+        },
+        {
+          "name": "Fibula (left)",
+          "topology": {
+            "weldedVertices": 169,
+            "connectedComponents": 1,
+            "boundaryEdges": 0,
+            "nonManifoldEdges": 0,
+            "degenerateTriangles": 0
+          }
+        }
+      ]
+    },
+    {
+      "side": "right",
+      "inputVariant": 2,
+      "inputRotation": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0.8571673007021123,
+        -0.5150380749100542,
+        0,
+        0,
+        0.5150380749100542,
+        0.8571673007021123,
+        0,
+        0,
+        0.05244180962576101,
+        0.02343454010973897,
+        1
+      ],
+      "pivotMetres": [
+        -0.14681871235370636,
+        0.06178122200071812,
+        -0.07810849696397781
+      ],
+      "initial": {
+        "parameters": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "skinExcess": 9968.594077811877,
+        "boneExcess": 0,
+        "outside": 1934,
+        "insideBone": 0,
+        "ambiguous": 0,
+        "cost": 9968.594077811877
+      },
+      "best": {
+        "parameters": [
+          1.75,
+          4.5,
+          -4.25,
+          0,
+          0,
+          -6.25
+        ],
+        "skinExcess": 2.177773529123095,
+        "boneExcess": 0.006003668844117947,
+        "outside": 44,
+        "insideBone": 1,
+        "ambiguous": 0,
+        "cost": 2.9390154135348894
+      },
+      "rigidMatrix": [
+        0.9940563382223196,
+        -0.10886687485196457,
+        0,
+        0,
+        0.10886687485196457,
+        0.9940563382223196,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        -0.005848569332618597,
+        -0.01111648769595347,
+        -0.004250000000000004,
+        1
+      ],
+      "trials": [
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 9968.594077811877,
+          "boneExcess": 0,
+          "outside": 1934,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 9968.594077811877
+        },
+        {
+          "parameters": [
+            -4,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 15635.97230286086,
+          "boneExcess": 0,
+          "outside": 1882,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 15636.00430286086
+        },
+        {
+          "parameters": [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 18795.59570465318,
+          "boneExcess": 0,
+          "outside": 2442,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 18795.62770465318
+        },
+        {
+          "parameters": [
+            0,
+            -4,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 62943.03216334669,
+          "boneExcess": 0,
+          "outside": 3585,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 62943.06416334669
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 2966.3961458847075,
+          "boneExcess": 0.14076603481382394,
+          "outside": 871,
+          "insideBone": 7,
+          "ambiguous": 0,
+          "cost": 2980.50474936609
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            -4,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 7299.044040826353,
+          "boneExcess": 0,
+          "outside": 1662,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 7299.076040826353
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 18135.109507244208,
+          "boneExcess": 0,
+          "outside": 2333,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 18135.141507244207
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            -4,
+            0,
+            0
+          ],
+          "skinExcess": 35122.27724755696,
+          "boneExcess": 0,
+          "outside": 2737,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 35122.30924755696
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          "skinExcess": 109761.0482731381,
+          "boneExcess": 0,
+          "outside": 4425,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 109761.08027313811
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            -4,
+            0
+          ],
+          "skinExcess": 23826.289346473208,
+          "boneExcess": 0,
+          "outside": 2114,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 23826.321346473207
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          "skinExcess": 70311.4058601311,
+          "boneExcess": 0,
+          "outside": 3183,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 70311.4378601311
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 6901.357741938238,
+          "boneExcess": 0,
+          "outside": 1400,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 6901.389741938238
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 24228.07441032018,
+          "boneExcess": 0,
+          "outside": 2728,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 24228.10641032018
+        },
+        {
+          "parameters": [
+            -4,
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 2427.004299547027,
+          "boneExcess": 3.588918836669363,
+          "outside": 540,
+          "insideBone": 22,
+          "ambiguous": 0,
+          "cost": 2785.9601832139633
+        },
+        {
+          "parameters": [
+            4,
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 19720.615653821842,
+          "boneExcess": 63.06858646417094,
+          "outside": 1336,
+          "insideBone": 104,
+          "ambiguous": 0,
+          "cost": 26027.538300238935
+        },
+        {
+          "parameters": [
+            0,
+            8,
+            0,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 9270.198317393955,
+          "boneExcess": 1826.793397807615,
+          "outside": 1219,
+          "insideBone": 528,
+          "ambiguous": 0,
+          "cost": 191949.66609815546
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 1339.8078523422023,
+          "boneExcess": 0.01790245092712988,
+          "outside": 627,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 1341.6620974349153
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            4,
+            0,
+            0,
+            0
+          ],
+          "skinExcess": 7868.981307072141,
+          "boneExcess": 1.7095410400594289,
+          "outside": 1258,
+          "insideBone": 19,
+          "ambiguous": 0,
+          "cost": 8039.999411078084
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            -4,
+            0,
+            0
+          ],
+          "skinExcess": 81408.19526228381,
+          "boneExcess": 0.08257393160909772,
+          "outside": 3056,
+          "insideBone": 7,
+          "ambiguous": 0,
+          "cost": 81416.51665544472
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            4,
+            0,
+            0
+          ],
+          "skinExcess": 30069.57105784673,
+          "boneExcess": 0.5987815430743334,
+          "outside": 1939,
+          "insideBone": 13,
+          "ambiguous": 0,
+          "cost": 30129.51321215416
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            0,
+            -4,
+            0
+          ],
+          "skinExcess": 7416.940893105307,
+          "boneExcess": 0.12881710409338545,
+          "outside": 779,
+          "insideBone": 8,
+          "ambiguous": 0,
+          "cost": 7429.886603514646
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            0,
+            4,
+            0
+          ],
+          "skinExcess": 84665.6433249601,
+          "boneExcess": 0.15855514290411477,
+          "outside": 2204,
+          "insideBone": 7,
+          "ambiguous": 1,
+          "cost": null
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 737.3274998568329,
+          "boneExcess": 0,
+          "outside": 280,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 737.3914998568329
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            0,
+            0,
+            4
+          ],
+          "skinExcess": 16540.23444921426,
+          "boneExcess": 1.6312572319867056,
+          "outside": 1527,
+          "insideBone": 18,
+          "ambiguous": 0,
+          "cost": 16703.424172412928
+        },
+        {
+          "parameters": [
+            -4,
+            4,
+            0,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 3631.5578970275155,
+          "boneExcess": 0.4841917513235759,
+          "outside": 556,
+          "insideBone": 10,
+          "ambiguous": 0,
+          "cost": 3680.073072159873
+        },
+        {
+          "parameters": [
+            4,
+            4,
+            0,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 3715.524029352605,
+          "boneExcess": 81.00940650783203,
+          "outside": 830,
+          "insideBone": 108,
+          "ambiguous": 0,
+          "cost": 11816.560680135806
+        },
+        {
+          "parameters": [
+            0,
+            8,
+            0,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 2113.41277830277,
+          "boneExcess": 1729.2816951869606,
+          "outside": 769,
+          "insideBone": 552,
+          "ambiguous": 0,
+          "cost": 175041.74229699883
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 57.330512329170816,
+          "boneExcess": 0,
+          "outside": 119,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 57.42651232917081
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 4820.533744075632,
+          "boneExcess": 0.20671455556032908,
+          "outside": 645,
+          "insideBone": 11,
+          "ambiguous": 0,
+          "cost": 4841.3011996316645
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            -4,
+            0,
+            -4
+          ],
+          "skinExcess": 63098.43757372731,
+          "boneExcess": 0.01504662914280783,
+          "outside": 3001,
+          "insideBone": 4,
+          "ambiguous": 0,
+          "cost": 63100.03823664159
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            4,
+            0,
+            -4
+          ],
+          "skinExcess": 18294.730681197343,
+          "boneExcess": 0.007094805001769597,
+          "outside": 1575,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 18295.53616169752
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            0,
+            -4,
+            -4
+          ],
+          "skinExcess": 11753.644581500113,
+          "boneExcess": 0,
+          "outside": 963,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 11753.740581500113
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            0,
+            4,
+            -4
+          ],
+          "skinExcess": 35869.548017732246,
+          "boneExcess": 0,
+          "outside": 1533,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 35869.644017732244
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            0,
+            0,
+            0,
+            -8
+          ],
+          "skinExcess": 1650.2147601273566,
+          "boneExcess": 0,
+          "outside": 331,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 1650.3747601273567
+        },
+        {
+          "parameters": [
+            -4,
+            4,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 1750.6017284234658,
+          "boneExcess": 22.02863043825513,
+          "outside": 424,
+          "insideBone": 42,
+          "ambiguous": 0,
+          "cost": 3953.592772248979
+        },
+        {
+          "parameters": [
+            4,
+            4,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 2201.2616421770867,
+          "boneExcess": 8.068497250226557,
+          "outside": 655,
+          "insideBone": 49,
+          "ambiguous": 0,
+          "cost": 3008.2393671997424
+        },
+        {
+          "parameters": [
+            0,
+            0,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 5737.5014992399765,
+          "boneExcess": 0,
+          "outside": 1277,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 5737.565499239977
+        },
+        {
+          "parameters": [
+            0,
+            8,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 441.5428116318875,
+          "boneExcess": 1845.1495100334487,
+          "outside": 406,
+          "insideBone": 552,
+          "ambiguous": 0,
+          "cost": 184956.68581497678
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -8,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 166.83585297760044,
+          "boneExcess": 1.9902836416499783,
+          "outside": 156,
+          "insideBone": 29,
+          "ambiguous": 0,
+          "cost": 366.05621714259826
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            -4,
+            0,
+            -4
+          ],
+          "skinExcess": 44740.06864669949,
+          "boneExcess": 0,
+          "outside": 2776,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 44740.196646699485
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            4,
+            0,
+            -4
+          ],
+          "skinExcess": 12577.858345391913,
+          "boneExcess": 0,
+          "outside": 1317,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 12577.986345391913
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            -4,
+            -4
+          ],
+          "skinExcess": 4778.0323651303515,
+          "boneExcess": 0,
+          "outside": 766,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 4778.160365130351
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            4,
+            -4
+          ],
+          "skinExcess": 29877.078776267805,
+          "boneExcess": 0,
+          "outside": 1449,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 29877.206776267805
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            0,
+            -8
+          ],
+          "skinExcess": 358.7435504091365,
+          "boneExcess": 0,
+          "outside": 291,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 358.9355504091365
+        },
+        {
+          "parameters": [
+            -2,
+            4,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 467.47260676206724,
+          "boneExcess": 0,
+          "outside": 234,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 467.57660676206723
+        },
+        {
+          "parameters": [
+            2,
+            4,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 233.8983847250356,
+          "boneExcess": 0,
+          "outside": 278,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 234.00238472503563
+        },
+        {
+          "parameters": [
+            0,
+            2,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 894.3508895511917,
+          "boneExcess": 0,
+          "outside": 588,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 894.4228895511917
+        },
+        {
+          "parameters": [
+            0,
+            6,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 53.75685548522425,
+          "boneExcess": 112.95558799937218,
+          "outside": 142,
+          "insideBone": 205,
+          "ambiguous": 0,
+          "cost": 11349.451655422443
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -6,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 99.30346676892094,
+          "boneExcess": 0.0027974412015246176,
+          "outside": 90,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 99.7192108890734
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -2,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 167.7781944056031,
+          "boneExcess": 0,
+          "outside": 196,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 167.8501944056031
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            -2,
+            0,
+            -4
+          ],
+          "skinExcess": 2460.0390050568217,
+          "boneExcess": 0,
+          "outside": 1046,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 2460.1430050568215
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            2,
+            0,
+            -4
+          ],
+          "skinExcess": 1416.2104115208197,
+          "boneExcess": 0,
+          "outside": 496,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 1416.3144115208197
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            -2,
+            -4
+          ],
+          "skinExcess": 845.6050675422358,
+          "boneExcess": 0,
+          "outside": 281,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 845.7090675422359
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            2,
+            -4
+          ],
+          "skinExcess": 3287.9859593747856,
+          "boneExcess": 0,
+          "outside": 756,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 3288.0899593747854
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 135.86262154096175,
+          "boneExcess": 0,
+          "outside": 165,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 135.99862154096175
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            0,
+            -2
+          ],
+          "skinExcess": 193.73354556309224,
+          "boneExcess": 0,
+          "outside": 315,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 193.80554556309224
+        },
+        {
+          "parameters": [
+            -1,
+            4,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 188.4616916679333,
+          "boneExcess": 0,
+          "outside": 168,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 188.55969166793332
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 38.18685441194653,
+          "boneExcess": 0,
+          "outside": 166,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 38.284854411946526
+        },
+        {
+          "parameters": [
+            0,
+            3,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 241.0487844329711,
+          "boneExcess": 0,
+          "outside": 304,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 241.1307844329711
+        },
+        {
+          "parameters": [
+            0,
+            5,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 18.770894181017315,
+          "boneExcess": 5.047744513375752,
+          "outside": 109,
+          "insideBone": 40,
+          "ambiguous": 0,
+          "cost": 523.6593455185925
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -5,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 72.77104920021196,
+          "boneExcess": 0,
+          "outside": 94,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 72.88504920021197
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -3,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 75.85959714455534,
+          "boneExcess": 0,
+          "outside": 157,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 75.94159714455533
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            -1,
+            0,
+            -4
+          ],
+          "skinExcess": 204.17333730536978,
+          "boneExcess": 0,
+          "outside": 329,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 204.2713373053698
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            1,
+            0,
+            -4
+          ],
+          "skinExcess": 323.82428538900444,
+          "boneExcess": 0,
+          "outside": 209,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 323.92228538900446
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            -1,
+            -4
+          ],
+          "skinExcess": 248.66817543269715,
+          "boneExcess": 0,
+          "outside": 191,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 248.76617543269717
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            1,
+            -4
+          ],
+          "skinExcess": 367.46805278530013,
+          "boneExcess": 0,
+          "outside": 360,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 367.56605278530014
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 83.73911004140918,
+          "boneExcess": 0,
+          "outside": 121,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 83.85311004140918
+        },
+        {
+          "parameters": [
+            0,
+            4,
+            -4,
+            0,
+            0,
+            -3
+          ],
+          "skinExcess": 67.88390813793214,
+          "boneExcess": 0,
+          "outside": 194,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 67.96590813793213
+        },
+        {
+          "parameters": [
+            1,
+            3,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 123.10466253131919,
+          "boneExcess": 0,
+          "outside": 300,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 123.1886625313192
+        },
+        {
+          "parameters": [
+            1,
+            5,
+            -4,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 96.93048724460641,
+          "boneExcess": 3.833551332745745,
+          "outside": 184,
+          "insideBone": 44,
+          "ambiguous": 0,
+          "cost": 480.4016205191809
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -5,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 31.9994929111452,
+          "boneExcess": 0,
+          "outside": 150,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 32.1154929111452
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -3,
+            0,
+            0,
+            -4
+          ],
+          "skinExcess": 62.21397331348866,
+          "boneExcess": 0,
+          "outside": 213,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 62.29797331348866
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            -1,
+            0,
+            -4
+          ],
+          "skinExcess": 536.3483651216518,
+          "boneExcess": 0,
+          "outside": 454,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 536.4483651216518
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            1,
+            0,
+            -4
+          ],
+          "skinExcess": 182.78935425760528,
+          "boneExcess": 0,
+          "outside": 154,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 182.88935425760528
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0,
+            -1,
+            -4
+          ],
+          "skinExcess": 77.90583640211165,
+          "boneExcess": 0,
+          "outside": 130,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 78.00583640211164
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0,
+            1,
+            -4
+          ],
+          "skinExcess": 1125.2237760534445,
+          "boneExcess": 0,
+          "outside": 525,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 1125.3237760534444
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 15.527643455022975,
+          "boneExcess": 0,
+          "outside": 83,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 15.643643455022975
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0,
+            0,
+            -3
+          ],
+          "skinExcess": 190.71741366981266,
+          "boneExcess": 0,
+          "outside": 293,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 190.80141366981266
+        },
+        {
+          "parameters": [
+            2,
+            4,
+            -4,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 44.03552427186643,
+          "boneExcess": 0,
+          "outside": 163,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 44.15752427186643
+        },
+        {
+          "parameters": [
+            1,
+            3,
+            -4,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 134.58420904891227,
+          "boneExcess": 0,
+          "outside": 273,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 134.68620904891227
+        },
+        {
+          "parameters": [
+            1,
+            5,
+            -4,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 14.82682299269887,
+          "boneExcess": 2.5396824553324495,
+          "outside": 96,
+          "insideBone": 35,
+          "ambiguous": 0,
+          "cost": 268.9290685259438
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -5,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 24.623824868427334,
+          "boneExcess": 0,
+          "outside": 67,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 24.757824868427335
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -3,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 27.390476056424756,
+          "boneExcess": 0,
+          "outside": 117,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 27.492476056424756
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            -1,
+            0,
+            -5
+          ],
+          "skinExcess": 239.43999632169005,
+          "boneExcess": 0,
+          "outside": 357,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 239.55799632169004
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            1,
+            0,
+            -5
+          ],
+          "skinExcess": 145.08142050982656,
+          "boneExcess": 0,
+          "outside": 146,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 145.19942050982655
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0,
+            -1,
+            -5
+          ],
+          "skinExcess": 126.691782015192,
+          "boneExcess": 0,
+          "outside": 148,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 126.809782015192
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0,
+            1,
+            -5
+          ],
+          "skinExcess": 444.88078289043955,
+          "boneExcess": 0,
+          "outside": 360,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 444.99878289043954
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 28.471006339771048,
+          "boneExcess": 0,
+          "outside": 94,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 28.60900633977105
+        },
+        {
+          "parameters": [
+            0.5,
+            4,
+            -4,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 38.764309736323455,
+          "boneExcess": 0,
+          "outside": 97,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 38.878809736323454
+        },
+        {
+          "parameters": [
+            1.5,
+            4,
+            -4,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 12.936575287350554,
+          "boneExcess": 0,
+          "outside": 109,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 13.055075287350553
+        },
+        {
+          "parameters": [
+            1,
+            3.5,
+            -4,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 44.62029700245869,
+          "boneExcess": 0,
+          "outside": 172,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 44.72879700245869
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 8.71323295392044,
+          "boneExcess": 0.01301845244195754,
+          "outside": 75,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 10.139578198116192
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4.5,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 19.106130251259792,
+          "boneExcess": 0,
+          "outside": 67,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 19.230630251259793
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -3.5,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 16.84252808633923,
+          "boneExcess": 0,
+          "outside": 95,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 16.951028086339228
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            -0.5,
+            0,
+            -5
+          ],
+          "skinExcess": 42.40043308270018,
+          "boneExcess": 0,
+          "outside": 185,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 42.516933082700184
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0.5,
+            0,
+            -5
+          ],
+          "skinExcess": 48.40192244142366,
+          "boneExcess": 0,
+          "outside": 102,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 48.51842244142366
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0,
+            -0.5,
+            -5
+          ],
+          "skinExcess": 44.73673321085783,
+          "boneExcess": 0,
+          "outside": 104,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 44.85323321085783
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0,
+            0.5,
+            -5
+          ],
+          "skinExcess": 67.80876591354395,
+          "boneExcess": 0,
+          "outside": 193,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 67.92526591354395
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0,
+            0,
+            -5.5
+          ],
+          "skinExcess": 19.944890365561772,
+          "boneExcess": 0,
+          "outside": 80,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 20.071390365561772
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            -4,
+            0,
+            0,
+            -4.5
+          ],
+          "skinExcess": 18.443927806775843,
+          "boneExcess": 0,
+          "outside": 120,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 18.550427806775843
+        },
+        {
+          "parameters": [
+            0.5,
+            4.5,
+            -4,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 18.044489400808686,
+          "boneExcess": 0.0175147146056993,
+          "outside": 81,
+          "insideBone": 4,
+          "ambiguous": 0,
+          "cost": 19.91896086137862
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 23.099239183659012,
+          "boneExcess": 0.01373380123229264,
+          "outside": 117,
+          "insideBone": 2,
+          "ambiguous": 0,
+          "cost": 24.599619306888275
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4.5,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 8.610020873646794,
+          "boneExcess": 0.0579293135771331,
+          "outside": 65,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 14.535952231360103
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -3.5,
+            0,
+            0,
+            -5
+          ],
+          "skinExcess": 13.46184498683126,
+          "boneExcess": 0.0019341340744376844,
+          "outside": 96,
+          "insideBone": 2,
+          "ambiguous": 0,
+          "cost": 13.77225839427503
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4,
+            -0.5,
+            0,
+            -5
+          ],
+          "skinExcess": 74.92501748127202,
+          "boneExcess": 0.01374576030737082,
+          "outside": 176,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 76.42459351200911
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4,
+            0.5,
+            0,
+            -5
+          ],
+          "skinExcess": 17.413031907758022,
+          "boneExcess": 0.01296824956285722,
+          "outside": 67,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 18.834856864043743
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4,
+            0,
+            -0.5,
+            -5
+          ],
+          "skinExcess": 25.50096690542723,
+          "boneExcess": 0.011567234227101222,
+          "outside": 84,
+          "insideBone": 2,
+          "ambiguous": 0,
+          "cost": 26.782690328137353
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4,
+            0,
+            0.5,
+            -5
+          ],
+          "skinExcess": 108.78580402634829,
+          "boneExcess": 0.014628274573211631,
+          "outside": 205,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 110.37363148366946
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4,
+            0,
+            0,
+            -5.5
+          ],
+          "skinExcess": 8.565615048249866,
+          "boneExcess": 0.0063549114773077085,
+          "outside": 67,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 9.336106195980637
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4,
+            0,
+            0,
+            -4.5
+          ],
+          "skinExcess": 20.224333151585295,
+          "boneExcess": 0.02638194469624083,
+          "outside": 117,
+          "insideBone": 5,
+          "ambiguous": 0,
+          "cost": 22.977527621209376
+        },
+        {
+          "parameters": [
+            0.5,
+            4.5,
+            -4,
+            0,
+            0,
+            -5.5
+          ],
+          "skinExcess": 27.367601222878417,
+          "boneExcess": 0.006351433112197847,
+          "outside": 83,
+          "insideBone": 2,
+          "ambiguous": 0,
+          "cost": 28.136244534098203
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0,
+            0,
+            -5.5
+          ],
+          "skinExcess": 7.007075268614582,
+          "boneExcess": 0.006869373657748494,
+          "outside": 75,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 7.831512634389431
+        },
+        {
+          "parameters": [
+            1,
+            5,
+            -4,
+            0,
+            0,
+            -5.5
+          ],
+          "skinExcess": 8.31835300247561,
+          "boneExcess": 2.014419769907696,
+          "outside": 64,
+          "insideBone": 29,
+          "ambiguous": 0,
+          "cost": 209.90482999324522
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4.5,
+            0,
+            0,
+            -5.5
+          ],
+          "skinExcess": 8.977262850549314,
+          "boneExcess": 0.03501421676472936,
+          "outside": 58,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 12.622184527022249
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -3.5,
+            0,
+            0,
+            -5.5
+          ],
+          "skinExcess": 14.356149442375541,
+          "boneExcess": 0,
+          "outside": 85,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 14.48364944237554
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4,
+            -0.5,
+            0,
+            -5.5
+          ],
+          "skinExcess": 47.90409295334918,
+          "boneExcess": 0.0069237151372611655,
+          "outside": 135,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 48.731964467075294
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4,
+            0.5,
+            0,
+            -5.5
+          ],
+          "skinExcess": 21.24025341990432,
+          "boneExcess": 0.0056028066171118236,
+          "outside": 75,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 21.936034081615503
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4,
+            0,
+            -0.5,
+            -5.5
+          ],
+          "skinExcess": 39.89589072820928,
+          "boneExcess": 0.005342361446225198,
+          "outside": 94,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 40.5656268728318
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4,
+            0,
+            0.5,
+            -5.5
+          ],
+          "skinExcess": 46.24803679308752,
+          "boneExcess": 0.007447761937286062,
+          "outside": 151,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 47.12831298681613
+        },
+        {
+          "parameters": [
+            1,
+            4.5,
+            -4,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 14.301275024603354,
+          "boneExcess": 0.001967058381021007,
+          "outside": 70,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 14.644480862705455
+        },
+        {
+          "parameters": [
+            2,
+            4.5,
+            -4,
+            0,
+            0,
+            -5.5
+          ],
+          "skinExcess": 29.053618242005395,
+          "boneExcess": 0.008591335835989393,
+          "outside": 112,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 30.053751825604337
+        },
+        {
+          "parameters": [
+            1.5,
+            4,
+            -4,
+            0,
+            0,
+            -5.5
+          ],
+          "skinExcess": 6.909207423080911,
+          "boneExcess": 0,
+          "outside": 73,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 7.038207423080911
+        },
+        {
+          "parameters": [
+            1.5,
+            5,
+            -4,
+            0,
+            0,
+            -5.5
+          ],
+          "skinExcess": 17.480278000267887,
+          "boneExcess": 2.3333343650835876,
+          "outside": 87,
+          "insideBone": 37,
+          "ambiguous": 0,
+          "cost": 250.96071450862667
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4.5,
+            0,
+            0,
+            -5.5
+          ],
+          "skinExcess": 5.448621585618747,
+          "boneExcess": 0.038588874453766984,
+          "outside": 60,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 9.453509030995447
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -3.5,
+            0,
+            0,
+            -5.5
+          ],
+          "skinExcess": 12.40493268529816,
+          "boneExcess": 0.0000908611674313124,
+          "outside": 94,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 12.544018802041291
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            -0.5,
+            0,
+            -5.5
+          ],
+          "skinExcess": 85.34708941142924,
+          "boneExcess": 0.007460269318043002,
+          "outside": 176,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 86.23111634323354
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0.5,
+            0,
+            -5.5
+          ],
+          "skinExcess": 6.333519624905848,
+          "boneExcess": 0.006086463433493929,
+          "outside": 48,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 7.0801659682552405
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0,
+            -0.5,
+            -5.5
+          ],
+          "skinExcess": 14.141737145673225,
+          "boneExcess": 0.005814878589369167,
+          "outside": 65,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 14.861225004610143
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0,
+            0.5,
+            -5.5
+          ],
+          "skinExcess": 126.94308975896134,
+          "boneExcess": 0.008003862502801008,
+          "outside": 201,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 127.88147600924144
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 4.122360283831961,
+          "boneExcess": 0.0022577154843230135,
+          "outside": 53,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 4.497131832264262
+        },
+        {
+          "parameters": [
+            2,
+            4.5,
+            -4,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 8.302231468426058,
+          "boneExcess": 0.0042374587842153345,
+          "outside": 72,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 8.87847734684759
+        },
+        {
+          "parameters": [
+            1.5,
+            4,
+            -4,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 8.743442959787888,
+          "boneExcess": 0,
+          "outside": 72,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 8.883942959787888
+        },
+        {
+          "parameters": [
+            1.5,
+            5,
+            -4,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 7.918007286945254,
+          "boneExcess": 1.9224927974609576,
+          "outside": 51,
+          "insideBone": 33,
+          "ambiguous": 0,
+          "cost": 200.32578703304102
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4.5,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 3.31117001784778,
+          "boneExcess": 0.021270091259434493,
+          "outside": 42,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 5.595679143791229
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -3.5,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 10.251154352551334,
+          "boneExcess": 0.0001812898451079038,
+          "outside": 68,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 10.410783337062124
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            -0.5,
+            0,
+            -6
+          ],
+          "skinExcess": 51.872250684293384,
+          "boneExcess": 0.0026037589075075646,
+          "outside": 134,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 52.282126575044146
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0.5,
+            0,
+            -6
+          ],
+          "skinExcess": 8.593860333395078,
+          "boneExcess": 0.0018172301826410667,
+          "outside": 56,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 8.925083351659184
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0,
+            -0.5,
+            -6
+          ],
+          "skinExcess": 24.628639178572165,
+          "boneExcess": 0.0016516638020811368,
+          "outside": 82,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 24.943305558780278
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0,
+            0.5,
+            -6
+          ],
+          "skinExcess": 54.84754959906874,
+          "boneExcess": 0.0029535388898819463,
+          "outside": 149,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 55.29240348805694
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0,
+            0,
+            -6.5
+          ],
+          "skinExcess": 7.090305386984385,
+          "boneExcess": 0.00011727769957935215,
+          "outside": 54,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 7.26353315694232
+        },
+        {
+          "parameters": [
+            1.25,
+            4.5,
+            -4,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 7.394975782492961,
+          "boneExcess": 0.002109884379909937,
+          "outside": 60,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 7.7535892204839545
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 4.245896134357644,
+          "boneExcess": 0.0024105516942589736,
+          "outside": 52,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 4.637576303783542
+        },
+        {
+          "parameters": [
+            1.5,
+            4.25,
+            -4,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 5.244678880864935,
+          "boneExcess": 0,
+          "outside": 53,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 5.389303880864935
+        },
+        {
+          "parameters": [
+            1.5,
+            4.75,
+            -4,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 5.081241858625947,
+          "boneExcess": 0.18532031315705425,
+          "outside": 51,
+          "insideBone": 12,
+          "ambiguous": 0,
+          "cost": 23.766898174331374
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4.25,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 3.2568414258160012,
+          "boneExcess": 0.008851610780840834,
+          "outside": 48,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 4.295127503900085
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -3.75,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 6.299228381272726,
+          "boneExcess": 8.957865853373104e-7,
+          "outside": 59,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 6.444442959931259
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            -0.25,
+            0,
+            -6
+          ],
+          "skinExcess": 15.191060380511688,
+          "boneExcess": 0.0024440391832811813,
+          "outside": 80,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 15.584589298839806
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0.25,
+            0,
+            -6
+          ],
+          "skinExcess": 4.226661879474152,
+          "boneExcess": 0.00204649434543886,
+          "outside": 41,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 4.580436314018038
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0,
+            -0.25,
+            -6
+          ],
+          "skinExcess": 9.76312412588605,
+          "boneExcess": 0.0019433230928960518,
+          "outside": 57,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 10.106581435175654
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0,
+            0.25,
+            -6
+          ],
+          "skinExcess": 12.021165681416013,
+          "boneExcess": 0.0025944802116949555,
+          "outside": 87,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 12.429738702585508
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0,
+            0,
+            -6.25
+          ],
+          "skinExcess": 5.084551909045212,
+          "boneExcess": 0.0008604676947513778,
+          "outside": 51,
+          "insideBone": 1,
+          "ambiguous": 1,
+          "cost": null
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4,
+            0,
+            0,
+            -5.75
+          ],
+          "skinExcess": 4.604147390263306,
+          "boneExcess": 0.004271907449102459,
+          "outside": 57,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 5.174463135173553
+        },
+        {
+          "parameters": [
+            1.25,
+            4.5,
+            -4.25,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 6.499945052020465,
+          "boneExcess": 0.008556444907309594,
+          "outside": 56,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 7.507339542751424
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.25,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 3.1752625440737234,
+          "boneExcess": 0.009151781759894999,
+          "outside": 46,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 4.245190720063223
+        },
+        {
+          "parameters": [
+            1.5,
+            4.25,
+            -4.25,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 5.282313883012897,
+          "boneExcess": 0,
+          "outside": 47,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 5.4310638830128966
+        },
+        {
+          "parameters": [
+            1.5,
+            4.75,
+            -4.25,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 3.3052312046544725,
+          "boneExcess": 0.23264081187100127,
+          "outside": 50,
+          "insideBone": 10,
+          "ambiguous": 0,
+          "cost": 26.7270623917546
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4.25,
+            -0.25,
+            0,
+            -6
+          ],
+          "skinExcess": 11.152974471908138,
+          "boneExcess": 0.009217188190054668,
+          "outside": 72,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 12.227943290913604
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4.25,
+            0.25,
+            0,
+            -6
+          ],
+          "skinExcess": 4.931447412381294,
+          "boneExcess": 0.008428554492448639,
+          "outside": 41,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 5.9275528616261575
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4.25,
+            0,
+            -0.25,
+            -6
+          ],
+          "skinExcess": 7.518341790684257,
+          "boneExcess": 0.008217551984576285,
+          "outside": 54,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 8.493346989141886
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4.25,
+            0,
+            0.25,
+            -6
+          ],
+          "skinExcess": 10.322902743706305,
+          "boneExcess": 0.009507225808730098,
+          "outside": 83,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 11.426875324579314
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4.25,
+            0,
+            0,
+            -6.25
+          ],
+          "skinExcess": 3.986121011466908,
+          "boneExcess": 0.005761008164646312,
+          "outside": 48,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 4.7214718279315395
+        },
+        {
+          "parameters": [
+            1.5,
+            4.5,
+            -4.25,
+            0,
+            0,
+            -5.75
+          ],
+          "skinExcess": 3.75739814121383,
+          "boneExcess": 0.012536349364084253,
+          "outside": 50,
+          "insideBone": 2,
+          "ambiguous": 0,
+          "cost": 5.158283077622255
+        },
+        {
+          "parameters": [
+            2,
+            4.5,
+            -4.25,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 6.709718670418641,
+          "boneExcess": 0.010434608886998393,
+          "outside": 65,
+          "insideBone": 2,
+          "ambiguous": 0,
+          "cost": 7.909804559118481
+        },
+        {
+          "parameters": [
+            1.75,
+            4.25,
+            -4.25,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 2.982145383754507,
+          "boneExcess": 0,
+          "outside": 47,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 3.132520383754507
+        },
+        {
+          "parameters": [
+            1.75,
+            4.75,
+            -4.25,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 5.273890979251599,
+          "boneExcess": 0.27714565814321024,
+          "outside": 52,
+          "insideBone": 13,
+          "ambiguous": 0,
+          "cost": 33.14783179357262
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.5,
+            0,
+            0,
+            -6
+          ],
+          "skinExcess": 2.705552540077525,
+          "boneExcess": 0.02288246090951785,
+          "outside": 45,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 5.152923631029311
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.25,
+            -0.25,
+            0,
+            -6
+          ],
+          "skinExcess": 16.973669140584164,
+          "boneExcess": 0.009523462334181537,
+          "outside": 88,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 18.08089037400232
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.25,
+            0.25,
+            0,
+            -6
+          ],
+          "skinExcess": 1.9335414157916708,
+          "boneExcess": 0.008721524959583175,
+          "outside": 29,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 2.9605689117499883
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.25,
+            0,
+            -0.25,
+            -6
+          ],
+          "skinExcess": 3.198478941861994,
+          "boneExcess": 0.00850686358469419,
+          "outside": 43,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 4.204040300331413
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.25,
+            0,
+            0.25,
+            -6
+          ],
+          "skinExcess": 20.824819790973446,
+          "boneExcess": 0.00981822363990853,
+          "outside": 103,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 21.9615171549643
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.25,
+            0,
+            0,
+            -6.25
+          ],
+          "skinExcess": 2.177773529123095,
+          "boneExcess": 0.006003668844117947,
+          "outside": 44,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 2.9390154135348894
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.25,
+            0,
+            0,
+            -5.75
+          ],
+          "skinExcess": 6.023774082475207,
+          "boneExcess": 0.013042841438903193,
+          "outside": 71,
+          "insideBone": 2,
+          "ambiguous": 0,
+          "cost": 7.476933226365526
+        },
+        {
+          "parameters": [
+            2,
+            4.5,
+            -4.25,
+            0,
+            0,
+            -6.25
+          ],
+          "skinExcess": 3.183137595123614,
+          "boneExcess": 0.007448810247188298,
+          "outside": 47,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 4.090768619842444
+        },
+        {
+          "parameters": [
+            1.75,
+            4.25,
+            -4.25,
+            0,
+            0,
+            -6.25
+          ],
+          "skinExcess": 3.02092788746792,
+          "boneExcess": 0,
+          "outside": 40,
+          "insideBone": 0,
+          "ambiguous": 0,
+          "cost": 3.17742788746792
+        },
+        {
+          "parameters": [
+            1.75,
+            4.75,
+            -4.25,
+            0,
+            0,
+            -6.25
+          ],
+          "skinExcess": 3.1018204896424657,
+          "boneExcess": 0.24158349927619358,
+          "outside": 44,
+          "insideBone": 12,
+          "ambiguous": 0,
+          "cost": 27.425670417261827
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.5,
+            0,
+            0,
+            -6.25
+          ],
+          "skinExcess": 1.9401844948296392,
+          "boneExcess": 0.016543004672317885,
+          "outside": 39,
+          "insideBone": 3,
+          "ambiguous": 0,
+          "cost": 3.7597349620614273
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4,
+            0,
+            0,
+            -6.25
+          ],
+          "skinExcess": 3.2357024798010743,
+          "boneExcess": 0.0009557848231556805,
+          "outside": 48,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 3.4880309621166425
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.25,
+            -0.25,
+            0,
+            -6.25
+          ],
+          "skinExcess": 11.567021130506381,
+          "boneExcess": 0.006307663051019275,
+          "outside": 73,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 12.358787435608308
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.25,
+            0.25,
+            0,
+            -6.25
+          ],
+          "skinExcess": 2.5948588285871668,
+          "boneExcess": 0.005656211422497837,
+          "outside": 30,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 3.3214799708369505
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.25,
+            0,
+            -0.25,
+            -6.25
+          ],
+          "skinExcess": 4.849388264034965,
+          "boneExcess": 0.005474519421439184,
+          "outside": 44,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 5.5578402061788825
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.25,
+            0,
+            0.25,
+            -6.25
+          ],
+          "skinExcess": 11.206172762575154,
+          "boneExcess": 0.006555785118677462,
+          "outside": 80,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 12.0227512744429
+        },
+        {
+          "parameters": [
+            1.75,
+            4.5,
+            -4.25,
+            0,
+            0,
+            -6.5
+          ],
+          "skinExcess": 2.4257068515735893,
+          "boneExcess": 0.003679897577697766,
+          "outside": 39,
+          "insideBone": 1,
+          "ambiguous": 0,
+          "cost": 2.960946609343366
+        }
+      ],
+      "parts": [
+        {
+          "structure": "Talus",
+          "vertices": 5344,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "Calcaneous",
+          "vertices": 8789,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "Navicular",
+          "vertices": 2251,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "Cuboid",
+          "vertices": 2523,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "LateralCuneiform",
+          "vertices": 1406,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "MedialCuneiform",
+          "vertices": 2110,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "IntermediateCuneiform",
+          "vertices": 1159,
+          "outside": 0,
+          "ambiguous": 0,
+          "maxOutsideMm": 0,
+          "worst": null
+        },
+        {
+          "structure": "Phalanges",
+          "vertices": 18093,
+          "outside": 44,
+          "ambiguous": 0,
+          "maxOutsideMm": 2.519787081793666,
+          "worst": {
+            "index": 13445,
+            "pointMetres": [
+              -0.16466082632541656,
+              0.03672882542014122,
+              0.09198424220085144
+            ]
+          }
+        }
+      ],
+      "collisions": [
+        {
+          "foot": "Talus",
+          "target": "Tibia (right)",
+          "intersectingTrianglePairs": 41,
+          "strictPlaneStraddlingPairs": 41,
+          "toleranceMm": 0.001,
+          "maxTrianglePlaneStraddleExtentMm": 0.22987986585644773
+        }
+      ],
+      "summary": {
+        "vertices": 41675,
+        "outside": 44,
+        "ambiguous": 0,
+        "maxOutsideMm": 2.519787081793666,
+        "strictCrossingPairs": 1
+      },
+      "targetTopology": [
+        {
+          "name": "Tibia (right)",
+          "topology": {
+            "weldedVertices": 385,
+            "connectedComponents": 1,
+            "boundaryEdges": 0,
+            "nonManifoldEdges": 0,
+            "degenerateTriangles": 0
+          }
+        },
+        {
+          "name": "Fibula (right)",
+          "topology": {
+            "weldedVertices": 168,
+            "connectedComponents": 1,
+            "boundaryEdges": 0,
+            "nonManifoldEdges": 0,
+            "degenerateTriangles": 0
+          }
+        }
+      ]
+    }
+  ],
+  "objective": "sum squared skin excess beyond 2mm + 100 times squared sampled bone penetration beyond 0.25mm + 0.002 times squared translation(mm)/rotation(deg)",
+  "limitations": [
+    "The rotation pivots and angle limits remain numerical, not validated anatomical axes or ranges.",
+    "Pattern search is local and cannot prove that no acceptable global rigid alignment exists.",
+    "Bone volume classification requires a closed single-component target, but does not validate anatomy or articular contact.",
+    "Only talus vertices influence the bone penalty; full finalist foot-to-tibia/fibula surface tests are recorded separately.",
+    "Skin fitting uses the already modified HRA outer surface, not a clinical target or independent source scan.",
+    "Muscle attachments, nerves, vessels, cartilage and other whole-body tissues remain unvalidated."
+  ],
+  "files": [
+    {
+      "file": ".cache/donor-foot-pose/report.json",
+      "sha256": "38d544586582cf15e64a64e8291d1a966499f28eaf198fd71a9bb3ef9decd312"
+    },
+    {
+      "file": ".cache/donor-foot-pose/parts.json",
+      "sha256": "79c267c678fc43ac1939eabeac4c95935b108ee282d8876f8ebbb10d6eb8dbc3"
+    },
+    {
+      "file": "scripts/refine-donor-foot-pose.mjs",
+      "sha256": "18bd9444e63f6f3ced373a41eaba47658494a6a9d6062ea02e2d0f77c3cba78d"
+    },
+    {
+      "file": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "file": "scripts/lib/triangle-crossings.mjs",
+      "sha256": "a55dd923c032c76591a7f2aa1af2863fe9e24bf0adb0ee6eb4aad5388238d512"
+    },
+    {
+      "file": ".cache/donor-foot-pose/refined-full-parts.json",
+      "sha256": "1be5b26221c9a3d9af887f5dce61d098563eedce0138376977dbd7e6338aa441"
+    }
+  ]
+}

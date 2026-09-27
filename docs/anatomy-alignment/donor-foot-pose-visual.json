@@ -1,0 +1,95 @@
+{
+  "mode": "refined-hard",
+  "status": "Geometry diagnostic, not app interaction or clinical validation",
+  "skinOpacity": 0.17,
+  "clipping": "Above y=0.24m and opposite body half hidden only for rendering",
+  "captures": [
+    {
+      "side": "left",
+      "view": "anterior",
+      "file": ".cache/donor-foot-pose/refined-hard-left-anterior.png",
+      "sha256": "aa013bb24ca535f4fd681f4613616150d057d765741ee1b608bed5e803c3b3d5",
+      "camera": {
+        "position": [
+          0.14327768236398697,
+          0.03929492086172104,
+          0.5952413011079953
+        ],
+        "target": [
+          0.14327768236398697,
+          0.03929492086172104,
+          -0.016952689737081528
+        ]
+      }
+    },
+    {
+      "side": "left",
+      "view": "lateral",
+      "file": ".cache/donor-foot-pose/refined-hard-left-lateral.png",
+      "sha256": "8c13a5ad147ee70f54a859d4b5004a2d417805538dd994d13cf08659a3a2316d",
+      "camera": {
+        "position": [
+          0.7554716732090638,
+          0.03929492086172104,
+          -0.016952689737081528
+        ],
+        "target": [
+          0.14327768236398697,
+          0.03929492086172104,
+          -0.016952689737081528
+        ]
+      }
+    },
+    {
+      "side": "right",
+      "view": "anterior",
+      "file": ".cache/donor-foot-pose/refined-hard-right-anterior.png",
+      "sha256": "affec39f25ce5daecf5a4c67dc41695a0f3363bab5f7173c042c8c5908ebb9a0",
+      "camera": {
+        "position": [
+          -0.15331250801682472,
+          0.042021857254439965,
+          0.5745791169755763
+        ],
+        "target": [
+          -0.15331250801682472,
+          0.042021857254439965,
+          -0.021443035453557968
+        ]
+      }
+    },
+    {
+      "side": "right",
+      "view": "lateral",
+      "file": ".cache/donor-foot-pose/refined-hard-right-lateral.png",
+      "sha256": "e7a0fb6ffc95410becf5c18ce6b4277569c9725831b3ea6ee6c67fecdecd7f9b",
+      "camera": {
+        "position": [
+          -0.749334660445959,
+          0.042021857254439965,
+          -0.021443035453557968
+        ],
+        "target": [
+          -0.15331250801682472,
+          0.042021857254439965,
+          -0.021443035453557968
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "files": [
+    {
+      "file": ".cache/donor-foot-pose/refined-hard.json",
+      "sha256": "40f7c726d372838e54bcd201c614049e94a299b08e276e0d901fcea435d8754e"
+    },
+    {
+      "file": ".cache/donor-foot-pose/refined-hard-parts.json",
+      "sha256": "7349f218781ad5d7735de2074043e46a9bdb0343caf536b3fbebd8a7f6005a60"
+    },
+    {
+      "file": "scripts/capture-donor-foot-pose.mjs",
+      "sha256": "ee532f458e8e9eef51e7440c4b5ea56acb2d6b25eb249f0b6be69342c60bd625"
+    }
+  ]
+}
