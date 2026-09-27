@@ -38,3 +38,17 @@ agy 읽기 전용 제한 검토 `acab419b-e053-4ff8-87bc-1ddf111cfc7d`는 원본
 같은 대화의 후속 정적 검토에서 최종 ID 집합 조건과 전체/개별 상태의 버튼 분기를 재검토했습니다. 화면 잘림 해결의 근거는 검토자의 추론이 아니라 별도 실행한 가시 비율1 검사와 위 캡처입니다.
 
 전체 목표는 미완료입니다. 여성 보완 골격/근육 정합, 남녀 내부 기관·신경 연결과 실제 근육 층서 검증은 별도로 계속 필요합니다.
+
+## 2026-09-27 공개 배포 재확인
+
+`86d359c5afb1cf378ca7cf45c57284bde7b3135f`의 GitHub Actions [35665097398](https://github.com/jay-jang/gyeol-atlas/actions/runs/35665097398)은 성공 상태입니다. 실제 [Pages 주소](https://jay-jang.github.io/gyeol-atlas/)에서도 좌우 각각16개 ID 전체 보기→32개 조각을 각각 선택→마지막 조각의 새로고침 복원→16개 복귀→전체 묶음의 새로고침 복원을 실행했습니다. 각 버튼의 원문명·선택 상태·단독 가시 ID를 대조했습니다. 모든32개를 각각 새로고침한 검사는 아니며, 개별 복원 대표는 `HRAF0952`/`HRAF0926`입니다.
+
+새 재현 스크립트는 `scripts/smoke-female-composite.mjs`입니다. `SMOKE_ORIGIN`을 생략하면 공개 주소를 검사하며 산출물은 `.cache/public-female-composite/`에 저장합니다. HTTP 400 이상 응답·페이지 JavaScript 오류는 모두0이었습니다. [실행 기록](../ui-renewal/female-femur-public-verification.json)에 실제 로드한 배포 번들 URL과 검사 스크립트 해시를 보존했습니다. 해당 번들을 로컬 빌드와 바이트 단위로 대조했다는 뜻은 아닙니다.
+
+왼쪽 전체 모형의 [데스크톱](../ui-renewal/female-femur-public-desktop.png)·[모바일](../ui-renewal/female-femur-public-mobile.png)·[가로](../ui-renewal/female-femur-public-landscape.png)를 직접 확인했습니다. 세부 선택 줄과 전신 복귀 버튼의 전체 가시 비율1, 가로 페이지 넘침0을 자동 확인했습니다. 이 공개 검사는 모델 투영 경계·색상 대비·201단계 박리를 다시 측정하지 않았으며, 해부 위치 검증을 대신하지 않습니다.
+
+```sh
+npm exec --yes --package=node@24.14.0 -- node scripts/smoke-female-composite.mjs
+```
+
+agy 읽기 전용 검토 `84e422a5-57e7-43d0-83f4-f75969fb0ed4`는 초기 스크립트의 본체만 클릭하는 범위와 전체 묶음 새로고침 누락을 지적했습니다. 위32개 개별 선택·전체 복원 검사는 그 후 직접 확장·재실행한 결과입니다. 검토 응답의 개수만1인지 확인한다는 설명은 초기 읽기 시점에 해당하며, 최종 스크립트는 정확한 ID를 비교합니다. DOM의 가시 ID는 장면 객체의 가시 상태이지 모든 픽셀의 렌더링/해부 정합 증거가 아닙니다. 화면 검사는 왼쪽의 접힌 목록 상태에 한정하며 펼친 목록 전체·오른쪽3화면 검사를 수행했다고 주장하지 않습니다. agy가 브라우저를 실행한 것도 아닙니다.
