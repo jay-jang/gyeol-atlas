@@ -1,0 +1,504 @@
+{
+  "status": "CACHE-ONLY SHARED VOXEL FACES; blocky cell-exact surface, no runtime export",
+  "files": [
+    {
+      "url": "https://sci.utah.edu/~datasets/SCI_headmodel/Segmentation.zip",
+      "bytes": 593032,
+      "sha256": "31b7f32628a887bb8e5e089bc98e355cbb30f94b8d4cf52685a58449068ec021",
+      "member": "Segmentation/HeadSegmentation.nrrd",
+      "memberSha256": "7e9ce6ee21d7b216c1d103b40fd0e54d5370aad29d67a6bee8f67cb8d283187a"
+    },
+    {
+      "url": "https://sci.utah.edu/~datasets/SCI_headmodel/T1.zip",
+      "bytes": 63732613,
+      "sha256": "54b6e3f3ade3f5a9d321cf93fe69be796f09513e3c24a079731fbe93594f75fd",
+      "member": "T1/T1_Corrected.nrrd",
+      "memberSha256": "e26ee96a8ee888c75a2e4a25d1ac9473ce46aa67c77bb14f63fd42236114b319"
+    },
+    {
+      "url": "https://sci.utah.edu/~datasets/SCI_headmodel/Pseudo-CT.zip",
+      "bytes": 6737736,
+      "sha256": "b694998eaf9d568bf05ce9e7f75c4f8012c279a1befb2f6a56f8f73ce6801f4f",
+      "member": "Pseudo-CT/Pseudo-CT.nii",
+      "memberSha256": "cb0ac6002f1d2f45c284cf5dc11711c94e6c9cebc2ddeb09ec9266843f53d8b0"
+    }
+  ],
+  "segmentationHeader": {
+    "type": "unsigned char",
+    "dimension": "3",
+    "space": "3D-right-handed",
+    "sizes": "208 256 256",
+    "space directions": "(1,0,0) (0,1,0) (0,0,1)",
+    "centerings": "cell cell cell",
+    "kinds": "space space space",
+    "encoding": "gzip",
+    "space origin": "(-101.67818450927734,-108.63245391845703,-171.80877685546875)",
+    "measurement frame": "(1,0,0) (0,1,0) (0,0,1)"
+  },
+  "t1Header": {
+    "type": "float",
+    "dimension": "3",
+    "space": "left-posterior-superior",
+    "sizes": "208 256 256",
+    "space directions": "(1,0,0) (0,1,0) (0,0,1)",
+    "kinds": "domain domain domain",
+    "endian": "little",
+    "encoding": "gzip",
+    "space origin": "(-101.67818450927734,-108.63245391845703,-171.80877685546875)"
+  },
+  "orientationEvidence": "Segmentation and official T1 share exact shape/origin/directions; T1 declares LPS. No independent DICOM orientation audit.",
+  "pseudoCtIndexMap": [
+    [
+      -1.0,
+      0.0,
+      0.0,
+      207.0
+    ],
+    [
+      0.0,
+      -1.0,
+      0.0,
+      255.00000762939453
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "maximumPseudoCtIndexRoundingError": 7.62939453125e-06,
+  "niftiSpatialUnits": "mm",
+  "statistics": [
+    {
+      "value": 1,
+      "editorialHypothesis": "Eyes",
+      "authoritativeNumericName": false,
+      "voxels": 12009,
+      "faceConnectedVoxelComponents": 2,
+      "t1Percentiles10_50_90": [
+        59.86034240722656,
+        105.09469604492188,
+        211.86791992187523
+      ],
+      "pseudoCtPercentiles10_50_90": [
+        -4.972643189132214,
+        2.963040202856064,
+        19.968076042830944
+      ]
+    },
+    {
+      "value": 2,
+      "editorialHypothesis": "Gray matter",
+      "authoritativeNumericName": false,
+      "voxels": 738976,
+      "faceConnectedVoxelComponents": 2,
+      "t1Percentiles10_50_90": [
+        254.25970458984375,
+        324.4555206298828,
+        376.6713104248047
+      ],
+      "pseudoCtPercentiles10_50_90": [
+        21.026167161762714,
+        29.037428490817547,
+        35.99059870094061
+      ]
+    },
+    {
+      "value": 3,
+      "editorialHypothesis": "White matter",
+      "authoritativeNumericName": false,
+      "voxels": 674779,
+      "faceConnectedVoxelComponents": 1,
+      "t1Percentiles10_50_90": [
+        382.1672119140625,
+        440.92938232421875,
+        475.14062500000006
+      ],
+      "pseudoCtPercentiles10_50_90": [
+        21.026167161762714,
+        26.99682419002056,
+        34.02557233721018
+      ]
+    },
+    {
+      "value": 4,
+      "editorialHypothesis": "CSF",
+      "authoritativeNumericName": false,
+      "voxels": 259870,
+      "faceConnectedVoxelComponents": 4,
+      "t1Percentiles10_50_90": [
+        35.9043586730957,
+        132.8372344970703,
+        239.27705535888674
+      ],
+      "pseudoCtPercentiles10_50_90": [
+        13.997419014573097,
+        104.50199865177274,
+        1763.0220386087894
+      ]
+    },
+    {
+      "value": 5,
+      "editorialHypothesis": "Internal air / sinus",
+      "authoritativeNumericName": false,
+      "voxels": 101364,
+      "faceConnectedVoxelComponents": 13,
+      "t1Percentiles10_50_90": [
+        14.954474449157715,
+        42.9111442565918,
+        201.3555160522461
+      ],
+      "pseudoCtPercentiles10_50_90": [
+        -1014.0136809647083,
+        -807.0057113394141,
+        -163.98862277716398
+      ]
+    },
+    {
+      "value": 6,
+      "editorialHypothesis": "Skull / modeled oral bone",
+      "authoritativeNumericName": false,
+      "voxels": 797620,
+      "faceConnectedVoxelComponents": 2,
+      "t1Percentiles10_50_90": [
+        31.13913097381592,
+        137.0064468383789,
+        341.3111511230469
+      ],
+      "pseudoCtPercentiles10_50_90": [
+        22.00868034362793,
+        987.9702939912677,
+        2213.9955890849233
+      ]
+    },
+    {
+      "value": 7,
+      "editorialHypothesis": "Scalp / external soft tissue",
+      "authoritativeNumericName": false,
+      "voxels": 1691700,
+      "faceConnectedVoxelComponents": 1,
+      "t1Percentiles10_50_90": [
+        141.0902801513672,
+        274.4800109863281,
+        426.99407958984375
+      ],
+      "pseudoCtPercentiles10_50_90": [
+        -255.96697218716145,
+        12.032392650842667,
+        55.036238841712475
+      ]
+    },
+    {
+      "value": 8,
+      "editorialHypothesis": "Background air",
+      "authoritativeNumericName": false,
+      "voxels": 9355170,
+      "faceConnectedVoxelComponents": 1,
+      "t1Percentiles10_50_90": [
+        2.062992811203003,
+        6.2934417724609375,
+        14.460053634643554
+      ],
+      "pseudoCtPercentiles10_50_90": [
+        -1023.9899686574936,
+        -1023.9899686574936,
+        -1023.9899686574936
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "id": "label-1",
+      "sourceLabels": [
+        1
+      ],
+      "vertexCount": 4874,
+      "indexCount": 29220,
+      "positions": 0,
+      "indices": 58488,
+      "scanBoundaryXYZ": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "bounds": [
+        [
+          -0.04117818549275398,
+          -0.057308778166770935,
+          0.03313245251774788
+        ],
+        [
+          0.0398218147456646,
+          -0.0343087762594223,
+          0.05813245475292206
+        ]
+      ]
+    },
+    {
+      "id": "label-2",
+      "sourceLabels": [
+        2
+      ],
+      "vertexCount": 508869,
+      "indexCount": 3087216,
+      "positions": 175368,
+      "indices": 6281796,
+      "scanBoundaryXYZ": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "bounds": [
+        [
+          -0.06717818230390549,
+          -0.07830877602100372,
+          -0.11286754906177521
+        ],
+        [
+          0.06882181763648987,
+          0.058691222220659256,
+          0.06113245338201523
+        ]
+      ]
+    },
+    {
+      "id": "label-3",
+      "sourceLabels": [
+        3
+      ],
+      "vertexCount": 331200,
+      "indexCount": 1991844,
+      "positions": 18630660,
+      "indices": 22605060,
+      "scanBoundaryXYZ": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "bounds": [
+        [
+          -0.06517818570137024,
+          -0.0773087739944458,
+          -0.11186754703521729
+        ],
+        [
+          0.0658218190073967,
+          0.055691223591566086,
+          0.057132452726364136
+        ]
+      ]
+    },
+    {
+      "id": "label-4",
+      "sourceLabels": [
+        4
+      ],
+      "vertexCount": 300803,
+      "indexCount": 1836756,
+      "positions": 30572436,
+      "indices": 34182072,
+      "scanBoundaryXYZ": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "bounds": [
+        [
+          -0.06917818635702133,
+          -0.08030878007411957,
+          -0.11386754363775253
+        ],
+        [
+          0.07082181423902512,
+          0.06269122660160065,
+          0.06213245540857315
+        ]
+      ]
+    },
+    {
+      "id": "label-5",
+      "sourceLabels": [
+        5
+      ],
+      "vertexCount": 49158,
+      "indexCount": 295404,
+      "positions": 41529096,
+      "indices": 42118992,
+      "scanBoundaryXYZ": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "bounds": [
+        [
+          -0.07017818093299866,
+          -0.1723087728023529,
+          -0.05086754634976387
+        ],
+        [
+          0.07282181829214096,
+          -0.008308776654303074,
+          0.08413245528936386
+        ]
+      ]
+    },
+    {
+      "id": "label-6",
+      "sourceLabels": [
+        6
+      ],
+      "vertexCount": 365077,
+      "indexCount": 2192532,
+      "positions": 43300608,
+      "indices": 47681532,
+      "scanBoundaryXYZ": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "bounds": [
+        [
+          -0.0721781849861145,
+          -0.1723087728023529,
+          -0.11886754631996155
+        ],
+        [
+          0.07282181829214096,
+          0.06969122588634491,
+          0.07213245332241058
+        ]
+      ]
+    },
+    {
+      "id": "label-7",
+      "sourceLabels": [
+        7
+      ],
+      "vertexCount": 472899,
+      "indexCount": 2838420,
+      "positions": 56451660,
+      "indices": 62126448,
+      "scanBoundaryXYZ": [
+        true,
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "bounds": [
+        [
+          -0.1021781861782074,
+          -0.1723087728023529,
+          -0.12186754494905472
+        ],
+        [
+          0.10582181811332703,
+          0.07169122248888016,
+          0.08813245594501495
+        ]
+      ]
+    },
+    {
+      "id": "non-background-envelope",
+      "sourceLabels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "vertexCount": 220726,
+      "indexCount": 1324368,
+      "positions": 73480128,
+      "indices": 76128840,
+      "scanBoundaryXYZ": [
+        true,
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "bounds": [
+        [
+          -0.1021781861782074,
+          -0.1723087728023529,
+          -0.12186754494905472
+        ],
+        [
+          0.10582181811332703,
+          0.07169122248888016,
+          0.08813245594501495
+        ]
+      ]
+    }
+  ],
+  "scanBoundaryAxisOrder": [
+    "source grid X min",
+    "source grid X max",
+    "source grid Y min",
+    "source grid Y max",
+    "source grid Z min",
+    "source grid Z max"
+  ],
+  "binary": {
+    "path": ".cache/sci-head/shared-candidate.bin.gz",
+    "bytes": 81426312,
+    "gzipBytes": 27018218,
+    "sha256": "35f512cf977830698fea502830b16711b5c4dc895f989794b8913c435df13c0c"
+  },
+  "coordinatePolicy": "Common LPS-mm to left/superior/anterior-m rotation and unit conversion only. No centering, HRA registration, local fitting or runtime export.",
+  "limitations": [
+    "Exact cell-boundary representation, not a smooth anatomical surface; 1mm stair steps remain.",
+    "Tissue names remain inferred; source-space preservation does not establish HRA registration or clinical segmentation accuracy.",
+    "Triple/quadruple junctions can be nonmanifold within a single tissue. Shared faces do not certify manifold topology.",
+    "Artificial scan closures remain, including lateral neck cropping. No smoothing or missing anatomy is synthesized.",
+    "Envelope duplicates material outer boundaries for diagnosis; do not add its volume to tissue volumes."
+  ],
+  "codeSha256": "4219db2165c3db7243b16223d510d50e55407c300ea058cde6db13eea5ee092f",
+  "method": "Cell faces at index +/- 0.5, one fixed shared diagonal, reversed winding for opposite tissue. Padding label 8 outside volume.",
+  "parentReportSha256": "8743fce124d0dcf91dd81270260e9e0f9624b07bf230aa024befd18dafafc773",
+  "interfacesFaceCounts": {
+    "1-7": 4743,
+    "1-8": 127,
+    "2-3": 326554,
+    "2-4": 187982,
+    "3-4": 5420,
+    "4-6": 112033,
+    "4-7": 691,
+    "5-6": 25913,
+    "5-7": 22619,
+    "5-8": 702,
+    "6-7": 226297,
+    "7-8": 218720,
+    "6-8": 1179
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "reportSha256": "8743fce124d0dcf91dd81270260e9e0f9624b07bf230aa024befd18dafafc773",
+  "rows": [
+    {
+      "id": "label-1",
+      "vertices": 4870,
+      "triangles": 9732,
+      "edgeVertices": 4870,
+      "interiorVertices": 0,
+      "maxEdgeError": 0.000003278249039340153
+    },
+    {
+      "id": "label-2",
+      "vertices": 515045,
+      "triangles": 1033834,
+      "edgeVertices": 514536,
+      "interiorVertices": 509,
+      "maxEdgeError": 0.000005379304993446965
+    },
+    {
+      "id": "label-3",
+      "vertices": 332125,
+      "triangles": 665214,
+      "edgeVertices": 331974,
+      "interiorVertices": 151,
+      "maxEdgeError": 0.000005081284083274795
+    },
+    {
+      "id": "label-4",
+      "vertices": 307444,
+      "triangles": 620720,
+      "edgeVertices": 306126,
+      "interiorVertices": 1318,
+      "maxEdgeError": 0.000005498512124724186
+    },
+    {
+      "id": "label-5",
+      "vertices": 49267,
+      "triangles": 98666,
+      "edgeVertices": 49234,
+      "interiorVertices": 33,
+      "maxEdgeError": 0.000007949761095416008
+    },
+    {
+      "id": "label-6",
+      "vertices": 365453,
+      "triangles": 731158,
+      "edgeVertices": 365422,
+      "interiorVertices": 31,
+      "maxEdgeError": 0.000009335548183386777
+    },
+    {
+      "id": "label-7",
+      "vertices": 473113,
+      "triangles": 946526,
+      "edgeVertices": 473070,
+      "interiorVertices": 43,
+      "maxEdgeError": 0.00001034135790695112
+    },
+    {
+      "id": "non-background-envelope",
+      "vertices": 220728,
+      "triangles": 441452,
+      "edgeVertices": 220728,
+      "interiorVertices": 0,
+      "maxEdgeError": 0.00001034135790695112
+    }
+  ],
+  "totalVertices": 2268045,
+  "crossings": [
+    {
+      "a": "label-2",
+      "b": "label-6",
+      "witness": null
+    },
+    {
+      "a": "label-3",
+      "b": "label-6",
+      "witness": null
+    },
+    {
+      "a": "label-2",
+      "b": "label-3",
+      "witness": {
+        "point": [
+          -0.00042818458071765313,
+          -0.015308776249488098,
+          -0.03711754634665977
+        ],
+        "segmentFraction": 0.49999984477935544,
+        "barycentric": [
+          0.16666692536774105,
+          0.6666670805883855,
+          0.16666599404387342
+        ],
+        "direction": "b-to-a",
+        "edge": 1,
+        "planeStraddleExtentMm": 0.5773485378810005,
+        "a": [
+          [
+            0.0003218154888600111,
+            -0.014808776788413525,
+            -0.036867547780275345
+          ],
+          [
+            -0.0006781845004297793,
+            -0.015308776870369911,
+            -0.03736754506826401
+          ],
+          [
+            -0.0001781845057848841,
+            -0.015808776021003723,
+            -0.036367546766996384
+          ]
+        ],
+        "b": [
+          [
+            -0.0006781845004297793,
+            -0.015308776870369911,
+            -0.03736754506826401
+          ],
+          [
+            -0.0006781845004297793,
+            -0.014808776788413525,
+            -0.036867547780275345
+          ],
+          [
+            -0.0001781845057848841,
+            -0.015808776021003723,
+            -0.03736754506826401
+          ]
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "All source-index/edge membership is checked, not the exact marching-cubes triangulation or clinical segmentation.",
+    "Three mesh pairs only, using first transverse witness at 0.001mm plane-straddle tolerance. No witness does not prove separation; coplanar/edge contact is excluded.",
+    "Anatomical names, shared-interface topology, self-intersections and HRA placement are not certified."
+  ],
+  "codeSha256": "34725690ed9524e924a8e10953f2719fb5d1d6ee3476ea17b6f38bf9d4b3e97a"
+}
