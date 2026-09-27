@@ -1,0 +1,71 @@
+{
+  "createdAt": "2026-09-27T20:17:03.959Z",
+  "reportSha256": "b2a4e58d660ac035aac3f19650b87c33b3788520f5312b49033bbba1cad71de7",
+  "candidateSha256": "009314693b503f0a86713a1bcda1a6e3c0235efee63d804adf282ad45b1795fa",
+  "vertices": 652173,
+  "indexReferences": 3912126,
+  "coordinateDifferences": 0,
+  "boneVertices": 471211,
+  "boneIndexReferences": 2827170,
+  "jacobianSamples": 9728,
+  "maximumJacobianDifference": 4.440892098500626e-16,
+  "maximumStepBound": 0.12000000000000002,
+  "sampling": {
+    "surfaces": 88,
+    "samples": 3968,
+    "inputTriangles": 2109356,
+    "maximumPointResidualMm": 0,
+    "maximumAreaResidualSquareMetres": 6.938893903907228e-18
+  },
+  "witnesses": 12,
+  "missingWitnesses": 0,
+  "maximumWitnessResidualMm": 1.1775693440128312e-13,
+  "limits": [
+    "All candidate muscle coordinates/indices and diagnostic bone arrays are replayed with scalar compact-step arithmetic. Initial bone decoding/interpolation and BVH targets use shared implementations.",
+    "All stored control area strata and barycentric points, final weighted control losses and stored step bounds are checked. This does not independently optimize the objective or replay every rejected trial.",
+    "Stored sampled Jacobian products and every saved witness triangle membership/arithmetic are checked, not global injectivity, absent intersections, full containment or clinical anatomy."
+  ],
+  "controlLossReplay": [
+    {
+      "state": "initial",
+      "loss": 0.000011533029877528312,
+      "rmsByGroup": [
+        0.0031906013322035897,
+        0.004288062114873206,
+        0.005190522303514871,
+        0.0031766036656621743,
+        0.003713817530565136,
+        0.005653092649240077,
+        0.0030861910602986626,
+        0.0032581926859049076,
+        0.0009824157840369974,
+        0.0010288970127758366,
+        0.0009316204556665085,
+        0.0009790406553901653,
+        0.0005046544388623751
+      ],
+      "lossResidual": 0
+    },
+    {
+      "state": "final",
+      "loss": 0.0000029246548937660594,
+      "rmsByGroup": [
+        0.0021642734296818404,
+        0.001611927567468113,
+        0.002466363545822249,
+        0.001955341272350694,
+        0.0016663376722717991,
+        0.001923341437901544,
+        0.001815520712813621,
+        0.0021547590192010076,
+        0.0007570516193792996,
+        0.0008397745994663171,
+        0.0007676810375526722,
+        0.0007492077682238813,
+        0.0002976490845666016
+      ],
+      "lossResidual": 4.235164736271502e-22
+    }
+  ],
+  "scriptSha256": "eaee3ce6ff1a27f1fee4aed61f73d9af9d9b91f92ad9eca50237129bc7420f79"
+}

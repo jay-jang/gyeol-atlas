@@ -1,0 +1,22 @@
+{
+  "conversationId": "2d05517c-2a84-426f-81cb-6c23fadaf274",
+  "status": "SUCCESS",
+  "recordKind": "Operator summary of received completed CLI response, not a verbatim transcript",
+  "scope": "Bounded read-only static review of fit-compact-constraints, its synthetic tests, hip joint fit/replay scripts and selected report fields; no clinical validation or runtime release approval",
+  "findings": [
+    "Actual trial loss is recomputed with changed projections; strict decrease accepts the step, exhausted halvings leave the last accepted state intact.",
+    "Greedy selection does not try the second-best centre if line search fails. Worst-residual and strided centre lists can duplicate work.",
+    "Each compact step's derivative bound is at most approximately 0.12; cumulative distortion and discrete triangle crossings are not thereby bounded.",
+    "Only unanimous outside classifications beyond the 2 mm band contribute skin loss; ambiguous samples are unpenalized.",
+    "Report distinguishes current 232, initial 215 and final 197 crossing pairs; 11 are new against initial and 94 against current runtime.",
+    "One-way sample fitting differs from full bidirectional vertex evaluation. Sparse objective improvement does not approve anatomy."
+  ],
+  "corrections": [
+    "The assertion that large reverse distances are a direct consequence of omitted reverse terms or source-missing target features is not established by this run. Boundary representation, correspondence and fitting effects were not isolated; left Tibia/Fibula reverse p95 actually worsened despite improved RMS.",
+    "New outside means after outside and before not outside: before may be inside, band or ambiguous. The review's inside/band wording is incomplete.",
+    "The Jacobian replay covers 128 vertices per muscle, 9728 total, and the additional compact flow only. It does not certify the inherited inverse-fourth map globally injective.",
+    "Maximum computed step bound is 0.12000000000000002 within floating-point tolerance, not strictly below 0.12. The mathematical condition used is below 1.",
+    "The skin ambiguity handling is an implementation choice, not evidence of appropriate clinical forces or a safe 2 mm margin. No-backtrack acceptance occurred in this candidate; halving and failure paths were exercised only by synthetic tests.",
+    "The independent scalar witness replay covers the 11 new-against-initial pairs plus one inherited source-internal coarse crossing, not all 94 new-against-runtime pairs. The review's closing all-fields-verified wording does not expand its static scope."
+  ]
+}
