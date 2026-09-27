@@ -182,7 +182,9 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       // original BodyParts3D meshes for explicit searches and organ details.
       if ((layer === "nerve" || layer === "vessel") && !selected && !props.detailIds.includes(id)) o.visible = false;
       if (o.visible) visibleCount++;
-      const alpha = (layer === "skin" ? props.opacity : props.layerOpacity[layer]) * (selected ? 1 : dissectionAlpha);
+      // Selection is an opaque emphasis, as in PackedAtlas and the supplements.
+      // Keep the user's layer alpha in view-state; it applies again on deselect.
+      const alpha = selected ? 1 : (layer === "skin" ? props.opacity : props.layerOpacity[layer]) * dissectionAlpha;
       const vessel = structureById.get(id)?.name || "";
       const material = o.material as MeshStandardMaterial;
       configurePicking(o, layer, props.selectionTarget);

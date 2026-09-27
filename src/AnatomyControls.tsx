@@ -46,6 +46,7 @@ export default function AnatomyControls({
       {scopeControls}
       <p className="control-hint">
         계통을 조합해 같은 부위를 비교하세요. 현재 시점은 유지됩니다.
+        선택한 구조는 불투명하게 강조하며, 선택을 해제하면 아래 투명도로 돌아갑니다.
       </p>
       {layerKeys.map((l) => (
         <div className="layer-row" key={l}>

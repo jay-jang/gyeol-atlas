@@ -91,6 +91,7 @@ export type ViewAction =
   | { type: "anatomy-region"; value: ViewState["anatomyRegion"] }
   | { type: "stage"; index: number }
   | { type: "dissection"; value: number }
+  | { type: "dissection-step"; amount: number }
   | { type: "layers"; layers: Layers }
   | { type: "alpha"; layer: Layer; value: number }
   | { type: "markers"; value: ViewState["markers"] }
@@ -140,6 +141,11 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         cutaway: 0,
         selectionTarget: "visible",
       };
+    case "dissection-step": {
+      if (!Number.isFinite(a.amount)) return s;
+      const depth = quantizeDepth(s.dissection + a.amount);
+      return depth === s.dissection ? s : viewReducer(s, { type: "dissection", value: depth });
+    }
     case "dissection": {
       const depth = quantizeDepth(a.value);
       const layers = dissectionLayers(depth);

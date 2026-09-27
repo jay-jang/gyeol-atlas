@@ -10,6 +10,17 @@ const parse = (s) =>
     points.map((p) => p.id),
     assets,
   );
+test("relative peel inputs compose without stale absolute depth and preserve preferences", () => {
+  let s = {...initialView(), camera:{position:[0,1,3],target:[0,1,0]}, markers:'hidden'};
+  const camera=s.camera;
+  for(let i=0;i<201;i++)s=viewReducer(s,{type:'dissection-step',amount:.5});
+  assert.equal(s.dissection,100);assert.equal(s.camera,camera);assert.equal(s.markers,'hidden');
+  assert.equal(viewReducer(s,{type:'dissection-step',amount:.5}),s);
+  assert.equal(viewReducer(s,{type:'dissection-step',amount:NaN}),s);
+  s=viewReducer(s,{type:'dissection-step',amount:-5});assert.equal(s.dissection,95);
+  for(let i=0;i<200;i++)s=viewReducer(s,{type:'dissection-step',amount:-.5});
+  assert.equal(s.dissection,0);assert.equal(s.camera,camera);assert.equal(s.markers,'hidden');
+});
 test("organ detail scopes selection, restores safely and resets on sex/layer/peel changes", () => {
   const initial = initialView();
   const layers = { ...initial.layers, skin: false, organ: true, vessel: true };

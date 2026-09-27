@@ -422,6 +422,7 @@ function AtlasPage({
   >(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const dockRef = useRef<HTMLDivElement>(null);
+  const workspaceRef = useRef<HTMLElement>(null);
   const [action, setAction] = useState<CameraAction>({
     // A validated selection with a deliberately cleared migration pose must
     // wait for its real meshes and frame them, not consume a no-op restore.
@@ -608,11 +609,26 @@ function AtlasPage({
     setPanel(null);
     camera("fit");
   };
-  const shiftDissection = (amount: number) => {
-    const next = Math.max(0, Math.min(100, state.dissection + amount));
-    if (next !== state.dissection)
-      dispatch({ type: "dissection", value: next });
-  };
+  const shiftDissection = useCallback((amount: number) => {
+    dispatch({ type: "dissection-step", amount });
+  }, [dispatch]);
+  useEffect(() => {
+    const workspace = workspaceRef.current;
+    if (!workspace) return;
+    const wheel = (event: WheelEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const depthControl = Boolean(target.closest('.depth-explorer'));
+      if (!depthControl && !(event.altKey && target instanceof HTMLCanvasElement)) return;
+      // A non-passive listener actually prevents native scrolling/zooming.
+      // A horizontal gesture is consumed here without changing peel depth.
+      event.preventDefault();
+      event.stopPropagation();
+      if (event.deltaY !== 0) shiftDissection(event.deltaY > 0 ? .5 : -.5);
+    };
+    workspace.addEventListener('wheel', wheel, { capture: true, passive: false });
+    return () => workspace.removeEventListener('wheel', wheel, true);
+  }, [shiftDissection]);
   const selectedAnatomy = state.selection?.kind === "structure"
     ? structures.find((item) => item.id === state.selection?.ids[0])
     : null;
@@ -627,18 +643,13 @@ function AtlasPage({
   return (
     <main
       className="anatomy-workspace"
+      ref={workspaceRef}
       aria-label="인체 구조 탐색"
       data-panel={panel || "none"}
       data-detail={Boolean(state.detail)}
       data-selection={Boolean(state.selection)}
-      onWheelCapture={(event) => {
-        if (!event.altKey || Math.abs(event.deltaY) < 2) return;
-        event.preventDefault();
-        event.stopPropagation();
-        shiftDissection(event.deltaY > 0 ? .5 : -.5);
-      }}
       onKeyDownCapture={(event) => {
-        if (!event.altKey || !["ArrowUp", "ArrowDown"].includes(event.key)) return;
+        if (!(event.target instanceof HTMLCanvasElement) || !event.altKey || !["ArrowUp", "ArrowDown"].includes(event.key)) return;
         event.preventDefault();
         event.stopPropagation();
         const step = event.shiftKey ? 5 : .5;
@@ -730,12 +741,6 @@ function AtlasPage({
         <section
           className="depth-explorer"
           aria-label="인체 깊이 탐색"
-          onWheel={(event) => {
-            if (Math.abs(event.deltaY) < 8) return;
-            event.preventDefault();
-            const next = Math.max(0, Math.min(100, state.dissection + (event.deltaY > 0 ? .5 : -.5)));
-            if (next !== state.dissection) dispatch({ type: "dissection", value: next });
-          }}
         >
           <div className="depth-heading">
             <span>연속 박리 깊이</span>
@@ -749,12 +754,6 @@ function AtlasPage({
             value={state.dissection}
             aria-label="연속 해부 박리 깊이"
             aria-valuetext={`${state.dissection.toFixed(1)}% 해부 깊이`}
-            onWheelCapture={(event) => {
-              event.preventDefault();
-              event.stopPropagation();
-              const next = Math.max(0, Math.min(100, state.dissection + (event.deltaY > 0 ? .5 : -.5)));
-              if (next !== state.dissection) dispatch({ type: "dissection", value: next });
-            }}
             onChange={(event) => dispatch({ type: "dissection", value: Number(event.target.value) })}
           />
           <div className="depth-steps" aria-hidden="true">
