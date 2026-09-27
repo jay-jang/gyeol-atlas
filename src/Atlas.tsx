@@ -557,7 +557,8 @@ function Scene(props: Props) {
       restoringLayout.current = false; framedLayout.current = layoutKey; return;
     }
     if (!pendingAction && !refitLimb && (!hasSelection || !layoutChanged)) { framedLayout.current = layoutKey; return; }
-    const kind = pendingAction ? action.kind : refitLimb ? "anatomy-region" : props.highlight.length && !props.isolated ? "comparison" : "structure";
+    const detailContext = props.detailIds.length > 0 && !props.isolated;
+    const kind = pendingAction ? action.kind : refitLimb ? "anatomy-region" : props.highlight.length && !props.isolated ? "comparison" : detailContext ? "fit" : "structure";
     const selectionPreset = hasSelection && ["front", "back", "side", "reset"].includes(kind);
     if (kind.startsWith("move-")) {
       translateView(camera, c.target, kind.slice(5) as MoveDirection, 0.12);
@@ -580,7 +581,8 @@ function Scene(props: Props) {
       const box = new Box3();
       let count = 0;
       scene.updateMatrixWorld(true);
-      if (kind === "fit") {
+      const fitVisible = kind === "fit" || (selectionPreset && detailContext);
+      if (fitVisible) {
         scene.traverse(obj => {
           if (obj instanceof Mesh && obj.visible && structureById.has(obj.name)) {
             box.union(new Box3().setFromObject(obj));
@@ -596,7 +598,7 @@ function Scene(props: Props) {
           }
         }
       }
-      if (!count || (kind !== "fit" && count !== ids.length) || box.isEmpty()) return;
+      if (!count || (!fitVisible && count !== ids.length) || box.isEmpty()) return;
       const direction = selectionPreset ? new Vector3(kind === "side" ? 1 : 0, 0, kind === "side" ? 0 : kind === "back" ? -1 : 1)
         : camera.position.clone().sub(c.target).normalize();
       box.getCenter(c.target);

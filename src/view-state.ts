@@ -202,7 +202,9 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       };
     case "select": {
       const stage = a.layer ? keys.indexOf(a.layer) : -1;
-      const scope = a.detail || s.detail;
+      // A part may have a narrower default detail (e.g. CT back muscles).
+      // Keep the containing scope the user explicitly opened while selecting it.
+      const scope = s.detail && a.selection.ids.every(id => s.detail!.ids.includes(id)) ? s.detail : a.detail;
       const detail = scope && a.selection.ids.every(id => scope.ids.includes(id)) ? scope : null;
       return {
         ...s,
@@ -258,7 +260,12 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         cutaway: 0,
       };
     case "isolate":
-      return s.selection?.ids.length ? { ...s, isolated: !s.isolated } : s;
+      return s.selection?.ids.length ? {
+        ...s, isolated: !s.isolated,
+        // Selecting a part activates its layer. Restoring its detail context
+        // must also restore the other layers and remove the part's region filter.
+        ...(s.isolated && s.detail ? { layers: s.detail.layers, anatomyRegion: "whole" as const } : {}),
+      } : s;
     case "clear-selection":
       return { ...s, selection: null, detail: null, isolated: false };
     case "cutaway":

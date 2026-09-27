@@ -1,0 +1,362 @@
+{
+  "group": "abdomen-ct",
+  "child": "CTF_autochthon_left",
+  "expected": [
+    "CTF_adrenal_gland_left",
+    "CTF_adrenal_gland_right",
+    "CTF_autochthon_left",
+    "CTF_autochthon_right",
+    "CTF_esophagus",
+    "CTF_kidney_left",
+    "CTF_kidney_right",
+    "CTF_liver",
+    "CTF_pancreas",
+    "CTF_spleen",
+    "CTF_stomach"
+  ],
+  "restored": {
+    "version": 4,
+    "brainBindingVersion": "hra-female-v1.10-laterality-1",
+    "pointId": "",
+    "sex": "female",
+    "anatomyRegion": "whole",
+    "stage": 1,
+    "dissection": 25,
+    "displayMode": "layers",
+    "layers": {
+      "skin": false,
+      "muscle": true,
+      "bone": false,
+      "organ": true,
+      "vessel": false,
+      "lymph": true,
+      "nerve": false
+    },
+    "alpha": {
+      "skin": 1,
+      "muscle": 1,
+      "bone": 1,
+      "organ": 1,
+      "vessel": 1,
+      "lymph": 1,
+      "nerve": 1
+    },
+    "markers": "selected",
+    "labels": false,
+    "selection": {
+      "kind": "structure",
+      "ids": [
+        "CTF_autochthon_left"
+      ],
+      "name": "왼쪽 등 고유근육군 (CT 수록 구간)"
+    },
+    "detail": {
+      "id": "abdomen-ct",
+      "name": "여성 CT 주변 기관",
+      "ids": [
+        "CTF_stomach",
+        "CTF_esophagus",
+        "CTF_adrenal_gland_left",
+        "CTF_adrenal_gland_right",
+        "CTF_autochthon_left",
+        "CTF_autochthon_right",
+        "CTF_liver",
+        "CTF_spleen",
+        "CTF_kidney_left",
+        "CTF_kidney_right",
+        "CTF_pancreas"
+      ],
+      "layers": {
+        "skin": false,
+        "muscle": true,
+        "bone": false,
+        "organ": true,
+        "vessel": false,
+        "lymph": true,
+        "nerve": false
+      }
+    },
+    "comparison": null,
+    "isolated": false,
+    "cutaway": 0,
+    "selectionTarget": "visible",
+    "fadeContext": true,
+    "camera": {
+      "position": [
+        0,
+        1.1772425550297643,
+        2.245456643097096
+      ],
+      "target": [
+        0,
+        1.050000011920929,
+        0
+      ]
+    },
+    "filters": {
+      "query": "",
+      "region": "전체",
+      "meridian": "all",
+      "concept": "all",
+      "onlySaved": false,
+      "bodyRegion": "전체",
+      "catalogue": "all"
+    }
+  },
+  "shape": [
+    {
+      "id": "CTF_adrenal_gland_left",
+      "positions": "b912fae6994f8b45e07b9eddd73d33342594ea41d32e4bc14d29b1e995d93129",
+      "indices": "66aacba18da12dc4c768389f8e7a79efb093611d068ea6278ae5c4638a5e5be2",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "CTF_adrenal_gland_right",
+      "positions": "f32258bc3615f543f14e6111a4969bdf042f20f9ac44557485505b4191e1e20f",
+      "indices": "650762072c9176e563dc2a4a9d6d5beb6e33c17c70fe79503dd35fdb4ae0b12c",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "CTF_autochthon_left",
+      "positions": "d88aed8baf3b29309dc923f20a1be31a925e70b392f084c3af9b462f6dec5a5f",
+      "indices": "4294da323364c46457a88bc2cffe2a8dac68114bde2212cd411afa9dc02af157",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "CTF_autochthon_right",
+      "positions": "1800f4be9d2005dd5b6e41e2caac422216a49bf912a5744dbcc8bdf87886a999",
+      "indices": "ec6e2d298000474c22e514b8e1ff7c9b42ac7ae42d82b118cb227491caa26163",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "CTF_esophagus",
+      "positions": "f76a709c28cfe272315b79ee411fcb1ecc397723d98507e87c4e186710082d59",
+      "indices": "efac41735d1d015b1e09aca67b879bfdfa6cb200365d27dcb2f0f432419437c8",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "CTF_kidney_left",
+      "positions": "4ab583a80c7ecc87d131365ec42ed65712f869d65eda152c7caba56f06aeda9d",
+      "indices": "aef518e976fb51b47f52de53448d6d6b9698d415659ea3b7550b975f45ac9097",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "CTF_kidney_right",
+      "positions": "f8b9a2efdbfc52f2da5565790127bae6793d2f77b2d1eb52e5cb97ae22752651",
+      "indices": "cd9e989e2baae0165c143e3933b5dfedcdf5c17a93511ac6995df4a6aed2c547",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "CTF_liver",
+      "positions": "bc7f54f32e4c7aab34378e59acafcad71ca2ddbe16ff3291856a63240b98a0a3",
+      "indices": "8eccbc8474dde5d4ede8086996ea809296171bda56dd52f4aa02f7d9fb78ec8a",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "CTF_pancreas",
+      "positions": "72a73db77c806d0c1cafad3f9c1fce4ffcaf4ca894f606a1a8e999fc94497734",
+      "indices": "5e1a81019c8c7f5ff2725ac139321aabd3c37146dbcc12134136c3772fe93556",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "CTF_spleen",
+      "positions": "f40358d00ad23cf9700bcea84a44b470efc83a10f85eb1b76bb145d0a2ae54d1",
+      "indices": "c353c57d63846cb8119e2ae3aca95673406eb865b7ade3026a1af149e820757b",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "CTF_stomach",
+      "positions": "a1b589d075115834e2e28f1ed55fb309b212e4d70a2d9fcebb481437f39798e6",
+      "indices": "b46a7638723a8a2c12e10ff4da45f3bb057773dcc942e533d43fa955c1f58312",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "errors": []
+}

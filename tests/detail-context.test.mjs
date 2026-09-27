@@ -1,0 +1,31 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {initialView,viewReducer,restoreView} from '../src/view-state.ts';
+const base=initialView(),layers={...base.layers,skin:false,organ:true,vessel:true};
+const detail={id:'mixed',name:'기관',ids:['organ','artery'],layers};
+const selection={kind:'structure',ids:['artery'],name:'동맥'};
+test('leaving detail isolation restores all scope layers while preserving the individual selection and preferences',()=>{
+  const start={...base,alpha:{...base.alpha,organ:.3},markers:'hidden',camera:{position:[0,1,2],target:[0,1,0]}};
+  const whole=viewReducer(start,{type:'detail',detail});
+  const single=viewReducer(whole,{type:'select',selection,layer:'vessel',region:'chest'});
+  assert.equal(single.isolated,true);assert.equal(single.layers.organ,false);
+  const context=viewReducer(single,{type:'isolate'});
+  assert.equal(context.isolated,false);assert.deepEqual(context.layers,detail.layers);assert.equal(context.anatomyRegion,'whole');
+  assert.equal(context.selection,selection);assert.equal(context.detail,detail);
+  for(const key of ['alpha','camera','markers','fadeContext'])assert.deepEqual(context[key],start[key]);
+  const catalog=[{id:'organ',layer:'organ'},{id:'artery',layer:'vessel'}];
+  assert.deepEqual(restoreView(JSON.stringify(context),[],catalog),context);
+  assert.equal(viewReducer(context,{type:'isolate'}).isolated,true);
+  const outside=viewReducer(start,{type:'select',selection,layer:'vessel'});
+  assert.deepEqual(viewReducer(viewReducer(outside,{type:'isolate'}),{type:'isolate'}),outside);
+});
+test('a child default scope cannot replace the active containing detail but an unrelated search can',()=>{
+  const childDetail={id:'arteries',name:'동맥 묶음',ids:['artery'],layers:{...base.layers,skin:false,vessel:true}};
+  const whole=viewReducer(base,{type:'detail',detail});
+  const child=viewReducer(whole,{type:'select',selection,layer:'vessel',detail:childDetail});
+  assert.equal(child.detail,detail);
+  const searched=viewReducer(base,{type:'select',selection,layer:'vessel',detail:childDetail});
+  assert.equal(searched.detail,childDetail);
+  const other={...childDetail,id:'other',ids:['elsewhere']};
+  assert.equal(viewReducer(whole,{type:'select',selection:{...selection,ids:['elsewhere']},layer:'vessel',detail:other}).detail,other);
+});

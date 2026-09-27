@@ -1212,7 +1212,11 @@ function AtlasPage({
             </button>
             {!fullCompositeDetail && <button
               aria-pressed={state.isolated}
-              onClick={() => { dispatch({ type: "isolate" }); requestAnimationFrame(() => camera("structure")); }}
+              onClick={() => {
+                const kind = state.isolated && state.detail ? "fit" : "structure";
+                dispatch({ type: "isolate" });
+                requestAnimationFrame(() => camera(kind));
+              }}
             >
               {state.isolated
                 ? "전체 구조 보기"
