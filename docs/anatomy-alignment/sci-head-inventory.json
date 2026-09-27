@@ -1,0 +1,233 @@
+{
+  "status": "SOURCE RECEIVED; voxel labels not yet authoritatively mapped; no runtime export",
+  "sourcePage": "https://sci.utah.edu/sci-head-model/",
+  "paperDoi": "10.1101/552190",
+  "files": [
+    {
+      "url": "https://sci.utah.edu/~datasets/SCI_headmodel/Segmentation.zip",
+      "bytes": 593032,
+      "sha256": "31b7f32628a887bb8e5e089bc98e355cbb30f94b8d4cf52685a58449068ec021",
+      "entries": [
+        {
+          "path": "Segmentation/HeadSegmentation.nrrd",
+          "bytes": 624234,
+          "sha256": "7e9ce6ee21d7b216c1d103b40fd0e54d5370aad29d67a6bee8f67cb8d283187a"
+        },
+        {
+          "path": "Segmentation/README.txt",
+          "bytes": 519,
+          "sha256": "d0188ec98c9459612865f3c76cf87d9d473d6baaca3f3c313ebf095c61ec0837"
+        }
+      ]
+    },
+    {
+      "url": "https://sci.utah.edu/~datasets/SCI_headmodel/Simulations.zip",
+      "bytes": 17727,
+      "sha256": "ca375ae4cb6d289a2e8d68dfb9754bad83312bee7f4127f3df18be642d2ccf79",
+      "entries": [
+        {
+          "path": "Simulations/forward_problem.srn",
+          "bytes": 28642,
+          "sha256": "48ec2937609572cc7f67265407b4755566b2aaae67f9ef9eeab94d681da4df5c"
+        },
+        {
+          "path": "Simulations/README.txt",
+          "bytes": 567,
+          "sha256": "aac67e45b48a81ecee353abc5f3d45ad3d2ea33527661268c89cdb2d1540e71f"
+        },
+        {
+          "path": "Simulations/LeadFieldMatrix.srn",
+          "bytes": 57850,
+          "sha256": "6c8591a3b4c38a630a9b2db2441200e26b0794a7c1038fa6d6c3066a4ea1ac41"
+        },
+        {
+          "path": "Simulations/LeadFieldMatrix_anisotropic.srn",
+          "bytes": 61099,
+          "sha256": "e8728811d1fbca3b863e193d8f33eb06011274597a308f8055de50124542f811"
+        }
+      ]
+    }
+  ],
+  "nrrdHeader": {
+    "type": "unsigned char",
+    "dimension": "3",
+    "space": "3D-right-handed",
+    "sizes": "208 256 256",
+    "space directions": "(1,0,0) (0,1,0) (0,0,1)",
+    "centerings": "cell cell cell",
+    "kinds": "space space space",
+    "encoding": "gzip",
+    "space origin": "(-101.67818450927734,-108.63245391845703,-171.80877685546875)",
+    "measurement frame": "(1,0,0) (0,1,0) (0,0,1)"
+  },
+  "voxelBytes": 13631488,
+  "voxelSha256": "20caa9e180af6ce459668d015fd6fc55d1300fb9671f57e451e94ceb404dccfa",
+  "labels": [
+    {
+      "value": 1,
+      "voxels": 12009,
+      "indexBoundsXYZ": [
+        [
+          61,
+          51,
+          115
+        ],
+        [
+          141,
+          75,
+          137
+        ]
+      ],
+      "anatomicalName": null
+    },
+    {
+      "value": 2,
+      "voxels": 738976,
+      "indexBoundsXYZ": [
+        [
+          35,
+          48,
+          94
+        ],
+        [
+          170,
+          221,
+          230
+        ]
+      ],
+      "anatomicalName": null
+    },
+    {
+      "value": 3,
+      "voxels": 674779,
+      "indexBoundsXYZ": [
+        [
+          37,
+          52,
+          95
+        ],
+        [
+          167,
+          220,
+          227
+        ]
+      ],
+      "anatomicalName": null
+    },
+    {
+      "value": 4,
+      "voxels": 259870,
+      "indexBoundsXYZ": [
+        [
+          33,
+          47,
+          92
+        ],
+        [
+          172,
+          222,
+          234
+        ]
+      ],
+      "anatomicalName": null
+    },
+    {
+      "value": 5,
+      "voxels": 101364,
+      "indexBoundsXYZ": [
+        [
+          32,
+          25,
+          0
+        ],
+        [
+          174,
+          159,
+          163
+        ]
+      ],
+      "anatomicalName": null
+    },
+    {
+      "value": 6,
+      "voxels": 797620,
+      "indexBoundsXYZ": [
+        [
+          30,
+          37,
+          0
+        ],
+        [
+          174,
+          227,
+          241
+        ]
+      ],
+      "anatomicalName": null
+    },
+    {
+      "value": 7,
+      "voxels": 1691700,
+      "indexBoundsXYZ": [
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          207,
+          230,
+          243
+        ]
+      ],
+      "anatomicalName": null
+    },
+    {
+      "value": 8,
+      "voxels": 9355170,
+      "indexBoundsXYZ": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          207,
+          255,
+          255
+        ]
+      ],
+      "anatomicalName": null
+    }
+  ],
+  "meshNetworkEvidence": [
+    {
+      "moduleId": "m5",
+      "name": "ClipFieldByFunction",
+      "note": "{Clip out brain \n(CSF, GM, WM)}",
+      "variables": {
+        "function": "{DATA == 1 || DATA == 3 || DATA == 7;\n\n\n\n\n\n\n\n}"
+      }
+    },
+    {
+      "moduleId": "m25",
+      "name": "CreateMatrix",
+      "note": "{Set conductivities\n(isotropic)}",
+      "variables": {
+        "rows": "{8}",
+        "cols": "{1}",
+        "data": "{{0.00 1.79 0.5051 0.3333 1e-6 0.4336 0.01 0.1429}}",
+        "rlabel": "{0 1 2 3 4 5 6 7}"
+      }
+    }
+  ],
+  "limitations": [
+    "The source describes a female head and eight material classes; the downloaded NRRD and README do not name their numeric values.",
+    "Do not copy the Cleaver mesh conductivity-table row indices onto the NRRD labels. Their geometric support differs and the crosswalk is unverified.",
+    "NRRD space is generic 3D-right-handed, not explicit RAS/LPS. Anatomical axis orientation and physical units require source-image correspondence.",
+    "The paper describes synthetic MRI-derived bone and represents the mouth as solid bone due to dental artifacts; it is not a detailed normal dental/jaw model.",
+    "The official page permits public access and asks for acknowledgement. The paper CC BY notice is not automatically the data license.",
+    "No surface extraction, HRA placement, cranial-nerve detail, whole-body completion or clinical accuracy is claimed."
+  ],
+  "codeSha256": "e7d7bbff8dfde7489d0bb2ef4a8452ae0e8e0aef6287c69e413778dab9451d1b"
+}

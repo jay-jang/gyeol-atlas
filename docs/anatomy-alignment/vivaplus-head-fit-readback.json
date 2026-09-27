@@ -1,0 +1,55 @@
+{
+  "reportSha256": "34f3b62603fb7d1e1f20ae81c635fd00ecf2c44ee2c904cc2f1f49552a305df4",
+  "rows": [
+    {
+      "mode": "initial",
+      "kind": "skin",
+      "vertices": 3099,
+      "triangles": 6148,
+      "maximumErrorM": 0
+    },
+    {
+      "mode": "initial",
+      "kind": "skull",
+      "vertices": 6680,
+      "triangles": 13368,
+      "maximumErrorM": 0
+    },
+    {
+      "mode": "rigid",
+      "kind": "skin",
+      "vertices": 3099,
+      "triangles": 6148,
+      "maximumErrorM": 0
+    },
+    {
+      "mode": "rigid",
+      "kind": "skull",
+      "vertices": 6680,
+      "triangles": 13368,
+      "maximumErrorM": 0
+    },
+    {
+      "mode": "similarity",
+      "kind": "skin",
+      "vertices": 3099,
+      "triangles": 6148,
+      "maximumErrorM": 0
+    },
+    {
+      "mode": "similarity",
+      "kind": "skull",
+      "vertices": 6680,
+      "triangles": 13368,
+      "maximumErrorM": 0
+    }
+  ],
+  "totalReferencedVertices": 29337,
+  "witnessesReplayed": 339,
+  "previousAuditBaselineIdsMatch": true,
+  "baselineDistinctNeuralMeshes": 49,
+  "limitations": [
+    "Arithmetic and oriented-index readback, not an independent nearest-surface optimizer or clinical check.",
+    "Witness replay reuses the segment-triangle predicate but not the BVH traversal; no-witness outcomes are not certified."
+  ]
+}

@@ -1,0 +1,682 @@
+{
+  "status": "INDEX-SPACE CROSS-TAB ONLY; no authoritative anatomical crosswalk",
+  "url": "https://sci.utah.edu/~datasets/SCI_headmodel/Mesh.zip",
+  "archiveBytes": 3463196500,
+  "etag": "\"ce6c2f54-5824437da6580\"",
+  "archiveSha256": null,
+  "requests": [
+    {
+      "start": 3463196478,
+      "bytes": 22,
+      "sha256": "ff75794543f3bab7fbfe15575869c6e9065e5c4e00d35a9102fc9dde69ec016d"
+    },
+    {
+      "start": 3463196458,
+      "bytes": 20,
+      "sha256": "c7e1b3e4f9b1023da650ecb1f267167029da817ce325214c0d8d9041428ad741"
+    },
+    {
+      "start": 3463188771,
+      "bytes": 7707,
+      "sha256": "06da841d315ea128f9a6ff2641e1da8d0b2b44265b1cfb7fb97d904ee6f576dd"
+    },
+    {
+      "start": 2539824179,
+      "bytes": 30,
+      "sha256": "bf1633812593c4d9bcfbd89686f2f76f20a5352127f552d4b8d4c2ea794f0609"
+    },
+    {
+      "start": 2539824209,
+      "bytes": 15,
+      "sha256": "8dab3a199fcf5dfdbfa2192a456fe6baec7b0d3d579c74e50a3ce7ca0f5df133"
+    },
+    {
+      "start": 2539824224,
+      "bytes": 351,
+      "sha256": "0e056b87d97224f202f31ab87c96f26d8388133e2dc8571999f4448e3d13a192"
+    },
+    {
+      "start": 3184919892,
+      "bytes": 30,
+      "sha256": "4132233d3b07c3fbd724414135a8aa32515a87a2eec68f9c2cdccae0078441c1"
+    },
+    {
+      "start": 3184919922,
+      "bytes": 38,
+      "sha256": "4bb3c9c75547bb206b352484775944a0efa4b88669516017ad3ae4f1352b1cf9"
+    },
+    {
+      "start": 3184919960,
+      "bytes": 423370,
+      "sha256": "a44813cb26e06064bbe7084f2f2d955847d367356437cb1d64675c801f2db930"
+    }
+  ],
+  "transferredBytes": 431583,
+  "inventory": [
+    {
+      "path": "Mesh/._.DS_Store",
+      "bytes": 4096,
+      "compressedBytes": 146,
+      "crc32": "06d03142"
+    },
+    {
+      "path": "Mesh/._BigMesh_60M",
+      "bytes": 4096,
+      "compressedBytes": 238,
+      "crc32": "93e18302"
+    },
+    {
+      "path": "Mesh/._README.txt",
+      "bytes": 4096,
+      "compressedBytes": 422,
+      "crc32": "b511939e"
+    },
+    {
+      "path": "Mesh/._ScaledMesh_15M",
+      "bytes": 4096,
+      "compressedBytes": 239,
+      "crc32": "28297484"
+    },
+    {
+      "path": "Mesh/.DS_Store",
+      "bytes": 10244,
+      "compressedBytes": 1179,
+      "crc32": "2f6f1fd5"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/",
+      "bytes": 0,
+      "compressedBytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._.DS_Store",
+      "bytes": 4096,
+      "compressedBytes": 146,
+      "crc32": "06d03142"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh.ele",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh.elem",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh.mat",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh.node",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh.ply",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh.pts",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh.txt",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh0.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh1.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh2.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh3.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh4.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh5.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh6.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh7.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/._Adaptive-BCC-Mesh8.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "276e694c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/.DS_Store",
+      "bytes": 8196,
+      "compressedBytes": 408,
+      "crc32": "d74ee206"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh.ele",
+      "bytes": 2559734128,
+      "compressedBytes": 466964681,
+      "crc32": "3319d8b2"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh.elem",
+      "bytes": 1908177178,
+      "compressedBytes": 320140158,
+      "crc32": "03b5d8ed"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh.mat",
+      "bytes": 1147847400,
+      "compressedBytes": 307960990,
+      "crc32": "6c5e4db0"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh.node",
+      "bytes": 325382111,
+      "compressedBytes": 64723389,
+      "crc32": "ac7b1c0f"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh.ply",
+      "bytes": 203798814,
+      "compressedBytes": 40923451,
+      "crc32": "2c01668a"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh.pts",
+      "bytes": 243700341,
+      "compressedBytes": 44091585,
+      "crc32": "a1d8be7e"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh.txt",
+      "bytes": 120485090,
+      "compressedBytes": 4037268,
+      "crc32": "7f19fd7c"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh.vtk",
+      "bytes": 2573576528,
+      "compressedBytes": 377093230,
+      "crc32": "3876b5e3"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh0.vtk",
+      "bytes": 1196052475,
+      "compressedBytes": 174700489,
+      "crc32": "881271f0"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh1.vtk",
+      "bytes": 374027883,
+      "compressedBytes": 60225466,
+      "crc32": "bafbd70a"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh2.vtk",
+      "bytes": 10761305,
+      "compressedBytes": 1965723,
+      "crc32": "e9297491"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh3.vtk",
+      "bytes": 1106391708,
+      "compressedBytes": 164877713,
+      "crc32": "217a1260"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh4.vtk",
+      "bytes": 106044896,
+      "compressedBytes": 17349463,
+      "crc32": "3ac9a458"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh5.vtk",
+      "bytes": 1494812230,
+      "compressedBytes": 219335734,
+      "crc32": "99ea3e4d"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh6.vtk",
+      "bytes": 1032239373,
+      "compressedBytes": 153820964,
+      "crc32": "2cb5103d"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh7.vtk",
+      "bytes": 800770816,
+      "compressedBytes": 121044167,
+      "crc32": "d8bbff90"
+    },
+    {
+      "path": "Mesh/BigMesh_60M/Adaptive-BCC-Mesh8.vtk",
+      "bytes": 2867340,
+      "compressedBytes": 555313,
+      "crc32": "71ec9198"
+    },
+    {
+      "path": "Mesh/Networks/",
+      "bytes": 0,
+      "compressedBytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "Mesh/Networks/._.DS_Store",
+      "bytes": 4096,
+      "compressedBytes": 146,
+      "crc32": "06d03142"
+    },
+    {
+      "path": "Mesh/Networks/.DS_Store",
+      "bytes": 6148,
+      "compressedBytes": 173,
+      "crc32": "6d88006a"
+    },
+    {
+      "path": "Mesh/Networks/flat_tets_test.srn",
+      "bytes": 15602,
+      "compressedBytes": 1636,
+      "crc32": "d39e3c18"
+    },
+    {
+      "path": "Mesh/Networks/ViewBadTets.srn",
+      "bytes": 11214,
+      "compressedBytes": 1626,
+      "crc32": "fed8dfdc"
+    },
+    {
+      "path": "Mesh/README.txt",
+      "bytes": 902,
+      "compressedBytes": 351,
+      "crc32": "facabc00"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/",
+      "bytes": 0,
+      "compressedBytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._.DS_Store",
+      "bytes": 4096,
+      "compressedBytes": 243,
+      "crc32": "ab3688a3"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh.ele",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh.elem",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh.mat",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh.node",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh.ply",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh.pts",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh.txt",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh_poly0.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh_poly1.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh_poly2.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh_poly3.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh_poly4.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh_poly5.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh_poly6.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh_poly7.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh_poly8.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/._HeadMesh1.vtk",
+      "bytes": 4096,
+      "compressedBytes": 294,
+      "crc32": "c579cb8a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/.DS_Store",
+      "bytes": 8196,
+      "compressedBytes": 391,
+      "crc32": "b83c87d0"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh.ele",
+      "bytes": 636217197,
+      "compressedBytes": 122475849,
+      "crc32": "bdab7533"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh.elem",
+      "bytes": 475062115,
+      "compressedBytes": 87312322,
+      "crc32": "78ec19d8"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh.mat",
+      "bytes": 299224480,
+      "compressedBytes": 87149825,
+      "crc32": "cc0ec6fb"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh.node",
+      "bytes": 63518082,
+      "compressedBytes": 18824584,
+      "crc32": "68da68cf"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh.obj",
+      "bytes": 742855605,
+      "compressedBytes": 127629828,
+      "crc32": "51e7ee0b"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh.ply",
+      "bytes": 92581129,
+      "compressedBytes": 20274365,
+      "crc32": "2aa6d5a5"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh.pts",
+      "bytes": 42632705,
+      "compressedBytes": 12824577,
+      "crc32": "832a0b42"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh.txt",
+      "bytes": 31321114,
+      "compressedBytes": 1918802,
+      "crc32": "03e43a0e"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh.vtk",
+      "bytes": 627334525,
+      "compressedBytes": 103600567,
+      "crc32": "496c8120"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh_poly0.vtk",
+      "bytes": 140617935,
+      "compressedBytes": 23108330,
+      "crc32": "32abc7b3"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh_poly1.vtk",
+      "bytes": 239231375,
+      "compressedBytes": 39968267,
+      "crc32": "f08383c7"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh_poly2.vtk",
+      "bytes": 1996985,
+      "compressedBytes": 423370,
+      "crc32": "548f2097"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh_poly3.vtk",
+      "bytes": 347605035,
+      "compressedBytes": 57051881,
+      "crc32": "1ea49361"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh_poly4.vtk",
+      "bytes": 32247554,
+      "compressedBytes": 5988599,
+      "crc32": "42c47ec4"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh_poly5.vtk",
+      "bytes": 234415903,
+      "compressedBytes": 38530606,
+      "crc32": "ed2b9653"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh_poly6.vtk",
+      "bytes": 277328512,
+      "compressedBytes": 45452648,
+      "crc32": "e5d2247a"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh_poly7.vtk",
+      "bytes": 183742903,
+      "compressedBytes": 30584166,
+      "crc32": "2b300f72"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh_poly8.vtk",
+      "bytes": 434050,
+      "compressedBytes": 91272,
+      "crc32": "d311b663"
+    },
+    {
+      "path": "Mesh/ScaledMesh_15M/HeadMesh1.vtk",
+      "bytes": 239231379,
+      "compressedBytes": 39968282,
+      "crc32": "a348e5f6"
+    },
+    {
+      "path": "Mesh/SizingFields/",
+      "bytes": 0,
+      "compressedBytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "Mesh/SizingFields/._.DS_Store",
+      "bytes": 4096,
+      "compressedBytes": 146,
+      "crc32": "06d03142"
+    },
+    {
+      "path": "Mesh/SizingFields/._Cleaver_0.6_1.0_1.0_sizing_field.nrrd",
+      "bytes": 4096,
+      "compressedBytes": 237,
+      "crc32": "92b45c05"
+    },
+    {
+      "path": "Mesh/SizingFields/._Updated_sizing_field_27.nrrd",
+      "bytes": 4096,
+      "compressedBytes": 510,
+      "crc32": "9f568c73"
+    },
+    {
+      "path": "Mesh/SizingFields/.DS_Store",
+      "bytes": 6148,
+      "compressedBytes": 280,
+      "crc32": "95b32ae7"
+    },
+    {
+      "path": "Mesh/SizingFields/Cleaver_0.6_1.0_1.0_sizing_field.nrrd",
+      "bytes": 11611163,
+      "compressedBytes": 8274914,
+      "crc32": "4c88b331"
+    },
+    {
+      "path": "Mesh/SizingFields/Updated_sizing_field_27.nrrd",
+      "bytes": 52006201,
+      "compressedBytes": 51900939,
+      "crc32": "23c52414"
+    }
+  ],
+  "readme": "\n------------------------------------------------------------------------------------------\nMesh:\n\nThis folder contains all necessary files related to the 3D tetrahedral meshes generated for this project.\n---\nBigMesh_60M: \n60 million(M) element mesh in the following data types\n  .ele, .elem, .mat, .node, .ply, .pts, .txt, and .vtk\n---\nScaledMesh_15M: 15M element mesh in the following data types\n  .ele, .elem, .mat, .node, .ply, .pts, .txt, .obj, and .vtk\n---\nSizing Fields: sizing fields in .nrrd format.\n  Cleaver_0.6_1.0_1.0_sizing_field.nrrd: sizing field for 60M element mesh.\n  Updated_sizing_field_27.nrrd: sizing field for 15M element mesh.\n---\nNetworks: SCIRun4 network files\n  flat_tets_test.srn: testing for flat tetrahedra in the mesh.\n  ViewBadTets.srn: viewing the flat tetrahedra in the mesh. \n------------------------------------------------------------------------------------------",
+  "member": {
+    "path": "Mesh/ScaledMesh_15M/HeadMesh_poly2.vtk",
+    "bytes": 1996985,
+    "sha256": "6cb920d073aae24acdea7c077a0c851ea5362fa33b578ec090502570f95f68cc",
+    "crcVerified": true,
+    "points": 7136,
+    "boundsXYZ": [
+      [
+        60.8384,
+        50.9815,
+        115.009
+      ],
+      [
+        142.168,
+        75.994,
+        138.075
+      ]
+    ]
+  },
+  "indexSpaceHypotheses": [
+    {
+      "indexOffset": 0,
+      "nearestVoxelCounts": {
+        "1": 4938,
+        "6": 28,
+        "7": 2145,
+        "8": 25
+      }
+    },
+    {
+      "indexOffset": -0.5,
+      "nearestVoxelCounts": {
+        "1": 5403,
+        "7": 1644,
+        "8": 89
+      }
+    },
+    {
+      "indexOffset": 0.5,
+      "nearestVoxelCounts": {
+        "1": 4284,
+        "6": 149,
+        "7": 2701,
+        "8": 2
+      }
+    }
+  ],
+  "limitations": [
+    "Only one small mesh member and README were fully read; whole ZIP SHA/CRC is not verified.",
+    "Numeric suffix poly2 is not independently established as the simulation field material value.",
+    "Nearest voxel counts test possible coordinate conventions, not exact mesher correspondence.",
+    "No RAS/LPS orientation, physical units, anatomical names, HRA registration or runtime assets are assigned."
+  ],
+  "codeSha256": "493f4492da746c27a8a5473350501d560d34977de3451fef8777bdaae7e2411c"
+}
