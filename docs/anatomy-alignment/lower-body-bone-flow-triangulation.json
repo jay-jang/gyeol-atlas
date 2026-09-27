@@ -1,0 +1,113 @@
+{
+  "createdAt": "2026-09-27T17:03:16.840Z",
+  "reportSha256": "b8029be75ed2802c67e2def3c6facbfb6e43247cbab0b4fffb1c4a51c64af876",
+  "auditSha256": "c4426ba432c5fafa23c57ab89e833784c29371a6404c82a3f0c3331331b2311e",
+  "case": {
+    "side": "left",
+    "bone": "Pelvis",
+    "muscleId": "VHF0028"
+  },
+  "levels": [
+    {
+      "level": 0,
+      "muscle": {
+        "vertices": 11167,
+        "triangles": 22330,
+        "maximumCentroidChordErrorMm": 0.04724812980064437
+      },
+      "bone": {
+        "vertices": 49654,
+        "triangles": 99308,
+        "maximumCentroidChordErrorMm": 0.027381535978009446
+      },
+      "crosses": true,
+      "witness": {
+        "point": [
+          0.09590500416350659,
+          0.8469569830061032,
+          -0.03619669563966187
+        ],
+        "segmentFraction": 0.6531477487544743,
+        "barycentric": [
+          0.4631135183311739,
+          0.49742155183761927,
+          0.0394649298312068
+        ],
+        "direction": "a-to-b",
+        "edge": 1,
+        "planeStraddleExtentMm": 0.055677158359615966,
+        "a": [
+          [
+            0.0951814278960228,
+            0.8466434478759766,
+            -0.037265922874212265
+          ],
+          [
+            0.09524918347597122,
+            0.8482142090797424,
+            -0.03651091456413269
+          ],
+          [
+            0.09625327587127686,
+            0.846289336681366,
+            -0.03602983057498932
+          ]
+        ],
+        "b": [
+          [
+            0.09609734266996384,
+            0.8472943902015686,
+            -0.03571047633886337
+          ],
+          [
+            0.09567548334598541,
+            0.8467105627059937,
+            -0.03665906935930252
+          ],
+          [
+            0.09654086083173752,
+            0.8461034893989563,
+            -0.03607456386089325
+          ]
+        ]
+      }
+    },
+    {
+      "level": 1,
+      "muscle": {
+        "vertices": 44662,
+        "triangles": 89320,
+        "maximumCentroidChordErrorMm": 0.012359378968484207
+      },
+      "bone": {
+        "vertices": 198616,
+        "triangles": 397232,
+        "maximumCentroidChordErrorMm": 0.007268419012269144
+      },
+      "crosses": false,
+      "witness": null
+    },
+    {
+      "level": 2,
+      "muscle": {
+        "vertices": 178642,
+        "triangles": 357280,
+        "maximumCentroidChordErrorMm": 0.0031333665549383924
+      },
+      "bone": {
+        "vertices": 794464,
+        "triangles": 1588928,
+        "maximumCentroidChordErrorMm": 0.0018655747704314977
+      },
+      "crosses": false,
+      "witness": null
+    }
+  ],
+  "limitations": [
+    "Uniform midpoint refinement preserves original flat source triangles before the same nonlinear map. Native HRA bones are not refined or corrected here.",
+    "Full pair intersection is rescreened at each tested level. Centroid chord error is a finite sample, not a continuous approximation bound.",
+    "Removing this discretization crossing does not resolve44 native HRA bone relationships or skin/ligament failures. No runtime model is changed."
+  ],
+  "scriptSha256": "65be66f5a63ca023a1bedcb4b47d40b2cd20107cc711b2e9f55a5060af70ae4f",
+  "subdivisionSha256": "1c8f2bcb6984862299f71910469b2fe61174e027f8850782b9cdc6a6b36f0763"
+}
