@@ -1,0 +1,2829 @@
+{
+  "createdAt": "2026-09-27T09:48:36.754Z",
+  "status": "Direct shank fitting only; foot placement not approved; no runtime export",
+  "sampling": "512 per bone and direction, retain closest 409",
+  "sourceRevision": "ac8de2b38f5ae1a0996053ca0639dd6ae43358f1",
+  "sourceUnits": "STL mm converted once to metres before fitting",
+  "sides": [
+    {
+      "side": "left",
+      "initialMatrix": [
+        1.0166893433899007,
+        0.13008329241675892,
+        -0.011685863824034073,
+        0,
+        -0.0051597451461249996,
+        -0.05163850498301584,
+        -1.0237295957307437,
+        0,
+        -0.13050517004825848,
+        1.0154443584850033,
+        -0.05056281987330258,
+        0,
+        -0.12431103535020183,
+        -0.11466010009598313,
+        0.19211670211042453,
+        1
+      ],
+      "sourceToAtlasMatrix": [
+        1.0493268237000537,
+        0.13937331642341907,
+        -0.0023678020095671192,
+        0,
+        0.0012356886899936605,
+        -0.027280916477433557,
+        -1.0581925795540599,
+        0,
+        -0.13938795102404095,
+        1.04897480475889,
+        -0.027206044255473523,
+        0,
+        -0.1337079058328732,
+        -0.1413864949720039,
+        0.18811544014094977,
+        1
+      ],
+      "uniformScale": 1.0585449025684563,
+      "iterations": [
+        {
+          "iteration": 0,
+          "maximumSampleChangeMm": 0.8776338878522418,
+          "scale": 1.0242891256866649
+        },
+        {
+          "iteration": 1,
+          "maximumSampleChangeMm": 0.7293430059368884,
+          "scale": 1.0236590286890137
+        },
+        {
+          "iteration": 2,
+          "maximumSampleChangeMm": 0.612981729521562,
+          "scale": 1.0233675667563256
+        },
+        {
+          "iteration": 3,
+          "maximumSampleChangeMm": 0.54868119127416,
+          "scale": 1.0231884924137213
+        },
+        {
+          "iteration": 4,
+          "maximumSampleChangeMm": 0.41537804844838916,
+          "scale": 1.023177272611026
+        },
+        {
+          "iteration": 5,
+          "maximumSampleChangeMm": 0.3555306239725608,
+          "scale": 1.02326578983297
+        },
+        {
+          "iteration": 6,
+          "maximumSampleChangeMm": 0.43458609830200734,
+          "scale": 1.0234939336994529
+        },
+        {
+          "iteration": 7,
+          "maximumSampleChangeMm": 0.43334603614802614,
+          "scale": 1.0238736394543124
+        },
+        {
+          "iteration": 8,
+          "maximumSampleChangeMm": 0.42072712365746345,
+          "scale": 1.0242846226905535
+        },
+        {
+          "iteration": 9,
+          "maximumSampleChangeMm": 0.4557456470375695,
+          "scale": 1.0247530229248851
+        },
+        {
+          "iteration": 10,
+          "maximumSampleChangeMm": 0.4563615978261622,
+          "scale": 1.0252527835421597
+        },
+        {
+          "iteration": 11,
+          "maximumSampleChangeMm": 0.37132876933521775,
+          "scale": 1.0256776068767388
+        },
+        {
+          "iteration": 12,
+          "maximumSampleChangeMm": 0.34003815595015996,
+          "scale": 1.0261210787116437
+        },
+        {
+          "iteration": 13,
+          "maximumSampleChangeMm": 0.3206187419987173,
+          "scale": 1.0265630243649426
+        },
+        {
+          "iteration": 14,
+          "maximumSampleChangeMm": 0.26447030271339894,
+          "scale": 1.0269587250578618
+        },
+        {
+          "iteration": 15,
+          "maximumSampleChangeMm": 0.23527731350911293,
+          "scale": 1.0273684186072514
+        },
+        {
+          "iteration": 16,
+          "maximumSampleChangeMm": 0.19507769173584247,
+          "scale": 1.0277539005926735
+        },
+        {
+          "iteration": 17,
+          "maximumSampleChangeMm": 0.17540585739996933,
+          "scale": 1.0281287310736855
+        },
+        {
+          "iteration": 18,
+          "maximumSampleChangeMm": 0.15649840875100837,
+          "scale": 1.0284881609487135
+        },
+        {
+          "iteration": 19,
+          "maximumSampleChangeMm": 0.14685292412755135,
+          "scale": 1.0288430751907858
+        },
+        {
+          "iteration": 20,
+          "maximumSampleChangeMm": 0.15321042378497998,
+          "scale": 1.0292083284129843
+        },
+        {
+          "iteration": 21,
+          "maximumSampleChangeMm": 0.1406909824200523,
+          "scale": 1.029561727164381
+        },
+        {
+          "iteration": 22,
+          "maximumSampleChangeMm": 0.13312204885447837,
+          "scale": 1.029913938777686
+        },
+        {
+          "iteration": 23,
+          "maximumSampleChangeMm": 0.12631684083301464,
+          "scale": 1.0302587608021245
+        },
+        {
+          "iteration": 24,
+          "maximumSampleChangeMm": 0.13235763949750612,
+          "scale": 1.0306108161417726
+        },
+        {
+          "iteration": 25,
+          "maximumSampleChangeMm": 0.13139941134760863,
+          "scale": 1.0309685840843745
+        },
+        {
+          "iteration": 26,
+          "maximumSampleChangeMm": 0.12064084041601522,
+          "scale": 1.031302749030008
+        },
+        {
+          "iteration": 27,
+          "maximumSampleChangeMm": 0.11293302925684755,
+          "scale": 1.0316092389980223
+        },
+        {
+          "iteration": 28,
+          "maximumSampleChangeMm": 0.11073597825888815,
+          "scale": 1.0319147550611736
+        },
+        {
+          "iteration": 29,
+          "maximumSampleChangeMm": 0.11263943725474329,
+          "scale": 1.032226908145271
+        },
+        {
+          "iteration": 30,
+          "maximumSampleChangeMm": 0.11536273319136335,
+          "scale": 1.0325510627025147
+        },
+        {
+          "iteration": 31,
+          "maximumSampleChangeMm": 0.10761038176907615,
+          "scale": 1.0328529668725004
+        },
+        {
+          "iteration": 32,
+          "maximumSampleChangeMm": 0.09919022985945423,
+          "scale": 1.0331285595041673
+        },
+        {
+          "iteration": 33,
+          "maximumSampleChangeMm": 0.0925757436396381,
+          "scale": 1.0333753052537105
+        },
+        {
+          "iteration": 34,
+          "maximumSampleChangeMm": 0.0849230811713425,
+          "scale": 1.0336043748821906
+        },
+        {
+          "iteration": 35,
+          "maximumSampleChangeMm": 0.09504456914224418,
+          "scale": 1.0338456649523442
+        },
+        {
+          "iteration": 36,
+          "maximumSampleChangeMm": 0.08676761576927167,
+          "scale": 1.03407403420499
+        },
+        {
+          "iteration": 37,
+          "maximumSampleChangeMm": 0.08112665594434337,
+          "scale": 1.0342930714073917
+        },
+        {
+          "iteration": 38,
+          "maximumSampleChangeMm": 0.07596182478152981,
+          "scale": 1.034499237874914
+        },
+        {
+          "iteration": 39,
+          "maximumSampleChangeMm": 0.07793844038824325,
+          "scale": 1.03471430269495
+        },
+        {
+          "iteration": 40,
+          "maximumSampleChangeMm": 0.07293736201521296,
+          "scale": 1.034912817078149
+        },
+        {
+          "iteration": 41,
+          "maximumSampleChangeMm": 0.08476454128544847,
+          "scale": 1.0351214204947832
+        },
+        {
+          "iteration": 42,
+          "maximumSampleChangeMm": 0.07849154699523367,
+          "scale": 1.0353167370660268
+        },
+        {
+          "iteration": 43,
+          "maximumSampleChangeMm": 0.0698102522523917,
+          "scale": 1.035506333866472
+        },
+        {
+          "iteration": 44,
+          "maximumSampleChangeMm": 0.06579741366140295,
+          "scale": 1.0356886497775144
+        },
+        {
+          "iteration": 45,
+          "maximumSampleChangeMm": 0.06103685284827411,
+          "scale": 1.0358596823224993
+        },
+        {
+          "iteration": 46,
+          "maximumSampleChangeMm": 0.05961802205234097,
+          "scale": 1.03602851756918
+        },
+        {
+          "iteration": 47,
+          "maximumSampleChangeMm": 0.0633825589410583,
+          "scale": 1.0362062196859034
+        },
+        {
+          "iteration": 48,
+          "maximumSampleChangeMm": 0.056840242660526286,
+          "scale": 1.0363661629504237
+        },
+        {
+          "iteration": 49,
+          "maximumSampleChangeMm": 0.06156349289956189,
+          "scale": 1.0365423739860828
+        },
+        {
+          "iteration": 50,
+          "maximumSampleChangeMm": 0.06916704598141922,
+          "scale": 1.0367374881257092
+        },
+        {
+          "iteration": 51,
+          "maximumSampleChangeMm": 0.06354738518971531,
+          "scale": 1.0369168119761991
+        },
+        {
+          "iteration": 52,
+          "maximumSampleChangeMm": 0.06125452299232438,
+          "scale": 1.037090665696807
+        },
+        {
+          "iteration": 53,
+          "maximumSampleChangeMm": 0.060704243884016656,
+          "scale": 1.0372542846979318
+        },
+        {
+          "iteration": 54,
+          "maximumSampleChangeMm": 0.06304143638306105,
+          "scale": 1.0374322814565844
+        },
+        {
+          "iteration": 55,
+          "maximumSampleChangeMm": 0.06728869711381974,
+          "scale": 1.0376269428037264
+        },
+        {
+          "iteration": 56,
+          "maximumSampleChangeMm": 0.0631363228393312,
+          "scale": 1.0378070349652602
+        },
+        {
+          "iteration": 57,
+          "maximumSampleChangeMm": 0.06524422330056877,
+          "scale": 1.0379927154222583
+        },
+        {
+          "iteration": 58,
+          "maximumSampleChangeMm": 0.08028565472903018,
+          "scale": 1.0382019530286053
+        },
+        {
+          "iteration": 59,
+          "maximumSampleChangeMm": 0.06874795470725423,
+          "scale": 1.0383886956427575
+        },
+        {
+          "iteration": 60,
+          "maximumSampleChangeMm": 0.06259231384669943,
+          "scale": 1.0385595117408484
+        },
+        {
+          "iteration": 61,
+          "maximumSampleChangeMm": 0.05742123339839411,
+          "scale": 1.038713366508433
+        },
+        {
+          "iteration": 62,
+          "maximumSampleChangeMm": 0.05418037976290603,
+          "scale": 1.0388617497053632
+        },
+        {
+          "iteration": 63,
+          "maximumSampleChangeMm": 0.05521564651975059,
+          "scale": 1.0390163144768925
+        },
+        {
+          "iteration": 64,
+          "maximumSampleChangeMm": 0.051768996711646455,
+          "scale": 1.0391603161656857
+        },
+        {
+          "iteration": 65,
+          "maximumSampleChangeMm": 0.048626995294546733,
+          "scale": 1.0392951912991932
+        },
+        {
+          "iteration": 66,
+          "maximumSampleChangeMm": 0.0453068814438602,
+          "scale": 1.0394204244200305
+        },
+        {
+          "iteration": 67,
+          "maximumSampleChangeMm": 0.048529725570950616,
+          "scale": 1.0395568887620101
+        },
+        {
+          "iteration": 68,
+          "maximumSampleChangeMm": 0.04571630977083137,
+          "scale": 1.0396853464397908
+        },
+        {
+          "iteration": 69,
+          "maximumSampleChangeMm": 0.04265426194752843,
+          "scale": 1.0398041649077885
+        },
+        {
+          "iteration": 70,
+          "maximumSampleChangeMm": 0.03996182590878569,
+          "scale": 1.0399149159217607
+        },
+        {
+          "iteration": 71,
+          "maximumSampleChangeMm": 0.03948595582616436,
+          "scale": 1.040024868618103
+        },
+        {
+          "iteration": 72,
+          "maximumSampleChangeMm": 0.039567957460803826,
+          "scale": 1.0401298480688312
+        },
+        {
+          "iteration": 73,
+          "maximumSampleChangeMm": 0.044891398903258356,
+          "scale": 1.0402585700162166
+        },
+        {
+          "iteration": 74,
+          "maximumSampleChangeMm": 0.04461063011082855,
+          "scale": 1.0403861999979724
+        },
+        {
+          "iteration": 75,
+          "maximumSampleChangeMm": 0.041259322481056376,
+          "scale": 1.0405031540370195
+        },
+        {
+          "iteration": 76,
+          "maximumSampleChangeMm": 0.057927409419935426,
+          "scale": 1.04066022741341
+        },
+        {
+          "iteration": 77,
+          "maximumSampleChangeMm": 0.06377835078136135,
+          "scale": 1.0408355415154784
+        },
+        {
+          "iteration": 78,
+          "maximumSampleChangeMm": 0.05693808596135596,
+          "scale": 1.0409948919168548
+        },
+        {
+          "iteration": 79,
+          "maximumSampleChangeMm": 0.05483808232893106,
+          "scale": 1.0411502006327986
+        },
+        {
+          "iteration": 80,
+          "maximumSampleChangeMm": 0.05173959418137105,
+          "scale": 1.0412981794970524
+        },
+        {
+          "iteration": 81,
+          "maximumSampleChangeMm": 0.06806622543591438,
+          "scale": 1.041477833423936
+        },
+        {
+          "iteration": 82,
+          "maximumSampleChangeMm": 0.0551966380316846,
+          "scale": 1.0416319221656714
+        },
+        {
+          "iteration": 83,
+          "maximumSampleChangeMm": 0.057832227030712224,
+          "scale": 1.041804474824672
+        },
+        {
+          "iteration": 84,
+          "maximumSampleChangeMm": 0.053853111777247956,
+          "scale": 1.0419631893059107
+        },
+        {
+          "iteration": 85,
+          "maximumSampleChangeMm": 0.051311605928923275,
+          "scale": 1.0421118263602618
+        },
+        {
+          "iteration": 86,
+          "maximumSampleChangeMm": 0.04719168094293453,
+          "scale": 1.042246549380744
+        },
+        {
+          "iteration": 87,
+          "maximumSampleChangeMm": 0.046997359057601655,
+          "scale": 1.042380425179466
+        },
+        {
+          "iteration": 88,
+          "maximumSampleChangeMm": 0.05699291633439782,
+          "scale": 1.0425504225154467
+        },
+        {
+          "iteration": 89,
+          "maximumSampleChangeMm": 0.053317613281164196,
+          "scale": 1.042706679025315
+        },
+        {
+          "iteration": 90,
+          "maximumSampleChangeMm": 0.06236633226557236,
+          "scale": 1.0428857600901795
+        },
+        {
+          "iteration": 91,
+          "maximumSampleChangeMm": 0.05712638948992938,
+          "scale": 1.0430498288038546
+        },
+        {
+          "iteration": 92,
+          "maximumSampleChangeMm": 0.053978971586529735,
+          "scale": 1.0432033835443635
+        },
+        {
+          "iteration": 93,
+          "maximumSampleChangeMm": 0.05028562454737758,
+          "scale": 1.04334540184165
+        },
+        {
+          "iteration": 94,
+          "maximumSampleChangeMm": 0.04980156689853367,
+          "scale": 1.043487136346027
+        },
+        {
+          "iteration": 95,
+          "maximumSampleChangeMm": 0.04561814569471037,
+          "scale": 1.0436168036418396
+        },
+        {
+          "iteration": 96,
+          "maximumSampleChangeMm": 0.0446208456110387,
+          "scale": 1.0437371783251612
+        },
+        {
+          "iteration": 97,
+          "maximumSampleChangeMm": 0.04117588079437864,
+          "scale": 1.0438508929171335
+        },
+        {
+          "iteration": 98,
+          "maximumSampleChangeMm": 0.03841057381361274,
+          "scale": 1.0439527186867812
+        },
+        {
+          "iteration": 99,
+          "maximumSampleChangeMm": 0.04580768245858145,
+          "scale": 1.0440791870708566
+        },
+        {
+          "iteration": 100,
+          "maximumSampleChangeMm": 0.06341298073882558,
+          "scale": 1.044213811402726
+        },
+        {
+          "iteration": 101,
+          "maximumSampleChangeMm": 0.05058559225175203,
+          "scale": 1.0443403758118412
+        },
+        {
+          "iteration": 102,
+          "maximumSampleChangeMm": 0.044664607784899515,
+          "scale": 1.0444606261191847
+        },
+        {
+          "iteration": 103,
+          "maximumSampleChangeMm": 0.04477768323848505,
+          "scale": 1.044570922281324
+        },
+        {
+          "iteration": 104,
+          "maximumSampleChangeMm": 0.04027908736458403,
+          "scale": 1.044675968086429
+        },
+        {
+          "iteration": 105,
+          "maximumSampleChangeMm": 0.04683086089998212,
+          "scale": 1.0447988079163222
+        },
+        {
+          "iteration": 106,
+          "maximumSampleChangeMm": 0.0665640207171633,
+          "scale": 1.0449538446319442
+        },
+        {
+          "iteration": 107,
+          "maximumSampleChangeMm": 0.06906565673765687,
+          "scale": 1.045110210695191
+        },
+        {
+          "iteration": 108,
+          "maximumSampleChangeMm": 0.058019975108824236,
+          "scale": 1.0452578005167137
+        },
+        {
+          "iteration": 109,
+          "maximumSampleChangeMm": 0.07042994240542717,
+          "scale": 1.0454260846529586
+        },
+        {
+          "iteration": 110,
+          "maximumSampleChangeMm": 0.060356263652990766,
+          "scale": 1.045579926644561
+        },
+        {
+          "iteration": 111,
+          "maximumSampleChangeMm": 0.059859442459974016,
+          "scale": 1.0457412168496483
+        },
+        {
+          "iteration": 112,
+          "maximumSampleChangeMm": 0.06286829496678835,
+          "scale": 1.0459146459308002
+        },
+        {
+          "iteration": 113,
+          "maximumSampleChangeMm": 0.056997532947667046,
+          "scale": 1.0460764778909764
+        },
+        {
+          "iteration": 114,
+          "maximumSampleChangeMm": 0.06427579715441839,
+          "scale": 1.0462650613499314
+        },
+        {
+          "iteration": 115,
+          "maximumSampleChangeMm": 0.06368932301782333,
+          "scale": 1.0464500795124323
+        },
+        {
+          "iteration": 116,
+          "maximumSampleChangeMm": 0.058791829329428294,
+          "scale": 1.0466207595410346
+        },
+        {
+          "iteration": 117,
+          "maximumSampleChangeMm": 0.055888406620338144,
+          "scale": 1.0467806294144533
+        },
+        {
+          "iteration": 118,
+          "maximumSampleChangeMm": 0.06626105831750793,
+          "scale": 1.0469558823407983
+        },
+        {
+          "iteration": 119,
+          "maximumSampleChangeMm": 0.06076221353006145,
+          "scale": 1.0471219001571348
+        },
+        {
+          "iteration": 120,
+          "maximumSampleChangeMm": 0.056264112995092146,
+          "scale": 1.0472763653530075
+        },
+        {
+          "iteration": 121,
+          "maximumSampleChangeMm": 0.05312749922177906,
+          "scale": 1.0474236983559948
+        },
+        {
+          "iteration": 122,
+          "maximumSampleChangeMm": 0.05166447735629637,
+          "scale": 1.0475673957309253
+        },
+        {
+          "iteration": 123,
+          "maximumSampleChangeMm": 0.048638286286686046,
+          "scale": 1.047702104275579
+        },
+        {
+          "iteration": 124,
+          "maximumSampleChangeMm": 0.047463375319948604,
+          "scale": 1.0478337571731982
+        },
+        {
+          "iteration": 125,
+          "maximumSampleChangeMm": 0.044071204442275504,
+          "scale": 1.047947709617868
+        },
+        {
+          "iteration": 126,
+          "maximumSampleChangeMm": 0.045949904981536345,
+          "scale": 1.0480683581207422
+        },
+        {
+          "iteration": 127,
+          "maximumSampleChangeMm": 0.04507088235540708,
+          "scale": 1.0481866253553285
+        },
+        {
+          "iteration": 128,
+          "maximumSampleChangeMm": 0.045435035416554415,
+          "scale": 1.04830566967296
+        },
+        {
+          "iteration": 129,
+          "maximumSampleChangeMm": 0.04187066582154725,
+          "scale": 1.0484173188617607
+        },
+        {
+          "iteration": 130,
+          "maximumSampleChangeMm": 0.0402686392512638,
+          "scale": 1.0485259218049465
+        },
+        {
+          "iteration": 131,
+          "maximumSampleChangeMm": 0.03830539385103695,
+          "scale": 1.0486295055452182
+        },
+        {
+          "iteration": 132,
+          "maximumSampleChangeMm": 0.03418867990323147,
+          "scale": 1.0487129472940064
+        },
+        {
+          "iteration": 133,
+          "maximumSampleChangeMm": 0.04188085398105484,
+          "scale": 1.0488181388608067
+        },
+        {
+          "iteration": 134,
+          "maximumSampleChangeMm": 0.039114814360196676,
+          "scale": 1.0489210612479147
+        },
+        {
+          "iteration": 135,
+          "maximumSampleChangeMm": 0.042727169203483316,
+          "scale": 1.0490247264033925
+        },
+        {
+          "iteration": 136,
+          "maximumSampleChangeMm": 0.04685362341874217,
+          "scale": 1.04912992378871
+        },
+        {
+          "iteration": 137,
+          "maximumSampleChangeMm": 0.039195397477524874,
+          "scale": 1.0492313469457923
+        },
+        {
+          "iteration": 138,
+          "maximumSampleChangeMm": 0.055938124732907976,
+          "scale": 1.0493276638293236
+        },
+        {
+          "iteration": 139,
+          "maximumSampleChangeMm": 0.04441234159097483,
+          "scale": 1.049416581029865
+        },
+        {
+          "iteration": 140,
+          "maximumSampleChangeMm": 0.052886471898305726,
+          "scale": 1.0495213396271532
+        },
+        {
+          "iteration": 141,
+          "maximumSampleChangeMm": 0.055315768351977754,
+          "scale": 1.049627443172378
+        },
+        {
+          "iteration": 142,
+          "maximumSampleChangeMm": 0.05858062318436001,
+          "scale": 1.0497411668496563
+        },
+        {
+          "iteration": 143,
+          "maximumSampleChangeMm": 0.050009709051419104,
+          "scale": 1.0498558986676987
+        },
+        {
+          "iteration": 144,
+          "maximumSampleChangeMm": 0.04631107495376795,
+          "scale": 1.0499698639854766
+        },
+        {
+          "iteration": 145,
+          "maximumSampleChangeMm": 0.05593515643192288,
+          "scale": 1.0500902870619022
+        },
+        {
+          "iteration": 146,
+          "maximumSampleChangeMm": 0.06553749915329542,
+          "scale": 1.050197245234861
+        },
+        {
+          "iteration": 147,
+          "maximumSampleChangeMm": 0.05571275495619302,
+          "scale": 1.0503087271681653
+        },
+        {
+          "iteration": 148,
+          "maximumSampleChangeMm": 0.046166876382458796,
+          "scale": 1.0504213649774479
+        },
+        {
+          "iteration": 149,
+          "maximumSampleChangeMm": 0.04136228196603806,
+          "scale": 1.0505301871703359
+        },
+        {
+          "iteration": 150,
+          "maximumSampleChangeMm": 0.03856557687546797,
+          "scale": 1.0506332678132855
+        },
+        {
+          "iteration": 151,
+          "maximumSampleChangeMm": 0.04751081726457592,
+          "scale": 1.0507629630549464
+        },
+        {
+          "iteration": 152,
+          "maximumSampleChangeMm": 0.04347227921767882,
+          "scale": 1.0508845969101044
+        },
+        {
+          "iteration": 153,
+          "maximumSampleChangeMm": 0.04088495518652085,
+          "scale": 1.05099952907488
+        },
+        {
+          "iteration": 154,
+          "maximumSampleChangeMm": 0.03873642762485305,
+          "scale": 1.0511079112305268
+        },
+        {
+          "iteration": 155,
+          "maximumSampleChangeMm": 0.03638788730042291,
+          "scale": 1.0512080081912833
+        },
+        {
+          "iteration": 156,
+          "maximumSampleChangeMm": 0.037942775959622185,
+          "scale": 1.051308445344565
+        },
+        {
+          "iteration": 157,
+          "maximumSampleChangeMm": 0.036175523002684916,
+          "scale": 1.051405861702811
+        },
+        {
+          "iteration": 158,
+          "maximumSampleChangeMm": 0.03565013238742711,
+          "scale": 1.051503972351124
+        },
+        {
+          "iteration": 159,
+          "maximumSampleChangeMm": 0.03727815859865796,
+          "scale": 1.0516068066749897
+        },
+        {
+          "iteration": 160,
+          "maximumSampleChangeMm": 0.03427760087039121,
+          "scale": 1.0517027858201597
+        },
+        {
+          "iteration": 161,
+          "maximumSampleChangeMm": 0.04075707702027895,
+          "scale": 1.0518003677834489
+        },
+        {
+          "iteration": 162,
+          "maximumSampleChangeMm": 0.038743241553562256,
+          "scale": 1.0518977543485168
+        },
+        {
+          "iteration": 163,
+          "maximumSampleChangeMm": 0.040135635327402754,
+          "scale": 1.0520058039360949
+        },
+        {
+          "iteration": 164,
+          "maximumSampleChangeMm": 0.03547325639383529,
+          "scale": 1.052106751212588
+        },
+        {
+          "iteration": 165,
+          "maximumSampleChangeMm": 0.03682257253549783,
+          "scale": 1.05220098140668
+        },
+        {
+          "iteration": 166,
+          "maximumSampleChangeMm": 0.051571271379838995,
+          "scale": 1.052287371953354
+        },
+        {
+          "iteration": 167,
+          "maximumSampleChangeMm": 0.045815612806224947,
+          "scale": 1.0523669469785057
+        },
+        {
+          "iteration": 168,
+          "maximumSampleChangeMm": 0.033435771008389514,
+          "scale": 1.0524441507125837
+        },
+        {
+          "iteration": 169,
+          "maximumSampleChangeMm": 0.028425295848404673,
+          "scale": 1.0525163265951236
+        },
+        {
+          "iteration": 170,
+          "maximumSampleChangeMm": 0.03738190433577035,
+          "scale": 1.0526013723515482
+        },
+        {
+          "iteration": 171,
+          "maximumSampleChangeMm": 0.039845919566100986,
+          "scale": 1.05269839111571
+        },
+        {
+          "iteration": 172,
+          "maximumSampleChangeMm": 0.043102467027575586,
+          "scale": 1.0528005815573476
+        },
+        {
+          "iteration": 173,
+          "maximumSampleChangeMm": 0.03680336784055489,
+          "scale": 1.052895697233831
+        },
+        {
+          "iteration": 174,
+          "maximumSampleChangeMm": 0.0491479582497335,
+          "scale": 1.0530360007442465
+        },
+        {
+          "iteration": 175,
+          "maximumSampleChangeMm": 0.04576394686578452,
+          "scale": 1.0531688053942534
+        },
+        {
+          "iteration": 176,
+          "maximumSampleChangeMm": 0.04237858641040008,
+          "scale": 1.053290927533592
+        },
+        {
+          "iteration": 177,
+          "maximumSampleChangeMm": 0.042305742846734364,
+          "scale": 1.0534070348264934
+        },
+        {
+          "iteration": 178,
+          "maximumSampleChangeMm": 0.03968040244088958,
+          "scale": 1.053517545875708
+        },
+        {
+          "iteration": 179,
+          "maximumSampleChangeMm": 0.03716777611439822,
+          "scale": 1.0536221834592483
+        },
+        {
+          "iteration": 180,
+          "maximumSampleChangeMm": 0.03457401664526984,
+          "scale": 1.0537188643272348
+        },
+        {
+          "iteration": 181,
+          "maximumSampleChangeMm": 0.03515719210905642,
+          "scale": 1.0538145640693346
+        },
+        {
+          "iteration": 182,
+          "maximumSampleChangeMm": 0.03913762245012986,
+          "scale": 1.0539226360729927
+        },
+        {
+          "iteration": 183,
+          "maximumSampleChangeMm": 0.03651353723487934,
+          "scale": 1.0540239703668286
+        },
+        {
+          "iteration": 184,
+          "maximumSampleChangeMm": 0.03943056140597727,
+          "scale": 1.0541328621806036
+        },
+        {
+          "iteration": 185,
+          "maximumSampleChangeMm": 0.03651639831078732,
+          "scale": 1.0542342926422386
+        },
+        {
+          "iteration": 186,
+          "maximumSampleChangeMm": 0.04533701937953825,
+          "scale": 1.0543584772251644
+        },
+        {
+          "iteration": 187,
+          "maximumSampleChangeMm": 0.04999000240914774,
+          "scale": 1.05447428522838
+        },
+        {
+          "iteration": 188,
+          "maximumSampleChangeMm": 0.04288705765819184,
+          "scale": 1.0545839320263666
+        },
+        {
+          "iteration": 189,
+          "maximumSampleChangeMm": 0.038548914292187736,
+          "scale": 1.0546870333861955
+        },
+        {
+          "iteration": 190,
+          "maximumSampleChangeMm": 0.03597832853735205,
+          "scale": 1.054785197359814
+        },
+        {
+          "iteration": 191,
+          "maximumSampleChangeMm": 0.03388110187439744,
+          "scale": 1.0548782005940083
+        },
+        {
+          "iteration": 192,
+          "maximumSampleChangeMm": 0.03465484103959507,
+          "scale": 1.0549735117092343
+        },
+        {
+          "iteration": 193,
+          "maximumSampleChangeMm": 0.04008417626831898,
+          "scale": 1.0550738807448292
+        },
+        {
+          "iteration": 194,
+          "maximumSampleChangeMm": 0.037291973661964836,
+          "scale": 1.0551733551095825
+        },
+        {
+          "iteration": 195,
+          "maximumSampleChangeMm": 0.03467052839995829,
+          "scale": 1.0552681345187804
+        },
+        {
+          "iteration": 196,
+          "maximumSampleChangeMm": 0.032743471504442984,
+          "scale": 1.0553597556247871
+        },
+        {
+          "iteration": 197,
+          "maximumSampleChangeMm": 0.031909302346007244,
+          "scale": 1.0554415067824074
+        },
+        {
+          "iteration": 198,
+          "maximumSampleChangeMm": 0.029681068230516663,
+          "scale": 1.055520408780638
+        },
+        {
+          "iteration": 199,
+          "maximumSampleChangeMm": 0.02777250495862393,
+          "scale": 1.0555952177405032
+        },
+        {
+          "iteration": 200,
+          "maximumSampleChangeMm": 0.028206634686338616,
+          "scale": 1.0556731083253743
+        },
+        {
+          "iteration": 201,
+          "maximumSampleChangeMm": 0.028328584733610867,
+          "scale": 1.055751728989689
+        },
+        {
+          "iteration": 202,
+          "maximumSampleChangeMm": 0.026525515937554842,
+          "scale": 1.0558239511807708
+        },
+        {
+          "iteration": 203,
+          "maximumSampleChangeMm": 0.024983066617320707,
+          "scale": 1.0558916533675577
+        },
+        {
+          "iteration": 204,
+          "maximumSampleChangeMm": 0.026046799224147255,
+          "scale": 1.0559577062814918
+        },
+        {
+          "iteration": 205,
+          "maximumSampleChangeMm": 0.023500423527900296,
+          "scale": 1.056020065159427
+        },
+        {
+          "iteration": 206,
+          "maximumSampleChangeMm": 0.03180870897351071,
+          "scale": 1.056085102341944
+        },
+        {
+          "iteration": 207,
+          "maximumSampleChangeMm": 0.02532660925377385,
+          "scale": 1.056141114721201
+        },
+        {
+          "iteration": 208,
+          "maximumSampleChangeMm": 0.022213470977131524,
+          "scale": 1.056195399558645
+        },
+        {
+          "iteration": 209,
+          "maximumSampleChangeMm": 0.021767617328389118,
+          "scale": 1.0562511463642488
+        },
+        {
+          "iteration": 210,
+          "maximumSampleChangeMm": 0.04050269305433731,
+          "scale": 1.056320097608464
+        },
+        {
+          "iteration": 211,
+          "maximumSampleChangeMm": 0.05319113179112082,
+          "scale": 1.0563985158765534
+        },
+        {
+          "iteration": 212,
+          "maximumSampleChangeMm": 0.041720703069460255,
+          "scale": 1.0564737191633664
+        },
+        {
+          "iteration": 213,
+          "maximumSampleChangeMm": 0.054678603701707205,
+          "scale": 1.056571165510085
+        },
+        {
+          "iteration": 214,
+          "maximumSampleChangeMm": 0.04849373302424752,
+          "scale": 1.056668840872585
+        },
+        {
+          "iteration": 215,
+          "maximumSampleChangeMm": 0.036531558441013155,
+          "scale": 1.0567567250972336
+        },
+        {
+          "iteration": 216,
+          "maximumSampleChangeMm": 0.0437414415079494,
+          "scale": 1.0568354350988498
+        },
+        {
+          "iteration": 217,
+          "maximumSampleChangeMm": 0.04328682661462325,
+          "scale": 1.0569239987138679
+        },
+        {
+          "iteration": 218,
+          "maximumSampleChangeMm": 0.04019497904039954,
+          "scale": 1.0570086562178418
+        },
+        {
+          "iteration": 219,
+          "maximumSampleChangeMm": 0.032762098397033146,
+          "scale": 1.0570796577786095
+        },
+        {
+          "iteration": 220,
+          "maximumSampleChangeMm": 0.04225275567958229,
+          "scale": 1.0571775743666445
+        },
+        {
+          "iteration": 221,
+          "maximumSampleChangeMm": 0.03785215494228796,
+          "scale": 1.0572744381218664
+        },
+        {
+          "iteration": 222,
+          "maximumSampleChangeMm": 0.04048996478987847,
+          "scale": 1.0573737093812352
+        },
+        {
+          "iteration": 223,
+          "maximumSampleChangeMm": 0.036896147322862685,
+          "scale": 1.057469818400412
+        },
+        {
+          "iteration": 224,
+          "maximumSampleChangeMm": 0.03876766636787317,
+          "scale": 1.0575667907767463
+        },
+        {
+          "iteration": 225,
+          "maximumSampleChangeMm": 0.03488907001073226,
+          "scale": 1.057657942127463
+        },
+        {
+          "iteration": 226,
+          "maximumSampleChangeMm": 0.032342353170925035,
+          "scale": 1.0577447369557529
+        },
+        {
+          "iteration": 227,
+          "maximumSampleChangeMm": 0.030454350610685944,
+          "scale": 1.0578257275066167
+        },
+        {
+          "iteration": 228,
+          "maximumSampleChangeMm": 0.028934612816731677,
+          "scale": 1.0579030307807678
+        },
+        {
+          "iteration": 229,
+          "maximumSampleChangeMm": 0.02823323701965255,
+          "scale": 1.0579774836038072
+        },
+        {
+          "iteration": 230,
+          "maximumSampleChangeMm": 0.029423938719949864,
+          "scale": 1.0580471230324469
+        },
+        {
+          "iteration": 231,
+          "maximumSampleChangeMm": 0.026386120805562397,
+          "scale": 1.0581144541541954
+        },
+        {
+          "iteration": 232,
+          "maximumSampleChangeMm": 0.024626791817884085,
+          "scale": 1.058178403918884
+        },
+        {
+          "iteration": 233,
+          "maximumSampleChangeMm": 0.02280420961271847,
+          "scale": 1.0582394291733832
+        },
+        {
+          "iteration": 234,
+          "maximumSampleChangeMm": 0.02121031531258881,
+          "scale": 1.0582960239172434
+        },
+        {
+          "iteration": 235,
+          "maximumSampleChangeMm": 0.020169514350832068,
+          "scale": 1.0583501929514691
+        },
+        {
+          "iteration": 236,
+          "maximumSampleChangeMm": 0.019246742852249022,
+          "scale": 1.0584024274690509
+        },
+        {
+          "iteration": 237,
+          "maximumSampleChangeMm": 0.018376177838332064,
+          "scale": 1.0584523815227633
+        },
+        {
+          "iteration": 238,
+          "maximumSampleChangeMm": 0.017300254464270803,
+          "scale": 1.058499529745683
+        },
+        {
+          "iteration": 239,
+          "maximumSampleChangeMm": 0.016574974629958113,
+          "scale": 1.0585449025684563
+        }
+      ],
+      "stopReason": "iteration limit",
+      "bones": [
+        {
+          "name": "Tibia",
+          "sourceName": "TIBIA_LEFT",
+          "initialForward": {
+            "vertices": 81854,
+            "p95Mm": 3.8783318543844745,
+            "maxMm": 7.5345911821653475,
+            "rmsMm": 2.0913565086698314
+          },
+          "forward": {
+            "vertices": 81854,
+            "p95Mm": 14.351120199802434,
+            "maxMm": 20.47418615431787,
+            "rmsMm": 4.925914853484894
+          },
+          "reverse": {
+            "vertices": 385,
+            "p95Mm": 7.0858509501975595,
+            "maxMm": 15.816308682356391,
+            "rmsMm": 3.134396485684128
+          }
+        },
+        {
+          "name": "Fibula",
+          "sourceName": "FIBULA_LEFT",
+          "initialForward": {
+            "vertices": 30444,
+            "p95Mm": 7.924373551401722,
+            "maxMm": 12.436281076975886,
+            "rmsMm": 3.918929518392455
+          },
+          "forward": {
+            "vertices": 30444,
+            "p95Mm": 11.321307535091865,
+            "maxMm": 19.721414464707063,
+            "rmsMm": 4.158371516882
+          },
+          "reverse": {
+            "vertices": 169,
+            "p95Mm": 4.553238098821334,
+            "maxMm": 8.902229945467782,
+            "rmsMm": 2.052660798058432
+          }
+        }
+      ],
+      "footLabels": [
+        "CALCANEUS_LEFT",
+        "CUBOID_LEFT",
+        "INTERMEDIATE_CUNEIFORM_LEFT",
+        "LATERAL_CUNEIFORM_LEFT",
+        "MEDIAL_CUNEIFORM_LEFT",
+        "METATARSAL_1_LEFT",
+        "METATARSAL_2_LEFT",
+        "METATARSAL_3_LEFT",
+        "METATARSAL_4_LEFT",
+        "METATARSAL_5_LEFT",
+        "NAVICULAR_LEFT",
+        "PHALANGE_FOOT_1_LEFT",
+        "PHALANGE_FOOT_2_LEFT",
+        "PHALANGE_FOOT_3_LEFT",
+        "PHALANGE_FOOT_4_LEFT",
+        "PHALANGE_FOOT_5_LEFT",
+        "TALUS_LEFT"
+      ]
+    },
+    {
+      "side": "right",
+      "initialMatrix": [
+        0.9845719524472969,
+        -0.137610963102815,
+        -0.1528340258639941,
+        0,
+        -0.1605386965730624,
+        -0.04708619019340523,
+        -0.9918100441966973,
+        0,
+        0.12853926843771352,
+        0.9952502497868309,
+        -0.06805544021245653,
+        0,
+        -0.3181251695014676,
+        -0.03945048488217087,
+        0.22967946139845918,
+        1
+      ],
+      "sourceToAtlasMatrix": [
+        1.0262231654028608,
+        -0.13651826204985548,
+        -0.14630817960455883,
+        0,
+        -0.1513710072747346,
+        -0.029603217831714355,
+        -1.0341120694356203,
+        0,
+        0.13088215099449235,
+        1.036177454938427,
+        -0.04882057896174356,
+        0,
+        -0.32761220142723113,
+        -0.06489077872028692,
+        0.23264911593747684,
+        1
+      ],
+      "uniformScale": 1.045551196499617,
+      "iterations": [
+        {
+          "iteration": 0,
+          "maximumSampleChangeMm": 0.6102249374565758,
+          "scale": 1.0057293024687133
+        },
+        {
+          "iteration": 1,
+          "maximumSampleChangeMm": 0.6090259396270497,
+          "scale": 1.0057550618901463
+        },
+        {
+          "iteration": 2,
+          "maximumSampleChangeMm": 0.5813464562198315,
+          "scale": 1.0058730774980709
+        },
+        {
+          "iteration": 3,
+          "maximumSampleChangeMm": 0.6544135218006266,
+          "scale": 1.0060968603881892
+        },
+        {
+          "iteration": 4,
+          "maximumSampleChangeMm": 0.6618573199266143,
+          "scale": 1.0064398598517237
+        },
+        {
+          "iteration": 5,
+          "maximumSampleChangeMm": 0.5576479256245622,
+          "scale": 1.0068171704003925
+        },
+        {
+          "iteration": 6,
+          "maximumSampleChangeMm": 0.4988199576466863,
+          "scale": 1.0071840626627564
+        },
+        {
+          "iteration": 7,
+          "maximumSampleChangeMm": 0.43121120188808304,
+          "scale": 1.0076425120610306
+        },
+        {
+          "iteration": 8,
+          "maximumSampleChangeMm": 0.38548436375700956,
+          "scale": 1.0080814421934783
+        },
+        {
+          "iteration": 9,
+          "maximumSampleChangeMm": 0.31787039840120657,
+          "scale": 1.0085212492504882
+        },
+        {
+          "iteration": 10,
+          "maximumSampleChangeMm": 0.3283516926021148,
+          "scale": 1.0090516879709293
+        },
+        {
+          "iteration": 11,
+          "maximumSampleChangeMm": 0.2767240498926436,
+          "scale": 1.0095337941120675
+        },
+        {
+          "iteration": 12,
+          "maximumSampleChangeMm": 0.24178067309093884,
+          "scale": 1.0100469844310387
+        },
+        {
+          "iteration": 13,
+          "maximumSampleChangeMm": 0.22797343947800094,
+          "scale": 1.0105231002199544
+        },
+        {
+          "iteration": 14,
+          "maximumSampleChangeMm": 0.19982535970039247,
+          "scale": 1.0109793354383276
+        },
+        {
+          "iteration": 15,
+          "maximumSampleChangeMm": 0.182524318055561,
+          "scale": 1.011419336887682
+        },
+        {
+          "iteration": 16,
+          "maximumSampleChangeMm": 0.16494618442013612,
+          "scale": 1.0118319339726984
+        },
+        {
+          "iteration": 17,
+          "maximumSampleChangeMm": 0.1521370059455873,
+          "scale": 1.0122253258365936
+        },
+        {
+          "iteration": 18,
+          "maximumSampleChangeMm": 0.14707951994179108,
+          "scale": 1.0126255651613807
+        },
+        {
+          "iteration": 19,
+          "maximumSampleChangeMm": 0.13782487227711304,
+          "scale": 1.0130002435786647
+        },
+        {
+          "iteration": 20,
+          "maximumSampleChangeMm": 0.14179179736970784,
+          "scale": 1.0133788064465525
+        },
+        {
+          "iteration": 21,
+          "maximumSampleChangeMm": 0.13503093511843256,
+          "scale": 1.0137453020746687
+        },
+        {
+          "iteration": 22,
+          "maximumSampleChangeMm": 0.14345531312784676,
+          "scale": 1.0141392060036885
+        },
+        {
+          "iteration": 23,
+          "maximumSampleChangeMm": 0.13100420294034323,
+          "scale": 1.0144986102883882
+        },
+        {
+          "iteration": 24,
+          "maximumSampleChangeMm": 0.13344531221616227,
+          "scale": 1.0148683544889614
+        },
+        {
+          "iteration": 25,
+          "maximumSampleChangeMm": 0.12498856251244277,
+          "scale": 1.0152128962706608
+        },
+        {
+          "iteration": 26,
+          "maximumSampleChangeMm": 0.11921348529768207,
+          "scale": 1.015545790112405
+        },
+        {
+          "iteration": 27,
+          "maximumSampleChangeMm": 0.1237007014461516,
+          "scale": 1.0158968303570288
+        },
+        {
+          "iteration": 28,
+          "maximumSampleChangeMm": 0.11532970951731518,
+          "scale": 1.0162200323485422
+        },
+        {
+          "iteration": 29,
+          "maximumSampleChangeMm": 0.10850429155710319,
+          "scale": 1.0165194282476206
+        },
+        {
+          "iteration": 30,
+          "maximumSampleChangeMm": 0.10012535175251112,
+          "scale": 1.0167927259702
+        },
+        {
+          "iteration": 31,
+          "maximumSampleChangeMm": 0.09468209143013101,
+          "scale": 1.0170488143335783
+        },
+        {
+          "iteration": 32,
+          "maximumSampleChangeMm": 0.0986892364077235,
+          "scale": 1.0173245782803266
+        },
+        {
+          "iteration": 33,
+          "maximumSampleChangeMm": 0.09311956905452615,
+          "scale": 1.0175814870193747
+        },
+        {
+          "iteration": 34,
+          "maximumSampleChangeMm": 0.09191923988529356,
+          "scale": 1.0178288440640142
+        },
+        {
+          "iteration": 35,
+          "maximumSampleChangeMm": 0.08618489564959807,
+          "scale": 1.018060470747243
+        },
+        {
+          "iteration": 36,
+          "maximumSampleChangeMm": 0.08176581519367204,
+          "scale": 1.0182808863415684
+        },
+        {
+          "iteration": 37,
+          "maximumSampleChangeMm": 0.0852962181902718,
+          "scale": 1.0185109943070263
+        },
+        {
+          "iteration": 38,
+          "maximumSampleChangeMm": 0.08073753964734764,
+          "scale": 1.0187297322687254
+        },
+        {
+          "iteration": 39,
+          "maximumSampleChangeMm": 0.07620984719258506,
+          "scale": 1.0189341729346102
+        },
+        {
+          "iteration": 40,
+          "maximumSampleChangeMm": 0.07477692306438984,
+          "scale": 1.0191367037632568
+        },
+        {
+          "iteration": 41,
+          "maximumSampleChangeMm": 0.07114759518259325,
+          "scale": 1.0193287488226308
+        },
+        {
+          "iteration": 42,
+          "maximumSampleChangeMm": 0.06665582604267146,
+          "scale": 1.0195083527388684
+        },
+        {
+          "iteration": 43,
+          "maximumSampleChangeMm": 0.06160156447839764,
+          "scale": 1.0196738726024275
+        },
+        {
+          "iteration": 44,
+          "maximumSampleChangeMm": 0.067892084773599,
+          "scale": 1.0198582669461804
+        },
+        {
+          "iteration": 45,
+          "maximumSampleChangeMm": 0.0759468192461281,
+          "scale": 1.020069019323611
+        },
+        {
+          "iteration": 46,
+          "maximumSampleChangeMm": 0.07363349154492042,
+          "scale": 1.0202753889975122
+        },
+        {
+          "iteration": 47,
+          "maximumSampleChangeMm": 0.07338468179544391,
+          "scale": 1.0204801376610255
+        },
+        {
+          "iteration": 48,
+          "maximumSampleChangeMm": 0.0708063361615655,
+          "scale": 1.0206724062546402
+        },
+        {
+          "iteration": 49,
+          "maximumSampleChangeMm": 0.06673646983873457,
+          "scale": 1.0208492498233315
+        },
+        {
+          "iteration": 50,
+          "maximumSampleChangeMm": 0.06669605602752016,
+          "scale": 1.0210238692620883
+        },
+        {
+          "iteration": 51,
+          "maximumSampleChangeMm": 0.07078669356704079,
+          "scale": 1.0212028922295322
+        },
+        {
+          "iteration": 52,
+          "maximumSampleChangeMm": 0.09148938086221141,
+          "scale": 1.0214022505631764
+        },
+        {
+          "iteration": 53,
+          "maximumSampleChangeMm": 0.07695153221425687,
+          "scale": 1.0215900039122063
+        },
+        {
+          "iteration": 54,
+          "maximumSampleChangeMm": 0.06957971469740074,
+          "scale": 1.0217681902067026
+        },
+        {
+          "iteration": 55,
+          "maximumSampleChangeMm": 0.07730563792437456,
+          "scale": 1.021985191941833
+        },
+        {
+          "iteration": 56,
+          "maximumSampleChangeMm": 0.0746362525976685,
+          "scale": 1.0221931888436033
+        },
+        {
+          "iteration": 57,
+          "maximumSampleChangeMm": 0.07516000755340026,
+          "scale": 1.0224031745795847
+        },
+        {
+          "iteration": 58,
+          "maximumSampleChangeMm": 0.0760601044278704,
+          "scale": 1.0226190341169235
+        },
+        {
+          "iteration": 59,
+          "maximumSampleChangeMm": 0.09360727785283066,
+          "scale": 1.0228847848730793
+        },
+        {
+          "iteration": 60,
+          "maximumSampleChangeMm": 0.09025584917900852,
+          "scale": 1.0231372170484685
+        },
+        {
+          "iteration": 61,
+          "maximumSampleChangeMm": 0.08852108728943013,
+          "scale": 1.0233815302737868
+        },
+        {
+          "iteration": 62,
+          "maximumSampleChangeMm": 0.08902521177942249,
+          "scale": 1.0236330602424002
+        },
+        {
+          "iteration": 63,
+          "maximumSampleChangeMm": 0.09369832036837318,
+          "scale": 1.0238912731648007
+        },
+        {
+          "iteration": 64,
+          "maximumSampleChangeMm": 0.11933041290010496,
+          "scale": 1.024192550796383
+        },
+        {
+          "iteration": 65,
+          "maximumSampleChangeMm": 0.11440461025887116,
+          "scale": 1.0245104895587391
+        },
+        {
+          "iteration": 66,
+          "maximumSampleChangeMm": 0.1069160985680379,
+          "scale": 1.0248166615761791
+        },
+        {
+          "iteration": 67,
+          "maximumSampleChangeMm": 0.10856392056294892,
+          "scale": 1.025130811293454
+        },
+        {
+          "iteration": 68,
+          "maximumSampleChangeMm": 0.11088311278894417,
+          "scale": 1.0254447926544625
+        },
+        {
+          "iteration": 69,
+          "maximumSampleChangeMm": 0.12011578860736957,
+          "scale": 1.0257942472168764
+        },
+        {
+          "iteration": 70,
+          "maximumSampleChangeMm": 0.11807504498828383,
+          "scale": 1.0261373531880493
+        },
+        {
+          "iteration": 71,
+          "maximumSampleChangeMm": 0.12235959119376785,
+          "scale": 1.0264842017989366
+        },
+        {
+          "iteration": 72,
+          "maximumSampleChangeMm": 0.12742140941730845,
+          "scale": 1.026846933720858
+        },
+        {
+          "iteration": 73,
+          "maximumSampleChangeMm": 0.12870945866841516,
+          "scale": 1.0271983369809499
+        },
+        {
+          "iteration": 74,
+          "maximumSampleChangeMm": 0.1475059678490584,
+          "scale": 1.0275936358783169
+        },
+        {
+          "iteration": 75,
+          "maximumSampleChangeMm": 0.14766963951849205,
+          "scale": 1.0279805297654536
+        },
+        {
+          "iteration": 76,
+          "maximumSampleChangeMm": 0.1317410691724577,
+          "scale": 1.0283391702565092
+        },
+        {
+          "iteration": 77,
+          "maximumSampleChangeMm": 0.1307719666202173,
+          "scale": 1.0287049724254989
+        },
+        {
+          "iteration": 78,
+          "maximumSampleChangeMm": 0.1285112471214192,
+          "scale": 1.029058511202938
+        },
+        {
+          "iteration": 79,
+          "maximumSampleChangeMm": 0.12164859370898044,
+          "scale": 1.0293911057643184
+        },
+        {
+          "iteration": 80,
+          "maximumSampleChangeMm": 0.11898044021582123,
+          "scale": 1.0297150362361764
+        },
+        {
+          "iteration": 81,
+          "maximumSampleChangeMm": 0.12102077667983889,
+          "scale": 1.0300334162103888
+        },
+        {
+          "iteration": 82,
+          "maximumSampleChangeMm": 0.12110131240376792,
+          "scale": 1.0303632749099059
+        },
+        {
+          "iteration": 83,
+          "maximumSampleChangeMm": 0.11641321020155103,
+          "scale": 1.0306809531513683
+        },
+        {
+          "iteration": 84,
+          "maximumSampleChangeMm": 0.12056844639588052,
+          "scale": 1.0309735677613707
+        },
+        {
+          "iteration": 85,
+          "maximumSampleChangeMm": 0.11397474844122542,
+          "scale": 1.0312555202484035
+        },
+        {
+          "iteration": 86,
+          "maximumSampleChangeMm": 0.10315991686188353,
+          "scale": 1.0315223160572127
+        },
+        {
+          "iteration": 87,
+          "maximumSampleChangeMm": 0.0947604324260122,
+          "scale": 1.0317729472876473
+        },
+        {
+          "iteration": 88,
+          "maximumSampleChangeMm": 0.09903999917489986,
+          "scale": 1.0320310509756612
+        },
+        {
+          "iteration": 89,
+          "maximumSampleChangeMm": 0.10583745094719521,
+          "scale": 1.032276008093316
+        },
+        {
+          "iteration": 90,
+          "maximumSampleChangeMm": 0.09270616401332721,
+          "scale": 1.03251016921812
+        },
+        {
+          "iteration": 91,
+          "maximumSampleChangeMm": 0.08569740805810358,
+          "scale": 1.0327348735917794
+        },
+        {
+          "iteration": 92,
+          "maximumSampleChangeMm": 0.08262840344349275,
+          "scale": 1.032946652368164
+        },
+        {
+          "iteration": 93,
+          "maximumSampleChangeMm": 0.08721827835415513,
+          "scale": 1.0331661398907033
+        },
+        {
+          "iteration": 94,
+          "maximumSampleChangeMm": 0.0819514666652937,
+          "scale": 1.0333817897468045
+        },
+        {
+          "iteration": 95,
+          "maximumSampleChangeMm": 0.07766953806693608,
+          "scale": 1.0335861681405876
+        },
+        {
+          "iteration": 96,
+          "maximumSampleChangeMm": 0.07335132726810917,
+          "scale": 1.0337819950107212
+        },
+        {
+          "iteration": 97,
+          "maximumSampleChangeMm": 0.07712202810337337,
+          "scale": 1.0339883766705444
+        },
+        {
+          "iteration": 98,
+          "maximumSampleChangeMm": 0.0715651298545293,
+          "scale": 1.0341799771891524
+        },
+        {
+          "iteration": 99,
+          "maximumSampleChangeMm": 0.06687559018272372,
+          "scale": 1.0343593430280633
+        },
+        {
+          "iteration": 100,
+          "maximumSampleChangeMm": 0.0630134116266657,
+          "scale": 1.034528350906007
+        },
+        {
+          "iteration": 101,
+          "maximumSampleChangeMm": 0.05876725431172354,
+          "scale": 1.0346859993519197
+        },
+        {
+          "iteration": 102,
+          "maximumSampleChangeMm": 0.056202634266717066,
+          "scale": 1.0348365502000563
+        },
+        {
+          "iteration": 103,
+          "maximumSampleChangeMm": 0.052481987938867346,
+          "scale": 1.0349758765206765
+        },
+        {
+          "iteration": 104,
+          "maximumSampleChangeMm": 0.07098834608690378,
+          "scale": 1.0351769678684803
+        },
+        {
+          "iteration": 105,
+          "maximumSampleChangeMm": 0.07394854344134284,
+          "scale": 1.0353829620636656
+        },
+        {
+          "iteration": 106,
+          "maximumSampleChangeMm": 0.07021060503415963,
+          "scale": 1.035578231336263
+        },
+        {
+          "iteration": 107,
+          "maximumSampleChangeMm": 0.06995205550391938,
+          "scale": 1.0357708726663009
+        },
+        {
+          "iteration": 108,
+          "maximumSampleChangeMm": 0.0687836263460148,
+          "scale": 1.03596060135868
+        },
+        {
+          "iteration": 109,
+          "maximumSampleChangeMm": 0.07483169261750526,
+          "scale": 1.0361651501273272
+        },
+        {
+          "iteration": 110,
+          "maximumSampleChangeMm": 0.07370974948175636,
+          "scale": 1.0363740000185542
+        },
+        {
+          "iteration": 111,
+          "maximumSampleChangeMm": 0.06814606476570227,
+          "scale": 1.0365660089271862
+        },
+        {
+          "iteration": 112,
+          "maximumSampleChangeMm": 0.07644321603723502,
+          "scale": 1.0367785576887205
+        },
+        {
+          "iteration": 113,
+          "maximumSampleChangeMm": 0.0705645132125884,
+          "scale": 1.0369746294832014
+        },
+        {
+          "iteration": 114,
+          "maximumSampleChangeMm": 0.07328893250662817,
+          "scale": 1.037170991846884
+        },
+        {
+          "iteration": 115,
+          "maximumSampleChangeMm": 0.06806665211294154,
+          "scale": 1.037358551272168
+        },
+        {
+          "iteration": 116,
+          "maximumSampleChangeMm": 0.07302202924332848,
+          "scale": 1.0375490705227703
+        },
+        {
+          "iteration": 117,
+          "maximumSampleChangeMm": 0.07237264774460977,
+          "scale": 1.0377513685865463
+        },
+        {
+          "iteration": 118,
+          "maximumSampleChangeMm": 0.07099273614772371,
+          "scale": 1.0379517550566615
+        },
+        {
+          "iteration": 119,
+          "maximumSampleChangeMm": 0.06906045378604735,
+          "scale": 1.0381440038682297
+        },
+        {
+          "iteration": 120,
+          "maximumSampleChangeMm": 0.06559678426888693,
+          "scale": 1.0383255927862418
+        },
+        {
+          "iteration": 121,
+          "maximumSampleChangeMm": 0.06863237372059314,
+          "scale": 1.0385026928948484
+        },
+        {
+          "iteration": 122,
+          "maximumSampleChangeMm": 0.0629927699970651,
+          "scale": 1.038671499360001
+        },
+        {
+          "iteration": 123,
+          "maximumSampleChangeMm": 0.06342317661125259,
+          "scale": 1.038845339334618
+        },
+        {
+          "iteration": 124,
+          "maximumSampleChangeMm": 0.059425975841893006,
+          "scale": 1.0390090329611295
+        },
+        {
+          "iteration": 125,
+          "maximumSampleChangeMm": 0.06242176189778284,
+          "scale": 1.0391765334817225
+        },
+        {
+          "iteration": 126,
+          "maximumSampleChangeMm": 0.06417299287654643,
+          "scale": 1.039342085927137
+        },
+        {
+          "iteration": 127,
+          "maximumSampleChangeMm": 0.058618182557191735,
+          "scale": 1.0395003623663852
+        },
+        {
+          "iteration": 128,
+          "maximumSampleChangeMm": 0.05609572621279542,
+          "scale": 1.0396492552261212
+        },
+        {
+          "iteration": 129,
+          "maximumSampleChangeMm": 0.0518695754391583,
+          "scale": 1.0397895764940752
+        },
+        {
+          "iteration": 130,
+          "maximumSampleChangeMm": 0.05232119095416121,
+          "scale": 1.0399246618749856
+        },
+        {
+          "iteration": 131,
+          "maximumSampleChangeMm": 0.04894291759582463,
+          "scale": 1.0400564244343697
+        },
+        {
+          "iteration": 132,
+          "maximumSampleChangeMm": 0.04516435521399508,
+          "scale": 1.0401781557767777
+        },
+        {
+          "iteration": 133,
+          "maximumSampleChangeMm": 0.0425053586332678,
+          "scale": 1.0402931168640603
+        },
+        {
+          "iteration": 134,
+          "maximumSampleChangeMm": 0.04393002468875394,
+          "scale": 1.0404164436391452
+        },
+        {
+          "iteration": 135,
+          "maximumSampleChangeMm": 0.04113685575966222,
+          "scale": 1.040531318506652
+        },
+        {
+          "iteration": 136,
+          "maximumSampleChangeMm": 0.05109821290789988,
+          "scale": 1.0406692182477597
+        },
+        {
+          "iteration": 137,
+          "maximumSampleChangeMm": 0.04654218547421716,
+          "scale": 1.0407972984288767
+        },
+        {
+          "iteration": 138,
+          "maximumSampleChangeMm": 0.04319336506031209,
+          "scale": 1.0409160844466119
+        },
+        {
+          "iteration": 139,
+          "maximumSampleChangeMm": 0.04028895426395287,
+          "scale": 1.041025591630955
+        },
+        {
+          "iteration": 140,
+          "maximumSampleChangeMm": 0.0380292475057944,
+          "scale": 1.0411285265599894
+        },
+        {
+          "iteration": 141,
+          "maximumSampleChangeMm": 0.03559809983243748,
+          "scale": 1.0412246806376517
+        },
+        {
+          "iteration": 142,
+          "maximumSampleChangeMm": 0.033671813184635226,
+          "scale": 1.0413150995801987
+        },
+        {
+          "iteration": 143,
+          "maximumSampleChangeMm": 0.031597624470470785,
+          "scale": 1.0414002346618727
+        },
+        {
+          "iteration": 144,
+          "maximumSampleChangeMm": 0.02939376401815989,
+          "scale": 1.041479303802277
+        },
+        {
+          "iteration": 145,
+          "maximumSampleChangeMm": 0.027708586959210506,
+          "scale": 1.0415521895812014
+        },
+        {
+          "iteration": 146,
+          "maximumSampleChangeMm": 0.027035862396694553,
+          "scale": 1.041624089578808
+        },
+        {
+          "iteration": 147,
+          "maximumSampleChangeMm": 0.029434210263501934,
+          "scale": 1.0417060687136022
+        },
+        {
+          "iteration": 148,
+          "maximumSampleChangeMm": 0.02732409089124562,
+          "scale": 1.041781694133174
+        },
+        {
+          "iteration": 149,
+          "maximumSampleChangeMm": 0.030561145518432177,
+          "scale": 1.0418562079751688
+        },
+        {
+          "iteration": 150,
+          "maximumSampleChangeMm": 0.026542913951219955,
+          "scale": 1.0419246807086873
+        },
+        {
+          "iteration": 151,
+          "maximumSampleChangeMm": 0.023929222294919637,
+          "scale": 1.041988605909773
+        },
+        {
+          "iteration": 152,
+          "maximumSampleChangeMm": 0.022925830867754803,
+          "scale": 1.042050893512993
+        },
+        {
+          "iteration": 153,
+          "maximumSampleChangeMm": 0.04517607074754856,
+          "scale": 1.042146199284668
+        },
+        {
+          "iteration": 154,
+          "maximumSampleChangeMm": 0.03604364880890174,
+          "scale": 1.0422344110804778
+        },
+        {
+          "iteration": 155,
+          "maximumSampleChangeMm": 0.03064394651812039,
+          "scale": 1.042313955794417
+        },
+        {
+          "iteration": 156,
+          "maximumSampleChangeMm": 0.04863178344116818,
+          "scale": 1.0424190280549301
+        },
+        {
+          "iteration": 157,
+          "maximumSampleChangeMm": 0.03671526272644015,
+          "scale": 1.0425113723258286
+        },
+        {
+          "iteration": 158,
+          "maximumSampleChangeMm": 0.04539847697594734,
+          "scale": 1.042622916570197
+        },
+        {
+          "iteration": 159,
+          "maximumSampleChangeMm": 0.04028815274164773,
+          "scale": 1.0427273985244196
+        },
+        {
+          "iteration": 160,
+          "maximumSampleChangeMm": 0.034192134053781874,
+          "scale": 1.042820270225448
+        },
+        {
+          "iteration": 161,
+          "maximumSampleChangeMm": 0.03067496855042584,
+          "scale": 1.0429039475172874
+        },
+        {
+          "iteration": 162,
+          "maximumSampleChangeMm": 0.028546691731117294,
+          "scale": 1.0429808429819956
+        },
+        {
+          "iteration": 163,
+          "maximumSampleChangeMm": 0.02656849824907022,
+          "scale": 1.0430520744267846
+        },
+        {
+          "iteration": 164,
+          "maximumSampleChangeMm": 0.025164886235793812,
+          "scale": 1.0431197156604248
+        },
+        {
+          "iteration": 165,
+          "maximumSampleChangeMm": 0.02313161075690154,
+          "scale": 1.0431816516092272
+        },
+        {
+          "iteration": 166,
+          "maximumSampleChangeMm": 0.021718878264255004,
+          "scale": 1.0432383490497699
+        },
+        {
+          "iteration": 167,
+          "maximumSampleChangeMm": 0.0203167470322994,
+          "scale": 1.0432912675382366
+        },
+        {
+          "iteration": 168,
+          "maximumSampleChangeMm": 0.019363829444199197,
+          "scale": 1.043342094236007
+        },
+        {
+          "iteration": 169,
+          "maximumSampleChangeMm": 0.01806699203770764,
+          "scale": 1.0433896154352928
+        },
+        {
+          "iteration": 170,
+          "maximumSampleChangeMm": 0.018234318683270145,
+          "scale": 1.043438443283283
+        },
+        {
+          "iteration": 171,
+          "maximumSampleChangeMm": 0.01699998483077907,
+          "scale": 1.043483886292242
+        },
+        {
+          "iteration": 172,
+          "maximumSampleChangeMm": 0.015579407861139998,
+          "scale": 1.0435249997803044
+        },
+        {
+          "iteration": 173,
+          "maximumSampleChangeMm": 0.014309153409104677,
+          "scale": 1.0435624051998886
+        },
+        {
+          "iteration": 174,
+          "maximumSampleChangeMm": 0.013694478162134507,
+          "scale": 1.043598068561183
+        },
+        {
+          "iteration": 175,
+          "maximumSampleChangeMm": 0.013130896891070354,
+          "scale": 1.0436319265290228
+        },
+        {
+          "iteration": 176,
+          "maximumSampleChangeMm": 0.012215231953901506,
+          "scale": 1.0436621942920583
+        },
+        {
+          "iteration": 177,
+          "maximumSampleChangeMm": 0.011713314341323965,
+          "scale": 1.0436916801391622
+        },
+        {
+          "iteration": 178,
+          "maximumSampleChangeMm": 0.01122789407720338,
+          "scale": 1.0437205361738375
+        },
+        {
+          "iteration": 179,
+          "maximumSampleChangeMm": 0.010566351194310764,
+          "scale": 1.0437479245715182
+        },
+        {
+          "iteration": 180,
+          "maximumSampleChangeMm": 0.010015058436937702,
+          "scale": 1.0437740982329378
+        },
+        {
+          "iteration": 181,
+          "maximumSampleChangeMm": 0.021398797066584613,
+          "scale": 1.0438051310758916
+        },
+        {
+          "iteration": 182,
+          "maximumSampleChangeMm": 0.015219037271093791,
+          "scale": 1.0438368368029733
+        },
+        {
+          "iteration": 183,
+          "maximumSampleChangeMm": 0.01223918886354967,
+          "scale": 1.043867279728449
+        },
+        {
+          "iteration": 184,
+          "maximumSampleChangeMm": 0.011341882088685227,
+          "scale": 1.0438943012854973
+        },
+        {
+          "iteration": 185,
+          "maximumSampleChangeMm": 0.010632757690645263,
+          "scale": 1.043922641377038
+        },
+        {
+          "iteration": 186,
+          "maximumSampleChangeMm": 0.010066866974394637,
+          "scale": 1.0439500543615514
+        },
+        {
+          "iteration": 187,
+          "maximumSampleChangeMm": 0.00931563114181835,
+          "scale": 1.0439756282552728
+        },
+        {
+          "iteration": 188,
+          "maximumSampleChangeMm": 0.00942233677694413,
+          "scale": 1.0440003594046798
+        },
+        {
+          "iteration": 189,
+          "maximumSampleChangeMm": 0.00922522912995684,
+          "scale": 1.0440253432363202
+        },
+        {
+          "iteration": 190,
+          "maximumSampleChangeMm": 0.020196273654697023,
+          "scale": 1.0440571550401812
+        },
+        {
+          "iteration": 191,
+          "maximumSampleChangeMm": 0.01759412335150089,
+          "scale": 1.04408529751375
+        },
+        {
+          "iteration": 192,
+          "maximumSampleChangeMm": 0.02816693596414461,
+          "scale": 1.0441240022776341
+        },
+        {
+          "iteration": 193,
+          "maximumSampleChangeMm": 0.01846090611339507,
+          "scale": 1.0441609186587613
+        },
+        {
+          "iteration": 194,
+          "maximumSampleChangeMm": 0.013981515119779476,
+          "scale": 1.0441954518231218
+        },
+        {
+          "iteration": 195,
+          "maximumSampleChangeMm": 0.012637749032245281,
+          "scale": 1.044228252038385
+        },
+        {
+          "iteration": 196,
+          "maximumSampleChangeMm": 0.010822937265549558,
+          "scale": 1.0442581753992555
+        },
+        {
+          "iteration": 197,
+          "maximumSampleChangeMm": 0.009896228716433355,
+          "scale": 1.0442855387711556
+        },
+        {
+          "iteration": 198,
+          "maximumSampleChangeMm": 0.009262523385271362,
+          "scale": 1.0443110974622465
+        },
+        {
+          "iteration": 199,
+          "maximumSampleChangeMm": 0.012410240694120757,
+          "scale": 1.0443454707934126
+        },
+        {
+          "iteration": 200,
+          "maximumSampleChangeMm": 0.010918852927939416,
+          "scale": 1.0443761737314985
+        },
+        {
+          "iteration": 201,
+          "maximumSampleChangeMm": 0.009969189046094656,
+          "scale": 1.0444039553038897
+        },
+        {
+          "iteration": 202,
+          "maximumSampleChangeMm": 0.009327217106670853,
+          "scale": 1.0444297748331806
+        },
+        {
+          "iteration": 203,
+          "maximumSampleChangeMm": 0.008599504037929947,
+          "scale": 1.04445331969904
+        },
+        {
+          "iteration": 204,
+          "maximumSampleChangeMm": 0.007911376679007216,
+          "scale": 1.0444747887965375
+        },
+        {
+          "iteration": 205,
+          "maximumSampleChangeMm": 0.0077097210738925346,
+          "scale": 1.044495650685133
+        },
+        {
+          "iteration": 206,
+          "maximumSampleChangeMm": 0.0070775575759498355,
+          "scale": 1.044514409258802
+        },
+        {
+          "iteration": 207,
+          "maximumSampleChangeMm": 0.006627730300285133,
+          "scale": 1.0445319838632654
+        },
+        {
+          "iteration": 208,
+          "maximumSampleChangeMm": 0.006193980989045086,
+          "scale": 1.044548384158121
+        },
+        {
+          "iteration": 209,
+          "maximumSampleChangeMm": 0.005786605106456546,
+          "scale": 1.0445636927800952
+        },
+        {
+          "iteration": 210,
+          "maximumSampleChangeMm": 0.005399684656850301,
+          "scale": 1.044577964512117
+        },
+        {
+          "iteration": 211,
+          "maximumSampleChangeMm": 0.005092941628958681,
+          "scale": 1.0445914557715674
+        },
+        {
+          "iteration": 212,
+          "maximumSampleChangeMm": 0.02487424780800527,
+          "scale": 1.0446438511893719
+        },
+        {
+          "iteration": 213,
+          "maximumSampleChangeMm": 0.01922309685539664,
+          "scale": 1.0446924118795726
+        },
+        {
+          "iteration": 214,
+          "maximumSampleChangeMm": 0.0159879757975982,
+          "scale": 1.0447364308770077
+        },
+        {
+          "iteration": 215,
+          "maximumSampleChangeMm": 0.014014384047645339,
+          "scale": 1.0447777720196079
+        },
+        {
+          "iteration": 216,
+          "maximumSampleChangeMm": 0.013133177098958363,
+          "scale": 1.0448163533095414
+        },
+        {
+          "iteration": 217,
+          "maximumSampleChangeMm": 0.01229916326677295,
+          "scale": 1.0448520017683711
+        },
+        {
+          "iteration": 218,
+          "maximumSampleChangeMm": 0.011511237809105741,
+          "scale": 1.0448848411946756
+        },
+        {
+          "iteration": 219,
+          "maximumSampleChangeMm": 0.010863457708329355,
+          "scale": 1.0449153525722767
+        },
+        {
+          "iteration": 220,
+          "maximumSampleChangeMm": 0.010132410891197314,
+          "scale": 1.0449434964457043
+        },
+        {
+          "iteration": 221,
+          "maximumSampleChangeMm": 0.009417298159423921,
+          "scale": 1.044969404786708
+        },
+        {
+          "iteration": 222,
+          "maximumSampleChangeMm": 0.009651002783524184,
+          "scale": 1.0449960175462067
+        },
+        {
+          "iteration": 223,
+          "maximumSampleChangeMm": 0.01980340847613294,
+          "scale": 1.0450383529137321
+        },
+        {
+          "iteration": 224,
+          "maximumSampleChangeMm": 0.015157685156596028,
+          "scale": 1.0450782544910828
+        },
+        {
+          "iteration": 225,
+          "maximumSampleChangeMm": 0.012554370654867709,
+          "scale": 1.0451130741999595
+        },
+        {
+          "iteration": 226,
+          "maximumSampleChangeMm": 0.01136583899284273,
+          "scale": 1.0451445458906128
+        },
+        {
+          "iteration": 227,
+          "maximumSampleChangeMm": 0.010436992613187113,
+          "scale": 1.0451731598125833
+        },
+        {
+          "iteration": 228,
+          "maximumSampleChangeMm": 0.009664797978022477,
+          "scale": 1.0451994275890177
+        },
+        {
+          "iteration": 229,
+          "maximumSampleChangeMm": 0.008973574584354627,
+          "scale": 1.0452236313972134
+        },
+        {
+          "iteration": 230,
+          "maximumSampleChangeMm": 0.008839366606158486,
+          "scale": 1.0452477016943493
+        },
+        {
+          "iteration": 231,
+          "maximumSampleChangeMm": 0.008208285421945334,
+          "scale": 1.04526989369427
+        },
+        {
+          "iteration": 232,
+          "maximumSampleChangeMm": 0.014277398281413094,
+          "scale": 1.0453052736631523
+        },
+        {
+          "iteration": 233,
+          "maximumSampleChangeMm": 0.011965567153750958,
+          "scale": 1.0453378385708287
+        },
+        {
+          "iteration": 234,
+          "maximumSampleChangeMm": 0.010800927926091927,
+          "scale": 1.0453676362212325
+        },
+        {
+          "iteration": 235,
+          "maximumSampleChangeMm": 0.010012452409148177,
+          "scale": 1.0453951500467256
+        },
+        {
+          "iteration": 236,
+          "maximumSampleChangeMm": 0.009206653822974501,
+          "scale": 1.0454202324826385
+        },
+        {
+          "iteration": 237,
+          "maximumSampleChangeMm": 0.0177778541621664,
+          "scale": 1.0454537500045529
+        },
+        {
+          "iteration": 238,
+          "maximumSampleChangeMm": 0.033760220444825385,
+          "scale": 1.0455027063619864
+        },
+        {
+          "iteration": 239,
+          "maximumSampleChangeMm": 0.02920845038501746,
+          "scale": 1.045551196499617
+        }
+      ],
+      "stopReason": "iteration limit",
+      "bones": [
+        {
+          "name": "Tibia",
+          "sourceName": "TIBIA_RIGHT",
+          "initialForward": {
+            "vertices": 82710,
+            "p95Mm": 4.503390459290971,
+            "maxMm": 20.367608042424315,
+            "rmsMm": 2.5244831732590245
+          },
+          "forward": {
+            "vertices": 82710,
+            "p95Mm": 15.426138694316657,
+            "maxMm": 21.145331715192892,
+            "rmsMm": 5.215748544634027
+          },
+          "reverse": {
+            "vertices": 385,
+            "p95Mm": 7.5423929441169895,
+            "maxMm": 15.692510714269337,
+            "rmsMm": 3.15928239716585
+          }
+        },
+        {
+          "name": "Fibula",
+          "sourceName": "FIBULA_RIGHT",
+          "initialForward": {
+            "vertices": 30598,
+            "p95Mm": 7.104390371589178,
+            "maxMm": 10.921117614130104,
+            "rmsMm": 3.3736520226647664
+          },
+          "forward": {
+            "vertices": 30598,
+            "p95Mm": 12.855635412669967,
+            "maxMm": 21.796245386905458,
+            "rmsMm": 4.6955496349435695
+          },
+          "reverse": {
+            "vertices": 168,
+            "p95Mm": 4.697624342558498,
+            "maxMm": 9.034673727100849,
+            "rmsMm": 2.2156805543294054
+          }
+        }
+      ],
+      "footLabels": [
+        "CALCANEUS_RIGHT",
+        "CUBOID_RIGHT",
+        "INTERMEDIATE_CUNEIFORM_RIGHT",
+        "LATERAL_CUNEIFORM_RIGHT",
+        "MEDIAL_CUNEIFORM_RIGHT",
+        "METATARSAL_1_RIGHT",
+        "METATARSAL_2_RIGHT",
+        "METATARSAL_3_RIGHT",
+        "METATARSAL_4_RIGHT",
+        "METATARSAL_5_RIGHT",
+        "NAVICULAR_RIGHT",
+        "PHALANGE_FOOT_1_RIGHT",
+        "PHALANGE_FOOT_2_RIGHT",
+        "PHALANGE_FOOT_3_RIGHT",
+        "PHALANGE_FOOT_4_RIGHT",
+        "PHALANGE_FOOT_5_RIGHT",
+        "TALUS_RIGHT"
+      ]
+    }
+  ],
+  "parts": ".cache/bonehub-foot-symmetric/initial-parts.json",
+  "limitations": [
+    "HRA shank meshes are low-detail reference surfaces, not clinical landmarks.",
+    "A common similarity is fitted only to tibia/fibula, never borrowed male foot shapes. Foot pose, skin, cartilage, vessels, nerves and attachments require separate checks.",
+    "Digits are source compound labels; no individual phalanx or FMA mapping is invented."
+  ],
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/bonehub-female-receipt.json",
+      "sha256": "4146adce0c4d8389b23bb4a4eb30024912c92f8cccd9e56995cbb9a4b935cd02"
+    },
+    {
+      "file": "docs/anatomy-alignment/bonehub-female-inventory.json",
+      "sha256": "3e82a5e58d9c3a90e55a83a236e20fb82424a9796a7a8f7fe0f2ffbadbcad4c4"
+    },
+    {
+      "file": "docs/anatomy-alignment/bonehub-denver-final-frame.json",
+      "sha256": "52570945fca74df6d1a34d40d9189d2aebeb017ed36b734d00125b1806428f65"
+    },
+    {
+      "file": "docs/anatomy-alignment/hierarchy-joint-bone-surface-fits.json",
+      "sha256": "f1146b7fb1fb339e3dc3cf22d46b456363945e01191bbf5463614e166ceba6a4"
+    },
+    {
+      "file": ".cache/donor-feet/audit.json",
+      "sha256": "25e5247c1dc2cf5d784498395eb4664caeb1c5d4a51280ea817d99bba33ff14c"
+    },
+    {
+      "file": ".cache/donor-feet/visual-parts.json",
+      "sha256": "6834c90bee06bb8552caa3f7c3c490f9f9c64ec1b4e84f8b8c0fc8860713d91e"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/TIBIA_LEFT.stl",
+      "sha256": "4dd60dfba89bf4822da9b5dc123e8f5cef17d6e2f9b57583e7f9def6e11bb276"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/FIBULA_LEFT.stl",
+      "sha256": "83ef606e5dee7bc1b3f35a61736c566b5d90ccd25ea5332fb73e0b2d95edc3a8"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/CALCANEUS_LEFT.stl",
+      "sha256": "adb7e828535941c2db0993eef9721c8064e2580f571800f22fcbe67a76d6340b"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/CUBOID_LEFT.stl",
+      "sha256": "4e9a717a9781768c008333c603edc6352c4319315a6c4aa00476580ff4efe88a"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/INTERMEDIATE_CUNEIFORM_LEFT.stl",
+      "sha256": "6790f11a8d5d8f52fd55bc84da2289507208ce93ee39fd0f174c166048ec8031"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/LATERAL_CUNEIFORM_LEFT.stl",
+      "sha256": "3bc962ca0dcf7489a17ee0b5111229354e71ef51ceee002b357b737a85f93161"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/MEDIAL_CUNEIFORM_LEFT.stl",
+      "sha256": "abf07a9cbd051051059b4352cd1f62c3b1312a31bf2a701441c1debf367be17d"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_1_LEFT.stl",
+      "sha256": "c412c53641198b306d71c40829cd5870f0152a8e08d9d32c65254754c9a28829"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_2_LEFT.stl",
+      "sha256": "8f169c2ccf8ea4b21dd84779c6bfd942d0d6886272afad47ae2f877baf732db9"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_3_LEFT.stl",
+      "sha256": "96928a79d69add1d25f27630f18600133e0c075be469e3c723275eeb96c193bd"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_4_LEFT.stl",
+      "sha256": "7c0dde1053f3e36f33308c7497a093633a227a522c22a347ab55b92861805765"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_5_LEFT.stl",
+      "sha256": "d62ce0ac0450838c3b53e7a1ef09198aebca56f0d8c78d32f052c813e1bcf7fa"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/NAVICULAR_LEFT.stl",
+      "sha256": "0c13d5e5affea6f013872ad0d5212f7d9b6873a1dc5fa6307d6af347bd35a59f"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_1_LEFT.stl",
+      "sha256": "cfd130f3f6f2d039b00a0063b26d56eddb762b190a3ba6df63fbc63d1a5bf1bf"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_2_LEFT.stl",
+      "sha256": "af26d8729ef1832d980877934a5071672cac5a333f28c8014b750a8c11f8f4d0"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_3_LEFT.stl",
+      "sha256": "434e9345a05df10b61d16b12a145c12b387dc7a6ec0c3cfdc4ac1b1ce2b9119f"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_4_LEFT.stl",
+      "sha256": "7bd329b35596dada0eb6881e43ac2069283af10f45deb78bd69c59b3f4b2651e"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_5_LEFT.stl",
+      "sha256": "17b00eab0123d080deaf2356f64eb14185e6d602853f76dc92f4a352cce7d528"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/TALUS_LEFT.stl",
+      "sha256": "3f322768cd56a4489683ad7bbbf1d8d537532675ac73c8269c9328b888394d56"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/TIBIA_RIGHT.stl",
+      "sha256": "0c262cf9c7a188934a1296382eb6bf3ffb72cc41b14d76e0457025225d54d68b"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/FIBULA_RIGHT.stl",
+      "sha256": "8536f9936175e5cecb595c4b84ac1ce8af59fa42595a488dfc7c3b8eab0cf40d"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/CALCANEUS_RIGHT.stl",
+      "sha256": "5e6875d292ca36454775cee7ec5ceae4746c2ff682d797087d13a1ecd4112968"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/CUBOID_RIGHT.stl",
+      "sha256": "6d45623a8dc16401bb77f93c6f4b568c07b72ae2c8077632318c7f267cab2ccd"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/INTERMEDIATE_CUNEIFORM_RIGHT.stl",
+      "sha256": "a16080c692c95a9c5471fd42c99c79fcbca16152703a77d6d583d1e4d17b668c"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/LATERAL_CUNEIFORM_RIGHT.stl",
+      "sha256": "e610db2cb0f1384b0832b2c829701763c76e2b2b51e460f5da5395da960cc41c"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/MEDIAL_CUNEIFORM_RIGHT.stl",
+      "sha256": "46cffc714d5dda411465f806502cb72841578e14dafa4a317353bb05f45b6b70"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_1_RIGHT.stl",
+      "sha256": "eecfd229f6863b46b20c783ccdd37f734c409e8ee1d02ebea504a534cf861d56"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_2_RIGHT.stl",
+      "sha256": "6374d1cfad544598a9c09b8e40208f7d8d081836a5fae60a09d6d03cd51fc779"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_3_RIGHT.stl",
+      "sha256": "fd82d0fa2994ec1d196ee2109a7a3e465c1bddcc97758d9db5e6ebb4ccba2870"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_4_RIGHT.stl",
+      "sha256": "e5297330b496b9bbf2bb7675db86b94f98a6083c0595433da67f07c0ed0aaaf0"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_5_RIGHT.stl",
+      "sha256": "9c7a09a1802b9852bd1345031e2c073281b6d83706dc646a29559db2f891565a"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/NAVICULAR_RIGHT.stl",
+      "sha256": "e51a30c6573922455aab5069cf3289557e991e9c61cb917a42f20aad878eeba8"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_1_RIGHT.stl",
+      "sha256": "c6eab5b830ef3f9c0ae0e79dcc5c8c499a30341391eaadfe99ef647c4e4c42a5"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_2_RIGHT.stl",
+      "sha256": "fe1d23922d28a4226f46cc4e449fd0fda11faa934d985d392c813cf7b7c7b5c4"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_3_RIGHT.stl",
+      "sha256": "55fa37d8c6c7814e2029675fb0c58564aa7cbeaf71e934138504c256dff225f5"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_4_RIGHT.stl",
+      "sha256": "09360d17aec16e9374a8718080a6bf3fd4e0d63d2ac8f844fb8f5de1e5e7bbac"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_5_RIGHT.stl",
+      "sha256": "f7b034a87dda2221fb0e4d5f73333095540ad703fad81c376f46a45891f4115f"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/TALUS_RIGHT.stl",
+      "sha256": "6af24dab667e03f174101154f03d7be5cc99406d1dd08a131b1d320cf9299145"
+    },
+    {
+      "file": ".cache/bonehub-foot-symmetric/initial-parts.json",
+      "sha256": "7a27204e6d5421ef89ecef53729e56223ca9d4b1f7e26c9f496cb2226aa35bd6"
+    },
+    {
+      "file": "scripts/prepare-bonehub-foot-candidates.mjs",
+      "sha256": "c22c9726ac8f91a2c0a5dcbf9c4141196c0765c698f89a539fe08a76a1865b14"
+    },
+    {
+      "file": "scripts/lib/similarity-fit.mjs",
+      "sha256": "72472e690233c9575af2191adb9cd22d99a8dd8dccf254197709daf061b45042"
+    },
+    {
+      "file": "scripts/lib/exact-position-components.mjs",
+      "sha256": "8e9aee660f8edf3f357b9ac9156c47d532ac6f2dc4679c9e6770ad2d51f805cd"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    }
+  ]
+}

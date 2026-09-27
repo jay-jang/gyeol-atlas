@@ -1,0 +1,82 @@
+{
+  "createdAt": "2026-09-27T09:57:42.545Z",
+  "status": "Same-source female CT acquired and header inspected; no segmentation, clinical validation or runtime export",
+  "repository": "https://huggingface.co/datasets/BoneHub/visible-human-3d-models",
+  "revision": "ac8de2b38f5ae1a0996053ca0639dd6ae43358f1",
+  "license": "CC-BY-4.0",
+  "sourceFile": {
+    "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Image/02_Female.nii.gz",
+    "member": "visible_human_3d_models/CT/Image/02_Female.nii.gz",
+    "bytes": 501395759,
+    "sha256": "638c569c9a702a6c7b3f50e36fe4be8ef7acc2ab0c53d960ad19418d7f00d979",
+    "publishedLfsSha256": "638c569c9a702a6c7b3f50e36fe4be8ef7acc2ab0c53d960ad19418d7f00d979"
+  },
+  "nifti": {
+    "dims": [
+      3,
+      673,
+      670,
+      1727,
+      1,
+      1,
+      1,
+      1
+    ],
+    "pixdim": [
+      1,
+      0.7226560115814209,
+      0.7226560115814209,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "datatype": 512,
+    "bitpix": 16,
+    "voxOffset": 352,
+    "voxels": 778721570,
+    "uncompressedBytes": 1557443492,
+    "qformCode": 1,
+    "sformCode": 1,
+    "sformRas": [
+      [
+        -0.7226560115814209,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -0.7226560115814209,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ]
+    ],
+    "quaternion": [
+      0,
+      0,
+      1
+    ],
+    "qoffset": [
+      0,
+      0,
+      0
+    ],
+    "xyztUnits": 10,
+    "sclSlope": 1,
+    "sclInter": 0
+  },
+  "gzipCrcChecked": true,
+  "limitations": [
+    "Header geometry and a valid complete gzip stream do not establish tissue coverage or segmentation accuracy.",
+    "Source CT elbow truncation remains. No organ, nerve, muscle or skin surface was produced by this acquisition."
+  ],
+  "scriptSha256": "2b85fe01ac0d133419d01b76c1cea74ad2dd0ff311ccd0f1ec5066a2bd452c22"
+}

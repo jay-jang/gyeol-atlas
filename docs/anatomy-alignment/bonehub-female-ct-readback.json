@@ -1,0 +1,79 @@
+{
+  "status": "Independent NIfTI affine/header readback; not HU or tissue validation",
+  "reader": "nibabel 5.2.1",
+  "shape": [
+    673,
+    670,
+    1727
+  ],
+  "dtype": "uint16",
+  "units": [
+    "mm",
+    "sec"
+  ],
+  "sform": [
+    [
+      -0.7226560115814209,
+      0.0,
+      0.0,
+      -0.0
+    ],
+    [
+      0.0,
+      -0.7226560115814209,
+      0.0,
+      -0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "qform": [
+    [
+      -0.7226560115814209,
+      0.0,
+      0.0,
+      -0.0
+    ],
+    [
+      0.0,
+      -0.7226560115814209,
+      0.0,
+      -0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "maximumQformSformDifference": 0.0,
+  "slope": 1.0,
+  "intercept": 0.0,
+  "files": [
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/ct-receipt.json",
+      "sha256": "2e3af1b7fe0e6c4bf6c453a3570cc896d21d8f918b642806196438ead6b552ce"
+    },
+    {
+      "file": "/Users/nuinuri/workspace/anatomy/scripts/verify-bonehub-ct-grid.py",
+      "sha256": "f5acdd492421f49ddaf3754529288d6979d34bdc96b8077fa4ebfcb6606fa6f6"
+    }
+  ]
+}

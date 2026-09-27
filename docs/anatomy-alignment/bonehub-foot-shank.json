@@ -1,0 +1,1249 @@
+{
+  "createdAt": "2026-09-27T09:48:33.495Z",
+  "status": "Direct shank fitting only; foot placement not approved; no runtime export",
+  "sampling": "2000 source vertices per bone, untrimmed forward surface fit",
+  "sourceRevision": "ac8de2b38f5ae1a0996053ca0639dd6ae43358f1",
+  "sourceUnits": "STL mm converted once to metres before fitting",
+  "sides": [
+    {
+      "side": "left",
+      "initialMatrix": [
+        1.0166893433899007,
+        0.13008329241675892,
+        -0.011685863824034073,
+        0,
+        -0.0051597451461249996,
+        -0.05163850498301584,
+        -1.0237295957307437,
+        0,
+        -0.13050517004825848,
+        1.0154443584850033,
+        -0.05056281987330258,
+        0,
+        -0.12431103535020183,
+        -0.11466010009598313,
+        0.19211670211042453,
+        1
+      ],
+      "sourceToAtlasMatrix": [
+        1.001508811514659,
+        0.1365888143294106,
+        -0.010461749705337678,
+        0,
+        -0.00678154005457177,
+        -0.027667876534543643,
+        -1.0104327544527019,
+        0,
+        -0.13682091624199708,
+        1.001181220537257,
+        -0.026496272767039912,
+        0,
+        -0.11734380902677949,
+        -0.11703030633773148,
+        0.17823022710587458,
+        1
+      ],
+      "uniformScale": 1.0108342356431723,
+      "iterations": [
+        {
+          "iteration": 0,
+          "maximumSampleChangeMm": 2.47731656228175,
+          "scale": 1.0214556181217906
+        },
+        {
+          "iteration": 1,
+          "maximumSampleChangeMm": 1.492941758127803,
+          "scale": 1.018964806543856
+        },
+        {
+          "iteration": 2,
+          "maximumSampleChangeMm": 0.9791198850445109,
+          "scale": 1.0171583534735886
+        },
+        {
+          "iteration": 3,
+          "maximumSampleChangeMm": 0.6928179104089979,
+          "scale": 1.0158721523565215
+        },
+        {
+          "iteration": 4,
+          "maximumSampleChangeMm": 0.5102211843302265,
+          "scale": 1.014923722046241
+        },
+        {
+          "iteration": 5,
+          "maximumSampleChangeMm": 0.3821865627145489,
+          "scale": 1.014206908422821
+        },
+        {
+          "iteration": 6,
+          "maximumSampleChangeMm": 0.2898007297178524,
+          "scale": 1.0136423161581274
+        },
+        {
+          "iteration": 7,
+          "maximumSampleChangeMm": 0.226279341925496,
+          "scale": 1.0131834389199368
+        },
+        {
+          "iteration": 8,
+          "maximumSampleChangeMm": 0.17324273995652645,
+          "scale": 1.0128093906617115
+        },
+        {
+          "iteration": 9,
+          "maximumSampleChangeMm": 0.13548645846971513,
+          "scale": 1.0125099407659488
+        },
+        {
+          "iteration": 10,
+          "maximumSampleChangeMm": 0.10886755281386734,
+          "scale": 1.0122718262113395
+        },
+        {
+          "iteration": 11,
+          "maximumSampleChangeMm": 0.09024129727958476,
+          "scale": 1.0120781185814376
+        },
+        {
+          "iteration": 12,
+          "maximumSampleChangeMm": 0.0767972204807677,
+          "scale": 1.0119123240273948
+        },
+        {
+          "iteration": 13,
+          "maximumSampleChangeMm": 0.06493736822376445,
+          "scale": 1.0117741527054698
+        },
+        {
+          "iteration": 14,
+          "maximumSampleChangeMm": 0.055012242967170416,
+          "scale": 1.0116586314563498
+        },
+        {
+          "iteration": 15,
+          "maximumSampleChangeMm": 0.047034371919317586,
+          "scale": 1.0115629762696166
+        },
+        {
+          "iteration": 16,
+          "maximumSampleChangeMm": 0.04222350876670348,
+          "scale": 1.0114771136645373
+        },
+        {
+          "iteration": 17,
+          "maximumSampleChangeMm": 0.037917887552418726,
+          "scale": 1.0114013048423038
+        },
+        {
+          "iteration": 18,
+          "maximumSampleChangeMm": 0.032514206228233145,
+          "scale": 1.0113366017776675
+        },
+        {
+          "iteration": 19,
+          "maximumSampleChangeMm": 0.027836256793321218,
+          "scale": 1.0112823222143137
+        },
+        {
+          "iteration": 20,
+          "maximumSampleChangeMm": 0.0246768920659536,
+          "scale": 1.0112336102374109
+        },
+        {
+          "iteration": 21,
+          "maximumSampleChangeMm": 0.02244648121071711,
+          "scale": 1.0111877605294397
+        },
+        {
+          "iteration": 22,
+          "maximumSampleChangeMm": 0.019341272305134015,
+          "scale": 1.011149259678308
+        },
+        {
+          "iteration": 23,
+          "maximumSampleChangeMm": 0.01663481200678555,
+          "scale": 1.0111169193614309
+        },
+        {
+          "iteration": 24,
+          "maximumSampleChangeMm": 0.014369847187463902,
+          "scale": 1.0110898009854306
+        },
+        {
+          "iteration": 25,
+          "maximumSampleChangeMm": 0.01325731073202534,
+          "scale": 1.011063390724567
+        },
+        {
+          "iteration": 26,
+          "maximumSampleChangeMm": 0.01216310640034376,
+          "scale": 1.0110392013901712
+        },
+        {
+          "iteration": 27,
+          "maximumSampleChangeMm": 0.010476336038523387,
+          "scale": 1.011018864341725
+        },
+        {
+          "iteration": 28,
+          "maximumSampleChangeMm": 0.009067269565830097,
+          "scale": 1.0110015272456874
+        },
+        {
+          "iteration": 29,
+          "maximumSampleChangeMm": 0.007902394672681798,
+          "scale": 1.010986434507799
+        },
+        {
+          "iteration": 30,
+          "maximumSampleChangeMm": 0.006974837859733968,
+          "scale": 1.0109735656655867
+        },
+        {
+          "iteration": 31,
+          "maximumSampleChangeMm": 0.006037002298215561,
+          "scale": 1.010962556227071
+        },
+        {
+          "iteration": 32,
+          "maximumSampleChangeMm": 0.0052298646851107085,
+          "scale": 1.0109531044839806
+        },
+        {
+          "iteration": 33,
+          "maximumSampleChangeMm": 0.004452331552047829,
+          "scale": 1.0109457097332688
+        },
+        {
+          "iteration": 34,
+          "maximumSampleChangeMm": 0.004900770972091788,
+          "scale": 1.0109371757336425
+        },
+        {
+          "iteration": 35,
+          "maximumSampleChangeMm": 0.003925840997236275,
+          "scale": 1.0109300679103959
+        },
+        {
+          "iteration": 36,
+          "maximumSampleChangeMm": 0.005817062648190033,
+          "scale": 1.0109221931831118
+        },
+        {
+          "iteration": 37,
+          "maximumSampleChangeMm": 0.004092756336483228,
+          "scale": 1.0109156221774227
+        },
+        {
+          "iteration": 38,
+          "maximumSampleChangeMm": 0.003463632776193059,
+          "scale": 1.0109082088462928
+        },
+        {
+          "iteration": 39,
+          "maximumSampleChangeMm": 0.0028445882093923324,
+          "scale": 1.0109021591137146
+        },
+        {
+          "iteration": 40,
+          "maximumSampleChangeMm": 0.002424278124758375,
+          "scale": 1.0108971549403745
+        },
+        {
+          "iteration": 41,
+          "maximumSampleChangeMm": 0.0020815959495426393,
+          "scale": 1.0108929715854431
+        },
+        {
+          "iteration": 42,
+          "maximumSampleChangeMm": 0.0025362654885285486,
+          "scale": 1.0108871767713028
+        },
+        {
+          "iteration": 43,
+          "maximumSampleChangeMm": 0.00211705426063034,
+          "scale": 1.0108823994876208
+        },
+        {
+          "iteration": 44,
+          "maximumSampleChangeMm": 0.0017891936617945685,
+          "scale": 1.010878448447912
+        },
+        {
+          "iteration": 45,
+          "maximumSampleChangeMm": 0.0017056975796032195,
+          "scale": 1.0108745986932186
+        },
+        {
+          "iteration": 46,
+          "maximumSampleChangeMm": 0.001443227299163273,
+          "scale": 1.010871418554623
+        },
+        {
+          "iteration": 47,
+          "maximumSampleChangeMm": 0.0012286619054398989,
+          "scale": 1.0108687796244116
+        },
+        {
+          "iteration": 48,
+          "maximumSampleChangeMm": 0.0010510544417987827,
+          "scale": 1.0108665765208422
+        },
+        {
+          "iteration": 49,
+          "maximumSampleChangeMm": 0.0009030163139961146,
+          "scale": 1.0108647246430476
+        },
+        {
+          "iteration": 50,
+          "maximumSampleChangeMm": 0.0007763607008890965,
+          "scale": 1.0108631649608018
+        },
+        {
+          "iteration": 51,
+          "maximumSampleChangeMm": 0.0006686468181804256,
+          "scale": 1.0108618461333445
+        },
+        {
+          "iteration": 52,
+          "maximumSampleChangeMm": 0.0005767095375674272,
+          "scale": 1.0108607269579528
+        },
+        {
+          "iteration": 53,
+          "maximumSampleChangeMm": 0.000498010578442176,
+          "scale": 1.0108597741581096
+        },
+        {
+          "iteration": 54,
+          "maximumSampleChangeMm": 0.003343563041609222,
+          "scale": 1.0108546340322928
+        },
+        {
+          "iteration": 55,
+          "maximumSampleChangeMm": 0.0019524203238553447,
+          "scale": 1.0108507471021952
+        },
+        {
+          "iteration": 56,
+          "maximumSampleChangeMm": 0.0013025202401623832,
+          "scale": 1.0108477167237349
+        },
+        {
+          "iteration": 57,
+          "maximumSampleChangeMm": 0.0009642813093881843,
+          "scale": 1.0108453116174212
+        },
+        {
+          "iteration": 58,
+          "maximumSampleChangeMm": 0.0007603999349034244,
+          "scale": 1.010843381779251
+        },
+        {
+          "iteration": 59,
+          "maximumSampleChangeMm": 0.0006210595657107359,
+          "scale": 1.0108418224220874
+        },
+        {
+          "iteration": 60,
+          "maximumSampleChangeMm": 0.0005169900757849344,
+          "scale": 1.0108405546284145
+        },
+        {
+          "iteration": 61,
+          "maximumSampleChangeMm": 0.0004350349571241412,
+          "scale": 1.010839518135581
+        },
+        {
+          "iteration": 62,
+          "maximumSampleChangeMm": 0.0003684981640376678,
+          "scale": 1.0108386665441251
+        },
+        {
+          "iteration": 63,
+          "maximumSampleChangeMm": 0.000313557786787886,
+          "scale": 1.0108379633825602
+        },
+        {
+          "iteration": 64,
+          "maximumSampleChangeMm": 0.000267703351311168,
+          "scale": 1.0108373799480184
+        },
+        {
+          "iteration": 65,
+          "maximumSampleChangeMm": 0.0002291541122647611,
+          "scale": 1.010836893585831
+        },
+        {
+          "iteration": 66,
+          "maximumSampleChangeMm": 0.00019657623205526358,
+          "scale": 1.0108364863402397
+        },
+        {
+          "iteration": 67,
+          "maximumSampleChangeMm": 0.00016893291685298633,
+          "scale": 1.010836143917804
+        },
+        {
+          "iteration": 68,
+          "maximumSampleChangeMm": 0.0001453991037311682,
+          "scale": 1.0108358548870504
+        },
+        {
+          "iteration": 69,
+          "maximumSampleChangeMm": 0.0001253080423357085,
+          "scale": 1.0108356100592748
+        },
+        {
+          "iteration": 70,
+          "maximumSampleChangeMm": 0.0001081151060165335,
+          "scale": 1.0108354020090886
+        },
+        {
+          "iteration": 71,
+          "maximumSampleChangeMm": 0.00009337180385830845,
+          "scale": 1.0108352247028483
+        },
+        {
+          "iteration": 72,
+          "maximumSampleChangeMm": 0.00008070640366248385,
+          "scale": 1.0108350732102453
+        },
+        {
+          "iteration": 73,
+          "maximumSampleChangeMm": 0.00006980907270106963,
+          "scale": 1.010834943480021
+        },
+        {
+          "iteration": 74,
+          "maximumSampleChangeMm": 0.0000604202995443373,
+          "scale": 1.0108348321650689
+        },
+        {
+          "iteration": 75,
+          "maximumSampleChangeMm": 0.00005232177779806527,
+          "scale": 1.0108347364855257
+        },
+        {
+          "iteration": 76,
+          "maximumSampleChangeMm": 0.000045329132776564516,
+          "scale": 1.0108346541211735
+        },
+        {
+          "iteration": 77,
+          "maximumSampleChangeMm": 0.00003928610128068357,
+          "scale": 1.010834583126469
+        },
+        {
+          "iteration": 78,
+          "maximumSampleChangeMm": 0.00003405982086364271,
+          "scale": 1.0108345218630757
+        },
+        {
+          "iteration": 79,
+          "maximumSampleChangeMm": 0.000029537008583005368,
+          "scale": 1.010834468945984
+        },
+        {
+          "iteration": 80,
+          "maximumSampleChangeMm": 0.000025620833438374435,
+          "scale": 1.010834423200234
+        },
+        {
+          "iteration": 81,
+          "maximumSampleChangeMm": 0.000022228344400995462,
+          "scale": 1.010834383625924
+        },
+        {
+          "iteration": 82,
+          "maximumSampleChangeMm": 0.0000192883391767224,
+          "scale": 1.0108343493697711
+        },
+        {
+          "iteration": 83,
+          "maximumSampleChangeMm": 0.000016739602689688768,
+          "scale": 1.0108343197018097
+        },
+        {
+          "iteration": 84,
+          "maximumSampleChangeMm": 0.000014529428332015506,
+          "scale": 1.0108342939962414
+        },
+        {
+          "iteration": 85,
+          "maximumSampleChangeMm": 0.000012612374269190247,
+          "scale": 1.0108342717155525
+        },
+        {
+          "iteration": 86,
+          "maximumSampleChangeMm": 0.000010949218129019536,
+          "scale": 1.0108342523973246
+        },
+        {
+          "iteration": 87,
+          "maximumSampleChangeMm": 0.000009506082078928637,
+          "scale": 1.0108342356431723
+        }
+      ],
+      "stopReason": "sample-change threshold",
+      "bones": [
+        {
+          "name": "Tibia",
+          "sourceName": "TIBIA_LEFT",
+          "initialForward": {
+            "vertices": 81854,
+            "p95Mm": 3.8783318543844745,
+            "maxMm": 7.5345911821653475,
+            "rmsMm": 2.0913565086698314
+          },
+          "forward": {
+            "vertices": 81854,
+            "p95Mm": 4.494973031432338,
+            "maxMm": 8.25712603786382,
+            "rmsMm": 2.3321296636737086
+          },
+          "reverse": {
+            "vertices": 385,
+            "p95Mm": 4.470659452053834,
+            "maxMm": 5.673033434933959,
+            "rmsMm": 2.2378666025258553
+          }
+        },
+        {
+          "name": "Fibula",
+          "sourceName": "FIBULA_LEFT",
+          "initialForward": {
+            "vertices": 30444,
+            "p95Mm": 7.924373551401722,
+            "maxMm": 12.436281076975886,
+            "rmsMm": 3.918929518392455
+          },
+          "forward": {
+            "vertices": 30444,
+            "p95Mm": 3.703314862431344,
+            "maxMm": 5.28402724948608,
+            "rmsMm": 2.2011210193212434
+          },
+          "reverse": {
+            "vertices": 169,
+            "p95Mm": 4.014406110135783,
+            "maxMm": 5.3341003531949305,
+            "rmsMm": 2.2005966964366492
+          }
+        }
+      ],
+      "footLabels": [
+        "CALCANEUS_LEFT",
+        "CUBOID_LEFT",
+        "INTERMEDIATE_CUNEIFORM_LEFT",
+        "LATERAL_CUNEIFORM_LEFT",
+        "MEDIAL_CUNEIFORM_LEFT",
+        "METATARSAL_1_LEFT",
+        "METATARSAL_2_LEFT",
+        "METATARSAL_3_LEFT",
+        "METATARSAL_4_LEFT",
+        "METATARSAL_5_LEFT",
+        "NAVICULAR_LEFT",
+        "PHALANGE_FOOT_1_LEFT",
+        "PHALANGE_FOOT_2_LEFT",
+        "PHALANGE_FOOT_3_LEFT",
+        "PHALANGE_FOOT_4_LEFT",
+        "PHALANGE_FOOT_5_LEFT",
+        "TALUS_LEFT"
+      ]
+    },
+    {
+      "side": "right",
+      "initialMatrix": [
+        0.9845719524472969,
+        -0.137610963102815,
+        -0.1528340258639941,
+        0,
+        -0.1605386965730624,
+        -0.04708619019340523,
+        -0.9918100441966973,
+        0,
+        0.12853926843771352,
+        0.9952502497868309,
+        -0.06805544021245653,
+        0,
+        -0.3181251695014676,
+        -0.03945048488217087,
+        0.22967946139845918,
+        1
+      ],
+      "sourceToAtlasMatrix": [
+        0.9759015263294535,
+        -0.13019759040869847,
+        -0.13467270849181054,
+        0,
+        -0.13917815906969414,
+        -0.025825881116486246,
+        -0.9835824337367136,
+        0,
+        0.12536981693662275,
+        0.9848114293453517,
+        -0.043598138549160385,
+        0,
+        -0.320713171800325,
+        -0.042198130715604715,
+        0.2151162106383201,
+        1
+      ],
+      "uniformScale": 0.9937162271256863,
+      "iterations": [
+        {
+          "iteration": 0,
+          "maximumSampleChangeMm": 1.9842430896294303,
+          "scale": 1.0027026992662291
+        },
+        {
+          "iteration": 1,
+          "maximumSampleChangeMm": 1.2688986755357579,
+          "scale": 1.000557348617196
+        },
+        {
+          "iteration": 2,
+          "maximumSampleChangeMm": 0.8820174884488655,
+          "scale": 0.9990456101718258
+        },
+        {
+          "iteration": 3,
+          "maximumSampleChangeMm": 0.6372403069182053,
+          "scale": 0.9979388356715145
+        },
+        {
+          "iteration": 4,
+          "maximumSampleChangeMm": 0.4707747872740414,
+          "scale": 0.9971125780764353
+        },
+        {
+          "iteration": 5,
+          "maximumSampleChangeMm": 0.3793977228449,
+          "scale": 0.9964752520592645
+        },
+        {
+          "iteration": 6,
+          "maximumSampleChangeMm": 0.27862155974110814,
+          "scale": 0.9959800758671167
+        },
+        {
+          "iteration": 7,
+          "maximumSampleChangeMm": 0.2133796629047799,
+          "scale": 0.9955917588009976
+        },
+        {
+          "iteration": 8,
+          "maximumSampleChangeMm": 0.16837960285918577,
+          "scale": 0.9952824949939921
+        },
+        {
+          "iteration": 9,
+          "maximumSampleChangeMm": 0.13242651838865424,
+          "scale": 0.9950279508624899
+        },
+        {
+          "iteration": 10,
+          "maximumSampleChangeMm": 0.10744677547217928,
+          "scale": 0.9948308619587829
+        },
+        {
+          "iteration": 11,
+          "maximumSampleChangeMm": 0.08478780901012095,
+          "scale": 0.9946734306882928
+        },
+        {
+          "iteration": 12,
+          "maximumSampleChangeMm": 0.07040730436104177,
+          "scale": 0.9945413485281819
+        },
+        {
+          "iteration": 13,
+          "maximumSampleChangeMm": 0.057591460370235194,
+          "scale": 0.9944361749452804
+        },
+        {
+          "iteration": 14,
+          "maximumSampleChangeMm": 0.047711822130605215,
+          "scale": 0.9943480857274871
+        },
+        {
+          "iteration": 15,
+          "maximumSampleChangeMm": 0.04056907989836247,
+          "scale": 0.9942688197471518
+        },
+        {
+          "iteration": 16,
+          "maximumSampleChangeMm": 0.03639788921266095,
+          "scale": 0.9941980609971736
+        },
+        {
+          "iteration": 17,
+          "maximumSampleChangeMm": 0.03254401493014928,
+          "scale": 0.994134554606618
+        },
+        {
+          "iteration": 18,
+          "maximumSampleChangeMm": 0.028533220665562724,
+          "scale": 0.9940761732446559
+        },
+        {
+          "iteration": 19,
+          "maximumSampleChangeMm": 0.025496519546134806,
+          "scale": 0.9940258247620694
+        },
+        {
+          "iteration": 20,
+          "maximumSampleChangeMm": 0.021579025666808627,
+          "scale": 0.9939836387568226
+        },
+        {
+          "iteration": 21,
+          "maximumSampleChangeMm": 0.018871075524413118,
+          "scale": 0.9939462771284489
+        },
+        {
+          "iteration": 22,
+          "maximumSampleChangeMm": 0.016434084065756905,
+          "scale": 0.993914846336416
+        },
+        {
+          "iteration": 23,
+          "maximumSampleChangeMm": 0.014239602707128474,
+          "scale": 0.993887950390279
+        },
+        {
+          "iteration": 24,
+          "maximumSampleChangeMm": 0.012570951669449954,
+          "scale": 0.9938641013674034
+        },
+        {
+          "iteration": 25,
+          "maximumSampleChangeMm": 0.010952264938980352,
+          "scale": 0.9938443056710471
+        },
+        {
+          "iteration": 26,
+          "maximumSampleChangeMm": 0.009377046915506495,
+          "scale": 0.993827887514968
+        },
+        {
+          "iteration": 27,
+          "maximumSampleChangeMm": 0.00806863900883374,
+          "scale": 0.9938140527587099
+        },
+        {
+          "iteration": 28,
+          "maximumSampleChangeMm": 0.007773796080834015,
+          "scale": 0.9937994370293703
+        },
+        {
+          "iteration": 29,
+          "maximumSampleChangeMm": 0.006659158233712139,
+          "scale": 0.9937872163522495
+        },
+        {
+          "iteration": 30,
+          "maximumSampleChangeMm": 0.005676838953254415,
+          "scale": 0.9937777237153933
+        },
+        {
+          "iteration": 31,
+          "maximumSampleChangeMm": 0.0048987112999635245,
+          "scale": 0.9937695766782102
+        },
+        {
+          "iteration": 32,
+          "maximumSampleChangeMm": 0.0044879557796753755,
+          "scale": 0.9937622432028677
+        },
+        {
+          "iteration": 33,
+          "maximumSampleChangeMm": 0.003838732584813829,
+          "scale": 0.9937560000120621
+        },
+        {
+          "iteration": 34,
+          "maximumSampleChangeMm": 0.003295206683705476,
+          "scale": 0.9937506046697349
+        },
+        {
+          "iteration": 35,
+          "maximumSampleChangeMm": 0.0028416878408790607,
+          "scale": 0.9937459413338995
+        },
+        {
+          "iteration": 36,
+          "maximumSampleChangeMm": 0.0024566812733234516,
+          "scale": 0.9937419084076718
+        },
+        {
+          "iteration": 37,
+          "maximumSampleChangeMm": 0.002125847166155663,
+          "scale": 0.9937384217227099
+        },
+        {
+          "iteration": 38,
+          "maximumSampleChangeMm": 0.001840597838267447,
+          "scale": 0.9937354069186851
+        },
+        {
+          "iteration": 39,
+          "maximumSampleChangeMm": 0.0015931232511010467,
+          "scale": 0.993732803425927
+        },
+        {
+          "iteration": 40,
+          "maximumSampleChangeMm": 0.0013790493256168146,
+          "scale": 0.9937305551975648
+        },
+        {
+          "iteration": 41,
+          "maximumSampleChangeMm": 0.0011939784596480087,
+          "scale": 0.9937286130397425
+        },
+        {
+          "iteration": 42,
+          "maximumSampleChangeMm": 0.001033928899712196,
+          "scale": 0.9937269346086598
+        },
+        {
+          "iteration": 43,
+          "maximumSampleChangeMm": 0.0008954279784214252,
+          "scale": 0.9937254836658564
+        },
+        {
+          "iteration": 44,
+          "maximumSampleChangeMm": 0.0007755645353952554,
+          "scale": 0.9937242289792022
+        },
+        {
+          "iteration": 45,
+          "maximumSampleChangeMm": 0.0006718083755444793,
+          "scale": 0.9937231436889085
+        },
+        {
+          "iteration": 46,
+          "maximumSampleChangeMm": 0.0005819801459415254,
+          "scale": 0.9937222046403863
+        },
+        {
+          "iteration": 47,
+          "maximumSampleChangeMm": 0.0005041993831210799,
+          "scale": 0.9937213918569799
+        },
+        {
+          "iteration": 48,
+          "maximumSampleChangeMm": 0.0004368377791314112,
+          "scale": 0.9937206882346274
+        },
+        {
+          "iteration": 49,
+          "maximumSampleChangeMm": 0.00037849325961239775,
+          "scale": 0.9937200790169689
+        },
+        {
+          "iteration": 50,
+          "maximumSampleChangeMm": 0.00032795414698185186,
+          "scale": 0.9937195514658304
+        },
+        {
+          "iteration": 51,
+          "maximumSampleChangeMm": 0.0002841728250508261,
+          "scale": 0.9937190945796734
+        },
+        {
+          "iteration": 52,
+          "maximumSampleChangeMm": 0.00024624318855655556,
+          "scale": 0.9937186988525469
+        },
+        {
+          "iteration": 53,
+          "maximumSampleChangeMm": 0.00021338128745885165,
+          "scale": 0.9937183560674698
+        },
+        {
+          "iteration": 54,
+          "maximumSampleChangeMm": 0.00018490868181730255,
+          "scale": 0.9937180591191364
+        },
+        {
+          "iteration": 55,
+          "maximumSampleChangeMm": 0.00016023811076616484,
+          "scale": 0.9937178018615933
+        },
+        {
+          "iteration": 56,
+          "maximumSampleChangeMm": 0.00013886114400705918,
+          "scale": 0.9937175789772696
+        },
+        {
+          "iteration": 57,
+          "maximumSampleChangeMm": 0.00012033753549163677,
+          "scale": 0.9937173858642243
+        },
+        {
+          "iteration": 58,
+          "maximumSampleChangeMm": 0.00010428602969379907,
+          "scale": 0.9937172185390024
+        },
+        {
+          "iteration": 59,
+          "maximumSampleChangeMm": 0.00009037641114208667,
+          "scale": 0.993717073552936
+        },
+        {
+          "iteration": 60,
+          "maximumSampleChangeMm": 0.00007832265802020596,
+          "scale": 0.9937169479198499
+        },
+        {
+          "iteration": 61,
+          "maximumSampleChangeMm": 0.00006787699246156163,
+          "scale": 0.9937168390537303
+        },
+        {
+          "iteration": 62,
+          "maximumSampleChangeMm": 0.000058824765124900514,
+          "scale": 0.9937167447148266
+        },
+        {
+          "iteration": 63,
+          "maximumSampleChangeMm": 0.00005098000609690471,
+          "scale": 0.9937166629631112
+        },
+        {
+          "iteration": 64,
+          "maximumSampleChangeMm": 0.00004418158664721012,
+          "scale": 0.9937165921180304
+        },
+        {
+          "iteration": 65,
+          "maximumSampleChangeMm": 0.00003828990001002528,
+          "scale": 0.993716530723695
+        },
+        {
+          "iteration": 66,
+          "maximumSampleChangeMm": 0.00003318397710458419,
+          "scale": 0.9937164775187707
+        },
+        {
+          "iteration": 67,
+          "maximumSampleChangeMm": 0.000028758994757644223,
+          "scale": 0.9937164314104292
+        },
+        {
+          "iteration": 68,
+          "maximumSampleChangeMm": 0.00002492412296502151,
+          "scale": 0.9937163914517889
+        },
+        {
+          "iteration": 69,
+          "maximumSampleChangeMm": 0.000021600652790461064,
+          "scale": 0.9937163568223842
+        },
+        {
+          "iteration": 70,
+          "maximumSampleChangeMm": 0.000018720373923871284,
+          "scale": 0.9937163268112881
+        },
+        {
+          "iteration": 71,
+          "maximumSampleChangeMm": 0.00001622417811590795,
+          "scale": 0.9937163008024547
+        },
+        {
+          "iteration": 72,
+          "maximumSampleChangeMm": 0.000014060843501213322,
+          "scale": 0.9937162782620481
+        },
+        {
+          "iteration": 73,
+          "maximumSampleChangeMm": 0.000012185980231390302,
+          "scale": 0.9937162587274644
+        },
+        {
+          "iteration": 74,
+          "maximumSampleChangeMm": 0.000010561118083242887,
+          "scale": 0.9937162417978114
+        },
+        {
+          "iteration": 75,
+          "maximumSampleChangeMm": 0.000009152919634467893,
+          "scale": 0.9937162271256863
+        }
+      ],
+      "stopReason": "sample-change threshold",
+      "bones": [
+        {
+          "name": "Tibia",
+          "sourceName": "TIBIA_RIGHT",
+          "initialForward": {
+            "vertices": 82710,
+            "p95Mm": 4.503390459290971,
+            "maxMm": 20.367608042424315,
+            "rmsMm": 2.5244831732590245
+          },
+          "forward": {
+            "vertices": 82710,
+            "p95Mm": 4.629106595918759,
+            "maxMm": 18.234568664499108,
+            "rmsMm": 2.4678508461848163
+          },
+          "reverse": {
+            "vertices": 385,
+            "p95Mm": 4.680321607648067,
+            "maxMm": 5.948178228149831,
+            "rmsMm": 2.3225315221298373
+          }
+        },
+        {
+          "name": "Fibula",
+          "sourceName": "FIBULA_RIGHT",
+          "initialForward": {
+            "vertices": 30598,
+            "p95Mm": 7.104390371589178,
+            "maxMm": 10.921117614130104,
+            "rmsMm": 3.3736520226647664
+          },
+          "forward": {
+            "vertices": 30598,
+            "p95Mm": 3.854566804035276,
+            "maxMm": 5.421953656342968,
+            "rmsMm": 2.2469035831699067
+          },
+          "reverse": {
+            "vertices": 168,
+            "p95Mm": 4.319670022510297,
+            "maxMm": 5.516621419204714,
+            "rmsMm": 2.3243118677125705
+          }
+        }
+      ],
+      "footLabels": [
+        "CALCANEUS_RIGHT",
+        "CUBOID_RIGHT",
+        "INTERMEDIATE_CUNEIFORM_RIGHT",
+        "LATERAL_CUNEIFORM_RIGHT",
+        "MEDIAL_CUNEIFORM_RIGHT",
+        "METATARSAL_1_RIGHT",
+        "METATARSAL_2_RIGHT",
+        "METATARSAL_3_RIGHT",
+        "METATARSAL_4_RIGHT",
+        "METATARSAL_5_RIGHT",
+        "NAVICULAR_RIGHT",
+        "PHALANGE_FOOT_1_RIGHT",
+        "PHALANGE_FOOT_2_RIGHT",
+        "PHALANGE_FOOT_3_RIGHT",
+        "PHALANGE_FOOT_4_RIGHT",
+        "PHALANGE_FOOT_5_RIGHT",
+        "TALUS_RIGHT"
+      ]
+    }
+  ],
+  "parts": ".cache/bonehub-foot/initial-parts.json",
+  "limitations": [
+    "HRA shank meshes are low-detail reference surfaces, not clinical landmarks.",
+    "A common similarity is fitted only to tibia/fibula, never borrowed male foot shapes. Foot pose, skin, cartilage, vessels, nerves and attachments require separate checks.",
+    "Digits are source compound labels; no individual phalanx or FMA mapping is invented."
+  ],
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/bonehub-female-receipt.json",
+      "sha256": "4146adce0c4d8389b23bb4a4eb30024912c92f8cccd9e56995cbb9a4b935cd02"
+    },
+    {
+      "file": "docs/anatomy-alignment/bonehub-female-inventory.json",
+      "sha256": "3e82a5e58d9c3a90e55a83a236e20fb82424a9796a7a8f7fe0f2ffbadbcad4c4"
+    },
+    {
+      "file": "docs/anatomy-alignment/bonehub-denver-final-frame.json",
+      "sha256": "52570945fca74df6d1a34d40d9189d2aebeb017ed36b734d00125b1806428f65"
+    },
+    {
+      "file": "docs/anatomy-alignment/hierarchy-joint-bone-surface-fits.json",
+      "sha256": "f1146b7fb1fb339e3dc3cf22d46b456363945e01191bbf5463614e166ceba6a4"
+    },
+    {
+      "file": ".cache/donor-feet/audit.json",
+      "sha256": "25e5247c1dc2cf5d784498395eb4664caeb1c5d4a51280ea817d99bba33ff14c"
+    },
+    {
+      "file": ".cache/donor-feet/visual-parts.json",
+      "sha256": "6834c90bee06bb8552caa3f7c3c490f9f9c64ec1b4e84f8b8c0fc8860713d91e"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/TIBIA_LEFT.stl",
+      "sha256": "4dd60dfba89bf4822da9b5dc123e8f5cef17d6e2f9b57583e7f9def6e11bb276"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/FIBULA_LEFT.stl",
+      "sha256": "83ef606e5dee7bc1b3f35a61736c566b5d90ccd25ea5332fb73e0b2d95edc3a8"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/CALCANEUS_LEFT.stl",
+      "sha256": "adb7e828535941c2db0993eef9721c8064e2580f571800f22fcbe67a76d6340b"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/CUBOID_LEFT.stl",
+      "sha256": "4e9a717a9781768c008333c603edc6352c4319315a6c4aa00476580ff4efe88a"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/INTERMEDIATE_CUNEIFORM_LEFT.stl",
+      "sha256": "6790f11a8d5d8f52fd55bc84da2289507208ce93ee39fd0f174c166048ec8031"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/LATERAL_CUNEIFORM_LEFT.stl",
+      "sha256": "3bc962ca0dcf7489a17ee0b5111229354e71ef51ceee002b357b737a85f93161"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/MEDIAL_CUNEIFORM_LEFT.stl",
+      "sha256": "abf07a9cbd051051059b4352cd1f62c3b1312a31bf2a701441c1debf367be17d"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_1_LEFT.stl",
+      "sha256": "c412c53641198b306d71c40829cd5870f0152a8e08d9d32c65254754c9a28829"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_2_LEFT.stl",
+      "sha256": "8f169c2ccf8ea4b21dd84779c6bfd942d0d6886272afad47ae2f877baf732db9"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_3_LEFT.stl",
+      "sha256": "96928a79d69add1d25f27630f18600133e0c075be469e3c723275eeb96c193bd"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_4_LEFT.stl",
+      "sha256": "7c0dde1053f3e36f33308c7497a093633a227a522c22a347ab55b92861805765"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/METATARSAL_5_LEFT.stl",
+      "sha256": "d62ce0ac0450838c3b53e7a1ef09198aebca56f0d8c78d32f052c813e1bcf7fa"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/NAVICULAR_LEFT.stl",
+      "sha256": "0c13d5e5affea6f013872ad0d5212f7d9b6873a1dc5fa6307d6af347bd35a59f"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_1_LEFT.stl",
+      "sha256": "cfd130f3f6f2d039b00a0063b26d56eddb762b190a3ba6df63fbc63d1a5bf1bf"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_2_LEFT.stl",
+      "sha256": "af26d8729ef1832d980877934a5071672cac5a333f28c8014b750a8c11f8f4d0"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_3_LEFT.stl",
+      "sha256": "434e9345a05df10b61d16b12a145c12b387dc7a6ec0c3cfdc4ac1b1ce2b9119f"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_4_LEFT.stl",
+      "sha256": "7bd329b35596dada0eb6881e43ac2069283af10f45deb78bd69c59b3f4b2651e"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/PHALANGE_FOOT_5_LEFT.stl",
+      "sha256": "17b00eab0123d080deaf2356f64eb14185e6d602853f76dc92f4a352cce7d528"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/TALUS_LEFT.stl",
+      "sha256": "3f322768cd56a4489683ad7bbbf1d8d537532675ac73c8269c9328b888394d56"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/TIBIA_RIGHT.stl",
+      "sha256": "0c262cf9c7a188934a1296382eb6bf3ffb72cc41b14d76e0457025225d54d68b"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/FIBULA_RIGHT.stl",
+      "sha256": "8536f9936175e5cecb595c4b84ac1ce8af59fa42595a488dfc7c3b8eab0cf40d"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/CALCANEUS_RIGHT.stl",
+      "sha256": "5e6875d292ca36454775cee7ec5ceae4746c2ff682d797087d13a1ecd4112968"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/CUBOID_RIGHT.stl",
+      "sha256": "6d45623a8dc16401bb77f93c6f4b568c07b72ae2c8077632318c7f267cab2ccd"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/INTERMEDIATE_CUNEIFORM_RIGHT.stl",
+      "sha256": "a16080c692c95a9c5471fd42c99c79fcbca16152703a77d6d583d1e4d17b668c"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/LATERAL_CUNEIFORM_RIGHT.stl",
+      "sha256": "e610db2cb0f1384b0832b2c829701763c76e2b2b51e460f5da5395da960cc41c"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/MEDIAL_CUNEIFORM_RIGHT.stl",
+      "sha256": "46cffc714d5dda411465f806502cb72841578e14dafa4a317353bb05f45b6b70"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_1_RIGHT.stl",
+      "sha256": "eecfd229f6863b46b20c783ccdd37f734c409e8ee1d02ebea504a534cf861d56"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_2_RIGHT.stl",
+      "sha256": "6374d1cfad544598a9c09b8e40208f7d8d081836a5fae60a09d6d03cd51fc779"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_3_RIGHT.stl",
+      "sha256": "fd82d0fa2994ec1d196ee2109a7a3e465c1bddcc97758d9db5e6ebb4ccba2870"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_4_RIGHT.stl",
+      "sha256": "e5297330b496b9bbf2bb7675db86b94f98a6083c0595433da67f07c0ed0aaaf0"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/METATARSAL_5_RIGHT.stl",
+      "sha256": "9c7a09a1802b9852bd1345031e2c073281b6d83706dc646a29559db2f891565a"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/NAVICULAR_RIGHT.stl",
+      "sha256": "e51a30c6573922455aab5069cf3289557e991e9c61cb917a42f20aad878eeba8"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_1_RIGHT.stl",
+      "sha256": "c6eab5b830ef3f9c0ae0e79dcc5c8c499a30341391eaadfe99ef647c4e4c42a5"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_2_RIGHT.stl",
+      "sha256": "fe1d23922d28a4226f46cc4e449fd0fda11faa934d985d392c813cf7b7c7b5c4"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_3_RIGHT.stl",
+      "sha256": "55fa37d8c6c7814e2029675fb0c58564aa7cbeaf71e934138504c256dff225f5"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_4_RIGHT.stl",
+      "sha256": "09360d17aec16e9374a8718080a6bf3fd4e0d63d2ac8f844fb8f5de1e5e7bbac"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/PHALANGE_FOOT_5_RIGHT.stl",
+      "sha256": "f7b034a87dda2221fb0e4d5f73333095540ad703fad81c376f46a45891f4115f"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/TALUS_RIGHT.stl",
+      "sha256": "6af24dab667e03f174101154f03d7be5cc99406d1dd08a131b1d320cf9299145"
+    },
+    {
+      "file": ".cache/bonehub-foot/initial-parts.json",
+      "sha256": "d082586fbf3dfbe158299f462350f018b5a70a8b76d61f53af6eaf80d13655be"
+    },
+    {
+      "file": "scripts/prepare-bonehub-foot-candidates.mjs",
+      "sha256": "c22c9726ac8f91a2c0a5dcbf9c4141196c0765c698f89a539fe08a76a1865b14"
+    },
+    {
+      "file": "scripts/lib/similarity-fit.mjs",
+      "sha256": "72472e690233c9575af2191adb9cd22d99a8dd8dccf254197709daf061b45042"
+    },
+    {
+      "file": "scripts/lib/exact-position-components.mjs",
+      "sha256": "8e9aee660f8edf3f357b9ac9156c47d532ac6f2dc4679c9e6770ad2d51f805cd"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    }
+  ]
+}

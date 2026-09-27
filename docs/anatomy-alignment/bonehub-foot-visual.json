@@ -1,0 +1,99 @@
+{
+  "mode": "sampled",
+  "status": "Offline geometry diagnostic, not application or anatomical approval",
+  "skinOpacity": 0.17,
+  "clipping": "Above y=0.24m and opposite body half hidden only for rendering",
+  "captures": [
+    {
+      "side": "left",
+      "view": "anterior",
+      "file": ".cache/bonehub-foot/sampled-left-anterior.png",
+      "sha256": "3c2fa3a6c39596f068207423a70df435eb174d130747d11d8627a806b0add74e",
+      "camera": {
+        "position": [
+          0.14174197986721992,
+          0.038038678001612425,
+          0.5865468270140414
+        ],
+        "target": [
+          0.14174197986721992,
+          0.038038678001612425,
+          -0.017343949526548386
+        ],
+        "visibleSourceMeshes": 17
+      }
+    },
+    {
+      "side": "left",
+      "view": "lateral",
+      "file": ".cache/bonehub-foot/sampled-left-lateral.png",
+      "sha256": "baed5c7976733e802651792dc60cde11ffc3ec55329275f7d6f938a8ffe8ee6f",
+      "camera": {
+        "position": [
+          0.7456327564078097,
+          0.038038678001612425,
+          -0.017343949526548386
+        ],
+        "target": [
+          0.14174197986721992,
+          0.038038678001612425,
+          -0.017343949526548386
+        ],
+        "visibleSourceMeshes": 17
+      }
+    },
+    {
+      "side": "right",
+      "view": "anterior",
+      "file": ".cache/bonehub-foot/sampled-right-anterior.png",
+      "sha256": "64d151ff108e77ab46a083c19c8c5ecae2a56da9b747210f1138acd28ccd111d",
+      "camera": {
+        "position": [
+          -0.15192613750696182,
+          0.041364970325957984,
+          0.5666846140084748
+        ],
+        "target": [
+          -0.15192613750696182,
+          0.041364970325957984,
+          -0.019918520003557205
+        ],
+        "visibleSourceMeshes": 17
+      }
+    },
+    {
+      "side": "right",
+      "view": "lateral",
+      "file": ".cache/bonehub-foot/sampled-right-lateral.png",
+      "sha256": "a2f9fda22d3bd3b8296f6e111868323b6c99f7a0f5eab90c5249994e36c7f017",
+      "camera": {
+        "position": [
+          -0.7385292715189938,
+          0.041364970325957984,
+          -0.019918520003557205
+        ],
+        "target": [
+          -0.15192613750696182,
+          0.041364970325957984,
+          -0.019918520003557205
+        ],
+        "visibleSourceMeshes": 17
+      }
+    }
+  ],
+  "errors": [],
+  "files": [
+    {
+      "file": ".cache/bonehub-foot/pose-sampled.json",
+      "sha256": "75866d4e1d9f96c1c7e3408f71b8cb6135e5e59ec3950747fec61c6ce4b94a5b"
+    },
+    {
+      "file": ".cache/bonehub-foot/pose-sampled-parts.json",
+      "sha256": "eca615dcc5e77426d945b7c37f4e99f9e2edcac642a3995faa3bb87e616cc859"
+    },
+    {
+      "file": "scripts/capture-bonehub-foot-pose.mjs",
+      "sha256": "24a279df25f077b536ceddb58a412fa2eafed6b12dd0b13ac363cd11ef68bf82"
+    }
+  ]
+}
