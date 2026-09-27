@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {Triangle,Vector3} from 'three';
+import {transverseTriangleWitness} from '../scripts/lib/triangle-witness.mjs';
+test('prescribed bone frame audit retains all pairs and replays the recorded transverse witness',()=>{
+  const r=JSON.parse(fs.readFileSync('docs/anatomy-alignment/prescribed-bone-crossings.json'));
+  assert.equal(r.pairs.length,45);assert.equal(new Set(r.pairs.map(p=>p.ids.join('|'))).size,45);
+  assert.deepEqual(r.summary,{bones:10,pairs:45,originalWitnessPairs:0,prescribedWitnessPairs:1,newWitnessPairs:1});
+  const pair=r.pairs.find(p=>p.newWitness);
+  assert.deepEqual(pair.ids,['left-Pelvis','left-Femur']);assert.equal(pair.original,null);
+  const w=pair.prescribed;
+  const a=new Triangle(...w.a.map(v=>new Vector3(...v))),b=new Triangle(...w.b.map(v=>new Vector3(...v)));
+  const checked=transverseTriangleWitness(a,b);assert.ok(checked);
+  assert.ok(checked.planeStraddleExtentMm>.25);
+  assert.ok(new Vector3(...checked.point).distanceTo(new Vector3(...w.point))<1e-12);
+  assert.ok(checked.barycentric.every(v=>v>0&&v<1));
+  assert.ok(checked.segmentFraction>0&&checked.segmentFraction<1);
+  assert.match(r.limitations.join(' '),/NOT a penetration depth/);
+});

@@ -1,0 +1,828 @@
+{
+  "createdAt": "2026-09-27T04:57:16.336Z",
+  "status": "DIAGNOSTIC ONLY; no public geometry change",
+  "method": "All 45 unordered pairs of ten original source bones, before versus their own prescribed similarity frames. Segment and triangle interiors with >1 micrometre supporting-plane straddle; first witness only.",
+  "summary": {
+    "bones": 10,
+    "pairs": 45,
+    "originalWitnessPairs": 0,
+    "prescribedWitnessPairs": 1,
+    "newWitnessPairs": 1
+  },
+  "pairs": [
+    {
+      "ids": [
+        "left-Pelvis",
+        "left-Femur"
+      ],
+      "frames": [
+        "left-hip",
+        "left-thigh"
+      ],
+      "original": null,
+      "prescribed": {
+        "point": [
+          0.09141448137376715,
+          0.7935339464495568,
+          -0.08648064494699642
+        ],
+        "segmentFraction": 0.7795860131124187,
+        "barycentric": [
+          0.4835722322139916,
+          0.21951060709906509,
+          0.2969171606869433
+        ],
+        "direction": "a-to-b",
+        "edge": 2,
+        "planeStraddleExtentMm": 0.25201021641395316,
+        "a": [
+          [
+            0.09148804098367691,
+            0.7932520508766174,
+            -0.0864601731300354
+          ],
+          [
+            0.09230782091617584,
+            0.7940577268600464,
+            -0.08727414906024933
+          ],
+          [
+            0.0911543071269989,
+            0.794530987739563,
+            -0.08655305206775665
+          ]
+        ],
+        "b": [
+          [
+            0.09092427790164948,
+            0.793667733669281,
+            -0.08678635209798813
+          ],
+          [
+            0.09219623357057571,
+            0.793683648109436,
+            -0.08688409626483917
+          ],
+          [
+            0.09163489937782288,
+            0.7932053804397583,
+            -0.08568448573350906
+          ]
+        ]
+      },
+      "newWitness": true
+    },
+    {
+      "ids": [
+        "left-Pelvis",
+        "left-Patella"
+      ],
+      "frames": [
+        "left-hip",
+        "left-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Pelvis",
+        "left-Tibia"
+      ],
+      "frames": [
+        "left-hip",
+        "left-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Pelvis",
+        "left-Fibula"
+      ],
+      "frames": [
+        "left-hip",
+        "left-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Pelvis",
+        "right-Pelvis"
+      ],
+      "frames": [
+        "left-hip",
+        "right-hip"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Pelvis",
+        "right-Femur"
+      ],
+      "frames": [
+        "left-hip",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Pelvis",
+        "right-Patella"
+      ],
+      "frames": [
+        "left-hip",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Pelvis",
+        "right-Tibia"
+      ],
+      "frames": [
+        "left-hip",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Pelvis",
+        "right-Fibula"
+      ],
+      "frames": [
+        "left-hip",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Femur",
+        "left-Patella"
+      ],
+      "frames": [
+        "left-thigh",
+        "left-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Femur",
+        "left-Tibia"
+      ],
+      "frames": [
+        "left-thigh",
+        "left-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Femur",
+        "left-Fibula"
+      ],
+      "frames": [
+        "left-thigh",
+        "left-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Femur",
+        "right-Pelvis"
+      ],
+      "frames": [
+        "left-thigh",
+        "right-hip"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Femur",
+        "right-Femur"
+      ],
+      "frames": [
+        "left-thigh",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Femur",
+        "right-Patella"
+      ],
+      "frames": [
+        "left-thigh",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Femur",
+        "right-Tibia"
+      ],
+      "frames": [
+        "left-thigh",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Femur",
+        "right-Fibula"
+      ],
+      "frames": [
+        "left-thigh",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Patella",
+        "left-Tibia"
+      ],
+      "frames": [
+        "left-thigh",
+        "left-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Patella",
+        "left-Fibula"
+      ],
+      "frames": [
+        "left-thigh",
+        "left-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Patella",
+        "right-Pelvis"
+      ],
+      "frames": [
+        "left-thigh",
+        "right-hip"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Patella",
+        "right-Femur"
+      ],
+      "frames": [
+        "left-thigh",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Patella",
+        "right-Patella"
+      ],
+      "frames": [
+        "left-thigh",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Patella",
+        "right-Tibia"
+      ],
+      "frames": [
+        "left-thigh",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Patella",
+        "right-Fibula"
+      ],
+      "frames": [
+        "left-thigh",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Tibia",
+        "left-Fibula"
+      ],
+      "frames": [
+        "left-shank",
+        "left-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Tibia",
+        "right-Pelvis"
+      ],
+      "frames": [
+        "left-shank",
+        "right-hip"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Tibia",
+        "right-Femur"
+      ],
+      "frames": [
+        "left-shank",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Tibia",
+        "right-Patella"
+      ],
+      "frames": [
+        "left-shank",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Tibia",
+        "right-Tibia"
+      ],
+      "frames": [
+        "left-shank",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Tibia",
+        "right-Fibula"
+      ],
+      "frames": [
+        "left-shank",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Fibula",
+        "right-Pelvis"
+      ],
+      "frames": [
+        "left-shank",
+        "right-hip"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Fibula",
+        "right-Femur"
+      ],
+      "frames": [
+        "left-shank",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Fibula",
+        "right-Patella"
+      ],
+      "frames": [
+        "left-shank",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Fibula",
+        "right-Tibia"
+      ],
+      "frames": [
+        "left-shank",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "left-Fibula",
+        "right-Fibula"
+      ],
+      "frames": [
+        "left-shank",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "right-Pelvis",
+        "right-Femur"
+      ],
+      "frames": [
+        "right-hip",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "right-Pelvis",
+        "right-Patella"
+      ],
+      "frames": [
+        "right-hip",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "right-Pelvis",
+        "right-Tibia"
+      ],
+      "frames": [
+        "right-hip",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "right-Pelvis",
+        "right-Fibula"
+      ],
+      "frames": [
+        "right-hip",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "right-Femur",
+        "right-Patella"
+      ],
+      "frames": [
+        "right-thigh",
+        "right-thigh"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "right-Femur",
+        "right-Tibia"
+      ],
+      "frames": [
+        "right-thigh",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "right-Femur",
+        "right-Fibula"
+      ],
+      "frames": [
+        "right-thigh",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "right-Patella",
+        "right-Tibia"
+      ],
+      "frames": [
+        "right-thigh",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "right-Patella",
+        "right-Fibula"
+      ],
+      "frames": [
+        "right-thigh",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    },
+    {
+      "ids": [
+        "right-Tibia",
+        "right-Fibula"
+      ],
+      "frames": [
+        "right-shank",
+        "right-shank"
+      ],
+      "original": null,
+      "prescribed": null,
+      "newWitness": false
+    }
+  ],
+  "limitations": [
+    "A missing transverse witness does not exclude coplanar contact, sub-tolerance crossing or full solid containment.",
+    "The supporting-plane straddle extent is NOT a penetration depth or distance between whole tissues.",
+    "Source/placed meshes use Float32 coordinates; witnesses describe these meshes, not an exact continuous or clinical anatomy.",
+    "These are prescribed donor bone frames, not deployed HRA bones. No muscle surface, nerve or attachment is examined here."
+  ],
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/donor-source-comparison.json",
+      "sha256": "ea0c9cbc5d0edc0a3859fb9f5786a638eeb3e92bb5a60649325561dc14c69959"
+    },
+    {
+      "file": "docs/anatomy-alignment/bone-interpolating-candidate.json",
+      "sha256": "a28e474582118886ace099cf1eb9aa93647e1dd4e6191c44ddee9fa456b58b24"
+    },
+    {
+      "file": "docs/anatomy-alignment/continuous-hip-per-side.json",
+      "sha256": "eae59e3454b0cea1bacdd1b0e9939e683e61d709eb43a4a2d48391e7b1ba0738"
+    },
+    {
+      "file": "docs/anatomy-alignment/hierarchy-joint-bone-surface-fits.json",
+      "sha256": "f1146b7fb1fb339e3dc3cf22d46b456363945e01191bbf5463614e166ceba6a4"
+    },
+    {
+      "file": "docs/anatomy-alignment/hip-surface-fits.json",
+      "sha256": "c299a1666c8c2b176233acab35e3e2d71837b43c05433498ee75253b7c19b99e"
+    },
+    {
+      "file": "docs/anatomy-alignment/donor-fidelity-packing.json",
+      "sha256": "0aad0815b9914a4841a6aa5cf84aa7202ee04f4d508737939c034aeecbb8b432"
+    },
+    {
+      "file": ".cache/donor-fidelity/source-full.bin.gz",
+      "sha256": "5c506d56f40971eca353cfc6612b269c4e0e1cd22888dc4f1007377944133720"
+    },
+    {
+      "file": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "file": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "file": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "file": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "file": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "file": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "file": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "file": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "file": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "file": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "file": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "file": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "file": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "file": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "file": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "file": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "file": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Pelvis_smooth.stl",
+      "sha256": "8a54af941e90d601320747d8e44a9bef8ca748291653480c1ca25355e6c89e08"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Femur_smooth.stl",
+      "sha256": "964b27ab140b4e72a2e7c4ae3f1ae24212554cc1a8f0552b632dafce8d66b242"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Patella_smooth.stl",
+      "sha256": "4a57158e9ec1716a78e27d4370865fcbc5e7ff4be203f38e9aa59ca84761153c"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Tibia_smooth.stl",
+      "sha256": "148107a0157932b94cab2b382b805af7c3c178400be76349ed20cea0bb56c3eb"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Fibula_smooth.stl",
+      "sha256": "3f5573f86c10eac6b25ed63604ea15ada1d389b54e0ceaecc48e5c5d33a62549"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Pelvis_smooth.stl",
+      "sha256": "007280b01294f728e3e81a4e708986f6bbb921140d88b4260543a5babc6fac5b"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Femur_smooth.stl",
+      "sha256": "012b293cbaa2cd467ea423b96bb257c8f558ff639c8342e37972af7c6febbd25"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Patella_smooth.stl",
+      "sha256": "bca69eb33e240c0ec6ea3fafb4f782edbc8ca714203860d972c74aabc6202613"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Tibia_smooth.stl",
+      "sha256": "589b64fe38d602eb95a0dad900bcd1059043d3d8451d3d74c7231fccc62ffae1"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Fibula_smooth.stl",
+      "sha256": "5e62c5c1aeedb2b0c287e4efbaf881ef9c8c721ccc546a69c74784e520581a24"
+    },
+    {
+      "file": "scripts/build-continuous-donor-candidate.mjs",
+      "sha256": "ea109c4dcf90996e605d2be7056bbfff2f9557fc780cc9181b4b87c6d08244ff"
+    },
+    {
+      "file": "scripts/lib/surface-frame-field.mjs",
+      "sha256": "e14c3c9f084ba76a9142d2aac7a958d7142bd01ae18c45ed77778357fd5aeb36"
+    },
+    {
+      "file": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    },
+    {
+      "file": ".cache/donor-continuous/surface-weighted-gaussian-20mm-hip-surface-per-side.bin.gz",
+      "sha256": "b4ccedf595a8388118cbea3f3f39f592c9c7dacd64d275e69bba46ed8e317ab4"
+    },
+    {
+      "file": "scripts/build-bone-interpolating-candidate.mjs",
+      "sha256": "b4bb207f2f41e40d6d22ef3edf4df6753e45d4378942b3b1e9736d3784f79009"
+    },
+    {
+      "file": "scripts/lib/bone-interpolating-field.mjs",
+      "sha256": "9da1b90b2f9e94da2414e148eb8af2b82df6916c39dfd2f00a9dfa61c401f437"
+    },
+    {
+      "file": "scripts/audit-prescribed-bone-crossings.mjs",
+      "sha256": "62c77a8d5e74795627e913107f5a439efaabcf728bbcfd007475da749b89cba5"
+    },
+    {
+      "file": "scripts/lib/triangle-witness.mjs",
+      "sha256": "309654844ad1f9e21270c25bd0a78d767ba44b34aa2bb6962d6ad32667361c17"
+    }
+  ]
+}
