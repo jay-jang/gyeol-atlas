@@ -1,0 +1,102 @@
+{
+  "createdAt": "2026-09-27T20:35:18.678Z",
+  "reportSha256": "49c86d61cd449fe1e6b15b81f1b36e369fef1ac502ec7598a4d45a42f8df3914",
+  "candidateSha256": "7c33c6af8ec40d29738b5fbbaaaed365acdd35b2d5399d0a13c3c8a2f43d04e9",
+  "vertices": 652173,
+  "indexReferences": 3912126,
+  "coordinateDifferences": 0,
+  "boneVertices": 471211,
+  "boneIndexReferences": 2827170,
+  "jacobianSamples": 9728,
+  "maximumJacobianDifference": 2.220446049250313e-16,
+  "maximumStepBound": 0.12000000000000002,
+  "sampling": {
+    "surfaces": 100,
+    "samples": 5504,
+    "inputTriangles": 2250121,
+    "maximumPointResidualMm": 0,
+    "maximumAreaResidualSquareMetres": 2.7755575615628914e-17
+  },
+  "witnesses": 6,
+  "missingWitnesses": 0,
+  "maximumWitnessResidualMm": 1.1274368112207334e-13,
+  "limits": [
+    "All candidate muscle coordinates/indices and diagnostic bone arrays are replayed with scalar compact-step arithmetic. Initial bone decoding/interpolation and BVH targets use shared implementations.",
+    "All stored area strata and reverse material barycentric points, full initial skin classification and alternate extreme-selection replay, final weighted losses and step bounds are checked. Shared BVH/skin probe implementations remain; optimizer/rejected trials are not independently rerun.",
+    "Stored sampled Jacobian products and every saved witness triangle membership/arithmetic are checked, not global injectivity, absent intersections, full containment or clinical anatomy."
+  ],
+  "reverseMaterialPoints": 1536,
+  "maximumMaterialResidualMm": 2.38182018474016e-13,
+  "skinExtremes": {
+    "vertices": 652173,
+    "outside": 11178,
+    "selected": 508
+  },
+  "controlLossReplay": [
+    {
+      "state": "initial",
+      "loss": 0.000012160972416790178,
+      "rmsByGroup": [
+        0.00271080139223647,
+        0.004466072838399958,
+        0.0015636823242165293,
+        0.001752885246353863,
+        0.0024858585135305437,
+        0.004040336478927638,
+        0.002389635821031016,
+        0.004860306401060888,
+        0.0017447683512064513,
+        0.0034782610294029565,
+        0.0026007385503998203,
+        0.002899448160788288,
+        0.001916138462286355,
+        0.002184714156264493,
+        0.0024122240450257363,
+        0.003843022535876173,
+        0.0008182147170290476,
+        0.000863941096506621,
+        0.0009594567382506614,
+        0.0009561563247448925,
+        0.000920971434488282,
+        0.0009197816867448867,
+        0.0008279700032115861,
+        0.0009062585002210596,
+        0.00171644967385225
+      ],
+      "lossResidual": 6.776263578034403e-21
+    },
+    {
+      "state": "final",
+      "loss": 0.000003862990907361836,
+      "rmsByGroup": [
+        0.0019830366281047107,
+        0.003263077861735889,
+        0.0013985657500416645,
+        0.0016841841253286615,
+        0.0022072817476049673,
+        0.0031574225765835092,
+        0.0017803370983972189,
+        0.0032189371191427385,
+        0.0014988138926407464,
+        0.002583337683352336,
+        0.0018336972011499743,
+        0.0023436498146701176,
+        0.0016734500172287516,
+        0.0018724999453560893,
+        0.0020013232878372473,
+        0.00303349198255372,
+        0.0007251935668959645,
+        0.0007921171610504068,
+        0.0007505968331410184,
+        0.0008458253778655232,
+        0.0007756773835674033,
+        0.0008116051282216282,
+        0.0006490284976383173,
+        0.0007955375543161683,
+        0.0002470955374790535
+      ],
+      "lossResidual": 8.470329472543003e-22
+    }
+  ],
+  "scriptSha256": "732eb7d04d619b9b0d3a93897beb135d706461076a982fdb6d3cb4dae7964d0a"
+}
