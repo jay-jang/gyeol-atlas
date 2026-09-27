@@ -1,0 +1,114 @@
+{
+  "createdAt": "2026-09-27T19:27:42.305Z",
+  "sphereReportSha256": "d598fb622f623b37c6de53de538fa5468716d22c8be3aabdffc59094e125b4dd",
+  "legReportSha256": "dddf0b73862d539b95789affc4a34855e8650c2501cc401c221c1560b82b3291",
+  "cartilage": [
+    {
+      "side": "left",
+      "name": "FemurHead",
+      "vertices": 8287,
+      "triangles": 16574,
+      "residual": {
+        "count": 8287,
+        "rmsMm": 0.8905082690288737,
+        "p95Mm": 1.4427047051668758,
+        "maximumMm": 2.0868059507203887
+      }
+    },
+    {
+      "side": "left",
+      "name": "PelvisAcetabulum",
+      "vertices": 22967,
+      "triangles": 45930,
+      "residual": {
+        "count": 22967,
+        "rmsMm": 0.7732808266910685,
+        "p95Mm": 1.2246133946122069,
+        "maximumMm": 1.7056613706655197
+      }
+    },
+    {
+      "side": "right",
+      "name": "FemurHead",
+      "vertices": 11476,
+      "triangles": 22948,
+      "residual": {
+        "count": 11476,
+        "rmsMm": 1.1625397975637843,
+        "p95Mm": 1.9706204088246506,
+        "maximumMm": 4.43247224164274
+      }
+    },
+    {
+      "side": "right",
+      "name": "PelvisAcetabulum",
+      "vertices": 6458,
+      "triangles": 12912,
+      "residual": {
+        "count": 6458,
+        "rmsMm": 0.7749190159627248,
+        "p95Mm": 1.303117959915903,
+        "maximumMm": 2.247482459473312
+      }
+    }
+  ],
+  "sampling": {
+    "surfaces": 16,
+    "samples": 14336,
+    "inputTriangles": 468024,
+    "maximumAreaResidualSquareMetres": 6.938893903907228e-18,
+    "maximumPointResidualMm": 0
+  },
+  "rotations": [
+    {
+      "side": "left",
+      "pivotName": "FemurHead",
+      "determinant": 1.0000000000000002,
+      "maximumGramError": 2.220446049250313e-16,
+      "pivotMotionMm": 2.7755575615628914e-14
+    },
+    {
+      "side": "left",
+      "pivotName": "PelvisAcetabulum",
+      "determinant": 1.0000000000000002,
+      "maximumGramError": 2.220446049250313e-16,
+      "pivotMotionMm": 2.7755575615628914e-14
+    },
+    {
+      "side": "right",
+      "pivotName": "FemurHead",
+      "determinant": 0.9999999999999999,
+      "maximumGramError": 2.220446049250313e-16,
+      "pivotMotionMm": 2.7755575615628914e-14
+    },
+    {
+      "side": "right",
+      "pivotName": "PelvisAcetabulum",
+      "determinant": 1,
+      "maximumGramError": 2.220446049250313e-16,
+      "pivotMotionMm": 1.962615573354719e-14
+    }
+  ],
+  "sensitivity": [
+    {
+      "side": "left",
+      "count": 88400,
+      "rmsMm": 0.14916786123023315,
+      "p95Mm": 0.18054202488146548,
+      "maximumMm": 0.20624176130013494
+    },
+    {
+      "side": "right",
+      "count": 87956,
+      "rmsMm": 0.1511987430007637,
+      "p95Mm": 0.20546857215533576,
+      "maximumMm": 0.21684377388059983
+    }
+  ],
+  "limits": [
+    "Binary STL byte decoding and radial residuals use scalar arithmetic without STLLoader or the sphere optimizer. Exact coordinate welding precedes millimetre-to-metre Float32 conversion as in the fitting input.",
+    "Area sums, duplicate treatment, sample triangle/barycentric membership and matrix/pivot arithmetic are replayed. Leg geometry decoding uses the frozen shared context.",
+    "No independent ICP optimization, global nearest-surface distance search, full-body containment/crossing or anatomical landmark validation is performed."
+  ],
+  "scriptSha256": "aac8fedaafb481e824ea3ea884701dc3ce44286a2ce277ef33f2775228c07cb7"
+}
