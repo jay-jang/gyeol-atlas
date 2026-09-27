@@ -5,6 +5,7 @@ export const musclePeelSources = {
   pectoral: "https://www.clinicalanatomy.ca/thorax/thoraxAnteriorPMrefl.html",
   abdomen: "https://booksite.elsevier.com/samplechapters/9780443066122/9780443066122.pdf",
   calf: "https://www.meddean.luc.edu/lumen/meded/grossanatomy/dissector/labs/le/ant_th_leg/tl3.html",
+  gluteal: "https://www.lumen.luc.edu/lumen/meded/grossanatomy/dissector/labs/le/glut_post_th/g2.html",
 };
 export const musclePeelGroups = [
   { sex: "male", side: "right", source: "pectoral", names: ["pectoralis major", "pectoralis minor"], levels: [["FMA34690", "FMA45874", "FMA79979"], ["FMA13375"]] },
@@ -15,6 +16,18 @@ export const musclePeelGroups = [
   { sex: "male", side: "left", source: "calf", names: ["gastrocnemius", "soleus", "deep posterior leg"], levels: [["FMA45958", "FMA45961"], ["FMA22559"], ["FMA65015", "FMA65017", "FMA65019"]] },
   { sex: "female", side: "left", source: "calf", names: ["gastrocnemius", "soleus", "deep posterior leg"], levels: [["VHF0005", "VHF0020"], ["VHF0022"], ["VHF0018", "VHF0019", "VHF0024"]] },
   { sex: "female", side: "right", source: "calf", names: ["gastrocnemius", "soleus", "deep posterior leg"], levels: [["VHF0043", "VHF0058"], ["VHF0060"], ["VHF0056", "VHF0057", "VHF0062"]] },
+  // Posterior dissection: maximus is reflected first; medius is then
+  // reflected to expose minimus. This is not whole-surface containment.
+  { sex: "male", side: "right", source: "gluteal", names: ["gluteus maximus", "gluteus medius", "gluteus minimus"], levels: [["FMA22328"], ["FMA22330"], ["FMA22332"]] },
+  { sex: "male", side: "left", source: "gluteal", names: ["gluteus maximus", "gluteus medius", "gluteus minimus"], levels: [["FMA22329"], ["FMA22331"], ["FMA22333"]] },
+  { sex: "female", side: "left", source: "gluteal", names: ["gluteus maximus", "gluteus medius", "gluteus minimus"], levels: [["VHF0025"], ["VHF0026"], ["VHF0027"]] },
+  { sex: "female", side: "right", source: "gluteal", names: ["gluteus maximus", "gluteus medius", "gluteus minimus"], levels: [["VHF0063"], ["VHF0064"], ["VHF0065"]] },
+  // Do not order piriformis relative to medius/minimus: the source only
+  // supports its exposure after reflecting maximus.
+  { sex: "male", side: "right", source: "gluteal", names: ["gluteus maximus", "piriformis"], levels: [["FMA22328"], ["FMA22340"]] },
+  { sex: "male", side: "left", source: "gluteal", names: ["gluteus maximus", "piriformis"], levels: [["FMA22329"], ["FMA22341"]] },
+  { sex: "female", side: "left", source: "gluteal", names: ["gluteus maximus", "piriformis"], levels: [["VHF0025"], ["VHF0033"]] },
+  { sex: "female", side: "right", source: "gluteal", names: ["gluteus maximus", "piriformis"], levels: [["VHF0063"], ["VHF0071"]] },
 ] as const;
 
 export const musclePeelRelations: readonly (readonly [string, string])[] = musclePeelGroups.flatMap(group =>
