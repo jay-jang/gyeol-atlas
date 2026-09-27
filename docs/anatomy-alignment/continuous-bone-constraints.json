@@ -1,0 +1,1608 @@
+{
+  "createdAt": "2026-09-27T04:45:27.794Z",
+  "status": "DIAGNOSTIC ONLY; existing rejected candidate remains unexported",
+  "method": "Existing per-side Gaussian field evaluated on all indexed source vertices of its 10 anchor bones; compared to each own fitted frame and corresponding HRA composite surfaces in both directions.",
+  "kernel": "gaussian",
+  "regularizationMm": 20,
+  "reproducedMuscleWitnesses": 16,
+  "rows": [
+    {
+      "side": "left",
+      "name": "Pelvis",
+      "frame": "hip",
+      "targetIds": [
+        "HRAF0956",
+        "HRAF0959",
+        "HRAF0828",
+        "HRAF0829",
+        "HRAF0961",
+        "HRAF0963"
+      ],
+      "sourceVertices": 49654,
+      "ownFrame": {
+        "sourceToTarget": {
+          "vertices": 49654,
+          "medianMm": 0.39703932848972734,
+          "p95Mm": 1.726095990178959,
+          "maximumMm": 4.110361176653404,
+          "maximumWitness": {
+            "vertex": 2292,
+            "pointMetres": [
+              0.053297024220228195,
+              0.8894052505493164,
+              -0.16067703068256378
+            ],
+            "nearestMetres": [
+              0.04937544281268525,
+              0.8885483209127953,
+              -0.15979275704583987
+            ],
+            "distanceMm": 4.110361176653404
+          }
+        },
+        "targetToSource": {
+          "vertices": 7592,
+          "medianMm": 1.0163048149209544,
+          "p95Mm": 3.1453874632338894,
+          "maximumMm": 16.465684946964195,
+          "maximumWitness": {
+            "vertex": 3305,
+            "pointMetres": [
+              0.04380626231431961,
+              0.8738738298416138,
+              -0.16422230005264282
+            ],
+            "nearestMetres": [
+              0.048388101160526276,
+              0.8896825313568115,
+              -0.1646810919046402
+            ],
+            "distanceMm": 16.465684946964195
+          }
+        }
+      },
+      "blendedField": {
+        "sourceToTarget": {
+          "vertices": 49654,
+          "medianMm": 0.4723384042016168,
+          "p95Mm": 2.570473791502458,
+          "maximumMm": 5.317644004013963,
+          "maximumWitness": {
+            "vertex": 4260,
+            "pointMetres": [
+              0.10904630273580551,
+              0.8421633243560791,
+              -0.05781809985637665
+            ],
+            "nearestMetres": [
+              0.11419941257538775,
+              0.8423955927210909,
+              -0.05652626080245348
+            ],
+            "distanceMm": 5.317644004013963
+          }
+        },
+        "targetToSource": {
+          "vertices": 7592,
+          "medianMm": 1.311194091400115,
+          "p95Mm": 4.213873824064621,
+          "maximumMm": 16.46568391034328,
+          "maximumWitness": {
+            "vertex": 3305,
+            "pointMetres": [
+              0.04380626231431961,
+              0.8738738298416138,
+              -0.16422230005264282
+            ],
+            "nearestMetres": [
+              0.04838809743523598,
+              0.8896825313568115,
+              -0.1646810919046402
+            ],
+            "distanceMm": 16.46568391034328
+          }
+        }
+      },
+      "displacementFromOwnFrame": {
+        "vertices": 49654,
+        "medianMm": 0.22276968890227797,
+        "p95Mm": 3.8471728197855364,
+        "maximumMm": 4.327671355705,
+        "maximumWitness": {
+          "vertex": 19394,
+          "sourcePointMetres": [
+            0.4291645586490631,
+            0.4662608206272125,
+            0.9153028130531311
+          ],
+          "ownFramePointMetres": [
+            0.11343221217464,
+            0.843269551209126,
+            -0.058702720047016155
+          ],
+          "fieldPointMetres": [
+            0.11008542044253875,
+            0.8438712544567126,
+            -0.061379598390679135
+          ],
+          "distanceMm": 4.327671355705,
+          "weights": [
+            0.5473102827626326,
+            0.4526897172373674,
+            3.083122317474579e-100
+          ],
+          "frameOrder": [
+            "hip",
+            "thigh",
+            "shank"
+          ],
+          "sourceSurfaceDistancesMetres": [
+            0,
+            0.012322627844811267,
+            0.4275790706605011
+          ]
+        }
+      },
+      "jacobian": {
+        "minimumDeterminant": 0.9928401087302489,
+        "maximumDeterminant": 1.183434853599624,
+        "nonpositiveDeterminants": 0
+      }
+    },
+    {
+      "side": "left",
+      "name": "Femur",
+      "frame": "thigh",
+      "targetIds": [
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0939",
+        "HRAF0940",
+        "HRAF0941",
+        "HRAF0942",
+        "HRAF0943",
+        "HRAF0944",
+        "HRAF0945",
+        "HRAF0946",
+        "HRAF0947",
+        "HRAF0948",
+        "HRAF0949",
+        "HRAF0950",
+        "HRAF0951",
+        "HRAF0952"
+      ],
+      "sourceVertices": 45945,
+      "ownFrame": {
+        "sourceToTarget": {
+          "vertices": 45945,
+          "medianMm": 1.366758362279424,
+          "p95Mm": 3.4907037346184495,
+          "maximumMm": 5.570278495182804,
+          "maximumWitness": {
+            "vertex": 23272,
+            "pointMetres": [
+              0.15490707755088806,
+              0.7938613891601562,
+              -0.06875932216644287
+            ],
+            "nearestMetres": [
+              0.15842525149879497,
+              0.7959185474513873,
+              -0.06496214501084632
+            ],
+            "distanceMm": 5.570278495182804
+          }
+        },
+        "targetToSource": {
+          "vertices": 1997,
+          "medianMm": 1.5830223301552915,
+          "p95Mm": 3.9942714415503593,
+          "maximumMm": 6.289085358288179,
+          "maximumWitness": {
+            "vertex": 999,
+            "pointMetres": [
+              0.15603846311569214,
+              0.7943897247314453,
+              -0.06249161809682846
+            ],
+            "nearestMetres": [
+              0.15389067109338023,
+              0.7942200067308779,
+              -0.06840015259135512
+            ],
+            "distanceMm": 6.289085358288179
+          }
+        }
+      },
+      "blendedField": {
+        "sourceToTarget": {
+          "vertices": 45945,
+          "medianMm": 1.4022309076876907,
+          "p95Mm": 3.2417971836799264,
+          "maximumMm": 5.605183698425958,
+          "maximumWitness": {
+            "vertex": 23272,
+            "pointMetres": [
+              0.1548832505941391,
+              0.7936616539955139,
+              -0.06868024170398712
+            ],
+            "nearestMetres": [
+              0.15842347058100129,
+              0.7957317031194602,
+              -0.06485927018326482
+            ],
+            "distanceMm": 5.605183698425958
+          }
+        },
+        "targetToSource": {
+          "vertices": 1997,
+          "medianMm": 1.668351104021516,
+          "p95Mm": 3.6059937057148317,
+          "maximumMm": 6.220478036114604,
+          "maximumWitness": {
+            "vertex": 999,
+            "pointMetres": [
+              0.15603846311569214,
+              0.7943897247314453,
+              -0.06249161809682846
+            ],
+            "nearestMetres": [
+              0.1538451873649418,
+              0.7941650198084647,
+              -0.06830826628771494
+            ],
+            "distanceMm": 6.220478036114604
+          }
+        }
+      },
+      "displacementFromOwnFrame": {
+        "vertices": 45945,
+        "medianMm": 0.20104941855830327,
+        "p95Mm": 2.9009174080167073,
+        "maximumMm": 3.877584484679824,
+        "maximumWitness": {
+          "vertex": 7575,
+          "sourcePointMetres": [
+            0.4403868019580841,
+            0.4625433385372162,
+            0.9051936864852905
+          ],
+          "ownFramePointMetres": [
+            0.0962529024773161,
+            0.8327511920393783,
+            -0.0678901827614245
+          ],
+          "fieldPointMetres": [
+            0.09892255249171453,
+            0.8329542306068836,
+            -0.06508529317775857
+          ],
+          "distanceMm": 3.877584484679824,
+          "weights": [
+            0.4966457318052303,
+            0.5033542681947697,
+            5.116544191026538e-95
+          ],
+          "frameOrder": [
+            "hip",
+            "thigh",
+            "shank"
+          ],
+          "sourceSurfaceDistancesMetres": [
+            0.0032762507914449453,
+            0,
+            0.4161025292301854
+          ]
+        }
+      },
+      "jacobian": {
+        "minimumDeterminant": 0.9522283087494895,
+        "maximumDeterminant": 1.1291151536603994,
+        "nonpositiveDeterminants": 0
+      }
+    },
+    {
+      "side": "left",
+      "name": "Patella",
+      "frame": "thigh",
+      "targetIds": [
+        "HRAF0953"
+      ],
+      "sourceVertices": 3264,
+      "ownFrame": {
+        "sourceToTarget": {
+          "vertices": 3264,
+          "medianMm": 1.447508698359639,
+          "p95Mm": 2.0487545024424136,
+          "maximumMm": 2.624510084986149,
+          "maximumWitness": {
+            "vertex": 1161,
+            "pointMetres": [
+              0.1501665711402893,
+              0.4507174789905548,
+              -0.03912825137376785
+            ],
+            "nearestMetres": [
+              0.15224871960750008,
+              0.45212924757382467,
+              -0.03987632918655075
+            ],
+            "distanceMm": 2.624510084986149
+          }
+        },
+        "targetToSource": {
+          "vertices": 204,
+          "medianMm": 1.6141655484005828,
+          "p95Mm": 2.3176022310826854,
+          "maximumMm": 2.8837584323083707,
+          "maximumWitness": {
+            "vertex": 88,
+            "pointMetres": [
+              0.1536824107170105,
+              0.4491896331310272,
+              -0.04143351688981056
+            ],
+            "nearestMetres": [
+              0.15169755679839705,
+              0.4480313067777356,
+              -0.039691478521420055
+            ],
+            "distanceMm": 2.8837584323083707
+          }
+        }
+      },
+      "blendedField": {
+        "sourceToTarget": {
+          "vertices": 3264,
+          "medianMm": 1.4739976558216565,
+          "p95Mm": 2.331845320523816,
+          "maximumMm": 2.9696617653297888,
+          "maximumWitness": {
+            "vertex": 1912,
+            "pointMetres": [
+              0.1425774246454239,
+              0.4268142879009247,
+              -0.0445086695253849
+            ],
+            "nearestMetres": [
+              0.1416444842444512,
+              0.4276616523777696,
+              -0.04181971310103067
+            ],
+            "distanceMm": 2.9696617653297888
+          }
+        },
+        "targetToSource": {
+          "vertices": 204,
+          "medianMm": 1.7174409338566548,
+          "p95Mm": 2.527378733174619,
+          "maximumMm": 3.055889924742797,
+          "maximumWitness": {
+            "vertex": 177,
+            "pointMetres": [
+              0.11225343495607376,
+              0.4305638372898102,
+              -0.024788057431578636
+            ],
+            "nearestMetres": [
+              0.11398342435435684,
+              0.4319290436053993,
+              -0.02690508639450009
+            ],
+            "distanceMm": 3.055889924742797
+          }
+        }
+      },
+      "displacementFromOwnFrame": {
+        "vertices": 3264,
+        "medianMm": 0.3983846505497471,
+        "p95Mm": 1.264419233556789,
+        "maximumMm": 1.4109201088665693,
+        "maximumWitness": {
+          "vertex": 2871,
+          "sourcePointMetres": [
+            0.4664936661720276,
+            0.48567235469818115,
+            0.4928358793258667
+          ],
+          "ownFramePointMetres": [
+            0.1337883944934236,
+            0.4173474652833306,
+            -0.040409446429452545
+          ],
+          "fieldPointMetres": [
+            0.13388035778152052,
+            0.41842214518208143,
+            -0.04131900754475343
+          ],
+          "distanceMm": 1.4109201088665693,
+          "weights": [
+            7.312933132876872e-60,
+            0.6633314482194099,
+            0.33666855178059
+          ],
+          "frameOrder": [
+            "hip",
+            "thigh",
+            "shank"
+          ],
+          "sourceSurfaceDistancesMetres": [
+            0.3295511864887474,
+            0,
+            0.02329250294264311
+          ]
+        }
+      },
+      "jacobian": {
+        "minimumDeterminant": 1.0163606702958108,
+        "maximumDeterminant": 1.0494979880070427,
+        "nonpositiveDeterminants": 0
+      }
+    },
+    {
+      "side": "left",
+      "name": "Tibia",
+      "frame": "shank",
+      "targetIds": [
+        "HRAF0954"
+      ],
+      "sourceVertices": 29730,
+      "ownFrame": {
+        "sourceToTarget": {
+          "vertices": 29730,
+          "medianMm": 1.1080004864679827,
+          "p95Mm": 3.9120142620589795,
+          "maximumMm": 6.493534064481901,
+          "maximumWitness": {
+            "vertex": 13356,
+            "pointMetres": [
+              0.1191210150718689,
+              0.08286044001579285,
+              -0.07524276524782181
+            ],
+            "nearestMetres": [
+              0.11441434478092805,
+              0.08446786632980473,
+              -0.07106790955403025
+            ],
+            "distanceMm": 6.493534064481901
+          }
+        },
+        "targetToSource": {
+          "vertices": 385,
+          "medianMm": 1.2226366948592122,
+          "p95Mm": 4.362042066379131,
+          "maximumMm": 6.591611078969259,
+          "maximumWitness": {
+            "vertex": 219,
+            "pointMetres": [
+              0.11646817624568939,
+              0.08623450994491577,
+              -0.06943265348672867
+            ],
+            "nearestMetres": [
+              0.1206484242351916,
+              0.08523266222288396,
+              -0.07442976910521426
+            ],
+            "distanceMm": 6.591611078969259
+          }
+        }
+      },
+      "blendedField": {
+        "sourceToTarget": {
+          "vertices": 29730,
+          "medianMm": 1.1431475638695159,
+          "p95Mm": 3.94690064140047,
+          "maximumMm": 6.493534064481901,
+          "maximumWitness": {
+            "vertex": 13356,
+            "pointMetres": [
+              0.1191210150718689,
+              0.08286044001579285,
+              -0.07524276524782181
+            ],
+            "nearestMetres": [
+              0.11441434478092805,
+              0.08446786632980473,
+              -0.07106790955403025
+            ],
+            "distanceMm": 6.493534064481901
+          }
+        },
+        "targetToSource": {
+          "vertices": 385,
+          "medianMm": 1.327836004191,
+          "p95Mm": 4.362042066379131,
+          "maximumMm": 6.591611078969259,
+          "maximumWitness": {
+            "vertex": 219,
+            "pointMetres": [
+              0.11646817624568939,
+              0.08623450994491577,
+              -0.06943265348672867
+            ],
+            "nearestMetres": [
+              0.1206484242351916,
+              0.08523266222288396,
+              -0.07442976910521426
+            ],
+            "distanceMm": 6.591611078969259
+          }
+        }
+      },
+      "displacementFromOwnFrame": {
+        "vertices": 29730,
+        "medianMm": 3.998166106553259e-8,
+        "p95Mm": 1.5606211558327683,
+        "maximumMm": 1.7674001361033638,
+        "maximumWitness": {
+          "vertex": 19937,
+          "sourcePointMetres": [
+            0.48525065183639526,
+            0.46499520540237427,
+            0.48661500215530396
+          ],
+          "ownFramePointMetres": [
+            0.11526796705916997,
+            0.41058824641419683,
+            -0.06308581143566777
+          ],
+          "fieldPointMetres": [
+            0.11529023789598294,
+            0.40932614887662266,
+            -0.061848751592097115
+          ],
+          "distanceMm": 1.7674001361033638,
+          "weights": [
+            4.656330288820663e-61,
+            0.490708889682347,
+            0.509291110317653
+          ],
+          "frameOrder": [
+            "hip",
+            "thigh",
+            "shank"
+          ],
+          "sourceSurfaceDistancesMetres": [
+            0.33255944133517185,
+            0.005452978618767635,
+            0
+          ]
+        }
+      },
+      "jacobian": {
+        "minimumDeterminant": 1.0117526038308255,
+        "maximumDeterminant": 1.0688058917301761,
+        "nonpositiveDeterminants": 0
+      }
+    },
+    {
+      "side": "left",
+      "name": "Fibula",
+      "frame": "shank",
+      "targetIds": [
+        "HRAF0955"
+      ],
+      "sourceVertices": 9461,
+      "ownFrame": {
+        "sourceToTarget": {
+          "vertices": 9461,
+          "medianMm": 1.501900356278693,
+          "p95Mm": 3.9323729698022314,
+          "maximumMm": 6.590945908416295,
+          "maximumWitness": {
+            "vertex": 668,
+            "pointMetres": [
+              0.15814615786075592,
+              0.09422329068183899,
+              -0.1160903349518776
+            ],
+            "nearestMetres": [
+              0.1572730507802984,
+              0.09432944317302328,
+              -0.12262233186264997
+            ],
+            "distanceMm": 6.590945908416295
+          }
+        },
+        "targetToSource": {
+          "vertices": 169,
+          "medianMm": 1.666783659932836,
+          "p95Mm": 5.71678634099749,
+          "maximumMm": 6.8972522395918165,
+          "maximumWitness": {
+            "vertex": 15,
+            "pointMetres": [
+              0.15927261114120483,
+              0.07013911008834839,
+              -0.12469293922185898
+            ],
+            "nearestMetres": [
+              0.15966303432251816,
+              0.0705229813147565,
+              -0.1178174537060875
+            ],
+            "distanceMm": 6.8972522395918165
+          }
+        }
+      },
+      "blendedField": {
+        "sourceToTarget": {
+          "vertices": 9461,
+          "medianMm": 1.5349966040873335,
+          "p95Mm": 3.9325364978844113,
+          "maximumMm": 6.590945908416295,
+          "maximumWitness": {
+            "vertex": 668,
+            "pointMetres": [
+              0.15814615786075592,
+              0.09422329068183899,
+              -0.1160903349518776
+            ],
+            "nearestMetres": [
+              0.1572730507802984,
+              0.09432944317302328,
+              -0.12262233186264997
+            ],
+            "distanceMm": 6.590945908416295
+          }
+        },
+        "targetToSource": {
+          "vertices": 169,
+          "medianMm": 1.7115511382158999,
+          "p95Mm": 5.71678634099749,
+          "maximumMm": 6.8972522395918165,
+          "maximumWitness": {
+            "vertex": 15,
+            "pointMetres": [
+              0.15927261114120483,
+              0.07013911008834839,
+              -0.12469293922185898
+            ],
+            "nearestMetres": [
+              0.15966303432251816,
+              0.0705229813147565,
+              -0.1178174537060875
+            ],
+            "distanceMm": 6.8972522395918165
+          }
+        }
+      },
+      "displacementFromOwnFrame": {
+        "vertices": 9461,
+        "medianMm": 0,
+        "p95Mm": 0.4085011052316437,
+        "maximumMm": 0.7346181604743247,
+        "maximumWitness": {
+          "vertex": 17,
+          "sourcePointMetres": [
+            0.4443158209323883,
+            0.4097904860973358,
+            0.46898382902145386
+          ],
+          "ownFramePointMetres": [
+            0.15705095656271773,
+            0.3961774928764478,
+            -0.12039701745400333
+          ],
+          "fieldPointMetres": [
+            0.15702970483453904,
+            0.39610752323795473,
+            -0.1196660479228755
+          ],
+          "distanceMm": 0.7346181604743247,
+          "weights": [
+            1.3452783630759301e-67,
+            0.2623457184309765,
+            0.7376542815690236
+          ],
+          "frameOrder": [
+            "hip",
+            "thigh",
+            "shank"
+          ],
+          "sourceSurfaceDistancesMetres": [
+            0.35062495092080076,
+            0.028758471332793047,
+            0
+          ]
+        }
+      },
+      "jacobian": {
+        "minimumDeterminant": 1.0545847049384238,
+        "maximumDeterminant": 1.0770474563663057,
+        "nonpositiveDeterminants": 0
+      }
+    },
+    {
+      "side": "right",
+      "name": "Pelvis",
+      "frame": "hip",
+      "targetIds": [
+        "HRAF0957",
+        "HRAF0958",
+        "HRAF0827",
+        "HRAF0830",
+        "HRAF0960",
+        "HRAF0962"
+      ],
+      "sourceVertices": 49211,
+      "ownFrame": {
+        "sourceToTarget": {
+          "vertices": 49211,
+          "medianMm": 0.3897201251051971,
+          "p95Mm": 2.011563279522539,
+          "maximumMm": 5.187587983163452,
+          "maximumWitness": {
+            "vertex": 36669,
+            "pointMetres": [
+              -0.08607853949069977,
+              0.7951281070709229,
+              -0.08665494620800018
+            ],
+            "nearestMetres": [
+              -0.08912209443053504,
+              0.7981080581572468,
+              -0.08369391025172024
+            ],
+            "distanceMm": 5.187587983163452
+          }
+        },
+        "targetToSource": {
+          "vertices": 7384,
+          "medianMm": 1.1203833870286675,
+          "p95Mm": 3.5204626645868173,
+          "maximumMm": 8.622545429053485,
+          "maximumWitness": {
+            "vertex": 6550,
+            "pointMetres": [
+              -0.052769068628549576,
+              0.7729137539863586,
+              -0.08289263397455215
+            ],
+            "nearestMetres": [
+              -0.053693172721604676,
+              0.7645558377094864,
+              -0.08480039622653338
+            ],
+            "distanceMm": 8.622545429053485
+          }
+        }
+      },
+      "blendedField": {
+        "sourceToTarget": {
+          "vertices": 49211,
+          "medianMm": 0.4778258624989226,
+          "p95Mm": 2.5594026551137596,
+          "maximumMm": 5.414484145969829,
+          "maximumWitness": {
+            "vertex": 40687,
+            "pointMetres": [
+              -0.09463465958833694,
+              0.759606122970581,
+              -0.1060413271188736
+            ],
+            "nearestMetres": [
+              -0.09006630922420797,
+              0.7623662028346674,
+              -0.1069516966380176
+            ],
+            "distanceMm": 5.414484145969829
+          }
+        },
+        "targetToSource": {
+          "vertices": 7384,
+          "medianMm": 1.3741304160188637,
+          "p95Mm": 3.9340311937617596,
+          "maximumMm": 8.976285769393789,
+          "maximumWitness": {
+            "vertex": 6550,
+            "pointMetres": [
+              -0.052769068628549576,
+              0.7729137539863586,
+              -0.08289263397455215
+            ],
+            "nearestMetres": [
+              -0.04947264592046384,
+              0.7651000662921655,
+              -0.07995093579814905
+            ],
+            "distanceMm": 8.976285769393789
+          }
+        }
+      },
+      "displacementFromOwnFrame": {
+        "vertices": 49211,
+        "medianMm": 0.0989946519742612,
+        "p95Mm": 3.933371294270743,
+        "maximumMm": 6.385374804121966,
+        "maximumWitness": {
+          "vertex": 40687,
+          "sourcePointMetres": [
+            0.6224622130393982,
+            0.4126359224319458,
+            0.8349094986915588
+          ],
+          "ownFramePointMetres": [
+            -0.0883152702177894,
+            0.7591929798904531,
+            -0.10685841954468583
+          ],
+          "fieldPointMetres": [
+            -0.09463465828276292,
+            0.7596061408394741,
+            -0.10604132474994662
+          ],
+          "distanceMm": 6.385374804121966,
+          "weights": [
+            0.6054836780611047,
+            0.39451632193889524,
+            1.7995594991700894e-65
+          ],
+          "frameOrder": [
+            "hip",
+            "thigh",
+            "shank"
+          ],
+          "sourceSurfaceDistancesMetres": [
+            0,
+            0.018511987323462684,
+            0.34476515074451214
+          ]
+        }
+      },
+      "jacobian": {
+        "minimumDeterminant": 1.0006337031543229,
+        "maximumDeterminant": 1.2930150377808673,
+        "nonpositiveDeterminants": 0
+      }
+    },
+    {
+      "side": "right",
+      "name": "Femur",
+      "frame": "thigh",
+      "targetIds": [
+        "HRAF0911",
+        "HRAF0912",
+        "HRAF0913",
+        "HRAF0914",
+        "HRAF0915",
+        "HRAF0916",
+        "HRAF0917",
+        "HRAF0918",
+        "HRAF0919",
+        "HRAF0920",
+        "HRAF0921",
+        "HRAF0922",
+        "HRAF0923",
+        "HRAF0924",
+        "HRAF0925",
+        "HRAF0926"
+      ],
+      "sourceVertices": 44735,
+      "ownFrame": {
+        "sourceToTarget": {
+          "vertices": 44735,
+          "medianMm": 1.5692672819190492,
+          "p95Mm": 4.368881391586246,
+          "maximumMm": 7.612969581213604,
+          "maximumWitness": {
+            "vertex": 19064,
+            "pointMetres": [
+              -0.0953182652592659,
+              0.8031400442123413,
+              -0.05346475914120674
+            ],
+            "nearestMetres": [
+              -0.09070335563060528,
+              0.8010427125461936,
+              -0.04778487227209101
+            ],
+            "distanceMm": 7.612969581213604
+          }
+        },
+        "targetToSource": {
+          "vertices": 1996,
+          "medianMm": 1.8975673397793464,
+          "p95Mm": 4.84410690165518,
+          "maximumMm": 7.7885088502445585,
+          "maximumWitness": {
+            "vertex": 965,
+            "pointMetres": [
+              -0.08945079892873764,
+              0.8004615306854248,
+              -0.049017179757356644
+            ],
+            "nearestMetres": [
+              -0.09492102488836944,
+              0.8027140081482914,
+              -0.05408312915901732
+            ],
+            "distanceMm": 7.7885088502445585
+          }
+        }
+      },
+      "blendedField": {
+        "sourceToTarget": {
+          "vertices": 44735,
+          "medianMm": 1.6293745543847413,
+          "p95Mm": 4.368394177081475,
+          "maximumMm": 10.05270755351244,
+          "maximumWitness": {
+            "vertex": 40341,
+            "pointMetres": [
+              -0.11222808808088303,
+              0.7606068849563599,
+              -0.08563787490129471
+            ],
+            "nearestMetres": [
+              -0.12109116765573896,
+              0.7566488098313341,
+              -0.08825252419151888
+            ],
+            "distanceMm": 10.05270755351244
+          }
+        },
+        "targetToSource": {
+          "vertices": 1996,
+          "medianMm": 1.9203657307930906,
+          "p95Mm": 4.6083173041125844,
+          "maximumMm": 7.7750312820620175,
+          "maximumWitness": {
+            "vertex": 887,
+            "pointMetres": [
+              -0.10277203470468521,
+              0.8089291453361511,
+              -0.04061123728752136
+            ],
+            "nearestMetres": [
+              -0.10342692459939914,
+              0.8087444865644925,
+              -0.0483564378530906
+            ],
+            "distanceMm": 7.7750312820620175
+          }
+        }
+      },
+      "displacementFromOwnFrame": {
+        "vertices": 44735,
+        "medianMm": 0.25614883709950165,
+        "p95Mm": 3.7102557224806025,
+        "maximumMm": 6.443265331891106,
+        "maximumWitness": {
+          "vertex": 34475,
+          "sourcePointMetres": [
+            0.6399549245834351,
+            0.41810616850852966,
+            0.8301432132720947
+          ],
+          "ownFramePointMetres": [
+            -0.1213688756125123,
+            0.7572669401272029,
+            -0.09663866738523774
+          ],
+          "fieldPointMetres": [
+            -0.11532367393361526,
+            0.7558818715790794,
+            -0.09838589087283434
+          ],
+          "distanceMm": 6.443265331891106,
+          "weights": [
+            0.3929914812031147,
+            0.6070085187968853,
+            5.1962340740645925e-64
+          ],
+          "frameOrder": [
+            "hip",
+            "thigh",
+            "shank"
+          ],
+          "sourceSurfaceDistancesMetres": [
+            0.01864950165374721,
+            0,
+            0.3408440104812402
+          ]
+        }
+      },
+      "jacobian": {
+        "minimumDeterminant": 0.9686094059887106,
+        "maximumDeterminant": 1.2536548821524431,
+        "nonpositiveDeterminants": 0
+      }
+    },
+    {
+      "side": "right",
+      "name": "Patella",
+      "frame": "thigh",
+      "targetIds": [
+        "HRAF0929"
+      ],
+      "sourceVertices": 3296,
+      "ownFrame": {
+        "sourceToTarget": {
+          "vertices": 3296,
+          "medianMm": 1.4457400580484714,
+          "p95Mm": 2.6507490252513595,
+          "maximumMm": 3.3810493853263313,
+          "maximumWitness": {
+            "vertex": 2577,
+            "pointMetres": [
+              -0.12464971840381622,
+              0.43938323855400085,
+              -0.030325178056955338
+            ],
+            "nearestMetres": [
+              -0.12154792430812021,
+              0.4404818195138447,
+              -0.031102023092074653
+            ],
+            "distanceMm": 3.3810493853263313
+          }
+        },
+        "targetToSource": {
+          "vertices": 204,
+          "medianMm": 1.5428896908071794,
+          "p95Mm": 2.8348261405839805,
+          "maximumMm": 3.6181309613012074,
+          "maximumWitness": {
+            "vertex": 160,
+            "pointMetres": [
+              -0.15752580761909485,
+              0.45733535289764404,
+              -0.03580506518483162
+            ],
+            "nearestMetres": [
+              -0.15519411117627244,
+              0.4555071416255975,
+              -0.033728600184785205
+            ],
+            "distanceMm": 3.6181309613012074
+          }
+        }
+      },
+      "blendedField": {
+        "sourceToTarget": {
+          "vertices": 3296,
+          "medianMm": 1.5400246058317524,
+          "p95Mm": 2.5820305887115746,
+          "maximumMm": 3.3889929569232518,
+          "maximumWitness": {
+            "vertex": 2841,
+            "pointMetres": [
+              -0.15705439448356628,
+              0.45246100425720215,
+              -0.033982183784246445
+            ],
+            "nearestMetres": [
+              -0.1598860924904193,
+              0.4542171574759303,
+              -0.033363567964523964
+            ],
+            "distanceMm": 3.3889929569232518
+          }
+        },
+        "targetToSource": {
+          "vertices": 204,
+          "medianMm": 1.7053946205472525,
+          "p95Mm": 2.734984129160343,
+          "maximumMm": 3.5946634891298785,
+          "maximumWitness": {
+            "vertex": 160,
+            "pointMetres": [
+              -0.15752580761909485,
+              0.45733535289764404,
+              -0.03580506518483162
+            ],
+            "nearestMetres": [
+              -0.15520372621165338,
+              0.4555058430368463,
+              -0.03375996440331939
+            ],
+            "distanceMm": 3.5946634891298785
+          }
+        }
+      },
+      "displacementFromOwnFrame": {
+        "vertices": 3296,
+        "medianMm": 0.28288344870457105,
+        "p95Mm": 0.8956135118457416,
+        "maximumMm": 0.9924478211179149,
+        "maximumWitness": {
+          "vertex": 3253,
+          "sourcePointMetres": [
+            0.6375022530555725,
+            0.4695363938808441,
+            0.4905891418457031
+          ],
+          "ownFramePointMetres": [
+            -0.1436095184270204,
+            0.41680379481321717,
+            -0.03516275423595416
+          ],
+          "fieldPointMetres": [
+            -0.14341681447233065,
+            0.41757310778412726,
+            -0.03575939098999979
+          ],
+          "distanceMm": 0.9924478211179149,
+          "weights": [
+            3.0335945672730146e-61,
+            0.689807511049564,
+            0.31019248895043605
+          ],
+          "frameOrder": [
+            "hip",
+            "thigh",
+            "shank"
+          ],
+          "sourceSurfaceDistancesMetres": [
+            0.33343856974334307,
+            0,
+            0.0252858783086511
+          ]
+        }
+      },
+      "jacobian": {
+        "minimumDeterminant": 1.0130534054897429,
+        "maximumDeterminant": 1.0415455215815743,
+        "nonpositiveDeterminants": 0
+      }
+    },
+    {
+      "side": "right",
+      "name": "Tibia",
+      "frame": "shank",
+      "targetIds": [
+        "HRAF0927"
+      ],
+      "sourceVertices": 30183,
+      "ownFrame": {
+        "sourceToTarget": {
+          "vertices": 30183,
+          "medianMm": 1.4484105231046087,
+          "p95Mm": 4.059941228985904,
+          "maximumMm": 6.4258363359448225,
+          "maximumWitness": {
+            "vertex": 6127,
+            "pointMetres": [
+              -0.12797684967517853,
+              0.08173155039548874,
+              -0.07163575291633606
+            ],
+            "nearestMetres": [
+              -0.12284225082674903,
+              0.0811371671162566,
+              -0.06781816522259221
+            ],
+            "distanceMm": 6.4258363359448225
+          }
+        },
+        "targetToSource": {
+          "vertices": 385,
+          "medianMm": 1.5760225115647306,
+          "p95Mm": 4.307747624452773,
+          "maximumMm": 6.405546038491152,
+          "maximumWitness": {
+            "vertex": 230,
+            "pointMetres": [
+              -0.12187235802412033,
+              0.08279949426651001,
+              -0.06886383891105652
+            ],
+            "nearestMetres": [
+              -0.12628342532155756,
+              0.07990435958990721,
+              -0.07249587698258626
+            ],
+            "distanceMm": 6.405546038491152
+          }
+        }
+      },
+      "blendedField": {
+        "sourceToTarget": {
+          "vertices": 30183,
+          "medianMm": 1.4191869005533373,
+          "p95Mm": 4.043887001001292,
+          "maximumMm": 6.4258363359448225,
+          "maximumWitness": {
+            "vertex": 6127,
+            "pointMetres": [
+              -0.12797684967517853,
+              0.08173155039548874,
+              -0.07163575291633606
+            ],
+            "nearestMetres": [
+              -0.12284225082674903,
+              0.0811371671162566,
+              -0.06781816522259221
+            ],
+            "distanceMm": 6.4258363359448225
+          }
+        },
+        "targetToSource": {
+          "vertices": 385,
+          "medianMm": 1.5188131738509656,
+          "p95Mm": 4.307747624452773,
+          "maximumMm": 6.405546038491152,
+          "maximumWitness": {
+            "vertex": 230,
+            "pointMetres": [
+              -0.12187235802412033,
+              0.08279949426651001,
+              -0.06886383891105652
+            ],
+            "nearestMetres": [
+              -0.12628342532155756,
+              0.07990435958990721,
+              -0.07249587698258626
+            ],
+            "distanceMm": 6.405546038491152
+          }
+        }
+      },
+      "displacementFromOwnFrame": {
+        "vertices": 30183,
+        "medianMm": 5.990843589094372e-8,
+        "p95Mm": 1.4428127881452029,
+        "maximumMm": 1.8464746964413215,
+        "maximumWitness": {
+          "vertex": 13622,
+          "sourcePointMetres": [
+            0.5827219486236572,
+            0.42944279313087463,
+            0.48057448863983154
+          ],
+          "ownFramePointMetres": [
+            -0.09822071276802646,
+            0.4013333863193258,
+            -0.08598483258613232
+          ],
+          "fieldPointMetres": [
+            -0.09717638149398594,
+            0.40102270562316944,
+            -0.08449408830903622
+          ],
+          "distanceMm": 1.8464746964413215,
+          "weights": [
+            5.966455472814048e-63,
+            0.47394218540231664,
+            0.5260578145976833
+          ],
+          "frameOrder": [
+            "hip",
+            "thigh",
+            "shank"
+          ],
+          "sourceSurfaceDistancesMetres": [
+            0.33779800315820674,
+            0.009135678534213067,
+            0
+          ]
+        }
+      },
+      "jacobian": {
+        "minimumDeterminant": 0.9714721627908174,
+        "maximumDeterminant": 1.0366173081579777,
+        "nonpositiveDeterminants": 0
+      }
+    },
+    {
+      "side": "right",
+      "name": "Fibula",
+      "frame": "shank",
+      "targetIds": [
+        "HRAF0928"
+      ],
+      "sourceVertices": 9742,
+      "ownFrame": {
+        "sourceToTarget": {
+          "vertices": 9742,
+          "medianMm": 1.6473587938426348,
+          "p95Mm": 4.5344686244524155,
+          "maximumMm": 7.948033817444807,
+          "maximumWitness": {
+            "vertex": 9208,
+            "pointMetres": [
+              -0.1664235144853592,
+              0.08449968695640564,
+              -0.11183808743953705
+            ],
+            "nearestMetres": [
+              -0.16653097140946535,
+              0.08553481986412748,
+              -0.1197176936756417
+            ],
+            "distanceMm": 7.948033817444807
+          }
+        },
+        "targetToSource": {
+          "vertices": 168,
+          "medianMm": 2.386004726760971,
+          "p95Mm": 6.8007902749343385,
+          "maximumMm": 7.913625707674719,
+          "maximumWitness": {
+            "vertex": 160,
+            "pointMetres": [
+              -0.1691625714302063,
+              0.08745014667510986,
+              -0.11943019181489944
+            ],
+            "nearestMetres": [
+              -0.16747473366465362,
+              0.08767538611582103,
+              -0.11170193569125211
+            ],
+            "distanceMm": 7.913625707674719
+          }
+        }
+      },
+      "blendedField": {
+        "sourceToTarget": {
+          "vertices": 9742,
+          "medianMm": 1.6629346392540403,
+          "p95Mm": 4.536868055523313,
+          "maximumMm": 7.948033817444807,
+          "maximumWitness": {
+            "vertex": 9208,
+            "pointMetres": [
+              -0.1664235144853592,
+              0.08449968695640564,
+              -0.11183808743953705
+            ],
+            "nearestMetres": [
+              -0.16653097140946535,
+              0.08553481986412748,
+              -0.1197176936756417
+            ],
+            "distanceMm": 7.948033817444807
+          }
+        },
+        "targetToSource": {
+          "vertices": 168,
+          "medianMm": 2.384638167792926,
+          "p95Mm": 6.8007902749343385,
+          "maximumMm": 7.913625707674719,
+          "maximumWitness": {
+            "vertex": 160,
+            "pointMetres": [
+              -0.1691625714302063,
+              0.08745014667510986,
+              -0.11943019181489944
+            ],
+            "nearestMetres": [
+              -0.16747473366465362,
+              0.08767538611582103,
+              -0.11170193569125211
+            ],
+            "distanceMm": 7.913625707674719
+          }
+        }
+      },
+      "displacementFromOwnFrame": {
+        "vertices": 9742,
+        "medianMm": 0,
+        "p95Mm": 0.5334304402789563,
+        "maximumMm": 0.8237649562662905,
+        "maximumWitness": {
+          "vertex": 9683,
+          "sourcePointMetres": [
+            0.6429697275161743,
+            0.3870028555393219,
+            0.46980929374694824
+          ],
+          "ownFramePointMetres": [
+            -0.16629093097818953,
+            0.39653587585935823,
+            -0.11599454040238039
+          ],
+          "fieldPointMetres": [
+            -0.1655451700933242,
+            0.39618763802964196,
+            -0.11602859652858087
+          ],
+          "distanceMm": 0.8237649562662905,
+          "weights": [
+            3.268988846423654e-68,
+            0.24056970724106855,
+            0.7594302927589315
+          ],
+          "frameOrder": [
+            "hip",
+            "thigh",
+            "shank"
+          ],
+          "sourceSurfaceDistancesMetres": [
+            0.35226821470713204,
+            0.030325680824544565,
+            0
+          ]
+        }
+      },
+      "jacobian": {
+        "minimumDeterminant": 0.9857789187795284,
+        "maximumDeterminant": 1.0027922667971603,
+        "nonpositiveDeterminants": 0
+      }
+    }
+  ],
+  "summary": {
+    "bones": 10,
+    "sourceVertices": 275221,
+    "maximumFrameDisplacementMm": 6.443265331891106,
+    "nonpositiveDeterminants": 0,
+    "worsenedForwardP95": 6,
+    "worsenedReverseP95": 3
+  },
+  "limitations": [
+    "The common field is evaluated on source bones diagnostically; deployed HRA bones were not transformed.",
+    "Own fitted frames are candidates, not ground-truth anatomical landmarks. Drift measures non-interpolation, not a clinical error threshold.",
+    "The field interpolates affine frames softly; no bone constraint was enforced by its original implementation.",
+    "Drift compares double-precision field/frame evaluation. Surface distances compare Float32 meshes at all referenced vertices, not continuous Hausdorff distance.",
+    "Targets retain original HRA composite membership, including femoral cartilage and attachments, not pure bone-only segmentation.",
+    "No muscle attachment, skin, nerve, tissue intersection or clinical validation is performed by this diagnostic."
+  ],
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/continuous-hip-per-side.json",
+      "sha256": "eae59e3454b0cea1bacdd1b0e9939e683e61d709eb43a4a2d48391e7b1ba0738"
+    },
+    {
+      "file": "docs/anatomy-alignment/donor-source-comparison.json",
+      "sha256": "ea0c9cbc5d0edc0a3859fb9f5786a638eeb3e92bb5a60649325561dc14c69959"
+    },
+    {
+      "file": "docs/anatomy-alignment/hra-bone-targets.json",
+      "sha256": "94c3e05a112656f1f3859c88627c49b7cd3ed394a21dfd2d5f5aebff14b3e87a"
+    },
+    {
+      "file": "docs/anatomy-alignment/hip-surface-fits.json",
+      "sha256": "c299a1666c8c2b176233acab35e3e2d71837b43c05433498ee75253b7c19b99e"
+    },
+    {
+      "file": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "file": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "file": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "file": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "file": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "file": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "file": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "file": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "file": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "file": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "file": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "file": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "file": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "file": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "file": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "file": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "file": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "file": "docs/anatomy-alignment/hierarchy-joint-bone-surface-fits.json",
+      "sha256": "f1146b7fb1fb339e3dc3cf22d46b456363945e01191bbf5463614e166ceba6a4"
+    },
+    {
+      "file": "docs/anatomy-alignment/donor-fidelity-packing.json",
+      "sha256": "0aad0815b9914a4841a6aa5cf84aa7202ee04f4d508737939c034aeecbb8b432"
+    },
+    {
+      "file": ".cache/donor-fidelity/source-full.bin.gz",
+      "sha256": "5c506d56f40971eca353cfc6612b269c4e0e1cd22888dc4f1007377944133720"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Pelvis_smooth.stl",
+      "sha256": "8a54af941e90d601320747d8e44a9bef8ca748291653480c1ca25355e6c89e08"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Femur_smooth.stl",
+      "sha256": "964b27ab140b4e72a2e7c4ae3f1ae24212554cc1a8f0552b632dafce8d66b242"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Patella_smooth.stl",
+      "sha256": "4a57158e9ec1716a78e27d4370865fcbc5e7ff4be203f38e9aa59ca84761153c"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Tibia_smooth.stl",
+      "sha256": "148107a0157932b94cab2b382b805af7c3c178400be76349ed20cea0bb56c3eb"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Fibula_smooth.stl",
+      "sha256": "3f5573f86c10eac6b25ed63604ea15ada1d389b54e0ceaecc48e5c5d33a62549"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Pelvis_smooth.stl",
+      "sha256": "007280b01294f728e3e81a4e708986f6bbb921140d88b4260543a5babc6fac5b"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Femur_smooth.stl",
+      "sha256": "012b293cbaa2cd467ea423b96bb257c8f558ff639c8342e37972af7c6febbd25"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Patella_smooth.stl",
+      "sha256": "bca69eb33e240c0ec6ea3fafb4f782edbc8ca714203860d972c74aabc6202613"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Tibia_smooth.stl",
+      "sha256": "589b64fe38d602eb95a0dad900bcd1059043d3d8451d3d74c7231fccc62ffae1"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Fibula_smooth.stl",
+      "sha256": "5e62c5c1aeedb2b0c287e4efbaf881ef9c8c721ccc546a69c74784e520581a24"
+    },
+    {
+      "file": "scripts/build-continuous-donor-candidate.mjs",
+      "sha256": "ea109c4dcf90996e605d2be7056bbfff2f9557fc780cc9181b4b87c6d08244ff"
+    },
+    {
+      "file": "scripts/lib/surface-frame-field.mjs",
+      "sha256": "e14c3c9f084ba76a9142d2aac7a958d7142bd01ae18c45ed77778357fd5aeb36"
+    },
+    {
+      "file": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    },
+    {
+      "file": ".cache/donor-continuous/surface-weighted-gaussian-20mm-hip-surface-per-side.bin.gz",
+      "sha256": "b4ccedf595a8388118cbea3f3f39f592c9c7dacd64d275e69bba46ed8e317ab4"
+    },
+    {
+      "file": "scripts/audit-continuous-bone-constraints.mjs",
+      "sha256": "579860cca07f840abe052fadb39324665f9831b7380da3ebde16e66e7f27e494"
+    }
+  ]
+}
