@@ -59,3 +59,7 @@ npm exec --yes --package=node@24.14.0 -- node scripts/build-finger-refinement.mj
 ```
 
 생성기의 기본 출력은 캐시이며 `--export`에서만 검사 기록·기준v2·v3카탈로그를 씁니다. 여성 고유 자료의 정합·뇌/신경 관계·전체 기관 세부화·실제 근육 층서의 전체 목표는 계속 미완료입니다.
+
+## 공개 반영
+
+코드 `4ee5613`과 Pages 실행36326759482가 성공했습니다. CI179통과·실패0·건너뛰기1(원본 메타데이터를 이용한 뇌 GLB 독립 판독)은 로컬180/180과 구분합니다. [공개 HTTPS 검사](pages-female-finger-verification.json)는 양쪽 약지·새끼손가락 끝4개의 검색/확대 타깃 오차0m와 브라우저/HTTP 오류0을 확인했습니다. [공개 데스크톱](pages-female-finger-selected.png)·[모바일](pages-female-finger-selected-mobile.png)도 직접 확인했습니다. 공개 모든 정점의 해시 검사나 임상 정합 승인으로 일반화하지 않습니다.
