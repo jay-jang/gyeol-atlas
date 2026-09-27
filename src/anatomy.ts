@@ -1,5 +1,5 @@
 import labels from "../data/structure-labels.json";
-import { limbSkeletonRegion } from "./anatomy-region";
+import { limbSkeletonRegion, sourceOrganRegion } from "./anatomy-region";
 import inputs from "../scripts/model-inputs.json";
 import fullSystemStructures from "../data/full-system-structures.json";
 import sexLymphStructures from "../data/sex-lymph-structures.json";
@@ -39,7 +39,7 @@ const baseStructures = inputs.assets.map((s) => ({
   label: (labels as Record<string, string>)[s.id] || s.name,
 }));
 export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures.filter(s => s.sex === "male"), ...femaleAtlasStructures, ...maleDetailStructures, ...femaleDetailStructures].map(s => {
-  const region = limbSkeletonRegion(s);
+  const region = limbSkeletonRegion(s) || sourceOrganRegion(s);
   return region ? { ...s, bodyRegion: region } : s;
 }) as {
   id: string;

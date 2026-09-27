@@ -11,12 +11,28 @@ export function limbSkeletonRegion(structure: { layer: string; name: string }) {
 export type AnatomyRegion = "whole" | "head" | "upper-body" | "lower-body" | "upper-limb" | "lower-limb" | "chest" | "abdomen" | "pelvis";
 export type RegionBounds = [ArrayLike<number>, ArrayLike<number>];
 
-export function anatomyRegionMatches(bounds: RegionBounds, region: AnatomyRegion, structure?: { layer: string; name: string }) {
+// UI organ scopes, keyed by audited source membership (not name substrings).
+// An organ can project beneath the ribs without belonging to the chest scope.
+// Transregional groups (intestine, spinal cord, CT collections) are not mapped.
+// Sources and limitations: docs/anatomy-alignment/ORGAN_REGIONS.md.
+export const sourceOrganRegions = {
+  brain: "head", heart: "chest", lung: "chest", breast: "chest",
+  liver: "abdomen", kidney: "abdomen", stomach: "abdomen", pancreas: "abdomen", spleen: "abdomen",
+  uterus: "pelvis", ovary: "pelvis", bladder: "pelvis",
+} as const satisfies Record<string, AnatomyRegion>;
+export function sourceOrganRegion(structure: { layer: string; group?: string }) {
+  return structure.group && Object.hasOwn(sourceOrganRegions, structure.group)
+    ? sourceOrganRegions[structure.group as keyof typeof sourceOrganRegions] : undefined;
+}
+
+export function anatomyRegionMatches(bounds: RegionBounds, region: AnatomyRegion, structure?: { layer: string; name: string; group?: string }) {
   if (region === "whole") return true;
   const limb = structure && limbSkeletonRegion(structure);
   // Hanging hands are still upper limbs, regardless of their height or pose.
   // Shoulder girdles belong to this UI's arm/hand scope too.
   if (limb) return region === limb || region === (limb === "upper-limb" ? "upper-body" : "lower-body");
+  const organ = structure && sourceOrganRegion(structure);
+  if (organ) return region === organ || region === (organ === "pelvis" ? "lower-body" : "upper-body");
   // Unreviewed structures retain the existing geometric overlap heuristic.
   // In particular this is not a clinically validated organ/nerve region map.
   const [min, max] = bounds;

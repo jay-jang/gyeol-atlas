@@ -2,6 +2,7 @@ import type { Layer } from "./anatomy";
 import type { Layers } from "./types";
 import { dissectionLayers, quantizeDepth, stageDepth } from "./dissection.ts";
 import { hasMixedReferenceFrames } from "./reference-source.ts";
+import { sourceOrganRegion } from "./anatomy-region.ts";
 import femaleBrainBindings from "../data/catalog/female-brain-bindings.json" with {type:"json"};
 export type CameraPose = {
   position: [number, number, number];
@@ -275,7 +276,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
 export function restoreView(
   raw: string | null,
   pointIds: string[],
-  assets: { id: string; layer: string; sex?: string }[],
+  assets: { id: string; layer: string; sex?: string; group?: string }[],
 ): ViewState {
   const base = initialView();
   try {
@@ -403,6 +404,14 @@ export function restoreView(
       if(femaleBrainBindings.records.some(r=>selected.has(r.id)!==selected.has(r.partnerId)))s.camera=null;
     }
     s.brainBindingVersion=femaleBrainBindings.version;
+    // Repair an obsolete height-based scope only when it would hide one selected
+    // source organ. Keep valid whole/parent views, detail frames and comparisons.
+    if (!s.detail && !s.comparison && s.selection?.kind === "structure" && s.selection.ids.length === 1) {
+      const asset = assets.find(a => a.id === s.selection!.ids[0]);
+      const region = asset && sourceOrganRegion(asset);
+      if (region && !["whole", region, region === "pelvis" ? "lower-body" : "upper-body"].includes(s.anatomyRegion))
+        s.anatomyRegion = region;
+    }
     return { ...s, filters: { ...base.filters, ...s.filters } };
   } catch {
     return base;
