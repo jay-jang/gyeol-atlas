@@ -49,6 +49,18 @@ def main():
         # Each triangle is exactly half a unit-grid square, with one axis normal.
         assert (np.count_nonzero(normal, axis=1) == 1).all()
         assert (np.abs(normal).sum(axis=1) == 1).all()
+        extent = np.ptp(tri, axis=1)
+        assert ((extent == 0) | (extent == 1)).all()
+        assert (extent.sum(axis=1) == 2).all()
+        # Every triangle must be one of the two canonical halves of that face,
+        # not an arbitrary unit-area triangle or an overlapping half-square.
+        axes = np.argmax(np.abs(normal), axis=1)
+        local = tri - tri.min(axis=1)[:, None, :]
+        row = np.arange(len(tri))[:, None]
+        corner = np.arange(3)[None, :]
+        bits = local[row, corner, ((axes + 1) % 3)[:, None]] + 2 * local[row, corner, ((axes + 2) % 3)[:, None]]
+        bits.sort(axis=1)
+        assert ((bits[:, 0] == 0) & (bits[:, 2] == 3) & np.isin(bits[:, 1], [1, 2])).all()
         center = tri.mean(axis=1)
         inside, outside = at(center - normal * .25), at(center + normal * .25)
         assert np.isin(inside, part['sourceLabels']).all()
@@ -61,11 +73,17 @@ def main():
         triples = np.sort(ids[faces], axis=1)
         unique = np.unique(triples, axis=0)
         assert len(unique) == len(faces), 'Duplicate triangle within a material'
+        # Membership + uniqueness + equality to the entire source boundary's
+        # cardinality also rules out missing faces with canceling volume errors.
+        mask = np.pad(np.isin(labels, part['sourceLabels']), 1)
+        expected_faces = sum(int(np.count_nonzero(np.diff(mask, axis=a))) for a in range(3))
+        assert len(faces) == 2 * expected_faces
         if part['id'] != 'non-background-envelope':
             canonical.append(triples)
             signs.append(normal.sum(axis=1).astype(np.int8))
         rows.append(dict(id=part['id'], vertices=len(points), triangles=len(faces),
                          maximumGridRoundtripMm=error, exactGridVolumeMm3=volume, sourceVoxels=voxel_count,
+                         expectedSourceBoundaryTriangles=2 * expected_faces,
                          trianglesWithBackgroundNeighbor=int((outside == 8).sum())))
         print(json.dumps(rows[-1]), flush=True)
     all_triangles, all_signs = np.concatenate(canonical), np.concatenate(signs)

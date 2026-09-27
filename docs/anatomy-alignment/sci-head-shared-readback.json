@@ -8,6 +8,7 @@
       "maximumGridRoundtripMm": 1.8477439880371094e-06,
       "exactGridVolumeMm3": 12009.0,
       "sourceVoxels": 12009,
+      "expectedSourceBoundaryTriangles": 9740,
       "trianglesWithBackgroundNeighbor": 254
     },
     {
@@ -17,6 +18,7 @@
       "maximumGridRoundtripMm": 3.6954879760742188e-06,
       "exactGridVolumeMm3": 738976.0,
       "sourceVoxels": 738976,
+      "expectedSourceBoundaryTriangles": 1029072,
       "trianglesWithBackgroundNeighbor": 0
     },
     {
@@ -26,6 +28,7 @@
       "maximumGridRoundtripMm": 3.6954879760742188e-06,
       "exactGridVolumeMm3": 674779.0,
       "sourceVoxels": 674779,
+      "expectedSourceBoundaryTriangles": 663948,
       "trianglesWithBackgroundNeighbor": 0
     },
     {
@@ -35,6 +38,7 @@
       "maximumGridRoundtripMm": 3.6954879760742188e-06,
       "exactGridVolumeMm3": 259870.0,
       "sourceVoxels": 259870,
+      "expectedSourceBoundaryTriangles": 612252,
       "trianglesWithBackgroundNeighbor": 0
     },
     {
@@ -44,6 +48,7 @@
       "maximumGridRoundtripMm": 7.3909759521484375e-06,
       "exactGridVolumeMm3": 101364.0,
       "sourceVoxels": 101364,
+      "expectedSourceBoundaryTriangles": 98468,
       "trianglesWithBackgroundNeighbor": 1404
     },
     {
@@ -53,6 +58,7 @@
       "maximumGridRoundtripMm": 7.3909759521484375e-06,
       "exactGridVolumeMm3": 797620.0,
       "sourceVoxels": 797620,
+      "expectedSourceBoundaryTriangles": 730844,
       "trianglesWithBackgroundNeighbor": 2358
     },
     {
@@ -62,6 +68,7 @@
       "maximumGridRoundtripMm": 7.3909759521484375e-06,
       "exactGridVolumeMm3": 1691700.0,
       "sourceVoxels": 1691700,
+      "expectedSourceBoundaryTriangles": 946140,
       "trianglesWithBackgroundNeighbor": 437440
     },
     {
@@ -71,6 +78,7 @@
       "maximumGridRoundtripMm": 7.3909759521484375e-06,
       "exactGridVolumeMm3": 4276318.0,
       "sourceVoxels": 4276318,
+      "expectedSourceBoundaryTriangles": 441456,
       "trianglesWithBackgroundNeighbor": 441456
     }
   ],
@@ -83,5 +91,5 @@
     "Volumes include artificial scan closures. Exact grid volume is not a patient organ-volume measurement.",
     "No manifold-junction, HRA alignment, clinical tissue-name or complete neural-pathway approval."
   ],
-  "codeSha256": "b4ca77988cb2c16b71e05d0291982cdf8f144780769f4a54722beca9ce7588e2"
+  "codeSha256": "739949225afde4102b5503c525b008f56a4f1a14256db071654a6f7fdc3f200c"
 }
