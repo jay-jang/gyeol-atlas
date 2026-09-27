@@ -35,9 +35,10 @@ test('female CT details preserve source isolation, search, nearby organs, reload
   await openTool(page,'구조 찾기'); await page.getByLabel('해부 구조 검색').fill('CTF_stomach');
   await page.locator('.structure-item').click(); await ready(page); await closeTool(page);
   await expect.poll(visible).toEqual(['CTF_stomach']);
-  expect((await snapshot(page)).detail.id).toBe('stomach-ct');
+  // Selecting one part inside the CT abdomen keeps the source bundle in scope.
+  expect((await snapshot(page)).detail.id).toBe('abdomen-ct');
   await page.reload(); await ready(page); await expect.poll(visible).toEqual(['CTF_stomach']);
-  await page.getByRole('button',{name:'같은 여성 CT의 주변 기관 보기',exact:true}).click(); await ready(page);
+  await page.getByRole('button',{name:'전체 구조 보기',exact:true}).click(); await ready(page);
   await expect.poll(visible).toEqual([...groups.at(-1)!.ids].sort());
   await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click(); await ready(page);
   await expect(canvas).toHaveAttribute('data-female-atlas-parts','1220');

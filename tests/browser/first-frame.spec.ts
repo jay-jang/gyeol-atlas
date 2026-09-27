@@ -74,7 +74,9 @@ test('female and independent CT source mounts never draw the default all-visible
     else if(step==='ct')await page.locator('.featured-anatomy > button').filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
     else await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();
     await ready(page);
-    const expected=step==='ct'?['CTF_stomach']:catalog.filter(s=>s.sex==='female'&&s.model==='HRA female whole-body atlas'&&s.layer===(step==='female'?'skin':'organ')&&!s.hierarchy.includes('pregnancy')).map(s=>s.id).sort();
+    // Returning from detail restores the pre-detail skin view, including its
+    // very first rendered frame; it no longer opens the organ overview.
+    const expected=step==='ct'?['CTF_stomach']:catalog.filter(s=>s.sex==='female'&&s.model==='HRA female whole-body atlas'&&s.layer==='skin'&&!s.hierarchy.includes('pregnancy')).map(s=>s.id).sort();
     const isTarget=(id:string)=>step==='ct'?id.startsWith('CTF_'):/^(HRAF|BM|VHF)/.test(id);
     // Transfer one boolean while waiting, not every frame/material snapshot.
     // The complete samples are still checked below once the target appears.

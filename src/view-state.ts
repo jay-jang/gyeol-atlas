@@ -14,6 +14,7 @@ export type Selection = {
   ids: string[];
   name: string;
 };
+type DetailReturn = Pick<ViewState, "anatomyRegion" | "stage" | "dissection" | "displayMode" | "layers" | "cutaway" | "selectionTarget">;
 export type ViewState = {
   version: 4;
   brainBindingVersion?: string;
@@ -29,6 +30,7 @@ export type ViewState = {
   labels: boolean;
   selection: Selection | null;
   detail: { id: string; name: string; ids: string[]; layers: Layers } | null;
+  detailReturn: DetailReturn | null;
   comparison: ({ pointId: string } & Selection) | null;
   isolated: boolean;
   cutaway: number;
@@ -72,6 +74,7 @@ export function initialView(pointId = ""): ViewState {
     labels: false,
     selection: null,
     detail: null,
+    detailReturn: null,
     comparison: null,
     isolated: false,
     cutaway: 0,
@@ -115,20 +118,35 @@ export type ViewAction =
   | { type: "region-filter"; value: string }
   | { type: "show-filtered" }
   | { type: "reset" };
+const detailReturnView = (s: ViewState): DetailReturn => ({
+  anatomyRegion: s.anatomyRegion, stage: s.stage, dissection: s.dissection,
+  displayMode: s.displayMode, layers: { ...s.layers }, cutaway: s.cutaway,
+  selectionTarget: s.selectionTarget,
+});
+const detailOrigin = (s: ViewState) => s.detailReturn
+  ?? detailReturnView(s.detail ? initialView(s.pointId) : s);
+function closeDetail(s: ViewState): ViewState {
+  const previous = detailOrigin(s);
+  return { ...s, ...previous, detail: null, detailReturn: null, selection: null,
+    comparison: null, isolated: false };
+}
 export function viewReducer(s: ViewState, a: ViewAction): ViewState {
   switch (a.type) {
     case "sex":
-      return a.value === s.sex ? s : { ...s, sex: a.value, stage: 0, dissection: 0, displayMode: "dissection", anatomyRegion: "whole", layers: singleLayer(0), alpha: initialView().alpha, selection: null, detail: null, comparison: null, isolated: false, cutaway: 0 };
+      return a.value === s.sex ? s : { ...s, sex: a.value, stage: 0, dissection: 0, displayMode: "dissection", anatomyRegion: "whole", layers: singleLayer(0), alpha: initialView().alpha, selection: null, detail: null, detailReturn: null, comparison: null, isolated: false, cutaway: 0 };
     case "anatomy-region":
-      return a.value === s.anatomyRegion ? s : { ...s, anatomyRegion: a.value, selection: null, detail: null, comparison: null, isolated: false };
+      return a.value === s.anatomyRegion && !s.detail ? s
+        : { ...(s.detail ? closeDetail(s) : s), anatomyRegion: a.value, selection: null,
+            detail: null, detailReturn: null, comparison: null, isolated: false };
     case "point":
-      return a.id === s.pointId
+      return a.id === s.pointId && !s.detail
         ? s
         : {
-            ...s,
+            ...(s.detail ? closeDetail(s) : s),
             pointId: a.id,
             selection: null,
             detail: null,
+            detailReturn: null,
             comparison: null,
             isolated: false,
           };
@@ -136,6 +154,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return {
         ...s,
         detail: null,
+        detailReturn: null,
         stage: a.index,
         dissection: stageDepth[a.index],
         displayMode: "layers",
@@ -162,6 +181,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         dissection: depth,
         displayMode: "dissection",
         detail: null,
+        detailReturn: null,
         stage,
         layers,
         selection: null,
@@ -175,6 +195,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return {
         ...s,
         detail: null,
+        detailReturn: null,
         layers: a.layers,
         displayMode: "layers",
         selection: null,
@@ -199,7 +220,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         selectionTarget: a.value,
         ...(a.value === "skin" ? {
           stage: 0, dissection: 0, displayMode: "layers" as const,
-          detail: null, selection: null, comparison: null, isolated: false,
+          detail: null, detailReturn: null, selection: null, comparison: null, isolated: false,
         } : {}),
         layers: a.value === "skin" ? { ...s.layers, skin: true } : s.layers,
       };
@@ -225,19 +246,21 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
           : {}),
         selection: a.selection,
         detail,
+        detailReturn: detail ? detailOrigin(s) : null,
         isolated: Boolean(detail),
       };
     }
     case "detail": {
       const stage = a.detail.layers.organ ? 3 : Math.max(0, keys.findIndex(layer => a.detail.layers[layer]));
-      return { ...s, detail: a.detail, selection: { kind: "bundle", ids: a.detail.ids, name: a.detail.name }, layers: a.detail.layers, stage, dissection: stageDepth[stage], displayMode: "layers", anatomyRegion: "whole", isolated: false, cutaway: 0, comparison: null, selectionTarget: "visible" };
+      return { ...s, detail: a.detail, detailReturn: detailOrigin(s), selection: { kind: "bundle", ids: a.detail.ids, name: a.detail.name }, layers: a.detail.layers, stage, dissection: stageDepth[stage], displayMode: "layers", anatomyRegion: "whole", isolated: false, cutaway: 0, comparison: null, selectionTarget: "visible" };
     }
     case "detail-close":
-      return { ...s, detail: null, selection: null, isolated: false, cutaway: 0, layers: s.detail?.layers || s.layers };
+      return s.detail ? closeDetail(s) : s;
     case "compare":
       return {
         ...s,
         detail: null,
+        detailReturn: null,
         stage: 0,
         dissection: 0,
         displayMode: "layers",
@@ -270,7 +293,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         ...(s.isolated && s.detail ? { layers: s.detail.layers, anatomyRegion: "whole" as const } : {}),
       } : s;
     case "clear-selection":
-      return { ...s, selection: null, detail: null, comparison: null, isolated: false };
+      return s.detail ? closeDetail(s) : { ...s, selection: null, detail: null, detailReturn: null, comparison: null, isolated: false };
     case "cutaway":
       return { ...s, cutaway: Math.max(0, Math.min(1, a.value)) };
     case "camera":
@@ -278,9 +301,9 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
     case "filters":
       return { ...s, filters: { ...s.filters, ...a.value } };
     case "region-filter":
-      return { ...s, filters: { ...s.filters, bodyRegion: a.value, region: "전체" }, markers: "filtered", selection: null, comparison: null, isolated: false };
+      return { ...(s.detail ? closeDetail(s) : s), filters: { ...s.filters, bodyRegion: a.value, region: "전체" }, markers: "filtered", selection: null, comparison: null, isolated: false };
     case "show-filtered":
-      return { ...s, markers: "filtered", selection: null, comparison: null, isolated: false };
+      return { ...(s.detail ? closeDetail(s) : s), markers: "filtered", selection: null, comparison: null, isolated: false };
     case "reset-filters":
       return { ...s, filters: initialView().filters };
     case "reset":
@@ -318,6 +341,19 @@ export function restoreView(
       return base;
     s.displayMode ??= "layers";
     s.detail ??= null;
+    s.detailReturn ??= null;
+    if (!s.detail) s.detailReturn = null;
+    if (s.detailReturn) {
+      const r = s.detailReturn;
+      if (!Number.isInteger(r.stage) || r.stage < 0 || r.stage > 6
+        || !Number.isFinite(r.dissection) || r.dissection < 0 || r.dissection > 100
+        || !["dissection", "layers"].includes(r.displayMode)
+        || !["whole", "head", "upper-body", "lower-body", "upper-limb", "lower-limb", "chest", "abdomen", "pelvis"].includes(r.anatomyRegion)
+        || !keys.every(key => typeof r.layers?.[key] === "boolean")
+        || !Number.isFinite(r.cutaway) || r.cutaway < 0 || r.cutaway > 1
+        || !["visible", "internal", "skin"].includes(r.selectionTarget)) return base;
+      r.dissection = quantizeDepth(r.dissection);
+    }
     if (s.fadeContext === undefined) s.fadeContext = base.fadeContext;
     if (typeof s.fadeContext !== "boolean") return base;
     if (!["dissection", "layers"].includes(s.displayMode)) return base;

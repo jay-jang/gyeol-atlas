@@ -6,14 +6,18 @@ test('leaving a detailed reference does not mark unloaded overview layers ready'
   let release: () => void = () => {};
   const gate = new Promise<void>(resolve => { release = resolve; });
   let requested = false;
-  await page.route('**/models/organ.glb', async route => {
-    requested = true;
-    await gate;
-    await route.continue();
-  });
   try {
     await page.goto('/'); await ready(page);
+    // Save an actual organ-layer overview as the view to restore. Reloading
+    // detail drops that layer's loaded geometry before the return transition.
+    await page.getByRole('button',{name:'장기 빠른 보기',exact:true}).click(); await ready(page);
     await page.locator('.featured-anatomy > button').filter({has:page.getByText('심장',{exact:true})}).click(); await ready(page);
+    await page.reload(); await ready(page);
+    await page.route('**/models/organ.glb', async route => {
+      requested = true;
+      await gate;
+      await route.continue();
+    });
     await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();
     await expect.poll(()=>requested).toBe(true);
     await expect(page.getByText('해부 모델 로드 완료')).not.toBeVisible({timeout:1500});

@@ -510,9 +510,11 @@ function AtlasPage({
     return () => removeEventListener("keydown", key);
   }, []);
   const select = (p: Point) => {
+    const leavingDetail = Boolean(state.detail);
     dispatch({ type: "point", id: p.id });
     navigate(`atlas/${p.id}`);
     setPanel(null);
+    if (leavingDetail) requestAnimationFrame(() => camera("fit"));
   };
   const compare = () => {
     const c = pointConcepts[selected.id];

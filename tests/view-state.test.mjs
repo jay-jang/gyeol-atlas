@@ -54,6 +54,65 @@ test("organ detail scopes selection, restores safely and resets on sex/layer/pee
   assert.equal(surface.selectionTarget, "skin"); assert.equal(surface.layers.skin, true); assert.equal(surface.displayMode, "layers");
   assert.equal(surface.detail, null); assert.equal(surface.selection, null); assert.equal(surface.isolated, false);
 });
+test("leaving an organ detail restores the prior half-percent peel, region and preferences", () => {
+  for (const sex of ["male", "female"]) {
+    let s = viewReducer(initialView("KI3"), { type: "sex", value: sex });
+    s = viewReducer(s, { type: "anatomy-region", value: "lower-body" });
+    s = viewReducer(s, { type: "dissection", value: 50.5 });
+    s = viewReducer(s, { type: "markers", value: "hidden" });
+    s = viewReducer(s, { type: "camera", value: { position: [0, 1, 2], target: [0, 1, 0] } });
+    const before = s;
+    const id = sex === "female" ? "CTF_stomach" : "BP4_FJ2631";
+    const detail = { id: "stomach", name: "위", ids: [id], layers: { ...s.layers, skin: false, muscle: false, bone: false, organ: true } };
+    s = viewReducer(s, { type: "detail", detail });
+    assert.equal(s.dissection, 66); assert.equal(s.displayMode, "layers");
+    assert.equal(s.detailReturn.dissection, 50.5);
+    s = viewReducer(s, { type: "select", layer: "organ", selection: { kind: "structure", ids: [id], name: "위" } });
+    assert.equal(s.detailReturn.dissection, 50.5);
+    s = viewReducer(s, { type: "detail", detail: { ...detail, id: "abdomen", name: "복부" } });
+    assert.equal(s.detailReturn.dissection, 50.5);
+    const restored = viewReducer(s, { type: "detail-close" });
+    for (const key of ["anatomyRegion", "stage", "dissection", "displayMode", "layers", "cutaway", "selectionTarget", "camera", "markers", "alpha", "pointId", "sex"])
+      assert.deepEqual(restored[key], before[key], `${sex}/${key}`);
+    assert.equal(restored.detail, null); assert.equal(restored.detailReturn, null); assert.equal(restored.selection, null);
+    assert.deepEqual(viewReducer(s, { type: "clear-selection" }), restored);
+    for (const action of [{ type: "stage", index: 1 }, { type: "dissection", value: 35.5 }, { type: "layers", layers: before.layers }, { type: "sex", value: sex === "male" ? "female" : "male" }]) {
+      const next = viewReducer(s, action);
+      assert.equal(next.detail, null); assert.equal(next.detailReturn, null);
+    }
+    const filter = viewReducer(s, { type: "region-filter", value: "다리·발" });
+    assert.equal(filter.detail, null); assert.equal(filter.detailReturn, null);
+    assert.equal(filter.dissection, 50.5); assert.deepEqual(filter.layers, before.layers);
+    const filtered = viewReducer(s, { type: "show-filtered" });
+    assert.equal(filtered.detail, null); assert.equal(filtered.dissection, 50.5);
+    for (const pointId of ["KI3", "ST36"]) {
+      const point = viewReducer(s, { type: "point", id: pointId });
+      assert.equal(point.detail, null); assert.equal(point.detailReturn, null);
+      assert.equal(point.pointId, pointId); assert.equal(point.dissection, 50.5);
+      assert.deepEqual(point.layers, before.layers);
+    }
+    for (const region of ["whole", "head"]) {
+      const next = viewReducer(s, { type: "anatomy-region", value: region });
+      assert.equal(next.detail, null); assert.equal(next.detailReturn, null);
+      assert.equal(next.anatomyRegion, region); assert.equal(next.dissection, 50.5);
+      assert.deepEqual(next.layers, before.layers);
+    }
+  }
+});
+test("old detail sessions without a return snapshot exit to a safe whole-body view", () => {
+  const detail = { id: "heart", name: "심장", ids: ["BP4_FJ2631"], layers: { ...initialView().layers, skin: false, organ: true } };
+  let s = viewReducer(initialView(), { type: "detail", detail });
+  const catalog = [{ id: "BP4_FJ2631", layer: "organ", sex: "male" }];
+  assert.equal(restoreView(JSON.stringify(s), [], catalog).detailReturn.dissection, 0);
+  const bad = { ...s, detailReturn: { ...s.detailReturn, layers: { ...s.detailReturn.layers, skin: "yes" } } };
+  assert.deepEqual(restoreView(JSON.stringify(bad), [], catalog), initialView());
+  const legacy = { ...s }; delete legacy.detailReturn;
+  s = restoreView(JSON.stringify(legacy), [], catalog);
+  assert.equal(s.detailReturn, null);
+  const closed = viewReducer(s, { type: "detail-close" });
+  assert.equal(closed.detail, null); assert.equal(closed.displayMode, "dissection");
+  assert.equal(closed.layers.skin, true); assert.equal(closed.dissection, 0);
+});
 test("layer changes and presets leave no dangling isolated selection and preserve camera/markers", () => {
   let s = initialView("CV12");
   s = viewReducer(s, {
