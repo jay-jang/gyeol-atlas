@@ -1,0 +1,103 @@
+{
+  "method": "DataView raw read; scalar row-vector composition; every within-chain referenced vertex pair; not independent surface intersection validation",
+  "vertices": 2575,
+  "distancePairs": 850433,
+  "maxCompositionErrorM": 5.551115123125783e-16,
+  "maxPairDistanceErrorMm": 0.00011465411075932408,
+  "rows": [
+    {
+      "id": "BM0099",
+      "vertices": 200,
+      "positionSha256": "d364c1c15973cd9aec4af9ad1b1fb62aa37ca022a856e16147f77441da70e470",
+      "sourceIndicesSha256": "d1f93b6a6cee9c999a788e78e0868d1c1d3cd16c562fd7742ac18a5c66fbcbb4"
+    },
+    {
+      "id": "BM0088",
+      "vertices": 208,
+      "positionSha256": "fb33f11614a0579fd5897077d3cca698880db04a4221a97c2b8519dcad3bc988",
+      "sourceIndicesSha256": "18161abae2b181cb088fdd7e5ee9bfefd56c291ca4439d83c6d2892714ec8bb0"
+    },
+    {
+      "id": "BM0063",
+      "vertices": 138,
+      "positionSha256": "a35e6828ee1c512f8719e03becfe25b981279b38ce2f63f23cf1333b1e771a9a",
+      "sourceIndicesSha256": "c9718037c90fbec0b2de55d61fbd3033dc6b03735ede8cc0c2bde3a0827bc212"
+    },
+    {
+      "id": "BM0075",
+      "vertices": 265,
+      "positionSha256": "506527edbdca06610926a3fbb6fa3e31012a01fcfd85ee63589a4e0b3fbdce75",
+      "sourceIndicesSha256": "b18311d12a96be41a6ba28b0fbee9aeed52a1e8b7fc4287418e1cbefc9676a1a"
+    },
+    {
+      "id": "BM0097",
+      "vertices": 162,
+      "positionSha256": "09e62742dce249559dfde765303c369e97da85a5b8e94ca709eb506444d08d57",
+      "sourceIndicesSha256": "6caa7a9ec0b6a0ee5f3dab829379bcdec0656e78849e33652da2a81997fc4aa4"
+    },
+    {
+      "id": "BM0091",
+      "vertices": 190,
+      "positionSha256": "ecea0946ddec0f9cd183dad22ec301b6de0f1b0755d61d1a1c816f66be313765",
+      "sourceIndicesSha256": "5b9e9d3a00e7be90f5a16cfe5d7d9bf099be23c03003a86504dfe451c176d40f"
+    },
+    {
+      "id": "BM0061",
+      "vertices": 154,
+      "positionSha256": "0c0ab6d59477efef900f3f75330041f67c71c751b9520cb788be179d8f9a8561",
+      "sourceIndicesSha256": "e49a243c9deb5402375fd34d13656dccf14b0ba48adf4d8665fbf0aa5e8cdab1"
+    },
+    {
+      "id": "BM0104",
+      "vertices": 202,
+      "positionSha256": "2387413136ee168b061f3bc2a82d88a05c3923f57f9bd6f000d121498bfa6778",
+      "sourceIndicesSha256": "63ef926eb30c865e0c3fa27b9bdf2132cc00e27345570f024effd720f78a6192"
+    },
+    {
+      "id": "BM0089",
+      "vertices": 214,
+      "positionSha256": "07788e8f472f2d64ca9c93f349cb03509b0235e2aa2f0a25cbb3a682f0dcf8dd",
+      "sourceIndicesSha256": "cd62379d4fd0b825614b9ff109636691e90310e724acb990c99e6c3878b0c3d5"
+    },
+    {
+      "id": "BM0068",
+      "vertices": 114,
+      "positionSha256": "65e63e47b4329e1663add39f4c0cb4d0c95943c6a4e64ad55da19e9f13baafd5",
+      "sourceIndicesSha256": "d147b2cb27caa34863be135df3cbf9b12417db66bd8d7219bf7c18fcc2bd317c"
+    },
+    {
+      "id": "BM0111",
+      "vertices": 236,
+      "positionSha256": "41c3d98cfdc564c4e1693f156cfdce1e00a1a266fad45003fb4017e4e647c739",
+      "sourceIndicesSha256": "788c6a7846ad862805c64604043a9e42ddc126f44a84d72de84b5f1318c23237"
+    },
+    {
+      "id": "BM0102",
+      "vertices": 186,
+      "positionSha256": "1601679a7981bfcf3bb52722931eb44ead444e120baa88ce161e66e0a22aeb01",
+      "sourceIndicesSha256": "310a437b456482899077f6a4b8657f36bad6519848941c9fcde957cee8e66db3"
+    },
+    {
+      "id": "BM0094",
+      "vertices": 168,
+      "positionSha256": "3e948911125198ee218ff3dd079bba4f96004b69d5432b37bdcfdbe4c6fe3b11",
+      "sourceIndicesSha256": "ecaddd5be6a59cd08f98e06fb13bd457d7c5a347cbe8087508320442fac99db3"
+    },
+    {
+      "id": "BM0066",
+      "vertices": 138,
+      "positionSha256": "7e132e8bafc291fbe5902db45b4c64e6de1e0011232cfa85a9a22320f90c627e",
+      "sourceIndicesSha256": "37293397785c47d1a7c31da7056996b2349fa888f51ac7f8d8d6d4451ddb8b66"
+    }
+  ],
+  "files": [
+    {
+      "path": ".cache/finger-chains/candidate.json",
+      "sha256": "6a383d0130bd9c2c7b51c27a7fdad62862abc6cc5f49c7c1ac585c1b15be0e79"
+    },
+    {
+      "path": "scripts/build-finger-refinement.mjs",
+      "sha256": "ae2db3095e05bf15dfb5a5d8c89b74a384f14e14f342ca7e165d959c434305b6"
+    }
+  ]
+}

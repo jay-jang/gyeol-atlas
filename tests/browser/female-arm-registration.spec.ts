@@ -50,7 +50,7 @@ test('female arm and toe rest poses match calibrated geometry through peeling, s
     await page.getByLabel('연속 해부 박리 깊이').fill(depth);await ready(page);
     expect(await geometryHashes()).toEqual({hashes:expected,calibrated:60});
   }
-  for(const id of ['BM0078','BM0064','BM0069','BM0126','BM0154']){
+  for(const id of ['BM0078','BM0064','BM0069','BM0126','BM0154','BM0063','BM0066']){
     await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);
     await page.locator('.structure-item').filter({hasText:id}).click();await ready(page);
     expect((await snapshot(page)).layers.bone).toBe(true);
@@ -61,10 +61,10 @@ test('female arm and toe rest poses match calibrated geometry through peeling, s
       const centre=mesh.geometry.boundingBox.getCenter(s.controls.target.clone());
       return centre.distanceTo(s.controls.target);
     },{url:fiberUrl,id})).toBeLessThan(.001);
-    await page.screenshot({path:id==='BM0078'?'docs/anatomy-alignment/female-arm-selected.png':`docs/anatomy-alignment/female-${['BM0126','BM0154'].includes(id)?'toe':'thumb'}-${id}.png`});
-    if(id==='BM0154'){
+    await page.screenshot({path:id==='BM0078'?'docs/anatomy-alignment/female-arm-selected.png':`docs/anatomy-alignment/female-${['BM0126','BM0154'].includes(id)?'toe':['BM0063','BM0066'].includes(id)?'finger':'thumb'}-${id}.png`});
+    if(id==='BM0154'||id==='BM0066'){
       await page.setViewportSize({width:390,height:844});
-      await page.screenshot({path:'docs/anatomy-alignment/female-toe-selected-mobile.png'});
+      await page.screenshot({path:`docs/anatomy-alignment/female-${id==='BM0154'?'toe':'finger'}-selected-mobile.png`});
       expect(await geometryHashes()).toEqual({hashes:expected,calibrated:60});
       await page.setViewportSize({width:1440,height:1100});
     }

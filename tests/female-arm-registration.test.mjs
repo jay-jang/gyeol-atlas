@@ -60,6 +60,8 @@ test('registration excludes other source frames and rejects mismatched metadata'
 });
 
 test('thumb refinement changes exactly six v1 records by two rigid group transforms',()=>{
+  // The thumb stage is historical; later finger refinement must not rewrite it.
+  const registration=read('docs/anatomy-alignment/female-arm-registration-v2.json');
   const baseline=read('docs/anatomy-alignment/female-arm-registration-v1.json');
   assert.equal(registration.version,'female-arm-partial-2');
   assert.equal(registration.refinement.movedParts,6);

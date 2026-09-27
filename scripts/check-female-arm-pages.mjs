@@ -8,27 +8,33 @@ import {chromium} from '@playwright/test';
 
 const origin=process.env.PAGES_ORIGIN||'http://127.0.0.1:5174/';
 const feet=process.argv.includes('--feet');
+const fingers=process.argv.includes('--fingers');
+assert.ok(!(feet&&fingers));
 const registrationPath=`data/catalog/female-${feet?'foot':'arm'}-registration.json`;
 const registration=JSON.parse(fs.readFileSync(registrationPath));
 const atlas=JSON.parse(fs.readFileSync('public/models/female/atlas-female.json'));
-const records=registration.records.filter(r=>feet?/^Distal phalanx of (left|right) (third|fourth) toe$/.test(r.name):/^(Left|Right) (humerus|third metacarpal bone)$/.test(r.name)||/^Distal phalanx of (left|right) thumb$/.test(r.name));
-assert.equal(records.length,feet?4:6);
+const records=registration.records.filter(r=>feet?/^Distal phalanx of (left|right) (third|fourth) toe$/.test(r.name):fingers?/^Distal phalanx of (left|right) (ring|little) finger$/.test(r.name):/^(Left|Right) (humerus|third metacarpal bone)$/.test(r.name)||/^Distal phalanx of (left|right) thumb$/.test(r.name));
+assert.equal(records.length,feet||fingers?4:6);
+const oldRegistration=fingers?JSON.parse(fs.readFileSync('docs/anatomy-alignment/female-arm-registration-v2.json')):null;
 const expected=records.map(r=>{
   const p=atlas.parts.find(p=>p.id===r.id);
   const bytes=gunzipSync(fs.readFileSync(`public/models/female/${atlas.chunks[p.chunk].gzip.split('/').pop()}`));
   const min=[Infinity,Infinity,Infinity],max=[-Infinity,-Infinity,-Infinity];
-  const rawMin=[...min],rawMax=[...max];
+  const rawMin=[...min],rawMax=[...max],oldMin=[...min],oldMax=[...max],old=oldRegistration?.records.find(old=>old.id===r.id);
   for(let i=0;i<p.vertexCount;i++){
     const q=[0,1,2].map(j=>bytes.readFloatLE(p.positions+(i*3+j)*4));
     for(let j=0;j<3;j++){
       const v=Math.fround(r.translation[j]+q.reduce((s,x,k)=>s+x*r.linear[k][j],0));
       min[j]=Math.min(min[j],v);max[j]=Math.max(max[j],v);
       rawMin[j]=Math.min(rawMin[j],q[j]);rawMax[j]=Math.max(rawMax[j],q[j]);
+      if(old){const v=Math.fround(old.translation[j]+q.reduce((s,x,k)=>s+x*old.linear[k][j],0));oldMin[j]=Math.min(oldMin[j],v);oldMax[j]=Math.max(oldMax[j],v);}
     }
   }
   const target=min.map((v,j)=>(v+max[j])/2),rawTarget=rawMin.map((v,j)=>(v+rawMax[j])/2);
   assert.ok(Math.hypot(...target.map((v,j)=>v-rawTarget[j]))>.005,'Probe must distinguish the original pose');
-  return {id:r.id,name:r.name,target,rawTarget};
+  const previousTarget=old?oldMin.map((v,j)=>(v+oldMax[j])/2):null;
+  if(previousTarget)assert.ok(Math.hypot(...target.map((v,j)=>v-previousTarget[j]))>.001,'Finger check must distinguish deployed v2');
+  return {id:r.id,name:r.name,target,rawTarget,previousTarget};
 });
 const browser=await chromium.launch({headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']});
 try {
@@ -51,15 +57,15 @@ try {
     await page.getByRole('button',{name:'선택 구조 확대',exact:true}).click();
     await page.waitForFunction(target=>{
       const s=JSON.parse(sessionStorage.getItem('gyeol-view-v2'));
-      return s?.camera&&Math.hypot(...target.map((v,j)=>v-s.camera.target[j]))<.001;
+      return s?.camera&&Math.hypot(...target.map((v,j)=>v-s.camera.target[j]))<.000001;
     },row.target);
     const actual=await view();assert.equal(actual.sex,'female');assert.equal(actual.layers.bone,true);
     checks.push({...row,actualTarget:actual.camera.target,errorMetres:Math.hypot(...row.target.map((v,j)=>v-actual.camera.target[j]))});
   }
-  if(feet){
-    await page.screenshot({path:'docs/anatomy-alignment/pages-female-toe-selected.png'});
+  if(feet||fingers){
+    await page.screenshot({path:`docs/anatomy-alignment/pages-female-${fingers?'finger':'toe'}-selected.png`});
     await page.setViewportSize({width:390,height:844});
-    await page.screenshot({path:'docs/anatomy-alignment/pages-female-toe-selected-mobile.png'});
+    await page.screenshot({path:`docs/anatomy-alignment/pages-female-${fingers?'finger':'toe'}-selected-mobile.png`});
   }else{
     await page.getByRole('button',{name:'골격 빠른 보기',exact:true}).click();await ready();
     await page.getByLabel('전신 부위 선택').selectOption({label:'전신'});await ready();
@@ -70,6 +76,6 @@ try {
   const report={origin,checkedAt:new Date().toISOString(),registrationVersion:registration.version,
     registrationSha256:createHash('sha256').update(fs.readFileSync(registrationPath)).digest('hex'),
     method:`${records.length} real search/select/frame operations; camera target versus independent transformed bounding centre. Not a complete deployed vertex audit.`,checks,errors,failures};
-  fs.writeFileSync(`docs/anatomy-alignment/pages-female-${feet?'foot':'arm'}-verification.json`,JSON.stringify(report,null,2)+'\n');
+  fs.writeFileSync(`docs/anatomy-alignment/pages-female-${feet?'foot':fingers?'finger':'arm'}-verification.json`,JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify(report));
 } finally {await browser.close();}
