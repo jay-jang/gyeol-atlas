@@ -1169,9 +1169,9 @@ function AtlasPage({
               <p className="selection-description">{selectedComposite.description}</p>
             </details>}
             {state.sex === "female" && selectedOrgan?.id === "brain" && <div data-brain-provenance>
-              <p className="selection-description">Allen 기반 참조 뇌 · 원본 좌우 표기와 전신 방향 불일치</p>
+              <p className="selection-description">뇌 묶음: Allen 참조 282개 + Visible Human 시신경교차 1개 · 위치 검증 미완료</p>
               <details className="anatomy-source-details"><summary>뇌 출처·방향 주의</summary>
-                <p className="selection-description">Allen 참조 구조를 대칭 복제하고 여성 신체에 맞춰 크기를 조정한 모델입니다. 여성 기증자 뇌 스캔이 아닙니다. 원본의 좌우 이름과 전신의 눈·뼈 방향이 일치하지 않아 좌우 위치 학습에 사용하지 마세요. 원문 이름·ID·좌표는 보존했으며 위치 교정은 아직 완료되지 않았습니다.</p>
+                <p className="selection-description">282개는 Allen 참조 구조를 대칭 복제하고 여성 신체에 맞춰 크기를 조정한 모델로, 여성 기증자 뇌 스캔이 아닙니다. 시신경교차 1개는 원본 메타데이터상 Visible Human 여성 자료입니다. Allen 구조의 좌우 이름과 전신의 눈·뼈 방향이 일치하지 않아 좌우 위치 학습에 사용하지 마세요. 원문 이름·ID·좌표는 보존했으며 위치·연결 교정은 아직 완료되지 않았습니다.</p>
                 <p className="selection-source"><a href="https://3d.nih.gov/entries/3DPX-020959" target="_blank" rel="noreferrer">HRA / NIH 3D 출처 설명</a> · CC BY 4.0 · 학습용 비진단 모델</p>
               </details>
             </div>}
