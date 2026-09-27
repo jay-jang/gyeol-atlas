@@ -1,0 +1,1131 @@
+{
+  "createdAt": "2026-09-27T18:34:59.248Z",
+  "reportSha256": "4d906f32bf5774af4a4d5d40afe8ad468a546b7d12bb63c0f2df3de5b157f611",
+  "auditSha256": "b819fc5fa900f6e5a819587b91eda4195088fad6aad3ccb998098bd151b4f436",
+  "scriptSha256": "cc4751bd600c37c21266934734cd2fd89b53dfa68240d08f008572564f83751c",
+  "errors": [],
+  "captures": [
+    {
+      "view": "spine",
+      "state": "legacy-hip-left",
+      "file": "lumbar-spine-legacy-hip-left.png",
+      "sha256": "184dd276faa1960f8d09932a34a558c55a3607cfaa492fdfcdebab5cdc41b5bd",
+      "ids": [
+        "VERTEBRA_L1",
+        "HRAF0855",
+        "VERTEBRA_L2",
+        "HRAF0854",
+        "VERTEBRA_L3",
+        "HRAF0853",
+        "VERTEBRA_L4",
+        "HRAF0852",
+        "VERTEBRA_L5",
+        "HRAF0851",
+        "VERTEBRA_L6",
+        "HRAF0850"
+      ],
+      "target": [
+        0.0021593160927295685,
+        1.0196868181228638,
+        -0.12237932905554771
+      ],
+      "cameraPosition": [
+        0.0021593160927295685,
+        1.049680819922264,
+        1.3773207609144629
+      ],
+      "extent": 0.30163964271545407
+    },
+    {
+      "view": "spine",
+      "state": "legacy-hip-right",
+      "file": "lumbar-spine-legacy-hip-right.png",
+      "sha256": "d764fd4ff1e93c83c980104e627c8150ede68cdaf4f94e00f93918930c773840",
+      "ids": [
+        "VERTEBRA_L1",
+        "HRAF0855",
+        "VERTEBRA_L2",
+        "HRAF0854",
+        "VERTEBRA_L3",
+        "HRAF0853",
+        "VERTEBRA_L4",
+        "HRAF0852",
+        "VERTEBRA_L5",
+        "HRAF0851",
+        "VERTEBRA_L6",
+        "HRAF0850"
+      ],
+      "target": [
+        0.0021593160927295685,
+        1.0196868181228638,
+        -0.12237932905554771
+      ],
+      "cameraPosition": [
+        0.0021593160927295685,
+        1.049680819922264,
+        1.3773207609144629
+      ],
+      "extent": 0.30163964271545407
+    },
+    {
+      "view": "spine",
+      "state": "lumbar-rigid",
+      "file": "lumbar-spine-lumbar-rigid.png",
+      "sha256": "c2fedfd74625e318ae8bf02485b09df0ff1cdb0d6f1f8951b1de9db4a06562e1",
+      "ids": [
+        "VERTEBRA_L1",
+        "HRAF0855",
+        "VERTEBRA_L2",
+        "HRAF0854",
+        "VERTEBRA_L3",
+        "HRAF0853",
+        "VERTEBRA_L4",
+        "HRAF0852",
+        "VERTEBRA_L5",
+        "HRAF0851",
+        "VERTEBRA_L6",
+        "HRAF0850"
+      ],
+      "target": [
+        0.0021593160927295685,
+        1.0196868181228638,
+        -0.12237932905554771
+      ],
+      "cameraPosition": [
+        0.0021593160927295685,
+        1.049680819922264,
+        1.3773207609144629
+      ],
+      "extent": 0.30163964271545407
+    },
+    {
+      "view": "spine",
+      "state": "lumbar-similarity",
+      "file": "lumbar-spine-lumbar-similarity.png",
+      "sha256": "39fa7d4c59d2a668e06bf5d74cfc2d51d59f68bb254c12f5d452293750de901a",
+      "ids": [
+        "VERTEBRA_L1",
+        "HRAF0855",
+        "VERTEBRA_L2",
+        "HRAF0854",
+        "VERTEBRA_L3",
+        "HRAF0853",
+        "VERTEBRA_L4",
+        "HRAF0852",
+        "VERTEBRA_L5",
+        "HRAF0851",
+        "VERTEBRA_L6",
+        "HRAF0850"
+      ],
+      "target": [
+        0.0021593160927295685,
+        1.0196868181228638,
+        -0.12237932905554771
+      ],
+      "cameraPosition": [
+        0.0021593160927295685,
+        1.049680819922264,
+        1.3773207609144629
+      ],
+      "extent": 0.30163964271545407
+    },
+    {
+      "view": "front",
+      "state": "legacy",
+      "file": "lumbar-front-legacy.png",
+      "sha256": "10ea858b10e9846ded6c7db3ea0daae2636c9952ff8554ebf8c118cebf1d67db",
+      "ids": [
+        "HRAF0423",
+        "HRAF0512",
+        "HRAF0513",
+        "HRAF0523",
+        "HRAF0528",
+        "HRAF0529",
+        "HRAF0541",
+        "HRAF0547",
+        "HRAF0550",
+        "HRAF0552",
+        "HRAF0553",
+        "HRAF0554",
+        "HRAF0555",
+        "HRAF0556",
+        "HRAF0557",
+        "HRAF0568",
+        "HRAF0569",
+        "HRAF0591",
+        "HRAF0592",
+        "HRAF0653",
+        "HRAF0661",
+        "HRAF0827",
+        "HRAF0828",
+        "HRAF0829",
+        "HRAF0830",
+        "HRAF0850",
+        "HRAF0851",
+        "HRAF0852",
+        "HRAF0853",
+        "HRAF0854",
+        "HRAF0855",
+        "HRAF0900",
+        "HRAF0901",
+        "HRAF0911",
+        "HRAF0912",
+        "HRAF0913",
+        "HRAF0914",
+        "HRAF0915",
+        "HRAF0916",
+        "HRAF0917",
+        "HRAF0918",
+        "HRAF0919",
+        "HRAF0920",
+        "HRAF0921",
+        "HRAF0922",
+        "HRAF0923",
+        "HRAF0924",
+        "HRAF0925",
+        "HRAF0926",
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0939",
+        "HRAF0940",
+        "HRAF0941",
+        "HRAF0942",
+        "HRAF0943",
+        "HRAF0944",
+        "HRAF0945",
+        "HRAF0946",
+        "HRAF0947",
+        "HRAF0948",
+        "HRAF0949",
+        "HRAF0950",
+        "HRAF0951",
+        "HRAF0952",
+        "HRAF0956",
+        "HRAF0957",
+        "HRAF0958",
+        "HRAF0959",
+        "HRAF0960",
+        "HRAF0961",
+        "HRAF0962",
+        "HRAF0963",
+        "VHF0028",
+        "VHF0030",
+        "VHF0032",
+        "VHF0066",
+        "VHF0068",
+        "VHF0070",
+        "VHF0034",
+        "VHF0072"
+      ],
+      "target": [
+        -0.001283898949623108,
+        0.9528935551643372,
+        -0.10132815688848495
+      ],
+      "cameraPosition": [
+        -0.001283898949623108,
+        0.9828875569637374,
+        1.3983719330815256
+      ],
+      "extent": 0.4329511785507202
+    },
+    {
+      "view": "front",
+      "state": "rigid",
+      "file": "lumbar-front-rigid.png",
+      "sha256": "b07985e7d142ba2bd574d074c61b89fe102644baea9fdee0c29088059333f902",
+      "ids": [
+        "HRAF0423",
+        "HRAF0512",
+        "HRAF0513",
+        "HRAF0523",
+        "HRAF0528",
+        "HRAF0529",
+        "HRAF0541",
+        "HRAF0547",
+        "HRAF0550",
+        "HRAF0552",
+        "HRAF0553",
+        "HRAF0554",
+        "HRAF0555",
+        "HRAF0556",
+        "HRAF0557",
+        "HRAF0568",
+        "HRAF0569",
+        "HRAF0591",
+        "HRAF0592",
+        "HRAF0653",
+        "HRAF0661",
+        "HRAF0827",
+        "HRAF0828",
+        "HRAF0829",
+        "HRAF0830",
+        "HRAF0850",
+        "HRAF0851",
+        "HRAF0852",
+        "HRAF0853",
+        "HRAF0854",
+        "HRAF0855",
+        "HRAF0900",
+        "HRAF0901",
+        "HRAF0911",
+        "HRAF0912",
+        "HRAF0913",
+        "HRAF0914",
+        "HRAF0915",
+        "HRAF0916",
+        "HRAF0917",
+        "HRAF0918",
+        "HRAF0919",
+        "HRAF0920",
+        "HRAF0921",
+        "HRAF0922",
+        "HRAF0923",
+        "HRAF0924",
+        "HRAF0925",
+        "HRAF0926",
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0939",
+        "HRAF0940",
+        "HRAF0941",
+        "HRAF0942",
+        "HRAF0943",
+        "HRAF0944",
+        "HRAF0945",
+        "HRAF0946",
+        "HRAF0947",
+        "HRAF0948",
+        "HRAF0949",
+        "HRAF0950",
+        "HRAF0951",
+        "HRAF0952",
+        "HRAF0956",
+        "HRAF0957",
+        "HRAF0958",
+        "HRAF0959",
+        "HRAF0960",
+        "HRAF0961",
+        "HRAF0962",
+        "HRAF0963",
+        "VHF0028",
+        "VHF0030",
+        "VHF0032",
+        "VHF0066",
+        "VHF0068",
+        "VHF0070",
+        "VHF0034",
+        "VHF0072"
+      ],
+      "target": [
+        -0.001283898949623108,
+        0.9528935551643372,
+        -0.10132815688848495
+      ],
+      "cameraPosition": [
+        -0.001283898949623108,
+        0.9828875569637374,
+        1.3983719330815256
+      ],
+      "extent": 0.4329511785507202
+    },
+    {
+      "view": "front",
+      "state": "similarity",
+      "file": "lumbar-front-similarity.png",
+      "sha256": "46a2149a56185b2f604d65272aee2db26fb2f325ad2dd0ea2bd4fb4fb06ed152",
+      "ids": [
+        "HRAF0423",
+        "HRAF0512",
+        "HRAF0513",
+        "HRAF0523",
+        "HRAF0528",
+        "HRAF0529",
+        "HRAF0541",
+        "HRAF0547",
+        "HRAF0550",
+        "HRAF0552",
+        "HRAF0553",
+        "HRAF0554",
+        "HRAF0555",
+        "HRAF0556",
+        "HRAF0557",
+        "HRAF0568",
+        "HRAF0569",
+        "HRAF0591",
+        "HRAF0592",
+        "HRAF0653",
+        "HRAF0661",
+        "HRAF0827",
+        "HRAF0828",
+        "HRAF0829",
+        "HRAF0830",
+        "HRAF0850",
+        "HRAF0851",
+        "HRAF0852",
+        "HRAF0853",
+        "HRAF0854",
+        "HRAF0855",
+        "HRAF0900",
+        "HRAF0901",
+        "HRAF0911",
+        "HRAF0912",
+        "HRAF0913",
+        "HRAF0914",
+        "HRAF0915",
+        "HRAF0916",
+        "HRAF0917",
+        "HRAF0918",
+        "HRAF0919",
+        "HRAF0920",
+        "HRAF0921",
+        "HRAF0922",
+        "HRAF0923",
+        "HRAF0924",
+        "HRAF0925",
+        "HRAF0926",
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0939",
+        "HRAF0940",
+        "HRAF0941",
+        "HRAF0942",
+        "HRAF0943",
+        "HRAF0944",
+        "HRAF0945",
+        "HRAF0946",
+        "HRAF0947",
+        "HRAF0948",
+        "HRAF0949",
+        "HRAF0950",
+        "HRAF0951",
+        "HRAF0952",
+        "HRAF0956",
+        "HRAF0957",
+        "HRAF0958",
+        "HRAF0959",
+        "HRAF0960",
+        "HRAF0961",
+        "HRAF0962",
+        "HRAF0963",
+        "VHF0028",
+        "VHF0030",
+        "VHF0032",
+        "VHF0066",
+        "VHF0068",
+        "VHF0070",
+        "VHF0034",
+        "VHF0072"
+      ],
+      "target": [
+        -0.001283898949623108,
+        0.9528935551643372,
+        -0.10132815688848495
+      ],
+      "cameraPosition": [
+        -0.001283898949623108,
+        0.9828875569637374,
+        1.3983719330815256
+      ],
+      "extent": 0.4329511785507202
+    },
+    {
+      "view": "oblique",
+      "state": "legacy",
+      "file": "lumbar-oblique-legacy.png",
+      "sha256": "13c194b99f3158cbbde7b75e623325bb959a02cda993fd8805e4dee559ba1e51",
+      "ids": [
+        "HRAF0423",
+        "HRAF0512",
+        "HRAF0513",
+        "HRAF0523",
+        "HRAF0528",
+        "HRAF0529",
+        "HRAF0541",
+        "HRAF0547",
+        "HRAF0550",
+        "HRAF0552",
+        "HRAF0553",
+        "HRAF0554",
+        "HRAF0555",
+        "HRAF0556",
+        "HRAF0557",
+        "HRAF0568",
+        "HRAF0569",
+        "HRAF0591",
+        "HRAF0592",
+        "HRAF0653",
+        "HRAF0661",
+        "HRAF0827",
+        "HRAF0828",
+        "HRAF0829",
+        "HRAF0830",
+        "HRAF0850",
+        "HRAF0851",
+        "HRAF0852",
+        "HRAF0853",
+        "HRAF0854",
+        "HRAF0855",
+        "HRAF0900",
+        "HRAF0901",
+        "HRAF0911",
+        "HRAF0912",
+        "HRAF0913",
+        "HRAF0914",
+        "HRAF0915",
+        "HRAF0916",
+        "HRAF0917",
+        "HRAF0918",
+        "HRAF0919",
+        "HRAF0920",
+        "HRAF0921",
+        "HRAF0922",
+        "HRAF0923",
+        "HRAF0924",
+        "HRAF0925",
+        "HRAF0926",
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0939",
+        "HRAF0940",
+        "HRAF0941",
+        "HRAF0942",
+        "HRAF0943",
+        "HRAF0944",
+        "HRAF0945",
+        "HRAF0946",
+        "HRAF0947",
+        "HRAF0948",
+        "HRAF0949",
+        "HRAF0950",
+        "HRAF0951",
+        "HRAF0952",
+        "HRAF0956",
+        "HRAF0957",
+        "HRAF0958",
+        "HRAF0959",
+        "HRAF0960",
+        "HRAF0961",
+        "HRAF0962",
+        "HRAF0963",
+        "VHF0028",
+        "VHF0030",
+        "VHF0032",
+        "VHF0066",
+        "VHF0068",
+        "VHF0070",
+        "VHF0034",
+        "VHF0072"
+      ],
+      "target": [
+        -0.001283898949623108,
+        0.9528935551643372,
+        -0.10132815688848495
+      ],
+      "cameraPosition": [
+        0.8160837151456444,
+        0.97804332790573,
+        1.1561604801811571
+      ],
+      "extent": 0.4329511785507202
+    },
+    {
+      "view": "oblique",
+      "state": "rigid",
+      "file": "lumbar-oblique-rigid.png",
+      "sha256": "93175b155924362e6beda534913ddf47d861b5001e135a2d4f054015bee9bca1",
+      "ids": [
+        "HRAF0423",
+        "HRAF0512",
+        "HRAF0513",
+        "HRAF0523",
+        "HRAF0528",
+        "HRAF0529",
+        "HRAF0541",
+        "HRAF0547",
+        "HRAF0550",
+        "HRAF0552",
+        "HRAF0553",
+        "HRAF0554",
+        "HRAF0555",
+        "HRAF0556",
+        "HRAF0557",
+        "HRAF0568",
+        "HRAF0569",
+        "HRAF0591",
+        "HRAF0592",
+        "HRAF0653",
+        "HRAF0661",
+        "HRAF0827",
+        "HRAF0828",
+        "HRAF0829",
+        "HRAF0830",
+        "HRAF0850",
+        "HRAF0851",
+        "HRAF0852",
+        "HRAF0853",
+        "HRAF0854",
+        "HRAF0855",
+        "HRAF0900",
+        "HRAF0901",
+        "HRAF0911",
+        "HRAF0912",
+        "HRAF0913",
+        "HRAF0914",
+        "HRAF0915",
+        "HRAF0916",
+        "HRAF0917",
+        "HRAF0918",
+        "HRAF0919",
+        "HRAF0920",
+        "HRAF0921",
+        "HRAF0922",
+        "HRAF0923",
+        "HRAF0924",
+        "HRAF0925",
+        "HRAF0926",
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0939",
+        "HRAF0940",
+        "HRAF0941",
+        "HRAF0942",
+        "HRAF0943",
+        "HRAF0944",
+        "HRAF0945",
+        "HRAF0946",
+        "HRAF0947",
+        "HRAF0948",
+        "HRAF0949",
+        "HRAF0950",
+        "HRAF0951",
+        "HRAF0952",
+        "HRAF0956",
+        "HRAF0957",
+        "HRAF0958",
+        "HRAF0959",
+        "HRAF0960",
+        "HRAF0961",
+        "HRAF0962",
+        "HRAF0963",
+        "VHF0028",
+        "VHF0030",
+        "VHF0032",
+        "VHF0066",
+        "VHF0068",
+        "VHF0070",
+        "VHF0034",
+        "VHF0072"
+      ],
+      "target": [
+        -0.001283898949623108,
+        0.9528935551643372,
+        -0.10132815688848495
+      ],
+      "cameraPosition": [
+        0.8160837151456444,
+        0.97804332790573,
+        1.1561604801811571
+      ],
+      "extent": 0.4329511785507202
+    },
+    {
+      "view": "oblique",
+      "state": "similarity",
+      "file": "lumbar-oblique-similarity.png",
+      "sha256": "b973c20de56f7ff463552b256715760e3d520080e8e2ecd30c79e6dbf89c24b3",
+      "ids": [
+        "HRAF0423",
+        "HRAF0512",
+        "HRAF0513",
+        "HRAF0523",
+        "HRAF0528",
+        "HRAF0529",
+        "HRAF0541",
+        "HRAF0547",
+        "HRAF0550",
+        "HRAF0552",
+        "HRAF0553",
+        "HRAF0554",
+        "HRAF0555",
+        "HRAF0556",
+        "HRAF0557",
+        "HRAF0568",
+        "HRAF0569",
+        "HRAF0591",
+        "HRAF0592",
+        "HRAF0653",
+        "HRAF0661",
+        "HRAF0827",
+        "HRAF0828",
+        "HRAF0829",
+        "HRAF0830",
+        "HRAF0850",
+        "HRAF0851",
+        "HRAF0852",
+        "HRAF0853",
+        "HRAF0854",
+        "HRAF0855",
+        "HRAF0900",
+        "HRAF0901",
+        "HRAF0911",
+        "HRAF0912",
+        "HRAF0913",
+        "HRAF0914",
+        "HRAF0915",
+        "HRAF0916",
+        "HRAF0917",
+        "HRAF0918",
+        "HRAF0919",
+        "HRAF0920",
+        "HRAF0921",
+        "HRAF0922",
+        "HRAF0923",
+        "HRAF0924",
+        "HRAF0925",
+        "HRAF0926",
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0939",
+        "HRAF0940",
+        "HRAF0941",
+        "HRAF0942",
+        "HRAF0943",
+        "HRAF0944",
+        "HRAF0945",
+        "HRAF0946",
+        "HRAF0947",
+        "HRAF0948",
+        "HRAF0949",
+        "HRAF0950",
+        "HRAF0951",
+        "HRAF0952",
+        "HRAF0956",
+        "HRAF0957",
+        "HRAF0958",
+        "HRAF0959",
+        "HRAF0960",
+        "HRAF0961",
+        "HRAF0962",
+        "HRAF0963",
+        "VHF0028",
+        "VHF0030",
+        "VHF0032",
+        "VHF0066",
+        "VHF0068",
+        "VHF0070",
+        "VHF0034",
+        "VHF0072"
+      ],
+      "target": [
+        -0.001283898949623108,
+        0.9528935551643372,
+        -0.10132815688848495
+      ],
+      "cameraPosition": [
+        0.8160837151456444,
+        0.97804332790573,
+        1.1561604801811571
+      ],
+      "extent": 0.4329511785507202
+    }
+  ],
+  "fixedContext": [
+    {
+      "id": "HRAF0423",
+      "name": "Suspensory ligament of ovary (right)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0512",
+      "name": "Jejunum",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0513",
+      "name": "Ileum",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0523",
+      "name": "Caecum",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0528",
+      "name": "Kidney capsule (left)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0529",
+      "name": "Hilum of kidney (left)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0541",
+      "name": "Renal pyramid a (left)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0547",
+      "name": "Renal pyramid g (left)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0550",
+      "name": "Renal pyramid j (left)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0552",
+      "name": "Renal column (left)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0553",
+      "name": "Outer cortex of kidney (left)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0554",
+      "name": "Kidney capsule (right)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0555",
+      "name": "Hilum of kidney (right)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0556",
+      "name": "Outer cortex of kidney (right)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0557",
+      "name": "Renal column (right)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0568",
+      "name": "Renal pyramid a (right)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0569",
+      "name": "Renal pyramid b (right)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0591",
+      "name": "Renal pelvis (right)",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0592",
+      "name": "Right ureter",
+      "layer": "organ"
+    },
+    {
+      "id": "HRAF0653",
+      "name": "Left common iliac vein",
+      "layer": "vessel"
+    },
+    {
+      "id": "HRAF0661",
+      "name": "Internal iliac vein (left)",
+      "layer": "vessel"
+    },
+    {
+      "id": "HRAF0827",
+      "name": "Ilium compact bone (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0828",
+      "name": "Ilium compact bone (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0829",
+      "name": "Ilium spongy bone (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0830",
+      "name": "Ilium spongy bone (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0850",
+      "name": "Lumbar vertebra 6",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0851",
+      "name": "Lumbar vertebra 5",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0852",
+      "name": "Lumbar vertebra 4",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0853",
+      "name": "Lumbar vertebra 3",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0854",
+      "name": "Lumbar vertebra 2",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0855",
+      "name": "Lumbar vertebra 1",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0900",
+      "name": "Intervertebral disk of third lumbar vertebra",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0901",
+      "name": "Intervertebral disk of fourth lumbar vertebra",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0911",
+      "name": "Femur (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0912",
+      "name": "Trochlear groove (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0913",
+      "name": "Medial perichondular surface (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0914",
+      "name": "Articular cartilage of knee (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0915",
+      "name": "Medial condyle of right femur superior",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0916",
+      "name": "Lateral condyle of femur superior (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0917",
+      "name": "Medial condyle of right femur inferior",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0918",
+      "name": "Lateral condyle of femur inferior (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0919",
+      "name": "Lateral condyle of femur frontal (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0920",
+      "name": "Distal most point of medial condyle (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0921",
+      "name": "Intercondylar fossa (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0922",
+      "name": "Posterior cruciate enthesis (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0923",
+      "name": "Anterior cruciate enthesis (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0924",
+      "name": "Lateral perichondular surface (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0925",
+      "name": "Lateral epicondylar enthesis (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0926",
+      "name": "Medial epicondylar enthesis (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0937",
+      "name": "Femur (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0938",
+      "name": "Intercondylar fossa (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0939",
+      "name": "Anterior cruciate enthesis (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0940",
+      "name": "Posterior cruciate enthesis (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0941",
+      "name": "Lateral perichondular surface (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0942",
+      "name": "Lateral epicondylar enthesis (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0943",
+      "name": "Medial epicondylar enthesis (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0944",
+      "name": "Trochlear groove (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0945",
+      "name": "Medial perichondular surface (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0946",
+      "name": "Articular cartilage of knee (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0947",
+      "name": "Medial condyle of left femur inferior",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0948",
+      "name": "Lateral condyle of femur inferior (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0949",
+      "name": "Lateral condyle of femur frontal (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0950",
+      "name": "Distal most point of medial condyle (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0951",
+      "name": "Lateral condyle of femur superior (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0952",
+      "name": "Medial condyle of left femur superior",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0956",
+      "name": "Pubis spongy bone (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0957",
+      "name": "Pubis spongy bone (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0958",
+      "name": "Pubis compact bone (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0959",
+      "name": "Pubis compact bone (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0960",
+      "name": "Ischium compact bone (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0961",
+      "name": "Ischium compact bone (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0962",
+      "name": "Ischium spongy bone (right)",
+      "layer": "bone"
+    },
+    {
+      "id": "HRAF0963",
+      "name": "Ischium spongy bone (left)",
+      "layer": "bone"
+    },
+    {
+      "id": "VHF0028",
+      "name": "Iliacus (left)",
+      "layer": "muscle"
+    },
+    {
+      "id": "VHF0030",
+      "name": "Obturator externus (left)",
+      "layer": "muscle"
+    },
+    {
+      "id": "VHF0032",
+      "name": "Pectineus (left)",
+      "layer": "muscle"
+    },
+    {
+      "id": "VHF0066",
+      "name": "Iliacus (right)",
+      "layer": "muscle"
+    },
+    {
+      "id": "VHF0068",
+      "name": "Obturator externus (right)",
+      "layer": "muscle"
+    },
+    {
+      "id": "VHF0070",
+      "name": "Pectineus (right)",
+      "layer": "muscle"
+    }
+  ],
+  "limits": "Four same-camera spine views show implied muscle-frame probes, not extra runtime bones. Six psoas views show two high-resolution source muscles and the union of current/candidate crossing targets plus lumbar, pelvis and femur context. No skin, full neural network or whole body. Context is translucent, camera focused on psoas/spine: distal context can be clipped. No mobile/public UI or actual peel validation."
+}

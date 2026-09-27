@@ -1,0 +1,42 @@
+{
+  "createdAt": "2026-09-27T18:33:08.686Z",
+  "reportSha256": "4d906f32bf5774af4a4d5d40afe8ad468a546b7d12bb63c0f2df3de5b157f611",
+  "candidates": [
+    {
+      "mode": "rigid",
+      "binarySha256": "04d7d723ee2a2ebdbfc1082c37369da299989f5ea1227ac3dc91f03c5977e760",
+      "compositionError": 3.3306690738754696e-16,
+      "scale": 0.9951366746264418,
+      "determinant": 0.9854808646533431,
+      "maximumGramError": 9.992007221626409e-16,
+      "vertices": 18728,
+      "indexReferences": 112344,
+      "coordinateDifferences": 0,
+      "edgeOccurrences": 112344,
+      "maximumScaledEdgeResidualMm": 0.00011797210555121972,
+      "witnesses": 23,
+      "maximumWitnessResidualMm": 1.1188630228279524e-13
+    },
+    {
+      "mode": "similarity",
+      "binarySha256": "c252a57275af99619526b6817d9ebef9dc2d0ad8f3ee06a9025195a8ae8c5e06",
+      "compositionError": 4.440892098500626e-16,
+      "scale": 0.9994780420867563,
+      "determinant": 0.9984349434382562,
+      "maximumGramError": 3.3306690738754696e-16,
+      "vertices": 18728,
+      "indexReferences": 112344,
+      "coordinateDifferences": 0,
+      "edgeOccurrences": 112344,
+      "maximumScaledEdgeResidualMm": 0.00011325601372881577,
+      "witnesses": 25,
+      "maximumWitnessResidualMm": 2.220446049250313e-13
+    }
+  ],
+  "limitations": [
+    "Scalar replay and stored witness verification, not a repeated nearest-surface fit or exhaustive crossing search.",
+    "Common lumbar rigid fitting composes with inverse approximate Denver similarity: the resulting psoas transform is not rigid.",
+    "Strict triangle crossings are geometric evidence, not measured tissue penetration or proof of abnormal attachment."
+  ],
+  "scriptSha256": "5d0b110c749fc8911ea93ecb4bea8b5a225b60a0603ecbd3b06ceca7fd2a9da0"
+}
