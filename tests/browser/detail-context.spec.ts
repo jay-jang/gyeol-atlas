@@ -74,6 +74,45 @@ for(const sample of samples)test(`${sample.sex} ${sample.group.id}: restoring de
   await page.getByRole('button',{name:'전체 구조 보기',exact:true}).click();await ready(page);await expect.poll(visible).toEqual(expected);
   await expect.poll(frameError).toBeLessThan(.001);
   await expect(page.getByRole('button',{name:'전신으로 돌아가기',exact:true})).toBeInViewport();
+  if(sample.group.id==='lung'){
+    const title=page.locator('.selection-card > div:first-child > strong');
+    const inspectTitle=()=>title.evaluate(el=>{
+      const r=el.getBoundingClientRect(),clip=el.parentElement!.getBoundingClientRect();
+      const card=el.closest('.selection-card')!.getBoundingClientRect(),pad=document.querySelector('.movement-pad')!.getBoundingClientRect();
+      const tools=document.querySelector('.floating-tools')!.getBoundingClientRect(),point=document.querySelector('.floating-point')!.getBoundingClientRect();
+      const gap=(a:DOMRect,b:DOMRect)=>Math.max(a.top-b.bottom,b.top-a.bottom,a.left-b.right,b.left-a.right);
+      return {top:r.top-clip.top,bottom:clip.bottom-r.bottom,padClearance:gap(card,pad),toolsClearance:gap(card,tools),pointClearance:gap(pad,point)};
+    });
+    for(const width of [390,360]){
+      await page.setViewportSize({width,height:width===390?844:740});
+      await expect.poll(async()=>(await inspectTitle()).top).toBeGreaterThanOrEqual(-.5);
+      await expect.poll(async()=>(await inspectTitle()).bottom).toBeGreaterThanOrEqual(-.5);
+      await expect.poll(async()=>(await inspectTitle()).padClearance).toBeGreaterThan(4);
+      await expect.poll(async()=>(await inspectTitle()).toolsClearance).toBeGreaterThan(0);
+      await expect.poll(async()=>(await inspectTitle()).pointClearance).toBeGreaterThan(0);
+      const movement=page.locator('.movement-pad summary');
+      await movement.focus();await page.keyboard.press('Enter');
+      await expect(page.locator('.movement-pad')).toHaveAttribute('open','');
+      await expect(page.locator('.floating-point')).toBeHidden();
+      await expect(page.getByRole('button',{name:'위로 이동',exact:true})).toBeInViewport();
+      const beforeMove=(await snapshot(page)).camera.position[1];
+      await page.getByRole('button',{name:'위로 이동',exact:true}).click();
+      await expect.poll(async()=>(await snapshot(page)).camera.position[1]).toBeGreaterThan(beforeMove);
+      const contrast=await page.getByRole('button',{name:'위로 이동',exact:true}).evaluate(el=>{
+        const style=getComputedStyle(el),lum=(s:string)=>s.match(/[\d.]+/g)!.slice(0,3).map(Number).map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4;}).reduce((sum,x,i)=>sum+x*[.2126,.7152,.0722][i],0);
+        const a=lum(style.color),b=lum(style.backgroundColor);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+      });
+      expect(contrast).toBeGreaterThanOrEqual(4.5);
+      await expect.poll(async()=>(await inspectTitle()).padClearance).toBeGreaterThan(4);
+      if(width===360)await page.screenshot({path:'docs/anatomy-alignment/detail-context-male-lung-small-mobile-movement.png'});
+      await movement.click();await expect(page.locator('.floating-point')).toBeVisible();
+      await page.locator('.view-presets').getByRole('button',{name:'정면',exact:true}).click();
+      await expect.poll(async()=>(await projection()).cardClearance).toBeGreaterThan(0);
+      if(width===360)await page.screenshot({path:'docs/anatomy-alignment/detail-context-male-lung-small-mobile.png'});
+    }
+    await page.setViewportSize({width:390,height:844});
+    await expect.poll(async()=>(await projection()).cardClearance).toBeGreaterThan(0);
+  }
   await page.screenshot({path:`docs/anatomy-alignment/detail-context-${sample.sex}-${sample.group.id}-mobile.png`});
   expect(await geometry(page,url,sample.group.ids)).toEqual(shape);
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);

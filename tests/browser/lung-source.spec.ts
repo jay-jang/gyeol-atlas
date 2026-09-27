@@ -35,6 +35,8 @@ for(const mobile of [false,true])test(`lung source views remain separate and sel
   await page.locator('.organ-detail-parts button').nth(lung.ids.indexOf('BP4_FJ6595')).click();await check(['BP4_FJ6595']);
   await page.getByRole('button',{name:'전체 구조 보기',exact:true}).click();await check(lung.ids);
   expect((await snapshot(page)).selection.ids).toEqual(['BP4_FJ6595']);
+  await page.locator('[data-lung-provenance] summary').click();
+  await page.locator('[data-lung-provenance]').getByRole('button',{name:'혈관·기관지 보기',exact:true}).click();await check(internal);
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
   expect((await snapshot(page)).detail).toBe(null);expect((await visible()).some(id=>id.startsWith('BP4_'))).toBe(false);
   await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);

@@ -1306,8 +1306,21 @@ body:has(.anatomy-workspace) .site-footer {
   .anatomy-workspace[data-selection="true"] .selection-actions { flex-shrink:0; }
 }
 .selection-actions { flex-wrap:wrap; }
+.movement-pad>summary { font-size:13px; font-weight:650; cursor:pointer; }
+.movement-pad[open]>summary { margin-bottom:5px; }
+.anatomy-workspace .movement-pad small { color:inherit; }
+.anatomy-workspace .movement-pad button:hover,
+.anatomy-workspace .movement-pad button:focus-visible { color:var(--ink); background:var(--surface-subtle); }
 @media(max-width:700px){
   .anatomy-workspace .selection-card { left:10px; width:calc(100% - 84px); max-height:210px; overflow:hidden; display:grid; grid-template-rows:minmax(0,1fr) auto; }
   .anatomy-workspace .selection-card>div:first-child { min-height:0; overflow:auto; }
   .organ-detail-parts>div { grid-template-columns:1fr; max-height:130px; }
+  /* Reserve a readable selected name above fixed actions; cap the card at
+     45% of the scene remaining below the mobile header and scope controls. */
+  .anatomy-workspace .selection-card[data-lung-part="true"] { max-height:min(250px,calc(45dvh - 97.2px)); }
+  .anatomy-workspace[data-lung-part="true"] .movement-pad { bottom:calc(min(250px,calc(45dvh - 97.2px)) + 160px); }
+  .anatomy-workspace[data-lung-part="true"] .floating-tools { top:auto; bottom:106px; left:10px; padding:0; gap:2px; flex-direction:row; }
+  .anatomy-workspace[data-lung-part="true"] .floating-tools button { width:40px; height:40px; }
+  .anatomy-workspace[data-lung-part="true"] .floating-tools .tool-name { left:0; bottom:46px; top:auto; }
+  .anatomy-workspace[data-lung-part="true"]:has(.movement-pad[open]) .floating-point { visibility:hidden; }
 }

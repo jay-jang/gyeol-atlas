@@ -54,6 +54,26 @@ try{
       assert.deepEqual((await page.locator('canvas').getAttribute('data-visible-structure-ids')).split(',').sort(),[...ids].sort());
     }
   }
+  await page.getByRole('button',{name:'폐실질 함께 보기',exact:true}).click();await ready();
+  await page.locator('.organ-detail-parts summary').click();
+  await page.locator('.organ-detail-parts button').nth(current.ids.indexOf('BP4_FJ6044')).click();await ready();
+  await page.getByRole('button',{name:'전체 구조 보기',exact:true}).click();await ready();
+  for(const width of [390,360]){
+    await page.setViewportSize({width,height:width===390?844:740});
+    const layout=await page.locator('.selection-card > div:first-child > strong').evaluate(el=>{
+      const title=el.getBoundingClientRect(),clip=el.parentElement.getBoundingClientRect();
+      const box=selector=>document.querySelector(selector).getBoundingClientRect();
+      const card=box('.selection-card'),pad=box('.movement-pad'),tools=box('.floating-tools'),point=box('.floating-point');
+      const gap=(a,b)=>Math.max(a.top-b.bottom,b.top-a.bottom,a.left-b.right,b.left-a.right);
+      return {top:title.top-clip.top,bottom:clip.bottom-title.bottom,tools:gap(card,tools),pad:gap(card,pad),point:gap(pad,point)};
+    });
+    assert.ok(layout.top>=-.5&&layout.bottom>=-.5&&layout.tools>0&&layout.pad>4&&layout.point>0,JSON.stringify(layout));
+    const toggle=page.locator('.movement-pad summary');await toggle.focus();await toggle.press('Enter');
+    assert.equal(await page.locator('.floating-point').isVisible(),false);
+    await page.getByRole('button',{name:'위로 이동',exact:true}).click();await toggle.click();
+    assert.equal(await page.locator('.floating-point').isVisible(),true);
+    records.push({selected:'BP4_FJ6044',width,layout});
+  }
   assert.deepEqual(errors,[]);
   const output=process.env.SMOKE_ORIGIN?'docs/anatomy-alignment/lung-public-check.json':'docs/anatomy-alignment/lung-production-check.json';
   await fs.writeFile(output,JSON.stringify({origin,records,errors,sourceFiles:receipt.files},null,2)+'\n');
