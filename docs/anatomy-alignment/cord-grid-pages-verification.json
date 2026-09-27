@@ -1,0 +1,14 @@
+{
+  "commit": "12d7357079041be12e4f02e60d74ee940b1e0922",
+  "githubActionsRun": 36356515996,
+  "githubActionsConclusion": "success",
+  "origin": "https://jay-jang.github.io/gyeol-atlas/",
+  "publicHRAF0370Bounds": [[-0.006342860870063305,1.1983723640441895,-0.14998196065425873],[0.0035996988881379366,1.2186232805252075,-0.13963189721107483]],
+  "boundsEqualOfflineRuntimeCandidate": true,
+  "publicProvenanceShowsOriginalSevenAndDisplayZero": true,
+  "publicProvenanceShowsClinicalLimit": true,
+  "publicSpinalSmoke": {"wholeSegments":29,"individualSelectionAndReload":true,"mobileControls":true,"peelAndSexReturn":true,"browserErrors":0,"httpFailures":0},
+  "publicPagesSmoke": {"acupoints":409,"femaleAtlasParts":1220,"femaleBrainParts":283,"maleHeartParts":83,"initialWikiModelRequests":0,"browserErrors":0,"httpFailures":0},
+  "inapplicableGateFailure": "SMOKE_ORIGIN with scripts/smoke-production.mjs expects the local backend /api/ask JSON. GitHub Pages is static and returned HTML, causing SyntaxError Unexpected token '<'. Local production smoke passed; the public Pages and spinal-specific smoke checks above passed.",
+  "limitations": "The public checks compare one selected runtime bounding box and behavior, not all 3-D anatomy or clinical alignment."
+}
