@@ -1,0 +1,14 @@
+{
+  "createdAt": "2026-09-27T17:57:24.484Z",
+  "reportSha256": "49c6d5c13036d74a422323f77877d7dacfa9710a9ca665c291c154c77f70482a",
+  "binarySha256": "b05b69a385cf509865732dd76f60d9e92c3a38b48de9040108e09d4899381e2f",
+  "vertices": 652173,
+  "indexReferences": 3912126,
+  "coordinateDifferences": 0,
+  "maximumStepBound": 0.15000000000000005,
+  "scriptSha256": "8090115ab79c4b8c3b618e455220c74276f752764ecfc887ac31df7b04896dd8",
+  "limitations": [
+    "Independent scalar reconstruction of serialized muscle positions/indices; the fit, source envelope assignment, fixed-surface distance queries, containment and crossing screens are not independently rerun.",
+    "Initial similarities are rounded to Float32 before the common post-placement field, matching the declared candidate space."
+  ]
+}
