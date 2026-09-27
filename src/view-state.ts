@@ -32,6 +32,7 @@ export type ViewState = {
   isolated: boolean;
   cutaway: number;
   selectionTarget: "visible" | "internal" | "skin";
+  fadeContext: boolean;
   camera: CameraPose | null;
   filters: {
     query: string;
@@ -74,6 +75,7 @@ export function initialView(pointId = ""): ViewState {
     isolated: false,
     cutaway: 0,
     selectionTarget: "visible",
+    fadeContext: true,
     camera: null,
     filters: {
       query: "",
@@ -95,6 +97,7 @@ export type ViewAction =
   | { type: "dissection-step"; amount: number }
   | { type: "layers"; layers: Layers }
   | { type: "alpha"; layer: Layer; value: number }
+  | { type: "fade-context"; value: boolean }
   | { type: "markers"; value: ViewState["markers"] }
   | { type: "labels"; value: boolean }
   | { type: "target"; value: ViewState["selectionTarget"] }
@@ -181,6 +184,8 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         ...s,
         alpha: { ...s.alpha, [a.layer]: Math.max(0.05, Math.min(1, a.value)) },
       };
+    case "fade-context":
+      return { ...s, fadeContext: a.value };
     case "markers":
       return { ...s, markers: a.value };
     case "labels":
@@ -303,6 +308,8 @@ export function restoreView(
       return base;
     s.displayMode ??= "layers";
     s.detail ??= null;
+    if (s.fadeContext === undefined) s.fadeContext = base.fadeContext;
+    if (typeof s.fadeContext !== "boolean") return base;
     if (!["dissection", "layers"].includes(s.displayMode)) return base;
     s.dissection = quantizeDepth(s.dissection);
     if (

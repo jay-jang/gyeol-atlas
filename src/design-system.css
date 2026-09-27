@@ -36,6 +36,9 @@ svg { stroke-width: 2; }
 .selection-kind { color: #12666b; font-weight: 650; }
 .selection-kind.bundle { color: #77500c; }
 .selection-actions button { border-color: #91a69a; min-height: 40px; }
+.selection-context { display: flex; align-items: center; gap: 8px; flex-basis: 100%; min-height: 36px; margin: 0; color: var(--ink); font-size: 13px; cursor: pointer; }
+.selection-context input { width: 18px; height: 18px; accent-color: var(--accent); flex: 0 0 auto; }
+.selection-context small { font-size: 12px; color: var(--ink-secondary); margin-left: 4px; }
 .layer-row input[type=checkbox], .setting-check input { width: 18px; height: 18px; accent-color: var(--accent); }
 .floating-tools button { height: 44px; width: 44px; }
 .view-tools button { width: 44px; height: 44px; position: relative; }

@@ -43,6 +43,7 @@ import { referenceSourceFor } from "./reference-source";
 import { framedDistance } from "./camera-framing";
 import { musclePeelRanks } from "./muscle-peel";
 import { musclePeelOpacity } from "./dissection";
+import { selectionOpacity, selectionHitId } from "./selection-context";
 
 const structureById = new Map(structures.map(s => [s.id, s]));
 
@@ -64,6 +65,7 @@ type Props = {
   dissection: number;
   displayMode: "dissection" | "layers";
   layerOpacity: Record<Layer, number>;
+  contextDimmed: boolean;
   selectionIds: string[];
   detailIds: string[];
   selectionTarget: "visible" | "internal" | "skin";
@@ -184,7 +186,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       if (o.visible) visibleCount++;
       // Selection is an opaque emphasis, as in PackedAtlas and the supplements.
       // Keep the user's layer alpha in view-state; it applies again on deselect.
-      const alpha = selected ? 1 : (layer === "skin" ? props.opacity : props.layerOpacity[layer]) * dissectionAlpha;
+      const alpha = selectionOpacity((layer === "skin" ? props.opacity : props.layerOpacity[layer]) * dissectionAlpha, selected, props.contextDimmed);
       const vessel = structureById.get(id)?.name || "";
       const material = o.material as MeshStandardMaterial;
       configurePicking(o, layer, props.selectionTarget);
@@ -196,6 +198,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
         material.needsUpdate = true;
       material.transparent = transparent;
       material.opacity = alpha;
+      material.depthWrite = !props.contextDimmed || selected;
       material.clippingPlanes = planes;
     });
     gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(visibleCount);
@@ -213,6 +216,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     props.highlight,
     props.opacity,
     props.layerOpacity,
+    props.contextDimmed,
     props.cutaway,
     props.dissection,
     props.displayMode,
@@ -227,12 +231,12 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
   return (
     <primitive
       object={object}
-      onClick={(e: { stopPropagation: () => void; object: Mesh }) => {
+      onClick={(e: { stopPropagation: () => void; object: Mesh; intersections: Intersection[] }) => {
         e.stopPropagation();
         const id = structureById.has(e.object.name)
           ? e.object.name
           : e.object.parent?.name || "";
-        props.onStructure(id);
+        props.onStructure(selectionHitId(id, e.intersections, props.selectionIds, props.contextDimmed));
       }}
     />
   );
@@ -275,13 +279,14 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
       const entry = structureById.get(item.name);
       const vein = layer === "vessel" && /vein|vena cava/i.test(entry?.name || "");
       material.color.set(selected ? "#34d3dd" : layer === "nerve" ? "#f0c94f" : vein ? "#356fb3" : "#cf3e49");
-      const alpha = selected ? 1 : props.layerOpacity[layer] * dissectionLayerOpacity(layer, props.dissection, progressive);
+      const alpha = selectionOpacity(props.layerOpacity[layer] * dissectionLayerOpacity(layer, props.dissection, progressive), selected, props.contextDimmed);
       item.visible = item.visible && alpha > .01;
       const clipped = props.cutaway > 0;
       if (material.transparent !== (alpha < 1) || Boolean(material.clippingPlanes?.length) !== clipped)
         material.needsUpdate = true;
       material.transparent = alpha < 1;
       material.opacity = alpha;
+      material.depthWrite = !props.contextDimmed || selected;
       material.clippingPlanes = clipped
         ? [new Plane(new Vector3(0, 0, -1), 0.22 - props.cutaway * 0.44)]
         : [];
@@ -289,7 +294,7 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
     });
     object.visible = true;
     invalidate();
-  }, [object, layer, props.isolated, props.selectionIds, props.detailIds, props.layerOpacity, props.cutaway, props.dissection, props.displayMode, props.selectionTarget, props.anatomyRegion, props.layers, invalidate]);
+  }, [object, layer, props.isolated, props.selectionIds, props.detailIds, props.layerOpacity, props.contextDimmed, props.cutaway, props.dissection, props.displayMode, props.selectionTarget, props.anatomyRegion, props.layers, invalidate]);
   useEffect(() => {
     props.onReady(layer);
   }, [object, layer, props.onReady]);
@@ -301,13 +306,13 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
       }),
     [object],
   );
-  return <primitive object={object} onClick={(event: { stopPropagation: () => void; object: Mesh; point: Vector3 }) => {
+  return <primitive object={object} onClick={(event: { stopPropagation: () => void; object: Mesh; point: Vector3; intersections: Intersection[] }) => {
     if (props.selectionTarget === "skin") return;
     if (props.cutaway > 0 && event.point.z > 0.22 - props.cutaway * 0.44) return;
     const id = event.object.name;
     if (!structureById.has(id)) return;
     event.stopPropagation();
-    props.onStructure(id);
+    props.onStructure(selectionHitId(id, event.intersections, props.selectionIds, props.contextDimmed));
   }} />;
 }
 function ReferenceModel({ modelName, layer, props }: { modelName: string; layer: Layer; props: Props }) {
@@ -344,10 +349,11 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
       if (item.visible) visibleCount++;
       const material = item.material as MeshStandardMaterial;
       material.color.set(selected ? "#34d3dd" : clinicalColor(layer, entry?.name || ""));
-      material.opacity = selected ? 1 : props.layerOpacity[layer] * depthAlpha;
+      material.opacity = selectionOpacity(props.layerOpacity[layer] * depthAlpha, selected, props.contextDimmed);
       const planes = clippingPlanes(layer, props);
       if (material.transparent !== (material.opacity < .995) || (material.clippingPlanes?.length || 0) !== planes.length) material.needsUpdate = true;
       material.transparent = material.opacity < .995;
+      material.depthWrite = !props.contextDimmed || selected;
       material.clippingPlanes = planes;
       configurePicking(item, layer, props.selectionTarget);
     });
@@ -357,14 +363,14 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
     gl.domElement.dataset[`boundsReference${modelName.replace(/[^a-z0-9]/gi, "")}`] = JSON.stringify([bounds.min.toArray(), bounds.max.toArray()]);
     object.visible = true;
     invalidate();
-  }, [object, layer, modelName, props.anatomyRegion, props.isolated, props.layerOpacity, props.selectionIds, props.detailIds, props.layers, props.dissection, props.displayMode, props.cutaway, props.selectionTarget, gl, invalidate]);
+  }, [object, layer, modelName, props.anatomyRegion, props.isolated, props.layerOpacity, props.contextDimmed, props.selectionIds, props.detailIds, props.layers, props.dissection, props.displayMode, props.cutaway, props.selectionTarget, gl, invalidate]);
   useEffect(() => { props.onReady(layer); }, [layer, object, props.onReady]);
   useEffect(() => () => object.traverse(item => { if (item instanceof Mesh && item.material instanceof MeshStandardMaterial) item.material.dispose(); }), [object]);
-  return <primitive object={object} onClick={(event: { stopPropagation: () => void; object: Mesh }) => {
+  return <primitive object={object} onClick={(event: { stopPropagation: () => void; object: Mesh; intersections: Intersection[] }) => {
     const id = event.object.name;
     if (!structureById.has(id)) return;
     event.stopPropagation();
-    props.onStructure(id);
+    props.onStructure(selectionHitId(id, event.intersections, props.selectionIds, props.contextDimmed));
   }} />;
 }
 function Scene(props: Props) {

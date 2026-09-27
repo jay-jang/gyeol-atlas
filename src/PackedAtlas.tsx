@@ -1,7 +1,8 @@
 import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useThree } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
-import { BufferAttribute, BufferGeometry, DoubleSide, FrontSide, Group, Int16BufferAttribute, Mesh, MeshStandardMaterial } from "three";
+import { BufferAttribute, BufferGeometry, DoubleSide, FrontSide, Group, Int16BufferAttribute, Mesh, MeshStandardMaterial, type Intersection } from "three";
+import { selectionOpacity, selectionHitId } from "./selection-context";
 import { assetUrl } from "./assets";
 import { dissectionLayerOpacity, layerKeys, structures, type Layer } from "./anatomy";
 import type { AtlasProps } from "./Atlas";
@@ -151,7 +152,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       if (item.visible) counts[layer]++;
       const material = item.material as MeshStandardMaterial;
       material.color.set(selected && props.selectionIds.length === 1 ? "#34d3dd" : highlighted ? "#e5b24f" : part?.system === "venous" ? "#356fb3" : part?.system === "borrowed" ? "#9aa7b1" : layerColor[layer]);
-      material.opacity = selected ? 1 : props.layerOpacity[layer] * depthAlpha;
+      material.opacity = selectionOpacity(props.layerOpacity[layer] * depthAlpha, selected, props.contextDimmed);
       const planes = clippingPlanes(layer, props);
       if (material.transparent !== (material.opacity < .995) || (material.clippingPlanes?.length || 0) !== planes.length) material.needsUpdate = true;
       material.transparent = material.opacity < .995;
@@ -164,13 +165,13 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       gl.domElement.dataset[key] = source === dataset ? String(object.children.length) : "0";
     object.visible = true;
     invalidate();
-  }, [object, partById, props.layers, props.isolated, props.selectionIds, props.detailIds, props.highlight, props.dissection, props.displayMode, props.selectionTarget, props.layerOpacity, props.anatomyRegion, props.cutaway, gl, invalidate]);
+  }, [object, partById, props.layers, props.isolated, props.selectionIds, props.detailIds, props.highlight, props.dissection, props.displayMode, props.selectionTarget, props.layerOpacity, props.contextDimmed, props.anatomyRegion, props.cutaway, gl, invalidate]);
   useEffect(() => { if (object) { layerKeys.forEach(props.onReady); props.onLoading(false); } }, [object, props.onReady, props.onLoading]);
   if (error) throw error;
   if (!object) return <Html center><div className="model-loading">참조 모델 불러오는 중</div></Html>;
-  return <primitive object={object} onClick={(event: { stopPropagation: () => void; object: Mesh }) => {
+  return <primitive object={object} onClick={(event: { stopPropagation: () => void; object: Mesh; intersections: Intersection[] }) => {
     if (!partById.has(event.object.name)) return;
     event.stopPropagation();
-    props.onStructure(event.object.name);
+    props.onStructure(selectionHitId(event.object.name, event.intersections, props.selectionIds, props.contextDimmed));
   }} />;
 }

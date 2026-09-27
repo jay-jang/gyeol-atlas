@@ -47,6 +47,8 @@ export default function AnatomyControls({
       <p className="control-hint">
         계통을 조합해 같은 부위를 비교하세요. 현재 시점은 유지됩니다.
         선택한 구조는 불투명하게 강조하며, 선택을 해제하면 아래 투명도로 돌아갑니다.
+        단일 구조 선택 시 주변 반투명 표시를 선택 카드에서 끌 수 있습니다. 실제 박리가 아닌 관찰 보조입니다.
+        반투명 표시 중 겹친 표면을 누르면 선택 구조를 우선합니다. 겹친 다른 구조는 반투명을 끄거나 검색해 선택하세요.
       </p>
       {layerKeys.map((l) => (
         <div className="layer-row" key={l}>

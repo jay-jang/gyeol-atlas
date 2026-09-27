@@ -45,6 +45,7 @@ import {
 } from "lucide-react";
 import Markdown, { defaultUrlTransform } from "react-markdown";
 import { assetUrl } from "./assets";
+import { contextIsDimmed } from "./selection-context";
 import { createKnowledge } from "../shared/knowledge.mjs";
 import remarkGfm from "remark-gfm";
 import AnatomyControls from "./AnatomyControls";
@@ -701,6 +702,7 @@ function AtlasPage({
             dissection={state.dissection}
             displayMode={state.displayMode}
             layerOpacity={state.alpha}
+            contextDimmed={contextIsDimmed(state)}
             selectionIds={state.selection?.ids || []}
             detailIds={state.detail?.ids || []}
             selectionTarget={state.selectionTarget}
@@ -1193,6 +1195,10 @@ function AtlasPage({
             )}
           </div>
           <div className="selection-actions">
+            {state.selection.kind === "structure" && state.selection.ids.length === 1 && !state.comparison && !state.isolated && <label className="selection-context">
+              <input type="checkbox" aria-label="주변 반투명" aria-describedby="selection-context-help" checked={state.fadeContext} onChange={e => dispatch({ type: "fade-context", value: e.target.checked })} />
+              <span>주변 반투명 <small id="selection-context-help">관찰 보조 · 실제 박리 아님</small></span>
+            </label>}
             {sourceKey === "female-detail" && state.detail?.id !== "abdomen-ct" && <button aria-label="같은 여성 CT의 주변 기관 보기" onClick={() => selectFeatured(featuredAnatomy.find(item => item.id === "abdomen-ct")!)}>주변 기관 함께 보기</button>}
             {!fullCompositeDetail && selectedOrgan && !(sourceKey === "female-detail" && selectedOrgan.ids.length === 1 && state.detail) && <button onClick={() => selectFeatured(selectedOrgan)}>{selectedComposite ? `${selectedComposite.name} ${state.detail ? "전체 모형" : "전체 상세 보기"}` : state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
             {state.detail && <button onClick={() => { dispatch({ type: "detail-close" }); requestAnimationFrame(() => camera("fit")); }}>전신으로 돌아가기</button>}
