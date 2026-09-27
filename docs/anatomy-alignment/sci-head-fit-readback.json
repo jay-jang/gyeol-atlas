@@ -1,0 +1,72 @@
+{
+  "reportSha256": "7a5ff564c3462d383c3f1d8cd6256e77cd9f9be8bc7d5c1be925dc1ac85f9fe8",
+  "rows": [
+    {
+      "mode": "anchors",
+      "id": "label-1",
+      "vertices": 4874
+    },
+    {
+      "mode": "anchors",
+      "id": "label-2",
+      "vertices": 508869
+    },
+    {
+      "mode": "anchors",
+      "id": "label-3",
+      "vertices": 331200
+    },
+    {
+      "mode": "anchors",
+      "id": "label-6",
+      "vertices": 365077
+    },
+    {
+      "mode": "skin-refined",
+      "id": "label-1",
+      "vertices": 4874
+    },
+    {
+      "mode": "skin-refined",
+      "id": "label-2",
+      "vertices": 508869
+    },
+    {
+      "mode": "skin-refined",
+      "id": "label-3",
+      "vertices": 331200
+    },
+    {
+      "mode": "skin-refined",
+      "id": "label-6",
+      "vertices": 365077
+    }
+  ],
+  "totalVertexEvaluations": 2420040,
+  "anchorPairDistancesMm": {
+    "pairs": [
+      "right-left eye centers",
+      "right eye-superior patch",
+      "left eye-superior patch"
+    ],
+    "source": [
+      58.043086752876576,
+      150.23361179308253,
+      148.961171981738
+    ],
+    "target": [
+      72.91342323918487,
+      135.11839915148752,
+      135.57422391751112
+    ],
+    "requiredScaleByPair": [
+      1.256194791114746,
+      0.8993886091055757,
+      0.9101312920264345
+    ]
+  },
+  "limitations": [
+    "Independent matrix arithmetic and whole selected-buffer bounds, but not a separate optimizer or every-vertex containment rerun.",
+    "Saved maximum-outside witnesses reuse the skin classifier. Ray ambiguity counts remain unresolved; no native neural connection check."
+  ]
+}
