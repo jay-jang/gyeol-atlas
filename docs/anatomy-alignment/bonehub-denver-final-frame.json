@@ -1,0 +1,3341 @@
+{
+  "createdAt": "2026-09-27T09:39:49.058Z",
+  "status": "SOURCE FRAME CANDIDATE ONLY; no HRA registration or runtime export",
+  "targetStage": "Denver Final",
+  "sourceRevision": "ac8de2b38f5ae1a0996053ca0639dd6ae43358f1",
+  "sourceUnits": "millimetres",
+  "targetUnits": "millimetres",
+  "method": "One proper similarity initialized with ten bilateral lower-extremity AABB centres and refined by symmetric trimmed sampled surface ICP on those same ten pairs; fourteen tarsal pairs held out. Full referenced vertices in both final surface-distance directions.",
+  "initialMatrixColumnMajor": [
+    -1.0030470269972498,
+    0.030463548125443853,
+    -0.013424486082934114,
+    0,
+    -0.030319857935856998,
+    -1.0030828826031903,
+    -0.010817569145944101,
+    0,
+    -0.013745937790182768,
+    -0.010406047428615667,
+    1.0034512177132402,
+    0,
+    799.0992680240813,
+    682.5128176203865,
+    2.300642849628616,
+    1
+  ],
+  "refinement": {
+    "samplePerBonePerDirection": 512,
+    "retainedFraction": 0.8,
+    "maximumIterations": 240,
+    "stopCentreChangeMm": 0.00001,
+    "stopReason": "centre-change threshold",
+    "iterations": [
+      {
+        "iteration": 0,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.49670397488573204,
+        "scale": 1.003756775332686
+      },
+      {
+        "iteration": 1,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.3671316383540686,
+        "scale": 1.0038907575406142
+      },
+      {
+        "iteration": 2,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.2704106730035497,
+        "scale": 1.0040055015152523
+      },
+      {
+        "iteration": 3,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.20004503939702545,
+        "scale": 1.0040998935433842
+      },
+      {
+        "iteration": 4,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.14948536542925836,
+        "scale": 1.0041721517438393
+      },
+      {
+        "iteration": 5,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.11069223652761832,
+        "scale": 1.0042362975715122
+      },
+      {
+        "iteration": 6,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.08212696328426428,
+        "scale": 1.0042882836816929
+      },
+      {
+        "iteration": 7,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.06388330209755788,
+        "scale": 1.0043350132152773
+      },
+      {
+        "iteration": 8,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.056835314906328635,
+        "scale": 1.0043717354150066
+      },
+      {
+        "iteration": 9,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.05154216371858035,
+        "scale": 1.0044075817275553
+      },
+      {
+        "iteration": 10,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.04490358742311206,
+        "scale": 1.0044407903598864
+      },
+      {
+        "iteration": 11,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.038867346567515566,
+        "scale": 1.0044755407992547
+      },
+      {
+        "iteration": 12,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.03715162872150828,
+        "scale": 1.004506942874423
+      },
+      {
+        "iteration": 13,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.03289876774936182,
+        "scale": 1.0045369039065555
+      },
+      {
+        "iteration": 14,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.02881190230750618,
+        "scale": 1.0045616162738968
+      },
+      {
+        "iteration": 15,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.027120977560291092,
+        "scale": 1.0045835859140815
+      },
+      {
+        "iteration": 16,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.023501071290696233,
+        "scale": 1.0046021276419483
+      },
+      {
+        "iteration": 17,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.023282334329480403,
+        "scale": 1.0046233422944613
+      },
+      {
+        "iteration": 18,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.021657988818404833,
+        "scale": 1.0046445350615714
+      },
+      {
+        "iteration": 19,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.020088614944069022,
+        "scale": 1.0046642368836438
+      },
+      {
+        "iteration": 20,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.01907394330790159,
+        "scale": 1.0046859359257974
+      },
+      {
+        "iteration": 21,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.016668420520891052,
+        "scale": 1.0047060231656464
+      },
+      {
+        "iteration": 22,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.014504040030170995,
+        "scale": 1.0047221096574181
+      },
+      {
+        "iteration": 23,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.01381659949675298,
+        "scale": 1.0047364530318221
+      },
+      {
+        "iteration": 24,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.012020037652000153,
+        "scale": 1.004749598944056
+      },
+      {
+        "iteration": 25,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.011282025337188254,
+        "scale": 1.0047610680525636
+      },
+      {
+        "iteration": 26,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.011316686022157888,
+        "scale": 1.00477308341285
+      },
+      {
+        "iteration": 27,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.010240974227070947,
+        "scale": 1.004783804531724
+      },
+      {
+        "iteration": 28,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.008592796470414691,
+        "scale": 1.0047922207403819
+      },
+      {
+        "iteration": 29,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.007099134423964552,
+        "scale": 1.004799235208797
+      },
+      {
+        "iteration": 30,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.006950517636509682,
+        "scale": 1.004807164105701
+      },
+      {
+        "iteration": 31,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.006522653168659545,
+        "scale": 1.004814208059171
+      },
+      {
+        "iteration": 32,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00548056891643338,
+        "scale": 1.0048202859839335
+      },
+      {
+        "iteration": 33,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.004828955707833656,
+        "scale": 1.0048257114396686
+      },
+      {
+        "iteration": 34,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.004198708010712273,
+        "scale": 1.0048295519154253
+      },
+      {
+        "iteration": 35,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.003698975727010129,
+        "scale": 1.004832833561861
+      },
+      {
+        "iteration": 36,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.004510684495307687,
+        "scale": 1.004838064282201
+      },
+      {
+        "iteration": 37,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.003729838965130665,
+        "scale": 1.0048420377733398
+      },
+      {
+        "iteration": 38,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0030620168141045167,
+        "scale": 1.0048454623990455
+      },
+      {
+        "iteration": 39,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0028862813055184006,
+        "scale": 1.004848617468057
+      },
+      {
+        "iteration": 40,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0025196060283792458,
+        "scale": 1.0048512678555572
+      },
+      {
+        "iteration": 41,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0020396470800960764,
+        "scale": 1.004853491672393
+      },
+      {
+        "iteration": 42,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0020785289646512843,
+        "scale": 1.0048558008319624
+      },
+      {
+        "iteration": 43,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0018998442297697299,
+        "scale": 1.0048577404159258
+      },
+      {
+        "iteration": 44,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0015373719778556394,
+        "scale": 1.004859384087429
+      },
+      {
+        "iteration": 45,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0013221427094901568,
+        "scale": 1.0048607292313383
+      },
+      {
+        "iteration": 46,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.002007393664251068,
+        "scale": 1.004862575008628
+      },
+      {
+        "iteration": 47,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0024353241333876135,
+        "scale": 1.0048653313571807
+      },
+      {
+        "iteration": 48,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0016987200116362984,
+        "scale": 1.0048675946608423
+      },
+      {
+        "iteration": 49,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0012254841877247773,
+        "scale": 1.0048693689256538
+      },
+      {
+        "iteration": 50,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0009855825295320892,
+        "scale": 1.0048709178957254
+      },
+      {
+        "iteration": 51,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.001250529642840857,
+        "scale": 1.004872406416715
+      },
+      {
+        "iteration": 52,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0009738437244649731,
+        "scale": 1.0048736891339596
+      },
+      {
+        "iteration": 53,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0007749086272040277,
+        "scale": 1.0048747356877483
+      },
+      {
+        "iteration": 54,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0008633399237941489,
+        "scale": 1.0048760731456117
+      },
+      {
+        "iteration": 55,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.000714402438177522,
+        "scale": 1.0048771666585252
+      },
+      {
+        "iteration": 56,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0006225801444851349,
+        "scale": 1.0048781517352519
+      },
+      {
+        "iteration": 57,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0007349136792363871,
+        "scale": 1.0048793932538211
+      },
+      {
+        "iteration": 58,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0007017381097220644,
+        "scale": 1.0048805803329288
+      },
+      {
+        "iteration": 59,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0005634932218920103,
+        "scale": 1.004881539378383
+      },
+      {
+        "iteration": 60,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00045667844551550255,
+        "scale": 1.0048823164118441
+      },
+      {
+        "iteration": 61,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0003693090654956392,
+        "scale": 1.0048829438184688
+      },
+      {
+        "iteration": 62,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00030491945955085637,
+        "scale": 1.0048834612718403
+      },
+      {
+        "iteration": 63,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00027840099726491544,
+        "scale": 1.0048839019371536
+      },
+      {
+        "iteration": 64,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00022568628169681925,
+        "scale": 1.0048842629110526
+      },
+      {
+        "iteration": 65,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.000182305001522912,
+        "scale": 1.0048845563034954
+      },
+      {
+        "iteration": 66,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00014733052742372886,
+        "scale": 1.0048847945558306
+      },
+      {
+        "iteration": 67,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00012681567027150983,
+        "scale": 1.0048850039604427
+      },
+      {
+        "iteration": 68,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00010236858699714518,
+        "scale": 1.0048851734078739
+      },
+      {
+        "iteration": 69,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00018603373169376138,
+        "scale": 1.004885489026847
+      },
+      {
+        "iteration": 70,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00014306171247394764,
+        "scale": 1.004885745485714
+      },
+      {
+        "iteration": 71,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00011945491483045482,
+        "scale": 1.0048859651919904
+      },
+      {
+        "iteration": 72,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00011129331086656653,
+        "scale": 1.0048861687492057
+      },
+      {
+        "iteration": 73,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00009003263073183075,
+        "scale": 1.0048863347322887
+      },
+      {
+        "iteration": 74,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00007258415873023492,
+        "scale": 1.0048864691476767
+      },
+      {
+        "iteration": 75,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00006219575531668174,
+        "scale": 1.0048865862246934
+      },
+      {
+        "iteration": 76,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.0000503097398316944,
+        "scale": 1.0048866809759331
+      },
+      {
+        "iteration": 77,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00004070445811905294,
+        "scale": 1.0048867576693885
+      },
+      {
+        "iteration": 78,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00003359455961401483,
+        "scale": 1.0048868207435162
+      },
+      {
+        "iteration": 79,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.000027176272601350075,
+        "scale": 1.0048868718031587
+      },
+      {
+        "iteration": 80,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00002198611170472561,
+        "scale": 1.0048869131377771
+      },
+      {
+        "iteration": 81,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.000025385887266240712,
+        "scale": 1.0048869609370037
+      },
+      {
+        "iteration": 82,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.000020131267065485338,
+        "scale": 1.0048869995598868
+      },
+      {
+        "iteration": 83,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.000016150431188995113,
+        "scale": 1.0048870307708715
+      },
+      {
+        "iteration": 84,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.000013021383261092265,
+        "scale": 1.0048870559994536
+      },
+      {
+        "iteration": 85,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.000010520929344184393,
+        "scale": 1.0048870763985283
+      },
+      {
+        "iteration": 86,
+        "correspondences": 8180,
+        "maximumCentreChangeMm": 0.00000850813752545056,
+        "scale": 1.0048870928964448
+      }
+    ]
+  },
+  "matrixColumnMajor": [
+    -1.004254874201112,
+    0.031453847615234336,
+    -0.016759253664020958,
+    0,
+    -0.03129786544927374,
+    -1.0043543327068947,
+    -0.009533491546960045,
+    0,
+    -0.01704877507319923,
+    -0.009005515696195251,
+    1.00470209984125,
+    0,
+    801.5064434367952,
+    682.6057265073536,
+    1.305764798747191,
+    1
+  ],
+  "determinant": 1.0147330464420183,
+  "uniformScale": 1.0048870928964448,
+  "fitPairs": 10,
+  "heldOutPairs": 14,
+  "records": [
+    {
+      "side": "left",
+      "name": "Femur",
+      "bonehubName": "FEMUR_LEFT",
+      "fitLandmark": true,
+      "sourceComponents": [
+        {
+          "triangles": 250256,
+          "vertices": 125130,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              268.3651428222656,
+              201.1621551513672,
+              491.33001708984375
+            ],
+            [
+              401.99237060546875,
+              270.3458251953125,
+              906.6547241210938
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 91886,
+          "vertices": 45945,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              375.7519226074219,
+              417.9640808105469,
+              488.26702880859375
+            ],
+            [
+              517.482666015625,
+              482.2778015136719,
+              905.2905883789062
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        335.1787567138672,
+        235.75399017333984,
+        698.9923706054688
+      ],
+      "denverCentreMm": [
+        446.61729431152344,
+        450.1209411621094,
+        696.77880859375
+      ],
+      "initialCentreResidualMm": 1.2518846197050297,
+      "fittedCentreResidualMm": 1.4649906844606222,
+      "sourceTriangles": 250256,
+      "targetTriangles": 91886,
+      "bonehubToDenver": {
+        "vertices": 125130,
+        "meanMm": 1.3908421096636985,
+        "rmsMm": 1.675332669741412,
+        "p50Mm": 1.280144680425667,
+        "p95Mm": 3.093586584481569,
+        "maximum": {
+          "vertex": 85559,
+          "point": [
+            412.6673583984375,
+            425.47808837890625,
+            805.2807006835938
+          ],
+          "nearest": [
+            412.23468692446806,
+            430.8605462141248,
+            806.646281613545
+          ],
+          "distanceMm": 5.569817611783972
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 45945,
+        "meanMm": 1.349049954609668,
+        "rmsMm": 1.6166164669489382,
+        "p50Mm": 1.2513210371019514,
+        "p95Mm": 2.9691053047259697,
+        "maximum": {
+          "vertex": 25270,
+          "point": [
+            449.1921691894531,
+            452.37744140625,
+            641.641845703125
+          ],
+          "nearest": [
+            451.4321269494529,
+            447.65091233012845,
+            642.031398866478
+          ],
+          "distanceMm": 5.244925122543109
+        }
+      },
+      "dominantComponentCentreResidualMm": 1.4649906844606222
+    },
+    {
+      "side": "left",
+      "name": "Tibia",
+      "bonehubName": "TIBIA_LEFT",
+      "fitLandmark": true,
+      "sourceComponents": [
+        {
+          "triangles": 163704,
+          "vertices": 81854,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              253.63365173339844,
+              217.35720825195312,
+              156.8590087890625
+            ],
+            [
+              348.5669860839844,
+              284.8955383300781,
+              498.9678955078125
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 59456,
+          "vertices": 29730,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              437.8517761230469,
+              400.21807861328125,
+              156.64569091796875
+            ],
+            [
+              533.14453125,
+              471.81854248046875,
+              491.8427429199219
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        301.1003189086914,
+        251.12637329101562,
+        327.9134521484375
+      ],
+      "denverCentreMm": [
+        485.49815368652344,
+        436.018310546875,
+        324.2442169189453
+      ],
+      "initialCentreResidualMm": 0.7299179886644384,
+      "fittedCentreResidualMm": 1.2913832447306217,
+      "sourceTriangles": 163704,
+      "targetTriangles": 59456,
+      "bonehubToDenver": {
+        "vertices": 81854,
+        "meanMm": 1.7174614690639272,
+        "rmsMm": 2.1279236970313047,
+        "p50Mm": 1.471825677493501,
+        "p95Mm": 4.315619979214502,
+        "maximum": {
+          "vertex": 24,
+          "point": [
+            525.5780639648438,
+            443.56427001953125,
+            153.31906127929688
+          ],
+          "nearest": [
+            524.8556151499781,
+            438.05959424074314,
+            158.21858502246909
+          ],
+          "distanceMm": 7.404641829932458
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 29730,
+        "meanMm": 1.581391965515322,
+        "rmsMm": 1.9468091992310916,
+        "p50Mm": 1.370662254429678,
+        "p95Mm": 3.8704522838551854,
+        "maximum": {
+          "vertex": 19614,
+          "point": [
+            489.402099609375,
+            412.80560302734375,
+            178.27772521972656
+          ],
+          "nearest": [
+            490.14355631260884,
+            419.46212894231047,
+            177.81306290752778
+          ],
+          "distanceMm": 6.7137922490774065
+        }
+      },
+      "dominantComponentCentreResidualMm": 1.2913832447306217
+    },
+    {
+      "side": "left",
+      "name": "Fibula",
+      "bonehubName": "FIBULA_LEFT",
+      "fitLandmark": true,
+      "sourceComponents": [
+        {
+          "triangles": 60884,
+          "vertices": 30444,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              287.8554992675781,
+              262.0138244628906,
+              140.6275634765625
+            ],
+            [
+              355.7734069824219,
+              290.480224609375,
+              476.3265686035156
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 18918,
+          "vertices": 9461,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              429.9722595214844,
+              396.5501708984375,
+              140.3260040283203
+            ],
+            [
+              497.8377685546875,
+              423.99432373046875,
+              469.4984436035156
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        321.814453125,
+        276.2470245361328,
+        308.47706604003906
+      ],
+      "denverCentreMm": [
+        463.90501403808594,
+        410.2722473144531,
+        304.91222381591797
+      ],
+      "initialCentreResidualMm": 1.789455188254962,
+      "fittedCentreResidualMm": 2.8524117786614798,
+      "sourceTriangles": 60884,
+      "targetTriangles": 18918,
+      "bonehubToDenver": {
+        "vertices": 30444,
+        "meanMm": 2.4025436115498,
+        "rmsMm": 2.9924844713791234,
+        "p50Mm": 2.055211291511193,
+        "p95Mm": 5.774923984268661,
+        "maximum": {
+          "vertex": 405,
+          "point": [
+            490.7913513183594,
+            422.227783203125,
+            139.4730224609375
+          ],
+          "nearest": [
+            487.9375319076775,
+            416.1039293972222,
+            145.1295483760845
+          ],
+          "distanceMm": 8.811478655344084
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 9461,
+        "meanMm": 1.7630679582777138,
+        "rmsMm": 2.192143474867139,
+        "p50Mm": 1.5061358670933704,
+        "p95Mm": 4.229442752881351,
+        "maximum": {
+          "vertex": 6872,
+          "point": [
+            488.92303466796875,
+            418.376708984375,
+            150.1216278076172
+          ],
+          "nearest": [
+            482.97761075159355,
+            420.55506873621334,
+            147.30664910342924
+          ],
+          "distanceMm": 6.929460430572294
+        }
+      },
+      "dominantComponentCentreResidualMm": 2.8524117786614798
+    },
+    {
+      "side": "left",
+      "name": "Patella",
+      "bonehubName": "PATELLA_LEFT",
+      "fitLandmark": true,
+      "sourceComponents": [
+        {
+          "triangles": 19916,
+          "vertices": 9960,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              300.114501953125,
+              182.1339874267578,
+              493.7977294921875
+            ],
+            [
+              343.5725402832031,
+              207.17393493652344,
+              541.679931640625
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 6524,
+          "vertices": 3264,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              443.1539611816406,
+              481.1357421875,
+              490.0610656738281
+            ],
+            [
+              485.93023681640625,
+              505.1454772949219,
+              537.0046997070312
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        321.84352111816406,
+        194.65396118164062,
+        517.7388305664062
+      ],
+      "denverCentreMm": [
+        464.54209899902344,
+        493.14060974121094,
+        513.5328826904297
+      ],
+      "initialCentreResidualMm": 2.6991533139308483,
+      "fittedCentreResidualMm": 1.476509849644859,
+      "sourceTriangles": 19916,
+      "targetTriangles": 6524,
+      "bonehubToDenver": {
+        "vertices": 9960,
+        "meanMm": 1.0092577264848097,
+        "rmsMm": 1.2264619303870827,
+        "p50Mm": 0.8645293353621057,
+        "p95Mm": 2.2525366056868035,
+        "maximum": {
+          "vertex": 9298,
+          "point": [
+            448.3189697265625,
+            487.5161437988281,
+            533.8388671875
+          ],
+          "nearest": [
+            450.1488280618433,
+            489.379836460673,
+            531.1504969894632
+          ],
+          "distanceMm": 3.748208396914877
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 3264,
+        "meanMm": 0.9101813506897783,
+        "rmsMm": 1.099678871487632,
+        "p50Mm": 0.7647130871036867,
+        "p95Mm": 1.9650453573657003,
+        "maximum": {
+          "vertex": 626,
+          "point": [
+            449.4002685546875,
+            489.4103088378906,
+            530.662109375
+          ],
+          "nearest": [
+            449.1995929835389,
+            486.3150737231808,
+            531.116330750504
+          ],
+          "distanceMm": 3.1348154902886116
+        }
+      },
+      "dominantComponentCentreResidualMm": 1.476509849644859
+    },
+    {
+      "side": "left",
+      "name": "Pelvis",
+      "bonehubName": "HIP_LEFT",
+      "fitLandmark": true,
+      "sourceComponents": [
+        {
+          "triangles": 284940,
+          "vertices": 142470,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              238.19277954101562,
+              169.338134765625,
+              817.7811279296875
+            ],
+            [
+              387.4036560058594,
+              323.9894104003906,
+              1028.61572265625
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 99308,
+          "vertices": 49654,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              390.1241760253906,
+              355.2444763183594,
+              817.1968383789062
+            ],
+            [
+              540.900634765625,
+              512.5238037109375,
+              1027.4359130859375
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        312.7982177734375,
+        246.6637725830078,
+        923.1984252929688
+      ],
+      "denverCentreMm": [
+        465.5124053955078,
+        433.88414001464844,
+        922.3163757324219
+      ],
+      "initialCentreResidualMm": 1.2763157354339991,
+      "fittedCentreResidualMm": 3.1575178838541023,
+      "sourceTriangles": 284940,
+      "targetTriangles": 99308,
+      "bonehubToDenver": {
+        "vertices": 142470,
+        "meanMm": 1.0369579092811374,
+        "rmsMm": 1.2608672369763196,
+        "p50Mm": 0.952115344577628,
+        "p95Mm": 2.3205062468186957,
+        "maximum": {
+          "vertex": 71739,
+          "point": [
+            418.2697448730469,
+            509.9620361328125,
+            939.962890625
+          ],
+          "nearest": [
+            419.05804231141576,
+            507.6780525735873,
+            943.2134251503145
+          ],
+          "distanceMm": 4.050181286116886
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 49654,
+        "meanMm": 1.0093748624852734,
+        "rmsMm": 1.2251652806822957,
+        "p50Mm": 0.9242772882226419,
+        "p95Mm": 2.253020143316033,
+        "maximum": {
+          "vertex": 11082,
+          "point": [
+            487.6937255859375,
+            358.0965576171875,
+            957.4417724609375
+          ],
+          "nearest": [
+            486.61854983567724,
+            361.74037064434714,
+            960.2730161315159
+          ],
+          "distanceMm": 4.738071020260892
+        }
+      },
+      "dominantComponentCentreResidualMm": 3.1575178838541023
+    },
+    {
+      "side": "left",
+      "name": "Talus",
+      "bonehubName": "TALUS_LEFT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 31372,
+          "vertices": 15688,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              256.09765625,
+              228.95924377441406,
+              121.54630279541016
+            ],
+            [
+              298.8463439941406,
+              287.69158935546875,
+              168.51744079589844
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 11074,
+          "vertices": 5539,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              489.16815185546875,
+              395.44891357421875,
+              119.98930358886719
+            ],
+            [
+              532.5099487304688,
+              454.979248046875,
+              166.3146209716797
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        277.4720001220703,
+        258.3254165649414,
+        145.0318717956543
+      ],
+      "denverCentreMm": [
+        510.83905029296875,
+        425.2140808105469,
+        143.15196228027344
+      ],
+      "initialCentreResidualMm": 5.441737270352139,
+      "fittedCentreResidualMm": 6.435513252957263,
+      "sourceTriangles": 31372,
+      "targetTriangles": 11074,
+      "bonehubToDenver": {
+        "vertices": 15688,
+        "meanMm": 2.6761300370853047,
+        "rmsMm": 3.2030667437171654,
+        "p50Mm": 2.505298768435124,
+        "p95Mm": 5.8510225712944735,
+        "maximum": {
+          "vertex": 6325,
+          "point": [
+            519.3428955078125,
+            431.2083740234375,
+            138.0849609375
+          ],
+          "nearest": [
+            520.4184080086029,
+            424.991739020165,
+            134.19311041711074
+          ],
+          "distanceMm": 7.412811772621984
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 5539,
+        "meanMm": 2.817513367237012,
+        "rmsMm": 3.3772576841526316,
+        "p50Mm": 2.6557985721257995,
+        "p95Mm": 6.189627195184832,
+        "maximum": {
+          "vertex": 2104,
+          "point": [
+            507.3648376464844,
+            410.42669677734375,
+            163.20001220703125
+          ],
+          "nearest": [
+            509.87151270637855,
+            415.28972288251765,
+            157.15024024436013
+          ],
+          "distanceMm": 8.15672627687235
+        }
+      },
+      "dominantComponentCentreResidualMm": 6.435513252957263
+    },
+    {
+      "side": "left",
+      "name": "Calcaneous",
+      "bonehubName": "CALCANEUS_LEFT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 48756,
+          "vertices": 24380,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              246.38272094726562,
+              245.44834899902344,
+              102.32816314697266
+            ],
+            [
+              297.1883544921875,
+              328.4858093261719,
+              153.6521453857422
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 17472,
+          "vertices": 8738,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              490.0071716308594,
+              354.578857421875,
+              99.01204681396484
+            ],
+            [
+              540.4947509765625,
+              438.6150207519531,
+              151.53656005859375
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        271.78553771972656,
+        286.96707916259766,
+        127.99015426635742
+      ],
+      "denverCentreMm": [
+        515.2509613037109,
+        396.59693908691406,
+        125.2743034362793
+      ],
+      "initialCentreResidualMm": 5.2339304044775385,
+      "fittedCentreResidualMm": 6.2172939590205685,
+      "sourceTriangles": 48756,
+      "targetTriangles": 17472,
+      "bonehubToDenver": {
+        "vertices": 24380,
+        "meanMm": 2.8893011794399923,
+        "rmsMm": 3.357718493403073,
+        "p50Mm": 2.9060408485201044,
+        "p95Mm": 5.771341280831691,
+        "maximum": {
+          "vertex": 4629,
+          "point": [
+            515.0189208984375,
+            433.33099365234375,
+            108.32451629638672
+          ],
+          "nearest": [
+            511.8648807449133,
+            427.4653388609075,
+            109.8149114647692
+          ],
+          "distanceMm": 6.824599122313341
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 8738,
+        "meanMm": 2.923678639058536,
+        "rmsMm": 3.3751647417607016,
+        "p50Mm": 2.97741282036241,
+        "p95Mm": 5.801126648846114,
+        "maximum": {
+          "vertex": 7440,
+          "point": [
+            511.5251159667969,
+            428.3465881347656,
+            112.45777130126953
+          ],
+          "nearest": [
+            514.0571110029813,
+            433.5440383318266,
+            107.98725586506323
+          ],
+          "distanceMm": 7.308214260648787
+        }
+      },
+      "dominantComponentCentreResidualMm": 6.2172939590205685
+    },
+    {
+      "side": "left",
+      "name": "Navicular",
+      "bonehubName": "NAVICULAR_LEFT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 12988,
+          "vertices": 6496,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              247.8522491455078,
+              220.80416870117188,
+              109.34168243408203
+            ],
+            [
+              287.2887878417969,
+              248.21917724609375,
+              131.29702758789062
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 4610,
+          "vertices": 2307,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              499.8556823730469,
+              435.1885681152344,
+              106.56217956542969
+            ],
+            [
+              540.5182495117188,
+              463.2322998046875,
+              132.09756469726562
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        267.57051849365234,
+        234.5116729736328,
+        120.31935501098633
+      ],
+      "denverCentreMm": [
+        520.1869659423828,
+        449.21043395996094,
+        119.32987213134766
+      ],
+      "initialCentreResidualMm": 5.800699418181633,
+      "fittedCentreResidualMm": 7.228104401193526,
+      "sourceTriangles": 12988,
+      "targetTriangles": 4610,
+      "bonehubToDenver": {
+        "vertices": 6496,
+        "meanMm": 3.482570858840586,
+        "rmsMm": 3.948968783948436,
+        "p50Mm": 3.588570675647979,
+        "p95Mm": 6.178701414359418,
+        "maximum": {
+          "vertex": 1638,
+          "point": [
+            534.2357788085938,
+            463.4920654296875,
+            110.30386352539062
+          ],
+          "nearest": [
+            530.3240975948564,
+            458.4476353893857,
+            113.21775226865054
+          ],
+          "distanceMm": 7.016998785627762
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 2307,
+        "meanMm": 3.833279620640235,
+        "rmsMm": 4.369779143687091,
+        "p50Mm": 4.061811936601947,
+        "p95Mm": 7.118456566484703,
+        "maximum": {
+          "vertex": 373,
+          "point": [
+            509.613525390625,
+            455.41455078125,
+            131.7464141845703
+          ],
+          "nearest": [
+            510.45777531206693,
+            460.31951278845145,
+            125.25214395716459
+          ],
+          "distanceMm": 8.182111952822005
+        }
+      },
+      "dominantComponentCentreResidualMm": 7.228104401193526
+    },
+    {
+      "side": "left",
+      "name": "Cuboid",
+      "bonehubName": "CUBOID_LEFT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 13524,
+          "vertices": 6764,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              266.9771423339844,
+              233.18057250976562,
+              84.41788482666016
+            ],
+            [
+              298.9865417480469,
+              263.82196044921875,
+              117.44975280761719
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 4926,
+          "vertices": 2465,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              487.7890625,
+              419.5045471191406,
+              83.07485961914062
+            ],
+            [
+              520.5753784179688,
+              451.6795349121094,
+              117.00456237792969
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        282.9818420410156,
+        248.5012664794922,
+        100.93381881713867
+      ],
+      "denverCentreMm": [
+        504.1822204589844,
+        435.592041015625,
+        100.03971099853516
+      ],
+      "initialCentreResidualMm": 6.370321439766116,
+      "fittedCentreResidualMm": 7.89549978179676,
+      "sourceTriangles": 13524,
+      "targetTriangles": 4926,
+      "bonehubToDenver": {
+        "vertices": 6764,
+        "meanMm": 3.685067581068706,
+        "rmsMm": 4.21651983942661,
+        "p50Mm": 3.817633017083684,
+        "p95Mm": 6.913699124432106,
+        "maximum": {
+          "vertex": 730,
+          "point": [
+            503.723876953125,
+            455.8765563964844,
+            83.81036376953125
+          ],
+          "nearest": [
+            500.48632235267627,
+            449.7364081115823,
+            88.61033172121525
+          ],
+          "distanceMm": 8.439364495545028
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 2465,
+        "meanMm": 4.046953504542348,
+        "rmsMm": 4.631839634285969,
+        "p50Mm": 4.196509004803204,
+        "p95Mm": 7.633128274665967,
+        "maximum": {
+          "vertex": 1343,
+          "point": [
+            496.5385437011719,
+            429.82171630859375,
+            115.10558319091797
+          ],
+          "nearest": [
+            498.6553039550781,
+            435.843505859375,
+            108.50311279296875
+          ],
+          "distanceMm": 9.183421950570017
+        }
+      },
+      "dominantComponentCentreResidualMm": 7.89549978179676
+    },
+    {
+      "side": "left",
+      "name": "LateralCuneiform",
+      "bonehubName": "LATERAL_CUNEIFORM_LEFT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 7528,
+          "vertices": 3766,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              269.0707702636719,
+              217.71282958984375,
+              89.83204650878906
+            ],
+            [
+              291.7077941894531,
+              241.08071899414062,
+              113.53205871582031
+            ]
+          ]
+        },
+        {
+          "triangles": 8,
+          "vertices": 3,
+          "firstTriangle": 5048,
+          "bounds": [
+            [
+              270.27337646484375,
+              234.14051818847656,
+              104.99998474121094
+            ],
+            [
+              270.2734069824219,
+              234.14051818847656,
+              104.99999237060547
+            ]
+          ]
+        },
+        {
+          "triangles": 8,
+          "vertices": 2,
+          "firstTriangle": 5379,
+          "bounds": [
+            [
+              270.27337646484375,
+              234.86317443847656,
+              105.99998474121094
+            ],
+            [
+              270.2734069824219,
+              234.86317443847656,
+              105.99998474121094
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 2698,
+          "vertices": 1351,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              495.14508056640625,
+              442.64495849609375,
+              86.73297882080078
+            ],
+            [
+              518.5291748046875,
+              467.50384521484375,
+              112.6427001953125
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        280.3892822265625,
+        229.3967742919922,
+        101.68205261230469
+      ],
+      "denverCentreMm": [
+        506.8371276855469,
+        455.07440185546875,
+        99.68783950805664
+      ],
+      "initialCentreResidualMm": 5.7338741091500145,
+      "fittedCentreResidualMm": 7.243955962410056,
+      "sourceTriangles": 7544,
+      "targetTriangles": 2698,
+      "bonehubToDenver": {
+        "vertices": 3771,
+        "meanMm": 4.055680460977328,
+        "rmsMm": 4.584058240182644,
+        "p50Mm": 4.197132751560364,
+        "p95Mm": 7.482856748277113,
+        "maximum": {
+          "vertex": 848,
+          "point": [
+            508.05108642578125,
+            470.93310546875,
+            90.10807800292969
+          ],
+          "nearest": [
+            504.83767795168916,
+            463.8819996604265,
+            94.4292804345471
+          ],
+          "distanceMm": 8.872253242359363
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 1351,
+        "meanMm": 3.808792680128932,
+        "rmsMm": 4.260685271236114,
+        "p50Mm": 3.912571995996068,
+        "p95Mm": 6.711090100380255,
+        "maximum": {
+          "vertex": 1031,
+          "point": [
+            500.7757873535156,
+            448.20159912109375,
+            111.13449096679688
+          ],
+          "nearest": [
+            504.5163879394531,
+            453.4754943847656,
+            106.41636657714844
+          ],
+          "distanceMm": 8.004171521893571
+        }
+      },
+      "dominantComponentCentreResidualMm": 7.243955962410056
+    },
+    {
+      "side": "left",
+      "name": "MedialCuneiform",
+      "bonehubName": "MEDIAL_CUNEIFORM_LEFT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 11276,
+          "vertices": 5640,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              246.1676483154297,
+              203.12603759765625,
+              87.12004089355469
+            ],
+            [
+              271.2769775390625,
+              239.6339569091797,
+              116.35427856445312
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 4090,
+          "vertices": 2047,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              515.8767700195312,
+              443.2586669921875,
+              85.51004791259766
+            ],
+            [
+              541.8541870117188,
+              480.9537658691406,
+              115.0674819946289
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        258.7223129272461,
+        221.37999725341797,
+        101.7371597290039
+      ],
+      "denverCentreMm": [
+        528.865478515625,
+        462.10621643066406,
+        100.28876495361328
+      ],
+      "initialCentreResidualMm": 6.053799132566843,
+      "fittedCentreResidualMm": 7.516936899427546,
+      "sourceTriangles": 11276,
+      "targetTriangles": 4090,
+      "bonehubToDenver": {
+        "vertices": 5640,
+        "meanMm": 3.666648648806941,
+        "rmsMm": 4.246803220782806,
+        "p50Mm": 3.3631409280152025,
+        "p95Mm": 7.282944617705302,
+        "maximum": {
+          "vertex": 1712,
+          "point": [
+            529.5818481445312,
+            483.6260070800781,
+            93.25242614746094
+          ],
+          "nearest": [
+            526.2615375035743,
+            478.46546763994075,
+            97.88708972145062
+          ],
+          "distanceMm": 7.689976366006062
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 2047,
+        "meanMm": 3.8818415475712085,
+        "rmsMm": 4.4148363541873294,
+        "p50Mm": 4.052336053925537,
+        "p95Mm": 6.946760648295908,
+        "maximum": {
+          "vertex": 1257,
+          "point": [
+            524.025634765625,
+            448.61883544921875,
+            107.36724853515625
+          ],
+          "nearest": [
+            529.8391605187363,
+            453.4492350513542,
+            103.04341289052155
+          ],
+          "distanceMm": 8.707777941599826
+        }
+      },
+      "dominantComponentCentreResidualMm": 7.516936899427546
+    },
+    {
+      "side": "left",
+      "name": "IntermediateCuneiform",
+      "bonehubName": "INTERMEDIATE_CUNEIFORM_LEFT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 6712,
+          "vertices": 3358,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              264.9450988769531,
+              209.98858642578125,
+              94.02350616455078
+            ],
+            [
+              284.2091064453125,
+              235.46755981445312,
+              118.19889068603516
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 2328,
+          "vertices": 1166,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              503.11492919921875,
+              447.8666687011719,
+              92.88722229003906
+            ],
+            [
+              523.0028076171875,
+              474.3551330566406,
+              117.72880554199219
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        274.5771026611328,
+        222.7280731201172,
+        106.11119842529297
+      ],
+      "denverCentreMm": [
+        513.0588684082031,
+        461.11090087890625,
+        105.30801391601562
+      ],
+      "initialCentreResidualMm": 6.34523557201478,
+      "fittedCentreResidualMm": 7.895672928997315,
+      "sourceTriangles": 6712,
+      "targetTriangles": 2328,
+      "bonehubToDenver": {
+        "vertices": 3358,
+        "meanMm": 3.9789374961863673,
+        "rmsMm": 4.601544185134458,
+        "p50Mm": 4.140716670141681,
+        "p95Mm": 7.649033510152853,
+        "maximum": {
+          "vertex": 1,
+          "point": [
+            524.5828247070312,
+            467.7752380371094,
+            89.74347686767578
+          ],
+          "nearest": [
+            520.1754112175859,
+            462.62340989717825,
+            96.36866347301084
+          ],
+          "distanceMm": 9.479436924514161
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 1166,
+        "meanMm": 3.9312267286249782,
+        "rmsMm": 4.451546826343233,
+        "p50Mm": 4.276391292353057,
+        "p95Mm": 7.084774360921096,
+        "maximum": {
+          "vertex": 1157,
+          "point": [
+            512.8275146484375,
+            454.1226806640625,
+            108.6054458618164
+          ],
+          "nearest": [
+            516.7647094726562,
+            459.9180908203125,
+            105.21517944335938
+          ],
+          "distanceMm": 7.783456067271018
+        }
+      },
+      "dominantComponentCentreResidualMm": 7.895672928997315
+    },
+    {
+      "side": "right",
+      "name": "Femur",
+      "bonehubName": "FEMUR_RIGHT",
+      "fitLandmark": true,
+      "sourceComponents": [
+        {
+          "triangles": 251096,
+          "vertices": 125550,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              75.5564193725586,
+              203.555908203125,
+              487.3475036621094
+            ],
+            [
+              207.1332244873047,
+              285.1079406738281,
+              904.9011840820312
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 89466,
+          "vertices": 44735,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              577.0431518554688,
+              398.6834411621094,
+              487.313720703125
+            ],
+            [
+              700.7717895507812,
+              469.22955322265625,
+              904.2706298828125
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        141.34482192993164,
+        244.33192443847656,
+        696.1243438720703
+      ],
+      "denverCentreMm": [
+        638.907470703125,
+        433.9564971923828,
+        695.7921752929688
+      ],
+      "initialCentreResidualMm": 1.6126241719866974,
+      "fittedCentreResidualMm": 1.8399020686787135,
+      "sourceTriangles": 251096,
+      "targetTriangles": 89466,
+      "bonehubToDenver": {
+        "vertices": 125550,
+        "meanMm": 1.8755260166491485,
+        "rmsMm": 2.3050398667291594,
+        "p50Mm": 1.6233290136210226,
+        "p95Mm": 4.562151007717477,
+        "maximum": {
+          "vertex": 107494,
+          "point": [
+            691.9472045898438,
+            450.3667297363281,
+            869.8795166015625
+          ],
+          "nearest": [
+            687.7935145320596,
+            443.25738696653656,
+            872.0010789473351
+          ],
+          "distanceMm": 8.502759699151973
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 44735,
+        "meanMm": 1.7568513147727955,
+        "rmsMm": 2.1604908123210587,
+        "p50Mm": 1.5236804911945117,
+        "p95Mm": 4.345622420022752,
+        "maximum": {
+          "vertex": 18070,
+          "point": [
+            637.0396728515625,
+            429.85186767578125,
+            833.1924438476562
+          ],
+          "nearest": [
+            644.7667528338686,
+            428.47374109975993,
+            833.3582454900929
+          ],
+          "distanceMm": 7.8507635359324714
+        }
+      },
+      "dominantComponentCentreResidualMm": 1.8399020686787135
+    },
+    {
+      "side": "right",
+      "name": "Tibia",
+      "bonehubName": "TIBIA_RIGHT",
+      "fitLandmark": true,
+      "sourceComponents": [
+        {
+          "triangles": 165112,
+          "vertices": 82558,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              127.49640655517578,
+              228.9808807373047,
+              147.63595581054688
+            ],
+            [
+              220.19171142578125,
+              298.8106689453125,
+              494.6680603027344
+            ]
+          ]
+        },
+        {
+          "triangles": 248,
+          "vertices": 126,
+          "firstTriangle": 129172,
+          "bounds": [
+            [
+              171.1258544921875,
+              248.65733337402344,
+              463.92230224609375
+            ],
+            [
+              173.271240234375,
+              252.9228515625,
+              468.8448486328125
+            ]
+          ]
+        },
+        {
+          "triangles": 48,
+          "vertices": 26,
+          "firstTriangle": 129146,
+          "bounds": [
+            [
+              169.35348510742188,
+              247.9624481201172,
+              464.808349609375
+            ],
+            [
+              169.368896484375,
+              248.0311279296875,
+              465.43426513671875
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 60362,
+          "vertices": 30183,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              567.7767944335938,
+              385.04547119140625,
+              147.92074584960938
+            ],
+            [
+              655.6962890625,
+              455.2113037109375,
+              490.4704284667969
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        173.84405899047852,
+        263.8957748413086,
+        321.1520080566406
+      ],
+      "denverCentreMm": [
+        611.7365417480469,
+        420.1283874511719,
+        319.1955871582031
+      ],
+      "initialCentreResidualMm": 0.7052555217701443,
+      "fittedCentreResidualMm": 1.59335076459986,
+      "sourceTriangles": 165408,
+      "targetTriangles": 60362,
+      "bonehubToDenver": {
+        "vertices": 82710,
+        "meanMm": 1.6229646613478113,
+        "rmsMm": 2.094685539639211,
+        "p50Mm": 1.355209880974397,
+        "p95Mm": 3.848068584249308,
+        "maximum": {
+          "vertex": 66503,
+          "point": [
+            613.228515625,
+            430.649658203125,
+            464.86041259765625
+          ],
+          "nearest": [
+            611.194476014995,
+            443.09461763984234,
+            452.63208903664275
+          ],
+          "distanceMm": 17.56548404199119
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 30183,
+        "meanMm": 1.4583286389203667,
+        "rmsMm": 1.8002290024221788,
+        "p50Mm": 1.2576750518969384,
+        "p95Mm": 3.4086666990914845,
+        "maximum": {
+          "vertex": 7026,
+          "point": [
+            586.7063598632812,
+            400.2110900878906,
+            159.40084838867188
+          ],
+          "nearest": [
+            586.7747466834987,
+            401.79167944254425,
+            153.64672372998356
+          ],
+          "distanceMm": 5.967653647200774
+        }
+      },
+      "dominantComponentCentreResidualMm": 1.59335076459986
+    },
+    {
+      "side": "right",
+      "name": "Fibula",
+      "bonehubName": "FIBULA_RIGHT",
+      "fitLandmark": true,
+      "sourceComponents": [
+        {
+          "triangles": 61192,
+          "vertices": 30598,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              124.54840087890625,
+              279.18438720703125,
+              131.7654266357422
+            ],
+            [
+              191.9745330810547,
+              307.504150390625,
+              473.03009033203125
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 19480,
+          "vertices": 9742,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              595.79931640625,
+              376.5648193359375,
+              133.6714630126953
+            ],
+            [
+              657.6326904296875,
+              402.42352294921875,
+              470.80615234375
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        158.26146697998047,
+        293.3442687988281,
+        302.3977584838867
+      ],
+      "denverCentreMm": [
+        626.7160034179688,
+        389.4941711425781,
+        302.23880767822266
+      ],
+      "initialCentreResidualMm": 1.9402939389159366,
+      "fittedCentreResidualMm": 3.0704132036438017,
+      "sourceTriangles": 61192,
+      "targetTriangles": 19480,
+      "bonehubToDenver": {
+        "vertices": 30598,
+        "meanMm": 1.791343817692257,
+        "rmsMm": 2.2240291329503767,
+        "p50Mm": 1.5231885060389785,
+        "p95Mm": 4.49866228291692,
+        "maximum": {
+          "vertex": 20513,
+          "point": [
+            636.7796020507812,
+            392.142333984375,
+            373.0072937011719
+          ],
+          "nearest": [
+            635.3555405510007,
+            385.92723491936704,
+            373.15908720030734
+          ],
+          "distanceMm": 6.377965883367513
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 9742,
+        "meanMm": 1.382965314726737,
+        "rmsMm": 1.7044444152579588,
+        "p50Mm": 1.1928115732973192,
+        "p95Mm": 3.2743361261161468,
+        "maximum": {
+          "vertex": 150,
+          "point": [
+            611.1512451171875,
+            398.5788269042969,
+            140.78187561035156
+          ],
+          "nearest": [
+            606.9977002286877,
+            402.1893065974063,
+            139.89965337907006
+          ],
+          "distanceMm": 5.573671574510455
+        }
+      },
+      "dominantComponentCentreResidualMm": 3.0704132036438017
+    },
+    {
+      "side": "right",
+      "name": "Patella",
+      "bonehubName": "PATELLA_RIGHT",
+      "fitLandmark": true,
+      "sourceComponents": [
+        {
+          "triangles": 20412,
+          "vertices": 10208,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              125.45853424072266,
+              192.8881072998047,
+              489.5650939941406
+            ],
+            [
+              168.05523681640625,
+              221.3949432373047,
+              536.4230346679688
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 6588,
+          "vertices": 3296,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              617.14501953125,
+              462.6136169433594,
+              489.1386413574219
+            ],
+            [
+              658.9677734375,
+              489.22149658203125,
+              534.4334106445312
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        146.75688552856445,
+        207.1415252685547,
+        512.9940643310547
+      ],
+      "denverCentreMm": [
+        638.056396484375,
+        475.9175567626953,
+        511.78602600097656
+      ],
+      "initialCentreResidualMm": 2.3685616325253296,
+      "fittedCentreResidualMm": 1.671462900156804,
+      "sourceTriangles": 20412,
+      "targetTriangles": 6588,
+      "bonehubToDenver": {
+        "vertices": 10208,
+        "meanMm": 1.1085583819441691,
+        "rmsMm": 1.3332701413060086,
+        "p50Mm": 0.9686795749589985,
+        "p95Mm": 2.416660621153409,
+        "maximum": {
+          "vertex": 8260,
+          "point": [
+            655.2822265625,
+            466.6688232421875,
+            526.6552124023438
+          ],
+          "nearest": [
+            653.6134268943989,
+            469.30320657372636,
+            524.9162874561588
+          ],
+          "distanceMm": 3.570536071545623
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 3296,
+        "meanMm": 1.016757720406995,
+        "rmsMm": 1.2299939943034706,
+        "p50Mm": 0.8744854456171383,
+        "p95Mm": 2.283113709659595,
+        "maximum": {
+          "vertex": 2389,
+          "point": [
+            654.3872680664062,
+            463.3911437988281,
+            506.8898010253906
+          ],
+          "nearest": [
+            657.2342422920418,
+            462.8421662850166,
+            505.6521575556781
+          ],
+          "distanceMm": 3.152522785044685
+        }
+      },
+      "dominantComponentCentreResidualMm": 1.671462900156804
+    },
+    {
+      "side": "right",
+      "name": "Pelvis",
+      "bonehubName": "HIP_RIGHT",
+      "fitLandmark": true,
+      "sourceComponents": [
+        {
+          "triangles": 281504,
+          "vertices": 140752,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              90.73796844482422,
+              172.3607940673828,
+              816.3521728515625
+            ],
+            [
+              238.2562713623047,
+              324.23480224609375,
+              1029.66357421875
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 98422,
+          "vertices": 49211,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              540.9413452148438,
+              352.8451232910156,
+              817.97021484375
+            ],
+            [
+              687.3468017578125,
+              503.1739807128906,
+              1031.539306640625
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        164.49711990356445,
+        248.29779815673828,
+        923.0078735351562
+      ],
+      "denverCentreMm": [
+        614.1440734863281,
+        428.0095520019531,
+        924.7547607421875
+      ],
+      "initialCentreResidualMm": 1.455132156776198,
+      "fittedCentreResidualMm": 2.7612343842707783,
+      "sourceTriangles": 281504,
+      "targetTriangles": 98422,
+      "bonehubToDenver": {
+        "vertices": 140752,
+        "meanMm": 1.0902998962646686,
+        "rmsMm": 1.3880893136995338,
+        "p50Mm": 0.8851035244089105,
+        "p95Mm": 2.849707544718333,
+        "maximum": {
+          "vertex": 43820,
+          "point": [
+            623.4459228515625,
+            433.4652099609375,
+            893.4926147460938
+          ],
+          "nearest": [
+            621.0553927503254,
+            430.1357456439615,
+            895.7472297581692
+          ],
+          "distanceMm": 4.677954216921427
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 49211,
+        "meanMm": 1.0847464448893067,
+        "rmsMm": 1.3776679157268743,
+        "p50Mm": 0.8893048645723011,
+        "p95Mm": 2.79885019438445,
+        "maximum": {
+          "vertex": 6838,
+          "point": [
+            620.5969848632812,
+            430.3232116699219,
+            895.5380249023438
+          ],
+          "nearest": [
+            623.2855526200352,
+            433.6407668471462,
+            893.5694486629549
+          ],
+          "distanceMm": 4.7021124345204175
+        }
+      },
+      "dominantComponentCentreResidualMm": 2.7612343842707783
+    },
+    {
+      "side": "right",
+      "name": "Talus",
+      "bonehubName": "TALUS_RIGHT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 31364,
+          "vertices": 15684,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              175.46893310546875,
+              242.72421264648438,
+              112.95758056640625
+            ],
+            [
+              221.4570770263672,
+              299.51153564453125,
+              159.6956329345703
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 10672,
+          "vertices": 5338,
+          "firstTriangle": 4,
+          "bounds": [
+            [
+              565.3025512695312,
+              382.6085205078125,
+              111.01625061035156
+            ],
+            [
+              612.4468994140625,
+              440.6876220703125,
+              156.36134338378906
+            ]
+          ]
+        },
+        {
+          "triangles": 2,
+          "vertices": 3,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              602.6592407226562,
+              417.0076904296875,
+              145.2212371826172
+            ],
+            [
+              602.6663208007812,
+              417.0204772949219,
+              145.23812866210938
+            ]
+          ]
+        },
+        {
+          "triangles": 2,
+          "vertices": 3,
+          "firstTriangle": 2,
+          "bounds": [
+            [
+              602.7305908203125,
+              416.2507629394531,
+              146.52064514160156
+            ],
+            [
+              602.7311401367188,
+              416.25091552734375,
+              146.52078247070312
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        198.46300506591797,
+        271.1178741455078,
+        136.32660675048828
+      ],
+      "denverCentreMm": [
+        588.8747253417969,
+        411.6480712890625,
+        133.6887969970703
+      ],
+      "initialCentreResidualMm": 3.6992207638434795,
+      "fittedCentreResidualMm": 4.645476076987017,
+      "sourceTriangles": 31364,
+      "targetTriangles": 10676,
+      "bonehubToDenver": {
+        "vertices": 15684,
+        "meanMm": 2.299105534502978,
+        "rmsMm": 2.747627338222969,
+        "p50Mm": 1.9914432577585761,
+        "p95Mm": 4.982297022063521,
+        "maximum": {
+          "vertex": 45,
+          "point": [
+            591.2051391601562,
+            434.4676513671875,
+            109.71927642822266
+          ],
+          "nearest": [
+            591.257034049807,
+            434.08479992765706,
+            117.0496025089374
+          ],
+          "distanceMm": 7.340500579247244
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 5344,
+        "meanMm": 2.3302039366347786,
+        "rmsMm": 2.7836247239729777,
+        "p50Mm": 2.0274152055887975,
+        "p95Mm": 5.06538117868475,
+        "maximum": {
+          "vertex": 2926,
+          "point": [
+            592.1234741210938,
+            432.3199768066406,
+            116.83383178710938
+          ],
+          "nearest": [
+            592.2457706829822,
+            433.3476936610451,
+            109.52674904243223
+          ],
+          "distanceMm": 7.380014676098911
+        }
+      },
+      "dominantComponentCentreResidualMm": 4.645476076987017
+    },
+    {
+      "side": "right",
+      "name": "Calcaneous",
+      "bonehubName": "CALCANEUS_RIGHT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 49856,
+          "vertices": 24930,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              178.0269012451172,
+              259.2016296386719,
+              93.44646453857422
+            ],
+            [
+              236.6876220703125,
+              339.3224792480469,
+              145.59536743164062
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 17574,
+          "vertices": 8789,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              549.1439208984375,
+              343.0106506347656,
+              92.58084869384766
+            ],
+            [
+              609.7350463867188,
+              423.87078857421875,
+              146.05409240722656
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        207.35726165771484,
+        299.2620544433594,
+        119.52091598510742
+      ],
+      "denverCentreMm": [
+        579.4394836425781,
+        383.4407196044922,
+        119.31747055053711
+      ],
+      "initialCentreResidualMm": 5.121871559797696,
+      "fittedCentreResidualMm": 6.353155601891404,
+      "sourceTriangles": 49856,
+      "targetTriangles": 17574,
+      "bonehubToDenver": {
+        "vertices": 24930,
+        "meanMm": 2.5004230917175505,
+        "rmsMm": 3.096997058140901,
+        "p50Mm": 2.134355590034658,
+        "p95Mm": 6.174074179432757,
+        "maximum": {
+          "vertex": 18898,
+          "point": [
+            564.53515625,
+            353.3144836425781,
+            126.30292510986328
+          ],
+          "nearest": [
+            563.4203905637416,
+            349.5914615439908,
+            133.8653600653851
+          ],
+          "distanceMm": 8.502588931515309
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 8789,
+        "meanMm": 2.4970565440754786,
+        "rmsMm": 3.1128469505814524,
+        "p50Mm": 2.1241511320210926,
+        "p95Mm": 6.343043308458346,
+        "maximum": {
+          "vertex": 4027,
+          "point": [
+            559.1951904296875,
+            347.5867004394531,
+            132.5464630126953
+          ],
+          "nearest": [
+            562.0630087932518,
+            352.05490111541775,
+            125.1331277216655
+          ],
+          "distanceMm": 9.118483403741843
+        }
+      },
+      "dominantComponentCentreResidualMm": 6.353155601891404
+    },
+    {
+      "side": "right",
+      "name": "Navicular",
+      "bonehubName": "NAVICULAR_RIGHT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 12388,
+          "vertices": 6196,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              181.33030700683594,
+              233.24530029296875,
+              101.66853332519531
+            ],
+            [
+              220.9296417236328,
+              259.04949951171875,
+              125.26981353759766
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 4498,
+          "vertices": 2251,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              567.0235595703125,
+              423.18377685546875,
+              100.1624526977539
+            ],
+            [
+              607.688720703125,
+              449.9273376464844,
+              124.42731475830078
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        201.12997436523438,
+        246.14739990234375,
+        113.46917343139648
+      ],
+      "denverCentreMm": [
+        587.3561401367188,
+        436.55555725097656,
+        112.29488372802734
+      ],
+      "initialCentreResidualMm": 4.378716191422937,
+      "fittedCentreResidualMm": 5.5492234786921015,
+      "sourceTriangles": 12388,
+      "targetTriangles": 4498,
+      "bonehubToDenver": {
+        "vertices": 6196,
+        "meanMm": 2.997291923372003,
+        "rmsMm": 3.439730873029753,
+        "p50Mm": 3.072464256608863,
+        "p95Mm": 5.458706959291478,
+        "maximum": {
+          "vertex": 2409,
+          "point": [
+            596.2314453125,
+            452.5081481933594,
+            106.48273468017578
+          ],
+          "nearest": [
+            595.342812067981,
+            447.14885551487305,
+            109.38130116033021
+          ],
+          "distanceMm": 6.157383754226824
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 2251,
+        "meanMm": 3.3306243797592248,
+        "rmsMm": 3.8148467168723377,
+        "p50Mm": 3.4869253264014954,
+        "p95Mm": 6.1223395152141284,
+        "maximum": {
+          "vertex": 457,
+          "point": [
+            601.070068359375,
+            427.13909912109375,
+            116.15646362304688
+          ],
+          "nearest": [
+            603.2199855127749,
+            431.7954162559725,
+            111.27430860931003
+          ],
+          "distanceMm": 7.080880637689379
+        }
+      },
+      "dominantComponentCentreResidualMm": 5.5492234786921015
+    },
+    {
+      "side": "right",
+      "name": "Cuboid",
+      "bonehubName": "CUBOID_RIGHT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 13552,
+          "vertices": 6778,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              171.07717895507812,
+              249.05833435058594,
+              77.48046875
+            ],
+            [
+              205.4584197998047,
+              278.5530090332031,
+              110.04174041748047
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 5042,
+          "vertices": 2523,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              582.339599609375,
+              402.67962646484375,
+              78.33274841308594
+            ],
+            [
+              617.1118774414062,
+              432.2879333496094,
+              110.9330825805664
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        188.2677993774414,
+        263.80567169189453,
+        93.76110458374023
+      ],
+      "denverCentreMm": [
+        599.7257385253906,
+        417.48377990722656,
+        94.63291549682617
+      ],
+      "initialCentreResidualMm": 6.437598330820723,
+      "fittedCentreResidualMm": 7.659408498940086,
+      "sourceTriangles": 13552,
+      "targetTriangles": 5042,
+      "bonehubToDenver": {
+        "vertices": 6778,
+        "meanMm": 2.841687560566325,
+        "rmsMm": 3.374850380565282,
+        "p50Mm": 2.7552179678152218,
+        "p95Mm": 6.4014177489935244,
+        "maximum": {
+          "vertex": 5197,
+          "point": [
+            600.785400390625,
+            416.9272155761719,
+            98.07132720947266
+          ],
+          "nearest": [
+            598.7395513163701,
+            411.67882157398003,
+            103.56314717675109
+          ],
+          "distanceMm": 7.867097596310275
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 2523,
+        "meanMm": 3.314275596119213,
+        "rmsMm": 3.992123212286523,
+        "p50Mm": 3.080402337721873,
+        "p95Mm": 7.376606172094132,
+        "maximum": {
+          "vertex": 2467,
+          "point": [
+            601.1924438476562,
+            408.6195068359375,
+            102.02559661865234
+          ],
+          "nearest": [
+            604.3371729510419,
+            415.4904518599819,
+            98.14191502938243
+          ],
+          "distanceMm": 8.496010201497818
+        }
+      },
+      "dominantComponentCentreResidualMm": 7.659408498940086
+    },
+    {
+      "side": "right",
+      "name": "LateralCuneiform",
+      "bonehubName": "LATERAL_CUNEIFORM_RIGHT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 7596,
+          "vertices": 3800,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              173.94479370117188,
+              232.48397827148438,
+              81.61958312988281
+            ],
+            [
+              198.6976776123047,
+              253.3633575439453,
+              106.26238250732422
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 2808,
+          "vertices": 1406,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              589.2030639648438,
+              428.1166076660156,
+              81.49610137939453
+            ],
+            [
+              614.979248046875,
+              449.9461364746094,
+              105.72056579589844
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        186.32123565673828,
+        242.92366790771484,
+        93.94098281860352
+      ],
+      "denverCentreMm": [
+        602.0911560058594,
+        439.0313720703125,
+        93.60833358764648
+      ],
+      "initialCentreResidualMm": 5.212538608235773,
+      "fittedCentreResidualMm": 6.4882130642817115,
+      "sourceTriangles": 7596,
+      "targetTriangles": 2808,
+      "bonehubToDenver": {
+        "vertices": 3800,
+        "meanMm": 2.5087809113697355,
+        "rmsMm": 2.9158805164295596,
+        "p50Mm": 2.3971238989297876,
+        "p95Mm": 4.9549085028595865,
+        "maximum": {
+          "vertex": 979,
+          "point": [
+            614.8899536132812,
+            453.34619140625,
+            84.56709289550781
+          ],
+          "nearest": [
+            611.9617919921875,
+            448.8426513671875,
+            87.0890884399414
+          ],
+          "distanceMm": 5.934346205676607
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 1406,
+        "meanMm": 2.7249632878446164,
+        "rmsMm": 3.1873165111092474,
+        "p50Mm": 2.548460283413117,
+        "p95Mm": 5.738044665897485,
+        "maximum": {
+          "vertex": 33,
+          "point": [
+            595.2991943359375,
+            429.1993408203125,
+            100.96150970458984
+          ],
+          "nearest": [
+            598.2914428710938,
+            434.6070251464844,
+            97.48067474365234
+          ],
+          "distanceMm": 7.093152549674542
+        }
+      },
+      "dominantComponentCentreResidualMm": 6.4882130642817115
+    },
+    {
+      "side": "right",
+      "name": "MedialCuneiform",
+      "bonehubName": "MEDIAL_CUNEIFORM_RIGHT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 11392,
+          "vertices": 5698,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              191.33547973632812,
+              216.04673767089844,
+              78.34127807617188
+            ],
+            [
+              218.94857788085938,
+              250.26101684570312,
+              107.45692443847656
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 4216,
+          "vertices": 2110,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              569.2054443359375,
+              431.890869140625,
+              77.22470092773438
+            ],
+            [
+              597.7101440429688,
+              467.11920166015625,
+              106.90149688720703
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        205.14202880859375,
+        233.15387725830078,
+        92.89910125732422
+      ],
+      "denverCentreMm": [
+        583.4577941894531,
+        449.5050354003906,
+        92.0630989074707
+      ],
+      "initialCentreResidualMm": 5.015985141310781,
+      "fittedCentreResidualMm": 6.333985192649376,
+      "sourceTriangles": 11392,
+      "targetTriangles": 4216,
+      "bonehubToDenver": {
+        "vertices": 5698,
+        "meanMm": 2.3412987802619645,
+        "rmsMm": 2.8606427119392017,
+        "p50Mm": 2.2717115264236134,
+        "p95Mm": 5.058586480235887,
+        "maximum": {
+          "vertex": 4892,
+          "point": [
+            582.7457885742188,
+            447.7170104980469,
+            98.9906005859375
+          ],
+          "nearest": [
+            588.1676635742188,
+            444.766357421875,
+            98.8458251953125
+          ],
+          "distanceMm": 6.174466940981882
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 2110,
+        "meanMm": 2.517213318985901,
+        "rmsMm": 3.1156189794973566,
+        "p50Mm": 2.4110424189995516,
+        "p95Mm": 5.977194947917783,
+        "maximum": {
+          "vertex": 1797,
+          "point": [
+            573.4042358398438,
+            434.3466796875,
+            102.0521240234375
+          ],
+          "nearest": [
+            576.2203775564286,
+            439.1119694827772,
+            97.43735808503685
+          ],
+          "distanceMm": 7.206573781422464
+        }
+      },
+      "dominantComponentCentreResidualMm": 6.333985192649376
+    },
+    {
+      "side": "right",
+      "name": "IntermediateCuneiform",
+      "bonehubName": "INTERMEDIATE_CUNEIFORM_RIGHT",
+      "fitLandmark": false,
+      "sourceComponents": [
+        {
+          "triangles": 6208,
+          "vertices": 3106,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              181.15748596191406,
+              223.7947540283203,
+              87.40391540527344
+            ],
+            [
+              202.4351806640625,
+              247.1476287841797,
+              110.22179412841797
+            ]
+          ]
+        }
+      ],
+      "targetComponents": [
+        {
+          "triangles": 2314,
+          "vertices": 1159,
+          "firstTriangle": 0,
+          "bounds": [
+            [
+              585.8096313476562,
+              434.6856994628906,
+              87.0740737915039
+            ],
+            [
+              608.148681640625,
+              459.8778381347656,
+              109.67542266845703
+            ]
+          ]
+        }
+      ],
+      "bonehubCentreLpsMm": [
+        191.79633331298828,
+        235.47119140625,
+        98.8128547668457
+      ],
+      "denverCentreMm": [
+        596.9791564941406,
+        447.2817687988281,
+        98.37474822998047
+      ],
+      "initialCentreResidualMm": 4.530240116438224,
+      "fittedCentreResidualMm": 5.874786424140377,
+      "sourceTriangles": 6208,
+      "targetTriangles": 2314,
+      "bonehubToDenver": {
+        "vertices": 3106,
+        "meanMm": 2.19204614330566,
+        "rmsMm": 2.63916497703541,
+        "p50Mm": 2.0294382219114646,
+        "p95Mm": 4.663274438265121,
+        "maximum": {
+          "vertex": 757,
+          "point": [
+            609.8527221679688,
+            458.558837890625,
+            90.71730041503906
+          ],
+          "nearest": [
+            605.7586203274996,
+            454.68770780175953,
+            92.58927435293495
+          ],
+          "distanceMm": 5.937306162664535
+        }
+      },
+      "denverToBonehub": {
+        "vertices": 1159,
+        "meanMm": 2.636788511474679,
+        "rmsMm": 3.283579986821064,
+        "p50Mm": 2.2268017381427527,
+        "p95Mm": 5.945901424413304,
+        "maximum": {
+          "vertex": 337,
+          "point": [
+            586.3508911132812,
+            437.0129089355469,
+            100.32714080810547
+          ],
+          "nearest": [
+            590.235221134098,
+            441.30467179681904,
+            95.22290678800172
+          ],
+          "distanceMm": 7.717541907887347
+        }
+      },
+      "dominantComponentCentreResidualMm": 5.874786424140377
+    }
+  ],
+  "limitations": [
+    "AABB centres are not anatomical landmarks. Nearest surface distances do not establish pointwise anatomical correspondence.",
+    "Disconnected source fragments remain in fitting samples and full final distance checks; dominant-component centres are supplementary diagnostics, never a silent geometry deletion.",
+    "This compares BoneHub to the recorded Denver source stage, not to the HRA skin, brain, nerves or current borrowed bones.",
+    "Different segmentation, smoothing, final overclosure adjustments and source granularity can leave residual differences even with shared imaging provenance.",
+    "No individual toe phalanx mapping, clinical alignment approval, shape deformation or runtime replacement is inferred."
+  ],
+  "files": [
+    {
+      "file": "docs/anatomy-alignment/donor-source-comparison.json",
+      "sha256": "ea0c9cbc5d0edc0a3859fb9f5786a638eeb3e92bb5a60649325561dc14c69959"
+    },
+    {
+      "file": "docs/anatomy-alignment/bonehub-female-inventory.json",
+      "sha256": "3e82a5e58d9c3a90e55a83a236e20fb82424a9796a7a8f7fe0f2ffbadbcad4c4"
+    },
+    {
+      "file": "docs/anatomy-alignment/bonehub-female-receipt.json",
+      "sha256": "4146adce0c4d8389b23bb4a4eb30024912c92f8cccd9e56995cbb9a4b935cd02"
+    },
+    {
+      "file": "docs/anatomy-alignment/donor-feet-audit.json",
+      "sha256": "25e5247c1dc2cf5d784498395eb4664caeb1c5d4a51280ea817d99bba33ff14c"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Femur_smooth.stl",
+      "sha256": "964b27ab140b4e72a2e7c4ae3f1ae24212554cc1a8f0552b632dafce8d66b242"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/FEMUR_LEFT.stl",
+      "sha256": "0b4966022c37708c8e7ebc62836003b2e6be8a2e29841db326d20d68ad538ff4"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Tibia_smooth.stl",
+      "sha256": "148107a0157932b94cab2b382b805af7c3c178400be76349ed20cea0bb56c3eb"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/TIBIA_LEFT.stl",
+      "sha256": "4dd60dfba89bf4822da9b5dc123e8f5cef17d6e2f9b57583e7f9def6e11bb276"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Fibula_smooth.stl",
+      "sha256": "3f5573f86c10eac6b25ed63604ea15ada1d389b54e0ceaecc48e5c5d33a62549"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/FIBULA_LEFT.stl",
+      "sha256": "83ef606e5dee7bc1b3f35a61736c566b5d90ccd25ea5332fb73e0b2d95edc3a8"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Patella_smooth.stl",
+      "sha256": "4a57158e9ec1716a78e27d4370865fcbc5e7ff4be203f38e9aa59ca84761153c"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/PATELLA_LEFT.stl",
+      "sha256": "1ef6861750145e6b4a1e3c578c993790be90e823f3a89190214788ffeba126a8"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Pelvis_smooth.stl",
+      "sha256": "8a54af941e90d601320747d8e44a9bef8ca748291653480c1ca25355e6c89e08"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_LEFT/HIP_LEFT.stl",
+      "sha256": "2741340e19380df5f89aa2c402d6f2f9046ac74e5c4118f0e3456f21b77004a0"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Talus_smooth.stl",
+      "sha256": "1f905e13b8a9bf3d7b30964a6f151cc8df2f07891614364e4d46c856e50b9fbd"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/TALUS_LEFT.stl",
+      "sha256": "3f322768cd56a4489683ad7bbbf1d8d537532675ac73c8269c9328b888394d56"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Calcaneous_smooth.stl",
+      "sha256": "e39565fce885e6d53d1abac45c259eb12a4293d4fa19b4068e1222a449d7f67c"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/CALCANEUS_LEFT.stl",
+      "sha256": "adb7e828535941c2db0993eef9721c8064e2580f571800f22fcbe67a76d6340b"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Navicular_smooth.stl",
+      "sha256": "83781105ca69f198893bf10671564f774b36ae115012a082fb6cc9b94cf125d7"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/NAVICULAR_LEFT.stl",
+      "sha256": "0c13d5e5affea6f013872ad0d5212f7d9b6873a1dc5fa6307d6af347bd35a59f"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_Cuboid_smooth.stl",
+      "sha256": "a7ee7acebdf33e4b45fc0c56d3e79d1377bfac4ea8a296f2a74400dfef5d849d"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/CUBOID_LEFT.stl",
+      "sha256": "4e9a717a9781768c008333c603edc6352c4319315a6c4aa00476580ff4efe88a"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_LateralCuneiform_smooth.stl",
+      "sha256": "f131c0d95e9a58181745aa2e2ab58682c4d1d1dc3d991de4811e187ab71cd52b"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/LATERAL_CUNEIFORM_LEFT.stl",
+      "sha256": "3bc962ca0dcf7489a17ee0b5111229354e71ef51ceee002b357b737a85f93161"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_MedialCuneiform_smooth.stl",
+      "sha256": "9416e8ee8dc8e84756471178de642bec5d66c5f94255db6b78616645a895abeb"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/MEDIAL_CUNEIFORM_LEFT.stl",
+      "sha256": "abf07a9cbd051051059b4352cd1f62c3b1312a31bf2a701441c1debf367be17d"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Left/VHF_Left_Bone_IntermediateCuneiform_smooth.stl",
+      "sha256": "38f08693bd04bbed5d21b54319cd6c1a3546d0930cfbcb51a7b8e1207507cff6"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_LEFT/INTERMEDIATE_CUNEIFORM_LEFT.stl",
+      "sha256": "6790f11a8d5d8f52fd55bc84da2289507208ce93ee39fd0f174c166048ec8031"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Femur_smooth.stl",
+      "sha256": "012b293cbaa2cd467ea423b96bb257c8f558ff639c8342e37972af7c6febbd25"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/FEMUR_RIGHT.stl",
+      "sha256": "0136d11c03268b71b2e4011367d56caaad63e8ca9c7b81416b116df3d93a25de"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Tibia_smooth.stl",
+      "sha256": "589b64fe38d602eb95a0dad900bcd1059043d3d8451d3d74c7231fccc62ffae1"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/TIBIA_RIGHT.stl",
+      "sha256": "0c262cf9c7a188934a1296382eb6bf3ffb72cc41b14d76e0457025225d54d68b"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Fibula_smooth.stl",
+      "sha256": "5e62c5c1aeedb2b0c287e4efbaf881ef9c8c721ccc546a69c74784e520581a24"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/FIBULA_RIGHT.stl",
+      "sha256": "8536f9936175e5cecb595c4b84ac1ce8af59fa42595a488dfc7c3b8eab0cf40d"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Patella_smooth.stl",
+      "sha256": "bca69eb33e240c0ec6ea3fafb4f782edbc8ca714203860d972c74aabc6202613"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/PATELLA_RIGHT.stl",
+      "sha256": "61c4946fdfedefd5c584d935f93a987fe366490d2dae5f2fd2bf061e4aa5191a"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Pelvis_smooth.stl",
+      "sha256": "007280b01294f728e3e81a4e708986f6bbb921140d88b4260543a5babc6fac5b"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/LOWER_EXTREMITY_RIGHT/HIP_RIGHT.stl",
+      "sha256": "ad1783ea8749aaf7c84d53bbfbbec5eb494f38a0cbfa48b4bd7e89b30aa044e6"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Talus_smooth.stl",
+      "sha256": "dc7dfeb876a6e3ca0d7c877d2aaec5aa95e721aa146d6e576bd6e6ee5f5c37b5"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/TALUS_RIGHT.stl",
+      "sha256": "6af24dab667e03f174101154f03d7be5cc99406d1dd08a131b1d320cf9299145"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Calcaneous_smooth.stl",
+      "sha256": "e2b7ac7099289a1aaa9f16d7e693b05d13a1f57912793a9e063f9d4c55ac83d9"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/CALCANEUS_RIGHT.stl",
+      "sha256": "5e6875d292ca36454775cee7ec5ceae4746c2ff682d797087d13a1ecd4112968"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Navicular_smooth.stl",
+      "sha256": "ccb9e9c5a8299a609e09c97a58f10ecb3585000b2270dcfc6e2caa85435d4194"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/NAVICULAR_RIGHT.stl",
+      "sha256": "e51a30c6573922455aab5069cf3289557e991e9c61cb917a42f20aad878eeba8"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_Cuboid_smooth.stl",
+      "sha256": "a89932159a0dd53d603529b644bca95505aeb697f53cf164329ebeea51c40fb0"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/CUBOID_RIGHT.stl",
+      "sha256": "6d45623a8dc16401bb77f93c6f4b568c07b72ae2c8077632318c7f267cab2ccd"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_LateralCuneiform_smooth.stl",
+      "sha256": "1711df66029087a9e356f225f7f0943232426e8935cbdfc173fa3b6150b66ccc"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/LATERAL_CUNEIFORM_RIGHT.stl",
+      "sha256": "e610db2cb0f1384b0832b2c829701763c76e2b2b51e460f5da5395da960cc41c"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_MedialCuneiform_smooth.stl",
+      "sha256": "95f8bbb0e6efa335a620ac8517b0577fb6c470c7e52d7da7f09afd82d782b13e"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/MEDIAL_CUNEIFORM_RIGHT.stl",
+      "sha256": "46cffc714d5dda411465f806502cb72841578e14dafa4a317353bb05f45b6b70"
+    },
+    {
+      "file": ".cache/donor-muscle/source-P9Rvmp/Final 3D STL Models-stl/Right/VHF_Right_Bone_IntermediateCuneiform_smooth.stl",
+      "sha256": "d84ff954c393d538e227cede60b116a6de4dce7f943ea8523cc243e45ae0c878"
+    },
+    {
+      "file": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/FOOT_RIGHT/INTERMEDIATE_CUNEIFORM_RIGHT.stl",
+      "sha256": "a16080c692c95a9c5471fd42c99c79fcbca16152703a77d6d583d1e4d17b668c"
+    },
+    {
+      "file": "scripts/audit-bonehub-denver-frame.mjs",
+      "sha256": "4101cf2558c6a9c5663883fd3e2c21a8baf33e54bced04cbb6e30ce43b89fb37"
+    },
+    {
+      "file": "scripts/lib/similarity-fit.mjs",
+      "sha256": "72472e690233c9575af2191adb9cd22d99a8dd8dccf254197709daf061b45042"
+    },
+    {
+      "file": "scripts/lib/exact-position-components.mjs",
+      "sha256": "8e9aee660f8edf3f357b9ac9156c47d532ac6f2dc4679c9e6770ad2d51f805cd"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    }
+  ]
+}

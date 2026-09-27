@@ -1,0 +1,96 @@
+{
+  "status": "Held-out source surface comparison, not app or clinical validation",
+  "captures": [
+    {
+      "stage": "final",
+      "side": "left",
+      "file": ".cache/bonehub-denver-frame/final-left.png",
+      "sha256": "28dbc656ecfbcf7132b30a04f1b8938c5780fcb7e93c7fffd535b90b5d7ad549",
+      "camera": {
+        "position": [
+          -0.24602243656516987,
+          0.25796687054335615,
+          0.6910015160381703
+        ],
+        "target": [
+          -0.5166924148797989,
+          0.12263188138604164,
+          0.42033153772354126
+        ],
+        "visibleMeshes": 14
+      }
+    },
+    {
+      "stage": "final",
+      "side": "right",
+      "file": ".cache/bonehub-denver-frame/final-right.png",
+      "sha256": "e7eb1ba8ebe1daf579327c4994a47a4b825c592b87025d5b39a4338cd6c6322c",
+      "camera": {
+        "position": [
+          -0.8552629846730413,
+          0.25032825635863254,
+          0.6776473421254339
+        ],
+        "target": [
+          -0.5846278369426727,
+          0.11501068249344826,
+          0.4070121943950653
+        ],
+        "visibleMeshes": 14
+      }
+    },
+    {
+      "stage": "original",
+      "side": "left",
+      "file": ".cache/bonehub-denver-frame/original-left.png",
+      "sha256": "44bf9b673df2914fef1b99adb9c0a0e47304f8b36cfc2e0e4631d5af598e5e14",
+      "camera": {
+        "position": [
+          -0.24641289731140192,
+          0.25787762095394107,
+          0.6906683949602122
+        ],
+        "target": [
+          -0.5167945325374603,
+          0.12268680334091187,
+          0.42028675973415375
+        ],
+        "visibleMeshes": 14
+      }
+    },
+    {
+      "stage": "original",
+      "side": "right",
+      "file": ".cache/bonehub-denver-frame/original-right.png",
+      "sha256": "c922688266c2f23f1c71e7f18b392aedf8bafb5fc365c5784aa1d41b54442e9d",
+      "camera": {
+        "position": [
+          -0.8555770552938057,
+          0.2505147028359211,
+          0.6776628679816795
+        ],
+        "target": [
+          -0.5846818089485168,
+          0.11506707966327667,
+          0.4067676216363907
+        ],
+        "visibleMeshes": 14
+      }
+    }
+  ],
+  "errors": [],
+  "files": [
+    {
+      "file": ".cache/bonehub-denver-frame/report.json",
+      "sha256": "52570945fca74df6d1a34d40d9189d2aebeb017ed36b734d00125b1806428f65"
+    },
+    {
+      "file": ".cache/bonehub-denver-original-frame/report.json",
+      "sha256": "ae47f5347c9859d89f99a8b8091f7505ba0db9b56af912ca88cc612bb360614c"
+    },
+    {
+      "file": "scripts/capture-bonehub-denver-frame.mjs",
+      "sha256": "99d300d3a07f866ecc3e6fcb071fe208ffd7cd7d32526aed6ec78c2a1a6bb354"
+    }
+  ]
+}
