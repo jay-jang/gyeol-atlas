@@ -1,0 +1,53 @@
+{
+  "createdAt": "2026-09-27T18:53:49.900Z",
+  "reportSha256": "817855ae9ca0e9b1721f5e090ac0b3446a5c1a56b7f5013b35612c2085688a91",
+  "relations": 134,
+  "closestPoints": 268,
+  "witnesses": 55,
+  "maximumClosestPlaneResidualMm": 1.8474193135003312e-13,
+  "maximumDistanceResidualMm": 2.842170943040401e-14,
+  "maximumWitnessResidualMm": 2.2388016169968657e-13,
+  "limitations": [
+    "Verifies every recorded closest point and triangle membership, and every stored transverse witness. Does not independently prove global minimum distances, absent crossings, nearest-search completeness or clinical anatomy.",
+    "Runtime/source decoding and matrix application reuse the context/Three implementation; point/plane/barycentric arithmetic below is separate."
+  ],
+  "lumbarFrameSensitivity": [
+    {
+      "level": "VERTEBRA_L1",
+      "vertices": 26378,
+      "p95Mm": 0.40375221215459034,
+      "maximumMm": 0.4062198400644191
+    },
+    {
+      "level": "VERTEBRA_L2",
+      "vertices": 30412,
+      "p95Mm": 0.3858224310210395,
+      "maximumMm": 0.3890100246386705
+    },
+    {
+      "level": "VERTEBRA_L3",
+      "vertices": 34482,
+      "p95Mm": 0.3684370235822486,
+      "maximumMm": 0.373942307448137
+    },
+    {
+      "level": "VERTEBRA_L4",
+      "vertices": 35156,
+      "p95Mm": 0.34924631444595705,
+      "maximumMm": 0.3514799733874131
+    },
+    {
+      "level": "VERTEBRA_L5",
+      "vertices": 33958,
+      "p95Mm": 0.33077048637530426,
+      "maximumMm": 0.33448233015748985
+    },
+    {
+      "level": "VERTEBRA_L6",
+      "vertices": 35604,
+      "p95Mm": 0.3127504841927697,
+      "maximumMm": 0.31790697039967825
+    }
+  ],
+  "scriptSha256": "626925cdd05ccfe8692fa0611288e89504df3ad3d6db85589406dce6bd126c14"
+}
