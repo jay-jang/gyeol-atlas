@@ -1,0 +1,312 @@
+{
+  "createdAt": "2026-09-27T15:06:02.957Z",
+  "status": "PRIVATE DIAGNOSTIC, not app UI or anatomical approval",
+  "auditSha256": "4eec713c49ee965bcd8fb6a933c981504c3eb7aab1d8f6b13f562561f1bbec2f",
+  "diagnosticSha256": "30821772328e8bc8c24d67432edb053b702450ea0d53bc93743f54a918a6e896",
+  "scriptSha256": "29d7b5b4ff945d3cd5e936617b22301d532d541e7fec656ed2d11dcd394cb1f6",
+  "colorKey": {
+    "sourceMuscle": "blue, 48% opacity",
+    "sourceLigaments": "green",
+    "fixedHraTargets": "beige"
+  },
+  "limits": "Camera frames the knee; distal muscle/bone portions extend beyond viewport. Skin, other muscles and untested structures are omitted. Source and HRA ligaments are intentionally shown together for correspondence comparison.",
+  "errors": [],
+  "captures": [
+    {
+      "side": "left",
+      "frame": "original-shank",
+      "view": "posterior",
+      "file": "knee-left-original-shank-posterior.png",
+      "sha256": "61b81eada35e2894819299eedcde100b9bf07c35063f304dc9107da1fa12c4dc",
+      "cameraPosition": [
+        0.12449448555707932,
+        0.5412349444835511,
+        -1.084256309409359
+      ],
+      "target": [
+        0.12449448555707932,
+        0.3928944915533066,
+        -0.0953199565410614
+      ],
+      "extent": 0.22235588199643586,
+      "ids": [
+        "VHF0005",
+        "HRAF0931",
+        "HRAF0933",
+        "HRAF0934",
+        "HRAF0935",
+        "HRAF0936",
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0939",
+        "HRAF0946",
+        "HRAF0947",
+        "HRAF0948",
+        "HRAF0954",
+        "SOURCE-ACL",
+        "SOURCE-PCL",
+        "SOURCE-MCL",
+        "SOURCE-LCL"
+      ]
+    },
+    {
+      "side": "left",
+      "frame": "original-shank",
+      "view": "oblique",
+      "file": "knee-left-original-shank-oblique.png",
+      "sha256": "55c3b59c133708917b762e21f80e0dc9d2b140d297b97dcba8999586ce9fc1eb",
+      "cameraPosition": [
+        -0.5786680683775507,
+        0.4983688746435011,
+        -0.7984825104756914
+      ],
+      "target": [
+        0.12449448555707932,
+        0.3928944915533066,
+        -0.0953199565410614
+      ],
+      "extent": 0.22235588199643586,
+      "ids": [
+        "VHF0005",
+        "HRAF0931",
+        "HRAF0933",
+        "HRAF0934",
+        "HRAF0935",
+        "HRAF0936",
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0939",
+        "HRAF0946",
+        "HRAF0947",
+        "HRAF0948",
+        "HRAF0954",
+        "SOURCE-ACL",
+        "SOURCE-PCL",
+        "SOURCE-MCL",
+        "SOURCE-LCL"
+      ]
+    },
+    {
+      "side": "left",
+      "frame": "hierarchy-shank",
+      "view": "posterior",
+      "file": "knee-left-hierarchy-shank-posterior.png",
+      "sha256": "2cd2125e0bbd96afeb09ae17069452e34d074cf25692f989c4f155598e3a8c13",
+      "cameraPosition": [
+        0.12449448555707932,
+        0.5412349444835511,
+        -1.084256309409359
+      ],
+      "target": [
+        0.12449448555707932,
+        0.3928944915533066,
+        -0.0953199565410614
+      ],
+      "extent": 0.22235588199643586,
+      "ids": [
+        "VHF0005",
+        "HRAF0931",
+        "HRAF0933",
+        "HRAF0934",
+        "HRAF0935",
+        "HRAF0936",
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0939",
+        "HRAF0946",
+        "HRAF0947",
+        "HRAF0948",
+        "HRAF0954",
+        "SOURCE-ACL",
+        "SOURCE-PCL",
+        "SOURCE-MCL",
+        "SOURCE-LCL"
+      ]
+    },
+    {
+      "side": "left",
+      "frame": "hierarchy-shank",
+      "view": "oblique",
+      "file": "knee-left-hierarchy-shank-oblique.png",
+      "sha256": "a3a23cd1b198aaee6898a94bc1c68789e01e135dbdbc48b74ad139ee1d633da5",
+      "cameraPosition": [
+        -0.5786680683775507,
+        0.4983688746435011,
+        -0.7984825104756914
+      ],
+      "target": [
+        0.12449448555707932,
+        0.3928944915533066,
+        -0.0953199565410614
+      ],
+      "extent": 0.22235588199643586,
+      "ids": [
+        "VHF0005",
+        "HRAF0931",
+        "HRAF0933",
+        "HRAF0934",
+        "HRAF0935",
+        "HRAF0936",
+        "HRAF0937",
+        "HRAF0938",
+        "HRAF0939",
+        "HRAF0946",
+        "HRAF0947",
+        "HRAF0948",
+        "HRAF0954",
+        "SOURCE-ACL",
+        "SOURCE-PCL",
+        "SOURCE-MCL",
+        "SOURCE-LCL"
+      ]
+    },
+    {
+      "side": "right",
+      "frame": "original-shank",
+      "view": "posterior",
+      "file": "knee-right-original-shank-posterior.png",
+      "sha256": "49d7a6c3f889696cf7d21c31e11d3a2387df49499fb57d3c579c2d7706d6da20",
+      "cameraPosition": [
+        -0.1331796906888485,
+        0.5412349444835511,
+        -1.0805240677192
+      ],
+      "target": [
+        -0.1331796906888485,
+        0.3928944915533066,
+        -0.09158771485090256
+      ],
+      "extent": 0.22235585164784444,
+      "ids": [
+        "VHF0043",
+        "HRAF0904",
+        "HRAF0905",
+        "HRAF0906",
+        "HRAF0908",
+        "HRAF0910",
+        "HRAF0911",
+        "HRAF0914",
+        "HRAF0917",
+        "HRAF0918",
+        "HRAF0921",
+        "HRAF0923",
+        "HRAF0927",
+        "SOURCE-ACL",
+        "SOURCE-PCL",
+        "SOURCE-MCL",
+        "SOURCE-LCL"
+      ]
+    },
+    {
+      "side": "right",
+      "frame": "original-shank",
+      "view": "oblique",
+      "file": "knee-right-original-shank-oblique.png",
+      "sha256": "cfcbb88a1cab76f570b9e2543014c8f6ce72ef1a2d2b757957c5f13465cb8f8b",
+      "cameraPosition": [
+        0.5699828632457815,
+        0.4983688746435011,
+        -0.7947502687855326
+      ],
+      "target": [
+        -0.1331796906888485,
+        0.3928944915533066,
+        -0.09158771485090256
+      ],
+      "extent": 0.22235585164784444,
+      "ids": [
+        "VHF0043",
+        "HRAF0904",
+        "HRAF0905",
+        "HRAF0906",
+        "HRAF0908",
+        "HRAF0910",
+        "HRAF0911",
+        "HRAF0914",
+        "HRAF0917",
+        "HRAF0918",
+        "HRAF0921",
+        "HRAF0923",
+        "HRAF0927",
+        "SOURCE-ACL",
+        "SOURCE-PCL",
+        "SOURCE-MCL",
+        "SOURCE-LCL"
+      ]
+    },
+    {
+      "side": "right",
+      "frame": "hierarchy-shank",
+      "view": "posterior",
+      "file": "knee-right-hierarchy-shank-posterior.png",
+      "sha256": "f37f1fd82212b8da43ad56638ceeca64de9fe2971a9f8aa08f6aa2a61c61b4bf",
+      "cameraPosition": [
+        -0.1331796906888485,
+        0.5412349444835511,
+        -1.0805240677192
+      ],
+      "target": [
+        -0.1331796906888485,
+        0.3928944915533066,
+        -0.09158771485090256
+      ],
+      "extent": 0.22235585164784444,
+      "ids": [
+        "VHF0043",
+        "HRAF0904",
+        "HRAF0905",
+        "HRAF0906",
+        "HRAF0908",
+        "HRAF0910",
+        "HRAF0911",
+        "HRAF0914",
+        "HRAF0917",
+        "HRAF0918",
+        "HRAF0921",
+        "HRAF0923",
+        "HRAF0927",
+        "SOURCE-ACL",
+        "SOURCE-PCL",
+        "SOURCE-MCL",
+        "SOURCE-LCL"
+      ]
+    },
+    {
+      "side": "right",
+      "frame": "hierarchy-shank",
+      "view": "oblique",
+      "file": "knee-right-hierarchy-shank-oblique.png",
+      "sha256": "4c0f5e9c526a325b7bfc446e39cd6853572a27c7be5b21523290bad5db1e0977",
+      "cameraPosition": [
+        0.5699828632457815,
+        0.4983688746435011,
+        -0.7947502687855326
+      ],
+      "target": [
+        -0.1331796906888485,
+        0.3928944915533066,
+        -0.09158771485090256
+      ],
+      "extent": 0.22235585164784444,
+      "ids": [
+        "VHF0043",
+        "HRAF0904",
+        "HRAF0905",
+        "HRAF0906",
+        "HRAF0908",
+        "HRAF0910",
+        "HRAF0911",
+        "HRAF0914",
+        "HRAF0917",
+        "HRAF0918",
+        "HRAF0921",
+        "HRAF0923",
+        "HRAF0927",
+        "SOURCE-ACL",
+        "SOURCE-PCL",
+        "SOURCE-MCL",
+        "SOURCE-LCL"
+      ]
+    }
+  ]
+}
