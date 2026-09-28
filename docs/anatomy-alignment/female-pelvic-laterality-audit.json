@@ -1,0 +1,130 @@
+{
+  "createdAt": "2026-09-28T03:04:11.305Z",
+  "status": "SOURCE LATERALITY AUDIT; no runtime change",
+  "source": {
+    "file": ".cache/neural-bone/hra-united-female-v1.10.glb",
+    "sha256": "95f0c3d2f918582608692ca1139e8bdb18c147a16470e9ee9af8b276bd77c422",
+    "url": "https://cdn.humanatlas.io/digital-objects/ref-organ/united-female/v1.10/assets/3d-vh-f-united.glb"
+  },
+  "packed": {
+    "file": "public/models/female/atlas-female.json",
+    "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+  },
+  "census": {
+    "method": "Exact case-insensitive left/right name pairs among native non-brain parts; bounding-box center X only",
+    "pairs": 185,
+    "reversed": [
+      {
+        "key": "side round ligament of uterus",
+        "leftId": "HRAF0418",
+        "rightId": "HRAF0417",
+        "leftCenterX": -0.054917276338632165,
+        "rightCenterX": 0.031615758580197634
+      }
+    ]
+  },
+  "coordinates": [
+    {
+      "id": "HRAF0417",
+      "name": "Right round ligament of uterus",
+      "conceptId": "HRA:right_round_ligament_of_uterus",
+      "sourceNode": "VH_F_right_round_ligament_of_uterus",
+      "sourceVertices": 453,
+      "sourceX": [
+        0.0020686625503003597,
+        0.04897189885377884
+      ],
+      "packedX": [
+        0.008164140428458394,
+        0.05506737673193687
+      ],
+      "stageShiftX": 0.006095477878158034
+    },
+    {
+      "id": "HRAF0418",
+      "name": "Left round ligament of uterus",
+      "conceptId": "HRA:left_round_ligament_of_uterus",
+      "sourceNode": "VH_F_left_round_ligament_of_uterus",
+      "sourceVertices": 514,
+      "sourceX": [
+        -0.09142684936523438,
+        -0.030598659068346024
+      ],
+      "packedX": [
+        -0.08533137148707634,
+        -0.02450318119018799
+      ],
+      "stageShiftX": 0.006095477878158034
+    },
+    {
+      "id": "HRAF0421",
+      "name": "Right cardinal ligament of uterus",
+      "conceptId": "HRA:right_cardinal_ligament_of_uterus",
+      "sourceNode": "VH_F_right_cardinal_ligament_of_uterus",
+      "sourceVertices": 2030,
+      "sourceX": [
+        -0.08383975923061371,
+        -0.017134008929133415
+      ],
+      "packedX": [
+        -0.07774428135245567,
+        -0.011038531050975381
+      ],
+      "stageShiftX": 0.006095477878158034
+    },
+    {
+      "id": "HRAF0422",
+      "name": "Left cardinal ligament of uterus",
+      "conceptId": "HRA:left_cardinal_ligament_of_uterus",
+      "sourceNode": "VH_F_left_cardinal_ligament_of_uterus",
+      "sourceVertices": 2030,
+      "sourceX": [
+        -0.007059134542942047,
+        0.0554359033703804
+      ],
+      "packedX": [
+        -0.0009636566647840128,
+        0.061531381248538436
+      ],
+      "stageShiftX": 0.006095477878158034
+    },
+    {
+      "id": "HRAF0432",
+      "name": "Left ovary",
+      "conceptId": "HRA:left_ovary",
+      "sourceNode": "VH_F_left_ovary",
+      "sourceVertices": 214,
+      "sourceX": [
+        0.038216304033994675,
+        0.05049369856715202
+      ],
+      "packedX": [
+        0.04431178191215271,
+        0.05658917644531006
+      ],
+      "stageShiftX": 0.006095477878158034
+    },
+    {
+      "id": "HRAF0433",
+      "name": "Right ovary",
+      "conceptId": "HRA:right_ovary",
+      "sourceNode": "VH_F_right_ovary",
+      "sourceVertices": 207,
+      "sourceX": [
+        -0.0767170712351799,
+        -0.06440738588571548
+      ],
+      "packedX": [
+        -0.07062159335702187,
+        -0.05831190800755745
+      ],
+      "stageShiftX": 0.006095477878158034
+    }
+  ],
+  "limitations": [
+    "Positive X is inferred as anatomical left from the other 184 native exact-name pairs and both ovary/cardinal-ligament controls; this is not an individual clinical position validation.",
+    "Exact-name matching omits unpaired, differently named and midline parts; it does not audit every female structure or any neural connection.",
+    "The official GLB carries the reversed round-ligament names on opposite sides. This audit does not establish why its authoring labels differ from the rest of the atlas.",
+    "Bounding-box extrema and six source meshes do not validate uterine attachment or physiological course."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "hra-female-round-ligament-v1",
+  "atlasSha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f",
+  "sourceGlbSha256": "95f0c3d2f918582608692ca1139e8bdb18c147a16470e9ee9af8b276bd77c422",
+  "records": [
+    {
+      "id": "HRAF0417",
+      "name": "Right round ligament of uterus",
+      "label": "오른쪽 자궁원인대",
+      "partnerId": "HRAF0418",
+      "partnerName": "Left round ligament of uterus"
+    },
+    {
+      "id": "HRAF0418",
+      "name": "Left round ligament of uterus",
+      "label": "왼쪽 자궁원인대",
+      "partnerId": "HRAF0417",
+      "partnerName": "Right round ligament of uterus"
+    }
+  ]
+}

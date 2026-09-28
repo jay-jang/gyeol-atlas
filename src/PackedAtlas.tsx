@@ -17,6 +17,7 @@ import { applyFemaleSourceRestoration, femaleSourceRestoration } from "./female-
 import { applyFemaleKneeSourceRestoration, femaleKneeSourceRestoration } from "./female-knee-source-restoration";
 import { anatomyRegionMatches } from "./anatomy-region";
 import { femaleBrainBindings, resolveFemaleBrainGeometryPart, verifyFemaleBrainManifest } from "./female-brain-bindings";
+import { femalePelvicBindings, resolveFemalePelvicGeometryPart, verifyFemalePelvicManifestVersion } from "./female-pelvic-bindings";
 
 type FemalePart = {
   id: string;
@@ -70,6 +71,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       const atlas = await fetch(assetUrl(`models/${dataset}/${dataset === "female" ? "atlas-female.json" : "atlas.json"}`), { signal: abort.signal }).then(async r => {
         if (!r.ok) throw new Error(`참조 모델 목록 ${r.status}`);
         const text=await r.text();await verifyFemaleBrainManifest(dataset,text);
+        verifyFemalePelvicManifestVersion(dataset);
         return JSON.parse(text) as FemaleManifest;
       });
       const [buffers,restoredSource,restoredKnee] = await Promise.all([Promise.all(atlas.chunks.map(async (chunk) => {
@@ -96,13 +98,15 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       for (const part of atlas.parts) {
         const layer = catalogById.get(part.id)?.layer || systemLayer[part.system];
         if (!layer) continue;
-        const geometryPart=resolveFemaleBrainGeometryPart(part,dataset,geometryParts);
+        const brainGeometryPart=resolveFemaleBrainGeometryPart(part,dataset,geometryParts);
+        const geometryPart=resolveFemalePelvicGeometryPart(brainGeometryPart,dataset,geometryParts);
         const buffer = buffers[geometryPart.chunk];
         const geometry = new BufferGeometry();
         geometry.setAttribute("position", new BufferAttribute(new Float32Array(buffer, geometryPart.positions, geometryPart.vertexCount * 3), 3));
         geometry.setAttribute("normal", new Int16BufferAttribute(new Int16Array(buffer, geometryPart.normals, geometryPart.vertexCount * 3), 3, true));
         geometry.setIndex(new BufferAttribute(new Uint32Array(buffer, geometryPart.indices, geometryPart.indexCount), 1));
-        if(geometryPart!==part)geometry.userData.femaleBrainBinding={version:femaleBrainBindings.version,canonicalId:part.id,sourceGeometryId:geometryPart.id};
+        if(brainGeometryPart!==part)geometry.userData.femaleBrainBinding={version:femaleBrainBindings.version,canonicalId:part.id,sourceGeometryId:geometryPart.id};
+        if(femalePelvicBindings.records.some(record=>record.id===part.id))geometry.userData.femalePelvicBinding={version:femalePelvicBindings.version,canonicalId:part.id,sourceGeometryId:geometryPart.id};
         applyFemaleSourceRestoration(geometry,dataset,part.id,part.system,restoredSource);
         applyFemaleKneeSourceRestoration(geometry,dataset,part.id,part.system,restoredKnee);
         applyFemaleArmRegistration(geometry, dataset, part.id, part.system);

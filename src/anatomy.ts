@@ -11,6 +11,7 @@ import maleDetailGroups from "../data/male-detail-groups.json";
 import maleDetailStructures from "../data/male-detail-structures.json";
 import femaleDetailStructures from "../data/female-detail-structures.json";
 import femaleDetailGroups from "../data/female-detail-groups.json";
+import {pelvicStructureDisplay} from "./female-pelvic-bindings";
 export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.find(detail => detail.id === group.id) || group), ...femaleOrganGroups, ...femaleDetailGroups];
 // Source-defined composite structures are available from their selection card,
 // without changing the featured major-organ navigation or comparison bundles.
@@ -45,7 +46,7 @@ const baseStructures = inputs.assets.map((s) => ({
 }));
 export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures.filter(s => s.sex === "male"), ...femaleAtlasStructures, ...maleDetailStructures, ...femaleDetailStructures].map(s => {
   const region = limbSkeletonRegion(s) || sourceOrganRegion(s);
-  return region ? { ...s, bodyRegion: region } : s;
+  return { ...pelvicStructureDisplay(s), ...(region ? { bodyRegion: region } : {}) };
 }) as {
   id: string;
   fmaId?: string;

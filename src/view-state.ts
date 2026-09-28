@@ -4,6 +4,7 @@ import { dissectionLayers, quantizeDepth, stageDepth } from "./dissection.ts";
 import { hasMixedReferenceFrames } from "./reference-source.ts";
 import { sourceOrganRegion } from "./anatomy-region.ts";
 import femaleBrainBindings from "../data/catalog/female-brain-bindings.json" with {type:"json"};
+import femalePelvicBindings from "../data/catalog/female-pelvic-bindings.json" with {type:"json"};
 import maleDetailGroups from "../data/male-detail-groups.json" with {type:"json"};
 export type CameraPose = {
   position: [number, number, number];
@@ -18,6 +19,7 @@ type ReturnView = Pick<ViewState, "anatomyRegion" | "stage" | "dissection" | "di
 export type ViewState = {
   version: 4;
   brainBindingVersion?: string;
+  pelvicBindingVersion?: string;
   pointId: string;
   sex: "male" | "female";
   anatomyRegion: "whole" | "head" | "upper-body" | "lower-body" | "upper-limb" | "lower-limb" | "chest" | "abdomen" | "pelvis";
@@ -55,6 +57,7 @@ export function initialView(pointId = ""): ViewState {
   return {
     version: 4,
     brainBindingVersion: femaleBrainBindings.version,
+    pelvicBindingVersion: femalePelvicBindings.version,
     pointId,
     sex: "male",
     anatomyRegion: "whole",
@@ -496,6 +499,11 @@ export function restoreView(
       if(femaleBrainBindings.records.some(r=>selected.has(r.id)!==selected.has(r.partnerId)))s.camera=null;
     }
     s.brainBindingVersion=femaleBrainBindings.version;
+    if(s.pelvicBindingVersion!==femalePelvicBindings.version&&s.sex==="female"){
+      const selected=new Set(s.selection?.ids||[]);
+      if(femalePelvicBindings.records.some(r=>selected.has(r.id)!==selected.has(r.partnerId)))s.camera=null;
+    }
+    s.pelvicBindingVersion=femalePelvicBindings.version;
     // Repair an obsolete height-based scope only when it would hide one selected
     // source organ. Keep valid whole/parent views, detail frames and comparisons.
     if (!s.detail && !s.comparison && s.selection?.kind === "structure" && s.selection.ids.length === 1) {
