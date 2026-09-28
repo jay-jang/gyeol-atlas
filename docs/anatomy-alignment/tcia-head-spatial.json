@@ -1,0 +1,107 @@
+{
+  "caseId": "003",
+  "sourceArchiveSha256": "f3daa9c5e9740c8d68688bd800f5d3107236099d3e319bbef04076aa4719b13f",
+  "sourceMember": "Healthy-Total-Body-Cts/HealthyTotalBodyCTCollectionNIfTIfilesJanuary2023/Healthy-Total-Body-CTs-003.nii.gz",
+  "sourceMemberSha256": "7f94ed7854ec2aabba7f4eaa0db0d5e2fff059480ba392bf1de37d3e1ff6638d",
+  "cropGridLowXyz": [
+    166,
+    212,
+    657
+  ],
+  "cropGridHighExclusiveXyz": [
+    333,
+    415,
+    773
+  ],
+  "spacingMmZyx": [
+    2.3440001010894775,
+    0.9765625,
+    0.9765625
+  ],
+  "sourceAffineRasMm": [
+    [
+      -0.9765625,
+      0.0,
+      0.0,
+      249.51171875
+    ],
+    [
+      0.0,
+      0.9765625,
+      0.0,
+      -249.51171875
+    ],
+    [
+      0.0,
+      0.0,
+      2.3440001010894775,
+      521.443115234375
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "metrics": {
+    "brain": {
+      "voxels": 568799,
+      "components6": 1,
+      "componentVoxelCountsDescending": [
+        568799
+      ],
+      "surface": {
+        "vertices": 61802,
+        "triangles": 123600,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "sourceCropTouchesBoundary": false
+      }
+    },
+    "skull": {
+      "voxels": 264082,
+      "components6": 3,
+      "componentVoxelCountsDescending": [
+        264039,
+        42,
+        1
+      ],
+      "surface": {
+        "vertices": 153432,
+        "triangles": 306916,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "sourceCropTouchesBoundary": false
+      }
+    },
+    "brainSkull": {
+      "sharedLabeledVoxels": 0,
+      "sharedVoxelFaceContactsByAxis": {
+        "z": 29546,
+        "y": 12486,
+        "x": 13362
+      },
+      "brainSurfaceVoxels": 38842,
+      "distanceTransformVsKdTreeMaxDifferenceMm": 0.0,
+      "brainVoxelsConnectedToCropExteriorThroughNonSkull": 568799,
+      "brainFractionConnectedToCropExteriorThroughNonSkull": 1.0,
+      "brainSurfaceToSkullCenterDistanceMm": {
+        "min": 0.9765625,
+        "p5": 0.9765625,
+        "median": 1.3810679320049757,
+        "p95": 7.042092334890604,
+        "max": 16.879600444943556
+      }
+    }
+  },
+  "montage": {
+    "gridCenterZyx": [
+      72,
+      97,
+      83
+    ],
+    "sha256": "e9f33e2964034ef564aa5c4959ec0c333f00ba2b4fb013d9f3e0116ad3874260"
+  },
+  "scope": "Same-case automatic segmentation only. Closed binary isosurfaces are a raster construction, not a sealed anatomical cranial cavity. Center distances are not triangle clearance. No controlled CT, HRA overlay, anatomy approval, or clinical clearance measurement."
+}
