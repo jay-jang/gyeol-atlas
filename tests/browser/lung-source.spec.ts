@@ -57,5 +57,8 @@ test('a retired fragment in a historical lung session restores a source bundle a
   const restored=await snapshot(page);
   expect(restored.detail.id).toBe('lung-branches');expect(restored.markers).toBe('hidden');
   expect(restored.alpha).toEqual(saved.alpha);expect(restored.camera).toEqual(saved.camera);
+  await page.locator('.organ-detail-parts summary').click();
+  await expect(page.locator('.organ-detail-parts')).toHaveAttribute('open','');
+  await expect.poll(async()=>(await snapshot(page)).camera).toEqual(saved.camera);
   await page.reload();await ready(page);await expect.poll(visible).toEqual([...old.ids].sort());
 });

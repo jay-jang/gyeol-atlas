@@ -512,10 +512,14 @@ function AtlasPage({
   }, []);
   const select = (p: Point) => {
     const leavingDetail = Boolean(state.detail);
+    const returnPose = !leavingDetail ? state.selectionReturn?.camera : null;
+    if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
+    isolateCameraFrame.current = null;
     dispatch({ type: "point", id: p.id });
     navigate(`atlas/${p.id}`);
     setPanel(null);
     if (leavingDetail) requestAnimationFrame(() => camera("fit"));
+    else if (returnPose) setAction(a => ({ kind: "pose", pose: returnPose, tick: a.tick + 1 }));
   };
   const compare = () => {
     const c = pointConcepts[selected.id];

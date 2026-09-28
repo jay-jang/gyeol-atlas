@@ -132,19 +132,25 @@ function closeDetail(s: ViewState): ViewState {
   return { ...s, ...previous, detail: null, detailReturn: null, selectionReturn: null, selection: null,
     comparison: null, isolated: false };
 }
+function leaveSelection(s: ViewState): ViewState {
+  if (s.detail) return closeDetail(s);
+  if (!s.selectionReturn) return s;
+  return { ...s, ...s.selectionReturn, selection: null, selectionReturn: null,
+    comparison: null, isolated: false };
+}
 export function viewReducer(s: ViewState, a: ViewAction): ViewState {
   switch (a.type) {
     case "sex":
       return a.value === s.sex ? s : { ...s, sex: a.value, stage: 0, dissection: 0, displayMode: "dissection", anatomyRegion: "whole", layers: singleLayer(0), alpha: initialView().alpha, selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false, cutaway: 0 };
     case "anatomy-region":
       return a.value === s.anatomyRegion && !s.detail ? s
-        : { ...(s.detail ? closeDetail(s) : s), anatomyRegion: a.value, selection: null,
+        : { ...leaveSelection(s), anatomyRegion: a.value, selection: null,
             detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false };
     case "point":
       return a.id === s.pointId && !s.detail
         ? s
         : {
-            ...(s.detail ? closeDetail(s) : s),
+            ...leaveSelection(s),
             pointId: a.id,
             selection: null,
             detail: null,
@@ -315,9 +321,9 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
     case "filters":
       return { ...s, filters: { ...s.filters, ...a.value } };
     case "region-filter":
-      return { ...(s.detail ? closeDetail(s) : s), filters: { ...s.filters, bodyRegion: a.value, region: "전체" }, markers: "filtered", selection: null, selectionReturn: null, comparison: null, isolated: false };
+      return { ...leaveSelection(s), filters: { ...s.filters, bodyRegion: a.value, region: "전체" }, markers: "filtered", selection: null, selectionReturn: null, comparison: null, isolated: false };
     case "show-filtered":
-      return { ...(s.detail ? closeDetail(s) : s), markers: "filtered", selection: null, selectionReturn: null, comparison: null, isolated: false };
+      return { ...leaveSelection(s), markers: "filtered", selection: null, selectionReturn: null, comparison: null, isolated: false };
     case "reset-filters":
       return { ...s, filters: initialView().filters };
     case "reset":

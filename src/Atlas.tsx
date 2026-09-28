@@ -561,13 +561,12 @@ function Scene(props: Props) {
     // selection-card size changes must not disturb a comparison's camera.
     const refitOverview = !hasSelection && !selectionJustCleared && props.anatomyRegion === "whole" && mobileBreakpointChanged;
     framedViewport.current = viewportKey;
-    // Initial restoration already has the user's saved framing. Measuring its
-    // card must not overwrite that pose; later resizing/toggling may re-fit.
-    if (!pendingAction && restoringLayout.current && hasSelection && selectionCardTop !== null) {
-      restoringLayout.current = false; framedLayout.current = layoutKey; return;
-    }
-    if (!pendingAction && restoringLayout.current && !hasSelection) {
-      restoringLayout.current = false; framedLayout.current = layoutKey; return;
+    // A saved camera remains authoritative through asynchronous card/content
+    // measurements. One skipped layout pass is insufficient: detail sources
+    // can resize the card again after the first committed frame. Only a real
+    // user camera action, or an overview viewport reframe, ends restoration.
+    if (!pendingAction && restoringLayout.current && !refitLimb && !refitOverview) {
+      framedLayout.current = layoutKey; return;
     }
     if (!pendingAction && !refitLimb && !refitOverview && (!hasSelection || !layoutChanged)) { framedLayout.current = layoutKey; return; }
     const detailContext = props.detailIds.length > 0 && !props.isolated;

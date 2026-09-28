@@ -142,6 +142,27 @@ test("ordinary peel selection return survives another selection, detail and save
   const invalidPose = { ...selected, selectionReturn: { ...selected.selectionReturn, camera: { position: [0, 0, 0], target: [0, 0, 0] } } };
   assert.deepEqual(restoreView(JSON.stringify(invalidPose), [], catalog), initialView());
 });
+test("leaving an ordinary peel selection for a point or region does not strand its single layer", () => {
+  for (const sex of ["male", "female"]) {
+    let before = viewReducer(initialView("KI3"), { type: "sex", value: sex });
+    before = viewReducer(before, { type: "dissection", value: 50.5 });
+    before = viewReducer(before, { type: "camera", value: { position: [0, 1, 2], target: [0, 1, 0] } });
+    const id = sex === "male" ? "FMA7148" : "HRAF0435";
+    const selected = viewReducer(before, { type: "select", layer: "organ", selection: { kind: "structure", ids: [id], name: "장기" } });
+    for (const action of [
+      { type: "point", id: "ST36" },
+      { type: "anatomy-region", value: "head" },
+      { type: "region-filter", value: "머리·목" },
+      { type: "show-filtered" },
+    ]) {
+      const next = viewReducer(selected, action);
+      for (const key of ["stage", "dissection", "displayMode", "layers", "cutaway", "selectionTarget", "camera"])
+        assert.deepEqual(next[key], before[key], `${sex}/${action.type}/${key}`);
+      assert.equal(next.selection, null);
+      assert.equal(next.selectionReturn, null);
+    }
+  }
+});
 test("old detail sessions without a return snapshot exit to a safe whole-body view", () => {
   const detail = { id: "heart", name: "심장", ids: ["BP4_FJ2631"], layers: { ...initialView().layers, skin: false, organ: true } };
   let s = viewReducer(initialView(), { type: "detail", detail });
