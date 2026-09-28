@@ -18,7 +18,7 @@ export type RegionBounds = [ArrayLike<number>, ArrayLike<number>];
 export const sourceOrganRegions = {
   brain: "head", heart: "chest", lung: "chest", "lung-branches": "chest", "lung-internal": "chest", breast: "chest",
   liver: "abdomen", kidney: "abdomen", stomach: "abdomen", pancreas: "abdomen", spleen: "abdomen",
-  uterus: "pelvis", ovary: "pelvis", bladder: "pelvis",
+  uterus: "pelvis", ovary: "pelvis", "uterine-tube": "pelvis", vagina: "pelvis", bladder: "pelvis",
 } as const satisfies Record<string, AnatomyRegion>;
 export function sourceOrganRegion(structure: { layer: string; group?: string }) {
   return structure.group && Object.hasOwn(sourceOrganRegions, structure.group)

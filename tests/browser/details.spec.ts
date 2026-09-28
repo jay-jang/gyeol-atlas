@@ -1,7 +1,51 @@
 import { test, expect } from '@playwright/test';
 import { ready, snapshot, openTool, closeTool } from './helpers';
 import femaleGroups from '../../data/female-organ-groups.json' with { type: 'json' };
+import femaleAdditionalGroups from '../../data/female-additional-organ-groups.json' with { type: 'json' };
 import maleGroups from '../../data/male-detail-groups.json' with { type: 'json' };
+
+test('female uterine tubes and vagina have complete source-defined detail views on desktop and mobile', async ({ page }) => {
+  test.setTimeout(180000);
+  const errors: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto('/'); await ready(page);
+  await page.locator('.explore-sidebar').getByRole('button', { name: '여성', exact: true }).click(); await ready(page);
+  const canvas = page.locator('canvas');
+  const visible = async () => (await canvas.getAttribute('data-visible-structure-ids') || '').split(',').filter(Boolean);
+  for (const [index, group] of femaleAdditionalGroups.entries()) {
+    if (index === 1) await page.setViewportSize({ width: 390, height: 844 });
+    if (index === 0) {
+      await page.locator('.featured-anatomy > button').filter({ has: page.getByText(group.name, { exact: true }) }).click(); await ready(page);
+    } else {
+      await openTool(page, '구조 찾기');
+      await page.getByLabel('해부 구조 검색').fill(group.ids[0]);
+      await page.locator('.structure-item').click(); await ready(page);
+      await closeTool(page);
+      await expect(page.getByLabel('전신 부위 선택')).toHaveValue('pelvis');
+      await expect(page.locator('.selection-card')).toContainText('Vagina');
+      await page.getByRole('button', { name: '기관 상세 보기', exact: true }).click(); await ready(page);
+    }
+    await expect.poll(async () => (await visible()).sort()).toEqual([...group.ids].sort());
+    await expect.poll(async () => (await snapshot(page)).detail.id).toBe(group.id);
+    await expect(canvas).toHaveAttribute('data-rendered-markers', '0');
+    await page.screenshot({ path: `docs/anatomy-alignment/female-${group.id}-navigation-${index ? 'mobile' : 'desktop'}.png` });
+    await page.locator('.organ-detail-parts summary').click();
+    await expect(page.locator('.organ-detail-parts button')).toHaveCount(group.ids.length);
+    await page.locator('.organ-detail-parts button').first().click(); await ready(page);
+    await expect.poll(visible).toEqual([group.ids[0]]);
+    const saved = await snapshot(page);
+    expect(saved.detail.id).toBe(group.id);
+    await page.reload(); await ready(page);
+    await expect.poll(visible).toEqual([group.ids[0]]);
+    expect((await snapshot(page)).detail.id).toBe(group.id);
+    await page.getByRole('button', { name: '기관 전체 모형', exact: true }).click(); await ready(page);
+    await expect.poll(async () => (await visible()).sort()).toEqual([...group.ids].sort());
+    await page.getByRole('button', { name: '전신으로 돌아가기', exact: true }).click(); await ready(page);
+    expect((await snapshot(page)).detail).toBe(null);
+    if (index === 1) expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  }
+  expect(errors).toEqual([]);
+});
 
 test('organ details use their own complete source memberships and individual parts survive reload', async ({ page }) => {
   test.setTimeout(180000);
