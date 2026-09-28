@@ -25,6 +25,7 @@
 | --- | --- | --- |
 | [TotalSegmentator CT 2.0.1](https://zenodo.org/records/10047292) | 공식 메타데이터 CC BY 4.0. 사례 s0255의 gender=f, 1.5mm 공개 분할 마스크. 위·부신·간·비장·콩팥·췌장은 촬영 경계와 만나지 않음 | 11개 마스크→실제 표면 모형으로 변환, 독립 CT 상세로 도입 |
 | 동일 자료 s0241 | metadata의 검사명은 흉복부골반이지만 실제 파일에서 오른 콩팥·췌장 마스크가 비어 있고 왼 콩팥도 거의 잘림 | 제외. 메타데이터 검사명만으로 완전성을 판단하지 않음 |
+| [TCIA Healthy-Total-Body-CTs v3](https://www.cancerimagingarchive.net/collection/healthy-total-body-cts/) | 공개 CC BY 4.0 여성16사례의 실제3,472,883,712복셀 검사. 같은 사례의 뇌·두개골·심장·근육은 있지만 양성 라벨은1–36뿐. 동봉 키의 세부 뇌37–119와 위·자궁·신경은 실수록되지 않음 | [실수록 감사](TCIA_FEMALE_SEGMENTATIONS.md)만 수행. 기존 HRA 피부와 공통 신체가 아니므로 미도입 |
 | [CheRa 여성 근육](https://sketchfab.com/3d-models/female-anatomy-by-chera-muscles-132188d5be9b47eabb0e64b378d81603) | 공식 API에서 CC BY 4.0, isDownloadable=true, 여성 해부 공부용 모델 확인. 정식 다운로드 API는 로그인 부재401 | 후보 확보, 원본 파일은 미확보. 사용자에게 로그인 후 원본 ZIP 첨부 요청. 우회 추출·가입·구매하지 않음 |
 | [HRA 공식 ref-organ 목록](https://github.com/hubmapconsortium/hra-kg/tree/main/digital-objects/ref-organ) | 여성 united v1.10까지 확인. 위·전신 상체 근육·말초신경 표면 패키지 없음. ASCT-B 말초신경 목록은 명명 관계표이지3D 모형이 아님 | 기존 HRA 유지 |
 | [FHS 여성 상체 OpenSim](https://zenodo.org/records/18259702) | 여성 상체 생체역학 모델은 있으나 근육은 다수 선형 작용선/Hill-type 표현 | 완전한 근육 표면으로 간주하지 않음 |
