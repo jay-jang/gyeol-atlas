@@ -1,0 +1,3082 @@
+{
+  "status": "MALE SKIN COMPONENT SCREEN; NO OUTER ENVELOPE APPROVED",
+  "sourceNode": "FMA7163",
+  "vertices": 20749,
+  "triangles": 44970,
+  "wholeTopology": {
+    "weldedVertices": 20749,
+    "connectedComponents": 86,
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 834,
+    "degenerateTriangles": 0
+  },
+  "componentCount": 86,
+  "components": [
+    {
+      "triangles": 44192,
+      "vertices": 20188,
+      "bounds": [
+        [
+          -0.328993022441864,
+          7.629394338515283e-11,
+          -0.14251010119915009
+        ],
+        [
+          0.32808801531791687,
+          1.655077576637268,
+          0.14264129102230072
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 20188,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 787,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 64711,
+        "4": 784,
+        "6": 3
+      },
+      "exactDuplicateTriangles": 313,
+      "duplicateTriangleGroups": 311,
+      "deduplicatedTopology": {
+        "weldedVertices": 20188,
+        "connectedComponents": 1,
+        "boundaryEdges": 456,
+        "nonManifoldEdges": 725,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 40,
+      "vertices": 22,
+      "bounds": [
+        [
+          -0.10515699535608292,
+          1.2255675792694092,
+          0.06407729536294937
+        ],
+        [
+          -0.023652900010347366,
+          1.2528774738311768,
+          0.10338529944419861
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 22,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 58,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 22,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 38,
+      "vertices": 21,
+      "bounds": [
+        [
+          0.023385901004076004,
+          1.226277470588684,
+          0.06514430046081543
+        ],
+        [
+          0.1031859964132309,
+          1.2535775899887085,
+          0.10249030590057373
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 21,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 55,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 21,
+        "connectedComponents": 1,
+        "boundaryEdges": 2,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 34,
+      "vertices": 19,
+      "bounds": [
+        [
+          -0.12522700428962708,
+          1.0958975553512573,
+          -0.04895609989762306
+        ],
+        [
+          -0.10611400008201599,
+          1.1261775493621826,
+          -0.009756099432706833
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 19,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 49,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 19,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 32,
+      "vertices": 18,
+      "bounds": [
+        [
+          -0.11521399766206741,
+          0.9896745085716248,
+          0.030280299484729767
+        ],
+        [
+          -0.09631410241127014,
+          1.0344774723052979,
+          0.061735302209854126
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 18,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 5,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 38,
+        "4": 5
+      },
+      "exactDuplicateTriangles": 3,
+      "duplicateTriangleGroups": 3,
+      "deduplicatedTopology": {
+        "weldedVertices": 18,
+        "connectedComponents": 1,
+        "boundaryEdges": 5,
+        "nonManifoldEdges": 5,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 28,
+      "vertices": 16,
+      "bounds": [
+        [
+          0.03528590127825737,
+          1.060957431793213,
+          0.08548229932785034
+        ],
+        [
+          0.07341950386762619,
+          1.149977445602417,
+          0.10352929681539536
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 16,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 40,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 16,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 28,
+      "vertices": 16,
+      "bounds": [
+        [
+          0.09618590027093887,
+          0.990512490272522,
+          0.03141229599714279
+        ],
+        [
+          0.11368599534034729,
+          1.0340875387191772,
+          0.06026029586791992
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 16,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 38,
+        "4": 2
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 16,
+        "connectedComponents": 1,
+        "boundaryEdges": 2,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 28,
+      "vertices": 16,
+      "bounds": [
+        [
+          0.10600199550390244,
+          1.096077561378479,
+          -0.048256099224090576
+        ],
+        [
+          0.1241689994931221,
+          1.1268774271011353,
+          -0.013956096023321152
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 16,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 38,
+        "4": 2
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 16,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 26,
+      "vertices": 15,
+      "bounds": [
+        [
+          -0.07486020028591156,
+          1.0601675510406494,
+          0.08474430441856384
+        ],
+        [
+          -0.036114100366830826,
+          1.1506775617599487,
+          0.10349630564451218
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 15,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 37,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 15,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 24,
+      "vertices": 14,
+      "bounds": [
+        [
+          -0.07440730184316635,
+          1.5399974584579468,
+          -0.015131901018321514
+        ],
+        [
+          -0.06341410428285599,
+          1.5832774639129639,
+          0.012644298374652863
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 14,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 36
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 14,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 22,
+      "vertices": 13,
+      "bounds": [
+        [
+          -0.25107499957084656,
+          0.9347034692764282,
+          -0.033556099981069565
+        ],
+        [
+          -0.23421400785446167,
+          1.0043745040893555,
+          -0.02020309865474701
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 13,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 33
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 13,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 20,
+      "vertices": 12,
+      "bounds": [
+        [
+          0.06678589433431625,
+          1.2843774557113647,
+          0.04274430498480797
+        ],
+        [
+          0.12698599696159363,
+          1.3003474473953247,
+          0.07844430208206177
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 12,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 30
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 12,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 18,
+      "vertices": 11,
+      "bounds": [
+        [
+          -0.1302260011434555,
+          1.283677577972412,
+          0.04204429313540459
+        ],
+        [
+          -0.0676141008734703,
+          1.3010575771331787,
+          0.07914429903030396
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 11,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 27
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 11,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 18,
+      "vertices": 11,
+      "bounds": [
+        [
+          0.06258589774370193,
+          1.5402274131774902,
+          -0.01465610135346651
+        ],
+        [
+          0.07238589972257614,
+          1.5832774639129639,
+          0.012070300988852978
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 11,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 25,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 11,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 18,
+      "vertices": 11,
+      "bounds": [
+        [
+          0.12278600037097931,
+          1.166777491569519,
+          -0.01465610135346651
+        ],
+        [
+          0.129147008061409,
+          1.181477427482605,
+          -0.0006561009795404971
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 11,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 23,
+        "4": 2
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 11,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 16,
+      "vertices": 10,
+      "bounds": [
+        [
+          -0.12851400673389435,
+          1.174477458000183,
+          -0.06057720258831978
+        ],
+        [
+          -0.11311399936676025,
+          1.1975775957107544,
+          -0.025293102487921715
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 10,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 22,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 10,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 16,
+      "vertices": 11,
+      "bounds": [
+        [
+          -0.09621690213680267,
+          1.1002775430679321,
+          -0.07116659730672836
+        ],
+        [
+          -0.07238829880952835,
+          1.1247775554656982,
+          -0.05455609783530235
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 11,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 3,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 18,
+        "4": 3
+      },
+      "exactDuplicateTriangles": 3,
+      "duplicateTriangleGroups": 3,
+      "deduplicatedTopology": {
+        "weldedVertices": 11,
+        "connectedComponents": 1,
+        "boundaryEdges": 6,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 16,
+      "vertices": 10,
+      "bounds": [
+        [
+          0.07298200577497482,
+          0.9084744453430176,
+          -0.03507100045681
+        ],
+        [
+          0.10080699622631073,
+          0.9416095018386841,
+          -0.01530690398067236
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 10,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 24
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 10,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 14,
+      "vertices": 9,
+      "bounds": [
+        [
+          -0.10282700508832932,
+          0.907074511051178,
+          -0.03495610132813454
+        ],
+        [
+          -0.07461410015821457,
+          0.9426595568656921,
+          -0.015356197021901608
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 9,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 21
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 9,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 14,
+      "vertices": 10,
+      "bounds": [
+        [
+          0.0719648003578186,
+          1.1058775186538696,
+          -0.07071559876203537
+        ],
+        [
+          0.09268590062856674,
+          1.124077558517456,
+          -0.05758039653301239
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 10,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 19,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 10,
+        "connectedComponents": 1,
+        "boundaryEdges": 2,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 12,
+      "vertices": 8,
+      "bounds": [
+        [
+          -0.07490350306034088,
+          1.152767539024353,
+          0.10084429383277893
+        ],
+        [
+          -0.051486801356077194,
+          1.1681774854660034,
+          0.10854429006576538
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 8,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 14,
+        "4": 2
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 8,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 12,
+      "vertices": 8,
+      "bounds": [
+        [
+          0.11085899919271469,
+          1.174477458000183,
+          -0.05875609815120697
+        ],
+        [
+          0.1263349950313568,
+          1.1943775415420532,
+          -0.025856098160147667
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 8,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 14,
+        "4": 2
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 8,
+        "connectedComponents": 1,
+        "boundaryEdges": 2,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 12,
+      "vertices": 8,
+      "bounds": [
+        [
+          0.23321600258350372,
+          0.9364744424819946,
+          -0.03285610303282738
+        ],
+        [
+          0.24878600239753723,
+          1.00330650806427,
+          -0.020256100222468376
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 8,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 18
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 8,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 10,
+      "vertices": 7,
+      "bounds": [
+        [
+          -0.13228200376033783,
+          1.152077555656433,
+          0.011082302778959274
+        ],
+        [
+          -0.12832599878311157,
+          1.1695775985717773,
+          0.043444301933050156
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 7,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 15
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 7,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 10,
+      "vertices": 7,
+      "bounds": [
+        [
+          -0.12276599556207657,
+          1.0367774963378906,
+          -0.006797603331506252
+        ],
+        [
+          -0.11203700304031372,
+          1.0565775632858276,
+          0.007744297385215759
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 7,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 15
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 7,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 10,
+      "vertices": 7,
+      "bounds": [
+        [
+          0.05068590119481087,
+          1.153957486152649,
+          0.10059729963541031
+        ],
+        [
+          0.07238589972257614,
+          1.1686675548553467,
+          0.1078442931175232
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 7,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 13,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 7,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 10,
+      "vertices": 7,
+      "bounds": [
+        [
+          0.11088600009679794,
+          1.0369175672531128,
+          -0.006349101662635803
+        ],
+        [
+          0.12055899947881699,
+          1.0560475587844849,
+          0.00742129934951663
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 7,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 15
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 7,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 10,
+      "vertices": 7,
+      "bounds": [
+        [
+          0.12278600037097931,
+          1.1228975057601929,
+          -0.01045609638094902
+        ],
+        [
+          0.1268799901008606,
+          1.1408774852752686,
+          0.003544300328940153
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 7,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 13,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 7,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 10,
+      "vertices": 7,
+      "bounds": [
+        [
+          0.23268599808216095,
+          0.87557452917099,
+          -0.015821002423763275
+        ],
+        [
+          0.24879099428653717,
+          0.9189744591712952,
+          -0.005556102376431227
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 7,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 15
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 7,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 8,
+      "vertices": 6,
+      "bounds": [
+        [
+          -0.13411399722099304,
+          0.9343904852867126,
+          -0.014891399070620537
+        ],
+        [
+          -0.12042199820280075,
+          0.9574744701385498,
+          -0.005556102376431227
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 8,
+        "4": 2
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 8,
+      "vertices": 6,
+      "bounds": [
+        [
+          -0.12862899899482727,
+          1.1217074394226074,
+          -0.01045609638094902
+        ],
+        [
+          -0.12431400269269943,
+          1.1410374641418457,
+          0.004244297277182341
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 8,
+        "4": 2
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 8,
+      "vertices": 6,
+      "bounds": [
+        [
+          -0.12711399793624878,
+          1.2498674392700195,
+          -0.0561257004737854
+        ],
+        [
+          -0.11661399900913239,
+          1.2614574432373047,
+          -0.03337570279836655
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 10,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 2,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 8,
+      "vertices": 6,
+      "bounds": [
+        [
+          -0.0935140997171402,
+          0.9643105268478394,
+          0.05913030728697777
+        ],
+        [
+          -0.08371410518884659,
+          0.9809924960136414,
+          0.06739430129528046
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 8,
+        "4": 2
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 8,
+      "vertices": 6,
+      "bounds": [
+        [
+          -0.040314096957445145,
+          1.3837774991989136,
+          0.02161729894578457
+        ],
+        [
+          -0.03021330013871193,
+          1.4122074842453003,
+          0.032244306057691574
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 12
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 8,
+      "vertices": 6,
+      "bounds": [
+        [
+          0.028985900804400444,
+          1.3858774900436401,
+          0.022132297977805138
+        ],
+        [
+          0.03764539957046509,
+          1.4103775024414062,
+          0.032244306057691574
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 12
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 8,
+      "vertices": 6,
+      "bounds": [
+        [
+          0.04103359952569008,
+          0.4530854821205139,
+          -0.04752489924430847
+        ],
+        [
+          0.04788589850068092,
+          0.466235488653183,
+          -0.03215610235929489
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 12
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 8,
+      "vertices": 6,
+      "bounds": [
+        [
+          0.11018599569797516,
+          1.1536775827407837,
+          -0.050356101244688034
+        ],
+        [
+          0.11368599534034729,
+          1.1633275747299194,
+          -0.03684289753437042
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 8,
+        "4": 2
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 6,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 6,
+      "vertices": 5,
+      "bounds": [
+        [
+          -0.2125140130519867,
+          1.0771775245666504,
+          -0.030056102201342583
+        ],
+        [
+          -0.20341400802135468,
+          1.082837462425232,
+          -0.024161700159311295
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 9
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 6,
+      "vertices": 5,
+      "bounds": [
+        [
+          -0.09071410447359085,
+          1.0491775274276733,
+          0.07426729798316956
+        ],
+        [
+          -0.0781140998005867,
+          1.0659774541854858,
+          0.09180529415607452
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 9
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 6,
+      "vertices": 5,
+      "bounds": [
+        [
+          -0.09001410007476807,
+          0.87557452917099,
+          0.010917301289737225
+        ],
+        [
+          -0.08186019957065582,
+          0.8926745057106018,
+          0.022055301815271378
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 9
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 6,
+      "vertices": 5,
+      "bounds": [
+        [
+          -0.05011410266160965,
+          0.45329350233078003,
+          -0.04816320165991783
+        ],
+        [
+          -0.04206959903240204,
+          0.46677449345588684,
+          -0.03215610235929489
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 9
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 6,
+      "vertices": 5,
+      "bounds": [
+        [
+          -0.02811329998075962,
+          1.1583775281906128,
+          0.10154429078102112
+        ],
+        [
+          -0.014414099976420403,
+          1.17804753780365,
+          0.10294429957866669
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 7,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 2,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 6,
+      "vertices": 5,
+      "bounds": [
+        [
+          0.012746999971568584,
+          1.161507487297058,
+          0.10154429078102112
+        ],
+        [
+          0.02606010064482689,
+          1.17791748046875,
+          0.10294429957866669
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 7,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 2,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 6,
+      "vertices": 5,
+      "bounds": [
+        [
+          0.11998599767684937,
+          0.9343745112419128,
+          -0.014869404025375843
+        ],
+        [
+          0.13258600234985352,
+          0.9572065472602844,
+          -0.00835619680583477
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 2,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 5,
+        "4": 2
+      },
+      "exactDuplicateTriangles": 3,
+      "duplicateTriangleGroups": 3,
+      "deduplicatedTopology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 5,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 6,
+      "vertices": 5,
+      "bounds": [
+        [
+          0.20258599519729614,
+          1.0765974521636963,
+          -0.030531901866197586
+        ],
+        [
+          0.21168600022792816,
+          1.0818874835968018,
+          -0.02515610121190548
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 9
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 5,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          -0.13830499351024628,
+          1.1807775497436523,
+          0.007744297385215759
+        ],
+        [
+          -0.1362140029668808,
+          1.1913574934005737,
+          0.027458302676677704
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 4,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 4,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          -0.11301899701356888,
+          1.0813775062561035,
+          -0.03697410225868225
+        ],
+        [
+          -0.10681400448083878,
+          1.0876774787902832,
+          -0.031045597046613693
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 4,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 4,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          -0.09881330281496048,
+          1.2330775260925293,
+          0.0714443027973175
+        ],
+        [
+          -0.09319140017032623,
+          1.237477421760559,
+          0.07354429364204407
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          -0.10261400043964386,
+          1.326817512512207,
+          -0.07491730153560638
+        ],
+        [
+          -0.09001410007476807,
+          1.3340775966644287,
+          -0.0655101016163826
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          -0.09301959723234177,
+          0.6333745121955872,
+          0.013344303704798222
+        ],
+        [
+          -0.0886140987277031,
+          0.6594374775886536,
+          0.016144298017024994
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          -0.08721410483121872,
+          1.283677577972412,
+          -0.08395610004663467
+        ],
+        [
+          -0.08579350262880325,
+          1.2907875776290894,
+          -0.07842720299959183
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          -0.06714129447937012,
+          1.6049774885177612,
+          -0.004856197163462639
+        ],
+        [
+          -0.05921410024166107,
+          1.6176375150680542,
+          0.008444301784038544
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          -0.060614101588726044,
+          1.5290274620056152,
+          -0.009247600100934505
+        ],
+        [
+          -0.04839229956269264,
+          1.5349774360656738,
+          -0.0027560994494706392
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          -0.05711410194635391,
+          0.3637685179710388,
+          -0.0423194020986557
+        ],
+        [
+          -0.05221410095691681,
+          0.3814994990825653,
+          -0.03425610065460205
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 4,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 4,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          -0.03639289736747742,
+          1.09957754611969,
+          -0.0776560977101326
+        ],
+        [
+          -0.030125798657536507,
+          1.1156774759292603,
+          -0.07135610282421112
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 4,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 4,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          0.04788589850068092,
+          1.5287774801254272,
+          -0.007661701180040836
+        ],
+        [
+          0.05978589877486229,
+          1.533577561378479,
+          -0.002696002833545208
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          0.050228700041770935,
+          0.3641754984855652,
+          -0.04208189994096756
+        ],
+        [
+          0.05558589845895767,
+          0.37997451424598694,
+          -0.03425610065460205
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          0.0590858981013298,
+          1.6063774824142456,
+          -0.004117900505661964
+        ],
+        [
+          0.06578510254621506,
+          1.61774742603302,
+          0.008444301784038544
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          0.07798589766025543,
+          1.0514674186706543,
+          0.07564429938793182
+        ],
+        [
+          0.08918590098619461,
+          1.0659774541854858,
+          0.09104929864406586
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 4,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 4,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          0.07951170206069946,
+          0.5668745040893555,
+          0.010544300079345703
+        ],
+        [
+          0.08498590439558029,
+          0.6055425405502319,
+          0.016751300543546677
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          0.08218589425086975,
+          0.966574490070343,
+          0.05953829735517502
+        ],
+        [
+          0.09198590368032455,
+          0.9789785146713257,
+          0.06729429215192795
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 1,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 4,
+        "4": 1
+      },
+      "exactDuplicateTriangles": 2,
+      "duplicateTriangleGroups": 2,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 4,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          0.08904920518398285,
+          1.32721745967865,
+          -0.07415609806776047
+        ],
+        [
+          0.10132099688053131,
+          1.3336374759674072,
+          -0.06645610183477402
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          0.1282929927110672,
+          1.1569774150848389,
+          0.011623302474617958
+        ],
+        [
+          0.13054600358009338,
+          1.1695775985717773,
+          0.035744305700063705
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          0.13468600809574127,
+          1.1792374849319458,
+          0.010544300079345703
+        ],
+        [
+          0.13611599802970886,
+          1.1912775039672852,
+          0.026749301701784134
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 6
+      },
+      "exactDuplicateTriangles": 0,
+      "duplicateTriangleGroups": 0,
+      "deduplicatedTopology": {
+        "weldedVertices": 4,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          -0.20131400227546692,
+          1.0075575113296509,
+          -0.008081996813416481
+        ],
+        [
+          -0.19501401484012604,
+          1.0302774906158447,
+          -0.0006561009795404971
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          -0.12291400134563446,
+          1.14718759059906,
+          -0.022356098517775536
+        ],
+        [
+          -0.1200530007481575,
+          1.1513774394989014,
+          -0.016520999372005463
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          -0.09631410241127014,
+          1.040777564048767,
+          0.06555630266666412
+        ],
+        [
+          -0.09141410142183304,
+          1.0473774671554565,
+          0.07300230115652084
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          -0.09369460493326187,
+          1.2773774862289429,
+          -0.07485610246658325
+        ],
+        [
+          -0.08957109600305557,
+          1.2881674766540527,
+          -0.0727560967206955
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          -0.06341410428285599,
+          0.2973744869232178,
+          -0.06855610013008118
+        ],
+        [
+          -0.058514099568128586,
+          0.30927449464797974,
+          -0.06631939858198166
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          -0.05221410095691681,
+          1.1846874952316284,
+          -0.08682724088430405
+        ],
+        [
+          -0.04871410131454468,
+          1.1934375762939453,
+          -0.08465609699487686
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          -0.02421410009264946,
+          1.5032775402069092,
+          -0.05948350206017494
+        ],
+        [
+          -0.020014099776744843,
+          1.509777545928955,
+          -0.05584130063652992
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          -0.013889100402593613,
+          1.2885775566101074,
+          -0.09445615112781525
+        ],
+        [
+          -0.011466399766504765,
+          1.3074774742126465,
+          -0.0916561484336853
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.009989939630031586,
+          1.2892775535583496,
+          -0.09445615112781525
+        ],
+        [
+          0.012552300468087196,
+          1.30537748336792,
+          -0.0916561484336853
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.019185898825526237,
+          1.5042774677276611,
+          -0.059456098824739456
+        ],
+        [
+          0.022685900330543518,
+          1.509137511253357,
+          -0.05665609985589981
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.022685900330543518,
+          1.116437554359436,
+          0.09440729767084122
+        ],
+        [
+          0.027585899457335472,
+          1.1247775554656982,
+          0.09524430334568024
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.031085899099707603,
+          1.1049975156784058,
+          -0.07625609636306763
+        ],
+        [
+          0.03517109900712967,
+          1.1142774820327759,
+          -0.07415609806776047
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.040705397725105286,
+          1.1051775217056274,
+          -0.07104440033435822
+        ],
+        [
+          0.04508589953184128,
+          1.1135776042938232,
+          -0.06645610183477402
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.04788589850068092,
+          1.1851775646209717,
+          -0.08605609834194183
+        ],
+        [
+          0.05135290324687958,
+          1.1929374933242798,
+          -0.08535610139369965
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.07168589532375336,
+          0.03347419947385788,
+          0.03294430300593376
+        ],
+        [
+          0.07468820363283157,
+          0.03627970069646835,
+          0.0413442961871624
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.08778589963912964,
+          0.635474443435669,
+          0.013262302614748478
+        ],
+        [
+          0.09058590233325958,
+          0.6587265133857727,
+          0.015444302000105381
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.08288590610027313,
+          0.8775264620780945,
+          0.011944301426410675
+        ],
+        [
+          0.08918590098619461,
+          0.8909744620323181,
+          0.018944302573800087
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.09263670444488525,
+          1.2332775592803955,
+          0.07102230191230774
+        ],
+        [
+          0.09619439393281937,
+          1.2367775440216064,
+          0.07354429364204407
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.10668599605560303,
+          1.0811375379562378,
+          -0.03565610200166702
+        ],
+        [
+          0.11121900379657745,
+          1.0866775512695312,
+          -0.03215610235929489
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.11861299723386765,
+          1.1478774547576904,
+          -0.020956097170710564
+        ],
+        [
+          0.12138599902391434,
+          1.149977445602417,
+          -0.01656470075249672
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.1941860020160675,
+          1.0120744705200195,
+          -0.008349399082362652
+        ],
+        [
+          0.19838599860668182,
+          1.0295774936676025,
+          -0.003527202410623431
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "triangles": 2,
+      "vertices": 3,
+      "bounds": [
+        [
+          0.209974005818367,
+          1.1478774547576904,
+          -0.026244403794407845
+        ],
+        [
+          0.21314600110054016,
+          1.1583775281906128,
+          -0.02515610121190548
+        ]
+      ],
+      "topology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "edgeIncidence": {
+        "2": 3
+      },
+      "exactDuplicateTriangles": 1,
+      "duplicateTriangleGroups": 1,
+      "deduplicatedTopology": {
+        "weldedVertices": 3,
+        "connectedComponents": 1,
+        "boundaryEdges": 3,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    }
+  ],
+  "limitations": [
+    "Exact-position connected components are not proof that the largest component is the external body boundary.",
+    "Closed topology alone would not resolve nested skin shells, self-intersections or anatomical cavities.",
+    "No male organ or nerve placement is approved by this component count; no runtime geometry is changed."
+  ],
+  "files": [
+    {
+      "path": "public/models/skin.glb",
+      "sha256": "216d81eaebb72f3ece7b4141c7f1e8bec34beb59c39a5ffeb79561930d8b745d"
+    },
+    {
+      "path": "scripts/audit-male-skin-components.mjs",
+      "sha256": "0f8a0ee9086734753f2ed9379f466d384bf13876cde09b42727e2ee9111d0aa7"
+    },
+    {
+      "path": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    }
+  ]
+}

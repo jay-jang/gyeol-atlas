@@ -1,0 +1,261 @@
+{
+  "status": "OFFLINE CT STOMACH LABEL SURFACE SCREEN; NOT REGISTERED HRA ANATOMY",
+  "sourceReceipt": "docs/anatomy-alignment/bonehub-moose-stomach-surface.json",
+  "sourceReceiptSha256": "60ffd7100cfdf2b77d26e5e3ef07cfa0d5598a295c869905e48349508357dabd",
+  "femaleAtlasSha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f",
+  "sourceChunkSha256": {
+    "0": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f",
+    "7": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736",
+    "8": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed",
+    "9": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+  },
+  "candidateTopology": {
+    "weldedVertices": 25069,
+    "connectedComponents": 1,
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "degenerateTriangles": 0
+  },
+  "skinTopology": {
+    "weldedVertices": 29338,
+    "connectedComponents": 1,
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "degenerateTriangles": 0
+  },
+  "toleranceMm": 2,
+  "vertexCount": 25069,
+  "triangleCount": 50178,
+  "counts": {
+    "inside": 25069,
+    "surface-band": 0,
+    "outside": 0,
+    "ambiguous": 0
+  },
+  "closestSkinMm": 23.92176878392061,
+  "maxOutsideMm": 0,
+  "examples": [],
+  "skinTriangleCrossing": false,
+  "nearby": [
+    {
+      "id": "HRAF0474",
+      "name": "Capsule of the liver",
+      "boxOverlap": true,
+      "triangleIntersection": true,
+      "exactMinimumSurfaceDistanceMm": 0,
+      "strictPlaneStraddlingPairs": 62,
+      "intersectingTrianglePairs": 62,
+      "maxTrianglePlaneStraddleExtentMm": 0.6116269674824228,
+      "transverseWitness": {
+        "pointMetres": [
+          0.08371900761850516,
+          1.1574497437181703,
+          -0.06688502193771438
+        ],
+        "planeStraddleExtentMm": 0.13325114223538062
+      }
+    },
+    {
+      "id": "HRAF0467",
+      "name": "Gastric impression of liver",
+      "boxOverlap": true,
+      "triangleIntersection": true,
+      "exactMinimumSurfaceDistanceMm": 0,
+      "strictPlaneStraddlingPairs": 64,
+      "intersectingTrianglePairs": 64,
+      "maxTrianglePlaneStraddleExtentMm": 0.4359259489033683,
+      "transverseWitness": {
+        "pointMetres": [
+          0.08341658452287841,
+          1.157132829409599,
+          -0.0667128902304365
+        ],
+        "planeStraddleExtentMm": 0.13676558031409633
+      }
+    },
+    {
+      "id": "HRAF0809",
+      "name": "Gastric surface of spleen",
+      "boxOverlap": true,
+      "triangleIntersection": true,
+      "exactMinimumSurfaceDistanceMm": 0,
+      "strictPlaneStraddlingPairs": 204,
+      "intersectingTrianglePairs": 204,
+      "maxTrianglePlaneStraddleExtentMm": 0.8766002039350198,
+      "transverseWitness": {
+        "pointMetres": [
+          0.047950265476324964,
+          1.1334948579448676,
+          -0.11970220900143713
+        ],
+        "planeStraddleExtentMm": 0.026791374108745793
+      }
+    },
+    {
+      "id": "HRAF0810",
+      "name": "Diaphragmatic surface of spleen",
+      "boxOverlap": true,
+      "triangleIntersection": true,
+      "exactMinimumSurfaceDistanceMm": 0,
+      "strictPlaneStraddlingPairs": 45,
+      "intersectingTrianglePairs": 45,
+      "maxTrianglePlaneStraddleExtentMm": 0.7280115763216766,
+      "transverseWitness": {
+        "pointMetres": [
+          0.047681080251789534,
+          1.1341793414994863,
+          -0.12012704341132222
+        ],
+        "planeStraddleExtentMm": 0.15707265179989316
+      }
+    },
+    {
+      "id": "HRAF0811",
+      "name": "Colic surface of spleen",
+      "boxOverlap": true,
+      "triangleIntersection": true,
+      "exactMinimumSurfaceDistanceMm": 0,
+      "strictPlaneStraddlingPairs": 34,
+      "intersectingTrianglePairs": 34,
+      "maxTrianglePlaneStraddleExtentMm": 0.8991584297832048,
+      "transverseWitness": {
+        "pointMetres": [
+          0.11442227849937872,
+          1.092423302211455,
+          -0.09553451255993994
+        ],
+        "planeStraddleExtentMm": 0.19509372913427947
+      }
+    },
+    {
+      "id": "HRAF0812",
+      "name": "Hilum of spleen",
+      "boxOverlap": true,
+      "triangleIntersection": true,
+      "exactMinimumSurfaceDistanceMm": 0,
+      "strictPlaneStraddlingPairs": 239,
+      "intersectingTrianglePairs": 239,
+      "maxTrianglePlaneStraddleExtentMm": 0.9552032558673318,
+      "transverseWitness": {
+        "pointMetres": [
+          0.06592409520319606,
+          1.1175114859100448,
+          -0.11934188317616709
+        ],
+        "planeStraddleExtentMm": 0.31976206196735835
+      }
+    },
+    {
+      "id": "HRAF0813",
+      "name": "Renal surface of spleen",
+      "boxOverlap": true,
+      "triangleIntersection": true,
+      "exactMinimumSurfaceDistanceMm": 0,
+      "strictPlaneStraddlingPairs": 68,
+      "intersectingTrianglePairs": 68,
+      "maxTrianglePlaneStraddleExtentMm": 0.9423994340410047,
+      "transverseWitness": {
+        "pointMetres": [
+          0.057697881424823856,
+          1.1209750164871948,
+          -0.11915359171827153
+        ],
+        "planeStraddleExtentMm": 0.049916654103234065
+      }
+    },
+    {
+      "id": "HRAF0493",
+      "name": "Tail of pancreas",
+      "boxOverlap": true,
+      "triangleIntersection": true,
+      "exactMinimumSurfaceDistanceMm": 0,
+      "strictPlaneStraddlingPairs": 366,
+      "intersectingTrianglePairs": 366,
+      "maxTrianglePlaneStraddleExtentMm": 1.0106452411483016,
+      "transverseWitness": {
+        "pointMetres": [
+          0.059008015434064615,
+          1.0664511829970087,
+          -0.08247789175288658
+        ],
+        "planeStraddleExtentMm": 0.08618613220691722
+      }
+    },
+    {
+      "id": "HRAF0494",
+      "name": "Body of pancreas",
+      "boxOverlap": true,
+      "triangleIntersection": true,
+      "exactMinimumSurfaceDistanceMm": 0,
+      "strictPlaneStraddlingPairs": 247,
+      "intersectingTrianglePairs": 247,
+      "maxTrianglePlaneStraddleExtentMm": 1.0381558129540178,
+      "transverseWitness": {
+        "pointMetres": [
+          0.027563117329036785,
+          1.0647542244703299,
+          -0.03773601752777311
+        ],
+        "planeStraddleExtentMm": 0.0528903253739217
+      }
+    },
+    {
+      "id": "HRAF0496",
+      "name": "Head of pancreas",
+      "boxOverlap": true,
+      "triangleIntersection": false,
+      "exactMinimumSurfaceDistanceMm": 23.975279571936156,
+      "strictPlaneStraddlingPairs": 0,
+      "intersectingTrianglePairs": 0,
+      "maxTrianglePlaneStraddleExtentMm": 0,
+      "transverseWitness": null
+    },
+    {
+      "id": "HRAF0497",
+      "name": "Neck of pancreas",
+      "boxOverlap": true,
+      "triangleIntersection": false,
+      "exactMinimumSurfaceDistanceMm": 22.364727637948885,
+      "strictPlaneStraddlingPairs": 0,
+      "intersectingTrianglePairs": 0,
+      "maxTrianglePlaneStraddleExtentMm": 0,
+      "transverseWitness": null
+    },
+    {
+      "id": "HRAF0528",
+      "name": "Kidney capsule (left)",
+      "boxOverlap": true,
+      "triangleIntersection": true,
+      "exactMinimumSurfaceDistanceMm": 0,
+      "strictPlaneStraddlingPairs": 126,
+      "intersectingTrianglePairs": 126,
+      "maxTrianglePlaneStraddleExtentMm": 0.5812595883895091,
+      "transverseWitness": {
+        "pointMetres": [
+          0.08645959586945523,
+          1.034043153598081,
+          -0.07449153064473973
+        ],
+        "planeStraddleExtentMm": 0.4325496980724367
+      }
+    },
+    {
+      "id": "HRAF0554",
+      "name": "Kidney capsule (right)",
+      "boxOverlap": true,
+      "triangleIntersection": false,
+      "exactMinimumSurfaceDistanceMm": 66.49599007954608,
+      "strictPlaneStraddlingPairs": 0,
+      "intersectingTrianglePairs": 0,
+      "maxTrianglePlaneStraddleExtentMm": 0,
+      "transverseWitness": null
+    }
+  ],
+  "limitations": [
+    "Marching Cubes on a 2 mm automatic CT label is not validated stomach-wall anatomy or a lumen/mucosa separation.",
+    "Skin vertex containment plus surface nonintersection screens only this rigid candidate, not clinical organ position or HRA pose.",
+    "Most HRA organ meshes here are open surfaces; triangle crossings mean geometric overlap, not proven tissue penetration.",
+    "No oesophagus, duodenum, vessel or nerve connection is established by these checks."
+  ],
+  "scriptSha256": "e69580a2c5b7da13a655c4e6511065cf76a11da3bed2dc63f9ffbaf51a71821b"
+}

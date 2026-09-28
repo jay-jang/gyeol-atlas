@@ -1,0 +1,1228 @@
+{
+  "source": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Female-Images/PNG_format/radiological/mri/index.html",
+  "terms": "https://www.nlm.nih.gov/databases/download/terms_and_conditions.html",
+  "listingSha256": {
+    "images": "af0760877a5a3b36984be00d0ac9e4109a775c380f3f90fbeb064140eb9dee09",
+    "headers": "d6c518a6eaf127fb98f457d2021e18538662f3bddb6610890c1c0172df158e68"
+  },
+  "sourceDescription": "Official NLM Visible Human Female BRAIN T1 PNGs and corresponding GE text headers; no segmentation or CT/HRA registration.",
+  "files": 66,
+  "totalFileBytes": 2738438,
+  "labelAnomalies": [
+    {
+      "scan": 1174,
+      "raw": "Iö"
+    }
+  ],
+  "nativeGeometry": {
+    "pixels": [
+      256,
+      256
+    ],
+    "pixelSpacingMm": [
+      0.859375,
+      0.859375
+    ],
+    "sliceThicknessMm": 4,
+    "sliceCenterStepMm": 5,
+    "superiorCentersMm": [
+      69.3,
+      -90.7
+    ],
+    "normalRas": [
+      0,
+      0,
+      1
+    ]
+  },
+  "rows": [
+    {
+      "scan": 1014,
+      "image": {
+        "file": "mvf10141.png",
+        "sha256": "5cf0d10c4e78e3fadd8a145ca17db6382a09b2752d1e5869ff27895ceb71848a",
+        "bytes": 46989,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1014.t1.txt",
+        "sha256": "72c30772f011d520397cc5f131eee5a9f72eb7c30c7e62c5ffc64ad30a1151b0",
+        "bytes": 16170
+      },
+      "imageNumber": 33,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 69.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        69.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        69.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        69.3
+      ]
+    },
+    {
+      "scan": 1019,
+      "image": {
+        "file": "mvf10191.png",
+        "sha256": "f497f5b2e13a2d59c1e8005a63f9f61281f025a7ae33a229387423ed0ce98f06",
+        "bytes": 51404,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1019.t1.txt",
+        "sha256": "9a9485eb7255b2b131805fbb2725d0a256012dd34bbf5cc9979264e0fb074561",
+        "bytes": 16176
+      },
+      "imageNumber": 32,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 64.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        64.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        64.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        64.3
+      ]
+    },
+    {
+      "scan": 1024,
+      "image": {
+        "file": "mvf10241.png",
+        "sha256": "c226a143fb79fe035f860f371da7e5e2e5094cfd1c144f525e9bc66a5f505e5d",
+        "bytes": 54481,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1024.t1.txt",
+        "sha256": "700378a25c4ee42ace2d5c270bc92ad64cd94085040e33ef3525b226f49e1df2",
+        "bytes": 16170
+      },
+      "imageNumber": 31,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 59.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        59.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        59.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        59.3
+      ]
+    },
+    {
+      "scan": 1029,
+      "image": {
+        "file": "mvf10291.png",
+        "sha256": "d80ffb1810d951db124156b7428e58f51113602e8749a500fdfe1f9ce42a7c8d",
+        "bytes": 57376,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1029.t1.txt",
+        "sha256": "e77549590ca311eeab20b798d1837875883b7a9803e380a41c8695f2e950c0ad",
+        "bytes": 16170
+      },
+      "imageNumber": 30,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 54.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        54.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        54.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        54.3
+      ]
+    },
+    {
+      "scan": 1034,
+      "image": {
+        "file": "mvf10341.png",
+        "sha256": "13f263a3511bb2754c253a76a99f741908c07d5256ca36790934f56839e29f48",
+        "bytes": 59821,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1034.t1.txt",
+        "sha256": "2a7b3fcbda42b1566f76fbd3e986c162c7e1fc8aeba421cdf0e6a5b489ce9441",
+        "bytes": 16170
+      },
+      "imageNumber": 29,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 49.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        49.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        49.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        49.3
+      ]
+    },
+    {
+      "scan": 1039,
+      "image": {
+        "file": "mvf10391.png",
+        "sha256": "4bb8df1ebd32f18b19d79e708ed69408a3d3fdc728f836f472cf95f1be867617",
+        "bytes": 61891,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1039.t1.txt",
+        "sha256": "561945148398eb2146c8a0c7ff2217a6a9325e801b2c4993d0831a8d813cb509",
+        "bytes": 16170
+      },
+      "imageNumber": 28,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 44.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        44.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        44.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        44.3
+      ]
+    },
+    {
+      "scan": 1044,
+      "image": {
+        "file": "mvf10441.png",
+        "sha256": "32260a1c5d7ebb52214de8cb17c05fefab3117b8ec3da8723d8920ed0eb1956e",
+        "bytes": 63624,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1044.t1.txt",
+        "sha256": "e9d982608367aff101885a21f060eb1d0e87a9323e73104b146a688328528e47",
+        "bytes": 16170
+      },
+      "imageNumber": 27,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 39.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        39.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        39.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        39.3
+      ]
+    },
+    {
+      "scan": 1049,
+      "image": {
+        "file": "mvf10491.png",
+        "sha256": "2a91ba1894d7cc3518535dace58aff265e275dbc721895b5125728de05bb4011",
+        "bytes": 65159,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1049.t1.txt",
+        "sha256": "84a3768d29fe2a9238cf8f88ef29da508eba001c9647614cac1d00f8520dd07a",
+        "bytes": 16170
+      },
+      "imageNumber": 26,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 34.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        34.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        34.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        34.3
+      ]
+    },
+    {
+      "scan": 1054,
+      "image": {
+        "file": "mvf10541.png",
+        "sha256": "47aa890d67d0e01ca1734dfa4cb1a0251e55e89e283fdac7c1eba3feae52f731",
+        "bytes": 66027,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1054.t1.txt",
+        "sha256": "55d46544e5f4415e2a94f7a6f139b74230fa4a9c198e00145e7030acb869caf0",
+        "bytes": 16170
+      },
+      "imageNumber": 25,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 29.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        29.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        29.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        29.3
+      ]
+    },
+    {
+      "scan": 1059,
+      "image": {
+        "file": "mvf10591.png",
+        "sha256": "fd643d998ffc41c627bf4bee9ec31e777c360b77a10915146ab5d4be105f41a7",
+        "bytes": 66657,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1059.t1.txt",
+        "sha256": "497b2e78bd1731d141c1cea235210a14cae03e36121a620196b66862b876b0a1",
+        "bytes": 16170
+      },
+      "imageNumber": 24,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 24.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        24.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        24.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        24.3
+      ]
+    },
+    {
+      "scan": 1064,
+      "image": {
+        "file": "mvf10641.png",
+        "sha256": "7334413f331f4b1aebe54f04339a494ddf77ef9ff0cffc7a47afde529332f5f3",
+        "bytes": 66870,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1064.t1.txt",
+        "sha256": "1ffe9af420248f82c0feea2dfdab56be79553bd192018bd09d2fe3b2c4ebe529",
+        "bytes": 16170
+      },
+      "imageNumber": 23,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 19.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        19.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        19.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        19.3
+      ]
+    },
+    {
+      "scan": 1069,
+      "image": {
+        "file": "mvf10691.png",
+        "sha256": "0e918233783c0211b661451f46c8b229e1e5d6e8cf5fa2bb0bb6e1f9140565ad",
+        "bytes": 67552,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1069.t1.txt",
+        "sha256": "72301aaaed8a8fccb7d98623e44111b00f7a18d05e93ce4ab568b26bfb744a63",
+        "bytes": 16170
+      },
+      "imageNumber": 22,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 14.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        14.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        14.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        14.3
+      ]
+    },
+    {
+      "scan": 1074,
+      "image": {
+        "file": "mvf10741.png",
+        "sha256": "a2231d4af4e8b202942fb18b63126dc7005dd29c7e5ef59d7d29f248bd81acff",
+        "bytes": 67974,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1074.t1.txt",
+        "sha256": "d52f648929a91f38219c3ea3a32243c9646e774f6d419ab79b8772636edff57e",
+        "bytes": 16165
+      },
+      "imageNumber": 21,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 9.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        9.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        9.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        9.3
+      ]
+    },
+    {
+      "scan": 1079,
+      "image": {
+        "file": "mvf10791.png",
+        "sha256": "61bbd4e304ccf8df0e7c2e14d18c22737609f717ee9c959189111fe2660b8182",
+        "bytes": 68420,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1079.t1.txt",
+        "sha256": "492351f4d1f532a051cb4da07ac856d1454be594508ebfcb14116da0c9175535",
+        "bytes": 16165
+      },
+      "imageNumber": 20,
+      "rasLetter": "S",
+      "rasLetterRaw": "S",
+      "imageLocationMm": 4.3,
+      "centerRasMm": [
+        0,
+        7.7,
+        4.3
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        4.3
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        4.3
+      ]
+    },
+    {
+      "scan": 1084,
+      "image": {
+        "file": "mvf10841.png",
+        "sha256": "1affa0c5815949e55134d11bed3b4831929a5af81d3d7f02839ccc7f1d30ba8f",
+        "bytes": 69297,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1084.t1.txt",
+        "sha256": "075ed70bef68b3f0322f33b3a428d3fad84dfdffe373ed7e3e39747ef4b0ccff",
+        "bytes": 16170
+      },
+      "imageNumber": 19,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -0.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -0.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -0.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -0.7
+      ]
+    },
+    {
+      "scan": 1089,
+      "image": {
+        "file": "mvf10891.png",
+        "sha256": "01255202678e7b185c833eff005dcbacb838a8028cf6c1d9370ce11c62d90595",
+        "bytes": 69734,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1089.t1.txt",
+        "sha256": "436a548766fcc43bfe01b69dac1b67019b7ecb31d8f01d8fa1a1db64d57c3a4e",
+        "bytes": 16170
+      },
+      "imageNumber": 18,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -5.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -5.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -5.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -5.7
+      ]
+    },
+    {
+      "scan": 1094,
+      "image": {
+        "file": "mvf10941.png",
+        "sha256": "bcbe27d8f2eb023c583af1cfc43a4c39a81e25e4f4b01473d5b7eed2ae53f68b",
+        "bytes": 69947,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1094.t1.txt",
+        "sha256": "6a9061255186e7493e518760cf9f9bb95f43cdb475e6875a545cb89e2b759385",
+        "bytes": 16175
+      },
+      "imageNumber": 17,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -10.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -10.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -10.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -10.7
+      ]
+    },
+    {
+      "scan": 1099,
+      "image": {
+        "file": "mvf10991.png",
+        "sha256": "c24959d4da7d2c6ef280ed661e484e79d5de5ed202c1e0853640cdbda02a28e0",
+        "bytes": 70424,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1099.t1.txt",
+        "sha256": "90a776ee61a0ea9edd3182eb42d5d0e317fd8ab1b17ad11c0a6efbaca5faeba4",
+        "bytes": 16184
+      },
+      "imageNumber": 16,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -15.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -15.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -15.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -15.7
+      ]
+    },
+    {
+      "scan": 1104,
+      "image": {
+        "file": "mvf11041.png",
+        "sha256": "f0cd3b3fefe5d0ded6d9a83e7ba8393fcc3a29a6ef3e37ff6316f7dce1c28fd8",
+        "bytes": 71004,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1104.t1.txt",
+        "sha256": "f527e03352264d3d126b7ec8c9ce8ffda56293146c985d7ebe1d23b82b21c6f9",
+        "bytes": 16175
+      },
+      "imageNumber": 15,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -20.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -20.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -20.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -20.7
+      ]
+    },
+    {
+      "scan": 1109,
+      "image": {
+        "file": "mvf11091.png",
+        "sha256": "505523390922fcddfe5337dd5217d7ff6bfaa1ae8f46af627a4d9e076b6e2250",
+        "bytes": 71666,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1109.t1.txt",
+        "sha256": "9fa4e5987cdf8fb8b66df889f1dde9c07ac90600d879d25b5ed63c8bbaf0d1a3",
+        "bytes": 16175
+      },
+      "imageNumber": 14,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -25.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -25.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -25.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -25.7
+      ]
+    },
+    {
+      "scan": 1114,
+      "image": {
+        "file": "mvf11141.png",
+        "sha256": "f04402227c052cf798c71849d72f8c2fbbf98491a74598b718b557d72fe2060e",
+        "bytes": 72209,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1114.t1.txt",
+        "sha256": "f5607d1f3be14c084834695d70f13fe491914799052257ac7664252ecffa2ab1",
+        "bytes": 16175
+      },
+      "imageNumber": 13,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -30.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -30.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -30.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -30.7
+      ]
+    },
+    {
+      "scan": 1119,
+      "image": {
+        "file": "mvf11191.png",
+        "sha256": "1bc0fd1c5cabbc2d4aabdd3c61cbb7d4a293e213c19dbb4f037b8e4d30e1e629",
+        "bytes": 72007,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1119.t1.txt",
+        "sha256": "95bed5a4444f8685c7252aa81c1f8cc490a4e8129557531d9a3588e460255ed2",
+        "bytes": 16175
+      },
+      "imageNumber": 12,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -35.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -35.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -35.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -35.7
+      ]
+    },
+    {
+      "scan": 1124,
+      "image": {
+        "file": "mvf11241.png",
+        "sha256": "db75f00d6ce51000f5ae2367500679788e526427f7df1bbf1eeaf9f41ee14fbb",
+        "bytes": 71641,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1124.t1.txt",
+        "sha256": "97bfe57455a3a0ddbcb33fbe7b028cd77be6cdb151a6148c65a90b357afe3def",
+        "bytes": 16175
+      },
+      "imageNumber": 11,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -40.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -40.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -40.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -40.7
+      ]
+    },
+    {
+      "scan": 1129,
+      "image": {
+        "file": "mvf11291.png",
+        "sha256": "253b4fb500aa09facce143fc739727230e653f67b63de16e2dee94225853d6de",
+        "bytes": 71879,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1129.t1.txt",
+        "sha256": "764b182eb80b61f81874c9c034434e2be26f62669ead68af6a49c984838e70e7",
+        "bytes": 16175
+      },
+      "imageNumber": 10,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -45.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -45.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -45.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -45.7
+      ]
+    },
+    {
+      "scan": 1134,
+      "image": {
+        "file": "mvf11341.png",
+        "sha256": "57a1017820851c6cc229dbe5afa0d7320c78fb91245138b5e723a14c6617d5d9",
+        "bytes": 71508,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1134.t1.txt",
+        "sha256": "3af2b8d9eec814ecccf7f933e68e4f864572274da013b2238f2acc901e8373d4",
+        "bytes": 16174
+      },
+      "imageNumber": 9,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -50.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -50.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -50.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -50.7
+      ]
+    },
+    {
+      "scan": 1139,
+      "image": {
+        "file": "mvf11391.png",
+        "sha256": "9a7e54d331396e1c650b6b4a6c5a2d2a1ee5c9cbf04c5e3bfc25f6e26541ed5c",
+        "bytes": 71047,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1139.t1.txt",
+        "sha256": "160e7f2f3fa9761ceaaa8383741c88813a50e9d5096db5fd68ca30d6a5a8cba8",
+        "bytes": 16180
+      },
+      "imageNumber": 8,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -55.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -55.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -55.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -55.7
+      ]
+    },
+    {
+      "scan": 1144,
+      "image": {
+        "file": "mvf11441.png",
+        "sha256": "ea7dfec34c6ed17abaa3cc941d6bbffc97a06108f7bc086043c9e6b80395653c",
+        "bytes": 70873,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1144.t1.txt",
+        "sha256": "fa21a178fd99f488339f1f69ec34d740cddc8a180df2c1270974a8b8d16de6c2",
+        "bytes": 16174
+      },
+      "imageNumber": 7,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -60.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -60.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -60.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -60.7
+      ]
+    },
+    {
+      "scan": 1149,
+      "image": {
+        "file": "mvf11491.png",
+        "sha256": "3804ff4a9df2bc6d63b88a6a632528f83a6fde729a41265d5dc3cc94c2444b57",
+        "bytes": 71063,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1149.t1.txt",
+        "sha256": "2fcf920ff433785d8051b9c61a923a0ed86c179234679cd40cfb4bd18b31e53f",
+        "bytes": 16174
+      },
+      "imageNumber": 6,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -65.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -65.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -65.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -65.7
+      ]
+    },
+    {
+      "scan": 1154,
+      "image": {
+        "file": "mvf11541.png",
+        "sha256": "6b8cd18a0623f2da9fae765624bca2cb420e3038b6f3c3789320b114c829efbf",
+        "bytes": 70406,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1154.t1.txt",
+        "sha256": "6fd923da4cecc2f1d8b3d309d8f574d9e1b46d2cca4e0cfbbbb4c08803b24d4a",
+        "bytes": 16174
+      },
+      "imageNumber": 5,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -70.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -70.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -70.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -70.7
+      ]
+    },
+    {
+      "scan": 1159,
+      "image": {
+        "file": "mvf11591.png",
+        "sha256": "775224b59f3e83462a851c6c06a3370f2a2a2c4cc3172f582eba0556a1518019",
+        "bytes": 70241,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1159.t1.txt",
+        "sha256": "fb12156959fc736ba39221fdb77854cc386f3b1795cfe98f7bd9f6f869d1af6e",
+        "bytes": 16180
+      },
+      "imageNumber": 4,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -75.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -75.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -75.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -75.7
+      ]
+    },
+    {
+      "scan": 1164,
+      "image": {
+        "file": "mvf11641.png",
+        "sha256": "7efdfd9ef6909d3d89ffc98e273b642350a52247c3f7bc2738e7c58dfc1fd843",
+        "bytes": 69549,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1164.t1.txt",
+        "sha256": "93de7e8676015c2a2a290fa8f0b4c01825505b5e3607d4477a9b36a5502d5c31",
+        "bytes": 16174
+      },
+      "imageNumber": 3,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -80.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -80.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -80.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -80.7
+      ]
+    },
+    {
+      "scan": 1169,
+      "image": {
+        "file": "mvf11691.png",
+        "sha256": "cc272df95fffafcb5c3428326f4d4a296571f80309646ff5aa894f3571fab573",
+        "bytes": 68775,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1169.t1.txt",
+        "sha256": "e59729a9c3e5bb19ad674a689d4da46339113867095c4ca68043fd17bf027cb8",
+        "bytes": 16182
+      },
+      "imageNumber": 2,
+      "rasLetter": "I",
+      "rasLetterRaw": "I",
+      "imageLocationMm": -85.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -85.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -85.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -85.7
+      ]
+    },
+    {
+      "scan": 1174,
+      "image": {
+        "file": "mvf11741.png",
+        "sha256": "5fc65b5e515a9b5abf44de3e12bb417c1636dd8ff8947cc39e2352d62075e6dc",
+        "bytes": 67206,
+        "width": 256,
+        "height": 256,
+        "bitDepth": 16,
+        "colorType": 0
+      },
+      "header": {
+        "file": "m_vf1174.t1.txt",
+        "sha256": "9edb2dac1ec07bcbb821e85dc98460ed57fb8a8e27a38c925348b9769433c101",
+        "bytes": 16180
+      },
+      "imageNumber": 1,
+      "rasLetter": "I",
+      "rasLetterRaw": "Iö",
+      "imageLocationMm": -90.7,
+      "centerRasMm": [
+        0,
+        7.7,
+        -90.7
+      ],
+      "topRightRasMm": [
+        -110,
+        117.7,
+        -90.7
+      ],
+      "bottomRightRasMm": [
+        -110,
+        -102.3,
+        -90.7
+      ]
+    }
+  ]
+}

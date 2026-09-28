@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useThree } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import { BufferAttribute, BufferGeometry, DoubleSide, FrontSide, Group, Int16BufferAttribute, Mesh, MeshStandardMaterial, type Intersection } from "three";
-import { selectionOpacity, selectionHitId } from "./selection-context";
+import { selectionOpacity, selectionHitId, opacityWritesDepth } from "./selection-context";
 import { assetUrl } from "./assets";
 import { dissectionLayerOpacity, layerKeys, structures, type Layer } from "./anatomy";
 import type { AtlasProps } from "./Atlas";
@@ -18,6 +18,7 @@ import { applyFemaleKneeSourceRestoration, femaleKneeSourceRestoration } from ".
 import { anatomyRegionMatches } from "./anatomy-region";
 import { femaleBrainBindings, resolveFemaleBrainGeometryPart, verifyFemaleBrainManifest } from "./female-brain-bindings";
 import { femalePelvicBindings, resolveFemalePelvicGeometryPart, verifyFemalePelvicManifestVersion } from "./female-pelvic-bindings";
+import { verifyPackedSourceManifest } from "./packed-source-guard";
 
 type FemalePart = {
   id: string;
@@ -36,13 +37,6 @@ type FemaleManifest = {
   chunks: { url: string; bytes: number; gzip: string; gzipBytes: number }[];
 };
 
-const systemLayer: Record<string, Layer> = {
-  integumentary: "skin", muscular: "muscle", "donor-muscle": "muscle",
-  skeletal: "bone", borrowed: "bone", connective: "bone",
-  digestive: "organ", respiratory: "organ", urinary: "organ", reproductive: "organ", pregnancy: "organ", cardiac: "organ",
-  arterial: "vessel", venous: "vessel", lymphatic: "lymph",
-  brain: "nerve", nervous: "nerve", sensory: "nerve",
-};
 const layerColor: Record<Layer, string> = {
   skin: "#b9826f", muscle: "#b43f3f", bone: "#e8dec5", organ: "#a94d60",
   vessel: "#d33f49", lymph: "#58b99f", nerve: "#f0c94f",
@@ -74,6 +68,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         verifyFemalePelvicManifestVersion(dataset);
         return JSON.parse(text) as FemaleManifest;
       });
+      verifyPackedSourceManifest(dataset,props.sex,atlas.parts,catalogById);
       const [buffers,restoredSource,restoredKnee] = await Promise.all([Promise.all(atlas.chunks.map(async (chunk) => {
         const file = chunk.gzip.split("/").pop()!;
         const response = await fetch(assetUrl(`models/${dataset}/${file}`), { signal: abort.signal });
@@ -96,8 +91,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       group.visible = false;
       const geometryParts=new Map(atlas.parts.map(part=>[part.id,part]));
       for (const part of atlas.parts) {
-        const layer = catalogById.get(part.id)?.layer || systemLayer[part.system];
-        if (!layer) continue;
+        const layer = catalogById.get(part.id)!.layer;
         const brainGeometryPart=resolveFemaleBrainGeometryPart(part,dataset,geometryParts);
         const geometryPart=resolveFemalePelvicGeometryPart(brainGeometryPart,dataset,geometryParts);
         const buffer = buffers[geometryPart.chunk];
@@ -166,9 +160,10 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       material.color.set(selected && props.selectionIds.length === 1 ? "#34d3dd" : highlighted ? "#e5b24f" : part?.system === "venous" ? "#356fb3" : part?.system === "borrowed" ? "#9aa7b1" : layerColor[layer]);
       material.opacity = selectionOpacity(props.layerOpacity[layer] * depthAlpha, selected, props.contextDimmed);
       const planes = clippingPlanes(layer, props);
-      if (material.transparent !== (material.opacity < .995) || (material.clippingPlanes?.length || 0) !== planes.length) material.needsUpdate = true;
-      material.transparent = material.opacity < .995;
-      material.depthWrite = material.opacity > .45;
+      const transparent = !opacityWritesDepth(material.opacity);
+      if (material.transparent !== transparent || (material.clippingPlanes?.length || 0) !== planes.length) material.needsUpdate = true;
+      material.transparent = transparent;
+      material.depthWrite = !transparent;
       material.clippingPlanes = planes;
       configurePicking(item, layer, props.selectionTarget);
     });

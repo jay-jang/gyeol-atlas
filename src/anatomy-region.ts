@@ -16,8 +16,8 @@ export type RegionBounds = [ArrayLike<number>, ArrayLike<number>];
 // Transregional groups (intestine, spinal cord, CT collections) are not mapped.
 // Sources and limitations: docs/anatomy-alignment/ORGAN_REGIONS.md.
 export const sourceOrganRegions = {
-  brain: "head", heart: "chest", lung: "chest", "lung-branches": "chest", "lung-internal": "chest", breast: "chest",
-  liver: "abdomen", kidney: "abdomen", stomach: "abdomen", pancreas: "abdomen", spleen: "abdomen",
+  brain: "head", heart: "chest", lung: "chest", "lung-branches": "chest", "lung-internal": "chest", "tracheobronchial-tree": "chest", breast: "chest",
+  liver: "abdomen", kidney: "abdomen", stomach: "abdomen", pancreas: "abdomen", "pancreas-parenchyma": "abdomen", gallbladder: "abdomen", spleen: "abdomen",
   uterus: "pelvis", ovary: "pelvis", "uterine-tube": "pelvis", vagina: "pelvis", bladder: "pelvis",
 } as const satisfies Record<string, AnatomyRegion>;
 export function sourceOrganRegion(structure: { layer: string; group?: string }) {

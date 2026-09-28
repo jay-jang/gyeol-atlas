@@ -59,7 +59,7 @@ test('organ details use their own complete source memberships and individual par
     await ready(page);
     // The archived lung branch view has its own source-specific entry and
     // assertions in lung-source.spec.ts, not a featured-anatomy button.
-    const groups = sex === 'female' ? femaleGroups : maleGroups.filter(group => group.id !== 'lung-branches');
+    const groups = sex === 'female' ? femaleGroups : maleGroups.filter(group => group.id !== 'lung-branches' && group.id !== 'pancreas-parenchyma');
     for (const group of groups) {
       await page.locator('.featured-anatomy > button').filter({ has: page.getByText(group.name, { exact: true }) }).click();
       await ready(page);

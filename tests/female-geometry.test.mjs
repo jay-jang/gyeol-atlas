@@ -8,6 +8,7 @@ const read = file => JSON.parse(fs.readFileSync(file, "utf8"));
 const atlas = read("public/models/female/atlas-female.json");
 const catalog = read("data/female-atlas-structures.json");
 const groups = read("data/female-organ-groups.json");
+const airwayGroups = read("data/female-airway-groups.json");
 const bounds = new Map();
 
 test("female source hashes, every index and actual vertex bounds match the pinned source", () => {
@@ -50,6 +51,22 @@ test("female organ groups match source hierarchy and have no male organs", () =>
   assert.equal(atlas.parts.filter(p => p.system === "borrowed" && !catalog.find(s => s.id === p.id)?.source.includes("남성 유래 보완 골격")).length, 0);
   // Do not relabel a gastric impression/surface as a missing stomach.
   assert.equal(groups.some(group => group.id === "stomach"), false);
+});
+
+test("female tracheobronchial detail uses the complete 36-mesh HRA concept, including cartilage", () => {
+  const group = airwayGroups.find(group => group.id === "tracheobronchial-tree");
+  const source = atlas.concepts.find(concept => concept.id === "HRA:tracheobronchial_tree");
+  assert.deepEqual(group.sourceConcepts, [source.id]);
+  assert.deepEqual(group.ids, source.elements);
+  assert.equal(group.ids.length, 36);
+  assert.equal(groups.some(group => group.id === airwayGroups[0].id), false);
+  assert.equal(group.ids.filter(id => /cartilage/i.test(atlas.parts.find(part => part.id === id).name)).length, 7);
+  for (const id of group.ids) {
+    const part = atlas.parts.find(part => part.id === id);
+    assert.equal(part.system, "respiratory");
+    assert.equal(catalog.find(item => item.id === id).sex, "female");
+  }
+  assert.equal(groups.find(group => group.id === "lung").ids.some(id => group.ids.includes(id)), false);
 });
 
 test("brain is within the head, major organs are within the female body bounds", () => {

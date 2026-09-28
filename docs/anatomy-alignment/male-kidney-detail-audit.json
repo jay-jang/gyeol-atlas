@@ -1,0 +1,963 @@
+{
+  "source": "https://github.com/slorksmo/Human-Atlas/tree/5bb5713aab18d7fe9380c3339eb09f173491ea06",
+  "version": "BodyParts3D 4.0",
+  "concepts": [
+    "FMA7203",
+    "FMA9704",
+    "FMA14751",
+    "FMA70494",
+    "FMA70485",
+    "FMA70488",
+    "FMA14334"
+  ],
+  "ids": [
+    "BP4_FJ3145",
+    "BP4_FJ3147",
+    "BP4_FJ3144",
+    "BP4_FJ3146",
+    "BP4_FJ2038",
+    "BP4_FJ2046",
+    "BP4_FJ2042",
+    "BP4_FJ2043",
+    "BP4_FJ2045",
+    "BP4_FJ2049",
+    "BP4_FJ2052",
+    "BP4_FJ2053",
+    "BP4_FJ2054",
+    "BP4_FJ3458",
+    "BP4_FJ3459",
+    "BP4_FJ3460",
+    "BP4_FJ3461",
+    "BP4_FJ3462",
+    "BP4_FJ3463",
+    "BP4_FJ3558",
+    "BP4_FJ3559",
+    "BP4_FJ3560",
+    "BP4_FJ3561",
+    "BP4_FJ3562",
+    "BP4_FJ3563",
+    "BP4_FJ3473",
+    "BP4_FJ3474",
+    "BP4_FJ3475",
+    "BP4_FJ3573",
+    "BP4_FJ3574",
+    "BP4_FJ3575",
+    "BP4_FJ3477",
+    "BP4_FJ3478",
+    "BP4_FJ3577",
+    "BP4_FJ3578"
+  ],
+  "scope": "Exact source-to-packed positions, normals and indices, catalog identity and source hierarchy; no kidney interior, complete vascular continuity, spatial registration to the older overview or clinical anatomy approval.",
+  "rows": [
+    {
+      "id": "BP4_FJ3145",
+      "name": "Left kidney",
+      "conceptId": "FMA7205",
+      "system": "urinary",
+      "chunk": 11,
+      "vertices": 762,
+      "triangles": 1512,
+      "bounds": [
+        [
+          0.0328399,
+          1.0626052000000001,
+          -0.0404086
+        ],
+        [
+          0.09038299999999999,
+          1.1685512,
+          0.0001850000000000046
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "8b3feb5612b24f97978ef1851bb345f6b32e220294d0aa4b03ed856c6ff10984",
+        "normals": "3594aaaf142a8cb1ae271f9a0ee0ac8e14e4ca4186d4ab2126d56fa1aacef251",
+        "indices": "7cf3536a8d3f086d37dfd2d6812ce11fb0f40f4e0d43988270889b0c4840dac4"
+      }
+    },
+    {
+      "id": "BP4_FJ3147",
+      "name": "Right kidney",
+      "conceptId": "FMA7204",
+      "system": "urinary",
+      "chunk": 11,
+      "vertices": 747,
+      "triangles": 1480,
+      "bounds": [
+        [
+          -0.0875754,
+          1.0449232,
+          -0.035299899999999995
+        ],
+        [
+          -0.030427600000000003,
+          1.1493512,
+          0.011855000000000004
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "5ca770e661a4d6028b2d5c677a5832de94527d03ca95c743911cc2c7e4b48bd2",
+        "normals": "cc1e44dae93924aa61c16f4cc465c7e13b0dc6d0b05a393863fa173bdf09b604",
+        "indices": "6f4a506ad020673b862169980450b8970686398ef8bca27ba63bb6592e0d6481"
+      }
+    },
+    {
+      "id": "BP4_FJ3144",
+      "name": "Left ureter",
+      "conceptId": "FMA15572",
+      "system": "urinary",
+      "chunk": 11,
+      "vertices": 441,
+      "triangles": 760,
+      "bounds": [
+        [
+          0.0232688,
+          0.8961502,
+          -0.038389000000000006
+        ],
+        [
+          0.07937659999999999,
+          1.1506812,
+          0.019751000000000005
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "4273bffb4d846eb9e9fb79edbf8709a33d5bf8af270ee2653ce2be81f965bae1",
+        "normals": "c1352cdd4754cb8bc13c1aaefdac76a0cac6b5945a56ce001d1c4fc0def9bc39",
+        "indices": "20417648222e8806764b265ca9cbe7c7d229f9780abfdcb5a9aec3dbf9b971cb"
+      }
+    },
+    {
+      "id": "BP4_FJ3146",
+      "name": "Right ureter",
+      "conceptId": "FMA15571",
+      "system": "urinary",
+      "chunk": 11,
+      "vertices": 551,
+      "triangles": 818,
+      "bounds": [
+        [
+          -0.0727935,
+          0.8893142,
+          -0.039654100000000005
+        ],
+        [
+          -0.009399290000000001,
+          1.1351111999999999,
+          0.018968999999999986
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "fa7df0948b3757c990be5a7b37a777246fb2e54a5c5d572e31d0fa77eff245c3",
+        "normals": "2110008546c1ce2b61917c4acb54bdecc0aa563dddb10c9e26c2d55985705526",
+        "indices": "78eee0d60e3d6cfa7e38621d936bfa4a66965159f328d02926fbc583d98c28e1"
+      }
+    },
+    {
+      "id": "BP4_FJ2038",
+      "name": "Right renal artery",
+      "conceptId": "FMA14752",
+      "system": "arterial",
+      "chunk": 7,
+      "vertices": 119,
+      "triangles": 196,
+      "bounds": [
+        [
+          -0.042344099999999996,
+          1.1032912,
+          -0.0027416000000000107
+        ],
+        [
+          0.0127113,
+          1.1268312,
+          0.01956100000000001
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "cd558713ecadc313e3261caf701f3dfe8d9cddc77bb7647af55cd46a6b284178",
+        "normals": "36dca29a08ccf623598e32cdc985272630a39f9d6f43d2dcf082e4ef967e66e1",
+        "indices": "a7f2b4916dad049dd154e37e3f54c4d8d8d3a723eebd1528a8815307630d00a7"
+      }
+    },
+    {
+      "id": "BP4_FJ2046",
+      "name": "Left renal artery",
+      "conceptId": "FMA14753",
+      "system": "arterial",
+      "chunk": 7,
+      "vertices": 165,
+      "triangles": 286,
+      "bounds": [
+        [
+          0.0036509000000000003,
+          1.1146612,
+          -0.0032380000000000048
+        ],
+        [
+          0.0394612,
+          1.1278612,
+          0.020307000000000006
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "fc6d597acb0144c3de1d8c1c5717ba60473cad5ec3c593dc577083a2d1444176",
+        "normals": "6aff0f0ac04f87af081fa2896c4611aa205aa46947b45cdf3fe0e5faa5220e05",
+        "indices": "90dff75ab22db260685a7ad63e7920360cad019740dd89dedaf2cbc3f9b584eb"
+      }
+    },
+    {
+      "id": "BP4_FJ2042",
+      "name": "Superior segmental branch of right renal artery",
+      "conceptId": "FMA86340",
+      "system": "arterial",
+      "chunk": 7,
+      "vertices": 188,
+      "triangles": 288,
+      "bounds": [
+        [
+          -0.06901840000000001,
+          1.1083212,
+          -0.0363233
+        ],
+        [
+          -0.057554600000000004,
+          1.1511912,
+          -0.0103472
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "a79e45940e0be3d8ea6dec34e969bc96612bb5dec726d5c3ee70444a4096ceb0",
+        "normals": "3ed540d2741055e5c92c69d803d1c7afb9935df2a39e232fbcc2ab6ce64c47b0",
+        "indices": "d88550f3e91c476ea3277e9e35e864f2b1ccf0028432b8f160732454140da017"
+      }
+    },
+    {
+      "id": "BP4_FJ2043",
+      "name": "Inferior segmental branch of right renal artery",
+      "conceptId": "FMA86346",
+      "system": "arterial",
+      "chunk": 7,
+      "vertices": 139,
+      "triangles": 260,
+      "bounds": [
+        [
+          -0.0865751,
+          1.0777142,
+          -0.016376400000000013
+        ],
+        [
+          -0.056624400000000005,
+          1.1118712,
+          -0.007624900000000004
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "28f2477cc15825f11ba8bdecd5d825efb79b60d2b0a23009f7c9f54825390f08",
+        "normals": "0bfd0feed42f540bd52e601f52ae1c63d20cf091fd5318c8aba936bfb1a3534a",
+        "indices": "fae5a7f8770791562add604faa196b3e663d8707e2d2c73bbd16660784bc9b3a"
+      }
+    },
+    {
+      "id": "BP4_FJ2045",
+      "name": "Posterior segmental branch of right renal artery",
+      "conceptId": "FMA86348",
+      "system": "arterial",
+      "chunk": 7,
+      "vertices": 282,
+      "triangles": 474,
+      "bounds": [
+        [
+          -0.111388,
+          1.0716242,
+          -0.049377800000000006
+        ],
+        [
+          -0.060562700000000004,
+          1.0973112,
+          -0.008068400000000003
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "02d6dced36f55a58f029d45bf150a7e70081be06679cbcf7f4e329bf803bae0c",
+        "normals": "e0e8680eb3f83482ca61ce5d6fafb85b31f229cb3ebcf458f5415e3d5e17b87a",
+        "indices": "4aac32bdb894e43e8103259c1a7b3431401a0e4db8490b3960315c66440f11a9"
+      }
+    },
+    {
+      "id": "BP4_FJ2049",
+      "name": "Inferior segmental branch of left renal artery",
+      "conceptId": "FMA86347",
+      "system": "arterial",
+      "chunk": 7,
+      "vertices": 160,
+      "triangles": 300,
+      "bounds": [
+        [
+          0.0476934,
+          1.0971812,
+          -0.019467200000000004
+        ],
+        [
+          0.0815951,
+          1.1242812,
+          -0.00871290000000001
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "fb0994a9bd0548b090995354ea67d3be37bc4f494f1cbfc66d7cad91ff62f2e2",
+        "normals": "b5572495dbed027ade007884407cb4713c0caba4c6c68da30cbf03c697be8e58",
+        "indices": "296c7f87c4bc0187eaedcafd4ec62d6ee09d9564986b4e5682a7cb1600aac8a0"
+      }
+    },
+    {
+      "id": "BP4_FJ2052",
+      "name": "Superior segmental branch of left renal artery",
+      "conceptId": "FMA86341",
+      "system": "arterial",
+      "chunk": 7,
+      "vertices": 167,
+      "triangles": 262,
+      "bounds": [
+        [
+          0.045552300000000004,
+          1.1219912,
+          -0.03455920000000001
+        ],
+        [
+          0.052607999999999995,
+          1.1634912000000002,
+          -0.005324200000000015
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "7009392a3b4976406d12b19d8272eb60c60404d3eabae24b6069973ad13ab27e",
+        "normals": "0b3ea532cbde8890a4f1b980342331f5c06cbd80a6fa0d695a7291ad74c15f69",
+        "indices": "a8d9075880d10e8c8f6f3b47893b372a991aa2e8683e7cfbcc535d7821b498fb"
+      }
+    },
+    {
+      "id": "BP4_FJ2053",
+      "name": "Posterior segmental branch of left renal artery",
+      "conceptId": "FMA86349",
+      "system": "arterial",
+      "chunk": 7,
+      "vertices": 182,
+      "triangles": 274,
+      "bounds": [
+        [
+          0.0542281,
+          1.1180112,
+          -0.046151700000000004
+        ],
+        [
+          0.0679522,
+          1.1496612,
+          -0.021758799999999995
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "75c649f91f9ebc3c9f6084d7165bcfceefda3a65b6b8e16cf0abdf7aa69d4696",
+        "normals": "af7ada1ff472e97e8b490e9c41be4eb0e8ee44ae6a0c8d2b38c7ed451f57c240",
+        "indices": "c4fae883bedd51e2a88c265371199dd4c518fbf55a24344aa80ef39bf2eaee39"
+      }
+    },
+    {
+      "id": "BP4_FJ2054",
+      "name": "Posterior segmental branch of left renal artery",
+      "conceptId": "FMA86349",
+      "system": "arterial",
+      "chunk": 7,
+      "vertices": 284,
+      "triangles": 492,
+      "bounds": [
+        [
+          0.042296799999999996,
+          1.1065112000000001,
+          -0.049777800000000004
+        ],
+        [
+          0.0939464,
+          1.1228212,
+          -0.004274299999999995
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "850a9b337e3e4de5165f7fdf1d554ace4fa7fb2557b7f5fbf36981508d110edf",
+        "normals": "960ea50de19522c58c63cc9341b3af77cab02ca96d06d9414e636be584c65f4e",
+        "indices": "c38e1516182b04696e500f7ffb594b4b1cbffbcbdfe3b760dd9d1d0c73704a20"
+      }
+    },
+    {
+      "id": "BP4_FJ3458",
+      "name": "Anterior division of left renal artery",
+      "conceptId": "FMA70487",
+      "system": "arterial",
+      "chunk": 13,
+      "vertices": 207,
+      "triangles": 410,
+      "bounds": [
+        [
+          0.0279607,
+          1.1165012,
+          -0.0187089
+        ],
+        [
+          0.0615699,
+          1.1312712,
+          0.010335999999999998
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "a7de8c151d6bb1b7ce7f6a57afbe6ce73285cc02152ed67821a1cedf0b35461c",
+        "normals": "fd8278e837d00e665829833b8f3e5c85b9026335ba0f6df9a048d03c6e1cc126",
+        "indices": "6668ba59179e1a99cde62014c28b9794c16d3ccf93210fde4aa47f050878dc4c"
+      }
+    },
+    {
+      "id": "BP4_FJ3459",
+      "name": "Anterior division of left renal artery",
+      "conceptId": "FMA70487",
+      "system": "arterial",
+      "chunk": 13,
+      "vertices": 240,
+      "triangles": 410,
+      "bounds": [
+        [
+          0.0480419,
+          1.0801311999999998,
+          -0.015384900000000007
+        ],
+        [
+          0.0565051,
+          1.1088812,
+          -0.009429199999999999
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "4607b11add12c23de7162f528853b838510b70974672495fe8bdd996e3ee0dd4",
+        "normals": "019b672e1916b8aad516717b2f5262240560cb6a7a8d91dc9b30066efb5c9ad8",
+        "indices": "8203e98e3f2a9885433d455c0907cc0b64e44263a588312945c7dd0c4a0e0568"
+      }
+    },
+    {
+      "id": "BP4_FJ3460",
+      "name": "Anterior division of left renal artery",
+      "conceptId": "FMA70487",
+      "system": "arterial",
+      "chunk": 13,
+      "vertices": 221,
+      "triangles": 278,
+      "bounds": [
+        [
+          0.060476999999999996,
+          1.0865512,
+          -0.025495900000000016
+        ],
+        [
+          0.0701327,
+          1.1357512,
+          -0.012975700000000007
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "47d3d2d2963448ad9ae0c5b07680702512bba9563c5c8e5e189efc7677e3dd91",
+        "normals": "d4ded33401a5e941b87d90106d927b41881864f7bdb00a206ca32fde47f0ef9a",
+        "indices": "3db4e3f72cd17d39f6fc0a020d2f17d1e19211631fe56de3d28ff5f755c8418a"
+      }
+    },
+    {
+      "id": "BP4_FJ3461",
+      "name": "Anterior division of left renal artery",
+      "conceptId": "FMA70487",
+      "system": "arterial",
+      "chunk": 13,
+      "vertices": 1106,
+      "triangles": 1260,
+      "bounds": [
+        [
+          0.0419461,
+          1.0748772,
+          -0.028435199999999994
+        ],
+        [
+          0.08164919999999999,
+          1.1533112,
+          -0.010727100000000003
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "1e9d08cb8142107485fcd79fc35ebb7ff85d19baf86908ab532019f3388b6662",
+        "normals": "1e0d9c3a0f9c8ce1c8ef52b23c15f56cbd9af99f94f25436e2b6e638a18dfc3c",
+        "indices": "cab35fa2db7efb059af6e2ac6fbcda5968867518dcb584f863469633708a7c13"
+      }
+    },
+    {
+      "id": "BP4_FJ3462",
+      "name": "Anterior division of left renal artery",
+      "conceptId": "FMA70487",
+      "system": "arterial",
+      "chunk": 13,
+      "vertices": 337,
+      "triangles": 668,
+      "bounds": [
+        [
+          0.0309582,
+          1.1186012,
+          -0.022445499999999993
+        ],
+        [
+          0.0573075,
+          1.1440712,
+          0.006283999999999998
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "cdbb4971dc77727aa37e05daa9bc9814a210a47a36f1e60a224dd5873451c7d9",
+        "normals": "444b1b3d49b318c8a4854aaae4a4d956d2ac32d4ccb159394acd93f82ee7d006",
+        "indices": "d1d022c7da75291e4cb77df38970b52f77c48277f626694a07c4000ac5f43c49"
+      }
+    },
+    {
+      "id": "BP4_FJ3463",
+      "name": "Anterior division of left renal artery",
+      "conceptId": "FMA70487",
+      "system": "arterial",
+      "chunk": 13,
+      "vertices": 378,
+      "triangles": 748,
+      "bounds": [
+        [
+          0.027063,
+          1.0896211999999998,
+          -0.019610000000000002
+        ],
+        [
+          0.067975,
+          1.1217912,
+          0.009763000000000008
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "21094b3900f12517a40ebac24d5a94e4431d08d7b5e5337ecdbee4719af4cb0c",
+        "normals": "383d1bb86469c650c20bc71b001dc72fc66a0516ba8fedc712cdce337b6e56a1",
+        "indices": "12fae1453dbe7b642fbf150b1a6292d773bdbd838fd43e3d2364422f5022beaa"
+      }
+    },
+    {
+      "id": "BP4_FJ3558",
+      "name": "Anterior division of right renal artery",
+      "conceptId": "FMA70486",
+      "system": "arterial",
+      "chunk": 14,
+      "vertices": 217,
+      "triangles": 386,
+      "bounds": [
+        [
+          -0.06320300000000001,
+          1.0738532,
+          -0.006893300000000005
+        ],
+        [
+          -0.0344949,
+          1.1093511999999999,
+          0.0036659999999999887
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "976a75aa61e75880acc2f096a5dda91ff68541e2f3663f2d781fcfd1a908d78b",
+        "normals": "e7c741e2da05c300a7f313ed252c427fdfb60b7024d7ff8f2d5f8d43fbbc2110",
+        "indices": "1d7f4891236cd7860e3bcab94ef98b902fd2e13eb7f9da7e84e3d10417c11c6a"
+      }
+    },
+    {
+      "id": "BP4_FJ3559",
+      "name": "Anterior division of right renal artery",
+      "conceptId": "FMA70486",
+      "system": "arterial",
+      "chunk": 14,
+      "vertices": 314,
+      "triangles": 604,
+      "bounds": [
+        [
+          -0.053968600000000005,
+          1.1054211999999999,
+          -0.0078149
+        ],
+        [
+          -0.034602100000000004,
+          1.1151111999999999,
+          0.003373999999999988
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "ee4fde4dfa3b3fb515935985f713690d4fe399652a4e1eb2d533889f52924d52",
+        "normals": "51ef1ef17ccd506790e1f57a96d8ed313af3fa161a15ef49ce2f4c1b3c01b7d1",
+        "indices": "66bc76306173e7ca02cbd1b4634be864e161d6c3214aeb3158256ee17deb1f99"
+      }
+    },
+    {
+      "id": "BP4_FJ3560",
+      "name": "Anterior division of right renal artery",
+      "conceptId": "FMA70486",
+      "system": "arterial",
+      "chunk": 14,
+      "vertices": 314,
+      "triangles": 604,
+      "bounds": [
+        [
+          -0.048400599999999995,
+          1.1073012,
+          -0.010304400000000005
+        ],
+        [
+          -0.0369238,
+          1.1277812,
+          0.0022990000000000094
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "c34f223a5928409462981a8ef96c7918cbb2c6d50a5221e8cbac7034fc1a7274",
+        "normals": "b22e3ccad165b0a8d6710b3962e672a0d366427554be18ce586be5ccfc401457",
+        "indices": "a0106dd290c5101305ea103e46e4866dbd389bb39c9a252437d6799d57043112"
+      }
+    },
+    {
+      "id": "BP4_FJ3561",
+      "name": "Anterior division of right renal artery",
+      "conceptId": "FMA70486",
+      "system": "arterial",
+      "chunk": 14,
+      "vertices": 259,
+      "triangles": 454,
+      "bounds": [
+        [
+          -0.0612228,
+          1.0878911999999998,
+          -0.0113669
+        ],
+        [
+          -0.038513399999999996,
+          1.1077912,
+          0.0031929999999999875
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "37ceec6a90a6af728a4ed0cef3a2adc42e3a3ee06778d10d5368a4da36c70c0d",
+        "normals": "a2cb4ea48265f1d8a625e8fe871bbb825bdf3cd0ef41d69e0f6589eabdc6ab5d",
+        "indices": "da6ec46eef806901507a015f239c0d6e6209d1b2d7c559d60f4594704914e6af"
+      }
+    },
+    {
+      "id": "BP4_FJ3562",
+      "name": "Anterior division of right renal artery",
+      "conceptId": "FMA70486",
+      "system": "arterial",
+      "chunk": 14,
+      "vertices": 335,
+      "triangles": 492,
+      "bounds": [
+        [
+          -0.062044100000000005,
+          1.0628802,
+          -0.014658299999999999
+        ],
+        [
+          -0.0441918,
+          1.1201911999999998,
+          -0.00042430000000000245
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "f81d4d9a88b7134b861c13a01989f42ebd85e2afb29b38a03be83a33d3092e73",
+        "normals": "da7c3ba6dd2bb3e733929298017c2f2b992be857ad6b796ad1b179f92509cd0f",
+        "indices": "9b9caf64c9417419941e73c23963ca7c7978f1664fdb6e9e89b90c1215b01cbd"
+      }
+    },
+    {
+      "id": "BP4_FJ3563",
+      "name": "Anterior division of right renal artery",
+      "conceptId": "FMA70486",
+      "system": "arterial",
+      "chunk": 14,
+      "vertices": 1006,
+      "triangles": 1212,
+      "bounds": [
+        [
+          -0.0734827,
+          1.0586422,
+          -0.020694100000000007
+        ],
+        [
+          -0.0329184,
+          1.1372512000000001,
+          -0.0024011000000000032
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "27c181bd10440329d829ce9ff76338906ad876d61e1391f772faa51a341476dc",
+        "normals": "fbba1077b55aeeb9e6ec9d3add31c099c1c2ecec4e9ccaee3d1dde71eeb3824c",
+        "indices": "43c45e4b04b6de909ec20ac78eece0dae68be99423f1f9b307768ea198dd4ad6"
+      }
+    },
+    {
+      "id": "BP4_FJ3473",
+      "name": "Posterior division of left renal artery",
+      "conceptId": "FMA70490",
+      "system": "arterial",
+      "chunk": 13,
+      "vertices": 226,
+      "triangles": 264,
+      "bounds": [
+        [
+          0.0159546,
+          1.1157612000000001,
+          -0.031315300000000004
+        ],
+        [
+          0.05739350000000001,
+          1.1226012,
+          0.012639999999999998
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "6f5cc50185e78a4bb74f5e442bf88c4beedac2086f9a2e92f25fc1405383f03d",
+        "normals": "aee3b7fba497db64728433a563fdc37ea1146458daa50b0aa6a5634dfbcc05c4",
+        "indices": "2bb73ad5966f18ea83ab3b8cb482f280870c52bc9febc71e91208a9a94089b07"
+      }
+    },
+    {
+      "id": "BP4_FJ3474",
+      "name": "Posterior division of left renal artery",
+      "conceptId": "FMA70490",
+      "system": "arterial",
+      "chunk": 13,
+      "vertices": 173,
+      "triangles": 252,
+      "bounds": [
+        [
+          0.0408168,
+          1.1064212,
+          -0.028788700000000014
+        ],
+        [
+          0.0498115,
+          1.1172612,
+          -0.02406430000000001
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "eafec5dac9e58bb5e352aae8fad23b850ba22f3f3a7d03a87d8ea9329cbd0123",
+        "normals": "6f5fe2b857e470baf8d0139c4d05beccaccc699e9fcb9664ce9cc1c825591d13",
+        "indices": "21e0bad5049e2cf8dfcc4bba7104a1ed7d6ada04ad9a0c5912931a0127d52399"
+      }
+    },
+    {
+      "id": "BP4_FJ3475",
+      "name": "Posterior division of left renal artery",
+      "conceptId": "FMA70490",
+      "system": "arterial",
+      "chunk": 13,
+      "vertices": 158,
+      "triangles": 234,
+      "bounds": [
+        [
+          0.0392626,
+          1.1197512,
+          -0.030387600000000015
+        ],
+        [
+          0.0538139,
+          1.1224512,
+          0.0009240000000000081
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "e7cc7d8d437bf0b88f5bda4582e0670e50e9548d70e9211a8a1c5eae73538a70",
+        "normals": "b4fabbb38b03341c2522b4d881a6ab2b5639fc174ddea7b31fa24a1fc3939cb7",
+        "indices": "f6372697f27729e993faacd9034cfc85f9407f5bf4c435bc5d3fcb6685191938"
+      }
+    },
+    {
+      "id": "BP4_FJ3573",
+      "name": "Posterior division of right renal artery",
+      "conceptId": "FMA70489",
+      "system": "arterial",
+      "chunk": 14,
+      "vertices": 279,
+      "triangles": 460,
+      "bounds": [
+        [
+          -0.0742307,
+          1.0890312,
+          -0.0216171
+        ],
+        [
+          -0.062021400000000004,
+          1.1005212,
+          -0.017679
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "dfefdf11acc0ec3442035b596d6342474c2abc97ea24c765d20ce2d9251042ad",
+        "normals": "cbba68e5a8656d9687d91b25cc0f883745d162625c3f0b1a10ab0ce37350ed5c",
+        "indices": "2d42436c62c4f1c3a38a4987c25a92727b7d45c6bc76aa0013455a409a092432"
+      }
+    },
+    {
+      "id": "BP4_FJ3574",
+      "name": "Posterior division of right renal artery",
+      "conceptId": "FMA70489",
+      "system": "arterial",
+      "chunk": 14,
+      "vertices": 212,
+      "triangles": 350,
+      "bounds": [
+        [
+          -0.06531290000000001,
+          1.0843512,
+          -0.0220152
+        ],
+        [
+          -0.0489891,
+          1.1044512,
+          -0.0173986
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "1487635eb824a489f9bfbf00752c4276b3cf38defef2036deaab54e623ce8b03",
+        "normals": "e41108055bca78011059e6d277484fa8a42ed87e8be02782835e108aeddc4ebc",
+        "indices": "e1b1f267d91f73922c0bdc4b580fe83267dab743f127b5af7057dc875487d6d9"
+      }
+    },
+    {
+      "id": "BP4_FJ3575",
+      "name": "Posterior division of right renal artery",
+      "conceptId": "FMA70489",
+      "system": "arterial",
+      "chunk": 14,
+      "vertices": 281,
+      "triangles": 486,
+      "bounds": [
+        [
+          -0.0735532,
+          1.0986312,
+          -0.02226940000000001
+        ],
+        [
+          -0.026833,
+          1.1130012,
+          0.0056790000000000035
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "df92bd9aed85bd88b9b3e9df33c6840e92b3e2355afcd9f096874c479a92b828",
+        "normals": "e06cbca7e0d782179becf6a0291763c43d2a02940570051658e7909f9246ac44",
+        "indices": "cd745cde056980b0b724ee55e46e351be49d3d6322b1aa51d71dbd36615ac95e"
+      }
+    },
+    {
+      "id": "BP4_FJ3477",
+      "name": "Left renal vein",
+      "conceptId": "FMA14336",
+      "system": "venous",
+      "chunk": 13,
+      "vertices": 327,
+      "triangles": 638,
+      "bounds": [
+        [
+          -0.0157686,
+          1.1014012,
+          -0.010419399999999995
+        ],
+        [
+          0.0316965,
+          1.1178611999999999,
+          0.03242599999999998
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "c945d235274a5eafcc83774f9c6322633df98da202f378b1977e37ee3a359a7d",
+        "normals": "42cc7ca18cf594c1794890176f679482c2d29381310fbf84424a03a586fa2298",
+        "indices": "a6a4ff842fccd8533c4a4b91188a73b153d30e26e2c890100810da2c5d8b5f94"
+      }
+    },
+    {
+      "id": "BP4_FJ3478",
+      "name": "Left renal vein",
+      "conceptId": "FMA14336",
+      "system": "venous",
+      "chunk": 13,
+      "vertices": 2324,
+      "triangles": 2280,
+      "bounds": [
+        [
+          0.0245644,
+          1.0756992,
+          -0.032292699999999994
+        ],
+        [
+          0.0810475,
+          1.1527112,
+          -0.0026026999999999995
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "1a982dadde7c4d61ef6f641891adc00964b230f0df1cde94883d77fa1bae2081",
+        "normals": "4000f681f66a22b8af9d73782d18ec245b2d4775cb4f6a0ce27cecba62a06553",
+        "indices": "bc74e7107c5665f193e34f1fb7f526a5123f4b030836e94a68dccc0de061a6b6"
+      }
+    },
+    {
+      "id": "BP4_FJ3577",
+      "name": "Right renal vein",
+      "conceptId": "FMA14335",
+      "system": "venous",
+      "chunk": 14,
+      "vertices": 170,
+      "triangles": 328,
+      "bounds": [
+        [
+          -0.0313539,
+          1.0992012,
+          -0.0077705
+        ],
+        [
+          -0.008988930000000001,
+          1.1113112,
+          0.017223000000000002
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "79664e79b0d34023f3d0385f7a33bb50133cef59bdd04549ac32ea60838a68ba",
+        "normals": "7f88ec3faef19da4cb12fffd6070cecf644cab52b3d65d1e05e512d891f0e1a2",
+        "indices": "d81e9cc771830eafd94ff2b5687d1926bc0cd96a892b0291fdb6d90eb0dfc6b1"
+      }
+    },
+    {
+      "id": "BP4_FJ3578",
+      "name": "Right renal vein",
+      "conceptId": "FMA14335",
+      "system": "venous",
+      "chunk": 14,
+      "vertices": 2388,
+      "triangles": 2386,
+      "bounds": [
+        [
+          -0.0733557,
+          1.0589922,
+          -0.021342899999999998
+        ],
+        [
+          -0.0237453,
+          1.1363712,
+          0.001467999999999997
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "393dc2499efd9f6f2e3b9c07384fb78e89b4d9f349d1abdc87904d939b201bbd",
+        "normals": "db6042be6f380de66bd2a025593946e0373740ae3477af76030e11b969ce0653",
+        "indices": "dbfef45fe19dbbe89babdb01ce8d5a7ca069d4406e7ec80b827d6410ffd94aea"
+      }
+    }
+  ]
+}

@@ -10,6 +10,12 @@ export function selectionOpacity(alpha: number, selected: boolean, dimmed: boole
   return selected ? 1 : dimmed ? Math.min(alpha, .12) : alpha;
 }
 
+// Translucent layers must not stamp the depth buffer and erase anatomical
+// structures rendered behind them. The same threshold controls transparency.
+export function opacityWritesDepth(alpha:number) {
+  return Number.isFinite(alpha) && alpha >= .995;
+}
+
 type HitObject = { name: string; parent?: { name: string } | null };
 // A visibly emphasized selected surface wins over the translucent context at
 // the same pixel. Else keep the normal frontmost hit, so other meshes work.

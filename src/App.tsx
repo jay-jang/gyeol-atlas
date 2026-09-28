@@ -57,7 +57,7 @@ import {
   type ViewState,
   type ViewAction,
 } from "./view-state";
-import { structures, detailForStructure, stageDescription, maleLungViews } from "./anatomy";
+import { structures, detailForStructure, stageDescription, maleKidneyViews, maleLungViews, malePancreasViews } from "./anatomy";
 import { referenceSourceFor } from "./reference-source";
 import { comparisonReference } from "./comparison-reference";
 
@@ -78,6 +78,7 @@ function returnToAtlas() {
   return pointId ? `#atlas/${pointId}` : "#atlas";
 }
 import { anatomyRegionNames, layerKeys, layerNames, stages, structuresForSex, organGroups, structureGroups, compositeGroups, type Layer } from "./anatomy";
+import { structureForSexId } from "./sex-structure";
 import conceptData from "../data/point-concepts.json";
 import concepts from "../data/concepts.json";
 const pointConcepts = conceptData as Record<
@@ -432,6 +433,7 @@ function AtlasPage({
   });
   const isolateCameraFrame = useRef<number | null>(null);
   const sourceKey = referenceSourceFor(state.sex, [...(state.selection?.ids || []), ...(state.detail?.ids || [])]);
+  const pendingOverviewPose = useRef<ViewState["camera"]>(null);
   const [loaded, setLoaded] = useState<{ source: string | null; layers: Layer[] }>({ source: null, layers: [] });
   const [loadingReference, setLoadingReference] = useState(false);
   const [comparisonNotice, setComparisonNotice] = useState("");
@@ -478,10 +480,17 @@ function AtlasPage({
     if (kind === "focus" && state.markers === "hidden")
       dispatch({ type: "markers", value: "selected" });
   };
+  const restoreOverviewPose = (pose: NonNullable<ViewState["camera"]>) => {
+    // An overview source loaded after a CT/BP4 detail would otherwise run its
+    // usual fit and overwrite the saved pre-detail viewpoint.
+    if (sourceKey !== referenceSourceFor(state.sex, [])) pendingOverviewPose.current = pose;
+    else setAction(a => ({ kind: "pose", pose, tick: a.tick + 1 }));
+  };
   const previousSex = useRef(state.sex);
   useEffect(() => {
     if (previousSex.current === state.sex) return;
     previousSex.current = state.sex;
+    pendingOverviewPose.current = null;
     camera("fit");
   }, [state.sex]);
   const closePanel = () => {
@@ -512,14 +521,14 @@ function AtlasPage({
   }, []);
   const select = (p: Point) => {
     const leavingDetail = Boolean(state.detail);
-    const returnPose = !leavingDetail ? state.selectionReturn?.camera : null;
+    const returnPose = leavingDetail ? state.detailReturn?.camera : state.selectionReturn?.camera;
     if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
     isolateCameraFrame.current = null;
     dispatch({ type: "point", id: p.id });
     navigate(`atlas/${p.id}`);
     setPanel(null);
-    if (leavingDetail) requestAnimationFrame(() => camera("fit"));
-    else if (returnPose) setAction(a => ({ kind: "pose", pose: returnPose, tick: a.tick + 1 }));
+    if (returnPose) restoreOverviewPose(returnPose);
+    else if (leavingDetail) requestAnimationFrame(() => camera("fit"));
   };
   const compare = () => {
     const c = pointConcepts[selected.id];
@@ -558,7 +567,12 @@ function AtlasPage({
     // A detail camera belongs to its own source coordinates and scale. Wait
     // for the overview geometry before fitting it; ordinary peeling/layer
     // changes within one source must still preserve the user's camera.
-    if (!selectionKey && !state.comparison) camera("fit");
+    if (!selectionKey && !state.comparison) {
+      const returnPose = pendingOverviewPose.current;
+      pendingOverviewPose.current = null;
+      if (returnPose) setAction(a => ({ kind: "pose", pose: returnPose, tick: a.tick + 1 }));
+      else camera("fit");
+    }
   }, [sourceKey, ready, selectionKey, state.comparison]);
   const focusedSelection = useRef(selectionKey);
   useEffect(() => {
@@ -638,17 +652,30 @@ function AtlasPage({
     return () => workspace.removeEventListener('wheel', wheel, true);
   }, [shiftDissection]);
   const selectedAnatomy = state.selection?.kind === "structure"
-    ? structures.find((item) => item.id === state.selection?.ids[0])
+    ? structureForSexId(structures,state.sex,state.selection.ids[0])
     : null;
   const selectedGroup = state.detail?.id || selectedAnatomy?.group;
   const selectedOrgan = structureGroups.find(group => group.id === selectedGroup && group.sex === state.sex);
   const selectedComposite = compositeGroups.find(group => group.id === selectedGroup && group.sex === state.sex);
   const selectedLungPart = Boolean(state.sex === "male" && selectedAnatomy && maleLungViews.some(view => view.id === selectedGroup));
+  // Any selection card needs the compact mobile movement controls; otherwise
+  // the expanded pad can overlap ordinary structure cards as well as details.
+  const compactSelectionControls = Boolean(state.selection);
   const fullLungDetail = Boolean(state.sex === "male" && state.detail && state.selection?.kind === "bundle"
     && maleLungViews.some(view => view.id === state.detail!.id && view.ids.length === state.selection!.ids.length
       && view.ids.every(id => state.selection!.ids.includes(id))));
   const lungViewOptions = state.sex === "male" && maleLungViews.some(view => view.id === selectedGroup)
     ? maleLungViews.filter(view => view.id !== selectedGroup).map(view => <button key={view.id} onClick={() => selectFeatured(view)}>{view.id === "lung" ? "폐실질 함께 보기" : view.id === "lung-internal" ? "혈관·기관지 보기" : "이전 세부 가지 별도 보기"}</button>) : null;
+  const fullPancreasDetail = Boolean(state.sex === "male" && state.detail && state.selection?.kind === "bundle"
+    && malePancreasViews.some(view => view.id === state.detail!.id && view.ids.length === state.selection!.ids.length
+      && view.ids.every(id => state.selection!.ids.includes(id))));
+  const pancreasViewOptions = state.sex === "male" && malePancreasViews.some(view => view.id === selectedGroup)
+    ? malePancreasViews.filter(view => view.id !== selectedGroup).map(view => <button key={view.id} onClick={() => selectFeatured(view)}>{view.id === "pancreas" ? "췌장 전체 형상 보기" : "췌장 실질·관 가지 별도 보기"}</button>) : null;
+  const fullKidneyDetail = Boolean(state.sex === "male" && state.detail && state.selection?.kind === "bundle"
+    && maleKidneyViews.some(view => view.id === state.detail!.id && view.ids.length === state.selection!.ids.length
+      && view.ids.every(id => state.selection!.ids.includes(id))));
+  const kidneyViewOptions = state.sex === "male" && maleKidneyViews.some(view => view.id === selectedGroup)
+    ? maleKidneyViews.filter(view => view.id !== selectedGroup).map(view => <button key={view.id} onClick={() => selectFeatured(view)}>{view.id === "kidney" ? "양쪽 콩팥 전체 보기" : view.id === "kidney-left" ? "왼쪽 콩팥·혈관 확대 보기" : "오른쪽 콩팥·혈관 확대 보기"}</button>) : null;
   const fullCompositeDetail = Boolean(selectedComposite && state.detail && state.selection?.kind === "bundle"
     && state.selection.ids.length === selectedComposite.ids.length
     && selectedComposite.ids.every(id => state.selection!.ids.includes(id)));
@@ -666,6 +693,7 @@ function AtlasPage({
       data-panel={panel || "none"}
       data-detail={Boolean(state.detail)}
       data-lung-part={selectedLungPart}
+      data-compact-selection-controls={compactSelectionControls}
       data-selection={Boolean(state.selection)}
       onKeyDownCapture={(event) => {
         if (!(event.target instanceof HTMLCanvasElement) || !event.altKey || !["ArrowUp", "ArrowDown"].includes(event.key)) return;
@@ -700,7 +728,7 @@ function AtlasPage({
                 : ""
             }
             onStructure={(id) => {
-              const item = structures.find((s) => s.id === id);
+              const item = structureForSexId(structures,state.sex,id);
               if (item)
                 dispatch({
                   type: "select",
@@ -1170,8 +1198,8 @@ function AtlasPage({
         </div>
       )}
       {state.selection && (
-        <section className="selection-card" data-detail={Boolean(state.detail)} data-selection="true" data-lung-part={selectedLungPart} aria-label="선택 구조 조작">
-          <div key={selectedLungPart ? selectionKey : "selection-content"}>
+        <section className="selection-card" data-detail={Boolean(state.detail)} data-selection="true" data-lung-part={selectedLungPart} data-compact-selection-controls={compactSelectionControls} aria-label="선택 구조 조작">
+          <div key={compactSelectionControls ? selectionKey : "selection-content"}>
             <span className={`selection-kind ${state.selection.kind}`}>
               {state.comparison ? "전통 장부 비교" : state.detail ? `${state.detail.name} · ${selectedComposite ? "구조" : "기관"} 상세 모델` : state.selection.kind === "bundle" ? "구조 묶음" : "선택 구조"}
             </span>
@@ -1179,6 +1207,7 @@ function AtlasPage({
               {state.selection.name}{" "}
               <small>{state.selection.ids.length}개 구조</small>
             </strong>
+            {state.sex === "male" && sourceKey === "male-detail" && selectedGroup === "stomach" && <p className="selection-description" data-stomach-frame-warning>별도 4.0 상세 원본입니다. 전신 3.0 위와 상자 중심이 약 42mm 달라 같은 위치로 정합된 화면이 아닙니다.</p>}
             {selectedAnatomy?.description && sourceKey !== "female-detail" && (
               <p className="selection-description">{selectedAnatomy.description}</p>
             )}
@@ -1196,6 +1225,20 @@ function AtlasPage({
               <summary>{fullLungDetail ? "폐 자료·원본 묶음 구분" : "폐 보기 변경·원본 구분"}</summary>
               <p className="selection-description">BodyParts3D 4.3 공식 원본입니다. 기본 보기는 2014 표기 원본의 폐실질 18조각과 혈관·기관지 267조각입니다. 이전 세부 가지 278조각은 2011–2012 표기 원본으로, 겹치는 대체 형상과 일부 위치 차이가 있어 별도로 표시합니다. 연도는 원본 묶음명 기준입니다. 공식 목록에서 제외된 이전 혈관 2조각은 수록하지 않습니다. 미세 구조 전체나 임상적 위치 검증을 뜻하지 않습니다.</p>
               {!fullLungDetail && <div className="selection-actions">{lungViewOptions}</div>}
+            </details>}
+            {state.sex === "male" && malePancreasViews.some(view => view.id === selectedGroup) && <details className="anatomy-source-details" data-pancreas-provenance>
+              <summary>췌장 원본·대체 표현</summary>
+              <p className="selection-description">BodyParts3D 4.0의 췌장 전체 형상·췌장관과 실질·관 가지는 같은 공식 췌장 관계에 수록된 별도 표현입니다. 전체 형상과 실질의 공간 범위가 크게 겹쳐 두 보기를 동시에 표시하지 않습니다. 원본 자세·좌표를 유지하며 췌장의 세포·미세 관 전체나 다른 전신 기관과의 위치 정합을 검증한 것은 아닙니다.</p>
+              {!fullPancreasDetail && <div className="selection-actions">{pancreasViewOptions}</div>}
+            </details>}
+            {state.sex === "male" && maleKidneyViews.some(view => view.id === selectedGroup) && <details className="anatomy-source-details" data-kidney-provenance>
+              <summary>콩팥 세부 보기·출처 한계</summary>
+              <p className="selection-description">BodyParts3D 4.0의 좌우 콩팥·요관 4개와 신장동맥·가지 27개, 신정맥 4개를 같은 원본 좌표계에서 별도 선택합니다. 좌우 확대 보기는 해당 측 콩팥·혈관만 프레이밍하며, 긴 요관은 양쪽 전체 보기에서 선택할 수 있습니다. 피질·속질·네프론은 이 상세에 없고, 일부 동맥 가지에는 원본의 간격이 남습니다. 혈관 분절의 완전 연결이나 기존 전신/다른 출처 기관과의 해부 위치는 검증되지 않았습니다. 한국어 이름은 편집 표기이며 원문명과 FMA ID는 유지합니다.</p>
+              {!fullKidneyDetail && <div className="selection-actions">{kidneyViewOptions}</div>}
+            </details>}
+            {state.sex === "male" && sourceKey === "male-detail" && selectedGroup === "stomach" && <details className="anatomy-source-details" data-stomach-provenance>
+              <summary>위·혈관 상세 출처와 한계</summary>
+              <p className="selection-description">BodyParts3D 4.0의 위 1개, 좌우 위동맥·위정맥 4개와 위그물막동맥·정맥 4개를 같은 원본 좌표계에서 별도 선택합니다. 이 9개는 각각의 공식 개념에 대응하며 공식 ‘위의 9개 하위 부품’ 관계는 아닙니다. 위벽 층은 분할되지 않았고 혈관의 연결·관류나 기존 3.0 전신과의 국소 정합은 검증되지 않았습니다. 한국어 이름은 편집 표기이며 원문명·FMA ID를 유지합니다.</p>
             </details>}
             {state.sex === "female" && selectedOrgan?.id === "brain" && <div data-brain-provenance>
               <p className="selection-description">뇌 묶음: Allen 참조 282개 + Visible Human 시신경교차 1개 · 차용 머리뼈와 뇌 모형 35개 표면 교차 · 위치 검증 미완료</p>
@@ -1215,7 +1258,7 @@ function AtlasPage({
               <details className="organ-detail-parts">
                 <summary>세부 구조 {detailParts.length}개 선택</summary>
                 <div>
-                  {detailParts.map(part => <button key={part.id} aria-pressed={state.selection?.ids.length === 1 && state.selection.ids[0] === part.id} onClick={() => dispatch({ type: "select", layer: part.layer, detail: detailForStructure(part), selection: { kind: "structure", ids: [part.id], name: part.label || part.name } })}>{part.label || part.name}<small>{part.name}</small></button>)}
+                  {detailParts.map(part => <button key={part.id} aria-pressed={state.selection?.ids.length === 1 && state.selection.ids[0] === part.id} onClick={() => dispatch({ type: "select", layer: part.layer, detail: state.detail?.ids.includes(part.id) ? state.detail : detailForStructure(part), selection: { kind: "structure", ids: [part.id], name: part.label || part.name } })}>{part.label || part.name}<small>{part.name}</small></button>)}
                 </div>
               </details>
             )}
@@ -1227,13 +1270,15 @@ function AtlasPage({
             </label>}
             {sourceKey === "female-detail" && state.detail?.id !== "abdomen-ct" && <button aria-label="같은 여성 CT의 주변 기관 보기" onClick={() => selectFeatured(featuredAnatomy.find(item => item.id === "abdomen-ct")!)}>주변 기관 함께 보기</button>}
             {fullLungDetail && lungViewOptions}
-            {!fullCompositeDetail && !fullLungDetail && selectedOrgan && !(sourceKey === "female-detail" && selectedOrgan.ids.length === 1 && state.detail) && <button onClick={() => selectFeatured(selectedOrgan)}>{selectedComposite ? `${selectedComposite.name} ${state.detail ? "전체 모형" : "전체 상세 보기"}` : state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
+            {fullPancreasDetail && pancreasViewOptions}
+            {fullKidneyDetail && kidneyViewOptions}
+            {!fullCompositeDetail && !fullLungDetail && !fullPancreasDetail && !fullKidneyDetail && selectedOrgan && !(sourceKey === "female-detail" && selectedOrgan.ids.length === 1 && state.detail) && <button onClick={() => selectFeatured(selectedOrgan)}>{selectedComposite ? `${selectedComposite.name} ${state.detail ? "전체 모형" : "전체 상세 보기"}` : state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
             {state.detail && <button onClick={() => {
               if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
               isolateCameraFrame.current = null;
               const pose = state.detailReturn?.camera;
               dispatch({ type: "detail-close" });
-              if (pose) setAction(a => ({ kind: "pose", pose, tick: a.tick + 1 }));
+              if (pose) restoreOverviewPose(pose);
               else requestAnimationFrame(() => camera("fit"));
             }}>전신으로 돌아가기</button>}
             <button
@@ -1267,9 +1312,10 @@ function AtlasPage({
               onClick={() => {
                 if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
                 isolateCameraFrame.current = null;
-                const pose = (state.detail ? state.detailReturn?.camera : state.selectionReturn?.camera) ?? state.camera;
+                const pose = state.detail ? state.detailReturn?.camera : (state.selectionReturn?.camera ?? state.camera);
                 dispatch({ type: "clear-selection" });
-                if (pose) setAction(a => ({ kind: "pose", pose, tick: a.tick + 1 }));
+                if (pose) restoreOverviewPose(pose);
+                else if (state.detail) requestAnimationFrame(() => camera("fit"));
               }}
             >
               <X size={15} />
@@ -1297,7 +1343,7 @@ function AtlasPage({
           경로 아님
         </p>
       )}
-      {selectedLungPart ? <details className="movement-pad" aria-label="화면 이동">
+      {compactSelectionControls ? <details className="movement-pad" aria-label="화면 이동">
         <summary>이동 <small>WASD · Q/E</small></summary>{movementButtons}
       </details> : <div className="movement-pad" aria-label="화면 이동">
         <span>이동 <small>WASD · Q/E</small></span>{movementButtons}
@@ -1738,7 +1784,7 @@ export default function App() {
   useEffect(() => {
     if (view === "atlas") {
       const id = route.split("/")[1] || viewState.pointId;
-      if (points.some((p) => p.id === id)) dispatch({ type: "point", id });
+      if (points.some((p) => p.id === id)) dispatch({ type: "route-point", id });
     }
   }, [route, view]);
   useEffect(() => {

@@ -4,6 +4,7 @@ import fs from "node:fs";
 import { initialView, viewReducer, restoreView } from "../src/view-state.ts";
 const points = JSON.parse(fs.readFileSync("data/points.json"));
 const assets = JSON.parse(fs.readFileSync("scripts/model-inputs.json")).assets;
+const femaleAirway = JSON.parse(fs.readFileSync("data/female-airway-groups.json"))[0];
 const parse = (s) =>
   restoreView(
     s,
@@ -99,6 +100,43 @@ test("leaving an organ detail restores the prior half-percent peel, region and p
     }
   }
 });
+test("female airway detail preserves all 36 source members and restores the prior peel after a child selection", () => {
+  const catalog = femaleAirway.ids.map(id => ({ id, layer: "organ", sex: "female" }));
+  let before = viewReducer(initialView(), { type: "sex", value: "female" });
+  before = viewReducer(before, { type: "dissection", value: 50.5 });
+  before = viewReducer(before, { type: "markers", value: "hidden" });
+  before = viewReducer(before, { type: "camera", value: { position: [0, 1.2, 2], target: [0, 1.2, 0] } });
+  const detail = { id: femaleAirway.id, name: femaleAirway.name, ids: femaleAirway.ids,
+    layers: { skin: false, muscle: false, bone: false, organ: true, vessel: false, lymph: false, nerve: false } };
+  let inside = viewReducer(before, { type: "detail", detail });
+  assert.deepEqual(inside.selection.ids, femaleAirway.ids);
+  assert.equal(inside.layers.organ, true);
+  inside = viewReducer(inside, { type: "select", layer: "organ",
+    selection: { kind: "structure", ids: ["HRAF0808"], name: "Right anterior basal bronchus" } });
+  inside = restoreView(JSON.stringify(inside), [], catalog);
+  assert.deepEqual(inside.selection.ids, ["HRAF0808"]);
+  assert.deepEqual(inside.detail.ids, femaleAirway.ids);
+  const returned = viewReducer(inside, { type: "detail-close" });
+  for (const key of ["anatomyRegion", "stage", "dissection", "displayMode", "layers", "camera", "markers", "sex"])
+    assert.deepEqual(returned[key], before[key], key);
+  assert.equal(returned.detail, null);
+  assert.equal(viewReducer(inside, { type: "sex", value: "male" }).selection, null);
+});
+test("direct organ detail remembers the originating camera through framing, reload and point navigation", () => {
+  const overviewPose = { position: [0.4, 1.2, 2.1], target: [0.1, 1.1, 0] };
+  const detailPose = { position: [0.2, 1.4, 0.5], target: [0, 1.4, 0] };
+  const detail = { id: "brain", name: "뇌", ids: ["HRAF0070"],
+    layers: { skin: false, muscle: false, bone: false, organ: false, vessel: false, lymph: false, nerve: true } };
+  let before = viewReducer(initialView(), { type: "sex", value: "female" });
+  before = viewReducer(before, { type: "dissection", value: 50.5 });
+  before = viewReducer(before, { type: "camera", value: overviewPose });
+  let inside = viewReducer(before, { type: "detail", detail });
+  assert.deepEqual(inside.detailReturn.camera, overviewPose);
+  inside = viewReducer(inside, { type: "camera", value: detailPose });
+  inside = restoreView(JSON.stringify(inside), ["KI3"], [{ id: "HRAF0070", layer: "nerve", sex: "female" }]);
+  assert.deepEqual(viewReducer(inside, { type: "detail-close" }), before);
+  assert.deepEqual(viewReducer(inside, { type: "point", id: "KI3" }).camera, overviewPose);
+});
 test("clearing an ordinary structure selected during peeling restores the exact prior scene", () => {
   for (const sex of ["male", "female"]) {
     let s = viewReducer(initialView("KI3"), { type: "sex", value: sex });
@@ -161,6 +199,20 @@ test("leaving an ordinary peel selection for a point or region does not strand i
       assert.equal(next.selection, null);
       assert.equal(next.selectionReturn, null);
     }
+  }
+});
+test("explicit same-point reselection exits an organ while wiki route sync preserves the prior view", () => {
+  for (const sex of ["male", "female"]) {
+    let before = viewReducer(initialView("ST36"), { type: "sex", value: sex });
+    before = viewReducer(before, { type: "dissection", value: 50.5 });
+    before = viewReducer(before, { type: "camera", value: { position: [0, 1, 2], target: [0, 1, 0] } });
+    const id = sex === "male" ? "FMA7148" : "HRAF0435";
+    const selected = viewReducer(before, { type: "select", layer: "organ", selection: { kind: "structure", ids: [id], name: "장기" } });
+    assert.equal(viewReducer(selected, { type: "route-point", id: "ST36" }), selected, `${sex}/wiki return`);
+    assert.equal(viewReducer(before, { type: "point", id: "ST36" }), before, `${sex}/plain reselect`);
+    const returned = viewReducer(selected, { type: "point", id: "ST36" });
+    assert.deepEqual(returned, before, `${sex}/explicit reselect`);
+    assert.equal(viewReducer(selected, { type: "route-point", id: "KI3" }).pointId, "KI3");
   }
 });
 test("old detail sessions without a return snapshot exit to a safe whole-body view", () => {

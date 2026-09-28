@@ -43,7 +43,7 @@ import { referenceSourceFor } from "./reference-source";
 import { framedDistance } from "./camera-framing";
 import { musclePeelRanks } from "./muscle-peel";
 import { musclePeelOpacity } from "./dissection";
-import { selectionOpacity, selectionHitId } from "./selection-context";
+import { selectionOpacity, selectionHitId, opacityWritesDepth } from "./selection-context";
 
 const structureById = new Map(structures.map(s => [s.id, s]));
 
@@ -191,14 +191,14 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       const material = o.material as MeshStandardMaterial;
       configurePicking(o, layer, props.selectionTarget);
       material.color.set(emphasis ? emphasis : clinicalColor(layer, vessel));
-      const transparent = alpha < .995;
+      const transparent = !opacityWritesDepth(alpha);
       const planes = clippingPlanes(layer, props);
       const clipping = planes.length > 0;
       if (material.transparent !== transparent || Boolean(material.clippingPlanes?.length) !== clipping)
         material.needsUpdate = true;
       material.transparent = transparent;
       material.opacity = alpha;
-      material.depthWrite = !props.contextDimmed || selected;
+      material.depthWrite = !transparent;
       material.clippingPlanes = planes;
     });
     gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(visibleCount);
@@ -282,11 +282,12 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
       const alpha = selectionOpacity(props.layerOpacity[layer] * dissectionLayerOpacity(layer, props.dissection, progressive), selected, props.contextDimmed);
       item.visible = item.visible && alpha > .01;
       const clipped = props.cutaway > 0;
-      if (material.transparent !== (alpha < 1) || Boolean(material.clippingPlanes?.length) !== clipped)
+      const transparent = !opacityWritesDepth(alpha);
+      if (material.transparent !== transparent || Boolean(material.clippingPlanes?.length) !== clipped)
         material.needsUpdate = true;
-      material.transparent = alpha < 1;
+      material.transparent = transparent;
       material.opacity = alpha;
-      material.depthWrite = !props.contextDimmed || selected;
+      material.depthWrite = !transparent;
       material.clippingPlanes = clipped
         ? [new Plane(new Vector3(0, 0, -1), 0.22 - props.cutaway * 0.44)]
         : [];
@@ -351,9 +352,10 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
       material.color.set(selected ? "#34d3dd" : clinicalColor(layer, entry?.name || ""));
       material.opacity = selectionOpacity(props.layerOpacity[layer] * depthAlpha, selected, props.contextDimmed);
       const planes = clippingPlanes(layer, props);
-      if (material.transparent !== (material.opacity < .995) || (material.clippingPlanes?.length || 0) !== planes.length) material.needsUpdate = true;
-      material.transparent = material.opacity < .995;
-      material.depthWrite = !props.contextDimmed || selected;
+      const transparent = !opacityWritesDepth(material.opacity);
+      if (material.transparent !== transparent || (material.clippingPlanes?.length || 0) !== planes.length) material.needsUpdate = true;
+      material.transparent = transparent;
+      material.depthWrite = !transparent;
       material.clippingPlanes = planes;
       configurePicking(item, layer, props.selectionTarget);
     });

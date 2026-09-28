@@ -1,0 +1,4392 @@
+{
+  "status": "DIAGNOSTIC ONLY: no anatomical registration approved",
+  "limits": {
+    "maximumTranslationMm": 15,
+    "stepsMm": [
+      0.25,
+      0.5,
+      1,
+      2,
+      5,
+      10,
+      15
+    ],
+    "skinBandMm": 2
+  },
+  "sides": [
+    {
+      "side": "left",
+      "baseline": [
+        {
+          "id": "BM0133",
+          "name": "Left fifth metatarsal bone",
+          "outside": 175,
+          "maxOutsideMm": 10.038245949315543
+        },
+        {
+          "id": "BM0149",
+          "name": "Proximal phalanx of left little toe",
+          "outside": 176,
+          "maxOutsideMm": 11.88355329889849
+        },
+        {
+          "id": "BM0145",
+          "name": "Middle phalanx of left little toe",
+          "outside": 142,
+          "maxOutsideMm": 13.036243910055697
+        },
+        {
+          "id": "BM0128",
+          "name": "Distal phalanx of left little toe",
+          "outside": 160,
+          "maxOutsideMm": 14.246382782371596
+        }
+      ],
+      "nearSkinVertices": 894,
+      "meanInwardDirection": [
+        -0.8912816294599724,
+        0.44886853568818347,
+        -0.064296925714396
+      ],
+      "baselineIntersections": [
+        [
+          "BM0133",
+          "BM0132"
+        ],
+        [
+          "BM0133",
+          "BM0135"
+        ]
+      ],
+      "existingCrossings": [
+        {
+          "movingId": "BM0133",
+          "fixedId": "BM0132",
+          "before": {
+            "intersectingTrianglePairs": 37,
+            "strictPlaneStraddlingPairs": 37,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.7481437735018268
+          },
+          "after2Mm": {
+            "intersectingTrianglePairs": 75,
+            "strictPlaneStraddlingPairs": 75,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.829226654403414
+          }
+        },
+        {
+          "movingId": "BM0133",
+          "fixedId": "BM0135",
+          "before": {
+            "intersectingTrianglePairs": 34,
+            "strictPlaneStraddlingPairs": 34,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.6292721283814534
+          },
+          "after2Mm": {
+            "intersectingTrianglePairs": 70,
+            "strictPlaneStraddlingPairs": 70,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.9595397970130701
+          }
+        }
+      ],
+      "cuboidJoint": {
+        "before": {
+          "vertexSurfaceMinimumMm": 0.0667794786608873,
+          "triangleSurfacesIntersect": true
+        },
+        "afterMeanInward2Mm": {
+          "vertexSurfaceMinimumMm": 0.03238350327488497,
+          "triangleSurfacesIntersect": true
+        }
+      },
+      "localSafe": [],
+      "trials": [
+        {
+          "direction": "mean-inward",
+          "mm": 15,
+          "outside": 0,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 0,
+          "sumSquaredExcessMm": 0,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0133",
+              "BM0132"
+            ],
+            [
+              "BM0133",
+              "BM0135"
+            ],
+            [
+              "BM0133",
+              "BM0138"
+            ],
+            [
+              "BM0149",
+              "BM0132"
+            ],
+            [
+              "BM0149",
+              "BM0148"
+            ],
+            [
+              "BM0145",
+              "BM0148"
+            ],
+            [
+              "BM0128",
+              "BM0144"
+            ],
+            [
+              "BM0128",
+              "BM0148"
+            ]
+          ]
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 15,
+          "outside": 0,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 0,
+          "sumSquaredExcessMm": 0,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0133",
+              "BM0131"
+            ],
+            [
+              "BM0133",
+              "BM0132"
+            ],
+            [
+              "BM0133",
+              "BM0135"
+            ],
+            [
+              "BM0133",
+              "BM0138"
+            ],
+            [
+              "BM0149",
+              "BM0132"
+            ],
+            [
+              "BM0149",
+              "BM0148"
+            ]
+          ]
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 15,
+          "outside": 33,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 2.898472486379148,
+          "sumSquaredExcessMm": 7.60711126052187,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0133",
+              "BM0132"
+            ],
+            [
+              "BM0133",
+              "BM0135"
+            ],
+            [
+              "BM0149",
+              "BM0132"
+            ]
+          ]
+        },
+        {
+          "direction": "-x",
+          "mm": 15,
+          "outside": 67,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 4.774650360614526,
+          "sumSquaredExcessMm": 99.03556838534195,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0133",
+              "BM0132"
+            ],
+            [
+              "BM0133",
+              "BM0135"
+            ],
+            [
+              "BM0149",
+              "BM0132"
+            ],
+            [
+              "BM0149",
+              "BM0148"
+            ]
+          ]
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 15,
+          "outside": 82,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 4.464852323224312,
+          "sumSquaredExcessMm": 99.17635603786448,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0133",
+              "BM0131"
+            ],
+            [
+              "BM0133",
+              "BM0132"
+            ],
+            [
+              "BM0133",
+              "BM0135"
+            ],
+            [
+              "BM0149",
+              "BM0132"
+            ],
+            [
+              "BM0149",
+              "BM0148"
+            ]
+          ]
+        },
+        {
+          "direction": "mean-inward",
+          "mm": 10,
+          "outside": 88,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 4.483223282660024,
+          "sumSquaredExcessMm": 117.45085853780972,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0133",
+              "BM0132"
+            ],
+            [
+              "BM0133",
+              "BM0135"
+            ],
+            [
+              "BM0149",
+              "BM0132"
+            ],
+            [
+              "BM0149",
+              "BM0148"
+            ]
+          ]
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 15,
+          "outside": 114,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 4.656859984520318,
+          "sumSquaredExcessMm": 113.36119003680764,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0133",
+              "BM0132"
+            ],
+            [
+              "BM0133",
+              "BM0135"
+            ]
+          ]
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 10,
+          "outside": 152,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 4.774298338616578,
+          "sumSquaredExcessMm": 269.6580842512343,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0133",
+              "BM0132"
+            ],
+            [
+              "BM0133",
+              "BM0135"
+            ],
+            [
+              "BM0149",
+              "BM0132"
+            ]
+          ]
+        },
+        {
+          "direction": "-x",
+          "mm": 10,
+          "outside": 214,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 7.144445590082152,
+          "sumSquaredExcessMm": 1081.6262607841522,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 10,
+          "outside": 246,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 7.434277940431161,
+          "sumSquaredExcessMm": 1864.4913502183474,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 10,
+          "outside": 252,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 5.779440584324206,
+          "sumSquaredExcessMm": 1065.74016491977,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 15,
+          "outside": 294,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 8.764676687950505,
+          "sumSquaredExcessMm": 3166.3803780366006,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 10,
+          "outside": 335,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 7.512702373696978,
+          "sumSquaredExcessMm": 2181.0533113179413,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 10,
+          "outside": 343,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 10.105785888431575,
+          "sumSquaredExcessMm": 6243.375607201881,
+          "ambiguous": 0
+        },
+        {
+          "direction": "mean-inward",
+          "mm": 5,
+          "outside": 386,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 9.354842237189699,
+          "sumSquaredExcessMm": 5387.630457880376,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 5,
+          "outside": 424,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 9.44735326316613,
+          "sumSquaredExcessMm": 6181.438650273106,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-x",
+          "mm": 5,
+          "outside": 429,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 10.309726323656912,
+          "sumSquaredExcessMm": 7323.440786291338,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 5,
+          "outside": 469,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 10.705344694517624,
+          "sumSquaredExcessMm": 9452.41292204876,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 5,
+          "outside": 491,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 9.939450953392104,
+          "sumSquaredExcessMm": 8326.20375074414,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 5,
+          "outside": 500,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.04408027166421,
+          "sumSquaredExcessMm": 13142.578099597993,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 5,
+          "outside": 534,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 10.916050710403038,
+          "sumSquaredExcessMm": 10513.642852328527,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 15,
+          "outside": 545,
+          "newOutside": 13,
+          "worsenedOutside": 61,
+          "maxOutsideMm": 12.619084197357903,
+          "sumSquaredExcessMm": 17625.082744299463,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 10,
+          "outside": 562,
+          "newOutside": 6,
+          "worsenedOutside": 38,
+          "maxOutsideMm": 12.501918820831321,
+          "sumSquaredExcessMm": 17342.03383546395,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 10,
+          "outside": 569,
+          "newOutside": 3,
+          "worsenedOutside": 286,
+          "maxOutsideMm": 15.213237174189942,
+          "sumSquaredExcessMm": 28529.191527960615,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 15,
+          "outside": 573,
+          "newOutside": 20,
+          "worsenedOutside": 425,
+          "maxOutsideMm": 16.53146941594517,
+          "sumSquaredExcessMm": 39848.75572033611,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 10,
+          "outside": 574,
+          "newOutside": 14,
+          "worsenedOutside": 97,
+          "maxOutsideMm": 11.10503419219847,
+          "sumSquaredExcessMm": 16000.221871970534,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 15,
+          "outside": 577,
+          "newOutside": 8,
+          "worsenedOutside": 417,
+          "maxOutsideMm": 17.577201720423567,
+          "sumSquaredExcessMm": 42488.08464584169,
+          "ambiguous": 0
+        },
+        {
+          "direction": "mean-inward",
+          "mm": 2,
+          "outside": 583,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.277551960029154,
+          "sumSquaredExcessMm": 16528.879498804825,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0133",
+              "BM0132"
+            ],
+            [
+              "BM0133",
+              "BM0135"
+            ]
+          ]
+        },
+        {
+          "direction": "-x",
+          "mm": 2,
+          "outside": 587,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.686796169043093,
+          "sumSquaredExcessMm": 17763.137997501224,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 2,
+          "outside": 589,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.313494678628475,
+          "sumSquaredExcessMm": 17137.972832658616,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 5,
+          "outside": 592,
+          "newOutside": 1,
+          "worsenedOutside": 16,
+          "maxOutsideMm": 13.071523595305012,
+          "sumSquaredExcessMm": 21091.266052944193,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 5,
+          "outside": 593,
+          "newOutside": 0,
+          "worsenedOutside": 135,
+          "maxOutsideMm": 14.261807561307554,
+          "sumSquaredExcessMm": 24723.121388545125,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 10,
+          "outside": 593,
+          "newOutside": 5,
+          "worsenedOutside": 407,
+          "maxOutsideMm": 16.093199487095504,
+          "sumSquaredExcessMm": 35864.38835751909,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 2,
+          "outside": 594,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.826760863459613,
+          "sumSquaredExcessMm": 19387.854978767286,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 2,
+          "outside": 597,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.347657430840124,
+          "sumSquaredExcessMm": 21252.50333097447,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 10,
+          "outside": 597,
+          "newOutside": 7,
+          "worsenedOutside": 218,
+          "maxOutsideMm": 14.552933855962124,
+          "sumSquaredExcessMm": 23626.10846701143,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 5,
+          "outside": 599,
+          "newOutside": 6,
+          "worsenedOutside": 52,
+          "maxOutsideMm": 12.001971346496848,
+          "sumSquaredExcessMm": 18289.422221770208,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 5,
+          "outside": 604,
+          "newOutside": 1,
+          "worsenedOutside": 34,
+          "maxOutsideMm": 13.726857689719445,
+          "sumSquaredExcessMm": 22112.68942413643,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 2,
+          "outside": 609,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.508598381972739,
+          "sumSquaredExcessMm": 18751.38127172183,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 10,
+          "outside": 611,
+          "newOutside": 11,
+          "worsenedOutside": 153,
+          "maxOutsideMm": 11.334442782006802,
+          "sumSquaredExcessMm": 17799.899643161374,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 2,
+          "outside": 616,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.927609218886124,
+          "sumSquaredExcessMm": 20251.20701037411,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 10,
+          "outside": 617,
+          "newOutside": 17,
+          "worsenedOutside": 95,
+          "maxOutsideMm": 12.960191754229582,
+          "sumSquaredExcessMm": 18235.514197703673,
+          "ambiguous": 0
+        },
+        {
+          "direction": "mean-inward",
+          "mm": 1,
+          "outside": 618,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.256206343928119,
+          "sumSquaredExcessMm": 22277.195828581323,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 1,
+          "outside": 619,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.278366633608188,
+          "sumSquaredExcessMm": 22634.564621895996,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 15,
+          "outside": 620,
+          "newOutside": 32,
+          "worsenedOutside": 202,
+          "maxOutsideMm": 12.02147938113053,
+          "sumSquaredExcessMm": 20556.10906316783,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-x",
+          "mm": 1,
+          "outside": 621,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.456414369336313,
+          "sumSquaredExcessMm": 22972.0901978851,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 1,
+          "outside": 622,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.536155520635555,
+          "sumSquaredExcessMm": 23937.39262898211,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 1,
+          "outside": 624,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.786845276855319,
+          "sumSquaredExcessMm": 24937.5605007261,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 5,
+          "outside": 624,
+          "newOutside": 4,
+          "worsenedOutside": 61,
+          "maxOutsideMm": 13.224470859970832,
+          "sumSquaredExcessMm": 21243.08348764286,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 2,
+          "outside": 625,
+          "newOutside": 0,
+          "worsenedOutside": 29,
+          "maxOutsideMm": 14.225899390822354,
+          "sumSquaredExcessMm": 26338.563911351393,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 5,
+          "outside": 627,
+          "newOutside": 4,
+          "worsenedOutside": 406,
+          "maxOutsideMm": 15.01929336701659,
+          "sumSquaredExcessMm": 31629.759977138285,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 1,
+          "outside": 628,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.375641854908688,
+          "sumSquaredExcessMm": 23592.598178839748,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 2,
+          "outside": 628,
+          "newOutside": 0,
+          "worsenedOutside": 8,
+          "maxOutsideMm": 13.71600410891475,
+          "sumSquaredExcessMm": 25354.268865662598,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 2,
+          "outside": 629,
+          "newOutside": 0,
+          "worsenedOutside": 14,
+          "maxOutsideMm": 13.986780814329046,
+          "sumSquaredExcessMm": 25201.77855305721,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 2,
+          "outside": 629,
+          "newOutside": 1,
+          "worsenedOutside": 36,
+          "maxOutsideMm": 13.26386391092374,
+          "sumSquaredExcessMm": 23509.265378732256,
+          "ambiguous": 0
+        },
+        {
+          "direction": "mean-inward",
+          "mm": 0.5,
+          "outside": 633,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.75116078079654,
+          "sumSquaredExcessMm": 25581.827074545057,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 0.5,
+          "outside": 633,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.762016902967904,
+          "sumSquaredExcessMm": 25773.64723418215,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 1,
+          "outside": 634,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.57682061763732,
+          "sumSquaredExcessMm": 24460.27060802865,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-x",
+          "mm": 0.5,
+          "outside": 635,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.84122920357373,
+          "sumSquaredExcessMm": 25948.028147060682,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 0.5,
+          "outside": 635,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.810585581641432,
+          "sumSquaredExcessMm": 26292.01372969927,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 0.5,
+          "outside": 635,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.891165498749363,
+          "sumSquaredExcessMm": 26470.653813828958,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 5,
+          "outside": 635,
+          "newOutside": 6,
+          "worsenedOutside": 118,
+          "maxOutsideMm": 12.170670411672361,
+          "sumSquaredExcessMm": 20350.66878489292,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 0.5,
+          "outside": 637,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 14.006432912531112,
+          "sumSquaredExcessMm": 26987.9732193734,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 1,
+          "outside": 637,
+          "newOutside": 0,
+          "worsenedOutside": 3,
+          "maxOutsideMm": 13.971210016073336,
+          "sumSquaredExcessMm": 27175.220571554662,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 1,
+          "outside": 638,
+          "newOutside": 0,
+          "worsenedOutside": 32,
+          "maxOutsideMm": 13.728392449650837,
+          "sumSquaredExcessMm": 26117.544843987005,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 2,
+          "outside": 638,
+          "newOutside": 0,
+          "worsenedOutside": 399,
+          "maxOutsideMm": 14.527752046729079,
+          "sumSquaredExcessMm": 29936.05814989072,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 2,
+          "outside": 638,
+          "newOutside": 2,
+          "worsenedOutside": 103,
+          "maxOutsideMm": 13.34394168552558,
+          "sumSquaredExcessMm": 24718.766983580525,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 0.5,
+          "outside": 639,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.90504574381556,
+          "sumSquaredExcessMm": 26756.443944858216,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 15,
+          "outside": 639,
+          "newOutside": 43,
+          "worsenedOutside": 371,
+          "maxOutsideMm": 16.10616645414612,
+          "sumSquaredExcessMm": 31617.87348892655,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 1,
+          "outside": 640,
+          "newOutside": 0,
+          "worsenedOutside": 8,
+          "maxOutsideMm": 14.225971437696261,
+          "sumSquaredExcessMm": 27572.421328143177,
+          "ambiguous": 0
+        },
+        {
+          "direction": "mean-inward",
+          "mm": 0.25,
+          "outside": 641,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.998738598073382,
+          "sumSquaredExcessMm": 27344.869724979333,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 1,
+          "outside": 641,
+          "newOutside": 0,
+          "worsenedOutside": 10,
+          "maxOutsideMm": 14.120942859284076,
+          "sumSquaredExcessMm": 26975.50207313337,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 2,
+          "outside": 641,
+          "newOutside": 2,
+          "worsenedOutside": 45,
+          "maxOutsideMm": 13.862554801824487,
+          "sumSquaredExcessMm": 25357.556198383056,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-x",
+          "mm": 0.25,
+          "outside": 642,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 14.040056039429237,
+          "sumSquaredExcessMm": 27532.50303714145,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 1,
+          "outside": 642,
+          "newOutside": 0,
+          "worsenedOutside": 399,
+          "maxOutsideMm": 14.386772972027982,
+          "sumSquaredExcessMm": 29530.5840375096,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 15,
+          "outside": 642,
+          "newOutside": 40,
+          "worsenedOutside": 146,
+          "maxOutsideMm": 12.989045521189047,
+          "sumSquaredExcessMm": 18717.88325916115,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 0.25,
+          "outside": 643,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 14.125232994687371,
+          "sumSquaredExcessMm": 28067.195940673457,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 0.25,
+          "outside": 643,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 14.004122438294667,
+          "sumSquaredExcessMm": 27443.950028411065,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 0.5,
+          "outside": 643,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 14.106371267017987,
+          "sumSquaredExcessMm": 28155.37330704567,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 0.5,
+          "outside": 644,
+          "newOutside": 0,
+          "worsenedOutside": 4,
+          "maxOutsideMm": 14.225996835366049,
+          "sumSquaredExcessMm": 28330.455941475015,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 0.5,
+          "outside": 645,
+          "newOutside": 0,
+          "worsenedOutside": 30,
+          "maxOutsideMm": 13.981061908917352,
+          "sumSquaredExcessMm": 27593.533013523014,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 0.25,
+          "outside": 645,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 14.068756866267933,
+          "sumSquaredExcessMm": 27803.906375472892,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 1,
+          "outside": 645,
+          "newOutside": 0,
+          "worsenedOutside": 90,
+          "maxOutsideMm": 13.778796622267723,
+          "sumSquaredExcessMm": 26791.66211496306,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 1,
+          "outside": 646,
+          "newOutside": 0,
+          "worsenedOutside": 38,
+          "maxOutsideMm": 14.054487757915298,
+          "sumSquaredExcessMm": 27144.369973054938,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 0.5,
+          "outside": 646,
+          "newOutside": 0,
+          "worsenedOutside": 9,
+          "maxOutsideMm": 14.173481980365999,
+          "sumSquaredExcessMm": 28024.81098075681,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 0.25,
+          "outside": 646,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 14.028390768336637,
+          "sumSquaredExcessMm": 27713.27072880601,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 0.5,
+          "outside": 647,
+          "newOutside": 0,
+          "worsenedOutside": 399,
+          "maxOutsideMm": 14.316503510359848,
+          "sumSquaredExcessMm": 29349.7408753165,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 0.25,
+          "outside": 647,
+          "newOutside": 0,
+          "worsenedOutside": 7,
+          "maxOutsideMm": 14.19976329826205,
+          "sumSquaredExcessMm": 28589.809853677572,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 0.5,
+          "outside": 648,
+          "newOutside": 0,
+          "worsenedOutside": 38,
+          "maxOutsideMm": 14.140254442234577,
+          "sumSquaredExcessMm": 28132.840468148268,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 0.25,
+          "outside": 648,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 14.175779420593265,
+          "sumSquaredExcessMm": 28662.993881200575,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 15,
+          "outside": 648,
+          "newOutside": 27,
+          "worsenedOutside": 231,
+          "maxOutsideMm": 11.803569137799723,
+          "sumSquaredExcessMm": 20233.70644573354,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 0.25,
+          "outside": 649,
+          "newOutside": 0,
+          "worsenedOutside": 27,
+          "maxOutsideMm": 14.112184966809975,
+          "sumSquaredExcessMm": 28373.64056017083,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 0.25,
+          "outside": 649,
+          "newOutside": 0,
+          "worsenedOutside": 399,
+          "maxOutsideMm": 14.28142435162497,
+          "sumSquaredExcessMm": 29264.548364198443,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 0.25,
+          "outside": 649,
+          "newOutside": 0,
+          "worsenedOutside": 1,
+          "maxOutsideMm": 14.227027793943064,
+          "sumSquaredExcessMm": 28744.79802750426,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 0.25,
+          "outside": 649,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 14.075475629909048,
+          "sumSquaredExcessMm": 27953.04307596249,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 0.25,
+          "outside": 650,
+          "newOutside": 0,
+          "worsenedOutside": 35,
+          "maxOutsideMm": 14.186214876417745,
+          "sumSquaredExcessMm": 28649.658836425617,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 0.5,
+          "outside": 650,
+          "newOutside": 0,
+          "worsenedOutside": 87,
+          "maxOutsideMm": 14.008698084227749,
+          "sumSquaredExcessMm": 27946.417779133895,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 0.25,
+          "outside": 651,
+          "newOutside": 0,
+          "worsenedOutside": 82,
+          "maxOutsideMm": 14.126591471541582,
+          "sumSquaredExcessMm": 28554.136029045836,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 0.25,
+          "outside": 653,
+          "newOutside": 1,
+          "worsenedOutside": 619,
+          "maxOutsideMm": 14.308981545580144,
+          "sumSquaredExcessMm": 29733.180892647164,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 0.5,
+          "outside": 653,
+          "newOutside": 2,
+          "worsenedOutside": 560,
+          "maxOutsideMm": 14.498093413832434,
+          "sumSquaredExcessMm": 30504.665841785536,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 0.25,
+          "outside": 654,
+          "newOutside": 1,
+          "worsenedOutside": 648,
+          "maxOutsideMm": 14.298892572179327,
+          "sumSquaredExcessMm": 29804.661347660454,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 0.25,
+          "outside": 654,
+          "newOutside": 2,
+          "worsenedOutside": 559,
+          "maxOutsideMm": 14.368024070413576,
+          "sumSquaredExcessMm": 29832.92757148071,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 0.5,
+          "outside": 654,
+          "newOutside": 2,
+          "worsenedOutside": 624,
+          "maxOutsideMm": 14.37399198418269,
+          "sumSquaredExcessMm": 30298.683680203278,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 0.25,
+          "outside": 655,
+          "newOutside": 2,
+          "worsenedOutside": 256,
+          "maxOutsideMm": 14.211379080657373,
+          "sumSquaredExcessMm": 29105.7301484454,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 0.25,
+          "outside": 655,
+          "newOutside": 2,
+          "worsenedOutside": 655,
+          "maxOutsideMm": 14.417762034066262,
+          "sumSquaredExcessMm": 30446.780709927967,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 0.25,
+          "outside": 655,
+          "newOutside": 2,
+          "worsenedOutside": 637,
+          "maxOutsideMm": 14.268919672471478,
+          "sumSquaredExcessMm": 29645.12909817776,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 0.25,
+          "outside": 656,
+          "newOutside": 3,
+          "worsenedOutside": 629,
+          "maxOutsideMm": 14.383569763089001,
+          "sumSquaredExcessMm": 30023.7356490216,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 0.5,
+          "outside": 656,
+          "newOutside": 3,
+          "worsenedOutside": 258,
+          "maxOutsideMm": 14.176413526984335,
+          "sumSquaredExcessMm": 29032.614228107526,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 0.25,
+          "outside": 656,
+          "newOutside": 3,
+          "worsenedOutside": 656,
+          "maxOutsideMm": 14.318163187443968,
+          "sumSquaredExcessMm": 29717.417944822675,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 1,
+          "outside": 657,
+          "newOutside": 4,
+          "worsenedOutside": 259,
+          "maxOutsideMm": 14.106598517714426,
+          "sumSquaredExcessMm": 28896.87104197664,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 0.5,
+          "outside": 658,
+          "newOutside": 5,
+          "worsenedOutside": 658,
+          "maxOutsideMm": 14.393081637464402,
+          "sumSquaredExcessMm": 30266.555244937488,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 0.25,
+          "outside": 658,
+          "newOutside": 5,
+          "worsenedOutside": 658,
+          "maxOutsideMm": 14.464565990721963,
+          "sumSquaredExcessMm": 30701.73854627407,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 0.25,
+          "outside": 659,
+          "newOutside": 6,
+          "worsenedOutside": 659,
+          "maxOutsideMm": 14.368458539934336,
+          "sumSquaredExcessMm": 30336.526551347353,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 0.5,
+          "outside": 659,
+          "newOutside": 7,
+          "worsenedOutside": 633,
+          "maxOutsideMm": 14.53653026812887,
+          "sumSquaredExcessMm": 30897.087865857047,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 1,
+          "outside": 659,
+          "newOutside": 8,
+          "worsenedOutside": 569,
+          "maxOutsideMm": 14.770154811276294,
+          "sumSquaredExcessMm": 31916.22958233071,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+x",
+          "mm": 0.25,
+          "outside": 660,
+          "newOutside": 7,
+          "worsenedOutside": 660,
+          "maxOutsideMm": 14.454069895474138,
+          "sumSquaredExcessMm": 30900.685077455903,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 2,
+          "outside": 660,
+          "newOutside": 7,
+          "worsenedOutside": 262,
+          "maxOutsideMm": 13.967437852891493,
+          "sumSquaredExcessMm": 28670.39091913505,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 0.25,
+          "outside": 660,
+          "newOutside": 7,
+          "worsenedOutside": 660,
+          "maxOutsideMm": 14.424053866057088,
+          "sumSquaredExcessMm": 30609.24743920358,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 0.25,
+          "outside": 660,
+          "newOutside": 7,
+          "worsenedOutside": 660,
+          "maxOutsideMm": 14.488801469083214,
+          "sumSquaredExcessMm": 30992.070785549673,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 0.5,
+          "outside": 660,
+          "newOutside": 7,
+          "worsenedOutside": 651,
+          "maxOutsideMm": 14.294635001758499,
+          "sumSquaredExcessMm": 30132.00202034225,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 0.5,
+          "outside": 660,
+          "newOutside": 7,
+          "worsenedOutside": 655,
+          "maxOutsideMm": 14.355560078711644,
+          "sumSquaredExcessMm": 30454.400290473375,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 1,
+          "outside": 661,
+          "newOutside": 9,
+          "worsenedOutside": 632,
+          "maxOutsideMm": 14.511055068659644,
+          "sumSquaredExcessMm": 31476.266433660086,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 1,
+          "outside": 662,
+          "newOutside": 9,
+          "worsenedOutside": 662,
+          "maxOutsideMm": 14.560130152058314,
+          "sumSquaredExcessMm": 31406.48832827838,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 0.5,
+          "outside": 662,
+          "newOutside": 9,
+          "worsenedOutside": 662,
+          "maxOutsideMm": 14.682945185508204,
+          "sumSquaredExcessMm": 32270.058984145577,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 0.5,
+          "outside": 662,
+          "newOutside": 9,
+          "worsenedOutside": 662,
+          "maxOutsideMm": 14.491449335595867,
+          "sumSquaredExcessMm": 31528.517494733824,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 0.5,
+          "outside": 662,
+          "newOutside": 9,
+          "worsenedOutside": 662,
+          "maxOutsideMm": 14.589609180030859,
+          "sumSquaredExcessMm": 31744.315821956814,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 0.5,
+          "outside": 663,
+          "newOutside": 10,
+          "worsenedOutside": 663,
+          "maxOutsideMm": 14.601780764119663,
+          "sumSquaredExcessMm": 32083.53148822588,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 2,
+          "outside": 663,
+          "newOutside": 14,
+          "worsenedOutside": 581,
+          "maxOutsideMm": 15.31427649968207,
+          "sumSquaredExcessMm": 35017.44906867889,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 1,
+          "outside": 665,
+          "newOutside": 12,
+          "worsenedOutside": 660,
+          "maxOutsideMm": 14.355473165282532,
+          "sumSquaredExcessMm": 31180.898927605296,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 1,
+          "outside": 665,
+          "newOutside": 12,
+          "worsenedOutside": 663,
+          "maxOutsideMm": 14.481105318348735,
+          "sumSquaredExcessMm": 31839.929944717067,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 1,
+          "outside": 665,
+          "newOutside": 13,
+          "worsenedOutside": 643,
+          "maxOutsideMm": 14.847027966628204,
+          "sumSquaredExcessMm": 32742.369884207976,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 0.5,
+          "outside": 667,
+          "newOutside": 14,
+          "worsenedOutside": 667,
+          "maxOutsideMm": 14.731382456478478,
+          "sumSquaredExcessMm": 32872.36312341584,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+x",
+          "mm": 0.5,
+          "outside": 668,
+          "newOutside": 15,
+          "worsenedOutside": 668,
+          "maxOutsideMm": 14.663059574130733,
+          "sumSquaredExcessMm": 32686.49962894842,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 2,
+          "outside": 668,
+          "newOutside": 17,
+          "worsenedOutside": 643,
+          "maxOutsideMm": 14.81253749144422,
+          "sumSquaredExcessMm": 34037.9340446049,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 1,
+          "outside": 669,
+          "newOutside": 16,
+          "worsenedOutside": 669,
+          "maxOutsideMm": 14.93458266934451,
+          "sumSquaredExcessMm": 34439.17449589098,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 1,
+          "outside": 670,
+          "newOutside": 17,
+          "worsenedOutside": 670,
+          "maxOutsideMm": 15.120193244306673,
+          "sumSquaredExcessMm": 35557.22867067467,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 5,
+          "outside": 673,
+          "newOutside": 22,
+          "worsenedOutside": 278,
+          "maxOutsideMm": 13.553893418048775,
+          "sumSquaredExcessMm": 28396.664940072515,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 2,
+          "outside": 674,
+          "newOutside": 21,
+          "worsenedOutside": 674,
+          "maxOutsideMm": 14.779625906079746,
+          "sumSquaredExcessMm": 35009.06399349468,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 1,
+          "outside": 675,
+          "newOutside": 22,
+          "worsenedOutside": 675,
+          "maxOutsideMm": 14.740022777680432,
+          "sumSquaredExcessMm": 34030.31008186314,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 2,
+          "outside": 676,
+          "newOutside": 23,
+          "worsenedOutside": 676,
+          "maxOutsideMm": 14.514299930594339,
+          "sumSquaredExcessMm": 33605.40917266066,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 2,
+          "outside": 677,
+          "newOutside": 24,
+          "worsenedOutside": 677,
+          "maxOutsideMm": 14.894228287728048,
+          "sumSquaredExcessMm": 33878.06345283387,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 1,
+          "outside": 677,
+          "newOutside": 24,
+          "worsenedOutside": 677,
+          "maxOutsideMm": 14.957334294121866,
+          "sumSquaredExcessMm": 35176.62710553897,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+x",
+          "mm": 1,
+          "outside": 679,
+          "newOutside": 26,
+          "worsenedOutside": 679,
+          "maxOutsideMm": 15.084742374448059,
+          "sumSquaredExcessMm": 36467.373350778544,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 1,
+          "outside": 679,
+          "newOutside": 26,
+          "worsenedOutside": 679,
+          "maxOutsideMm": 15.21694308909036,
+          "sumSquaredExcessMm": 36849.02435199196,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 2,
+          "outside": 681,
+          "newOutside": 28,
+          "worsenedOutside": 681,
+          "maxOutsideMm": 15.629351575998248,
+          "sumSquaredExcessMm": 40239.9085558641,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 2,
+          "outside": 681,
+          "newOutside": 29,
+          "worsenedOutside": 663,
+          "maxOutsideMm": 15.462369892470896,
+          "sumSquaredExcessMm": 36867.55564258835,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 5,
+          "outside": 683,
+          "newOutside": 36,
+          "worsenedOutside": 620,
+          "maxOutsideMm": 16.93984573197907,
+          "sumSquaredExcessMm": 46899.98558402347,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 5,
+          "outside": 688,
+          "newOutside": 38,
+          "worsenedOutside": 673,
+          "maxOutsideMm": 15.860098288178179,
+          "sumSquaredExcessMm": 43817.037199867154,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 2,
+          "outside": 690,
+          "newOutside": 37,
+          "worsenedOutside": 690,
+          "maxOutsideMm": 16.003261114553055,
+          "sumSquaredExcessMm": 42747.88223968429,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 2,
+          "outside": 695,
+          "newOutside": 42,
+          "worsenedOutside": 695,
+          "maxOutsideMm": 15.247051714611494,
+          "sumSquaredExcessMm": 39524.265898244026,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 2,
+          "outside": 699,
+          "newOutside": 46,
+          "worsenedOutside": 699,
+          "maxOutsideMm": 15.66892317571026,
+          "sumSquaredExcessMm": 41964.68258793358,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+x",
+          "mm": 2,
+          "outside": 703,
+          "newOutside": 50,
+          "worsenedOutside": 703,
+          "maxOutsideMm": 15.941486376549758,
+          "sumSquaredExcessMm": 44895.029866380515,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 10,
+          "outside": 703,
+          "newOutside": 50,
+          "worsenedOutside": 318,
+          "maxOutsideMm": 12.930509873150228,
+          "sumSquaredExcessMm": 29520.195513810737,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 2,
+          "outside": 705,
+          "newOutside": 52,
+          "worsenedOutside": 705,
+          "maxOutsideMm": 16.19265163847146,
+          "sumSquaredExcessMm": 45695.302478118094,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 10,
+          "outside": 708,
+          "newOutside": 61,
+          "worsenedOutside": 680,
+          "maxOutsideMm": 19.93952323670653,
+          "sumSquaredExcessMm": 76418.27090599334,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 5,
+          "outside": 711,
+          "newOutside": 58,
+          "worsenedOutside": 703,
+          "maxOutsideMm": 17.244423741573712,
+          "sumSquaredExcessMm": 53036.727572073614,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 5,
+          "outside": 712,
+          "newOutside": 59,
+          "worsenedOutside": 712,
+          "maxOutsideMm": 15.771024022998546,
+          "sumSquaredExcessMm": 42900.81465847176,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 5,
+          "outside": 722,
+          "newOutside": 69,
+          "worsenedOutside": 722,
+          "maxOutsideMm": 15.121477294041194,
+          "sumSquaredExcessMm": 43901.87703529149,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 5,
+          "outside": 724,
+          "newOutside": 71,
+          "worsenedOutside": 724,
+          "maxOutsideMm": 17.745338420165293,
+          "sumSquaredExcessMm": 61103.1745614357,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 5,
+          "outside": 724,
+          "newOutside": 71,
+          "worsenedOutside": 724,
+          "maxOutsideMm": 15.79258950275831,
+          "sumSquaredExcessMm": 48283.63167963355,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 15,
+          "outside": 733,
+          "newOutside": 80,
+          "worsenedOutside": 366,
+          "maxOutsideMm": 14.204270279515358,
+          "sumSquaredExcessMm": 33045.023360378684,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 5,
+          "outside": 733,
+          "newOutside": 80,
+          "worsenedOutside": 733,
+          "maxOutsideMm": 18.669097657159554,
+          "sumSquaredExcessMm": 69500.76298108921,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 10,
+          "outside": 750,
+          "newOutside": 97,
+          "worsenedOutside": 750,
+          "maxOutsideMm": 17.912715253498128,
+          "sumSquaredExcessMm": 68230.01191731513,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 15,
+          "outside": 750,
+          "newOutside": 101,
+          "worsenedOutside": 735,
+          "maxOutsideMm": 23.229149573083735,
+          "sumSquaredExcessMm": 121123.34487746714,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 5,
+          "outside": 760,
+          "newOutside": 107,
+          "worsenedOutside": 760,
+          "maxOutsideMm": 16.836230300932375,
+          "sumSquaredExcessMm": 60356.349803351026,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 5,
+          "outside": 769,
+          "newOutside": 116,
+          "worsenedOutside": 769,
+          "maxOutsideMm": 17.811680562356916,
+          "sumSquaredExcessMm": 67517.58655862127,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 5,
+          "outside": 772,
+          "newOutside": 119,
+          "worsenedOutside": 772,
+          "maxOutsideMm": 19.142591999089422,
+          "sumSquaredExcessMm": 79834.69054823049,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+x",
+          "mm": 5,
+          "outside": 774,
+          "newOutside": 121,
+          "worsenedOutside": 774,
+          "maxOutsideMm": 18.595536683117047,
+          "sumSquaredExcessMm": 77716.56702671653,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 10,
+          "outside": 782,
+          "newOutside": 129,
+          "worsenedOutside": 782,
+          "maxOutsideMm": 21.468367867038925,
+          "sumSquaredExcessMm": 108680.43982685971,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 10,
+          "outside": 784,
+          "newOutside": 131,
+          "worsenedOutside": 784,
+          "maxOutsideMm": 17.340256707483437,
+          "sumSquaredExcessMm": 64816.33774389881,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 10,
+          "outside": 788,
+          "newOutside": 135,
+          "worsenedOutside": 788,
+          "maxOutsideMm": 20.78871242425166,
+          "sumSquaredExcessMm": 95640.74116129112,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 10,
+          "outside": 809,
+          "newOutside": 156,
+          "worsenedOutside": 809,
+          "maxOutsideMm": 17.158322807385098,
+          "sumSquaredExcessMm": 72931.33888301179,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 10,
+          "outside": 812,
+          "newOutside": 159,
+          "worsenedOutside": 812,
+          "maxOutsideMm": 23.13732646339051,
+          "sumSquaredExcessMm": 133115.99840089373,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 10,
+          "outside": 815,
+          "newOutside": 162,
+          "worsenedOutside": 815,
+          "maxOutsideMm": 18.475361261428528,
+          "sumSquaredExcessMm": 85549.12096659481,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 15,
+          "outside": 820,
+          "newOutside": 167,
+          "worsenedOutside": 820,
+          "maxOutsideMm": 20.747276150336937,
+          "sumSquaredExcessMm": 107075.8434081622,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 15,
+          "outside": 840,
+          "newOutside": 187,
+          "worsenedOutside": 840,
+          "maxOutsideMm": 25.40139064014992,
+          "sumSquaredExcessMm": 174417.32290554285,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 15,
+          "outside": 844,
+          "newOutside": 191,
+          "worsenedOutside": 844,
+          "maxOutsideMm": 19.189271498794376,
+          "sumSquaredExcessMm": 98878.01435973377,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 10,
+          "outside": 853,
+          "newOutside": 200,
+          "worsenedOutside": 853,
+          "maxOutsideMm": 19.687833621400568,
+          "sumSquaredExcessMm": 111936.53202975457,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 15,
+          "outside": 853,
+          "newOutside": 200,
+          "worsenedOutside": 853,
+          "maxOutsideMm": 19.898713656437852,
+          "sumSquaredExcessMm": 121813.37335403643,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 10,
+          "outside": 857,
+          "newOutside": 204,
+          "worsenedOutside": 857,
+          "maxOutsideMm": 21.343646473731518,
+          "sumSquaredExcessMm": 129971.92254118575,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 10,
+          "outside": 858,
+          "newOutside": 205,
+          "worsenedOutside": 858,
+          "maxOutsideMm": 24.046326318136767,
+          "sumSquaredExcessMm": 164924.30966789243,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 15,
+          "outside": 858,
+          "newOutside": 205,
+          "worsenedOutside": 858,
+          "maxOutsideMm": 21.69086746880364,
+          "sumSquaredExcessMm": 148247.29833297248,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+x",
+          "mm": 10,
+          "outside": 859,
+          "newOutside": 206,
+          "worsenedOutside": 859,
+          "maxOutsideMm": 23.085961413827455,
+          "sumSquaredExcessMm": 160777.11717306444,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 15,
+          "outside": 861,
+          "newOutside": 208,
+          "worsenedOutside": 861,
+          "maxOutsideMm": 27.654173909955695,
+          "sumSquaredExcessMm": 222835.8856663835,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 15,
+          "outside": 863,
+          "newOutside": 210,
+          "worsenedOutside": 863,
+          "maxOutsideMm": 24.785974407841042,
+          "sumSquaredExcessMm": 163149.22651347864,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 15,
+          "outside": 870,
+          "newOutside": 217,
+          "worsenedOutside": 870,
+          "maxOutsideMm": 22.78783185324298,
+          "sumSquaredExcessMm": 188454.34743636602,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 15,
+          "outside": 883,
+          "newOutside": 230,
+          "worsenedOutside": 883,
+          "maxOutsideMm": 24.844077016784492,
+          "sumSquaredExcessMm": 221285.15276944425,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+x",
+          "mm": 15,
+          "outside": 889,
+          "newOutside": 236,
+          "worsenedOutside": 889,
+          "maxOutsideMm": 27.625688365978366,
+          "sumSquaredExcessMm": 283402.1107552509,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 15,
+          "outside": 890,
+          "newOutside": 237,
+          "worsenedOutside": 890,
+          "maxOutsideMm": 28.922238919406514,
+          "sumSquaredExcessMm": 289031.9395087383,
+          "ambiguous": 0
+        }
+      ]
+    },
+    {
+      "side": "right",
+      "baseline": [
+        {
+          "id": "BM0171",
+          "name": "Right fifth metatarsal bone",
+          "outside": 73,
+          "maxOutsideMm": 8.6626221494619
+        },
+        {
+          "id": "BM0166",
+          "name": "Proximal phalanx of right little toe",
+          "outside": 168,
+          "maxOutsideMm": 11.157868581382681
+        },
+        {
+          "id": "BM0160",
+          "name": "Middle phalanx of right little toe",
+          "outside": 102,
+          "maxOutsideMm": 12.142912314257162
+        },
+        {
+          "id": "BM0156",
+          "name": "Distal phalanx of right little toe",
+          "outside": 178,
+          "maxOutsideMm": 13.3166014654037
+        }
+      ],
+      "nearSkinVertices": 842,
+      "meanInwardDirection": [
+        0.9406678715153456,
+        0.3328495597444652,
+        -0.06599337903687773
+      ],
+      "baselineIntersections": [
+        [
+          "BM0171",
+          "BM0170"
+        ],
+        [
+          "BM0171",
+          "BM0173"
+        ]
+      ],
+      "existingCrossings": [
+        {
+          "movingId": "BM0171",
+          "fixedId": "BM0170",
+          "before": {
+            "intersectingTrianglePairs": 46,
+            "strictPlaneStraddlingPairs": 46,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.845049279923871
+          },
+          "after2Mm": {
+            "intersectingTrianglePairs": 77,
+            "strictPlaneStraddlingPairs": 77,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.8091145072926017
+          }
+        },
+        {
+          "movingId": "BM0171",
+          "fixedId": "BM0173",
+          "before": {
+            "intersectingTrianglePairs": 36,
+            "strictPlaneStraddlingPairs": 36,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 0.44949950994665955
+          },
+          "after2Mm": {
+            "intersectingTrianglePairs": 86,
+            "strictPlaneStraddlingPairs": 86,
+            "toleranceMm": 0.001,
+            "maxTrianglePlaneStraddleExtentMm": 1.0259131460283561
+          }
+        }
+      ],
+      "cuboidJoint": {
+        "before": {
+          "vertexSurfaceMinimumMm": 0.10376440714428364,
+          "triangleSurfacesIntersect": true
+        },
+        "afterMeanInward2Mm": {
+          "vertexSurfaceMinimumMm": 0.033168368827979536,
+          "triangleSurfacesIntersect": true
+        }
+      },
+      "localSafe": [
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 1,
+          "outside": 504,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "intersections": [
+            [
+              "BM0171",
+              "BM0170"
+            ],
+            [
+              "BM0171",
+              "BM0173"
+            ]
+          ],
+          "changed": [
+            {
+              "movingId": "BM0171",
+              "fixedId": "BM0170",
+              "before": {
+                "intersectingTrianglePairs": 46,
+                "strictPlaneStraddlingPairs": 46,
+                "toleranceMm": 0.001,
+                "maxTrianglePlaneStraddleExtentMm": 0.845049279923871
+              },
+              "after": {
+                "intersectingTrianglePairs": 36,
+                "strictPlaneStraddlingPairs": 36,
+                "toleranceMm": 0.001,
+                "maxTrianglePlaneStraddleExtentMm": 0.6754374175966251
+              }
+            },
+            {
+              "movingId": "BM0171",
+              "fixedId": "BM0173",
+              "before": {
+                "intersectingTrianglePairs": 36,
+                "strictPlaneStraddlingPairs": 36,
+                "toleranceMm": 0.001,
+                "maxTrianglePlaneStraddleExtentMm": 0.44949950994665955
+              },
+              "after": {
+                "intersectingTrianglePairs": 13,
+                "strictPlaneStraddlingPairs": 13,
+                "toleranceMm": 0.001,
+                "maxTrianglePlaneStraddleExtentMm": 0.40611262650467556
+              }
+            }
+          ]
+        }
+      ],
+      "trials": [
+        {
+          "direction": "mean-inward",
+          "mm": 15,
+          "outside": 0,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 0,
+          "sumSquaredExcessMm": 0,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0171",
+              "BM0170"
+            ],
+            [
+              "BM0171",
+              "BM0173"
+            ],
+            [
+              "BM0166",
+              "BM0165"
+            ],
+            [
+              "BM0166",
+              "BM0170"
+            ]
+          ]
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 15,
+          "outside": 0,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 0,
+          "sumSquaredExcessMm": 0,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0171",
+              "BM0169"
+            ],
+            [
+              "BM0171",
+              "BM0170"
+            ],
+            [
+              "BM0171",
+              "BM0173"
+            ],
+            [
+              "BM0171",
+              "BM0176"
+            ],
+            [
+              "BM0166",
+              "BM0165"
+            ],
+            [
+              "BM0166",
+              "BM0170"
+            ]
+          ]
+        },
+        {
+          "direction": "+x",
+          "mm": 15,
+          "outside": 6,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 2.2815479965205077,
+          "sumSquaredExcessMm": 0.3590379526115155,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0171",
+              "BM0170"
+            ],
+            [
+              "BM0171",
+              "BM0173"
+            ],
+            [
+              "BM0166",
+              "BM0165"
+            ],
+            [
+              "BM0166",
+              "BM0170"
+            ]
+          ]
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 15,
+          "outside": 14,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 2.657269175677317,
+          "sumSquaredExcessMm": 2.5895255668704142,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0171",
+              "BM0173"
+            ]
+          ]
+        },
+        {
+          "direction": "mean-inward",
+          "mm": 10,
+          "outside": 37,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 3.474425920183371,
+          "sumSquaredExcessMm": 22.055543582686003,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0171",
+              "BM0170"
+            ],
+            [
+              "BM0171",
+              "BM0173"
+            ],
+            [
+              "BM0166",
+              "BM0170"
+            ]
+          ]
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 15,
+          "outside": 72,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 3.660277245396409,
+          "sumSquaredExcessMm": 45.58470036583737,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0171",
+              "BM0170"
+            ],
+            [
+              "BM0171",
+              "BM0173"
+            ],
+            [
+              "BM0166",
+              "BM0170"
+            ]
+          ]
+        },
+        {
+          "direction": "+x",
+          "mm": 10,
+          "outside": 123,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 5.0533279412737055,
+          "sumSquaredExcessMm": 218.72013085107898,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0171",
+              "BM0170"
+            ],
+            [
+              "BM0171",
+              "BM0173"
+            ],
+            [
+              "BM0166",
+              "BM0170"
+            ]
+          ]
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 15,
+          "outside": 128,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 5.664338102078882,
+          "sumSquaredExcessMm": 384.76894593906553,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0171",
+              "BM0169"
+            ],
+            [
+              "BM0171",
+              "BM0170"
+            ],
+            [
+              "BM0171",
+              "BM0173"
+            ],
+            [
+              "BM0166",
+              "BM0165"
+            ],
+            [
+              "BM0166",
+              "BM0170"
+            ]
+          ]
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 10,
+          "outside": 163,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 4.652626510681344,
+          "sumSquaredExcessMm": 252.78416347061923,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 15,
+          "outside": 201,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 9.161971458779735,
+          "sumSquaredExcessMm": 2854.203433805575,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 10,
+          "outside": 221,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 6.085413990972574,
+          "sumSquaredExcessMm": 930.2074882258352,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 10,
+          "outside": 222,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 7.760913008302965,
+          "sumSquaredExcessMm": 1969.2125480842296,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 10,
+          "outside": 237,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 9.667412392745376,
+          "sumSquaredExcessMm": 4297.751033082991,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 10,
+          "outside": 245,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 6.126908549631067,
+          "sumSquaredExcessMm": 966.6769122853588,
+          "ambiguous": 0
+        },
+        {
+          "direction": "mean-inward",
+          "mm": 5,
+          "outside": 302,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 8.370680470503304,
+          "sumSquaredExcessMm": 3465.249287701799,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+x",
+          "mm": 5,
+          "outside": 303,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 9.001472651496066,
+          "sumSquaredExcessMm": 4315.441411643173,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 5,
+          "outside": 342,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 8.839293951820686,
+          "sumSquaredExcessMm": 4704.792389669602,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 5,
+          "outside": 369,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 10.280693154085773,
+          "sumSquaredExcessMm": 7403.880803659569,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 5,
+          "outside": 375,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 9.216397714049696,
+          "sumSquaredExcessMm": 6251.825488920565,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 5,
+          "outside": 376,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 9.66070176550774,
+          "sumSquaredExcessMm": 6683.685390406057,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 5,
+          "outside": 379,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 11.110326451759885,
+          "sumSquaredExcessMm": 8952.211331777806,
+          "ambiguous": 0
+        },
+        {
+          "direction": "mean-inward",
+          "mm": 2,
+          "outside": 433,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 11.334362693817413,
+          "sumSquaredExcessMm": 11577.716803655563,
+          "ambiguous": 0,
+          "intersections": [
+            [
+              "BM0171",
+              "BM0170"
+            ],
+            [
+              "BM0171",
+              "BM0173"
+            ]
+          ]
+        },
+        {
+          "direction": "+x",
+          "mm": 2,
+          "outside": 436,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 11.552369250720451,
+          "sumSquaredExcessMm": 12084.077662246606,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 10,
+          "outside": 436,
+          "newOutside": 0,
+          "worsenedOutside": 183,
+          "maxOutsideMm": 13.772586870527297,
+          "sumSquaredExcessMm": 17398.211536594506,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 2,
+          "outside": 444,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 11.482978973789162,
+          "sumSquaredExcessMm": 12469.277438666564,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 10,
+          "outside": 445,
+          "newOutside": 4,
+          "worsenedOutside": 49,
+          "maxOutsideMm": 12.146638753407444,
+          "sumSquaredExcessMm": 12520.266731733816,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 10,
+          "outside": 449,
+          "newOutside": 11,
+          "worsenedOutside": 25,
+          "maxOutsideMm": 10.712369065855915,
+          "sumSquaredExcessMm": 9522.054140031116,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 15,
+          "outside": 450,
+          "newOutside": 11,
+          "worsenedOutside": 297,
+          "maxOutsideMm": 15.381539689443782,
+          "sumSquaredExcessMm": 25018.461646535197,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 5,
+          "outside": 454,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.10605468725891,
+          "sumSquaredExcessMm": 13292.010651758354,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 5,
+          "outside": 458,
+          "newOutside": 0,
+          "worsenedOutside": 25,
+          "maxOutsideMm": 12.92141025963364,
+          "sumSquaredExcessMm": 15943.994500382147,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 2,
+          "outside": 459,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 11.991676698590528,
+          "sumSquaredExcessMm": 14148.802322180278,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 2,
+          "outside": 461,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.286953335002712,
+          "sumSquaredExcessMm": 14849.247774474612,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 2,
+          "outside": 461,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 11.641255312175947,
+          "sumSquaredExcessMm": 13572.276637698189,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 15,
+          "outside": 468,
+          "newOutside": 34,
+          "worsenedOutside": 63,
+          "maxOutsideMm": 10.565931093409827,
+          "sumSquaredExcessMm": 8955.30868023642,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 5,
+          "outside": 470,
+          "newOutside": 0,
+          "worsenedOutside": 8,
+          "maxOutsideMm": 11.692698818612165,
+          "sumSquaredExcessMm": 13020.378292276358,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 2,
+          "outside": 473,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 11.84052994414646,
+          "sumSquaredExcessMm": 14000.14966420037,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 15,
+          "outside": 477,
+          "newOutside": 6,
+          "worsenedOutside": 386,
+          "maxOutsideMm": 18.586990754399068,
+          "sumSquaredExcessMm": 40849.2936273083,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 10,
+          "outside": 477,
+          "newOutside": 14,
+          "worsenedOutside": 112,
+          "maxOutsideMm": 13.12614517976053,
+          "sumSquaredExcessMm": 18147.618381124354,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 5,
+          "outside": 485,
+          "newOutside": 5,
+          "worsenedOutside": 44,
+          "maxOutsideMm": 12.960085291161201,
+          "sumSquaredExcessMm": 17951.968856492906,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 10,
+          "outside": 488,
+          "newOutside": 3,
+          "worsenedOutside": 376,
+          "maxOutsideMm": 16.17093474152973,
+          "sumSquaredExcessMm": 29870.366497054583,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+x",
+          "mm": 1,
+          "outside": 489,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.42641628658209,
+          "sumSquaredExcessMm": 16105.206177142984,
+          "ambiguous": 0
+        },
+        {
+          "direction": "mean-inward",
+          "mm": 1,
+          "outside": 490,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.325043857302,
+          "sumSquaredExcessMm": 15825.64891896157,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 2,
+          "outside": 490,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.728249240733907,
+          "sumSquaredExcessMm": 16909.41272377325,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 5,
+          "outside": 490,
+          "newOutside": 9,
+          "worsenedOutside": 85,
+          "maxOutsideMm": 11.81182227186888,
+          "sumSquaredExcessMm": 16038.663642712343,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 15,
+          "outside": 491,
+          "newOutside": 34,
+          "worsenedOutside": 238,
+          "maxOutsideMm": 13.27257408741639,
+          "sumSquaredExcessMm": 17178.41005565917,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 1,
+          "outside": 493,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.394449063107103,
+          "sumSquaredExcessMm": 16343.07130888028,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 2,
+          "outside": 494,
+          "newOutside": 0,
+          "worsenedOutside": 3,
+          "maxOutsideMm": 13.024106018808228,
+          "sumSquaredExcessMm": 18022.118482700018,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 1,
+          "outside": 494,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.651399255416695,
+          "sumSquaredExcessMm": 17300.552089860856,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 1,
+          "outside": 497,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.474573467012297,
+          "sumSquaredExcessMm": 16998.681801597166,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 1,
+          "outside": 498,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.795719853276267,
+          "sumSquaredExcessMm": 17666.15939800664,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 1,
+          "outside": 500,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.57551835287726,
+          "sumSquaredExcessMm": 17262.589864896036,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+x",
+          "mm": 0.5,
+          "outside": 502,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.869630578489566,
+          "sumSquaredExcessMm": 18437.317524137492,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 15,
+          "outside": 502,
+          "newOutside": 29,
+          "worsenedOutside": 290,
+          "maxOutsideMm": 14.063324511756923,
+          "sumSquaredExcessMm": 22822.887055850668,
+          "ambiguous": 0
+        },
+        {
+          "direction": "mean-inward",
+          "mm": 0.5,
+          "outside": 504,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.820719380290516,
+          "sumSquaredExcessMm": 18290.872166901776,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 2,
+          "outside": 504,
+          "newOutside": 0,
+          "worsenedOutside": 5,
+          "maxOutsideMm": 12.64655950027556,
+          "sumSquaredExcessMm": 17168.237728587424,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 1,
+          "outside": 504,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.007550473276154,
+          "sumSquaredExcessMm": 18733.687198886713,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 1,
+          "outside": 504,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.150477421795374,
+          "sumSquaredExcessMm": 19310.02269166957,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 0.5,
+          "outside": 506,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.854326311734924,
+          "sumSquaredExcessMm": 18567.425777613735,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 5,
+          "outside": 506,
+          "newOutside": 1,
+          "worsenedOutside": 351,
+          "maxOutsideMm": 14.511934018139453,
+          "sumSquaredExcessMm": 23999.180002160614,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 5,
+          "outside": 506,
+          "newOutside": 8,
+          "worsenedOutside": 117,
+          "maxOutsideMm": 11.945889067838424,
+          "sumSquaredExcessMm": 16733.200696805336,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 0.5,
+          "outside": 507,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.054996512058375,
+          "sumSquaredExcessMm": 19267.20180453751,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 0.5,
+          "outside": 507,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.894596158656695,
+          "sumSquaredExcessMm": 18923.39185920043,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 0.5,
+          "outside": 507,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.98339415043812,
+          "sumSquaredExcessMm": 19078.58091797825,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 2,
+          "outside": 507,
+          "newOutside": 1,
+          "worsenedOutside": 21,
+          "maxOutsideMm": 13.008074337692046,
+          "sumSquaredExcessMm": 19236.319215098378,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 2,
+          "outside": 507,
+          "newOutside": 2,
+          "worsenedOutside": 41,
+          "maxOutsideMm": 12.620223674228237,
+          "sumSquaredExcessMm": 18125.269911508716,
+          "ambiguous": 0
+        },
+        {
+          "direction": "mean-inward",
+          "mm": 0.25,
+          "outside": 509,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.068637093667745,
+          "sumSquaredExcessMm": 19613.126649394544,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 1,
+          "outside": 509,
+          "newOutside": 0,
+          "worsenedOutside": 16,
+          "maxOutsideMm": 13.147279438640156,
+          "sumSquaredExcessMm": 20010.36482755387,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 0.5,
+          "outside": 509,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 12.9453569900172,
+          "sumSquaredExcessMm": 19068.414760200467,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+x",
+          "mm": 0.25,
+          "outside": 510,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.092668858101986,
+          "sumSquaredExcessMm": 19687.884488789725,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 1,
+          "outside": 510,
+          "newOutside": 1,
+          "worsenedOutside": 32,
+          "maxOutsideMm": 12.935010274380732,
+          "sumSquaredExcessMm": 19375.048277120874,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 1,
+          "outside": 511,
+          "newOutside": 0,
+          "worsenedOutside": 3,
+          "maxOutsideMm": 12.968660787770185,
+          "sumSquaredExcessMm": 18949.476772494338,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,0",
+          "mm": 0.25,
+          "outside": 511,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.085188123957717,
+          "sumSquaredExcessMm": 19755.840103906197,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,1",
+          "mm": 0.25,
+          "outside": 511,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.149860210801918,
+          "sumSquaredExcessMm": 20019.739183601865,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 2,
+          "outside": 511,
+          "newOutside": 2,
+          "worsenedOutside": 90,
+          "maxOutsideMm": 12.587299106628187,
+          "sumSquaredExcessMm": 18570.830839593604,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 2,
+          "outside": 513,
+          "newOutside": 0,
+          "worsenedOutside": 326,
+          "maxOutsideMm": 13.64138113789879,
+          "sumSquaredExcessMm": 21784.335415433663,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,1",
+          "mm": 0.25,
+          "outside": 513,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.185524922082186,
+          "sumSquaredExcessMm": 20115.684966261022,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 0.5,
+          "outside": 514,
+          "newOutside": 0,
+          "worsenedOutside": 18,
+          "maxOutsideMm": 13.228507345900681,
+          "sumSquaredExcessMm": 20477.934649055846,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 0.5,
+          "outside": 514,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.153758311187836,
+          "sumSquaredExcessMm": 19807.227571883326,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,1,-1",
+          "mm": 0.25,
+          "outside": 514,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.10537183704158,
+          "sumSquaredExcessMm": 19941.014129254723,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 1,
+          "outside": 515,
+          "newOutside": 0,
+          "worsenedOutside": 322,
+          "maxOutsideMm": 13.471131215243046,
+          "sumSquaredExcessMm": 21322.18555488897,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 0.5,
+          "outside": 515,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.227409430698154,
+          "sumSquaredExcessMm": 20104.368778511966,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 0.5,
+          "outside": 515,
+          "newOutside": 1,
+          "worsenedOutside": 31,
+          "maxOutsideMm": 13.117795751228712,
+          "sumSquaredExcessMm": 20137.716867511368,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,0,-1",
+          "mm": 0.25,
+          "outside": 516,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.130819126248777,
+          "sumSquaredExcessMm": 20016.953318173502,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 1,
+          "outside": 516,
+          "newOutside": 1,
+          "worsenedOutside": 87,
+          "maxOutsideMm": 12.9330774574468,
+          "sumSquaredExcessMm": 19651.927388723077,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 0.5,
+          "outside": 517,
+          "newOutside": 0,
+          "worsenedOutside": 1,
+          "maxOutsideMm": 13.13734952703051,
+          "sumSquaredExcessMm": 19935.684092555333,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 0.5,
+          "outside": 517,
+          "newOutside": 1,
+          "worsenedOutside": 83,
+          "maxOutsideMm": 13.120320850215935,
+          "sumSquaredExcessMm": 20290.54232524219,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 0.25,
+          "outside": 518,
+          "newOutside": 1,
+          "worsenedOutside": 29,
+          "maxOutsideMm": 13.21524008648569,
+          "sumSquaredExcessMm": 20554.6717569,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 0.5,
+          "outside": 519,
+          "newOutside": 0,
+          "worsenedOutside": 319,
+          "maxOutsideMm": 13.393837278667151,
+          "sumSquaredExcessMm": 21145.84734820526,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,1",
+          "mm": 0.25,
+          "outside": 519,
+          "newOutside": 0,
+          "worsenedOutside": 18,
+          "maxOutsideMm": 13.271704307211547,
+          "sumSquaredExcessMm": 20730.484954020616,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,1",
+          "mm": 0.25,
+          "outside": 519,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.270495227951736,
+          "sumSquaredExcessMm": 20538.344097329053,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+z",
+          "mm": 0.25,
+          "outside": 520,
+          "newOutside": 0,
+          "worsenedOutside": 316,
+          "maxOutsideMm": 13.355211970939543,
+          "sumSquaredExcessMm": 21068.194092010064,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,-1",
+          "mm": 0.25,
+          "outside": 520,
+          "newOutside": 0,
+          "worsenedOutside": 1,
+          "maxOutsideMm": 13.22568969115669,
+          "sumSquaredExcessMm": 20456.16546301516,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:1,-1,0",
+          "mm": 0.25,
+          "outside": 520,
+          "newOutside": 0,
+          "worsenedOutside": 0,
+          "maxOutsideMm": 13.233075823850575,
+          "sumSquaredExcessMm": 20386.84542766338,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 0.25,
+          "outside": 521,
+          "newOutside": 0,
+          "worsenedOutside": 201,
+          "maxOutsideMm": 13.278005891187448,
+          "sumSquaredExcessMm": 20929.396649343846,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 0.25,
+          "outside": 521,
+          "newOutside": 1,
+          "worsenedOutside": 442,
+          "maxOutsideMm": 13.418007911122903,
+          "sumSquaredExcessMm": 21375.458446016055,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 0.25,
+          "outside": 521,
+          "newOutside": 1,
+          "worsenedOutside": 81,
+          "maxOutsideMm": 13.217355978055148,
+          "sumSquaredExcessMm": 20635.004433289898,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 10,
+          "outside": 521,
+          "newOutside": 32,
+          "worsenedOutside": 194,
+          "maxOutsideMm": 11.951478944405512,
+          "sumSquaredExcessMm": 17873.931476332586,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 0.25,
+          "outside": 522,
+          "newOutside": 1,
+          "worsenedOutside": 494,
+          "maxOutsideMm": 13.42179149127158,
+          "sumSquaredExcessMm": 21463.36344699408,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 0.25,
+          "outside": 522,
+          "newOutside": 1,
+          "worsenedOutside": 508,
+          "maxOutsideMm": 13.363181321732096,
+          "sumSquaredExcessMm": 21274.84031017655,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 0.5,
+          "outside": 522,
+          "newOutside": 2,
+          "worsenedOutside": 448,
+          "maxOutsideMm": 13.521526290363557,
+          "sumSquaredExcessMm": 21773.15031632833,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 10,
+          "outside": 522,
+          "newOutside": 23,
+          "worsenedOutside": 201,
+          "maxOutsideMm": 11.965191988916471,
+          "sumSquaredExcessMm": 17164.06871968009,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 0.5,
+          "outside": 523,
+          "newOutside": 2,
+          "worsenedOutside": 496,
+          "maxOutsideMm": 13.530721283458922,
+          "sumSquaredExcessMm": 21956.68527886348,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 0.5,
+          "outside": 523,
+          "newOutside": 2,
+          "worsenedOutside": 206,
+          "maxOutsideMm": 13.23942537887411,
+          "sumSquaredExcessMm": 20867.1748323348,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 1,
+          "outside": 523,
+          "newOutside": 2,
+          "worsenedOutside": 210,
+          "maxOutsideMm": 13.162310644009926,
+          "sumSquaredExcessMm": 20754.82686760333,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 0.25,
+          "outside": 523,
+          "newOutside": 2,
+          "worsenedOutside": 518,
+          "maxOutsideMm": 13.410045639919606,
+          "sumSquaredExcessMm": 21556.519265684794,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 0.5,
+          "outside": 523,
+          "newOutside": 2,
+          "worsenedOutside": 510,
+          "maxOutsideMm": 13.411425939964106,
+          "sumSquaredExcessMm": 21566.457376579958,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 0.25,
+          "outside": 524,
+          "newOutside": 3,
+          "worsenedOutside": 524,
+          "maxOutsideMm": 13.4042698697094,
+          "sumSquaredExcessMm": 21636.565937524545,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 1,
+          "outside": 524,
+          "newOutside": 4,
+          "worsenedOutside": 457,
+          "maxOutsideMm": 13.734708995005294,
+          "sumSquaredExcessMm": 22627.368488006894,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 0.25,
+          "outside": 525,
+          "newOutside": 4,
+          "worsenedOutside": 525,
+          "maxOutsideMm": 13.502703549986082,
+          "sumSquaredExcessMm": 22006.980028324986,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 0.25,
+          "outside": 525,
+          "newOutside": 4,
+          "worsenedOutside": 525,
+          "maxOutsideMm": 13.365708943364966,
+          "sumSquaredExcessMm": 21478.67952283449,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 0.5,
+          "outside": 525,
+          "newOutside": 4,
+          "worsenedOutside": 524,
+          "maxOutsideMm": 13.505983400177573,
+          "sumSquaredExcessMm": 22137.9037229362,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-x",
+          "mm": 0.25,
+          "outside": 526,
+          "newOutside": 5,
+          "worsenedOutside": 526,
+          "maxOutsideMm": 13.54138403222616,
+          "sumSquaredExcessMm": 22363.727931612375,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 0.25,
+          "outside": 526,
+          "newOutside": 5,
+          "worsenedOutside": 526,
+          "maxOutsideMm": 13.483620449704304,
+          "sumSquaredExcessMm": 22009.013230080793,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 0.25,
+          "outside": 526,
+          "newOutside": 5,
+          "worsenedOutside": 526,
+          "maxOutsideMm": 13.548550486725219,
+          "sumSquaredExcessMm": 22290.35587923055,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 0.25,
+          "outside": 526,
+          "newOutside": 5,
+          "worsenedOutside": 526,
+          "maxOutsideMm": 13.528277501200094,
+          "sumSquaredExcessMm": 22090.354329082395,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 0.25,
+          "outside": 526,
+          "newOutside": 5,
+          "worsenedOutside": 526,
+          "maxOutsideMm": 13.44822301534677,
+          "sumSquaredExcessMm": 21909.62308493964,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 0.5,
+          "outside": 526,
+          "newOutside": 5,
+          "worsenedOutside": 526,
+          "maxOutsideMm": 13.41779733743326,
+          "sumSquaredExcessMm": 21985.35470918036,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 2,
+          "outside": 526,
+          "newOutside": 6,
+          "worsenedOutside": 216,
+          "maxOutsideMm": 13.008266679456794,
+          "sumSquaredExcessMm": 20566.60844439997,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 0.5,
+          "outside": 528,
+          "newOutside": 7,
+          "worsenedOutside": 528,
+          "maxOutsideMm": 13.496014245558356,
+          "sumSquaredExcessMm": 22308.407303087246,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 1,
+          "outside": 528,
+          "newOutside": 7,
+          "worsenedOutside": 516,
+          "maxOutsideMm": 13.512838498349673,
+          "sumSquaredExcessMm": 22186.578861515703,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 0.5,
+          "outside": 530,
+          "newOutside": 9,
+          "worsenedOutside": 530,
+          "maxOutsideMm": 13.740393586308954,
+          "sumSquaredExcessMm": 23223.841267812517,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 0.5,
+          "outside": 530,
+          "newOutside": 9,
+          "worsenedOutside": 530,
+          "maxOutsideMm": 13.689125772471423,
+          "sumSquaredExcessMm": 23049.60295692923,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 1,
+          "outside": 530,
+          "newOutside": 10,
+          "worsenedOutside": 505,
+          "maxOutsideMm": 13.759387990765278,
+          "sumSquaredExcessMm": 23021.754800852406,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 2,
+          "outside": 530,
+          "newOutside": 11,
+          "worsenedOutside": 471,
+          "maxOutsideMm": 14.181272647022105,
+          "sumSquaredExcessMm": 24603.375738606977,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 1,
+          "outside": 531,
+          "newOutside": 10,
+          "worsenedOutside": 530,
+          "maxOutsideMm": 13.705061479419504,
+          "sumSquaredExcessMm": 23365.22320808402,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 0.5,
+          "outside": 532,
+          "newOutside": 11,
+          "worsenedOutside": 532,
+          "maxOutsideMm": 13.650920101153337,
+          "sumSquaredExcessMm": 23058.597460797548,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 0.5,
+          "outside": 532,
+          "newOutside": 11,
+          "worsenedOutside": 532,
+          "maxOutsideMm": 13.580387177088184,
+          "sumSquaredExcessMm": 22855.95523742204,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 0.5,
+          "outside": 533,
+          "newOutside": 12,
+          "worsenedOutside": 533,
+          "maxOutsideMm": 13.781021039339116,
+          "sumSquaredExcessMm": 23639.185268283658,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-x",
+          "mm": 0.5,
+          "outside": 535,
+          "newOutside": 14,
+          "worsenedOutside": 535,
+          "maxOutsideMm": 13.766974925067135,
+          "sumSquaredExcessMm": 23791.002881644068,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 1,
+          "outside": 535,
+          "newOutside": 14,
+          "worsenedOutside": 535,
+          "maxOutsideMm": 13.691331500029417,
+          "sumSquaredExcessMm": 23751.004421803158,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 1,
+          "outside": 536,
+          "newOutside": 15,
+          "worsenedOutside": 536,
+          "maxOutsideMm": 13.530714892036293,
+          "sumSquaredExcessMm": 23075.382690269922,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 1,
+          "outside": 538,
+          "newOutside": 17,
+          "worsenedOutside": 538,
+          "maxOutsideMm": 14.062815285873418,
+          "sumSquaredExcessMm": 25232.53309483332,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 2,
+          "outside": 541,
+          "newOutside": 20,
+          "worsenedOutside": 541,
+          "maxOutsideMm": 14.130714044590784,
+          "sumSquaredExcessMm": 26093.577403888234,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 5,
+          "outside": 542,
+          "newOutside": 21,
+          "worsenedOutside": 233,
+          "maxOutsideMm": 12.565803071666734,
+          "sumSquaredExcessMm": 20271.593919407365,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 1,
+          "outside": 542,
+          "newOutside": 21,
+          "worsenedOutside": 542,
+          "maxOutsideMm": 14.165797941536255,
+          "sumSquaredExcessMm": 25611.811841090235,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 2,
+          "outside": 542,
+          "newOutside": 21,
+          "worsenedOutside": 533,
+          "maxOutsideMm": 13.730759476281463,
+          "sumSquaredExcessMm": 23564.406646988093,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 1,
+          "outside": 544,
+          "newOutside": 23,
+          "worsenedOutside": 544,
+          "maxOutsideMm": 13.846214914993967,
+          "sumSquaredExcessMm": 24848.660631079456,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 2,
+          "outside": 544,
+          "newOutside": 24,
+          "worsenedOutside": 524,
+          "maxOutsideMm": 14.228575696481501,
+          "sumSquaredExcessMm": 25477.967799574453,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 1,
+          "outside": 546,
+          "newOutside": 25,
+          "worsenedOutside": 546,
+          "maxOutsideMm": 13.98625728343737,
+          "sumSquaredExcessMm": 25271.220050054933,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 2,
+          "outside": 547,
+          "newOutside": 26,
+          "worsenedOutside": 547,
+          "maxOutsideMm": 14.127039178317995,
+          "sumSquaredExcessMm": 27059.198122242673,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 1,
+          "outside": 548,
+          "newOutside": 27,
+          "worsenedOutside": 548,
+          "maxOutsideMm": 14.247362111766176,
+          "sumSquaredExcessMm": 26505.770563078364,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 2,
+          "outside": 548,
+          "newOutside": 27,
+          "worsenedOutside": 548,
+          "maxOutsideMm": 13.790596096032752,
+          "sumSquaredExcessMm": 25583.387326027325,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-x",
+          "mm": 1,
+          "outside": 549,
+          "newOutside": 28,
+          "worsenedOutside": 549,
+          "maxOutsideMm": 14.220441230818416,
+          "sumSquaredExcessMm": 26829.141151946988,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 5,
+          "outside": 555,
+          "newOutside": 37,
+          "worsenedOutside": 506,
+          "maxOutsideMm": 15.760249733672817,
+          "sumSquaredExcessMm": 32791.91894064565,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,1,-1",
+          "mm": 15,
+          "outside": 555,
+          "newOutside": 43,
+          "worsenedOutside": 316,
+          "maxOutsideMm": 12.655209862347165,
+          "sumSquaredExcessMm": 22276.92610981944,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 2,
+          "outside": 556,
+          "newOutside": 35,
+          "worsenedOutside": 556,
+          "maxOutsideMm": 14.813383899700932,
+          "sumSquaredExcessMm": 30006.80021271879,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 2,
+          "outside": 565,
+          "newOutside": 44,
+          "worsenedOutside": 565,
+          "maxOutsideMm": 15.020960838348943,
+          "sumSquaredExcessMm": 30890.913315477243,
+          "ambiguous": 0
+        },
+        {
+          "direction": "+y",
+          "mm": 15,
+          "outside": 566,
+          "newOutside": 63,
+          "worsenedOutside": 393,
+          "maxOutsideMm": 13.175817428549747,
+          "sumSquaredExcessMm": 27748.627769276187,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 2,
+          "outside": 571,
+          "newOutside": 50,
+          "worsenedOutside": 571,
+          "maxOutsideMm": 14.383596263024904,
+          "sumSquaredExcessMm": 29250.39105983813,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 2,
+          "outside": 574,
+          "newOutside": 53,
+          "worsenedOutside": 574,
+          "maxOutsideMm": 14.65976897516706,
+          "sumSquaredExcessMm": 30164.040918373492,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 5,
+          "outside": 574,
+          "newOutside": 53,
+          "worsenedOutside": 574,
+          "maxOutsideMm": 15.626487130390263,
+          "sumSquaredExcessMm": 36629.87565844058,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 2,
+          "outside": 578,
+          "newOutside": 57,
+          "worsenedOutside": 578,
+          "maxOutsideMm": 15.185148179854929,
+          "sumSquaredExcessMm": 32941.35638076719,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-x",
+          "mm": 2,
+          "outside": 580,
+          "newOutside": 59,
+          "worsenedOutside": 580,
+          "maxOutsideMm": 15.135489564587523,
+          "sumSquaredExcessMm": 33667.93213925268,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 10,
+          "outside": 582,
+          "newOutside": 61,
+          "worsenedOutside": 289,
+          "maxOutsideMm": 12.44254220267946,
+          "sumSquaredExcessMm": 21082.452226588088,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 5,
+          "outside": 589,
+          "newOutside": 68,
+          "worsenedOutside": 588,
+          "maxOutsideMm": 14.391538527171692,
+          "sumSquaredExcessMm": 28765.93891562443,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 5,
+          "outside": 589,
+          "newOutside": 69,
+          "worsenedOutside": 577,
+          "maxOutsideMm": 15.7757291256474,
+          "sumSquaredExcessMm": 35620.27427444494,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 10,
+          "outside": 598,
+          "newOutside": 82,
+          "worsenedOutside": 568,
+          "maxOutsideMm": 18.89888652077871,
+          "sumSquaredExcessMm": 54528.148452480265,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 5,
+          "outside": 603,
+          "newOutside": 82,
+          "worsenedOutside": 603,
+          "maxOutsideMm": 14.850770106797519,
+          "sumSquaredExcessMm": 35966.21694678132,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 5,
+          "outside": 605,
+          "newOutside": 84,
+          "worsenedOutside": 605,
+          "maxOutsideMm": 15.572868336601198,
+          "sumSquaredExcessMm": 40526.927879636074,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 5,
+          "outside": 608,
+          "newOutside": 87,
+          "worsenedOutside": 608,
+          "maxOutsideMm": 17.175260763538798,
+          "sumSquaredExcessMm": 47847.92582161054,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-z",
+          "mm": 15,
+          "outside": 610,
+          "newOutside": 89,
+          "worsenedOutside": 397,
+          "maxOutsideMm": 12.54372314660454,
+          "sumSquaredExcessMm": 23329.062649731768,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 5,
+          "outside": 621,
+          "newOutside": 100,
+          "worsenedOutside": 621,
+          "maxOutsideMm": 17.634103389372573,
+          "sumSquaredExcessMm": 51183.18587203343,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 5,
+          "outside": 641,
+          "newOutside": 120,
+          "worsenedOutside": 641,
+          "maxOutsideMm": 16.034493159983363,
+          "sumSquaredExcessMm": 46115.990601731915,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 10,
+          "outside": 642,
+          "newOutside": 121,
+          "worsenedOutside": 642,
+          "maxOutsideMm": 18.455821780806666,
+          "sumSquaredExcessMm": 62879.2886789537,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 5,
+          "outside": 644,
+          "newOutside": 123,
+          "worsenedOutside": 644,
+          "maxOutsideMm": 16.697847652481986,
+          "sumSquaredExcessMm": 48975.90926759304,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 10,
+          "outside": 646,
+          "newOutside": 125,
+          "worsenedOutside": 646,
+          "maxOutsideMm": 15.722411346405508,
+          "sumSquaredExcessMm": 42630.89174363737,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,1",
+          "mm": 15,
+          "outside": 654,
+          "newOutside": 136,
+          "worsenedOutside": 642,
+          "maxOutsideMm": 22.441340114921395,
+          "sumSquaredExcessMm": 89564.47281572038,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-x",
+          "mm": 5,
+          "outside": 660,
+          "newOutside": 139,
+          "worsenedOutside": 660,
+          "maxOutsideMm": 17.930615047010097,
+          "sumSquaredExcessMm": 60863.874000464035,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 5,
+          "outside": 662,
+          "newOutside": 141,
+          "worsenedOutside": 662,
+          "maxOutsideMm": 18.021076966202198,
+          "sumSquaredExcessMm": 58419.10100642028,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 10,
+          "outside": 670,
+          "newOutside": 149,
+          "worsenedOutside": 667,
+          "maxOutsideMm": 18.787993836403245,
+          "sumSquaredExcessMm": 64888.22062458195,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 10,
+          "outside": 684,
+          "newOutside": 163,
+          "worsenedOutside": 684,
+          "maxOutsideMm": 21.437175236896376,
+          "sumSquaredExcessMm": 90410.58270119704,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 10,
+          "outside": 696,
+          "newOutside": 175,
+          "worsenedOutside": 696,
+          "maxOutsideMm": 17.657727955130273,
+          "sumSquaredExcessMm": 64608.187381101605,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 10,
+          "outside": 708,
+          "newOutside": 187,
+          "worsenedOutside": 708,
+          "maxOutsideMm": 22.200017621997294,
+          "sumSquaredExcessMm": 101845.99667901006,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 10,
+          "outside": 718,
+          "newOutside": 197,
+          "worsenedOutside": 718,
+          "maxOutsideMm": 18.754185033669607,
+          "sumSquaredExcessMm": 77861.58551508108,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:0,-1,-1",
+          "mm": 15,
+          "outside": 720,
+          "newOutside": 199,
+          "worsenedOutside": 720,
+          "maxOutsideMm": 17.416348064062745,
+          "sumSquaredExcessMm": 65675.73597955517,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 10,
+          "outside": 742,
+          "newOutside": 221,
+          "worsenedOutside": 742,
+          "maxOutsideMm": 20.177655433226235,
+          "sumSquaredExcessMm": 96471.7270126872,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 10,
+          "outside": 743,
+          "newOutside": 222,
+          "worsenedOutside": 743,
+          "maxOutsideMm": 19.389176436752216,
+          "sumSquaredExcessMm": 89151.26905736458,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,1",
+          "mm": 15,
+          "outside": 745,
+          "newOutside": 224,
+          "worsenedOutside": 745,
+          "maxOutsideMm": 21.691525108509076,
+          "sumSquaredExcessMm": 103922.48772122925,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-y",
+          "mm": 15,
+          "outside": 753,
+          "newOutside": 232,
+          "worsenedOutside": 753,
+          "maxOutsideMm": 22.41116347957387,
+          "sumSquaredExcessMm": 115005.70711378,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 10,
+          "outside": 758,
+          "newOutside": 237,
+          "worsenedOutside": 758,
+          "maxOutsideMm": 22.753233196412253,
+          "sumSquaredExcessMm": 124681.1167060525,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,1",
+          "mm": 15,
+          "outside": 764,
+          "newOutside": 243,
+          "worsenedOutside": 764,
+          "maxOutsideMm": 25.755565843881413,
+          "sumSquaredExcessMm": 150676.55302145646,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,1",
+          "mm": 15,
+          "outside": 767,
+          "newOutside": 246,
+          "worsenedOutside": 767,
+          "maxOutsideMm": 26.910695916201124,
+          "sumSquaredExcessMm": 176110.42482827045,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-x",
+          "mm": 10,
+          "outside": 778,
+          "newOutside": 257,
+          "worsenedOutside": 778,
+          "maxOutsideMm": 22.680610498175398,
+          "sumSquaredExcessMm": 131713.94985716025,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,-1",
+          "mm": 15,
+          "outside": 784,
+          "newOutside": 263,
+          "worsenedOutside": 784,
+          "maxOutsideMm": 20.785274831144754,
+          "sumSquaredExcessMm": 111588.07796015026,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,1,0",
+          "mm": 15,
+          "outside": 794,
+          "newOutside": 273,
+          "worsenedOutside": 794,
+          "maxOutsideMm": 22.568436619730004,
+          "sumSquaredExcessMm": 140845.148243424,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,-1",
+          "mm": 15,
+          "outside": 802,
+          "newOutside": 281,
+          "worsenedOutside": 802,
+          "maxOutsideMm": 23.702345853912124,
+          "sumSquaredExcessMm": 168415.93884081213,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,0,-1",
+          "mm": 15,
+          "outside": 809,
+          "newOutside": 288,
+          "worsenedOutside": 809,
+          "maxOutsideMm": 22.963681955024654,
+          "sumSquaredExcessMm": 154286.59591709785,
+          "ambiguous": 0
+        },
+        {
+          "direction": "diagonal:-1,-1,0",
+          "mm": 15,
+          "outside": 819,
+          "newOutside": 298,
+          "worsenedOutside": 819,
+          "maxOutsideMm": 27.503117803049157,
+          "sumSquaredExcessMm": 225221.6664483138,
+          "ambiguous": 0
+        },
+        {
+          "direction": "-x",
+          "mm": 15,
+          "outside": 821,
+          "newOutside": 300,
+          "worsenedOutside": 821,
+          "maxOutsideMm": 27.449326876111268,
+          "sumSquaredExcessMm": 239281.35188272243,
+          "ambiguous": 0
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": "data/catalog/female-arm-registration.json",
+      "sha256": "1e4fa09616f0da44b0353fbc18e44f738e00344860426d3b047c0c1e06ecaf0d"
+    },
+    {
+      "path": "data/catalog/female-foot-registration.json",
+      "sha256": "c8d8400067825ed5c70172d252d4a4ca291a2005bfe0488e633dfe56b5bb220a"
+    },
+    {
+      "path": "scripts/audit-fifth-ray-translation.mjs",
+      "sha256": "b58095111d704acca67bacefa3e0a99400827ff118155ba6c885e339bad7e0d9"
+    },
+    {
+      "path": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "path": "scripts/lib/registration-baseline.mjs",
+      "sha256": "6e6296339736e42275844cc20fec48db5f296f039aad23e9516d71e2f997ab8f"
+    },
+    {
+      "path": "scripts/lib/joint-geometry.mjs",
+      "sha256": "a008cae6f842a7f55239d4eed617465bf765eb87998d6668f6007998d23ad2db"
+    },
+    {
+      "path": "scripts/lib/triangle-crossings.mjs",
+      "sha256": "a55dd923c032c76591a7f2aa1af2863fe9e24bf0adb0ee6eb4aad5388238d512"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "path": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "path": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    }
+  ]
+}

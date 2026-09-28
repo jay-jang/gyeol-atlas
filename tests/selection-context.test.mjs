@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {initialView,viewReducer,restoreView} from '../src/view-state.ts';
-import {contextIsDimmed,selectionOpacity,selectionHitId} from '../src/selection-context.ts';
+import {contextIsDimmed,selectionOpacity,selectionHitId,opacityWritesDepth} from '../src/selection-context.ts';
+import {dissectionLayerOpacity} from '../src/dissection.ts';
 const selection={kind:'structure',ids:['organ'],name:'test'};
 const selected=()=>viewReducer(initialView(),{type:'select',layer:'organ',selection});
 
@@ -46,4 +47,22 @@ test('translucent context does not steal a hit on the emphasized selected surfac
   assert.equal(selectionHitId('foreground',hits,['chosen'],false),'foreground');
   assert.equal(selectionHitId('foreground',[hit('foreground')],['chosen'],true),'foreground');
   assert.equal(selectionHitId('foreground',[{object:{name:'surface',parent:{name:'chosen'}}}],['chosen'],true),'chosen');
+});
+
+test('every half-percent layer alpha has a consistent opaque/depth decision',()=>{
+  const layers=['skin','muscle','bone','organ','vessel','lymph','nerve'];
+  let translucent=0,opaque=0;
+  for(let tick=0;tick<=200;tick++)for(const layer of layers){
+    const alpha=dissectionLayerOpacity(layer,tick/2);
+    if(alpha<=.01)continue;
+    const selected=selectionOpacity(alpha,true,false);
+    assert.equal(opacityWritesDepth(selected),true,`${layer}/${tick/2} selected`);
+    if(alpha<.995){assert.equal(opacityWritesDepth(alpha),false,`${layer}/${tick/2}`);translucent++;}
+    else {assert.equal(opacityWritesDepth(alpha),true,`${layer}/${tick/2}`);opaque++;}
+  }
+  assert.ok(translucent>0&&opaque>0);
+  assert.equal(opacityWritesDepth(selectionOpacity(1,false,true)),false,'dimmed context is not a depth occluder');
+  assert.equal(opacityWritesDepth(.8),false,'manual layer translucency is not a depth occluder');
+  assert.equal(opacityWritesDepth(1),true);
+  assert.equal(opacityWritesDepth(NaN),false);
 });

@@ -1,0 +1,166 @@
+{
+  "scope": "Official BodyParts3D 4.0 FMA7198 part_of source and exact deployed simplified vertices. No anatomical position approval.",
+  "officialArchive": ".cache/bp4-official/isa_BP3D_4.0_obj_99.zip",
+  "officialArchiveSha256": "40665852c49f218326590e204db91064a1ecfc3c6f8cbd7bbbcaac62c7cd409e",
+  "officialRelation": ".cache/bp4-official/partof_element_parts.txt",
+  "officialRelationSha256": "3f5f6df1028eb122b30de77c711597b6bb8e5541658e5985859fd228adbf88ea",
+  "sourceConcept": "FMA7198",
+  "officialMembers": [
+    "FJ1895",
+    "FJ1896",
+    "FJ2629",
+    "FJ2630"
+  ],
+  "rows": [
+    {
+      "id": "BP4_FJ1895",
+      "name": "Pancreas",
+      "fmaId": "FMA7198",
+      "group": "pancreas",
+      "officialEntry": "isa_BP3D_4.0_obj_99/FJ1895.obj",
+      "officialObjSha256": "ed9111890b410aebacb86ae06ce2f7e3010bac8a2db3f9b292b53359bbf18026",
+      "sourceDistinctPositions": 2447,
+      "runtimeVertices": 1276,
+      "runtimeTriangles": 2534,
+      "exactOfficialSourceVertices": 1276,
+      "positionSha256": "2f9619109c53a78b13ec64e91db099218f1a16160d93affb014f094d1b80274c",
+      "boundsMetres": [
+        [
+          -0.047904800000000004,
+          1.0824712,
+          -0.004587999999999995
+        ],
+        [
+          0.07267440000000001,
+          1.1562111999999998,
+          0.046378999999999976
+        ]
+      ]
+    },
+    {
+      "id": "BP4_FJ1896",
+      "name": "Pancreatic duct",
+      "fmaId": "FMA10419",
+      "group": "pancreas",
+      "officialEntry": "isa_BP3D_4.0_obj_99/FJ1896.obj",
+      "officialObjSha256": "aaf43697017cb6a8df51f1c95b4a10917fa165178fbd4e32dce946332d2cbc03",
+      "sourceDistinctPositions": 1686,
+      "runtimeVertices": 2745,
+      "runtimeTriangles": 1816,
+      "exactOfficialSourceVertices": 2745,
+      "positionSha256": "4a19adc3d565761633d87ac40e168bf173d673935a39dd3fac726885f231752c",
+      "boundsMetres": [
+        [
+          -0.0495436,
+          1.0994912,
+          0.0019549999999999984
+        ],
+        [
+          0.0614969,
+          1.1448212,
+          0.038103
+        ]
+      ]
+    },
+    {
+      "id": "BP4_FJ2629",
+      "name": "Parenchyma of pancreas",
+      "fmaId": "FMA63120",
+      "group": "pancreas-parenchyma",
+      "officialEntry": "isa_BP3D_4.0_obj_99/FJ2629.obj",
+      "officialObjSha256": "bd34649f3c15c34fe2fe845a6c6e926de2c014557360df48922f7266dba113e6",
+      "sourceDistinctPositions": 2138,
+      "runtimeVertices": 1139,
+      "runtimeTriangles": 2258,
+      "exactOfficialSourceVertices": 1139,
+      "positionSha256": "4e7d9fe83019b699ca4f4bd558c6c51ddbf82e8184d44eb700e6402ad74c327f",
+      "boundsMetres": [
+        [
+          -0.047904800000000004,
+          1.0826612,
+          -0.0045792000000000055
+        ],
+        [
+          0.0726701,
+          1.1562111999999998,
+          0.046378999999999976
+        ]
+      ]
+    },
+    {
+      "id": "BP4_FJ2630",
+      "name": "Pancreatic duct tree",
+      "fmaId": "FMA63103",
+      "group": "pancreas-parenchyma",
+      "officialEntry": "isa_BP3D_4.0_obj_99/FJ2630.obj",
+      "officialObjSha256": "77e2f5c9bf24cfe0c74b354d1fe0ee559d2fc130e7fb62b1b32951298be5a3b5",
+      "sourceDistinctPositions": 2218,
+      "runtimeVertices": 2534,
+      "runtimeTriangles": 1956,
+      "exactOfficialSourceVertices": 2534,
+      "positionSha256": "6f5854c3dec9a635c201937811e07bcdd571a0c9025fcea211fdb6e20508398c",
+      "boundsMetres": [
+        [
+          -0.0567069,
+          1.0982512,
+          0.003721000000000002
+        ],
+        [
+          0.0591244,
+          1.1466212,
+          0.038466
+        ]
+      ]
+    }
+  ],
+  "views": [
+    {
+      "id": "pancreas",
+      "ids": [
+        "BP4_FJ1895",
+        "BP4_FJ1896"
+      ]
+    },
+    {
+      "id": "pancreas-parenchyma",
+      "ids": [
+        "BP4_FJ2629",
+        "BP4_FJ2630"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": ".cache/male-details/atlas.json",
+      "sha256": "d6979fc62cf18fa4f08a9e6efae8fdac9ec383c5a1f3c757920125ac758429fe"
+    },
+    {
+      "path": "public/models/male-detail/atlas.json",
+      "sha256": "77b1ef10fab915212b4385a6b1f237ea688a15caef2501255022a42d3a55b463"
+    },
+    {
+      "path": "public/models/male-detail/organs.bin.gz",
+      "sha256": "df32245900245932a99872658ca69062e1e8779730986a5515ad0b43f782e638"
+    },
+    {
+      "path": "data/male-detail-groups.json",
+      "sha256": "7ea2e1dc2f78148f2784c0641b58ac86eab52a812e7824524fe514bf7f4f3558"
+    },
+    {
+      "path": "data/male-detail-structures.json",
+      "sha256": "0edb216412c81e05a1f2010ceecb0594f9b9a60ba9b91ad36f7e638df9e162d7"
+    },
+    {
+      "path": "scripts/import-male-details.mjs",
+      "sha256": "4b910632c9636556f797967a9f776bbc8cd7517d08e4e38838196aa75f4f03b7"
+    },
+    {
+      "path": "scripts/import-lung-details.py",
+      "sha256": "265f92c6d8e01d53eb4d98d934d92e27f6e0b824cfeef79e3c528efc7f87a9ab"
+    },
+    {
+      "path": "scripts/audit-male-pancreas-source.py",
+      "sha256": "a0a6f0a54fa334294c8010fe6f39f9f3bbc53004c10927adc9258ad44dcb330a"
+    }
+  ]
+}

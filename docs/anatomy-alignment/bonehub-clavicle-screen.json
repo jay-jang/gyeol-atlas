@@ -1,0 +1,287 @@
+{
+  "status": "OFFLINE HELD-OUT CLAVICLE SCREEN; NOT APPLIED",
+  "sourceRevision": "ac8de2b38f5ae1a0996053ca0639dd6ae43358f1",
+  "sourceTransform": "Rigid map fitted to even T2,T4,T6,T8,T10,T12; neither clavicle trained",
+  "transformMatrixColumnMajor": [
+    0.9990629383578361,
+    0.010808187051073975,
+    -0.04190976368909149,
+    0,
+    -0.010485274651073188,
+    0.9999136853473839,
+    0.007917125141402335,
+    0,
+    0.04199171603183247,
+    -0.007470270924274417,
+    0.9990900313970807,
+    0,
+    -0.21477311717578176,
+    -0.07633544753837151,
+    0.15551640292918822,
+    1
+  ],
+  "skinTopology": {
+    "weldedVertices": 29338,
+    "connectedComponents": 1,
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "degenerateTriangles": 0
+  },
+  "donorSternumSkin": {
+    "vertices": 30896,
+    "skinOutside2mm": 0,
+    "skinAmbiguous": 0,
+    "maxOutsideMm": 0
+  },
+  "sides": [
+    {
+      "side": "left",
+      "currentId": "BM0070",
+      "scapulaId": "BM0083",
+      "current": {
+        "vertices": 426,
+        "skinOutside2mm": 0,
+        "skinAmbiguous": 0,
+        "maxOutsideMm": 0,
+        "airwayCrossingIds": [
+          "HRAF0781",
+          "HRAF0785"
+        ],
+        "sternumCrossing": false,
+        "scapulaCrossing": false,
+        "medialVertices": 92,
+        "lateralVertices": 76,
+        "medialToSternumMinMm": 24.836658264481706,
+        "lateralToScapulaMinMm": 2.1965408872492067
+      },
+      "candidate": {
+        "vertices": 18794,
+        "skinOutside2mm": 5522,
+        "skinAmbiguous": 0,
+        "maxOutsideMm": 28.746599304659423,
+        "airwayCrossingIds": [],
+        "sternumCrossing": false,
+        "scapulaCrossing": false,
+        "medialVertices": 3438,
+        "lateralVertices": 2877,
+        "medialToSternumMinMm": 58.83664171526866,
+        "lateralToScapulaMinMm": 54.11897357205616
+      },
+      "sameDonor": {
+        "scapulaSkin": {
+          "vertices": 73828,
+          "skinOutside2mm": 14766,
+          "skinAmbiguous": 0,
+          "maxOutsideMm": 35.06455432878385
+        },
+        "medialToSternumMinMm": 3.530411465026245,
+        "lateralToScapulaMinMm": 1.4792070951636058,
+        "sternumCrossing": false,
+        "scapulaCrossing": false
+      },
+      "candidateBounds": [
+        [
+          0.016954004764556885,
+          1.3424524068832397,
+          -0.1053217425942421
+        ],
+        [
+          0.13661856949329376,
+          1.4250245094299316,
+          -0.03628716990351677
+        ]
+      ]
+    },
+    {
+      "side": "right",
+      "currentId": "BM0113",
+      "scapulaId": "BM0119",
+      "current": {
+        "vertices": 420,
+        "skinOutside2mm": 0,
+        "skinAmbiguous": 0,
+        "maxOutsideMm": 0,
+        "airwayCrossingIds": [
+          "HRAF0799"
+        ],
+        "sternumCrossing": false,
+        "scapulaCrossing": false,
+        "medialVertices": 89,
+        "lateralVertices": 71,
+        "medialToSternumMinMm": 37.72755499993249,
+        "lateralToScapulaMinMm": 1.3457766726835176
+      },
+      "candidate": {
+        "vertices": 19886,
+        "skinOutside2mm": 3087,
+        "skinAmbiguous": 0,
+        "maxOutsideMm": 15.6702211391795,
+        "airwayCrossingIds": [],
+        "sternumCrossing": false,
+        "scapulaCrossing": false,
+        "medialVertices": 4102,
+        "lateralVertices": 2902,
+        "medialToSternumMinMm": 54.62809541595433,
+        "lateralToScapulaMinMm": 46.67658123401357
+      },
+      "sameDonor": {
+        "scapulaSkin": {
+          "vertices": 73548,
+          "skinOutside2mm": 7262,
+          "skinAmbiguous": 0,
+          "maxOutsideMm": 19.03439572997017
+        },
+        "medialToSternumMinMm": 3.827576439261971,
+        "lateralToScapulaMinMm": 1.6759301553084107,
+        "sternumCrossing": false,
+        "scapulaCrossing": false
+      },
+      "candidateBounds": [
+        [
+          -0.13774847984313965,
+          1.3373723030090332,
+          -0.10012993961572647
+        ],
+        [
+          -0.012076430022716522,
+          1.4129763841629028,
+          -0.03701113536953926
+        ]
+      ]
+    }
+  ],
+  "limitations": [
+    "The common thoracic transform was fitted to vertebral bounding-box centres, not clavicle joints or a clinical landmark set.",
+    "Current clavicles and scapulae are male-derived borrowed surfaces; donor clavicles may not connect to unchanged scapulae/sternum.",
+    "Endpoint minimums use the outer 15% of x-span referenced vertices; they are not full joint-surface distances or proof of connection.",
+    "Same-donor sternum and scapulae are compared only as independent source surfaces under the same map; their clinical joint surfaces are not identified.",
+    "A triangle crossing with an airway is not automatically invalid penetration; no clinical geometry approval is made.",
+    "Skin classification covers referenced mesh vertices and a 2mm boundary band, not every triangle interior."
+  ],
+  "files": [
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "path": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "path": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "path": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "path": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "path": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "path": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "path": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "path": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "path": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "path": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "path": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "path": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "path": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "path": "docs/anatomy-alignment/bonehub-female-receipt.json",
+      "sha256": "4146adce0c4d8389b23bb4a4eb30024912c92f8cccd9e56995cbb9a4b935cd02"
+    },
+    {
+      "path": "docs/anatomy-alignment/bonehub-female-inventory.json",
+      "sha256": "3e82a5e58d9c3a90e55a83a236e20fb82424a9796a7a8f7fe0f2ffbadbcad4c4"
+    },
+    {
+      "path": "docs/anatomy-alignment/bonehub-thorax-screen.json",
+      "sha256": "5e20c0ffc696b262a2732b99c57df32319232697aad371dcad63cf4e02583dee"
+    },
+    {
+      "path": "data/female-airway-groups.json",
+      "sha256": "f363677da8f45400fb75e684d84d7cb07eff94dfff7ecd7d7656b242ed82f875"
+    },
+    {
+      "path": "docs/anatomy-alignment/female-organ-bone-relations.json",
+      "sha256": "dc7b6159bc748914841b2edc4d6822a8452618f9286cdae2b7f048e128be61d1"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/STERNUM.stl",
+      "sha256": "651cf285e48ba1a1cc74cf34bfa68b9488b34affb5456098f46609b4f145e3a8"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_LEFT/CLAVICLE_LEFT.stl",
+      "sha256": "c11627952ad8692a41d1a916fc1c06ec81b208a7654b1aaafc40d9f6e2894b5e"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_LEFT/SCAPULA_LEFT.stl",
+      "sha256": "292960ac0a6bb78574769cc13603c56050e939070900de12ea197139343d51c4"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_RIGHT/CLAVICLE_RIGHT.stl",
+      "sha256": "1c97829c44bfd3cf0c5438c3c7aed7511bbbb21aaae83324ffd677971b59fc34"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/UPPER_EXTREMITY_RIGHT/SCAPULA_RIGHT.stl",
+      "sha256": "f0a06280b203ab3593c4eee6221968419ed712e6b22668b094690a976f717763"
+    },
+    {
+      "path": "scripts/audit-bonehub-clavicle-candidate.mjs",
+      "sha256": "2d207d138046fe335b69b8eab220e867e80b173958bff078e886ad74d498275f"
+    },
+    {
+      "path": "scripts/lib/exact-position-components.mjs",
+      "sha256": "8e9aee660f8edf3f357b9ac9156c47d532ac6f2dc4679c9e6770ad2d51f805cd"
+    },
+    {
+      "path": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    }
+  ]
+}

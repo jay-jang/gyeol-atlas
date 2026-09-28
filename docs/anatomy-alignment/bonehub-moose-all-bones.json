@@ -1,0 +1,2482 @@
+{
+  "status": "ALL 31 SAME-CT SOURCE AGREEMENT SCREEN; NOT ATLAS APPROVAL",
+  "ctSha256": "638c569c9a702a6c7b3f50e36fe4be8ef7acc2ab0c53d960ad19418d7f00d979",
+  "candidateInputSha256": "92996cd3b2e8169d2fcb5456b5a02e06c6269bdeb43b19de8eac1f3421f9edf9",
+  "segmentationSha256": "c9e3566b36443600051e1c7067a4cf306375fa836e863348d52a7d6918f6b150",
+  "modelDatasetJsonSha256": "f3d8e43a0f9dada1ec77f86fbedd6c06dc0605d2d5018ddb831c81fb382c1a6f",
+  "comparisonGridShape": [
+    243,
+    242,
+    864
+  ],
+  "candidateCornerMaxDistanceMm": 2.6518571151606258e-05,
+  "samplers": [
+    "one nearest source voxel at output voxel centre",
+    "eight nearest source samples at +/-0.25 output voxels; >=4/8 foreground"
+  ],
+  "comparisons": [
+    {
+      "name": "carpal_left",
+      "mooseLabel": 1,
+      "sourceFile": "HAND_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "SCAPHOID_LEFT",
+          "layer": 0,
+          "value": 1
+        },
+        {
+          "name": "LUNATE_LEFT",
+          "layer": 0,
+          "value": 9
+        },
+        {
+          "name": "TRIQUETRUM_LEFT",
+          "layer": 0,
+          "value": 2
+        },
+        {
+          "name": "PISIFORM_LEFT",
+          "layer": 1,
+          "value": 2
+        },
+        {
+          "name": "TRAPEZIUM_LEFT",
+          "layer": 1,
+          "value": 3
+        },
+        {
+          "name": "TRAPEZOID_LEFT",
+          "layer": 1,
+          "value": 4
+        },
+        {
+          "name": "CAPITATE_LEFT",
+          "layer": 0,
+          "value": 10
+        },
+        {
+          "name": "HAMATE_LEFT",
+          "layer": 1,
+          "value": 1
+        }
+      ],
+      "sourceHighResolutionVoxels": 29321,
+      "roi": [
+        [
+          189,
+          218
+        ],
+        [
+          63,
+          94
+        ],
+        [
+          503,
+          531
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 1922,
+          "centroidMm": [
+            -411.41467840254745,
+            -156.8478561564737,
+            1033.578649984252
+          ]
+        },
+        "candidate": {
+          "voxels": 2794,
+          "centroidMm": [
+            -411.42538014077763,
+            -156.04169775766394,
+            1034.7266217456943
+          ]
+        },
+        "intersectionVoxels": 1798,
+        "dice": 0.7625106022052587,
+        "centroidDistanceMm": 1.4027990077846157
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 2041,
+          "centroidMm": [
+            -411.3787227823476,
+            -156.80964734964894,
+            1034.178198510528
+          ]
+        },
+        "candidate": {
+          "voxels": 2794,
+          "centroidMm": [
+            -411.42538014077763,
+            -156.04169775766394,
+            1034.7266217456943
+          ]
+        },
+        "intersectionVoxels": 1908,
+        "dice": 0.7892450879007239,
+        "centroidDistanceMm": 0.9448235442640812
+      }
+    },
+    {
+      "name": "carpal_right",
+      "mooseLabel": 2,
+      "sourceFile": "HAND_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "SCAPHOID_RIGHT",
+          "layer": 0,
+          "value": 1
+        },
+        {
+          "name": "LUNATE_RIGHT",
+          "layer": 0,
+          "value": 10
+        },
+        {
+          "name": "TRIQUETRUM_RIGHT",
+          "layer": 1,
+          "value": 1
+        },
+        {
+          "name": "PISIFORM_RIGHT",
+          "layer": 0,
+          "value": 3
+        },
+        {
+          "name": "TRAPEZIUM_RIGHT",
+          "layer": 0,
+          "value": 11
+        },
+        {
+          "name": "TRAPEZOID_RIGHT",
+          "layer": 1,
+          "value": 4
+        },
+        {
+          "name": "CAPITATE_RIGHT",
+          "layer": 0,
+          "value": 2
+        },
+        {
+          "name": "HAMATE_RIGHT",
+          "layer": 2,
+          "value": 1
+        }
+      ],
+      "sourceHighResolutionVoxels": 28190,
+      "roi": [
+        [
+          17,
+          46
+        ],
+        [
+          70,
+          101
+        ],
+        [
+          488,
+          515
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 1817,
+          "centroidMm": [
+            -58.76787671317224,
+            -169.10107538004004,
+            1003.4706730552932
+          ]
+        },
+        "candidate": {
+          "voxels": 2697,
+          "centroidMm": [
+            -58.92055467941339,
+            -168.656115209632,
+            1004.4675864440713
+          ]
+        },
+        "intersectionVoxels": 1674,
+        "dice": 0.7416925121843154,
+        "centroidDistanceMm": 1.1023322635894235
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 1923,
+          "centroidMm": [
+            -58.69855136525427,
+            -169.11649798463546,
+            1003.946469869052
+          ]
+        },
+        "candidate": {
+          "voxels": 2697,
+          "centroidMm": [
+            -58.92055467941339,
+            -168.656115209632,
+            1004.4675864440713
+          ]
+        },
+        "intersectionVoxels": 1772,
+        "dice": 0.7670995670995671,
+        "centroidDistanceMm": 0.7299316788422521
+      }
+    },
+    {
+      "name": "clavicle_left",
+      "mooseLabel": 3,
+      "sourceFile": "UPPER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "CLAVICLE_LEFT",
+          "layer": 0,
+          "value": 1
+        }
+      ],
+      "sourceHighResolutionVoxels": 50562,
+      "roi": [
+        [
+          124,
+          193
+        ],
+        [
+          92,
+          133
+        ],
+        [
+          704,
+          752
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 3282,
+          "centroidMm": [
+            -309.3852773944028,
+            -221.08581510573026,
+            1454.9028504652124
+          ]
+        },
+        "candidate": {
+          "voxels": 3732,
+          "centroidMm": [
+            -310.06089939756794,
+            -221.29053743533382,
+            1455.8571446562887
+          ]
+        },
+        "intersectionVoxels": 3144,
+        "dice": 0.8964927288280582,
+        "centroidDistanceMm": 1.187035688815281
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 3426,
+          "centroidMm": [
+            -309.7125276552608,
+            -221.16040112164308,
+            1455.5535642203015
+          ]
+        },
+        "candidate": {
+          "voxels": 3732,
+          "centroidMm": [
+            -310.06089939756794,
+            -221.29053743533382,
+            1455.8571446562887
+          ]
+        },
+        "intersectionVoxels": 3239,
+        "dice": 0.9050013970382789,
+        "centroidDistanceMm": 0.480061883608033
+      }
+    },
+    {
+      "name": "clavicle_right",
+      "mooseLabel": 4,
+      "sourceFile": "UPPER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "CLAVICLE_RIGHT",
+          "layer": 0,
+          "value": 1
+        }
+      ],
+      "sourceHighResolutionVoxels": 58930,
+      "roi": [
+        [
+          48,
+          118
+        ],
+        [
+          94,
+          135
+        ],
+        [
+          702,
+          748
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 3859,
+          "centroidMm": [
+            -176.13715756106296,
+            -223.59552598578782,
+            1446.0920152846597
+          ]
+        },
+        "candidate": {
+          "voxels": 4257,
+          "centroidMm": [
+            -175.06986790202384,
+            -223.96781039200172,
+            1447.0632643348906
+          ]
+        },
+        "intersectionVoxels": 3659,
+        "dice": 0.901675702316412,
+        "centroidDistanceMm": 1.490311247013948
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 4013,
+          "centroidMm": [
+            -175.64456888647885,
+            -223.8426733494191,
+            1446.8973886330853
+          ]
+        },
+        "candidate": {
+          "voxels": 4257,
+          "centroidMm": [
+            -175.06986790202384,
+            -223.96781039200172,
+            1447.0632643348906
+          ]
+        },
+        "intersectionVoxels": 3765,
+        "dice": 0.9105199516324063,
+        "centroidDistanceMm": 0.6111098505255008
+      }
+    },
+    {
+      "name": "femur_left",
+      "mooseLabel": 5,
+      "sourceFile": "LOWER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "FEMUR_LEFT",
+          "layer": 0,
+          "value": 3
+        }
+      ],
+      "sourceHighResolutionVoxels": 922837,
+      "roi": [
+        [
+          130,
+          205
+        ],
+        [
+          97,
+          139
+        ],
+        [
+          242,
+          458
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 60270,
+          "centroidMm": [
+            -335.443298779049,
+            -231.98453350245745,
+            681.0666222560875
+          ]
+        },
+        "candidate": {
+          "voxels": 64520,
+          "centroidMm": [
+            -335.50447171987105,
+            -231.96295518710312,
+            681.6242749339904
+          ]
+        },
+        "intersectionVoxels": 59930,
+        "dice": 0.9604936292972194,
+        "centroidDistanceMm": 0.5614127372571708
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 61971,
+          "centroidMm": [
+            -335.54851117197916,
+            -231.96857259903652,
+            681.0942461645609
+          ]
+        },
+        "candidate": {
+          "voxels": 64520,
+          "centroidMm": [
+            -335.50447171987105,
+            -231.96295518710312,
+            681.6242749339904
+          ]
+        },
+        "intersectionVoxels": 61075,
+        "dice": 0.9656813528235211,
+        "centroidDistanceMm": 0.5318848795385367
+      }
+    },
+    {
+      "name": "femur_right",
+      "mooseLabel": 6,
+      "sourceFile": "LOWER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "FEMUR_RIGHT",
+          "layer": 0,
+          "value": 3
+        }
+      ],
+      "sourceHighResolutionVoxels": 935510,
+      "roi": [
+        [
+          34,
+          107
+        ],
+        [
+          98,
+          146
+        ],
+        [
+          240,
+          457
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 61082,
+          "centroidMm": [
+            -139.14632727472494,
+            -240.59057238602475,
+            677.4667527044707
+          ]
+        },
+        "candidate": {
+          "voxels": 65769,
+          "centroidMm": [
+            -138.67710569445595,
+            -240.50284275428467,
+            681.283589066282
+          ]
+        },
+        "intersectionVoxels": 60682,
+        "dice": 0.9567445270435393,
+        "centroidDistanceMm": 3.8465705755284203
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 62856,
+          "centroidMm": [
+            -138.98648687272004,
+            -240.5602990429153,
+            677.8703717030713
+          ]
+        },
+        "candidate": {
+          "voxels": 65769,
+          "centroidMm": [
+            -138.67710569445595,
+            -240.50284275428467,
+            681.283589066282
+          ]
+        },
+        "intersectionVoxels": 62070,
+        "dice": 0.9651311953352769,
+        "centroidDistanceMm": 3.427691746217915
+      }
+    },
+    {
+      "name": "fibula_left",
+      "mooseLabel": 7,
+      "sourceFile": "LOWER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "FIBULA_LEFT",
+          "layer": 0,
+          "value": 2
+        }
+      ],
+      "sourceHighResolutionVoxels": 90803,
+      "roi": [
+        [
+          140,
+          182
+        ],
+        [
+          127,
+          149
+        ],
+        [
+          67,
+          242
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 5831,
+          "centroidMm": [
+            -318.4727234724475,
+            -279.27195488814726,
+            304.123303267717
+          ]
+        },
+        "candidate": {
+          "voxels": 7097,
+          "centroidMm": [
+            -317.8298091248625,
+            -279.33785893787916,
+            299.90841128241766
+          ]
+        },
+        "intersectionVoxels": 5760,
+        "dice": 0.8910891089108911,
+        "centroidDistanceMm": 4.264152512497929
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 6341,
+          "centroidMm": [
+            -318.58079885205075,
+            -279.4820805226585,
+            304.30962613763126
+          ]
+        },
+        "candidate": {
+          "voxels": 7097,
+          "centroidMm": [
+            -317.8298091248625,
+            -279.33785893787916,
+            299.90841128241766
+          ]
+        },
+        "intersectionVoxels": 6166,
+        "dice": 0.9176960857270428,
+        "centroidDistanceMm": 4.467155430205153
+      }
+    },
+    {
+      "name": "fibula_right",
+      "mooseLabel": 8,
+      "sourceFile": "LOWER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "FIBULA_RIGHT",
+          "layer": 0,
+          "value": 2
+        }
+      ],
+      "sourceHighResolutionVoxels": 90883,
+      "roi": [
+        [
+          59,
+          100
+        ],
+        [
+          136,
+          158
+        ],
+        [
+          62,
+          241
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 5953,
+          "centroidMm": [
+            -161.8246036008208,
+            -296.73877009853044,
+            297.93210198454506
+          ]
+        },
+        "candidate": {
+          "voxels": 7063,
+          "centroidMm": [
+            -162.2227708528286,
+            -296.723358413602,
+            294.4560679210898
+          ]
+        },
+        "intersectionVoxels": 5814,
+        "dice": 0.8933620159803319,
+        "centroidDistanceMm": 3.498798006588113
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 6370,
+          "centroidMm": [
+            -161.72874070834513,
+            -296.843079255271,
+            298.0928808778758
+          ]
+        },
+        "candidate": {
+          "voxels": 7063,
+          "centroidMm": [
+            -162.2227708528286,
+            -296.723358413602,
+            294.4560679210898
+          ]
+        },
+        "intersectionVoxels": 6154,
+        "dice": 0.9162510235986004,
+        "centroidDistanceMm": 3.6721665738681897
+      }
+    },
+    {
+      "name": "fingers_left",
+      "mooseLabel": 9,
+      "sourceFile": "HAND_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "PHALANGE_HAND_1_LEFT",
+          "layer": 0,
+          "value": 8
+        },
+        {
+          "name": "PHALANGE_HAND_2_LEFT",
+          "layer": 1,
+          "value": 7
+        },
+        {
+          "name": "PHALANGE_HAND_3_LEFT",
+          "layer": 0,
+          "value": 6
+        },
+        {
+          "name": "PHALANGE_HAND_4_LEFT",
+          "layer": 1,
+          "value": 8
+        },
+        {
+          "name": "PHALANGE_HAND_5_LEFT",
+          "layer": 0,
+          "value": 7
+        }
+      ],
+      "sourceHighResolutionVoxels": 50421,
+      "roi": [
+        [
+          158,
+          205
+        ],
+        [
+          42,
+          84
+        ],
+        [
+          453,
+          511
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 3309,
+          "centroidMm": [
+            -368.1519015162832,
+            -119.58372675837546,
+            954.9174643416137
+          ]
+        },
+        "candidate": {
+          "voxels": 2587,
+          "centroidMm": [
+            -371.2497645348345,
+            -118.74855603190707,
+            956.0358099357982
+          ]
+        },
+        "intersectionVoxels": 2375,
+        "dice": 0.8056309362279511,
+        "centroidDistanceMm": 3.397787852719685
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 3492,
+          "centroidMm": [
+            -368.1511174010247,
+            -119.56229696794065,
+            955.7893433579055
+          ]
+        },
+        "candidate": {
+          "voxels": 2587,
+          "centroidMm": [
+            -371.2497645348345,
+            -118.74855603190707,
+            956.0358099357982
+          ]
+        },
+        "intersectionVoxels": 2420,
+        "dice": 0.7961835828261227,
+        "centroidDistanceMm": 3.2131813121675568
+      }
+    },
+    {
+      "name": "fingers_right",
+      "mooseLabel": 10,
+      "sourceFile": "HAND_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "PHALANGE_HAND_1_RIGHT",
+          "layer": 0,
+          "value": 6
+        },
+        {
+          "name": "PHALANGE_HAND_2_RIGHT",
+          "layer": 0,
+          "value": 7
+        },
+        {
+          "name": "PHALANGE_HAND_3_RIGHT",
+          "layer": 0,
+          "value": 8
+        },
+        {
+          "name": "PHALANGE_HAND_4_RIGHT",
+          "layer": 1,
+          "value": 5
+        },
+        {
+          "name": "PHALANGE_HAND_5_RIGHT",
+          "layer": 0,
+          "value": 9
+        }
+      ],
+      "sourceHighResolutionVoxels": 49735,
+      "roi": [
+        [
+          23,
+          71
+        ],
+        [
+          51,
+          92
+        ],
+        [
+          440,
+          492
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 3231,
+          "centroidMm": [
+            -86.82538714747575,
+            -137.1328669580023,
+            919.6112949399342
+          ]
+        },
+        "candidate": {
+          "voxels": 2852,
+          "centroidMm": [
+            -84.56892042056374,
+            -136.14441317503784,
+            920.2102131104151
+          ]
+        },
+        "intersectionVoxels": 2531,
+        "dice": 0.8321551865855663,
+        "centroidDistanceMm": 2.5352289730219595
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 3455,
+          "centroidMm": [
+            -86.40660166805974,
+            -137.5430687908326,
+            919.6366717475713
+          ]
+        },
+        "candidate": {
+          "voxels": 2852,
+          "centroidMm": [
+            -84.56892042056374,
+            -136.14441317503784,
+            920.2102131104151
+          ]
+        },
+        "intersectionVoxels": 2623,
+        "dice": 0.8317742191216109,
+        "centroidDistanceMm": 2.379550292363107
+      }
+    },
+    {
+      "name": "humerus_left",
+      "mooseLabel": 11,
+      "sourceFile": "UPPER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "HUMERUS_LEFT",
+          "layer": 0,
+          "value": 4
+        }
+      ],
+      "sourceHighResolutionVoxels": 287520,
+      "roi": [
+        [
+          187,
+          243
+        ],
+        [
+          107,
+          167
+        ],
+        [
+          599,
+          746
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 18746,
+          "centroidMm": [
+            -428.0531733698795,
+            -267.7757697287853,
+            1373.6595018148155
+          ]
+        },
+        "candidate": {
+          "voxels": 20972,
+          "centroidMm": [
+            -429.6519081558909,
+            -268.8807077042569,
+            1368.7397749911345
+          ]
+        },
+        "intersectionVoxels": 18400,
+        "dice": 0.9265320509592628,
+        "centroidDistanceMm": 5.289664721443938
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 19276,
+          "centroidMm": [
+            -428.2127888623944,
+            -267.8975226758278,
+            1373.5832723015806
+          ]
+        },
+        "candidate": {
+          "voxels": 20972,
+          "centroidMm": [
+            -429.6519081558909,
+            -268.8807077042569,
+            1368.7397749911345
+          ]
+        },
+        "intersectionVoxels": 18844,
+        "dice": 0.9363943549990061,
+        "centroidDistanceMm": 5.1475414847613825
+      }
+    },
+    {
+      "name": "humerus_right",
+      "mooseLabel": 12,
+      "sourceFile": "UPPER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "HUMERUS_RIGHT",
+          "layer": 0,
+          "value": 3
+        }
+      ],
+      "sourceHighResolutionVoxels": 264710,
+      "roi": [
+        [
+          2,
+          55
+        ],
+        [
+          107,
+          165
+        ],
+        [
+          594,
+          740
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 17229,
+          "centroidMm": [
+            -57.289185149628544,
+            -262.2108836033588,
+            1375.067011378429
+          ]
+        },
+        "candidate": {
+          "voxels": 19733,
+          "centroidMm": [
+            -55.02487326820375,
+            -264.70048081272853,
+            1365.485662174658
+          ]
+        },
+        "intersectionVoxels": 16959,
+        "dice": 0.9176451490720199,
+        "centroidDistanceMm": 10.155168887116826
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 17761,
+          "centroidMm": [
+            -57.085100416751615,
+            -262.40618071586766,
+            1374.905549216291
+          ]
+        },
+        "candidate": {
+          "voxels": 19733,
+          "centroidMm": [
+            -55.02487326820375,
+            -264.70048081272853,
+            1365.485662174658
+          ]
+        },
+        "intersectionVoxels": 17373,
+        "dice": 0.9267082733237318,
+        "centroidDistanceMm": 9.911741558131732
+      }
+    },
+    {
+      "name": "metacarpal_left",
+      "mooseLabel": 13,
+      "sourceFile": "HAND_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "METACARPAL_1_LEFT",
+          "layer": 0,
+          "value": 5
+        },
+        {
+          "name": "METACARPAL_2_LEFT",
+          "layer": 0,
+          "value": 3
+        },
+        {
+          "name": "METACARPAL_3_LEFT",
+          "layer": 1,
+          "value": 5
+        },
+        {
+          "name": "METACARPAL_4_LEFT",
+          "layer": 0,
+          "value": 4
+        },
+        {
+          "name": "METACARPAL_5_LEFT",
+          "layer": 1,
+          "value": 6
+        }
+      ],
+      "sourceHighResolutionVoxels": 52058,
+      "roi": [
+        [
+          175,
+          215
+        ],
+        [
+          46,
+          89
+        ],
+        [
+          479,
+          525
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 3413,
+          "centroidMm": [
+            -399.69627077681486,
+            -132.80759945477763,
+            1002.140354564366
+          ]
+        },
+        "candidate": {
+          "voxels": 4152,
+          "centroidMm": [
+            -400.4009344309051,
+            -133.27204379491036,
+            1002.2676267533461
+          ]
+        },
+        "intersectionVoxels": 3192,
+        "dice": 0.8438863185723727,
+        "centroidDistanceMm": 0.8534972879657919
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 3577,
+          "centroidMm": [
+            -399.8438271911977,
+            -132.88154215690372,
+            1002.5186004938778
+          ]
+        },
+        "candidate": {
+          "voxels": 4152,
+          "centroidMm": [
+            -400.4009344309051,
+            -133.27204379491036,
+            1002.2676267533461
+          ]
+        },
+        "intersectionVoxels": 3326,
+        "dice": 0.8606546771898046,
+        "centroidDistanceMm": 0.7251536556184105
+      }
+    },
+    {
+      "name": "metacarpal_right",
+      "mooseLabel": 14,
+      "sourceFile": "HAND_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "METACARPAL_1_RIGHT",
+          "layer": 0,
+          "value": 4
+        },
+        {
+          "name": "METACARPAL_2_RIGHT",
+          "layer": 0,
+          "value": 12
+        },
+        {
+          "name": "METACARPAL_3_RIGHT",
+          "layer": 1,
+          "value": 2
+        },
+        {
+          "name": "METACARPAL_4_RIGHT",
+          "layer": 0,
+          "value": 5
+        },
+        {
+          "name": "METACARPAL_5_RIGHT",
+          "layer": 1,
+          "value": 3
+        }
+      ],
+      "sourceHighResolutionVoxels": 52122,
+      "roi": [
+        [
+          19,
+          58
+        ],
+        [
+          53,
+          94
+        ],
+        [
+          464,
+          508
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 3367,
+          "centroidMm": [
+            -65.86211024305747,
+            -146.07343343600414,
+            970.4141936369278
+          ]
+        },
+        "candidate": {
+          "voxels": 4357,
+          "centroidMm": [
+            -65.51612974321293,
+            -146.49299393665746,
+            969.9156013229913
+          ]
+        },
+        "intersectionVoxels": 3198,
+        "dice": 0.8280683583635422,
+        "centroidDistanceMm": 0.7377857517584399
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 3578,
+          "centroidMm": [
+            -65.76025950242315,
+            -146.25480966733915,
+            970.8883411204635
+          ]
+        },
+        "candidate": {
+          "voxels": 4357,
+          "centroidMm": [
+            -65.51612974321293,
+            -146.49299393665746,
+            969.9156013229913
+          ]
+        },
+        "intersectionVoxels": 3333,
+        "dice": 0.8400756143667297,
+        "centroidDistanceMm": 1.0308025024557046
+      }
+    },
+    {
+      "name": "metatarsal_left",
+      "mooseLabel": 15,
+      "sourceFile": "FOOT_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "METATARSAL_1_LEFT",
+          "layer": 0,
+          "value": 7
+        },
+        {
+          "name": "METATARSAL_2_LEFT",
+          "layer": 0,
+          "value": 8
+        },
+        {
+          "name": "METATARSAL_3_LEFT",
+          "layer": 1,
+          "value": 2
+        },
+        {
+          "name": "METATARSAL_4_LEFT",
+          "layer": 0,
+          "value": 9
+        },
+        {
+          "name": "METATARSAL_5_LEFT",
+          "layer": 0,
+          "value": 10
+        }
+      ],
+      "sourceHighResolutionVoxels": 78311,
+      "roi": [
+        [
+          113,
+          154
+        ],
+        [
+          78,
+          133
+        ],
+        [
+          13,
+          56
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 5142,
+          "centroidMm": [
+            -269.68576473658396,
+            -207.23063041455825,
+            71.32694321655197
+          ]
+        },
+        "candidate": {
+          "voxels": 6944,
+          "centroidMm": [
+            -268.0974806278669,
+            -205.5816916666822,
+            68.62529650498782
+          ]
+        },
+        "intersectionVoxels": 4885,
+        "dice": 0.8083733245076948,
+        "centroidDistanceMm": 3.5412625373382887
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 5382,
+          "centroidMm": [
+            -269.81201730723365,
+            -207.4084009226482,
+            70.90681337772006
+          ]
+        },
+        "candidate": {
+          "voxels": 6944,
+          "centroidMm": [
+            -268.0974806278669,
+            -205.5816916666822,
+            68.62529650498782
+          ]
+        },
+        "intersectionVoxels": 5106,
+        "dice": 0.8284926172318676,
+        "centroidDistanceMm": 3.3884837274639206
+      }
+    },
+    {
+      "name": "metatarsal_right",
+      "mooseLabel": 16,
+      "sourceFile": "FOOT_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "METATARSAL_1_RIGHT",
+          "layer": 0,
+          "value": 8
+        },
+        {
+          "name": "METATARSAL_2_RIGHT",
+          "layer": 1,
+          "value": 1
+        },
+        {
+          "name": "METATARSAL_3_RIGHT",
+          "layer": 1,
+          "value": 2
+        },
+        {
+          "name": "METATARSAL_4_RIGHT",
+          "layer": 0,
+          "value": 9
+        },
+        {
+          "name": "METATARSAL_5_RIGHT",
+          "layer": 1,
+          "value": 3
+        }
+      ],
+      "sourceHighResolutionVoxels": 80809,
+      "roi": [
+        [
+          79,
+          118
+        ],
+        [
+          86,
+          143
+        ],
+        [
+          8,
+          52
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 5275,
+          "centroidMm": [
+            -194.00674354474125,
+            -222.40128160715105,
+            60.944421432018274
+          ]
+        },
+        "candidate": {
+          "voxels": 7142,
+          "centroidMm": [
+            -194.2938563080937,
+            -220.84391885782216,
+            58.51987182052487
+          ]
+        },
+        "intersectionVoxels": 5030,
+        "dice": 0.8101795924941613,
+        "centroidDistanceMm": 2.8959028454818583
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 5535,
+          "centroidMm": [
+            -193.81408727789312,
+            -222.55909984367003,
+            60.4285864246893
+          ]
+        },
+        "candidate": {
+          "voxels": 7142,
+          "centroidMm": [
+            -194.2938563080937,
+            -220.84391885782216,
+            58.51987182052487
+          ]
+        },
+        "intersectionVoxels": 5269,
+        "dice": 0.8312692277352686,
+        "centroidDistanceMm": 2.6105967855462153
+      }
+    },
+    {
+      "name": "patella_left",
+      "mooseLabel": 17,
+      "sourceFile": "LOWER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "PATELLA_LEFT",
+          "layer": 0,
+          "value": 4
+        }
+      ],
+      "sourceHighResolutionVoxels": 42818,
+      "roi": [
+        [
+          146,
+          176
+        ],
+        [
+          87,
+          107
+        ],
+        [
+          243,
+          275
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 2778,
+          "centroidMm": [
+            -321.40925589261764,
+            -195.0171019324216,
+            519.9229181495135
+          ]
+        },
+        "candidate": {
+          "voxels": 3085,
+          "centroidMm": [
+            -321.59091315597925,
+            -194.8031053984571,
+            520.7084119577462
+          ]
+        },
+        "intersectionVoxels": 2728,
+        "dice": 0.9305816135084428,
+        "centroidDistanceMm": 0.8341429138059767
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 2901,
+          "centroidMm": [
+            -321.3607885703183,
+            -195.03584897795534,
+            519.3606500544863
+          ]
+        },
+        "candidate": {
+          "voxels": 3085,
+          "centroidMm": [
+            -321.59091315597925,
+            -194.8031053984571,
+            520.7084119577462
+          ]
+        },
+        "intersectionVoxels": 2802,
+        "dice": 0.936184430337454,
+        "centroidDistanceMm": 1.3869351270344208
+      }
+    },
+    {
+      "name": "patella_right",
+      "mooseLabel": 18,
+      "sourceFile": "LOWER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "PATELLA_RIGHT",
+          "layer": 0,
+          "value": 4
+        }
+      ],
+      "sourceHighResolutionVoxels": 43853,
+      "roi": [
+        [
+          59,
+          88
+        ],
+        [
+          93,
+          115
+        ],
+        [
+          241,
+          272
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 2842,
+          "centroidMm": [
+            -147.02758541759852,
+            -206.9583414903331,
+            514.3208302350886
+          ]
+        },
+        "candidate": {
+          "voxels": 3114,
+          "centroidMm": [
+            -146.89481873663863,
+            -206.43597757644048,
+            515.277774828592
+          ]
+        },
+        "intersectionVoxels": 2778,
+        "dice": 0.9328408327736736,
+        "centroidDistanceMm": 1.098286850119648
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 2955,
+          "centroidMm": [
+            -146.9699987047215,
+            -207.0357187789709,
+            513.8326394374601
+          ]
+        },
+        "candidate": {
+          "voxels": 3114,
+          "centroidMm": [
+            -146.89481873663863,
+            -206.43597757644048,
+            515.277774828592
+          ]
+        },
+        "intersectionVoxels": 2812,
+        "dice": 0.9266765529741309,
+        "centroidDistanceMm": 1.5664475210856843
+      }
+    },
+    {
+      "name": "radius_left",
+      "mooseLabel": 19,
+      "sourceFile": "UPPER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "RADIUS_LEFT",
+          "layer": 0,
+          "value": 3
+        }
+      ],
+      "sourceHighResolutionVoxels": 72885,
+      "roi": [
+        [
+          200,
+          243
+        ],
+        [
+          70,
+          150
+        ],
+        [
+          519,
+          612
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 4749,
+          "centroidMm": [
+            -444.18561507935624,
+            -211.8338083145141,
+            1121.8808437430323
+          ]
+        },
+        "candidate": {
+          "voxels": 5889,
+          "centroidMm": [
+            -447.00042725975754,
+            -216.70830269349938,
+            1128.3425381885338
+          ]
+        },
+        "intersectionVoxels": 4621,
+        "dice": 0.8687723256251175,
+        "centroidDistanceMm": 8.569559975209907
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 4959,
+          "centroidMm": [
+            -444.3579189939637,
+            -212.08345653692737,
+            1122.650622635593
+          ]
+        },
+        "candidate": {
+          "voxels": 5889,
+          "centroidMm": [
+            -447.00042725975754,
+            -216.70830269349938,
+            1128.3425381885338
+          ]
+        },
+        "intersectionVoxels": 4797,
+        "dice": 0.8844026548672567,
+        "centroidDistanceMm": 7.795508615129432
+      }
+    },
+    {
+      "name": "radius_right",
+      "mooseLabel": 20,
+      "sourceFile": "UPPER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "RADIUS_RIGHT",
+          "layer": 0,
+          "value": 4
+        }
+      ],
+      "sourceHighResolutionVoxels": 60657,
+      "roi": [
+        [
+          0,
+          38
+        ],
+        [
+          76,
+          141
+        ],
+        [
+          505,
+          595
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 3937,
+          "centroidMm": [
+            -36.76934230533505,
+            -205.09383204047197,
+            1081.4655775305491
+          ]
+        },
+        "candidate": {
+          "voxels": 4628,
+          "centroidMm": [
+            -36.19244763762557,
+            -205.57372750536365,
+            1082.999666775159
+          ]
+        },
+        "intersectionVoxels": 3754,
+        "dice": 0.8765907764156451,
+        "centroidDistanceMm": 1.707787142849832
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 4146,
+          "centroidMm": [
+            -36.72353888299807,
+            -205.08147712821727,
+            1081.9113532466931
+          ]
+        },
+        "candidate": {
+          "voxels": 4628,
+          "centroidMm": [
+            -36.19244763762557,
+            -205.57372750536365,
+            1082.999666775159
+          ]
+        },
+        "intersectionVoxels": 3924,
+        "dice": 0.8944609072258947,
+        "centroidDistanceMm": 1.3072087365658525
+      }
+    },
+    {
+      "name": "scapula_left",
+      "mooseLabel": 21,
+      "sourceFile": "UPPER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "SCAPULA_LEFT",
+          "layer": 0,
+          "value": 2
+        }
+      ],
+      "sourceHighResolutionVoxels": 155872,
+      "roi": [
+        [
+          142,
+          207
+        ],
+        [
+          109,
+          171
+        ],
+        [
+          672,
+          753
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 10121,
+          "centroidMm": [
+            -354.4578481461971,
+            -285.92911070650035,
+            1444.7802131724927
+          ]
+        },
+        "candidate": {
+          "voxels": 11511,
+          "centroidMm": [
+            -357.0257274577914,
+            -282.7377494946258,
+            1449.7110088496802
+          ]
+        },
+        "intersectionVoxels": 9101,
+        "dice": 0.8414386094674556,
+        "centroidDistanceMm": 6.410268056309504
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 10763,
+          "centroidMm": [
+            -354.0774638557438,
+            -286.1196206799728,
+            1445.4375332501158
+          ]
+        },
+        "candidate": {
+          "voxels": 11511,
+          "centroidMm": [
+            -357.0257274577914,
+            -282.7377494946258,
+            1449.7110088496802
+          ]
+        },
+        "intersectionVoxels": 9639,
+        "dice": 0.8654934003771213,
+        "centroidDistanceMm": 6.196120131300764
+      }
+    },
+    {
+      "name": "scapula_right",
+      "mooseLabel": 22,
+      "sourceFile": "UPPER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "SCAPULA_RIGHT",
+          "layer": 0,
+          "value": 2
+        }
+      ],
+      "sourceHighResolutionVoxels": 151835,
+      "roi": [
+        [
+          34,
+          97
+        ],
+        [
+          109,
+          171
+        ],
+        [
+          663,
+          747
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 9943,
+          "centroidMm": [
+            -125.58474092485677,
+            -287.47778922695875,
+            1431.3776188243999
+          ]
+        },
+        "candidate": {
+          "voxels": 11500,
+          "centroidMm": [
+            -123.91860123808488,
+            -284.86200986934745,
+            1435.9816158944004
+          ]
+        },
+        "intersectionVoxels": 9010,
+        "dice": 0.8403674858928322,
+        "centroidDistanceMm": 5.551136111114147
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 10479,
+          "centroidMm": [
+            -126.01974410362993,
+            -287.8653217415362,
+            1431.6356232240519
+          ]
+        },
+        "candidate": {
+          "voxels": 11500,
+          "centroidMm": [
+            -123.91860123808488,
+            -284.86200986934745,
+            1435.9816158944004
+          ]
+        },
+        "intersectionVoxels": 9457,
+        "dice": 0.8605487055826015,
+        "centroidDistanceMm": 5.685273593573504
+      }
+    },
+    {
+      "name": "skull",
+      "mooseLabel": 23,
+      "sourceFile": "SKULL.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "SKULL_CRANIAL_MAXILLA",
+          "layer": 0,
+          "value": 1
+        },
+        {
+          "name": "SKULL_MANDIBLE",
+          "layer": 0,
+          "value": 2
+        }
+      ],
+      "sourceHighResolutionVoxels": 1261664,
+      "roi": [
+        [
+          80,
+          158
+        ],
+        [
+          59,
+          162
+        ],
+        [
+          755,
+          864
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 82168,
+          "centroidMm": [
+            -238.48114519096163,
+            -218.84626546890638,
+            1631.7514882274775
+          ]
+        },
+        "candidate": {
+          "voxels": 95809,
+          "centroidMm": [
+            -237.85051080522967,
+            -224.40157333670274,
+            1635.5178665249607
+          ]
+        },
+        "intersectionVoxels": 70515,
+        "dice": 0.7924057602948695,
+        "centroidDistanceMm": 6.741272188112597
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 86700,
+          "centroidMm": [
+            -238.5021673347546,
+            -218.78250016559778,
+            1632.3495607348668
+          ]
+        },
+        "candidate": {
+          "voxels": 95809,
+          "centroidMm": [
+            -237.85051080522967,
+            -224.40157333670274,
+            1635.5178665249607
+          ]
+        },
+        "intersectionVoxels": 74728,
+        "dice": 0.8188966023593357,
+        "centroidDistanceMm": 6.483579344331834
+      }
+    },
+    {
+      "name": "tarsal_left",
+      "mooseLabel": 24,
+      "sourceFile": "FOOT_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "TALUS_LEFT",
+          "layer": 0,
+          "value": 1
+        },
+        {
+          "name": "CALCANEUS_LEFT",
+          "layer": 0,
+          "value": 2
+        },
+        {
+          "name": "NAVICULAR_LEFT",
+          "layer": 0,
+          "value": 3
+        },
+        {
+          "name": "CUBOID_LEFT",
+          "layer": 0,
+          "value": 4
+        },
+        {
+          "name": "LATERAL_CUNEIFORM_LEFT",
+          "layer": 0,
+          "value": 5
+        },
+        {
+          "name": "INTERMEDIATE_CUNEIFORM_LEFT",
+          "layer": 1,
+          "value": 1
+        },
+        {
+          "name": "MEDIAL_CUNEIFORM_LEFT",
+          "layer": 0,
+          "value": 6
+        }
+      ],
+      "sourceHighResolutionVoxels": 268970,
+      "roi": [
+        [
+          119,
+          153
+        ],
+        [
+          98,
+          168
+        ],
+        [
+          39,
+          88
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 17546,
+          "centroidMm": [
+            -273.6743217675427,
+            -266.3645085218041,
+            127.26507098525576
+          ]
+        },
+        "candidate": {
+          "voxels": 20693,
+          "centroidMm": [
+            -273.7118005109134,
+            -263.92606844677886,
+            126.61109816388878
+          ]
+        },
+        "intersectionVoxels": 17281,
+        "dice": 0.903841627657627,
+        "centroidDistanceMm": 2.5248911079055474
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 18113,
+          "centroidMm": [
+            -273.67431101132047,
+            -266.18156287561607,
+            126.65824837897672
+          ]
+        },
+        "candidate": {
+          "voxels": 20693,
+          "centroidMm": [
+            -273.7118005109134,
+            -263.92606844677886,
+            126.61109816388878
+          ]
+        },
+        "intersectionVoxels": 17772,
+        "dice": 0.9159408338916663,
+        "centroidDistanceMm": 2.2562986778966696
+      }
+    },
+    {
+      "name": "tarsal_right",
+      "mooseLabel": 25,
+      "sourceFile": "FOOT_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "TALUS_RIGHT",
+          "layer": 0,
+          "value": 1
+        },
+        {
+          "name": "CALCANEUS_RIGHT",
+          "layer": 0,
+          "value": 2
+        },
+        {
+          "name": "NAVICULAR_RIGHT",
+          "layer": 0,
+          "value": 3
+        },
+        {
+          "name": "CUBOID_RIGHT",
+          "layer": 0,
+          "value": 4
+        },
+        {
+          "name": "LATERAL_CUNEIFORM_RIGHT",
+          "layer": 0,
+          "value": 5
+        },
+        {
+          "name": "INTERMEDIATE_CUNEIFORM_RIGHT",
+          "layer": 0,
+          "value": 6
+        },
+        {
+          "name": "MEDIAL_CUNEIFORM_RIGHT",
+          "layer": 0,
+          "value": 7
+        }
+      ],
+      "sourceHighResolutionVoxels": 270707,
+      "roi": [
+        [
+          82,
+          122
+        ],
+        [
+          104,
+          174
+        ],
+        [
+          35,
+          84
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 17649,
+          "centroidMm": [
+            -201.77216220978022,
+            -279.3906109940838,
+            118.7742980478796
+          ]
+        },
+        "candidate": {
+          "voxels": 20438,
+          "centroidMm": [
+            -200.9710956165172,
+            -277.0338402993351,
+            118.34076704179509
+          ]
+        },
+        "intersectionVoxels": 17340,
+        "dice": 0.9105469057683724,
+        "centroidDistanceMm": 2.52666280451206
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 18221,
+          "centroidMm": [
+            -201.70967615401793,
+            -279.1031015005674,
+            118.12507169085141
+          ]
+        },
+        "candidate": {
+          "voxels": 20438,
+          "centroidMm": [
+            -200.9710956165172,
+            -277.0338402993351,
+            118.34076704179509
+          ]
+        },
+        "intersectionVoxels": 17779,
+        "dice": 0.9197858196021625,
+        "centroidDistanceMm": 2.2076837666927824
+      }
+    },
+    {
+      "name": "tibia_left",
+      "mooseLabel": 26,
+      "sourceFile": "LOWER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "TIBIA_LEFT",
+          "layer": 0,
+          "value": 1
+        }
+      ],
+      "sourceHighResolutionVoxels": 538022,
+      "roi": [
+        [
+          123,
+          178
+        ],
+        [
+          105,
+          146
+        ],
+        [
+          75,
+          254
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 35044,
+          "centroidMm": [
+            -303.40782293106184,
+            -249.14176766506517,
+            369.3727494475538
+          ]
+        },
+        "candidate": {
+          "voxels": 38221,
+          "centroidMm": [
+            -303.30560603519115,
+            -249.18007549191503,
+            368.8336946712051
+          ]
+        },
+        "intersectionVoxels": 34816,
+        "dice": 0.9504128847335017,
+        "centroidDistanceMm": 0.5499962138994997
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 36158,
+          "centroidMm": [
+            -303.3362787540616,
+            -249.20868294686696,
+            368.04493740153026
+          ]
+        },
+        "candidate": {
+          "voxels": 38221,
+          "centroidMm": [
+            -303.30560603519115,
+            -249.18007549191503,
+            368.8336946712051
+          ]
+        },
+        "intersectionVoxels": 35541,
+        "dice": 0.955672972209898,
+        "centroidDistanceMm": 0.7898716557939052
+      }
+    },
+    {
+      "name": "tibia_right",
+      "mooseLabel": 27,
+      "sourceFile": "LOWER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "TIBIA_RIGHT",
+          "layer": 0,
+          "value": 1
+        }
+      ],
+      "sourceHighResolutionVoxels": 542174,
+      "roi": [
+        [
+          60,
+          114
+        ],
+        [
+          111,
+          153
+        ],
+        [
+          70,
+          251
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 35426,
+          "centroidMm": [
+            -172.1608562552733,
+            -262.9336818766602,
+            364.3402881889699
+          ]
+        },
+        "candidate": {
+          "voxels": 38411,
+          "centroidMm": [
+            -172.0835897174785,
+            -262.9105771392835,
+            363.5984860923826
+          ]
+        },
+        "intersectionVoxels": 35121,
+        "dice": 0.9513116730094668,
+        "centroidDistanceMm": 0.746173101400331
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 36367,
+          "centroidMm": [
+            -172.16431295549842,
+            -262.9280228807928,
+            363.6432324931987
+          ]
+        },
+        "candidate": {
+          "voxels": 38411,
+          "centroidMm": [
+            -172.0835897174785,
+            -262.9105771392835,
+            363.5984860923826
+          ]
+        },
+        "intersectionVoxels": 35750,
+        "dice": 0.9561635775228008,
+        "centroidDistanceMm": 0.09392994963921823
+      }
+    },
+    {
+      "name": "toes_left",
+      "mooseLabel": 28,
+      "sourceFile": "FOOT_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "PHALANGE_FOOT_1_LEFT",
+          "layer": 0,
+          "value": 11
+        },
+        {
+          "name": "PHALANGE_FOOT_2_LEFT",
+          "layer": 1,
+          "value": 3
+        },
+        {
+          "name": "PHALANGE_FOOT_3_LEFT",
+          "layer": 0,
+          "value": 12
+        },
+        {
+          "name": "PHALANGE_FOOT_4_LEFT",
+          "layer": 0,
+          "value": 13
+        },
+        {
+          "name": "PHALANGE_FOOT_5_LEFT",
+          "layer": 0,
+          "value": 14
+        }
+      ],
+      "sourceHighResolutionVoxels": 33289,
+      "roi": [
+        [
+          111,
+          154
+        ],
+        [
+          62,
+          106
+        ],
+        [
+          4,
+          34
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 2140,
+          "centroidMm": [
+            -260.2819126124694,
+            -164.12583886518655,
+            36.80456751490308
+          ]
+        },
+        "candidate": {
+          "voxels": 2063,
+          "centroidMm": [
+            -258.2272160743777,
+            -164.4904020552316,
+            37.094809029469836
+          ]
+        },
+        "intersectionVoxels": 1728,
+        "dice": 0.8222698072805139,
+        "centroidDistanceMm": 2.1068754875312234
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 2296,
+          "centroidMm": [
+            -260.70761161253427,
+            -164.59618652884555,
+            36.29924937958086
+          ]
+        },
+        "candidate": {
+          "voxels": 2063,
+          "centroidMm": [
+            -258.2272160743777,
+            -164.4904020552316,
+            37.094809029469836
+          ]
+        },
+        "intersectionVoxels": 1841,
+        "dice": 0.8446891488873595,
+        "centroidDistanceMm": 2.6070035552519584
+      }
+    },
+    {
+      "name": "toes_right",
+      "mooseLabel": 29,
+      "sourceFile": "FOOT_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "PHALANGE_FOOT_1_RIGHT",
+          "layer": 1,
+          "value": 4
+        },
+        {
+          "name": "PHALANGE_FOOT_2_RIGHT",
+          "layer": 0,
+          "value": 10
+        },
+        {
+          "name": "PHALANGE_FOOT_3_RIGHT",
+          "layer": 0,
+          "value": 11
+        },
+        {
+          "name": "PHALANGE_FOOT_4_RIGHT",
+          "layer": 0,
+          "value": 12
+        },
+        {
+          "name": "PHALANGE_FOOT_5_RIGHT",
+          "layer": 0,
+          "value": 13
+        }
+      ],
+      "sourceHighResolutionVoxels": 32201,
+      "roi": [
+        [
+          76,
+          118
+        ],
+        [
+          68,
+          118
+        ],
+        [
+          0,
+          26
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 2081,
+          "centroidMm": [
+            -192.73627626586568,
+            -180.52987696060708,
+            26.050219915997005
+          ]
+        },
+        "candidate": {
+          "voxels": 2039,
+          "centroidMm": [
+            -192.28882790061994,
+            -179.76677551402244,
+            24.903142539264525
+          ]
+        },
+        "intersectionVoxels": 1675,
+        "dice": 0.8131067961165048,
+        "centroidDistanceMm": 1.4485580297496305
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 2204,
+          "centroidMm": [
+            -192.41797484503468,
+            -180.87648138928543,
+            25.49765058340481
+          ]
+        },
+        "candidate": {
+          "voxels": 2039,
+          "centroidMm": [
+            -192.28882790061994,
+            -179.76677551402244,
+            24.903142539264525
+          ]
+        },
+        "intersectionVoxels": 1771,
+        "dice": 0.8347867075182653,
+        "centroidDistanceMm": 1.2655298800867434
+      }
+    },
+    {
+      "name": "ulna_left",
+      "mooseLabel": 30,
+      "sourceFile": "UPPER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "ULNA_LEFT",
+          "layer": 1,
+          "value": 1
+        }
+      ],
+      "sourceHighResolutionVoxels": 79596,
+      "roi": [
+        [
+          207,
+          243
+        ],
+        [
+          84,
+          168
+        ],
+        [
+          515,
+          620
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 5200,
+          "centroidMm": [
+            -459.0057388730233,
+            -261.0706218123436,
+            1143.0932023123594
+          ]
+        },
+        "candidate": {
+          "voxels": 6318,
+          "centroidMm": [
+            -459.71352062435915,
+            -263.940864755727,
+            1147.9616210532552
+          ]
+        },
+        "intersectionVoxels": 4982,
+        "dice": 0.8650807431845806,
+        "centroidDistanceMm": 5.69567823865354
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 5415,
+          "centroidMm": [
+            -459.0707249323747,
+            -261.0724646009897,
+            1143.500001351358
+          ]
+        },
+        "candidate": {
+          "voxels": 6318,
+          "centroidMm": [
+            -459.71352062435915,
+            -263.940864755727,
+            1147.9616210532552
+          ]
+        },
+        "intersectionVoxels": 5138,
+        "dice": 0.8758203358049944,
+        "centroidDistanceMm": 5.342935159038359
+      }
+    },
+    {
+      "name": "ulna_right",
+      "mooseLabel": 31,
+      "sourceFile": "UPPER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceSegments": [
+        {
+          "name": "ULNA_RIGHT",
+          "layer": 0,
+          "value": 5
+        }
+      ],
+      "sourceHighResolutionVoxels": 34155,
+      "roi": [
+        [
+          0,
+          28
+        ],
+        [
+          88,
+          153
+        ],
+        [
+          501,
+          597
+        ]
+      ],
+      "nearest": {
+        "reference": {
+          "voxels": 2235,
+          "centroidMm": [
+            -24.20880021584914,
+            -226.5957677464357,
+            1066.1910716763277
+          ]
+        },
+        "candidate": {
+          "voxels": 2997,
+          "centroidMm": [
+            -23.11657490136029,
+            -235.3540463275141,
+            1082.298112036886
+          ]
+        },
+        "intersectionVoxels": 2112,
+        "dice": 0.8073394495412844,
+        "centroidDistanceMm": 18.366740293749537
+      },
+      "eightSubpointMajority": {
+        "reference": {
+          "voxels": 2354,
+          "centroidMm": [
+            -24.155764805936368,
+            -226.6718882660088,
+            1066.7961850764393
+          ]
+        },
+        "candidate": {
+          "voxels": 2997,
+          "centroidMm": [
+            -23.11657490136029,
+            -235.3540463275141,
+            1082.298112036886
+          ]
+        },
+        "intersectionVoxels": 2211,
+        "dice": 0.8263875911044665,
+        "centroidDistanceMm": 17.79802021995034
+      }
+    }
+  ],
+  "sourceFiles": {
+    "HAND_LEFT.seg.nrrd": "c7b877afafb65cd9b7c3c9cf17646207f9255062acdb508164cb120dc4da00b8",
+    "HAND_RIGHT.seg.nrrd": "7d09322eb86736dccddd3805c9043aa6bef04bf042c180586ad2ce4f4c60a090",
+    "UPPER_EXTREMITY_LEFT.seg.nrrd": "93bab71ae3dd2c46fdff2f7a052d313b40b04aca0ff36a53a5c3d1629daab68f",
+    "UPPER_EXTREMITY_RIGHT.seg.nrrd": "a40f0f7f6c1ccb0d46128ab90a466794900ebc570bd55d7a81cacc6cb4a15838",
+    "LOWER_EXTREMITY_LEFT.seg.nrrd": "edca5d18deae91f4ddb05302a1168b43a4b538796bbd10a34ceb3fe18377114f",
+    "LOWER_EXTREMITY_RIGHT.seg.nrrd": "c9e69629b80dcd1a01c1db4993c78f5b034518ec8f76e169967d10358965b63e",
+    "FOOT_LEFT.seg.nrrd": "1fe34cff43db5869ae0109d6ba9ba32676d0b07963d03b074a52641c588fab94",
+    "FOOT_RIGHT.seg.nrrd": "af75e5f2370a30284fa72e47a9b54b2d9ec97fd21dd3d4116af4510bf1eb6293",
+    "SKULL.seg.nrrd": "d5bbf9409a2b8d525364553d3d33fe5fae7f52c6cad620eb725d6b3445eb8483"
+  },
+  "sourceAffineMaxAbsDifference": {
+    "HAND_LEFT.seg.nrrd": 0.0,
+    "HAND_RIGHT.seg.nrrd": 0.0,
+    "UPPER_EXTREMITY_LEFT.seg.nrrd": 0.0,
+    "UPPER_EXTREMITY_RIGHT.seg.nrrd": 0.0,
+    "LOWER_EXTREMITY_LEFT.seg.nrrd": 0.0,
+    "LOWER_EXTREMITY_RIGHT.seg.nrrd": 0.0,
+    "FOOT_LEFT.seg.nrrd": 0.0,
+    "FOOT_RIGHT.seg.nrrd": 0.0,
+    "SKULL.seg.nrrd": 0.0
+  },
+  "limitations": [
+    "Same-CT annotations are not an independent clinical gold standard.",
+    "Eight subpoints are a sampling sensitivity test, not exact volume occupancy.",
+    "2 mm Dice does not validate mesh surface, joints, skin or HRA-frame position.",
+    "Hand/finger and foot/toe model labels are grouped, not individual bone anatomy."
+  ],
+  "scriptSha256": "9cf003085ca18dd05a58c1aef1934a8376303c8065c6ca46f023185a74630935"
+}

@@ -7,6 +7,8 @@ export const musclePeelSources = {
   calf: "https://www.meddean.luc.edu/lumen/meded/grossanatomy/dissector/labs/le/ant_th_leg/tl3.html",
   gluteal: "https://www.lumen.luc.edu/lumen/meded/grossanatomy/dissector/labs/le/glut_post_th/g2.html",
   upperBack: "https://www.meddean.luc.edu/lumen/meded/grossanatomy/2010/dissection%20guide%20509.pdf",
+  anteriorThigh: "https://www.clinicalanatomy.ca/labs/421cards.pdf",
+  anteriorForearm: "https://teachmeanatomy.info/upper-limb/muscles/anterior-forearm/",
 };
 export const musclePeelGroups = [
   { sex: "male", side: "right", source: "pectoral", names: ["pectoralis major", "pectoralis minor"], levels: [["FMA34690", "FMA45874", "FMA79979"], ["FMA13375"]] },
@@ -29,6 +31,18 @@ export const musclePeelGroups = [
   { sex: "male", side: "left", source: "gluteal", names: ["gluteus maximus", "piriformis"], levels: [["FMA22329"], ["FMA22341"]] },
   { sex: "female", side: "left", source: "gluteal", names: ["gluteus maximus", "piriformis"], levels: [["VHF0025"], ["VHF0033"]] },
   { sex: "female", side: "right", source: "gluteal", names: ["gluteus maximus", "piriformis"], levels: [["VHF0063"], ["VHF0071"]] },
+  // UBC's dissected thigh identifies vastus intermedius deep to rectus
+  // femoris. Both the HRA and donor rectus meshes are present in the female
+  // atlas, although the donor duplicate is hidden in the default overview.
+  { sex: "male", side: "right", source: "anteriorThigh", names: ["rectus femoris", "vastus intermedius"], levels: [["FMA38928"], ["FMA38934"]] },
+  { sex: "male", side: "left", source: "anteriorThigh", names: ["rectus femoris", "vastus intermedius"], levels: [["FMA38929"], ["FMA38935"]] },
+  { sex: "female", side: "left", source: "anteriorThigh", names: ["rectus femoris", "vastus intermedius"], levels: [["HRAF0394", "VHF0009"], ["VHF0013"]] },
+  { sex: "female", side: "right", source: "anteriorThigh", names: ["rectus femoris", "vastus intermedius"], levels: [["HRAF0396", "VHF0047"], ["VHF0051"]] },
+  // In the anterior forearm, superficialis lies between the superficial
+  // flexor/pronator set and the deep flexors/pronator. This is a regional
+  // dissection order, not a claim that every triangle covers every other.
+  { sex: "male", side: "right", source: "anteriorForearm", names: [["pronator teres", "flexor carpi radialis", "palmaris longus", "flexor carpi ulnaris"], ["flexor digitorum superficialis"], ["flexor digitorum profundus", "flexor pollicis longus", "pronator quadratus"]], levels: [["FMA38560", "FMA38562", "FMA38460", "FMA38463", "FMA38617", "FMA38619"], ["FMA38638", "FMA38640"], ["FMA38479", "FMA38482", "FMA38454"]] },
+  { sex: "male", side: "left", source: "anteriorForearm", names: [["pronator teres", "flexor carpi radialis", "palmaris longus", "flexor carpi ulnaris"], ["flexor digitorum superficialis"], ["flexor digitorum profundus", "flexor pollicis longus", "pronator quadratus"]], levels: [["FMA38561", "FMA38563", "FMA38461", "FMA38464", "FMA38618", "FMA38620"], ["FMA38639", "FMA38641"], ["FMA38480", "FMA38484", "FMA38455"]] },
   // The upper-back dissection reflects trapezius before exposing rhomboids
   // and levator scapulae. This does not order those three deep muscles or
   // assert that every trapezius triangle covers every deeper triangle.

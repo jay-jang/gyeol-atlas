@@ -1,0 +1,566 @@
+{
+  "status": "OFFLINE SCREEN ONLY; NOT APPROVED FOR ATLAS",
+  "ctSha256": "638c569c9a702a6c7b3f50e36fe4be8ef7acc2ab0c53d960ad19418d7f00d979",
+  "candidateInputSha256": "92996cd3b2e8169d2fcb5456b5a02e06c6269bdeb43b19de8eac1f3421f9edf9",
+  "segmentationSha256": "c9e3566b36443600051e1c7067a4cf306375fa836e863348d52a7d6918f6b150",
+  "modelDatasetJsonSha256": "f3d8e43a0f9dada1ec77f86fbedd6c06dc0605d2d5018ddb831c81fb382c1a6f",
+  "comparisonGridShape": [
+    243,
+    242,
+    864
+  ],
+  "comparisonVoxelMm": [
+    2.001430034637451,
+    2.000741958618164,
+    1.9988425970077515
+  ],
+  "resampling": "nearest-neighbour original NRRD label samples at 2 mm candidate voxel centres",
+  "comparisons": [
+    {
+      "name": "skull with mandible",
+      "mooseLabel": 23,
+      "sourceFile": "SKULL.seg.nrrd",
+      "sourceFileSha256": "d5bbf9409a2b8d525364553d3d33fe5fae7f52c6cad620eb725d6b3445eb8483",
+      "sourceLabel": null,
+      "reference": {
+        "voxels": 82168,
+        "centroidMm": [
+          -238.48114519096166,
+          -218.84626546890638,
+          1631.7514882274775
+        ],
+        "bboxVoxels": [
+          [
+            83,
+            153
+          ],
+          [
+            63,
+            157
+          ],
+          [
+            758,
+            861
+          ]
+        ]
+      },
+      "candidate": {
+        "voxels": 95809,
+        "centroidMm": [
+          -237.85051080522967,
+          -224.40157333670274,
+          1635.5178665249607
+        ],
+        "bboxVoxels": [
+          [
+            83,
+            153
+          ],
+          [
+            66,
+            158
+          ],
+          [
+            758,
+            863
+          ]
+        ]
+      },
+      "intersectionVoxels": 70515,
+      "dice": 0.7924057602948695,
+      "centroidDistanceMm": 6.7412721881126
+    },
+    {
+      "name": "clavicle_right",
+      "mooseLabel": 4,
+      "sourceFile": "UPPER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceFileSha256": "a40f0f7f6c1ccb0d46128ab90a466794900ebc570bd55d7a81cacc6cb4a15838",
+      "sourceLabel": 1,
+      "reference": {
+        "voxels": 3859,
+        "centroidMm": [
+          -176.13715756106296,
+          -223.59552598578784,
+          1446.0920152846597
+        ],
+        "bboxVoxels": [
+          [
+            52,
+            112
+          ],
+          [
+            98,
+            130
+          ],
+          [
+            705,
+            743
+          ]
+        ]
+      },
+      "candidate": {
+        "voxels": 4257,
+        "centroidMm": [
+          -175.06986790202384,
+          -223.96781039200172,
+          1447.0632643348906
+        ],
+        "bboxVoxels": [
+          [
+            52,
+            112
+          ],
+          [
+            98,
+            130
+          ],
+          [
+            705,
+            744
+          ]
+        ]
+      },
+      "intersectionVoxels": 3659,
+      "dice": 0.901675702316412,
+      "centroidDistanceMm": 1.490311247013941
+    },
+    {
+      "name": "scapula_right",
+      "mooseLabel": 22,
+      "sourceFile": "UPPER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceFileSha256": "a40f0f7f6c1ccb0d46128ab90a466794900ebc570bd55d7a81cacc6cb4a15838",
+      "sourceLabel": 2,
+      "reference": {
+        "voxels": 9943,
+        "centroidMm": [
+          -125.58474092485679,
+          -287.47778922695875,
+          1431.3776188243999
+        ],
+        "bboxVoxels": [
+          [
+            38,
+            92
+          ],
+          [
+            113,
+            166
+          ],
+          [
+            667,
+            742
+          ]
+        ]
+      },
+      "candidate": {
+        "voxels": 11500,
+        "centroidMm": [
+          -123.91860123808488,
+          -284.86200986934745,
+          1435.9816158944004
+        ],
+        "bboxVoxels": [
+          [
+            38,
+            91
+          ],
+          [
+            114,
+            166
+          ],
+          [
+            667,
+            744
+          ]
+        ]
+      },
+      "intersectionVoxels": 9010,
+      "dice": 0.8403674858928322,
+      "centroidDistanceMm": 5.551136111114151
+    },
+    {
+      "name": "humerus_right",
+      "mooseLabel": 12,
+      "sourceFile": "UPPER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceFileSha256": "a40f0f7f6c1ccb0d46128ab90a466794900ebc570bd55d7a81cacc6cb4a15838",
+      "sourceLabel": 3,
+      "reference": {
+        "voxels": 17229,
+        "centroidMm": [
+          -57.289185149628544,
+          -262.2108836033588,
+          1375.0670113784292
+        ],
+        "bboxVoxels": [
+          [
+            6,
+            50
+          ],
+          [
+            111,
+            160
+          ],
+          [
+            598,
+            735
+          ]
+        ]
+      },
+      "candidate": {
+        "voxels": 19733,
+        "centroidMm": [
+          -55.02487326820375,
+          -264.70048081272853,
+          1365.485662174658
+        ],
+        "bboxVoxels": [
+          [
+            5,
+            51
+          ],
+          [
+            111,
+            161
+          ],
+          [
+            594,
+            738
+          ]
+        ]
+      },
+      "intersectionVoxels": 16959,
+      "dice": 0.9176451490720199,
+      "centroidDistanceMm": 10.155168887117041
+    },
+    {
+      "name": "radius_right",
+      "mooseLabel": 20,
+      "sourceFile": "UPPER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceFileSha256": "a40f0f7f6c1ccb0d46128ab90a466794900ebc570bd55d7a81cacc6cb4a15838",
+      "sourceLabel": 4,
+      "reference": {
+        "voxels": 3937,
+        "centroidMm": [
+          -36.76934230533505,
+          -205.09383204047197,
+          1081.4655775305491
+        ],
+        "bboxVoxels": [
+          [
+            4,
+            33
+          ],
+          [
+            80,
+            137
+          ],
+          [
+            508,
+            590
+          ]
+        ]
+      },
+      "candidate": {
+        "voxels": 4628,
+        "centroidMm": [
+          -36.19244763762557,
+          -205.57372750536365,
+          1082.999666775159
+        ],
+        "bboxVoxels": [
+          [
+            4,
+            34
+          ],
+          [
+            80,
+            134
+          ],
+          [
+            507,
+            588
+          ]
+        ]
+      },
+      "intersectionVoxels": 3754,
+      "dice": 0.8765907764156451,
+      "centroidDistanceMm": 1.707787142849832
+    },
+    {
+      "name": "ulna_right",
+      "mooseLabel": 31,
+      "sourceFile": "UPPER_EXTREMITY_RIGHT.seg.nrrd",
+      "sourceFileSha256": "a40f0f7f6c1ccb0d46128ab90a466794900ebc570bd55d7a81cacc6cb4a15838",
+      "sourceLabel": 5,
+      "reference": {
+        "voxels": 2235,
+        "centroidMm": [
+          -24.20880021584914,
+          -226.5957677464357,
+          1066.1910716763277
+        ],
+        "bboxVoxels": [
+          [
+            3,
+            24
+          ],
+          [
+            91,
+            136
+          ],
+          [
+            504,
+            566
+          ]
+        ]
+      },
+      "candidate": {
+        "voxels": 2997,
+        "centroidMm": [
+          -23.11657490136029,
+          -235.3540463275141,
+          1082.298112036886
+        ],
+        "bboxVoxels": [
+          [
+            4,
+            24
+          ],
+          [
+            91,
+            152
+          ],
+          [
+            505,
+            596
+          ]
+        ]
+      },
+      "intersectionVoxels": 2112,
+      "dice": 0.8073394495412844,
+      "centroidDistanceMm": 18.366740293749537
+    },
+    {
+      "name": "tibia_left",
+      "mooseLabel": 26,
+      "sourceFile": "LOWER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceFileSha256": "edca5d18deae91f4ddb05302a1168b43a4b538796bbd10a34ceb3fe18377114f",
+      "sourceLabel": 1,
+      "reference": {
+        "voxels": 35044,
+        "centroidMm": [
+          -303.40782293106184,
+          -249.14176766506517,
+          369.3727494475538
+        ],
+        "bboxVoxels": [
+          [
+            127,
+            173
+          ],
+          [
+            109,
+            142
+          ],
+          [
+            79,
+            249
+          ]
+        ]
+      },
+      "candidate": {
+        "voxels": 38221,
+        "centroidMm": [
+          -303.30560603519115,
+          -249.18007549191503,
+          368.833694671205
+        ],
+        "bboxVoxels": [
+          [
+            127,
+            173
+          ],
+          [
+            108,
+            141
+          ],
+          [
+            78,
+            248
+          ]
+        ]
+      },
+      "intersectionVoxels": 34816,
+      "dice": 0.9504128847335017,
+      "centroidDistanceMm": 0.5499962138995554
+    },
+    {
+      "name": "fibula_left",
+      "mooseLabel": 7,
+      "sourceFile": "LOWER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceFileSha256": "edca5d18deae91f4ddb05302a1168b43a4b538796bbd10a34ceb3fe18377114f",
+      "sourceLabel": 2,
+      "reference": {
+        "voxels": 5831,
+        "centroidMm": [
+          -318.4727234724475,
+          -279.27195488814726,
+          304.123303267717
+        ],
+        "bboxVoxels": [
+          [
+            144,
+            177
+          ],
+          [
+            131,
+            144
+          ],
+          [
+            71,
+            238
+          ]
+        ]
+      },
+      "candidate": {
+        "voxels": 7097,
+        "centroidMm": [
+          -317.8298091248625,
+          -279.33785893787916,
+          299.90841128241766
+        ],
+        "bboxVoxels": [
+          [
+            143,
+            177
+          ],
+          [
+            130,
+            144
+          ],
+          [
+            71,
+            237
+          ]
+        ]
+      },
+      "intersectionVoxels": 5760,
+      "dice": 0.8910891089108911,
+      "centroidDistanceMm": 4.264152512497929
+    },
+    {
+      "name": "femur_left",
+      "mooseLabel": 5,
+      "sourceFile": "LOWER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceFileSha256": "edca5d18deae91f4ddb05302a1168b43a4b538796bbd10a34ceb3fe18377114f",
+      "sourceLabel": 3,
+      "reference": {
+        "voxels": 60270,
+        "centroidMm": [
+          -335.443298779049,
+          -231.98453350245742,
+          681.0666222560875
+        ],
+        "bboxVoxels": [
+          [
+            134,
+            200
+          ],
+          [
+            101,
+            134
+          ],
+          [
+            246,
+            453
+          ]
+        ]
+      },
+      "candidate": {
+        "voxels": 64520,
+        "centroidMm": [
+          -335.50447171987105,
+          -231.96295518710312,
+          681.6242749339904
+        ],
+        "bboxVoxels": [
+          [
+            134,
+            201
+          ],
+          [
+            100,
+            135
+          ],
+          [
+            246,
+            453
+          ]
+        ]
+      },
+      "intersectionVoxels": 59930,
+      "dice": 0.9604936292972194,
+      "centroidDistanceMm": 0.5614127372571698
+    },
+    {
+      "name": "patella_left",
+      "mooseLabel": 17,
+      "sourceFile": "LOWER_EXTREMITY_LEFT.seg.nrrd",
+      "sourceFileSha256": "edca5d18deae91f4ddb05302a1168b43a4b538796bbd10a34ceb3fe18377114f",
+      "sourceLabel": 4,
+      "reference": {
+        "voxels": 2778,
+        "centroidMm": [
+          -321.40925589261764,
+          -195.0171019324216,
+          519.9229181495135
+        ],
+        "bboxVoxels": [
+          [
+            150,
+            171
+          ],
+          [
+            91,
+            103
+          ],
+          [
+            247,
+            270
+          ]
+        ]
+      },
+      "candidate": {
+        "voxels": 3085,
+        "centroidMm": [
+          -321.59091315597925,
+          -194.8031053984571,
+          520.7084119577462
+        ],
+        "bboxVoxels": [
+          [
+            150,
+            171
+          ],
+          [
+            91,
+            103
+          ],
+          [
+            247,
+            271
+          ]
+        ]
+      },
+      "intersectionVoxels": 2728,
+      "dice": 0.9305816135084428,
+      "centroidDistanceMm": 0.8341429138059767
+    }
+  ],
+  "limitations": [
+    "BoneHub labels are same-donor reference annotations, not a clinical gold standard.",
+    "A low-resolution overlap score cannot approve topology, joints, skin fit, or HRA alignment.",
+    "Only uniquely labelled source structures and skull union are compared; overlapping NRRD layers are excluded."
+  ],
+  "scriptSha256": "33738ae250d6c4bce670f112ed38ecb0fb6da8c35e1e5ddca21b254895d39514"
+}

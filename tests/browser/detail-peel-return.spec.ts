@@ -2,6 +2,50 @@ import {test,expect} from '@playwright/test';
 import {ready,snapshot,choosePoint} from './helpers';
 
 for(const scenario of [
+  {sex:'남성',name:'심장'},
+  {sex:'여성',name:'뇌'},
+  {sex:'여성',name:'위 (여성 CT)'},
+] as const)test(`${scenario.sex} ${scenario.name}: direct detail return restores its original camera after reload`,async({page})=>{
+  test.setTimeout(150000);
+  await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
+  if(scenario.sex==='여성')await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
+  await ready(page);
+  await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
+  const before=await snapshot(page),canvas=page.locator('canvas');
+  const ids=await canvas.getAttribute('data-visible-structure-ids');
+  await page.locator('.featured-anatomy > button').filter({has:page.getByText(scenario.name,{exact:true})}).click();await ready(page);
+  expect((await snapshot(page)).detailReturn.camera).toEqual(before.camera);
+  await page.reload();await ready(page);
+  expect((await snapshot(page)).detailReturn.camera).toEqual(before.camera);
+  await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();await ready(page);
+  await expect.poll(async()=>{
+    const after=await snapshot(page);
+    return Math.max(...['position','target'].flatMap(key=>after.camera[key].map((value:number,i:number)=>Math.abs(value-before.camera[key][i]))));
+  }).toBeLessThan(1e-6);
+  const after=await snapshot(page);
+  expect(after.dissection).toBe(50.5);
+  expect(after.detail).toBe(null);
+  await expect(canvas).toHaveAttribute('data-visible-structure-ids',ids!);
+});
+
+test('a point chosen from a directly opened heart detail returns to the original camera',async({page})=>{
+  test.setTimeout(90000);
+  await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
+  await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
+  const before=await snapshot(page);
+  await page.locator('.featured-anatomy > button').filter({has:page.getByText('심장',{exact:true})}).click();await ready(page);
+  await choosePoint(page,'ST36');await ready(page);
+  await expect.poll(async()=>{
+    const after=await snapshot(page);
+    return Math.max(...['position','target'].flatMap(key=>after.camera[key].map((value:number,i:number)=>Math.abs(value-before.camera[key][i]))));
+  }).toBeLessThan(1e-6);
+  const after=await snapshot(page);
+  expect(after.pointId).toBe('ST36');
+  expect(after.dissection).toBe(50.5);
+  expect(after.detail).toBe(null);
+});
+
+for(const scenario of [
   {sex:'남성',name:'심장',source:'male'},
   {sex:'여성',name:'뇌',source:'female'},
   {sex:'여성',name:'위 (여성 CT)',source:'female-detail'},

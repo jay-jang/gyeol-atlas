@@ -1,0 +1,229 @@
+{
+  "status": "ONE-SLICE STORED-VALUE CALIBRATION SUPPORT; NOT WHOLE-CT OR SEGMENTATION VALIDATION",
+  "source": {
+    "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Image/02_Female.nii.gz",
+    "sha256": "638c569c9a702a6c7b3f50e36fe4be8ef7acc2ab0c53d960ad19418d7f00d979",
+    "shape": [
+      673,
+      670,
+      1727
+    ],
+    "storedDtype": "uint16",
+    "niftiSlope": 1,
+    "niftiIntercept": 0
+  },
+  "dicom": {
+    "url": "https://dataverse.harvard.edu/api/access/datafile/7575838",
+    "datasetDoi": "10.7910/DVN/3JDZCT",
+    "fileId": 7575838,
+    "filename": "VHFCT1mm-Head (100).dcm",
+    "sha256": "0eb0922c813c97a3659cd6984be0297e2f64030b445904fc966d2b6902a386bd",
+    "md5": "c429a90d77b413d9b19e2e664cd2b56d",
+    "rescaleSlope": 1.0,
+    "rescaleIntercept": -1024.0,
+    "imagePositionPatient": [
+      0.0,
+      0.0,
+      1599.0
+    ],
+    "pixelSpacingMm": [
+      1.0,
+      1.0
+    ],
+    "imageOrientationPatient": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "sliceThicknessMm": 1.0
+  },
+  "matching": {
+    "feature": "stored intensity >1500, not a clinical bone threshold",
+    "candidateZValues": [
+      1580,
+      1582,
+      1584,
+      1586,
+      1588,
+      1590,
+      1592,
+      1594,
+      1596,
+      1598,
+      1600,
+      1602,
+      1604
+    ],
+    "best": {
+      "bonehubZ": 1592,
+      "offsetYX": [
+        130,
+        166
+      ],
+      "intersection": 2732,
+      "sourceMaskPixels": 2964,
+      "candidateMaskPixels": 2962,
+      "iou": 0.8553537883531622
+    },
+    "allCandidates": [
+      {
+        "bonehubZ": 1580,
+        "offsetYX": [
+          148,
+          165
+        ],
+        "intersection": 624,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 2133,
+        "iou": 0.13950368879946345
+      },
+      {
+        "bonehubZ": 1582,
+        "offsetYX": [
+          143,
+          165
+        ],
+        "intersection": 816,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 2289,
+        "iou": 0.1839080459770115
+      },
+      {
+        "bonehubZ": 1584,
+        "offsetYX": [
+          141,
+          165
+        ],
+        "intersection": 974,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 2638,
+        "iou": 0.2104580812445981
+      },
+      {
+        "bonehubZ": 1586,
+        "offsetYX": [
+          136,
+          164
+        ],
+        "intersection": 1134,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 2667,
+        "iou": 0.25216811207471646
+      },
+      {
+        "bonehubZ": 1588,
+        "offsetYX": [
+          134,
+          165
+        ],
+        "intersection": 1367,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 2688,
+        "iou": 0.3190198366394399
+      },
+      {
+        "bonehubZ": 1590,
+        "offsetYX": [
+          130,
+          166
+        ],
+        "intersection": 1808,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 2717,
+        "iou": 0.46682158533436613
+      },
+      {
+        "bonehubZ": 1592,
+        "offsetYX": [
+          130,
+          166
+        ],
+        "intersection": 2732,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 2962,
+        "iou": 0.8553537883531622
+      },
+      {
+        "bonehubZ": 1594,
+        "offsetYX": [
+          130,
+          166
+        ],
+        "intersection": 1917,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 3413,
+        "iou": 0.4298206278026906
+      },
+      {
+        "bonehubZ": 1596,
+        "offsetYX": [
+          126,
+          167
+        ],
+        "intersection": 1461,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 3939,
+        "iou": 0.2684674751929438
+      },
+      {
+        "bonehubZ": 1598,
+        "offsetYX": [
+          125,
+          167
+        ],
+        "intersection": 1477,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 4367,
+        "iou": 0.2523061154765972
+      },
+      {
+        "bonehubZ": 1600,
+        "offsetYX": [
+          123,
+          167
+        ],
+        "intersection": 1595,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 4845,
+        "iou": 0.2566784679755391
+      },
+      {
+        "bonehubZ": 1602,
+        "offsetYX": [
+          122,
+          167
+        ],
+        "intersection": 1469,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 4518,
+        "iou": 0.24430400798270413
+      },
+      {
+        "bonehubZ": 1604,
+        "offsetYX": [
+          120,
+          167
+        ],
+        "intersection": 1254,
+        "sourceMaskPixels": 2964,
+        "candidateMaskPixels": 3942,
+        "iou": 0.2218683651804671
+      }
+    ],
+    "positivePairs": 33665,
+    "storedValueCorrelation": 0.9971223311403462,
+    "candidateOnSourceLinearSlope": 0.987190388657551,
+    "candidateOnSourceLinearIntercept": 7.607399524893198,
+    "medianStoredValueDifference": -0.546051025390625,
+    "p95AbsoluteStoredValueDifference": 99.02311706542969
+  },
+  "interpretation": [
+    "The original DICOM slice has slope 1 and intercept -1024. The BoneHub NIfTI has unsigned stored values and a 1/0 NIfTI scale.",
+    "The near-matched same-donor slice supports, but does not prove for every voxel, applying stored value minus 1024 to the BoneHub derivative.",
+    "The 2mm MOOSE input is a separate downsampled candidate; neither this audit nor automatic labels are anatomy approval."
+  ],
+  "scriptSha256": "9efb4f9a96f4b8b54aead2c14d3804970d251b5e9b0ba0c360bc510232de117e"
+}

@@ -1,0 +1,1777 @@
+{
+  "scope": "Read-only regional screen of 39 existing same-name vessel surface pairs. Chest-trained global transforms are not accepted registrations or anatomical corrections.",
+  "sourceReport": {
+    "path": "docs/anatomy-alignment/male-vessel-surfaces.json",
+    "sha256": "e2f779f4e2ff68bf19194de3b0b410ab7fbc10eeec60732fcedb5c333ee71f8b",
+    "sourceFiles": {
+      "public/models/vessel.glb": "fc3432dfd82b93c2f3fc256c9ee3ff8baa2d8068643cadec6e017eea4d70a3b4",
+      "public/models/vessel-full.glb": "05f373a294ab809b9a628bc1474a66028642997330fddc553a33d4ac6409b757",
+      "scripts/model-inputs.json": "e676d9214cf2c4ab7afdeee5f3bd9782299eb223c050a2b7778dec68356337f2",
+      "data/catalog/male-registration.json": "7bd9f67b48ba44ca9e4b7cbd1621b2f874d4184d6f5a86f9387d055356ad7fd0",
+      "scripts/audit-male-vessel-surfaces.mjs": "229628746f6d50c469b0c8c909f0471de1729d33dd42e810176674007907f114"
+    }
+  },
+  "regionRule": "Source target AABB center y: head-neck >=1.35 m; thorax >=1.18; abdomen >=0.92; otherwise pelvis-leg. UI audit bins, not clinical body boundaries.",
+  "rows": [
+    {
+      "name": "aortic arch",
+      "region": "thorax",
+      "sourceCenter": [
+        0.010752447880804539,
+        1.3354602456092834,
+        -0.00020548328757286072
+      ],
+      "targetCenter": [
+        0.011803713627159595,
+        1.3341975808143616,
+        -0.0005201026797294617
+      ],
+      "centerResidualMm": 1.6728620432407284,
+      "sourceToTargetP95Mm": 4.280762556617292,
+      "targetToSourceP95Mm": 7.045196087077138
+    },
+    {
+      "name": "ascending aorta",
+      "region": "thorax",
+      "sourceCenter": [
+        0.010069592855870724,
+        1.2967602610588074,
+        0.023525243159383535
+      ],
+      "targetCenter": [
+        0.009211764670908451,
+        1.2909324765205383,
+        0.025895302183926105
+      ],
+      "centerResidualMm": 6.349497743854947,
+      "sourceToTargetP95Mm": 6.821416034623501,
+      "targetToSourceP95Mm": 6.149393942029735
+    },
+    {
+      "name": "brachiocephalic vein left",
+      "region": "thorax",
+      "sourceCenter": [
+        0.0019864197820425034,
+        1.3514127731323242,
+        0.023510603699833155
+      ],
+      "targetCenter": [
+        0.0021055005490779877,
+        1.3467374444007874,
+        0.024941799696534872
+      ],
+      "centerResidualMm": 4.890930479774467,
+      "sourceToTargetP95Mm": 3.3715179369914234,
+      "targetToSourceP95Mm": 12.503189088021383
+    },
+    {
+      "name": "brachiocephalic vein right",
+      "region": "thorax",
+      "sourceCenter": [
+        -0.016763326711952686,
+        1.3505257964134216,
+        0.02195468870922923
+      ],
+      "targetCenter": [
+        -0.021058600395917892,
+        1.3487474918365479,
+        0.023844298906624317
+      ],
+      "centerResidualMm": 5.018203850621631,
+      "sourceToTargetP95Mm": 7.743942480298948,
+      "targetToSourceP95Mm": 11.120017560541909
+    },
+    {
+      "name": "common carotid artery left",
+      "region": "head-neck",
+      "sourceCenter": [
+        0.022169332951307297,
+        1.397649109363556,
+        0.0029593572253361344
+      ],
+      "targetCenter": [
+        0.01683689933270216,
+        1.3653424978256226,
+        0.0076934018870815635
+      ],
+      "centerResidualMm": 33.08418317291752,
+      "sourceToTargetP95Mm": 39.64480749681056,
+      "targetToSourceP95Mm": 21.331724400057453
+    },
+    {
+      "name": "common carotid artery right",
+      "region": "head-neck",
+      "sourceCenter": [
+        -0.022646081168204546,
+        1.4046745300292969,
+        0.00839946826454252
+      ],
+      "targetCenter": [
+        -0.014943099580705166,
+        1.3761974573135376,
+        0.014966801274567842
+      ],
+      "centerResidualMm": 30.22266465188939,
+      "sourceToTargetP95Mm": 42.94571327825866,
+      "targetToSourceP95Mm": 14.706433216499452
+    },
+    {
+      "name": "common hepatic artery",
+      "region": "abdomen",
+      "sourceCenter": [
+        -0.0066873859614133835,
+        1.1202558875083923,
+        0.04416936170309782
+      ],
+      "targetCenter": [
+        -0.0054087701719254255,
+        1.1076025366783142,
+        0.04016480781137943
+      ],
+      "centerResidualMm": 13.33336407055037,
+      "sourceToTargetP95Mm": 19.131136480946854,
+      "targetToSourceP95Mm": 24.317381310872506
+    },
+    {
+      "name": "common iliac artery left",
+      "region": "abdomen",
+      "sourceCenter": [
+        0.013981880154460669,
+        0.9798671007156372,
+        0.022339941235259175
+      ],
+      "targetCenter": [
+        0.018341384187806398,
+        0.9583069682121277,
+        0.02211530366912484
+      ],
+      "centerResidualMm": 21.997614666635204,
+      "sourceToTargetP95Mm": 15.019652936771905,
+      "targetToSourceP95Mm": 27.089262734277828
+    },
+    {
+      "name": "common iliac artery right",
+      "region": "abdomen",
+      "sourceCenter": [
+        -0.010074787773191929,
+        0.9798475801944733,
+        0.022321383468806744
+      ],
+      "targetCenter": [
+        -0.012984849512577057,
+        0.9600325226783752,
+        0.02345780236646533
+      ],
+      "centerResidualMm": 20.059820826823493,
+      "sourceToTargetP95Mm": 15.59561712868246,
+      "targetToSourceP95Mm": 24.23107595965936
+    },
+    {
+      "name": "common iliac vein left",
+      "region": "abdomen",
+      "sourceCenter": [
+        0.0026906076818704605,
+        0.9787239134311676,
+        0.01933619473129511
+      ],
+      "targetCenter": [
+        0.00418699998408556,
+        0.9578745365142822,
+        0.014507198706269264
+      ],
+      "centerResidualMm": 21.45355239474798,
+      "sourceToTargetP95Mm": 15.661253224771565,
+      "targetToSourceP95Mm": 28.9722333980308
+    },
+    {
+      "name": "common iliac vein right",
+      "region": "abdomen",
+      "sourceCenter": [
+        -0.012316131353145465,
+        0.9786904752254486,
+        0.01939318864606321
+      ],
+      "targetCenter": [
+        -0.018751649651676416,
+        0.9585435092449188,
+        0.016033149586291984
+      ],
+      "centerResidualMm": 21.415088056660885,
+      "sourceToTargetP95Mm": 15.42848502733577,
+      "targetToSourceP95Mm": 29.210165412368372
+    },
+    {
+      "name": "coronary sinus",
+      "region": "thorax",
+      "sourceCenter": [
+        0.02024680864997208,
+        1.2359843850135803,
+        0.0003657117486000061
+      ],
+      "targetCenter": [
+        0.018849779618903995,
+        1.2305975556373596,
+        0.00181930186226964
+      ],
+      "centerResidualMm": 5.751742784645317,
+      "sourceToTargetP95Mm": 4.115519970505063,
+      "targetToSourceP95Mm": 3.881992646415193
+    },
+    {
+      "name": "external iliac artery left",
+      "region": "pelvis-leg",
+      "sourceCenter": [
+        0.03906104899942875,
+        0.9161478281021118,
+        0.013697203481569886
+      ],
+      "targetCenter": [
+        0.04078934993594885,
+        0.8855844736099243,
+        0.031417998994584195
+      ],
+      "centerResidualMm": 35.37134794655643,
+      "sourceToTargetP95Mm": 26.50253151769985,
+      "targetToSourceP95Mm": 43.3475894478575
+    },
+    {
+      "name": "external iliac artery right",
+      "region": "pelvis-leg",
+      "sourceCenter": [
+        -0.0403625164180994,
+        0.9161478281021118,
+        0.01369720185175538
+      ],
+      "targetCenter": [
+        -0.04044520203024149,
+        0.8876089751720428,
+        0.03478829609230161
+      ],
+      "centerResidualMm": 35.48671892043788,
+      "sourceToTargetP95Mm": 23.550263658009236,
+      "targetToSourceP95Mm": 45.181579077905845
+    },
+    {
+      "name": "external iliac vein left",
+      "region": "pelvis-leg",
+      "sourceCenter": [
+        0.02883176878094673,
+        0.9099378287792206,
+        0.021063770400360227
+      ],
+      "targetCenter": [
+        0.028665099758654833,
+        0.8847290277481079,
+        0.022346896585077047
+      ],
+      "centerResidualMm": 25.241985674568568,
+      "sourceToTargetP95Mm": 26.93960782199501,
+      "targetToSourceP95Mm": 30.5685328658475
+    },
+    {
+      "name": "external iliac vein right",
+      "region": "pelvis-leg",
+      "sourceCenter": [
+        -0.03013323713093996,
+        0.9099378287792206,
+        0.021063769061584026
+      ],
+      "targetCenter": [
+        -0.03224849887192249,
+        0.8853524923324585,
+        0.026379802031442523
+      ],
+      "centerResidualMm": 25.242292030835376,
+      "sourceToTargetP95Mm": 26.875174605544913,
+      "targetToSourceP95Mm": 25.99094804315976
+    },
+    {
+      "name": "gastric artery left",
+      "region": "abdomen",
+      "sourceCenter": [
+        0.01142064796295017,
+        1.1338621377944946,
+        0.04159801825881004
+      ],
+      "targetCenter": [
+        0.007188070216216147,
+        1.0981325507164001,
+        0.040385304018855095
+      ],
+      "centerResidualMm": 35.99984420773337,
+      "sourceToTargetP95Mm": 42.92548850663257,
+      "targetToSourceP95Mm": 28.098247416066187
+    },
+    {
+      "name": "great cardiac vein",
+      "region": "thorax",
+      "sourceCenter": [
+        0.05582178570330143,
+        1.2439296245574951,
+        0.02971778903156519
+      ],
+      "targetCenter": [
+        0.056441351771354675,
+        1.24013751745224,
+        0.030859198421239853
+      ],
+      "centerResidualMm": 4.0083355405014265,
+      "sourceToTargetP95Mm": 3.7549770136266227,
+      "targetToSourceP95Mm": 4.023472357744974
+    },
+    {
+      "name": "inferior mesenteric artery",
+      "region": "abdomen",
+      "sourceCenter": [
+        0.010339452186599374,
+        0.9915022850036621,
+        0.026004586834460497
+      ],
+      "targetCenter": [
+        0.0077122499933466315,
+        0.9951064586639404,
+        0.03924580384045839
+      ],
+      "centerResidualMm": 13.972189768880321,
+      "sourceToTargetP95Mm": 30.35617723413027,
+      "targetToSourceP95Mm": 20.887557588793424
+    },
+    {
+      "name": "internal iliac artery left",
+      "region": "pelvis-leg",
+      "sourceCenter": [
+        0.028916471637785435,
+        0.9389855563640594,
+        0.0019566677510738373
+      ],
+      "targetCenter": [
+        0.026608049869537354,
+        0.9024740159511566,
+        -0.024433947168290615
+      ],
+      "centerResidualMm": 45.109710154304246,
+      "sourceToTargetP95Mm": 23.68079316042876,
+      "targetToSourceP95Mm": 74.05355430850449
+    },
+    {
+      "name": "internal iliac artery right",
+      "region": "pelvis-leg",
+      "sourceCenter": [
+        -0.03021793905645609,
+        0.9389855563640594,
+        0.0019566677510738373
+      ],
+      "targetCenter": [
+        -0.026208248920738697,
+        0.9033290445804596,
+        -0.017638100311160088
+      ],
+      "centerResidualMm": 40.882996257260885,
+      "sourceToTargetP95Mm": 25.95923594329472,
+      "targetToSourceP95Mm": 64.69684056695849
+    },
+    {
+      "name": "internal iliac vein left",
+      "region": "pelvis-leg",
+      "sourceCenter": [
+        0.019419830292463303,
+        0.9382085800170898,
+        0.0012383549474179745
+      ],
+      "targetCenter": [
+        0.02006840007379651,
+        0.9035390317440033,
+        -0.02462199912406504
+      ],
+      "centerResidualMm": 43.25686226396461,
+      "sourceToTargetP95Mm": 23.962707914666268,
+      "targetToSourceP95Mm": 58.39642218095532
+    },
+    {
+      "name": "internal iliac vein right",
+      "region": "pelvis-leg",
+      "sourceCenter": [
+        -0.02072129864245653,
+        0.9382085800170898,
+        0.0012383568100631237
+      ],
+      "targetCenter": [
+        -0.026894849725067616,
+        0.9034259617328644,
+        -0.02382669923827052
+      ],
+      "centerResidualMm": 43.31512786985456,
+      "sourceToTargetP95Mm": 25.349032825660505,
+      "targetToSourceP95Mm": 58.79325466780021
+    },
+    {
+      "name": "internal jugular vein left",
+      "region": "head-neck",
+      "sourceCenter": [
+        0.027907520532608032,
+        1.4475272297859192,
+        0.0020627323538064957
+      ],
+      "targetCenter": [
+        0.0243695005774498,
+        1.3837525248527527,
+        0.020424797665327787
+      ],
+      "centerResidualMm": 66.45973229723486,
+      "sourceToTargetP95Mm": 123.12470957022042,
+      "targetToSourceP95Mm": 7.755033015572374
+    },
+    {
+      "name": "internal jugular vein right",
+      "region": "head-neck",
+      "sourceCenter": [
+        -0.029208987951278687,
+        1.4475272297859192,
+        0.0020627332851290703
+      ],
+      "targetCenter": [
+        -0.0264235008507967,
+        1.3858975172042847,
+        0.0209837993606925
+      ],
+      "centerResidualMm": 64.52896367304893,
+      "sourceToTargetP95Mm": 122.0235057728525,
+      "targetToSourceP95Mm": 4.705854132758785
+    },
+    {
+      "name": "middle cardiac vein",
+      "region": "thorax",
+      "sourceCenter": [
+        0.035612673324067146,
+        1.2177808284759521,
+        0.03425382962450385
+      ],
+      "targetCenter": [
+        0.036063593928702176,
+        1.2144625186920166,
+        0.035762302577495575
+      ],
+      "centerResidualMm": 3.6728735158938393,
+      "sourceToTargetP95Mm": 3.946906492000065,
+      "targetToSourceP95Mm": 4.061795566544634
+    },
+    {
+      "name": "renal artery left",
+      "region": "abdomen",
+      "sourceCenter": [
+        0.01734742778353393,
+        1.0863251686096191,
+        0.013542283442802727
+      ],
+      "targetCenter": [
+        0.029654640005901456,
+        1.0740824937820435,
+        0.005306702107191086
+      ],
+      "centerResidualMm": 19.213936597054303,
+      "sourceToTargetP95Mm": 9.071289414760951,
+      "targetToSourceP95Mm": 36.39467910063924
+    },
+    {
+      "name": "renal artery right",
+      "region": "abdomen",
+      "sourceCenter": [
+        -0.011347221210598946,
+        1.0834481716156006,
+        0.011163540999405086
+      ],
+      "targetCenter": [
+        -0.021432198584079742,
+        1.0684075355529785,
+        0.004060497507452965
+      ],
+      "centerResidualMm": 19.452010915081004,
+      "sourceToTargetP95Mm": 18.133731678807187,
+      "targetToSourceP95Mm": 35.35034549745997
+    },
+    {
+      "name": "renal vein left",
+      "region": "abdomen",
+      "sourceCenter": [
+        0.0065814778208732605,
+        1.0762729048728943,
+        0.016550131083931774
+      ],
+      "targetCenter": [
+        0.01633459934964776,
+        1.0687825083732605,
+        0.00985604990273714
+      ],
+      "centerResidualMm": 14.001433574359266,
+      "sourceToTargetP95Mm": 11.623540020229651,
+      "targetToSourceP95Mm": 32.64660396801916
+    },
+    {
+      "name": "renal vein right",
+      "region": "abdomen",
+      "sourceCenter": [
+        -0.018850290682166815,
+        1.0730090141296387,
+        0.010128203663043678
+      ],
+      "targetCenter": [
+        -0.04020049888640642,
+        1.0633124709129333,
+        0.007457999978214502
+      ],
+      "centerResidualMm": 23.600515427343733,
+      "sourceToTargetP95Mm": 13.076727273109215,
+      "targetToSourceP95Mm": 39.694902588200776
+    },
+    {
+      "name": "splenic artery",
+      "region": "abdomen",
+      "sourceCenter": [
+        0.04887287481687963,
+        1.1247232556343079,
+        0.009009231813251972
+      ],
+      "targetCenter": [
+        0.041971464874222875,
+        1.1078324913978577,
+        0.013168251607567072
+      ],
+      "centerResidualMm": 18.714294572263505,
+      "sourceToTargetP95Mm": 18.55662840668685,
+      "targetToSourceP95Mm": 25.01793984016842
+    },
+    {
+      "name": "splenic vein",
+      "region": "abdomen",
+      "sourceCenter": [
+        0.04463773057796061,
+        1.1248453855514526,
+        0.014904148876667023
+      ],
+      "targetCenter": [
+        0.04154519736766815,
+        1.1021174788475037,
+        0.011834499426186085
+      ],
+      "centerResidualMm": 23.141829066627565,
+      "sourceToTargetP95Mm": 23.088865509087125,
+      "targetToSourceP95Mm": 25.34930557249127
+    },
+    {
+      "name": "subclavian artery left",
+      "region": "head-neck",
+      "sourceCenter": [
+        0.04722349811345339,
+        1.3662096858024597,
+        -0.0019475892186164856
+      ],
+      "targetCenter": [
+        0.05213775113224983,
+        1.3567074537277222,
+        -0.00024330150336027145
+      ],
+      "centerResidualMm": 10.832677127621512,
+      "sourceToTargetP95Mm": 7.5300085117228965,
+      "targetToSourceP95Mm": 15.589028196464938
+    },
+    {
+      "name": "subclavian artery right",
+      "region": "head-neck",
+      "sourceCenter": [
+        -0.04475169163197279,
+        1.3736226558685303,
+        0.006702388636767864
+      ],
+      "targetCenter": [
+        -0.045981590170413256,
+        1.3669174909591675,
+        0.006659050122834742
+      ],
+      "centerResidualMm": 6.817166941141904,
+      "sourceToTargetP95Mm": 10.4416298369316,
+      "targetToSourceP95Mm": 13.349558374791137
+    },
+    {
+      "name": "subclavian vein left",
+      "region": "head-neck",
+      "sourceCenter": [
+        0.05607622768729925,
+        1.3653619289398193,
+        0.011078154086135328
+      ],
+      "targetCenter": [
+        0.05684460140764713,
+        1.364187479019165,
+        0.016859798692166805
+      ],
+      "centerResidualMm": 5.9495499948062465,
+      "sourceToTargetP95Mm": 9.300973735624977,
+      "targetToSourceP95Mm": 12.026262815132272
+    },
+    {
+      "name": "subclavian vein right",
+      "region": "head-neck",
+      "sourceCenter": [
+        -0.05559500865638256,
+        1.3649418354034424,
+        0.010657190228812397
+      ],
+      "targetCenter": [
+        -0.05456274747848511,
+        1.36451256275177,
+        0.018727298825979233
+      ],
+      "centerResidualMm": 8.147176868028222,
+      "sourceToTargetP95Mm": 13.822552895219102,
+      "targetToSourceP95Mm": 13.061282831879558
+    },
+    {
+      "name": "superior mesenteric artery",
+      "region": "abdomen",
+      "sourceCenter": [
+        -0.0027021318674087524,
+        1.0289768278598785,
+        0.03756634937599301
+      ],
+      "targetCenter": [
+        0.006852429825812578,
+        1.0700425505638123,
+        0.03661930561065674
+      ],
+      "centerResidualMm": 42.173215697162725,
+      "sourceToTargetP95Mm": 113.36388270671367,
+      "targetToSourceP95Mm": 13.882582011791408
+    },
+    {
+      "name": "superior mesenteric vein",
+      "region": "abdomen",
+      "sourceCenter": [
+        -0.02945477917091921,
+        1.038480967283249,
+        0.032054687384516
+      ],
+      "targetCenter": [
+        -0.002425149898044765,
+        1.0688774585723877,
+        0.04149429686367512
+      ],
+      "centerResidualMm": 41.757080458752775,
+      "sourceToTargetP95Mm": 110.67392992848295,
+      "targetToSourceP95Mm": 12.047764938060151
+    },
+    {
+      "name": "superior vena cava",
+      "region": "thorax",
+      "sourceCenter": [
+        -0.016325946198776364,
+        1.3188994526863098,
+        0.01855138991959393
+      ],
+      "targetCenter": [
+        -0.015397295588627458,
+        1.3161524534225464,
+        0.018909801496192813
+      ],
+      "centerResidualMm": 2.9217898228802923,
+      "sourceToTargetP95Mm": 2.0505606670054597,
+      "targetToSourceP95Mm": 3.427194282481811
+    }
+  ],
+  "summary": [
+    {
+      "region": "head-neck",
+      "count": 8,
+      "centerResidual": {
+        "minimumMm": 5.9495499948062465,
+        "medianMm": 10.832677127621512,
+        "maximumMm": 66.45973229723486
+      },
+      "sourceToTargetP95": {
+        "minimumMm": 7.5300085117228965,
+        "medianMm": 13.822552895219102,
+        "maximumMm": 123.12470957022042
+      },
+      "targetToSourceP95": {
+        "minimumMm": 4.705854132758785,
+        "medianMm": 13.061282831879558,
+        "maximumMm": 21.331724400057453
+      }
+    },
+    {
+      "region": "thorax",
+      "count": 8,
+      "centerResidual": {
+        "minimumMm": 1.6728620432407284,
+        "medianMm": 4.0083355405014265,
+        "maximumMm": 6.349497743854947
+      },
+      "sourceToTargetP95": {
+        "minimumMm": 2.0505606670054597,
+        "medianMm": 3.946906492000065,
+        "maximumMm": 7.743942480298948
+      },
+      "targetToSourceP95": {
+        "minimumMm": 3.427194282481811,
+        "medianMm": 4.061795566544634,
+        "maximumMm": 12.503189088021383
+      }
+    },
+    {
+      "region": "abdomen",
+      "count": 15,
+      "centerResidual": {
+        "minimumMm": 13.33336407055037,
+        "medianMm": 21.415088056660885,
+        "maximumMm": 42.173215697162725
+      },
+      "sourceToTargetP95": {
+        "minimumMm": 9.071289414760951,
+        "medianMm": 18.133731678807187,
+        "maximumMm": 113.36388270671367
+      },
+      "targetToSourceP95": {
+        "minimumMm": 12.047764938060151,
+        "medianMm": 27.089262734277828,
+        "maximumMm": 39.694902588200776
+      }
+    },
+    {
+      "region": "pelvis-leg",
+      "count": 8,
+      "centerResidual": {
+        "minimumMm": 25.241985674568568,
+        "medianMm": 35.48671892043788,
+        "maximumMm": 45.109710154304246
+      },
+      "sourceToTargetP95": {
+        "minimumMm": 23.550263658009236,
+        "medianMm": 25.349032825660505,
+        "maximumMm": 26.93960782199501
+      },
+      "targetToSourceP95": {
+        "minimumMm": 25.99094804315976,
+        "medianMm": 45.181579077905845,
+        "maximumMm": 74.05355430850449
+      }
+    }
+  ],
+  "thoraxTrainingNames": [
+    "aortic arch",
+    "ascending aorta",
+    "brachiocephalic vein left",
+    "brachiocephalic vein right",
+    "coronary sinus",
+    "great cardiac vein",
+    "middle cardiac vein",
+    "superior vena cava"
+  ],
+  "fits": [
+    {
+      "mode": "translation",
+      "scale": 1,
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        -0.00042258088797098026,
+        -0.003598541021347046,
+        0.0012297662324272096,
+        1
+      ],
+      "regionSummary": [
+        {
+          "region": "head-neck",
+          "count": 8,
+          "previousMeanMm": 28.25526434083607,
+          "candidateMeanMm": 25.479947857162152,
+          "worsenedCount": 0,
+          "maximumWorseningMm": 0
+        },
+        {
+          "region": "thorax",
+          "count": 8,
+          "previousMeanMm": 4.285779472676581,
+          "candidateMeanMm": 2.1435409438560615,
+          "worsenedCount": 1,
+          "maximumWorseningMm": 1.4915760749903122
+        },
+        {
+          "region": "abdomen",
+          "count": 15,
+          "previousMeanMm": 23.352386020045103,
+          "candidateMeanMm": 21.65404267691117,
+          "worsenedCount": 3,
+          "maximumWorseningMm": 3.6435752202862517
+        },
+        {
+          "region": "pelvis-leg",
+          "count": 8,
+          "previousMeanMm": 36.73838013972282,
+          "candidateMeanMm": 33.818408718895625,
+          "worsenedCount": 0,
+          "maximumWorseningMm": 0
+        }
+      ],
+      "measures": [
+        {
+          "name": "aortic arch",
+          "region": "thorax",
+          "previousMm": 1.6728620432407284,
+          "candidateMm": 3.1644381182310406,
+          "changeMm": 1.4915760749903122
+        },
+        {
+          "name": "ascending aorta",
+          "region": "thorax",
+          "previousMm": 6.349497743854947,
+          "candidateMm": 2.541502413736258,
+          "changeMm": -3.807995330118689
+        },
+        {
+          "name": "brachiocephalic vein left",
+          "region": "thorax",
+          "previousMm": 4.890930479774467,
+          "candidateMm": 1.222065084705336,
+          "changeMm": -3.6688653950691315
+        },
+        {
+          "name": "brachiocephalic vein right",
+          "region": "thorax",
+          "previousMm": 5.018203850621631,
+          "candidateMm": 4.329711799189269,
+          "changeMm": -0.6884920514323616
+        },
+        {
+          "name": "common carotid artery left",
+          "region": "head-neck",
+          "previousMm": 33.08418317291752,
+          "candidateMm": 29.33496094989718,
+          "changeMm": -3.7492222230203396
+        },
+        {
+          "name": "common carotid artery right",
+          "region": "head-neck",
+          "previousMm": 30.22266465188939,
+          "candidateMm": 26.710591979923713,
+          "changeMm": -3.512072671965676
+        },
+        {
+          "name": "common hepatic artery",
+          "region": "abdomen",
+          "previousMm": 13.33336407055037,
+          "candidateMm": 10.596308695471526,
+          "changeMm": -2.737055375078844
+        },
+        {
+          "name": "common iliac artery left",
+          "region": "abdomen",
+          "previousMm": 21.997614666635204,
+          "candidateMm": 18.644098132547107,
+          "changeMm": -3.3535165340880972
+        },
+        {
+          "name": "common iliac artery right",
+          "region": "abdomen",
+          "previousMm": 20.059820826823493,
+          "candidateMm": 16.40645244821655,
+          "changeMm": -3.6533683786069417
+        },
+        {
+          "name": "common iliac vein left",
+          "region": "abdomen",
+          "previousMm": 21.45355239474798,
+          "candidateMm": 18.38429757406533,
+          "changeMm": -3.0692548206826515
+        },
+        {
+          "name": "common iliac vein right",
+          "region": "abdomen",
+          "previousMm": 21.415088056660885,
+          "candidateMm": 18.195386710738152,
+          "changeMm": -3.219701345922733
+        },
+        {
+          "name": "coronary sinus",
+          "region": "thorax",
+          "previousMm": 5.751742784645317,
+          "candidateMm": 2.048809789506228,
+          "changeMm": -3.702932995139089
+        },
+        {
+          "name": "external iliac artery left",
+          "region": "pelvis-leg",
+          "previousMm": 35.37134794655643,
+          "candidateMm": 31.68093282833266,
+          "changeMm": -3.690415118223772
+        },
+        {
+          "name": "external iliac artery right",
+          "region": "pelvis-leg",
+          "previousMm": 35.48671892043788,
+          "candidateMm": 31.884275703690687,
+          "changeMm": -3.6024432167471936
+        },
+        {
+          "name": "external iliac vein left",
+          "region": "pelvis-leg",
+          "previousMm": 25.241985674568568,
+          "candidateMm": 21.61184110290419,
+          "changeMm": -3.6301445716643777
+        },
+        {
+          "name": "external iliac vein right",
+          "region": "pelvis-leg",
+          "previousMm": 25.242292030835376,
+          "candidateMm": 21.447804702295546,
+          "changeMm": -3.79448732853983
+        },
+        {
+          "name": "gastric artery left",
+          "region": "abdomen",
+          "previousMm": 35.99984420773337,
+          "candidateMm": 32.44820345755027,
+          "changeMm": -3.551640750183097
+        },
+        {
+          "name": "great cardiac vein",
+          "region": "thorax",
+          "previousMm": 4.0083355405014265,
+          "candidateMm": 1.0636470459937677,
+          "changeMm": -2.944688494507659
+        },
+        {
+          "name": "inferior mesenteric artery",
+          "region": "abdomen",
+          "previousMm": 13.972189768880321,
+          "candidateMm": 14.177954844423638,
+          "changeMm": 0.2057650755433169
+        },
+        {
+          "name": "internal iliac artery left",
+          "region": "pelvis-leg",
+          "previousMm": 45.109710154304246,
+          "candidateMm": 43.00822455931567,
+          "changeMm": -2.1014855949885742
+        },
+        {
+          "name": "internal iliac artery right",
+          "region": "pelvis-leg",
+          "previousMm": 40.882996257260885,
+          "candidateMm": 38.48401933803694,
+          "changeMm": -2.398976919223948
+        },
+        {
+          "name": "internal iliac vein left",
+          "region": "pelvis-leg",
+          "previousMm": 43.25686226396461,
+          "candidateMm": 41.236264058160366,
+          "changeMm": -2.020598205804241
+        },
+        {
+          "name": "internal iliac vein right",
+          "region": "pelvis-leg",
+          "previousMm": 43.31512786985456,
+          "candidateMm": 41.19390745842894,
+          "changeMm": -2.121220411425618
+        },
+        {
+          "name": "internal jugular vein left",
+          "region": "head-neck",
+          "previousMm": 66.45973229723486,
+          "candidateMm": 62.64497055198484,
+          "changeMm": -3.814761745250024
+        },
+        {
+          "name": "internal jugular vein right",
+          "region": "head-neck",
+          "previousMm": 64.52896367304893,
+          "candidateMm": 60.75270087014903,
+          "changeMm": -3.7762628028999075
+        },
+        {
+          "name": "middle cardiac vein",
+          "region": "thorax",
+          "previousMm": 3.6728735158938393,
+          "candidateMm": 0.9587553598775519,
+          "changeMm": -2.7141181560162875
+        },
+        {
+          "name": "renal artery left",
+          "region": "abdomen",
+          "previousMm": 19.213936597054303,
+          "candidateMm": 18.065477753875914,
+          "changeMm": -1.148458843178389
+        },
+        {
+          "name": "renal artery right",
+          "region": "abdomen",
+          "previousMm": 19.452010915081004,
+          "candidateMm": 17.138236860292068,
+          "changeMm": -2.3137740547889365
+        },
+        {
+          "name": "renal vein left",
+          "region": "abdomen",
+          "previousMm": 14.001433574359266,
+          "candidateMm": 13.471407371629436,
+          "changeMm": -0.5300262027298306
+        },
+        {
+          "name": "renal vein right",
+          "region": "abdomen",
+          "previousMm": 23.600515427343733,
+          "candidateMm": 22.14409585462301,
+          "changeMm": -1.4564195727207228
+        },
+        {
+          "name": "splenic artery",
+          "region": "abdomen",
+          "previousMm": 18.714294572263505,
+          "candidateMm": 15.074446933463284,
+          "changeMm": -3.639847638800221
+        },
+        {
+          "name": "splenic vein",
+          "region": "abdomen",
+          "previousMm": 23.141829066627565,
+          "candidateMm": 19.787527688840125,
+          "changeMm": -3.35430137778744
+        },
+        {
+          "name": "subclavian artery left",
+          "region": "head-neck",
+          "previousMm": 10.832677127621512,
+          "candidateMm": 7.9724861141284995,
+          "changeMm": -2.8601910134930124
+        },
+        {
+          "name": "subclavian artery right",
+          "region": "head-neck",
+          "previousMm": 6.817166941141904,
+          "candidateMm": 3.4530666755153816,
+          "changeMm": -3.3641002656265226
+        },
+        {
+          "name": "subclavian vein left",
+          "region": "head-neck",
+          "previousMm": 5.9495499948062465,
+          "candidateMm": 5.292843023519586,
+          "changeMm": -0.6567069712866607
+        },
+        {
+          "name": "subclavian vein right",
+          "region": "head-neck",
+          "previousMm": 8.147176868028222,
+          "candidateMm": 7.6779626921789905,
+          "changeMm": -0.4692141758492312
+        },
+        {
+          "name": "superior mesenteric artery",
+          "region": "abdomen",
+          "previousMm": 42.173215697162725,
+          "candidateMm": 45.81679091744898,
+          "changeMm": 3.6435752202862517
+        },
+        {
+          "name": "superior mesenteric vein",
+          "region": "abdomen",
+          "previousMm": 41.757080458752775,
+          "candidateMm": 44.459954910482196,
+          "changeMm": 2.7028744517294214
+        },
+        {
+          "name": "superior vena cava",
+          "region": "thorax",
+          "previousMm": 2.9217898228802923,
+          "candidateMm": 1.8193979396090383,
+          "changeMm": -1.102391883271254
+        }
+      ]
+    },
+    {
+      "mode": "rigid",
+      "scale": 1,
+      "matrix": [
+        0.9999934751573346,
+        0.0028463775477276495,
+        -0.002224360045696697,
+        0,
+        -0.002852391379182387,
+        0.9999922730000971,
+        -0.0027051438999024014,
+        0,
+        0.0022166429972067855,
+        0.0027114709946826107,
+        0.9999938671906283,
+        0,
+        0.003226025948033397,
+        -0.003676028864355141,
+        0.004758111062136909,
+        1
+      ],
+      "regionSummary": [
+        {
+          "region": "head-neck",
+          "count": 8,
+          "previousMeanMm": 28.25526434083607,
+          "candidateMeanMm": 25.536121409745547,
+          "worsenedCount": 0,
+          "maximumWorseningMm": 0
+        },
+        {
+          "region": "thorax",
+          "count": 8,
+          "previousMeanMm": 4.285779472676581,
+          "candidateMeanMm": 2.1160390803618436,
+          "worsenedCount": 1,
+          "maximumWorseningMm": 1.5621738631149122
+        },
+        {
+          "region": "abdomen",
+          "count": 15,
+          "previousMeanMm": 23.352386020045103,
+          "candidateMeanMm": 21.747745331687256,
+          "worsenedCount": 2,
+          "maximumWorseningMm": 3.510086942342994
+        },
+        {
+          "region": "pelvis-leg",
+          "count": 8,
+          "previousMeanMm": 36.73838013972282,
+          "candidateMeanMm": 33.931370820210994,
+          "worsenedCount": 0,
+          "maximumWorseningMm": 0
+        }
+      ],
+      "measures": [
+        {
+          "name": "aortic arch",
+          "region": "thorax",
+          "previousMm": 1.6728620432407284,
+          "candidateMm": 3.2350359063556406,
+          "changeMm": 1.5621738631149122
+        },
+        {
+          "name": "ascending aorta",
+          "region": "thorax",
+          "previousMm": 6.349497743854947,
+          "candidateMm": 2.547100730880107,
+          "changeMm": -3.80239701297484
+        },
+        {
+          "name": "brachiocephalic vein left",
+          "region": "thorax",
+          "previousMm": 4.890930479774467,
+          "candidateMm": 1.3096155735891397,
+          "changeMm": -3.5813149061853276
+        },
+        {
+          "name": "brachiocephalic vein right",
+          "region": "thorax",
+          "previousMm": 5.018203850621631,
+          "candidateMm": 4.239997885054798,
+          "changeMm": -0.7782059655668325
+        },
+        {
+          "name": "common carotid artery left",
+          "region": "head-neck",
+          "previousMm": 33.08418317291752,
+          "candidateMm": 29.30213214251405,
+          "changeMm": -3.782051030403469
+        },
+        {
+          "name": "common carotid artery right",
+          "region": "head-neck",
+          "previousMm": 30.22266465188939,
+          "candidateMm": 26.740273635772308,
+          "changeMm": -3.482391016117081
+        },
+        {
+          "name": "common hepatic artery",
+          "region": "abdomen",
+          "previousMm": 13.33336407055037,
+          "candidateMm": 10.798260188596622,
+          "changeMm": -2.5351038819537486
+        },
+        {
+          "name": "common iliac artery left",
+          "region": "abdomen",
+          "previousMm": 21.997614666635204,
+          "candidateMm": 18.534013175430857,
+          "changeMm": -3.463601491204347
+        },
+        {
+          "name": "common iliac artery right",
+          "region": "abdomen",
+          "previousMm": 20.059820826823493,
+          "candidateMm": 16.54497305989709,
+          "changeMm": -3.5148477669264047
+        },
+        {
+          "name": "common iliac vein left",
+          "region": "abdomen",
+          "previousMm": 21.45355239474798,
+          "candidateMm": 18.59682168155482,
+          "changeMm": -2.8567307131931585
+        },
+        {
+          "name": "common iliac vein right",
+          "region": "abdomen",
+          "previousMm": 21.415088056660885,
+          "candidateMm": 18.698582464837546,
+          "changeMm": -2.7165055918233385
+        },
+        {
+          "name": "coronary sinus",
+          "region": "thorax",
+          "previousMm": 5.751742784645317,
+          "candidateMm": 2.076126769724736,
+          "changeMm": -3.675616014920581
+        },
+        {
+          "name": "external iliac artery left",
+          "region": "pelvis-leg",
+          "previousMm": 35.37134794655643,
+          "candidateMm": 31.190371907251873,
+          "changeMm": -4.180976039304561
+        },
+        {
+          "name": "external iliac artery right",
+          "region": "pelvis-leg",
+          "previousMm": 35.48671892043788,
+          "candidateMm": 31.064041236688904,
+          "changeMm": -4.422677683748976
+        },
+        {
+          "name": "external iliac vein left",
+          "region": "pelvis-leg",
+          "previousMm": 25.241985674568568,
+          "candidateMm": 21.702111182731958,
+          "changeMm": -3.53987449183661
+        },
+        {
+          "name": "external iliac vein right",
+          "region": "pelvis-leg",
+          "previousMm": 25.242292030835376,
+          "candidateMm": 21.26557110292814,
+          "changeMm": -3.9767209279072375
+        },
+        {
+          "name": "gastric artery left",
+          "region": "abdomen",
+          "previousMm": 35.99984420773337,
+          "candidateMm": 32.605474504853845,
+          "changeMm": -3.3943697028795228
+        },
+        {
+          "name": "great cardiac vein",
+          "region": "thorax",
+          "previousMm": 4.0083355405014265,
+          "candidateMm": 0.950590440082008,
+          "changeMm": -3.0577451004194183
+        },
+        {
+          "name": "inferior mesenteric artery",
+          "region": "abdomen",
+          "previousMm": 13.972189768880321,
+          "candidateMm": 13.650997366969564,
+          "changeMm": -0.32119240191075704
+        },
+        {
+          "name": "internal iliac artery left",
+          "region": "pelvis-leg",
+          "previousMm": 45.109710154304246,
+          "candidateMm": 43.662484883873454,
+          "changeMm": -1.447225270430792
+        },
+        {
+          "name": "internal iliac artery right",
+          "region": "pelvis-leg",
+          "previousMm": 40.882996257260885,
+          "candidateMm": 38.83067263127123,
+          "changeMm": -2.052323625989658
+        },
+        {
+          "name": "internal iliac vein left",
+          "region": "pelvis-leg",
+          "previousMm": 43.25686226396461,
+          "candidateMm": 41.83161341256446,
+          "changeMm": -1.4252488514001485
+        },
+        {
+          "name": "internal iliac vein right",
+          "region": "pelvis-leg",
+          "previousMm": 43.31512786985456,
+          "candidateMm": 41.90410020437794,
+          "changeMm": -1.4110276654766167
+        },
+        {
+          "name": "internal jugular vein left",
+          "region": "head-neck",
+          "previousMm": 66.45973229723486,
+          "candidateMm": 62.74407786035106,
+          "changeMm": -3.7156544368838027
+        },
+        {
+          "name": "internal jugular vein right",
+          "region": "head-neck",
+          "previousMm": 64.52896367304893,
+          "candidateMm": 60.71587451889428,
+          "changeMm": -3.813089154154653
+        },
+        {
+          "name": "middle cardiac vein",
+          "region": "thorax",
+          "previousMm": 3.6728735158938393,
+          "candidateMm": 0.6581352344383489,
+          "changeMm": -3.0147382814554904
+        },
+        {
+          "name": "renal artery left",
+          "region": "abdomen",
+          "previousMm": 19.213936597054303,
+          "candidateMm": 17.963083521616035,
+          "changeMm": -1.2508530754382683
+        },
+        {
+          "name": "renal artery right",
+          "region": "abdomen",
+          "previousMm": 19.452010915081004,
+          "candidateMm": 17.722479695945637,
+          "changeMm": -1.7295312191353673
+        },
+        {
+          "name": "renal vein left",
+          "region": "abdomen",
+          "previousMm": 14.001433574359266,
+          "candidateMm": 13.381625495766698,
+          "changeMm": -0.6198080785925679
+        },
+        {
+          "name": "renal vein right",
+          "region": "abdomen",
+          "previousMm": 23.600515427343733,
+          "candidateMm": 22.81638817895286,
+          "changeMm": -0.7841272483908739
+        },
+        {
+          "name": "splenic artery",
+          "region": "abdomen",
+          "previousMm": 18.714294572263505,
+          "candidateMm": 15.277709048763265,
+          "changeMm": -3.4365855235002396
+        },
+        {
+          "name": "splenic vein",
+          "region": "abdomen",
+          "previousMm": 23.141829066627565,
+          "candidateMm": 20.021999560523092,
+          "changeMm": -3.119829506104473
+        },
+        {
+          "name": "subclavian artery left",
+          "region": "head-neck",
+          "previousMm": 10.832677127621512,
+          "candidateMm": 8.19417429656946,
+          "changeMm": -2.638502831052051
+        },
+        {
+          "name": "subclavian artery right",
+          "region": "head-neck",
+          "previousMm": 6.817166941141904,
+          "candidateMm": 3.1897270551725923,
+          "changeMm": -3.627439885969312
+        },
+        {
+          "name": "subclavian vein left",
+          "region": "head-neck",
+          "previousMm": 5.9495499948062465,
+          "candidateMm": 5.552747450013354,
+          "changeMm": -0.3968025447928927
+        },
+        {
+          "name": "subclavian vein right",
+          "region": "head-neck",
+          "previousMm": 8.147176868028222,
+          "candidateMm": 7.849964318677259,
+          "changeMm": -0.297212549350963
+        },
+        {
+          "name": "superior mesenteric artery",
+          "region": "abdomen",
+          "previousMm": 42.173215697162725,
+          "candidateMm": 45.68330263950572,
+          "changeMm": 3.510086942342994
+        },
+        {
+          "name": "superior mesenteric vein",
+          "region": "abdomen",
+          "previousMm": 41.757080458752775,
+          "candidateMm": 43.920469392095235,
+          "changeMm": 2.1633889333424605
+        },
+        {
+          "name": "superior vena cava",
+          "region": "thorax",
+          "previousMm": 2.9217898228802923,
+          "candidateMm": 1.9117101027699694,
+          "changeMm": -1.0100797201103229
+        }
+      ]
+    },
+    {
+      "mode": "similarity",
+      "scale": 1.0157217425689369,
+      "matrix": [
+        1.0157151151443748,
+        0.0028911275627870256,
+        -0.0022593308617157694,
+        0,
+        -0.0028972359421517474,
+        1.0157138940871306,
+        -0.0027476734759085968,
+        0,
+        0.002251492487776107,
+        0.00275410004364415,
+        1.015715513341115,
+        0,
+        0.0030841144236482005,
+        -0.024018732086987793,
+        0.004515510790324369,
+        1
+      ],
+      "regionSummary": [
+        {
+          "region": "head-neck",
+          "count": 8,
+          "previousMeanMm": 28.25526434083607,
+          "candidateMeanMm": 26.73753307654802,
+          "worsenedCount": 0,
+          "maximumWorseningMm": 0
+        },
+        {
+          "region": "thorax",
+          "count": 8,
+          "previousMeanMm": 4.285779472676581,
+          "candidateMeanMm": 2.060224055462928,
+          "worsenedCount": 1,
+          "maximumWorseningMm": 0.9906242359285458
+        },
+        {
+          "region": "abdomen",
+          "count": 15,
+          "previousMeanMm": 23.352386020045103,
+          "candidateMeanMm": 20.295221205735245,
+          "worsenedCount": 3,
+          "maximumWorseningMm": 7.649810002235007
+        },
+        {
+          "region": "pelvis-leg",
+          "count": 8,
+          "previousMeanMm": 36.73838013972282,
+          "candidateMeanMm": 29.11621058438718,
+          "worsenedCount": 0,
+          "maximumWorseningMm": 0
+        }
+      ],
+      "measures": [
+        {
+          "name": "aortic arch",
+          "region": "thorax",
+          "previousMm": 1.6728620432407284,
+          "candidateMm": 2.663486279169274,
+          "changeMm": 0.9906242359285458
+        },
+        {
+          "name": "ascending aorta",
+          "region": "thorax",
+          "previousMm": 6.349497743854947,
+          "candidateMm": 2.5499285475084044,
+          "changeMm": -3.7995691963465426
+        },
+        {
+          "name": "brachiocephalic vein left",
+          "region": "thorax",
+          "previousMm": 4.890930479774467,
+          "candidateMm": 2.16182299215148,
+          "changeMm": -2.7291074876229873
+        },
+        {
+          "name": "brachiocephalic vein right",
+          "region": "thorax",
+          "previousMm": 5.018203850621631,
+          "candidateMm": 3.4763484835987106,
+          "changeMm": -1.54185536702292
+        },
+        {
+          "name": "common carotid artery left",
+          "region": "head-neck",
+          "previousMm": 33.08418317291752,
+          "candidateMm": 30.955858892494525,
+          "changeMm": -2.1283242804229943
+        },
+        {
+          "name": "common carotid artery right",
+          "region": "head-neck",
+          "previousMm": 30.22266465188939,
+          "candidateMm": 28.564574437942763,
+          "changeMm": -1.6580902139466254
+        },
+        {
+          "name": "common hepatic artery",
+          "region": "abdomen",
+          "previousMm": 13.33336407055037,
+          "candidateMm": 8.951533236533827,
+          "changeMm": -4.381830834016544
+        },
+        {
+          "name": "common iliac artery left",
+          "region": "abdomen",
+          "previousMm": 21.997614666635204,
+          "candidateMm": 13.80025248629569,
+          "changeMm": -8.197362180339514
+        },
+        {
+          "name": "common iliac artery right",
+          "region": "abdomen",
+          "previousMm": 20.059820826823493,
+          "candidateMm": 11.680359913637194,
+          "changeMm": -8.3794609131863
+        },
+        {
+          "name": "common iliac vein left",
+          "region": "abdomen",
+          "previousMm": 21.45355239474798,
+          "candidateMm": 14.152004380507885,
+          "changeMm": -7.301548014240096
+        },
+        {
+          "name": "common iliac vein right",
+          "region": "abdomen",
+          "previousMm": 21.415088056660885,
+          "candidateMm": 14.352123850381789,
+          "changeMm": -7.062964206279096
+        },
+        {
+          "name": "coronary sinus",
+          "region": "thorax",
+          "previousMm": 5.751742784645317,
+          "candidateMm": 1.532505060042294,
+          "changeMm": -4.219237724603023
+        },
+        {
+          "name": "external iliac artery left",
+          "region": "pelvis-leg",
+          "previousMm": 35.37134794655643,
+          "candidateMm": 26.23930647258838,
+          "changeMm": -9.132041473968055
+        },
+        {
+          "name": "external iliac artery right",
+          "region": "pelvis-leg",
+          "previousMm": 35.48671892043788,
+          "candidateMm": 26.604230238290977,
+          "changeMm": -8.882488682146903
+        },
+        {
+          "name": "external iliac vein left",
+          "region": "pelvis-leg",
+          "previousMm": 25.241985674568568,
+          "candidateMm": 15.70157589808804,
+          "changeMm": -9.540409776480528
+        },
+        {
+          "name": "external iliac vein right",
+          "region": "pelvis-leg",
+          "previousMm": 25.242292030835376,
+          "candidateMm": 15.267538616383652,
+          "changeMm": -9.974753414451724
+        },
+        {
+          "name": "gastric artery left",
+          "region": "abdomen",
+          "previousMm": 35.99984420773337,
+          "candidateMm": 30.16102956841126,
+          "changeMm": -5.838814639322109
+        },
+        {
+          "name": "great cardiac vein",
+          "region": "thorax",
+          "previousMm": 4.0083355405014265,
+          "candidateMm": 0.5628929436775281,
+          "changeMm": -3.4454425968238986
+        },
+        {
+          "name": "inferior mesenteric artery",
+          "region": "abdomen",
+          "previousMm": 13.972189768880321,
+          "candidateMm": 16.56436400316269,
+          "changeMm": 2.5921742342823695
+        },
+        {
+          "name": "internal iliac artery left",
+          "region": "pelvis-leg",
+          "previousMm": 45.109710154304246,
+          "candidateMm": 39.465423448059354,
+          "changeMm": -5.644286706244891
+        },
+        {
+          "name": "internal iliac artery right",
+          "region": "pelvis-leg",
+          "previousMm": 40.882996257260885,
+          "candidateMm": 34.30795765163928,
+          "changeMm": -6.575038605621607
+        },
+        {
+          "name": "internal iliac vein left",
+          "region": "pelvis-leg",
+          "previousMm": 43.25686226396461,
+          "candidateMm": 37.672812847585334,
+          "changeMm": -5.584049416379273
+        },
+        {
+          "name": "internal iliac vein right",
+          "region": "pelvis-leg",
+          "previousMm": 43.31512786985456,
+          "candidateMm": 37.67083950246243,
+          "changeMm": -5.644288367392129
+        },
+        {
+          "name": "internal jugular vein left",
+          "region": "head-neck",
+          "previousMm": 66.45973229723486,
+          "candidateMm": 65.1487981088917,
+          "changeMm": -1.3109341883431682
+        },
+        {
+          "name": "internal jugular vein right",
+          "region": "head-neck",
+          "previousMm": 64.52896367304893,
+          "candidateMm": 63.14062896218815,
+          "changeMm": -1.3883347108607822
+        },
+        {
+          "name": "middle cardiac vein",
+          "region": "thorax",
+          "previousMm": 3.6728735158938393,
+          "candidateMm": 1.3962844134066055,
+          "changeMm": -2.276589102487234
+        },
+        {
+          "name": "renal artery left",
+          "region": "abdomen",
+          "previousMm": 19.213936597054303,
+          "candidateMm": 16.534354819517464,
+          "changeMm": -2.679581777536839
+        },
+        {
+          "name": "renal artery right",
+          "region": "abdomen",
+          "previousMm": 19.452010915081004,
+          "candidateMm": 15.507046821640674,
+          "changeMm": -3.94496409344033
+        },
+        {
+          "name": "renal vein left",
+          "region": "abdomen",
+          "previousMm": 14.001433574359266,
+          "candidateMm": 12.863343988586609,
+          "changeMm": -1.1380895857726578
+        },
+        {
+          "name": "renal vein right",
+          "region": "abdomen",
+          "previousMm": 23.600515427343733,
+          "candidateMm": 21.661270187758035,
+          "changeMm": -1.9392452395856985
+        },
+        {
+          "name": "splenic artery",
+          "region": "abdomen",
+          "previousMm": 18.714294572263505,
+          "candidateMm": 13.361480982584467,
+          "changeMm": -5.352813589679037
+        },
+        {
+          "name": "splenic vein",
+          "region": "abdomen",
+          "previousMm": 23.141829066627565,
+          "candidateMm": 17.573463388045226,
+          "changeMm": -5.568365678582339
+        },
+        {
+          "name": "subclavian artery left",
+          "region": "head-neck",
+          "previousMm": 10.832677127621512,
+          "candidateMm": 8.766191012255094,
+          "changeMm": -2.066486115366418
+        },
+        {
+          "name": "subclavian artery right",
+          "region": "head-neck",
+          "previousMm": 6.817166941141904,
+          "candidateMm": 4.291488161217746,
+          "changeMm": -2.5256787799241582
+        },
+        {
+          "name": "subclavian vein left",
+          "region": "head-neck",
+          "previousMm": 5.9495499948062465,
+          "candidateMm": 5.164687931188908,
+          "changeMm": -0.7848620636173385
+        },
+        {
+          "name": "subclavian vein right",
+          "region": "head-neck",
+          "previousMm": 8.147176868028222,
+          "candidateMm": 7.868037106205247,
+          "changeMm": -0.2791397618229743
+        },
+        {
+          "name": "superior mesenteric artery",
+          "region": "abdomen",
+          "previousMm": 42.173215697162725,
+          "candidateMm": 49.82302569939773,
+          "changeMm": 7.649810002235007
+        },
+        {
+          "name": "superior mesenteric vein",
+          "region": "abdomen",
+          "previousMm": 41.757080458752775,
+          "candidateMm": 47.44266475956813,
+          "changeMm": 5.685584300815357
+        },
+        {
+          "name": "superior vena cava",
+          "region": "thorax",
+          "previousMm": 2.9217898228802923,
+          "candidateMm": 2.1385237241491266,
+          "changeMm": -0.7832660987311657
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "scripts/audit-male-vessel-regional-drift.mjs",
+      "sha256": "af0cc077f87122c18c8da19e0f22f5591400dd8fcd2ceb101b05c3573ad74bca"
+    },
+    {
+      "path": "scripts/lib/rigid-fit.mjs",
+      "sha256": "ae01c3b322efc54dcf1d6194bcdd8af1fde3183f0d0c5ac6e08bd67098a7ff77"
+    },
+    {
+      "path": "scripts/lib/similarity-fit.mjs",
+      "sha256": "72472e690233c9575af2191adb9cd22d99a8dd8dccf254197709daf061b45042"
+    }
+  ]
+}

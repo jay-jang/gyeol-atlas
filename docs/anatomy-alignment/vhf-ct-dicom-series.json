@@ -1,0 +1,227 @@
+{
+  "status": "SIX SERIES HEADER SAMPLES ONLY; NOT ALL DICOM SLICES",
+  "datasetDoi": "10.7910/DVN/3JDZCT",
+  "datasetVersionId": 354044,
+  "datasetApi": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/3JDZCT",
+  "seriesCounts": {
+    "Ankle": 150,
+    "Head": 234,
+    "Hip": 400,
+    "Knee": 350,
+    "Pelvis": 150,
+    "Shoulder": 450
+  },
+  "selection": "middle numbered file in each of six female CT 1mm series",
+  "samples": [
+    {
+      "name": "VHFCT1mm-Ankle (76).dcm",
+      "fileId": 7575634,
+      "md5": "cdbe793d5d65ebdb01476c4620a02460",
+      "sha256": "3aa2f7d3d62db9d80d6de370d89dc5baa7676e27894d3995d11097a462b981e1",
+      "series": "Ankle",
+      "rescaleSlope": 1.0,
+      "rescaleIntercept": -1024.0,
+      "pixelSpacingMm": [
+        1.0,
+        1.0
+      ],
+      "sliceThicknessMm": 1.0,
+      "imageOrientationPatient": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "imagePositionPatient": [
+        0.0,
+        0.0,
+        75.0
+      ],
+      "rows": 512,
+      "columns": 512,
+      "pixelRepresentation": 1,
+      "bitsStored": 16,
+      "storedMin": 0,
+      "storedMax": 2718,
+      "storedNegativePixels": 0
+    },
+    {
+      "name": "VHFCT1mm-Head (118).dcm",
+      "fileId": 7575753,
+      "md5": "ffedbd71bd0eb84a75d603d31ca2a799",
+      "sha256": "0280fbbbbdc5807d76d379a7c512fe88aff595596a7b54f3d7e14a59421d6df4",
+      "series": "Head",
+      "rescaleSlope": 1.0,
+      "rescaleIntercept": -1024.0,
+      "pixelSpacingMm": [
+        1.0,
+        1.0
+      ],
+      "sliceThicknessMm": 1.0,
+      "imageOrientationPatient": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "imagePositionPatient": [
+        0.0,
+        0.0,
+        1617.0
+      ],
+      "rows": 512,
+      "columns": 512,
+      "pixelRepresentation": 1,
+      "bitsStored": 16,
+      "storedMin": 0,
+      "storedMax": 2927,
+      "storedNegativePixels": 0
+    },
+    {
+      "name": "VHFCT1mm-Hip (201).dcm",
+      "fileId": 7576236,
+      "md5": "2f4296c298099621a0f3d609143d4f9a",
+      "sha256": "236e18155a65eeb0aa21a6aeec181b31dc813d3ff2eaa9722f2707423ab7c109",
+      "series": "Hip",
+      "rescaleSlope": 1.0,
+      "rescaleIntercept": -1024.0,
+      "pixelSpacingMm": [
+        1.0,
+        1.0
+      ],
+      "sliceThicknessMm": 1.0,
+      "imageOrientationPatient": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "imagePositionPatient": [
+        0.0,
+        0.0,
+        700.0
+      ],
+      "rows": 512,
+      "columns": 512,
+      "pixelRepresentation": 1,
+      "bitsStored": 16,
+      "storedMin": 0,
+      "storedMax": 2593,
+      "storedNegativePixels": 0
+    },
+    {
+      "name": "VHFCT1mm-Knee (176).dcm",
+      "fileId": 7576444,
+      "md5": "0d1530187b1bedf572a5ce6090b704f6",
+      "sha256": "84e2ad255468b200fd244c7cf12109442a061d94bbad5e1024bdaf04e1d38569",
+      "series": "Knee",
+      "rescaleSlope": 1.0,
+      "rescaleIntercept": -1024.0,
+      "pixelSpacingMm": [
+        1.0,
+        1.0
+      ],
+      "sliceThicknessMm": 1.0,
+      "imageOrientationPatient": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "imagePositionPatient": [
+        0.0,
+        0.0,
+        325.0
+      ],
+      "rows": 512,
+      "columns": 512,
+      "pixelRepresentation": 1,
+      "bitsStored": 16,
+      "storedMin": 0,
+      "storedMax": 2752,
+      "storedNegativePixels": 0
+    },
+    {
+      "name": "VHFCT1mm-Pelvis (76).dcm",
+      "fileId": 7576787,
+      "md5": "d9fbc7746b738c4408bf61f3fb02ed67",
+      "sha256": "4ead895a62610b2ff43a01d9013e4d4de77f6fb18a211e8efdde21200d1ae183",
+      "series": "Pelvis",
+      "rescaleSlope": 1.0,
+      "rescaleIntercept": -1024.0,
+      "pixelSpacingMm": [
+        1.0,
+        1.0
+      ],
+      "sliceThicknessMm": 1.0,
+      "imageOrientationPatient": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "imagePositionPatient": [
+        0.0,
+        0.0,
+        975.0
+      ],
+      "rows": 512,
+      "columns": 512,
+      "pixelRepresentation": 1,
+      "bitsStored": 16,
+      "storedMin": 0,
+      "storedMax": 2505,
+      "storedNegativePixels": 0
+    },
+    {
+      "name": "VHFCT1mm-Shoulder (226).dcm",
+      "fileId": 7576988,
+      "md5": "4cdb2226f7ef2fc356e60cf6cb542da4",
+      "sha256": "16592caced70864546ef3d4f8ab90f9a71199fe26a5f013dff136191fcf805cc",
+      "series": "Shoulder",
+      "rescaleSlope": 1.0,
+      "rescaleIntercept": -1024.0,
+      "pixelSpacingMm": [
+        1.0,
+        1.0
+      ],
+      "sliceThicknessMm": 1.0,
+      "imageOrientationPatient": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "imagePositionPatient": [
+        0.0,
+        0.0,
+        1275.0
+      ],
+      "rows": 512,
+      "columns": 512,
+      "pixelRepresentation": 1,
+      "bitsStored": 16,
+      "storedMin": 0,
+      "storedMax": 3170,
+      "storedNegativePixels": 0
+    }
+  ],
+  "limitations": [
+    "A single header per series does not prove every DICOM file has the same scaling.",
+    "These DICOM samples were not registered voxelwise to BoneHub except for the separate head-slice audit.",
+    "BoneHub NIfTI processing may differ from original DICOM even if the acquisition scaling matches."
+  ],
+  "scriptSha256": "b4c2415a80134f0b6fd916bc058dbadfe16006414eb441812a38729146f81c1a"
+}

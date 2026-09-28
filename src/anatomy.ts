@@ -5,6 +5,8 @@ import fullSystemStructures from "../data/full-system-structures.json";
 import sexLymphStructures from "../data/sex-lymph-structures.json";
 import femaleAtlasStructures from "../data/female-atlas-structures.json";
 import femaleOrganGroups from "../data/female-organ-groups.json";
+import femaleAirwayGroups from "../data/female-airway-groups.json";
+import {femaleBiliaryGroups,femaleBiliaryDisplay} from "./female-biliary-navigation";
 import femaleAdditionalOrganGroups from "../data/female-additional-organ-groups.json";
 import femaleCompositeGroups from "../data/female-composite-groups.json";
 import maleOrganGroups from "../data/male-organ-groups.json";
@@ -13,16 +15,27 @@ import maleDetailStructures from "../data/male-detail-structures.json";
 import femaleDetailStructures from "../data/female-detail-structures.json";
 import femaleDetailGroups from "../data/female-detail-groups.json";
 import {pelvicStructureDisplay} from "./female-pelvic-bindings";
-export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.find(detail => detail.id === group.id) || group), ...femaleOrganGroups, ...femaleAdditionalOrganGroups, ...femaleDetailGroups];
+export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.find(detail => detail.id === group.id) || group), ...femaleOrganGroups, ...femaleAirwayGroups, ...femaleBiliaryGroups, ...femaleAdditionalOrganGroups, ...femaleDetailGroups];
 // Source-defined composite structures are available from their selection card,
 // without changing the featured major-organ navigation or comparison bundles.
 export const compositeGroups = femaleCompositeGroups;
 const lung = maleDetailGroups.find(group => group.id === "lung")!;
+const kidney = maleDetailGroups.find(group => group.id === "kidney")!;
+export const maleKidneyViews = [kidney, ...(["left", "right"] as const).map(side => ({
+  ...kidney, id: `kidney-${side}`, name: side === "left" ? "왼쪽 콩팥 · 혈관 확대" : "오른쪽 콩팥 · 혈관 확대",
+  ids: kidney.ids.filter(id => {
+    const name = maleDetailStructures.find(part => part.id === id)?.name;
+    return Boolean(name && (name.startsWith(side === "left" ? "Left " : "Right ")
+      || name.toLowerCase().includes(`of ${side} renal artery`)) && !name.toLowerCase().includes("ureter"));
+  }),
+}))];
 export const maleLungViews = [lung, {
   ...lung, id: "lung-internal", name: "폐 · 혈관·기관지",
   ids: lung.ids.filter(id => !maleDetailStructures.find(s => s.id === id)?.name.startsWith("Parenchyma of ")),
 }, maleDetailGroups.find(group => group.id === "lung-branches")!];
-export const structureGroups = [...organGroups, ...compositeGroups, ...maleLungViews.slice(1)];
+export const malePancreasViews = [maleDetailGroups.find(group => group.id === "pancreas")!,
+  maleDetailGroups.find(group => group.id === "pancreas-parenchyma")!];
+export const structureGroups = [...organGroups, ...compositeGroups, ...maleKidneyViews.slice(1), ...maleLungViews.slice(1), ...malePancreasViews.slice(1)];
 export const layerNames = {
   skin: "체표",
   muscle: "근육",
@@ -45,14 +58,18 @@ const baseStructures = inputs.assets.map((s) => ({
   sex: "male" as const,
   label: (labels as Record<string, string>)[s.id] || s.name,
 }));
-// Preserve the pinned source catalogue and its audit hashes. These two extra
-// navigation scopes only annotate existing source-defined female meshes.
+// Preserve the pinned source catalogue and its audit hashes. These navigation
+// scopes only annotate existing source-defined female meshes at runtime.
 const additionalFemaleGroupById = new Map(femaleAdditionalOrganGroups.flatMap(group => group.ids.map(id => [id, group] as const)));
+const featuredFemaleGroupById = new Map(femaleAirwayGroups.flatMap(group => group.ids.map(id => [id, group] as const)));
 export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures.filter(s => s.sex === "male"), ...femaleAtlasStructures, ...maleDetailStructures, ...femaleDetailStructures].map(s => {
   const additional = s.sex === "female" && !("group" in s && s.group) ? additionalFemaleGroupById.get(s.id) : undefined;
-  const grouped = additional ? { ...s, group: additional.id, hierarchy: ["reproductive", additional.name, additional.id] } : s;
-  const region = limbSkeletonRegion(grouped) || sourceOrganRegion(grouped);
-  return { ...pelvicStructureDisplay(grouped), ...(region ? { bodyRegion: region } : {}) };
+  const featured = s.sex === "female" && !("group" in s && s.group) ? featuredFemaleGroupById.get(s.id) : undefined;
+  const grouped = additional ? { ...s, group: additional.id, hierarchy: ["reproductive", additional.name, additional.id] }
+    : featured ? { ...s, group: featured.id, hierarchy: [...("hierarchy" in s && Array.isArray(s.hierarchy) ? s.hierarchy : []), featured.name, featured.id] } : s;
+  const displayed=femaleBiliaryDisplay(grouped);
+  const region = limbSkeletonRegion(displayed) || sourceOrganRegion(displayed);
+  return { ...pelvicStructureDisplay(displayed), ...(region ? { bodyRegion: region } : {}) };
 }) as {
   id: string;
   fmaId?: string;

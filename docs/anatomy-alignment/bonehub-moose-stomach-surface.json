@@ -1,0 +1,27 @@
+{
+  "status": "OFFLINE SEGMENTATION-BOUNDARY CANDIDATE; NOT VALIDATED STOMACH ANATOMY",
+  "segmentationSha256": "220bbcb2c6d93634733da1c6d3d432d9c725604569c571f28629e024a8e9d28c",
+  "thoraxScreenSha256": "5e20c0ffc696b262a2732b99c57df32319232697aad371dcad63cf4e02583dee",
+  "label": 16,
+  "sourceVoxelCount": 108011,
+  "algorithm": "scikit-image Lewiner marching_cubes, padded binary mask, level 0.5",
+  "coordinateFrame": "CT voxel index -> NIfTI RAS mm -> app left/up/anterior m -> thoracic rigid candidate",
+  "meshFormat": "XYZ float32 little-endian metres, then triangle ABC uint32 little-endian",
+  "vertexCount": 25069,
+  "triangleCount": 50178,
+  "vertexBoundsMetres": [
+    [
+      -0.03417268767952919,
+      0.9641579985618591,
+      -0.13240545988082886
+    ],
+    [
+      0.12611709535121918,
+      1.1937071084976196,
+      0.02189616858959198
+    ]
+  ],
+  "meshFile": ".cache/bonehub-moose/stomach-surface.bin",
+  "meshFileSha256": "91bcd9e460b75b5a6b5967b584f8462a1d0ba058fbb4bc7c8d74c6eb3206a9dd",
+  "scriptSha256": "f7df5d47c91078c77b74736cd369b6344597d90cb66855452b9e1bc362e6a0ac"
+}

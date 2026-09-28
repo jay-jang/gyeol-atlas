@@ -1,7 +1,7 @@
 """Pack official BP3D 4.3 lungs into two non-overlapping source-cohort views.
 
 Retains every official part_of member, but never renders alternative cohorts
-together. Existing heart/liver packed bytes are preserved exactly.
+together. Existing heart/liver/kidney/stomach/pancreas packed bytes are preserved exactly.
 """
 import gzip
 import hashlib
@@ -25,8 +25,27 @@ def main():
     root = Path('public/models/male-detail')
     previous = read(root/'atlas.json')
     previous_bytes = gzip.decompress((root/'organs.bin.gz').read_bytes())
-    groups = [g for g in read('data/male-detail-groups.json') if g['id'] in ['heart','liver']]
-    catalog = [s for s in read('data/male-detail-structures.json') if s['group'] in ['heart','liver']]
+    imported_groups = read('data/male-detail-groups.json')
+    groups = [g for g in imported_groups if g['id'] in ['heart','liver','kidney','stomach']]
+    catalog = [s for s in read('data/male-detail-structures.json')
+               if s['group'] in ['heart','liver','kidney','stomach','pancreas','pancreas-parenchyma']]
+    imported_pancreas = [g for g in imported_groups if g['id'] in ['pancreas','pancreas-parenchyma']]
+    assert len(imported_pancreas) in (1,2)
+    assert all(g['sourceConcepts'] == ['FMA7198'] for g in imported_pancreas)
+    assert {id for g in imported_pancreas for id in g['ids']} == {'BP4_FJ1895','BP4_FJ1896','BP4_FJ2629','BP4_FJ2630'}
+    # Whole-organ and parenchyma surfaces nearly coincide. Keep the duct
+    # representations in disjoint selectable views rather than overlaying all four.
+    pancreas_views = [('pancreas','췌장 · 전체 형상',['BP4_FJ1895','BP4_FJ1896']),
+                      ('pancreas-parenchyma','췌장 · 실질·관 가지',['BP4_FJ2629','BP4_FJ2630'])]
+    for id, name, ids in pancreas_views:
+        groups.append({'id':id,'name':name,'sex':'male','sourceConcepts':['FMA7198'],
+                       'ids':ids,'sourceVersion':'4.0'})
+        for part in catalog:
+            if part['id'] in ids:
+                part['group'] = id
+                note = ' 같은 원본의 대체 표현을 동시에 표시하지 않습니다. 한국어 보기명은 편집 표기입니다.'
+                if note not in part['description']:
+                    part['description'] += note
     keep = {id for g in groups for id in g['ids']}
     source = read('.cache/bp4-official/lung43/receipt.json')
     for f in source['archives']:
@@ -115,13 +134,14 @@ def main():
                         'positionSha256':hashlib.sha256(position_bytes).hexdigest()})
     compressed = gzip.compress(blob, compresslevel=9, mtime=0)
     (root/'organs.bin.gz').write_bytes(compressed)
-    atlas = {'version':'4.0-heart-liver+4.3-lung','sex':'male','parts':parts,
+    atlas = {'version':'4.0-heart-liver-kidney-stomach-pancreas+4.3-lung','sex':'male','parts':parts,
              'chunks':[{'url':'/models/male-detail/organs.bin','gzip':'/models/male-detail/organs.bin.gz','bytes':len(blob),'gzipBytes':len(compressed)}]}
     (root/'atlas.json').write_text(json.dumps(atlas,separators=(',',':'))+'\n')
     for file, value in [('data/male-detail-structures.json',catalog),('data/male-detail-groups.json',groups)]:
         Path(file).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
     receipt = read('data/catalog/male-detail-source.json')
     receipt.update(structures=len(parts),bytes=len(compressed),lungSupplement='data/catalog/male-lung-source.json',
+                   pancreasViews=[{'id':g['id'],'ids':g['ids']} for g in groups if g['id'].startswith('pancreas')],
                    files=[{'path':str(p),'sha256':sha(p)} for p in [root/'atlas.json',root/'organs.bin.gz']])
     Path('data/catalog/male-detail-source.json').write_text(json.dumps(receipt,indent=2)+'\n')
     supplement = {'version':'4.3','license':'CC-BY-4.0','officialConcepts':['FMA7309','FMA7310'],'logic':'part_of',

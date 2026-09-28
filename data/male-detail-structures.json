@@ -32,6 +32,38 @@
     "description": "간의 Left portal vein · 원본 기관 하위 관계에 포함된 구조입니다."
   },
   {
+    "id": "BP4_FJ1895",
+    "name": "Pancreas",
+    "label": "Pancreas",
+    "layer": "organ",
+    "sex": "male",
+    "group": "pancreas",
+    "detailOnly": true,
+    "fmaId": "FMA7198",
+    "hierarchy": [
+      "췌장",
+      "digestive"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "췌장의 Pancreas · 원본 기관 하위 관계에 포함된 구조입니다. 같은 원본의 대체 표현을 동시에 표시하지 않습니다. 한국어 보기명은 편집 표기입니다."
+  },
+  {
+    "id": "BP4_FJ1896",
+    "name": "Pancreatic duct",
+    "label": "Pancreatic duct",
+    "layer": "organ",
+    "sex": "male",
+    "group": "pancreas",
+    "detailOnly": true,
+    "fmaId": "FMA10419",
+    "hierarchy": [
+      "췌장",
+      "digestive"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "췌장의 Pancreatic duct · 원본 기관 하위 관계에 포함된 구조입니다. 같은 원본의 대체 표현을 동시에 표시하지 않습니다. 한국어 보기명은 편집 표기입니다."
+  },
+  {
     "id": "BP4_FJ1913",
     "name": "Right portal vein",
     "label": "Right portal vein",
@@ -78,6 +110,150 @@
     ],
     "source": "BodyParts3D 4.0 · 기관 상세 참조",
     "description": "간의 Caudate lobe branch of right hepatic artery · 원본 기관 하위 관계에 포함된 구조입니다."
+  },
+  {
+    "id": "BP4_FJ2038",
+    "name": "Right renal artery",
+    "label": "오른쪽 신장동맥",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA14752",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ2042",
+    "name": "Superior segmental branch of right renal artery",
+    "label": "오른쪽 신장동맥 위구역가지",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA86340",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Superior segmental branch of right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ2043",
+    "name": "Inferior segmental branch of right renal artery",
+    "label": "오른쪽 신장동맥 아래구역가지",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA86346",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Inferior segmental branch of right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ2045",
+    "name": "Posterior segmental branch of right renal artery",
+    "label": "오른쪽 신장동맥 뒤구역가지",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA86348",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Posterior segmental branch of right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ2046",
+    "name": "Left renal artery",
+    "label": "왼쪽 신장동맥",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA14753",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ2049",
+    "name": "Inferior segmental branch of left renal artery",
+    "label": "왼쪽 신장동맥 아래구역가지",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA86347",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Inferior segmental branch of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ2052",
+    "name": "Superior segmental branch of left renal artery",
+    "label": "왼쪽 신장동맥 위구역가지",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA86341",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Superior segmental branch of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ2053",
+    "name": "Posterior segmental branch of left renal artery",
+    "label": "왼쪽 신장동맥 뒤구역가지 · 원본 1",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA86349",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Posterior segmental branch of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ2054",
+    "name": "Posterior segmental branch of left renal artery",
+    "label": "왼쪽 신장동맥 뒤구역가지 · 원본 2",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA86349",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Posterior segmental branch of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
   },
   {
     "id": "BP4_FJ2386",
@@ -526,6 +702,54 @@
     ],
     "source": "BodyParts3D 4.0 · 기관 상세 참조",
     "description": "심장의 Wall of right atrium · 원본 기관 하위 관계에 포함된 구조입니다."
+  },
+  {
+    "id": "BP4_FJ2564",
+    "name": "Stomach",
+    "label": "위",
+    "layer": "organ",
+    "sex": "male",
+    "group": "stomach",
+    "detailOnly": true,
+    "fmaId": "FMA7148",
+    "hierarchy": [
+      "위 · 위동맥·위정맥",
+      "digestive"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Stomach · 같은 BodyParts3D 4.0 좌표계의 위와 이름으로 구분된 관련 혈관 모형입니다. 위벽의 독립 분할이나 혈관 연결·관류·전신 3.0 정합을 검증한 것은 아닙니다. 한국어 이름은 편집 표기입니다."
+  },
+  {
+    "id": "BP4_FJ2629",
+    "name": "Parenchyma of pancreas",
+    "label": "Parenchyma of pancreas",
+    "layer": "organ",
+    "sex": "male",
+    "group": "pancreas-parenchyma",
+    "detailOnly": true,
+    "fmaId": "FMA63120",
+    "hierarchy": [
+      "췌장",
+      "digestive"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "췌장의 Parenchyma of pancreas · 원본 기관 하위 관계에 포함된 구조입니다. 같은 원본의 대체 표현을 동시에 표시하지 않습니다. 한국어 보기명은 편집 표기입니다."
+  },
+  {
+    "id": "BP4_FJ2630",
+    "name": "Pancreatic duct tree",
+    "label": "Pancreatic duct tree",
+    "layer": "organ",
+    "sex": "male",
+    "group": "pancreas-parenchyma",
+    "detailOnly": true,
+    "fmaId": "FMA63103",
+    "hierarchy": [
+      "췌장",
+      "digestive"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "췌장의 Pancreatic duct tree · 원본 기관 하위 관계에 포함된 구조입니다. 같은 원본의 대체 표현을 동시에 표시하지 않습니다. 한국어 보기명은 편집 표기입니다."
   },
   {
     "id": "BP4_FJ2631",
@@ -2286,6 +2510,550 @@
     ],
     "source": "BodyParts3D 4.0 · 기관 상세 참조",
     "description": "간의 Medial inferior segmental branch of left portal vein · 원본 기관 하위 관계에 포함된 구조입니다."
+  },
+  {
+    "id": "BP4_FJ3144",
+    "name": "Left ureter",
+    "label": "왼쪽 요관",
+    "layer": "organ",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA15572",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "urinary"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Left ureter · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3145",
+    "name": "Left kidney",
+    "label": "왼쪽 콩팥",
+    "layer": "organ",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA7205",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "urinary"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Left kidney · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3146",
+    "name": "Right ureter",
+    "label": "오른쪽 요관",
+    "layer": "organ",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA15571",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "urinary"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Right ureter · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3147",
+    "name": "Right kidney",
+    "label": "오른쪽 콩팥",
+    "layer": "organ",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA7204",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "urinary"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Right kidney · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3458",
+    "name": "Anterior division of left renal artery",
+    "label": "왼쪽 신장동맥 앞가지 · 원본 1",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70487",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Anterior division of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3459",
+    "name": "Anterior division of left renal artery",
+    "label": "왼쪽 신장동맥 앞가지 · 원본 2",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70487",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Anterior division of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3460",
+    "name": "Anterior division of left renal artery",
+    "label": "왼쪽 신장동맥 앞가지 · 원본 3",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70487",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Anterior division of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3461",
+    "name": "Anterior division of left renal artery",
+    "label": "왼쪽 신장동맥 앞가지 · 원본 4",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70487",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Anterior division of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3462",
+    "name": "Anterior division of left renal artery",
+    "label": "왼쪽 신장동맥 앞가지 · 원본 5",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70487",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Anterior division of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3463",
+    "name": "Anterior division of left renal artery",
+    "label": "왼쪽 신장동맥 앞가지 · 원본 6",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70487",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Anterior division of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3473",
+    "name": "Posterior division of left renal artery",
+    "label": "왼쪽 신장동맥 뒤가지 · 원본 1",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70490",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Posterior division of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3474",
+    "name": "Posterior division of left renal artery",
+    "label": "왼쪽 신장동맥 뒤가지 · 원본 2",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70490",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Posterior division of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3475",
+    "name": "Posterior division of left renal artery",
+    "label": "왼쪽 신장동맥 뒤가지 · 원본 3",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70490",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Posterior division of left renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3477",
+    "name": "Left renal vein",
+    "label": "왼쪽 신정맥 · 원본 1",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA14336",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "venous"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Left renal vein · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3478",
+    "name": "Left renal vein",
+    "label": "왼쪽 신정맥 · 원본 2",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA14336",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "venous"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Left renal vein · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3499",
+    "name": "Left gastric artery",
+    "label": "왼쪽 위동맥",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "stomach",
+    "detailOnly": true,
+    "fmaId": "FMA14768",
+    "hierarchy": [
+      "위 · 위동맥·위정맥",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Left gastric artery · 같은 BodyParts3D 4.0 좌표계의 위와 이름으로 구분된 관련 혈관 모형입니다. 위벽의 독립 분할이나 혈관 연결·관류·전신 3.0 정합을 검증한 것은 아닙니다. 한국어 이름은 편집 표기입니다."
+  },
+  {
+    "id": "BP4_FJ3500",
+    "name": "Left gastric vein",
+    "label": "왼쪽 위정맥",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "stomach",
+    "detailOnly": true,
+    "fmaId": "FMA15399",
+    "hierarchy": [
+      "위 · 위동맥·위정맥",
+      "venous"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Left gastric vein · 같은 BodyParts3D 4.0 좌표계의 위와 이름으로 구분된 관련 혈관 모형입니다. 위벽의 독립 분할이나 혈관 연결·관류·전신 3.0 정합을 검증한 것은 아닙니다. 한국어 이름은 편집 표기입니다."
+  },
+  {
+    "id": "BP4_FJ3501",
+    "name": "Left gastro-epiploic artery",
+    "label": "왼쪽 위그물막동맥",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "stomach",
+    "detailOnly": true,
+    "fmaId": "FMA14796",
+    "hierarchy": [
+      "위 · 위동맥·위정맥",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Left gastro-epiploic artery · 같은 BodyParts3D 4.0 좌표계의 위와 이름으로 구분된 관련 혈관 모형입니다. 위벽의 독립 분할이나 혈관 연결·관류·전신 3.0 정합을 검증한 것은 아닙니다. 한국어 이름은 편집 표기입니다."
+  },
+  {
+    "id": "BP4_FJ3502",
+    "name": "Left gastroepiploic vein",
+    "label": "왼쪽 위그물막정맥",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "stomach",
+    "detailOnly": true,
+    "fmaId": "FMA15390",
+    "hierarchy": [
+      "위 · 위동맥·위정맥",
+      "venous"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Left gastroepiploic vein · 같은 BodyParts3D 4.0 좌표계의 위와 이름으로 구분된 관련 혈관 모형입니다. 위벽의 독립 분할이나 혈관 연결·관류·전신 3.0 정합을 검증한 것은 아닙니다. 한국어 이름은 편집 표기입니다."
+  },
+  {
+    "id": "BP4_FJ3558",
+    "name": "Anterior division of right renal artery",
+    "label": "오른쪽 신장동맥 앞가지 · 원본 1",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70486",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Anterior division of right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3559",
+    "name": "Anterior division of right renal artery",
+    "label": "오른쪽 신장동맥 앞가지 · 원본 2",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70486",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Anterior division of right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3560",
+    "name": "Anterior division of right renal artery",
+    "label": "오른쪽 신장동맥 앞가지 · 원본 3",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70486",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Anterior division of right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3561",
+    "name": "Anterior division of right renal artery",
+    "label": "오른쪽 신장동맥 앞가지 · 원본 4",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70486",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Anterior division of right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3562",
+    "name": "Anterior division of right renal artery",
+    "label": "오른쪽 신장동맥 앞가지 · 원본 5",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70486",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Anterior division of right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3563",
+    "name": "Anterior division of right renal artery",
+    "label": "오른쪽 신장동맥 앞가지 · 원본 6",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70486",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Anterior division of right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3573",
+    "name": "Posterior division of right renal artery",
+    "label": "오른쪽 신장동맥 뒤가지 · 원본 1",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70489",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Posterior division of right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3574",
+    "name": "Posterior division of right renal artery",
+    "label": "오른쪽 신장동맥 뒤가지 · 원본 2",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70489",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Posterior division of right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3575",
+    "name": "Posterior division of right renal artery",
+    "label": "오른쪽 신장동맥 뒤가지 · 원본 3",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA70489",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Posterior division of right renal artery · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3577",
+    "name": "Right renal vein",
+    "label": "오른쪽 신정맥 · 원본 1",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA14335",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "venous"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Right renal vein · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3578",
+    "name": "Right renal vein",
+    "label": "오른쪽 신정맥 · 원본 2",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "kidney",
+    "detailOnly": true,
+    "fmaId": "FMA14335",
+    "hierarchy": [
+      "콩팥 · 요관·신장혈관",
+      "venous"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Right renal vein · 같은 BodyParts3D 4.0 좌표계의 콩팥·요관·신장혈관 관련 모형입니다. 한국어 이름은 편집 표기이며 혈관 분절의 연결·콩팥 내부 구조·임상 위치를 검증한 것은 아닙니다."
+  },
+  {
+    "id": "BP4_FJ3594",
+    "name": "Right gastric artery",
+    "label": "오른쪽 위동맥",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "stomach",
+    "detailOnly": true,
+    "fmaId": "FMA14776",
+    "hierarchy": [
+      "위 · 위동맥·위정맥",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Right gastric artery · 같은 BodyParts3D 4.0 좌표계의 위와 이름으로 구분된 관련 혈관 모형입니다. 위벽의 독립 분할이나 혈관 연결·관류·전신 3.0 정합을 검증한 것은 아닙니다. 한국어 이름은 편집 표기입니다."
+  },
+  {
+    "id": "BP4_FJ3595",
+    "name": "Right gastric vein",
+    "label": "오른쪽 위정맥",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "stomach",
+    "detailOnly": true,
+    "fmaId": "FMA15400",
+    "hierarchy": [
+      "위 · 위동맥·위정맥",
+      "venous"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Right gastric vein · 같은 BodyParts3D 4.0 좌표계의 위와 이름으로 구분된 관련 혈관 모형입니다. 위벽의 독립 분할이나 혈관 연결·관류·전신 3.0 정합을 검증한 것은 아닙니다. 한국어 이름은 편집 표기입니다."
+  },
+  {
+    "id": "BP4_FJ3596",
+    "name": "Right gastro-epiploic artery",
+    "label": "오른쪽 위그물막동맥",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "stomach",
+    "detailOnly": true,
+    "fmaId": "FMA14781",
+    "hierarchy": [
+      "위 · 위동맥·위정맥",
+      "arterial"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Right gastro-epiploic artery · 같은 BodyParts3D 4.0 좌표계의 위와 이름으로 구분된 관련 혈관 모형입니다. 위벽의 독립 분할이나 혈관 연결·관류·전신 3.0 정합을 검증한 것은 아닙니다. 한국어 이름은 편집 표기입니다."
+  },
+  {
+    "id": "BP4_FJ3597",
+    "name": "Right gastroepiploic vein",
+    "label": "오른쪽 위그물막정맥",
+    "layer": "vessel",
+    "sex": "male",
+    "group": "stomach",
+    "detailOnly": true,
+    "fmaId": "FMA15397",
+    "hierarchy": [
+      "위 · 위동맥·위정맥",
+      "venous"
+    ],
+    "source": "BodyParts3D 4.0 · 기관 상세 참조",
+    "description": "Right gastroepiploic vein · 같은 BodyParts3D 4.0 좌표계의 위와 이름으로 구분된 관련 혈관 모형입니다. 위벽의 독립 분할이나 혈관 연결·관류·전신 3.0 정합을 검증한 것은 아닙니다. 한국어 이름은 편집 표기입니다."
   },
   {
     "id": "BP4_FJ2441",

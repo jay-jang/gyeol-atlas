@@ -1,0 +1,340 @@
+{
+  "status": "PACKED DETAIL AUDIT: exact official 4.0 membership and source buffers, no continuity/clinical approval",
+  "limitations": [
+    "The nine rows are independent is_a concepts, not an official nine-element part_of stomach bundle.",
+    "One-way vertex-to-stomach-surface distance does not establish vessel contact or vascular supply.",
+    "The source 4.0 frame has not been locally registered to the existing 3.0 overview body or female HRA body; unsigned surfaces alone cannot approve a registration."
+  ],
+  "overviewRelation": {
+    "source": "deployed BodyParts3D 3.0 stomach FMA7148 versus separate 4.0 detail FJ2564",
+    "sourceToOverview": {
+      "vertices": 852,
+      "minimumMm": 0.12214644687003323,
+      "medianMm": 21.75239167717848,
+      "p95Mm": 41.58951626826331,
+      "maximumMm": 45.11354844674701
+    },
+    "overviewToSource": {
+      "vertices": 1002,
+      "minimumMm": 0.009618720421951778,
+      "medianMm": 18.04286241067069,
+      "p95Mm": 41.89244335445973,
+      "maximumMm": 43.94394795553892
+    },
+    "boundsCenterDistanceMm": 41.651334368457285
+  },
+  "rows": [
+    {
+      "conceptId": "FMA7148",
+      "id": "BP4_FJ2564",
+      "name": "Stomach",
+      "system": "digestive",
+      "vertices": 852,
+      "triangles": 1686,
+      "bounds": [
+        [
+          -0.0289516,
+          1.1179912,
+          -0.018520099999999998
+        ],
+        [
+          0.105524,
+          1.2350012000000001,
+          0.09437000000000001
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "59121892be95734b9686863321cb61275742ef83f309d6df126bb332abd1630e",
+        "normals": "fb6fe4a3706708415646e5df6d3ebaa9699c90d2e25622630628c5b264690bbe",
+        "indices": "281b873c7d4b18adc3c96eba1ebe0ca590a43b59d6e979e274156134b7a96448"
+      },
+      "stomachVertexSurfaceDistanceMm": {
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      }
+    },
+    {
+      "conceptId": "FMA14768",
+      "id": "BP4_FJ3499",
+      "name": "Left gastric artery",
+      "system": "arterial",
+      "vertices": 478,
+      "triangles": 904,
+      "bounds": [
+        [
+          0.00493379,
+          1.1590112000000001,
+          0.022801000000000002
+        ],
+        [
+          0.0267316,
+          1.2043911999999999,
+          0.06948500000000002
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "2cc42804e24d07017cae34c73f5963ff82f014e6477de09ca7f86e4919b29bec",
+        "normals": "90de946f15899f9602c09fc8c528e771247fb297235d686b78366b9647b789f1",
+        "indices": "9f3df06a3b3e31bef045ac056555b0225c592a9ca6bb5341dc5e76621cd8afdd"
+      },
+      "stomachVertexSurfaceDistanceMm": {
+        "minimum": 0.015999305292693056,
+        "median": 5.961165012472076,
+        "maximum": 25.318357877311602
+      }
+    },
+    {
+      "conceptId": "FMA14776",
+      "id": "BP4_FJ3594",
+      "name": "Right gastric artery",
+      "system": "arterial",
+      "vertices": 251,
+      "triangles": 448,
+      "bounds": [
+        [
+          -0.0124546,
+          1.1543012,
+          0.037631
+        ],
+        [
+          0.0215367,
+          1.1676912,
+          0.069493
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "3b6d5d402534e155715f6c84b628926208ffdebb8a505636eafa4f383f405c46",
+        "normals": "f3fe969a78377389de39dd408ebe55153f24a3e948f377a603f99b9aff1a6159",
+        "indices": "0db44d2046634989b8a6d2da810e769a8ad8c1a4076760156cc4003b275f60b0"
+      },
+      "stomachVertexSurfaceDistanceMm": {
+        "minimum": 0.002234577642829984,
+        "median": 1.4592979368933712,
+        "maximum": 11.107822423700684
+      }
+    },
+    {
+      "conceptId": "FMA15399",
+      "id": "BP4_FJ3500",
+      "name": "Left gastric vein",
+      "system": "venous",
+      "vertices": 581,
+      "triangles": 986,
+      "bounds": [
+        [
+          -0.0143543,
+          1.1605312,
+          0.023650000000000004
+        ],
+        [
+          0.0251643,
+          1.2102712,
+          0.069656
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "5daf1f119102ce380bb499478a8b98a5d617c70d5decb896da782ad38371bacb",
+        "normals": "da4609bfc920751c4891738a837de95079c811fc7032f8f3737cbe1c2f24b45b",
+        "indices": "df17ada7a124f61eaff982ad27739b732c05f7d72d513afa720dfb9022ddfc24"
+      },
+      "stomachVertexSurfaceDistanceMm": {
+        "minimum": 0.26352732955979935,
+        "median": 4.167698570595144,
+        "maximum": 26.173606188245014
+      }
+    },
+    {
+      "conceptId": "FMA15400",
+      "id": "BP4_FJ3595",
+      "name": "Right gastric vein",
+      "system": "venous",
+      "vertices": 250,
+      "triangles": 456,
+      "bounds": [
+        [
+          -0.0231183,
+          1.1554612,
+          0.03745899999999999
+        ],
+        [
+          0.000795912,
+          1.1725312,
+          0.06355
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "461b96d3e1f761b543d035db0e1dcf11c4381e568c4187772975cb51551e6fa1",
+        "normals": "8de68ce4ca2e960e512967a9319f91bbec1f56175bdfacaaeeb2427bc57515ee",
+        "indices": "a50c6a32e13f3ead043f4bfa5528baaeeaa2f01410fcbad452b71b60aab10ebd"
+      },
+      "stomachVertexSurfaceDistanceMm": {
+        "minimum": 2.4850996972056043,
+        "median": 6.054626891280791,
+        "maximum": 20.60015143802004
+      }
+    },
+    {
+      "conceptId": "FMA14796",
+      "id": "BP4_FJ3501",
+      "name": "Left gastro-epiploic artery",
+      "system": "arterial",
+      "vertices": 280,
+      "triangles": 532,
+      "bounds": [
+        [
+          0.0575614,
+          1.1245512,
+          0.0012899999999999995
+        ],
+        [
+          0.0929849,
+          1.1631711999999998,
+          0.06581600000000001
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "cdaa05e9c107fabe7fd4cb96f77ac7b9fafea97b617635a54820c217d02a1c03",
+        "normals": "94735ef76420ad3a2319c0d3bab1c12f4e40df2989ef7bdf1261d8208c39f616",
+        "indices": "a80be8542180e5cebebfd67b98d7847279ac05ae60c3191542c3aee010e1bff1"
+      },
+      "stomachVertexSurfaceDistanceMm": {
+        "minimum": 0.01197647517915965,
+        "median": 0.5248077537264652,
+        "maximum": 1.4658819837378063
+      }
+    },
+    {
+      "conceptId": "FMA14781",
+      "id": "BP4_FJ3596",
+      "name": "Right gastro-epiploic artery",
+      "system": "arterial",
+      "vertices": 427,
+      "triangles": 812,
+      "bounds": [
+        [
+          -0.0181603,
+          1.1171312,
+          0.036355
+        ],
+        [
+          0.0583814,
+          1.1450412,
+          0.07758799999999999
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "a90406cb9b7b92f8a01b7e0553929da01cd66789934dfc1d9dcedf9338ad9bea",
+        "normals": "02250da1f5616ca08c6920cace8bb34fd6fef9791a984b9eb6c413b1ed231a09",
+        "indices": "b47a6f1e99935baca47290d2307e45dc431a83da373529bba28967f54548fdcf"
+      },
+      "stomachVertexSurfaceDistanceMm": {
+        "minimum": 0.0011076075028528163,
+        "median": 0.8228219565891248,
+        "maximum": 7.052944871396974
+      }
+    },
+    {
+      "conceptId": "FMA15390",
+      "id": "BP4_FJ3502",
+      "name": "Left gastroepiploic vein",
+      "system": "venous",
+      "vertices": 238,
+      "triangles": 300,
+      "bounds": [
+        [
+          0.0600961,
+          1.1248112,
+          0.0015259999999999996
+        ],
+        [
+          0.09455670000000001,
+          1.1621211999999999,
+          0.07183699999999998
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "588e06017ef452eef6d454217ef6a85dad89e8ad0715420fe4835581a6f35d20",
+        "normals": "d861be2bbb6d1e353f7ea0333f9f637a7b7604f20c85ae5a934e7bb767a02493",
+        "indices": "08274abe76fb110e8c53379ac62a9587a1156d36611eae98caa23b6e8eae84bb"
+      },
+      "stomachVertexSurfaceDistanceMm": {
+        "minimum": 0.0017194753466180273,
+        "median": 0.6207154041794972,
+        "maximum": 1.5720893822165425
+      }
+    },
+    {
+      "conceptId": "FMA15397",
+      "id": "BP4_FJ3597",
+      "name": "Right gastroepiploic vein",
+      "system": "venous",
+      "vertices": 326,
+      "triangles": 452,
+      "bounds": [
+        [
+          -0.017116700000000002,
+          1.1064812,
+          0.03794499999999998
+        ],
+        [
+          0.0606502,
+          1.1298911999999999,
+          0.08030799999999999
+        ]
+      ],
+      "fieldSha256": {
+        "positions": "4590eed322381089d98cadb3fe465fe954f3676fd761659a62b40cba822cb4eb",
+        "normals": "7f9f2d4cfccd7303063b5510358172098430d2da4e56f568e6ad67b883263a1d",
+        "indices": "a5ae6b7567a4dee0f3dbec3a397f9fd817afd7b61337ad1851a9dbf01e1f4f97"
+      },
+      "stomachVertexSurfaceDistanceMm": {
+        "minimum": 0.0020293913228435355,
+        "median": 1.4004318778473828,
+        "maximum": 30.03092530231149
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": ".cache/male-details/atlas.json",
+      "sha256": "d6979fc62cf18fa4f08a9e6efae8fdac9ec383c5a1f3c757920125ac758429fe"
+    },
+    {
+      "path": ".cache/bp4-official/v40-FMA2Obj.zip",
+      "sha256": "d942414c74c8bae7bddec33dc55dfd367e521b5544762788fd5df1a90cab6249"
+    },
+    {
+      "path": "public/models/male-detail/atlas.json",
+      "sha256": "77b1ef10fab915212b4385a6b1f237ea688a15caef2501255022a42d3a55b463"
+    },
+    {
+      "path": "public/models/male-detail/organs.bin.gz",
+      "sha256": "df32245900245932a99872658ca69062e1e8779730986a5515ad0b43f782e638"
+    },
+    {
+      "path": "data/male-detail-structures.json",
+      "sha256": "0edb216412c81e05a1f2010ceecb0594f9b9a60ba9b91ad36f7e638df9e162d7"
+    },
+    {
+      "path": "data/male-detail-groups.json",
+      "sha256": "7ea2e1dc2f78148f2784c0641b58ac86eab52a812e7824524fe514bf7f4f3558"
+    },
+    {
+      "path": "public/models/organ.glb",
+      "sha256": "5661ac5c4e41a558835dbbd45b3c37fed361b0e83fe188482c39a3fd6170959b"
+    },
+    {
+      "path": "scripts/audit-male-stomach-source.mjs",
+      "sha256": "3fed1599070a641c9ad9590cf1fc47d7cccaa2510c60561add4e12d2477e447a"
+    },
+    {
+      "path": ".cache/male-details/body-9.bin.gz",
+      "sha256": "6cd49b1a5468815cd4ca8d8dd7b1647a0cf338b0fa3361cfbe984e2a69861870"
+    },
+    {
+      "path": ".cache/male-details/body-14.bin.gz",
+      "sha256": "5b6436341e82eaf1ae37ac6970e909991d5279711aa6ca3fcd244449db921681"
+    }
+  ]
+}

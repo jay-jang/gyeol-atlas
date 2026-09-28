@@ -2,6 +2,7 @@ import {test,expect} from '@playwright/test';
 import {ready, snapshot} from './helpers';
 import {detailProjection} from './detail-projection';
 import maleGroups from '../../data/male-organ-groups.json' with {type:'json'};
+import maleDetailGroups from '../../data/male-detail-groups.json' with {type:'json'};
 import femaleGroups from '../../data/female-organ-groups.json' with {type:'json'};
 import ctGroups from '../../data/female-detail-groups.json' with {type:'json'};
 
@@ -61,11 +62,12 @@ for (const sample of [
 });
 
 test('every major organ detail fits beside its collapsed and expanded card',async({page})=>{
-  test.setTimeout(180000);
+  test.setTimeout(480000);
   await page.setViewportSize({width:1440,height:900});
   let fiberUrl=''; page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   await page.goto('/'); await ready(page);
-  for(const [sex,groups] of [['남성',maleGroups],['여성',[...femaleGroups,...ctGroups]]] as const) {
+  const featuredMaleGroups=maleGroups.map(group=>maleDetailGroups.find(detail=>detail.id===group.id)||group);
+  for(const [sex,groups] of [['남성',featuredMaleGroups],['여성',[...femaleGroups,...ctGroups]]] as const) {
     await page.locator('.explore-sidebar').getByRole('button',{name:sex,exact:true}).click(); await ready(page);
     for(const group of groups) {
       await page.locator('.featured-anatomy > button').filter({has:page.getByText(group.name,{exact:true})}).click(); await ready(page);

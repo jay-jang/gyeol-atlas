@@ -1,5 +1,13 @@
 # 여성 참조 미수록 구조 — 2026-09-20 확인
 
+2026-09-28 추가 후보 검토: [Female Atlas의 원본 표기](https://github.com/HiMahendraBeniwal/female-atlas/blob/main/public/ATTRIBUTION.md)는 여성 HRA v1.5와 남성 BodyParts3D의 결합이라고 밝힙니다. [실제 조립 코드](https://github.com/HiMahendraBeniwal/female-atlas/blob/main/scripts/build-perfect-female-atlas.mjs)는 여성 피부를 제외하고 남성 피부로 교체하며, 남성 구조에 전역 축척 `0.95/0.96335/0.95`와 신체 높이별 외형 변형을 적용합니다. 따라서 이 저장소의 ‘3,004개 여성 구조’라는 수만으로 같은 여성의 골격·근육·신경 위치를 입증할 수 없고, 현재 남성 유래 구조 정렬 문제의 교정 자료로 도입하지 않았습니다. [SPARC/Pennsieve 전신 scaffold](https://discover.pennsieve.io/datasets/307)는 CC BY4.0이지만 공식 설명상 일반 신체 좌표이며 신경 중심선 표지는 문헌을 참고한 추정입니다. 현재 HRA 여성의 같은 몸·촬영 좌표를 제공하는 신경 메쉬로 간주하지 않습니다.
+
+같은 Visible Human Female CT를 이용한 자동 분할 가능성은 [강도값 원본 대조](BONEHUB_CT_INTENSITY.md)에서 별도로 시험합니다. 원본 영상에 같은 사람이라는 근거가 있더라도 분할 모델의 출력은 검사 전에는 앱에 넣지 않습니다.
+
+2026-09-28 후속: 같은 여성 CT에서 위·뇌 등을 포함한 [MOOSE 장기 자동 라벨19개 후보](BONEHUB_MOOSE_ORGANS.md)를 오프라인으로 얻었습니다. 위 라벨의 복셀 중심은 현재 여성 피부 안이지만 표면·연결·자세 정합 승인은 아니며, 오른 폐엽의 심한 파편화와 매우 작은 기관 라벨도 확인했습니다. 이 후보는 앱에 수록하지 않았고, 여성 전신에 없는 위를 완성된 위치로 표시하지 않습니다.
+
+2026-09-28 머리 자료 후속: [NLM Visible Human Female의 BRAIN T1 MRI 원본 33장과 GE 헤더 33개](NLM_FEMALE_HEAD_MRI.md)를 공식 목록에서 별도 확보하고 파일 크기·해시·스캐너 RAS 간격을 기록했습니다. 이는 앱에 쓸 수 있는 분할 3D 뇌가 아니며 BoneHub CT나 HRA 전신과의 공간 등록도 아직 없습니다. 따라서 여성 두개골·뇌 정합 또는 전체 기관 수록이 해결된 것으로 세지 않습니다.
+
 2026-09-28 재탐색: [HRA-KG 공식 `united-female` 목록](https://github.com/hubmapconsortium/hra-kg/tree/main/digital-objects/ref-organ/united-female)을 다시 조회했을 때 공개된 폴더는 v1.2–v1.10으로, 현재 전신 v1.10보다 새 전신 판본을 확인하지 못했습니다. 목록 부재만으로 앞으로의 자료 공개 가능성까지 부정하지 않습니다. [Kabe-Tech 여성 에코르셰 공식 설명](https://kabe-tech.com/anatomy/en)은 여성 골격·근육 등673개 별도 메쉬, CC BY-SA 2.1 JP와 Gumroad/BOOTH 판매 경로를 명시합니다. 현재 원본을 구매·다운로드하지 않았고, 실제 파일별 성별/위치·재배포 및 동일조건 라이선스 적용 범위를 검증하지 않았으므로 앱에 도입하지 않았습니다. 여성 장기·혈관·신경까지 포함한다는 설명도 없습니다. [CADS 공식 저장소](https://github.com/murong-xu/CADS)의 전신 CT 분할167종은 별도 영상·추론/라벨 자료이며, 현재 HRA 여성과 같은 사람의 전체 기관 메쉬로 간주할 수 없어 자동 합성 후보로 채택하지 않았습니다.
 
 2026-09-27 후속: **BoneHub 여성 골격 STL143개·분할11개를 새로 확보**했습니다. CC BY4.0 고정 버전과 실제 파일 해시를 확인했고 양쪽 발은 각각17개 라벨의 실제 복셀을 검사했습니다. 발허리뼈는 개별 구조지만 손발가락 마디는 묶음이며, 팔꿈치 결손·근육/장기/신경 미수록 한계가 있습니다. 아직 전신 정합이나 앱 교체는 하지 않았습니다. [원본과 검증 범위](BONEHUB_FEMALE_SOURCE.md).
@@ -36,6 +44,8 @@
 | [Zygote 여성 소화계](https://www.zygote.com/poly-models/3d-female-systems/3d-female-digestive-system), [SciePro 여성 신경계](https://library.sciepro.com/en/3d-models/female-nervous-system-9213796945381) | 유료 상용 모델. 무료 재배포 허가는 확인하지 못함 | 구매·파일 취득·통합하지 않음 |
 
 ### 좌표와 범위
+
+2026-09-28 후속: [실제 배포 압축 메쉬의 다섯 기관 보류 검사](FEMALE_CT_HRA_LANDMARKS.md)에서 경계상자 중심뿐 아니라 삼각형 면적 가중 중심을 사용하고, 다섯 기관을 하나씩 제외하며 강체·균일 배율 후보를 모두 재계산했습니다. 보류 오차는26.5–67.0mm입니다. 아래 초기 네 기관 맞춤/췌장 보류 수치와 **검사 대상·중심 정의가 달라** 같은 값의 반복으로 취급하지 않습니다. CT 위의 상자가 HRA 간 위압흔 상자와 겹치는 후보도 다른 기관 검증에 실패해 여전히 별도 상세로 유지합니다.
 
 s0255와 HRA의 공통 간·비장·양측 콩팥 경계 중심을 이용해 유사변환을 시험했습니다. 중심 잔차20.33~34.84mm, 맞춤에 쓰지 않은 췌장 중심41.18mm, 약38도 회전이 요구됐습니다. 서로 다른 신체의 장기 배치를 한 좌표계에 합성하는 데 충분하지 않아 **이 변환은 사용하지 않았습니다**. 임상 오차 측정이나 전문가 정합 판정이 아닙니다.
 

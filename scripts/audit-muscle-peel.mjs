@@ -44,6 +44,26 @@ for(const [sex,input] of [['male',rows],['female',female]]){
   const summary={sex,meshes:input.length,verifiedRelationMeshes:new Set(musclePeelGroups.filter(g=>g.sex===sex).flatMap(g=>g.levels.flat())).size,
     relations:relations.length,beforeReversed:relations.filter(r=>r.beforeReversed).length,beforeOverlapping:relations.filter(r=>r.beforeOverlapping).length,afterViolations:relations.filter(r=>!r.afterSeparated).length};
   result.sexes.push({...summary,relationDetails:relations,starts:Object.fromEntries(after)});console.log(JSON.stringify(summary));
+  if(sex==='male'){
+    const forearmGroups=musclePeelGroups.filter(g=>g.source==='anteriorForearm');
+    const forearmIds=new Set(forearmGroups.flatMap(g=>g.levels.flat()));
+    const forearmEdges=musclePeelRelations.filter(([outer,inner])=>forearmIds.has(outer)&&forearmIds.has(inner));
+    const previousRelations=musclePeelRelations.filter(([outer,inner])=>!forearmIds.has(outer)||!forearmIds.has(inner));
+    const previousRanks=musclePeelRanks(input,previousRelations);
+    const previousStarts=new Map([...previousRanks].map(([id,rank])=>[id,24+rank*36]));
+    const previousRows=forearmEdges.map(([outer,inner])=>({outer,inner,
+      previous:[previousStarts.get(outer),previousStarts.get(inner)],
+      after:[after.get(outer),after.get(inner)],
+      previousReversed:previousStarts.get(outer)>previousStarts.get(inner),
+      previousOverlapping:previousStarts.get(outer)+4>previousStarts.get(inner),
+      afterSeparated:after.get(outer)+4<=after.get(inner)+1e-10}));
+    result.forearmPrevious={method:'Immediately preceding rank schedule with only the new forearm relations omitted; unchanged real GLB scores and all older constraints.',
+      meshes:forearmIds.size,relations:previousRows.length,
+      reversed:previousRows.filter(row=>row.previousReversed).length,
+      overlapping:previousRows.filter(row=>row.previousOverlapping).length,
+      afterViolations:previousRows.filter(row=>!row.afterSeparated).length,
+      relationDetails:previousRows};
+  }
 }
 result.files=['public/models/muscle.glb','public/models/female/atlas-female.json',...atlas.chunks.filter((_,i)=>cache.has(i)).map(c=>`public/models/female/${c.gzip.split('/').pop()}`),'scripts/audit-muscle-peel.mjs','src/muscle-peel.ts','src/muscle-peel-relations.ts','src/dissection.ts','src/Atlas.tsx','src/PackedAtlas.tsx'].map(path=>({path,sha256:createHash('sha256').update(fs.readFileSync(path)).digest('hex')}));
 fs.writeFileSync('docs/anatomy-alignment/muscle-peel-audit.json',JSON.stringify(result,null,2)+'\n');

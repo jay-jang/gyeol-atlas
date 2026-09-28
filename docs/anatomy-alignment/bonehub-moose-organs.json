@@ -1,0 +1,1759 @@
+{
+  "status": "SAME-DONOR CT ORGAN CANDIDATE; NOT HRA REGISTRATION OR ATLAS APPROVAL",
+  "candidateInputSha256": "92996cd3b2e8169d2fcb5456b5a02e06c6269bdeb43b19de8eac1f3421f9edf9",
+  "segmentationSha256": "220bbcb2c6d93634733da1c6d3d432d9c725604569c571f28629e024a8e9d28c",
+  "modelDatasetJsonSha256": "db8acaff49333781fc4d88572399e37fa483f9e94ff250db6bb5cbdae53fa05f",
+  "thoraxScreenSha256": "5e20c0ffc696b262a2732b99c57df32319232697aad371dcad63cf4e02583dee",
+  "femaleAtlasSha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f",
+  "sourceFrame": "MOOSE CT voxel -> NIfTI RAS mm -> app left/up/anterior m -> rigid fitted on even thoracic vertebra box centres",
+  "voxelVolumeMm3": 8.004055454135495,
+  "thoraxHeldOutOddVertebraMaxResidualMm": 1.7239170424469503,
+  "labels": [
+    {
+      "name": "adrenal_gland_left",
+      "label": 1,
+      "voxels": 582,
+      "maskVolumeMl": 4.658360274306857,
+      "voxelBoundsHalfOpen": [
+        [
+          135,
+          142
+        ],
+        [
+          119,
+          138
+        ],
+        [
+          570,
+          592
+        ]
+      ],
+      "componentCount": 1,
+      "largestComponentVoxelFraction": 1.0,
+      "topComponents": [
+        {
+          "voxels": 582,
+          "voxelBoundsHalfOpen": [
+            [
+              135,
+              142
+            ],
+            [
+              119,
+              138
+            ],
+            [
+              570,
+              592
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        0.03895091426635813,
+        1.0920248768358936,
+        -0.10230255676450495
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          0.030824781928261796,
+          1.067098810761666,
+          -0.12285314268951675
+        ],
+        [
+          0.04687902620243109,
+          1.1115049506653563,
+          -0.08393832897863465
+        ]
+      ]
+    },
+    {
+      "name": "adrenal_gland_right",
+      "label": 2,
+      "voxels": 532,
+      "maskVolumeMl": 4.258157501600083,
+      "voxelBoundsHalfOpen": [
+        [
+          101,
+          110
+        ],
+        [
+          129,
+          143
+        ],
+        [
+          581,
+          601
+        ]
+      ],
+      "componentCount": 1,
+      "largestComponentVoxelFraction": 1.0,
+      "topComponents": [
+        {
+          "voxels": 532,
+          "voxelBoundsHalfOpen": [
+            [
+              101,
+              110
+            ],
+            [
+              129,
+              143
+            ],
+            [
+              581,
+              601
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        -0.02758034844445789,
+        1.1071160796687636,
+        -0.11350588127054706
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.03776877216012517,
+          1.0884981601238515,
+          -0.12998953075067893
+        ],
+        [
+          -0.018177408511434956,
+          1.1288754931303007,
+          -0.10093321502543634
+        ]
+      ]
+    },
+    {
+      "name": "bladder",
+      "label": 3,
+      "voxels": 3998,
+      "maskVolumeMl": 32.00021370563371,
+      "voxelBoundsHalfOpen": [
+        [
+          106,
+          130
+        ],
+        [
+          88,
+          114
+        ],
+        [
+          431,
+          446
+        ]
+      ],
+      "componentCount": 1,
+      "largestComponentVoxelFraction": 1.0,
+      "topComponents": [
+        {
+          "voxels": 3998,
+          "voxelBoundsHalfOpen": [
+            [
+              106,
+              130
+            ],
+            [
+              88,
+              114
+            ],
+            [
+              431,
+              446
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        0.00404737364546956,
+        0.8036448372948063,
+        -0.050739865285876484
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.022086022136160788,
+          0.7881930196705698,
+          -0.07607216395194336
+        ],
+        [
+          0.02840204307244898,
+          0.8190808328055276,
+          -0.02184972560967527
+        ]
+      ]
+    },
+    {
+      "name": "brain",
+      "label": 4,
+      "voxels": 162781,
+      "maskVolumeMl": 1302.9081508796298,
+      "voxelBoundsHalfOpen": [
+        [
+          86,
+          151
+        ],
+        [
+          73,
+          154
+        ],
+        [
+          789,
+          859
+        ]
+      ],
+      "componentCount": 2,
+      "largestComponentVoxelFraction": 0.9999877135537931,
+      "topComponents": [
+        {
+          "voxels": 162779,
+          "voxelBoundsHalfOpen": [
+            [
+              86,
+              151
+            ],
+            [
+              73,
+              154
+            ],
+            [
+              789,
+              859
+            ]
+          ]
+        },
+        {
+          "voxels": 2,
+          "voxelBoundsHalfOpen": [
+            [
+              100,
+              101
+            ],
+            [
+              102,
+              104
+            ],
+            [
+              800,
+              801
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        -0.004912119572501983,
+        1.5778828869098114,
+        -0.07402215045587338
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.07409352191231863,
+          1.5030600760016848,
+          -0.1521251053194101
+        ],
+        [
+          0.06414979581913796,
+          1.6455836825387955,
+          0.01634744470207264
+        ]
+      ]
+    },
+    {
+      "name": "gallbladder",
+      "label": 5,
+      "voxels": 1526,
+      "maskVolumeMl": 12.214188623010765,
+      "voxelBoundsHalfOpen": [
+        [
+          72,
+          90
+        ],
+        [
+          90,
+          111
+        ],
+        [
+          558,
+          575
+        ]
+      ],
+      "componentCount": 1,
+      "largestComponentVoxelFraction": 1.0,
+      "topComponents": [
+        {
+          "voxels": 1526,
+          "voxelBoundsHalfOpen": [
+            [
+              72,
+              90
+            ],
+            [
+              90,
+              111
+            ],
+            [
+              558,
+              575
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        -0.07351023267871556,
+        1.0561620323589145,
+        -0.04537138379110109
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.09252246915278045,
+          1.0413185281989008,
+          -0.06471043547524083
+        ],
+        [
+          -0.05440988748577444,
+          1.0759991600655594,
+          -0.020954230449033606
+        ]
+      ]
+    },
+    {
+      "name": "kidney_left",
+      "label": 6,
+      "voxels": 25628,
+      "maskVolumeMl": 205.12793317858447,
+      "voxelBoundsHalfOpen": [
+        [
+          141,
+          176
+        ],
+        [
+          116,
+          151
+        ],
+        [
+          520,
+          582
+        ]
+      ],
+      "componentCount": 1,
+      "largestComponentVoxelFraction": 1.0,
+      "topComponents": [
+        {
+          "voxels": 25628,
+          "voxelBoundsHalfOpen": [
+            [
+              141,
+              176
+            ],
+            [
+              116,
+              151
+            ],
+            [
+              520,
+              582
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        0.08020291128765492,
+        1.0293408259574701,
+        -0.11697520933331917
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          0.041939503846005394,
+          0.9672502601091608,
+          -0.15248227617265797
+        ],
+        [
+          0.11616384607262906,
+          1.092448031313824,
+          -0.07860309256841103
+        ]
+      ]
+    },
+    {
+      "name": "kidney_right",
+      "label": 7,
+      "voxels": 19594,
+      "maskVolumeMl": 156.83146256833086,
+      "voxelBoundsHalfOpen": [
+        [
+          67,
+          105
+        ],
+        [
+          117,
+          148
+        ],
+        [
+          531,
+          582
+        ]
+      ],
+      "componentCount": 1,
+      "largestComponentVoxelFraction": 1.0,
+      "topComponents": [
+        {
+          "voxels": 19594,
+          "voxelBoundsHalfOpen": [
+            [
+              67,
+              105
+            ],
+            [
+              117,
+              148
+            ],
+            [
+              531,
+              582
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        -0.0711089280484099,
+        1.0398190958394893,
+        -0.1091102893359327
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.10577549066732314,
+          0.9876498215036624,
+          -0.1403559945319096
+        ],
+        [
+          -0.026119085629201816,
+          1.0908673331173189,
+          -0.07439493389006327
+        ]
+      ]
+    },
+    {
+      "name": "liver",
+      "label": 8,
+      "voxels": 275118,
+      "maskVolumeMl": 2202.059728430849,
+      "voxelBoundsHalfOpen": [
+        [
+          56,
+          181
+        ],
+        [
+          76,
+          156
+        ],
+        [
+          557,
+          647
+        ]
+      ],
+      "componentCount": 1,
+      "largestComponentVoxelFraction": 1.0,
+      "topComponents": [
+        {
+          "voxels": 275118,
+          "voxelBoundsHalfOpen": [
+            [
+              56,
+              181
+            ],
+            [
+              76,
+              156
+            ],
+            [
+              557,
+              647
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        -0.03609668735446486,
+        1.1338772250344376,
+        -0.06857335206484225
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.1298050045422079,
+          1.0387645036656274,
+          -0.1623107519846803
+        ],
+        [
+          0.12874674115269827,
+          1.2225444752813646,
+          0.00951214601763306
+        ]
+      ]
+    },
+    {
+      "name": "lung_lower_lobe_left",
+      "label": 9,
+      "voxels": 8302,
+      "maskVolumeMl": 66.44966838023288,
+      "voxelBoundsHalfOpen": [
+        [
+          135,
+          184
+        ],
+        [
+          124,
+          156
+        ],
+        [
+          615,
+          695
+        ]
+      ],
+      "componentCount": 25,
+      "largestComponentVoxelFraction": 0.8867742712599374,
+      "topComponents": [
+        {
+          "voxels": 7362,
+          "voxelBoundsHalfOpen": [
+            [
+              135,
+              180
+            ],
+            [
+              130,
+              156
+            ],
+            [
+              615,
+              661
+            ]
+          ]
+        },
+        {
+          "voxels": 372,
+          "voxelBoundsHalfOpen": [
+            [
+              137,
+              156
+            ],
+            [
+              149,
+              154
+            ],
+            [
+              679,
+              695
+            ]
+          ]
+        },
+        {
+          "voxels": 328,
+          "voxelBoundsHalfOpen": [
+            [
+              157,
+              169
+            ],
+            [
+              134,
+              146
+            ],
+            [
+              662,
+              674
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        0.06445452822347578,
+        1.2134972310655041,
+        -0.13854778638633547
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          0.027153802738804217,
+          1.1571136942262192,
+          -0.1616445353193044
+        ],
+        [
+          0.12949711664445543,
+          1.3185455340168777,
+          -0.09230295175111802
+        ]
+      ]
+    },
+    {
+      "name": "lung_lower_lobe_right",
+      "label": 10,
+      "voxels": 11805,
+      "maskVolumeMl": 94.4878746360695,
+      "voxelBoundsHalfOpen": [
+        [
+          60,
+          115
+        ],
+        [
+          99,
+          156
+        ],
+        [
+          621,
+          691
+        ]
+      ],
+      "componentCount": 38,
+      "largestComponentVoxelFraction": 0.4359169843286743,
+      "topComponents": [
+        {
+          "voxels": 5146,
+          "voxelBoundsHalfOpen": [
+            [
+              60,
+              84
+            ],
+            [
+              99,
+              131
+            ],
+            [
+              627,
+              658
+            ]
+          ]
+        },
+        {
+          "voxels": 3375,
+          "voxelBoundsHalfOpen": [
+            [
+              70,
+              100
+            ],
+            [
+              141,
+              153
+            ],
+            [
+              639,
+              691
+            ]
+          ]
+        },
+        {
+          "voxels": 2948,
+          "voxelBoundsHalfOpen": [
+            [
+              87,
+              115
+            ],
+            [
+              118,
+              141
+            ],
+            [
+              637,
+              659
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        -0.07410582304367186,
+        1.2291490609922493,
+        -0.09516360855513561
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.12272895645592899,
+          1.1671096752560284,
+          -0.15576190207179208
+        ],
+        [
+          -0.006497534554000012,
+          1.3090582574637684,
+          -0.03610225895830704
+        ]
+      ]
+    },
+    {
+      "name": "lung_middle_lobe_right",
+      "label": 11,
+      "voxels": 4560,
+      "maskVolumeMl": 36.49849287085786,
+      "voxelBoundsHalfOpen": [
+        [
+          66,
+          109
+        ],
+        [
+          89,
+          106
+        ],
+        [
+          625,
+          658
+        ]
+      ],
+      "componentCount": 5,
+      "largestComponentVoxelFraction": 0.9989035087719298,
+      "topComponents": [
+        {
+          "voxels": 4555,
+          "voxelBoundsHalfOpen": [
+            [
+              66,
+              109
+            ],
+            [
+              89,
+              105
+            ],
+            [
+              625,
+              658
+            ]
+          ]
+        },
+        {
+          "voxels": 2,
+          "voxelBoundsHalfOpen": [
+            [
+              88,
+              89
+            ],
+            [
+              97,
+              99
+            ],
+            [
+              648,
+              649
+            ]
+          ]
+        },
+        {
+          "voxels": 1,
+          "voxelBoundsHalfOpen": [
+            [
+              72,
+              73
+            ],
+            [
+              105,
+              106
+            ],
+            [
+              657,
+              658
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        -0.06686553258616779,
+        1.2095575746335858,
+        -0.03296159370299176
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.10583927196977219,
+          1.1750846856627413,
+          -0.055249257652462774
+        ],
+        [
+          -0.017738549754598015,
+          1.2422250500277314,
+          -0.017138550124815383
+        ]
+      ]
+    },
+    {
+      "name": "lung_upper_lobe_left",
+      "label": 12,
+      "voxels": 23452,
+      "maskVolumeMl": 187.71110851038563,
+      "voxelBoundsHalfOpen": [
+        [
+          129,
+          184
+        ],
+        [
+          86,
+          150
+        ],
+        [
+          630,
+          726
+        ]
+      ],
+      "componentCount": 106,
+      "largestComponentVoxelFraction": 0.9390243902439024,
+      "topComponents": [
+        {
+          "voxels": 22022,
+          "voxelBoundsHalfOpen": [
+            [
+              129,
+              183
+            ],
+            [
+              86,
+              139
+            ],
+            [
+              646,
+              726
+            ]
+          ]
+        },
+        {
+          "voxels": 764,
+          "voxelBoundsHalfOpen": [
+            [
+              173,
+              184
+            ],
+            [
+              94,
+              117
+            ],
+            [
+              630,
+              645
+            ]
+          ]
+        },
+        {
+          "voxels": 98,
+          "voxelBoundsHalfOpen": [
+            [
+              169,
+              175
+            ],
+            [
+              134,
+              141
+            ],
+            [
+              678,
+              688
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        0.07724360630362029,
+        1.2851206028953341,
+        -0.06338699362664846
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          0.015010852017914161,
+          1.186396003048909,
+          -0.14941363093710758
+        ],
+        [
+          0.13237529479105917,
+          1.3804146296056994,
+          -0.015350086138409241
+        ]
+      ]
+    },
+    {
+      "name": "lung_upper_lobe_right",
+      "label": 13,
+      "voxels": 3212,
+      "maskVolumeMl": 25.70902611868321,
+      "voxelBoundsHalfOpen": [
+        [
+          62,
+          243
+        ],
+        [
+          90,
+          151
+        ],
+        [
+          588,
+          721
+        ]
+      ],
+      "componentCount": 109,
+      "largestComponentVoxelFraction": 0.35118306351183065,
+      "topComponents": [
+        {
+          "voxels": 1128,
+          "voxelBoundsHalfOpen": [
+            [
+              63,
+              85
+            ],
+            [
+              92,
+              111
+            ],
+            [
+              653,
+              686
+            ]
+          ]
+        },
+        {
+          "voxels": 770,
+          "voxelBoundsHalfOpen": [
+            [
+              115,
+              126
+            ],
+            [
+              90,
+              100
+            ],
+            [
+              667,
+              693
+            ]
+          ]
+        },
+        {
+          "voxels": 651,
+          "voxelBoundsHalfOpen": [
+            [
+              65,
+              79
+            ],
+            [
+              115,
+              126
+            ],
+            [
+              673,
+              697
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        -0.05320030862751832,
+        1.273919002046476,
+        -0.06190695904494084
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.11893852678080434,
+          1.1010623119251617,
+          -0.15702609406417928
+        ],
+        [
+          0.2508932095181541,
+          1.3717125033330186,
+          -0.017804973152257042
+        ]
+      ]
+    },
+    {
+      "name": "pancreas",
+      "label": 14,
+      "voxels": 7842,
+      "maskVolumeMl": 62.767802871330545,
+      "voxelBoundsHalfOpen": [
+        [
+          97,
+          165
+        ],
+        [
+          94,
+          129
+        ],
+        [
+          547,
+          579
+        ]
+      ],
+      "componentCount": 2,
+      "largestComponentVoxelFraction": 0.9973221117061974,
+      "topComponents": [
+        {
+          "voxels": 7821,
+          "voxelBoundsHalfOpen": [
+            [
+              97,
+              145
+            ],
+            [
+              94,
+              117
+            ],
+            [
+              547,
+              579
+            ]
+          ]
+        },
+        {
+          "voxels": 21,
+          "voxelBoundsHalfOpen": [
+            [
+              161,
+              165
+            ],
+            [
+              126,
+              129
+            ],
+            [
+              568,
+              571
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        -0.004108080485253407,
+        1.0591656632470756,
+        -0.05889950250425696
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.04412970111139994,
+          1.0199337375477857,
+          -0.10715605514895599
+        ],
+        [
+          0.09545118956045015,
+          1.0858852571204205,
+          -0.030983601980930447
+        ]
+      ]
+    },
+    {
+      "name": "spleen",
+      "label": 15,
+      "voxels": 19011,
+      "maskVolumeMl": 152.1650982385699,
+      "voxelBoundsHalfOpen": [
+        [
+          139,
+          183
+        ],
+        [
+          124,
+          156
+        ],
+        [
+          574,
+          631
+        ]
+      ],
+      "componentCount": 1,
+      "largestComponentVoxelFraction": 1.0,
+      "topComponents": [
+        {
+          "voxels": 19011,
+          "voxelBoundsHalfOpen": [
+            [
+              139,
+              183
+            ],
+            [
+              124,
+              156
+            ],
+            [
+              574,
+              631
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        0.08280067578326669,
+        1.1258861412370826,
+        -0.13406916203355246
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          0.03649335949538332,
+          1.0752547487752175,
+          -0.16220948442563005
+        ],
+        [
+          0.12835685703130242,
+          1.1906090178600788,
+          -0.0936512751569081
+        ]
+      ]
+    },
+    {
+      "name": "stomach",
+      "label": 16,
+      "voxels": 108011,
+      "maskVolumeMl": 864.5260336566289,
+      "voxelBoundsHalfOpen": [
+        [
+          100,
+          182
+        ],
+        [
+          66,
+          143
+        ],
+        [
+          519,
+          633
+        ]
+      ],
+      "componentCount": 1,
+      "largestComponentVoxelFraction": 1.0,
+      "topComponents": [
+        {
+          "voxels": 108011,
+          "voxelBoundsHalfOpen": [
+            [
+              100,
+              182
+            ],
+            [
+              66,
+              143
+            ],
+            [
+              519,
+              633
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        0.06680112467982277,
+        1.0792583625326952,
+        -0.05486385642303765
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.040438995967092134,
+          0.9636173807799915,
+          -0.13701000724836165
+        ],
+        [
+          0.13238286132314134,
+          1.194390427066856,
+          0.025589112031623312
+        ]
+      ]
+    },
+    {
+      "name": "thyroid_left",
+      "label": 17,
+      "voxels": 493,
+      "maskVolumeMl": 3.945999338888799,
+      "voxelBoundsHalfOpen": [
+        [
+          120,
+          130
+        ],
+        [
+          99,
+          111
+        ],
+        [
+          726,
+          741
+        ]
+      ],
+      "componentCount": 1,
+      "largestComponentVoxelFraction": 1.0,
+      "topComponents": [
+        {
+          "voxels": 493,
+          "voxelBoundsHalfOpen": [
+            [
+              120,
+              130
+            ],
+            [
+              99,
+              111
+            ],
+            [
+              726,
+              741
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        0.011935042407794583,
+        1.3918961567700032,
+        -0.0528746187908245
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -2.294638920546932e-05,
+          1.378267942165421,
+          -0.06540699925453311
+        ],
+        [
+          0.02129515058637929,
+          1.4086436644950764,
+          -0.04034377219689758
+        ]
+      ]
+    },
+    {
+      "name": "thyroid_right",
+      "label": 18,
+      "voxels": 839,
+      "maskVolumeMl": 6.71540252601968,
+      "voxelBoundsHalfOpen": [
+        [
+          107,
+          120
+        ],
+        [
+          99,
+          110
+        ],
+        [
+          723,
+          743
+        ]
+      ],
+      "componentCount": 1,
+      "largestComponentVoxelFraction": 1.0,
+      "topComponents": [
+        {
+          "voxels": 839,
+          "voxelBoundsHalfOpen": [
+            [
+              107,
+              120
+            ],
+            [
+              99,
+              110
+            ],
+            [
+              723,
+              743
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        -0.013747459519169697,
+        1.3889985323344167,
+        -0.050639132447301255
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.025975058055446726,
+          1.3719907181702187,
+          -0.0626167585712962
+        ],
+        [
+          0.0013624801139957565,
+          1.4124097402439626,
+          -0.03922168904564585
+        ]
+      ]
+    },
+    {
+      "name": "trachea",
+      "label": 19,
+      "voxels": 194,
+      "maskVolumeMl": 1.552786758102286,
+      "voxelBoundsHalfOpen": [
+        [
+          105,
+          122
+        ],
+        [
+          99,
+          129
+        ],
+        [
+          681,
+          739
+        ]
+      ],
+      "componentCount": 3,
+      "largestComponentVoxelFraction": 0.9690721649484536,
+      "topComponents": [
+        {
+          "voxels": 188,
+          "voxelBoundsHalfOpen": [
+            [
+              115,
+              122
+            ],
+            [
+              99,
+              107
+            ],
+            [
+              726,
+              739
+            ]
+          ]
+        },
+        {
+          "voxels": 4,
+          "voxelBoundsHalfOpen": [
+            [
+              105,
+              107
+            ],
+            [
+              128,
+              129
+            ],
+            [
+              683,
+              685
+            ]
+          ]
+        },
+        {
+          "voxels": 2,
+          "voxelBoundsHalfOpen": [
+            [
+              108,
+              109
+            ],
+            [
+              128,
+              129
+            ],
+            [
+              681,
+              683
+            ]
+          ]
+        }
+      ],
+      "registeredVoxelCentroidMetres": [
+        -0.0017308059981215318,
+        1.3875114542162794,
+        -0.04988136236122642
+      ],
+      "registeredBoundingBoxMetres": [
+        [
+          -0.031486610719042296,
+          1.2880033116705096,
+          -0.10142867672278827
+        ],
+        [
+          0.006241842628424171,
+          1.4047422992390457,
+          -0.039117230473975945
+        ]
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "name": "liver",
+      "ctLabels": [
+        "liver"
+      ],
+      "hraPartIds": [
+        "HRAF0474"
+      ],
+      "ctFragmentedAtSixConnectivity": false,
+      "interpretation": "coarse held-out box-centre screen only",
+      "ctRegisteredBoundingBoxMetres": [
+        [
+          -0.1298050045422079,
+          1.0387645036656274,
+          -0.1623107519846803
+        ],
+        [
+          0.12874674115269827,
+          1.2225444752813646,
+          0.00951214601763306
+        ]
+      ],
+      "hraBoundingBoxMetres": [
+        [
+          -0.12879184490531212,
+          1.055199801604782,
+          -0.14689642267674702
+        ],
+        [
+          0.11831564599186653,
+          1.225110530536209,
+          0.0056358735784838715
+        ]
+      ],
+      "bboxCentreDistanceMm": 12.071409290586322,
+      "bboxCentreDeltaMm": [
+        4.708967761967983,
+        -9.500676596999602,
+        -5.76902843439206
+      ]
+    },
+    {
+      "name": "kidney_left",
+      "ctLabels": [
+        "kidney_left"
+      ],
+      "hraPartIds": [
+        "HRAF0528"
+      ],
+      "ctFragmentedAtSixConnectivity": false,
+      "interpretation": "coarse held-out box-centre screen only",
+      "ctRegisteredBoundingBoxMetres": [
+        [
+          0.041939503846005394,
+          0.9672502601091608,
+          -0.15248227617265797
+        ],
+        [
+          0.11616384607262906,
+          1.092448031313824,
+          -0.07860309256841103
+        ]
+      ],
+      "hraBoundingBoxMetres": [
+        [
+          0.04614704617768997,
+          0.9683889296460495,
+          -0.1461846091076781
+        ],
+        [
+          0.11925776445776695,
+          1.093245297353302,
+          -0.06860506238788862
+        ]
+      ],
+      "bboxCentreDistanceMm": 8.980658715709755,
+      "bboxCentreDeltaMm": [
+        -3.650730358411236,
+        -0.9679677881833104,
+        -8.147848622751141
+      ]
+    },
+    {
+      "name": "kidney_right",
+      "ctLabels": [
+        "kidney_right"
+      ],
+      "hraPartIds": [
+        "HRAF0554"
+      ],
+      "ctFragmentedAtSixConnectivity": false,
+      "interpretation": "coarse held-out box-centre screen only",
+      "ctRegisteredBoundingBoxMetres": [
+        [
+          -0.10577549066732314,
+          0.9876498215036624,
+          -0.1403559945319096
+        ],
+        [
+          -0.026119085629201816,
+          1.0908673331173189,
+          -0.07439493389006327
+        ]
+      ],
+      "hraBoundingBoxMetres": [
+        [
+          -0.10262605404942757,
+          0.9912085529971466,
+          -0.14123627620190876
+        ],
+        [
+          -0.02923534295051819,
+          1.0890632566619263,
+          -0.0716961182877471
+        ]
+      ],
+      "bboxCentreDistanceMm": 1.2636238395394166,
+      "bboxCentreDeltaMm": [
+        -0.016589648289599968,
+        -0.8773275190456786,
+        -0.9092669661585201
+      ]
+    },
+    {
+      "name": "pancreas",
+      "ctLabels": [
+        "pancreas"
+      ],
+      "hraPartIds": [
+        "HRAF0493",
+        "HRAF0494",
+        "HRAF0496",
+        "HRAF0497"
+      ],
+      "ctFragmentedAtSixConnectivity": false,
+      "interpretation": "coarse held-out box-centre screen only",
+      "ctRegisteredBoundingBoxMetres": [
+        [
+          -0.04412970111139994,
+          1.0199337375477857,
+          -0.10715605514895599
+        ],
+        [
+          0.09545118956045015,
+          1.0858852571204205,
+          -0.030983601980930447
+        ]
+      ],
+      "hraBoundingBoxMetres": [
+        [
+          -0.04785946241110092,
+          1.0412870195317612,
+          -0.11888701545447607
+        ],
+        [
+          0.12417226427704567,
+          1.086690008323227,
+          -0.03451356182247896
+        ]
+      ],
+      "bboxCentreDistanceMm": 18.360554626312247,
+      "bboxCentreDeltaMm": [
+        -12.495656708447267,
+        -11.079016593390945,
+        7.630460073534295
+      ]
+    },
+    {
+      "name": "spleen",
+      "ctLabels": [
+        "spleen"
+      ],
+      "hraPartIds": [
+        "HRAF0809",
+        "HRAF0810",
+        "HRAF0811",
+        "HRAF0812",
+        "HRAF0813"
+      ],
+      "ctFragmentedAtSixConnectivity": false,
+      "interpretation": "coarse held-out box-centre screen only",
+      "ctRegisteredBoundingBoxMetres": [
+        [
+          0.03649335949538332,
+          1.0752547487752175,
+          -0.16220948442563005
+        ],
+        [
+          0.12835685703130242,
+          1.1906090178600788,
+          -0.0936512751569081
+        ]
+      ],
+      "hraBoundingBoxMetres": [
+        [
+          0.0428697294881987,
+          1.078159778993164,
+          -0.15999110119790333
+        ],
+        [
+          0.13243038350254768,
+          1.180474906842743,
+          -0.08904990630597372
+        ]
+      ],
+      "bboxCentreDistanceMm": 7.210564536291287,
+      "bboxCentreDeltaMm": [
+        -5.224948232030319,
+        3.6145403996945547,
+        -3.4098760393305727
+      ]
+    },
+    {
+      "name": "gallbladder",
+      "ctLabels": [
+        "gallbladder"
+      ],
+      "hraPartIds": [
+        "HRAF0527"
+      ],
+      "ctFragmentedAtSixConnectivity": false,
+      "interpretation": "coarse held-out box-centre screen only",
+      "ctRegisteredBoundingBoxMetres": [
+        [
+          -0.09252246915278045,
+          1.0413185281989008,
+          -0.06471043547524083
+        ],
+        [
+          -0.05440988748577444,
+          1.0759991600655594,
+          -0.020954230449033606
+        ]
+      ],
+      "hraBoundingBoxMetres": [
+        [
+          -0.08321627086489922,
+          1.0488052663016663,
+          -0.0784412183091094
+        ],
+        [
+          -0.04230638823002106,
+          1.086731135528122,
+          -0.02642767953128118
+        ]
+      ],
+      "bboxCentreDistanceMm": 17.022772955465765,
+      "bboxCentreDeltaMm": [
+        -10.704848771817307,
+        -9.109356782663891,
+        9.602115958058071
+      ]
+    },
+    {
+      "name": "trachea",
+      "ctLabels": [
+        "trachea"
+      ],
+      "hraPartIds": [
+        "HRAF0773"
+      ],
+      "ctFragmentedAtSixConnectivity": false,
+      "interpretation": "coarse held-out box-centre screen only",
+      "ctRegisteredBoundingBoxMetres": [
+        [
+          -0.031486610719042296,
+          1.2880033116705096,
+          -0.10142867672278827
+        ],
+        [
+          0.006241842628424171,
+          1.4047422992390457,
+          -0.039117230473975945
+        ]
+      ],
+      "hraBoundingBoxMetres": [
+        [
+          -0.014934044764335214,
+          1.3084545132327423,
+          -0.0979169987365653
+        ],
+        [
+          0.009367524213199557,
+          1.416362106483017,
+          -0.02131270973384876
+        ]
+      ],
+      "bboxCentreDistanceMm": 21.622692710518336,
+      "bboxCentreDeltaMm": [
+        -9.839123769741235,
+        -16.035504403101974,
+        -10.658099363175078
+      ]
+    },
+    {
+      "name": "lung_left",
+      "ctLabels": [
+        "lung_lower_lobe_left",
+        "lung_upper_lobe_left"
+      ],
+      "hraPartIds": [
+        "HRAF0741",
+        "HRAF0742",
+        "HRAF0743",
+        "HRAF0744",
+        "HRAF0745",
+        "HRAF0746",
+        "HRAF0747",
+        "HRAF0748",
+        "HRAF0749",
+        "HRAF0750"
+      ],
+      "ctFragmentedAtSixConnectivity": true,
+      "interpretation": "whole-mask box unreliable: at least one CT label is fragmented",
+      "ctRegisteredBoundingBoxMetres": [
+        [
+          0.015010852017914161,
+          1.1571136942262192,
+          -0.1616445353193044
+        ],
+        [
+          0.13237529479105917,
+          1.3804146296056994,
+          -0.015350086138409241
+        ]
+      ],
+      "hraBoundingBoxMetres": [
+        [
+          0.015983266322915496,
+          1.1596858498263702,
+          -0.16321960168332356
+        ],
+        [
+          0.1267012893548655,
+          1.3827220794368134,
+          -0.010614703943957873
+        ]
+      ],
+      "bboxCentreDistanceMm": 3.7384189331125537,
+      "bboxCentreDeltaMm": [
+        2.3507955655961696,
+        -2.4398027156324886,
+        -1.5801579152161098
+      ]
+    },
+    {
+      "name": "lung_right",
+      "ctLabels": [
+        "lung_lower_lobe_right",
+        "lung_middle_lobe_right",
+        "lung_upper_lobe_right"
+      ],
+      "hraPartIds": [
+        "HRAF0753",
+        "HRAF0754",
+        "HRAF0755",
+        "HRAF0756",
+        "HRAF0757",
+        "HRAF0759",
+        "HRAF0760",
+        "HRAF0762",
+        "HRAF0763",
+        "HRAF0764"
+      ],
+      "ctFragmentedAtSixConnectivity": true,
+      "interpretation": "whole-mask box unreliable: at least one CT label is fragmented",
+      "ctRegisteredBoundingBoxMetres": [
+        [
+          -0.12272895645592899,
+          1.1010623119251617,
+          -0.15702609406417928
+        ],
+        [
+          0.2508932095181541,
+          1.3717125033330186,
+          -0.017138550124815383
+        ]
+      ],
+      "hraBoundingBoxMetres": [
+        [
+          -0.1244334489712072,
+          1.1744838055777893,
+          -0.16186368542165058
+        ],
+        [
+          0.006821070830379666,
+          1.3799781796145782,
+          -0.011172231588517614
+        ]
+      ],
+      "bboxCentreDistanceMm": 129.49924729744797,
+      "bboxCentreDeltaMm": [
+        122.88831560152632,
+        -40.84358496709362,
+        -0.5643635894132387
+      ]
+    }
+  ],
+  "limitations": [
+    "The CT-to-HRA transform was fitted on thoracic bones only, never on these organs.",
+    "A CT volume mask and an HRA surface group have different anatomical definitions; box centres are a screening metric only.",
+    "A high model confidence or low box-centre residual would not validate topology, surface fit, connected ducts/vessels, or HRA pose.",
+    "Brain atlas meshes may come from another donor; brain is listed but deliberately not treated as a same-donor HRA comparison."
+  ],
+  "scriptSha256": "b1d757407947dbe3c25f6419190465f28b28fade435acf8124413205d6bdc064"
+}

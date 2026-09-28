@@ -99,6 +99,7 @@ export function initialView(pointId = ""): ViewState {
 }
 export type ViewAction =
   | { type: "point"; id: string }
+  | { type: "route-point"; id: string }
   | { type: "sex"; value: ViewState["sex"] }
   | { type: "anatomy-region"; value: ViewState["anatomyRegion"] }
   | { type: "stage"; index: number }
@@ -126,7 +127,7 @@ export type ViewAction =
 const returnView = (s: ViewState): ReturnView => ({
   anatomyRegion: s.anatomyRegion, stage: s.stage, dissection: s.dissection,
   displayMode: s.displayMode, layers: { ...s.layers }, cutaway: s.cutaway,
-  selectionTarget: s.selectionTarget,
+  selectionTarget: s.selectionTarget, camera: s.camera,
 });
 const detailOrigin = (s: ViewState) => s.detailReturn
   ?? s.selectionReturn ?? returnView(s.detail ? initialView(s.pointId) : s);
@@ -143,6 +144,10 @@ function leaveSelection(s: ViewState): ViewState {
 }
 export function viewReducer(s: ViewState, a: ViewAction): ViewState {
   switch (a.type) {
+    case "route-point":
+      // Returning from the wiki to the same URL must not reinterpret a route
+      // sync as a new user selection and discard the saved atlas view.
+      return a.id === s.pointId ? s : viewReducer(s, { type: "point", id: a.id });
     case "sex":
       return a.value === s.sex ? s : { ...s, sex: a.value, stage: 0, dissection: 0, displayMode: "dissection", anatomyRegion: "whole", layers: singleLayer(0), alpha: initialView().alpha, selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false, cutaway: 0 };
     case "anatomy-region":
@@ -150,7 +155,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         : { ...leaveSelection(s), anatomyRegion: a.value, selection: null,
             detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false };
     case "point":
-      return a.id === s.pointId && !s.detail
+      return a.id === s.pointId && !s.detail && !s.selection && !s.comparison && !s.selectionReturn
         ? s
         : {
             ...leaveSelection(s),
@@ -454,6 +459,10 @@ export function restoreView(
     const lungViewIds = [...(s.selection?.ids || []), ...(s.detail?.ids || [])];
     if (s.sex === "male" && lungViewIds.some(id => currentLungIds.includes(id))
       && lungViewIds.some(id => branchGroup?.ids.includes(id))) return base;
+    const pancreasViews = maleDetailGroups.filter(group => group.id === "pancreas" || group.id === "pancreas-parenchyma");
+    const pancreasViewIds = [...(s.selection?.ids || []), ...(s.detail?.ids || [])];
+    if (s.sex === "male" && pancreasViews.length === 2
+      && pancreasViews.every(group => pancreasViewIds.some(id => group.ids.includes(id)))) return base;
     if (!validCamera(s.camera)) return base;
     if (
       !s.filters ||

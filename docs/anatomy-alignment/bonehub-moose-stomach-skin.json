@@ -1,0 +1,66 @@
+{
+  "status": "OFFLINE CT STOMACH VOXEL-CENTRE SKIN SCREEN; NOT ORGAN REGISTRATION",
+  "sourceReceipt": "docs/anatomy-alignment/bonehub-moose-stomach-centres.json",
+  "sourceReceiptSha256": "b2bd6f99d2f87d13c8dbabea8f455f969ba61e6c1abe0f6e88adcae2165ba47c",
+  "femaleAtlasSha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f",
+  "sourceChunkSha256": {
+    "0": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f",
+    "7": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+  },
+  "skinTopology": {
+    "weldedVertices": 29338,
+    "connectedComponents": 1,
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "degenerateTriangles": 0
+  },
+  "toleranceMm": 2,
+  "testedVoxelCentres": 108011,
+  "counts": {
+    "inside": 108011,
+    "surface-band": 0,
+    "outside": 0,
+    "ambiguous": 0
+  },
+  "maxOutsideMm": 0,
+  "examples": [],
+  "proximity": {
+    "liverCapsule": {
+      "id": "HRAF0474",
+      "topology": {
+        "weldedVertices": 3369,
+        "connectedComponents": 1,
+        "boundaryEdges": 130,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "minDistanceMm": 0.0025715412094403623,
+      "p01DistanceMm": 4.756309201340011,
+      "p05DistanceMm": 9.112813980871994,
+      "medianDistanceMm": 36.93235053010504,
+      "centresWithin2mm": 84
+    },
+    "gastricImpression": {
+      "id": "HRAF0467",
+      "topology": {
+        "weldedVertices": 385,
+        "connectedComponents": 1,
+        "boundaryEdges": 115,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      },
+      "minDistanceMm": 0.0038915807975327685,
+      "p01DistanceMm": 5.073026569850022,
+      "p05DistanceMm": 9.964408740506295,
+      "medianDistanceMm": 38.43197441923757,
+      "centresWithin2mm": 73
+    }
+  },
+  "limitations": [
+    "The 2 mm automatic mask is not a validated stomach surface; voxel centres omit cell faces and between-centre crossings.",
+    "The thoracic-spine rigid candidate does not prove stomach/skin alignment or neighbouring organ connections.",
+    "The HRA skin is a closed surface, not proof of a filled tissue volume or clinical stomach position.",
+    "Distances from interior voxel centres to liver/gastric-impression surfaces are proximity screens, not stomach-surface gaps or tissue intersection tests."
+  ],
+  "scriptSha256": "9e582ba2f6bdfc4475cfe993ff09d977246d2fe10f3d729a60bac03a619ee049"
+}
