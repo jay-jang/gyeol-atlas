@@ -1,0 +1,5488 @@
+{
+  "status": "CURRENT FEMALE GEOMETRY DIAGNOSTIC; NO POSITION CORRECTION OR CLINICAL APPROVAL",
+  "createdAt": "2026-09-28T05:09:33.470Z",
+  "scope": {
+    "organSurfaces": 301,
+    "defaultOrganSurfaces": 293,
+    "boneLayerSurfaces": 321,
+    "evaluatedPairs": 96621,
+    "broadPhasePairs": 1620
+  },
+  "limitations": [
+    "The organ display layer includes multiple systems and anatomical surfaces, not 301 distinct complete organs.",
+    "Eight pregnancy-reference surfaces are hidden by default; their pairs are reported separately.",
+    "The bone display layer includes connective/cartilage surfaces and 180 male-derived borrowed bones, not 321 distinct female bones.",
+    "Triangle surface crossing is not solid penetration depth, injury or an automatically invalid tissue contact.",
+    "No triangle crossing does not prove correct organ position, full solid containment, vascular or neural continuity.",
+    "The separate female CT and male/BP4 detail frames are excluded."
+  ],
+  "pairs": [
+    {
+      "organId": "HRAF0419",
+      "organName": "Right uterosacral ligament",
+      "organSystem": "reproductive",
+      "defaultHidden": false,
+      "boneId": "HRAF0825",
+      "boneName": "Sacrum",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 11,
+      "strictPlaneStraddlingPairs": 11,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.21521942161842647
+    },
+    {
+      "organId": "HRAF0421",
+      "organName": "Right cardinal ligament of uterus",
+      "organSystem": "reproductive",
+      "defaultHidden": false,
+      "boneId": "HRAF0827",
+      "boneName": "Ilium compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 51,
+      "strictPlaneStraddlingPairs": 51,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.136637623654292
+    },
+    {
+      "organId": "HRAF0421",
+      "organName": "Right cardinal ligament of uterus",
+      "organSystem": "reproductive",
+      "defaultHidden": false,
+      "boneId": "HRAF0960",
+      "boneName": "Ischium compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 66,
+      "strictPlaneStraddlingPairs": 66,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.5750446410090773
+    },
+    {
+      "organId": "HRAF0421",
+      "organName": "Right cardinal ligament of uterus",
+      "organSystem": "reproductive",
+      "defaultHidden": false,
+      "boneId": "HRAF0962",
+      "boneName": "Ischium spongy bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 27,
+      "strictPlaneStraddlingPairs": 27,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.41774594240493507
+    },
+    {
+      "organId": "HRAF0446",
+      "organName": "Submandibular gland (left)",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 62,
+      "strictPlaneStraddlingPairs": 62,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.1081754879077637
+    },
+    {
+      "organId": "HRAF0448",
+      "organName": "Parotid gland (right)",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "HRAF0843",
+      "boneName": "Cervical vertebra 1",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 111,
+      "strictPlaneStraddlingPairs": 111,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.7267289310007088
+    },
+    {
+      "organId": "HRAF0448",
+      "organName": "Parotid gland (right)",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 312,
+      "strictPlaneStraddlingPairs": 312,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.446464479765299
+    },
+    {
+      "organId": "HRAF0448",
+      "organName": "Parotid gland (right)",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0013",
+      "boneName": "Occipital bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 21,
+      "strictPlaneStraddlingPairs": 21,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.6258528833178766
+    },
+    {
+      "organId": "HRAF0448",
+      "organName": "Parotid gland (right)",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0018",
+      "boneName": "Right temporal bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 498,
+      "strictPlaneStraddlingPairs": 498,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.093510816495122
+    },
+    {
+      "organId": "HRAF0449",
+      "organName": "Parotid gland (left)",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0010",
+      "boneName": "Left temporal bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 285,
+      "strictPlaneStraddlingPairs": 285,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.695982794149405
+    },
+    {
+      "organId": "HRAF0449",
+      "organName": "Parotid gland (left)",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 137,
+      "strictPlaneStraddlingPairs": 137,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.5839982822055234
+    },
+    {
+      "organId": "HRAF0451",
+      "organName": "Sublingual gland (left)",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 327,
+      "strictPlaneStraddlingPairs": 327,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.6716486347041334
+    },
+    {
+      "organId": "HRAF0452",
+      "organName": "Buccal mucosa",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0000",
+      "boneName": "Right major alar cartilage",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 169,
+      "strictPlaneStraddlingPairs": 169,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.980010554139371
+    },
+    {
+      "organId": "HRAF0452",
+      "organName": "Buccal mucosa",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0001",
+      "boneName": "Left major alar cartilage",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 198,
+      "strictPlaneStraddlingPairs": 198,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.5406565824901808
+    },
+    {
+      "organId": "HRAF0452",
+      "organName": "Buccal mucosa",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0006",
+      "boneName": "Left maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 892,
+      "strictPlaneStraddlingPairs": 892,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.5114470466755754
+    },
+    {
+      "organId": "HRAF0452",
+      "organName": "Buccal mucosa",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0011",
+      "boneName": "Left zygomatic bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 67,
+      "strictPlaneStraddlingPairs": 67,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.3810502862038987
+    },
+    {
+      "organId": "HRAF0452",
+      "organName": "Buccal mucosa",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 1350,
+      "strictPlaneStraddlingPairs": 1346,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.31413312283242
+    },
+    {
+      "organId": "HRAF0452",
+      "organName": "Buccal mucosa",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0014",
+      "boneName": "Right maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 1373,
+      "strictPlaneStraddlingPairs": 1373,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.118193248699117
+    },
+    {
+      "organId": "HRAF0452",
+      "organName": "Buccal mucosa",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0016",
+      "boneName": "Right palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 70,
+      "strictPlaneStraddlingPairs": 70,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.9545080174198912
+    },
+    {
+      "organId": "HRAF0452",
+      "organName": "Buccal mucosa",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0019",
+      "boneName": "Right zygomatic bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 89,
+      "strictPlaneStraddlingPairs": 89,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.015554314372796
+    },
+    {
+      "organId": "HRAF0452",
+      "organName": "Buccal mucosa",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0020",
+      "boneName": "Sphenoid bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 141,
+      "strictPlaneStraddlingPairs": 141,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.877756940855645
+    },
+    {
+      "organId": "HRAF0453",
+      "organName": "Frenulum of upper lip",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0006",
+      "boneName": "Left maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 14,
+      "strictPlaneStraddlingPairs": 14,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.17504632301362197
+    },
+    {
+      "organId": "HRAF0454",
+      "organName": "Frenulum of lower lip",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 65,
+      "strictPlaneStraddlingPairs": 65,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.6821321892652895
+    },
+    {
+      "organId": "HRAF0455",
+      "organName": "Mouth floor",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 82,
+      "strictPlaneStraddlingPairs": 81,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.1657192115288708
+    },
+    {
+      "organId": "HRAF0456",
+      "organName": "Ginviva of upper jaw",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0001",
+      "boneName": "Left major alar cartilage",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 28,
+      "strictPlaneStraddlingPairs": 28,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.2657050164706076
+    },
+    {
+      "organId": "HRAF0456",
+      "organName": "Ginviva of upper jaw",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0006",
+      "boneName": "Left maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 1193,
+      "strictPlaneStraddlingPairs": 1193,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.359199004094725
+    },
+    {
+      "organId": "HRAF0456",
+      "organName": "Ginviva of upper jaw",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 34,
+      "strictPlaneStraddlingPairs": 34,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.40459201317999816
+    },
+    {
+      "organId": "HRAF0456",
+      "organName": "Ginviva of upper jaw",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0014",
+      "boneName": "Right maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 755,
+      "strictPlaneStraddlingPairs": 753,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.799842017467942
+    },
+    {
+      "organId": "HRAF0456",
+      "organName": "Ginviva of upper jaw",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0016",
+      "boneName": "Right palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 471,
+      "strictPlaneStraddlingPairs": 471,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.7651248805712716
+    },
+    {
+      "organId": "HRAF0456",
+      "organName": "Ginviva of upper jaw",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0020",
+      "boneName": "Sphenoid bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 130,
+      "strictPlaneStraddlingPairs": 130,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.1565036890198945
+    },
+    {
+      "organId": "HRAF0456",
+      "organName": "Ginviva of upper jaw",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0021",
+      "boneName": "Vomer",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 52,
+      "strictPlaneStraddlingPairs": 52,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.8258044566512066
+    },
+    {
+      "organId": "HRAF0457",
+      "organName": "Gingiva of lower jaw",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 2531,
+      "strictPlaneStraddlingPairs": 2531,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.3839936299900522
+    },
+    {
+      "organId": "HRAF0457",
+      "organName": "Gingiva of lower jaw",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0016",
+      "boneName": "Right palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 114,
+      "strictPlaneStraddlingPairs": 111,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.5023877561622629
+    },
+    {
+      "organId": "HRAF0458",
+      "organName": "Posterior part of tongue",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "HRAF0844",
+      "boneName": "Cervical vertebra 2",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 57,
+      "strictPlaneStraddlingPairs": 57,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.22180445251060774
+    },
+    {
+      "organId": "HRAF0458",
+      "organName": "Posterior part of tongue",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0002",
+      "boneName": "Hyoid bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 264,
+      "strictPlaneStraddlingPairs": 264,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.6546443187651583
+    },
+    {
+      "organId": "HRAF0458",
+      "organName": "Posterior part of tongue",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0005",
+      "boneName": "Hyoid bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 264,
+      "strictPlaneStraddlingPairs": 264,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.6546443187651583
+    },
+    {
+      "organId": "HRAF0458",
+      "organName": "Posterior part of tongue",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 59,
+      "strictPlaneStraddlingPairs": 59,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.30262734834718213
+    },
+    {
+      "organId": "HRAF0459",
+      "organName": "Dorsal tongue",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0006",
+      "boneName": "Left maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 1574,
+      "strictPlaneStraddlingPairs": 1572,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.8212317849467266
+    },
+    {
+      "organId": "HRAF0459",
+      "organName": "Dorsal tongue",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0008",
+      "boneName": "Left palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 746,
+      "strictPlaneStraddlingPairs": 744,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.7102078382716072
+    },
+    {
+      "organId": "HRAF0459",
+      "organName": "Dorsal tongue",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0014",
+      "boneName": "Right maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 183,
+      "strictPlaneStraddlingPairs": 183,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.42526293917227365
+    },
+    {
+      "organId": "HRAF0459",
+      "organName": "Dorsal tongue",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0016",
+      "boneName": "Right palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 212,
+      "strictPlaneStraddlingPairs": 212,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.9375532095011442
+    },
+    {
+      "organId": "HRAF0459",
+      "organName": "Dorsal tongue",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0020",
+      "boneName": "Sphenoid bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 121,
+      "strictPlaneStraddlingPairs": 119,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.827125498515223
+    },
+    {
+      "organId": "HRAF0459",
+      "organName": "Dorsal tongue",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0021",
+      "boneName": "Vomer",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 373,
+      "strictPlaneStraddlingPairs": 373,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.7665214030886015
+    },
+    {
+      "organId": "HRAF0460",
+      "organName": "Ventral tongue",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0006",
+      "boneName": "Left maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 63,
+      "strictPlaneStraddlingPairs": 63,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.3543540058179146
+    },
+    {
+      "organId": "HRAF0461",
+      "organName": "Fungiform papillae",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0006",
+      "boneName": "Left maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 42,
+      "strictPlaneStraddlingPairs": 42,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.4028490895696716
+    },
+    {
+      "organId": "HRAF0461",
+      "organName": "Fungiform papillae",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0008",
+      "boneName": "Left palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 11,
+      "strictPlaneStraddlingPairs": 11,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.30238711592403694
+    },
+    {
+      "organId": "HRAF0461",
+      "organName": "Fungiform papillae",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0014",
+      "boneName": "Right maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 18,
+      "strictPlaneStraddlingPairs": 18,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.22716208585125788
+    },
+    {
+      "organId": "HRAF0461",
+      "organName": "Fungiform papillae",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0016",
+      "boneName": "Right palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 12,
+      "strictPlaneStraddlingPairs": 12,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.22420447861228623
+    },
+    {
+      "organId": "HRAF0463",
+      "organName": "Hard palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0003",
+      "boneName": "Ethmoid",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 17,
+      "strictPlaneStraddlingPairs": 17,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.49275904928225833
+    },
+    {
+      "organId": "HRAF0463",
+      "organName": "Hard palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0006",
+      "boneName": "Left maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 851,
+      "strictPlaneStraddlingPairs": 844,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4290689150027673
+    },
+    {
+      "organId": "HRAF0463",
+      "organName": "Hard palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0008",
+      "boneName": "Left palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 241,
+      "strictPlaneStraddlingPairs": 241,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4620345713000082
+    },
+    {
+      "organId": "HRAF0463",
+      "organName": "Hard palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0014",
+      "boneName": "Right maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 97,
+      "strictPlaneStraddlingPairs": 97,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.0698982871358642
+    },
+    {
+      "organId": "HRAF0463",
+      "organName": "Hard palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0016",
+      "boneName": "Right palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 217,
+      "strictPlaneStraddlingPairs": 217,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.8875339581793751
+    },
+    {
+      "organId": "HRAF0463",
+      "organName": "Hard palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0020",
+      "boneName": "Sphenoid bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 142,
+      "strictPlaneStraddlingPairs": 142,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.869992739508732
+    },
+    {
+      "organId": "HRAF0463",
+      "organName": "Hard palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0021",
+      "boneName": "Vomer",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 383,
+      "strictPlaneStraddlingPairs": 383,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.0294037306640247
+    },
+    {
+      "organId": "HRAF0464",
+      "organName": "Mucosa of soft palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "HRAF0843",
+      "boneName": "Cervical vertebra 1",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 412,
+      "strictPlaneStraddlingPairs": 412,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.0014045168830696
+    },
+    {
+      "organId": "HRAF0464",
+      "organName": "Mucosa of soft palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "HRAF0844",
+      "boneName": "Cervical vertebra 2",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 166,
+      "strictPlaneStraddlingPairs": 166,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.3860241995345566
+    },
+    {
+      "organId": "HRAF0464",
+      "organName": "Mucosa of soft palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0003",
+      "boneName": "Ethmoid",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 93,
+      "strictPlaneStraddlingPairs": 93,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.6715568118774988
+    },
+    {
+      "organId": "HRAF0464",
+      "organName": "Mucosa of soft palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0006",
+      "boneName": "Left maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 22,
+      "strictPlaneStraddlingPairs": 22,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.3199713183478512
+    },
+    {
+      "organId": "HRAF0464",
+      "organName": "Mucosa of soft palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0008",
+      "boneName": "Left palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 193,
+      "strictPlaneStraddlingPairs": 191,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.1433569863665953
+    },
+    {
+      "organId": "HRAF0464",
+      "organName": "Mucosa of soft palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 70,
+      "strictPlaneStraddlingPairs": 70,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.48726378667697956
+    },
+    {
+      "organId": "HRAF0464",
+      "organName": "Mucosa of soft palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0016",
+      "boneName": "Right palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 16,
+      "strictPlaneStraddlingPairs": 16,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.28318095128109877
+    },
+    {
+      "organId": "HRAF0464",
+      "organName": "Mucosa of soft palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0020",
+      "boneName": "Sphenoid bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 615,
+      "strictPlaneStraddlingPairs": 614,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.0747361088581218
+    },
+    {
+      "organId": "HRAF0464",
+      "organName": "Mucosa of soft palate",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0021",
+      "boneName": "Vomer",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 277,
+      "strictPlaneStraddlingPairs": 277,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2102921688374215
+    },
+    {
+      "organId": "HRAF0465",
+      "organName": "Set of lower jaw teeth",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0006",
+      "boneName": "Left maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 63,
+      "strictPlaneStraddlingPairs": 63,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.45604223029044677
+    },
+    {
+      "organId": "HRAF0465",
+      "organName": "Set of lower jaw teeth",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 649,
+      "strictPlaneStraddlingPairs": 647,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2394683631829946
+    },
+    {
+      "organId": "HRAF0465",
+      "organName": "Set of lower jaw teeth",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0014",
+      "boneName": "Right maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 170,
+      "strictPlaneStraddlingPairs": 170,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.372109326787785
+    },
+    {
+      "organId": "HRAF0465",
+      "organName": "Set of lower jaw teeth",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0016",
+      "boneName": "Right palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 100,
+      "strictPlaneStraddlingPairs": 100,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4391460910873213
+    },
+    {
+      "organId": "HRAF0466",
+      "organName": "Set of upper jaw teeth",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0006",
+      "boneName": "Left maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 1022,
+      "strictPlaneStraddlingPairs": 1022,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.3669387433918607
+    },
+    {
+      "organId": "HRAF0466",
+      "organName": "Set of upper jaw teeth",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0012",
+      "boneName": "Mandible",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 13,
+      "strictPlaneStraddlingPairs": 13,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.21752654689076717
+    },
+    {
+      "organId": "HRAF0466",
+      "organName": "Set of upper jaw teeth",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0014",
+      "boneName": "Right maxilla",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 687,
+      "strictPlaneStraddlingPairs": 687,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.5423741288552266
+    },
+    {
+      "organId": "HRAF0466",
+      "organName": "Set of upper jaw teeth",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0016",
+      "boneName": "Right palatine bone",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 373,
+      "strictPlaneStraddlingPairs": 373,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.7881014659900722
+    },
+    {
+      "organId": "HRAF0466",
+      "organName": "Set of upper jaw teeth",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0021",
+      "boneName": "Vomer",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 41,
+      "strictPlaneStraddlingPairs": 41,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.355377407142128
+    },
+    {
+      "organId": "HRAF0468",
+      "organName": "Suprarenal impression of liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0043",
+      "boneName": "Right twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 3,
+      "strictPlaneStraddlingPairs": 3,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.6626741201069785
+    },
+    {
+      "organId": "HRAF0469",
+      "organName": "Renal impression of liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0043",
+      "boneName": "Right twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 39,
+      "strictPlaneStraddlingPairs": 39,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.368062822169021
+    },
+    {
+      "organId": "HRAF0474",
+      "organName": "Capsule of the liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0032",
+      "boneName": "Left eighth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 135,
+      "strictPlaneStraddlingPairs": 135,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.874713094474382
+    },
+    {
+      "organId": "HRAF0474",
+      "organName": "Capsule of the liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0043",
+      "boneName": "Right twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 53,
+      "strictPlaneStraddlingPairs": 53,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4116452676786269
+    },
+    {
+      "organId": "HRAF0474",
+      "organName": "Capsule of the liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0057",
+      "boneName": "Right seventh rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 91,
+      "strictPlaneStraddlingPairs": 88,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.6827929604016872
+    },
+    {
+      "organId": "HRAF0474",
+      "organName": "Capsule of the liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0058",
+      "boneName": "Right eighth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 161,
+      "strictPlaneStraddlingPairs": 161,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.5264981670417495
+    },
+    {
+      "organId": "HRAF0475",
+      "organName": "Bare area of liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0041",
+      "boneName": "Right tenth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 61,
+      "strictPlaneStraddlingPairs": 61,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.9050046136771535
+    },
+    {
+      "organId": "HRAF0475",
+      "organName": "Bare area of liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0042",
+      "boneName": "Right eleventh rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 63,
+      "strictPlaneStraddlingPairs": 63,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4907723110607063
+    },
+    {
+      "organId": "HRAF0475",
+      "organName": "Bare area of liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0043",
+      "boneName": "Right twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 103,
+      "strictPlaneStraddlingPairs": 103,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.823615269089247
+    },
+    {
+      "organId": "HRAF0475",
+      "organName": "Bare area of liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0059",
+      "boneName": "Right ninth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 65,
+      "strictPlaneStraddlingPairs": 65,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.3949245274669253
+    },
+    {
+      "organId": "HRAF0476",
+      "organName": "Diaphragmatic surface of liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0032",
+      "boneName": "Left eighth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 62,
+      "strictPlaneStraddlingPairs": 62,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.800147627529834
+    },
+    {
+      "organId": "HRAF0476",
+      "organName": "Diaphragmatic surface of liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0043",
+      "boneName": "Right twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 76,
+      "strictPlaneStraddlingPairs": 76,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.7753572975070602
+    },
+    {
+      "organId": "HRAF0478",
+      "organName": "Left superomedial segment",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0032",
+      "boneName": "Left eighth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 149,
+      "strictPlaneStraddlingPairs": 149,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.8094643000099864
+    },
+    {
+      "organId": "HRAF0482",
+      "organName": "Right anterosuperior segment",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0057",
+      "boneName": "Right seventh rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 78,
+      "strictPlaneStraddlingPairs": 78,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.9530621471834541
+    },
+    {
+      "organId": "HRAF0482",
+      "organName": "Right anterosuperior segment",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0058",
+      "boneName": "Right eighth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 92,
+      "strictPlaneStraddlingPairs": 92,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.6389777792236913
+    },
+    {
+      "organId": "HRAF0483",
+      "organName": "Right posteroinferior segment",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0043",
+      "boneName": "Right twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 118,
+      "strictPlaneStraddlingPairs": 118,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.8849099598550574
+    },
+    {
+      "organId": "HRAF0484",
+      "organName": "Right posterosuperior segment",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0041",
+      "boneName": "Right tenth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 61,
+      "strictPlaneStraddlingPairs": 61,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.269476052850725
+    },
+    {
+      "organId": "HRAF0484",
+      "organName": "Right posterosuperior segment",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0042",
+      "boneName": "Right eleventh rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 66,
+      "strictPlaneStraddlingPairs": 63,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.5549466712979338
+    },
+    {
+      "organId": "HRAF0484",
+      "organName": "Right posterosuperior segment",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0043",
+      "boneName": "Right twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 28,
+      "strictPlaneStraddlingPairs": 28,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4667932504891164
+    },
+    {
+      "organId": "HRAF0484",
+      "organName": "Right posterosuperior segment",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0058",
+      "boneName": "Right eighth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 61,
+      "strictPlaneStraddlingPairs": 61,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.229177023786675
+    },
+    {
+      "organId": "HRAF0484",
+      "organName": "Right posterosuperior segment",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0059",
+      "boneName": "Right ninth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 67,
+      "strictPlaneStraddlingPairs": 67,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.8592636508081286
+    },
+    {
+      "organId": "HRAF0487",
+      "organName": "Coronary ligament of liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0043",
+      "boneName": "Right twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 49,
+      "strictPlaneStraddlingPairs": 49,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.4490510744270333
+    },
+    {
+      "organId": "HRAF0487",
+      "organName": "Coronary ligament of liver",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0059",
+      "boneName": "Right ninth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 39,
+      "strictPlaneStraddlingPairs": 39,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.6647019853823124
+    },
+    {
+      "organId": "HRAF0493",
+      "organName": "Tail of pancreas",
+      "organSystem": "digestive",
+      "defaultHidden": false,
+      "boneId": "BM0023",
+      "boneName": "Left eleventh rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 76,
+      "strictPlaneStraddlingPairs": 76,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.420690365463156
+    },
+    {
+      "organId": "HRAF0528",
+      "organName": "Kidney capsule (left)",
+      "organSystem": "urinary",
+      "defaultHidden": false,
+      "boneId": "BM0024",
+      "boneName": "Left twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 105,
+      "strictPlaneStraddlingPairs": 105,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.80351562519349
+    },
+    {
+      "organId": "HRAF0541",
+      "organName": "Renal pyramid a (left)",
+      "organSystem": "urinary",
+      "defaultHidden": false,
+      "boneId": "BM0024",
+      "boneName": "Left twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 94,
+      "strictPlaneStraddlingPairs": 94,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.8105333925105921
+    },
+    {
+      "organId": "HRAF0553",
+      "organName": "Outer cortex of kidney (left)",
+      "organSystem": "urinary",
+      "defaultHidden": false,
+      "boneId": "BM0024",
+      "boneName": "Left twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 114,
+      "strictPlaneStraddlingPairs": 114,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.4812903511884046
+    },
+    {
+      "organId": "HRAF0554",
+      "organName": "Kidney capsule (right)",
+      "organSystem": "urinary",
+      "defaultHidden": false,
+      "boneId": "BM0043",
+      "boneName": "Right twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 80,
+      "strictPlaneStraddlingPairs": 80,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.7069081947788944
+    },
+    {
+      "organId": "HRAF0556",
+      "organName": "Outer cortex of kidney (right)",
+      "organSystem": "urinary",
+      "defaultHidden": false,
+      "boneId": "BM0043",
+      "boneName": "Right twelfth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 39,
+      "strictPlaneStraddlingPairs": 39,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.310489167538975
+    },
+    {
+      "organId": "HRAF0610",
+      "organName": "Urinary bladder neck smooth muscle",
+      "organSystem": "urinary",
+      "defaultHidden": false,
+      "boneId": "HRAF0958",
+      "boneName": "Pubis compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 33,
+      "strictPlaneStraddlingPairs": 33,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.16163930004734622
+    },
+    {
+      "organId": "HRAF0611",
+      "organName": "Fundus of urinary bladder base",
+      "organSystem": "urinary",
+      "defaultHidden": false,
+      "boneId": "HRAF0956",
+      "boneName": "Pubis spongy bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 96,
+      "strictPlaneStraddlingPairs": 96,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.0401490023675801
+    },
+    {
+      "organId": "HRAF0611",
+      "organName": "Fundus of urinary bladder base",
+      "organSystem": "urinary",
+      "defaultHidden": false,
+      "boneId": "HRAF0958",
+      "boneName": "Pubis compact bone (right)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 59,
+      "strictPlaneStraddlingPairs": 57,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.5702469633992409
+    },
+    {
+      "organId": "HRAF0611",
+      "organName": "Fundus of urinary bladder base",
+      "organSystem": "urinary",
+      "defaultHidden": false,
+      "boneId": "HRAF0959",
+      "boneName": "Pubis compact bone (left)",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 218,
+      "strictPlaneStraddlingPairs": 218,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.0401490023675801
+    },
+    {
+      "organId": "HRAF0617",
+      "organName": "Left ventricle",
+      "organSystem": "cardiac",
+      "defaultHidden": false,
+      "boneId": "BM0029",
+      "boneName": "Left fifth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 154,
+      "strictPlaneStraddlingPairs": 154,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.743709501967033
+    },
+    {
+      "organId": "HRAF0617",
+      "organName": "Left ventricle",
+      "organSystem": "cardiac",
+      "defaultHidden": false,
+      "boneId": "BM0030",
+      "boneName": "Left sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 186,
+      "strictPlaneStraddlingPairs": 186,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.0495930031234066
+    },
+    {
+      "organId": "HRAF0619",
+      "organName": "Right ventricle",
+      "organSystem": "cardiac",
+      "defaultHidden": false,
+      "boneId": "BM0030",
+      "boneName": "Left sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 32,
+      "strictPlaneStraddlingPairs": 32,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.096887187334051
+    },
+    {
+      "organId": "HRAF0619",
+      "organName": "Right ventricle",
+      "organSystem": "cardiac",
+      "defaultHidden": false,
+      "boneId": "BM0070",
+      "boneName": "Left clavicle",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 94,
+      "strictPlaneStraddlingPairs": 94,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.055251846271211
+    },
+    {
+      "organId": "HRAF0626",
+      "organName": "Pulmonary valve",
+      "organSystem": "cardiac",
+      "defaultHidden": false,
+      "boneId": "BM0070",
+      "boneName": "Left clavicle",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 109,
+      "strictPlaneStraddlingPairs": 109,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.3255729026465892
+    },
+    {
+      "organId": "HRAF0741",
+      "organName": "Lingula superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0824",
+      "boneName": "Manubrium",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 24,
+      "strictPlaneStraddlingPairs": 24,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2781449856333416
+    },
+    {
+      "organId": "HRAF0741",
+      "organName": "Lingula superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0029",
+      "boneName": "Left fifth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 9,
+      "strictPlaneStraddlingPairs": 9,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.29523596014412656
+    },
+    {
+      "organId": "HRAF0741",
+      "organName": "Lingula superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0035",
+      "boneName": "Left second costal cartilage",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 67,
+      "strictPlaneStraddlingPairs": 67,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.9490942955234543
+    },
+    {
+      "organId": "HRAF0741",
+      "organName": "Lingula superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0036",
+      "boneName": "Left third costal cartilage",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 66,
+      "strictPlaneStraddlingPairs": 66,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.8892807537568015
+    },
+    {
+      "organId": "HRAF0741",
+      "organName": "Lingula superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0070",
+      "boneName": "Left clavicle",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 53,
+      "strictPlaneStraddlingPairs": 53,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.181242083298189
+    },
+    {
+      "organId": "HRAF0742",
+      "organName": "Left anterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0824",
+      "boneName": "Manubrium",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 59,
+      "strictPlaneStraddlingPairs": 59,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.8197105989219042
+    },
+    {
+      "organId": "HRAF0742",
+      "organName": "Left anterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0028",
+      "boneName": "Left fourth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 18,
+      "strictPlaneStraddlingPairs": 18,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.5797820296669687
+    },
+    {
+      "organId": "HRAF0742",
+      "organName": "Left anterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0034",
+      "boneName": "Left first costal cartilage",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 69,
+      "strictPlaneStraddlingPairs": 69,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.674265055311631
+    },
+    {
+      "organId": "HRAF0742",
+      "organName": "Left anterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0083",
+      "boneName": "Left scapula",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 121,
+      "strictPlaneStraddlingPairs": 121,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.9664744615157423
+    },
+    {
+      "organId": "HRAF0743",
+      "organName": "Left apical bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0025",
+      "boneName": "Left first rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 56,
+      "strictPlaneStraddlingPairs": 56,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.4862466376630215
+    },
+    {
+      "organId": "HRAF0743",
+      "organName": "Left apical bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0070",
+      "boneName": "Left clavicle",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 9,
+      "strictPlaneStraddlingPairs": 9,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.7846536680803977
+    },
+    {
+      "organId": "HRAF0744",
+      "organName": "Left posterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0026",
+      "boneName": "Left second rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 62,
+      "strictPlaneStraddlingPairs": 62,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.3317156798790655
+    },
+    {
+      "organId": "HRAF0744",
+      "organName": "Left posterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0027",
+      "boneName": "Left third rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 57,
+      "strictPlaneStraddlingPairs": 57,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4673054047764715
+    },
+    {
+      "organId": "HRAF0744",
+      "organName": "Left posterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0028",
+      "boneName": "Left fourth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 43,
+      "strictPlaneStraddlingPairs": 43,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.1768432805665348
+    },
+    {
+      "organId": "HRAF0744",
+      "organName": "Left posterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0070",
+      "boneName": "Left clavicle",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 41,
+      "strictPlaneStraddlingPairs": 41,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.799972152901787
+    },
+    {
+      "organId": "HRAF0744",
+      "organName": "Left posterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0083",
+      "boneName": "Left scapula",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 98,
+      "strictPlaneStraddlingPairs": 98,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.8209472373122537
+    },
+    {
+      "organId": "HRAF0745",
+      "organName": "Lingula inferior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0028",
+      "boneName": "Left fourth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 66,
+      "strictPlaneStraddlingPairs": 66,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.0131277837857025
+    },
+    {
+      "organId": "HRAF0745",
+      "organName": "Lingula inferior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0029",
+      "boneName": "Left fifth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 110,
+      "strictPlaneStraddlingPairs": 110,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.6386562416630457
+    },
+    {
+      "organId": "HRAF0746",
+      "organName": "Left superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0028",
+      "boneName": "Left fourth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 132,
+      "strictPlaneStraddlingPairs": 132,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.6168342419839115
+    },
+    {
+      "organId": "HRAF0746",
+      "organName": "Left superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0029",
+      "boneName": "Left fifth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 153,
+      "strictPlaneStraddlingPairs": 153,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.432172036481288
+    },
+    {
+      "organId": "HRAF0746",
+      "organName": "Left superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0030",
+      "boneName": "Left sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 54,
+      "strictPlaneStraddlingPairs": 54,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2900852866141206
+    },
+    {
+      "organId": "HRAF0746",
+      "organName": "Left superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0083",
+      "boneName": "Left scapula",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 213,
+      "strictPlaneStraddlingPairs": 213,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 4.013053865453279
+    },
+    {
+      "organId": "HRAF0747",
+      "organName": "Left posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0022",
+      "boneName": "Left tenth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 86,
+      "strictPlaneStraddlingPairs": 86,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.5151214129447375
+    },
+    {
+      "organId": "HRAF0747",
+      "organName": "Left posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0030",
+      "boneName": "Left sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 9,
+      "strictPlaneStraddlingPairs": 9,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.5763666463450534
+    },
+    {
+      "organId": "HRAF0747",
+      "organName": "Left posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0031",
+      "boneName": "Left seventh rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 120,
+      "strictPlaneStraddlingPairs": 116,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.3547220691606436
+    },
+    {
+      "organId": "HRAF0747",
+      "organName": "Left posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0032",
+      "boneName": "Left eighth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 94,
+      "strictPlaneStraddlingPairs": 94,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.2531851342384783
+    },
+    {
+      "organId": "HRAF0747",
+      "organName": "Left posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0033",
+      "boneName": "Left ninth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 122,
+      "strictPlaneStraddlingPairs": 122,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 4.979291647605129
+    },
+    {
+      "organId": "HRAF0747",
+      "organName": "Left posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0083",
+      "boneName": "Left scapula",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 19,
+      "strictPlaneStraddlingPairs": 19,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.1102462527333479
+    },
+    {
+      "organId": "HRAF0748",
+      "organName": "Left anterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0029",
+      "boneName": "Left fifth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 7,
+      "strictPlaneStraddlingPairs": 7,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4851802064382846
+    },
+    {
+      "organId": "HRAF0748",
+      "organName": "Left anterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0030",
+      "boneName": "Left sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 40,
+      "strictPlaneStraddlingPairs": 40,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.241215889788037
+    },
+    {
+      "organId": "HRAF0748",
+      "organName": "Left anterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0031",
+      "boneName": "Left seventh rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 57,
+      "strictPlaneStraddlingPairs": 57,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 4.910777730220602
+    },
+    {
+      "organId": "HRAF0749",
+      "organName": "Left lateral basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0030",
+      "boneName": "Left sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 23,
+      "strictPlaneStraddlingPairs": 23,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.9504548016835918
+    },
+    {
+      "organId": "HRAF0749",
+      "organName": "Left lateral basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0031",
+      "boneName": "Left seventh rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 27,
+      "strictPlaneStraddlingPairs": 27,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4890982688161776
+    },
+    {
+      "organId": "HRAF0749",
+      "organName": "Left lateral basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0032",
+      "boneName": "Left eighth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 35,
+      "strictPlaneStraddlingPairs": 35,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.0932927154425163
+    },
+    {
+      "organId": "HRAF0749",
+      "organName": "Left lateral basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0083",
+      "boneName": "Left scapula",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 14,
+      "strictPlaneStraddlingPairs": 14,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.6561002225222676
+    },
+    {
+      "organId": "HRAF0750",
+      "organName": "Left medial basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0029",
+      "boneName": "Left fifth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 111,
+      "strictPlaneStraddlingPairs": 111,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.522635831067011
+    },
+    {
+      "organId": "HRAF0750",
+      "organName": "Left medial basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0030",
+      "boneName": "Left sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 28,
+      "strictPlaneStraddlingPairs": 28,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2065591231298074
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0837",
+      "boneName": "Thoracic vertebra 7",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 67,
+      "strictPlaneStraddlingPairs": 67,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.8872437929342623
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0838",
+      "boneName": "Thoracic vertebra 8",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 121,
+      "strictPlaneStraddlingPairs": 121,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.7279634893268643
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0839",
+      "boneName": "Thoracic vertebra 9",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 115,
+      "strictPlaneStraddlingPairs": 114,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.502649330809116
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0840",
+      "boneName": "Thoracic vertebra 10",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 50,
+      "strictPlaneStraddlingPairs": 50,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.4755963640485092
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0876",
+      "boneName": "Nucleus pulposus of intervertebral disk of ninth thoracic vertebra",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 44,
+      "strictPlaneStraddlingPairs": 43,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.13570280163936158
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0886",
+      "boneName": "Intervertebral disk of seventh thoracic vertebra",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 83,
+      "strictPlaneStraddlingPairs": 83,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.3074302876022499
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0887",
+      "boneName": "Intervertebral disk of eighth thoracic vertebra",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 116,
+      "strictPlaneStraddlingPairs": 114,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.8655969933499824
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0888",
+      "boneName": "Intervertebral disk of ninth thoracic vertebra",
+      "boneSystem": "connective",
+      "intersectingTrianglePairs": 100,
+      "strictPlaneStraddlingPairs": 100,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.192719560703149
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0041",
+      "boneName": "Right tenth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 125,
+      "strictPlaneStraddlingPairs": 125,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.6330471774799897
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0055",
+      "boneName": "Right sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 17,
+      "strictPlaneStraddlingPairs": 17,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.1079812550865618
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0057",
+      "boneName": "Right seventh rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 127,
+      "strictPlaneStraddlingPairs": 127,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.352523602937012
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0058",
+      "boneName": "Right eighth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 168,
+      "strictPlaneStraddlingPairs": 168,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 4.969252497827183
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0059",
+      "boneName": "Right ninth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 212,
+      "strictPlaneStraddlingPairs": 211,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.667453491034925
+    },
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0119",
+      "boneName": "Right scapula",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 14,
+      "strictPlaneStraddlingPairs": 14,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2753501987285973
+    },
+    {
+      "organId": "HRAF0755",
+      "organName": "Right anterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0053",
+      "boneName": "Right fifth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 74,
+      "strictPlaneStraddlingPairs": 74,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 4.690051202919798
+    },
+    {
+      "organId": "HRAF0755",
+      "organName": "Right anterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0055",
+      "boneName": "Right sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 131,
+      "strictPlaneStraddlingPairs": 131,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.901029578984057
+    },
+    {
+      "organId": "HRAF0755",
+      "organName": "Right anterior basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0057",
+      "boneName": "Right seventh rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 45,
+      "strictPlaneStraddlingPairs": 45,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.7679575454641987
+    },
+    {
+      "organId": "HRAF0756",
+      "organName": "Right lateral basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0055",
+      "boneName": "Right sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 17,
+      "strictPlaneStraddlingPairs": 17,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.052852254103356
+    },
+    {
+      "organId": "HRAF0756",
+      "organName": "Right lateral basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0057",
+      "boneName": "Right seventh rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 77,
+      "strictPlaneStraddlingPairs": 77,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.9795644087791568
+    },
+    {
+      "organId": "HRAF0756",
+      "organName": "Right lateral basal bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0058",
+      "boneName": "Right eighth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 15,
+      "strictPlaneStraddlingPairs": 15,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.1184341903700887
+    },
+    {
+      "organId": "HRAF0757",
+      "organName": "Right superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0835",
+      "boneName": "Thoracic vertebra 5",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 41,
+      "strictPlaneStraddlingPairs": 41,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.3634710232352178
+    },
+    {
+      "organId": "HRAF0757",
+      "organName": "Right superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0836",
+      "boneName": "Thoracic vertebra 6",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 50,
+      "strictPlaneStraddlingPairs": 50,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.4790874363236615
+    },
+    {
+      "organId": "HRAF0757",
+      "organName": "Right superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0051",
+      "boneName": "Right fourth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 90,
+      "strictPlaneStraddlingPairs": 90,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.8923636313434713
+    },
+    {
+      "organId": "HRAF0757",
+      "organName": "Right superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0053",
+      "boneName": "Right fifth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 158,
+      "strictPlaneStraddlingPairs": 158,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.650656654094519
+    },
+    {
+      "organId": "HRAF0757",
+      "organName": "Right superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0055",
+      "boneName": "Right sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 56,
+      "strictPlaneStraddlingPairs": 56,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.2016637173587768
+    },
+    {
+      "organId": "HRAF0757",
+      "organName": "Right superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0057",
+      "boneName": "Right seventh rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 39,
+      "strictPlaneStraddlingPairs": 39,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.8219246194057097
+    },
+    {
+      "organId": "HRAF0757",
+      "organName": "Right superior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0119",
+      "boneName": "Right scapula",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 164,
+      "strictPlaneStraddlingPairs": 164,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.7248807404891147
+    },
+    {
+      "organId": "HRAF0759",
+      "organName": "Right medial bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0051",
+      "boneName": "Right fourth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 47,
+      "strictPlaneStraddlingPairs": 47,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.21501837132378
+    },
+    {
+      "organId": "HRAF0759",
+      "organName": "Right medial bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0053",
+      "boneName": "Right fifth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 55,
+      "strictPlaneStraddlingPairs": 55,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.3679491385922384
+    },
+    {
+      "organId": "HRAF0759",
+      "organName": "Right medial bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0055",
+      "boneName": "Right sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 56,
+      "strictPlaneStraddlingPairs": 56,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.44346070447548
+    },
+    {
+      "organId": "HRAF0760",
+      "organName": "Right lateral bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0051",
+      "boneName": "Right fourth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 46,
+      "strictPlaneStraddlingPairs": 46,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.8090009274321717
+    },
+    {
+      "organId": "HRAF0760",
+      "organName": "Right lateral bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0053",
+      "boneName": "Right fifth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 80,
+      "strictPlaneStraddlingPairs": 80,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 4.4882202177284
+    },
+    {
+      "organId": "HRAF0760",
+      "organName": "Right lateral bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0055",
+      "boneName": "Right sixth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 25,
+      "strictPlaneStraddlingPairs": 25,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.8921053327826765
+    },
+    {
+      "organId": "HRAF0762",
+      "organName": "Right anterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0823",
+      "boneName": "Sternum",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 83,
+      "strictPlaneStraddlingPairs": 83,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.7854284127624245
+    },
+    {
+      "organId": "HRAF0762",
+      "organName": "Right anterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "HRAF0824",
+      "boneName": "Manubrium",
+      "boneSystem": "skeletal",
+      "intersectingTrianglePairs": 121,
+      "strictPlaneStraddlingPairs": 121,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.5824529531464706
+    },
+    {
+      "organId": "HRAF0762",
+      "organName": "Right anterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0044",
+      "boneName": "Right first costal cartilage",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 55,
+      "strictPlaneStraddlingPairs": 55,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.8375041044091787
+    },
+    {
+      "organId": "HRAF0762",
+      "organName": "Right anterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0046",
+      "boneName": "Right second costal cartilage",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 85,
+      "strictPlaneStraddlingPairs": 85,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2567320199582939
+    },
+    {
+      "organId": "HRAF0762",
+      "organName": "Right anterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0048",
+      "boneName": "Right third costal cartilage",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 91,
+      "strictPlaneStraddlingPairs": 91,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.148403406873828
+    },
+    {
+      "organId": "HRAF0762",
+      "organName": "Right anterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0049",
+      "boneName": "Right third rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 12,
+      "strictPlaneStraddlingPairs": 12,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.10149172413993507
+    },
+    {
+      "organId": "HRAF0762",
+      "organName": "Right anterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0051",
+      "boneName": "Right fourth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 147,
+      "strictPlaneStraddlingPairs": 147,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.555503860810054
+    },
+    {
+      "organId": "HRAF0762",
+      "organName": "Right anterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0113",
+      "boneName": "Right clavicle",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 20,
+      "strictPlaneStraddlingPairs": 20,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.2471980464575156
+    },
+    {
+      "organId": "HRAF0763",
+      "organName": "Right apical bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0044",
+      "boneName": "Right first costal cartilage",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 35,
+      "strictPlaneStraddlingPairs": 35,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.444177880718107
+    },
+    {
+      "organId": "HRAF0763",
+      "organName": "Right apical bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0045",
+      "boneName": "Right first rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 90,
+      "strictPlaneStraddlingPairs": 90,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.742953452370671
+    },
+    {
+      "organId": "HRAF0763",
+      "organName": "Right apical bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0047",
+      "boneName": "Right second rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 62,
+      "strictPlaneStraddlingPairs": 60,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.2630900841714845
+    },
+    {
+      "organId": "HRAF0764",
+      "organName": "Right posterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0049",
+      "boneName": "Right third rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 63,
+      "strictPlaneStraddlingPairs": 63,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.2903758862155197
+    },
+    {
+      "organId": "HRAF0764",
+      "organName": "Right posterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0051",
+      "boneName": "Right fourth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 69,
+      "strictPlaneStraddlingPairs": 69,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 3.081688227700476
+    },
+    {
+      "organId": "HRAF0764",
+      "organName": "Right posterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0113",
+      "boneName": "Right clavicle",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 33,
+      "strictPlaneStraddlingPairs": 33,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 4.160558238223477
+    },
+    {
+      "organId": "HRAF0764",
+      "organName": "Right posterior bronchopulmonary segment",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0119",
+      "boneName": "Right scapula",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 101,
+      "strictPlaneStraddlingPairs": 101,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.579468178277306
+    },
+    {
+      "organId": "HRAF0781",
+      "organName": "Cartilage of tertiary bronchus (left)",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0027",
+      "boneName": "Left third rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 38,
+      "strictPlaneStraddlingPairs": 38,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.4271782570531366
+    },
+    {
+      "organId": "HRAF0781",
+      "organName": "Cartilage of tertiary bronchus (left)",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0070",
+      "boneName": "Left clavicle",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 51,
+      "strictPlaneStraddlingPairs": 51,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.6217422373576292
+    },
+    {
+      "organId": "HRAF0785",
+      "organName": "Left lingula superior bronchus",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0027",
+      "boneName": "Left third rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 38,
+      "strictPlaneStraddlingPairs": 38,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.1562955712435128
+    },
+    {
+      "organId": "HRAF0785",
+      "organName": "Left lingula superior bronchus",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0070",
+      "boneName": "Left clavicle",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 76,
+      "strictPlaneStraddlingPairs": 76,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.8619454675639997
+    },
+    {
+      "organId": "HRAF0793",
+      "organName": "Left lingula inferior bronchi",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0029",
+      "boneName": "Left fifth rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 5,
+      "strictPlaneStraddlingPairs": 5,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.15296043341001972
+    },
+    {
+      "organId": "HRAF0799",
+      "organName": "Right anterior bronchus",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0113",
+      "boneName": "Right clavicle",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 42,
+      "strictPlaneStraddlingPairs": 42,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 2.03069273019254
+    },
+    {
+      "organId": "HRAF0807",
+      "organName": "Right apical bronchus",
+      "organSystem": "respiratory",
+      "defaultHidden": false,
+      "boneId": "BM0047",
+      "boneName": "Right second rib",
+      "boneSystem": "borrowed",
+      "intersectingTrianglePairs": 10,
+      "strictPlaneStraddlingPairs": 10,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.48208728415924557
+    }
+  ],
+  "rows": [
+    {
+      "id": "HRAF0398",
+      "name": "Basal plate",
+      "system": "pregnancy",
+      "sourceGeometryId": "HRAF0398",
+      "defaultHidden": true,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0399",
+      "name": "Chorionic plate",
+      "system": "pregnancy",
+      "sourceGeometryId": "HRAF0399",
+      "defaultHidden": true,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0400",
+      "name": "Placenta vessels",
+      "system": "pregnancy",
+      "sourceGeometryId": "HRAF0400",
+      "defaultHidden": true,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0401",
+      "name": "Amnion",
+      "system": "pregnancy",
+      "sourceGeometryId": "HRAF0401",
+      "defaultHidden": true,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0402",
+      "name": "Umbilical cord",
+      "system": "pregnancy",
+      "sourceGeometryId": "HRAF0402",
+      "defaultHidden": true,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0403",
+      "name": "Umbilical artery 1",
+      "system": "pregnancy",
+      "sourceGeometryId": "HRAF0403",
+      "defaultHidden": true,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0404",
+      "name": "Umbilical artery 2",
+      "system": "pregnancy",
+      "sourceGeometryId": "HRAF0404",
+      "defaultHidden": true,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0405",
+      "name": "Umbilical vein",
+      "system": "pregnancy",
+      "sourceGeometryId": "HRAF0405",
+      "defaultHidden": true,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0406",
+      "name": "Vagina",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0406",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0407",
+      "name": "Cervicovaginal junction",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0407",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0408",
+      "name": "Ampulla of uterine tube (right)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0408",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0409",
+      "name": "Isthmus of fallopian tube (right)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0409",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0410",
+      "name": "Fimbriae of uterine tube (right)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0410",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0411",
+      "name": "Uterine tube infundibulum (right)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0411",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0412",
+      "name": "Uterine tube infundibulum (left)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0412",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0413",
+      "name": "Fimbriae of uterine tube (left)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0413",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0414",
+      "name": "Isthmus of fallopian tube (left)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0414",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0415",
+      "name": "Ampulla of uterine tube (left)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0415",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0416",
+      "name": "Uterovesical pouch",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0416",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0417",
+      "name": "Right round ligament of uterus",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0418",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0418",
+      "name": "Left round ligament of uterus",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0417",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0419",
+      "name": "Right uterosacral ligament",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0419",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "HRAF0825"
+      ]
+    },
+    {
+      "id": "HRAF0420",
+      "name": "Left uterosacral ligament",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0420",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0421",
+      "name": "Right cardinal ligament of uterus",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0421",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "HRAF0827",
+        "HRAF0960",
+        "HRAF0962"
+      ]
+    },
+    {
+      "id": "HRAF0422",
+      "name": "Left cardinal ligament of uterus",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0422",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0423",
+      "name": "Suspensory ligament of ovary (right)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0423",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0424",
+      "name": "Suspensory ligament of ovary (left)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0424",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0425",
+      "name": "Ovarian ligament (left)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0425",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0426",
+      "name": "Ovarian ligament (right)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0426",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0427",
+      "name": "Broad ligament",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0427",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0428",
+      "name": "Mesosalpinx (left)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0428",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0429",
+      "name": "Mesosalpinx (right)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0429",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0430",
+      "name": "Mesovarium (right)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0430",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0431",
+      "name": "Mesovarium (left)",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0431",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0432",
+      "name": "Left ovary",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0432",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0433",
+      "name": "Right ovary",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0433",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0434",
+      "name": "Abdominal ostium of uterine tube",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0434",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0435",
+      "name": "Body of uterus",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0435",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0436",
+      "name": "Fundus of uterus",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0436",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0437",
+      "name": "Cornua",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0437",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0438",
+      "name": "Lower uterine segment",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0438",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0439",
+      "name": "Posterior wall of uterus",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0439",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0440",
+      "name": "Anterior wall of uterus",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0440",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0441",
+      "name": "Cervix",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0441",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0442",
+      "name": "Internal cervical os",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0442",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0443",
+      "name": "External cervical os",
+      "system": "reproductive",
+      "sourceGeometryId": "HRAF0443",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0444",
+      "name": "Omentum",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0444",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0445",
+      "name": "Epiploic appendage of transverse colon",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0445",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0446",
+      "name": "Submandibular gland (left)",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0446",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0012"
+      ]
+    },
+    {
+      "id": "HRAF0447",
+      "name": "Submandibular gland (right)",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0447",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0448",
+      "name": "Parotid gland (right)",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0448",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "HRAF0843",
+        "BM0012",
+        "BM0013",
+        "BM0018"
+      ]
+    },
+    {
+      "id": "HRAF0449",
+      "name": "Parotid gland (left)",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0449",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0010",
+        "BM0012"
+      ]
+    },
+    {
+      "id": "HRAF0450",
+      "name": "Sublingual gland (right)",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0450",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0451",
+      "name": "Sublingual gland (left)",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0451",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0012"
+      ]
+    },
+    {
+      "id": "HRAF0452",
+      "name": "Buccal mucosa",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0452",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0000",
+        "BM0001",
+        "BM0006",
+        "BM0011",
+        "BM0012",
+        "BM0014",
+        "BM0016",
+        "BM0019",
+        "BM0020"
+      ]
+    },
+    {
+      "id": "HRAF0453",
+      "name": "Frenulum of upper lip",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0453",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0006"
+      ]
+    },
+    {
+      "id": "HRAF0454",
+      "name": "Frenulum of lower lip",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0454",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0012"
+      ]
+    },
+    {
+      "id": "HRAF0455",
+      "name": "Mouth floor",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0455",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0012"
+      ]
+    },
+    {
+      "id": "HRAF0456",
+      "name": "Ginviva of upper jaw",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0456",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0001",
+        "BM0006",
+        "BM0012",
+        "BM0014",
+        "BM0016",
+        "BM0020",
+        "BM0021"
+      ]
+    },
+    {
+      "id": "HRAF0457",
+      "name": "Gingiva of lower jaw",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0457",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0012",
+        "BM0016"
+      ]
+    },
+    {
+      "id": "HRAF0458",
+      "name": "Posterior part of tongue",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0458",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "HRAF0844",
+        "BM0002",
+        "BM0005",
+        "BM0012"
+      ]
+    },
+    {
+      "id": "HRAF0459",
+      "name": "Dorsal tongue",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0459",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0006",
+        "BM0008",
+        "BM0014",
+        "BM0016",
+        "BM0020",
+        "BM0021"
+      ]
+    },
+    {
+      "id": "HRAF0460",
+      "name": "Ventral tongue",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0460",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0006"
+      ]
+    },
+    {
+      "id": "HRAF0461",
+      "name": "Fungiform papillae",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0461",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0006",
+        "BM0008",
+        "BM0014",
+        "BM0016"
+      ]
+    },
+    {
+      "id": "HRAF0462",
+      "name": "Circumvallate papillae",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0462",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0463",
+      "name": "Hard palate",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0463",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0003",
+        "BM0006",
+        "BM0008",
+        "BM0014",
+        "BM0016",
+        "BM0020",
+        "BM0021"
+      ]
+    },
+    {
+      "id": "HRAF0464",
+      "name": "Mucosa of soft palate",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0464",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "HRAF0843",
+        "HRAF0844",
+        "BM0003",
+        "BM0006",
+        "BM0008",
+        "BM0012",
+        "BM0016",
+        "BM0020",
+        "BM0021"
+      ]
+    },
+    {
+      "id": "HRAF0465",
+      "name": "Set of lower jaw teeth",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0465",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0006",
+        "BM0012",
+        "BM0014",
+        "BM0016"
+      ]
+    },
+    {
+      "id": "HRAF0466",
+      "name": "Set of upper jaw teeth",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0466",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0006",
+        "BM0012",
+        "BM0014",
+        "BM0016",
+        "BM0021"
+      ]
+    },
+    {
+      "id": "HRAF0467",
+      "name": "Gastric impression of liver",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0467",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0468",
+      "name": "Suprarenal impression of liver",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0468",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0043"
+      ]
+    },
+    {
+      "id": "HRAF0469",
+      "name": "Renal impression of liver",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0469",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0043"
+      ]
+    },
+    {
+      "id": "HRAF0470",
+      "name": "Duodenal impression of liver",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0470",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0471",
+      "name": "Esophageal impression of liver",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0471",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0472",
+      "name": "Porta hepatis",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0472",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0473",
+      "name": "Colic impression of liver",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0473",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0474",
+      "name": "Capsule of the liver",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0474",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0032",
+        "BM0043",
+        "BM0057",
+        "BM0058"
+      ]
+    },
+    {
+      "id": "HRAF0475",
+      "name": "Bare area of liver",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0475",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0041",
+        "BM0042",
+        "BM0043",
+        "BM0059"
+      ]
+    },
+    {
+      "id": "HRAF0476",
+      "name": "Diaphragmatic surface of liver",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0476",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0032",
+        "BM0043"
+      ]
+    },
+    {
+      "id": "HRAF0477",
+      "name": "Left anterolateral segment",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0477",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0478",
+      "name": "Left superomedial segment",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0478",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0032"
+      ]
+    },
+    {
+      "id": "HRAF0479",
+      "name": "Left superomedial segment 1",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0479",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0480",
+      "name": "Left inferomedial segment",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0480",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0481",
+      "name": "Quadrate lobe",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0481",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0482",
+      "name": "Right anterosuperior segment",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0482",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0057",
+        "BM0058"
+      ]
+    },
+    {
+      "id": "HRAF0483",
+      "name": "Right posteroinferior segment",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0483",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0043"
+      ]
+    },
+    {
+      "id": "HRAF0484",
+      "name": "Right posterosuperior segment",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0484",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0041",
+        "BM0042",
+        "BM0043",
+        "BM0058",
+        "BM0059"
+      ]
+    },
+    {
+      "id": "HRAF0485",
+      "name": "Right anteroinferior segment",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0485",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0486",
+      "name": "Caudate lobe",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0486",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0487",
+      "name": "Coronary ligament of liver",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0487",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0043",
+        "BM0059"
+      ]
+    },
+    {
+      "id": "HRAF0488",
+      "name": "Falciform ligament",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0488",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0489",
+      "name": "Triangular ligament of liver",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0489",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0490",
+      "name": "Ligamentum venosum",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0490",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0491",
+      "name": "Round ligament of liver",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0491",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0492",
+      "name": "Hepatoduodenal ligament",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0492",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0493",
+      "name": "Tail of pancreas",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0493",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0023"
+      ]
+    },
+    {
+      "id": "HRAF0494",
+      "name": "Body of pancreas",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0494",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0495",
+      "name": "Uncinate process 1",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0495",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0496",
+      "name": "Head of pancreas",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0496",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0497",
+      "name": "Neck of pancreas",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0497",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0498",
+      "name": "Right hepatic duct",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0498",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0499",
+      "name": "Left hepatic duct",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0499",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0500",
+      "name": "Common hepatic duct",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0500",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0501",
+      "name": "Hepatopancreatic ampulla",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0501",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0502",
+      "name": "Dorsal pancreatic duct",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0502",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0503",
+      "name": "Common bile duct",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0503",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0504",
+      "name": "Ventral pancreatic duct",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0504",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0505",
+      "name": "Cystic duct",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0505",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0506",
+      "name": "Duodenum superior",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0506",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0507",
+      "name": "Duodenal ampulla",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0507",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0508",
+      "name": "Duodenum descending",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0508",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0509",
+      "name": "Sphincter of hepatopancreatic ampulla",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0509",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0510",
+      "name": "Duodenum ascending",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0510",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0511",
+      "name": "Duodenum horizontal",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0511",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0512",
+      "name": "Jejunum",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0512",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0513",
+      "name": "Ileum",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0513",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0514",
+      "name": "Ileum terminal",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0514",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0515",
+      "name": "Palatine tonsil (left)",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0515",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0516",
+      "name": "Palatine tonsil (right)",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0516",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0517",
+      "name": "Hepatic flexure of colon",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0517",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0518",
+      "name": "Transverse colon",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0518",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0519",
+      "name": "Ascending colon",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0519",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0520",
+      "name": "Vermiform appendix",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0520",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0521",
+      "name": "Descending colon",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0521",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0522",
+      "name": "Ileocecal valve",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0522",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0523",
+      "name": "Caecum",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0523",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0524",
+      "name": "Rectum",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0524",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0525",
+      "name": "Sigmoid colon",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0525",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0526",
+      "name": "Splenic flexure of colon",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0526",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0527",
+      "name": "Gallbladder",
+      "system": "digestive",
+      "sourceGeometryId": "HRAF0527",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0528",
+      "name": "Kidney capsule (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0528",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0024"
+      ]
+    },
+    {
+      "id": "HRAF0529",
+      "name": "Hilum of kidney (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0529",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0530",
+      "name": "Renal papilla a (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0530",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0531",
+      "name": "Renal papilla b (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0531",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0532",
+      "name": "Renal papilla c (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0532",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0533",
+      "name": "Renal papilla d (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0533",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0534",
+      "name": "Renal papilla e (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0534",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0535",
+      "name": "Renal papilla f (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0535",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0536",
+      "name": "Renal papilla g (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0536",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0537",
+      "name": "Renal papilla h (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0537",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0538",
+      "name": "Renal papilla i (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0538",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0539",
+      "name": "Renal papilla j (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0539",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0540",
+      "name": "Renal papilla k (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0540",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0541",
+      "name": "Renal pyramid a (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0541",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0024"
+      ]
+    },
+    {
+      "id": "HRAF0542",
+      "name": "Renal pyramid b (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0542",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0543",
+      "name": "Renal pyramid c (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0543",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0544",
+      "name": "Renal pyramid d (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0544",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0545",
+      "name": "Renal pyramid e (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0545",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0546",
+      "name": "Renal pyramid f (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0546",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0547",
+      "name": "Renal pyramid g (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0547",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0548",
+      "name": "Renal pyramid h (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0548",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0549",
+      "name": "Renal pyramid i (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0549",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0550",
+      "name": "Renal pyramid j (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0550",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0551",
+      "name": "Renal pyramid k (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0551",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0552",
+      "name": "Renal column (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0552",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0553",
+      "name": "Outer cortex of kidney (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0553",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0024"
+      ]
+    },
+    {
+      "id": "HRAF0554",
+      "name": "Kidney capsule (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0554",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0043"
+      ]
+    },
+    {
+      "id": "HRAF0555",
+      "name": "Hilum of kidney (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0555",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0556",
+      "name": "Outer cortex of kidney (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0556",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0043"
+      ]
+    },
+    {
+      "id": "HRAF0557",
+      "name": "Renal column (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0557",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0558",
+      "name": "Renal papilla a (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0558",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0559",
+      "name": "Renal papilla b (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0559",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0560",
+      "name": "Renal papilla c (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0560",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0561",
+      "name": "Renal papilla d (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0561",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0562",
+      "name": "Renal papilla e (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0562",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0563",
+      "name": "Renal papilla f (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0563",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0564",
+      "name": "Renal papilla g (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0564",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0565",
+      "name": "Renal papilla h (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0565",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0566",
+      "name": "Renal papilla i (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0566",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0567",
+      "name": "Renal papilla j (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0567",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0568",
+      "name": "Renal pyramid a (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0568",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0569",
+      "name": "Renal pyramid b (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0569",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0570",
+      "name": "Renal pyramid c (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0570",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0571",
+      "name": "Renal pyramid d (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0571",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0572",
+      "name": "Renal pyramid e (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0572",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0573",
+      "name": "Renal pyramid f (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0573",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0574",
+      "name": "Renal pyramid g (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0574",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0575",
+      "name": "Renal pyramid h (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0575",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0576",
+      "name": "Renal pyramid i (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0576",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0577",
+      "name": "Renal pyramid j (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0577",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0578",
+      "name": "Minor calyx a (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0578",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0579",
+      "name": "Minor calyx b (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0579",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0580",
+      "name": "Minor calyx c (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0580",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0581",
+      "name": "Minor calyx d (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0581",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0582",
+      "name": "Minor calyx e (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0582",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0583",
+      "name": "Minor calyx f (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0583",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0584",
+      "name": "Minor calyx g (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0584",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0585",
+      "name": "Minor calyx h (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0585",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0586",
+      "name": "Minor calyx i (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0586",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0587",
+      "name": "Minor calyx j (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0587",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0588",
+      "name": "Major calyx a (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0588",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0589",
+      "name": "Major calyx b (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0589",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0590",
+      "name": "Major calyx c (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0590",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0591",
+      "name": "Renal pelvis (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0591",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0592",
+      "name": "Right ureter",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0592",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0593",
+      "name": "Minor calyx a (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0593",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0594",
+      "name": "Minor calyx b (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0594",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0595",
+      "name": "Minor calyx c (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0595",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0596",
+      "name": "Minor calyx d (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0596",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0597",
+      "name": "Minor calyx e (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0597",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0598",
+      "name": "Minor calyx f (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0598",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0599",
+      "name": "Minor calyx g (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0599",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0600",
+      "name": "Minor calyx h (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0600",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0601",
+      "name": "Minor calyx i (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0601",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0602",
+      "name": "Minor calyx j (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0602",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0603",
+      "name": "Major calyx a (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0603",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0604",
+      "name": "Major calyx b (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0604",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0605",
+      "name": "Major calyx c (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0605",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0606",
+      "name": "Major calyx d (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0606",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0607",
+      "name": "Renal pelvis (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0607",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0608",
+      "name": "Left ureter",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0608",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0609",
+      "name": "Fundus of urinary bladder dome",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0609",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0610",
+      "name": "Urinary bladder neck smooth muscle",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0610",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "HRAF0958"
+      ]
+    },
+    {
+      "id": "HRAF0611",
+      "name": "Fundus of urinary bladder base",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0611",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "HRAF0956",
+        "HRAF0958",
+        "HRAF0959"
+      ]
+    },
+    {
+      "id": "HRAF0612",
+      "name": "Trigone of urinary bladder",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0612",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0613",
+      "name": "Ureteral orifice (right)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0613",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0614",
+      "name": "Ureteral orifice (left)",
+      "system": "urinary",
+      "sourceGeometryId": "HRAF0614",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0615",
+      "name": "Interventricular septum",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0615",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0616",
+      "name": "Left cardiac atrium",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0616",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0617",
+      "name": "Left ventricle",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0617",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0029",
+        "BM0030"
+      ]
+    },
+    {
+      "id": "HRAF0618",
+      "name": "Right cardiac atrium",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0618",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0619",
+      "name": "Right ventricle",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0619",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0030",
+        "BM0070"
+      ]
+    },
+    {
+      "id": "HRAF0620",
+      "name": "Papillary muscle of heart anterior",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0620",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0621",
+      "name": "Papillary muscle of heart anterolateral",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0621",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0622",
+      "name": "Papillary muscle of heart medial",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0622",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0623",
+      "name": "Papillary muscle of heart posterior",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0623",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0624",
+      "name": "Papillary muscle of heart posteromedial",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0624",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0625",
+      "name": "Aortic valve",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0625",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0626",
+      "name": "Pulmonary valve",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0626",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0070"
+      ]
+    },
+    {
+      "id": "HRAF0627",
+      "name": "Mitral valve",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0627",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0628",
+      "name": "Tricuspid valve",
+      "system": "cardiac",
+      "sourceGeometryId": "HRAF0628",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0739",
+      "name": "Hilum (left)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0739",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0740",
+      "name": "Hilum upper (left)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0740",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0741",
+      "name": "Lingula superior bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0741",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "HRAF0824",
+        "BM0029",
+        "BM0035",
+        "BM0036",
+        "BM0070"
+      ]
+    },
+    {
+      "id": "HRAF0742",
+      "name": "Left anterior bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0742",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "HRAF0824",
+        "BM0028",
+        "BM0034",
+        "BM0083"
+      ]
+    },
+    {
+      "id": "HRAF0743",
+      "name": "Left apical bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0743",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0025",
+        "BM0070"
+      ]
+    },
+    {
+      "id": "HRAF0744",
+      "name": "Left posterior bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0744",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0026",
+        "BM0027",
+        "BM0028",
+        "BM0070",
+        "BM0083"
+      ]
+    },
+    {
+      "id": "HRAF0745",
+      "name": "Lingula inferior bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0745",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0028",
+        "BM0029"
+      ]
+    },
+    {
+      "id": "HRAF0746",
+      "name": "Left superior bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0746",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0028",
+        "BM0029",
+        "BM0030",
+        "BM0083"
+      ]
+    },
+    {
+      "id": "HRAF0747",
+      "name": "Left posterior basal bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0747",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0022",
+        "BM0030",
+        "BM0031",
+        "BM0032",
+        "BM0033",
+        "BM0083"
+      ]
+    },
+    {
+      "id": "HRAF0748",
+      "name": "Left anterior basal bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0748",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0029",
+        "BM0030",
+        "BM0031"
+      ]
+    },
+    {
+      "id": "HRAF0749",
+      "name": "Left lateral basal bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0749",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0030",
+        "BM0031",
+        "BM0032",
+        "BM0083"
+      ]
+    },
+    {
+      "id": "HRAF0750",
+      "name": "Left medial basal bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0750",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0029",
+        "BM0030"
+      ]
+    },
+    {
+      "id": "HRAF0751",
+      "name": "Hilum lower (left)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0751",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0752",
+      "name": "Hilum (right)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0752",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0753",
+      "name": "Right medial basal bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0753",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0754",
+      "name": "Right posterior basal bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0754",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "HRAF0837",
+        "HRAF0838",
+        "HRAF0839",
+        "HRAF0840",
+        "HRAF0876",
+        "HRAF0886",
+        "HRAF0887",
+        "HRAF0888",
+        "BM0041",
+        "BM0055",
+        "BM0057",
+        "BM0058",
+        "BM0059",
+        "BM0119"
+      ]
+    },
+    {
+      "id": "HRAF0755",
+      "name": "Right anterior basal bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0755",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0053",
+        "BM0055",
+        "BM0057"
+      ]
+    },
+    {
+      "id": "HRAF0756",
+      "name": "Right lateral basal bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0756",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0055",
+        "BM0057",
+        "BM0058"
+      ]
+    },
+    {
+      "id": "HRAF0757",
+      "name": "Right superior bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0757",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "HRAF0835",
+        "HRAF0836",
+        "BM0051",
+        "BM0053",
+        "BM0055",
+        "BM0057",
+        "BM0119"
+      ]
+    },
+    {
+      "id": "HRAF0758",
+      "name": "Hilum lower (right)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0758",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0759",
+      "name": "Right medial bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0759",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0051",
+        "BM0053",
+        "BM0055"
+      ]
+    },
+    {
+      "id": "HRAF0760",
+      "name": "Right lateral bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0760",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0051",
+        "BM0053",
+        "BM0055"
+      ]
+    },
+    {
+      "id": "HRAF0761",
+      "name": "Hilum middle (right)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0761",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0762",
+      "name": "Right anterior bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0762",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "HRAF0823",
+        "HRAF0824",
+        "BM0044",
+        "BM0046",
+        "BM0048",
+        "BM0049",
+        "BM0051",
+        "BM0113"
+      ]
+    },
+    {
+      "id": "HRAF0763",
+      "name": "Right apical bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0763",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0044",
+        "BM0045",
+        "BM0047"
+      ]
+    },
+    {
+      "id": "HRAF0764",
+      "name": "Right posterior bronchopulmonary segment",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0764",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0049",
+        "BM0051",
+        "BM0113",
+        "BM0119"
+      ]
+    },
+    {
+      "id": "HRAF0765",
+      "name": "Hilum upper (right)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0765",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0766",
+      "name": "Arytenoid cartilage (right)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0766",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0767",
+      "name": "Arytenoid cartilage (left)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0767",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0768",
+      "name": "Epiglotic cartilage",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0768",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0769",
+      "name": "Cricoid cartilage",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0769",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0770",
+      "name": "Thyroid cartilage",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0770",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0771",
+      "name": "Corniculate cartilage (left)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0771",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0772",
+      "name": "Corniculate cartilage (right)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0772",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0773",
+      "name": "Trachea",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0773",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0774",
+      "name": "Tracheal cartilage",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0774",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0775",
+      "name": "Carina",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0775",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0776",
+      "name": "Right main bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0776",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0777",
+      "name": "Cartilage of main bronchus (right)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0777",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0778",
+      "name": "Left main bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0778",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0779",
+      "name": "Cartilage of main bronchus (left)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0779",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0780",
+      "name": "Cartilage of lobar bronchus (left)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0780",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0781",
+      "name": "Cartilage of tertiary bronchus (left)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0781",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0027",
+        "BM0070"
+      ]
+    },
+    {
+      "id": "HRAF0782",
+      "name": "Left superior lobar bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0782",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0783",
+      "name": "Left inferior lobar bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0783",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0784",
+      "name": "Left anterior basal bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0784",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0785",
+      "name": "Left lingula superior bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0785",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0027",
+        "BM0070"
+      ]
+    },
+    {
+      "id": "HRAF0786",
+      "name": "Left apical bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0786",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0787",
+      "name": "Left posterior basal bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0787",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0788",
+      "name": "Left medial basal bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0788",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0789",
+      "name": "Left superior bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0789",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0790",
+      "name": "Left anterior bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0790",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0791",
+      "name": "Left posterior bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0791",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0792",
+      "name": "Left lateral basal bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0792",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0793",
+      "name": "Left lingula inferior bronchi",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0793",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0029"
+      ]
+    },
+    {
+      "id": "HRAF0794",
+      "name": "Cartilage of lobar bronchus (right)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0794",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0795",
+      "name": "Cartilage of tertiary bronchus (right)",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0795",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0796",
+      "name": "Right middle lobar bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0796",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0797",
+      "name": "Right superior lobar bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0797",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0798",
+      "name": "Right inferior lobar bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0798",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0799",
+      "name": "Right anterior bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0799",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0113"
+      ]
+    },
+    {
+      "id": "HRAF0800",
+      "name": "Right lateral basal bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0800",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0801",
+      "name": "Right lateral bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0801",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0802",
+      "name": "Right medial bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0802",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0803",
+      "name": "Right medial basal bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0803",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0804",
+      "name": "Right posterior basal bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0804",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0805",
+      "name": "Right posterior bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0805",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0806",
+      "name": "Right superior bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0806",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    },
+    {
+      "id": "HRAF0807",
+      "name": "Right apical bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0807",
+      "defaultHidden": false,
+      "intersectingBoneIds": [
+        "BM0047"
+      ]
+    },
+    {
+      "id": "HRAF0808",
+      "name": "Right anterior basal bronchus",
+      "system": "respiratory",
+      "sourceGeometryId": "HRAF0808",
+      "defaultHidden": false,
+      "intersectingBoneIds": []
+    }
+  ],
+  "summary": {
+    "allIntersectingPairs": 203,
+    "defaultIntersectingPairs": 203,
+    "defaultIntersectingOrganSurfaces": 65,
+    "defaultBorrowedBonePairs": 177,
+    "defaultNativeBonePairs": 26,
+    "strictDefaultPairs": 203
+  },
+  "files": [
+    {
+      "path": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "path": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "path": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "path": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "path": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "path": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "path": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "path": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "path": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "path": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "path": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "path": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "path": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "path": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "path": "data/female-atlas-structures.json",
+      "sha256": "4affd375a4413c840060b480668d6a4efd9a5102be3a70551e831597daf34035"
+    },
+    {
+      "path": "data/catalog/female-source-restoration.json",
+      "sha256": "6b4776f1c3d395b584cf72568fafe8063924455e5bf4e28c2882399495ca5f79"
+    },
+    {
+      "path": "public/models/female-source-restoration/right-ilium.bin.gz",
+      "sha256": "cb8f1642b7b4be63f5ebd276d620917a3d70905c97e338d57f978bf0943b3fa8"
+    },
+    {
+      "path": "data/catalog/female-knee-source-restoration.json",
+      "sha256": "03f9d1ab022e7ec620fc41d159872bd3dad92384e97f9fde140bc5a759629ad3"
+    },
+    {
+      "path": "public/models/female-source-restoration/knee-native.bin.gz",
+      "sha256": "61dc640f26d4f7de3d9b2978d2e23d9ef9be351f179b7bdbc5b4bb1afb205a25"
+    },
+    {
+      "path": "scripts/audit-female-organ-bone-relations.mjs",
+      "sha256": "acdefa399e1f8fc6830cde063164f7184425c523b1a95e620edb910c3b3e4860"
+    },
+    {
+      "path": "scripts/lib/triangle-crossings.mjs",
+      "sha256": "a55dd923c032c76591a7f2aa1af2863fe9e24bf0adb0ee6eb4aad5388238d512"
+    },
+    {
+      "path": "src/female-arm-registration.ts",
+      "sha256": "b0ba7383abfcabc4e2561d74b8cfcda56b46850595be20e5d16fed7d288555dd"
+    },
+    {
+      "path": "src/female-foot-registration.ts",
+      "sha256": "6545d3024a6ee781dc6f9f282f12d54531de15c0de7631cbc5cfef44a0103ba8"
+    },
+    {
+      "path": "src/female-cord-registration.ts",
+      "sha256": "3bc3fad57cf25c17443971399d35e341831daeae99f92acba7b6887704036082"
+    },
+    {
+      "path": "src/female-source-restoration.ts",
+      "sha256": "8ee57aa49d29bef60f8af42277f179fd792505f9b6327e9c1ff4b32c4c5f6cde"
+    },
+    {
+      "path": "src/female-knee-source-restoration.ts",
+      "sha256": "e088ba5b4efb8615ee47aaa8578693fa893c650be93219f9ba84a8f81195be8d"
+    },
+    {
+      "path": "src/female-pelvic-bindings.ts",
+      "sha256": "5f02c57c1c7fe484678ea2fc5ebb38899dd3d2f6c2d2b98bd84db08b8332b99a"
+    },
+    {
+      "path": "data/catalog/female-arm-registration.json",
+      "sha256": "1e4fa09616f0da44b0353fbc18e44f738e00344860426d3b047c0c1e06ecaf0d"
+    },
+    {
+      "path": "data/catalog/female-foot-registration.json",
+      "sha256": "c8d8400067825ed5c70172d252d4a4ca291a2005bfe0488e633dfe56b5bb220a"
+    },
+    {
+      "path": "data/catalog/female-cord-registration.json",
+      "sha256": "55df91e00da5a8df203b640866fecee247c953ef008b96a8af3dad8f86660940"
+    },
+    {
+      "path": "data/catalog/female-pelvic-bindings.json",
+      "sha256": "287125375550dc86605253a13ad8edbd5eea1d4464f63142b700c3ed772c82c8"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    }
+  ]
+}

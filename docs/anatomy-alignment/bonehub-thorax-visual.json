@@ -1,0 +1,113 @@
+{
+  "status": "Fixed-camera offline visual comparison; not app UI or anatomical approval",
+  "captures": [
+    {
+      "variant": "current",
+      "view": "front",
+      "file": ".cache/bonehub-thorax/current-front.png",
+      "sha256": "83907fbafdae73c7820364a83ef30561b6b6e29fa9a65b851bbcaccc99e9a6c8",
+      "camera": {
+        "position": [
+          0,
+          1.32,
+          0.92
+        ],
+        "target": [
+          0,
+          1.27,
+          0
+        ],
+        "ribIds": [
+          "BM0028",
+          "BM0031",
+          "BM0033",
+          "BM0051",
+          "BM0057",
+          "BM0059"
+        ]
+      }
+    },
+    {
+      "variant": "current",
+      "view": "back",
+      "file": ".cache/bonehub-thorax/current-back.png",
+      "sha256": "a7499c422887269a2423ab7560a9695d6a1072f383e777fd5c448269124fb859",
+      "camera": {
+        "position": [
+          0,
+          1.32,
+          -0.92
+        ],
+        "target": [
+          0,
+          1.27,
+          0
+        ],
+        "ribIds": [
+          "BM0028",
+          "BM0031",
+          "BM0033",
+          "BM0051",
+          "BM0057",
+          "BM0059"
+        ]
+      }
+    },
+    {
+      "variant": "rigid",
+      "view": "front",
+      "file": ".cache/bonehub-thorax/rigid-front.png",
+      "sha256": "bb1505f12f023ed7b83afca8032071f755fa77e07b162b5ef4dabe1f1a1a2bc4",
+      "camera": {
+        "position": [
+          0,
+          1.32,
+          0.92
+        ],
+        "target": [
+          0,
+          1.27,
+          0
+        ],
+        "ribIds": [
+          "BM0028",
+          "BM0031",
+          "BM0033",
+          "BM0051",
+          "BM0057",
+          "BM0059"
+        ]
+      }
+    },
+    {
+      "variant": "rigid",
+      "view": "back",
+      "file": ".cache/bonehub-thorax/rigid-back.png",
+      "sha256": "f89cb3209c33c43a0dc7cf59bdffe7b042491a99a6173d6b14165f39bcf01348",
+      "camera": {
+        "position": [
+          0,
+          1.32,
+          -0.92
+        ],
+        "target": [
+          0,
+          1.27,
+          0
+        ],
+        "ribIds": [
+          "BM0028",
+          "BM0031",
+          "BM0033",
+          "BM0051",
+          "BM0057",
+          "BM0059"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "sourceReport": ".cache/bonehub-thorax/screen.json",
+  "sourceReportSha256": "5e20c0ffc696b262a2732b99c57df32319232697aad371dcad63cf4e02583dee",
+  "scriptSha256": "500f09bdc685583fa24ff2c0768ca05d698b8d7bb1ee83d3067b2e65ea32cc2e"
+}

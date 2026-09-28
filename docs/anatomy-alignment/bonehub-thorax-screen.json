@@ -1,0 +1,2669 @@
+{
+  "status": "OFFLINE CANDIDATES; NONE EXPORTED TO RUNTIME",
+  "sourceRevision": "ac8de2b38f5ae1a0996053ca0639dd6ae43358f1",
+  "femaleSource": "Human Reference Atlas female v1.10 + pelvis v1.5",
+  "spineTraining": "Even thoracic levels T2,T4,T6,T8,T10,T12 bbox centres; odd levels held out",
+  "ribSourceCount": 24,
+  "skinSamplePerRib": 256,
+  "skinTopology": {
+    "weldedVertices": 29338,
+    "connectedComponents": 1,
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "degenerateTriangles": 0
+  },
+  "respiratoryScope": [
+    {
+      "id": "HRAF0741",
+      "name": "Lingula superior bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0742",
+      "name": "Left anterior bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0743",
+      "name": "Left apical bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0744",
+      "name": "Left posterior bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0745",
+      "name": "Lingula inferior bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0746",
+      "name": "Left superior bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0747",
+      "name": "Left posterior basal bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0748",
+      "name": "Left anterior basal bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0749",
+      "name": "Left lateral basal bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0750",
+      "name": "Left medial basal bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0753",
+      "name": "Right medial basal bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0754",
+      "name": "Right posterior basal bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0755",
+      "name": "Right anterior basal bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0756",
+      "name": "Right lateral basal bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0757",
+      "name": "Right superior bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0759",
+      "name": "Right medial bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0760",
+      "name": "Right lateral bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0762",
+      "name": "Right anterior bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0763",
+      "name": "Right apical bronchopulmonary segment"
+    },
+    {
+      "id": "HRAF0764",
+      "name": "Right posterior bronchopulmonary segment"
+    }
+  ],
+  "candidates": [
+    {
+      "mode": "rigid",
+      "matrixColumnMajor": [
+        0.9990629383578361,
+        0.010808187051073975,
+        -0.04190976368909149,
+        0,
+        -0.010485274651073188,
+        0.9999136853473839,
+        0.007917125141402335,
+        0,
+        0.04199171603183247,
+        -0.007470270924274417,
+        0.9990900313970807,
+        0,
+        -0.21477311717578176,
+        -0.07633544753837151,
+        0.15551640292918822,
+        1
+      ],
+      "scale": 1,
+      "spine": [
+        {
+          "number": 1,
+          "targetId": "HRAF0831",
+          "training": false,
+          "centreResidualMm": 1.7239170424469503
+        },
+        {
+          "number": 2,
+          "targetId": "HRAF0832",
+          "training": true,
+          "centreResidualMm": 1.138935946754108
+        },
+        {
+          "number": 3,
+          "targetId": "HRAF0833",
+          "training": false,
+          "centreResidualMm": 0.35507455018470324
+        },
+        {
+          "number": 4,
+          "targetId": "HRAF0834",
+          "training": true,
+          "centreResidualMm": 1.1763295236139213
+        },
+        {
+          "number": 5,
+          "targetId": "HRAF0835",
+          "training": false,
+          "centreResidualMm": 0.3040011118644359
+        },
+        {
+          "number": 6,
+          "targetId": "HRAF0836",
+          "training": true,
+          "centreResidualMm": 0.29684367529645544
+        },
+        {
+          "number": 7,
+          "targetId": "HRAF0837",
+          "training": false,
+          "centreResidualMm": 0.730937687177715
+        },
+        {
+          "number": 8,
+          "targetId": "HRAF0838",
+          "training": true,
+          "centreResidualMm": 0.6348550517062279
+        },
+        {
+          "number": 9,
+          "targetId": "HRAF0839",
+          "training": false,
+          "centreResidualMm": 1.594104739777276
+        },
+        {
+          "number": 10,
+          "targetId": "HRAF0840",
+          "training": true,
+          "centreResidualMm": 0.5540155429284791
+        },
+        {
+          "number": 11,
+          "targetId": "HRAF0841",
+          "training": false,
+          "centreResidualMm": 1.707270771715707
+        },
+        {
+          "number": 12,
+          "targetId": "HRAF0842",
+          "training": true,
+          "centreResidualMm": 1.1199791419408087
+        }
+      ],
+      "heldOutSurfaces": [
+        {
+          "number": 1,
+          "sourceToAtlas": {
+            "vertices": 16076,
+            "p95Mm": 2.6340131832398317,
+            "maximumMm": 3.8224448918732965
+          },
+          "atlasToSource": {
+            "vertices": 1659,
+            "p95Mm": 3.0220674410626533,
+            "maximumMm": 3.7268783022525347
+          }
+        },
+        {
+          "number": 3,
+          "sourceToAtlas": {
+            "vertices": 16844,
+            "p95Mm": 2.2424012697317517,
+            "maximumMm": 5.34681363106107
+          },
+          "atlasToSource": {
+            "vertices": 1785,
+            "p95Mm": 2.6503803387294393,
+            "maximumMm": 5.587421804098033
+          }
+        },
+        {
+          "number": 5,
+          "sourceToAtlas": {
+            "vertices": 16598,
+            "p95Mm": 1.783591176981011,
+            "maximumMm": 2.9793676550131796
+          },
+          "atlasToSource": {
+            "vertices": 1743,
+            "p95Mm": 2.37544051010877,
+            "maximumMm": 4.718416638844318
+          }
+        },
+        {
+          "number": 7,
+          "sourceToAtlas": {
+            "vertices": 17848,
+            "p95Mm": 1.7683966687474668,
+            "maximumMm": 3.232599574161892
+          },
+          "atlasToSource": {
+            "vertices": 1743,
+            "p95Mm": 2.374058263675623,
+            "maximumMm": 3.162470682803885
+          }
+        },
+        {
+          "number": 9,
+          "sourceToAtlas": {
+            "vertices": 18798,
+            "p95Mm": 1.8813747550473598,
+            "maximumMm": 2.9781853449578772
+          },
+          "atlasToSource": {
+            "vertices": 1813,
+            "p95Mm": 2.333792092457121,
+            "maximumMm": 4.443527232616915
+          }
+        },
+        {
+          "number": 11,
+          "sourceToAtlas": {
+            "vertices": 21466,
+            "p95Mm": 2.06468869899514,
+            "maximumMm": 3.083178102735925
+          },
+          "atlasToSource": {
+            "vertices": 1717,
+            "p95Mm": 2.510484851759291,
+            "maximumMm": 3.5301904980505294
+          }
+        }
+      ]
+    },
+    {
+      "mode": "similarity",
+      "matrixColumnMajor": [
+        0.9904199791072517,
+        0.010714684713364729,
+        -0.041547199564390964,
+        0,
+        -0.010394565849794491,
+        0.991263366228586,
+        0.007848633570599606,
+        0,
+        0.04162844293201977,
+        -0.0074056451187216096,
+        0.9904468377628302,
+        0,
+        -0.21292469247928802,
+        -0.06484780103625698,
+        0.15297874561470792,
+        1
+      ],
+      "scale": 0.99134893416746,
+      "spine": [
+        {
+          "number": 1,
+          "targetId": "HRAF0831",
+          "training": false,
+          "centreResidualMm": 1.4014769527932622
+        },
+        {
+          "number": 2,
+          "targetId": "HRAF0832",
+          "training": true,
+          "centreResidualMm": 0.6891256057906732
+        },
+        {
+          "number": 3,
+          "targetId": "HRAF0833",
+          "training": false,
+          "centreResidualMm": 0.5674801693380647
+        },
+        {
+          "number": 4,
+          "targetId": "HRAF0834",
+          "training": true,
+          "centreResidualMm": 0.7871201397764479
+        },
+        {
+          "number": 5,
+          "targetId": "HRAF0835",
+          "training": false,
+          "centreResidualMm": 0.43635522487946043
+        },
+        {
+          "number": 6,
+          "targetId": "HRAF0836",
+          "training": true,
+          "centreResidualMm": 0.4607646698366086
+        },
+        {
+          "number": 7,
+          "targetId": "HRAF0837",
+          "training": false,
+          "centreResidualMm": 0.7552375778466716
+        },
+        {
+          "number": 8,
+          "targetId": "HRAF0838",
+          "training": true,
+          "centreResidualMm": 0.6698616115959957
+        },
+        {
+          "number": 9,
+          "targetId": "HRAF0839",
+          "training": false,
+          "centreResidualMm": 1.5623089412375688
+        },
+        {
+          "number": 10,
+          "targetId": "HRAF0840",
+          "training": true,
+          "centreResidualMm": 0.3064957505265353
+        },
+        {
+          "number": 11,
+          "targetId": "HRAF0841",
+          "training": false,
+          "centreResidualMm": 1.2493134277045552
+        },
+        {
+          "number": 12,
+          "targetId": "HRAF0842",
+          "training": true,
+          "centreResidualMm": 0.30698478458742817
+        }
+      ],
+      "heldOutSurfaces": [
+        {
+          "number": 1,
+          "sourceToAtlas": {
+            "vertices": 16076,
+            "p95Mm": 2.7311717771368724,
+            "maximumMm": 3.8901082308972326
+          },
+          "atlasToSource": {
+            "vertices": 1659,
+            "p95Mm": 3.331335625213531,
+            "maximumMm": 4.093549661852638
+          }
+        },
+        {
+          "number": 3,
+          "sourceToAtlas": {
+            "vertices": 16844,
+            "p95Mm": 2.2443994753174015,
+            "maximumMm": 5.501135803340688
+          },
+          "atlasToSource": {
+            "vertices": 1785,
+            "p95Mm": 2.7943997709524044,
+            "maximumMm": 5.611832541317613
+          }
+        },
+        {
+          "number": 5,
+          "sourceToAtlas": {
+            "vertices": 16598,
+            "p95Mm": 1.8095250881865346,
+            "maximumMm": 3.0345700737311923
+          },
+          "atlasToSource": {
+            "vertices": 1743,
+            "p95Mm": 2.580508970914432,
+            "maximumMm": 4.802910206668882
+          }
+        },
+        {
+          "number": 7,
+          "sourceToAtlas": {
+            "vertices": 17848,
+            "p95Mm": 1.8876192606852444,
+            "maximumMm": 3.382002506571663
+          },
+          "atlasToSource": {
+            "vertices": 1743,
+            "p95Mm": 2.5850261625923356,
+            "maximumMm": 3.406052304046924
+          }
+        },
+        {
+          "number": 9,
+          "sourceToAtlas": {
+            "vertices": 18798,
+            "p95Mm": 2.0339663130244454,
+            "maximumMm": 3.0627463769391126
+          },
+          "atlasToSource": {
+            "vertices": 1813,
+            "p95Mm": 2.563160725544407,
+            "maximumMm": 4.81956658380514
+          }
+        },
+        {
+          "number": 11,
+          "sourceToAtlas": {
+            "vertices": 21466,
+            "p95Mm": 2.3107518383666332,
+            "maximumMm": 3.1935665871005208
+          },
+          "atlasToSource": {
+            "vertices": 1717,
+            "p95Mm": 2.622151175107927,
+            "maximumMm": 3.7104220682948
+          }
+        }
+      ]
+    }
+  ],
+  "measure": [
+    {
+      "mode": "current-male-borrowed",
+      "sampledOutside": 0,
+      "sampledAmbiguous": 0,
+      "maxOutsideMm": 0,
+      "fullVertices": 19489,
+      "fullOutside": 0,
+      "fullAmbiguous": 0,
+      "fullMaximumOutsideMm": 0,
+      "respiratorySurfacePairs": 51,
+      "rows": [
+        {
+          "side": "left",
+          "number": 1,
+          "currentId": "BM0025",
+          "vertices": 507,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 507,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 507,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0743"
+          ],
+          "cartilageRelation": {
+            "id": "BM0034",
+            "ribToCartilageMinimumMm": 0.011859606370049134,
+            "cartilageToRibMinimumMm": 0.021657914936468133,
+            "crossing": true
+          }
+        },
+        {
+          "side": "left",
+          "number": 2,
+          "currentId": "BM0026",
+          "vertices": 656,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 656,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 656,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0744"
+          ],
+          "cartilageRelation": {
+            "id": "BM0035",
+            "ribToCartilageMinimumMm": 0.016668401204796297,
+            "cartilageToRibMinimumMm": 0.007801977826817323,
+            "crossing": true
+          }
+        },
+        {
+          "side": "left",
+          "number": 3,
+          "currentId": "BM0027",
+          "vertices": 802,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 802,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 802,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0744"
+          ],
+          "cartilageRelation": {
+            "id": "BM0036",
+            "ribToCartilageMinimumMm": 0.08304947440850387,
+            "cartilageToRibMinimumMm": 0.013120641310140364,
+            "crossing": true
+          }
+        },
+        {
+          "side": "left",
+          "number": 4,
+          "currentId": "BM0028",
+          "vertices": 981,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 981,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 981,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0742",
+            "HRAF0744",
+            "HRAF0745",
+            "HRAF0746"
+          ],
+          "cartilageRelation": {
+            "id": "BM0037",
+            "ribToCartilageMinimumMm": 0.0013830338471243838,
+            "cartilageToRibMinimumMm": 0.025767644260653727,
+            "crossing": true
+          }
+        },
+        {
+          "side": "left",
+          "number": 5,
+          "currentId": "BM0029",
+          "vertices": 1095,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 1095,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 1095,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0741",
+            "HRAF0745",
+            "HRAF0746",
+            "HRAF0748",
+            "HRAF0750"
+          ],
+          "cartilageRelation": {
+            "id": "BM0038",
+            "ribToCartilageMinimumMm": 0.12278969104280327,
+            "cartilageToRibMinimumMm": 0.04190187098681472,
+            "crossing": true
+          }
+        },
+        {
+          "side": "left",
+          "number": 6,
+          "currentId": "BM0030",
+          "vertices": 1147,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 1147,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 1147,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0746",
+            "HRAF0747",
+            "HRAF0748",
+            "HRAF0749",
+            "HRAF0750"
+          ],
+          "cartilageRelation": {
+            "id": "BM0039",
+            "ribToCartilageMinimumMm": 0.03431693552015594,
+            "cartilageToRibMinimumMm": 0.008845064738324512,
+            "crossing": true
+          }
+        },
+        {
+          "side": "left",
+          "number": 7,
+          "currentId": "BM0031",
+          "vertices": 1122,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 1122,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 1122,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0747",
+            "HRAF0748",
+            "HRAF0749"
+          ],
+          "cartilageRelation": {
+            "id": "BM0040",
+            "ribToCartilageMinimumMm": 0.012573581030739158,
+            "cartilageToRibMinimumMm": 0.009243446294116607,
+            "crossing": true
+          }
+        },
+        {
+          "side": "left",
+          "number": 8,
+          "currentId": "BM0032",
+          "vertices": 936,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 936,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 936,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0747",
+            "HRAF0749"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "left",
+          "number": 9,
+          "currentId": "BM0033",
+          "vertices": 843,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 843,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 843,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0747"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "left",
+          "number": 10,
+          "currentId": "BM0022",
+          "vertices": 754,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 754,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 754,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0747"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "left",
+          "number": 11,
+          "currentId": "BM0023",
+          "vertices": 537,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 537,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 537,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [],
+          "cartilageRelation": null
+        },
+        {
+          "side": "left",
+          "number": 12,
+          "currentId": "BM0024",
+          "vertices": 367,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 367,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 367,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 1,
+          "currentId": "BM0045",
+          "vertices": 519,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 519,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 519,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0763"
+          ],
+          "cartilageRelation": {
+            "id": "BM0044",
+            "ribToCartilageMinimumMm": 0.01785189880318107,
+            "cartilageToRibMinimumMm": 0.020524968113385923,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 2,
+          "currentId": "BM0047",
+          "vertices": 648,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 648,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 648,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0763"
+          ],
+          "cartilageRelation": {
+            "id": "BM0046",
+            "ribToCartilageMinimumMm": 0.026955987149079094,
+            "cartilageToRibMinimumMm": 0.003594460767543695,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 3,
+          "currentId": "BM0049",
+          "vertices": 800,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 800,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 800,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0762",
+            "HRAF0764"
+          ],
+          "cartilageRelation": {
+            "id": "BM0048",
+            "ribToCartilageMinimumMm": 0.012797373263829862,
+            "cartilageToRibMinimumMm": 0.017365454095314876,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 4,
+          "currentId": "BM0051",
+          "vertices": 979,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 979,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 979,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0757",
+            "HRAF0759",
+            "HRAF0760",
+            "HRAF0762",
+            "HRAF0764"
+          ],
+          "cartilageRelation": {
+            "id": "BM0050",
+            "ribToCartilageMinimumMm": 0.004544823495870987,
+            "cartilageToRibMinimumMm": 0.003362129278540104,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 5,
+          "currentId": "BM0053",
+          "vertices": 1093,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 1093,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 1093,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0755",
+            "HRAF0757",
+            "HRAF0759",
+            "HRAF0760"
+          ],
+          "cartilageRelation": {
+            "id": "BM0052",
+            "ribToCartilageMinimumMm": 0.00033217594975547325,
+            "cartilageToRibMinimumMm": 0.00360861151022579,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 6,
+          "currentId": "BM0055",
+          "vertices": 1147,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 1147,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 1147,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0754",
+            "HRAF0755",
+            "HRAF0756",
+            "HRAF0757",
+            "HRAF0759",
+            "HRAF0760"
+          ],
+          "cartilageRelation": {
+            "id": "BM0054",
+            "ribToCartilageMinimumMm": 0.0030618016636409402,
+            "cartilageToRibMinimumMm": 0.0073451639919758826,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 7,
+          "currentId": "BM0057",
+          "vertices": 1122,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 1122,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 1122,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0754",
+            "HRAF0755",
+            "HRAF0756",
+            "HRAF0757"
+          ],
+          "cartilageRelation": {
+            "id": "BM0056",
+            "ribToCartilageMinimumMm": 0.0016719734134292522,
+            "cartilageToRibMinimumMm": 0.0009823720333521613,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 8,
+          "currentId": "BM0058",
+          "vertices": 928,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 928,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 928,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0754",
+            "HRAF0756"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 9,
+          "currentId": "BM0059",
+          "vertices": 842,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 842,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 842,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0754"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 10,
+          "currentId": "BM0041",
+          "vertices": 754,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 754,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 754,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0754"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 11,
+          "currentId": "BM0042",
+          "vertices": 538,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 538,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 538,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 12,
+          "currentId": "BM0043",
+          "vertices": 372,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 372,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 372,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [],
+          "cartilageRelation": null
+        }
+      ]
+    },
+    {
+      "mode": "rigid",
+      "sampledOutside": 0,
+      "sampledAmbiguous": 0,
+      "maxOutsideMm": 0,
+      "fullVertices": 402418,
+      "fullOutside": 0,
+      "fullAmbiguous": 0,
+      "fullMaximumOutsideMm": 0,
+      "respiratorySurfacePairs": 53,
+      "rows": [
+        {
+          "side": "left",
+          "number": 1,
+          "currentId": "BM0025",
+          "vertices": 13220,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 13220,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 13220,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0742",
+            "HRAF0743"
+          ],
+          "cartilageRelation": {
+            "id": "BM0034",
+            "ribToCartilageMinimumMm": 2.4702797841533757,
+            "cartilageToRibMinimumMm": 2.5189872676451905,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 2,
+          "currentId": "BM0026",
+          "vertices": 16270,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 16270,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 16270,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0743",
+            "HRAF0744"
+          ],
+          "cartilageRelation": {
+            "id": "BM0035",
+            "ribToCartilageMinimumMm": 4.652773860230018,
+            "cartilageToRibMinimumMm": 4.651091058857945,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 3,
+          "currentId": "BM0027",
+          "vertices": 17712,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 17712,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 17712,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0741",
+            "HRAF0742"
+          ],
+          "cartilageRelation": {
+            "id": "BM0036",
+            "ribToCartilageMinimumMm": 17.906604987299435,
+            "cartilageToRibMinimumMm": 17.906604987299435,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 4,
+          "currentId": "BM0028",
+          "vertices": 18642,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 18642,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 18642,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0741",
+            "HRAF0745"
+          ],
+          "cartilageRelation": {
+            "id": "BM0037",
+            "ribToCartilageMinimumMm": 22.901192496495202,
+            "cartilageToRibMinimumMm": 22.901192496495202,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 5,
+          "currentId": "BM0029",
+          "vertices": 19698,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 19698,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 19698,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0741",
+            "HRAF0742",
+            "HRAF0745"
+          ],
+          "cartilageRelation": {
+            "id": "BM0038",
+            "ribToCartilageMinimumMm": 17.916937573625724,
+            "cartilageToRibMinimumMm": 17.916937573625724,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 6,
+          "currentId": "BM0030",
+          "vertices": 19600,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 19600,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 19600,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0741",
+            "HRAF0742"
+          ],
+          "cartilageRelation": {
+            "id": "BM0039",
+            "ribToCartilageMinimumMm": 23.27779184518074,
+            "cartilageToRibMinimumMm": 23.29377609581575,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 7,
+          "currentId": "BM0031",
+          "vertices": 21152,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 21152,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 21152,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0748"
+          ],
+          "cartilageRelation": {
+            "id": "BM0040",
+            "ribToCartilageMinimumMm": 15.552549512819974,
+            "cartilageToRibMinimumMm": 15.552758733398335,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 8,
+          "currentId": "BM0032",
+          "vertices": 20490,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 20490,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 20490,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0747",
+            "HRAF0748",
+            "HRAF0749"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "left",
+          "number": 9,
+          "currentId": "BM0033",
+          "vertices": 18694,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 18694,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 18694,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0747",
+            "HRAF0749"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "left",
+          "number": 10,
+          "currentId": "BM0022",
+          "vertices": 16468,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 16468,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 16468,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0747"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "left",
+          "number": 11,
+          "currentId": "BM0023",
+          "vertices": 12140,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 12140,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 12140,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [],
+          "cartilageRelation": null
+        },
+        {
+          "side": "left",
+          "number": 12,
+          "currentId": "BM0024",
+          "vertices": 7246,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 7246,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 7246,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 1,
+          "currentId": "BM0045",
+          "vertices": 14382,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 14382,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 14382,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0762",
+            "HRAF0763"
+          ],
+          "cartilageRelation": {
+            "id": "BM0044",
+            "ribToCartilageMinimumMm": 0.00352627562738238,
+            "cartilageToRibMinimumMm": 0.024545097513520516,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 2,
+          "currentId": "BM0047",
+          "vertices": 15330,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 15330,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 15330,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0762",
+            "HRAF0763",
+            "HRAF0764"
+          ],
+          "cartilageRelation": {
+            "id": "BM0046",
+            "ribToCartilageMinimumMm": 0.005204375350372372,
+            "cartilageToRibMinimumMm": 0.014494281839961872,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 3,
+          "currentId": "BM0049",
+          "vertices": 16996,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 16996,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 16996,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0757",
+            "HRAF0762",
+            "HRAF0764"
+          ],
+          "cartilageRelation": {
+            "id": "BM0048",
+            "ribToCartilageMinimumMm": 4.815224942158826,
+            "cartilageToRibMinimumMm": 4.833141124033855,
+            "crossing": false
+          }
+        },
+        {
+          "side": "right",
+          "number": 4,
+          "currentId": "BM0051",
+          "vertices": 18188,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 18188,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 18188,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0757",
+            "HRAF0759",
+            "HRAF0760",
+            "HRAF0762",
+            "HRAF0764"
+          ],
+          "cartilageRelation": {
+            "id": "BM0050",
+            "ribToCartilageMinimumMm": 11.587570955077767,
+            "cartilageToRibMinimumMm": 11.589463846003309,
+            "crossing": false
+          }
+        },
+        {
+          "side": "right",
+          "number": 5,
+          "currentId": "BM0053",
+          "vertices": 19378,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 19378,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 19378,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0755",
+            "HRAF0757",
+            "HRAF0760",
+            "HRAF0762",
+            "HRAF0764"
+          ],
+          "cartilageRelation": {
+            "id": "BM0052",
+            "ribToCartilageMinimumMm": 9.51519514253607,
+            "cartilageToRibMinimumMm": 9.51514539269923,
+            "crossing": false
+          }
+        },
+        {
+          "side": "right",
+          "number": 6,
+          "currentId": "BM0055",
+          "vertices": 20036,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 20036,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 20036,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0755",
+            "HRAF0756",
+            "HRAF0757",
+            "HRAF0759",
+            "HRAF0760"
+          ],
+          "cartilageRelation": {
+            "id": "BM0054",
+            "ribToCartilageMinimumMm": 6.998654363930511,
+            "cartilageToRibMinimumMm": 7.0173759100434925,
+            "crossing": false
+          }
+        },
+        {
+          "side": "right",
+          "number": 7,
+          "currentId": "BM0057",
+          "vertices": 21414,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 21414,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 21414,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0754",
+            "HRAF0755",
+            "HRAF0756",
+            "HRAF0757"
+          ],
+          "cartilageRelation": {
+            "id": "BM0056",
+            "ribToCartilageMinimumMm": 0.0016160738544806193,
+            "cartilageToRibMinimumMm": 0.06084851368804642,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 8,
+          "currentId": "BM0058",
+          "vertices": 19978,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 19978,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 19978,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0754",
+            "HRAF0755",
+            "HRAF0756"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 9,
+          "currentId": "BM0059",
+          "vertices": 18842,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 18842,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 18842,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0754",
+            "HRAF0756"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 10,
+          "currentId": "BM0041",
+          "vertices": 14694,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 14694,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 14694,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [
+            "HRAF0754"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 11,
+          "currentId": "BM0042",
+          "vertices": 12722,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 12722,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 12722,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 12,
+          "currentId": "BM0043",
+          "vertices": 9126,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": {
+            "inside": 9126,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0,
+            "vertices": 9126,
+            "maxOutsideMm": 0
+          },
+          "intersectingRespiratoryIds": [],
+          "cartilageRelation": null
+        }
+      ]
+    },
+    {
+      "mode": "similarity",
+      "sampledOutside": 0,
+      "sampledAmbiguous": 0,
+      "maxOutsideMm": 0,
+      "fullVertices": null,
+      "fullOutside": null,
+      "fullAmbiguous": null,
+      "fullMaximumOutsideMm": null,
+      "respiratorySurfacePairs": 56,
+      "rows": [
+        {
+          "side": "left",
+          "number": 1,
+          "currentId": "BM0025",
+          "vertices": 13220,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0742",
+            "HRAF0743"
+          ],
+          "cartilageRelation": {
+            "id": "BM0034",
+            "ribToCartilageMinimumMm": 1.3957875622852245,
+            "cartilageToRibMinimumMm": 1.4305351716686274,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 2,
+          "currentId": "BM0026",
+          "vertices": 16270,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0743",
+            "HRAF0744"
+          ],
+          "cartilageRelation": {
+            "id": "BM0035",
+            "ribToCartilageMinimumMm": 4.474057096735061,
+            "cartilageToRibMinimumMm": 4.473726324477166,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 3,
+          "currentId": "BM0027",
+          "vertices": 17712,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0741",
+            "HRAF0742",
+            "HRAF0744"
+          ],
+          "cartilageRelation": {
+            "id": "BM0036",
+            "ribToCartilageMinimumMm": 17.881941483567683,
+            "cartilageToRibMinimumMm": 17.89552959796376,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 4,
+          "currentId": "BM0028",
+          "vertices": 18642,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0741",
+            "HRAF0742",
+            "HRAF0745"
+          ],
+          "cartilageRelation": {
+            "id": "BM0037",
+            "ribToCartilageMinimumMm": 22.72948935247051,
+            "cartilageToRibMinimumMm": 22.731278254842742,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 5,
+          "currentId": "BM0029",
+          "vertices": 19698,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0741",
+            "HRAF0742",
+            "HRAF0745"
+          ],
+          "cartilageRelation": {
+            "id": "BM0038",
+            "ribToCartilageMinimumMm": 17.883872678173002,
+            "cartilageToRibMinimumMm": 17.883620956479827,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 6,
+          "currentId": "BM0030",
+          "vertices": 19600,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0741",
+            "HRAF0742"
+          ],
+          "cartilageRelation": {
+            "id": "BM0039",
+            "ribToCartilageMinimumMm": 23.294134313090247,
+            "cartilageToRibMinimumMm": 23.294134313090247,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 7,
+          "currentId": "BM0031",
+          "vertices": 21152,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0748",
+            "HRAF0749"
+          ],
+          "cartilageRelation": {
+            "id": "BM0040",
+            "ribToCartilageMinimumMm": 15.507344640648464,
+            "cartilageToRibMinimumMm": 15.507344640648464,
+            "crossing": false
+          }
+        },
+        {
+          "side": "left",
+          "number": 8,
+          "currentId": "BM0032",
+          "vertices": 20490,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0747",
+            "HRAF0748",
+            "HRAF0749"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "left",
+          "number": 9,
+          "currentId": "BM0033",
+          "vertices": 18694,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0747",
+            "HRAF0749"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "left",
+          "number": 10,
+          "currentId": "BM0022",
+          "vertices": 16468,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0747"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "left",
+          "number": 11,
+          "currentId": "BM0023",
+          "vertices": 12140,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [],
+          "cartilageRelation": null
+        },
+        {
+          "side": "left",
+          "number": 12,
+          "currentId": "BM0024",
+          "vertices": 7246,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 1,
+          "currentId": "BM0045",
+          "vertices": 14382,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0762",
+            "HRAF0763"
+          ],
+          "cartilageRelation": {
+            "id": "BM0044",
+            "ribToCartilageMinimumMm": 0.00035235744492816053,
+            "cartilageToRibMinimumMm": 0.015479789079472927,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 2,
+          "currentId": "BM0047",
+          "vertices": 15330,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0762",
+            "HRAF0763",
+            "HRAF0764"
+          ],
+          "cartilageRelation": {
+            "id": "BM0046",
+            "ribToCartilageMinimumMm": 0.011828571509895303,
+            "cartilageToRibMinimumMm": 0.040470337961319616,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 3,
+          "currentId": "BM0049",
+          "vertices": 16996,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0757",
+            "HRAF0762",
+            "HRAF0764"
+          ],
+          "cartilageRelation": {
+            "id": "BM0048",
+            "ribToCartilageMinimumMm": 4.982839689565448,
+            "cartilageToRibMinimumMm": 4.982839689565448,
+            "crossing": false
+          }
+        },
+        {
+          "side": "right",
+          "number": 4,
+          "currentId": "BM0051",
+          "vertices": 18188,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0757",
+            "HRAF0759",
+            "HRAF0760",
+            "HRAF0762",
+            "HRAF0764"
+          ],
+          "cartilageRelation": {
+            "id": "BM0050",
+            "ribToCartilageMinimumMm": 11.805565791474612,
+            "cartilageToRibMinimumMm": 11.80556131058454,
+            "crossing": false
+          }
+        },
+        {
+          "side": "right",
+          "number": 5,
+          "currentId": "BM0053",
+          "vertices": 19378,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0755",
+            "HRAF0757",
+            "HRAF0760",
+            "HRAF0762",
+            "HRAF0764"
+          ],
+          "cartilageRelation": {
+            "id": "BM0052",
+            "ribToCartilageMinimumMm": 10.374929922865103,
+            "cartilageToRibMinimumMm": 10.374929922865103,
+            "crossing": false
+          }
+        },
+        {
+          "side": "right",
+          "number": 6,
+          "currentId": "BM0055",
+          "vertices": 20036,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0755",
+            "HRAF0756",
+            "HRAF0757",
+            "HRAF0759",
+            "HRAF0760"
+          ],
+          "cartilageRelation": {
+            "id": "BM0054",
+            "ribToCartilageMinimumMm": 7.997160521006233,
+            "cartilageToRibMinimumMm": 7.996722197029634,
+            "crossing": false
+          }
+        },
+        {
+          "side": "right",
+          "number": 7,
+          "currentId": "BM0057",
+          "vertices": 21414,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0754",
+            "HRAF0755",
+            "HRAF0756",
+            "HRAF0757"
+          ],
+          "cartilageRelation": {
+            "id": "BM0056",
+            "ribToCartilageMinimumMm": 0.0008576940559961333,
+            "cartilageToRibMinimumMm": 0.24470096050165102,
+            "crossing": true
+          }
+        },
+        {
+          "side": "right",
+          "number": 8,
+          "currentId": "BM0058",
+          "vertices": 19978,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0754",
+            "HRAF0755",
+            "HRAF0756"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 9,
+          "currentId": "BM0059",
+          "vertices": 18842,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0754",
+            "HRAF0756"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 10,
+          "currentId": "BM0041",
+          "vertices": 14694,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [
+            "HRAF0754"
+          ],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 11,
+          "currentId": "BM0042",
+          "vertices": 12722,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [],
+          "cartilageRelation": null
+        },
+        {
+          "side": "right",
+          "number": 12,
+          "currentId": "BM0043",
+          "vertices": 9126,
+          "sampleVertices": 256,
+          "skin": {
+            "inside": 256,
+            "outside": 0,
+            "surface-band": 0,
+            "ambiguous": 0
+          },
+          "fullSkin": null,
+          "intersectingRespiratoryIds": [],
+          "cartilageRelation": null
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Centres are bounding-box anchors, not validated anatomical landmarks; held-out centre fit does not approve rib pose.",
+    "A shared rigid/similarity map preserves source rib relationships but HRA skin and lung may differ in segmentation and posture.",
+    "Sample screening uses 256 index-spaced referenced vertices per rib; current and rigid candidate also check every referenced rib vertex, not triangle interiors.",
+    "Current simplified male-derived ribs and high-resolution BoneHub female ribs have different vertex density; raw sample counts and surface-pair counts are screening only.",
+    "A lung/rib surface intersection is not automatically invalid contact or a clinical penetration measurement.",
+    "Source rib cartilage is missing. Nearest rib/cartilage referenced-vertex distances screen existing male-derived cartilage continuity, not a complete surface-to-surface or joint-distance measurement.",
+    "No new runtime mesh, anatomical label or coordinate is created here."
+  ],
+  "files": [
+    {
+      "path": "docs/anatomy-alignment/bonehub-female-receipt.json",
+      "sha256": "4146adce0c4d8389b23bb4a4eb30024912c92f8cccd9e56995cbb9a4b935cd02"
+    },
+    {
+      "path": "docs/anatomy-alignment/bonehub-female-inventory.json",
+      "sha256": "3e82a5e58d9c3a90e55a83a236e20fb82424a9796a7a8f7fe0f2ffbadbcad4c4"
+    },
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": "data/female-atlas-structures.json",
+      "sha256": "4affd375a4413c840060b480668d6a4efd9a5102be3a70551e831597daf34035"
+    },
+    {
+      "path": "data/catalog/female-atlas-source.json",
+      "sha256": "693b023b8246804e5f74235fbf66cd6cb7a4890cbdf0ec33b0de1d64589d3a44"
+    },
+    {
+      "path": "public/models/female/female-0.bin.gz",
+      "sha256": "d6a62cac798f37fef4ee7324941e7c8f7aac930f8cd20b07481b63848e34100f"
+    },
+    {
+      "path": "public/models/female/female-1.bin.gz",
+      "sha256": "ac7ae1dcfb785c7be2c13a7271962f19a8594bbe1df4ab96a879fc3cba868f44"
+    },
+    {
+      "path": "public/models/female/female-2.bin.gz",
+      "sha256": "fc5e7aae98d73cb9d026e434a85240e52089dcb3fa599943e3a2c49f88e91986"
+    },
+    {
+      "path": "public/models/female/female-3.bin.gz",
+      "sha256": "5ac055a60dd1133e6907ec06186d818fe1c54922f438ebea12ec1e28b10f8bec"
+    },
+    {
+      "path": "public/models/female/female-4.bin.gz",
+      "sha256": "27584c9630aae289f80a2755bfc141947a81e1aee4528e5562235278873cc60d"
+    },
+    {
+      "path": "public/models/female/female-5.bin.gz",
+      "sha256": "5cd33bd9cfed62f1ab970fb5e37cfcff01e0ee1ac3ca44c3bd1af6c2c10bee7a"
+    },
+    {
+      "path": "public/models/female/female-6.bin.gz",
+      "sha256": "e5642de9c1546fff0042545091827482f1e3cb3359a5c19713e6fea87fa0051e"
+    },
+    {
+      "path": "public/models/female/female-7.bin.gz",
+      "sha256": "9f278f981dc87cc9869d90837148195a3aaa71ddc9aeaba0e749cc147bd15736"
+    },
+    {
+      "path": "public/models/female/female-8.bin.gz",
+      "sha256": "ba7f483a7b4cebcb823ca6bbc25cd23ffcbdf23cd3ad813e22c9b608bd4c59ed"
+    },
+    {
+      "path": "public/models/female/female-9.bin.gz",
+      "sha256": "5e84b7e67db7c49aa7167bf6daa960381e53bef76a18a85426d2ee4c7669a151"
+    },
+    {
+      "path": "public/models/female/female-10.bin.gz",
+      "sha256": "2d2c7523270f889f68e6951adb0f784b0157eaabfd8730cd22f0d76eaa28d31a"
+    },
+    {
+      "path": "public/models/female/female-11.bin.gz",
+      "sha256": "3f430321f6c3962d8c18c0385718e005f37451a76782bf631898091c433b4d6e"
+    },
+    {
+      "path": "public/models/female/female-12.bin.gz",
+      "sha256": "e6252d18e17547da248c4eb24dba21d6dd2dd483708371a639c20aa762e29253"
+    },
+    {
+      "path": "public/models/female/female-13.bin.gz",
+      "sha256": "b1639a6cc6a9f5066681b26550e693f1c0010c1263f0f9b00d78a216bafcb8e8"
+    },
+    {
+      "path": "public/models/female/female-14.bin.gz",
+      "sha256": "f7fe49c1b2d4858e37ef14caa17563f923b57d111f972c4f7c1d0531b8c07d1d"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T1.stl",
+      "sha256": "7ce598e2ec43c4a662d3146741f247471ac057acb3959d4be22ca83c3e33fe15"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T2.stl",
+      "sha256": "85805affdec76150347b5686ea2b99d0d5cea07ebaa3a30f01ea4312928d2b2d"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T3.stl",
+      "sha256": "fc62b0795b538bb368574cb496b88f64122e009058a5c126355e650032e3ad3b"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T4.stl",
+      "sha256": "7d37a54c8e0c08f4692e9fe8a9e9380bac872693074a04ddca7388626a9b8075"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T5.stl",
+      "sha256": "9d459d13e5ea54c2871d1796b6e1dce1dff8d860a0bd7e4850e976e69d237f84"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T6.stl",
+      "sha256": "5e7ba74cf452806727a80162a536da133b9c922ee3854d3708f2798afee565ab"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T7.stl",
+      "sha256": "d189cd005da68a09b2d095c5933b2301aafc664300bd2b9eb414b9ee31066473"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T8.stl",
+      "sha256": "571a6ce962b45ea2fba56dd3c582228ca043963c15e02c7dff9a2c92f82ebf62"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T9.stl",
+      "sha256": "9b6c3c5a8c9e43996e2c0bf181e0897ce5dc8ef238ed38598858806180c082ed"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T10.stl",
+      "sha256": "b9e3ae571ffbdf0f2ed26795a4163d9c8f82ffd8cd8ade00bdb90f94143cddfd"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T11.stl",
+      "sha256": "53f57a9dc8ff69bb40c627d4fbe7433454e72a01d2c2a065d241a46537d7a3e1"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/SPINAL_COLUMN/VERTEBRA_T12.stl",
+      "sha256": "5ead35770cfd1cfdba3207315c8af640fb48630eb067e6fb47f09e54443c3c8f"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_1_LEFT.stl",
+      "sha256": "d7ded36f9b97192ddb095d4af95b1e360fb96d9179989954a54a78839b85c094"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_2_LEFT.stl",
+      "sha256": "34139f952f62ea72d638f9b9ace2ab8d53e0ba1bd53fe6aa5c08fecfbfba3199"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_3_LEFT.stl",
+      "sha256": "3ff40c96475e4588af439bc98b9775e5554a747624562a613f99da2cb8cf969a"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_4_LEFT.stl",
+      "sha256": "b1247d97d64b19fe6f84b18cbf9d1ed01cb43344d0ad7253d8bd4d1067b4e112"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_5_LEFT.stl",
+      "sha256": "89fd3da4ce2bae0eeebaa5f66a63b31974ab5e91df264b0c53c0d765b5ae4031"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_6_LEFT.stl",
+      "sha256": "a4616ed649e5cd548bbad43461b435fc27fa017cd4892cd773da07ed5e107532"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_7_LEFT.stl",
+      "sha256": "31fb748a498754579ad00058bfb2527c69d293befa077f565815c21c06269184"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_8_LEFT.stl",
+      "sha256": "406cd2042ddb0135f815f64756db47e9b2964d4786b6fe1cb624647bf8a82be7"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_9_LEFT.stl",
+      "sha256": "9ecff2bcad56c682a97f1c9d238550099fc105bccc1f7e002be7124e922117e2"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_10_LEFT.stl",
+      "sha256": "c20d9de58952891d01f01867b360b3a2b54f16f8505ca23e472d202055985755"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_11_LEFT.stl",
+      "sha256": "c6b354984eda5e7933eec690b661b4e7e3d04d693da32a328b60bc24b4f3a324"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_12_LEFT.stl",
+      "sha256": "729e133e437eb15e90b58dfc582ac4e13f7432b57029fc6756f4492c8de43375"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_1_RIGHT.stl",
+      "sha256": "78b274915e3cb0aedabf916552b2e35ea0392f9b20ee2bcd99f703d5d5c21823"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_2_RIGHT.stl",
+      "sha256": "4a938b074321ac87bbd216d53c85aed7c99c5b2d5641c8d8ff8bff9f33c52a3d"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_3_RIGHT.stl",
+      "sha256": "0ec17eaa0600b383b7b313454909a14c599b05ca083a1401c1b1402f53fc6a27"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_4_RIGHT.stl",
+      "sha256": "7fa72e530e830975db16e7655ce8f293878ec2b65e1105cefeb1e3569d4663cc"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_5_RIGHT.stl",
+      "sha256": "07a520e8724b3a3e3d51d9abc092fc0ec69a6e8cb25f7b785011537925a9da96"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_6_RIGHT.stl",
+      "sha256": "8aa4bf1aa772ca37327def0dca22c78e94c5ae7f74a9a5b9f253cb4410347646"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_7_RIGHT.stl",
+      "sha256": "e7fc7b8e365586b2feabcb007873f9a1b3f5f1d48e5627e858a87eea22d5180d"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_8_RIGHT.stl",
+      "sha256": "92bcd56e58471e6bede8559ef6b143c8289fe4da60504bf1efe9cb0a14e4fe7a"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_9_RIGHT.stl",
+      "sha256": "8f3b621a81dd49244c67f05b22bd88c2b030ab7d4d4e2cdb51d21ec44d7f1f6f"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_10_RIGHT.stl",
+      "sha256": "eaa70da63ff816ff65ad0a4f297bb1f05e4711dfea80f3ff440b8a1e5a566ef4"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_11_RIGHT.stl",
+      "sha256": "f8d1ca4fbc7ece390c23167475ca9573015988f355572ee29bff476128f560d2"
+    },
+    {
+      "path": ".cache/bonehub/ac8de2b38f5ae1a0996053ca0639dd6ae43358f1/visible_human_3d_models/CT/Mesh/02_Female/THORAX/RIB_12_RIGHT.stl",
+      "sha256": "d408d07bf5d3a0d7e59a20a50c789ac9e4fdff27cafec03bd7b7006cb1408b95"
+    },
+    {
+      "path": "scripts/audit-bonehub-thorax-candidate.mjs",
+      "sha256": "aa5d299a2f14f6c96255deb1c2265a09ae3ac69c221c48b0b77a99f5bb1cf5cd"
+    },
+    {
+      "path": "scripts/lib/exact-position-components.mjs",
+      "sha256": "8e9aee660f8edf3f357b9ac9156c47d532ac6f2dc4679c9e6770ad2d51f805cd"
+    },
+    {
+      "path": "scripts/lib/rigid-fit.mjs",
+      "sha256": "ae01c3b322efc54dcf1d6194bcdd8af1fde3183f0d0c5ac6e08bd67098a7ff77"
+    },
+    {
+      "path": "scripts/lib/similarity-fit.mjs",
+      "sha256": "72472e690233c9575af2191adb9cd22d99a8dd8dccf254197709daf061b45042"
+    },
+    {
+      "path": "scripts/lib/surface-containment.mjs",
+      "sha256": "d25ad8681862f41fed03a0557fd6ddfbc71e8209a4d16263ecfcba944629b50e"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "1219a1ffb24a28581d4dcbad993ca955e408799ef9fc10395ae1ee91c8493c29"
+    }
+  ]
+}

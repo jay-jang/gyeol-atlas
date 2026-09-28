@@ -1,0 +1,84 @@
+{
+  "status": "TWO ORIGINAL SOURCE PAIRS CROSS; NOT A CLINICAL POSITION APPROVAL",
+  "sourcePath": ".cache/neural-bone/hra-united-female-v1.10.glb",
+  "sourceSha256": "95f0c3d2f918582608692ca1139e8bdb18c147a16470e9ee9af8b276bd77c422",
+  "sourceTranslation": [
+    0.006095477878158062,
+    0.792612790744339,
+    -0.0067982234284331144
+  ],
+  "limitations": [
+    "Only two selected native HRA pairs were reread; this is not an independent audit of all 203 current pairs.",
+    "Original high-resolution surfaces and simplified packed surfaces can have different crossing counts.",
+    "A triangle crossing does not measure penetration depth or prove an invalid attachment.",
+    "Borrowed male ribs and skull are not members of the original native HRA GLB pair check."
+  ],
+  "rows": [
+    {
+      "organId": "HRAF0754",
+      "organName": "Right posterior basal bronchopulmonary segment",
+      "boneId": "HRAF0837",
+      "boneName": "Thoracic vertebra 7",
+      "sourceNodes": [
+        "VH_F_right_posterior_basal_bronchopulmonary_segment",
+        "VH_F_thoracic_vertebra_7"
+      ],
+      "sourceNodeIndices": [
+        912,
+        1024
+      ],
+      "sourceVertices": [
+        852,
+        7928
+      ],
+      "intersectingTrianglePairs": 139,
+      "strictPlaneStraddlingPairs": 139,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 0.7045533298371156
+    },
+    {
+      "organId": "HRAF0421",
+      "organName": "Right cardinal ligament of uterus",
+      "boneId": "HRAF0827",
+      "boneName": "Ilium compact bone (right)",
+      "sourceNodes": [
+        "VH_F_right_cardinal_ligament_of_uterus",
+        "VH_F_ilium_compact_bone_R"
+      ],
+      "sourceNodeIndices": [
+        459,
+        1011
+      ],
+      "sourceVertices": [
+        2030,
+        5907
+      ],
+      "intersectingTrianglePairs": 70,
+      "strictPlaneStraddlingPairs": 70,
+      "toleranceMm": 0.001,
+      "maxTrianglePlaneStraddleExtentMm": 1.12780235013548
+    }
+  ],
+  "files": [
+    {
+      "path": "public/models/female/atlas-female.json",
+      "sha256": "349ad9085901db2cced179d467542271289ee0b259414a78814402d5ac374d2f"
+    },
+    {
+      "path": "data/catalog/female-source-restoration.json",
+      "sha256": "6b4776f1c3d395b584cf72568fafe8063924455e5bf4e28c2882399495ca5f79"
+    },
+    {
+      "path": "scripts/verify-female-organ-bone-source.mjs",
+      "sha256": "b29b8106d492d350d8d216fdf32341d9464384f775e7c566082eb65ea591c2da"
+    },
+    {
+      "path": "scripts/lib/official-meshes.mjs",
+      "sha256": "0ef3eb94746c8a67a4e257459a0eb3a0cc718706f7ce3f2eda994a0aa603cb39"
+    },
+    {
+      "path": "scripts/lib/triangle-crossings.mjs",
+      "sha256": "a55dd923c032c76591a7f2aa1af2863fe9e24bf0adb0ee6eb4aad5388238d512"
+    }
+  ]
+}
