@@ -99,6 +99,49 @@ test("leaving an organ detail restores the prior half-percent peel, region and p
     }
   }
 });
+test("clearing an ordinary structure selected during peeling restores the exact prior scene", () => {
+  for (const sex of ["male", "female"]) {
+    let s = viewReducer(initialView("KI3"), { type: "sex", value: sex });
+    s = viewReducer(s, { type: "anatomy-region", value: "lower-body" });
+    s = viewReducer(s, { type: "dissection", value: 50.5 });
+    s = viewReducer(s, { type: "markers", value: "hidden" });
+    s = viewReducer(s, { type: "camera", value: { position: [0, 1, 2], target: [0, 1, 0] } });
+    const before = s;
+    const id = sex === "male" ? "FMA7148" : "HRAF0435";
+    s = viewReducer(s, { type: "select", layer: "organ", selection: { kind: "structure", ids: [id], name: "장기" } });
+    assert.equal(s.displayMode, "layers"); assert.equal(s.dissection, 66); assert.equal(s.layers.organ, true);
+    s = viewReducer(s, { type: "clear-selection" });
+    for (const key of ["anatomyRegion", "stage", "dissection", "displayMode", "layers", "cutaway", "selectionTarget", "camera", "markers", "alpha", "pointId", "sex"])
+      assert.deepEqual(s[key], before[key], `${sex}/${key}`);
+    assert.equal(s.selection, null);
+  }
+});
+test("ordinary peel selection return survives another selection, detail and saved-session validation", () => {
+  const catalog = [
+    { id: "FMA7148", layer: "organ", sex: "male" },
+    { id: "ZA_nerve_1", layer: "nerve", sex: "male" },
+  ];
+  const before = viewReducer(initialView(), { type: "dissection", value: 50.5 });
+  let selected = viewReducer(before, { type: "select", layer: "organ", selection: { kind: "structure", ids: ["FMA7148"], name: "위" } });
+  assert.equal(selected.selectionReturn.dissection, 50.5);
+  selected = viewReducer(selected, { type: "select", layer: "nerve", selection: { kind: "structure", ids: ["ZA_nerve_1"], name: "신경" } });
+  assert.equal(selected.selectionReturn.dissection, 50.5);
+  selected = restoreView(JSON.stringify(selected), [], catalog);
+  assert.equal(selected.selectionReturn.dissection, 50.5);
+  assert.deepEqual(viewReducer(selected, { type: "clear-selection" }), before);
+  const detail = { id: "nerve", name: "신경 상세", ids: ["ZA_nerve_1"], layers: { ...before.layers, bone: false, nerve: true } };
+  const inside = viewReducer(selected, { type: "detail", detail });
+  assert.equal(inside.selectionReturn, null);
+  assert.equal(inside.detailReturn.dissection, 50.5);
+  assert.deepEqual(viewReducer(inside, { type: "detail-close" }), before);
+  assert.equal(viewReducer(selected, { type: "stage", index: 2 }).selectionReturn, null);
+  assert.equal(viewReducer(selected, { type: "dissection", value: 51 }).selectionReturn, null);
+  assert.equal(viewReducer(selected, { type: "sex", value: "female" }).selectionReturn, null);
+  const invalid = { ...selected, selectionReturn: { ...selected.selectionReturn, layers: { ...selected.selectionReturn.layers, skin: "yes" } } };
+  assert.deepEqual(restoreView(JSON.stringify(invalid), [], catalog), initialView());
+  const invalidPose = { ...selected, selectionReturn: { ...selected.selectionReturn, camera: { position: [0, 0, 0], target: [0, 0, 0] } } };
+  assert.deepEqual(restoreView(JSON.stringify(invalidPose), [], catalog), initialView());
+});
 test("old detail sessions without a return snapshot exit to a safe whole-body view", () => {
   const detail = { id: "heart", name: "심장", ids: ["BP4_FJ2631"], layers: { ...initialView().layers, skin: false, organ: true } };
   let s = viewReducer(initialView(), { type: "detail", detail });

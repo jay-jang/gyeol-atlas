@@ -101,7 +101,11 @@ for(const [sex,id] of [['male','FMA7204'],['female','HRAF0432']] as const)test(`
   await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);await page.locator('.structure-item').click();await ready(page);await closeTool(page);
   await expect(checkbox).not.toBeChecked();
   await page.getByRole('button',{name:'구조 선택 해제',exact:true}).click();await ready(page);
-  const cleared=await inspect(page,url,id);expect(cleared.every(m=>m.opacity===1)).toBe(true);expect(shape(cleared)).toEqual(shape(before));
+  const clearedState=await snapshot(page);
+  expect(clearedState.selection).toBe(null);expect(clearedState.selectionReturn).toBe(null);
+  expect(clearedState.displayMode).toBe('dissection');expect(clearedState.dissection).toBe(0);
+  expect(clearedState.layers.skin).toBe(true);expect(clearedState.layers.organ).toBe(false);
+  const cleared=await inspect(page,url,id);expect(cleared.every(m=>m.opacity===1)).toBe(true);
   expect((await snapshot(page)).alpha).toEqual(saved.alpha);expect(errors).toEqual([]);
   fs.writeFileSync(`docs/anatomy-alignment/selection-context-${sex}-evidence.json`,JSON.stringify({id,solidPixels,ghostPixels,style,overlappingHit:click,ordinaryHit:ordinaryClick,meshes:before},null,2)+'\n');
 });

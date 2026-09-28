@@ -476,8 +476,12 @@ function Scene(props: Props) {
   const executed = useRef(-1);
   const layoutKey = `${size.width}/${size.height}/${observationTop}/${observationBottom}/${observationLeft}/${observationWidth}`;
   const framedLayout = useRef(layoutKey);
-  const viewportKey = `${size.width}/${size.height}`;
+  // Canvas layout can change when a selection card disappears without the
+  // browser viewport changing. Only a real viewport resize merits refitting.
+  const viewportKey = `${window.innerWidth}/${window.innerHeight}`;
   const framedViewport = useRef(viewportKey);
+  const framedSelection = useRef(hasSelection);
+  const framedMobile = useRef(mobile);
   const restoringLayout = useRef(Boolean(props.initialPose));
   const poseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const emitPose = useCallback(() => {
@@ -546,7 +550,16 @@ function Scene(props: Props) {
     const layoutChanged = framedLayout.current !== layoutKey;
     // Removing a selection card also changes layoutKey. It must not refit a
     // regional view during an ordinary layer/peel transition (Q2).
-    const refitLimb = !hasSelection && limbScope && framedViewport.current !== viewportKey;
+    const viewportChanged = framedViewport.current !== viewportKey;
+    const selectionJustCleared = framedSelection.current && !hasSelection;
+    const mobileBreakpointChanged = framedMobile.current !== mobile;
+    framedSelection.current = hasSelection;
+    framedMobile.current = mobile;
+    const refitLimb = !hasSelection && limbScope && viewportChanged;
+    // A desktop overview pose can crop the head/feet after switching to the
+    // mobile layout. Refit only across that layout breakpoint; scrollbar or
+    // selection-card size changes must not disturb a comparison's camera.
+    const refitOverview = !hasSelection && !selectionJustCleared && props.anatomyRegion === "whole" && mobileBreakpointChanged;
     framedViewport.current = viewportKey;
     // Initial restoration already has the user's saved framing. Measuring its
     // card must not overwrite that pose; later resizing/toggling may re-fit.
@@ -556,9 +569,9 @@ function Scene(props: Props) {
     if (!pendingAction && restoringLayout.current && !hasSelection) {
       restoringLayout.current = false; framedLayout.current = layoutKey; return;
     }
-    if (!pendingAction && !refitLimb && (!hasSelection || !layoutChanged)) { framedLayout.current = layoutKey; return; }
+    if (!pendingAction && !refitLimb && !refitOverview && (!hasSelection || !layoutChanged)) { framedLayout.current = layoutKey; return; }
     const detailContext = props.detailIds.length > 0 && !props.isolated;
-    const kind = pendingAction ? action.kind : refitLimb ? "anatomy-region" : props.highlight.length && !props.isolated ? "comparison" : detailContext ? "fit" : "structure";
+    const kind = pendingAction ? action.kind : refitLimb ? "anatomy-region" : refitOverview ? "fit" : props.highlight.length && !props.isolated ? "comparison" : detailContext ? "fit" : "structure";
     const selectionPreset = hasSelection && ["front", "back", "side", "reset"].includes(kind);
     if (kind.startsWith("move-")) {
       translateView(camera, c.target, kind.slice(5) as MoveDirection, 0.12);
@@ -567,7 +580,10 @@ function Scene(props: Props) {
         .sub(c.target)
         .multiplyScalar(kind === "zoomIn" ? 0.8 : 1.25)
         .add(c.target);
-    else if (kind === "restore") {
+    else if (kind === "pose" && action.pose) {
+      camera.position.fromArray(action.pose.position);
+      c.target.fromArray(action.pose.target);
+    } else if (kind === "restore") {
       if (initialPose.current) {
         camera.position.fromArray(initialPose.current.position);
         c.target.fromArray(initialPose.current.target);

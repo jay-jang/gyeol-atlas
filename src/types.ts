@@ -58,6 +58,8 @@ export type CameraAction = {
     | "comparison"
     | "fit"
     | "restore"
+    | "pose"
     | "move-forward" | "move-backward" | "move-left" | "move-right" | "move-up" | "move-down";
   tick: number;
+  pose?: import("./view-state").CameraPose;
 };

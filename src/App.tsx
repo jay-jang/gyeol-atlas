@@ -430,6 +430,7 @@ function AtlasPage({
     kind: state.selection && !state.camera ? "structure" : "restore",
     tick: 0,
   });
+  const isolateCameraFrame = useRef<number | null>(null);
   const sourceKey = referenceSourceFor(state.sex, [...(state.selection?.ids || []), ...(state.detail?.ids || [])]);
   const [loaded, setLoaded] = useState<{ source: string | null; layers: Layer[] }>({ source: null, layers: [] });
   const [loadingReference, setLoadingReference] = useState(false);
@@ -1223,7 +1224,14 @@ function AtlasPage({
             {sourceKey === "female-detail" && state.detail?.id !== "abdomen-ct" && <button aria-label="같은 여성 CT의 주변 기관 보기" onClick={() => selectFeatured(featuredAnatomy.find(item => item.id === "abdomen-ct")!)}>주변 기관 함께 보기</button>}
             {fullLungDetail && lungViewOptions}
             {!fullCompositeDetail && !fullLungDetail && selectedOrgan && !(sourceKey === "female-detail" && selectedOrgan.ids.length === 1 && state.detail) && <button onClick={() => selectFeatured(selectedOrgan)}>{selectedComposite ? `${selectedComposite.name} ${state.detail ? "전체 모형" : "전체 상세 보기"}` : state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
-            {state.detail && <button onClick={() => { dispatch({ type: "detail-close" }); requestAnimationFrame(() => camera("fit")); }}>전신으로 돌아가기</button>}
+            {state.detail && <button onClick={() => {
+              if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
+              isolateCameraFrame.current = null;
+              const pose = state.detailReturn?.camera;
+              dispatch({ type: "detail-close" });
+              if (pose) setAction(a => ({ kind: "pose", pose, tick: a.tick + 1 }));
+              else requestAnimationFrame(() => camera("fit"));
+            }}>전신으로 돌아가기</button>}
             <button
               onClick={() => {
                 setPanel(null);
@@ -1237,7 +1245,11 @@ function AtlasPage({
               onClick={() => {
                 const kind = state.isolated && state.detail ? "fit" : "structure";
                 dispatch({ type: "isolate" });
-                requestAnimationFrame(() => camera(kind));
+                if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
+                isolateCameraFrame.current = requestAnimationFrame(() => {
+                  isolateCameraFrame.current = null;
+                  camera(kind);
+                });
               }}
             >
               {state.isolated
@@ -1248,7 +1260,13 @@ function AtlasPage({
             </button>}
             <button
               aria-label="구조 선택 해제"
-              onClick={() => dispatch({ type: "clear-selection" })}
+              onClick={() => {
+                if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
+                isolateCameraFrame.current = null;
+                const pose = (state.detail ? state.detailReturn?.camera : state.selectionReturn?.camera) ?? state.camera;
+                dispatch({ type: "clear-selection" });
+                if (pose) setAction(a => ({ kind: "pose", pose, tick: a.tick + 1 }));
+              }}
             >
               <X size={15} />
             </button>

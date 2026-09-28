@@ -6,7 +6,8 @@ const selection={kind:'structure',ids:['organ'],name:'test'};
 const selected=()=>viewReducer(initialView(),{type:'select',layer:'organ',selection});
 
 test('single selection dims context without overwriting opacity, layers, camera or marker settings',()=>{
-  const state={...selected(),alpha:{...initialView().alpha,organ:.08},camera:{position:[0,1,2],target:[0,1,0]},markers:'hidden'};
+  const before={...initialView(),alpha:{...initialView().alpha,organ:.08},camera:{position:[0,1,2],target:[0,1,0]},markers:'hidden'};
+  const state=viewReducer(before,{type:'select',layer:'organ',selection});
   assert.equal(contextIsDimmed(state),true);
   assert.equal(selectionOpacity(1,false,true),.12);
   assert.equal(selectionOpacity(.08,false,true),.08);

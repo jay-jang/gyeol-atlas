@@ -20,6 +20,11 @@ for(const sex of ['male','female'] as const)test(`${sex}: clearing a comparison 
     for(const m of meshes)rows.push({id:m.name,color:m.material.color.getHexString(),positions:await hash(m.geometry.attributes.position.array),indices:await hash(m.geometry.index.array),matrix:m.matrixWorld.toArray()});
     return rows.sort((a,b)=>a.id.localeCompare(b.id));
   },{url:fiberUrl,ids});
+  const livePose=async()=>page.evaluate(async url=>{
+    const {_roots}=await import(/* @vite-ignore */url);
+    const {camera,controls}=_roots.get(document.querySelector('canvas')).store.getState();
+    return {position:camera.position.toArray(),target:controls.target.toArray()};
+  },fiberUrl);
   for(const [width,height] of [[1440,900],[390,844]]){
     await page.setViewportSize({width,height});await compare(page);
     const ids=(await snapshot(page)).comparison.ids;
@@ -27,6 +32,11 @@ for(const sex of ['male','female'] as const)test(`${sex}: clearing a comparison 
     await expect.poll(async()=>(await inspect(ids)).filter(r=>r.color==='e5b24f').length).toBe(ids.length);
     await page.getByRole('button',{name:'비교 대상만 보기',exact:true}).click();
     await expect.poll(async()=>(await snapshot(page)).isolated).toBe(true);
+    // The fit can reach the Three.js camera before its pose reaches sessionStorage.
+    await expect.poll(async()=>{
+      const stored=(await snapshot(page)).camera,rendered=await livePose();
+      return Math.max(...(['position','target'] as const).flatMap(key=>stored[key].map((v:number,i:number)=>Math.abs(v-rendered[key][i]))));
+    }).toBeLessThan(1e-8);
     const before=await snapshot(page),geometry=await inspect(ids);
     await page.getByRole('button',{name:'구조 선택 해제',exact:true}).click();
     await expect(page.locator('.selection-card')).toHaveCount(0);
@@ -34,7 +44,8 @@ for(const sex of ['male','female'] as const)test(`${sex}: clearing a comparison 
     const after=await snapshot(page);
     expect(after.selection).toBe(null);expect(after.detail).toBe(null);expect(after.isolated).toBe(false);
     await expect(page.locator('.comparison-note')).toHaveCount(0);
-    for(const key of ['layers','alpha','markers','camera','pointId'])expect(after[key]).toEqual(before[key]);
+    for(const key of ['layers','alpha','markers','pointId'])expect(after[key]).toEqual(before[key]);
+    for(const key of ['position','target'])for(let i=0;i<3;i++)expect(after.camera[key][i]).toBeCloseTo(before.camera[key][i],8);
     const cleared=await inspect(ids);
     expect(cleared.filter(r=>r.color==='e5b24f')).toHaveLength(0);
     expect(cleared.map(({color,...r})=>r)).toEqual(geometry.map(({color,...r})=>r));
