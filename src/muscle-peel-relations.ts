@@ -6,6 +6,7 @@ export const musclePeelSources = {
   abdomen: "https://booksite.elsevier.com/samplechapters/9780443066122/9780443066122.pdf",
   calf: "https://www.meddean.luc.edu/lumen/meded/grossanatomy/dissector/labs/le/ant_th_leg/tl3.html",
   gluteal: "https://www.lumen.luc.edu/lumen/meded/grossanatomy/dissector/labs/le/glut_post_th/g2.html",
+  upperBack: "https://www.meddean.luc.edu/lumen/meded/grossanatomy/2010/dissection%20guide%20509.pdf",
 };
 export const musclePeelGroups = [
   { sex: "male", side: "right", source: "pectoral", names: ["pectoralis major", "pectoralis minor"], levels: [["FMA34690", "FMA45874", "FMA79979"], ["FMA13375"]] },
@@ -28,6 +29,13 @@ export const musclePeelGroups = [
   { sex: "male", side: "left", source: "gluteal", names: ["gluteus maximus", "piriformis"], levels: [["FMA22329"], ["FMA22341"]] },
   { sex: "female", side: "left", source: "gluteal", names: ["gluteus maximus", "piriformis"], levels: [["VHF0025"], ["VHF0033"]] },
   { sex: "female", side: "right", source: "gluteal", names: ["gluteus maximus", "piriformis"], levels: [["VHF0063"], ["VHF0071"]] },
+  // The upper-back dissection reflects trapezius before exposing rhomboids
+  // and levator scapulae. This does not order those three deep muscles or
+  // assert that every trapezius triangle covers every deeper triangle.
+  { sex: "male", side: "right", source: "upperBack", names: ["trapezius", "rhomboid"], levels: [["FMA33581", "FMA33584", "FMA33586"], ["FMA13381", "FMA13383"]] },
+  { sex: "male", side: "left", source: "upperBack", names: ["trapezius", "rhomboid"], levels: [["FMA33583", "FMA33585", "FMA33587"], ["FMA13382", "FMA13384"]] },
+  { sex: "male", side: "right", source: "upperBack", names: ["trapezius", "levator scapulae"], levels: [["FMA33581", "FMA33584", "FMA33586"], ["FMA32540"]] },
+  { sex: "male", side: "left", source: "upperBack", names: ["trapezius", "levator scapulae"], levels: [["FMA33583", "FMA33585", "FMA33587"], ["FMA32541"]] },
 ] as const;
 
 export const musclePeelRelations: readonly (readonly [string, string])[] = musclePeelGroups.flatMap(group =>

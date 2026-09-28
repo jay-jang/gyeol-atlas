@@ -9,8 +9,8 @@ const male=read('scripts/model-inputs.json').assets.filter(p=>p.layer==='muscle'
 const female=read('data/female-atlas-structures.json').filter(p=>p.layer==='muscle');
 
 test('named muscle precedence references exact sex, side and source catalog members',()=>{
-  assert.equal(musclePeelRelations.length,42);
-  assert.equal(new Set(musclePeelGroups.flatMap(g=>g.levels.flat())).size,54);
+  assert.equal(musclePeelRelations.length,60);
+  assert.equal(new Set(musclePeelGroups.flatMap(g=>g.levels.flat())).size,66);
   for(const group of musclePeelGroups){
     assert.ok(musclePeelSources[group.source].startsWith('https://'));
     const catalog=group.sex==='male'?male:female;
