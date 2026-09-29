@@ -23,7 +23,9 @@ import {
   Box3,
   PerspectiveCamera,
   PropertyBinding,
+  type Camera,
   type Intersection,
+  type Object3D,
 } from "three";
 import type { OrbitControls as OrbitType } from "three-stdlib";
 import type { CameraPose } from "./view-state";
@@ -44,8 +46,38 @@ import { framedDistance } from "./camera-framing";
 import { musclePeelRanks } from "./muscle-peel";
 import { musclePeelOpacity } from "./dissection";
 import { selectionOpacity, selectionHitId, opacityWritesDepth } from "./selection-context";
+import { besideMarker, type ScreenSize } from "./marker-label";
 
 const structureById = new Map(structures.map(s => [s.id, s]));
+
+const labelAnchor = new Vector3();
+function toCanvas(point: Vector3, camera: Camera, size: ScreenSize): [number, number] {
+  point.project(camera);
+  return [(point.x + 1) * size.width / 2, (1 - point.y) * size.height / 2];
+}
+// `outward` is a world-X step whose projection picks the label's screen side,
+// so bilateral labels still point away from the body from front and back.
+function MarkerLabel({ outward, children }: { outward: number; children: ReactNode }) {
+  const invalidate = useThree(state => state.invalidate);
+  const label = useRef<HTMLDivElement | null>(null);
+  const measure = useCallback((node: HTMLDivElement | null) => {
+    label.current = node;
+    if (!node) return;
+    // The label mounts after its first placement and frames run on demand.
+    const observer = new ResizeObserver(() => invalidate());
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [invalidate]);
+  const position = useCallback((el: Object3D, camera: Camera, size: ScreenSize) => {
+    const marker = toCanvas(labelAnchor.setFromMatrixPosition(el.matrixWorld), camera, size);
+    labelAnchor.setFromMatrixPosition(el.matrixWorld).x += outward;
+    const away = toCanvas(labelAnchor, camera, size)[0] - marker[0];
+    const node = label.current;
+    return besideMarker(marker, Math.abs(away) < 1 ? outward : away,
+      { width: node?.offsetWidth ?? 0, height: node?.offsetHeight ?? 0 }, size);
+  }, [outward]);
+  return <Html center zIndexRange={[20, 0]} ref={measure} calculatePosition={position}>{children}</Html>;
+}
 
 type Props = {
   points: Point[];
@@ -773,11 +805,7 @@ function Scene(props: Props) {
               />
             </mesh>
             {((active && m.side !== "왼쪽" && m.occurrence === 0) || hover === m.key || (labels && m.occurrence === 0)) && (
-              <Html
-                center
-                zIndexRange={[20, 0]}
-                position={[active ? -0.06 : 0.025, 0.012, 0]}
-              >
+              <MarkerLabel outward={active ? -0.05 : 0.05}>
                 <button
                   className={`point-label ${active ? "active" : ""}`}
                   title={`${m.point.name} ${m.side}`}
@@ -787,7 +815,7 @@ function Scene(props: Props) {
                   {m.point.id}
                   {active && <span>{m.point.name}</span>}
                 </button>
-              </Html>
+              </MarkerLabel>
             )}
           </group>
         );

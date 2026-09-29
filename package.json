@@ -19,6 +19,7 @@
     "test:visual": "node scripts/capture-workspace.mjs",
     "test:geometry": "node scripts/audit-dissection-geometry.mjs",
     "audit:containment": "node scripts/audit-body-containment.mjs",
+    "audit:overlays": "node scripts/audit-scene-overlays.mjs",
     "check": "npm test && npm run build && npm run test:e2e && npm run test:production"
   },
   "keywords": [],

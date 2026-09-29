@@ -17,6 +17,7 @@
   "restored": {
     "version": 4,
     "brainBindingVersion": "hra-female-v1.10-laterality-1",
+    "pelvicBindingVersion": "hra-female-round-ligament-v1",
     "pointId": "",
     "sex": "female",
     "anatomyRegion": "whole",
@@ -76,6 +77,36 @@
         "nerve": false
       }
     },
+    "detailReturn": {
+      "anatomyRegion": "whole",
+      "stage": 0,
+      "dissection": 0,
+      "displayMode": "dissection",
+      "layers": {
+        "skin": true,
+        "muscle": false,
+        "bone": false,
+        "organ": false,
+        "vessel": false,
+        "lymph": false,
+        "nerve": false
+      },
+      "cutaway": 0,
+      "selectionTarget": "visible",
+      "camera": {
+        "position": [
+          1.4901161193847656e-8,
+          1.0564423066545112,
+          3.9541015287468095
+        ],
+        "target": [
+          1.4901161193847656e-8,
+          0.8288460996793967,
+          -0.0623021237552166
+        ]
+      }
+    },
+    "selectionReturn": null,
     "comparison": null,
     "isolated": false,
     "cutaway": 0,

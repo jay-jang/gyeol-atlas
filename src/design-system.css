@@ -36,7 +36,7 @@ summary:focus-visible, canvas:focus-visible { outline: 3px solid #166e9a; outlin
 svg { stroke-width: 2; }
 .anatomy-workspace { color: var(--ink); }
 .floating-tools, .floating-dock, .system-strip, .floating-point, .view-tools,
-.anatomy-workspace > .view-presets { background: var(--surface); border-color: var(--border-strong); box-shadow: 0 4px 18px #102d211a; }
+.anatomy-workspace .view-presets { background: var(--surface); border-color: var(--border-strong); box-shadow: 0 4px 18px #102d211a; }
 .dock-header { background: var(--surface-subtle); padding: 10px 14px; }
 .dock-header strong, .structure-group h3 { font-size: 15px; font-weight: 700; }
 .dock-body { font-size: 14px; line-height: 1.65; }
@@ -68,7 +68,7 @@ svg { stroke-width: 2; }
 .movement-pad > div { display: grid; grid-template-columns: repeat(3, 40px); gap: 3px; }
 .movement-pad button { min-height: 40px; font-size: 13px; background: #edf3f0; border: 1px solid #bdccc4; border-radius: 6px; }
 .movement-pad button:hover { background: #cfdfd6; }
-.navigation-hint { position: absolute; left: 24px; bottom: 64px; z-index: 23; padding: 6px 9px; background: white; border-radius: 6px; font-size: 12px; color: var(--ink-secondary); }
+.navigation-hint { padding: 6px 9px; background: white; border-radius: 6px; font-size: 12px; color: var(--ink-secondary); }
 .anatomy-workspace .point-label { font-size: 12px; background: #fff; color: #574010; border-color: #99712d; }
 .wiki-article { color: var(--ink); }
 .point-tradition { line-height: 1.75; }
@@ -94,15 +94,12 @@ svg { stroke-width: 2; }
   .movement-pad button { min-height: 34px; font-size: 12px; padding: 0; }
   .navigation-hint { display: none; }
   .anatomy-workspace[data-panel]:not([data-panel="none"]) .movement-pad { display: none; }
-  .scene-status { max-width: 100%; font-size: 12px; bottom: 0; }
-  .scene-guide { bottom: 28px; font-size: 12px; }
-  .scene-legend { bottom: 60px; font-size: 12px; }
+  .scene-status, .scene-guide, .scene-legend { font-size: 12px; }
   .selection-card { bottom: 114px; width: calc(100% - 84px); left: 10px; transform: none; padding: 10px; }
   .selection-actions button { font-size: 12px; min-height: 38px; }
   .view-tools { right: 10px; bottom: 110px; }
   .view-tools button { width: 40px; height: 40px; }
-  .anatomy-workspace .comparison-note { font-size: 12px; bottom: 86px; }
-  .anatomy-workspace > .view-presets button { font-size: 12px; min-height: 34px; }
+  .anatomy-workspace .view-presets button { font-size: 12px; min-height: 34px; }
 }
 @media (max-height: 550px) and (min-width: 701px) {
   .movement-pad { right: 70px; bottom: 85px; padding: 4px; }
@@ -111,21 +108,15 @@ svg { stroke-width: 2; }
   .movement-pad button { min-height: 30px; }
   .view-tools button { width: 34px; height: 32px; }
   .scene-legend, .scene-status, .scene-guide { font-size: 12px; }
-  .scene-legend { bottom: 24px; }
   .system-strip button { font-size: 12px; }
 }
 .search-box { color: var(--ink-secondary); }
 .search-box input { color: var(--ink); }
-/* A dedicated footer row for each meaning; comparison notes never sit under actions. */
+/* Mobile tools stack above the three-row scene footer (106px). */
 @media (max-width: 700px) {
-  .selection-card { bottom: 151px; }
+  .selection-card { bottom: 155px; }
   .view-tools { bottom: 146px; }
   .movement-pad { bottom: 348px; }
-  .anatomy-workspace .comparison-note { bottom: 110px; width: calc(100% - 24px); max-width: none; white-space: nowrap; font-size: 12px; }
-  .anatomy-workspace > .view-presets { bottom: 61px; }
-  .scene-legend { bottom: 28px; left: 50%; transform: translateX(-50%); flex-direction: row; white-space: nowrap; gap: 10px; }
-  .scene-status { bottom: 0; }
-  .scene-guide { top: 40px; left: 14px; right: auto; bottom: auto; max-width: 190px; padding: 2px 6px; line-height: 16px; text-align: left; }
 }
 @media (max-width: 700px) {
   .floating-dock, .dock-detail { max-height: 44%; }
@@ -140,5 +131,60 @@ svg { stroke-width: 2; }
 }
 @media (max-height: 550px) and (min-width: 701px) {
   .movement-pad button { padding: 0; white-space: nowrap; }
-  .scene-legend { left: 80px; bottom: 20px; }
+}
+
+/* Scene footer: hint, legend, view presets, status and evidence link share
+   one grid over the 3D viewer, so their areas (not separate offsets) keep
+   them apart at every width. The footer passes pointer input to the canvas. */
+.scene-footer {
+  position: absolute; z-index: 23; left: 0; right: 0; bottom: 0;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-areas: "hint presets ." "legend status guide";
+  align-items: end; gap: 6px 12px; padding: 0 24px 9px;
+  pointer-events: none;
+}
+.scene-footer > * { pointer-events: auto; min-width: 0; max-width: 100%; }
+.scene-footer .navigation-hint { grid-area: hint; justify-self: start; }
+.scene-footer .scene-legend { grid-area: legend; justify-self: start; flex-wrap: wrap; row-gap: 2px; }
+.scene-footer .view-presets { grid-area: presets; justify-self: center; }
+.scene-footer .scene-status { grid-area: status; justify-self: center; }
+.scene-footer .scene-guide { grid-area: guide; justify-self: end; }
+.scene-guide span { white-space: nowrap; }
+.anatomy-workspace .scene-footer { left: 318px; }
+@media (max-width: 1200px) and (min-height: 551px) {
+  .scene-footer { grid-template-areas: "legend presets guide" "status status status"; }
+  .scene-footer .navigation-hint { display: none; }
+}
+@media (max-width: 900px) and (min-width: 701px) {
+  .anatomy-workspace .scene-footer { left: 272px; }
+}
+@media (max-width: 900px) and (min-width: 701px) and (min-height: 551px) {
+  /* A narrow viewer wraps the legend; keep the card above it and clear of
+     the camera tool column on both sides. */
+  .anatomy-workspace .selection-card { bottom: 128px; width: min(390px, calc(100% - 444px)); }
+  .anatomy-workspace .view-tools { bottom: 128px; }
+  .anatomy-workspace .movement-pad { bottom: 340px; }
+}
+@media (max-width: 700px) {
+  .anatomy-workspace .scene-footer {
+    left: 0; padding: 0 12px; gap: 3px 8px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "guide presets" "legend legend" "status status";
+  }
+  .scene-footer .scene-guide { justify-self: start; }
+  .scene-footer .view-presets { justify-self: end; }
+  .scene-footer .scene-legend, .scene-footer .scene-status { justify-self: center; }
+  .scene-footer .scene-legend { gap: 10px; }
+}
+@media (max-height: 550px) and (min-width: 701px) {
+  /* Landscape: start right of the tool rail and stop before the camera tools. */
+  .anatomy-workspace .scene-footer {
+    left: 406px; right: 68px; padding: 0 0 4px; gap: 4px 8px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "legend presets" "status guide";
+  }
+  .scene-footer .scene-status { justify-self: start; }
+}
+@media (max-height: 550px) and (min-width: 701px) and (max-width: 900px) {
+  .anatomy-workspace .scene-footer { left: 346px; }
 }

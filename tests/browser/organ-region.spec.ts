@@ -34,7 +34,8 @@ for(const sex of ['male','female'] as const)test(`${sex}: source organ regions, 
   for(const o of observations)expect(o.actual,`${o.group}/${o.region}`).toEqual(o.expected);
   const checks=sex==='female'?[['HRAF0475','abdomen'],['HRAF0432','pelvis']]:[['FMA7148','abdomen']];
   for(const [index,[id,region]] of checks.entries()){
-    await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);await page.locator('.structure-item').click();await ready(page);await closeTool(page);
+    // The male 4.0 stomach detail (BP4_) also cites FMA7148; this check needs the whole-body mesh.
+    await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);await page.locator('.structure-item').filter({hasNotText:'BP4_'}).click();await ready(page);await closeTool(page);
     await expect(page.getByLabel('전신 부위 선택')).toHaveValue(region);
     expect((await snapshot(page)).selection.ids).toEqual([id]);
     const geometry=()=>page.evaluate(async({url,id})=>{

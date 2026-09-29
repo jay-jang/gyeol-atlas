@@ -479,14 +479,10 @@
   color: #fff;
 }
 .scene-legend {
-  position: absolute;
-  left: 24px;
-  bottom: 26px;
   display: flex;
   gap: 12px;
   font-size: 12px;
   color: #65755f;
-  z-index: 23;
 }
 .scene-legend span {
   display: flex;
@@ -508,19 +504,14 @@
 .legend-reference {
   background: #bca77a;
 }
-.anatomy-workspace .comparison-note {
-  position: absolute;
-  bottom: 77px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 23;
-  margin: 0;
-  padding: 4px 8px;
-  white-space: nowrap;
-  background: #fbf6e2cf;
-  border-radius: 4px;
-  color: #756442;
+/* The comparison caveat qualifies the card it sits in, above its actions. */
+.anatomy-workspace .selection-card .comparison-note {
+  margin: 5px 0 0;
+  padding: 0;
+  background: none;
+  color: #6b4f16;
   font-size: 12px;
+  line-height: 1.45;
 }
 .view-tools {
   position: absolute;
@@ -543,20 +534,15 @@
   display: grid;
   place-items: center;
 }
-.anatomy-workspace > .view-presets {
-  position: absolute;
-  bottom: 42px;
-  left: 50%;
-  transform: translateX(-50%);
+.anatomy-workspace .view-presets {
   background: #ffffff;
   border: 1px solid #cbd5c4;
   border-radius: 30px;
   padding: 4px;
   display: flex;
-  z-index: 23;
   gap: 3px;
 }
-.anatomy-workspace > .view-presets button {
+.anatomy-workspace .view-presets button {
   padding: 6px 13px;
   min-height: 32px;
   border: 0;
@@ -565,28 +551,19 @@
   border-radius: 20px;
 }
 .scene-status {
-  position: absolute;
-  bottom: 9px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 12px;
   color: #647460;
   white-space: nowrap;
-  z-index: 22;
 }
 .click-target {
   margin-left: 7px;
 }
 .scene-guide {
-  position: absolute;
-  bottom: 26px;
-  right: 24px;
   font-size: 12px;
   color: #5f755f;
-  z-index: 23;
 }
 .cutaway-reset {
   position: absolute;
@@ -658,12 +635,6 @@ body:has(.anatomy-workspace) .site-footer {
   }
   .selection-card {
     max-width: 360px;
-  }
-  .scene-legend {
-    bottom: 72px;
-    left: 20px;
-    flex-direction: column;
-    gap: 4px;
   }
 }
 @media (max-width: 700px) {
@@ -831,40 +802,22 @@ body:has(.anatomy-workspace) .site-footer {
     height: 32px;
   }
   .scene-legend {
-    left: 12px;
-    bottom: 57px;
-    gap: 3px;
     font-size: 12px;
   }
   .scene-guide {
-    right: 12px;
-    bottom: 32px;
     font-size: 12px;
-    max-width: 105px;
-    text-align: right;
   }
-  .anatomy-workspace > .view-presets {
-    bottom: 43px;
-  }
-  .anatomy-workspace > .view-presets button {
+  .anatomy-workspace .view-presets button {
     padding: 4px 10px;
     min-height: 27px;
     font-size: 12px;
   }
   .scene-status {
     font-size: 12px;
-    bottom: 9px;
     gap: 3px;
   }
   .click-target {
     margin-left: 3px;
-  }
-  .anatomy-workspace .comparison-note {
-    bottom: 82px;
-    font-size: 12px;
-    max-width: calc(100% - 20px);
-    white-space: normal;
-    text-align: center;
   }
   .cutaway-reset {
     top: 109px;
@@ -921,7 +874,7 @@ body:has(.anatomy-workspace) .site-footer {
 .anatomy-workspace .floating-tools,
 .anatomy-workspace .floating-point,
 .anatomy-workspace .view-tools,
-.anatomy-workspace > .view-presets,
+.anatomy-workspace .view-presets,
 .anatomy-workspace .movement-pad,
 .anatomy-workspace .floating-dock {
   color: #dce8ed;
@@ -1001,9 +954,9 @@ body:has(.anatomy-workspace) .site-footer {
     font-size: 12px;
   }
 }
-@media(max-height:550px) and (min-width:701px){.anatomy-workspace{min-height:260px}.scene-title{display:none}.system-strip{top:12px;left:45%;}.floating-point{right:12px;top:12px}.floating-tools{top:72px;left:12px;padding:3px;gap:2px}.floating-tools button{height:32px;width:34px}.floating-dock{left:62px;top:65px;max-height:calc(100% - 76px);width:280px}.dock-detail{left:auto;right:12px}.selection-card{bottom:67px;padding:8px 10px;min-width:230px}.selection-actions{margin-top:4px}.selection-actions button{min-height:29px}.view-tools{bottom:66px;right:12px}.view-tools button{height:27px;width:30px}.anatomy-workspace>.view-presets{bottom:22px}.scene-status{bottom:3px}.scene-guide{right:12px;bottom:10px}.scene-legend{left:12px;bottom:8px;font-size: 12px}.anatomy-workspace .comparison-note{bottom:54px;font-size: 12px}}
+@media(max-height:550px) and (min-width:701px){.anatomy-workspace{min-height:260px}.scene-title{display:none}.system-strip{top:12px;left:45%;}.floating-point{right:12px;top:12px}.floating-tools{top:72px;left:12px;padding:3px;gap:2px}.floating-tools button{height:32px;width:34px}.floating-dock{left:62px;top:65px;max-height:calc(100% - 76px);width:280px}.dock-detail{left:auto;right:12px}.selection-card{bottom:67px;padding:8px 10px;min-width:230px}.selection-actions{margin-top:4px}.selection-actions button{min-height:29px}.view-tools{bottom:66px;right:12px}.view-tools button{height:27px;width:30px}.scene-legend{font-size: 12px}}
 @media(max-width:700px){.scene-legend{font-size: 12px}.scene-status{font-size: 12px}.scene-guide{font-size: 12px}.anatomy-workspace .comparison-note{font-size: 12px}}
-@media(max-height:550px) and (min-width:701px){.system-strip{left:62px;transform:none;width:min(310px,calc(50% - 95px));gap:0}.system-strip button{min-width:0;flex:1;padding:5px 3px;font-size: 12px;gap:4px}.anatomy-workspace>.view-presets{left:auto;right:72px;transform:none;bottom:32px}}
+@media(max-height:550px) and (min-width:701px){.system-strip{left:62px;transform:none;width:min(310px,calc(50% - 95px));gap:0}.system-strip button{min-width:0;flex:1;padding:5px 3px;font-size: 12px;gap:4px}}
 
 /* 2026 Explore workspace: a visible anatomy catalogue beside the scene. */
 .explore-sidebar {
@@ -1167,7 +1120,6 @@ body:has(.anatomy-workspace) .site-footer {
 .anatomy-workspace .floating-tools { left: 340px; top: 112px; }
 .anatomy-workspace .floating-dock { left: 398px; top: 90px; }
 .anatomy-workspace .dock-detail { left: auto; }
-.anatomy-workspace .navigation-hint, .anatomy-workspace .scene-legend { left: 342px; }
 .anatomy-workspace .scene-title { display: none; }
 .anatomy-workspace .floating-point { top: 18px; }
 .floating-point.empty .point-empty { padding-inline: 14px; gap: 9px; }
@@ -1183,7 +1135,6 @@ body:has(.anatomy-workspace) .site-footer {
   .anatomy-workspace .viewer-panel { left: 272px; width: calc(100% - 272px); }
   .anatomy-workspace .floating-tools { left: 286px; }
   .anatomy-workspace .floating-dock { left: 342px; }
-  .anatomy-workspace .navigation-hint, .anatomy-workspace .scene-legend { left: 288px; }
 }
 @media (max-width: 700px) {
   .explore-sidebar {
@@ -1220,7 +1171,6 @@ body:has(.anatomy-workspace) .site-footer {
   .anatomy-workspace .floating-tools { left: 10px; top: 170px; }
   .anatomy-workspace .floating-point { top: 168px; right: 10px; }
   .anatomy-workspace .floating-dock, .anatomy-workspace .dock-detail { left: 8px; top: auto; }
-  .anatomy-workspace .navigation-hint, .anatomy-workspace .scene-legend { left: 12px; }
 }
 
 /* Final cascade for the dark clinical dissection surface. */
@@ -1318,8 +1268,8 @@ body:has(.anatomy-workspace) .site-footer {
   /* Reserve a readable selected name above fixed actions; cap the card at
      45% of the scene remaining below the mobile header and scope controls. */
   .anatomy-workspace .selection-card[data-compact-selection-controls="true"] { max-height:min(250px,calc(45dvh - 97.2px)); }
-  .anatomy-workspace[data-compact-selection-controls="true"] .movement-pad { bottom:calc(min(250px,calc(45dvh - 97.2px)) + 160px); }
-  .anatomy-workspace[data-compact-selection-controls="true"] .floating-tools { top:auto; bottom:106px; left:10px; padding:0; gap:2px; flex-direction:row; }
+  .anatomy-workspace[data-compact-selection-controls="true"] .movement-pad { bottom:calc(min(250px,calc(45dvh - 97.2px)) + 164px); }
+  .anatomy-workspace[data-compact-selection-controls="true"] .floating-tools { top:auto; bottom:110px; left:10px; padding:0; gap:2px; flex-direction:row; }
   .anatomy-workspace[data-compact-selection-controls="true"] .floating-tools button { width:40px; height:40px; }
   .anatomy-workspace[data-compact-selection-controls="true"] .floating-tools .tool-name { left:0; bottom:46px; top:auto; }
   .anatomy-workspace[data-compact-selection-controls="true"]:has(.movement-pad[open]) .floating-point { visibility:hidden; }

@@ -51,7 +51,8 @@ for(const [sex,id] of [['male','FMA7204'],['female','HRAF0432']] as const)test(`
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');await ready(page);
   if(sex==='female'){await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
-  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);await page.locator('.structure-item').click();await ready(page);await closeTool(page);
+  // The male 4.0 kidney detail (BP4_) also cites FMA7204; these steps need the whole-body mesh.
+  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);await page.locator('.structure-item').filter({hasNotText:'BP4_'}).click();await ready(page);await closeTool(page);
   const checkbox=page.getByRole('checkbox',{name:/주변 반투명/});await expect(checkbox).toBeChecked();
   await expect.poll(async()=>(await detailProjection(page,url)).clearance).toBeGreaterThan(0);
   const before=await inspect(page,url,id),saved=await snapshot(page);
@@ -98,7 +99,7 @@ for(const [sex,id] of [['male','FMA7204'],['female','HRAF0432']] as const)test(`
   const ordinaryClick=await overlappingRay(page,url,id);expect(ordinaryClick).not.toBeNull();
   await page.mouse.click(ordinaryClick!.x,ordinaryClick!.y);await ready(page);
   expect((await snapshot(page)).selection.ids).toEqual([ordinaryClick!.front]);
-  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);await page.locator('.structure-item').click();await ready(page);await closeTool(page);
+  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);await page.locator('.structure-item').filter({hasNotText:'BP4_'}).click();await ready(page);await closeTool(page);
   await expect(checkbox).not.toBeChecked();
   await page.getByRole('button',{name:'구조 선택 해제',exact:true}).click();await ready(page);
   const clearedState=await snapshot(page);

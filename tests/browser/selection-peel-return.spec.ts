@@ -23,7 +23,8 @@ for (const scenario of [
   expect(beforeIds).toBeTruthy();
   await openTool(page, '구조 찾기');
   await page.getByLabel('해부 구조 검색').fill(scenario.id);
-  await page.locator('.structure-item').filter({ hasText: scenario.id }).click(); await ready(page);
+  // The male 4.0 stomach detail (BP4_) also cites FMA7148; this scenario needs the whole-body mesh.
+  await page.locator('.structure-item').filter({ hasText: scenario.id }).filter({ hasNotText: 'BP4_' }).click(); await ready(page);
   await closeTool(page);
   const inside = await snapshot(page);
   expect(inside.selection.ids).toEqual([scenario.id]);

@@ -681,6 +681,13 @@ function AtlasPage({
     && selectedComposite.ids.every(id => state.selection!.ids.includes(id)));
   const detailParts = selectedOrgan ? structuresForSex(state.sex).filter(item => selectedOrgan.ids.includes(item.id))
     .sort((a,b) => selectedOrgan.ids.indexOf(a.id)-selectedOrgan.ids.indexOf(b.id)) : [];
+  // Card content remounts per selection so a newly chosen name starts in
+  // view; keep the parts list open across those remounts within one organ.
+  // A new organ, sex or cleared selection starts the list collapsed again.
+  const partsScope = state.selection && selectedOrgan ? `${state.sex}:${selectedOrgan.id}` : "";
+  const [partsOpen, setPartsOpen] = useState({ scope: "", open: false });
+  if (partsOpen.scope && partsOpen.scope !== partsScope) setPartsOpen({ scope: "", open: false });
+  const detailPartsOpen = partsOpen.open && partsOpen.scope === partsScope;
   const movementButtons = <div>{([
     ['move-up', '위로 이동', '↑'], ['move-forward', '앞으로 이동', '전진'], ['move-down', '아래로 이동', '↓'],
     ['move-left', '왼쪽으로 이동', '←'], ['move-backward', '뒤로 이동', '후진'], ['move-right', '오른쪽으로 이동', '→'],
@@ -1207,6 +1214,12 @@ function AtlasPage({
               {state.selection.name}{" "}
               <small>{state.selection.ids.length}개 구조</small>
             </strong>
+            {state.comparison && (
+              <p className="comparison-note">
+                {selected.name} · {state.comparison.name} 비교 — 전통적 대응, 압력
+                경로 아님
+              </p>
+            )}
             {state.sex === "male" && sourceKey === "male-detail" && selectedGroup === "stomach" && <p className="selection-description" data-stomach-frame-warning>별도 4.0 상세 원본입니다. 전신 3.0 위와 상자 중심이 약 42mm 달라 같은 위치로 정합된 화면이 아닙니다.</p>}
             {selectedAnatomy?.description && sourceKey !== "female-detail" && (
               <p className="selection-description">{selectedAnatomy.description}</p>
@@ -1255,7 +1268,7 @@ function AtlasPage({
               </details>
             </>}
             {detailParts.length > 1 && (
-              <details className="organ-detail-parts">
+              <details className="organ-detail-parts" open={detailPartsOpen} onToggle={e => setPartsOpen({ scope: partsScope, open: e.currentTarget.open })}>
                 <summary>세부 구조 {detailParts.length}개 선택</summary>
                 <div>
                   {detailParts.map(part => <button key={part.id} aria-pressed={state.selection?.ids.length === 1 && state.selection.ids[0] === part.id} onClick={() => dispatch({ type: "select", layer: part.layer, detail: state.detail?.ids.includes(part.id) ? state.detail : detailForStructure(part), selection: { kind: "structure", ids: [part.id], name: part.label || part.name } })}>{part.label || part.name}<small>{part.name}</small></button>)}
@@ -1323,32 +1336,11 @@ function AtlasPage({
           </div>
         </section>
       )}
-      <div className="scene-legend">
-        <span>
-          <i className="legend-selected" />
-          선택 구조
-        </span>
-        <span>
-          <i className="legend-compare" />
-          전통 장부 대응
-        </span>
-        <span>
-          <i className="legend-reference" />
-          경혈 참조
-        </span>
-      </div>
-      {state.comparison && (
-        <p className="comparison-note">
-          {selected.name} · {state.comparison.name} 비교 — 전통적 대응, 압력
-          경로 아님
-        </p>
-      )}
       {compactSelectionControls ? <details className="movement-pad" aria-label="화면 이동">
         <summary>이동 <small>WASD · Q/E</small></summary>{movementButtons}
       </details> : <div className="movement-pad" aria-label="화면 이동">
         <span>이동 <small>WASD · Q/E</small></span>{movementButtons}
       </div>}
-      <div className="navigation-hint">WASD 이동 · 휠 확대/축소 · Alt/⌥+휠 박리</div>
       <div className="view-tools">
         <button aria-label="확대" onClick={() => camera("zoomIn")}>
           <Plus size={18} /><span className="view-action-label">확대</span>
@@ -1367,30 +1359,52 @@ function AtlasPage({
           <RotateCcw size={17} />
         </button>
       </div>
-      <div className="view-presets">
-        {(["front", "back", "side"] as const).map((v, i) => (
-          <button key={v} onClick={() => camera(v)}>
-            {["정면", "후면", "측면"][i]}
-          </button>
-        ))}
-      </div>
-      <div className="scene-status">
-        <span className={`status-dot ${ready ? "live" : ""}`} />
-        <span role="status">
-          {!layerKeys.some((l) => state.layers[l])
-            ? "레이어를 켜서 구조를 표시하세요"
-            : ready
-              ? "해부 모델 로드 완료"
-              : "해부 모델 준비 중"}
-        </span>
-        <span className="click-target">
-          선택 대상:{" "}
-          {state.selectionTarget === "internal"
-            ? "내부 구조"
-            : state.selectionTarget === "skin"
-              ? "체표"
-              : "보이는 구조"}
-        </span>
+      {/* One grid for scene explanations and view presets: its areas, not
+          separate offsets, keep these from overlapping at every width. */}
+      <div className="scene-footer">
+        <div className="navigation-hint">WASD 이동 · 휠 확대/축소 · Alt/⌥+휠 박리</div>
+        <div className="scene-legend">
+          <span>
+            <i className="legend-selected" />
+            선택 구조
+          </span>
+          <span>
+            <i className="legend-compare" />
+            전통 장부 대응
+          </span>
+          <span>
+            <i className="legend-reference" />
+            경혈 참조
+          </span>
+        </div>
+        <div className="view-presets">
+          {(["front", "back", "side"] as const).map((v, i) => (
+            <button key={v} onClick={() => camera(v)}>
+              {["정면", "후면", "측면"][i]}
+            </button>
+          ))}
+        </div>
+        <div className="scene-status">
+          <span className={`status-dot ${ready ? "live" : ""}`} />
+          <span role="status">
+            {!layerKeys.some((l) => state.layers[l])
+              ? "레이어를 켜서 구조를 표시하세요"
+              : ready
+                ? "해부 모델 로드 완료"
+                : "해부 모델 준비 중"}
+          </span>
+          <span className="click-target">
+            선택 대상:{" "}
+            {state.selectionTarget === "internal"
+              ? "내부 구조"
+              : state.selectionTarget === "skin"
+                ? "체표"
+                : "보이는 구조"}
+          </span>
+        </div>
+        <a className="scene-guide" href="#wiki/massage-anatomy">
+          <span>학습용 근사 ·</span> <span>근거 읽기 ↗</span>
+        </a>
       </div>
       {state.cutaway > 0 && (
         <button
@@ -1400,9 +1414,6 @@ function AtlasPage({
           앞쪽 구조 숨김 적용 · 초기화
         </button>
       )}
-      <a className="scene-guide" href="#wiki/massage-anatomy">
-        학습용 근사 · 근거 읽기 ↗
-      </a>
     </main>
   );
 }
