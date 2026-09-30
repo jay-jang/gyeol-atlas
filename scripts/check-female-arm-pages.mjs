@@ -49,12 +49,12 @@ try {
   const ready=()=>page.getByText('해부 모델 로드 완료').waitFor({timeout:120000});
   const view=()=>page.evaluate(()=>JSON.parse(sessionStorage.getItem('gyeol-view-v2')));
   await page.goto(origin);await ready();
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready();
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready();
   for(const row of expected){
-    if(!await page.getByLabel('해부 구조 검색').isVisible())await page.getByRole('button',{name:'구조 찾기',exact:true}).click();
-    await page.getByLabel('해부 구조 검색').fill(row.id);
+    if(!await page.getByLabel('경혈·구조 검색').isVisible())await page.getByRole('button',{name:'구조 찾기',exact:true}).click();
+    await page.getByLabel('경혈·구조 검색').fill(row.id);
     await page.locator('.structure-item').filter({hasText:row.id}).click();await ready();
-    await page.getByRole('button',{name:'선택 구조 확대',exact:true}).click();
+    await page.locator('.selection-card').getByRole('button',{name:'확대',exact:true}).click();
     await page.waitForFunction(target=>{
       const s=JSON.parse(sessionStorage.getItem('gyeol-view-v2'));
       return s?.camera&&Math.hypot(...target.map((v,j)=>v-s.camera.target[j]))<.000001;

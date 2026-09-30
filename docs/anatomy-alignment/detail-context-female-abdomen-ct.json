@@ -22,7 +22,7 @@
     "sex": "female",
     "anatomyRegion": "whole",
     "stage": 1,
-    "dissection": 25,
+    "dissection": 20,
     "displayMode": "layers",
     "layers": {
       "skin": false,
@@ -42,7 +42,7 @@
       "lymph": 1,
       "nerve": 1
     },
-    "markers": "selected",
+    "markers": "filtered",
     "labels": false,
     "selection": {
       "kind": "structure",
@@ -84,24 +84,24 @@
       "displayMode": "dissection",
       "layers": {
         "skin": true,
-        "muscle": false,
-        "bone": false,
-        "organ": false,
-        "vessel": false,
-        "lymph": false,
-        "nerve": false
+        "muscle": true,
+        "bone": true,
+        "organ": true,
+        "vessel": true,
+        "lymph": true,
+        "nerve": true
       },
       "cutaway": 0,
       "selectionTarget": "visible",
       "camera": {
         "position": [
           1.4901161193847656e-8,
-          1.0564423066545112,
-          3.9541015287468095
+          1.0575254851023603,
+          3.9581224427819084
         ],
         "target": [
           1.4901161193847656e-8,
-          0.8288460996793967,
+          0.8297014263319236,
           -0.0623021237552166
         ]
       }
@@ -115,8 +115,8 @@
     "camera": {
       "position": [
         0,
-        1.1772425550297643,
-        2.245456643097096
+        1.1096739841809387,
+        1.0530700987060568
       ],
       "target": [
         0,

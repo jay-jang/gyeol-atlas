@@ -25,7 +25,7 @@ try{
   await page.getByRole('link',{name:'3D 경혈 지도',exact:true}).click();
   const ready=()=>page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});await ready();
   assert.equal(requests.some(url=>url.includes('/male-detail/')),false);
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText('폐',{exact:true})}).click();await ready();
+  await (await (async()=>{const input=page.getByLabel('경혈·구조 검색');await input.click();await input.fill('');return page.locator('.featured-anatomy > button');})()).filter({has:page.getByText('폐',{exact:true})}).click();await ready();
   for(const mobile of [false,true]){
     if(mobile){await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'폐실질 함께 보기',exact:true}).click();}
     for(const [id,button,ids] of [['lung',null,current.ids],['lung-internal','혈관·기관지 보기',internal],['lung-branches','이전 세부 가지 별도 보기',old.ids]]){

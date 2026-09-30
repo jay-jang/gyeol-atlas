@@ -11,8 +11,8 @@ const output = process.env.AUDIT_OUTPUT || 'docs/anatomy-alignment/scene-overlay
 const shots = process.env.AUDIT_SCREENSHOTS;
 const viewports = [['desktop', 1440, 900], ['laptop', 1366, 768], ['small-laptop', 1280, 800], ['tablet-landscape', 1024, 768],
   ['tablet', 768, 1024], ['landscape', 844, 390], ['mobile', 390, 844], ['small-mobile', 360, 740]];
-const OVERLAYS = ['.floating-tools', '.floating-point', '.system-strip', '.selection-card', '.movement-pad', '.view-tools', '.cutaway-reset',
-  '.explore-sidebar', '.navigation-hint', '.scene-legend', '.view-presets', '.scene-status', '.scene-guide', '.comparison-note'];
+const OVERLAYS = ['.ax-search', '.ax-top-actions', '.ax-depth', '.ax-point-bar', '.ax-point-chip', '.detail-panel', '.selection-card',
+  '.movement-pad', '.view-presets', '.view-tools', '.ax-status .scene-status', '.ax-status .scene-legend', '.ax-status .ax-source', '.cutaway-reset', '.comparison-note'];
 
 const measure = page => page.evaluate(selectors => {
   const shown = el => { const s = getComputedStyle(el), r = el.getBoundingClientRect();
@@ -37,14 +37,14 @@ const measure = page => page.evaluate(selectors => {
   return {canvas: round(c), boxes: boxes.map(b => ({name: b.name, ...round(b.r)})), overlaps, labels, offscreen};
 }, OVERLAYS);
 
-const browser = await chromium.launch({headless: true, args: ['--no-sandbox', '--enable-unsafe-swiftshader']});
+const browser = await chromium.launch({headless: true, args:process.env.PLAYWRIGHT_GPU==='1'?['--no-sandbox','--use-gl=angle','--use-angle=metal','--ignore-gpu-blocklist']:['--no-sandbox','--enable-unsafe-swiftshader']});
 const results = [];
 try {
   for (const [name, width, height] of viewports) {
     const page = await browser.newPage({viewport: {width, height}});
     const errors = []; page.on('pageerror', e => errors.push(e.message));
     await page.goto(origin + '/#atlas/CV12');
-    await page.getByText('해부 모델 로드 완료').waitFor({timeout: 60000});
+    await page.getByText('해부 모델 로드 완료').waitFor({timeout: 90000});
     const settle = async state => {
       await page.mouse.move(1, 1); await page.waitForTimeout(400);
       if (shots) await page.screenshot({animations: 'disabled', path: `${shots}/${name}-${state}.png`});

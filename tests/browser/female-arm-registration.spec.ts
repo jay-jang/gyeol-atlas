@@ -37,7 +37,7 @@ test('female arm and toe rest poses match calibrated geometry through peeling, s
   page.on('pageerror',e=>errors.push(e.message));
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   const geometryHashes=()=>page.evaluate(async({url,ids})=>{
     const module=await import(/* @vite-ignore */ url),state=module._roots.get(document.querySelector('canvas')).store.getState();
     const result:Record<string,string>={};let calibrated=0;
@@ -58,10 +58,10 @@ test('female arm and toe rest poses match calibrated geometry through peeling, s
     expect(await geometryHashes()).toEqual({hashes:expected,calibrated:60});
   }
   for(const id of ['BM0078','BM0064','BM0069','BM0126','BM0154','BM0063','BM0066']){
-    await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);
+    await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill(id);
     await page.locator('.structure-item').filter({hasText:id}).click();await ready(page);
     expect((await snapshot(page)).layers.bone).toBe(true);
-    await page.getByRole('button',{name:'선택 구조 확대',exact:true}).click();
+    await page.locator('.selection-card').getByRole('button',{name:'확대',exact:true}).click();
     await expect.poll(()=>page.evaluate(async ({url,id})=>{
       const module=await import(/* @vite-ignore */ url),s=module._roots.get(document.querySelector('canvas')).store.getState();
       const mesh=s.scene.getObjectByName(id);mesh.geometry.computeBoundingBox();
@@ -82,12 +82,12 @@ test('female arm and toe rest poses match calibrated geometry through peeling, s
   // ULP. Keep sub-picometre camera tolerance; geometry hashes stay exact.
   for(const key of ['position','target'])for(let i=0;i<3;i++)expect(restored[key][i]).toBeCloseTo(pose[key][i],12);
   expect(await geometryHashes()).toEqual({hashes:expected,calibrated:60});
-  await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
   await expect.poll(()=>page.evaluate(async({url,ids})=>{
     const module=await import(/* @vite-ignore */ url),s=module._roots.get(document.querySelector('canvas')).store.getState();
     return ids.filter(id=>s.scene.getObjectByName(id)?.isMesh).length;
   },{url:fiberUrl,ids:Object.keys(expected)})).toBe(0);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   expect(await geometryHashes()).toEqual({hashes:expected,calibrated:60});
   await page.getByRole('button',{name:'골격 빠른 보기',exact:true}).click();await ready(page);
   await page.getByRole('button',{name:'계통 전체 보기',exact:true}).click();

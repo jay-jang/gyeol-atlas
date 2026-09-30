@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {ready,snapshot,openTool,closeTool} from './helpers';
+import {ready,snapshot,openTool,closeTool,organs} from './helpers';
 import groups from '../../data/male-detail-groups.json' with {type:'json'};
 import catalog from '../../data/male-detail-structures.json' with {type:'json'};
 import fs from 'node:fs';
@@ -11,11 +11,11 @@ for(const mobile of [false,true])test(`lung source views remain separate and sel
   await page.setViewportSize(mobile?{width:390,height:844}:{width:1440,height:900});
   await page.goto('/');await ready(page);
   if(mobile){
-    await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill('왼쪽 꼭대기뒤구역 폐실질');
+    await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill('왼쪽 꼭대기뒤구역 폐실질');
     await page.locator('.structure-item').first().click();await ready(page);await closeTool(page);
     await page.getByRole('button',{name:'기관 전체 모형',exact:true}).click();await ready(page);
   }else{
-    await page.locator('.featured-anatomy > button').filter({has:page.getByText('폐',{exact:true})}).click();await ready(page);
+    await (await organs(page)).filter({has:page.getByText('폐',{exact:true})}).click();await ready(page);
   }
   const visible=async()=>(await page.locator('canvas').getAttribute('data-visible-structure-ids')||'').split(',').filter(Boolean).sort();
   const check=async(ids:string[])=>{await ready(page);await expect.poll(visible).toEqual([...ids].sort());};
@@ -39,7 +39,7 @@ for(const mobile of [false,true])test(`lung source views remain separate and sel
   await page.locator('[data-lung-provenance]').getByRole('button',{name:'혈관·기관지 보기',exact:true}).click();await check(internal);
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
   expect((await snapshot(page)).detail).toBe(null);expect((await visible()).some(id=>id.startsWith('BP4_'))).toBe(false);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   expect((await visible()).some(id=>id.startsWith('BP4_'))).toBe(false);expect(errors).toEqual([]);
   fs.writeFileSync(`docs/anatomy-alignment/lung-source-${mobile?'mobile':'desktop'}.json`,JSON.stringify({captures,errors},null,2)+'\n');
 });

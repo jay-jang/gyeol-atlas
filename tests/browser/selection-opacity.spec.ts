@@ -10,10 +10,10 @@ for(const sex of ['male','female'] as const)test(`${sex}: selection remains opaq
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');await ready(page);
-  if(sex==='female'){await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
+  if(sex==='female'){await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
   await page.getByRole('button',{name:'장기 빠른 보기',exact:true}).click();await ready(page);
   await openTool(page,'레이어 조절');await page.getByLabel('장기 레이어 불투명도').fill('0.08');await closeTool(page);
-  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(sex==='male'?'FMA7148':'liver');
+  await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill(sex==='male'?'FMA7148':'liver');
   const item=page.locator('.structure-item').filter({hasText:sex==='male'?'FMA7148':'HRAF'}).first();
   await item.click();await ready(page);await closeTool(page);
   const selected=(await snapshot(page)).selection.ids;

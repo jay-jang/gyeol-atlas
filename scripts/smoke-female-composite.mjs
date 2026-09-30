@@ -19,12 +19,12 @@ try{
   page.on('response',r=>{if(r.status()>=400)failures.push({status:r.status(),url:r.url()});});
   await page.goto(`${origin}/?verify=female-composite`);
   const ready=()=>expect(page.getByText('해부 모델 로드 완료')).toBeVisible({timeout:60000});
-  await ready();await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready();
+  await ready();await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready();
   const card=page.getByRole('region',{name:'선택 구조 조작'}),canvas=page.locator('canvas');
   const visible=async()=>(await canvas.getAttribute('data-visible-structure-ids')||'').split(',').filter(Boolean).sort();
   for(const [index,group] of groups.entries()){
     await page.getByRole('button',{name:'구조 찾기',exact:true}).click();
-    await page.getByLabel('해부 구조 검색').fill(group.ids[0]);await page.locator('.structure-item').click();await ready();
+    await page.getByLabel('경혈·구조 검색').fill(group.ids[0]);await page.locator('.structure-item').click();await ready();
     await page.getByRole('button',{name:'도구 패널 닫기',exact:true}).click();
     await card.getByRole('button',{name:`${group.name} 전체 상세 보기`,exact:true}).click();await ready();
     await expect.poll(visible).toEqual([...group.ids].sort());

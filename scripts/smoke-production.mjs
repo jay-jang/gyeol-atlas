@@ -27,13 +27,14 @@ try {
   );
   await page.getByRole("link", { name: "3D 경혈 지도" }).click();
   await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
-  assert.equal(requests.filter((r) => r.endsWith(".glb")).length, 1);
+  // Every system is present from 0%: the atlas requests all nine male models up front (skin paints first).
+  assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, 9);
   for (const name of ["근육 빠른 보기", "골격 빠른 보기", "장기 빠른 보기", "혈관 빠른 보기", "림프 빠른 보기", "신경 빠른 보기"]) {
     await page.getByRole("button", { name, exact: true }).click();
     await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
   }
   assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, 9);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
   await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
   for (const name of ["골격 빠른 보기", "장기 빠른 보기", "혈관 빠른 보기", "림프 빠른 보기"]) {
     await page.getByRole("button", { name, exact: true }).click();
@@ -42,7 +43,7 @@ try {
   assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, 9, "Female mode must not load legacy male/female overlay GLBs");
   assert.equal(new Set(requests.filter((r) => /\/female\/.*\.bin\.gz$/.test(r))).size, 15);
   assert.equal(requests.filter(r => /\/female-detail\//.test(r)).length, 0, "CT detail must not download until requested");
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
+  await (await (async()=>{const input=page.getByLabel('경혈·구조 검색');await input.click();await input.fill('');return page.locator('.featured-anatomy > button');})()).filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
   await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
   await page.waitForFunction(()=>document.querySelector('canvas')?.dataset.femaleDetailParts==='11');
   assert.equal(new Set(requests.filter(r=>/\/female-detail\/.*\.bin\.gz$/.test(r))).size, 1);
@@ -50,7 +51,7 @@ try {
   assert.equal((await fetch(origin + '/models/LICENSE_female_ct.txt')).status, 200);
   await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();
   await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
-  await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();
+  await page.locator('.ax-top').getByRole('button',{name:'남성',exact:true}).click();
   await page.goto(origin+'/#atlas/KI3');
   await page.locator('.point-summary').click();
   await page.getByRole('button',{name:'대응 장부의 해부 구조 비교'}).click();

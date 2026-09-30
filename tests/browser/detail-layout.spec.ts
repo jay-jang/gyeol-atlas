@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {ready, snapshot} from './helpers';
+import {ready, snapshot,organs} from './helpers';
 import {detailProjection} from './detail-projection';
 import maleGroups from '../../data/male-organ-groups.json' with {type:'json'};
 import maleDetailGroups from '../../data/male-detail-groups.json' with {type:'json'};
@@ -15,8 +15,8 @@ for (const sample of [
   await page.setViewportSize({width:1440,height:900});
   let fiberUrl=''; page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   await page.goto('/'); await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:sample.sex,exact:true}).click(); await ready(page);
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText(sample.name,{exact:true})}).click(); await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:sample.sex,exact:true}).click(); await ready(page);
+  await (await organs(page)).filter({has:page.getByText(sample.name,{exact:true})}).click(); await ready(page);
   const inspect=()=>detailProjection(page,fiberUrl);
   const unobscured=async()=>{
     await expect.poll(async()=>(await inspect()).clearance).toBeGreaterThan(4);
@@ -58,7 +58,7 @@ for (const sample of [
   await page.screenshot({path:`docs/anatomy-alignment/detail-layout-${sample.id}-landscape.png`});
   await expect(page.getByRole('button',{name:'전신으로 돌아가기',exact:true})).toBeInViewport();
   await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click(); await ready(page);
-  await expect(page.locator('.explore-sidebar')).toBeVisible();
+  await expect(page.locator('.ax-depth')).toBeVisible();
 });
 
 test('every major organ detail fits beside its collapsed and expanded card',async({page})=>{
@@ -68,9 +68,9 @@ test('every major organ detail fits beside its collapsed and expanded card',asyn
   await page.goto('/'); await ready(page);
   const featuredMaleGroups=maleGroups.map(group=>maleDetailGroups.find(detail=>detail.id===group.id)||group);
   for(const [sex,groups] of [['남성',featuredMaleGroups],['여성',[...femaleGroups,...ctGroups]]] as const) {
-    await page.locator('.explore-sidebar').getByRole('button',{name:sex,exact:true}).click(); await ready(page);
+    await page.locator('.ax-top').getByRole('button',{name:sex,exact:true}).click(); await ready(page);
     for(const group of groups) {
-      await page.locator('.featured-anatomy > button').filter({has:page.getByText(group.name,{exact:true})}).click(); await ready(page);
+      await (await organs(page)).filter({has:page.getByText(group.name,{exact:true})}).click(); await ready(page);
       const parts=page.locator('.organ-detail-parts');
       if(await parts.count() && await parts.getAttribute('open')!==null) await parts.locator('summary').click();
       for(const expanded of [false,true]) {

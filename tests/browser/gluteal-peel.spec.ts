@@ -8,7 +8,7 @@ for(const sex of ['male','female'] as const)test(`${sex}: sourced gluteal order 
   test.setTimeout(240000);let url='';const errors:string[]=[];
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))url=r.url();});page.on('pageerror',e=>errors.push(e.message));
   await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
-  if(sex==='female'){await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
+  if(sex==='female'){await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
   const slider=page.getByLabel('연속 해부 박리 깊이');await slider.fill('20');await ready(page);
   const groups=musclePeelGroups.filter(g=>g.sex===sex),ids=[...new Set(groups.flatMap(g=>g.levels.flat()))];
   const gluteal=groups.filter(g=>g.source==='gluteal'),glutealIds=[...new Set(gluteal.flatMap(g=>g.levels.flat()))];

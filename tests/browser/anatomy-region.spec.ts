@@ -11,7 +11,7 @@ for(const sex of ['male','female'] as const) test(`${sex} limb regions agree wit
   page.on('pageerror',e=>errors.push(e.message));
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   await page.goto('/');await ready(page);
-  if(sex==='female') {await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
+  if(sex==='female') {await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
   await page.getByRole('button',{name:'골격 빠른 보기',exact:true}).click();await ready(page);
   const catalog=sex==='female'?female:male;
   const ids=catalog.filter((s:any)=>limbSkeletonRegion(s)).map((s:any)=>s.id);
@@ -39,12 +39,12 @@ for(const sex of ['male','female'] as const) test(`${sex} limb regions agree wit
   }
   const searchIds=sex==='female'?['BM0064','BM0069','BM0078','BM0127']:['FMA23951','FMA24459','FMA23131','FMA32651'];
   for(const id of searchIds) {
-    await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);
+    await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill(id);
     await page.locator('.structure-item').filter({hasText:id}).click();await ready(page);
     const expected=limbSkeletonRegion(catalog.find((s:any)=>s.id===id));
     await expect(page.getByLabel('전신 부위 선택')).toHaveValue(expected!);
     expect((await snapshot(page)).layers.bone).toBe(true);expect((await rendered()).visible).toContain(id);
-    await page.getByRole('button',{name:'선택 구조 확대',exact:true}).click();
+    await page.locator('.selection-card').getByRole('button',{name:'확대',exact:true}).click();
   }
   const selected=await snapshot(page);await page.reload();await ready(page);
   expect((await snapshot(page)).anatomyRegion).toBe(selected.anatomyRegion);

@@ -4,7 +4,7 @@ try {
   const page=await browser.newPage({viewport:{width:1440,height:900}});
   await page.goto(process.env.SMOKE_ORIGIN||'https://jay-jang.github.io/gyeol-atlas/');
   const ready=()=>page.getByText('해부 모델 로드 완료').waitFor({timeout:90000});
-  await ready();await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready();
+  await ready();await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready();
   await page.evaluate(()=>{
     const s=JSON.parse(sessionStorage.getItem('gyeol-view-v2'));
     s.layers={skin:true,muscle:false,bone:true,organ:false,vessel:false,lymph:false,nerve:false};

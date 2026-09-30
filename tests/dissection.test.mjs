@@ -41,3 +41,21 @@ test("assigned peel ranks disappear in order and never reappear (not anatomical 
     }
   }
 });
+test("every system is present at 0% and peels strictly from the outside in (display order, not tissue depth)", () => {
+  const order = ["skin", "muscle", "bone", "organ", "vessel", "lymph", "nerve"];
+  for (const layer of order) assert.equal(dissectionLayerOpacity(layer, 0), 1, layer);
+  const previous = Object.fromEntries(order.map(layer => [layer, 1]));
+  for (let i = 0; i <= 200; i++) {
+    const depth = i / 2;
+    for (const [index, layer] of order.entries()) {
+      const alpha = dissectionLayerOpacity(layer, depth);
+      assert.ok(alpha <= previous[layer], `${layer} returns at ${depth}`);
+      previous[layer] = alpha;
+      // A system starts leaving only after every system outside it is gone.
+      if (alpha < 1) for (const outer of order.slice(0, index)) assert.equal(dissectionLayerOpacity(outer, depth), 0, `${outer} still covers ${layer} at ${depth}`);
+    }
+    // Individual muscles begin peeling only after the skin is gone.
+    if (musclePeelOpacity(depth, 0) < 1) assert.equal(dissectionLayerOpacity("skin", depth), 0);
+  }
+  assert.equal(dissectionLayerOpacity("nerve", 100), 1);
+});

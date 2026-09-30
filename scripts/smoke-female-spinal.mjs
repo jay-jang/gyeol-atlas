@@ -10,8 +10,8 @@ try{
   page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)failures.push({url:r.url(),status:r.status()});});
   const ready=()=>expect(page.getByText('해부 모델 로드 완료')).toBeVisible({timeout:120000});
   await page.goto(`${origin}/`);await ready();
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready();
-  await page.getByRole('button',{name:'구조 찾기',exact:true}).click();await page.getByLabel('해부 구조 검색').fill('HRAF0370');
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready();
+  await page.getByRole('button',{name:'구조 찾기',exact:true}).click();await page.getByLabel('경혈·구조 검색').fill('HRAF0370');
   await page.locator('.structure-item').click();await ready();await page.getByRole('button',{name:'도구 패널 닫기',exact:true}).click();
   const card=page.getByRole('region',{name:'선택 구조 조작'}),canvas=page.locator('canvas');
   const visible=async()=>(await canvas.getAttribute('data-visible-structure-ids')||'').split(',').filter(Boolean).sort();
@@ -28,7 +28,7 @@ try{
   await expect(card.getByRole('button',{name:'전신으로 돌아가기',exact:true})).toBeInViewport({ratio:1});
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready();
   const view=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('gyeol-view-v2')));assert.equal(view.detail,null);assert.equal(view.selection,null);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();await ready();
+  await page.locator('.ax-top').getByRole('button',{name:'남성',exact:true}).click();await ready();
   assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
   const result={origin,checkedAt:new Date().toISOString(),group:group.id,allSelectedIds:group.ids,labels,reloadSingleId:group.ids.at(-1),peelReturn:50.5,errors,failures,
     scope:'Actual public whole/29-part selection, source ordering, reload, mobile controls, peel and sex return; source geometry and anatomical alignment were not revalidated by this script.'};

@@ -9,9 +9,10 @@ import {
   useState,
   useCallback,
   Component,
+  memo,
   type ReactNode,
 } from "react";
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import { Canvas, useThree, useFrame, type ThreeEvent } from "@react-three/fiber";
 import { Html, OrbitControls, useGLTF } from "@react-three/drei";
 import {
   Mesh,
@@ -23,6 +24,10 @@ import {
   Box3,
   PerspectiveCamera,
   PropertyBinding,
+  InstancedMesh,
+  Matrix4,
+  Quaternion,
+  Color,
   type Camera,
   type Intersection,
   type Object3D,
@@ -55,9 +60,20 @@ function toCanvas(point: Vector3, camera: Camera, size: ScreenSize): [number, nu
   point.project(camera);
   return [(point.x + 1) * size.width / 2, (1 - point.y) * size.height / 2];
 }
+const facingView = new Vector3();
+function outwardNormal(position: [number, number, number], surface?: [number, number, number]) {
+  const normal = surface ? new Vector3(...position).sub(new Vector3(...surface)) : new Vector3();
+  // Fallback: radial direction from the body's vertical axis.
+  if (normal.lengthSq() < 1e-10) normal.set(position[0], 0, position[2]);
+  return normal.lengthSq() < 1e-10 ? new Vector3(0, 0, 1) : normal.normalize();
+}
+function markerFaces(normal: Vector3 | undefined, position: Vector3, eye: Vector3) {
+  if (!normal) return true;
+  return normal.dot(facingView.copy(eye).sub(position).normalize()) > -0.15;
+}
 // `outward` is a world-X step whose projection picks the label's screen side,
 // so bilateral labels still point away from the body from front and back.
-function MarkerLabel({ outward, children }: { outward: number; children: ReactNode }) {
+function MarkerLabel({ outward, normal, children }: { outward: number; normal?: Vector3; children: ReactNode }) {
   const invalidate = useThree(state => state.invalidate);
   const label = useRef<HTMLDivElement | null>(null);
   const measure = useCallback((node: HTMLDivElement | null) => {
@@ -69,14 +85,101 @@ function MarkerLabel({ outward, children }: { outward: number; children: ReactNo
     return () => observer.disconnect();
   }, [invalidate]);
   const position = useCallback((el: Object3D, camera: Camera, size: ScreenSize) => {
+    // A label for a point on the far side of the body stays off the canvas.
+    if (normal && !markerFaces(normal, labelAnchor.setFromMatrixPosition(el.matrixWorld), camera.position)) return [-9999, -9999];
     const marker = toCanvas(labelAnchor.setFromMatrixPosition(el.matrixWorld), camera, size);
     labelAnchor.setFromMatrixPosition(el.matrixWorld).x += outward;
     const away = toCanvas(labelAnchor, camera, size)[0] - marker[0];
     const node = label.current;
     return besideMarker(marker, Math.abs(away) < 1 ? outward : away,
       { width: node?.offsetWidth ?? 0, height: node?.offsetHeight ?? 0 }, size);
-  }, [outward]);
+  }, [outward, normal]);
   return <Html center zIndexRange={[20, 0]} ref={measure} calculatePosition={position}>{children}</Html>;
+}
+
+type Marker = { point: Point; key: string; occurrence: number; position: Vector3; normal: Vector3; side: string };
+const markerCapacity = anchors.length;
+const markerMatrix = new Matrix4(), markerScale = new Vector3(), markerQuaternion = new Quaternion(), markerColor = new Color();
+// All acupoint markers share one instanced draw call. Each keeps a constant
+// screen size; back-facing points (and filtered ones) get zero scale, while
+// the chosen point is larger, gold and visible from every direction.
+function Markers({ markers, selectedId, labels, onSelect }: { markers: Marker[]; selectedId: string; labels: boolean; onSelect: (p: Point) => void }) {
+  const mesh = useRef<InstancedMesh>(null);
+  const shown = useRef<boolean[]>([]);
+  const [hover, setHover] = useState<number | null>(null);
+  const { camera, size, gl, invalidate } = useThree();
+  useLayoutEffect(() => {
+    const instances = mesh.current;
+    if (!instances) return;
+    instances.count = markers.length;
+    markers.forEach((m, i) => {
+      instances.setColorAt(i, markerColor.set(m.point.id === selectedId ? "#e1ad5a" : meridians.find((x) => x.id === m.point.meridian)!.color));
+      instances.setMatrixAt(i, markerMatrix.makeScale(0, 0, 0));
+    });
+    if (instances.instanceColor) instances.instanceColor.needsUpdate = true;
+    instances.instanceMatrix.needsUpdate = true;
+    // Report committed membership, also useful for diagnosing crowded views.
+    gl.domElement.dataset.renderedMarkers = String(markers.length);
+    gl.domElement.dataset.renderedPointIds = [...new Set(markers.map((m) => m.point.id))].sort().join(",");
+    invalidate();
+  }, [markers, selectedId, gl, invalidate]);
+  useEffect(() => setHover(null), [markers]);
+  useFrame(() => {
+    const instances = mesh.current;
+    if (!instances) return;
+    const tangent = 2 * Math.tan(((camera as PerspectiveCamera).fov * Math.PI) / 360) / size.height;
+    markers.forEach((m, i) => {
+      const active = m.point.id === selectedId;
+      const visible = active || markerFaces(m.normal, m.position, camera.position);
+      shown.current[i] = visible;
+      const pixels = active ? 6 : hover === i ? 5 : 3.2;
+      markerScale.setScalar(visible ? camera.position.distanceTo(m.position) * tangent * pixels : 0);
+      instances.setMatrixAt(i, markerMatrix.compose(m.position, markerQuaternion, markerScale));
+    });
+    instances.instanceMatrix.needsUpdate = true;
+    instances.computeBoundingSphere();
+  });
+  const pick = (e: ThreeEvent<PointerEvent | MouseEvent>) => e.instanceId !== undefined && shown.current[e.instanceId] ? e.instanceId : null;
+  return (
+    <>
+      <instancedMesh
+        ref={mesh}
+        args={[undefined, undefined, markerCapacity]}
+        renderOrder={20}
+        frustumCulled={false}
+        onClick={(e) => { const i = pick(e); if (i === null) return; e.stopPropagation(); onSelect(markers[i].point); }}
+        onPointerMove={(e) => {
+          const i = pick(e);
+          if (i === null) return;
+          e.stopPropagation();
+          if (i !== hover) { setHover(i); invalidate(); }
+          document.body.style.cursor = "pointer";
+        }}
+        onPointerOut={() => { setHover(null); document.body.style.cursor = "auto"; invalidate(); }}
+      >
+        <sphereGeometry args={[1, 14, 10]} />
+        <meshBasicMaterial depthTest={false} transparent depthWrite={false} toneMapped={false} />
+      </instancedMesh>
+      {markers.map((m, i) => {
+        const active = m.point.id === selectedId;
+        return ((active && m.side !== "왼쪽" && m.occurrence === 0) || hover === i || (labels && m.occurrence === 0)) && (
+          <group key={m.key} position={m.position}>
+            <MarkerLabel outward={active ? -0.05 : 0.05} normal={active ? undefined : m.normal}>
+              <button
+                className={`point-label ${active ? "active" : ""}`}
+                title={`${m.point.name} ${m.side}`}
+                aria-label={`${m.point.name} ${m.point.id} ${m.side} 선택`}
+                onClick={() => onSelect(m.point)}
+              >
+                {m.point.id}
+                {active && <span>{m.point.name}</span>}
+              </button>
+            </MarkerLabel>
+          </group>
+        );
+      })}
+    </>
+  );
 }
 
 type Props = {
@@ -410,7 +513,6 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
 function Scene(props: Props) {
   const { points, selected, onSelect, layers, labels, action } = props;
   const controls = useRef<OrbitType>(null);
-  const markerMeshes = useRef(new Map<string, Mesh>());
   const { camera, invalidate, scene, size, gl } = useThree();
   const keys = useRef(new Set<string>());
   const mobile = window.innerWidth <= 700;
@@ -418,39 +520,46 @@ function Scene(props: Props) {
   // and traditional comparison bundles. It never changes their memberships.
   const hasSelection = props.selectionIds.length > 0;
   const limbScope = props.anatomyRegion === "upper-limb" || props.anatomyRegion === "lower-limb";
-  const landscapeSelection = hasSelection && !mobile && window.innerHeight <= 550;
-  const [selectionCard, setSelectionCard] = useState<{top:number;right:number} | null>(null);
+  const [selectionCard, setSelectionCard] = useState<{top:number;right:number;left:number} | null>(null);
   const selectionCardTop = selectionCard?.top ?? null;
   useEffect(() => {
     if (!hasSelection) { setSelectionCard(null); return; }
-    const card = gl.domElement.closest('.anatomy-workspace')?.querySelector('.selection-card');
+    const card = gl.domElement.closest('.ax')?.querySelector('.selection-card');
     if (!card) return;
     const measure = () => {
       const bounds = card.getBoundingClientRect(), canvas = gl.domElement.getBoundingClientRect();
-      const top = Math.round(bounds.top - canvas.top), right = Math.round(bounds.right - canvas.left);
-      setSelectionCard(previous => previous?.top === top && previous.right === right ? previous : {top,right});
+      const top = Math.round(bounds.top - canvas.top), right = Math.round(bounds.right - canvas.left), left = Math.round(bounds.left - canvas.left);
+      setSelectionCard(previous => previous?.top === top && previous.right === right && previous.left === left ? previous : {top,right,left});
     };
     const observer = new ResizeObserver(measure);
     observer.observe(card); observer.observe(gl.domElement); measure();
     return () => observer.disconnect();
   }, [hasSelection, gl, size.width, size.height]);
-  const observationTop = mobile ? 182 : hasSelection ? 24 : 0;
-  const observationBottom = landscapeSelection ? size.height - 65 : hasSelection && selectionCardTop !== null
+  // The selection card docks right on desktop, left in short landscape and at
+  // the bottom on phones; the free region on the other side frames the model.
+  const cardSide = !hasSelection || !selectionCard ? null
+    : selectionCard.left > size.width * .5 ? "right" : selectionCard.right < size.width * .5 ? "left" : "bottom";
+  // Phone overlays: search row and depth bar at the top, tools on the right,
+  // the acupoint bar at the bottom. Desktop keeps the depth rail at the left.
+  // (Phone top overlays end below the status pill at about 140px.)
+  const observationTop = mobile ? 150 : hasSelection ? 64 : 0;
+  const observationBottom = cardSide === "bottom" && selectionCardTop !== null
     ? Math.max(observationTop + 1, Math.min(size.height, selectionCardTop - 16))
-    : mobile ? Math.max(observationTop + 120, size.height - (props.selectionIds.length ? 374 : 75)) : hasSelection ? Math.max(180, size.height - 340) : size.height;
+    : mobile ? Math.max(observationTop + 120, size.height - 64) : hasSelection ? size.height - 70 : size.height;
   const observationHeight = observationBottom - observationTop;
-  const observationLeft = landscapeSelection ? Math.max(80, (selectionCard?.right ?? 0) + 16) : 0;
-  const observationWidth = landscapeSelection ? Math.max(1,size.width - 200 - observationLeft)
-    : mobile && (hasSelection || limbScope) ? Math.max(120, size.width - 160) : size.width;
+  const observationLeft = cardSide === "left" ? Math.max(80, selectionCard!.right + 16) : hasSelection && !mobile ? 156 : 0;
+  const observationRight = cardSide === "right" ? selectionCard!.left - 16 : mobile ? size.width - 56 : size.width;
+  const observationWidth = Math.max(1, observationRight - observationLeft);
+  const framed = mobile || hasSelection || limbScope;
   useEffect(() => {
     const cam = camera as PerspectiveCamera;
-    if (mobile || hasSelection) cam.setViewOffset(size.width, size.height,
-      landscapeSelection ? size.width / 2 - (observationLeft + observationWidth / 2) : mobile && (hasSelection || limbScope) ? 32.5 : 0,
+    if (framed) cam.setViewOffset(size.width, size.height,
+      size.width / 2 - (observationLeft + observationWidth / 2),
       size.height / 2 - (observationTop + observationBottom) / 2, size.width, size.height);
     else cam.clearViewOffset();
     cam.updateProjectionMatrix();
     invalidate();
-  }, [camera, mobile, hasSelection, limbScope, landscapeSelection, size.width, size.height, observationTop, observationBottom, observationLeft, observationWidth, props.selectionIds.length, invalidate]);
+  }, [camera, framed, size.width, size.height, observationTop, observationBottom, observationLeft, observationWidth, invalidate]);
   useEffect(() => {
     const canvas = gl.domElement;
     canvas.tabIndex = 0;
@@ -484,19 +593,6 @@ function Scene(props: Props) {
     c.update(); invalidate();
     if (poseTimer.current) clearTimeout(poseTimer.current);
     poseTimer.current = setTimeout(emitPose, 160);
-  });
-  useFrame(() => {
-    for (const [key, mesh] of markerMeshes.current) {
-      const position = mesh.getWorldPosition(new Vector3());
-      const pixels = key.startsWith(selected.id + "-") ? 6 : 4;
-      const radius =
-        (camera.position.distanceTo(position) *
-          2 *
-          Math.tan(((camera as PerspectiveCamera).fov * Math.PI) / 360) *
-          pixels) /
-        size.height;
-      mesh.scale.setScalar(radius);
-    }
   });
   const [revision, setRevision] = useState(0);
   const layerReady = useCallback(
@@ -533,7 +629,6 @@ function Scene(props: Props) {
     },
     [emitPose],
   );
-  const [hover, setHover] = useState<string | null>(null);
   const markers = useMemo(
     () =>
       (props.sex === "female" || props.detailIds.length ? [] : anchors)
@@ -543,6 +638,9 @@ function Scene(props: Props) {
           key: a.key,
           occurrence: a.occurrence,
           position: new Vector3(...(a.position as [number, number, number])),
+          // Display anchors sit a few millimetres outside their surface point;
+          // that offset is the outward direction used to hide back-side points.
+          normal: outwardNormal(a.position as [number, number, number], (a as { surfacePoint?: number[] }).surfacePoint as [number, number, number] | undefined),
           side:
             a.side === "right"
               ? "오른쪽"
@@ -552,11 +650,6 @@ function Scene(props: Props) {
         })),
     [points, props.sex, props.detailIds.length],
   );
-  useEffect(() => {
-    // Report committed mesh membership, also useful for diagnosing crowded views.
-    gl.domElement.dataset.renderedMarkers = String(markerMeshes.current.size);
-    gl.domElement.dataset.renderedPointIds = [...new Set([...markerMeshes.current.values()].map(m => m.userData.pointId))].sort().join(',');
-  }, [markers, gl]);
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
       scene.updateMatrixWorld(true);
@@ -594,15 +687,18 @@ function Scene(props: Props) {
     // mobile layout. Refit only across that layout breakpoint; scrollbar or
     // selection-card size changes must not disturb a comparison's camera.
     const refitOverview = !hasSelection && !selectionJustCleared && props.anatomyRegion === "whole" && mobileBreakpointChanged;
+    // The selection card docks at the side on desktop and at the bottom on
+    // phones, so a pose from the other layout can hide the model behind it.
+    const refitSelection = hasSelection && mobileBreakpointChanged;
     framedViewport.current = viewportKey;
     // A saved camera remains authoritative through asynchronous card/content
     // measurements. One skipped layout pass is insufficient: detail sources
     // can resize the card again after the first committed frame. Only a real
     // user camera action, or an overview viewport reframe, ends restoration.
-    if (!pendingAction && restoringLayout.current && !refitLimb && !refitOverview) {
+    if (!pendingAction && restoringLayout.current && !refitLimb && !refitOverview && !refitSelection) {
       framedLayout.current = layoutKey; return;
     }
-    if (!pendingAction && !refitLimb && !refitOverview && (!hasSelection || !layoutChanged)) { framedLayout.current = layoutKey; return; }
+    if (!pendingAction && !refitLimb && !refitOverview && !refitSelection && (!hasSelection || !layoutChanged)) { framedLayout.current = layoutKey; return; }
     const detailContext = props.detailIds.length > 0 && !props.isolated;
     const kind = pendingAction ? action.kind : refitLimb ? "anatomy-region" : refitOverview ? "fit" : props.highlight.length && !props.isolated ? "comparison" : detailContext ? "fit" : "structure";
     const selectionPreset = hasSelection && ["front", "back", "side", "reset"].includes(kind);
@@ -654,9 +750,9 @@ function Scene(props: Props) {
       const cam = camera as PerspectiveCamera;
       if (direction.lengthSq() < 0.1) direction.set(0, 0, 1);
       const distance = framedDistance(box, direction, cam.fov, cam.aspect,
-        mobile || landscapeSelection ? observationWidth / gl.domElement.clientWidth : 1,
-        mobile || hasSelection ? observationHeight / gl.domElement.clientHeight : 1,
-        mobile ? 1.15 : kind === "comparison" ? 2.6 : 1.65);
+        framed ? observationWidth / gl.domElement.clientWidth : 1,
+        framed ? observationHeight / gl.domElement.clientHeight : 1,
+        mobile ? 1.3 : kind === "comparison" ? 2.6 : 1.65);
       camera.position.copy(c.target).addScaledVector(direction, distance);
     } else if (action.kind === "region") {
       if (!markers.length) return;
@@ -752,11 +848,7 @@ function Scene(props: Props) {
           .map((layer) => (
             <Suspense
               key={layer}
-              fallback={
-                <Html center>
-                  <div className="model-loading">{layer} 모델 불러오는 중</div>
-                </Html>
-              }
+              fallback={layer === "skin" ? <Html center><div className="model-loading">인체 모델 불러오는 중</div></Html> : null}
             >
               {layer !== "lymph" && <AnatomyLayer layer={layer} props={{ ...props, onReady: layerReady }} />}
               {(layer === "nerve" || layer === "vessel") && (
@@ -769,57 +861,7 @@ function Scene(props: Props) {
             </Suspense>
           ))}
       </group>
-      {markers.map((m) => {
-        const active = m.point.id === selected.id;
-        const color = meridians.find((x) => x.id === m.point.meridian)!.color;
-        return (
-          <group key={m.key} position={m.position}>
-            <mesh
-              ref={(mesh) => {
-                if (mesh) markerMeshes.current.set(m.key, mesh);
-                else markerMeshes.current.delete(m.key);
-              }}
-              userData={{ pointId: m.point.id }}
-              onClick={(e) => {
-                e.stopPropagation();
-                onSelect(m.point);
-              }}
-              onPointerOver={(e) => {
-                e.stopPropagation();
-                setHover(m.key);
-                document.body.style.cursor = "pointer";
-              }}
-              onPointerOut={() => {
-                setHover(null);
-                document.body.style.cursor = "auto";
-              }}
-              renderOrder={20}
-            >
-              <sphereGeometry args={[1, 16, 12]} />
-              <meshBasicMaterial
-                color={active ? "#e1ad5a" : color}
-                depthTest={false}
-                transparent
-                depthWrite={false}
-                toneMapped={false}
-              />
-            </mesh>
-            {((active && m.side !== "왼쪽" && m.occurrence === 0) || hover === m.key || (labels && m.occurrence === 0)) && (
-              <MarkerLabel outward={active ? -0.05 : 0.05}>
-                <button
-                  className={`point-label ${active ? "active" : ""}`}
-                  title={`${m.point.name} ${m.side}`}
-                  aria-label={`${m.point.name} ${m.point.id} ${m.side} 선택`}
-                  onClick={() => onSelect(m.point)}
-                >
-                  {m.point.id}
-                  {active && <span>{m.point.name}</span>}
-                </button>
-              </MarkerLabel>
-            )}
-          </group>
-        );
-      })}
+      <Markers markers={markers} selectedId={selected.id} labels={labels} onSelect={onSelect} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.018, 0]}>
         <circleGeometry args={[0.48, 64]} />
         <meshBasicMaterial color="#19313d" transparent opacity={0.58} />
@@ -844,7 +886,12 @@ function Scene(props: Props) {
     </>
   );
 }
-export default function Atlas(props: Props) {
+// Constant canvas options: new objects on each render would make the canvas
+// reconfigure (and redraw every system) on unrelated UI updates.
+const CANVAS_CAMERA = { position: [0, 1, 3.0] as [number, number, number], fov: 39, near: 0.01, far: 20 };
+const CANVAS_DPR: [number, number] = [1, 1.6];
+const CANVAS_GL = { antialias: true, localClippingEnabled: true };
+export default memo(function Atlas(props: Props) {
   const [attempt, setAttempt] = useState(0);
   return (
     <Boundary
@@ -856,10 +903,10 @@ export default function Atlas(props: Props) {
       }}
     >
       <Canvas
-        camera={{ position: [0, 1, 3.0], fov: 39, near: 0.01, far: 20 }}
+        camera={CANVAS_CAMERA}
         frameloop="demand"
-        dpr={[1, 1.6]}
-        gl={{ antialias: true, localClippingEnabled: true }}
+        dpr={CANVAS_DPR}
+        gl={CANVAS_GL}
         fallback={
           <div className="viewer-fallback">
             이 브라우저에서는 WebGL을 사용할 수 없습니다. 경혈 목록과 위키에서
@@ -882,4 +929,4 @@ export default function Atlas(props: Props) {
       </Canvas>
     </Boundary>
   );
-}
+});

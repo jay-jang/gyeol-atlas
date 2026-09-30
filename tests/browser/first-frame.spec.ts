@@ -1,6 +1,6 @@
 import {test,expect,type Page} from '@playwright/test';
 import fs from 'node:fs';
-import {ready} from './helpers';
+import {ready,organs} from './helpers';
 const read=(p:string)=>JSON.parse(fs.readFileSync(p,'utf8'));
 const catalog=[...read('scripts/model-inputs.json').assets,...read('data/full-system-structures.json'),...read('data/sex-lymph-structures.json'),...read('data/female-atlas-structures.json'),...read('data/female-detail-structures.json')];
 const layerById=Object.fromEntries(catalog.map(s=>[s.id,s.layer]));
@@ -39,17 +39,20 @@ async function observe(page:Page) {
 }
 const take=(page:Page)=>page.evaluate(()=>(window as any).__drawSamples.splice(0) as Record<string,{alpha:number;transparent:boolean}[]>[]);
 
-test('new male bone, vessel, lymph and nerve meshes use their peel opacity on their first draw',async({page})=>{
+test('overview meshes that mount mid-peel use their peel opacity on their first draw',async({page})=>{
   test.setTimeout(180000);await observe(page);
+  // Every system is present from 0%. Returning from an organ detail remounts
+  // the overview; at these depths each sampled system is exactly half peeled.
   const samples=[
-    {depth:'34.5',layer:'bone',prefix:'',count:278,alpha:.05},
-    {depth:'68.5',layer:'vessel',prefix:'ZA_',count:640,alpha:.05},
-    {depth:'80.5',layer:'lymph',prefix:'ZA_',count:142,alpha:.0625},
-    {depth:'88.5',layer:'nerve',prefix:'ZA_',count:525,alpha:.05},
+    {depth:'72',layer:'bone',prefix:'',count:278,alpha:.5},
+    {depth:'87',layer:'vessel',prefix:'ZA_',count:640,alpha:.5},
+    {depth:'92.5',layer:'lymph',prefix:'ZA_',count:142,alpha:.5},
   ];
   for(const sample of samples) {
-    await take(page);
     await page.getByLabel('연속 해부 박리 깊이').fill(sample.depth);await ready(page);
+    await (await organs(page)).filter({has:page.getByText('심장',{exact:true})}).click();await ready(page);
+    await take(page);
+    await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();await ready(page);
     await expect.poll(async()=>{
       return page.evaluate(({layer,prefix,layerById})=>(window as any).__drawSamples.some((f:any)=>Object.keys(f).some(id=>layerById[id]===layer&&id.startsWith(prefix))),{...sample,layerById});
     }).toBe(true);
@@ -70,19 +73,27 @@ test('female and independent CT source mounts never draw the default all-visible
   for(const step of ['female','ct','return','ct','return']) {
     currentStep=step;
     await take(page);
-    if(step==='female')await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
-    else if(step==='ct')await page.locator('.featured-anatomy > button').filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
+    if(step==='female')await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
+    else if(step==='ct')await (await organs(page)).filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
     else await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();
     await ready(page);
-    // Returning from detail restores the pre-detail skin view, including its
-    // very first rendered frame; it no longer opens the organ overview.
-    const expected=step==='ct'?['CTF_stomach']:catalog.filter(s=>s.sex==='female'&&s.model==='HRA female whole-body atlas'&&s.layer==='skin'&&!s.hierarchy.includes('pregnancy')).map(s=>s.id).sort();
+    // Returning from detail restores the pre-detail view (every system present
+    // at 0%), including its very first rendered frame; no frame may differ.
+    const skinIds=catalog.filter(s=>s.sex==='female'&&s.model==='HRA female whole-body atlas'&&s.layer==='skin'&&!s.hierarchy.includes('pregnancy')).map(s=>s.id);
+    const pregnancyIds=new Set(catalog.filter(s=>s.sex==='female'&&s.hierarchy?.includes('pregnancy')).map(s=>s.id));
     const isTarget=(id:string)=>step==='ct'?id.startsWith('CTF_'):/^(HRAF|BM|VHF)/.test(id);
     // Transfer one boolean while waiting, not every frame/material snapshot.
     // The complete samples are still checked below once the target appears.
     await expect.poll(()=>page.evaluate(ct=>(window as any).__drawSamples.some((f:Record<string,unknown>)=>
       Object.keys(f).some(id=>ct?id.startsWith('CTF_'):/^(HRAF|BM|VHF)/.test(id))),step==='ct')).toBe(true);
     const relevant=(await take(page)).map(f=>Object.keys(f).filter(isTarget).sort()).filter(ids=>ids.length);
+    const settled=relevant[relevant.length-1];
+    const expected=step==='ct'?['CTF_stomach']:settled;
+    if(step!=='ct'){
+      expect(settled).toEqual(expect.arrayContaining(skinIds));
+      expect(settled.some(id=>pregnancyIds.has(id))).toBe(false);
+      expect(settled.length).toBeGreaterThan(1000);
+    }
     for(const ids of relevant)expect(ids,`${step} every target-source frame`).toEqual(expected);
     completed.push(step);
   }
@@ -117,16 +128,16 @@ test('cancelled female and CT downloads cannot expose a late source after switch
     });
     try {
       await take(page);
-      if(source==='female')await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
-      else await page.locator('.featured-anatomy > button').filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
+      if(source==='female')await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
+      else await (await organs(page)).filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
       await expect.poll(()=>requested).toBe(true);
       await expect(page.getByText('해부 모델 로드 완료')).not.toBeVisible();
-      if(source==='female')await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();
+      if(source==='female')await page.locator('.ax-top').getByRole('button',{name:'남성',exact:true}).click();
       else await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();
       release();await done;await ready(page);
       const forbidden=source==='female'?/^(HRAF|BM|VHF)/:/^CTF_/;
       for(const frame of await take(page))expect(Object.keys(frame).filter(id=>forbidden.test(id))).toEqual([]);
     } finally {release();await page.unroute(pattern);}
-    if(source==='female') {await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
+    if(source==='female') {await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
   }
 });

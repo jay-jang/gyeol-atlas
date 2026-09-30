@@ -20,7 +20,7 @@ test('female uterine round-ligament IDs select the appropriate existing side at 
   page.on('request',request=>{if(/\/@react-three_fiber\.js\?/.test(request.url()))fiberUrl=request.url();});
   page.on('pageerror',error=>errors.push(error.message));
   await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   const actual=()=>page.evaluate(async({url,ids})=>{
     const module=await import(/* @vite-ignore */ url),scene=module._roots.get(document.querySelector('canvas')).store.getState().scene;
     const rows=[];
@@ -62,7 +62,7 @@ test('female uterine round-ligament IDs select the appropriate existing side at 
   },fiberUrl);
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
   const choose=async(id:string)=>{
-    await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);
+    await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill(id);
     await page.locator('.structure-item').filter({hasText:id}).click();await ready(page);await closeTool(page);
     expect((await snapshot(page)).selection.ids).toEqual([id]);
     await expect(page.locator('.selection-card')).toContainText(byId.get(id).name);

@@ -7,7 +7,7 @@ for(const sex of ['male','female'] as const)test(`${sex}: transparent peel meshe
   page.on('request',request=>{if(/\/@react-three_fiber\.js\?/.test(request.url()))fiberUrl=request.url();});
   await page.goto('/');await ready(page);
   if(sex==='female'){
-    await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
+    await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
     await ready(page);
   }
   expect(fiberUrl).not.toBe('');

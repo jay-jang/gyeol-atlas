@@ -3,7 +3,7 @@ import {ready,openTool,closeTool,snapshot} from './helpers';
 
 test('Alt+arrows in a search field do not peel or move the model; canvas focus enables peeling',async({page})=>{
   await page.goto('/');await ready(page);
-  await openTool(page,'구조 찾기');const input=page.getByLabel('해부 구조 검색');await input.fill('stomach');
+  await openTool(page,'구조 찾기');const input=page.getByLabel('경혈·구조 검색');await input.fill('stomach');
   const before=await snapshot(page);
   await input.press('Alt+ArrowDown');
   expect((await snapshot(page)).dissection).toBe(before.dissection);
@@ -39,7 +39,7 @@ test('movement stops on canvas focus loss even before the held key is released',
   await page.goto('/');await ready(page);const canvas=page.locator('canvas');await canvas.focus();
   const before=(await snapshot(page)).camera;
   await page.keyboard.down('KeyD');await page.waitForTimeout(350);
-  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').focus();
+  await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').focus();
   // Camera persistence is debounced during motion: inspect after focus loss,
   // while the physical key is still held, not the stale pre-motion snapshot.
   await expect.poll(async()=>(await snapshot(page)).camera.position[0]).toBeGreaterThan(before.position[0]);

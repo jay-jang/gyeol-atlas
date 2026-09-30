@@ -5,12 +5,12 @@ test('female same-point click exits ordinary organ selection while wiki return k
   test.setTimeout(120000);
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/#atlas/ST36'); await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button', { name: '여성', exact: true }).click(); await ready(page);
+  await page.locator('.ax-top').getByRole('button', { name: '여성', exact: true }).click(); await ready(page);
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5'); await ready(page);
   const before = await snapshot(page), canvas = page.locator('canvas');
   const beforeIds = await canvas.getAttribute('data-visible-structure-ids');
   await openTool(page, '구조 찾기');
-  await page.getByLabel('해부 구조 검색').fill('HRAF0435');
+  await page.getByLabel('경혈·구조 검색').fill('HRAF0435');
   await page.locator('.structure-item').filter({ hasText: 'HRAF0435' }).click(); await ready(page);
   await closeTool(page);
   expect((await snapshot(page)).selection.ids).toEqual(['HRAF0435']);
@@ -47,7 +47,7 @@ for (const { sex, id } of [
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/#atlas/KI3'); await ready(page);
   if (sex === 'female') {
-    await page.locator('.explore-sidebar').getByRole('button', { name: '여성', exact: true }).click();
+    await page.locator('.ax-top').getByRole('button', { name: '여성', exact: true }).click();
     await ready(page);
   }
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5'); await ready(page);
@@ -57,7 +57,7 @@ for (const { sex, id } of [
   expect(beforeIds).toBeTruthy();
   const chooseStructure = async () => {
     await openTool(page, '구조 찾기');
-    await page.getByLabel('해부 구조 검색').fill(id);
+    await page.getByLabel('경혈·구조 검색').fill(id);
     // The male 4.0 detail also cites FMA7148; this scenario needs the ordinary 3.0 mesh.
     const item = sex === 'male'
       ? page.getByRole('button', { name: /^위 stomach · FMA7148 · BodyParts3D 남성 참조$/ })

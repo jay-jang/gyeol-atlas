@@ -1,13 +1,19 @@
 import { defineConfig } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests/browser",
-  timeout: 60000,
+  // Every system is present from 0%, so each page load decodes all nine
+  // male models (about 64 MB) under software WebGL before the scene is ready.
+  timeout: 150000,
   expect: { timeout: 15000 },
   use: {
     baseURL: "http://127.0.0.1:5174",
     headless: true,
     viewport: { width: 1440, height: 1100 },
-    launchOptions: { args: ["--no-sandbox", "--enable-unsafe-swiftshader"] },
+    // Software WebGL by default; PLAYWRIGHT_GPU=1 uses the local GPU (macOS Metal)
+    // for a realistic frame cost. Record which renderer a verification used.
+    launchOptions: { args: process.env.PLAYWRIGHT_GPU === "1"
+      ? ["--no-sandbox", "--use-gl=angle", "--use-angle=metal", "--ignore-gpu-blocklist"]
+      : ["--no-sandbox", "--enable-unsafe-swiftshader"] },
     trace: "retain-on-failure",
   },
   webServer: {

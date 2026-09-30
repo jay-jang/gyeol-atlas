@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import groups from '../../data/male-detail-groups.json' with {type:'json'};
-import {ready,snapshot} from './helpers';
+import {ready,snapshot,organs} from './helpers';
 
 test('male pancreas source views stay separate, expose original parts and return to the prior peel',async({page})=>{
   test.setTimeout(150000);
@@ -12,7 +12,7 @@ test('male pancreas source views stay separate, expose original parts and return
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
   const before=await snapshot(page),canvas=page.locator('canvas');
   const beforeIds=await canvas.getAttribute('data-visible-structure-ids');
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText(whole.name,{exact:true})}).click();await ready(page);
+  await (await organs(page)).filter({has:page.getByText(whole.name,{exact:true})}).click();await ready(page);
   expect((await snapshot(page)).detail.id).toBe('pancreas');
   await expect.poll(visible).toEqual([...whole.ids].sort());
   await expect(page.locator('[data-pancreas-provenance]')).toContainText('BodyParts3D 4.0');
@@ -32,7 +32,8 @@ test('male pancreas source views stay separate, expose original parts and return
   await page.setViewportSize({width:390,height:844});
   const card=await page.locator('.selection-card').boundingBox();
   const movement=await page.locator('.movement-pad').boundingBox();
-  expect(movement!.y+movement!.height).toBeLessThan(card!.y-4);
+  // The phone tool column sits beside the card: the two never overlap.
+  expect(Math.max(card!.y-(movement!.y+movement!.height),movement!.y-(card!.y+card!.height),card!.x-(movement!.x+movement!.width),movement!.x-(card!.x+card!.width))).toBeGreaterThan(4);
   await page.screenshot({path:'docs/anatomy-alignment/male-pancreas-alternative-mobile.png'});
   await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();await ready(page);
   const after=await snapshot(page);
@@ -40,7 +41,7 @@ test('male pancreas source views stay separate, expose original parts and return
   expect(after.dissection).toBe(50.5);
   expect(after.layers).toEqual(before.layers);
   await expect(canvas).toHaveAttribute('data-visible-structure-ids',beforeIds!);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   expect((await canvas.getAttribute('data-visible-structure-ids')||'').split(',').every(id=>!id.startsWith('BP4_'))).toBe(true);
   expect(errors).toEqual([]);
 });

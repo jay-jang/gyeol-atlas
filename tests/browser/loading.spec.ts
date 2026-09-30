@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { ready } from './helpers';
+import { ready,organs} from './helpers';
 
 test('leaving a detailed reference does not mark unloaded overview layers ready', async ({ page }) => {
   test.setTimeout(90000);
@@ -11,7 +11,7 @@ test('leaving a detailed reference does not mark unloaded overview layers ready'
     // Save an actual organ-layer overview as the view to restore. Reloading
     // detail drops that layer's loaded geometry before the return transition.
     await page.getByRole('button',{name:'장기 빠른 보기',exact:true}).click(); await ready(page);
-    await page.locator('.featured-anatomy > button').filter({has:page.getByText('심장',{exact:true})}).click(); await ready(page);
+    await (await organs(page)).filter({has:page.getByText('심장',{exact:true})}).click(); await ready(page);
     await page.reload(); await ready(page);
     await page.route('**/models/organ.glb', async route => {
       requested = true;

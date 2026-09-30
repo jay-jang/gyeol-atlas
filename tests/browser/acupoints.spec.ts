@@ -7,14 +7,13 @@ test('409 points, extra-point regional meshes, multiple locations and theory sur
   await openTool(page,'경혈 찾기');
   await expect(page.locator('.point-item')).toHaveCount(409);
   await page.getByLabel('모델 부위 선택').selectOption('손목·손');
-  await page.locator('.point-filter-options summary').click();
   await page.getByLabel('수록 범위',{exact:true}).selectOption('extra');
   const expected=points.filter(p=>p.bodyRegion==='손목·손' && p.catalogue==='extra');
   await expect(page.locator('.point-item')).toHaveCount(expected.length);
   await expect(page.locator('canvas')).toHaveAttribute('data-rendered-point-ids',expected.map(p=>p.id).sort().join(','));
   await expect(page.locator('canvas')).toHaveAttribute('data-rendered-markers',String(expected.reduce((n,p)=>n+p.markerCount,0)));
   await page.getByRole('button',{name:/필터 결과 .*모델에서 보기/}).click();
-  await expect(page.locator('.floating-dock')).toHaveCount(0);
+  await expect(page.locator('.ax-panel')).toHaveCount(0);
   const pose=(await snapshot(page)).camera;
   await page.getByRole('link',{name:'지식 위키',exact:true}).first().click();
   await page.getByRole('link',{name:/3D 보기로 돌아가기/}).click(); await ready(page);
@@ -45,7 +44,7 @@ test('mobile regions and 34-site Jiaji retain the scene and expose sourced conte
   await expect(page.locator('.detail-panel')).toContainText('34곳 표시');
   await page.getByRole('tab',{name:'효능·오행'}).click();
   await page.locator('.point-tradition').scrollIntoViewIfNeeded();
-  const canvas=await page.locator('canvas').boundingBox(), dock=await page.locator('.floating-dock').boundingBox();
+  const canvas=await page.locator('canvas').boundingBox(), dock=await page.locator('.detail-panel').boundingBox();
   expect(dock!.height).toBeLessThan(canvas!.height*.45);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await page.screenshot({path:'docs/acupoint-expansion/mobile-theory.png'});

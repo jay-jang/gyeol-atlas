@@ -8,7 +8,7 @@ for(const sex of ['male','female'] as const)test(`${sex}: actual meshes obey sou
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');await ready(page);
-  if(sex==='female'){await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
+  if(sex==='female'){await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
   const depth=page.getByLabel('연속 해부 박리 깊이');await depth.fill('20');await ready(page);
   expect(fiberUrl).not.toBe('');
   const ids=[...new Set(musclePeelGroups.filter(g=>g.sex===sex).flatMap(g=>g.levels.flat()))];
@@ -40,7 +40,7 @@ for(const sex of ['male','female'] as const)test(`${sex}: actual meshes obey sou
     }
   }
   const target=sex==='male'?'FMA22559':'VHF0022';
-  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill('soleus');
+  await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill('soleus');
   await page.locator('.structure-item').filter({hasText:target}).click();await ready(page);await closeTool(page);
   const state=await snapshot(page);expect(state.displayMode).toBe('layers');expect(state.selection.ids).toEqual([target]);expect(state.layers.muscle).toBe(true);
   const selected=await inspect();expect(selected[target].alpha).toBe(1);expect(selected[target].visible).toBe(true);expect(selected[target].bounds).toEqual(baseline[target].bounds);

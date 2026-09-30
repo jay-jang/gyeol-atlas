@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {ready,snapshot} from './helpers';
+import {ready,snapshot,organs} from './helpers';
 import {detailProjection} from './detail-projection';
 
 test('female reference brain exposes provenance for bundle and individual selections',async({page})=>{
@@ -7,8 +7,8 @@ test('female reference brain exposes provenance for bundle and individual select
   const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
   let fiberUrl='';page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText('뇌',{exact:true})}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await (await organs(page)).filter({has:page.getByText('뇌',{exact:true})}).click();await ready(page);
   const notice=page.locator('[data-brain-provenance]');await expect(notice).toBeVisible();
   await expect(notice).toContainText('Allen 참조 282개 + Visible Human 시신경교차 1개');
   await expect(notice).toContainText('차용 머리뼈와 뇌 모형 35개 표면 교차');
@@ -83,7 +83,7 @@ test('female reference brain exposes provenance for bundle and individual select
   await expect(card.locator(':scope > div > .selection-source')).toContainText('Allen 기반');
   await expect(card.locator(':scope > div > .selection-description')).toContainText('여성 기증자 뇌 스캔이 아닙니다');
   await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
   await expect(notice).toHaveCount(0);
   expect(errors).toEqual([]);
 });

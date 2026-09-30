@@ -11,8 +11,8 @@ try {
   const ready=()=>page.getByText('해부 모델 로드 완료').waitFor({timeout:120000});
   await page.goto(origin);await ready();
   for(const step of ['female','ct','return','ct','return']) {
-    if(step==='female')await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
-    else if(step==='ct')await page.locator('.featured-anatomy > button').filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
+    if(step==='female')await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
+    else if(step==='ct')await (await (async()=>{const input=page.getByLabel('경혈·구조 검색');await input.click();await input.fill('');return page.locator('.featured-anatomy > button');})()).filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
     else await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();
     await ready();
     const expected=step==='ct'?['CTF_stomach']:female.filter(s=>s.layer===(step==='female'?'skin':'organ')&&!s.hierarchy.includes('pregnancy')).map(s=>s.id).sort();

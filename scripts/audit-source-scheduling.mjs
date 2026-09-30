@@ -68,8 +68,8 @@ try{
     const action=i===0?'female':i%2?'ct':'return',key=`${i}/${action}`;
     await page.evaluate(key=>{window.__sourceSchedule.step=key;},key);
     const start=Date.now();
-    if(action==='female')await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
-    else if(action==='ct')await page.locator('.featured-anatomy > button').filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
+    if(action==='female')await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
+    else if(action==='ct')await (await (async()=>{const input=page.getByLabel('경혈·구조 검색');await input.click();await input.fill('');return page.locator('.featured-anatomy > button');})()).filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
     else await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();
     await ready();const readyMs=Date.now()-start;
     let failure=null;

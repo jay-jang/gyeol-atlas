@@ -11,7 +11,7 @@ try {
     {sex:'male',label:'남성',depth:49,hidden:['FMA22559','FMA45958','FMA45961'],visible:['FMA65015','FMA65017','FMA65019']},
     {sex:'female',label:'여성',depth:46.5,hidden:['VHF0005','VHF0020'],visible:['VHF0022','VHF0018','VHF0019','VHF0024']},
   ]){
-    await page.locator('.explore-sidebar').getByRole('button',{name:scenario.label,exact:true}).click();await ready();
+    await page.locator('.ax-top').getByRole('button',{name:scenario.label,exact:true}).click();await ready();
     await page.getByLabel('연속 해부 박리 깊이').fill(String(scenario.depth));await ready();
     await page.waitForFunction(s=>{
       const canvas=document.querySelector('canvas'),ids=new Set(canvas?.dataset.visibleStructureIds?.split(',')||[]);

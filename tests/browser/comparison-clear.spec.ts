@@ -9,7 +9,7 @@ for(const sex of ['male','female'] as const)test(`${sex}: clearing a comparison 
   await page.setViewportSize({width:1440,height:900});
   await page.goto('/#atlas/KI3');await ready(page);
   if(sex==='female'){
-    await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+    await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   }
   const inspect=async(ids:string[])=>page.evaluate(async({url,ids})=>{
     const {_roots}=await import(/* @vite-ignore */url);

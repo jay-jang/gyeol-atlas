@@ -33,7 +33,7 @@ test('landscape comparisons and isolated bundles remain clear without changing t
     expect((await snapshot(page)).selection.ids).toEqual(ids);
     for(const key of ['position','target'] as const)for(let i=0;i<3;i++)expect((await snapshot(page)).camera[key][i]).toBeCloseTo(before[key][i],8);
     await page.getByRole('button',{name:'구조 선택 해제',exact:true}).click();
-    await expect(page.locator('.explore-sidebar')).toBeVisible();
+    await expect(page.locator('.ax-depth')).toBeVisible();
   }
 });
 
@@ -42,12 +42,12 @@ test('female stomach comparison offers a separate CT detail without replacing th
   await page.setViewportSize({width:390,height:844});
   const requests:string[]=[];page.on('request',r=>requests.push(r.url()));
   await page.goto('/#atlas/CV12');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   await compare(page);
   const link=page.getByRole('button',{name:'위 (여성 CT) 별도 상세 보기',exact:true});
   await expect(link).toBeVisible(); await expect(link).toBeInViewport();
   await expect.poll(async()=>{
-    const button=await link.boundingBox(),dock=await page.locator('.dock-body').boundingBox();
+    const button=await link.boundingBox(),dock=await page.locator('.detail-panel').boundingBox();
     return dock!.y+dock!.height-button!.y-button!.height;
   }).toBeGreaterThan(4);
   await expect(page.locator('.comparison-feedback')).toContainText('전신에 합쳐지지 않은');

@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
-import {ready,snapshot} from './helpers';
+import {ready,snapshot,organs} from './helpers';
 import {detailProjection} from './detail-projection';
 import bindings from '../../data/catalog/female-brain-bindings.json' with {type:'json'};
 const text=fs.readFileSync('public/models/female/atlas-female.json','utf8'),atlas=JSON.parse(text);
@@ -22,7 +22,7 @@ test('brain source bindings, ray selection and every half-percent peel preserve 
   page.on('pageerror',e=>errors.push(e.message));
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   const actual=()=>page.evaluate(async({url,ids})=>{
     const module=await import(/* @vite-ignore */ url),state=module._roots.get(document.querySelector('canvas')).store.getState();
     const bytes:Uint8Array[]=[],rows=[];
@@ -54,7 +54,7 @@ test('brain source bindings, ray selection and every half-percent peel preserve 
     const m=await import(/* @vite-ignore */ url),s=m._roots.get(document.querySelector('canvas')).store.getState();
     s.gl.render=(window as any).__brainOriginalRender;delete (window as any).__brainOriginalRender;s.invalidate();
   },fiberUrl);
-  const whole=async()=>{await page.locator('.featured-anatomy > button').filter({has:page.getByText('뇌',{exact:true})}).click();await ready(page);};
+  const whole=async()=>{await (await organs(page)).filter({has:page.getByText('뇌',{exact:true})}).click();await ready(page);};
   await whole();
   await expect.poll(async()=>(await detailProjection(page,fiberUrl)).targetError).toBeLessThan(.001);
   // Find an actual visible surface hit, then dispatch a real pointer click.
@@ -109,7 +109,7 @@ test('brain source bindings, ray selection and every half-percent peel preserve 
   await page.reload();await ready(page);expect((await snapshot(page)).camera).toEqual(migratedPose);
   await page.setViewportSize({width:1440,height:900});
   await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
   expect((await snapshot(page)).selection).toBeNull();expect(errors).toEqual([]);
 });
 
@@ -117,7 +117,7 @@ test('unreviewed female manifest is rejected before geometry download and retry 
   const requested:string[]=[];page.on('request',r=>requested.push(r.url()));
   await page.route('**/models/female/atlas-female.json',r=>r.fulfill({contentType:'application/json',body:text+' '}));
   await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
   await expect(page.getByRole('alert')).toContainText('3D 모델을 열지 못했습니다');
   expect(requested.some(url=>/\/female\/.*\.bin\.gz/.test(url))).toBe(false);
   await page.unroute('**/models/female/atlas-female.json');

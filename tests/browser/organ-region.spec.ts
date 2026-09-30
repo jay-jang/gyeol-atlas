@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {ready,openTool,closeTool,snapshot} from './helpers';
+import {ready,openTool,closeTool,snapshot,settledCamera} from './helpers';
 import {detailProjection} from './detail-projection';
 import femaleGroups from '../../data/female-organ-groups.json' with {type:'json'};
 import maleGroups from '../../data/male-organ-groups.json' with {type:'json'};
@@ -13,7 +13,7 @@ for(const sex of ['male','female'] as const)test(`${sex}: source organ regions, 
   page.on('pageerror',e=>errors.push(e.message));
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   await page.goto('/');await ready(page);
-  if(sex==='female'){await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
+  if(sex==='female'){await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
   await page.getByRole('button',{name:'장기 빠른 보기',exact:true}).click();await ready(page);
   await openTool(page,'레이어 조절');
   for(const layer of (sex==='female'?['신경','체표','림프']:['신경','혈관']))await page.getByRole('checkbox',{name:`${layer} 레이어`,exact:true}).check();
@@ -35,7 +35,7 @@ for(const sex of ['male','female'] as const)test(`${sex}: source organ regions, 
   const checks=sex==='female'?[['HRAF0475','abdomen'],['HRAF0432','pelvis']]:[['FMA7148','abdomen']];
   for(const [index,[id,region]] of checks.entries()){
     // The male 4.0 stomach detail (BP4_) also cites FMA7148; this check needs the whole-body mesh.
-    await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);await page.locator('.structure-item').filter({hasNotText:'BP4_'}).click();await ready(page);await closeTool(page);
+    await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill(id);await page.locator('.structure-item').filter({hasNotText:'BP4_'}).click();await ready(page);await closeTool(page);
     await expect(page.getByLabel('전신 부위 선택')).toHaveValue(region);
     expect((await snapshot(page)).selection.ids).toEqual([id]);
     const geometry=()=>page.evaluate(async({url,id})=>{
@@ -57,7 +57,7 @@ for(const sex of ['male','female'] as const)test(`${sex}: source organ regions, 
       await expect(page.getByRole('button',{name:'구조 선택 해제',exact:true})).toBeInViewport();
       expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
       await page.screenshot({path:`docs/anatomy-alignment/organ-region-${sex}-mobile.png`});
-      await page.setViewportSize({width:1440,height:900});
+      await page.setViewportSize({width:1440,height:900});await ready(page);await settledCamera(page);
     }
     // Simulate a pre-fix saved region, not a new selection action. Keep camera/preferences.
     const saved=await snapshot(page);

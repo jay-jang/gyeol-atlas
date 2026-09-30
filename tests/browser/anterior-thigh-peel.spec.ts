@@ -8,7 +8,7 @@ test('female anterior thigh exposes vastus intermedius only after both rectus fe
   page.on('pageerror',error=>errors.push(error.message));
   page.on('request',request=>{if(/\/@react-three_fiber\.js\?/.test(request.url()))fiberUrl=request.url();});
   await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   const groups=musclePeelGroups.filter(group=>group.sex==='female'&&group.source==='anteriorThigh');
   const ids=[...new Set(groups.flatMap(group=>group.levels.flat()))];
   const relations=musclePeelRelations.filter(([outer,inner])=>ids.includes(outer as typeof ids[number])&&ids.includes(inner as typeof ids[number]));
@@ -53,7 +53,7 @@ test('female anterior thigh exposes vastus intermedius only after both rectus fe
     await page.screenshot({path:`docs/anatomy-alignment/anterior-thigh-peel-${depth}-${width}.png`});
   }
   await openTool(page,'구조 찾기');
-  await page.getByLabel('해부 구조 검색').fill('VHF0009');
+  await page.getByLabel('경혈·구조 검색').fill('VHF0009');
   await page.locator('.structure-item').filter({hasText:'VHF0009'}).click();await ready(page);await closeTool(page);
   const selected=await inspect();
   expect((await snapshot(page)).selection.ids).toEqual(['VHF0009']);
@@ -63,7 +63,8 @@ test('female anterior thigh exposes vastus intermedius only after both rectus fe
   const movement=await page.locator('.movement-pad').boundingBox();
   const card=await page.locator('.selection-card').boundingBox();
   expect(movement).not.toBeNull();expect(card).not.toBeNull();
-  expect(movement!.y+movement!.height).toBeLessThan(card!.y-4);
+  // The phone tool column sits beside the card: the two never overlap.
+  expect(Math.max(card!.y-(movement!.y+movement!.height),movement!.y-(card!.y+card!.height),card!.x-(movement!.x+movement!.width),movement!.x-(card!.x+card!.width))).toBeGreaterThan(4);
   await page.screenshot({path:'docs/anatomy-alignment/anterior-thigh-donor-selected-mobile.png'});
   await page.locator('.movement-pad summary').click();
   await expect(page.locator('.movement-pad')).toHaveAttribute('open','');

@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {ready,snapshot,openTool,closeTool} from './helpers';
+import {ready,snapshot,openTool,closeTool,organs} from './helpers';
 import groups from '../../data/female-biliary-groups.json' with {type:'json'};
 
 const gallbladder=groups[0];
@@ -9,10 +9,10 @@ test('female gallbladder detail opens four actual meshes and restores the prior 
   test.setTimeout(180000);
   const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
   await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
   const before=await snapshot(page);
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText(gallbladder.name,{exact:true})}).click();await ready(page);
+  await (await organs(page)).filter({has:page.getByText(gallbladder.name,{exact:true})}).click();await ready(page);
   await expect.poll(()=>visible(page)).toEqual([...gallbladder.ids].sort());
   await expect.poll(async()=>(await snapshot(page)).detail.id).toBe(gallbladder.id);
   await page.screenshot({path:'docs/anatomy-alignment/female-gallbladder-desktop.png'});
@@ -36,9 +36,9 @@ test('female gallbladder detail opens four actual meshes and restores the prior 
 
 test('female cystic artery keeps its English source name and opens the abdominal group',async({page})=>{
   await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   await openTool(page,'구조 찾기');
-  await page.getByLabel('해부 구조 검색').fill('HRAF0687');
+  await page.getByLabel('경혈·구조 검색').fill('HRAF0687');
   await expect(page.locator('.structure-item')).toContainText(['Cystic artery']);
   await page.locator('.structure-item').click();await ready(page);await closeTool(page);
   await expect.poll(async()=>(await snapshot(page)).selection.ids).toEqual(['HRAF0687']);

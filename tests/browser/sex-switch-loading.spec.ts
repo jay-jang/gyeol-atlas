@@ -28,9 +28,10 @@ test('switching to female removes male organs even while the female geometry is 
       return Boolean(root.store.getState().scene.getObjectByName('FMA7148'));
     },fiberUrl)).toBe(true);
     const request=page.waitForRequest(request=>request.url().includes('/models/female/female-0.bin.gz'));
-    await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
+    await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
     await request;
-    expect(delayed).toBe(true);
+    // The route handler starts just after the request event.
+    await expect.poll(()=>delayed).toBe(true);
     expect((await snapshot(page)).sex).toBe('female');
     const maleOrgan=await page.evaluate(async url=>{
       const {_roots}=await import(/* @vite-ignore */url);

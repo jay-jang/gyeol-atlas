@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {ready,snapshot,choosePoint} from './helpers';
+import {ready,snapshot,choosePoint,organs} from './helpers';
 
 for(const scenario of [
   {sex:'남성',name:'심장'},
@@ -8,12 +8,12 @@ for(const scenario of [
 ] as const)test(`${scenario.sex} ${scenario.name}: direct detail return restores its original camera after reload`,async({page})=>{
   test.setTimeout(150000);
   await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
-  if(scenario.sex==='여성')await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
+  if(scenario.sex==='여성')await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
   await ready(page);
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
   const before=await snapshot(page),canvas=page.locator('canvas');
   const ids=await canvas.getAttribute('data-visible-structure-ids');
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText(scenario.name,{exact:true})}).click();await ready(page);
+  await (await organs(page)).filter({has:page.getByText(scenario.name,{exact:true})}).click();await ready(page);
   expect((await snapshot(page)).detailReturn.camera).toEqual(before.camera);
   await page.reload();await ready(page);
   expect((await snapshot(page)).detailReturn.camera).toEqual(before.camera);
@@ -33,7 +33,7 @@ test('a point chosen from a directly opened heart detail returns to the original
   await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
   const before=await snapshot(page);
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText('심장',{exact:true})}).click();await ready(page);
+  await (await organs(page)).filter({has:page.getByText('심장',{exact:true})}).click();await ready(page);
   await choosePoint(page,'ST36');await ready(page);
   await expect.poll(async()=>{
     const after=await snapshot(page);
@@ -53,7 +53,7 @@ for(const scenario of [
   test.setTimeout(150000);
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
-  if(scenario.sex==='여성')await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
+  if(scenario.sex==='여성')await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
   await ready(page);
   const depth=page.getByLabel('연속 해부 박리 깊이'),canvas=page.locator('canvas');
   await depth.fill('50.5');await ready(page);
@@ -61,7 +61,7 @@ for(const scenario of [
   const visibleBefore=await canvas.getAttribute('data-visible-structure-ids');
   expect(before.displayMode).toBe('dissection');expect(before.dissection).toBe(50.5);
   expect(before.layers.muscle).toBe(true);expect(before.layers.bone).toBe(true);
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText(scenario.name,{exact:true})}).click();await ready(page);
+  await (await organs(page)).filter({has:page.getByText(scenario.name,{exact:true})}).click();await ready(page);
   let inside=await snapshot(page);
   expect(inside.detail).toBeTruthy();expect(inside.detailReturn.dissection).toBe(50.5);
   expect(inside.displayMode).toBe('layers');
@@ -95,7 +95,7 @@ test('selecting a point from heart detail restores peel layers and whole-body fr
   const depth=page.getByLabel('연속 해부 박리 깊이'),canvas=page.locator('canvas');
   await depth.fill('50.5');await ready(page);
   const ids=await canvas.getAttribute('data-visible-structure-ids');
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText('심장',{exact:true})}).click();await ready(page);
+  await (await organs(page)).filter({has:page.getByText('심장',{exact:true})}).click();await ready(page);
   await choosePoint(page,'ST36');await ready(page);
   const state=await snapshot(page);
   expect(state.pointId).toBe('ST36');expect(state.detail).toBe(null);expect(state.detailReturn).toBe(null);
@@ -109,9 +109,9 @@ test('selecting a point from heart detail restores peel layers and whole-body fr
 test('changing body region from female CT detail returns to the same female overview peel',async({page})=>{
   test.setTimeout(90000);
   await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();await ready(page);
+  await (await organs(page)).filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();await ready(page);
   await page.getByLabel('전신 부위 선택').selectOption('head');await ready(page);
   const state=await snapshot(page),canvas=page.locator('canvas');
   expect(state.sex).toBe('female');expect(state.anatomyRegion).toBe('head');

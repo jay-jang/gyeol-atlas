@@ -7,8 +7,8 @@ test('female spinal cord partial rest pose retains whole and individually select
   test.setTimeout(180000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   let fiberUrl='';page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
-  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill('HRAF0370');
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill('HRAF0370');
   await page.locator('.structure-item').click();await ready(page);await closeTool(page);
   const card=page.getByRole('region',{name:'선택 구조 조작'}),canvas=page.locator('canvas');
   const bounds=await canvas.getAttribute('data-selected-world-bounds');
@@ -71,11 +71,11 @@ test('female spinal cord partial rest pose retains whole and individually select
   await page.setViewportSize({width:1440,height:900});
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
   expect((await snapshot(page)).detail).toBe(null);expect((await snapshot(page)).selection).toBe(null);
-  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill('경수');
+  await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill('경수');
   expect(await page.locator('.structure-item').count()).toBe(8);
-  await page.getByLabel('해부 구조 검색').fill('Tenth thoracic spinal cord segment');
+  await page.getByLabel('경혈·구조 검색').fill('Tenth thoracic spinal cord segment');
   expect(await page.locator('.structure-item').count()).toBe(1);await closeTool(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
   expect((await snapshot(page)).detail).toBe(null);await expect(card).toHaveCount(0);expect(errors).toEqual([]);
   fs.writeFileSync('docs/ui-renewal/female-spinal-detail-metrics.json',JSON.stringify({metrics,errors},null,2)+'\n');
 });

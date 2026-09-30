@@ -44,8 +44,8 @@ try {
   for(const step of ['male-20','male-32','male-34.5','male-48','male-64','female','ct','return']) {
     const start=Date.now();
     if(step.startsWith('male-'))await page.getByLabel('연속 해부 박리 깊이').fill(step.slice(5));
-    else if(step==='female')await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
-    else if(step==='ct')await page.locator('.featured-anatomy > button').filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
+    else if(step==='female')await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
+    else if(step==='ct')await (await (async()=>{const input=page.getByLabel('경혈·구조 검색');await input.click();await input.fill('');return page.locator('.featured-anatomy > button');})()).filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
     else await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();
     await page.getByText('해부 모델 로드 완료').waitFor({timeout:120000});
     await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));

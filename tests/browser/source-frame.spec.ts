@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import {ready, snapshot, openTool, closeTool} from './helpers';
+import {ready, snapshot, openTool, closeTool,organs} from './helpers';
 import femaleStructures from '../../data/female-atlas-structures.json' with {type:'json'};
 
 test('leaving an independent detail frame for peeling fits the loaded overview and preserves later layer views', async ({page}) => {
@@ -8,9 +8,9 @@ test('leaving an independent detail frame for peeling fits the loaded overview a
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url())) fiberUrl=r.url();});
   await page.goto('/'); await ready(page);
   for (const [sex, organ] of [['남성','심장'],['여성','위 (여성 CT)']]) {
-    await page.locator('.explore-sidebar').getByRole('button',{name:sex,exact:true}).click(); await ready(page);
+    await page.locator('.ax-top').getByRole('button',{name:sex,exact:true}).click(); await ready(page);
     for (const exit of ['peeling','stage','surface']) {
-    await page.locator('.featured-anatomy > button').filter({has:page.getByText(organ,{exact:true})}).click(); await ready(page);
+    await (await organs(page)).filter({has:page.getByText(organ,{exact:true})}).click(); await ready(page);
     if (exit === 'peeling') await page.getByLabel('연속 해부 박리 깊이').fill('0');
     else if (exit === 'stage') await page.getByRole('button',{name:'체표 빠른 보기',exact:true}).click();
     else {
@@ -49,7 +49,7 @@ test('leaving an independent detail frame for peeling fits the loaded overview a
 
 test('female help and layer descriptions use the female overview inventory', async ({page}) => {
   await page.goto('/'); await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click(); await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click(); await ready(page);
   await expect(page.locator('.scope-source')).toContainText('보완 골격·근육 정렬 미완료');
   for (const [label,layer] of [['근육','muscle'],['골격','bone'],['신경','nerve']]) {
     await page.getByRole('button',{name:`${label} 빠른 보기`,exact:true}).click(); await ready(page);

@@ -11,7 +11,7 @@ for (const scenario of [
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/'); await ready(page);
   if (scenario.sex === 'female') {
-    await page.locator('.explore-sidebar').getByRole('button', { name: scenario.label, exact: true }).click();
+    await page.locator('.ax-top').getByRole('button', { name: scenario.label, exact: true }).click();
     await ready(page);
   }
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5'); await ready(page);
@@ -22,7 +22,7 @@ for (const scenario of [
   expect(before.camera).toBeTruthy();
   expect(beforeIds).toBeTruthy();
   await openTool(page, '구조 찾기');
-  await page.getByLabel('해부 구조 검색').fill(scenario.id);
+  await page.getByLabel('경혈·구조 검색').fill(scenario.id);
   // The male 4.0 stomach detail (BP4_) also cites FMA7148; this scenario needs the whole-body mesh.
   await page.locator('.structure-item').filter({ hasText: scenario.id }).filter({ hasNotText: 'BP4_' }).click(); await ready(page);
   await closeTool(page);
@@ -60,13 +60,13 @@ for (const scenario of [
 test('female ordinary organ selection then detail returns to its original peel and pose', async ({ page }) => {
   test.setTimeout(90000);
   await page.goto('/'); await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button', { name: '여성', exact: true }).click(); await ready(page);
+  await page.locator('.ax-top').getByRole('button', { name: '여성', exact: true }).click(); await ready(page);
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5'); await ready(page);
   const before = await snapshot(page);
   const canvas = page.locator('canvas');
   const beforeIds = await canvas.getAttribute('data-visible-structure-ids');
   await openTool(page, '구조 찾기');
-  await page.getByLabel('해부 구조 검색').fill('HRAF0435');
+  await page.getByLabel('경혈·구조 검색').fill('HRAF0435');
   await page.locator('.structure-item').filter({ hasText: 'HRAF0435' }).click(); await ready(page);
   await closeTool(page);
   await page.getByRole('button', { name: '기관 상세 보기', exact: true }).click(); await ready(page);

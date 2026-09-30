@@ -10,6 +10,8 @@ test('movement, wheel zoom and modifier-wheel dissection work on the actual canv
   expect(moved.target[2]).toBeLessThan(before.target[2]);
   await page.keyboard.down('KeyD'); await page.waitForTimeout(400); await page.keyboard.up('KeyD');
   await expect.poll(async()=> (await snapshot(page)).camera.position[0]).toBeGreaterThan(moved.position[0]+.04);
+  // The six touch directions sit behind the compact 이동 toggle.
+  if(await page.locator('.movement-pad').getAttribute('open')===null)await page.locator('.movement-pad summary').click();
   await page.getByRole('button',{name:'위로 이동',exact:true}).click();
   await expect.poll(async()=> (await snapshot(page)).camera.position[1]).toBeGreaterThan(moved.position[1]+.08);
   const box=(await canvas.boundingBox())!; await page.mouse.move(box.x+box.width/2,box.y+box.height/2);

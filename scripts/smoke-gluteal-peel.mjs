@@ -12,7 +12,7 @@ try {
   const visible=async()=>(await page.locator('canvas').getAttribute('data-visible-structure-ids')||'').split(',');
   await page.goto(`${origin}/`);await ready();
   for(const sex of ['male','female']){
-    await page.locator('.explore-sidebar').getByRole('button',{name:sex==='male'?'남성':'여성',exact:true}).click();await ready();
+    await page.locator('.ax-top').getByRole('button',{name:sex==='male'?'남성':'여성',exact:true}).click();await ready();
     const rows=JSON.parse(fs.readFileSync(`docs/anatomy-alignment/gluteal-peel-${sex}.json`)).changes;
     const ids=rows.map(r=>r.id),depths=sex==='male'?[34,38,42,46,64]:[36,41,50,64];
     for(const [width,height] of [[1440,900],[390,844]]){
@@ -24,7 +24,7 @@ try {
       }
       const selected=sex==='male'?'FMA22333':'VHF0027';
       await page.getByRole('button',{name:'구조 찾기',exact:true}).click();
-      await page.getByLabel('해부 구조 검색').fill(selected);
+      await page.getByLabel('경혈·구조 검색').fill(selected);
       await page.locator('.structure-item').click();await ready();
       await page.getByRole('button',{name:'도구 패널 닫기',exact:true}).click();
       await expect.poll(visible).toContain(selected);

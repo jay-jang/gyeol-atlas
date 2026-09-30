@@ -50,9 +50,9 @@ for(const [sex,id] of [['male','FMA7204'],['female','HRAF0432']] as const)test(`
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))url=r.url();});
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');await ready(page);
-  if(sex==='female'){await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
+  if(sex==='female'){await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
   // The male 4.0 kidney detail (BP4_) also cites FMA7204; these steps need the whole-body mesh.
-  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);await page.locator('.structure-item').filter({hasNotText:'BP4_'}).click();await ready(page);await closeTool(page);
+  await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill(id);await page.locator('.structure-item').filter({hasNotText:'BP4_'}).click();await ready(page);await closeTool(page);
   const checkbox=page.getByRole('checkbox',{name:/주변 반투명/});await expect(checkbox).toBeChecked();
   await expect.poll(async()=>(await detailProjection(page,url)).clearance).toBeGreaterThan(0);
   const before=await inspect(page,url,id),saved=await snapshot(page);
@@ -99,13 +99,14 @@ for(const [sex,id] of [['male','FMA7204'],['female','HRAF0432']] as const)test(`
   const ordinaryClick=await overlappingRay(page,url,id);expect(ordinaryClick).not.toBeNull();
   await page.mouse.click(ordinaryClick!.x,ordinaryClick!.y);await ready(page);
   expect((await snapshot(page)).selection.ids).toEqual([ordinaryClick!.front]);
-  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);await page.locator('.structure-item').filter({hasNotText:'BP4_'}).click();await ready(page);await closeTool(page);
+  await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill(id);await page.locator('.structure-item').filter({hasNotText:'BP4_'}).click();await ready(page);await closeTool(page);
   await expect(checkbox).not.toBeChecked();
   await page.getByRole('button',{name:'구조 선택 해제',exact:true}).click();await ready(page);
   const clearedState=await snapshot(page);
   expect(clearedState.selection).toBe(null);expect(clearedState.selectionReturn).toBe(null);
   expect(clearedState.displayMode).toBe('dissection');expect(clearedState.dissection).toBe(0);
-  expect(clearedState.layers.skin).toBe(true);expect(clearedState.layers.organ).toBe(false);
+  // Back at 0%: every system is present again under the skin.
+  expect(Object.values(clearedState.layers).every(Boolean)).toBe(true);
   const cleared=await inspect(page,url,id);expect(cleared.every(m=>m.opacity===1)).toBe(true);
   expect((await snapshot(page)).alpha).toEqual(saved.alpha);expect(errors).toEqual([]);
   fs.writeFileSync(`docs/anatomy-alignment/selection-context-${sex}-evidence.json`,JSON.stringify({id,solidPixels,ghostPixels,style,overlappingHit:click,ordinaryHit:ordinaryClick,meshes:before},null,2)+'\n');
@@ -116,15 +117,19 @@ test('vascular, neural and lymph reference renderers share the aid and keyboard 
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))url=r.url();});
   await page.goto('/');await ready(page);
   for(const id of ['ZA_vessel_abdominal_aorta','ZA_nerve_sciatic_nerve_l','ZA_lymph_spleen']){
-    await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);await page.locator('.structure-item').click();await ready(page);await closeTool(page);
+    await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill(id);await page.locator('.structure-item').click();await ready(page);await closeTool(page);
     const checkbox=page.getByRole('checkbox',{name:'주변 반투명',exact:true});await checkbox.check();
     const before=await inspect(page,url,id);expect(before.filter(m=>m.selected).length).toBeGreaterThan(0);
     expect(before.filter(m=>!m.selected).length).toBeGreaterThan(0);
     expect(before.filter(m=>!m.selected).every(m=>m.opacity<=.12&&!m.depthWrite)).toBe(true);
     const saved=await snapshot(page);await checkbox.focus();await page.keyboard.press('Space');await expect(checkbox).not.toBeChecked();
     const solid=await inspect(page,url,id);expect(solid.every(m=>m.opacity===1)).toBe(true);
-    const shape=(rows:any[])=>rows.map(({opacity,depthWrite,...r})=>r);expect(shape(solid)).toEqual(shape(before));
-    expect((await snapshot(page)).camera).toEqual(saved.camera);expect((await snapshot(page)).alpha).toEqual(saved.alpha);
+    // Geometry and structure rows stay identical; world matrices and the camera
+    // may differ only by floating-point rounding (< 1e-9).
+    const shape=(rows:any[])=>rows.map(({opacity,depthWrite,matrix,...r})=>r);expect(shape(solid)).toEqual(shape(before));
+    solid.forEach((row:any,i:number)=>row.matrix.forEach((v:number,j:number)=>expect(Math.abs(v-before[i].matrix[j])).toBeLessThan(1e-9)));
+    const camera=(await snapshot(page)).camera;for(const key of ['position','target'])for(let i=0;i<3;i++)expect(Math.abs(camera[key][i]-saved.camera[key][i])).toBeLessThan(1e-9);
+    expect((await snapshot(page)).alpha).toEqual(saved.alpha);
   }
   await page.getByRole('link',{name:'지식 위키',exact:true}).click();await expect(page.locator('canvas')).toHaveCount(0);
   await page.getByRole('link',{name:'3D 경혈 지도',exact:true}).click();await ready(page);

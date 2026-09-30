@@ -9,12 +9,12 @@ test('female femur selection opens every source child and keeps atomic selection
   const metrics:unknown[]=[];
   let fiberUrl='';page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   const canvas=page.locator('canvas'),card=page.getByRole('region',{name:'선택 구조 조작'});
   const visible=async()=>(await canvas.getAttribute('data-visible-structure-ids')||'').split(',').filter(Boolean).sort();
   for(const [side,root,label] of [['L','HRAF0937','왼쪽'],['R','HRAF0911','오른쪽']]){
     const ids=atlas.concepts.find(c=>c.id===`HRA:femur_${side}`)!.elements;
-    await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(root);
+    await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill(root);
     await page.locator('.structure-item').click();await ready(page);await closeTool(page);
     const bounds=await canvas.getAttribute('data-selected-world-bounds');
     expect((await snapshot(page)).selection.ids).toEqual([root]);
@@ -58,7 +58,7 @@ test('female femur selection opens every source child and keeps atomic selection
     await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
     expect((await snapshot(page)).detail).toBe(null);expect((await snapshot(page)).selection).toBe(null);
   }
-  await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
   await expect(card).toHaveCount(0);expect(errors).toEqual([]);
   fs.writeFileSync('docs/ui-renewal/female-femur-detail-metrics.json',JSON.stringify({metrics,errors},null,2)+'\n');
 });

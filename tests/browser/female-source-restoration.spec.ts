@@ -12,7 +12,7 @@ test('female native source surface remains unchanged across all 201 peel values 
   expect(requests.some(url=>url.includes('/models/female-source-restoration/'))).toBe(false);
   await page.getByRole('link',{name:'3D 경혈 지도',exact:true}).click();await ready(page);
   expect(requests.some(url=>url.includes('/models/female-source-restoration/'))).toBe(false);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   const actual=()=>page.evaluate(async({url})=>{
     const module=await import(/* @vite-ignore */ url),canvas=document.querySelector('canvas')!;
     const scene=module._roots.get(canvas).store.getState().scene,mesh=scene.getObjectByName('HRAF0827');
@@ -30,7 +30,7 @@ test('female native source surface remains unchanged across all 201 peel values 
     expect(await actual()).toEqual(initial);
     if(step%50===0)console.log(`Verified source buffers at peel ${step*.5}%`);
   }
-  await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill('HRAF0827');await page.locator('.structure-item').click();await ready(page);await closeTool(page);
+  await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill('HRAF0827');await page.locator('.structure-item').click();await ready(page);await closeTool(page);
   const card=page.getByRole('region',{name:'선택 구조 조작'});
   await card.getByRole('button',{name:'선택 구조만 보기',exact:true}).click();await ready(page);
   await card.getByRole('button',{name:'확대',exact:true}).click();
@@ -44,6 +44,6 @@ test('female native source surface remains unchanged across all 201 peel values 
   await page.reload();await ready(page);expect(await actual()).toEqual(initial);
   expect((await snapshot(page)).selection.ids).toEqual(['HRAF0827']);
   await page.setViewportSize({width:1440,height:900});
-  await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'남성',exact:true}).click();await ready(page);
   expect((await snapshot(page)).selection).toBe(null);expect(errors).toEqual([]);
 });

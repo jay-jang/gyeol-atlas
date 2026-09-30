@@ -1,6 +1,6 @@
 import type { Layer } from "./anatomy";
 import type { Layers } from "./types";
-import { dissectionLayers, quantizeDepth, stageDepth } from "./dissection.ts";
+import { depthStage, dissectionLayers, quantizeDepth, stageDepth } from "./dissection.ts";
 import { hasMixedReferenceFrames } from "./reference-source.ts";
 import { sourceOrganRegion } from "./anatomy-region.ts";
 import femaleBrainBindings from "../data/catalog/female-brain-bindings.json" with {type:"json"};
@@ -64,17 +64,11 @@ export function initialView(pointId = ""): ViewState {
     stage: 0,
     dissection: 0,
     displayMode: "dissection",
-    layers: {
-      skin: true,
-      muscle: false,
-      bone: false,
-      organ: false,
-      vessel: false,
-      lymph: false,
-      nerve: false,
-    },
+    // Every system is present at 0%; the opaque skin covers the rest.
+    layers: dissectionLayers(0),
     alpha: { skin: 1, muscle: 1, bone: 1, organ: 1, vessel: 1, lymph: 1, nerve: 1 },
-    markers: "selected",
+    // An acupoint atlas shows its points on the body by default.
+    markers: "filtered",
     labels: false,
     selection: null,
     detail: null,
@@ -149,7 +143,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       // sync as a new user selection and discard the saved atlas view.
       return a.id === s.pointId ? s : viewReducer(s, { type: "point", id: a.id });
     case "sex":
-      return a.value === s.sex ? s : { ...s, sex: a.value, stage: 0, dissection: 0, displayMode: "dissection", anatomyRegion: "whole", layers: singleLayer(0), alpha: initialView().alpha, selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false, cutaway: 0 };
+      return a.value === s.sex ? s : { ...s, sex: a.value, stage: 0, dissection: 0, displayMode: "dissection", anatomyRegion: "whole", layers: dissectionLayers(0), alpha: initialView().alpha, selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false, cutaway: 0 };
     case "anatomy-region":
       return a.value === s.anatomyRegion && !s.detail ? s
         : { ...leaveSelection(s), anatomyRegion: a.value, selection: null,
@@ -193,7 +187,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
     case "dissection": {
       const depth = quantizeDepth(a.value);
       const layers = dissectionLayers(depth);
-      const stage = depth < 8 ? 0 : depth < 38 ? 1 : depth < 56 ? 2 : depth < 70 ? 3 : depth < 82 ? 4 : depth < 90 ? 5 : 6;
+      const stage = depthStage(depth);
       return {
         ...s,
         dissection: depth,
@@ -387,12 +381,20 @@ export function restoreView(
         && ["visible", "internal", "skin"].includes(r.selectionTarget)
         && validCamera(r.camera));
     if (!validReturn(s.detailReturn) || !validReturn(s.selectionReturn)) return base;
-    if (s.detailReturn) s.detailReturn.dissection = quantizeDepth(s.detailReturn.dissection);
-    if (s.selectionReturn) s.selectionReturn.dissection = quantizeDepth(s.selectionReturn.dissection);
+    // Progressive views follow the current peel schedule rather than a saved
+    // layer set, so a snapshot cannot hide a system that should be present.
+    for (const r of [s.detailReturn, s.selectionReturn]) if (r) {
+      r.dissection = quantizeDepth(r.dissection);
+      if (r.displayMode === "dissection") { r.layers = dissectionLayers(r.dissection); r.stage = depthStage(r.dissection); }
+    }
     if (s.fadeContext === undefined) s.fadeContext = base.fadeContext;
     if (typeof s.fadeContext !== "boolean") return base;
     if (!["dissection", "layers"].includes(s.displayMode)) return base;
     s.dissection = quantizeDepth(s.dissection);
+    if (s.displayMode === "dissection" && !s.selection && !s.detail && keys.every(k => typeof s.layers?.[k] === "boolean")) {
+      s.layers = dissectionLayers(s.dissection);
+      s.stage = depthStage(s.dissection);
+    }
     if (
       !keys.every(
         (k) =>

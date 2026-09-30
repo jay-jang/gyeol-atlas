@@ -61,8 +61,8 @@ try {
     return result;
   }, { url: fiberUrl, ids: allIds });
   for (const [sex, label, catalog] of [["male", "남성", male], ["female", "여성", female]]) {
-    await page.locator(".explore-sidebar").getByRole("button", { name: label, exact: true }).click();
-    await page.getByRole("button", { name: "전체 켜기", exact: true }).click();
+    await page.locator(".ax-top").getByRole("button", { name: label, exact: true }).click();
+    // Every system is present from 0%, so the sex switch alone loads all meshes.
     await ready();
     const baseline = await snapshot(), expected = new Set(catalog.map(s => s.id));
     assert.deepEqual(Object.keys(baseline).sort(), [...expected].sort(), `${sex}: every source mesh must be present before peeling`);

@@ -71,7 +71,7 @@
     "sex": "male",
     "anatomyRegion": "whole",
     "stage": 4,
-    "dissection": 78,
+    "dissection": 84,
     "displayMode": "layers",
     "layers": {
       "skin": false,
@@ -91,7 +91,7 @@
       "lymph": 1,
       "nerve": 1
     },
-    "markers": "selected",
+    "markers": "filtered",
     "labels": false,
     "selection": {
       "kind": "structure",
@@ -182,12 +182,12 @@
       "displayMode": "dissection",
       "layers": {
         "skin": true,
-        "muscle": false,
-        "bone": false,
-        "organ": false,
-        "vessel": false,
-        "lymph": false,
-        "nerve": false
+        "muscle": true,
+        "bone": true,
+        "organ": true,
+        "vessel": true,
+        "lymph": true,
+        "nerve": true
       },
       "cutaway": 0,
       "selectionTarget": "visible",
@@ -213,8 +213,8 @@
     "camera": {
       "position": [
         -0.01033710315823555,
-        1.245884499169943,
-        1.1209926789088636
+        1.214115992531938,
+        0.5603719735323128
       ],
       "target": [
         -0.01033710315823555,

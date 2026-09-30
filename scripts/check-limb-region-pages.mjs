@@ -15,7 +15,7 @@ try {
   const ready=()=>page.getByText('해부 모델 로드 완료').waitFor({timeout:120000});
   await page.goto(origin);await ready();
   for(const sex of ['male','female']) {
-    if(sex==='female') {await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready();}
+    if(sex==='female') {await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready();}
     await page.getByRole('button',{name:'골격 빠른 보기',exact:true}).click();await ready();
     const catalog=catalogs[sex],allIds=catalog.filter(s=>limbSkeletonRegion(s)).map(s=>s.id);
     for(const region of ['upper-limb','lower-limb','abdomen','pelvis','chest','upper-body','lower-body','whole']) {
@@ -31,8 +31,8 @@ try {
       checks.push({sex,region,expectedNamedLimbStructures:expected.length,passed:true});
     }
     for(const id of sex==='female'?['BM0064','BM0069','BM0078','BM0127']:['FMA23951','FMA24459','FMA23131','FMA32651']) {
-      if(!await page.getByLabel('해부 구조 검색').isVisible())await page.getByRole('button',{name:'구조 찾기',exact:true}).click();
-      await page.getByLabel('해부 구조 검색').fill(id);
+      if(!await page.getByLabel('경혈·구조 검색').isVisible())await page.getByRole('button',{name:'구조 찾기',exact:true}).click();
+      await page.getByLabel('경혈·구조 검색').fill(id);
       await page.locator('.structure-item').filter({hasText:id}).click();await ready();
       const expected=limbSkeletonRegion(catalog.find(s=>s.id===id));
       assert.equal(await page.getByLabel('전신 부위 선택').inputValue(),expected);

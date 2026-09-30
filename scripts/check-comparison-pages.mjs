@@ -22,7 +22,7 @@ try {
   if(screenshotDir)await page.screenshot({path:`${screenshotDir}/public-comparison-landscape.png`});
   await page.getByRole('button',{name:'구조 선택 해제',exact:true}).click();
   await page.setViewportSize({width:390,height:844});
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready();
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready();
   await page.locator('.point-summary').click();
   await page.getByRole('button',{name:'대응 장부의 해부 구조 비교'}).click();
   const alternative=page.getByRole('button',{name:'위 (여성 CT) 별도 상세 보기',exact:true});
@@ -33,7 +33,7 @@ try {
     const b=button.getBoundingClientRect(),dock=document.querySelector('.dock-body').getBoundingClientRect();
     return b.top>=dock.top&&b.bottom<=dock.bottom;
   },undefined,{timeout:10000}).catch(async error=>{
-    console.error(await page.evaluate(()=>Object.fromEntries(['.comparison-feedback button','.comparison-feedback','.dock-body','.floating-dock'].map(selector=>{
+    console.error(await page.evaluate(()=>Object.fromEntries(['.comparison-feedback button','.comparison-feedback','.dock-body','.ax-panel'].map(selector=>{
       const el=document.querySelector(selector),b=el?.getBoundingClientRect();
       return [selector,{top:b?.top,bottom:b?.bottom,height:b?.height,scrollTop:el?.scrollTop,scrollHeight:el?.scrollHeight,clientHeight:el?.clientHeight}];
     }))));

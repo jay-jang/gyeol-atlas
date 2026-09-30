@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import type {Page} from '@playwright/test';
-import {ready,snapshot,openTool,closeTool} from './helpers';
+import {ready,snapshot,openTool,closeTool,organs} from './helpers';
 import groups from '../../data/female-airway-groups.json' with {type:'json'};
 
 const airway=groups.find(group=>group.id==='tracheobronchial-tree')!;
@@ -10,10 +10,10 @@ test('female tracheobronchial tree opens every source mesh and keeps individual 
   test.setTimeout(180000);
   const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
   await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   await page.getByLabel('연속 해부 박리 깊이').fill('50.5');await ready(page);
   const before=await snapshot(page);
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText(airway.name,{exact:true})}).click();await ready(page);
+  await (await organs(page)).filter({has:page.getByText(airway.name,{exact:true})}).click();await ready(page);
   await expect.poll(()=>visible(page)).toEqual([...airway.ids].sort());
   await expect.poll(async()=>(await snapshot(page)).detail.id).toBe(airway.id);
   await expect(page.locator('canvas')).toHaveAttribute('data-rendered-markers','0');
@@ -41,12 +41,12 @@ test('female tracheobronchial tree opens every source mesh and keeps individual 
 
 test('female airway search keeps its original English name and enters the same source group',async({page})=>{
   await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   await openTool(page,'구조 찾기');
-  await page.getByLabel('해부 구조 검색').fill('기관지 나무');
+  await page.getByLabel('경혈·구조 검색').fill('기관지 나무');
   await expect(page.locator('.structure-item')).toHaveCount(36);
   await expect(page.locator('.structure-item').filter({hasText:'Right anterior basal bronchus'})).toBeVisible();
-  await page.getByLabel('해부 구조 검색').fill('HRAF0808');
+  await page.getByLabel('경혈·구조 검색').fill('HRAF0808');
   await expect(page.locator('.structure-item')).toContainText(['Right anterior basal bronchus']);
   await page.locator('.structure-item').click();await ready(page);await closeTool(page);
   await expect.poll(async()=>(await snapshot(page)).selection.ids).toEqual(['HRAF0808']);

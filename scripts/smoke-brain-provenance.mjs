@@ -13,8 +13,8 @@ try{
   const ready=()=>expect(page.getByText('해부 모델 로드 완료')).toBeVisible({timeout:60000});
   const snapshot=()=>page.evaluate(()=>JSON.parse(sessionStorage.getItem('gyeol-view-v2')));
   await page.goto(origin);await ready();
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready();
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText('뇌',{exact:true})}).click();await ready();
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready();
+  await (await (async()=>{const input=page.getByLabel('경혈·구조 검색');await input.click();await input.fill('');return page.locator('.featured-anatomy > button');})()).filter({has:page.getByText('뇌',{exact:true})}).click();await ready();
   expect((await snapshot()).selection.ids).toHaveLength(283);
   await expect(page.locator('[data-brain-provenance]')).toContainText('Allen 참조 282개 + Visible Human 시신경교차 1개');
   await page.locator('[data-brain-provenance] summary').click();
@@ -64,7 +64,7 @@ try{
   expect((await snapshot()).selection.ids).toEqual([binding.id]);
   report.legacySelectionCameraMigration=true;
   await page.getByRole('button',{name:'전신으로 돌아가기',exact:true}).click();await ready();
-  await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();await ready();
+  await page.locator('.ax-top').getByRole('button',{name:'남성',exact:true}).click();await ready();
   await expect(page.locator('[data-brain-provenance]')).toHaveCount(0);
   expect(report.errors).toEqual([]);expect(report.failedResponses).toEqual([]);
   report.status='passed';

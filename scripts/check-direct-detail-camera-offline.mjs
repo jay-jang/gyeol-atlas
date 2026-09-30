@@ -39,7 +39,7 @@ try{
       await page.goto(origin,{waitUntil:'domcontentloaded'});
       await settled(page,()=>Boolean(document.querySelector('canvas')?.getAttribute('data-visible-structure-ids')));
       if(scenario.sex==='female'){
-        await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
+        await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
         await settled(page,()=>JSON.parse(sessionStorage.getItem('gyeol-view-v2')||'null')?.sex==='female'
           && document.querySelector('canvas')?.getAttribute('data-female-atlas-parts')==='1220');
       }
@@ -48,7 +48,7 @@ try{
       const before=await snapshot(page);
       assert.ok(before.camera,`${scenario.id} overview camera`);
       const beforeIds=await page.locator('canvas').getAttribute('data-visible-structure-ids');
-      await page.locator('.featured-anatomy > button').filter({has:page.getByText(scenario.name,{exact:true})}).click();
+      await (await (async()=>{const input=page.getByLabel('경혈·구조 검색');await input.click();await input.fill('');return page.locator('.featured-anatomy > button');})()).filter({has:page.getByText(scenario.name,{exact:true})}).click();
       await settled(page,()=>Boolean(JSON.parse(sessionStorage.getItem('gyeol-view-v2')||'null')?.detail));
       let inside=await snapshot(page);
       assert.deepEqual(inside.detailReturn.camera,before.camera,`${scenario.id} origin pose`);

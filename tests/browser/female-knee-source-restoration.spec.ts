@@ -12,7 +12,7 @@ test('38 female knee source surfaces retain buffers and placement through all 20
   expect(requests.some(url=>url.includes(spec.url))).toBe(false);
   await page.getByRole('link',{name:'3D 경혈 지도',exact:true}).click();await ready(page);
   expect(requests.some(url=>url.includes(spec.url))).toBe(false);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   const actual=()=>page.evaluate(async({url,ids})=>{
     const module=await import(/* @vite-ignore */ url),state=module._roots.get(document.querySelector('canvas')).store.getState();
     state.scene.updateMatrixWorld(true);const first=state.scene.getObjectByName(ids[0]).geometry.attributes.position.array.buffer;
@@ -32,7 +32,7 @@ test('38 female knee source surfaces retain buffers and placement through all 20
     if(step%50===0)console.log(`Verified all 38 knee buffers/matrices at ${step*.5}%`);
   }
   for(const id of ['HRAF0954','HRAF0927']){
-    await openTool(page,'구조 찾기');await page.getByLabel('해부 구조 검색').fill(id);await page.locator('.structure-item').click();await ready(page);await closeTool(page);
+    await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill(id);await page.locator('.structure-item').click();await ready(page);await closeTool(page);
     expect((await snapshot(page)).layers.bone).toBe(true);expect((await snapshot(page)).selection.ids).toEqual([id]);expect(await actual()).toEqual(initial);
   }
   const card=page.getByRole('region',{name:'선택 구조 조작'});
@@ -45,13 +45,13 @@ test('38 female knee source surfaces retain buffers and placement through all 20
   }
   await page.reload();await ready(page);expect(await actual()).toEqual(initial);expect((await snapshot(page)).selection.ids).toEqual(['HRAF0927']);
   await page.setViewportSize({width:1440,height:900});
-  await page.locator('.explore-sidebar').getByRole('button',{name:'남성',exact:true}).click();await ready(page);expect((await snapshot(page)).selection).toBe(null);
-  await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();await ready(page);expect(await actual()).toEqual(initial);expect(errors).toEqual([]);
+  await page.locator('.ax-top').getByRole('button',{name:'남성',exact:true}).click();await ready(page);expect((await snapshot(page)).selection).toBe(null);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);expect(await actual()).toEqual(initial);expect(errors).toEqual([]);
 });
 test('knee source fetch failure is visible and retry restores female source geometry',async({page})=>{
   let fiberUrl='';page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   const route=`**/${spec.url}`;await page.route(route,r=>r.fulfill({status:503,body:'Unavailable'}));
-  await page.goto('/');await ready(page);await page.locator('.explore-sidebar').getByRole('button',{name:'여성',exact:true}).click();
+  await page.goto('/');await ready(page);await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
   await expect(page.getByRole('alert')).toContainText('3D 모델을 열지 못했습니다');
   await expect(page.locator('canvas')).toHaveCount(0);
   await page.unroute(route);await page.getByRole('button',{name:'3D 다시 시도',exact:true}).click();await ready(page);

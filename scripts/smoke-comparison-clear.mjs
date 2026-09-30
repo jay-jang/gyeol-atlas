@@ -11,7 +11,7 @@ try {
   await page.goto(`${origin}/#atlas/KI3`);await ready();
   for(const sex of ['male','female'])for(const [width,height] of [[1440,900],[390,844]]){
     await page.setViewportSize({width,height});
-    if((await state()).sex!==sex){await page.locator('.explore-sidebar').getByRole('button',{name:sex==='male'?'남성':'여성',exact:true}).click();await ready();}
+    if((await state()).sex!==sex){await page.locator('.ax-top').getByRole('button',{name:sex==='male'?'남성':'여성',exact:true}).click();await ready();}
     await page.locator('.point-summary').click();
     await page.getByRole('button',{name:'대응 장부의 해부 구조 비교'}).click();await ready();
     await page.getByRole('button',{name:'비교 대상만 보기',exact:true}).click();

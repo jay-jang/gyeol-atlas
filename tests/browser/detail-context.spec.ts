@@ -1,5 +1,5 @@
 import {test,expect,type Page} from '@playwright/test';
-import {ready,snapshot} from './helpers';
+import {ready,snapshot,organs} from './helpers';
 import fs from 'node:fs';
 import maleGroups from '../../data/male-detail-groups.json' with {type:'json'};
 import femaleGroups from '../../data/female-detail-groups.json' with {type:'json'};
@@ -26,8 +26,8 @@ for(const sample of samples)test(`${sample.sex} ${sample.group.id}: restoring de
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))url=r.url();});
   page.on('pageerror',e=>errors.push(e.message));
   await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
-  await page.locator('.explore-sidebar').getByRole('button',{name:sample.sex==='male'?'남성':'여성',exact:true}).click();await ready(page);
-  await page.locator('.featured-anatomy > button').filter({has:page.getByText(sample.group.name,{exact:true})}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:sample.sex==='male'?'남성':'여성',exact:true}).click();await ready(page);
+  await (await organs(page)).filter({has:page.getByText(sample.group.name,{exact:true})}).click();await ready(page);
   const canvas=page.locator('canvas'),visible=async()=>(await canvas.getAttribute('data-visible-structure-ids')||'').split(',').filter(Boolean).sort();
   const expected=[...sample.group.ids].sort();await expect.poll(visible).toEqual(expected);
   const before=await snapshot(page),shape=await geometry(page,url,sample.group.ids);
@@ -79,7 +79,8 @@ for(const sample of samples)test(`${sample.sex} ${sample.group.id}: restoring de
     const inspectTitle=()=>title.evaluate(el=>{
       const r=el.getBoundingClientRect(),clip=el.parentElement!.getBoundingClientRect();
       const card=el.closest('.selection-card')!.getBoundingClientRect(),pad=document.querySelector('.movement-pad')!.getBoundingClientRect();
-      const tools=document.querySelector('.floating-tools')!.getBoundingClientRect(),point=document.querySelector('.floating-point')!.getBoundingClientRect();
+      // Phone layout: acupoint bar below the card, depth bar across the top.
+      const tools=document.querySelector('.ax-point-bar')!.getBoundingClientRect(),point=document.querySelector('.ax-depth')!.getBoundingClientRect();
       const gap=(a:DOMRect,b:DOMRect)=>Math.max(a.top-b.bottom,b.top-a.bottom,a.left-b.right,b.left-a.right);
       return {top:r.top-clip.top,bottom:clip.bottom-r.bottom,padClearance:gap(card,pad),toolsClearance:gap(card,tools),pointClearance:gap(pad,point)};
     });
