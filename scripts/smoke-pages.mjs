@@ -2,7 +2,7 @@ import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 const origin = process.env.PAGES_ORIGIN || 'http://127.0.0.1:4184/gyeol-atlas/';
-const browser = await chromium.launch({headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']});
+const browser = await chromium.launch({headless:true,args:process.env.PLAYWRIGHT_GPU==='1'?['--no-sandbox','--use-gl=angle','--use-angle=metal','--ignore-gpu-blocklist']:['--no-sandbox','--enable-unsafe-swiftshader']});
 try {
  const page=await browser.newPage({viewport:{width:1440,height:1100}});
  const requests=[],errors=[],failures=[];
@@ -39,6 +39,8 @@ try {
  await page.getByRole('button',{name:'경혈 찾기',exact:true}).click();
  const box=await page.locator('.ax-panel').boundingBox(),canvas=await page.locator('canvas').boundingBox();assert.ok(box.height<canvas.height*.45);
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ // A resize clears the WebGL buffer; wait for a redrawn frame before the evidence shot.
+ await page.waitForTimeout(1000);await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
  await page.screenshot({path:'docs/acupoint-expansion/pages-mobile.png'});
  assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
  const result={origin,checkedAt:new Date().toISOString(),points:409,staticSearch:true,initialWikiModelRequests:0,femaleParts:1220,femaleBrainParts:283,maleHeartParts:83,errors,failures};
