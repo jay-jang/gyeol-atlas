@@ -30,6 +30,8 @@ export type ViewState = {
   alpha: Record<Layer, number>;
   markers: "hidden" | "selected" | "filtered";
   labels: boolean;
+  // Ligaments, joint structures and separately modelled tendons.
+  connective: boolean;
   selection: Selection | null;
   detail: { id: string; name: string; ids: string[]; layers: Layers } | null;
   detailReturn: ReturnView | null;
@@ -51,6 +53,7 @@ export type ViewState = {
   };
 };
 const keys: Layer[] = ["skin", "muscle", "bone", "organ", "vessel", "lymph", "nerve"];
+export const CONNECTIVE_BUNDLE = "인대·힘줄";
 const singleLayer = (index: number) =>
   Object.fromEntries(keys.map((layer, layerIndex) => [layer, layerIndex === index])) as Layers;
 export function initialView(pointId = ""): ViewState {
@@ -70,6 +73,7 @@ export function initialView(pointId = ""): ViewState {
     // An acupoint atlas shows its points on the body by default.
     markers: "filtered",
     labels: false,
+    connective: true,
     selection: null,
     detail: null,
     detailReturn: null,
@@ -104,6 +108,8 @@ export type ViewAction =
   | { type: "fade-context"; value: boolean }
   | { type: "markers"; value: ViewState["markers"] }
   | { type: "labels"; value: boolean }
+  | { type: "connective"; value: boolean }
+  | { type: "connective-only"; ids: string[] }
   | { type: "target"; value: ViewState["selectionTarget"] }
   | { type: "select"; selection: Selection; layer?: Layer; region?: ViewState["anatomyRegion"]; detail?: NonNullable<ViewState["detail"]> }
   | { type: "detail"; detail: NonNullable<ViewState["detail"]> }
@@ -228,6 +234,21 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return { ...s, markers: a.value };
     case "labels":
       return { ...s, labels: a.value };
+    case "connective":
+      return { ...s, connective: a.value };
+    case "connective-only": {
+      // Ligaments and tendons alone, over the muscle and bone layers. Leaving
+      // the selection returns to the view it was opened from.
+      if (!a.ids.length) return s;
+      const origin = s.detail ? closeDetail(s) : s;
+      const selectionReturn = origin.selectionReturn
+        ?? (!origin.comparison && origin.displayMode === "dissection" ? { ...returnView(origin), camera: origin.camera } : null);
+      return {
+        ...origin, connective: true, selection: { kind: "bundle", ids: a.ids, name: CONNECTIVE_BUNDLE }, comparison: null,
+        detail: null, detailReturn: null, selectionReturn, isolated: true, stage: 1, dissection: stageDepth[1], displayMode: "layers",
+        layers: { ...singleLayer(1), bone: true }, cutaway: 0, selectionTarget: "visible",
+      };
+    }
     case "target":
       return {
         ...s,
@@ -389,6 +410,9 @@ export function restoreView(
     }
     if (s.fadeContext === undefined) s.fadeContext = base.fadeContext;
     if (typeof s.fadeContext !== "boolean") return base;
+    // Sessions saved before ligaments and tendons existed show them.
+    if (s.connective === undefined) s.connective = base.connective;
+    if (typeof s.connective !== "boolean") return base;
     if (!["dissection", "layers"].includes(s.displayMode)) return base;
     s.dissection = quantizeDepth(s.dissection);
     if (s.displayMode === "dissection" && !s.selection && !s.detail && keys.every(k => typeof s.layers?.[k] === "boolean")) {

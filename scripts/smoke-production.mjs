@@ -27,20 +27,22 @@ try {
   );
   await page.getByRole("link", { name: "3D 경혈 지도" }).click();
   await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
-  // Every system is present from 0%: the atlas requests all nine male models up front (skin paints first).
-  assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, 9);
+  // Every system is present from 0%: the atlas requests all eleven male models up front
+  // (seven systems, vessel/nerve supplements, ligaments and tendons; skin paints first).
+  const maleModels = ["skin", "muscle", "bone", "organ", "vessel", "nerve", "vessel-full", "nerve-full", "ligament-full", "tendon-full", "reference/lymphatic_male"];
+  assert.deepEqual(new Set(requests.filter((r) => r.endsWith(".glb")).map((r) => r.replace(/^.*\/models\//, "").replace(/\.glb$/, ""))), new Set(maleModels));
   for (const name of ["근육 빠른 보기", "골격 빠른 보기", "장기 빠른 보기", "혈관 빠른 보기", "림프 빠른 보기", "신경 빠른 보기"]) {
     await page.getByRole("button", { name, exact: true }).click();
     await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
   }
-  assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, 9);
+  assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, maleModels.length);
   await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
   await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
   for (const name of ["골격 빠른 보기", "장기 빠른 보기", "혈관 빠른 보기", "림프 빠른 보기"]) {
     await page.getByRole("button", { name, exact: true }).click();
     await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
   }
-  assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, 9, "Female mode must not load legacy male/female overlay GLBs");
+  assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, maleModels.length, "Female mode must not load legacy male/female overlay GLBs");
   assert.equal(new Set(requests.filter((r) => /\/female\/.*\.bin\.gz$/.test(r))).size, 15);
   assert.equal(requests.filter(r => /\/female-detail\//.test(r)).length, 0, "CT detail must not download until requested");
   await (await (async()=>{const input=page.getByLabel('경혈·구조 검색');await input.click();await input.fill('');return page.locator('.featured-anatomy > button');})()).filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
@@ -92,7 +94,7 @@ try {
   await page.locator('.wiki-sidebar').getByRole('link',{name:'원혈·모혈·오수혈·낙혈의 구분',exact:true}).waitFor();
   assert.deepEqual(errors, []);
   console.log(
-    "Production smoke passed: static wiki, lazy 3D, 9 male GLBs, 15 HRA female chunks, 1 on-demand independent female CT chunk, lymph, bundle/wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
+    "Production smoke passed: static wiki, lazy 3D, 11 male GLBs (incl. ligaments/tendons), 15 HRA female chunks, 1 on-demand independent female CT chunk, lymph, bundle/wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
   );
 } finally {
   await browser?.close();

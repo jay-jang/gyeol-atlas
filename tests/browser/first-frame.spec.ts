@@ -2,7 +2,7 @@ import {test,expect,type Page} from '@playwright/test';
 import fs from 'node:fs';
 import {ready,organs} from './helpers';
 const read=(p:string)=>JSON.parse(fs.readFileSync(p,'utf8'));
-const catalog=[...read('scripts/model-inputs.json').assets,...read('data/full-system-structures.json'),...read('data/sex-lymph-structures.json'),...read('data/female-atlas-structures.json'),...read('data/female-detail-structures.json')];
+const catalog=[...read('scripts/model-inputs.json').assets,...read('data/full-system-structures.json'),...read('data/connective-structures.json'),...read('data/sex-lymph-structures.json'),...read('data/female-atlas-structures.json'),...read('data/female-detail-structures.json')];
 const layerById=Object.fromEntries(catalog.map(s=>[s.id,s.layer]));
 
 async function observe(page:Page) {
@@ -43,12 +43,15 @@ test('overview meshes that mount mid-peel use their peel opacity on their first 
   test.setTimeout(180000);await observe(page);
   // Every system is present from 0%. Returning from an organ detail remounts
   // the overview; at these depths each sampled system is exactly half peeled.
+  // Ligaments peel with the skeleton and supplement tendons with the muscles.
   const samples=[
-    {depth:'72',layer:'bone',prefix:'',count:278,alpha:.5},
+    {depth:'72',layer:'bone',prefix:'',count:278,alpha:.5,exclude:'ZA_'},
+    {depth:'72',layer:'bone',prefix:'ZA_ligament_',count:358,alpha:.5},
+    {depth:'66',layer:'muscle',prefix:'ZA_tendon_',count:58,alpha:.5},
     {depth:'87',layer:'vessel',prefix:'ZA_',count:640,alpha:.5},
     {depth:'92.5',layer:'lymph',prefix:'ZA_',count:142,alpha:.5},
   ];
-  for(const sample of samples) {
+  for(const sample of samples as {depth:string;layer:string;prefix:string;count:number;alpha:number;exclude?:string}[]) {
     await page.getByLabel('연속 해부 박리 깊이').fill(sample.depth);await ready(page);
     await (await organs(page)).filter({has:page.getByText('심장',{exact:true})}).click();await ready(page);
     await take(page);
@@ -58,7 +61,7 @@ test('overview meshes that mount mid-peel use their peel opacity on their first 
     }).toBe(true);
     const frames=await take(page),ids=new Set<string>();
     for(const frame of frames)for(const [id,materials] of Object.entries(frame)) {
-      if(layerById[id]!==sample.layer||!id.startsWith(sample.prefix)||ids.has(id))continue;
+      if(layerById[id]!==sample.layer||!id.startsWith(sample.prefix)||(sample.exclude&&id.startsWith(sample.exclude))||ids.has(id))continue;
       ids.add(id);
       for(const material of materials) {expect(material.alpha,`${id} first frame`).toBeCloseTo(sample.alpha,12);expect(material.transparent).toBe(true);}
     }

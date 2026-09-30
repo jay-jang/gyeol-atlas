@@ -1,0 +1,77 @@
+{
+  "sourceRepository": "https://github.com/Nurkan1/Anatria-3D",
+  "sourceCommit": "4211d717b0b624604a8bda174ffcae31a76f4581",
+  "upstreamModel": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+  "license": "CC-BY-SA-4.0",
+  "attribution": "Z-Anatomy contributors; BodyParts3D / DBCLS",
+  "modifications": "ligament-full.glb is the unmodified articular export. tendon-full.glb keeps only the selected muscular-system nodes and re-encodes them with Draco (16-bit positions). Both are placed with the male registration used for the vessel/nerve supplements; no per-structure registration.",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/Nurkan1/Anatria-3D/4211d717b0b624604a8bda174ffcae31a76f4581/public/anatomy/manifest.json",
+      "sha256": "628983219020d9b9b0f14dfbc394c29952cab974fd18871469f6776917755662"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Nurkan1/Anatria-3D/4211d717b0b624604a8bda174ffcae31a76f4581/public/anatomy/articular_male.glb",
+      "sha256": "894533f99658c1428dce59e5225f6b1099aaf4720b3cdd7b39ac76cfbb0aec98"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Nurkan1/Anatria-3D/4211d717b0b624604a8bda174ffcae31a76f4581/public/anatomy/muscular_male.glb",
+      "sha256": "53a004c7b8af38fcbb88d5d1a7ab9dc3f6db2f5bb52188d81c5ddbfb4fb30243"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/models/ligament-full.glb",
+      "sha256": "894533f99658c1428dce59e5225f6b1099aaf4720b3cdd7b39ac76cfbb0aec98",
+      "structures": 358
+    },
+    {
+      "path": "public/models/tendon-full.glb",
+      "sha256": "18829190b14010da7ed446ea05ad59d6129e2e8c925c04c76a25e36f1269c68a",
+      "structures": 58,
+      "maxBoundsChangeMeters": 8.85e-7
+    }
+  ],
+  "selection": {
+    "ligament": "All articular-system nodes plus vertebral-column ligaments listed under the skeletal system; intervertebral discs excluded (base meshes).",
+    "tendon": "Muscular-system nodes named tendon, aponeurosis, retinaculum or ligament, plus tendon sheaths. Excluded: muscular insertions (attachment patches), bursae, intermuscular septa. Most tendons remain part of their muscle meshes in the source."
+  },
+  "excludedBaseDuplicates": [
+    "Calcaneal tendon (left)",
+    "Calcaneal tendon (right)",
+    "Epicranial aponeurosis (left)",
+    "Epicranial aponeurosis (right)",
+    "Flexor retinaculum of wrist (left)",
+    "Flexor retinaculum of wrist (right)",
+    "Inguinal ligament (left)",
+    "Inguinal ligament (right)",
+    "Intermediate tendon of digastric muscle (left)",
+    "Intermediate tendon of digastric muscle (right)",
+    "Interosseous membrane of forearm (left)",
+    "Interosseous membrane of forearm (right)",
+    "Interosseous membrane of leg (left)",
+    "Interosseous membrane of leg (right)",
+    "Long plantar ligament (left)",
+    "Long plantar ligament (right)"
+  ],
+  "kinds": {
+    "capsule": 32,
+    "cartilage": 2,
+    "ligament": 300,
+    "fatpad": 2,
+    "disc": 9,
+    "labrum": 4,
+    "membrane": 8,
+    "meniscus": 4,
+    "symphysis": 1,
+    "aponeurosis": 4,
+    "retinaculum": 16,
+    "tendon": 2,
+    "sheath": 32
+  },
+  "baseTags": {
+    "male": 17,
+    "female": 16
+  },
+  "naming": "Korean names are editorial (data/catalog/connective-ko.tsv), not expert-reviewed; English, TA2 Latin and source hierarchy are kept."
+}

@@ -10,9 +10,9 @@ import { comparisonReference } from "./comparison-reference";
 import { referenceSourceFor } from "./reference-source";
 import { structureForSexId } from "./sex-structure";
 import { depthStage, stageDepth } from "./dissection";
-import type { ViewAction, ViewState } from "./view-state";
+import { CONNECTIVE_BUNDLE, type ViewAction, type ViewState } from "./view-state";
 import {
-  anatomyRegionNames, compositeGroups, detailForStructure, layerKeys, layerNames, maleKidneyViews, maleLungViews,
+  anatomyRegionNames, compositeGroups, connectiveKindNames, connectiveKindOf, detailForStructure, layerKeys, layerNames, maleKidneyViews, maleLungViews,
   malePancreasViews, organGroups, stageDescription, stages, structureGroups, structures, structuresForSex, type Layer,
 } from "./anatomy";
 import type { CameraAction, Layers, Point } from "./types";
@@ -342,6 +342,8 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   }, [shiftDissection]);
   const selectedAnatomy = state.selection?.kind === "structure" ? structureForSexId(structures, state.sex, state.selection.ids[0]) : null;
   const selectedGroup = state.detail?.id || selectedAnatomy?.group;
+  const selectedKind = selectedAnatomy ? connectiveKindOf(selectedAnatomy.id) : undefined;
+  const connectiveBundle = state.selection?.kind === "bundle" && state.selection.name === CONNECTIVE_BUNDLE && !state.detail;
   const selectedOrgan = structureGroups.find((group) => group.id === selectedGroup && group.sex === state.sex);
   const selectedComposite = compositeGroups.find((group) => group.id === selectedGroup && group.sex === state.sex);
   const selectedLungPart = Boolean(state.sex === "male" && selectedAnatomy && maleLungViews.some((view) => view.id === selectedGroup));
@@ -472,6 +474,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             onPose={onPose}
             sex={state.sex}
             anatomyRegion={state.anatomyRegion}
+            connective={state.connective}
           />
         </Suspense>
       </section>
@@ -560,7 +563,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
       {panel === "display" && (
         <div className="ax-panel ax-side-panel" role="region" aria-label="표시 설정" ref={dockRef}>
           <div className="ax-panel-head"><strong>표시 설정</strong>{closeButton}</div>
-          <AnatomyControls state={state} dispatch={dispatch} />
+          <AnatomyControls state={state} dispatch={dispatch} onDone={() => setPanel(null)} />
         </div>
       )}
 
@@ -698,11 +701,15 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             <div key={selectionKey}>
               <span className={`selection-kind ${state.selection.kind}`}>
                 {state.comparison ? "전통 장부 비교" : state.detail ? `${state.detail.name} · ${selectedComposite ? "구조" : "기관"} 상세 모델` : state.selection.kind === "bundle" ? "구조 묶음" : "선택 구조"}
+                {selectedKind && ` · ${connectiveKindNames[selectedKind]}`}
               </span>
               <strong>{state.selection.name} <small>{state.selection.ids.length}개 구조</small></strong>
               {state.comparison && <p className="comparison-note">{selected.name} · {state.comparison.name} 비교 — 전통적 대응, 압력 경로 아님</p>}
               {state.sex === "male" && sourceKey === "male-detail" && selectedGroup === "stomach" && <p className="selection-description" data-stomach-frame-warning>별도 4.0 상세 원본입니다. 전신 3.0 위와 상자 중심이 약 42mm 달라 같은 위치로 정합된 화면이 아닙니다.</p>}
               {selectedAnatomy?.description && sourceKey !== "female-detail" && <p className="selection-description">{selectedAnatomy.description}</p>}
+              {connectiveBundle && <p className="selection-description">{state.sex === "male"
+                ? "원본에 따로 모델링된 인대·관절 구조와 힘줄·힘줄집만 모았습니다. 대부분의 힘줄은 근육 모형에 포함되어 있어 이 묶음에 없습니다. 인대는 전신 보정만 적용했으며 구조별 정합은 하지 않았습니다."
+                : "여성 원본에 따로 수록된 무릎 인대·반달연골과 넙다리네갈래근 힘줄입니다."}</p>}
               {selectedAnatomy?.latin && <small className="selection-latin">TA2 · {selectedAnatomy.latin}</small>}
               {selectedAnatomy?.source && sourceKey !== "female-detail" && <small className="selection-source">{selectedAnatomy.source} · 학습용 비진단 모델</small>}
               {selectedComposite && <details className="anatomy-source-details" data-composite-provenance>

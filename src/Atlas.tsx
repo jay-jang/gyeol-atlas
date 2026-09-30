@@ -35,17 +35,18 @@ import {
 import type { OrbitControls as OrbitType } from "three-stdlib";
 import type { CameraPose } from "./view-state";
 import type { Point, Layers, CameraAction } from "./types";
-import { dissectionLayerOpacity, layerKeys, maleOnlyStructureIds, type Layer, structures } from "./anatomy";
+import { connectiveKindOf, dissectionLayerOpacity, layerKeys, maleOnlyStructureIds, type Layer, structures } from "./anatomy";
 import meridians from "../data/meridians.json";
 import anchors from "../data/anchors.json";
 import structurePairs from "../data/structure-pairs.json";
 import fullSystemStructures from "../data/full-system-structures.json";
+import connectiveStructures from "../data/connective-structures.json";
 import sexLymphStructures from "../data/sex-lymph-structures.json";
 import maleRegistration from "../data/catalog/male-registration.json";
 import { movementKeys, translateView, type MoveDirection } from "./navigation";
 import { LoaderCircle, TriangleAlert } from "lucide-react";
 import PackedAtlas from "./PackedAtlas";
-import { clippingPlanes, configurePicking } from "./anatomy-rendering";
+import { CONNECTIVE_COLOR, clippingPlanes, configurePicking } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { framedDistance } from "./camera-framing";
 import { musclePeelRanks } from "./muscle-peel";
@@ -208,6 +209,7 @@ type Props = {
   onPose: (pose: CameraPose) => void;
   sex: "male" | "female";
   anatomyRegion: "whole" | "head" | "upper-body" | "lower-body" | "upper-limb" | "lower-limb" | "chest" | "abdomen" | "pelvis";
+  connective: boolean;
 };
 export type AtlasProps = Props;
 const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
@@ -318,6 +320,8 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       // Use a single whole-body vascular/neural source in the overview. Retain
       // original BodyParts3D meshes for explicit searches and organ details.
       if ((layer === "nerve" || layer === "vessel") && !selected && !props.detailIds.includes(id)) o.visible = false;
+      const connective = Boolean(connectiveKindOf(id));
+      if (connective && !props.connective && !selected) o.visible = false;
       if (o.visible) visibleCount++;
       // Selection is an opaque emphasis, as in PackedAtlas and the supplements.
       // Keep the user's layer alpha in view-state; it applies again on deselect.
@@ -325,7 +329,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       const vessel = structureById.get(id)?.name || "";
       const material = o.material as MeshStandardMaterial;
       configurePicking(o, layer, props.selectionTarget);
-      material.color.set(emphasis ? emphasis : clinicalColor(layer, vessel));
+      material.color.set(emphasis ? emphasis : connective ? CONNECTIVE_COLOR : clinicalColor(layer, vessel));
       const transparent = !opacityWritesDepth(alpha);
       const planes = clippingPlanes(layer, props);
       const clipping = planes.length > 0;
@@ -357,6 +361,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     props.displayMode,
     props.layers,
     props.anatomyRegion,
+    props.connective,
     gl,
     invalidate,
   ]);
@@ -376,32 +381,32 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     />
   );
 }
-function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; props: Props }) {
-  const model = useGLTF(
-    assetUrl(`models/${layer}-full.glb`),
-    assetUrl("draco/"),
-  );
+type SupplementEntry = { id: string; node: string; name: string; layer: string };
+// A whole-body Z-Anatomy export placed with the male registration. Only the
+// catalogued nodes of this system are shown; the rest of the file stays hidden.
+function SupplementModel({ url, layer, entries, color, connective = false, signalsReady, props }: {
+  url: string; layer: Layer; entries: SupplementEntry[]; color: (entry: SupplementEntry | undefined) => string;
+  connective?: boolean; signalsReady: boolean; props: Props;
+}) {
+  const model = useGLTF(assetUrl(url), assetUrl("draco/"));
   const object = useMemo(() => {
     const clone = model.scene.clone(true);
     clone.visible = false;
     clone.scale.multiplyScalar(maleRegistration.scale);
     clone.position.multiplyScalar(maleRegistration.scale).add(new Vector3(...maleRegistration.translation));
     clone.updateMatrixWorld(true);
-    const byNode = new Map(
-      fullSystemStructures
-        .filter((item) => item.layer === layer)
-        .map((item) => [PropertyBinding.sanitizeNodeName(item.node), item.id]),
-    );
+    const byNode = new Map(entries.map((item) => [PropertyBinding.sanitizeNodeName(item.node), item]));
     clone.traverse((item) => {
       if (!(item instanceof Mesh)) return;
-      const id = byNode.get(item.name);
-      item.userData.systemAllowed = Boolean(id);
-      item.visible = Boolean(id);
-      if (id) item.name = id;
-      item.material = new MeshStandardMaterial({ roughness: 0.76, side: DoubleSide });
+      const entry = byNode.get(item.name);
+      item.userData.systemAllowed = Boolean(entry);
+      item.userData.entry = entry;
+      item.visible = Boolean(entry);
+      if (entry) item.name = entry.id;
+      item.material = new MeshStandardMaterial({ roughness: connective ? 0.58 : 0.76, side: DoubleSide });
     });
     return clone;
-  }, [model.scene]);
+  }, [model.scene, entries, connective]);
   const { invalidate } = useThree();
   useLayoutEffect(() => {
     const progressive = props.displayMode === "dissection";
@@ -410,10 +415,10 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
       const selected = props.selectionIds.includes(item.name);
       item.visible = item.userData.systemAllowed && (!props.isolated || selected) && (selected || inAnatomyRegion(item, props.anatomyRegion));
       item.visible = item.visible && (!props.detailIds.length || props.detailIds.includes(item.name));
+      if (connective && !props.connective && !selected) item.visible = false;
       const material = item.material as MeshStandardMaterial;
-      const entry = structureById.get(item.name);
-      const vein = layer === "vessel" && /vein|vena cava/i.test(entry?.name || "");
-      material.color.set(selected ? "#34d3dd" : layer === "nerve" ? "#f0c94f" : vein ? "#356fb3" : "#cf3e49");
+      // A category bundle keeps its tissue colour; one chosen structure is emphasised.
+      material.color.set((connective ? props.selectedStructure === item.name : selected) ? "#34d3dd" : color(item.userData.entry));
       const alpha = selectionOpacity(props.layerOpacity[layer] * dissectionLayerOpacity(layer, props.dissection, progressive), selected, props.contextDimmed);
       item.visible = item.visible && alpha > .01;
       const clipped = props.cutaway > 0;
@@ -430,10 +435,10 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
     });
     object.visible = true;
     invalidate();
-  }, [object, layer, props.isolated, props.selectionIds, props.detailIds, props.layerOpacity, props.contextDimmed, props.cutaway, props.dissection, props.displayMode, props.selectionTarget, props.anatomyRegion, props.layers, invalidate]);
+  }, [object, layer, color, connective, props.connective, props.selectedStructure, props.isolated, props.selectionIds, props.detailIds, props.layerOpacity, props.contextDimmed, props.cutaway, props.dissection, props.displayMode, props.selectionTarget, props.anatomyRegion, props.layers, invalidate]);
   useEffect(() => {
-    props.onReady(layer);
-  }, [object, layer, props.onReady]);
+    if (signalsReady) props.onReady(layer);
+  }, [object, layer, signalsReady, props.onReady]);
   useEffect(
     () => () =>
       object.traverse((item) => {
@@ -450,6 +455,27 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
     event.stopPropagation();
     props.onStructure(selectionHitId(id, event.intersections, props.selectionIds, props.contextDimmed));
   }} />;
+}
+const fullSystemEntries = {
+  nerve: fullSystemStructures.filter((item) => item.layer === "nerve"),
+  vessel: fullSystemStructures.filter((item) => item.layer === "vessel"),
+};
+const nerveColor = () => "#f0c94f";
+const vesselColor = (entry: SupplementEntry | undefined) => /vein|vena cava/i.test(entry?.name || "") ? "#356fb3" : "#cf3e49";
+function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; props: Props }) {
+  return <SupplementModel url={`models/${layer}-full.glb`} layer={layer} entries={fullSystemEntries[layer]}
+    color={layer === "nerve" ? nerveColor : vesselColor} signalsReady props={props} />;
+}
+// Ligaments and joint structures peel with the skeleton; separately modelled
+// tendons, retinacula and tendon sheaths with the muscles.
+const connectiveColor = () => CONNECTIVE_COLOR;
+const connectiveEntries = {
+  bone: connectiveStructures.filter((item) => item.model === "ligament-full.glb"),
+  muscle: connectiveStructures.filter((item) => item.model === "tendon-full.glb"),
+};
+function ConnectiveSupplement({ layer, props }: { layer: "bone" | "muscle"; props: Props }) {
+  return <SupplementModel url={`models/${layer === "bone" ? "ligament" : "tendon"}-full.glb`} layer={layer}
+    entries={connectiveEntries[layer]} color={connectiveColor} connective signalsReady={false} props={props} />;
 }
 function ReferenceModel({ modelName, layer, props }: { modelName: string; layer: Layer; props: Props }) {
   const model = useGLTF(assetUrl(`models/reference/${modelName}`), assetUrl("draco/"));
@@ -669,7 +695,7 @@ function Scene(props: Props) {
       for (const layer of layerKeys) gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(counts[layer]);
     });
     return () => cancelAnimationFrame(frame);
-  }, [revision, props.sex, props.layers, props.selectionIds, props.detailIds, props.isolated, props.dissection, props.anatomyRegion, scene, gl]);
+  }, [revision, props.sex, props.layers, props.selectionIds, props.detailIds, props.isolated, props.dissection, props.anatomyRegion, props.connective, scene, gl]);
   useEffect(() => {
     const c = controls.current;
     if (!c) return;
@@ -857,6 +883,7 @@ function Scene(props: Props) {
                   props={{ ...props, onReady: layerReady }}
                 />
               )}
+              {(layer === "bone" || layer === "muscle") && <ConnectiveSupplement layer={layer} props={props} />}
               {layer === "lymph" && <ReferenceModel modelName="lymphatic_male.glb" layer="lymph" props={{ ...props, sex: "male", onReady: layerReady }} />}
             </Suspense>
           ))}

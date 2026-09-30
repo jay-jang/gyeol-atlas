@@ -2,6 +2,8 @@ import labels from "../data/structure-labels.json";
 import { limbSkeletonRegion, sourceOrganRegion } from "./anatomy-region";
 import inputs from "../scripts/model-inputs.json";
 import fullSystemStructures from "../data/full-system-structures.json";
+import connectiveStructures from "../data/connective-structures.json";
+import connectiveTags from "../data/connective-tags.json";
 import sexLymphStructures from "../data/sex-lymph-structures.json";
 import femaleAtlasStructures from "../data/female-atlas-structures.json";
 import femaleOrganGroups from "../data/female-organ-groups.json";
@@ -62,7 +64,7 @@ const baseStructures = inputs.assets.map((s) => ({
 // scopes only annotate existing source-defined female meshes at runtime.
 const additionalFemaleGroupById = new Map(femaleAdditionalOrganGroups.flatMap(group => group.ids.map(id => [id, group] as const)));
 const featuredFemaleGroupById = new Map(femaleAirwayGroups.flatMap(group => group.ids.map(id => [id, group] as const)));
-export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures.filter(s => s.sex === "male"), ...femaleAtlasStructures, ...maleDetailStructures, ...femaleDetailStructures].map(s => {
+export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...connectiveStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures.filter(s => s.sex === "male"), ...femaleAtlasStructures, ...maleDetailStructures, ...femaleDetailStructures].map(s => {
   const additional = s.sex === "female" && !("group" in s && s.group) ? additionalFemaleGroupById.get(s.id) : undefined;
   const featured = s.sex === "female" && !("group" in s && s.group) ? featuredFemaleGroupById.get(s.id) : undefined;
   const grouped = additional ? { ...s, group: additional.id, hierarchy: ["reproductive", additional.name, additional.id] }
@@ -86,7 +88,22 @@ export const structures = [...baseStructures, ...fullSystemStructures.map(s => (
   model?: string;
   group?: string;
   detailOnly?: boolean;
+  kind?: string;
 }[];
+// Ligaments, joint structures and separately modelled tendons. Supplement
+// meshes carry their kind; existing base meshes of these kinds are tagged.
+export const connectiveKindNames: Record<string, string> = {
+  ligament: "인대", capsule: "관절주머니", meniscus: "반달연골", disc: "관절원반", labrum: "관절테두리", membrane: "섬유막",
+  cartilage: "연골", fatpad: "지방체", symphysis: "섬유연골결합", tendon: "힘줄", aponeurosis: "널힘줄", retinaculum: "지지띠",
+  sheath: "힘줄집", tract: "근막띠",
+};
+const connectiveKindById = new Map<string, string>([
+  ...connectiveStructures.map((s) => [s.id, s.kind] as [string, string]),
+  ...Object.entries(connectiveTags.male), ...Object.entries(connectiveTags.female),
+]);
+export const connectiveKindOf = (id: string) => connectiveKindById.get(id);
+export const connectiveIdsForSex = (sex: "male" | "female") =>
+  sex === "male" ? [...connectiveStructures.map((s) => s.id), ...Object.keys(connectiveTags.male)] : Object.keys(connectiveTags.female);
 export const maleOnlyStructureIds = new Set([
   "FMA18247", "FMA18256", "FMA18257", "FMA19235", "FMA19236", "FMA19387",
   "FMA19388", "FMA19617nsn", "FMA19618", "FMA7211", "FMA7212", "FMA9600",
@@ -112,11 +129,11 @@ export const stages: { layer: Layer; description: string }[] = [
   {
     layer: "muscle",
     description:
-      "437개 근육·힘줄·근막 구조를 회전하며 살펴봅니다. 필요한 레이어를 함께 켜서 비교하세요.",
+      "437개 근육·힘줄·근막 구조와 따로 모델링된 힘줄·널힘줄·지지띠·힘줄집 58개를 살펴봅니다. 대부분의 힘줄은 원본에서 근육 모형에 포함되어 있습니다.",
   },
   {
     layer: "bone",
-    description: "278개 골격·치아·연골 구조에서 손가락과 발가락 마디뼈까지 확인합니다.",
+    description: "278개 골격·치아·연골 구조와 인대·관절주머니·반달연골 등 관절 구조 358개를 확인합니다. 근육을 걷어 내면 뼈에 붙은 인대가 드러납니다.",
   },
   {
     layer: "organ",
@@ -147,7 +164,7 @@ export function stageDescription(stage: number, sex: "male" | "female") {
   const limitations: Record<Layer, string> = {
     skin: "여성 표면의 경혈 좌표는 검수 전이므로 표식을 표시하지 않습니다.",
     muscle: "별도 제작된 Visible Human Female 하체 근육을 포함하며 일부는 피부 밖으로 벗어나는 정렬 문제가 남아 있습니다. 상체 근육 전체는 수록되어 있지 않습니다.",
-    bone: "남성 유래 보완 골격 180개를 회청색과 출처로 구분합니다. 팔·손뼈 60개와 발가락뼈 20개의 위치를 부분 교정했고, 그중 양쪽 약지·새끼손가락과 다섯째 손허리뼈 14개를 추가 조정했습니다. 엄지·검지, 새끼발가락·뒤꿈치 등 정렬은 아직 미완료입니다. 여성 고유 골격으로 해석하지 마세요.",
+    bone: "남성 유래 보완 골격 180개를 회청색과 출처로 구분합니다. 팔·손뼈 60개와 발가락뼈 20개의 위치를 부분 교정했고, 그중 양쪽 약지·새끼손가락과 다섯째 손허리뼈 14개를 추가 조정했습니다. 엄지·검지, 새끼발가락·뒤꿈치 등 정렬은 아직 미완료입니다. 여성 고유 골격으로 해석하지 마세요. 인대는 원본에 있는 무릎 인대·반달연골만 수록되어 있습니다.",
     organ: "여성 CT 자료는 전신에 합쳐지지 않은 별도 상세입니다. 전통적 장부 대응은 압력 전달 경로가 아닙니다.",
     vessel: "여성 원본에 수록된 혈관을 검색·선택합니다. 전신 미세혈관 전체를 뜻하지 않습니다.",
     lymph: "여성 원본에 명명된 림프 구조입니다. 남성 자료와 수록 범위가 다릅니다.",

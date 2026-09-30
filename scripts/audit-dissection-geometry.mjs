@@ -8,7 +8,7 @@ import { chromium } from "@playwright/test";
 const origin = process.env.GEOMETRY_ORIGIN || "http://127.0.0.1:5174";
 const read = async path => JSON.parse(await fs.readFile(path, "utf8"));
 const base = (await read("scripts/model-inputs.json")).assets;
-const male = [...base, ...await read("data/full-system-structures.json"), ...(await read("data/sex-lymph-structures.json")).filter(s => s.sex === "male")];
+const male = [...base, ...await read("data/full-system-structures.json"), ...await read("data/connective-structures.json"), ...(await read("data/sex-lymph-structures.json")).filter(s => s.sex === "male")];
 const female = await read("data/female-atlas-structures.json");
 const allIds = [...male, ...female].map(s => s.id);
 const report = { checkedAt: new Date().toISOString(), origin, method: "Actual local development Three.js scene graph; world-space mesh bounds at every 0.5% setting. GPU drawing paused during sweep; pixel appearance is tested separately.", status: "running", sexes: [] };

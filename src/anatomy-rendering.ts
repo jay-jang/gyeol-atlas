@@ -1,3 +1,6 @@
+// Ligaments, joint structures and tendons: pale steel, apart from ivory bone
+// and red muscle, and from the cyan selection and gold comparison emphasis.
+export const CONNECTIVE_COLOR = "#a9c3d1";
 import { Mesh, MeshStandardMaterial, Plane, Vector3, type Intersection } from "three";
 import type { AtlasProps } from "./Atlas";
 import type { Layer } from "./anatomy";

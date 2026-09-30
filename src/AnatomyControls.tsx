@@ -1,5 +1,5 @@
 import type { Dispatch } from "react";
-import { layerKeys, layerNames, stageDescription } from "./anatomy";
+import { connectiveIdsForSex, layerKeys, layerNames, stageDescription } from "./anatomy";
 import type { ViewState, ViewAction } from "./view-state";
 // Display settings for the atlas: per-system layers and opacity, acupoint
 // markers, click target and the front cutaway. Sex and body region live in
@@ -7,10 +7,13 @@ import type { ViewState, ViewAction } from "./view-state";
 export default function AnatomyControls({
   state,
   dispatch,
+  onDone,
 }: {
   state: ViewState;
   dispatch: Dispatch<ViewAction>;
+  onDone: () => void;
 }) {
+  const connectiveIds = connectiveIdsForSex(state.sex);
   const scopeControls = state.sex === "female" ? <div className="anatomy-scope-controls">
     <p className="control-hint">HRA 여성 전신과 여성 CT 보완 상세는 서로 다른 신체 자료입니다. 위·부신·식도 구간·등 근육군 구간은 검색하거나 주요 기관에서 별도 CT 모형으로 볼 수 있습니다. 하체 근육은 별도 제작된 Visible Human Female 자료이며 전신 정합은 미완료입니다. 회청색 보완 골격 180개는 남성 유래입니다. 상체 근육 전체·일부 말초신경은 아직 미수록입니다. 여성 경혈 좌표는 검수 전이므로 표식을 숨깁니다.</p>
   </div> : null;
@@ -59,6 +62,25 @@ export default function AnatomyControls({
           <output>{Math.round(state.alpha[l] * 100)}%</output>
         </div>
       ))}
+      <div className="connective-setting">
+        <label className="setting-check">
+          <input
+            type="checkbox"
+            checked={state.connective}
+            onChange={(e) => dispatch({ type: "connective", value: e.target.checked })}
+          />
+          <i className="layer-dot connective" />
+          인대·힘줄 표시 <small>{connectiveIds.length}개</small>
+        </label>
+        <button onClick={() => { dispatch({ type: "connective-only", ids: connectiveIds }); onDone(); }}>
+          인대·힘줄만 보기
+        </button>
+        <p className="control-hint">
+          {state.sex === "male"
+            ? "관절 인대·관절주머니·반달연골과 따로 모델링된 힘줄·널힘줄·지지띠·힘줄집입니다. 인대는 골격과 함께, 힘줄은 근육과 함께 박리됩니다. 대부분의 힘줄은 원본에서 근육 모형에 포함되어 따로 보이지 않습니다."
+            : "여성 원본에는 무릎 인대·반달연골과 넙다리네갈래근 힘줄만 따로 수록되어 있습니다."}
+        </p>
+      </div>
       <p className="coverage-description">{stageDescription(state.stage, state.sex)}</p>
       <label className="setting-select">
         경혈 표식

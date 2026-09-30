@@ -179,6 +179,12 @@ body:has(.ax) .site-footer { display: none; }
 .ax .cutaway-setting label { display: grid; gap: 6px; }
 .ax .cutaway-setting button { justify-self: start; min-height: 32px; padding: 0 10px; border: 1px solid var(--ax-line); border-radius: 8px; font-size: 12px; }
 .ax .cutaway-setting p { color: var(--ax-muted); font-size: 12px; margin: 0; }
+.ax .connective-setting { display: grid; gap: 8px; padding: 10px 0; border-block: 1px solid var(--ax-line); font-size: 13px; }
+.ax .connective-setting .setting-check { justify-content: flex-start; }
+.ax .connective-setting .setting-check small { color: var(--ax-muted); font-size: 12px; }
+.ax .connective-setting button { justify-self: start; min-height: 32px; padding: 0 10px; border: 1px solid var(--ax-line); border-radius: 8px; font-size: 12px; }
+.ax .connective-setting button:hover, .ax .connective-setting button:focus-visible { border-color: var(--ax-accent); color: var(--ax-accent); }
+.ax .connective-setting p { margin: 0; }
 .ax .layer-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: 0 0 auto; }
 .ax .layer-dot.skin { background: #c98b73; }
 .ax .layer-dot.muscle { background: #c0504a; }
@@ -187,6 +193,7 @@ body:has(.ax) .site-footer { display: none; }
 .ax .layer-dot.vessel { background: #d34b44; }
 .ax .layer-dot.lymph { background: #58c3a0; }
 .ax .layer-dot.nerve { background: #e5c35a; }
+.ax .layer-dot.connective { background: #a9c3d1; }
 
 /* Depth rail: drag, click a system, or solo it */
 .ax-depth {
