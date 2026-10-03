@@ -43,6 +43,8 @@ Z-Anatomy(Anatria-3D) 신경·혈관·인대·힘줄·림프는 하나의 균일
 
 [전신 3mm 검사](male-show-through-body.json): 보완 구조 8,490→954→357, 기본 모형까지 포함 12,391→4,836→2,960. 같은 카메라의 [손바닥 전](male-hand-before-right-palm.png)/[후](male-hand-after-right-palm.png), [손등 전](male-hand-before-right-back.png)/[후](male-hand-after-right-back.png), [발 전](male-hand-before-right-foot.png)/[후](male-hand-after-right-foot.png).
 
+공개 반영: 커밋 `2f0fbfd`(Pages 작업37129283280 성공). 공개 사이트의 [손바닥](pages-male-hand-right-palm.png)·[손등](pages-male-hand-right-back.png)·[발](pages-male-hand-right-foot.png)이 로컬 결과와 같다.
+
 ## 남은 한계
 
 - 아직 조금 보이는 것(최종 오른손 1mm 격자 광선): 노신경 등쪽손가락가지 209, 고유바닥쪽손가락동맥 70, 손바닥널힘줄 가장자리 56, 정중신경 고유바닥쪽손가락가지 28, 손목 노동맥 15. 오른발: 발바닥·발등 손가락정맥 65·44, 발목 굽힘근·종아리근·폄근 지지띠와 힘줄집 가장자리 각 20–43. 전신에서는 정강이 안쪽 큰두렁정맥(좌우 70–78선, 3mm 격자)이 남는다. 피부 바로 밑 표재 구조와 두 원본의 피부 두께 차이이며, 피부 안으로 넣으려고 구조를 따로 옮기지 않았다.
