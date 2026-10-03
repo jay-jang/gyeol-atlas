@@ -1,7 +1,7 @@
 {
   "method": "First ray hit inside each hand/foot box (bones + 30 mm) on a grid from 14 directions; a non-skin first hit is tissue in front of the skin. Supplement rays exclude the base BodyParts3D muscle, bone and organ meshes.",
   "stepMm": 3,
-  "skinTriangles": 82754,
+  "skinTriangles": 102392,
   "states": {
     "final": {
       "registration": {
@@ -13,23 +13,22 @@
         ]
       },
       "skin": "public/models/skin.glb",
-      "skinTriangles": 82754,
+      "skinTriangles": 102392,
       "regions": {
         "whole body": {
-          "rays": 557188,
-          "skinFirst": 554228,
-          "showThroughRays": 2960,
-          "supplementRays": 357,
-          "showThroughStructures": 71,
+          "rays": 557465,
+          "skinFirst": 555049,
+          "showThroughRays": 2416,
+          "supplementRays": 296,
+          "showThroughStructures": 63,
           "bySource": {
-            "organ.glb": 2042,
-            "muscle.glb": 532,
-            "vessel-full.glb": 226,
-            "nerve-full.glb": 109,
-            "bone.glb": 29,
+            "organ.glb": 2038,
+            "vessel-full.glb": 185,
+            "muscle.glb": 55,
+            "nerve-full.glb": 90,
+            "bone.glb": 27,
             "tendon-full.glb": 18,
-            "ligament-full.glb": 3,
-            "lymphatic_male.glb": 1
+            "ligament-full.glb": 3
           },
           "top": [
             {
@@ -37,70 +36,42 @@
               "name": "ear",
               "layer": "organ",
               "source": "organ.glb",
-              "rays": 1695
-            },
-            {
-              "id": "FMA46768",
-              "name": "aponeurosis of epicranius",
-              "layer": "muscle",
-              "source": "muscle.glb",
-              "rays": 317
+              "rays": 1690
             },
             {
               "id": "FMA59815nsn",
               "name": "labial part of mouth, nsn",
               "layer": "organ",
               "source": "organ.glb",
-              "rays": 241
+              "rays": 249
             },
             {
               "id": "FMA12513",
               "name": "eyeball",
               "layer": "organ",
               "source": "organ.glb",
-              "rays": 79
-            },
-            {
-              "id": "ZA_vessel_great_saphenous_vein_l",
-              "name": "Great saphenous vein (left)",
-              "layer": "vessel",
-              "source": "vessel-full.glb",
-              "rays": 78
+              "rays": 83
             },
             {
               "id": "ZA_vessel_great_saphenous_vein_r",
               "name": "Great saphenous vein (right)",
               "layer": "vessel",
               "source": "vessel-full.glb",
-              "rays": 70
+              "rays": 64
             },
             {
-              "id": "FMA46763",
-              "name": "right temporoparietalis",
-              "layer": "muscle",
-              "source": "muscle.glb",
+              "id": "ZA_vessel_great_saphenous_vein_l",
+              "name": "Great saphenous vein (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
               "rays": 48
-            },
-            {
-              "id": "FMA38495",
-              "name": "right extensor carpi radialis longus",
-              "layer": "muscle",
-              "source": "muscle.glb",
-              "rays": 40
-            },
-            {
-              "id": "FMA46760",
-              "name": "left frontalis",
-              "layer": "muscle",
-              "source": "muscle.glb",
-              "rays": 36
             },
             {
               "id": "FMA43883",
               "name": "right gracilis",
               "layer": "muscle",
               "source": "muscle.glb",
-              "rays": 26
+              "rays": 24
             },
             {
               "id": "ZA_nerve_dorsal_digital_branches_of_radial_nerve_r",
@@ -117,20 +88,6 @@
               "rays": 22
             },
             {
-              "id": "FMA38501",
-              "name": "right extensor digitorum",
-              "layer": "muscle",
-              "source": "muscle.glb",
-              "rays": 21
-            },
-            {
-              "id": "FMA71704",
-              "name": "set of nasal cartilages",
-              "layer": "organ",
-              "source": "organ.glb",
-              "rays": 16
-            },
-            {
               "id": "ZA_nerve_dorsal_digital_branches_of_radial_nerve_l",
               "name": "Dorsal digital branches of radial nerve (left)",
               "layer": "nerve",
@@ -145,46 +102,11 @@
               "rays": 13
             },
             {
-              "id": "FMA45740",
-              "name": "left platysma",
-              "layer": "muscle",
-              "source": "muscle.glb",
-              "rays": 12
-            },
-            {
               "id": "FMA19667",
               "name": "urethra",
               "layer": "organ",
               "source": "organ.glb",
-              "rays": 11
-            },
-            {
-              "id": "ZA_nerve_lateral_antebrachial_cutaneous_nerve_r",
-              "name": "Lateral antebrachial cutaneous nerve (right)",
-              "layer": "nerve",
-              "source": "nerve-full.glb",
-              "rays": 11
-            },
-            {
-              "id": "ZA_nerve_saphenous_nerve_l",
-              "name": "Saphenous nerve (left)",
-              "layer": "nerve",
-              "source": "nerve-full.glb",
-              "rays": 11
-            },
-            {
-              "id": "ZA_vessel_superficial_temporal_veins_r",
-              "name": "Superficial temporal veins (right)",
-              "layer": "vessel",
-              "source": "vessel-full.glb",
               "rays": 10
-            },
-            {
-              "id": "FMA46783",
-              "name": "orbital part of left orbicularis oculi",
-              "layer": "muscle",
-              "source": "muscle.glb",
-              "rays": 9
             },
             {
               "id": "ZA_nerve_cornea_r",
@@ -194,6 +116,13 @@
               "rays": 8
             },
             {
+              "id": "ZA_nerve_sclera_r",
+              "name": "Sclera (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 7
+            },
+            {
               "id": "ZA_vessel_proper_palmar_digital_arteries_r",
               "name": "Proper palmar digital arteries (right)",
               "layer": "vessel",
@@ -201,11 +130,11 @@
               "rays": 7
             },
             {
-              "id": "ZA_nerve_sclera_r",
-              "name": "Sclera (right)",
-              "layer": "nerve",
-              "source": "nerve-full.glb",
-              "rays": 6
+              "id": "FMA45740",
+              "name": "left platysma",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 7
             },
             {
               "id": "ZA_vessel_superficial_temporal_artery_l",
@@ -244,10 +173,10 @@
               "rays": 6
             },
             {
-              "id": "ZA_nerve_saphenous_nerve_r",
-              "name": "Saphenous nerve (right)",
-              "layer": "nerve",
-              "source": "nerve-full.glb",
+              "id": "FMA71704",
+              "name": "set of nasal cartilages",
+              "layer": "organ",
+              "source": "organ.glb",
               "rays": 6
             },
             {
@@ -280,6 +209,13 @@
               "rays": 5
             },
             {
+              "id": "ZA_nerve_saphenous_nerve_r",
+              "name": "Saphenous nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 5
+            },
+            {
               "id": "ZA_vessel_proper_palmar_digital_arteries_l",
               "name": "Proper palmar digital arteries (left)",
               "layer": "vessel",
@@ -287,8 +223,15 @@
               "rays": 5
             },
             {
-              "id": "FMA46782",
-              "name": "orbital part of right orbicularis oculi",
+              "id": "ZA_vessel_median_antebrachial_vein_l",
+              "name": "Median antebrachial vein (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 5
+            },
+            {
+              "id": "FMA55606",
+              "name": "right nasalis",
               "layer": "muscle",
               "source": "muscle.glb",
               "rays": 4
@@ -358,13 +301,6 @@
               "rays": 3
             },
             {
-              "id": "FMA46759",
-              "name": "right frontalis",
-              "layer": "muscle",
-              "source": "muscle.glb",
-              "rays": 3
-            },
-            {
               "id": "FMA24463",
               "name": "distal phalanx of right little finger",
               "layer": "bone",
@@ -409,10 +345,10 @@
               "rays": 2
             },
             {
-              "id": "FMA24478",
-              "name": "left tibia",
-              "layer": "bone",
-              "source": "bone.glb",
+              "id": "FMA46783",
+              "name": "orbital part of left orbicularis oculi",
+              "layer": "muscle",
+              "source": "muscle.glb",
               "rays": 2
             },
             {
@@ -431,6 +367,13 @@
               "rays": 2
             },
             {
+              "id": "FMA33587",
+              "name": "descending part of left trapezius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 2
+            },
+            {
               "id": "ZA_vessel_dorsal_digital_veins_of_foot_l",
               "name": "Dorsal digital veins of foot (left)",
               "layer": "vessel",
@@ -438,8 +381,22 @@
               "rays": 2
             },
             {
+              "id": "ZA_nerve_saphenous_nerve_l",
+              "name": "Saphenous nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 2
+            },
+            {
               "id": "FMA22550",
               "name": "right fibularis tertius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 2
+            },
+            {
+              "id": "FMA22355",
+              "name": "left sartorius",
               "layer": "muscle",
               "source": "muscle.glb",
               "rays": 2
@@ -457,6 +414,48 @@
               "name": "distal phalanx of left little toe",
               "layer": "bone",
               "source": "bone.glb",
+              "rays": 1
+            },
+            {
+              "id": "ZA_vessel_palmar_digital_veins_l",
+              "name": "Palmar digital veins (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 1
+            },
+            {
+              "id": "FMA38519",
+              "name": "right extensor pollicis brevis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 1
+            },
+            {
+              "id": "FMA38463",
+              "name": "right palmaris longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 1
+            },
+            {
+              "id": "ZA_nerve_lateral_antebrachial_cutaneous_nerve_r",
+              "name": "Lateral antebrachial cutaneous nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 1
+            },
+            {
+              "id": "ZA_nerve_infrapatellar_branch_of_saphenous_nerve_l",
+              "name": "Infrapatellar branch of saphenous nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 1
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_deep_fibular_nerve_r",
+              "name": "Dorsal digital branches of deep fibular nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
               "rays": 1
             }
           ]
@@ -1410,7 +1409,7 @@
     },
     {
       "path": "public/models/skin.glb",
-      "sha256": "dc4e8d658ce8c29d8249301f0b6aa139e4644148b2e8b87d4f3baf9d84f92704"
+      "sha256": "a1c05589535b124367e4208df24041daa090073b2eb5108a32f04058de890a2e"
     },
     {
       "path": "public/models/muscle.glb",
@@ -1446,7 +1445,7 @@
     },
     {
       "path": "scripts/audit-male-show-through.mjs",
-      "sha256": "033a9b8923f2b58e0863d91806ff0658f2d95d56e9a687c050a5062ea94e0bfe"
+      "sha256": "222c174adedaced839bb46abecf146a7b079f8b4b48badf37524980816124a87"
     }
   ]
 }

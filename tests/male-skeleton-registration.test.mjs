@@ -39,7 +39,7 @@ test("hand bones of the two sources coincide under the new fit and sat ~8 mm apa
     assert.ok(fit.summary[region].medianOfBoneMediansAfterMm <= fit.summary[region].medianOfBoneMediansBeforeMm, region);
 });
 
-test("supplement tissue in front of the hand and foot skin falls by at least 90%", () => {
+test("supplement tissue in front of the hand, foot and whole-body skin falls by at least 90%", () => {
   pinned(showThrough);
   pinned(body);
   for (const report of [showThrough, body]) {
@@ -47,6 +47,7 @@ test("supplement tissue in front of the hand and foot skin falls by at least 90%
     assert.deepEqual(report.states.final.registration, { scale: registration.scale, translation: registration.translation });
     assert.deepEqual(report.states.original.registration, { scale: registration.previous.scale, translation: registration.previous.translation });
     for (const [region, final] of Object.entries(report.states.final.regions)) {
+      if (region === "head") continue;
       const original = report.states.original.regions[region], registered = report.states.registrationOnly.regions[region];
       assert.ok(registered.supplementRays < original.supplementRays, region);
       assert.ok(final.supplementRays <= original.supplementRays * 0.1, `${region}: ${final.supplementRays} vs ${original.supplementRays}`);
@@ -54,12 +55,22 @@ test("supplement tissue in front of the hand and foot skin falls by at least 90%
   }
 });
 
-test("the deployed skin keeps finer hands and feet within the model budget", () => {
+test("finer head skin hides the scalp and facial muscles that showed through", () => {
+  const { original, final } = Object.fromEntries(Object.entries(showThrough.states).map(([k, v]) => [k, v.regions.head]));
+  assert.ok(final.showThroughRays <= original.showThroughRays * 0.7, `${final.showThroughRays} vs ${original.showThroughRays}`);
+  const rays = (state, name) => state.top.find((t) => t.name === name)?.rays ?? 0;
+  for (const name of ["aponeurosis of epicranius", "right temporoparietalis", "left temporoparietalis"]) {
+    assert.ok(rays(original, name) > 1000, name);
+    assert.equal(rays(final, name), 0, name);
+  }
+  // The ears, lips and eyeballs are outer surfaces of the base model itself.
+  assert.ok(rays(final, "ear") > 10000);
+});
+
+test("the deployed skin keeps finer hands, feet and head within the model budget", () => {
   const skin = read("public/models/manifest.json").assets.find((a) => a.id === "FMA7163");
-  assert.equal(skin.detail.regions, "hands and feet");
-  assert.equal(skin.detail.boxesMm.length, 4);
-  assert.equal(skin.detail.targetErrorMm, 0.4);
-  assert.ok(skin.detail.errorMm <= 0.4);
+  assert.deepEqual(skin.detail.map((d) => [d.name, d.boxesMm.length, d.targetErrorMm]), [["hands and feet", 4, 0.4], ["head", 1, 0.6]]);
+  for (const d of skin.detail) assert.ok(d.errorMm <= d.targetErrorMm, d.name);
   assert.equal(skin.triangles, read("docs/anatomy-alignment/male-skin-source-topology.json").simplified.deployedPrune.triangles);
   assert.equal(showThrough.skinTriangles, skin.triangles);
 });

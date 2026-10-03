@@ -1,5 +1,5 @@
 // Which male structures show through the opaque skin at 0%? Rays are cast on
-// a grid from 14 directions around each hand and foot; a ray whose first hit
+// a grid from 14 directions around each hand, foot and the head; a ray whose first hit
 // inside the region is not the skin marks tissue lying in front of the skin
 // there. This measures what the viewer sees; it does not register anything.
 // The current registration and the earlier one kept as `previous` are both run.
@@ -54,6 +54,7 @@ if (process.env.SKIN_STL) {
 }
 const handBone = /phalanx of .*(finger|thumb)|metacarpal|scaphoid|lunate|triquetr|pisiform|trapezium|trapezoid|capitate|hamate/i;
 const footBone = /phalanx of .*toe|metatarsal|calcaneus|talus|navicular|cuboid|cuneiform/i;
+const skullBone = /^(occipital bone|frontal bone|mandible|(right|left) (temporal|parietal|zygomatic|nasal) bone|(right|left) maxilla)$/i;
 const region = (test, side) => {
   const box = new Box3();
   for (const p of baseParts) if (p.layer === "bone" && test.test(p.name) && new RegExp(`\\b${side}\\b`, "i").test(p.name)) {
@@ -64,7 +65,7 @@ const region = (test, side) => {
 // REGIONS=body screens the whole body instead (coarser STEP_MM recommended).
 const regions = process.env.REGIONS === "body"
   ? { "whole body": (skin.geometry.computeBoundingBox(), skin.geometry.boundingBox.clone().expandByScalar(0.01)) }
-  : { "right hand": region(handBone, "right"), "left hand": region(handBone, "left"), "right foot": region(footBone, "right"), "left foot": region(footBone, "left") };
+  : { "right hand": region(handBone, "right"), "left hand": region(handBone, "left"), "right foot": region(footBone, "right"), "left foot": region(footBone, "left"), head: region(skullBone, "") };
 const directions = [];
 for (const v of [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]]) directions.push(new Vector3(...v));
 for (const x of [-1, 1]) for (const y of [-1, 1]) for (const z of [-1, 1]) directions.push(new Vector3(x, y, z).normalize());

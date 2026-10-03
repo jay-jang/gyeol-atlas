@@ -1,7 +1,7 @@
 {
   "method": "First ray hit inside each hand/foot box (bones + 30 mm) on a grid from 14 directions; a non-skin first hit is tissue in front of the skin. Supplement rays exclude the base BodyParts3D muscle, bone and organ meshes.",
   "stepMm": 1,
-  "skinTriangles": 82754,
+  "skinTriangles": 102392,
   "states": {
     "final": {
       "registration": {
@@ -13,20 +13,20 @@
         ]
       },
       "skin": "public/models/skin.glb",
-      "skinTriangles": 82754,
+      "skinTriangles": 102392,
       "regions": {
         "right hand": {
-          "rays": 139698,
-          "skinFirst": 138907,
-          "showThroughRays": 791,
+          "rays": 139714,
+          "skinFirst": 138919,
+          "showThroughRays": 795,
           "supplementRays": 479,
-          "showThroughStructures": 35,
+          "showThroughStructures": 37,
           "bySource": {
             "nerve-full.glb": 266,
             "vessel-full.glb": 122,
             "bone.glb": 224,
             "tendon-full.glb": 89,
-            "muscle.glb": 88,
+            "muscle.glb": 92,
             "ligament-full.glb": 2
           },
           "top": [
@@ -218,6 +218,13 @@
               "rays": 3
             },
             {
+              "id": "FMA38640",
+              "name": "radial head of right flexor digitorum superficialis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 3
+            },
+            {
               "id": "ZA_vessel_radial_veins_r",
               "name": "Radial veins (right)",
               "layer": "vessel",
@@ -238,28 +245,20 @@
               "source": "ligament-full.glb",
               "kind": "capsule",
               "rays": 2
-            },
-            {
-              "id": "ZA_tendon_synovial_sheaths_of_digits_of_hand_r",
-              "name": "Synovial sheaths of digits of hand (right)",
-              "layer": "muscle",
-              "source": "tendon-full.glb",
-              "kind": "sheath",
-              "rays": 1
             }
           ]
         },
         "left hand": {
-          "rays": 139575,
-          "skinFirst": 138960,
-          "showThroughRays": 615,
+          "rays": 139576,
+          "skinFirst": 138957,
+          "showThroughRays": 619,
           "supplementRays": 346,
-          "showThroughStructures": 37,
+          "showThroughStructures": 38,
           "bySource": {
-            "nerve-full.glb": 149,
-            "vessel-full.glb": 137,
+            "nerve-full.glb": 150,
+            "vessel-full.glb": 136,
             "bone.glb": 177,
-            "muscle.glb": 92,
+            "muscle.glb": 96,
             "tendon-full.glb": 57,
             "ligament-full.glb": 3
           },
@@ -372,6 +371,13 @@
               "rays": 9
             },
             {
+              "id": "FMA38461",
+              "name": "left flexor carpi radialis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 9
+            },
+            {
               "id": "ZA_vessel_radial_artery_l",
               "name": "Radial artery (left)",
               "layer": "vessel",
@@ -391,13 +397,6 @@
               "name": "Palmar branch of ulnar nerve (left)",
               "layer": "nerve",
               "source": "nerve-full.glb",
-              "rays": 6
-            },
-            {
-              "id": "FMA38461",
-              "name": "left flexor carpi radialis",
-              "layer": "muscle",
-              "source": "muscle.glb",
               "rays": 6
             },
             {
@@ -466,10 +465,10 @@
               "rays": 3
             },
             {
-              "id": "ZA_vessel_dorsal_metacarpal_arteries_l",
-              "name": "Dorsal metacarpal arteries (left)",
-              "layer": "vessel",
-              "source": "vessel-full.glb",
+              "id": "ZA_nerve_palmar_branch_of_median_nerve_l",
+              "name": "Palmar branch of median nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
               "rays": 2
             },
             {
@@ -483,14 +482,14 @@
           ]
         },
         "right foot": {
-          "rays": 212945,
-          "skinFirst": 211583,
-          "showThroughRays": 1362,
+          "rays": 213237,
+          "skinFirst": 211853,
+          "showThroughRays": 1384,
           "supplementRays": 465,
           "showThroughStructures": 40,
           "bySource": {
-            "bone.glb": 590,
-            "muscle.glb": 307,
+            "bone.glb": 597,
+            "muscle.glb": 322,
             "vessel-full.glb": 181,
             "tendon-full.glb": 227,
             "ligament-full.glb": 17,
@@ -502,35 +501,35 @@
               "name": "right tibia",
               "layer": "bone",
               "source": "bone.glb",
-              "rays": 401
+              "rays": 398
             },
             {
               "id": "FMA258847",
               "name": "right calcaneal tendon",
               "layer": "muscle",
               "source": "muscle.glb",
-              "rays": 106
-            },
-            {
-              "id": "FMA65014",
-              "name": "right flexor hallucis longus",
-              "layer": "muscle",
-              "source": "muscle.glb",
-              "rays": 90
+              "rays": 110
             },
             {
               "id": "FMA24480",
               "name": "right fibula",
               "layer": "bone",
               "source": "bone.glb",
-              "rays": 81
+              "rays": 96
+            },
+            {
+              "id": "FMA65014",
+              "name": "right flexor hallucis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 94
             },
             {
               "id": "FMA24497",
               "name": "right calcaneus",
               "layer": "bone",
               "source": "bone.glb",
-              "rays": 78
+              "rays": 73
             },
             {
               "id": "ZA_vessel_plantar_digital_veins_r",
@@ -547,19 +546,19 @@
               "rays": 44
             },
             {
+              "id": "FMA65016",
+              "name": "right flexor digitorum longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 44
+            },
+            {
               "id": "ZA_tendon_tendon_sheath_of_flexor_hallucis_longus_r",
               "name": "Tendon sheath of flexor hallucis longus (right)",
               "layer": "muscle",
               "source": "tendon-full.glb",
               "kind": "sheath",
               "rays": 43
-            },
-            {
-              "id": "FMA65016",
-              "name": "right flexor digitorum longus",
-              "layer": "muscle",
-              "source": "muscle.glb",
-              "rays": 39
             },
             {
               "id": "ZA_tendon_flexor_retinaculum_of_ankle_r",
@@ -720,16 +719,16 @@
           ]
         },
         "left foot": {
-          "rays": 213296,
-          "skinFirst": 211958,
-          "showThroughRays": 1338,
-          "supplementRays": 481,
-          "showThroughStructures": 40,
+          "rays": 213369,
+          "skinFirst": 212001,
+          "showThroughRays": 1368,
+          "supplementRays": 498,
+          "showThroughStructures": 41,
           "bySource": {
-            "bone.glb": 610,
-            "muscle.glb": 247,
+            "bone.glb": 617,
+            "tendon-full.glb": 256,
+            "muscle.glb": 253,
             "vessel-full.glb": 188,
-            "tendon-full.glb": 239,
             "ligament-full.glb": 24,
             "nerve-full.glb": 30
           },
@@ -739,14 +738,15 @@
               "name": "left tibia",
               "layer": "bone",
               "source": "bone.glb",
-              "rays": 442
+              "rays": 453
             },
             {
-              "id": "FMA24481",
-              "name": "left fibula",
-              "layer": "bone",
-              "source": "bone.glb",
-              "rays": 75
+              "id": "ZA_tendon_inferior_extensor_retinaculum_of_ankle_l",
+              "name": "Inferior extensor retinaculum of ankle (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 73
             },
             {
               "id": "FMA65015",
@@ -756,6 +756,13 @@
               "rays": 73
             },
             {
+              "id": "FMA24481",
+              "name": "left fibula",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 68
+            },
+            {
               "id": "ZA_vessel_plantar_digital_veins_l",
               "name": "Plantar digital veins (left)",
               "layer": "vessel",
@@ -763,26 +770,18 @@
               "rays": 67
             },
             {
-              "id": "ZA_tendon_inferior_extensor_retinaculum_of_ankle_l",
-              "name": "Inferior extensor retinaculum of ankle (left)",
-              "layer": "muscle",
-              "source": "tendon-full.glb",
-              "kind": "retinaculum",
-              "rays": 64
-            },
-            {
               "id": "FMA24498",
               "name": "left calcaneus",
               "layer": "bone",
               "source": "bone.glb",
-              "rays": 64
+              "rays": 67
             },
             {
               "id": "FMA264844",
               "name": "left calcaneal tendon",
               "layer": "muscle",
               "source": "muscle.glb",
-              "rays": 58
+              "rays": 64
             },
             {
               "id": "ZA_tendon_tendon_sheath_of_flexor_hallucis_longus_l",
@@ -896,6 +895,14 @@
               "rays": 15
             },
             {
+              "id": "ZA_tendon_superior_extensor_retinaculum_of_ankle_l",
+              "name": "Superior extensor retinaculum of ankle (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 13
+            },
+            {
               "id": "ZA_tendon_superior_fibular_retinaculum_l",
               "name": "Superior fibular retinaculum (left)",
               "layer": "muscle",
@@ -908,15 +915,7 @@
               "name": "left fibularis brevis",
               "layer": "muscle",
               "source": "muscle.glb",
-              "rays": 13
-            },
-            {
-              "id": "ZA_tendon_superior_extensor_retinaculum_of_ankle_l",
-              "name": "Superior extensor retinaculum of ankle (left)",
-              "layer": "muscle",
-              "source": "tendon-full.glb",
-              "kind": "retinaculum",
-              "rays": 10
+              "rays": 12
             },
             {
               "id": "ZA_nerve_sural_nerve_l",
@@ -933,17 +932,18 @@
               "rays": 9
             },
             {
+              "id": "ZA_tendon_tendon_sheath_of_extensor_hallucis_longus_l",
+              "name": "Tendon sheath of extensor hallucis longus (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 8
+            },
+            {
               "id": "ZA_nerve_medial_dorsal_cutaneous_nerve_of_foot_l",
               "name": "Medial dorsal cutaneous nerve of foot (left)",
               "layer": "nerve",
               "source": "nerve-full.glb",
-              "rays": 8
-            },
-            {
-              "id": "FMA22553",
-              "name": "left fibularis longus",
-              "layer": "muscle",
-              "source": "muscle.glb",
               "rays": 8
             },
             {
@@ -952,6 +952,234 @@
               "layer": "nerve",
               "source": "nerve-full.glb",
               "rays": 7
+            }
+          ]
+        },
+        "head": {
+          "rays": 433298,
+          "skinFirst": 410760,
+          "showThroughRays": 22538,
+          "supplementRays": 784,
+          "showThroughStructures": 119,
+          "bySource": {
+            "organ.glb": 19174,
+            "muscle.glb": 2494,
+            "nerve-full.glb": 315,
+            "vessel-full.glb": 394,
+            "bone.glb": 86,
+            "lymphatic_male.glb": 27,
+            "ligament-full.glb": 48
+          },
+          "top": [
+            {
+              "id": "FMA52780",
+              "name": "ear",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 15636
+            },
+            {
+              "id": "FMA59815nsn",
+              "name": "labial part of mouth, nsn",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 2535
+            },
+            {
+              "id": "FMA12513",
+              "name": "eyeball",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 667
+            },
+            {
+              "id": "FMA33587",
+              "name": "descending part of left trapezius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 532
+            },
+            {
+              "id": "FMA33586",
+              "name": "descending part of right trapezius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 354
+            },
+            {
+              "id": "FMA45740",
+              "name": "left platysma",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 214
+            },
+            {
+              "id": "FMA13408",
+              "name": "right sternocleidomastoid",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 196
+            },
+            {
+              "id": "FMA13409",
+              "name": "left sternocleidomastoid",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 179
+            },
+            {
+              "id": "FMA45739",
+              "name": "right platysma",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 134
+            },
+            {
+              "id": "FMA55099",
+              "name": "thyroid cartilage",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 131
+            },
+            {
+              "id": "FMA32540",
+              "name": "right levator scapulae",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 120
+            },
+            {
+              "id": "FMA71704",
+              "name": "set of nasal cartilages",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 103
+            },
+            {
+              "id": "FMA32541",
+              "name": "left levator scapulae",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 100
+            },
+            {
+              "id": "FMA13390",
+              "name": "right scalenus medius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 95
+            },
+            {
+              "id": "FMA13391",
+              "name": "left scalenus medius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 79
+            },
+            {
+              "id": "ZA_nerve_cornea_r",
+              "name": "Cornea (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 78
+            },
+            {
+              "id": "FMA13347",
+              "name": "left sternohyoid",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 61
+            },
+            {
+              "id": "ZA_vessel_superficial_temporal_artery_r",
+              "name": "Superficial temporal artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 59
+            },
+            {
+              "id": "ZA_nerve_cornea_l",
+              "name": "Cornea (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 56
+            },
+            {
+              "id": "ZA_nerve_sclera_r",
+              "name": "Sclera (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 55
+            },
+            {
+              "id": "FMA13346",
+              "name": "right sternohyoid",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 52
+            },
+            {
+              "id": "FMA22729",
+              "name": "left splenius capitis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 51
+            },
+            {
+              "id": "ZA_vessel_right_common_carotid_artery",
+              "name": "Right common carotid artery",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 49
+            },
+            {
+              "id": "FMA22728",
+              "name": "right splenius capitis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 46
+            },
+            {
+              "id": "ZA_vessel_superficial_temporal_artery_l",
+              "name": "Superficial temporal artery (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 44
+            },
+            {
+              "id": "FMA55606",
+              "name": "right nasalis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 42
+            },
+            {
+              "id": "ZA_vessel_internal_jugular_vein_l",
+              "name": "Internal jugular vein (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 39
+            },
+            {
+              "id": "FMA46309",
+              "name": "right longus capitis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 38
+            },
+            {
+              "id": "ZA_vessel_internal_carotid_artery_r",
+              "name": "Internal carotid artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 33
+            },
+            {
+              "id": "ZA_vessel_left_common_carotid_artery",
+              "name": "Left common carotid artery",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 32
             }
           ]
         }
@@ -1908,6 +2136,234 @@
               "source": "tendon-full.glb",
               "kind": "sheath",
               "rays": 9
+            }
+          ]
+        },
+        "head": {
+          "rays": 431825,
+          "skinFirst": 395804,
+          "showThroughRays": 36021,
+          "supplementRays": 1116,
+          "showThroughStructures": 122,
+          "bySource": {
+            "organ.glb": 19697,
+            "muscle.glb": 15136,
+            "vessel-full.glb": 717,
+            "nerve-full.glb": 325,
+            "bone.glb": 72,
+            "lymphatic_male.glb": 31,
+            "ligament-full.glb": 43
+          },
+          "top": [
+            {
+              "id": "FMA52780",
+              "name": "ear",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 16133
+            },
+            {
+              "id": "FMA46768",
+              "name": "aponeurosis of epicranius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 7054
+            },
+            {
+              "id": "FMA46763",
+              "name": "right temporoparietalis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 3559
+            },
+            {
+              "id": "FMA59815nsn",
+              "name": "labial part of mouth, nsn",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 2476
+            },
+            {
+              "id": "FMA46764",
+              "name": "left temporoparietalis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 1814
+            },
+            {
+              "id": "FMA12513",
+              "name": "eyeball",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 624
+            },
+            {
+              "id": "FMA33587",
+              "name": "descending part of left trapezius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 469
+            },
+            {
+              "id": "FMA33586",
+              "name": "descending part of right trapezius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 348
+            },
+            {
+              "id": "FMA45740",
+              "name": "left platysma",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 280
+            },
+            {
+              "id": "FMA45739",
+              "name": "right platysma",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 247
+            },
+            {
+              "id": "FMA71704",
+              "name": "set of nasal cartilages",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 232
+            },
+            {
+              "id": "FMA13408",
+              "name": "right sternocleidomastoid",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 227
+            },
+            {
+              "id": "FMA13409",
+              "name": "left sternocleidomastoid",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 179
+            },
+            {
+              "id": "ZA_vessel_superficial_temporal_veins_l",
+              "name": "Superficial temporal veins (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 141
+            },
+            {
+              "id": "FMA55099",
+              "name": "thyroid cartilage",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 131
+            },
+            {
+              "id": "FMA32541",
+              "name": "left levator scapulae",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 121
+            },
+            {
+              "id": "ZA_vessel_superficial_temporal_veins_r",
+              "name": "Superficial temporal veins (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 95
+            },
+            {
+              "id": "FMA55606",
+              "name": "right nasalis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 92
+            },
+            {
+              "id": "FMA13391",
+              "name": "left scalenus medius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 92
+            },
+            {
+              "id": "ZA_vessel_superficial_temporal_artery_r",
+              "name": "Superficial temporal artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 87
+            },
+            {
+              "id": "FMA32540",
+              "name": "right levator scapulae",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 87
+            },
+            {
+              "id": "ZA_nerve_cornea_r",
+              "name": "Cornea (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 82
+            },
+            {
+              "id": "ZA_vessel_superficial_temporal_artery_l",
+              "name": "Superficial temporal artery (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 76
+            },
+            {
+              "id": "FMA46782",
+              "name": "orbital part of right orbicularis oculi",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 68
+            },
+            {
+              "id": "FMA13390",
+              "name": "right scalenus medius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 65
+            },
+            {
+              "id": "FMA13347",
+              "name": "left sternohyoid",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 62
+            },
+            {
+              "id": "ZA_nerve_sclera_r",
+              "name": "Sclera (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 59
+            },
+            {
+              "id": "FMA22729",
+              "name": "left splenius capitis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 58
+            },
+            {
+              "id": "ZA_nerve_cornea_l",
+              "name": "Cornea (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 56
+            },
+            {
+              "id": "FMA13346",
+              "name": "right sternohyoid",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 52
             }
           ]
         }
@@ -2876,6 +3332,234 @@
               "rays": 172
             }
           ]
+        },
+        "head": {
+          "rays": 431833,
+          "skinFirst": 395936,
+          "showThroughRays": 35897,
+          "supplementRays": 679,
+          "showThroughStructures": 111,
+          "bySource": {
+            "organ.glb": 19907,
+            "muscle.glb": 15246,
+            "vessel-full.glb": 511,
+            "lymphatic_male.glb": 41,
+            "nerve-full.glb": 99,
+            "bone.glb": 65,
+            "ligament-full.glb": 28
+          },
+          "top": [
+            {
+              "id": "FMA52780",
+              "name": "ear",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 16153
+            },
+            {
+              "id": "FMA46768",
+              "name": "aponeurosis of epicranius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 7054
+            },
+            {
+              "id": "FMA46763",
+              "name": "right temporoparietalis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 3625
+            },
+            {
+              "id": "FMA59815nsn",
+              "name": "labial part of mouth, nsn",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 2476
+            },
+            {
+              "id": "FMA46764",
+              "name": "left temporoparietalis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 1887
+            },
+            {
+              "id": "FMA12513",
+              "name": "eyeball",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 824
+            },
+            {
+              "id": "FMA33587",
+              "name": "descending part of left trapezius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 468
+            },
+            {
+              "id": "FMA33586",
+              "name": "descending part of right trapezius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 346
+            },
+            {
+              "id": "FMA45740",
+              "name": "left platysma",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 287
+            },
+            {
+              "id": "FMA45739",
+              "name": "right platysma",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 249
+            },
+            {
+              "id": "FMA71704",
+              "name": "set of nasal cartilages",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 232
+            },
+            {
+              "id": "FMA13408",
+              "name": "right sternocleidomastoid",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 200
+            },
+            {
+              "id": "FMA13409",
+              "name": "left sternocleidomastoid",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 166
+            },
+            {
+              "id": "FMA55099",
+              "name": "thyroid cartilage",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 132
+            },
+            {
+              "id": "FMA32541",
+              "name": "left levator scapulae",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 125
+            },
+            {
+              "id": "FMA32540",
+              "name": "right levator scapulae",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 93
+            },
+            {
+              "id": "FMA55606",
+              "name": "right nasalis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 92
+            },
+            {
+              "id": "FMA13391",
+              "name": "left scalenus medius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 92
+            },
+            {
+              "id": "ZA_vessel_superficial_temporal_artery_r",
+              "name": "Superficial temporal artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 77
+            },
+            {
+              "id": "FMA13390",
+              "name": "right scalenus medius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 69
+            },
+            {
+              "id": "FMA46782",
+              "name": "orbital part of right orbicularis oculi",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 68
+            },
+            {
+              "id": "FMA13347",
+              "name": "left sternohyoid",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 64
+            },
+            {
+              "id": "ZA_vessel_superficial_temporal_artery_l",
+              "name": "Superficial temporal artery (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 60
+            },
+            {
+              "id": "FMA22729",
+              "name": "left splenius capitis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 58
+            },
+            {
+              "id": "FMA13346",
+              "name": "right sternohyoid",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 54
+            },
+            {
+              "id": "ZA_vessel_internal_jugular_vein_l",
+              "name": "Internal jugular vein (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 47
+            },
+            {
+              "id": "FMA22728",
+              "name": "right splenius capitis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 45
+            },
+            {
+              "id": "ZA_vessel_internal_carotid_artery_r",
+              "name": "Internal carotid artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 44
+            },
+            {
+              "id": "ZA_vessel_external_jugular_vein_r",
+              "name": "External jugular vein (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 44
+            },
+            {
+              "id": "ZA_vessel_left_common_carotid_artery",
+              "name": "Left common carotid artery",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 43
+            }
+          ]
         }
       }
     }
@@ -2887,7 +3571,7 @@
     },
     {
       "path": "public/models/skin.glb",
-      "sha256": "dc4e8d658ce8c29d8249301f0b6aa139e4644148b2e8b87d4f3baf9d84f92704"
+      "sha256": "a1c05589535b124367e4208df24041daa090073b2eb5108a32f04058de890a2e"
     },
     {
       "path": "public/models/muscle.glb",
@@ -2923,7 +3607,7 @@
     },
     {
       "path": "scripts/audit-male-show-through.mjs",
-      "sha256": "033a9b8923f2b58e0863d91806ff0658f2d95d56e9a687c050a5062ea94e0bfe"
+      "sha256": "222c174adedaced839bb46abecf146a7b079f8b4b48badf37524980816124a87"
     }
   ]
 }

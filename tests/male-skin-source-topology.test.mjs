@@ -25,7 +25,7 @@ test('pinned original male skin is closed, while deployed simplification is nonm
     report.simplified.deployedPrune.components,
     report.simplified.deployedPrune.weldedVertices,
     report.simplified.deployedPrune.edges.nonManifoldEdges,
-  ],[82754,106,39577,700]);
+  ],[102392,116,49380,551]);
   assert.equal(report.simplified.deployedPrune.edges.boundaryEdges,0);
   assert.ok(Math.abs(report.simplified.deployedPrune.error-source.simplificationError)<1e-9);
   // Before the finer hands and feet: one simplification pass over the whole skin.

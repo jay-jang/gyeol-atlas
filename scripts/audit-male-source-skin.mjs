@@ -67,9 +67,9 @@ for(let i=0;i<indices.length;i++)convertedIndices[i]=convertedVertexIds[indices[
 const transformedEdges=edgeStats(null,convertedIndices);
 await MeshoptSimplifier.ready;
 const packedPositions=new Float32Array(rawPositions),simplified={};
-// The deployed skin keeps finer hands and feet (scripts/lib/detail-skin.mjs);
+// The deployed skin keeps finer hands, feet and head (scripts/lib/detail-skin.mjs);
 // the earlier single-pass result is kept for comparison.
-const deployed=()=>{const d=source.detail;const r=simplifyWithDetail(indices,packedPositions,{boxes:d.boxesMm,detailErrorMm:d.targetErrorMm,bodyTarget:135000,bodyError:.003});return [r.indices,r.error];};
+const deployed=()=>{const r=simplifyWithDetail(indices,packedPositions,{regions:source.detail.map(d=>({boxes:d.boxesMm,errorMm:d.targetErrorMm})),bodyTarget:135000,bodyError:.003});return [r.indices,r.error];};
 for(const [name,target,flags] of [
   ['deployedPrune',45000,null],['singlePassPrune',45000,['Prune']],['withoutPrune',45000,[]],
   ['target100k',100000,['Prune']],['target250k',250000,['Prune']],

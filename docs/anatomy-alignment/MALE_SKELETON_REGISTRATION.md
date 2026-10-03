@@ -39,11 +39,25 @@ Z-Anatomy(Anatria-3D) 신경·혈관·인대·힘줄·림프는 하나의 균일
 | 오른손 | 12,485 | 2,426 | 479 |
 | 왼손 | 11,186 | 2,549 | 346 |
 | 오른발 | 34,873 | 794 | 465 |
-| 왼발 | 35,887 | 623 | 481 |
+| 왼발 | 35,887 | 623 | 498 |
 
-[전신 3mm 검사](male-show-through-body.json): 보완 구조 8,490→954→357, 기본 모형까지 포함 12,391→4,836→2,960. 같은 카메라의 [손바닥 전](male-hand-before-right-palm.png)/[후](male-hand-after-right-palm.png), [손등 전](male-hand-before-right-back.png)/[후](male-hand-after-right-back.png), [발 전](male-hand-before-right-foot.png)/[후](male-hand-after-right-foot.png).
+[전신 3mm 검사](male-show-through-body.json): 보완 구조 8,490→954→296, 기본 모형까지 포함 12,391→4,836→2,416(머리 세부 포함 최종값; 손·발만일 때 357·2,960). 같은 카메라의 [손바닥 전](male-hand-before-right-palm.png)/[후](male-hand-after-right-palm.png), [손등 전](male-hand-before-right-back.png)/[후](male-hand-after-right-back.png), [발 전](male-hand-before-right-foot.png)/[후](male-hand-after-right-foot.png).
 
 공개 반영: 커밋 `2f0fbfd`(Pages 작업37129283280 성공). 공개 사이트의 [손바닥](pages-male-hand-right-palm.png)·[손등](pages-male-hand-right-back.png)·[발](pages-male-hand-right-foot.png)이 로컬 결과와 같다.
+
+## 후속: 머리 피부 세부
+
+손·발만 다시 단순화하자 몸의 나머지가 조금 달라져 얼굴 근육 몇 개가 새로 보였다(이마근 0→36, 넓은목근 0→12, 눈둘레근 1→9선, 전신 3mm). 같은 원인이 원래부터 머리에 크게 있었다: 머리뼈 경계+30mm 상자의 1mm 검사에서 머리덮개널힘줄 7,054, 관자마루근 3,625·1,887선이 피부 앞에 보였다(정수리의 옅은 판과 이마·관자의 붉은 조각).
+
+머리(머리뼈 20개 중 이마·마루·관자·뒤통수·광대·코뼈·위턱·아래턱 경계+35mm)를 세 번째 세부 영역으로 0.6mm 절대오차로 단순화했다. 손·발은 0.4mm 그대로이고, 영역마다 나머지를 잠근 채 차례로 처리한다. 피부 82,754→102,392삼각형이지만 정점이 65,536개 미만(49,380)이라 이 파일만 16비트 인덱스로 바꿔 1.94→1.80MB로 오히려 줄었다. 다른 모형 파일의 바이트는 바꾸지 않았다.
+
+머리 1mm 검사 전체 노출 35,897(원래)→22,538. 머리덮개널힘줄·관자마루근·이마근·얕은관자정맥은 0. 남은 것의 대부분은 귀(15,636)·입술(2,535)·눈알(667)로, 기본 모형에서 피부 바깥면을 이루는 기관이다. 목의 등세모근·목빗근·넓은목근은 원래와 비슷하게 남았다(목은 세부 영역 밖).
+
+눈: Z-Anatomy 각막·공막이 눈꺼풀 틈에서 노랗게 보인다(머리 상자 각막 오른쪽 78·왼쪽 56, 공막 55선; 원래는 상위 목록 밖). 골격 기준 등록으로 Z 눈이 1.9mm 앞으로 왔지만 각막 꼭대기(z 77.1mm)는 여전히 BP3 눈알 앞면(79.0mm)보다 뒤에 있고, Z 눈이 더 작다(높이 25.4 대 30.9mm). 두 원본의 서로 다른 눈 모형이 겹친 것이며, 머리뼈가 0.18mm로 맞은 상태에서 Z 눈은 자기 원본의 위치에 있다. 한쪽을 숨기거나 옮기지 않았다.
+
+같은 카메라(표식 숨김) [정면 전](male-head-before-front.png)/[후](male-head-after-front.png), [옆 전](male-head-before-side.png)/[후](male-head-after-side.png). ‘전’은 손·발 세부만 있던 공개 커밋 `2f0fbfd` 상태다.
+
+경혈 표식은 다시 같은 면의 가장 가까운 점으로 옮겨졌다. 처음 원본 대비 누적: 717개 이동, 중앙 0.29mm, 최대 2.66mm(3mm 초과 0).
 
 ## 남은 한계
 

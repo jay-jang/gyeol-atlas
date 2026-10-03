@@ -49,18 +49,14 @@ const manifest = {
   transform:
     "x=X/1000; y=(Z+13.5175)/1000; z=(-Y-96.5107)/1000. Original unit mm; scene unit m.",
   modifications:
-    "STL to GLB, welded positions, meshoptimizer topology-aware simplification (the skin keeps a 0.4 mm absolute error over the hands and feet), smooth normals, coordinate transform; no clinical registration.",
+    "STL to GLB, welded positions, meshoptimizer topology-aware simplification (the skin keeps a 0.4 mm absolute error over the hands and feet and 0.6 mm over the head, with 16-bit indices), smooth normals, coordinate transform; no clinical registration.",
   assets: [],
 };
-// The skin keeps finer detail over the hands and feet (lib/detail-skin.mjs).
-// Each box is the bounds of that hand's or foot's source bones plus 40 mm, in
-// source millimetres, so the detail follows the source data.
-const SKIN_DETAIL = { padMm: 40, detailErrorMm: 0.4 };
-const skinDetailBoxes = [];
-for (const side of ["right", "left"]) for (const pattern of [
-  `phalanx of ${side} (.*finger|thumb)|${side} .*metacarpal|${side} (scaphoid|lunate|triquetral|pisiform|trapezium|trapezoid|capitate|hamate)$`,
-  `phalanx of ${side} .*toe|${side} .*metatarsal|${side} (calcaneus|talus|navicular|cuboid|.*cuneiform)$`,
-]) {
+// The skin keeps finer detail where thin skin covers structures that sit just
+// under it (lib/detail-skin.mjs): hands and feet at 0.4 mm, the head (scalp,
+// face, ears) at 0.6 mm. Each box is the bounds of those source bones plus a
+// margin, in source millimetres, so the detail follows the source data.
+const boneBounds = async (pattern, padMm) => {
   const min = [Infinity, Infinity, Infinity], max = [-Infinity, -Infinity, -Infinity];
   for (const a of inputs.assets.filter((a) => a.layer === "bone" && new RegExp(pattern).test(a.name))) {
     const bytes = await fs.readFile(`.cache/models/${a.id}.${a.format || "stl"}`);
@@ -68,8 +64,16 @@ for (const side of ["right", "left"]) for (const pattern of [
     for (let i = 0; i < p.length; i++) { min[i % 3] = Math.min(min[i % 3], p[i]); max[i % 3] = Math.max(max[i % 3], p[i]); }
   }
   if (!Number.isFinite(min[0])) throw Error(`No source bones for skin detail: ${pattern}`);
-  skinDetailBoxes.push([min.map((v) => v - SKIN_DETAIL.padMm), max.map((v) => v + SKIN_DETAIL.padMm)]);
-}
+  return [min.map((v) => v - padMm), max.map((v) => v + padMm)];
+};
+const SKIN_DETAIL = [
+  { name: "hands and feet", padMm: 40, errorMm: 0.4, patterns: ["right", "left"].flatMap((side) => [
+    `phalanx of ${side} (.*finger|thumb)|${side} .*metacarpal|${side} (scaphoid|lunate|triquetral|pisiform|trapezium|trapezoid|capitate|hamate)$`,
+    `phalanx of ${side} .*toe|${side} .*metatarsal|${side} (calcaneus|talus|navicular|cuboid|.*cuneiform)$`,
+  ]) },
+  { name: "head", padMm: 35, errorMm: 0.6, patterns: ["^(occipital bone|frontal bone|mandible|(right|left) (temporal|parietal|zygomatic|nasal) bone|(right|left) maxilla)$"] },
+];
+for (const region of SKIN_DETAIL) region.boxesMm = await Promise.all(region.patterns.map((pattern) => boneBounds(pattern, region.padMm)));
 for (const layer of ["skin", "bone", "muscle", "organ", "vessel", "nerve"]) {
   const doc = new Document();
   const buffer = doc.createBuffer();
@@ -114,7 +118,7 @@ for (const layer of ["skin", "bone", "muscle", "organ", "vessel", "nerve"]) {
       layer === "skin" ? 135000 : layer === "bone" ? 4500 : 6000,
     );
     const detail = a.id === "FMA7163"
-      ? simplifyWithDetail(indices, pos, { boxes: skinDetailBoxes, detailErrorMm: SKIN_DETAIL.detailErrorMm, bodyTarget: target, bodyError: 0.003 })
+      ? simplifyWithDetail(indices, pos, { regions: SKIN_DETAIL.map((r) => ({ boxes: r.boxesMm, errorMm: r.errorMm })), bodyTarget: target, bodyError: 0.003 })
       : null;
     const [simple, error] = detail
       ? [detail.indices, detail.error]
@@ -160,7 +164,10 @@ for (const layer of ["skin", "bone", "muscle", "organ", "vessel", "nerve"]) {
           .setBuffer(buffer),
       )
       .setIndices(
-        doc.createAccessor().setType("SCALAR").setArray(idx).setBuffer(buffer),
+        // The skin carries the extra detail; 16-bit indices (valid below
+        // 65,536 vertices) keep it within the model budget. Other layers keep
+        // their bytes unchanged.
+        doc.createAccessor().setType("SCALAR").setArray(a.id === "FMA7163" && remap.size < 65536 ? Uint16Array.from(idx) : idx).setBuffer(buffer),
       );
     const mesh = doc.createMesh(a.id).addPrimitive(prim);
     scene.addChild(
@@ -174,7 +181,7 @@ for (const layer of ["skin", "bone", "muscle", "organ", "vessel", "nerve"]) {
       originalTriangles: original,
       triangles: idx.length / 3,
       simplificationError: error,
-      ...(detail ? { detail: { regions: "hands and feet", boxesMm: skinDetailBoxes, padMm: SKIN_DETAIL.padMm, targetErrorMm: SKIN_DETAIL.detailErrorMm, errorMm: detail.detailErrorMm } } : {}),
+      ...(detail ? { detail: SKIN_DETAIL.map((r, i) => ({ name: r.name, boxesMm: r.boxesMm, padMm: r.padMm, targetErrorMm: r.errorMm, errorMm: detail.regionErrorsMm[i] })) } : {}),
     });
     raw.dispose();
     geom.dispose();

@@ -6,7 +6,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
   "attribution": "BodyParts3D, (c) The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan",
   "transform": "x=X/1000; y=(Z+13.5175)/1000; z=(-Y-96.5107)/1000. Original unit mm; scene unit m.",
-  "modifications": "STL to GLB, welded positions, meshoptimizer topology-aware simplification (the skin keeps a 0.4 mm absolute error over the hands and feet), smooth normals, coordinate transform; no clinical registration.",
+  "modifications": "STL to GLB, welded positions, meshoptimizer topology-aware simplification (the skin keeps a 0.4 mm absolute error over the hands and feet and 0.6 mm over the head, with 16-bit indices), smooth normals, coordinate transform; no clinical registration.",
   "assets": [
     {
       "id": "FMA7163",
@@ -16,64 +16,86 @@
       "sourceUrl": "https://raw.githubusercontent.com/Kevin-Mattheus-Moerman/BodyParts3D/f0eeb6e843380cfe6b83797cf8c3e1af74de5e61/assets/BodyParts3D_data/stl/FMA7163.stl",
       "sha256": "c7762a9b5044a7329ac99403b42551571a28325472103cf1900c379cd8dfcfb7",
       "originalTriangles": 1586498,
-      "triangles": 82754,
-      "simplificationError": 0.0009295732597820461,
-      "detail": {
-        "regions": "hands and feet",
-        "boxesMm": [
-          [
+      "triangles": 102392,
+      "simplificationError": 0.0008340152562595904,
+      "detail": [
+        {
+          "name": "hands and feet",
+          "boxesMm": [
             [
-              -364.6510009765625,
-              -231.83399963378906,
-              623.22802734375
+              [
+                -364.6510009765625,
+                -231.83399963378906,
+                623.22802734375
+              ],
+              [
+                -179.51199340820312,
+                -66.55899810791016,
+                862.1950073242188
+              ]
             ],
             [
-              -179.51199340820312,
-              -66.55899810791016,
-              862.1950073242188
+              [
+                -186.3209991455078,
+                -270.8450012207031,
+                -44.1710000038147
+              ],
+              [
+                -16.256500244140625,
+                30.8060302734375,
+                109.7876968383789
+              ]
+            ],
+            [
+              [
+                178.2209930419922,
+                -231.78399658203125,
+                623.2849731445312
+              ],
+              [
+                363.31500244140625,
+                -66.51699829101562,
+                862.1920166015625
+              ]
+            ],
+            [
+              [
+                14.941398620605469,
+                -270.8280029296875,
+                -44.14906978607178
+              ],
+              [
+                184.98199462890625,
+                30.832059860229492,
+                109.78990173339844
+              ]
             ]
           ],
-          [
+          "padMm": 40,
+          "targetErrorMm": 0.4,
+          "errorMm": 0.3977260887622833
+        },
+        {
+          "name": "head",
+          "boxesMm": [
             [
-              -186.3209991455078,
-              -270.8450012207031,
-              -44.1710000038147
-            ],
-            [
-              -16.256500244140625,
-              30.8060302734375,
-              109.7876968383789
+              [
+                -107.63030242919922,
+                -230.0260009765625,
+                1400.6500244140625
+              ],
+              [
+                106.35479736328125,
+                37.22501993179321,
+                1673.219970703125
+              ]
             ]
           ],
-          [
-            [
-              178.2209930419922,
-              -231.78399658203125,
-              623.2849731445312
-            ],
-            [
-              363.31500244140625,
-              -66.51699829101562,
-              862.1920166015625
-            ]
-          ],
-          [
-            [
-              14.941398620605469,
-              -270.8280029296875,
-              -44.14906978607178
-            ],
-            [
-              184.98199462890625,
-              30.832059860229492,
-              109.78990173339844
-            ]
-          ]
-        ],
-        "padMm": 40,
-        "targetErrorMm": 0.4,
-        "errorMm": 0.3977260887622833
-      }
+          "padMm": 35,
+          "targetErrorMm": 0.6,
+          "errorMm": 0.5994952917098999
+        }
+      ]
     },
     {
       "id": "FMA52735",
