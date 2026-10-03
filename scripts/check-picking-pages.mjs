@@ -52,7 +52,9 @@ const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
     await page.mouse.click(spot.x, spot.y); await page.waitForTimeout(900);
     const s = await snap(page);
     if (!s.selection) continue;
-    results.desktopTissue = { selection: s.selection.ids, cameraSame: same(s.camera, pose), layersSame: same(s.layers, before.layers), dissection: s.dissection, displayMode: s.displayMode };
+    // No zoom: the picked part becomes the orbit centre at the same distance (Q30).
+    const gap = (c) => Math.hypot(...c.position.map((v, i) => v - c.target[i]));
+    results.desktopTissue = { selection: s.selection.ids, distanceSame: Math.abs(gap(s.camera) - gap(pose)) < 1e-6, layersSame: same(s.layers, before.layers), dissection: s.dissection, displayMode: s.displayMode };
     await page.getByRole('button', { name: '구조 선택 해제', exact: true }).click(); await page.waitForTimeout(500);
     break;
   }
@@ -82,7 +84,7 @@ results.origin = origin; results.checkedAt = new Date().toISOString();
 fs.writeFileSync('docs/anatomy-alignment/picking-pages.json', JSON.stringify(results, null, 2) + '\n');
 console.log(JSON.stringify(results));
 const failed = results.desktopHover.cold !== 0 || results.desktopHover.kept !== results.desktopHover.marker || results.desktopHover.pointId !== results.desktopHover.marker
-  || !results.desktopHover.cameraSame || !results.desktopTissue?.cameraSame || !results.desktopTissue?.layersSame || results.desktopDrag.selection
+  || !results.desktopHover.cameraSame || !results.desktopTissue?.distanceSame || !results.desktopTissue?.layersSame || results.desktopDrag.selection
   || results.touch.pointId !== results.touch.marker || !results.touch.cameraSame || results.desktopErrors.length || results.touch.errors.length;
 if (failed) process.exitCode = 1;
 await browser.close();
