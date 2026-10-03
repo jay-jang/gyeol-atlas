@@ -180,15 +180,18 @@ test("ordinary peel selection return survives another selection, detail and save
   const invalidPose = { ...selected, selectionReturn: { ...selected.selectionReturn, camera: { position: [0, 0, 0], target: [0, 0, 0] } } };
   assert.deepEqual(restoreView(JSON.stringify(invalidPose), [], catalog), initialView());
 });
-test("leaving an ordinary peel selection for a point or region does not strand its single layer", () => {
+test("leaving an ordinary peel selection for a region does not strand its single layer; an acupoint keeps it", () => {
   for (const sex of ["male", "female"]) {
     let before = viewReducer(initialView("KI3"), { type: "sex", value: sex });
     before = viewReducer(before, { type: "dissection", value: 50.5 });
     before = viewReducer(before, { type: "camera", value: { position: [0, 1, 2], target: [0, 1, 0] } });
     const id = sex === "male" ? "FMA7148" : "HRAF0435";
-    const selected = viewReducer(before, { type: "select", layer: "organ", selection: { kind: "structure", ids: [id], name: "장기" } });
+    const selected = viewReducer(before, { type: "select", layer: "organ", selection: { kind: "structure", ids: [id], name: "장기", layers: ["organ"] } });
+    // Continuity: choosing an acupoint keeps the organ being studied.
+    const pointed = viewReducer(selected, { type: "point", id: "ST36" });
+    assert.deepEqual({ ...pointed, pointId: selected.pointId }, selected, `${sex}/point keeps the selection`);
+    assert.equal(pointed.pointId, "ST36");
     for (const action of [
-      { type: "point", id: "ST36" },
       { type: "anatomy-region", value: "head" },
       { type: "region-filter", value: "머리·목" },
       { type: "show-filtered" },
@@ -201,7 +204,7 @@ test("leaving an ordinary peel selection for a point or region does not strand i
     }
   }
 });
-test("explicit same-point reselection exits an organ while wiki route sync preserves the prior view", () => {
+test("same-point reselection keeps an organ selected; clearing it returns to the prior peel", () => {
   for (const sex of ["male", "female"]) {
     let before = viewReducer(initialView("ST36"), { type: "sex", value: sex });
     before = viewReducer(before, { type: "dissection", value: 50.5 });
@@ -210,8 +213,9 @@ test("explicit same-point reselection exits an organ while wiki route sync prese
     const selected = viewReducer(before, { type: "select", layer: "organ", selection: { kind: "structure", ids: [id], name: "장기" } });
     assert.equal(viewReducer(selected, { type: "route-point", id: "ST36" }), selected, `${sex}/wiki return`);
     assert.equal(viewReducer(before, { type: "point", id: "ST36" }), before, `${sex}/plain reselect`);
-    const returned = viewReducer(selected, { type: "point", id: "ST36" });
-    assert.deepEqual(returned, before, `${sex}/explicit reselect`);
+    assert.equal(viewReducer(selected, { type: "point", id: "ST36" }), selected, `${sex}/explicit reselect keeps the organ`);
+    const returned = viewReducer(selected, { type: "clear-selection" });
+    assert.deepEqual(returned, before, `${sex}/clear`);
     assert.equal(viewReducer(selected, { type: "route-point", id: "KI3" }).pointId, "KI3");
   }
 });
@@ -414,4 +418,39 @@ test("all 1179 searchable structures have Korean labels without losing original 
   }
   assert.match(labels.FMA24474, /대퇴골/);
   assert.match(labels.FMA22544, /전경골근/);
+});
+
+test("a selection carries on through peel, stage and system changes while its meshes stay drawn", () => {
+  let s = viewReducer(initialView("CV12"), { type: "dissection", value: 30 });
+  s = viewReducer(s, { type: "pick", selection: { kind: "structure", ids: ["FMA7148"], name: "위", layers: ["organ"] } });
+  s = viewReducer(s, { type: "isolate" });
+  const peeled = viewReducer(s, { type: "dissection", value: 70 });
+  assert.deepEqual(peeled.selection, s.selection);
+  assert.equal(peeled.isolated, false, "isolation ends with the change");
+  assert.deepEqual(viewReducer(peeled, { type: "stage", index: 3 }).selection, s.selection, "organ quick view keeps it");
+  assert.equal(viewReducer(peeled, { type: "stage", index: 1 }).selection, null, "muscle quick view hides the organ, so it ends");
+  assert.equal(viewReducer(peeled, { type: "layers", layers: { ...peeled.layers, organ: false } }).selection, null);
+  // Sessions saved before selections recorded their systems end as before.
+  const legacy = viewReducer(initialView("CV12"), { type: "pick", selection: { kind: "structure", ids: ["FMA7148"], name: "위" } });
+  assert.equal(viewReducer(legacy, { type: "dissection", value: 40 }).selection, null);
+  // A comparison carries its highlight with it.
+  const compared = viewReducer(initialView("CV12"), { type: "compare", name: "위", ids: ["FMA7148"], selectionLayers: ["organ"] });
+  const peeledComparison = viewReducer(compared, { type: "dissection", value: 50 });
+  assert.deepEqual(peeledComparison.comparison, compared.comparison);
+  // An independent detail source is a different frame and always closes.
+  const detail = viewReducer(initialView(), { type: "detail", detail: { id: "heart", name: "심장", ids: ["BP4_FJ2631"], layers: { ...initialView().layers, skin: false } } });
+  assert.equal(viewReducer(detail, { type: "dissection", value: 10 }).selection, null);
+});
+
+test("leaving a selection never restores the camera it started from", () => {
+  let s = viewReducer(initialView("CV12"), { type: "dissection", value: 50.5 });
+  s = viewReducer(s, { type: "camera", value: { position: [0, 1, 3], target: [0, 1, 0] } });
+  s = viewReducer(s, { type: "select", layer: "organ", selection: { kind: "structure", ids: ["FMA7148"], name: "위", layers: ["organ"] } });
+  // The viewer zooms in on the organ ...
+  s = viewReducer(s, { type: "camera", value: { position: [0, 1.1, 0.6], target: [0, 1.1, 0] } });
+  for (const action of [{ type: "clear-selection" }, { type: "anatomy-region", value: "head" }, { type: "show-filtered" }]) {
+    const left = viewReducer(s, action);
+    assert.deepEqual(left.camera, s.camera, action.type);
+    assert.equal(left.dissection, 50.5, action.type);
+  }
 });

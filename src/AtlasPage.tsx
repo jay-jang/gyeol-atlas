@@ -179,7 +179,8 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
       return;
     }
     setAction((a) => ({ kind, tick: a.tick + 1 }));
-    setPlaced("");
+    // Re-centring on a part picked in place keeps that pick's gliding card.
+    if (kind !== "pivot") setPlaced("");
     if (kind === "focus" && state.markers === "hidden") dispatch({ type: "markers", value: "selected" });
   };
   const restoreOverviewPose = (pose: NonNullable<ViewState["camera"]>) => {
@@ -225,9 +226,11 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     addEventListener("keydown", key);
     return () => removeEventListener("keydown", key);
   }, []);
+  // Choosing an acupoint keeps the camera where the viewer is looking. Only
+  // an independent detail source (its own frame) returns to the whole body.
   const select = (p: Point) => {
     const leavingDetail = Boolean(state.detail);
-    const returnPose = leavingDetail ? state.detailReturn?.camera : state.selectionReturn?.camera;
+    const returnPose = leavingDetail ? state.detailReturn?.camera : null;
     if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
     isolateCameraFrame.current = null;
     dispatch({ type: "point", id: p.id });
@@ -253,6 +256,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
       name: c.traditionalName || selected.name,
       ids,
       layers: Object.fromEntries(layerKeys.map((layer) => [layer, layer === "skin" || structures.some((s) => s.layer === layer && ids.includes(s.id))])) as Layers,
+      selectionLayers: layersOf(ids),
     });
     setPanel(null);
     camera("comparison");
@@ -379,10 +383,12 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     ["move-up", "위로 이동", "↑"], ["move-forward", "앞으로 이동", "전진"], ["move-down", "아래로 이동", "↓"],
     ["move-left", "왼쪽으로 이동", "←"], ["move-backward", "뒤로 이동", "후진"], ["move-right", "오른쪽으로 이동", "→"],
   ] as const).map(([kind, label, text]) => <button key={kind} aria-label={label} title={label} onClick={() => camera(kind)}>{text}</button>)}</div>;
+  // Clearing a selection restores the systems it replaced but keeps the
+  // camera; only an independent detail source returns to its overview pose.
   const leaveSelection = () => {
     if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
     isolateCameraFrame.current = null;
-    const pose = state.detail ? state.detailReturn?.camera : (state.selectionReturn?.camera ?? state.camera);
+    const pose = state.detail ? state.detailReturn?.camera : null;
     dispatch({ type: "clear-selection" });
     if (pose) restoreOverviewPose(pose);
     else if (state.detail) requestAnimationFrame(() => camera("fit"));
@@ -406,13 +412,14 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     return score(a) - score(b) || (a.label || a.name).localeCompare(b.label || b.name);
   }), [q, state.sex]);
   const visibleStructures = structureResults.slice(0, 240);
+  const layersOf = (ids: string[]) => [...new Set(ids.map((id) => structureForSexId(structures, state.sex, id)?.layer).filter(Boolean))] as Layer[];
   // Picking closes the results but keeps the query; focusing search reopens it.
   const pickStructure = (s: ReturnType<typeof structuresForSex>[number]) => {
     setPanel((current) => current === "search" ? null : current);
     dispatch({
       type: "select", layer: s.layer as Layer, detail: detailForStructure(s),
       region: s.bodyRegion && s.bodyRegion !== "whole" ? s.bodyRegion as ViewState["anatomyRegion"] : undefined,
-      selection: { kind: "structure", ids: [s.id], name: s.label || s.name },
+      selection: { kind: "structure", ids: [s.id], name: s.label || s.name, layers: [s.layer as Layer] },
     });
   };
   // A part clicked on the model is selected where it is, without re-framing:
@@ -422,7 +429,10 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     if (state.detail && !state.detail.ids.includes(s.id)) { pickStructure(s); return; }
     focusedSelection.current = s.id;
     setPlaced(s.id);
-    dispatch({ type: "pick", selection: { kind: "structure", ids: [s.id], name: s.label || s.name } });
+    dispatch({ type: "pick", selection: { kind: "structure", ids: [s.id], name: s.label || s.name, layers: [s.layer as Layer] } });
+    // Turn about the picked part without changing the zoom, so it can be
+    // seen from every side.
+    camera("pivot");
   };
   // The 3D scene receives stable callbacks that always call the latest handlers,
   // so UI-only updates never make it redraw.
@@ -769,7 +779,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
                 <details className="organ-detail-parts" open={detailPartsOpen} onToggle={(e) => setPartsOpen({ scope: partsScope, open: e.currentTarget.open })}>
                   <summary>세부 구조 {detailParts.length}개 선택</summary>
                   <div>
-                    {detailParts.map((part) => <button key={part.id} aria-pressed={state.selection?.ids.length === 1 && state.selection.ids[0] === part.id} onClick={() => dispatch({ type: "select", layer: part.layer, detail: state.detail?.ids.includes(part.id) ? state.detail : detailForStructure(part), selection: { kind: "structure", ids: [part.id], name: part.label || part.name } })}>{part.label || part.name}<small>{part.name}</small></button>)}
+                    {detailParts.map((part) => <button key={part.id} aria-pressed={state.selection?.ids.length === 1 && state.selection.ids[0] === part.id} onClick={() => dispatch({ type: "select", layer: part.layer, detail: state.detail?.ids.includes(part.id) ? state.detail : detailForStructure(part), selection: { kind: "structure", ids: [part.id], name: part.label || part.name, layers: [part.layer as Layer] } })}>{part.label || part.name}<small>{part.name}</small></button>)}
                   </div>
                 </details>
               )}

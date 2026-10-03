@@ -56,7 +56,7 @@ import { musclePeelRanks } from "./muscle-peel";
 import { musclePeelOpacity } from "./dissection";
 import { selectionOpacity, selectionHitId, opacityWritesDepth } from "./selection-context";
 import { besideMarker, type ScreenSize } from "./marker-label";
-import { MARKER_HIT_PX, hitRadius, markersFirst, nearestMarker, releasedDragPress, trackPresses } from "./marker-picking";
+import { hitRadius, markerDotPx, markersFirst, nearestMarker, releasedDragPress, trackPresses } from "./marker-picking";
 
 const structureById = new Map(structures.map(s => [s.id, s]));
 
@@ -79,7 +79,7 @@ function markerFaces(normal: Vector3 | undefined, position: Vector3, eye: Vector
 // `outward` is a world-X step whose projection picks the label's screen side,
 // so bilateral labels still point away from the body from front and back.
 const passThrough = { pointerEvents: "none" } as const;
-function MarkerLabel({ outward, normal, peek = false, children }: { outward: number; normal?: Vector3; peek?: boolean; children: ReactNode }) {
+function MarkerLabel({ outward, normal, peek = false, gap = 10, children }: { outward: number; normal?: Vector3; peek?: boolean; gap?: number; children: ReactNode }) {
   const invalidate = useThree(state => state.invalidate);
   const label = useRef<HTMLDivElement | null>(null);
   const measure = useCallback((node: HTMLDivElement | null) => {
@@ -98,8 +98,8 @@ function MarkerLabel({ outward, normal, peek = false, children }: { outward: num
     const away = toCanvas(labelAnchor, camera, size)[0] - marker[0];
     const node = label.current;
     return besideMarker(marker, Math.abs(away) < 1 ? outward : away,
-      { width: node?.offsetWidth ?? 0, height: node?.offsetHeight ?? 0 }, size, peek ? MARKER_HIT_PX.hovered + 4 : 10);
-  }, [outward, normal, peek]);
+      { width: node?.offsetWidth ?? 0, height: node?.offsetHeight ?? 0 }, size, gap);
+  }, [outward, normal, gap]);
   // A hover-only name must let the pointer keep the marker underneath it.
   return <Html center zIndexRange={[20, 0]} ref={measure} calculatePosition={position} style={peek ? passThrough : undefined}>{children}</Html>;
 }
@@ -113,15 +113,15 @@ const markerColorOf = (m: Marker, selectedId: string) => m.point.id === selected
 // the chosen point is larger, gold and visible from every direction. The
 // pointer target is a wider screen circle (marker-picking.ts), shown as a halo
 // around the hovered point, and it wins over the tissue under the pointer.
-function Markers({ markers, selectedId, labels, onSelect }: { markers: Marker[]; selectedId: string; labels: boolean; onSelect: (p: Point) => void }) {
+function Markers({ markers, selectedId, labels, overTissue, onSelect }: { markers: Marker[]; selectedId: string; labels: boolean; overTissue: boolean; onSelect: (p: Point) => void }) {
   const mesh = useRef<InstancedMesh>(null);
   const halo = useRef<Group>(null);
   const shown = useRef<boolean[]>([]);
   const [hover, setHover] = useState<number | null>(null);
   const { camera, size, gl, invalidate } = useThree();
   const positions = useMemo(() => markers.map((m) => m.position), [markers]);
-  const pointer = useRef({ type: "mouse", hover: null as number | null, positions, camera, height: size.height });
-  pointer.current = { ...pointer.current, hover, positions, camera, height: size.height };
+  const pointer = useRef({ type: "mouse", hover: null as number | null, positions, camera, height: size.height, overTissue });
+  pointer.current = { ...pointer.current, hover, positions, camera, height: size.height, overTissue };
   useEffect(() => {
     // Touch and pen get the larger target; the click's own ray reads it.
     const canvas = gl.domElement;
@@ -131,11 +131,11 @@ function Markers({ markers, selectedId, labels, onSelect }: { markers: Marker[];
     return () => { canvas.removeEventListener("pointerdown", record, true); canvas.removeEventListener("pointermove", record, true); };
   }, [gl]);
   const raycast = useCallback((raycaster: Raycaster, intersects: Intersection[]) => {
-    const instances = mesh.current, { positions, camera, height, hover, type } = pointer.current;
+    const instances = mesh.current, { positions, camera, height, hover, type, overTissue } = pointer.current;
     if (!instances || !positions.length) return;
     const unit = 2 * Math.tan(((camera as PerspectiveCamera).fov * Math.PI) / 360) / height;
     const hit = nearestMarker(raycaster.ray.origin, raycaster.ray.direction, positions, shown.current, unit,
-      (i) => hitRadius(type, hover === i));
+      (i) => hitRadius(type, hover === i, overTissue));
     if (hit) intersects.push({ distance: hit.depth, point: raycaster.ray.at(hit.depth, new Vector3()), object: instances, instanceId: hit.index } as Intersection);
   }, []);
   useLayoutEffect(() => {
@@ -169,8 +169,9 @@ function Markers({ markers, selectedId, labels, onSelect }: { markers: Marker[];
       const active = m.point.id === selectedId;
       const visible = active || markerFaces(m.normal, m.position, camera.position);
       shown.current[i] = visible;
-      const pixels = active ? 6 : hover === i ? 6 : 3.2;
-      markerScale.setScalar(visible ? camera.position.distanceTo(m.position) * tangent * pixels : 0);
+      const distance = camera.position.distanceTo(m.position), dot = markerDotPx(distance);
+      const pixels = active ? Math.max(dot + 2.5, 6.5) : hover === i ? Math.max(dot + 3, 7.5) : dot;
+      markerScale.setScalar(visible ? distance * tangent * pixels : 0);
       instances.setMatrixAt(i, markerMatrix.compose(m.position, markerQuaternion, markerScale));
     });
     instances.instanceMatrix.needsUpdate = true;
@@ -181,7 +182,7 @@ function Markers({ markers, selectedId, labels, onSelect }: { markers: Marker[];
     if (!hovered || !ring.visible) return;
     ring.position.copy(hovered.position);
     ring.quaternion.copy(camera.quaternion);
-    ring.scale.setScalar(camera.position.distanceTo(hovered.position) * tangent * hitRadius(pointer.current.type, true));
+    ring.scale.setScalar(camera.position.distanceTo(hovered.position) * tangent * hitRadius(pointer.current.type, true, overTissue));
   });
   const pick = (e: ThreeEvent<PointerEvent | MouseEvent>) => e.instanceId !== undefined && shown.current[e.instanceId] ? e.instanceId : null;
   return (
@@ -227,7 +228,8 @@ function Markers({ markers, selectedId, labels, onSelect }: { markers: Marker[];
         const persistent = (active && m.side !== "왼쪽" && m.occurrence === 0) || (labels && m.occurrence === 0);
         return (persistent || hover === i) && (
           <group key={m.key} position={m.position}>
-            <MarkerLabel outward={active ? -0.05 : 0.05} normal={active ? undefined : m.normal} peek={!persistent}>
+            <MarkerLabel outward={active ? -0.05 : 0.05} normal={active ? undefined : m.normal} peek={!persistent}
+              gap={persistent ? 10 : hitRadius(pointer.current.type, true, overTissue) + 4}>
               {/* A hover-only name lets the pointer keep its target underneath;
                   shown names are buttons whose events stay off the 3D scene. */}
               <button
@@ -705,10 +707,26 @@ function Scene(props: Props) {
       window.removeEventListener('blur', clear); document.removeEventListener('visibilitychange', clear);
     };
   }, [gl, invalidate]);
+  // Camera moves the viewer asked for glide instead of jumping, so the place
+  // being studied stays in sight (instant under reduced motion). Dragging or
+  // keyboard movement takes over at once.
+  const glide = useRef<{ from: [Vector3, Vector3]; to: [Vector3, Vector3]; start: number; duration: number } | null>(null);
+  useFrame(() => {
+    const c = controls.current, g = glide.current;
+    if (!c || !g) return;
+    const t = Math.min(1, (performance.now() - g.start) / g.duration), eased = t < .5 ? 4 * t ** 3 : 1 - (-2 * t + 2) ** 3 / 2;
+    camera.position.lerpVectors(g.from[0], g.to[0], eased);
+    c.target.lerpVectors(g.from[1], g.to[1], eased);
+    c.update();
+    if (t < 1) { invalidate(); return; }
+    glide.current = null;
+    emitPose();
+  });
   useFrame((_, delta) => {
     const c = controls.current;
     const directions = [...keys.current].map(key => movementKeys[key]).filter(Boolean);
     if (!c || !directions.length) return;
+    glide.current = null;
     const speed = (keys.current.has('ShiftLeft') || keys.current.has('ShiftRight')) ? 1.5 : 0.5;
     for (const direction of directions) translateView(camera, c.target, direction, speed * Math.min(delta, 0.05) / Math.sqrt(directions.length));
     c.update(); invalidate();
@@ -827,6 +845,8 @@ function Scene(props: Props) {
     const detailContext = props.detailIds.length > 0 && !props.isolated;
     const kind = pendingAction ? action.kind : refitLimb ? "anatomy-region" : refitOverview ? "fit" : props.highlight.length && !props.isolated ? "comparison" : detailContext ? "fit" : "structure";
     const selectionPreset = hasSelection && ["front", "back", "side", "reset"].includes(kind);
+    const from: [Vector3, Vector3] = [camera.position.clone(), c.target.clone()];
+    glide.current = null;
     if (kind.startsWith("move-")) {
       translateView(camera, c.target, kind.slice(5) as MoveDirection, 0.12);
     } else if (kind === "zoomIn" || kind === "zoomOut")
@@ -837,6 +857,16 @@ function Scene(props: Props) {
     else if (kind === "pose" && action.pose) {
       camera.position.fromArray(action.pose.position);
       c.target.fromArray(action.pose.target);
+    } else if (kind === "pivot") {
+      // Orbit about the selected part: pan so it becomes the centre, keeping
+      // the distance and direction (no zoom).
+      const box = new Box3();
+      scene.updateMatrixWorld(true);
+      for (const id of props.selectionIds) { const obj = scene.getObjectByName(id); if (obj) box.union(new Box3().setFromObject(obj)); }
+      if (box.isEmpty()) return;
+      const shift = box.getCenter(new Vector3()).sub(c.target);
+      c.target.add(shift);
+      camera.position.add(shift);
     } else if (kind === "restore") {
       if (initialPose.current) {
         camera.position.fromArray(initialPose.current.position);
@@ -953,10 +983,22 @@ function Scene(props: Props) {
     framedLayout.current = layoutKey;
     if (hasSelection && (kind === "structure" || kind === "comparison" || kind === "fit" || selectionPreset)) framedFor.current = selectionKey;
     if (kind !== "restore") restoringLayout.current = false;
+    const glides = pendingAction && !["restore", "pose"].includes(kind) && !kind.startsWith("move-")
+      && !matchMedia("(prefers-reduced-motion: reduce)").matches
+      && (from[0].distanceToSquared(camera.position) > 1e-10 || from[1].distanceToSquared(c.target) > 1e-10);
+    if (glides) {
+      glide.current = { from, to: [camera.position.clone(), c.target.clone()], start: performance.now(), duration: kind === "zoomIn" || kind === "zoomOut" ? 220 : 450 };
+      camera.position.copy(from[0]);
+      c.target.copy(from[1]);
+    }
     c.update();
-    emitPose();
+    if (!glides) emitPose();
     invalidate();
   }, [action, camera, invalidate, scene, revision, emitPose, props.anatomyRegion, layoutKey, hasSelection, selectionKey, selectionCardTop]);
+  // Peeled (or see-through) skin leaves muscles and organs under the markers
+  // as click targets of their own, so the markers' circles shrink.
+  const skinAlpha = props.layers.skin ? props.layerOpacity.skin * dissectionLayerOpacity("skin", props.dissection, props.displayMode === "dissection") : 0;
+  const markersOverTissue = skinAlpha < .5 || props.selectionTarget === "internal";
   return (
     <>
       <color attach="background" args={["#07141c"]} />
@@ -988,7 +1030,7 @@ function Scene(props: Props) {
             </Suspense>
           ))}
       </group>
-      <Markers markers={markers} selectedId={selected.id} labels={labels} onSelect={onSelect} />
+      <Markers markers={markers} selectedId={selected.id} labels={labels} overTissue={markersOverTissue} onSelect={onSelect} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.018, 0]}>
         <circleGeometry args={[0.48, 64]} />
         <meshBasicMaterial color="#19313d" transparent opacity={0.58} />
@@ -1003,6 +1045,7 @@ function Scene(props: Props) {
         panSpeed={1}
         minDistance={0.06}
         maxDistance={12}
+        onStart={() => { glide.current = null; }}
         onChange={() => {
           if (poseTimer.current) clearTimeout(poseTimer.current);
           poseTimer.current = setTimeout(emitPose, 160);

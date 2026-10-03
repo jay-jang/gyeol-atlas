@@ -12,6 +12,7 @@ try {
   });
   const page = await browser.newPage({
     viewport: { width: 1440, height: 1100 },
+    reducedMotion: "reduce",
   });
   const requests = [],
     errors = [];

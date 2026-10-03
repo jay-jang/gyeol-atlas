@@ -24,18 +24,18 @@ function lone(p) {
 }
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 {
-  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, reducedMotion: "reduce" });
   const errors = []; page.on('pageerror', e => errors.push(e.message));
   await page.goto(origin); await page.getByText('해부 모델 로드 완료').waitFor({ timeout: 180000 }); await settle(page);
   for (let i = 0; i < 3; i++) await page.getByRole('button', { name: '확대', exact: true }).last().click();
   await settle(page);
   const before = await snap(page), p = await project(page, false), m = lone(p);
-  // Hover: cold 14px none, 9px hovered, drift 16px kept, click there selects.
-  await page.mouse.move(m.x + 14, m.y); await page.waitForTimeout(200);
+  // Hover: cold 18px none, 11px hovered, drift 20px kept, click there selects.
+  await page.mouse.move(m.x + 18, m.y); await page.waitForTimeout(200);
   const cold = await page.locator('.point-label').count();
-  await page.mouse.move(m.x + 9, m.y, { steps: 3 }); await page.waitForTimeout(200);
+  await page.mouse.move(m.x + 11, m.y, { steps: 3 }); await page.waitForTimeout(200);
   const hovered = await page.locator('.point-label.peek').textContent().catch(() => null);
-  await page.mouse.move(m.x + 16, m.y, { steps: 3 }); await page.waitForTimeout(200);
+  await page.mouse.move(m.x + 20, m.y, { steps: 3 }); await page.waitForTimeout(200);
   const kept = await page.locator('.point-label.peek').textContent().catch(() => null);
   await page.mouse.down(); await page.mouse.up(); await page.waitForTimeout(600);
   const picked = await snap(page);
@@ -44,7 +44,7 @@ const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
   const q = await project(page, false);
   const spots = [];
   for (let y = q.box.y + q.box.height * .25; y < q.box.y + q.box.height * .75; y += 8) for (let x = q.box.x + q.box.width * .3; x < q.box.x + q.box.width * .7; x += 8)
-    if (q.points.every(a => Math.hypot(a.x - x, a.y - y) > 34)) spots.push({ x, y, d: Math.hypot(x - (q.box.x + q.box.width / 2), y - (q.box.y + q.box.height / 2)) });
+    if (q.points.every(a => Math.hypot(a.x - x, a.y - y) > 40)) spots.push({ x, y, d: Math.hypot(x - (q.box.x + q.box.width / 2), y - (q.box.y + q.box.height / 2)) });
   spots.sort((a, b) => a.d - b.d);
   const pose = (await snap(page)).camera;
   for (const spot of spots.slice(0, 12)) {
@@ -66,14 +66,14 @@ const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
   await page.close();
 }
 {
-  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true, deviceScaleFactor: 2 });
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true, deviceScaleFactor: 2, reducedMotion: "reduce" });
   const page = await context.newPage();
   const errors = []; page.on('pageerror', e => errors.push(e.message));
   await page.goto(origin); await page.getByText('해부 모델 로드 완료').waitFor({ timeout: 180000 }); await settle(page);
   for (let i = 0; i < 3; i++) await page.getByRole('button', { name: '확대', exact: true }).last().click();
   await settle(page);
   const before = await snap(page), p = await project(page, true), m = lone(p);
-  await page.touchscreen.tap(m.x + 15, m.y); await page.waitForTimeout(700);
+  await page.touchscreen.tap(m.x + 18, m.y); await page.waitForTimeout(700);
   const s = await snap(page);
   results.touch = { marker: m.id, gapPx: Math.round(m.gap), pointId: s.pointId, selection: s.selection, cameraSame: same(s.camera, before.camera), errors };
   await context.close();

@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { ready, snapshot, openTool, closeTool } from './helpers';
+import { ready, snapshot, openTool, closeTool, settledCamera } from './helpers';
 
 for (const scenario of [
   { sex: 'male', label: '남성', id: 'FMA7148' },
   { sex: 'female', label: '여성', id: 'HRAF0435' },
-] as const) test(`${scenario.sex}: clearing an ordinary structure restores the prior 50.5% peel`, async ({ page }) => {
+] as const) test(`${scenario.sex}: clearing an ordinary structure restores the prior 50.5% peel and keeps the camera`, async ({ page }) => {
   test.setTimeout(120000);
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
@@ -33,16 +33,17 @@ for (const scenario of [
   expect(inside.selectionReturn.dissection).toBe(50.5);
   await page.reload(); await ready(page);
   expect((await snapshot(page)).selectionReturn.dissection).toBe(50.5);
+  await settledCamera(page);
+  const studied = (await snapshot(page)).camera;
   await page.getByRole('button', { name: '구조 선택 해제', exact: true }).click(); await ready(page);
   const after = await snapshot(page);
   for (const key of ['sex', 'anatomyRegion', 'stage', 'dissection', 'displayMode', 'layers', 'alpha', 'markers', 'pointId', 'selectionTarget'])
     expect(after[key], key).toEqual(before[key]);
   expect(after.selection).toBe(null);
   expect(after.selectionReturn).toBe(null);
-  await expect.poll(async () => {
-    const pose = (await snapshot(page)).camera;
-    return Math.max(...['position', 'target'].flatMap(key => pose[key].map((value: number, i: number) => Math.abs(value - before.camera[key][i]))));
-  }).toBeLessThan(1e-6);
+  // The peel comes back; the camera stays on the structure being studied (Q30).
+  await settledCamera(page);
+  expect((await snapshot(page)).camera).toEqual(studied);
   await expect(canvas).toHaveAttribute('data-visible-structure-ids', beforeIds!);
   await page.screenshot({ path: `docs/anatomy-alignment/selection-peel-return-${scenario.sex}-desktop.png` });
   const desktopPose = (await snapshot(page)).camera;

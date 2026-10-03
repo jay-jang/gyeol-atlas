@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { ready, snapshot, openTool, closeTool } from './helpers';
+import { ready, snapshot, openTool, closeTool, settledCamera } from './helpers';
 
-test('female same-point click exits ordinary organ selection while wiki return keeps it', async ({ page }) => {
+// View continuity (Q30): choosing an acupoint keeps the organ being studied
+// and the camera; clearing it restores the peel it replaced, not the camera.
+test('female same-point click keeps an ordinary organ selection; clearing returns to the prior peel', async ({ page }) => {
   test.setTimeout(120000);
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/#atlas/ST36'); await ready(page);
@@ -17,19 +19,21 @@ test('female same-point click exits ordinary organ selection while wiki return k
   await page.getByRole('link', { name: '지식 위키', exact: true }).first().click();
   await page.getByRole('link', { name: /3D 보기로 돌아가기/ }).click(); await ready(page);
   expect((await snapshot(page)).selection.ids).toEqual(['HRAF0435']);
+  await settledCamera(page);
+  const studied = (await snapshot(page)).camera;
   await openTool(page, '경혈 찾기');
   await page.getByLabel('경혈 검색').fill('ST36');
   await page.locator('.point-item').filter({ hasText: 'ST36' }).first().click(); await ready(page);
+  const reselected = await snapshot(page);
+  expect(reselected.selection.ids).toEqual(['HRAF0435']);
+  expect(reselected.camera).toEqual(studied);
+  await page.getByRole('button', { name: '구조 선택 해제', exact: true }).click(); await ready(page); await settledCamera(page);
   const after = await snapshot(page);
   for (const key of ['sex', 'pointId', 'anatomyRegion', 'stage', 'dissection', 'displayMode', 'layers', 'markers'])
     expect(after[key], key).toEqual(before[key]);
   expect(after.selection).toBe(null);
   expect(after.selectionReturn).toBe(null);
-  await expect.poll(async () => {
-    const pose = (await snapshot(page)).camera;
-    return Math.max(...(['position', 'target'] as const).flatMap(key =>
-      pose[key].map((value: number, i: number) => Math.abs(value - before.camera[key][i]))));
-  }).toBeLessThan(1e-6);
+  expect(after.camera).toEqual(studied);
   await expect(canvas).toHaveAttribute('data-visible-structure-ids', beforeIds!);
   await page.screenshot({ path: 'docs/anatomy-alignment/same-point-return-desktop.png' });
   await page.setViewportSize({ width: 390, height: 844 });
@@ -40,7 +44,7 @@ test('female same-point click exits ordinary organ selection while wiki return k
 for (const { sex, id } of [
   { sex: 'male', id: 'FMA7148' },
   { sex: 'female', id: 'HRAF0435' },
-] as const) test(`${sex}: point and region navigation leave an ordinary selection for the prior peel`, async ({ page }) => {
+] as const) test(`${sex}: acupoints keep an ordinary selection; region navigation leaves it for the prior peel`, async ({ page }) => {
   test.setTimeout(120000);
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
@@ -67,22 +71,24 @@ for (const { sex, id } of [
     expect((await snapshot(page)).displayMode).toBe('layers');
   };
   await chooseStructure();
+  await settledCamera(page);
+  const studied = (await snapshot(page)).camera;
   await openTool(page, '경혈 찾기');
   await page.getByLabel('경혈 검색').fill('ST36');
   await page.locator('.point-item').filter({ hasText: 'ST36' }).first().click(); await ready(page);
   const afterPoint = await snapshot(page);
   expect(afterPoint.pointId).toBe('ST36');
-  expect(afterPoint.selection).toBe(null);
-  expect(afterPoint.selectionReturn).toBe(null);
-  expect(afterPoint.dissection).toBe(50.5);
-  expect(afterPoint.displayMode).toBe('dissection');
-  expect(afterPoint.layers).toEqual(before.layers);
+  expect(afterPoint.selection.ids).toEqual([id]);
+  expect(afterPoint.camera).toEqual(studied);
+  await page.getByRole('button', { name: '구조 선택 해제', exact: true }).click(); await ready(page); await settledCamera(page);
+  const cleared = await snapshot(page);
+  expect(cleared.selection).toBe(null);
+  expect(cleared.selectionReturn).toBe(null);
+  expect(cleared.dissection).toBe(50.5);
+  expect(cleared.displayMode).toBe('dissection');
+  expect(cleared.layers).toEqual(before.layers);
+  expect(cleared.camera).toEqual(studied);
   await expect(canvas).toHaveAttribute('data-visible-structure-ids', beforeIds!);
-  await expect.poll(async () => {
-    const pose = (await snapshot(page)).camera;
-    return Math.max(...(['position', 'target'] as const).flatMap(key =>
-      pose[key].map((value: number, i: number) => Math.abs(value - before.camera[key][i]))));
-  }).toBeLessThan(1e-6);
   await page.screenshot({ path: `docs/anatomy-alignment/selection-navigation-${sex}-desktop.png` });
   await page.setViewportSize({ width: 390, height: 844 });
   await expect(canvas).toBeInViewport();

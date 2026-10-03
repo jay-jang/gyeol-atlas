@@ -14,7 +14,7 @@ const layout=page=>page.evaluate(selectors=>{
 },OVERLAYS);
 const browser=await chromium.launch({headless:true,args:process.env.PLAYWRIGHT_GPU==='1'?['--no-sandbox','--use-gl=angle','--use-angle=metal','--ignore-gpu-blocklist']:['--no-sandbox','--enable-unsafe-swiftshader']});const evidence=[];
 try{for(const [name,width,height] of [['desktop',1440,900],['mobile',390,844],['small-mobile',360,740],['landscape',844,390]]){
- const page=await browser.newPage({viewport:{width,height}});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(origin+'/#atlas/CV12');await page.getByText('해부 모델 로드 완료').waitFor({timeout:90000});
+ const page=await browser.newPage({viewport:{width,height},reducedMotion:'reduce'});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(origin+'/#atlas/CV12');await page.getByText('해부 모델 로드 완료').waitFor({timeout:90000});
  const settled=async state=>{await page.mouse.move(1,1);await page.waitForTimeout(400);const result=await layout(page);assert.deepEqual(result,{overlaps:[],clippedLabels:[]},`${name} ${state} overlays`);return result;};
  const canvas=await page.locator('canvas').boundingBox();const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth||document.documentElement.scrollHeight>innerHeight);assert.equal(overflow,false);assert.ok(canvas.y<100);assert.ok(canvas.y+canvas.height<=height+1);
  // Many acupoints on the body at once (male reference).

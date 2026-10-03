@@ -9,6 +9,9 @@ export default defineConfig({
     baseURL: "http://127.0.0.1:5174",
     headless: true,
     viewport: { width: 1440, height: 1100 },
+    // Camera moves glide unless reduced motion is preferred; specs compare
+    // settled poses, and camera-glide.spec.ts opts back into motion.
+    reducedMotion: "reduce",
     // Software WebGL by default; PLAYWRIGHT_GPU=1 uses the local GPU (macOS Metal)
     // for a realistic frame cost. Record which renderer a verification used.
     launchOptions: { args: process.env.PLAYWRIGHT_GPU === "1"

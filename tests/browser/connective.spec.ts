@@ -35,17 +35,19 @@ test('male ligaments and tendons are present, peel with their systems and can be
   expect(hidden.connective).toBe(false);expect(hidden.camera).toEqual(before.camera);expect(hidden.markers).toBe(before.markers);expect(hidden.dissection).toBe(66);
   await toggle.check();await ready(page);
   await expect.poll(async()=>[...await visible(page)].filter(id=>id.startsWith('ZA_ligament_')).length).toBe(358);
-  // Only ligaments and tendons, then back to the same peel and pose.
+  // Only ligaments and tendons, then back to the same peel.
   await page.getByRole('button',{name:'인대·힘줄만 보기'}).click();await ready(page);
   const card=page.getByRole('region',{name:'선택 구조 조작'});
   await expect(card).toContainText(`인대·힘줄 ${maleIds.size}개 구조`);
   await expect(card).toContainText('대부분의 힘줄은 근육 모형에 포함');
   await expect.poll(async()=>{const ids=await visible(page);return ids.size===maleIds.size&&[...ids].every(id=>maleIds.has(id));}).toBe(true);
   await page.screenshot({path:'docs/anatomy-expansion/connective-only-desktop.png'});
-  await card.getByRole('button',{name:'구조 선택 해제',exact:true}).click();await ready(page);
+  await settledCamera(page);const studied=(await snapshot(page)).camera;
+  await card.getByRole('button',{name:'구조 선택 해제',exact:true}).click();await ready(page);await settledCamera(page);
+  // Clearing returns to the same peel; the camera stays where the viewer was looking.
   const back=await snapshot(page);
   expect(back.selection).toBe(null);expect(back.dissection).toBe(66);expect(back.displayMode).toBe('dissection');
-  for(const key of ['position','target'] as const)for(let axis=0;axis<3;axis++)expect(back.camera[key][axis]).toBeCloseTo(before.camera[key][axis],6);
+  for(const key of ['position','target'] as const)for(let axis=0;axis<3;axis++)expect(back.camera[key][axis]).toBeCloseTo(studied[key][axis],6);
   // Search keeps English, TA2 Latin and the source hierarchy; the card names the tissue kind.
   const input=page.getByLabel('경혈·구조 검색');await input.click();await input.fill('Ligamentum cruciatum anterius');
   const result=page.locator('.structure-item').filter({hasText:'오른쪽 앞십자인대'});

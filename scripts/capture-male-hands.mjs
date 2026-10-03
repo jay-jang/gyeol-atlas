@@ -13,7 +13,7 @@ const views = {
 };
 const browser = await chromium.launch({ headless: true, args: process.env.PLAYWRIGHT_GPU === "1"
   ? ["--no-sandbox", "--use-gl=angle", "--use-angle=metal", "--ignore-gpu-blocklist"] : ["--no-sandbox", "--enable-unsafe-swiftshader"] });
-const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, reducedMotion: "reduce" });
 const errors = []; page.on("pageerror", (e) => errors.push(e.message));
 await page.goto(origin);
 await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 180000 });

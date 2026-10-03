@@ -13,8 +13,8 @@ async function loneMarker(page:Page,url:string){
   const points=await markerScreenPoints(page,url);
   const lone=[];
   for(const a of points){
-    if(points.some(b=>b!==a&&Math.hypot(a.x-b.x,a.y-b.y)<44))continue;
-    if(await page.evaluate(({x,y})=>document.elementFromPoint(x,y)?.tagName==='CANVAS'&&document.elementFromPoint(x+24,y)?.tagName==='CANVAS'&&document.elementFromPoint(x-24,y)?.tagName==='CANVAS',a))lone.push(a);
+    if(points.some(b=>b!==a&&Math.hypot(a.x-b.x,a.y-b.y)<52))continue;
+    if(await page.evaluate(({x,y})=>document.elementFromPoint(x,y)?.tagName==='CANVAS'&&document.elementFromPoint(x+28,y)?.tagName==='CANVAS'&&document.elementFromPoint(x-28,y)?.tagName==='CANVAS',a))lone.push(a);
   }
   expect(lone.length).toBeGreaterThan(0);
   return lone[Math.floor(lone.length/2)];
@@ -28,7 +28,7 @@ async function tissueSpot(page:Page,url:string){
     s.scene.traverseVisible((m:any)=>{if(m.isMesh&&!m.isInstancedMesh&&ids.has(m.name)&&m.material.opacity>.05)meshes.push(m);});
     for(let y=rect.height*.25;y<rect.height*.75;y+=6)for(let x=rect.width*.2;x<rect.width*.8;x+=6){
       const px=rect.left+x,py=rect.top+y;
-      if(markers.some((m:any)=>Math.hypot(m.x-px,m.y-py)<30)||document.elementFromPoint(px,py)!==canvas)continue;
+      if(markers.some((m:any)=>Math.hypot(m.x-px,m.y-py)<36)||document.elementFromPoint(px,py)!==canvas)continue;
       s.raycaster.setFromCamera({x:x/rect.width*2-1,y:-(y/rect.height)*2+1},s.camera);
       const hit=s.raycaster.intersectObjects(meshes,false)[0];
       if(hit)return {x:px,y:py,id:hit.object.name as string};
@@ -37,6 +37,7 @@ async function tissueSpot(page:Page,url:string){
   },{url,markers});
 }
 const kept=['layers','dissection','displayMode','stage','anatomyRegion','alpha','markers'] as const;
+const gap=(c:{position:number[];target:number[]})=>Math.hypot(...c.position.map((v,i)=>v-c.target[i]));
 
 test('a near miss picks the acupoint, a drag is not a pick, and tissue is selected in place',async({page})=>{
   test.setTimeout(180000);
@@ -46,16 +47,16 @@ test('a near miss picks the acupoint, a drag is not a pick, and tissue is select
   await zoomIn(page);
   const marker=await loneMarker(page,url());
   const before=await snapshot(page);
-  // The drawn dot is about 3px; from outside its 11px target nothing is hovered.
-  await page.mouse.move(marker.x+14,marker.y);
+  // The drawn dot is a few pixels; from outside its 14px target nothing is hovered.
+  await page.mouse.move(marker.x+18,marker.y);
   await expect(page.locator('.point-label')).toHaveCount(0);
-  await page.mouse.move(marker.x+9,marker.y,{steps:3});
+  await page.mouse.move(marker.x+11,marker.y,{steps:3});
   const label=page.locator('.point-label.peek');
   await expect(label).toHaveCount(1);
   const id=(await label.textContent())!.trim();
   await page.screenshot({path:'docs/ui-renewal/marker-hover-target.png',clip:{x:marker.x-110,y:marker.y-70,width:220,height:140}});
-  // Once hovered, the target widens: drifting to 16px keeps it, and a click there selects it.
-  await page.mouse.move(marker.x+16,marker.y,{steps:3});
+  // Once hovered, the target widens: drifting to 20px keeps it, and a click there selects it.
+  await page.mouse.move(marker.x+20,marker.y,{steps:3});
   await expect(label).toHaveText(id);
   await page.mouse.down();await page.mouse.up();
   await expect.poll(async()=>(await snapshot(page)).pointId).toBe(id);
@@ -70,7 +71,8 @@ test('a near miss picks the acupoint, a drag is not a pick, and tissue is select
   await expect.poll(async()=>(await snapshot(page)).selection?.ids).toEqual([tissue!.id]);
   await settledCamera(page);
   s=await snapshot(page);
-  expect(s.camera).toEqual(pose);expect(s.selectionReturn).toBe(null);expect(s.isolated).toBe(false);
+  // No zoom: the orbit centre moves onto the picked part at the same distance.
+  expect(gap(s.camera)).toBeCloseTo(gap(pose),6);expect(s.selectionReturn).toBe(null);expect(s.isolated).toBe(false);
   for(const key of kept)expect(s[key]).toEqual(before[key]);
   await expect(page.getByRole('region',{name:'선택 구조 조작'})).toBeVisible();
   await page.screenshot({path:'docs/ui-renewal/inplace-pick-desktop.png'});
@@ -104,7 +106,7 @@ test.describe('touch',()=>{
     const marker=await loneMarker(page,url());
     // Touch has no hover, so its resting target is already the wide one.
     const ids=await page.evaluate(()=>document.querySelector('canvas')!.dataset.renderedPointIds);
-    await page.touchscreen.tap(marker.x+15,marker.y);
+    await page.touchscreen.tap(marker.x+18,marker.y);
     await expect.poll(async()=>(await snapshot(page)).pointId).not.toBe(before.pointId);
     let s=await snapshot(page);
     expect(ids!.split(',')).toContain(s.pointId);expect(s.selection).toBe(null);expect(s.camera).toEqual(before.camera);
@@ -114,11 +116,26 @@ test.describe('touch',()=>{
     await expect.poll(async()=>(await snapshot(page)).selection?.ids).toEqual([tissue!.id]);
     await settledCamera(page);
     s=await snapshot(page);
-    expect(s.camera).toEqual(before.camera);for(const key of kept)expect(s[key]).toEqual(before[key]);
+    expect(gap(s.camera)).toBeCloseTo(gap(before.camera),6);for(const key of kept)expect(s[key]).toEqual(before[key]);
     await expect(page.getByRole('button',{name:'구조 선택 해제',exact:true})).toBeInViewport();
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
     await page.waitForTimeout(400);
     await page.screenshot({path:'docs/ui-renewal/inplace-pick-mobile.png'});
     expect(errors).toEqual([]);
   });
+});
+
+test('over peeled tissue an acupoint keeps a smaller target, so organs near it stay clickable',async({page})=>{
+  test.setTimeout(180000);
+  const url=fiber(page);
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto('/');await ready(page);
+  await page.getByLabel('연속 해부 박리 깊이').fill('80');await ready(page);await settledCamera(page);
+  await zoomIn(page);
+  const marker=await loneMarker(page,url());
+  // 12px is inside the skin-view target (14px) but outside the 9px one over tissue.
+  await page.mouse.move(marker.x+12,marker.y,{steps:3});
+  await expect(page.locator('.point-label.peek')).toHaveCount(0);
+  await page.mouse.move(marker.x+6,marker.y,{steps:3});
+  await expect(page.locator('.point-label.peek')).toHaveCount(1);
 });

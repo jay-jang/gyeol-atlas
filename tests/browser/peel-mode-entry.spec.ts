@@ -3,13 +3,14 @@ import {ready,compare,snapshot} from './helpers';
 const origin=process.env.SMOKE_ORIGIN ? `${process.env.SMOKE_ORIGIN.replace(/\/$/,'')}/` : '/';
 const captures=process.env.PEEL_SCREENSHOT_DIR || 'docs/anatomy-alignment';
 
-test('a backward peel input at zero exits a comparison instead of being discarded',async({page})=>{
+test('a backward peel input at zero enters peeling from a comparison instead of being discarded',async({page})=>{
   await page.goto(`${origin}#atlas/KI3`);await ready(page);await compare(page);
   const before=await snapshot(page);expect(before.displayMode).toBe('layers');expect(before.dissection).toBe(0);
   await page.locator('canvas').focus();await page.keyboard.press('Alt+ArrowUp');
   await expect.poll(async()=>(await snapshot(page)).displayMode).toBe('dissection');
   const after=await snapshot(page);
-  expect(after.dissection).toBe(0);expect(after.comparison).toBe(null);expect(after.selection).toBe(null);
+  // The compared organs stay highlighted while peeling (view continuity, Q30).
+  expect(after.dissection).toBe(0);expect(after.comparison).toEqual(before.comparison);expect(after.selection).toEqual(before.selection);
   // Every system is present at 0%; the opaque skin covers the rest.
   expect(after.layers).toEqual({skin:true,muscle:true,bone:true,organ:true,vessel:true,lymph:true,nerve:true});
   // Same pose up to floating-point rounding.

@@ -14,6 +14,9 @@ export type Selection = {
   kind: "structure" | "bundle";
   ids: string[];
   name: string;
+  // Systems of the selected meshes. A selection survives a peel or system
+  // change while all of them stay drawn (sessions saved without it do not).
+  layers?: Layer[];
 };
 type ReturnView = Pick<ViewState, "anatomyRegion" | "stage" | "dissection" | "displayMode" | "layers" | "cutaway" | "selectionTarget"> & { camera?: CameraPose | null };
 export type ViewState = {
@@ -115,7 +118,7 @@ export type ViewAction =
   | { type: "pick"; selection: Selection }
   | { type: "detail"; detail: NonNullable<ViewState["detail"]> }
   | { type: "detail-close" }
-  | { type: "compare"; name: string; ids: string[]; layers?: Layers }
+  | { type: "compare"; name: string; ids: string[]; layers?: Layers; selectionLayers?: Layer[] }
   | { type: "isolate" }
   | { type: "clear-selection" }
   | { type: "cutaway"; value: number }
@@ -137,12 +140,23 @@ function closeDetail(s: ViewState): ViewState {
   return { ...s, ...previous, detail: null, detailReturn: null, selectionReturn: null, selection: null,
     comparison: null, isolated: false };
 }
+// Leaving a selection restores the systems and depth it replaced, never its
+// camera: the viewer keeps looking where they are (an independent detail
+// source is a different frame and still returns through closeDetail).
+const sceneOf = (view: ReturnView) => { const { camera: _camera, ...scene } = view; return scene; };
 function leaveSelection(s: ViewState): ViewState {
   if (s.detail) return closeDetail(s);
   if (!s.selectionReturn) return s;
-  return { ...s, ...s.selectionReturn, selection: null, selectionReturn: null,
+  return { ...s, ...sceneOf(s.selectionReturn), selection: null, selectionReturn: null,
     comparison: null, isolated: false };
 }
+// A selection carries on through a peel, stage or system change while every
+// mesh of it stays drawn; otherwise (or in a detail source) the change ends
+// it, so no hidden lone selection is left behind (Q1). Isolation ends.
+const carried = (s: ViewState, layers: Layers) => {
+  const keep = !s.detail && Boolean(s.selection?.layers?.length) && s.selection!.layers!.every((layer) => layers[layer]);
+  return keep ? { selection: s.selection, comparison: s.comparison } : { selection: null, comparison: null };
+};
 export function viewReducer(s: ViewState, a: ViewAction): ViewState {
   switch (a.type) {
     case "route-point":
@@ -156,18 +170,21 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         : { ...leaveSelection(s), anatomyRegion: a.value, selection: null,
             detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false };
     case "point":
-      return a.id === s.pointId && !s.detail && !s.selection && !s.comparison && !s.selectionReturn
-        ? s
-        : {
-            ...leaveSelection(s),
-            pointId: a.id,
-            selection: null,
-            detail: null,
-            detailReturn: null,
-            selectionReturn: null,
-            comparison: null,
-            isolated: false,
-          };
+      if (a.id === s.pointId && !s.detail && !s.selection && !s.comparison && !s.selectionReturn) return s;
+      // A structure being studied stays selected while acupoints are chosen
+      // around it. A comparison belongs to its acupoint, and a detail source
+      // has no acupoint markers, so those end.
+      if (s.selection && !s.comparison && !s.detail) return a.id === s.pointId ? s : { ...s, pointId: a.id };
+      return {
+        ...leaveSelection(s),
+        pointId: a.id,
+        selection: null,
+        detail: null,
+        detailReturn: null,
+        selectionReturn: null,
+        comparison: null,
+        isolated: false,
+      };
     case "stage":
       return {
         ...s,
@@ -178,8 +195,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         dissection: stageDepth[a.index],
         displayMode: "layers",
         layers: singleLayer(a.index),
-        selection: null,
-        comparison: null,
+        ...carried(s, singleLayer(a.index)),
         isolated: false,
         cutaway: 0,
         selectionTarget: "visible",
@@ -204,8 +220,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         selectionReturn: null,
         stage,
         layers,
-        selection: null,
-        comparison: null,
+        ...carried(s, layers),
         isolated: false,
         cutaway: 0,
         selectionTarget: "visible",
@@ -219,8 +234,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         selectionReturn: null,
         layers: a.layers,
         displayMode: "layers",
-        selection: null,
-        comparison: null,
+        ...carried(s, a.layers),
         isolated: false,
         selectionTarget: "visible",
       };
@@ -245,7 +259,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       const selectionReturn = origin.selectionReturn
         ?? (!origin.comparison && origin.displayMode === "dissection" ? { ...returnView(origin), camera: origin.camera } : null);
       return {
-        ...origin, connective: true, selection: { kind: "bundle", ids: a.ids, name: CONNECTIVE_BUNDLE }, comparison: null,
+        ...origin, connective: true, selection: { kind: "bundle", ids: a.ids, name: CONNECTIVE_BUNDLE, layers: ["bone", "muscle"] }, comparison: null,
         detail: null, detailReturn: null, selectionReturn, isolated: true, stage: 1, dissection: stageDepth[1], displayMode: "layers",
         layers: { ...singleLayer(1), bone: true }, cutaway: 0, selectionTarget: "visible",
       };
@@ -328,7 +342,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
           nerve: false,
         },
         alpha: { ...s.alpha, skin: 0.12 },
-        selection: { kind: "bundle", ids: a.ids, name: a.name },
+        selection: { kind: "bundle", ids: a.ids, name: a.name, ...(a.selectionLayers ? { layers: a.selectionLayers } : {}) },
         comparison: {
           kind: "bundle",
           pointId: s.pointId,
@@ -347,7 +361,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         ...(s.isolated && s.detail ? { layers: s.detail.layers, anatomyRegion: "whole" as const } : {}),
       } : s;
     case "clear-selection":
-      return s.detail ? closeDetail(s) : { ...s, ...(s.selectionReturn || {}), selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false };
+      return s.detail ? closeDetail(s) : { ...s, ...(s.selectionReturn ? sceneOf(s.selectionReturn) : {}), selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false };
     case "cutaway":
       return { ...s, cutaway: Math.max(0, Math.min(1, a.value)) };
     case "camera":
@@ -475,6 +489,7 @@ export function restoreView(
         typeof x.name === "string" &&
         Array.isArray(x.ids) &&
         x.ids.length > 0 &&
+        (x.layers === undefined || (Array.isArray(x.layers) && x.layers.every((layer) => keys.includes(layer)))) &&
         !hasMixedReferenceFrames(s.sex, x.ids) &&
         x.ids.every((id) =>
           assets.some((a) => a.id === id && (!a.sex || a.sex === s.sex) && s.layers[a.layer as Layer]),

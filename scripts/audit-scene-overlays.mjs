@@ -41,7 +41,7 @@ const browser = await chromium.launch({headless: true, args:process.env.PLAYWRIG
 const results = [];
 try {
   for (const [name, width, height] of viewports) {
-    const page = await browser.newPage({viewport: {width, height}});
+    const page = await browser.newPage({viewport: {width, height}, reducedMotion: 'reduce'});
     const errors = []; page.on('pageerror', e => errors.push(e.message));
     await page.goto(origin + '/#atlas/CV12');
     await page.getByText('해부 모델 로드 완료').waitFor({timeout: 90000});

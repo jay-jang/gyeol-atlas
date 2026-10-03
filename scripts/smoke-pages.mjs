@@ -10,7 +10,7 @@ const litPixels=png=>{let off=8,w,h;const idat=[];while(off<png.length){const le
  for(let i=0;i<out.length;i+=4)if(out[i]>90)lit++;return lit;};
 const browser = await chromium.launch({headless:true,args:process.env.PLAYWRIGHT_GPU==='1'?['--no-sandbox','--use-gl=angle','--use-angle=metal','--ignore-gpu-blocklist']:['--no-sandbox','--enable-unsafe-swiftshader']});
 try {
- const page=await browser.newPage({viewport:{width:1440,height:1100}});
+ const page=await browser.newPage({viewport:{width:1440,height:1100},reducedMotion:'reduce'});
  const requests=[],errors=[],failures=[];
  page.on('request',r=>requests.push(r.url()));page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400) failures.push(`${r.status()} ${r.url()}`)});
  await page.goto(origin+'#wiki');

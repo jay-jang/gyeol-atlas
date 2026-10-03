@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { CLICK_SLOP_PX, MARKER_HIT_PX, hitRadius, isDragRelease, markersFirst, nearestMarker, releasedDragPress, trackPresses } from "../src/marker-picking.ts";
+import { CLICK_SLOP_PX, MARKER_HIT_OVER_TISSUE_PX, MARKER_HIT_PX, hitRadius, isDragRelease, markerDotPx, markersFirst, nearestMarker, releasedDragPress, trackPresses } from "../src/marker-picking.ts";
 import { initialView, viewReducer } from "../src/view-state.ts";
 
 // A camera at the origin looking down -Z; one pixel at unit depth is 1/1000.
@@ -98,4 +98,23 @@ test("a pick keeps an earlier return view and replaces a comparison without movi
   const detail = viewReducer(initialView("ST36"), { type: "detail", detail: { id: "d", name: "d", ids: ["A", "B"], layers: compared.layers } });
   assert.equal(viewReducer(detail, { type: "pick", selection: { kind: "structure", ids: ["C"], name: "c" } }), detail);
   assert.deepEqual(viewReducer(detail, { type: "pick", selection: { kind: "structure", ids: ["B"], name: "b" } }).detail, detail.detail);
+});
+
+test("over peeled tissue the targets shrink so the organs beneath stay clickable", () => {
+  assert.equal(hitRadius("mouse", false), 14);
+  assert.equal(hitRadius("mouse", true), 22);
+  assert.equal(hitRadius("touch", false), 22);
+  assert.equal(hitRadius("mouse", false, true), MARKER_HIT_OVER_TISSUE_PX.fine);
+  assert.equal(hitRadius("touch", false, true), MARKER_HIT_OVER_TISSUE_PX.coarse);
+  for (const key of ["fine", "coarse", "hovered"]) assert.ok(MARKER_HIT_OVER_TISSUE_PX[key] < MARKER_HIT_PX[key], key);
+  const at12 = [at(12, 0, 2)];
+  assert.equal(nearestMarker(origin, ahead, at12, [true], unit, () => hitRadius("mouse", false))?.index, 0);
+  assert.equal(nearestMarker(origin, ahead, at12, [true], unit, () => hitRadius("mouse", false, true)), null);
+});
+
+test("drawn dots grow as the camera comes closer, within limits", () => {
+  assert.equal(markerDotPx(3), 3.6);
+  assert.equal(markerDotPx(0.2), 6.5);
+  assert.ok(markerDotPx(1) > markerDotPx(2));
+  for (let d = 0.1; d < 6; d += 0.1) assert.ok(markerDotPx(d) >= 3.6 && markerDotPx(d) <= 6.5);
 });

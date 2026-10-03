@@ -91,7 +91,7 @@ test("the ligament-only view isolates the bundle over muscle and bone and return
   const camera = { position: [0, 1, 3], target: [0, 1, 0] };
   const start = { ...initialView(), dissection: 42, layers: { ...initialView().layers }, camera, connective: false, markers: "hidden" };
   const only = viewReducer(start, { type: "connective-only", ids: ["ZA_ligament_a", "FMA44249"] });
-  assert.deepEqual(only.selection, { kind: "bundle", ids: ["ZA_ligament_a", "FMA44249"], name: CONNECTIVE_BUNDLE });
+  assert.deepEqual(only.selection, { kind: "bundle", ids: ["ZA_ligament_a", "FMA44249"], name: CONNECTIVE_BUNDLE, layers: ["bone", "muscle"] });
   assert.equal(only.isolated, true);
   assert.equal(only.connective, true);
   assert.equal(only.displayMode, "layers");
