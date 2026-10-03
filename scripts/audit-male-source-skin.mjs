@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {MeshoptSimplifier} from 'meshoptimizer';
+import {simplifyWithDetail} from './lib/detail-skin.mjs';
 
 const file='.cache/models/FMA7163.stl',bytes=fs.readFileSync(file);
 const sha256=createHash('sha256').update(bytes).digest('hex');
@@ -66,12 +67,15 @@ for(let i=0;i<indices.length;i++)convertedIndices[i]=convertedVertexIds[indices[
 const transformedEdges=edgeStats(null,convertedIndices);
 await MeshoptSimplifier.ready;
 const packedPositions=new Float32Array(rawPositions),simplified={};
+// The deployed skin keeps finer hands and feet (scripts/lib/detail-skin.mjs);
+// the earlier single-pass result is kept for comparison.
+const deployed=()=>{const d=source.detail;const r=simplifyWithDetail(indices,packedPositions,{boxes:d.boxesMm,detailErrorMm:d.targetErrorMm,bodyTarget:135000,bodyError:.003});return [r.indices,r.error];};
 for(const [name,target,flags] of [
-  ['deployedPrune',45000,['Prune']],['withoutPrune',45000,[]],
+  ['deployedPrune',45000,null],['singlePassPrune',45000,['Prune']],['withoutPrune',45000,[]],
   ['target100k',100000,['Prune']],['target250k',250000,['Prune']],
   ['target500k',500000,['Prune']],['target1000k',1000000,['Prune']],
 ]){
-  const [result,error]=MeshoptSimplifier.simplify(indices,packedPositions,3,target*3,.003,flags);
+  const [result,error]=flags?MeshoptSimplifier.simplify(indices,packedPositions,3,target*3,.003,flags):deployed();
   const parents=new Uint32Array(vertexCount),used=new Set();
   for(let i=0;i<vertexCount;i++)parents[i]=i;
   const find=i=>{while(parents[i]!==i){parents[i]=parents[parents[i]];i=parents[i];}return i;};
@@ -95,7 +99,7 @@ const report={status:'SOURCE STL TOPOLOGY ONLY; NO MALE OUTER ENVELOPE APPROVED'
     'This is topology in raw STL coordinates; it does not measure the rendered simplified GLB geometry or organ placement.',
     'Coordinate-identical corners are welded. Closed or largest components do not establish an external body envelope.',
     'The audit does not remove triangles, repair the mesh, or approve parity-based inside/outside classification.',
-  ],files:['public/models/manifest.json','scripts/audit-male-source-skin.mjs','scripts/audit-male-skin-components.mjs',
+  ],files:['public/models/manifest.json','scripts/audit-male-source-skin.mjs','scripts/audit-male-skin-components.mjs','scripts/lib/detail-skin.mjs',
     'package-lock.json'].map(path=>({path,sha256:createHash('sha256').update(fs.readFileSync(path)).digest('hex')}))};
 fs.writeFileSync('docs/anatomy-alignment/male-skin-source-topology.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({sourceTriangles:triangles,sourceWeldedVertices:vertexCount,componentCount:ranked.length,

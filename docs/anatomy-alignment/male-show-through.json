@@ -1,0 +1,2929 @@
+{
+  "method": "First ray hit inside each hand/foot box (bones + 30 mm) on a grid from 14 directions; a non-skin first hit is tissue in front of the skin. Supplement rays exclude the base BodyParts3D muscle, bone and organ meshes.",
+  "stepMm": 1,
+  "skinTriangles": 82754,
+  "states": {
+    "final": {
+      "registration": {
+        "scale": 0.96837133915684,
+        "translation": [
+          -0.0008018877732986994,
+          0.0002440036472166618,
+          0.001395753839843519
+        ]
+      },
+      "skin": "public/models/skin.glb",
+      "skinTriangles": 82754,
+      "regions": {
+        "right hand": {
+          "rays": 139698,
+          "skinFirst": 138907,
+          "showThroughRays": 791,
+          "supplementRays": 479,
+          "showThroughStructures": 35,
+          "bySource": {
+            "nerve-full.glb": 266,
+            "vessel-full.glb": 122,
+            "bone.glb": 224,
+            "tendon-full.glb": 89,
+            "muscle.glb": 88,
+            "ligament-full.glb": 2
+          },
+          "top": [
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_radial_nerve_r",
+              "name": "Dorsal digital branches of radial nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 209
+            },
+            {
+              "id": "ZA_vessel_proper_palmar_digital_arteries_r",
+              "name": "Proper palmar digital arteries (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 70
+            },
+            {
+              "id": "FMA24462",
+              "name": "distal phalanx of right ring finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 68
+            },
+            {
+              "id": "FMA23464",
+              "name": "right radius",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 63
+            },
+            {
+              "id": "ZA_tendon_palmar_aponeurosis_r",
+              "name": "Palmar aponeurosis (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "aponeurosis",
+              "rays": 56
+            },
+            {
+              "id": "FMA24463",
+              "name": "distal phalanx of right little finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 54
+            },
+            {
+              "id": "FMA38519",
+              "name": "right extensor pollicis brevis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 31
+            },
+            {
+              "id": "ZA_nerve_proper_palmar_digital_branches_of_median_nerve_r",
+              "name": "Proper palmar digital branches of median nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 28
+            },
+            {
+              "id": "FMA23467",
+              "name": "right ulna",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 26
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_ulnar_nerve_r",
+              "name": "Dorsal digital branches of ulnar nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 24
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_hand_r",
+              "name": "Dorsal digital veins of hand (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 22
+            },
+            {
+              "id": "FMA38454",
+              "name": "right pronator quadratus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 20
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_pollicis_longus_r",
+              "name": "Tendon sheath of flexor pollicis longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 18
+            },
+            {
+              "id": "ZA_vessel_radial_artery_r",
+              "name": "Radial artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 15
+            },
+            {
+              "id": "FMA24461",
+              "name": "distal phalanx of right middle finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 13
+            },
+            {
+              "id": "FMA38482",
+              "name": "right flexor pollicis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 12
+            },
+            {
+              "id": "ZA_tendon_extensor_retinaculum_of_wrist_r",
+              "name": "Extensor retinaculum of wrist (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 7
+            },
+            {
+              "id": "FMA38460",
+              "name": "right flexor carpi radialis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 6
+            },
+            {
+              "id": "FMA38463",
+              "name": "right palmaris longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 6
+            },
+            {
+              "id": "ZA_vessel_palmar_digital_veins_r",
+              "name": "Palmar digital veins (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 5
+            },
+            {
+              "id": "BP47",
+              "name": "ulnar head of right extensor carpi ulnaris",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 5
+            },
+            {
+              "id": "FMA38522",
+              "name": "right extensor pollicis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 5
+            },
+            {
+              "id": "ZA_nerve_proper_palmar_digital_branches_of_ulnar_nerve_r",
+              "name": "Proper palmar digital branches of ulnar nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 4
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_extensor_pollicis_longus_r",
+              "name": "Tendon sheath of extensor pollicis longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 4
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_carpi_radialis_r",
+              "name": "Tendon sheath of flexor carpi radialis (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 3
+            },
+            {
+              "id": "ZA_vessel_palmar_carpal_branch_of_radial_artery_r",
+              "name": "Palmar carpal branch of radial artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 3
+            },
+            {
+              "id": "ZA_vessel_radial_veins_r",
+              "name": "Radial veins (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 3
+            },
+            {
+              "id": "ZA_vessel_cephalic_vein_r",
+              "name": "Cephalic vein (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 3
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_distal_interphalangeal_joints_r",
+              "name": "Articular capsules of distal interphalangeal joints (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 2
+            },
+            {
+              "id": "ZA_tendon_synovial_sheaths_of_digits_of_hand_r",
+              "name": "Synovial sheaths of digits of hand (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 1
+            }
+          ]
+        },
+        "left hand": {
+          "rays": 139575,
+          "skinFirst": 138960,
+          "showThroughRays": 615,
+          "supplementRays": 346,
+          "showThroughStructures": 37,
+          "bySource": {
+            "nerve-full.glb": 149,
+            "vessel-full.glb": 137,
+            "bone.glb": 177,
+            "muscle.glb": 92,
+            "tendon-full.glb": 57,
+            "ligament-full.glb": 3
+          },
+          "top": [
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_radial_nerve_l",
+              "name": "Dorsal digital branches of radial nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 115
+            },
+            {
+              "id": "ZA_vessel_proper_palmar_digital_arteries_l",
+              "name": "Proper palmar digital arteries (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 73
+            },
+            {
+              "id": "FMA23957",
+              "name": "distal phalanx of left ring finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 49
+            },
+            {
+              "id": "FMA23959",
+              "name": "distal phalanx of left little finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 47
+            },
+            {
+              "id": "FMA38520",
+              "name": "left extensor pollicis brevis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 45
+            },
+            {
+              "id": "FMA23465",
+              "name": "left radius",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 39
+            },
+            {
+              "id": "FMA23468",
+              "name": "left ulna",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 33
+            },
+            {
+              "id": "ZA_vessel_palmar_digital_veins_l",
+              "name": "Palmar digital veins (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 26
+            },
+            {
+              "id": "ZA_tendon_palmar_aponeurosis_l",
+              "name": "Palmar aponeurosis (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "aponeurosis",
+              "rays": 25
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_hand_l",
+              "name": "Dorsal digital veins of hand (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 23
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_pollicis_longus_l",
+              "name": "Tendon sheath of flexor pollicis longus (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 17
+            },
+            {
+              "id": "FMA38484",
+              "name": "left flexor pollicis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 13
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_ulnar_nerve_l",
+              "name": "Dorsal digital branches of ulnar nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 11
+            },
+            {
+              "id": "ZA_nerve_proper_palmar_digital_branches_of_median_nerve_l",
+              "name": "Proper palmar digital branches of median nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 10
+            },
+            {
+              "id": "FMA23955",
+              "name": "distal phalanx of left middle finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 9
+            },
+            {
+              "id": "ZA_vessel_radial_artery_l",
+              "name": "Radial artery (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 9
+            },
+            {
+              "id": "ZA_tendon_extensor_retinaculum_of_wrist_l",
+              "name": "Extensor retinaculum of wrist (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 8
+            },
+            {
+              "id": "ZA_nerve_palmar_branch_of_ulnar_nerve_l",
+              "name": "Palmar branch of ulnar nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 6
+            },
+            {
+              "id": "FMA38461",
+              "name": "left flexor carpi radialis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 6
+            },
+            {
+              "id": "FMA38464",
+              "name": "left palmaris longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 6
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_carpi_radialis_l",
+              "name": "Tendon sheath of flexor carpi radialis (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 5
+            },
+            {
+              "id": "FMA38641",
+              "name": "radial head of left flexor digitorum superficialis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 5
+            },
+            {
+              "id": "FMA38455",
+              "name": "left pronator quadratus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 5
+            },
+            {
+              "id": "FMA38523",
+              "name": "left extensor pollicis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 5
+            },
+            {
+              "id": "FMA38480",
+              "name": "left flexor digitorum profundus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 4
+            },
+            {
+              "id": "ZA_nerve_ulnar_nerve_l",
+              "name": "Ulnar nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 4
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_distal_interphalangeal_joints_l",
+              "name": "Articular capsules of distal interphalangeal joints (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 3
+            },
+            {
+              "id": "ZA_vessel_radial_veins_l",
+              "name": "Radial veins (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 3
+            },
+            {
+              "id": "ZA_vessel_dorsal_metacarpal_arteries_l",
+              "name": "Dorsal metacarpal arteries (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 2
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_extensor_carpi_ulnaris_l",
+              "name": "Tendon sheath of extensor carpi ulnaris (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 2
+            }
+          ]
+        },
+        "right foot": {
+          "rays": 212945,
+          "skinFirst": 211583,
+          "showThroughRays": 1362,
+          "supplementRays": 465,
+          "showThroughStructures": 40,
+          "bySource": {
+            "bone.glb": 590,
+            "muscle.glb": 307,
+            "vessel-full.glb": 181,
+            "tendon-full.glb": 227,
+            "ligament-full.glb": 17,
+            "nerve-full.glb": 40
+          },
+          "top": [
+            {
+              "id": "FMA24477",
+              "name": "right tibia",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 401
+            },
+            {
+              "id": "FMA258847",
+              "name": "right calcaneal tendon",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 106
+            },
+            {
+              "id": "FMA65014",
+              "name": "right flexor hallucis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 90
+            },
+            {
+              "id": "FMA24480",
+              "name": "right fibula",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 81
+            },
+            {
+              "id": "FMA24497",
+              "name": "right calcaneus",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 78
+            },
+            {
+              "id": "ZA_vessel_plantar_digital_veins_r",
+              "name": "Plantar digital veins (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 65
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_foot_r",
+              "name": "Dorsal digital veins of foot (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 44
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_hallucis_longus_r",
+              "name": "Tendon sheath of flexor hallucis longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 43
+            },
+            {
+              "id": "FMA65016",
+              "name": "right flexor digitorum longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 39
+            },
+            {
+              "id": "ZA_tendon_flexor_retinaculum_of_ankle_r",
+              "name": "Flexor retinaculum of ankle (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 39
+            },
+            {
+              "id": "ZA_tendon_superior_fibular_retinaculum_r",
+              "name": "Superior fibular retinaculum (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 34
+            },
+            {
+              "id": "ZA_tendon_inferior_extensor_retinaculum_of_ankle_r",
+              "name": "Inferior extensor retinaculum of ankle (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 32
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_tibialis_posterior_muscle_r",
+              "name": "Tendon sheath of tibialis posterior muscle (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 29
+            },
+            {
+              "id": "ZA_vessel_small_saphenous_vein_r",
+              "name": "Small saphenous vein (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 21
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_digitorum_longus_r",
+              "name": "Tendon sheath of flexor digitorum longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 20
+            },
+            {
+              "id": "FMA22560",
+              "name": "right plantaris",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 20
+            },
+            {
+              "id": "FMA22550",
+              "name": "right fibularis tertius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 18
+            },
+            {
+              "id": "ZA_vessel_fibular_artery_r",
+              "name": "Fibular artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 18
+            },
+            {
+              "id": "FMA22554",
+              "name": "right fibularis brevis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 17
+            },
+            {
+              "id": "ZA_vessel_fibular_veins_r",
+              "name": "Fibular veins (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 17
+            },
+            {
+              "id": "ZA_ligament_anterior_tibiofibular_ligament_r",
+              "name": "Anterior tibiofibular ligament (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 16
+            },
+            {
+              "id": "FMA32658",
+              "name": "distal phalanx of right little toe",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 15
+            },
+            {
+              "id": "FMA24482",
+              "name": "right talus",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 15
+            },
+            {
+              "id": "ZA_nerve_sural_nerve_r",
+              "name": "Sural nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 14
+            },
+            {
+              "id": "ZA_vessel_calcaneal_branches_of_posterior_tibial_artery_r",
+              "name": "Calcaneal branches of posterior tibial artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 13
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_extensor_hallucis_longus_r",
+              "name": "Tendon sheath of extensor hallucis longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 11
+            },
+            {
+              "id": "ZA_tendon_superior_extensor_retinaculum_of_ankle_r",
+              "name": "Superior extensor retinaculum of ankle (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 10
+            },
+            {
+              "id": "ZA_nerve_medial_dorsal_cutaneous_nerve_of_foot_r",
+              "name": "Medial dorsal cutaneous nerve of foot (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 9
+            },
+            {
+              "id": "ZA_tendon_inferior_fibular_retinaculum_r",
+              "name": "Inferior fibular retinaculum (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 8
+            },
+            {
+              "id": "ZA_nerve_intermediate_dorsal_cutaneous_nerve_of_foot_r",
+              "name": "Intermediate dorsal cutaneous nerve of foot (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 7
+            }
+          ]
+        },
+        "left foot": {
+          "rays": 213296,
+          "skinFirst": 211958,
+          "showThroughRays": 1338,
+          "supplementRays": 481,
+          "showThroughStructures": 40,
+          "bySource": {
+            "bone.glb": 610,
+            "muscle.glb": 247,
+            "vessel-full.glb": 188,
+            "tendon-full.glb": 239,
+            "ligament-full.glb": 24,
+            "nerve-full.glb": 30
+          },
+          "top": [
+            {
+              "id": "FMA24478",
+              "name": "left tibia",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 442
+            },
+            {
+              "id": "FMA24481",
+              "name": "left fibula",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 75
+            },
+            {
+              "id": "FMA65015",
+              "name": "left flexor hallucis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 73
+            },
+            {
+              "id": "ZA_vessel_plantar_digital_veins_l",
+              "name": "Plantar digital veins (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 67
+            },
+            {
+              "id": "ZA_tendon_inferior_extensor_retinaculum_of_ankle_l",
+              "name": "Inferior extensor retinaculum of ankle (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 64
+            },
+            {
+              "id": "FMA24498",
+              "name": "left calcaneus",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 64
+            },
+            {
+              "id": "FMA264844",
+              "name": "left calcaneal tendon",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 58
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_hallucis_longus_l",
+              "name": "Tendon sheath of flexor hallucis longus (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 51
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_foot_l",
+              "name": "Dorsal digital veins of foot (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 45
+            },
+            {
+              "id": "FMA22551",
+              "name": "left fibularis tertius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 36
+            },
+            {
+              "id": "ZA_tendon_flexor_retinaculum_of_ankle_l",
+              "name": "Flexor retinaculum of ankle (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 31
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_tibialis_posterior_muscle_l",
+              "name": "Tendon sheath of tibialis posterior muscle (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 27
+            },
+            {
+              "id": "FMA65017",
+              "name": "left flexor digitorum longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 25
+            },
+            {
+              "id": "ZA_vessel_small_saphenous_vein_l",
+              "name": "Small saphenous vein (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 25
+            },
+            {
+              "id": "FMA22561",
+              "name": "left plantaris",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 24
+            },
+            {
+              "id": "ZA_ligament_collateral_metatarsophalangeal_ligaments_l",
+              "name": "Collateral metatarsophalangeal ligaments (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 20
+            },
+            {
+              "id": "FMA32659",
+              "name": "distal phalanx of left little toe",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 20
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_digitorum_longus_l",
+              "name": "Tendon sheath of flexor digitorum longus (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 20
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_extensor_digitorum_longus_l",
+              "name": "Tendon sheath of extensor digitorum longus (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 19
+            },
+            {
+              "id": "ZA_vessel_fibular_veins_l",
+              "name": "Fibular veins (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 18
+            },
+            {
+              "id": "ZA_vessel_fibular_artery_l",
+              "name": "Fibular artery (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 16
+            },
+            {
+              "id": "ZA_vessel_calcaneal_branches_of_posterior_tibial_artery_l",
+              "name": "Calcaneal branches of posterior tibial artery (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 15
+            },
+            {
+              "id": "ZA_tendon_superior_fibular_retinaculum_l",
+              "name": "Superior fibular retinaculum (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 13
+            },
+            {
+              "id": "FMA22555",
+              "name": "left fibularis brevis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 13
+            },
+            {
+              "id": "ZA_tendon_superior_extensor_retinaculum_of_ankle_l",
+              "name": "Superior extensor retinaculum of ankle (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 10
+            },
+            {
+              "id": "ZA_nerve_sural_nerve_l",
+              "name": "Sural nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 10
+            },
+            {
+              "id": "FMA24483",
+              "name": "left talus",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 9
+            },
+            {
+              "id": "ZA_nerve_medial_dorsal_cutaneous_nerve_of_foot_l",
+              "name": "Medial dorsal cutaneous nerve of foot (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 8
+            },
+            {
+              "id": "FMA22553",
+              "name": "left fibularis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 8
+            },
+            {
+              "id": "ZA_nerve_intermediate_dorsal_cutaneous_nerve_of_foot_l",
+              "name": "Intermediate dorsal cutaneous nerve of foot (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 7
+            }
+          ]
+        }
+      }
+    },
+    "registrationOnly": {
+      "registration": {
+        "scale": 0.96837133915684,
+        "translation": [
+          -0.0008018877732986994,
+          0.0002440036472166618,
+          0.001395753839843519
+        ]
+      },
+      "skin": "public/models/skin.glb at 1aa6376 (single pass, 44,970 triangles)",
+      "skinTriangles": 44970,
+      "regions": {
+        "right hand": {
+          "rays": 137797,
+          "skinFirst": 134757,
+          "showThroughRays": 3040,
+          "supplementRays": 2426,
+          "showThroughStructures": 45,
+          "bySource": {
+            "vessel-full.glb": 931,
+            "nerve-full.glb": 845,
+            "tendon-full.glb": 440,
+            "muscle.glb": 245,
+            "ligament-full.glb": 210,
+            "bone.glb": 369
+          },
+          "top": [
+            {
+              "id": "ZA_vessel_proper_palmar_digital_arteries_r",
+              "name": "Proper palmar digital arteries (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 565
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_radial_nerve_r",
+              "name": "Dorsal digital branches of radial nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 401
+            },
+            {
+              "id": "ZA_tendon_palmar_aponeurosis_r",
+              "name": "Palmar aponeurosis (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "aponeurosis",
+              "rays": 306
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_ulnar_nerve_r",
+              "name": "Dorsal digital branches of ulnar nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 251
+            },
+            {
+              "id": "ZA_nerve_proper_palmar_digital_branches_of_median_nerve_r",
+              "name": "Proper palmar digital branches of median nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 177
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_hand_r",
+              "name": "Dorsal digital veins of hand (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 170
+            },
+            {
+              "id": "FMA38617",
+              "name": "humeral head of right flexor carpi ulnaris",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 127
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_distal_interphalangeal_joints_r",
+              "name": "Articular capsules of distal interphalangeal joints (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 124
+            },
+            {
+              "id": "ZA_vessel_palmar_digital_veins_r",
+              "name": "Palmar digital veins (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 100
+            },
+            {
+              "id": "ZA_tendon_extensor_retinaculum_of_wrist_r",
+              "name": "Extensor retinaculum of wrist (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 96
+            },
+            {
+              "id": "FMA24461",
+              "name": "distal phalanx of right middle finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 93
+            },
+            {
+              "id": "FMA24463",
+              "name": "distal phalanx of right little finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 89
+            },
+            {
+              "id": "ZA_ligament_collateral_interphalangeal_ligaments_of_hand_r",
+              "name": "Collateral interphalangeal ligaments of hand (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 70
+            },
+            {
+              "id": "ZA_vessel_cephalic_vein_r",
+              "name": "Cephalic vein (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 70
+            },
+            {
+              "id": "FMA24462",
+              "name": "distal phalanx of right ring finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 64
+            },
+            {
+              "id": "FMA38519",
+              "name": "right extensor pollicis brevis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 60
+            },
+            {
+              "id": "FMA23464",
+              "name": "right radius",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 41
+            },
+            {
+              "id": "FMA23467",
+              "name": "right ulna",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 35
+            },
+            {
+              "id": "FMA24460",
+              "name": "distal phalanx of right index finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 34
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_pollicis_longus_r",
+              "name": "Tendon sheath of flexor pollicis longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 18
+            },
+            {
+              "id": "ZA_vessel_radial_artery_r",
+              "name": "Radial artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 16
+            },
+            {
+              "id": "ZA_nerve_proper_palmar_digital_branches_of_ulnar_nerve_r",
+              "name": "Proper palmar digital branches of ulnar nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 14
+            },
+            {
+              "id": "FMA24457",
+              "name": "middle phalanx of right ring finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 13
+            },
+            {
+              "id": "ZA_tendon_synovial_sheaths_of_digits_of_hand_r",
+              "name": "Synovial sheaths of digits of hand (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 12
+            },
+            {
+              "id": "FMA38482",
+              "name": "right flexor pollicis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 12
+            },
+            {
+              "id": "FMA38638",
+              "name": "humeroulnar head of right flexor digitorum superficialis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 10
+            },
+            {
+              "id": "ZA_ligament_palmar_interphalangeal_ligaments_r",
+              "name": "Palmar interphalangeal ligaments (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 10
+            },
+            {
+              "id": "FMA38516",
+              "name": "right abductor pollicis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 8
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_proximal_interphalangeal_joints_r",
+              "name": "Articular capsules of proximal interphalangeal joints (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 6
+            },
+            {
+              "id": "FMA38460",
+              "name": "right flexor carpi radialis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 5
+            }
+          ]
+        },
+        "left hand": {
+          "rays": 137908,
+          "skinFirst": 134779,
+          "showThroughRays": 3129,
+          "supplementRays": 2549,
+          "showThroughStructures": 40,
+          "bySource": {
+            "vessel-full.glb": 1207,
+            "tendon-full.glb": 481,
+            "nerve-full.glb": 736,
+            "bone.glb": 386,
+            "muscle.glb": 194,
+            "ligament-full.glb": 125
+          },
+          "top": [
+            {
+              "id": "ZA_vessel_proper_palmar_digital_arteries_l",
+              "name": "Proper palmar digital arteries (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 431
+            },
+            {
+              "id": "ZA_tendon_palmar_aponeurosis_l",
+              "name": "Palmar aponeurosis (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "aponeurosis",
+              "rays": 321
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_radial_nerve_l",
+              "name": "Dorsal digital branches of radial nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 259
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_ulnar_nerve_l",
+              "name": "Dorsal digital branches of ulnar nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 256
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_hand_l",
+              "name": "Dorsal digital veins of hand (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 231
+            },
+            {
+              "id": "ZA_vessel_palmar_digital_veins_l",
+              "name": "Palmar digital veins (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 208
+            },
+            {
+              "id": "ZA_nerve_proper_palmar_digital_branches_of_median_nerve_l",
+              "name": "Proper palmar digital branches of median nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 157
+            },
+            {
+              "id": "ZA_tendon_extensor_retinaculum_of_wrist_l",
+              "name": "Extensor retinaculum of wrist (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 144
+            },
+            {
+              "id": "ZA_vessel_cephalic_vein_l",
+              "name": "Cephalic vein (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 134
+            },
+            {
+              "id": "FMA23955",
+              "name": "distal phalanx of left middle finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 119
+            },
+            {
+              "id": "FMA38520",
+              "name": "left extensor pollicis brevis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 116
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_distal_interphalangeal_joints_l",
+              "name": "Articular capsules of distal interphalangeal joints (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 89
+            },
+            {
+              "id": "ZA_vessel_median_antebrachial_vein_l",
+              "name": "Median antebrachial vein (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 81
+            },
+            {
+              "id": "ZA_vessel_dorsal_venous_network_of_hand_l",
+              "name": "Dorsal venous network of hand (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 77
+            },
+            {
+              "id": "FMA23957",
+              "name": "distal phalanx of left ring finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 71
+            },
+            {
+              "id": "FMA23959",
+              "name": "distal phalanx of left little finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 66
+            },
+            {
+              "id": "FMA23953",
+              "name": "distal phalanx of left index finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 66
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_arteries_of_hand_l",
+              "name": "Dorsal digital arteries of hand (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 43
+            },
+            {
+              "id": "FMA23468",
+              "name": "left ulna",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 41
+            },
+            {
+              "id": "ZA_nerve_proper_palmar_digital_branches_of_ulnar_nerve_l",
+              "name": "Proper palmar digital branches of ulnar nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 36
+            },
+            {
+              "id": "ZA_ligament_collateral_interphalangeal_ligaments_of_hand_l",
+              "name": "Collateral interphalangeal ligaments of hand (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 35
+            },
+            {
+              "id": "FMA38639",
+              "name": "humeroulnar head of left flexor digitorum superficialis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 30
+            },
+            {
+              "id": "ZA_nerve_palmar_branch_of_ulnar_nerve_l",
+              "name": "Palmar branch of ulnar nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 24
+            },
+            {
+              "id": "FMA23465",
+              "name": "left radius",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 23
+            },
+            {
+              "id": "ZA_tendon_synovial_sheaths_of_digits_of_hand_l",
+              "name": "Synovial sheaths of digits of hand (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 13
+            },
+            {
+              "id": "FMA38480",
+              "name": "left flexor digitorum profundus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 9
+            },
+            {
+              "id": "FMA38455",
+              "name": "left pronator quadratus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 9
+            },
+            {
+              "id": "FMA38464",
+              "name": "left palmaris longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 8
+            },
+            {
+              "id": "FMA38502",
+              "name": "left extensor digitorum",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 8
+            },
+            {
+              "id": "FMA38641",
+              "name": "radial head of left flexor digitorum superficialis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 5
+            }
+          ]
+        },
+        "right foot": {
+          "rays": 211661,
+          "skinFirst": 209410,
+          "showThroughRays": 2251,
+          "supplementRays": 794,
+          "showThroughStructures": 47,
+          "bySource": {
+            "muscle.glb": 786,
+            "bone.glb": 671,
+            "ligament-full.glb": 234,
+            "tendon-full.glb": 324,
+            "vessel-full.glb": 203,
+            "nerve-full.glb": 33
+          },
+          "top": [
+            {
+              "id": "FMA22548",
+              "name": "right extensor digitorum longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 563
+            },
+            {
+              "id": "FMA24477",
+              "name": "right tibia",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 396
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_metatarsophalangeal_joints_r",
+              "name": "Articular capsules of metatarsophalangeal joints (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 139
+            },
+            {
+              "id": "ZA_tendon_superior_fibular_retinaculum_r",
+              "name": "Superior fibular retinaculum (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 101
+            },
+            {
+              "id": "FMA24497",
+              "name": "right calcaneus",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 99
+            },
+            {
+              "id": "FMA65014",
+              "name": "right flexor hallucis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 98
+            },
+            {
+              "id": "ZA_ligament_collateral_metatarsophalangeal_ligaments_r",
+              "name": "Collateral metatarsophalangeal ligaments (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 86
+            },
+            {
+              "id": "ZA_vessel_plantar_digital_veins_r",
+              "name": "Plantar digital veins (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 72
+            },
+            {
+              "id": "ZA_tendon_inferior_extensor_retinaculum_of_ankle_r",
+              "name": "Inferior extensor retinaculum of ankle (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 67
+            },
+            {
+              "id": "FMA24480",
+              "name": "right fibula",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 62
+            },
+            {
+              "id": "FMA32658",
+              "name": "distal phalanx of right little toe",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 59
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_foot_r",
+              "name": "Dorsal digital veins of foot (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 56
+            },
+            {
+              "id": "FMA65016",
+              "name": "right flexor digitorum longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 47
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_hallucis_longus_r",
+              "name": "Tendon sheath of flexor hallucis longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 43
+            },
+            {
+              "id": "ZA_tendon_flexor_retinaculum_of_ankle_r",
+              "name": "Flexor retinaculum of ankle (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 34
+            },
+            {
+              "id": "FMA230986",
+              "name": "middle phalanx of right little toe",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 29
+            },
+            {
+              "id": "ZA_tendon_tendon_of_extensor_digitorum_longus_r",
+              "name": "Tendon of extensor digitorum longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "tendon",
+              "rays": 26
+            },
+            {
+              "id": "ZA_vessel_small_saphenous_vein_r",
+              "name": "Small saphenous vein (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 21
+            },
+            {
+              "id": "FMA22554",
+              "name": "right fibularis brevis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 20
+            },
+            {
+              "id": "ZA_vessel_fibular_artery_r",
+              "name": "Fibular artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 18
+            },
+            {
+              "id": "FMA24482",
+              "name": "right talus",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 17
+            },
+            {
+              "id": "ZA_vessel_fibular_veins_r",
+              "name": "Fibular veins (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 17
+            },
+            {
+              "id": "FMA22560",
+              "name": "right plantaris",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 17
+            },
+            {
+              "id": "FMA22550",
+              "name": "right fibularis tertius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 15
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_extensor_hallucis_longus_r",
+              "name": "Tendon sheath of extensor hallucis longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 15
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_tibialis_posterior_muscle_r",
+              "name": "Tendon sheath of tibialis posterior muscle (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 14
+            },
+            {
+              "id": "ZA_nerve_sural_nerve_r",
+              "name": "Sural nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 13
+            },
+            {
+              "id": "FMA258847",
+              "name": "right calcaneal tendon",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 13
+            },
+            {
+              "id": "ZA_vessel_calcaneal_branches_of_posterior_tibial_artery_r",
+              "name": "Calcaneal branches of posterior tibial artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 12
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_digitorum_longus_r",
+              "name": "Tendon sheath of flexor digitorum longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 11
+            }
+          ]
+        },
+        "left foot": {
+          "rays": 212405,
+          "skinFirst": 210735,
+          "showThroughRays": 1670,
+          "supplementRays": 623,
+          "showThroughStructures": 48,
+          "bySource": {
+            "bone.glb": 646,
+            "muscle.glb": 401,
+            "ligament-full.glb": 194,
+            "vessel-full.glb": 178,
+            "tendon-full.glb": 218,
+            "nerve-full.glb": 33
+          },
+          "top": [
+            {
+              "id": "FMA24478",
+              "name": "left tibia",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 373
+            },
+            {
+              "id": "FMA264844",
+              "name": "left calcaneal tendon",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 110
+            },
+            {
+              "id": "FMA22549",
+              "name": "left extensor digitorum longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 91
+            },
+            {
+              "id": "ZA_ligament_collateral_interphalangeal_ligaments_of_foot_l",
+              "name": "Collateral interphalangeal ligaments of foot (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 83
+            },
+            {
+              "id": "ZA_vessel_plantar_digital_veins_l",
+              "name": "Plantar digital veins (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 76
+            },
+            {
+              "id": "FMA24498",
+              "name": "left calcaneus",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 76
+            },
+            {
+              "id": "FMA32659",
+              "name": "distal phalanx of left little toe",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 74
+            },
+            {
+              "id": "FMA65015",
+              "name": "left flexor hallucis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 74
+            },
+            {
+              "id": "FMA24481",
+              "name": "left fibula",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 73
+            },
+            {
+              "id": "ZA_ligament_collateral_metatarsophalangeal_ligaments_l",
+              "name": "Collateral metatarsophalangeal ligaments (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 52
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_hallucis_longus_l",
+              "name": "Tendon sheath of flexor hallucis longus (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 51
+            },
+            {
+              "id": "ZA_tendon_inferior_extensor_retinaculum_of_ankle_l",
+              "name": "Inferior extensor retinaculum of ankle (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 42
+            },
+            {
+              "id": "FMA65017",
+              "name": "left flexor digitorum longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 42
+            },
+            {
+              "id": "ZA_ligament_articular_capsule_of_interphalangeal_joint_of_great_toe_l",
+              "name": "Articular capsule of interphalangeal joint of great toe (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 40
+            },
+            {
+              "id": "ZA_tendon_superior_fibular_retinaculum_l",
+              "name": "Superior fibular retinaculum (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 38
+            },
+            {
+              "id": "FMA22561",
+              "name": "left plantaris",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 38
+            },
+            {
+              "id": "FMA32657",
+              "name": "distal phalanx of left fourth toe",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 36
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_foot_l",
+              "name": "Dorsal digital veins of foot (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 31
+            },
+            {
+              "id": "ZA_tendon_flexor_retinaculum_of_ankle_l",
+              "name": "Flexor retinaculum of ankle (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 30
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_tibialis_posterior_muscle_l",
+              "name": "Tendon sheath of tibialis posterior muscle (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 26
+            },
+            {
+              "id": "ZA_vessel_small_saphenous_vein_l",
+              "name": "Small saphenous vein (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 25
+            },
+            {
+              "id": "FMA37462",
+              "name": "left flexor digitorum brevis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 18
+            },
+            {
+              "id": "ZA_vessel_fibular_veins_l",
+              "name": "Fibular veins (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 18
+            },
+            {
+              "id": "ZA_vessel_calcaneal_branches_of_posterior_tibial_artery_l",
+              "name": "Calcaneal branches of posterior tibial artery (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 15
+            },
+            {
+              "id": "FMA22555",
+              "name": "left fibularis brevis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 12
+            },
+            {
+              "id": "ZA_vessel_fibular_artery_l",
+              "name": "Fibular artery (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 11
+            },
+            {
+              "id": "ZA_nerve_sural_nerve_l",
+              "name": "Sural nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 10
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_metatarsophalangeal_joints_l",
+              "name": "Articular capsules of metatarsophalangeal joints (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 9
+            },
+            {
+              "id": "ZA_ligament_anterior_tibiofibular_ligament_l",
+              "name": "Anterior tibiofibular ligament (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 9
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_digitorum_longus_l",
+              "name": "Tendon sheath of flexor digitorum longus (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 9
+            }
+          ]
+        }
+      }
+    },
+    "original": {
+      "registration": {
+        "scale": 0.9599031746712589,
+        "translation": [
+          -0.0006507342546749239,
+          0.014537967202885138,
+          0.00022538399628205426
+        ]
+      },
+      "skin": "public/models/skin.glb at 1aa6376 (single pass, 44,970 triangles)",
+      "skinTriangles": 44970,
+      "regions": {
+        "right hand": {
+          "rays": 139277,
+          "skinFirst": 126083,
+          "showThroughRays": 13194,
+          "supplementRays": 12485,
+          "showThroughStructures": 52,
+          "bySource": {
+            "tendon-full.glb": 7918,
+            "vessel-full.glb": 3006,
+            "nerve-full.glb": 976,
+            "ligament-full.glb": 585,
+            "muscle.glb": 262,
+            "bone.glb": 447
+          },
+          "top": [
+            {
+              "id": "ZA_tendon_palmar_aponeurosis_r",
+              "name": "Palmar aponeurosis (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "aponeurosis",
+              "rays": 7848
+            },
+            {
+              "id": "ZA_vessel_proper_palmar_digital_arteries_r",
+              "name": "Proper palmar digital arteries (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 1431
+            },
+            {
+              "id": "ZA_vessel_palmar_digital_veins_r",
+              "name": "Palmar digital veins (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 742
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_hand_r",
+              "name": "Dorsal digital veins of hand (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 686
+            },
+            {
+              "id": "ZA_nerve_proper_palmar_digital_branches_of_median_nerve_r",
+              "name": "Proper palmar digital branches of median nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 350
+            },
+            {
+              "id": "ZA_nerve_proper_palmar_digital_branches_of_ulnar_nerve_r",
+              "name": "Proper palmar digital branches of ulnar nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 284
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_ulnar_nerve_r",
+              "name": "Dorsal digital branches of ulnar nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 221
+            },
+            {
+              "id": "ZA_ligament_collateral_interphalangeal_ligaments_of_hand_r",
+              "name": "Collateral interphalangeal ligaments of hand (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 195
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_distal_interphalangeal_joints_r",
+              "name": "Articular capsules of distal interphalangeal joints (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 130
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_proximal_interphalangeal_joints_r",
+              "name": "Articular capsules of proximal interphalangeal joints (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 123
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_arteries_of_hand_r",
+              "name": "Dorsal digital arteries of hand (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 117
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_radial_nerve_r",
+              "name": "Dorsal digital branches of radial nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 116
+            },
+            {
+              "id": "FMA38617",
+              "name": "humeral head of right flexor carpi ulnaris",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 115
+            },
+            {
+              "id": "FMA24461",
+              "name": "distal phalanx of right middle finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 106
+            },
+            {
+              "id": "FMA38519",
+              "name": "right extensor pollicis brevis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 89
+            },
+            {
+              "id": "FMA24463",
+              "name": "distal phalanx of right little finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 89
+            },
+            {
+              "id": "ZA_ligament_collateral_metacarpophalangeal_ligaments_r",
+              "name": "Collateral metacarpophalangeal ligaments (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 77
+            },
+            {
+              "id": "FMA24462",
+              "name": "distal phalanx of right ring finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 76
+            },
+            {
+              "id": "FMA24457",
+              "name": "middle phalanx of right ring finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 74
+            },
+            {
+              "id": "ZA_ligament_palmar_interphalangeal_ligaments_r",
+              "name": "Palmar interphalangeal ligaments (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 48
+            },
+            {
+              "id": "FMA24460",
+              "name": "distal phalanx of right index finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 34
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_flexor_pollicis_longus_r",
+              "name": "Tendon sheath of flexor pollicis longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 33
+            },
+            {
+              "id": "FMA23467",
+              "name": "right ulna",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 32
+            },
+            {
+              "id": "FMA23464",
+              "name": "right radius",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 29
+            },
+            {
+              "id": "FMA38638",
+              "name": "humeroulnar head of right flexor digitorum superficialis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 19
+            },
+            {
+              "id": "ZA_vessel_radial_artery_r",
+              "name": "Radial artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 17
+            },
+            {
+              "id": "ZA_tendon_synovial_sheaths_of_digits_of_hand_r",
+              "name": "Synovial sheaths of digits of hand (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 14
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_extensor_pollicis_longus_r",
+              "name": "Tendon sheath of extensor pollicis longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 12
+            },
+            {
+              "id": "ZA_ligament_articular_capsule_of_radiocarpal_joint_r",
+              "name": "Articular capsule of radiocarpal joint (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 8
+            },
+            {
+              "id": "FMA24458",
+              "name": "middle phalanx of right little finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 7
+            }
+          ]
+        },
+        "left hand": {
+          "rays": 139379,
+          "skinFirst": 127523,
+          "showThroughRays": 11856,
+          "supplementRays": 11186,
+          "showThroughStructures": 47,
+          "bySource": {
+            "tendon-full.glb": 6775,
+            "vessel-full.glb": 2835,
+            "nerve-full.glb": 1008,
+            "ligament-full.glb": 568,
+            "muscle.glb": 268,
+            "bone.glb": 402
+          },
+          "top": [
+            {
+              "id": "ZA_tendon_palmar_aponeurosis_l",
+              "name": "Palmar aponeurosis (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "aponeurosis",
+              "rays": 6734
+            },
+            {
+              "id": "ZA_vessel_proper_palmar_digital_arteries_l",
+              "name": "Proper palmar digital arteries (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 1317
+            },
+            {
+              "id": "ZA_vessel_palmar_digital_veins_l",
+              "name": "Palmar digital veins (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 733
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_hand_l",
+              "name": "Dorsal digital veins of hand (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 624
+            },
+            {
+              "id": "ZA_nerve_proper_palmar_digital_branches_of_ulnar_nerve_l",
+              "name": "Proper palmar digital branches of ulnar nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 300
+            },
+            {
+              "id": "ZA_nerve_proper_palmar_digital_branches_of_median_nerve_l",
+              "name": "Proper palmar digital branches of median nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 290
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_ulnar_nerve_l",
+              "name": "Dorsal digital branches of ulnar nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 276
+            },
+            {
+              "id": "ZA_ligament_collateral_interphalangeal_ligaments_of_hand_l",
+              "name": "Collateral interphalangeal ligaments of hand (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 208
+            },
+            {
+              "id": "FMA38520",
+              "name": "left extensor pollicis brevis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 176
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_proximal_interphalangeal_joints_l",
+              "name": "Articular capsules of proximal interphalangeal joints (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 137
+            },
+            {
+              "id": "FMA23955",
+              "name": "distal phalanx of left middle finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 132
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_arteries_of_hand_l",
+              "name": "Dorsal digital arteries of hand (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 116
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_distal_interphalangeal_joints_l",
+              "name": "Articular capsules of distal interphalangeal joints (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 103
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_radial_nerve_l",
+              "name": "Dorsal digital branches of radial nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 94
+            },
+            {
+              "id": "FMA23957",
+              "name": "distal phalanx of left ring finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 76
+            },
+            {
+              "id": "FMA23959",
+              "name": "distal phalanx of left little finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 66
+            },
+            {
+              "id": "ZA_ligament_collateral_metacarpophalangeal_ligaments_l",
+              "name": "Collateral metacarpophalangeal ligaments (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 66
+            },
+            {
+              "id": "FMA23953",
+              "name": "distal phalanx of left index finger",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 66
+            },
+            {
+              "id": "ZA_ligament_palmar_interphalangeal_ligaments_l",
+              "name": "Palmar interphalangeal ligaments (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 49
+            },
+            {
+              "id": "ZA_nerve_palmar_branch_of_ulnar_nerve_l",
+              "name": "Palmar branch of ulnar nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 45
+            },
+            {
+              "id": "FMA38639",
+              "name": "humeroulnar head of left flexor digitorum superficialis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 45
+            },
+            {
+              "id": "ZA_vessel_median_antebrachial_vein_l",
+              "name": "Median antebrachial vein (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 42
+            },
+            {
+              "id": "FMA23468",
+              "name": "left ulna",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 36
+            },
+            {
+              "id": "FMA23465",
+              "name": "left radius",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 23
+            },
+            {
+              "id": "ZA_tendon_synovial_sheaths_of_digits_of_hand_l",
+              "name": "Synovial sheaths of digits of hand (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 16
+            },
+            {
+              "id": "ZA_tendon_common_flexor_tendon_sheath_l",
+              "name": "Common flexor tendon sheath (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 15
+            },
+            {
+              "id": "FMA38464",
+              "name": "left palmaris longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 9
+            },
+            {
+              "id": "FMA38502",
+              "name": "left extensor digitorum",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 8
+            },
+            {
+              "id": "FMA38480",
+              "name": "left flexor digitorum profundus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 8
+            },
+            {
+              "id": "FMA38455",
+              "name": "left pronator quadratus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 8
+            }
+          ]
+        },
+        "right foot": {
+          "rays": 217061,
+          "skinFirst": 181245,
+          "showThroughRays": 35816,
+          "supplementRays": 34873,
+          "showThroughStructures": 76,
+          "bySource": {
+            "tendon-full.glb": 18346,
+            "ligament-full.glb": 7579,
+            "vessel-full.glb": 5974,
+            "nerve-full.glb": 2974,
+            "bone.glb": 638,
+            "muscle.glb": 305
+          },
+          "top": [
+            {
+              "id": "ZA_tendon_tendon_of_extensor_digitorum_longus_r",
+              "name": "Tendon of extensor digitorum longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "tendon",
+              "rays": 8723
+            },
+            {
+              "id": "ZA_tendon_superior_fibular_retinaculum_r",
+              "name": "Superior fibular retinaculum (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 6042
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_metatarsophalangeal_joints_r",
+              "name": "Articular capsules of metatarsophalangeal joints (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 2979
+            },
+            {
+              "id": "ZA_tendon_inferior_fibular_retinaculum_r",
+              "name": "Inferior fibular retinaculum (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 1821
+            },
+            {
+              "id": "ZA_vessel_dorsal_metatarsal_veins_r",
+              "name": "Dorsal metatarsal veins (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 1365
+            },
+            {
+              "id": "ZA_ligament_articular_capsule_of_interphalangeal_joint_of_great_toe_r",
+              "name": "Articular capsule of interphalangeal joint of great toe (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 1110
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_foot_r",
+              "name": "Dorsal digital veins of foot (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 978
+            },
+            {
+              "id": "ZA_ligament_collateral_metatarsophalangeal_ligaments_r",
+              "name": "Collateral metatarsophalangeal ligaments (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 885
+            },
+            {
+              "id": "ZA_ligament_collateral_interphalangeal_ligaments_of_foot_r",
+              "name": "Collateral interphalangeal ligaments of foot (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 797
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_distal_interphalangeal_joints_of_foot_r",
+              "name": "Articular capsules of distal interphalangeal joints of foot (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 742
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_superficial_fibular_nerve_r",
+              "name": "Dorsal digital branches of superficial fibular nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 741
+            },
+            {
+              "id": "ZA_vessel_great_saphenous_vein_r",
+              "name": "Great saphenous vein (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 694
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_arteries_of_foot_r",
+              "name": "Dorsal digital arteries of foot (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 663
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_proximal_interphalangeal_joints_of_foot_r",
+              "name": "Articular capsules of proximal interphalangeal joints of foot (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 608
+            },
+            {
+              "id": "ZA_tendon_flexor_retinaculum_of_ankle_r",
+              "name": "Flexor retinaculum of ankle (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 577
+            },
+            {
+              "id": "ZA_tendon_inferior_extensor_retinaculum_of_ankle_r",
+              "name": "Inferior extensor retinaculum of ankle (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 571
+            },
+            {
+              "id": "ZA_nerve_medial_dorsal_cutaneous_nerve_of_foot_r",
+              "name": "Medial dorsal cutaneous nerve of foot (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 526
+            },
+            {
+              "id": "ZA_vessel_proper_plantar_digital_arteries_r",
+              "name": "Proper plantar digital arteries (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 481
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_deep_fibular_nerve_r",
+              "name": "Dorsal digital branches of deep fibular nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 433
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_extensor_hallucis_longus_r",
+              "name": "Tendon sheath of extensor hallucis longus (right)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 427
+            },
+            {
+              "id": "ZA_nerve_sural_nerve_r",
+              "name": "Sural nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 409
+            },
+            {
+              "id": "ZA_vessel_dorsal_venous_arch_of_foot_r",
+              "name": "Dorsal venous arch of foot (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 387
+            },
+            {
+              "id": "FMA24477",
+              "name": "right tibia",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 386
+            },
+            {
+              "id": "ZA_vessel_plantar_digital_veins_r",
+              "name": "Plantar digital veins (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 376
+            },
+            {
+              "id": "ZA_nerve_proper_plantar_digital_branches_of_medial_plantar_nerve_r",
+              "name": "Proper plantar digital branches of medial plantar nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 311
+            },
+            {
+              "id": "ZA_vessel_dorsal_metatarsal_arteries_r",
+              "name": "Dorsal metatarsal arteries (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 307
+            },
+            {
+              "id": "ZA_vessel_dorsalis_pedis_artery_r",
+              "name": "Dorsalis pedis artery (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 287
+            },
+            {
+              "id": "ZA_nerve_proper_plantar_digital_branches_of_lateral_plantar_nerve_r",
+              "name": "Proper plantar digital branches of lateral plantar nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 272
+            },
+            {
+              "id": "ZA_ligament_dorsal_tarsometatarsal_ligaments_r",
+              "name": "Dorsal tarsometatarsal ligaments (right)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 212
+            },
+            {
+              "id": "FMA22548",
+              "name": "right extensor digitorum longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 176
+            }
+          ]
+        },
+        "left foot": {
+          "rays": 217943,
+          "skinFirst": 181155,
+          "showThroughRays": 36788,
+          "supplementRays": 35887,
+          "showThroughStructures": 80,
+          "bySource": {
+            "tendon-full.glb": 19373,
+            "ligament-full.glb": 7679,
+            "vessel-full.glb": 5850,
+            "nerve-full.glb": 2985,
+            "bone.glb": 637,
+            "muscle.glb": 264
+          },
+          "top": [
+            {
+              "id": "ZA_tendon_tendon_of_extensor_digitorum_longus_l",
+              "name": "Tendon of extensor digitorum longus (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "tendon",
+              "rays": 8727
+            },
+            {
+              "id": "ZA_tendon_superior_fibular_retinaculum_l",
+              "name": "Superior fibular retinaculum (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 6575
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_metatarsophalangeal_joints_l",
+              "name": "Articular capsules of metatarsophalangeal joints (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 2984
+            },
+            {
+              "id": "ZA_tendon_inferior_fibular_retinaculum_l",
+              "name": "Inferior fibular retinaculum (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 1806
+            },
+            {
+              "id": "ZA_vessel_dorsal_metatarsal_veins_l",
+              "name": "Dorsal metatarsal veins (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 1231
+            },
+            {
+              "id": "ZA_tendon_flexor_retinaculum_of_ankle_l",
+              "name": "Flexor retinaculum of ankle (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 1169
+            },
+            {
+              "id": "ZA_ligament_articular_capsule_of_interphalangeal_joint_of_great_toe_l",
+              "name": "Articular capsule of interphalangeal joint of great toe (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 1130
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_foot_l",
+              "name": "Dorsal digital veins of foot (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 958
+            },
+            {
+              "id": "ZA_ligament_collateral_metatarsophalangeal_ligaments_l",
+              "name": "Collateral metatarsophalangeal ligaments (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 923
+            },
+            {
+              "id": "ZA_ligament_collateral_interphalangeal_ligaments_of_foot_l",
+              "name": "Collateral interphalangeal ligaments of foot (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 797
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_distal_interphalangeal_joints_of_foot_l",
+              "name": "Articular capsules of distal interphalangeal joints of foot (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 759
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_superficial_fibular_nerve_l",
+              "name": "Dorsal digital branches of superficial fibular nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 744
+            },
+            {
+              "id": "ZA_vessel_great_saphenous_vein_l",
+              "name": "Great saphenous vein (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 672
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_arteries_of_foot_l",
+              "name": "Dorsal digital arteries of foot (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 634
+            },
+            {
+              "id": "ZA_ligament_articular_capsules_of_proximal_interphalangeal_joints_of_foot_l",
+              "name": "Articular capsules of proximal interphalangeal joints of foot (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "capsule",
+              "rays": 602
+            },
+            {
+              "id": "ZA_nerve_medial_dorsal_cutaneous_nerve_of_foot_l",
+              "name": "Medial dorsal cutaneous nerve of foot (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 503
+            },
+            {
+              "id": "ZA_vessel_proper_plantar_digital_arteries_l",
+              "name": "Proper plantar digital arteries (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 487
+            },
+            {
+              "id": "ZA_nerve_dorsal_digital_branches_of_deep_fibular_nerve_l",
+              "name": "Dorsal digital branches of deep fibular nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 447
+            },
+            {
+              "id": "ZA_tendon_tendon_sheath_of_extensor_hallucis_longus_l",
+              "name": "Tendon sheath of extensor hallucis longus (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "sheath",
+              "rays": 433
+            },
+            {
+              "id": "ZA_tendon_inferior_extensor_retinaculum_of_ankle_l",
+              "name": "Inferior extensor retinaculum of ankle (left)",
+              "layer": "muscle",
+              "source": "tendon-full.glb",
+              "kind": "retinaculum",
+              "rays": 426
+            },
+            {
+              "id": "ZA_vessel_dorsal_venous_arch_of_foot_l",
+              "name": "Dorsal venous arch of foot (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 402
+            },
+            {
+              "id": "ZA_nerve_sural_nerve_l",
+              "name": "Sural nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 399
+            },
+            {
+              "id": "FMA24478",
+              "name": "left tibia",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 368
+            },
+            {
+              "id": "ZA_vessel_dorsal_metatarsal_arteries_l",
+              "name": "Dorsal metatarsal arteries (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 328
+            },
+            {
+              "id": "ZA_vessel_plantar_digital_veins_l",
+              "name": "Plantar digital veins (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 324
+            },
+            {
+              "id": "ZA_nerve_proper_plantar_digital_branches_of_medial_plantar_nerve_l",
+              "name": "Proper plantar digital branches of medial plantar nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 316
+            },
+            {
+              "id": "ZA_nerve_proper_plantar_digital_branches_of_lateral_plantar_nerve_l",
+              "name": "Proper plantar digital branches of lateral plantar nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 302
+            },
+            {
+              "id": "ZA_vessel_dorsalis_pedis_artery_l",
+              "name": "Dorsalis pedis artery (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 290
+            },
+            {
+              "id": "ZA_ligament_dorsal_tarsometatarsal_ligaments_l",
+              "name": "Dorsal tarsometatarsal ligaments (left)",
+              "layer": "bone",
+              "source": "ligament-full.glb",
+              "kind": "ligament",
+              "rays": 213
+            },
+            {
+              "id": "ZA_nerve_deep_fibular_nerve_l",
+              "name": "Deep fibular nerve (left)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 172
+            }
+          ]
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "data/catalog/male-registration.json",
+      "sha256": "e57f0c397ccd4b1d6c3d27cf5945fc34a725633f774714930293fddf1622ab71"
+    },
+    {
+      "path": "public/models/skin.glb",
+      "sha256": "dc4e8d658ce8c29d8249301f0b6aa139e4644148b2e8b87d4f3baf9d84f92704"
+    },
+    {
+      "path": "public/models/muscle.glb",
+      "sha256": "dcea6ed872cf9a74237f9ce0dcefb631098fc6382196567397868bc4f7a95b81"
+    },
+    {
+      "path": "public/models/bone.glb",
+      "sha256": "3d5ab58b8c9f3b8d69caba29ce9b4c56b387dfacbd5658245edf6b171026263e"
+    },
+    {
+      "path": "public/models/organ.glb",
+      "sha256": "5661ac5c4e41a558835dbbd45b3c37fed361b0e83fe188482c39a3fd6170959b"
+    },
+    {
+      "path": "public/models/nerve-full.glb",
+      "sha256": "e7a3a2de6c6f098152e3619dd75613531749235cfa9f687d971c8b334a08dcb8"
+    },
+    {
+      "path": "public/models/vessel-full.glb",
+      "sha256": "05f373a294ab809b9a628bc1474a66028642997330fddc553a33d4ac6409b757"
+    },
+    {
+      "path": "public/models/ligament-full.glb",
+      "sha256": "894533f99658c1428dce59e5225f6b1099aaf4720b3cdd7b39ac76cfbb0aec98"
+    },
+    {
+      "path": "public/models/tendon-full.glb",
+      "sha256": "18829190b14010da7ed446ea05ad59d6129e2e8c925c04c76a25e36f1269c68a"
+    },
+    {
+      "path": "public/models/reference/lymphatic_male.glb",
+      "sha256": "b73830220fb9d67cbf9f30ebc448c88483c1b3bd1c014f49eb10aefa70dfbfbd"
+    },
+    {
+      "path": "scripts/audit-male-show-through.mjs",
+      "sha256": "033a9b8923f2b58e0863d91806ff0658f2d95d56e9a687c050a5062ea94e0bfe"
+    }
+  ]
+}

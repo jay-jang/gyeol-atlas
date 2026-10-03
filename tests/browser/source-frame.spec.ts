@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import {ready, snapshot, openTool, closeTool,organs} from './helpers';
+import {ready, snapshot, openTool, closeTool,organs,settledCamera} from './helpers';
 import femaleStructures from '../../data/female-atlas-structures.json' with {type:'json'};
 
 test('leaving an independent detail frame for peeling fits the loaded overview and preserves later layer views', async ({page}) => {
@@ -39,6 +39,8 @@ test('leaving an independent detail frame for peeling fits the loaded overview a
       });
       return count ? extent : Infinity;
     },fiberUrl)).toBeLessThan(1);
+    // The fit's pose is saved at once and again after the controls' debounce.
+    await settledCamera(page);
     const pose=(await snapshot(page)).camera;
     await page.getByLabel('연속 해부 박리 깊이').fill('0.5'); await ready(page);
     expect((await snapshot(page)).camera).toEqual(pose);

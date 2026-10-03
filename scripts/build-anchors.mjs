@@ -9,7 +9,15 @@ import {
   Vector3,
   Triangle,
 } from "three";
+import { MeshBVH } from "three-mesh-bvh";
 const points = JSON.parse(await fs.readFile("data/points.json", "utf8"));
+// A marker that already exists for the same seed keeps the surface it was
+// placed on: after a skin rebuild it moves to the closest point of the new
+// skin instead of being re-projected. The male skin is a shell with inner
+// surfaces, so a fresh ray choice can jump to another surface centimetres
+// away; projection is only for new seeds.
+const previous = new Map(JSON.parse(await fs.readFile("data/anchors.json", "utf8").catch(() => "[]")).map((a) => [a.key, a]));
+const KEEP_SURFACE_MAX_MM = 5;
 const manifest = JSON.parse(
   await fs.readFile("public/models/manifest.json", "utf8"),
 );
@@ -33,6 +41,7 @@ const geometry = new BufferGeometry()
   )
   .setIndex(new BufferAttribute(primitive.getIndices().getArray(), 1));
 const skin = new Mesh(geometry, new MeshBasicMaterial());
+const skinBvh = new MeshBVH(geometry.clone());
 skin.updateMatrixWorld(true);
 const ray = new Raycaster(),
   anchors = [],
@@ -55,6 +64,24 @@ for (const p of points)
       p.surface === "medial"
         ? new Vector3(0, seed.y, seed.z)
         : seed.clone().addScaledVector(direction, -0.5);
+    const key = `${p.id}-${occurrence}-${sign}`, before = previous.get(key);
+    if (before && before.seed.every((v, i) => v === seed.getComponent(i))) {
+      const nearest = skinBvh.closestPointToPoint(new Vector3(...before.surfacePoint));
+      if (nearest.distance * 1000 > KEEP_SURFACE_MAX_MM)
+        throw Error(`${key}: its surface moved ${(nearest.distance * 1000).toFixed(1)} mm; review before re-projecting.`);
+      // Already on this skin: keep the stored coordinates exactly.
+      const onSkin = nearest.distance < 1e-9;
+      const surfacePoint = onSkin ? new Vector3(...before.surfacePoint) : nearest.point.clone();
+      const outward = new Vector3(...before.position).sub(new Vector3(...before.surfacePoint)).normalize();
+      anchors.push({
+        pointId: p.id, occurrence, key, mode: p.markerMode || "surface-illustration", method: before.method,
+        side: seed.x < 0 ? "right" : seed.x > 0 ? "left" : "midline",
+        position: onSkin ? before.position : surfacePoint.clone().addScaledVector(outward, 0.003).toArray(),
+        surfacePoint: surfacePoint.toArray(), seed: seed.toArray(), seedDistance: surfacePoint.distanceTo(seed),
+        displayOffset: 0.003, status: "illustrative-unreviewed",
+      });
+      continue;
+    }
     ray.set(origin, direction);
     let hit = ray
       .intersectObject(skin)

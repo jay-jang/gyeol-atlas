@@ -6,6 +6,7 @@ import { STLLoader } from "three/addons/loaders/STLLoader.js";
 import { BufferGeometry, BufferAttribute } from "three";
 import { MeshoptSimplifier } from "meshoptimizer";
 import { Document, NodeIO } from "@gltf-transform/core";
+import { simplifyWithDetail } from "./lib/detail-skin.mjs";
 const inputs = JSON.parse(
   await fs.readFile("scripts/model-inputs.json", "utf8"),
 );
@@ -48,9 +49,27 @@ const manifest = {
   transform:
     "x=X/1000; y=(Z+13.5175)/1000; z=(-Y-96.5107)/1000. Original unit mm; scene unit m.",
   modifications:
-    "STL to GLB, welded positions, meshoptimizer topology-aware simplification, smooth normals, coordinate transform; no clinical registration.",
+    "STL to GLB, welded positions, meshoptimizer topology-aware simplification (the skin keeps a 0.4 mm absolute error over the hands and feet), smooth normals, coordinate transform; no clinical registration.",
   assets: [],
 };
+// The skin keeps finer detail over the hands and feet (lib/detail-skin.mjs).
+// Each box is the bounds of that hand's or foot's source bones plus 40 mm, in
+// source millimetres, so the detail follows the source data.
+const SKIN_DETAIL = { padMm: 40, detailErrorMm: 0.4 };
+const skinDetailBoxes = [];
+for (const side of ["right", "left"]) for (const pattern of [
+  `phalanx of ${side} (.*finger|thumb)|${side} .*metacarpal|${side} (scaphoid|lunate|triquetral|pisiform|trapezium|trapezoid|capitate|hamate)$`,
+  `phalanx of ${side} .*toe|${side} .*metatarsal|${side} (calcaneus|talus|navicular|cuboid|.*cuneiform)$`,
+]) {
+  const min = [Infinity, Infinity, Infinity], max = [-Infinity, -Infinity, -Infinity];
+  for (const a of inputs.assets.filter((a) => a.layer === "bone" && new RegExp(pattern).test(a.name))) {
+    const bytes = await fs.readFile(`.cache/models/${a.id}.${a.format || "stl"}`);
+    const p = new STLLoader().parse(bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength)).attributes.position.array;
+    for (let i = 0; i < p.length; i++) { min[i % 3] = Math.min(min[i % 3], p[i]); max[i % 3] = Math.max(max[i % 3], p[i]); }
+  }
+  if (!Number.isFinite(min[0])) throw Error(`No source bones for skin detail: ${pattern}`);
+  skinDetailBoxes.push([min.map((v) => v - SKIN_DETAIL.padMm), max.map((v) => v + SKIN_DETAIL.padMm)]);
+}
 for (const layer of ["skin", "bone", "muscle", "organ", "vessel", "nerve"]) {
   const doc = new Document();
   const buffer = doc.createBuffer();
@@ -94,14 +113,12 @@ for (const layer of ["skin", "bone", "muscle", "organ", "vessel", "nerve"]) {
       indices.length,
       layer === "skin" ? 135000 : layer === "bone" ? 4500 : 6000,
     );
-    const [simple, error] = MeshoptSimplifier.simplify(
-      indices,
-      pos,
-      3,
-      target,
-      0.003,
-      ["Prune"],
-    );
+    const detail = a.id === "FMA7163"
+      ? simplifyWithDetail(indices, pos, { boxes: skinDetailBoxes, detailErrorMm: SKIN_DETAIL.detailErrorMm, bodyTarget: target, bodyError: 0.003 })
+      : null;
+    const [simple, error] = detail
+      ? [detail.indices, detail.error]
+      : MeshoptSimplifier.simplify(indices, pos, 3, target, 0.003, ["Prune"]);
     const remap = new Map();
     const compact = [];
     const idx = new Uint32Array(simple.length);
@@ -157,6 +174,7 @@ for (const layer of ["skin", "bone", "muscle", "organ", "vessel", "nerve"]) {
       originalTriangles: original,
       triangles: idx.length / 3,
       simplificationError: error,
+      ...(detail ? { detail: { regions: "hands and feet", boxesMm: skinDetailBoxes, padMm: SKIN_DETAIL.padMm, targetErrorMm: SKIN_DETAIL.detailErrorMm, errorMm: detail.detailErrorMm } } : {}),
     });
     raw.dispose();
     geom.dispose();

@@ -20,22 +20,22 @@ for (const name of ["medulla oblongata", "pons"]) {
   const left = nerveSource.get(`${name} left`).center, right = nerveSource.get(`${name} right`).center;
   neural.push({ name, source: left.map((v, i) => (v + right[i]) / 2), target: nerveTarget.get(name).center });
 }
-// Matching vessel names may cover different lengths in these releases. Use the
-// two bilateral optic nerves and brainstem structures to calibrate coordinates;
-// retain ALL vascular pairs as independent residual measurements.
-const training = neural, holdout = pairs;
-const mean = (rows, key) => [0, 1, 2].map(axis => rows.reduce((sum, p) => sum + p[key][axis], 0) / rows.length);
-const sm = mean(training, "source"), tm = mean(training, "target");
-let numerator = 0, denominator = 0;
-for (const p of training) for (let axis = 0; axis < 3; axis++) {
-  numerator += (p.source[axis] - sm[axis]) * (p.target[axis] - tm[axis]);
-  denominator += (p.source[axis] - sm[axis]) ** 2;
+// Matching vessel names may cover different lengths in these releases, so the
+// vascular pairs are independent residual measurements, never fit targets.
+// The registration itself is fitted on the shared skeleton
+// (fit-male-skeleton-registration.mjs); the four neural centres that defined
+// the earlier fit are held out here as well.
+export function heldOutResiduals(scale, translation) {
+  const measure = p => ({ ...p,
+    beforeMm: 1000 * Math.hypot(...p.source.map((v, axis) => v - p.target[axis])),
+    afterMm: 1000 * Math.hypot(...p.source.map((v, axis) => v * scale + translation[axis] - p.target[axis])),
+  });
+  return { neural: neural.map(measure), holdout: pairs.map(measure) };
 }
-const scale = numerator / denominator, translation = tm.map((v, axis) => v - scale * sm[axis]);
-const measure = p => ({ ...p,
-  beforeMm: 1000 * Math.hypot(...p.source.map((v, axis) => v - p.target[axis])),
-  afterMm: 1000 * Math.hypot(...p.source.map((v, axis) => v * scale + translation[axis] - p.target[axis])),
-});
-const report = { method: "Uniform scale and translation fitted to four named neural centers; vascular pairs held out and may have differing source extents", scale, translation, training: training.map(measure), holdout: holdout.map(measure), neural: neural.map(measure) };
-if (process.argv.includes("--write")) fs.writeFileSync("data/catalog/male-registration.json", JSON.stringify(report, null, 2) + "\n");
-console.log(JSON.stringify({scale, translation, training: training.length, holdout: report.holdout, neural: report.neural}, null, 2));
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const registration = JSON.parse(fs.readFileSync("data/catalog/male-registration.json"));
+  const residuals = heldOutResiduals(registration.scale, registration.translation);
+  if (process.argv.includes("--write")) fs.writeFileSync("data/catalog/male-registration.json", JSON.stringify({ ...registration, ...residuals }, null, 2) + "\n");
+  const summary = rows => ({ count: rows.length, meanMm: rows.reduce((n, r) => n + r.afterMm, 0) / rows.length, maxMm: Math.max(...rows.map(r => r.afterMm)) });
+  console.log(JSON.stringify({ scale: registration.scale, translation: registration.translation, neural: summary(residuals.neural), holdout: summary(residuals.holdout) }, null, 2));
+}

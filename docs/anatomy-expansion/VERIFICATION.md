@@ -66,7 +66,7 @@
 
 - 실제 GLB 구성: `tests/connective.test.mjs`가 두 파일의 SHA-256을 `data/catalog/connective-supplement.json`과 대조하고, 관절계 파일에 카탈로그 노드 358개가 모두 있는지, 힘줄 파일의 노드가 정확히 카탈로그 58개뿐인지 GLB JSON을 직접 읽어 확인합니다. 원본 매니페스트 계통(관절계·골격계 척주 인대·근육계)과 제외 규칙(부착부·윤활주머니·근육사이막, 기존 원본 중복 16개)은 `scripts/build-connective-tissue.mjs`에서 재현됩니다.
 - 신경조직·공간 모델과 마찬가지로 종류를 섞지 않습니다. 관절주머니·반달연골·관절원반·막·지방체는 ‘인대’로 부르지 않고 각자의 종류로 표시하며, 근육 메쉬를 힘줄로 바꾸어 부르지 않습니다.
-- 배치: 균일 남성 보정만 적용했고 `docs/anatomy-alignment/connective-fit.json`에 모든 구조의 최근접 거리를 기록했습니다(인대 중앙 0.58mm, 5mm 초과 4개는 발).
+- 배치: 균일 남성 보정만 적용했고 `docs/anatomy-alignment/connective-fit.json`에 모든 구조의 최근접 거리를 기록했습니다(인대 중앙 0.58mm, 5mm 초과 4개는 발). **2026-10-03 후속:** 보정을 공유 골격 기준으로 다시 맞춘 뒤 중앙 0.37mm, 최대 3.17mm, 5mm 초과 0개([기록](../anatomy-alignment/MALE_SKELETON_REGISTRATION.md)).
 - 좌표 불변: 박리 기하 감사가 새 416개를 포함해 남성 2,902개 메쉬, 201단계, 최대 이동 0m입니다.
 - 화면·상호작용: `tests/browser/connective.spec.ts`와 [재검증 기록](../anatomy-alignment/VERIFICATION.md). 캡처: `connective-only-desktop.png`, `connective-only-mobile.png`, `connective-acl-desktop.png`.
 - 한계: 한국어명은 편집 표기(`data/catalog/connective-ko.tsv`), 대부분의 힘줄은 근육 메쉬 일부, 여성은 무릎 구조만, 구조별 정합 없음.

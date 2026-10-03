@@ -724,7 +724,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               {state.sex === "male" && sourceKey === "male-detail" && selectedGroup === "stomach" && <p className="selection-description" data-stomach-frame-warning>별도 4.0 상세 원본입니다. 전신 3.0 위와 상자 중심이 약 42mm 달라 같은 위치로 정합된 화면이 아닙니다.</p>}
               {selectedAnatomy?.description && sourceKey !== "female-detail" && <p className="selection-description">{selectedAnatomy.description}</p>}
               {connectiveBundle && <p className="selection-description">{state.sex === "male"
-                ? "원본에 따로 모델링된 인대·관절 구조와 힘줄·힘줄집만 모았습니다. 대부분의 힘줄은 근육 모형에 포함되어 있어 이 묶음에 없습니다. 인대는 전신 보정만 적용했으며 구조별 정합은 하지 않았습니다."
+                ? "원본에 따로 모델링된 인대·관절 구조와 힘줄·힘줄집만 모았습니다. 대부분의 힘줄은 근육 모형에 포함되어 있어 이 묶음에 없습니다. 인대는 두 원본이 공유하는 골격에 맞춘 전신 보정만 적용했으며 구조별 정합은 하지 않았습니다."
                 : "여성 원본에 따로 수록된 무릎 인대·반달연골과 넙다리네갈래근 힘줄입니다."}</p>}
               {selectedAnatomy?.latin && <small className="selection-latin">TA2 · {selectedAnatomy.latin}</small>}
               {selectedAnatomy?.source && sourceKey !== "female-detail" && <small className="selection-source">{selectedAnatomy.source} · 학습용 비진단 모델</small>}

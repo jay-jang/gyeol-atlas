@@ -1,0 +1,1749 @@
+{
+  "previous": {
+    "scale": 0.9599031746712589,
+    "translation": [
+      -0.0006507342546749239,
+      0.014537967202885138,
+      0.00022538399628205426
+    ]
+  },
+  "fit": {
+    "scale": 0.96837133915684,
+    "translation": [
+      -0.0008018877732986994,
+      0.0002440036472166618,
+      0.001395753839843519
+    ]
+  },
+  "samples": 135370,
+  "bones": 335,
+  "skeletonSha256": "b49d71788bfa0b4a3188e2954d59728a699b08ec280e70df1c2a95e13d4b81f8",
+  "summary": {
+    "head": {
+      "bones": 78,
+      "medianOfBoneMediansBeforeMm": 0.77,
+      "medianOfBoneMediansAfterMm": 0.18,
+      "worstBoneMedianBeforeMm": 12.81,
+      "worstBoneMedianAfterMm": 14.29
+    },
+    "trunk and arm": {
+      "bones": 136,
+      "medianOfBoneMediansBeforeMm": 1.41,
+      "medianOfBoneMediansAfterMm": 0.21,
+      "worstBoneMedianBeforeMm": 10.65,
+      "worstBoneMedianAfterMm": 12.12
+    },
+    "foot": {
+      "bones": 54,
+      "medianOfBoneMediansBeforeMm": 7.01,
+      "medianOfBoneMediansAfterMm": 1.47,
+      "worstBoneMedianBeforeMm": 11.69,
+      "worstBoneMedianAfterMm": 2.52
+    },
+    "hand": {
+      "bones": 54,
+      "medianOfBoneMediansBeforeMm": 2,
+      "medianOfBoneMediansAfterMm": 0.08,
+      "worstBoneMedianBeforeMm": 5.68,
+      "worstBoneMedianAfterMm": 0.13
+    },
+    "leg": {
+      "bones": 13,
+      "medianOfBoneMediansBeforeMm": 2.62,
+      "medianOfBoneMediansAfterMm": 0.73,
+      "worstBoneMedianBeforeMm": 3.98,
+      "worstBoneMedianAfterMm": 1.98
+    }
+  },
+  "files": [
+    {
+      "path": "public/models/bone.glb",
+      "sha256": "3d5ab58b8c9f3b8d69caba29ce9b4c56b387dfacbd5658245edf6b171026263e"
+    },
+    {
+      "path": "scripts/fit-male-skeleton-registration.mjs",
+      "sha256": "1307bf30e402042378a364b440dfa170d1b3a51a9e07b9eae1ca6a1ff23d6a96"
+    },
+    {
+      "path": "scripts/audit-male-hand-bones.mjs",
+      "sha256": "0d54f0492fe97ecc57bbaf39951359dd743331dcfe5ff665a8145e2326210fec"
+    }
+  ],
+  "perBone": [
+    {
+      "bone": "Anterior cells of ethmoid bone.l",
+      "beforeMedianMm": 2.378,
+      "afterMedianMm": 1.765
+    },
+    {
+      "bone": "Anterior cells of ethmoid bone.r",
+      "beforeMedianMm": 3.47,
+      "afterMedianMm": 2.717
+    },
+    {
+      "bone": "Anterior longitudinal ligament",
+      "beforeMedianMm": 0.904,
+      "afterMedianMm": 1.249
+    },
+    {
+      "bone": "Arytenoid cartilage.l",
+      "beforeMedianMm": 6.459,
+      "afterMedianMm": 7.915
+    },
+    {
+      "bone": "Arytenoid cartilage.r",
+      "beforeMedianMm": 6.605,
+      "afterMedianMm": 8.04
+    },
+    {
+      "bone": "Atlas (C1)",
+      "beforeMedianMm": 0.947,
+      "afterMedianMm": 0.2
+    },
+    {
+      "bone": "Axis (C2)",
+      "beforeMedianMm": 0.824,
+      "afterMedianMm": 0.194
+    },
+    {
+      "bone": "Body of sternum",
+      "beforeMedianMm": 0.908,
+      "afterMedianMm": 0.205
+    },
+    {
+      "bone": "Calcaneus.l",
+      "beforeMedianMm": 4.005,
+      "afterMedianMm": 1.508
+    },
+    {
+      "bone": "Calcaneus.r",
+      "beforeMedianMm": 3.924,
+      "afterMedianMm": 1.407
+    },
+    {
+      "bone": "Capitate bone.l",
+      "beforeMedianMm": 0.95,
+      "afterMedianMm": 0.072
+    },
+    {
+      "bone": "Capitate bone.r",
+      "beforeMedianMm": 0.938,
+      "afterMedianMm": 0.089
+    },
+    {
+      "bone": "Clavicle.l",
+      "beforeMedianMm": 1.539,
+      "afterMedianMm": 0.077
+    },
+    {
+      "bone": "Clavicle.r",
+      "beforeMedianMm": 1.506,
+      "afterMedianMm": 0.099
+    },
+    {
+      "bone": "Coccyx",
+      "beforeMedianMm": 1.789,
+      "afterMedianMm": 0.308
+    },
+    {
+      "bone": "Corniculate cartilage.l",
+      "beforeMedianMm": 3.466,
+      "afterMedianMm": 4.859
+    },
+    {
+      "bone": "Corniculate cartilage.r",
+      "beforeMedianMm": 3.851,
+      "afterMedianMm": 5.183
+    },
+    {
+      "bone": "Costal cartilage of eighth rib.l",
+      "beforeMedianMm": 2.912,
+      "afterMedianMm": 1.047
+    },
+    {
+      "bone": "Costal cartilage of eighth rib.r",
+      "beforeMedianMm": 2.961,
+      "afterMedianMm": 1.013
+    },
+    {
+      "bone": "Costal cartilage of fifth rib.l",
+      "beforeMedianMm": 1.375,
+      "afterMedianMm": 0.043
+    },
+    {
+      "bone": "Costal cartilage of fifth rib.r",
+      "beforeMedianMm": 1.41,
+      "afterMedianMm": 0.055
+    },
+    {
+      "bone": "Costal cartilage of first rib.l",
+      "beforeMedianMm": 0.773,
+      "afterMedianMm": 0.08
+    },
+    {
+      "bone": "Costal cartilage of first rib.r",
+      "beforeMedianMm": 0.851,
+      "afterMedianMm": 0.062
+    },
+    {
+      "bone": "Costal cartilage of fourth rib.l",
+      "beforeMedianMm": 1.205,
+      "afterMedianMm": 0.059
+    },
+    {
+      "bone": "Costal cartilage of fourth rib.r",
+      "beforeMedianMm": 1.247,
+      "afterMedianMm": 0.045
+    },
+    {
+      "bone": "Costal cartilage of ninth rib.l",
+      "beforeMedianMm": 3.047,
+      "afterMedianMm": 1.226
+    },
+    {
+      "bone": "Costal cartilage of ninth rib.r",
+      "beforeMedianMm": 3.109,
+      "afterMedianMm": 1.177
+    },
+    {
+      "bone": "Costal cartilage of second rib.l",
+      "beforeMedianMm": 1.113,
+      "afterMedianMm": 0.055
+    },
+    {
+      "bone": "Costal cartilage of second rib.r",
+      "beforeMedianMm": 1.1,
+      "afterMedianMm": 0.069
+    },
+    {
+      "bone": "Costal cartilage of seventh rib.l",
+      "beforeMedianMm": 1.796,
+      "afterMedianMm": 0.291
+    },
+    {
+      "bone": "Costal cartilage of seventh rib.r",
+      "beforeMedianMm": 1.824,
+      "afterMedianMm": 0.254
+    },
+    {
+      "bone": "Costal cartilage of sixth rib.l",
+      "beforeMedianMm": 2.012,
+      "afterMedianMm": 0.221
+    },
+    {
+      "bone": "Costal cartilage of sixth rib.r",
+      "beforeMedianMm": 2.088,
+      "afterMedianMm": 0.264
+    },
+    {
+      "bone": "Costal cartilage of tenth rib.l",
+      "beforeMedianMm": 2.795,
+      "afterMedianMm": 0.597
+    },
+    {
+      "bone": "Costal cartilage of tenth rib.r",
+      "beforeMedianMm": 2.867,
+      "afterMedianMm": 0.585
+    },
+    {
+      "bone": "Costal cartilage of third rib.l",
+      "beforeMedianMm": 1.14,
+      "afterMedianMm": 0.063
+    },
+    {
+      "bone": "Costal cartilage of third rib.r",
+      "beforeMedianMm": 1.089,
+      "afterMedianMm": 0.064
+    },
+    {
+      "bone": "Cricoid cartilage",
+      "beforeMedianMm": 10.651,
+      "afterMedianMm": 12.121
+    },
+    {
+      "bone": "Cuboid bone.l",
+      "beforeMedianMm": 1.858,
+      "afterMedianMm": 1.26
+    },
+    {
+      "bone": "Cuboid bone.r",
+      "beforeMedianMm": 1.809,
+      "afterMedianMm": 1.176
+    },
+    {
+      "bone": "Distal phalanx of fifth finger of foot.l",
+      "beforeMedianMm": 10.36,
+      "afterMedianMm": 1.807
+    },
+    {
+      "bone": "Distal phalanx of fifth finger of foot.r",
+      "beforeMedianMm": 10.328,
+      "afterMedianMm": 1.638
+    },
+    {
+      "bone": "Distal phalanx of fifth finger of hand.l",
+      "beforeMedianMm": 3.215,
+      "afterMedianMm": 0.073
+    },
+    {
+      "bone": "Distal phalanx of fifth finger of hand.r",
+      "beforeMedianMm": 3.226,
+      "afterMedianMm": 0.105
+    },
+    {
+      "bone": "Distal phalanx of first finger of foot.l",
+      "beforeMedianMm": 9.377,
+      "afterMedianMm": 1.294
+    },
+    {
+      "bone": "Distal phalanx of first finger of foot.r",
+      "beforeMedianMm": 9.427,
+      "afterMedianMm": 1.196
+    },
+    {
+      "bone": "Distal phalanx of first finger of hand.l",
+      "beforeMedianMm": 1.702,
+      "afterMedianMm": 0.085
+    },
+    {
+      "bone": "Distal phalanx of first finger of hand.r",
+      "beforeMedianMm": 1.722,
+      "afterMedianMm": 0.12
+    },
+    {
+      "bone": "Distal phalanx of fourth finger of foot.l",
+      "beforeMedianMm": 9.823,
+      "afterMedianMm": 1.778
+    },
+    {
+      "bone": "Distal phalanx of fourth finger of foot.r",
+      "beforeMedianMm": 9.842,
+      "afterMedianMm": 1.608
+    },
+    {
+      "bone": "Distal phalanx of fourth finger of hand.l",
+      "beforeMedianMm": 5.671,
+      "afterMedianMm": 0.074
+    },
+    {
+      "bone": "Distal phalanx of fourth finger of hand.r",
+      "beforeMedianMm": 5.675,
+      "afterMedianMm": 0.108
+    },
+    {
+      "bone": "Distal phalanx of second finger of foot.l",
+      "beforeMedianMm": 11.169,
+      "afterMedianMm": 1.315
+    },
+    {
+      "bone": "Distal phalanx of second finger of foot.r",
+      "beforeMedianMm": 11.227,
+      "afterMedianMm": 1.256
+    },
+    {
+      "bone": "Distal phalanx of second finger of hand.l",
+      "beforeMedianMm": 5.07,
+      "afterMedianMm": 0.065
+    },
+    {
+      "bone": "Distal phalanx of second finger of hand.r",
+      "beforeMedianMm": 5.062,
+      "afterMedianMm": 0.082
+    },
+    {
+      "bone": "Distal phalanx of third finger of foot.l",
+      "beforeMedianMm": 11.694,
+      "afterMedianMm": 1.505
+    },
+    {
+      "bone": "Distal phalanx of third finger of foot.r",
+      "beforeMedianMm": 11.647,
+      "afterMedianMm": 1.389
+    },
+    {
+      "bone": "Distal phalanx of third finger of hand.l",
+      "beforeMedianMm": 5.22,
+      "afterMedianMm": 0.071
+    },
+    {
+      "bone": "Distal phalanx of third finger of hand.r",
+      "beforeMedianMm": 5.249,
+      "afterMedianMm": 0.078
+    },
+    {
+      "bone": "Eighth rib.l",
+      "beforeMedianMm": 1.694,
+      "afterMedianMm": 0.46
+    },
+    {
+      "bone": "Eighth rib.r",
+      "beforeMedianMm": 1.686,
+      "afterMedianMm": 0.107
+    },
+    {
+      "bone": "Eleventh rib.l",
+      "beforeMedianMm": 1.788,
+      "afterMedianMm": 0.541
+    },
+    {
+      "bone": "Eleventh rib.r",
+      "beforeMedianMm": 1.641,
+      "afterMedianMm": 0.118
+    },
+    {
+      "bone": "Ethmoid bone",
+      "beforeMedianMm": 1.206,
+      "afterMedianMm": 1.163
+    },
+    {
+      "bone": "Femur.l",
+      "beforeMedianMm": 2.671,
+      "afterMedianMm": 0.432
+    },
+    {
+      "bone": "Femur.r",
+      "beforeMedianMm": 2.624,
+      "afterMedianMm": 0.388
+    },
+    {
+      "bone": "Fibula.l",
+      "beforeMedianMm": 2.545,
+      "afterMedianMm": 1.98
+    },
+    {
+      "bone": "Fibula.r",
+      "beforeMedianMm": 2.559,
+      "afterMedianMm": 1.928
+    },
+    {
+      "bone": "Fifth metacarpal bone.l",
+      "beforeMedianMm": 1.828,
+      "afterMedianMm": 0.072
+    },
+    {
+      "bone": "Fifth metacarpal bone.r",
+      "beforeMedianMm": 1.829,
+      "afterMedianMm": 0.105
+    },
+    {
+      "bone": "Fifth metatarsal bone.l",
+      "beforeMedianMm": 2.809,
+      "afterMedianMm": 1.862
+    },
+    {
+      "bone": "Fifth metatarsal bone.r",
+      "beforeMedianMm": 2.831,
+      "afterMedianMm": 1.787
+    },
+    {
+      "bone": "Fifth rib.l",
+      "beforeMedianMm": 1.491,
+      "afterMedianMm": 0.389
+    },
+    {
+      "bone": "Fifth rib.r",
+      "beforeMedianMm": 1.494,
+      "afterMedianMm": 0.11
+    },
+    {
+      "bone": "First metacarpal bone.l",
+      "beforeMedianMm": 1.761,
+      "afterMedianMm": 0.071
+    },
+    {
+      "bone": "First metacarpal bone.r",
+      "beforeMedianMm": 1.717,
+      "afterMedianMm": 0.11
+    },
+    {
+      "bone": "First metatarsal bone.l",
+      "beforeMedianMm": 4.207,
+      "afterMedianMm": 1.634
+    },
+    {
+      "bone": "First metatarsal bone.r",
+      "beforeMedianMm": 4.225,
+      "afterMedianMm": 1.501
+    },
+    {
+      "bone": "First rib.l",
+      "beforeMedianMm": 1.068,
+      "afterMedianMm": 0.367
+    },
+    {
+      "bone": "First rib.r",
+      "beforeMedianMm": 0.927,
+      "afterMedianMm": 0.068
+    },
+    {
+      "bone": "Fourth metacarpal bone.l",
+      "beforeMedianMm": 1.57,
+      "afterMedianMm": 0.075
+    },
+    {
+      "bone": "Fourth metacarpal bone.r",
+      "beforeMedianMm": 1.566,
+      "afterMedianMm": 0.109
+    },
+    {
+      "bone": "Fourth metatarsal bone.l",
+      "beforeMedianMm": 1.926,
+      "afterMedianMm": 1.383
+    },
+    {
+      "bone": "Fourth metatarsal bone.r",
+      "beforeMedianMm": 1.894,
+      "afterMedianMm": 1.3
+    },
+    {
+      "bone": "Fourth rib.l",
+      "beforeMedianMm": 1.338,
+      "afterMedianMm": 0.422
+    },
+    {
+      "bone": "Fourth rib.r",
+      "beforeMedianMm": 1.38,
+      "afterMedianMm": 0.121
+    },
+    {
+      "bone": "Frontal bone",
+      "beforeMedianMm": 0.689,
+      "afterMedianMm": 0.166
+    },
+    {
+      "bone": "Hamate bone.l",
+      "beforeMedianMm": 1.16,
+      "afterMedianMm": 0.075
+    },
+    {
+      "bone": "Hamate bone.r",
+      "beforeMedianMm": 1.146,
+      "afterMedianMm": 0.11
+    },
+    {
+      "bone": "Hip bone.l",
+      "beforeMedianMm": 3.241,
+      "afterMedianMm": 1.291
+    },
+    {
+      "bone": "Hip bone.r",
+      "beforeMedianMm": 2.598,
+      "afterMedianMm": 0.182
+    },
+    {
+      "bone": "Humerus.l",
+      "beforeMedianMm": 1.395,
+      "afterMedianMm": 0.318
+    },
+    {
+      "bone": "Humerus.r",
+      "beforeMedianMm": 1.421,
+      "afterMedianMm": 0.327
+    },
+    {
+      "bone": "Hyoid bone",
+      "beforeMedianMm": 1.03,
+      "afterMedianMm": 0.488
+    },
+    {
+      "bone": "Incus.l",
+      "beforeMedianMm": 4.029,
+      "afterMedianMm": 3.284
+    },
+    {
+      "bone": "Incus.r",
+      "beforeMedianMm": 4.024,
+      "afterMedianMm": 3.094
+    },
+    {
+      "bone": "Inferior nasal concha bone.l",
+      "beforeMedianMm": 0.949,
+      "afterMedianMm": 0.844
+    },
+    {
+      "bone": "Inferior nasal concha bone.r",
+      "beforeMedianMm": 0.479,
+      "afterMedianMm": 0.132
+    },
+    {
+      "bone": "Intermediate cuneiform bone.l",
+      "beforeMedianMm": 4.895,
+      "afterMedianMm": 1.03
+    },
+    {
+      "bone": "Intermediate cuneiform bone.r",
+      "beforeMedianMm": 4.902,
+      "afterMedianMm": 1.032
+    },
+    {
+      "bone": "Interspinous ligaments",
+      "beforeMedianMm": 1.816,
+      "afterMedianMm": 2.017
+    },
+    {
+      "bone": "Intertransverse ligaments.l",
+      "beforeMedianMm": 2.856,
+      "afterMedianMm": 2.637
+    },
+    {
+      "bone": "Intertransverse ligaments.r",
+      "beforeMedianMm": 2.521,
+      "afterMedianMm": 2.29
+    },
+    {
+      "bone": "Intervertebral disc C2-C3",
+      "beforeMedianMm": 0.845,
+      "afterMedianMm": 0.13
+    },
+    {
+      "bone": "Intervertebral disc C3-C4",
+      "beforeMedianMm": 0.778,
+      "afterMedianMm": 0.117
+    },
+    {
+      "bone": "Intervertebral disc C4-C5",
+      "beforeMedianMm": 0.685,
+      "afterMedianMm": 0.121
+    },
+    {
+      "bone": "Intervertebral disc C5-C6",
+      "beforeMedianMm": 0.963,
+      "afterMedianMm": 0.111
+    },
+    {
+      "bone": "Intervertebral disc C6-C7",
+      "beforeMedianMm": 1.055,
+      "afterMedianMm": 0.128
+    },
+    {
+      "bone": "Intervertebral disc C7-T1",
+      "beforeMedianMm": 0.957,
+      "afterMedianMm": 0.17
+    },
+    {
+      "bone": "Intervertebral disc L1-L2",
+      "beforeMedianMm": 0.667,
+      "afterMedianMm": 0.1
+    },
+    {
+      "bone": "Intervertebral disc L2-L3",
+      "beforeMedianMm": 0.703,
+      "afterMedianMm": 0.12
+    },
+    {
+      "bone": "Intervertebral disc L3-L4",
+      "beforeMedianMm": 1.165,
+      "afterMedianMm": 0.094
+    },
+    {
+      "bone": "Intervertebral disc L4-L5",
+      "beforeMedianMm": 1.925,
+      "afterMedianMm": 0.119
+    },
+    {
+      "bone": "Intervertebral disc L5-S1",
+      "beforeMedianMm": 2.22,
+      "afterMedianMm": 0.123
+    },
+    {
+      "bone": "Intervertebral disc T1-T2",
+      "beforeMedianMm": 1.114,
+      "afterMedianMm": 0.115
+    },
+    {
+      "bone": "Intervertebral disc T2-T3",
+      "beforeMedianMm": 1.298,
+      "afterMedianMm": 0.124
+    },
+    {
+      "bone": "Intervertebral disc T3-T4",
+      "beforeMedianMm": 0.929,
+      "afterMedianMm": 0.158
+    },
+    {
+      "bone": "Intervertebral disc T4-T5",
+      "beforeMedianMm": 0.967,
+      "afterMedianMm": 0.165
+    },
+    {
+      "bone": "Intervertebral disc T5-T6",
+      "beforeMedianMm": 0.841,
+      "afterMedianMm": 0.143
+    },
+    {
+      "bone": "Intervertebral disc T6-T7",
+      "beforeMedianMm": 0.886,
+      "afterMedianMm": 0.175
+    },
+    {
+      "bone": "Intervertebral disc T7-T8",
+      "beforeMedianMm": 1.165,
+      "afterMedianMm": 0.147
+    },
+    {
+      "bone": "Intervertebral disc T8-T9",
+      "beforeMedianMm": 1.714,
+      "afterMedianMm": 0.143
+    },
+    {
+      "bone": "Intervertebral disc T9-T10",
+      "beforeMedianMm": 0.775,
+      "afterMedianMm": 0.131
+    },
+    {
+      "bone": "Intervertebral disc T10-T11",
+      "beforeMedianMm": 1.346,
+      "afterMedianMm": 0.13
+    },
+    {
+      "bone": "Intervertebral disc T11-T12",
+      "beforeMedianMm": 1.467,
+      "afterMedianMm": 0.163
+    },
+    {
+      "bone": "Intervertebral disc T12-L1",
+      "beforeMedianMm": 1.276,
+      "afterMedianMm": 0.093
+    },
+    {
+      "bone": "Intra-articular ligament of head of rib",
+      "beforeMedianMm": 0.762,
+      "afterMedianMm": 1.05
+    },
+    {
+      "bone": "Intra-articular ligament of head of rib.r",
+      "beforeMedianMm": 0.553,
+      "afterMedianMm": 0.559
+    },
+    {
+      "bone": "Lacrimal bone.l",
+      "beforeMedianMm": 0.57,
+      "afterMedianMm": 0.532
+    },
+    {
+      "bone": "Lacrimal bone.r",
+      "beforeMedianMm": 0.466,
+      "afterMedianMm": 0.125
+    },
+    {
+      "bone": "Lateral cuneiform bone.l",
+      "beforeMedianMm": 3.796,
+      "afterMedianMm": 1.302
+    },
+    {
+      "bone": "Lateral cuneiform bone.r",
+      "beforeMedianMm": 3.799,
+      "afterMedianMm": 1.228
+    },
+    {
+      "bone": "Lateral process of nasal septal cartilage.l",
+      "beforeMedianMm": 6.037,
+      "afterMedianMm": 8.081
+    },
+    {
+      "bone": "Lateral process of nasal septal cartilage.r",
+      "beforeMedianMm": 6.076,
+      "afterMedianMm": 8.043
+    },
+    {
+      "bone": "Ligamenta flava",
+      "beforeMedianMm": 1.099,
+      "afterMedianMm": 0.878
+    },
+    {
+      "bone": "Lower canine.l",
+      "beforeMedianMm": 0.842,
+      "afterMedianMm": 0.097
+    },
+    {
+      "bone": "Lower canine.r",
+      "beforeMedianMm": 0.84,
+      "afterMedianMm": 0.234
+    },
+    {
+      "bone": "Lower first molar tooth.l",
+      "beforeMedianMm": 0.813,
+      "afterMedianMm": 0.284
+    },
+    {
+      "bone": "Lower first molar tooth.r",
+      "beforeMedianMm": 0.814,
+      "afterMedianMm": 0.307
+    },
+    {
+      "bone": "Lower first premolar.l",
+      "beforeMedianMm": 0.672,
+      "afterMedianMm": 0.046
+    },
+    {
+      "bone": "Lower first premolar.r",
+      "beforeMedianMm": 0.675,
+      "afterMedianMm": 0.18
+    },
+    {
+      "bone": "Lower lateral incisor.l",
+      "beforeMedianMm": 0.82,
+      "afterMedianMm": 0.057
+    },
+    {
+      "bone": "Lower lateral incisor.r",
+      "beforeMedianMm": 0.808,
+      "afterMedianMm": 0.189
+    },
+    {
+      "bone": "Lower medial incisor.l",
+      "beforeMedianMm": 0.686,
+      "afterMedianMm": 0.033
+    },
+    {
+      "bone": "Lower medial incisor.r",
+      "beforeMedianMm": 0.677,
+      "afterMedianMm": 0.163
+    },
+    {
+      "bone": "Lower second molar tooth.l",
+      "beforeMedianMm": 0.677,
+      "afterMedianMm": 0.053
+    },
+    {
+      "bone": "Lower second molar tooth.r",
+      "beforeMedianMm": 0.678,
+      "afterMedianMm": 0.152
+    },
+    {
+      "bone": "Lower second premolar.l",
+      "beforeMedianMm": 0.516,
+      "afterMedianMm": 0.022
+    },
+    {
+      "bone": "Lower second premolar.r",
+      "beforeMedianMm": 0.511,
+      "afterMedianMm": 0.154
+    },
+    {
+      "bone": "Lunate bone.l",
+      "beforeMedianMm": 1.593,
+      "afterMedianMm": 0.074
+    },
+    {
+      "bone": "Lunate bone.r",
+      "beforeMedianMm": 1.631,
+      "afterMedianMm": 0.134
+    },
+    {
+      "bone": "Major alar cartilage.l",
+      "beforeMedianMm": 12.807,
+      "afterMedianMm": 14.292
+    },
+    {
+      "bone": "Major alar cartilage.r",
+      "beforeMedianMm": 12.544,
+      "afterMedianMm": 14.09
+    },
+    {
+      "bone": "Malleus.l",
+      "beforeMedianMm": 2.335,
+      "afterMedianMm": 1.652
+    },
+    {
+      "bone": "Malleus.r",
+      "beforeMedianMm": 2.277,
+      "afterMedianMm": 1.64
+    },
+    {
+      "bone": "Mandible",
+      "beforeMedianMm": 0.742,
+      "afterMedianMm": 0.245
+    },
+    {
+      "bone": "Manubrium of sternum",
+      "beforeMedianMm": 0.749,
+      "afterMedianMm": 0.115
+    },
+    {
+      "bone": "Maxilla.l",
+      "beforeMedianMm": 0.65,
+      "afterMedianMm": 0.071
+    },
+    {
+      "bone": "Maxilla.r",
+      "beforeMedianMm": 0.611,
+      "afterMedianMm": 0.096
+    },
+    {
+      "bone": "Medial cuneiform bone.l",
+      "beforeMedianMm": 4.803,
+      "afterMedianMm": 2.517
+    },
+    {
+      "bone": "Medial cuneiform bone.r",
+      "beforeMedianMm": 4.766,
+      "afterMedianMm": 2.302
+    },
+    {
+      "bone": "Middle cells of ethmoid bone.l",
+      "beforeMedianMm": 2.664,
+      "afterMedianMm": 2.861
+    },
+    {
+      "bone": "Middle cells of ethmoid bone.r",
+      "beforeMedianMm": 2.307,
+      "afterMedianMm": 2.844
+    },
+    {
+      "bone": "Middle phalanx of fifth finger of foot.l",
+      "beforeMedianMm": 8.642,
+      "afterMedianMm": 1.409
+    },
+    {
+      "bone": "Middle phalanx of fifth finger of foot.r",
+      "beforeMedianMm": 8.605,
+      "afterMedianMm": 1.23
+    },
+    {
+      "bone": "Middle phalanx of fifth finger of hand.l",
+      "beforeMedianMm": 3.046,
+      "afterMedianMm": 0.069
+    },
+    {
+      "bone": "Middle phalanx of fifth finger of hand.r",
+      "beforeMedianMm": 3.03,
+      "afterMedianMm": 0.08
+    },
+    {
+      "bone": "Middle phalanx of fourth finger of foot.l",
+      "beforeMedianMm": 10.353,
+      "afterMedianMm": 2.085
+    },
+    {
+      "bone": "Middle phalanx of fourth finger of foot.r",
+      "beforeMedianMm": 10.331,
+      "afterMedianMm": 1.878
+    },
+    {
+      "bone": "Middle phalanx of fourth finger of hand.l",
+      "beforeMedianMm": 3.332,
+      "afterMedianMm": 0.062
+    },
+    {
+      "bone": "Middle phalanx of fourth finger of hand.r",
+      "beforeMedianMm": 3.319,
+      "afterMedianMm": 0.067
+    },
+    {
+      "bone": "Middle phalanx of second finger of foot.l",
+      "beforeMedianMm": 10.582,
+      "afterMedianMm": 1.245
+    },
+    {
+      "bone": "Middle phalanx of second finger of foot.r",
+      "beforeMedianMm": 10.557,
+      "afterMedianMm": 1.146
+    },
+    {
+      "bone": "Middle phalanx of second finger of hand.l",
+      "beforeMedianMm": 2.953,
+      "afterMedianMm": 0.062
+    },
+    {
+      "bone": "Middle phalanx of second finger of hand.r",
+      "beforeMedianMm": 2.928,
+      "afterMedianMm": 0.093
+    },
+    {
+      "bone": "Middle phalanx of third finger of foot.l",
+      "beforeMedianMm": 9.882,
+      "afterMedianMm": 1.471
+    },
+    {
+      "bone": "Middle phalanx of third finger of foot.r",
+      "beforeMedianMm": 9.878,
+      "afterMedianMm": 1.423
+    },
+    {
+      "bone": "Middle phalanx of third finger of hand.l",
+      "beforeMedianMm": 2.709,
+      "afterMedianMm": 0.056
+    },
+    {
+      "bone": "Middle phalanx of third finger of hand.r",
+      "beforeMedianMm": 2.677,
+      "afterMedianMm": 0.083
+    },
+    {
+      "bone": "Nasal bone.l",
+      "beforeMedianMm": 0.646,
+      "afterMedianMm": 0.423
+    },
+    {
+      "bone": "Nasal bone.r",
+      "beforeMedianMm": 0.647,
+      "afterMedianMm": 0.128
+    },
+    {
+      "bone": "Nasal septal cartilage",
+      "beforeMedianMm": 2.012,
+      "afterMedianMm": 1.863
+    },
+    {
+      "bone": "Navicular bone.l",
+      "beforeMedianMm": 7.628,
+      "afterMedianMm": 1.229
+    },
+    {
+      "bone": "Navicular bone.r",
+      "beforeMedianMm": 7.614,
+      "afterMedianMm": 1.121
+    },
+    {
+      "bone": "Ninth rib.l",
+      "beforeMedianMm": 1.817,
+      "afterMedianMm": 0.521
+    },
+    {
+      "bone": "Ninth rib.r",
+      "beforeMedianMm": 1.702,
+      "afterMedianMm": 0.117
+    },
+    {
+      "bone": "Nuchal ligament",
+      "beforeMedianMm": 4.696,
+      "afterMedianMm": 4.312
+    },
+    {
+      "bone": "Nucleus pulposus C2-C3",
+      "beforeMedianMm": 0.998,
+      "afterMedianMm": 0.784
+    },
+    {
+      "bone": "Nucleus pulposus C3-C4",
+      "beforeMedianMm": 0.926,
+      "afterMedianMm": 0.478
+    },
+    {
+      "bone": "Nucleus pulposus C4-C5",
+      "beforeMedianMm": 0.931,
+      "afterMedianMm": 0.609
+    },
+    {
+      "bone": "Nucleus pulposus C5-C6",
+      "beforeMedianMm": 1.309,
+      "afterMedianMm": 0.795
+    },
+    {
+      "bone": "Nucleus pulposus C6-C7",
+      "beforeMedianMm": 1.153,
+      "afterMedianMm": 0.652
+    },
+    {
+      "bone": "Nucleus pulposus C7-T1",
+      "beforeMedianMm": 0.672,
+      "afterMedianMm": 0.442
+    },
+    {
+      "bone": "Nucleus pulposus L1-L2",
+      "beforeMedianMm": 2.281,
+      "afterMedianMm": 1.257
+    },
+    {
+      "bone": "Nucleus pulposus L2-L3",
+      "beforeMedianMm": 2.949,
+      "afterMedianMm": 1.406
+    },
+    {
+      "bone": "Nucleus pulposus L3-L4",
+      "beforeMedianMm": 1.83,
+      "afterMedianMm": 0.988
+    },
+    {
+      "bone": "Nucleus pulposus L4-L5",
+      "beforeMedianMm": 3.779,
+      "afterMedianMm": 1.305
+    },
+    {
+      "bone": "Nucleus pulposus L5-S1",
+      "beforeMedianMm": 3.732,
+      "afterMedianMm": 2.498
+    },
+    {
+      "bone": "Nucleus pulposus T1-T2",
+      "beforeMedianMm": 1.189,
+      "afterMedianMm": 0.574
+    },
+    {
+      "bone": "Nucleus pulposus T2-T3",
+      "beforeMedianMm": 1.665,
+      "afterMedianMm": 1.015
+    },
+    {
+      "bone": "Nucleus pulposus T3-T4",
+      "beforeMedianMm": 1.436,
+      "afterMedianMm": 0.753
+    },
+    {
+      "bone": "Nucleus pulposus T4-T5",
+      "beforeMedianMm": 1.942,
+      "afterMedianMm": 1.091
+    },
+    {
+      "bone": "Nucleus pulposus T5-T6",
+      "beforeMedianMm": 1.749,
+      "afterMedianMm": 0.909
+    },
+    {
+      "bone": "Nucleus pulposus T6-T7",
+      "beforeMedianMm": 1.925,
+      "afterMedianMm": 1.023
+    },
+    {
+      "bone": "Nucleus pulposus T7-T8",
+      "beforeMedianMm": 2.351,
+      "afterMedianMm": 1.196
+    },
+    {
+      "bone": "Nucleus pulposus T8-T9",
+      "beforeMedianMm": 2.246,
+      "afterMedianMm": 1.133
+    },
+    {
+      "bone": "Nucleus pulposus T9-T10",
+      "beforeMedianMm": 1.88,
+      "afterMedianMm": 0.973
+    },
+    {
+      "bone": "Nucleus pulposus T10-T11",
+      "beforeMedianMm": 2.073,
+      "afterMedianMm": 1.183
+    },
+    {
+      "bone": "Nucleus pulposus T11-T12",
+      "beforeMedianMm": 2.071,
+      "afterMedianMm": 1.305
+    },
+    {
+      "bone": "Nucleus pulposus T12-L1",
+      "beforeMedianMm": 2.764,
+      "afterMedianMm": 1.449
+    },
+    {
+      "bone": "Occipital bone",
+      "beforeMedianMm": 0.406,
+      "afterMedianMm": 0.118
+    },
+    {
+      "bone": "Palatine bone.l",
+      "beforeMedianMm": 0.721,
+      "afterMedianMm": 0.737
+    },
+    {
+      "bone": "Palatine bone.r",
+      "beforeMedianMm": 0.546,
+      "afterMedianMm": 0.095
+    },
+    {
+      "bone": "Parietal bone.l",
+      "beforeMedianMm": 0.312,
+      "afterMedianMm": 0.094
+    },
+    {
+      "bone": "Parietal bone.r",
+      "beforeMedianMm": 0.285,
+      "afterMedianMm": 0.104
+    },
+    {
+      "bone": "Patella.l",
+      "beforeMedianMm": 3.983,
+      "afterMedianMm": 0.75
+    },
+    {
+      "bone": "Patella.r",
+      "beforeMedianMm": 3.857,
+      "afterMedianMm": 0.654
+    },
+    {
+      "bone": "Pisiform bone.l",
+      "beforeMedianMm": 2.361,
+      "afterMedianMm": 0.079
+    },
+    {
+      "bone": "Pisiform bone.r",
+      "beforeMedianMm": 2.355,
+      "afterMedianMm": 0.108
+    },
+    {
+      "bone": "Posterior cells of ethmoid bone.l",
+      "beforeMedianMm": 1.226,
+      "afterMedianMm": 1.562
+    },
+    {
+      "bone": "Posterior cells of ethmoid bone.r",
+      "beforeMedianMm": 1.131,
+      "afterMedianMm": 1.354
+    },
+    {
+      "bone": "Posterior longitudinal ligament",
+      "beforeMedianMm": 1.253,
+      "afterMedianMm": 0.375
+    },
+    {
+      "bone": "Proximal phalanx of fifth finger of foot.l",
+      "beforeMedianMm": 5.862,
+      "afterMedianMm": 1.639
+    },
+    {
+      "bone": "Proximal phalanx of fifth finger of foot.r",
+      "beforeMedianMm": 5.843,
+      "afterMedianMm": 1.509
+    },
+    {
+      "bone": "Proximal phalanx of fifth finger of hand.l",
+      "beforeMedianMm": 2.546,
+      "afterMedianMm": 0.071
+    },
+    {
+      "bone": "Proximal phalanx of fifth finger of hand.r",
+      "beforeMedianMm": 2.537,
+      "afterMedianMm": 0.117
+    },
+    {
+      "bone": "Proximal phalanx of first finger of foot.l",
+      "beforeMedianMm": 8.174,
+      "afterMedianMm": 1.401
+    },
+    {
+      "bone": "Proximal phalanx of first finger of foot.r",
+      "beforeMedianMm": 8.128,
+      "afterMedianMm": 1.329
+    },
+    {
+      "bone": "Proximal phalanx of first finger of hand.l",
+      "beforeMedianMm": 1.226,
+      "afterMedianMm": 0.082
+    },
+    {
+      "bone": "Proximal phalanx of first finger of hand.r",
+      "beforeMedianMm": 1.222,
+      "afterMedianMm": 0.119
+    },
+    {
+      "bone": "Proximal phalanx of fourth finger of foot.l",
+      "beforeMedianMm": 7.011,
+      "afterMedianMm": 1.551
+    },
+    {
+      "bone": "Proximal phalanx of fourth finger of foot.r",
+      "beforeMedianMm": 6.987,
+      "afterMedianMm": 1.471
+    },
+    {
+      "bone": "Proximal phalanx of fourth finger of hand.l",
+      "beforeMedianMm": 2.204,
+      "afterMedianMm": 0.048
+    },
+    {
+      "bone": "Proximal phalanx of fourth finger of hand.r",
+      "beforeMedianMm": 2.19,
+      "afterMedianMm": 0.1
+    },
+    {
+      "bone": "Proximal phalanx of second finger of foot.l",
+      "beforeMedianMm": 9.169,
+      "afterMedianMm": 1.702
+    },
+    {
+      "bone": "Proximal phalanx of second finger of foot.r",
+      "beforeMedianMm": 9.169,
+      "afterMedianMm": 1.816
+    },
+    {
+      "bone": "Proximal phalanx of second finger of hand.l",
+      "beforeMedianMm": 1.415,
+      "afterMedianMm": 0.073
+    },
+    {
+      "bone": "Proximal phalanx of second finger of hand.r",
+      "beforeMedianMm": 1.414,
+      "afterMedianMm": 0.086
+    },
+    {
+      "bone": "Proximal phalanx of third finger of foot.l",
+      "beforeMedianMm": 7.926,
+      "afterMedianMm": 1.104
+    },
+    {
+      "bone": "Proximal phalanx of third finger of foot.r",
+      "beforeMedianMm": 7.905,
+      "afterMedianMm": 1.104
+    },
+    {
+      "bone": "Proximal phalanx of third finger of hand.l",
+      "beforeMedianMm": 2.064,
+      "afterMedianMm": 0.058
+    },
+    {
+      "bone": "Proximal phalanx of third finger of hand.r",
+      "beforeMedianMm": 2.077,
+      "afterMedianMm": 0.099
+    },
+    {
+      "bone": "Radiate ligament of head of rib.l",
+      "beforeMedianMm": 1.417,
+      "afterMedianMm": 1.377
+    },
+    {
+      "bone": "Radiate ligament of head of rib.r",
+      "beforeMedianMm": 0.84,
+      "afterMedianMm": 0.621
+    },
+    {
+      "bone": "Radius.l",
+      "beforeMedianMm": 1.404,
+      "afterMedianMm": 0.112
+    },
+    {
+      "bone": "Radius.r",
+      "beforeMedianMm": 1.469,
+      "afterMedianMm": 0.104
+    },
+    {
+      "bone": "Sacrococcygeal symphysis",
+      "beforeMedianMm": 0.803,
+      "afterMedianMm": 0.257
+    },
+    {
+      "bone": "Sacrum",
+      "beforeMedianMm": 2.519,
+      "afterMedianMm": 0.734
+    },
+    {
+      "bone": "Scaphoid bone.l",
+      "beforeMedianMm": 1.588,
+      "afterMedianMm": 0.057
+    },
+    {
+      "bone": "Scaphoid bone.r",
+      "beforeMedianMm": 1.578,
+      "afterMedianMm": 0.069
+    },
+    {
+      "bone": "Scapula.l",
+      "beforeMedianMm": 1.037,
+      "afterMedianMm": 0.137
+    },
+    {
+      "bone": "Scapula.r",
+      "beforeMedianMm": 1.045,
+      "afterMedianMm": 0.149
+    },
+    {
+      "bone": "Second metacarpal bone.l",
+      "beforeMedianMm": 1.581,
+      "afterMedianMm": 0.068
+    },
+    {
+      "bone": "Second metacarpal bone.r",
+      "beforeMedianMm": 1.535,
+      "afterMedianMm": 0.089
+    },
+    {
+      "bone": "Second metatarsal bone.l",
+      "beforeMedianMm": 4.152,
+      "afterMedianMm": 1.594
+    },
+    {
+      "bone": "Second metatarsal bone.r",
+      "beforeMedianMm": 4.15,
+      "afterMedianMm": 1.467
+    },
+    {
+      "bone": "Second rib.l",
+      "beforeMedianMm": 0.679,
+      "afterMedianMm": 0.643
+    },
+    {
+      "bone": "Second rib.r",
+      "beforeMedianMm": 1.054,
+      "afterMedianMm": 0.093
+    },
+    {
+      "bone": "Sesamoid bones of foot.l",
+      "beforeMedianMm": 3.036,
+      "afterMedianMm": 1.112
+    },
+    {
+      "bone": "Sesamoid bones of foot.r",
+      "beforeMedianMm": 3.094,
+      "afterMedianMm": 1.122
+    },
+    {
+      "bone": "Seventh rib.l",
+      "beforeMedianMm": 1.875,
+      "afterMedianMm": 0.45
+    },
+    {
+      "bone": "Seventh rib.r",
+      "beforeMedianMm": 1.796,
+      "afterMedianMm": 0.118
+    },
+    {
+      "bone": "Sinus of frontal bone",
+      "beforeMedianMm": 1.953,
+      "afterMedianMm": 1.479
+    },
+    {
+      "bone": "Sinus of sphenoid bone",
+      "beforeMedianMm": 2.139,
+      "afterMedianMm": 1.958
+    },
+    {
+      "bone": "Sixth rib.l",
+      "beforeMedianMm": 1.528,
+      "afterMedianMm": 0.495
+    },
+    {
+      "bone": "Sixth rib.r",
+      "beforeMedianMm": 1.618,
+      "afterMedianMm": 0.123
+    },
+    {
+      "bone": "Sphenoid bone",
+      "beforeMedianMm": 0.769,
+      "afterMedianMm": 0.156
+    },
+    {
+      "bone": "Stapes.l",
+      "beforeMedianMm": 4.071,
+      "afterMedianMm": 2.88
+    },
+    {
+      "bone": "Stapes.r",
+      "beforeMedianMm": 3.978,
+      "afterMedianMm": 2.49
+    },
+    {
+      "bone": "Talus.l",
+      "beforeMedianMm": 4.531,
+      "afterMedianMm": 1.641
+    },
+    {
+      "bone": "Talus.r",
+      "beforeMedianMm": 4.512,
+      "afterMedianMm": 1.531
+    },
+    {
+      "bone": "Temporal bone.l",
+      "beforeMedianMm": 1.717,
+      "afterMedianMm": 1.581
+    },
+    {
+      "bone": "Temporal bone.r",
+      "beforeMedianMm": 1.686,
+      "afterMedianMm": 1.537
+    },
+    {
+      "bone": "Tenth rib.l",
+      "beforeMedianMm": 1.676,
+      "afterMedianMm": 0.507
+    },
+    {
+      "bone": "Tenth rib.r",
+      "beforeMedianMm": 1.638,
+      "afterMedianMm": 0.102
+    },
+    {
+      "bone": "Third metacarpal bone.l",
+      "beforeMedianMm": 1.004,
+      "afterMedianMm": 0.103
+    },
+    {
+      "bone": "Third metacarpal bone.r",
+      "beforeMedianMm": 1.003,
+      "afterMedianMm": 0.117
+    },
+    {
+      "bone": "Third metatarsal bone.l",
+      "beforeMedianMm": 3.13,
+      "afterMedianMm": 1.918
+    },
+    {
+      "bone": "Third metatarsal bone.r",
+      "beforeMedianMm": 3.12,
+      "afterMedianMm": 1.85
+    },
+    {
+      "bone": "Third rib.l",
+      "beforeMedianMm": 1.316,
+      "afterMedianMm": 0.414
+    },
+    {
+      "bone": "Third rib.r",
+      "beforeMedianMm": 1.352,
+      "afterMedianMm": 0.11
+    },
+    {
+      "bone": "Thyroid cartilage",
+      "beforeMedianMm": 9.006,
+      "afterMedianMm": 10.289
+    },
+    {
+      "bone": "Tibia.l",
+      "beforeMedianMm": 2.817,
+      "afterMedianMm": 1.401
+    },
+    {
+      "bone": "Tibia.r",
+      "beforeMedianMm": 2.781,
+      "afterMedianMm": 1.233
+    },
+    {
+      "bone": "Trapezium bone.l",
+      "beforeMedianMm": 2.151,
+      "afterMedianMm": 0.071
+    },
+    {
+      "bone": "Trapezium bone.r",
+      "beforeMedianMm": 2.113,
+      "afterMedianMm": 0.108
+    },
+    {
+      "bone": "Trapezoid bone.l",
+      "beforeMedianMm": 1.099,
+      "afterMedianMm": 0.07
+    },
+    {
+      "bone": "Trapezoid bone.r",
+      "beforeMedianMm": 1.145,
+      "afterMedianMm": 0.128
+    },
+    {
+      "bone": "Triquetrum bone.l",
+      "beforeMedianMm": 2.004,
+      "afterMedianMm": 0.066
+    },
+    {
+      "bone": "Triquetrum bone.r",
+      "beforeMedianMm": 1.962,
+      "afterMedianMm": 0.12
+    },
+    {
+      "bone": "Twelfth rib.l",
+      "beforeMedianMm": 1.417,
+      "afterMedianMm": 0.068
+    },
+    {
+      "bone": "Twelfth rib.r",
+      "beforeMedianMm": 1.447,
+      "afterMedianMm": 0.107
+    },
+    {
+      "bone": "Ulna.l",
+      "beforeMedianMm": 1.399,
+      "afterMedianMm": 0.372
+    },
+    {
+      "bone": "Ulna.r",
+      "beforeMedianMm": 1.411,
+      "afterMedianMm": 0.391
+    },
+    {
+      "bone": "Upper canine.l",
+      "beforeMedianMm": 0.688,
+      "afterMedianMm": 0.055
+    },
+    {
+      "bone": "Upper canine.r",
+      "beforeMedianMm": 0.673,
+      "afterMedianMm": 0.108
+    },
+    {
+      "bone": "Upper first molar tooth.l",
+      "beforeMedianMm": 0.641,
+      "afterMedianMm": 0.052
+    },
+    {
+      "bone": "Upper first molar tooth.r",
+      "beforeMedianMm": 0.646,
+      "afterMedianMm": 0.061
+    },
+    {
+      "bone": "Upper first premolar.l",
+      "beforeMedianMm": 0.75,
+      "afterMedianMm": 0.056
+    },
+    {
+      "bone": "Upper first premolar.r",
+      "beforeMedianMm": 0.735,
+      "afterMedianMm": 0.083
+    },
+    {
+      "bone": "Upper lateral incisor.l",
+      "beforeMedianMm": 0.498,
+      "afterMedianMm": 0.071
+    },
+    {
+      "bone": "Upper lateral incisor.r",
+      "beforeMedianMm": 0.475,
+      "afterMedianMm": 0.077
+    },
+    {
+      "bone": "Upper medial incisor.l",
+      "beforeMedianMm": 0.5,
+      "afterMedianMm": 0.054
+    },
+    {
+      "bone": "Upper medial incisor.r",
+      "beforeMedianMm": 0.494,
+      "afterMedianMm": 0.099
+    },
+    {
+      "bone": "Upper second molar tooth.l",
+      "beforeMedianMm": 0.723,
+      "afterMedianMm": 0.057
+    },
+    {
+      "bone": "Upper second molar tooth.r",
+      "beforeMedianMm": 0.698,
+      "afterMedianMm": 0.064
+    },
+    {
+      "bone": "Upper second premolar.l",
+      "beforeMedianMm": 0.691,
+      "afterMedianMm": 0.059
+    },
+    {
+      "bone": "Upper second premolar.r",
+      "beforeMedianMm": 0.681,
+      "afterMedianMm": 0.073
+    },
+    {
+      "bone": "Vertebra C3",
+      "beforeMedianMm": 0.826,
+      "afterMedianMm": 0.159
+    },
+    {
+      "bone": "Vertebra C4",
+      "beforeMedianMm": 0.831,
+      "afterMedianMm": 0.127
+    },
+    {
+      "bone": "Vertebra C5",
+      "beforeMedianMm": 0.873,
+      "afterMedianMm": 0.163
+    },
+    {
+      "bone": "Vertebra C6",
+      "beforeMedianMm": 1.009,
+      "afterMedianMm": 0.172
+    },
+    {
+      "bone": "Vertebra C7",
+      "beforeMedianMm": 1.153,
+      "afterMedianMm": 0.191
+    },
+    {
+      "bone": "Vertebra L1",
+      "beforeMedianMm": 1.559,
+      "afterMedianMm": 0.193
+    },
+    {
+      "bone": "Vertebra L2",
+      "beforeMedianMm": 1.527,
+      "afterMedianMm": 0.201
+    },
+    {
+      "bone": "Vertebra L3",
+      "beforeMedianMm": 1.746,
+      "afterMedianMm": 0.206
+    },
+    {
+      "bone": "Vertebra L4",
+      "beforeMedianMm": 1.726,
+      "afterMedianMm": 0.213
+    },
+    {
+      "bone": "Vertebra L5",
+      "beforeMedianMm": 2.12,
+      "afterMedianMm": 0.245
+    },
+    {
+      "bone": "Vertebra T1",
+      "beforeMedianMm": 1.305,
+      "afterMedianMm": 0.211
+    },
+    {
+      "bone": "Vertebra T2",
+      "beforeMedianMm": 1.022,
+      "afterMedianMm": 0.219
+    },
+    {
+      "bone": "Vertebra T3",
+      "beforeMedianMm": 1.041,
+      "afterMedianMm": 0.207
+    },
+    {
+      "bone": "Vertebra T4",
+      "beforeMedianMm": 1.186,
+      "afterMedianMm": 0.206
+    },
+    {
+      "bone": "Vertebra T5",
+      "beforeMedianMm": 1.086,
+      "afterMedianMm": 0.224
+    },
+    {
+      "bone": "Vertebra T6",
+      "beforeMedianMm": 0.958,
+      "afterMedianMm": 0.209
+    },
+    {
+      "bone": "Vertebra T7",
+      "beforeMedianMm": 1.203,
+      "afterMedianMm": 0.2
+    },
+    {
+      "bone": "Vertebra T8",
+      "beforeMedianMm": 1.161,
+      "afterMedianMm": 0.141
+    },
+    {
+      "bone": "Vertebra T9",
+      "beforeMedianMm": 1.184,
+      "afterMedianMm": 0.187
+    },
+    {
+      "bone": "Vertebra T10",
+      "beforeMedianMm": 1.285,
+      "afterMedianMm": 0.176
+    },
+    {
+      "bone": "Vertebra T11",
+      "beforeMedianMm": 1.419,
+      "afterMedianMm": 0.186
+    },
+    {
+      "bone": "Vertebra T12",
+      "beforeMedianMm": 1.338,
+      "afterMedianMm": 0.193
+    },
+    {
+      "bone": "Vomer",
+      "beforeMedianMm": 0.604,
+      "afterMedianMm": 0.406
+    },
+    {
+      "bone": "Xiphoid process",
+      "beforeMedianMm": 0.782,
+      "afterMedianMm": 0.069
+    },
+    {
+      "bone": "Zygomatic bone.l",
+      "beforeMedianMm": 0.738,
+      "afterMedianMm": 0.065
+    },
+    {
+      "bone": "Zygomatic bone.r",
+      "beforeMedianMm": 0.693,
+      "afterMedianMm": 0.106
+    }
+  ]
+}
