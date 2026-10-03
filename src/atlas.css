@@ -400,6 +400,8 @@ body:has(.ax) .site-footer { display: none; }
 }
 .ax .point-label.active { border-color: var(--ax-gold); box-shadow: 0 0 0 3px rgba(234, 184, 92, .2); }
 .ax .point-label span { font-weight: 450; color: #f2dcb0; }
+/* A hover-only name: the pointer keeps its marker target underneath it. */
+.ax .point-label.peek { pointer-events: none; }
 
 /* Narrow desktop: keep the bottom row clear */
 @media (max-width: 1180px) and (min-width: 701px) {

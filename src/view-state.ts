@@ -112,6 +112,7 @@ export type ViewAction =
   | { type: "connective-only"; ids: string[] }
   | { type: "target"; value: ViewState["selectionTarget"] }
   | { type: "select"; selection: Selection; layer?: Layer; region?: ViewState["anatomyRegion"]; detail?: NonNullable<ViewState["detail"]> }
+  | { type: "pick"; selection: Selection }
   | { type: "detail"; detail: NonNullable<ViewState["detail"]> }
   | { type: "detail-close" }
   | { type: "compare"; name: string; ids: string[]; layers?: Layers }
@@ -291,6 +292,16 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         selectionReturn,
         isolated: Boolean(detail),
       };
+    }
+    case "pick": {
+      // A part clicked on the model is selected where it is. Systems, depth,
+      // region, cut, isolation and camera stay (the clicked part is already
+      // visible, so nothing is hidden), and an earlier return view is kept.
+      // A part outside the open detail takes the full "select" path instead.
+      const ids = a.selection.ids;
+      if (s.detail && !ids.every(id => s.detail!.ids.includes(id))) return s;
+      if (s.selection?.kind === a.selection.kind && s.selection.ids.length === ids.length && ids.every(id => s.selection!.ids.includes(id))) return s;
+      return { ...s, selection: a.selection, comparison: null };
     }
     case "detail": {
       const stage = a.detail.layers.organ ? 3 : Math.max(0, keys.findIndex(layer => a.detail.layers[layer]));

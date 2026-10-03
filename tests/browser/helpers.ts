@@ -44,3 +44,13 @@ export async function settledCamera(page:Page){
   let last='';
   await expect.poll(async()=>{const now=JSON.stringify((await snapshot(page))?.camera);const same=now===last;last=now;return same;},{intervals:[400,400,400,400,800]}).toBe(true);
 }
+// Screen positions of the acupoint markers currently drawn (facing the camera).
+// A click meant for tissue must stay clear of their larger pointer targets.
+export const markerScreenPoints=(page:Page,url:string)=>page.evaluate(async url=>{
+  const {_roots}=await import(/* @vite-ignore */url),canvas=document.querySelector('canvas')!,s=_roots.get(canvas).store.getState(),rect=canvas.getBoundingClientRect();
+  let mesh:any;s.scene.traverse((o:any)=>{if(o.isInstancedMesh&&o.userData.acupointMarkers)mesh=o;});
+  const points:{x:number;y:number}[]=[];if(!mesh)return points;
+  const matrix=s.camera.matrixWorld.clone(),v=s.camera.position.clone();
+  for(let i=0;i<mesh.count;i++){mesh.getMatrixAt(i,matrix);if(!matrix.elements[0])continue;v.setFromMatrixPosition(matrix).project(s.camera);points.push({x:rect.left+(v.x+1)*rect.width/2,y:rect.top+(1-v.y)*rect.height/2});}
+  return points;
+},url);

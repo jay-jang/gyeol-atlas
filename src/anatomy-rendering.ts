@@ -4,6 +4,11 @@ export const CONNECTIVE_COLOR = "#a9c3d1";
 import { Mesh, MeshStandardMaterial, Plane, Vector3, type Intersection } from "three";
 import type { AtlasProps } from "./Atlas";
 import type { Layer } from "./anatomy";
+import { releasedDragPress } from "./marker-picking.ts";
+
+// Releasing an orbit drag over the body is not a pick (see marker-picking.ts).
+export type SceneClick = { stopPropagation: () => void; object: Mesh; point: Vector3; intersections: Intersection[]; delta: number; nativeEvent: MouseEvent };
+export const releasedDrag = (event: SceneClick) => releasedDragPress(event.delta, (event.nativeEvent as PointerEvent).pointerType);
 
 export function clippingPlanes(layer: Layer, props: AtlasProps) {
   const planes: Plane[] = [];

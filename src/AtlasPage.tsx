@@ -154,6 +154,10 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const [loadingReference, setLoadingReference] = useState(false);
   const [comparisonNotice, setComparisonNotice] = useState("");
   const [separateDetailIds, setSeparateDetailIds] = useState<string[]>([]);
+  // The selection made in place on the model (placeStructure), kept through
+  // its clearing so the picture glides back too; another selection or an
+  // explicit camera action ends it.
+  const [placed, setPlaced] = useState("");
   useEffect(() => { setComparisonNotice(""); setSeparateDetailIds([]); }, [state.sex, state.pointId]);
   const { query, region, meridian, concept, onlySaved, bodyRegion, catalogue } = state.filters;
   const setFilter = (value: Partial<ViewState["filters"]>) => dispatch({ type: "filters", value });
@@ -175,6 +179,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
       return;
     }
     setAction((a) => ({ kind, tick: a.tick + 1 }));
+    setPlaced("");
     if (kind === "focus" && state.markers === "hidden") dispatch({ type: "markers", value: "selected" });
   };
   const restoreOverviewPose = (pose: NonNullable<ViewState["camera"]>) => {
@@ -277,6 +282,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     }
   }, [sourceKey, ready, selectionKey, state.comparison]);
   const focusedSelection = useRef(selectionKey);
+  useEffect(() => { if (selectionKey && selectionKey !== placed) setPlaced(""); }, [selectionKey, placed]);
   useEffect(() => {
     if (!selectionKey) { focusedSelection.current = ""; return; }
     if (focusedSelection.current === selectionKey || !ready || state.comparison) return;
@@ -409,14 +415,23 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
       selection: { kind: "structure", ids: [s.id], name: s.label || s.name },
     });
   };
+  // A part clicked on the model is selected where it is, without re-framing:
+  // a near miss beside an acupoint must not move the camera. The card's
+  // "확대" frames it on request; the picture only slides aside for the card.
+  const placeStructure = (s: ReturnType<typeof structuresForSex>[number]) => {
+    if (state.detail && !state.detail.ids.includes(s.id)) { pickStructure(s); return; }
+    focusedSelection.current = s.id;
+    setPlaced(s.id);
+    dispatch({ type: "pick", selection: { kind: "structure", ids: [s.id], name: s.label || s.name } });
+  };
   // The 3D scene receives stable callbacks that always call the latest handlers,
   // so UI-only updates never make it redraw.
-  const latest = useRef({ select, pickStructure, sex: state.sex });
-  latest.current = { select, pickStructure, sex: state.sex };
+  const latest = useRef({ select, placeStructure, sex: state.sex });
+  latest.current = { select, placeStructure, sex: state.sex };
   const onScenePoint = useCallback((p: Point) => latest.current.select(p), []);
   const onSceneStructure = useCallback((sid: string) => {
     const item = structureForSexId(structures, latest.current.sex, sid);
-    if (item) latest.current.pickStructure(item);
+    if (item) latest.current.placeStructure(item);
   }, []);
 
   const depthName = (depth: number) => layerNames[stages[depthStage(depth)].layer];
@@ -475,6 +490,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             sex={state.sex}
             anatomyRegion={state.anatomyRegion}
             connective={state.connective}
+            glideFraming={placed !== "" && (!selectionKey || selectionKey === placed)}
           />
         </Suspense>
       </section>

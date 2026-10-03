@@ -8,7 +8,7 @@ import { connectiveKindOf, dissectionLayerOpacity, layerKeys, structures, type L
 import type { AtlasProps } from "./Atlas";
 import { musclePeelOpacity } from "./dissection";
 import { musclePeelRanks } from "./muscle-peel";
-import { CONNECTIVE_COLOR, clippingPlanes, configurePicking } from "./anatomy-rendering";
+import { CONNECTIVE_COLOR, clippingPlanes, configurePicking, releasedDrag, type SceneClick } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { applyFemaleArmRegistration } from "./female-arm-registration";
 import { applyFemaleFootRegistration } from "./female-foot-registration";
@@ -178,8 +178,8 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
   useEffect(() => { if (object) { layerKeys.forEach(props.onReady); props.onLoading(false); } }, [object, props.onReady, props.onLoading]);
   if (error) throw error;
   if (!object) return <Html center><div className="model-loading">참조 모델 불러오는 중</div></Html>;
-  return <primitive object={object} onClick={(event: { stopPropagation: () => void; object: Mesh; intersections: Intersection[] }) => {
-    if (!partById.has(event.object.name)) return;
+  return <primitive object={object} onClick={(event: SceneClick) => {
+    if (releasedDrag(event) || !partById.has(event.object.name)) return;
     event.stopPropagation();
     props.onStructure(selectionHitId(event.object.name, event.intersections, props.selectionIds, props.contextDimmed));
   }} />;

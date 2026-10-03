@@ -12,7 +12,7 @@ import {
   memo,
   type ReactNode,
 } from "react";
-import { Canvas, useThree, useFrame, type ThreeEvent } from "@react-three/fiber";
+import { Canvas, events as pointerEvents, useThree, useFrame, type RootStore, type ThreeEvent } from "@react-three/fiber";
 import { Html, OrbitControls, useGLTF } from "@react-three/drei";
 import {
   Mesh,
@@ -28,6 +28,9 @@ import {
   Matrix4,
   Quaternion,
   Color,
+  Group,
+  MeshBasicMaterial,
+  type Raycaster,
   type Camera,
   type Intersection,
   type Object3D,
@@ -46,13 +49,14 @@ import maleRegistration from "../data/catalog/male-registration.json";
 import { movementKeys, translateView, type MoveDirection } from "./navigation";
 import { LoaderCircle, TriangleAlert } from "lucide-react";
 import PackedAtlas from "./PackedAtlas";
-import { CONNECTIVE_COLOR, clippingPlanes, configurePicking } from "./anatomy-rendering";
+import { CONNECTIVE_COLOR, clippingPlanes, configurePicking, releasedDrag, type SceneClick } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { framedDistance } from "./camera-framing";
 import { musclePeelRanks } from "./muscle-peel";
 import { musclePeelOpacity } from "./dissection";
 import { selectionOpacity, selectionHitId, opacityWritesDepth } from "./selection-context";
 import { besideMarker, type ScreenSize } from "./marker-label";
+import { MARKER_HIT_PX, hitRadius, markersFirst, nearestMarker, releasedDragPress, trackPresses } from "./marker-picking";
 
 const structureById = new Map(structures.map(s => [s.id, s]));
 
@@ -74,7 +78,8 @@ function markerFaces(normal: Vector3 | undefined, position: Vector3, eye: Vector
 }
 // `outward` is a world-X step whose projection picks the label's screen side,
 // so bilateral labels still point away from the body from front and back.
-function MarkerLabel({ outward, normal, children }: { outward: number; normal?: Vector3; children: ReactNode }) {
+const passThrough = { pointerEvents: "none" } as const;
+function MarkerLabel({ outward, normal, peek = false, children }: { outward: number; normal?: Vector3; peek?: boolean; children: ReactNode }) {
   const invalidate = useThree(state => state.invalidate);
   const label = useRef<HTMLDivElement | null>(null);
   const measure = useCallback((node: HTMLDivElement | null) => {
@@ -93,28 +98,52 @@ function MarkerLabel({ outward, normal, children }: { outward: number; normal?: 
     const away = toCanvas(labelAnchor, camera, size)[0] - marker[0];
     const node = label.current;
     return besideMarker(marker, Math.abs(away) < 1 ? outward : away,
-      { width: node?.offsetWidth ?? 0, height: node?.offsetHeight ?? 0 }, size);
-  }, [outward, normal]);
-  return <Html center zIndexRange={[20, 0]} ref={measure} calculatePosition={position}>{children}</Html>;
+      { width: node?.offsetWidth ?? 0, height: node?.offsetHeight ?? 0 }, size, peek ? MARKER_HIT_PX.hovered + 4 : 10);
+  }, [outward, normal, peek]);
+  // A hover-only name must let the pointer keep the marker underneath it.
+  return <Html center zIndexRange={[20, 0]} ref={measure} calculatePosition={position} style={peek ? passThrough : undefined}>{children}</Html>;
 }
 
 type Marker = { point: Point; key: string; occurrence: number; position: Vector3; normal: Vector3; side: string };
 const markerCapacity = anchors.length;
 const markerMatrix = new Matrix4(), markerScale = new Vector3(), markerQuaternion = new Quaternion(), markerColor = new Color();
+const markerColorOf = (m: Marker, selectedId: string) => m.point.id === selectedId ? "#e1ad5a" : meridians.find((x) => x.id === m.point.meridian)!.color;
 // All acupoint markers share one instanced draw call. Each keeps a constant
 // screen size; back-facing points (and filtered ones) get zero scale, while
-// the chosen point is larger, gold and visible from every direction.
+// the chosen point is larger, gold and visible from every direction. The
+// pointer target is a wider screen circle (marker-picking.ts), shown as a halo
+// around the hovered point, and it wins over the tissue under the pointer.
 function Markers({ markers, selectedId, labels, onSelect }: { markers: Marker[]; selectedId: string; labels: boolean; onSelect: (p: Point) => void }) {
   const mesh = useRef<InstancedMesh>(null);
+  const halo = useRef<Group>(null);
   const shown = useRef<boolean[]>([]);
   const [hover, setHover] = useState<number | null>(null);
   const { camera, size, gl, invalidate } = useThree();
+  const positions = useMemo(() => markers.map((m) => m.position), [markers]);
+  const pointer = useRef({ type: "mouse", hover: null as number | null, positions, camera, height: size.height });
+  pointer.current = { ...pointer.current, hover, positions, camera, height: size.height };
+  useEffect(() => {
+    // Touch and pen get the larger target; the click's own ray reads it.
+    const canvas = gl.domElement;
+    const record = (event: PointerEvent) => { pointer.current.type = event.pointerType; };
+    canvas.addEventListener("pointerdown", record, true);
+    canvas.addEventListener("pointermove", record, true);
+    return () => { canvas.removeEventListener("pointerdown", record, true); canvas.removeEventListener("pointermove", record, true); };
+  }, [gl]);
+  const raycast = useCallback((raycaster: Raycaster, intersects: Intersection[]) => {
+    const instances = mesh.current, { positions, camera, height, hover, type } = pointer.current;
+    if (!instances || !positions.length) return;
+    const unit = 2 * Math.tan(((camera as PerspectiveCamera).fov * Math.PI) / 360) / height;
+    const hit = nearestMarker(raycaster.ray.origin, raycaster.ray.direction, positions, shown.current, unit,
+      (i) => hitRadius(type, hover === i));
+    if (hit) intersects.push({ distance: hit.depth, point: raycaster.ray.at(hit.depth, new Vector3()), object: instances, instanceId: hit.index } as Intersection);
+  }, []);
   useLayoutEffect(() => {
     const instances = mesh.current;
     if (!instances) return;
     instances.count = markers.length;
     markers.forEach((m, i) => {
-      instances.setColorAt(i, markerColor.set(m.point.id === selectedId ? "#e1ad5a" : meridians.find((x) => x.id === m.point.meridian)!.color));
+      instances.setColorAt(i, markerColor.set(markerColorOf(m, selectedId)));
       instances.setMatrixAt(i, markerMatrix.makeScale(0, 0, 0));
     });
     if (instances.instanceColor) instances.instanceColor.needsUpdate = true;
@@ -125,6 +154,13 @@ function Markers({ markers, selectedId, labels, onSelect }: { markers: Marker[];
     invalidate();
   }, [markers, selectedId, gl, invalidate]);
   useEffect(() => setHover(null), [markers]);
+  useEffect(() => {
+    const ring = halo.current;
+    if (!ring || hover === null || !markers[hover]) return;
+    const color = markerColorOf(markers[hover], selectedId);
+    ring.children.forEach((child) => ((child as Mesh).material as MeshBasicMaterial).color.set(color));
+  }, [hover, markers, selectedId]);
+  useEffect(() => () => { document.body.style.cursor = "auto"; }, []);
   useFrame(() => {
     const instances = mesh.current;
     if (!instances) return;
@@ -133,12 +169,19 @@ function Markers({ markers, selectedId, labels, onSelect }: { markers: Marker[];
       const active = m.point.id === selectedId;
       const visible = active || markerFaces(m.normal, m.position, camera.position);
       shown.current[i] = visible;
-      const pixels = active ? 6 : hover === i ? 5 : 3.2;
+      const pixels = active ? 6 : hover === i ? 6 : 3.2;
       markerScale.setScalar(visible ? camera.position.distanceTo(m.position) * tangent * pixels : 0);
       instances.setMatrixAt(i, markerMatrix.compose(m.position, markerQuaternion, markerScale));
     });
     instances.instanceMatrix.needsUpdate = true;
-    instances.computeBoundingSphere();
+    // The halo faces the camera and marks the hovered point's whole target.
+    const ring = halo.current, hovered = hover === null ? undefined : markers[hover];
+    if (!ring) return;
+    ring.visible = Boolean(hovered && shown.current[hover!]);
+    if (!hovered || !ring.visible) return;
+    ring.position.copy(hovered.position);
+    ring.quaternion.copy(camera.quaternion);
+    ring.scale.setScalar(camera.position.distanceTo(hovered.position) * tangent * hitRadius(pointer.current.type, true));
   });
   const pick = (e: ThreeEvent<PointerEvent | MouseEvent>) => e.instanceId !== undefined && shown.current[e.instanceId] ? e.instanceId : null;
   return (
@@ -148,7 +191,15 @@ function Markers({ markers, selectedId, labels, onSelect }: { markers: Marker[];
         args={[undefined, undefined, markerCapacity]}
         renderOrder={20}
         frustumCulled={false}
-        onClick={(e) => { const i = pick(e); if (i === null) return; e.stopPropagation(); onSelect(markers[i].point); }}
+        raycast={raycast}
+        userData={{ acupointMarkers: true }}
+        onClick={(e) => {
+          const i = pick(e);
+          if (i === null) return;
+          // The marker was under the pointer: nothing behind it is picked.
+          e.stopPropagation();
+          if (!releasedDragPress(e.delta, (e.nativeEvent as PointerEvent).pointerType)) onSelect(markers[i].point);
+        }}
         onPointerMove={(e) => {
           const i = pick(e);
           if (i === null) return;
@@ -161,16 +212,32 @@ function Markers({ markers, selectedId, labels, onSelect }: { markers: Marker[];
         <sphereGeometry args={[1, 14, 10]} />
         <meshBasicMaterial depthTest={false} transparent depthWrite={false} toneMapped={false} />
       </instancedMesh>
+      <group ref={halo} visible={false} renderOrder={19}>
+        <mesh renderOrder={19}>
+          <circleGeometry args={[1, 40]} />
+          <meshBasicMaterial depthTest={false} transparent opacity={0.16} depthWrite={false} toneMapped={false} />
+        </mesh>
+        <mesh renderOrder={19}>
+          <ringGeometry args={[0.9, 1, 40]} />
+          <meshBasicMaterial depthTest={false} transparent opacity={0.75} depthWrite={false} toneMapped={false} />
+        </mesh>
+      </group>
       {markers.map((m, i) => {
         const active = m.point.id === selectedId;
-        return ((active && m.side !== "왼쪽" && m.occurrence === 0) || hover === i || (labels && m.occurrence === 0)) && (
+        const persistent = (active && m.side !== "왼쪽" && m.occurrence === 0) || (labels && m.occurrence === 0);
+        return (persistent || hover === i) && (
           <group key={m.key} position={m.position}>
-            <MarkerLabel outward={active ? -0.05 : 0.05} normal={active ? undefined : m.normal}>
+            <MarkerLabel outward={active ? -0.05 : 0.05} normal={active ? undefined : m.normal} peek={!persistent}>
+              {/* A hover-only name lets the pointer keep its target underneath;
+                  shown names are buttons whose events stay off the 3D scene. */}
               <button
-                className={`point-label ${active ? "active" : ""}`}
+                className={`point-label ${active ? "active" : ""} ${persistent ? "" : "peek"}`}
                 title={`${m.point.name} ${m.side}`}
                 aria-label={`${m.point.name} ${m.point.id} ${m.side} 선택`}
-                onClick={() => onSelect(m.point)}
+                tabIndex={persistent ? undefined : -1}
+                onPointerDown={(e) => e.stopPropagation()}
+                onPointerMove={(e) => e.stopPropagation()}
+                onClick={(e) => { e.stopPropagation(); onSelect(m.point); }}
               >
                 {m.point.id}
                 {active && <span>{m.point.name}</span>}
@@ -210,6 +277,9 @@ type Props = {
   sex: "male" | "female";
   anatomyRegion: "whole" | "head" | "upper-body" | "lower-body" | "upper-limb" | "lower-limb" | "chest" | "abdomen" | "pelvis";
   connective: boolean;
+  // The selection was made in place on the model: slide the picture aside for
+  // its card (and back) instead of jumping.
+  glideFraming: boolean;
 };
 export type AtlasProps = Props;
 const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
@@ -371,7 +441,8 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
   return (
     <primitive
       object={object}
-      onClick={(e: { stopPropagation: () => void; object: Mesh; intersections: Intersection[] }) => {
+      onClick={(e: SceneClick) => {
+        if (releasedDrag(e)) return;
         e.stopPropagation();
         const id = structureById.has(e.object.name)
           ? e.object.name
@@ -447,8 +518,8 @@ function SupplementModel({ url, layer, entries, color, connective = false, signa
       }),
     [object],
   );
-  return <primitive object={object} onClick={(event: { stopPropagation: () => void; object: Mesh; point: Vector3; intersections: Intersection[] }) => {
-    if (props.selectionTarget === "skin") return;
+  return <primitive object={object} onClick={(event: SceneClick) => {
+    if (releasedDrag(event) || props.selectionTarget === "skin") return;
     if (props.cutaway > 0 && event.point.z > 0.22 - props.cutaway * 0.44) return;
     const id = event.object.name;
     if (!structureById.has(id)) return;
@@ -529,9 +600,9 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
   }, [object, layer, modelName, props.anatomyRegion, props.isolated, props.layerOpacity, props.contextDimmed, props.selectionIds, props.detailIds, props.layers, props.dissection, props.displayMode, props.cutaway, props.selectionTarget, gl, invalidate]);
   useEffect(() => { props.onReady(layer); }, [layer, object, props.onReady]);
   useEffect(() => () => object.traverse(item => { if (item instanceof Mesh && item.material instanceof MeshStandardMaterial) item.material.dispose(); }), [object]);
-  return <primitive object={object} onClick={(event: { stopPropagation: () => void; object: Mesh; intersections: Intersection[] }) => {
+  return <primitive object={object} onClick={(event: SceneClick) => {
     const id = event.object.name;
-    if (!structureById.has(id)) return;
+    if (releasedDrag(event) || !structureById.has(id)) return;
     event.stopPropagation();
     props.onStructure(selectionHitId(id, event.intersections, props.selectionIds, props.contextDimmed));
   }} />;
@@ -577,15 +648,39 @@ function Scene(props: Props) {
   const observationRight = cardSide === "right" ? selectionCard!.left - 16 : mobile ? size.width - 56 : size.width;
   const observationWidth = Math.max(1, observationRight - observationLeft);
   const framed = mobile || hasSelection || limbScope;
-  useEffect(() => {
-    const cam = camera as PerspectiveCamera;
-    if (framed) cam.setViewOffset(size.width, size.height,
-      size.width / 2 - (observationLeft + observationWidth / 2),
-      size.height / 2 - (observationTop + observationBottom) / 2, size.width, size.height);
+  // The projection centre follows the free area beside the tool overlays. The
+  // shift is a pure image translation, so it can glide without moving the camera.
+  const viewOffset = useRef({ x: 0, y: 0, from: [0, 0], to: [0, 0], start: 0, width: 0, height: 0, mobile, limbScope });
+  const applyViewOffset = useCallback((progress: number) => {
+    const o = viewOffset.current, cam = camera as PerspectiveCamera;
+    const eased = 1 - (1 - progress) ** 3;
+    o.x = o.from[0] + (o.to[0] - o.from[0]) * eased;
+    o.y = o.from[1] + (o.to[1] - o.from[1]) * eased;
+    if (o.x || o.y || framed) cam.setViewOffset(o.width, o.height, o.x, o.y, o.width, o.height);
     else cam.clearViewOffset();
     cam.updateProjectionMatrix();
+  }, [camera, framed]);
+  useEffect(() => {
+    const o = viewOffset.current;
+    // Only the selection card's arrival, size or departure glides; a resize,
+    // layout breakpoint or limb view comes with its own camera framing.
+    const resized = o.width !== size.width || o.height !== size.height || o.mobile !== mobile || o.limbScope !== limbScope;
+    Object.assign(o, { width: size.width, height: size.height, mobile, limbScope, from: [o.x, o.y] });
+    o.to = framed ? [size.width / 2 - (observationLeft + observationWidth / 2), size.height / 2 - (observationTop + observationBottom) / 2] : [0, 0];
+    const still = resized || !props.glideFraming || matchMedia("(prefers-reduced-motion: reduce)").matches;
+    o.start = still ? 0 : performance.now();
+    if (still) applyViewOffset(1);
     invalidate();
-  }, [camera, framed, size.width, size.height, observationTop, observationBottom, observationLeft, observationWidth, invalidate]);
+  }, [applyViewOffset, framed, mobile, limbScope, size.width, size.height, observationTop, observationBottom, observationLeft, observationWidth, props.glideFraming, invalidate]);
+  useFrame(() => {
+    const o = viewOffset.current;
+    if (!o.start) return;
+    const progress = Math.min(1, (performance.now() - o.start) / 320);
+    applyViewOffset(progress);
+    if (progress < 1) invalidate();
+    else o.start = 0;
+  });
+  useEffect(() => trackPresses(gl.domElement), [gl]);
   useEffect(() => {
     const canvas = gl.domElement;
     canvas.tabIndex = 0;
@@ -637,6 +732,10 @@ function Scene(props: Props) {
   const viewportKey = `${window.innerWidth}/${window.innerHeight}`;
   const framedViewport = useRef(viewportKey);
   const framedSelection = useRef(hasSelection);
+  // The selection a camera action last framed. A part picked in place on the
+  // model keeps the user's camera, so card measurements must not frame it.
+  const selectionKey = props.selectionIds.join("|");
+  const framedFor = useRef<string | null>(null);
   const framedMobile = useRef(mobile);
   const restoringLayout = useRef(Boolean(props.initialPose));
   const poseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -724,7 +823,7 @@ function Scene(props: Props) {
     if (!pendingAction && restoringLayout.current && !refitLimb && !refitOverview && !refitSelection) {
       framedLayout.current = layoutKey; return;
     }
-    if (!pendingAction && !refitLimb && !refitOverview && !refitSelection && (!hasSelection || !layoutChanged)) { framedLayout.current = layoutKey; return; }
+    if (!pendingAction && !refitLimb && !refitOverview && !refitSelection && (!hasSelection || !layoutChanged || framedFor.current !== selectionKey)) { framedLayout.current = layoutKey; return; }
     const detailContext = props.detailIds.length > 0 && !props.isolated;
     const kind = pendingAction ? action.kind : refitLimb ? "anatomy-region" : refitOverview ? "fit" : props.highlight.length && !props.isolated ? "comparison" : detailContext ? "fit" : "structure";
     const selectionPreset = hasSelection && ["front", "back", "side", "reset"].includes(kind);
@@ -852,11 +951,12 @@ function Scene(props: Props) {
     }
     executed.current = action.tick;
     framedLayout.current = layoutKey;
+    if (hasSelection && (kind === "structure" || kind === "comparison" || kind === "fit" || selectionPreset)) framedFor.current = selectionKey;
     if (kind !== "restore") restoringLayout.current = false;
     c.update();
     emitPose();
     invalidate();
-  }, [action, camera, invalidate, scene, revision, emitPose, props.anatomyRegion, layoutKey, hasSelection, selectionCardTop]);
+  }, [action, camera, invalidate, scene, revision, emitPose, props.anatomyRegion, layoutKey, hasSelection, selectionKey, selectionCardTop]);
   return (
     <>
       <color attach="background" args={["#07141c"]} />
@@ -918,6 +1018,8 @@ function Scene(props: Props) {
 const CANVAS_CAMERA = { position: [0, 1, 3.0] as [number, number, number], fov: 39, near: 0.01, far: 20 };
 const CANVAS_DPR: [number, number] = [1, 1.6];
 const CANVAS_GL = { antialias: true, localClippingEnabled: true };
+// Acupoint markers are drawn above the body, so their hits go first.
+const CANVAS_EVENTS = (store: RootStore) => ({ ...pointerEvents(store), filter: markersFirst });
 export default memo(function Atlas(props: Props) {
   const [attempt, setAttempt] = useState(0);
   return (
@@ -932,6 +1034,7 @@ export default memo(function Atlas(props: Props) {
       <Canvas
         camera={CANVAS_CAMERA}
         frameloop="demand"
+        events={CANVAS_EVENTS}
         dpr={CANVAS_DPR}
         gl={CANVAS_GL}
         fallback={

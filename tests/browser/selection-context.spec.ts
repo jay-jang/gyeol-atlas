@@ -1,5 +1,5 @@
 import {test,expect,type Page} from '@playwright/test';
-import {ready,openTool,closeTool,snapshot} from './helpers';
+import {ready,openTool,closeTool,snapshot,markerScreenPoints} from './helpers';
 import {detailProjection} from './detail-projection';
 import fs from 'node:fs';
 
@@ -33,7 +33,8 @@ async function selectedPixels(page:Page,url:string){
   },png.toString('base64'));
 }
 
-const overlappingRay=(page:Page,url:string,id:string)=>page.evaluate(async({url,id})=>{
+// Acupoint markers win a click near them, so the tissue ray stays clear of them.
+const overlappingRay=async(page:Page,url:string,id:string)=>{const markers=await markerScreenPoints(page,url);return page.evaluate(async({url,id,markers})=>{
   const {_roots}=await import(/* @vite-ignore */url),canvas=document.querySelector('canvas')!,s=_roots.get(canvas).store.getState(),rect=canvas.getBoundingClientRect(),meshes:any[]=[];
   const ids=new Set((canvas.dataset.visibleStructureIds||'').split(','));
   s.scene.traverseVisible((m:any)=>{if(m.isMesh&&(ids.has(m.name)||ids.has(m.parent?.name)))meshes.push(m);});
@@ -41,9 +42,11 @@ const overlappingRay=(page:Page,url:string,id:string)=>page.evaluate(async({url,
   for(let y=-4;y<=4;y++)for(let x=-4;x<=4;x++){
     const ndc={x:mid.x+x*.025,y:mid.y+y*.025};s.raycaster.setFromCamera(ndc,s.camera);
     const hits=s.raycaster.intersectObjects(meshes,false),match=(h:any)=>h.object.name===id||h.object.parent?.name===id;
-    if(hits.some(match)&&!match(hits[0]))return {x:rect.left+(ndc.x+1)*rect.width/2,y:rect.top+(1-ndc.y)*rect.height/2,front:ids.has(hits[0].object.name)?hits[0].object.name:hits[0].object.parent.name};
+    const px=rect.left+(ndc.x+1)*rect.width/2,py=rect.top+(1-ndc.y)*rect.height/2;
+    if(markers.some(m=>Math.hypot(m.x-px,m.y-py)<24))continue;
+    if(hits.some(match)&&!match(hits[0]))return {x:px,y:py,front:ids.has(hits[0].object.name)?hits[0].object.name:hits[0].object.parent.name};
   }return null;
-},{url,id});
+},{url,id,markers});};
 
 for(const [sex,id] of [['male','FMA7204'],['female','HRAF0432']] as const)test(`${sex}: context aid reveals a selected internal organ without moving or isolating anatomy`,async({page},testInfo)=>{
   test.setTimeout(150000);let url='';const errors:string[]=[];
