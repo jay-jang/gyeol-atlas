@@ -231,18 +231,20 @@ function Markers({ markers, selectedId, labels, overTissue, onSelect }: { marker
             <MarkerLabel outward={active ? -0.05 : 0.05} normal={active ? undefined : m.normal} peek={!persistent}
               gap={persistent ? 10 : hitRadius(pointer.current.type, true, overTissue) + 4}>
               {/* A hover-only name lets the pointer keep its target underneath;
-                  shown names are buttons whose events stay off the 3D scene. */}
+                  shown names are buttons whose events stay off the 3D scene.
+                  On the body each point reads by its name (중완), not its
+                  code (CV12); the code stays in the tooltip and search. */}
               <button
                 className={`point-label ${active ? "active" : ""} ${persistent ? "" : "peek"}`}
-                title={`${m.point.name} ${m.side}`}
+                data-point-id={m.point.id}
+                title={`${m.point.name} ${m.point.id} ${m.side}`}
                 aria-label={`${m.point.name} ${m.point.id} ${m.side} 선택`}
                 tabIndex={persistent ? undefined : -1}
                 onPointerDown={(e) => e.stopPropagation()}
                 onPointerMove={(e) => e.stopPropagation()}
                 onClick={(e) => { e.stopPropagation(); onSelect(m.point); }}
               >
-                {m.point.id}
-                {active && <span>{m.point.name}</span>}
+                {m.point.name}
               </button>
             </MarkerLabel>
           </group>

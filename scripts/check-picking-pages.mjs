@@ -5,6 +5,7 @@ import { PerspectiveCamera, Vector3 } from 'three';
 import fs from 'node:fs';
 const origin = process.env.PAGES_ORIGIN || 'https://jay-jang.github.io/gyeol-atlas/';
 const anchors = JSON.parse(fs.readFileSync('data/anchors.json', 'utf8'));
+const names = new Map(JSON.parse(fs.readFileSync('data/points.json', 'utf8')).map((p) => [p.id, p.name]));
 const browser = await chromium.launch({ headless: true, args: ['--no-sandbox', '--use-gl=angle', '--use-angle=metal', '--ignore-gpu-blocklist'] });
 const results = {};
 const snap = (page) => page.evaluate(() => JSON.parse(sessionStorage.getItem('gyeol-view-v2') || 'null'));
@@ -34,12 +35,13 @@ const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
   await page.mouse.move(m.x + 18, m.y); await page.waitForTimeout(200);
   const cold = await page.locator('.point-label').count();
   await page.mouse.move(m.x + 11, m.y, { steps: 3 }); await page.waitForTimeout(200);
-  const hovered = await page.locator('.point-label.peek').textContent().catch(() => null);
+  const hovered = await page.locator('.point-label.peek').getAttribute('data-point-id').catch(() => null);
+  const hoveredText = await page.locator('.point-label.peek').textContent().catch(() => null);
   await page.mouse.move(m.x + 20, m.y, { steps: 3 }); await page.waitForTimeout(200);
-  const kept = await page.locator('.point-label.peek').textContent().catch(() => null);
+  const kept = await page.locator('.point-label.peek').getAttribute('data-point-id').catch(() => null);
   await page.mouse.down(); await page.mouse.up(); await page.waitForTimeout(600);
   const picked = await snap(page);
-  results.desktopHover = { marker: m.id, gapPx: Math.round(m.gap), cold, hovered, kept, pointId: picked.pointId, selection: picked.selection, cameraSame: same(picked.camera, before.camera), layersSame: same(picked.layers, before.layers) };
+  results.desktopHover = { marker: m.id, gapPx: Math.round(m.gap), cold, hovered, hoveredText, kept, pointId: picked.pointId, selection: picked.selection, cameraSame: same(picked.camera, before.camera), layersSame: same(picked.layers, before.layers) };
   // Tissue far from every anchor: selected in place.
   const q = await project(page, false);
   const spots = [];
@@ -83,7 +85,8 @@ const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 results.origin = origin; results.checkedAt = new Date().toISOString();
 fs.writeFileSync('docs/anatomy-alignment/picking-pages.json', JSON.stringify(results, null, 2) + '\n');
 console.log(JSON.stringify(results));
-const failed = results.desktopHover.cold !== 0 || results.desktopHover.kept !== results.desktopHover.marker || results.desktopHover.pointId !== results.desktopHover.marker
+const failed = results.desktopHover.cold !== 0 || results.desktopHover.kept !== results.desktopHover.marker
+  || results.desktopHover.hoveredText?.trim() !== names.get(results.desktopHover.marker) || results.desktopHover.pointId !== results.desktopHover.marker
   || !results.desktopHover.cameraSame || !results.desktopTissue?.distanceSame || !results.desktopTissue?.layersSame || results.desktopDrag.selection
   || results.touch.pointId !== results.touch.marker || !results.touch.cameraSame || results.desktopErrors.length || results.touch.errors.length;
 if (failed) process.exitCode = 1;

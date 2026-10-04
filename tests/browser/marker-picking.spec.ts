@@ -1,5 +1,6 @@
 import {test,expect,type Page} from '@playwright/test';
 import {ready,snapshot,settledCamera,markerScreenPoints} from './helpers';
+import points from '../../data/points.json' with {type:'json'};
 
 // Clicking an acupoint must not fall through to the tissue under it and
 // re-frame the scene, and a part clicked on purpose is selected in place.
@@ -53,11 +54,13 @@ test('a near miss picks the acupoint, a drag is not a pick, and tissue is select
   await page.mouse.move(marker.x+11,marker.y,{steps:3});
   const label=page.locator('.point-label.peek');
   await expect(label).toHaveCount(1);
-  const id=(await label.textContent())!.trim();
+  const id=(await label.getAttribute('data-point-id'))!;
+  // The body shows the point's name, not its code.
+  await expect(label).toHaveText(points.find(p=>p.id===id)!.name);
   await page.screenshot({path:'docs/ui-renewal/marker-hover-target.png',clip:{x:marker.x-110,y:marker.y-70,width:220,height:140}});
   // Once hovered, the target widens: drifting to 20px keeps it, and a click there selects it.
   await page.mouse.move(marker.x+20,marker.y,{steps:3});
-  await expect(label).toHaveText(id);
+  await expect(label).toHaveAttribute('data-point-id',id);
   await page.mouse.down();await page.mouse.up();
   await expect.poll(async()=>(await snapshot(page)).pointId).toBe(id);
   let s=await snapshot(page);
