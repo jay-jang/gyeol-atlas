@@ -1,0 +1,3039 @@
+{
+ "version": 1,
+ "createdBy": "scripts/female-transport/fit.py",
+ "config": {
+  "grid": 0.02,
+  "bending": 0.01,
+  "sigma": 0.03,
+  "iterations": [
+   0.05,
+   0.025,
+   0.015
+  ],
+  "skinSigma": 0.006,
+  "skinVoxel": 0.006,
+  "skinMaxResidual": 0.025,
+  "weight": {
+   "native": 1.0,
+   "skin": 0.4,
+   "eye": 0.6,
+   "organ": 0.08,
+   "borrowed": 0.1
+  },
+  "outsideMm": 2.0,
+  "snapMm": 6.0,
+  "seed": 7
+ },
+ "inputs": {
+  "female-scene/geometry.bin": "99a91c49f3194ffa88d321007ed5628af0b5989af34fecf47dd5d26474ea71ce",
+  "female-scene/index.json": "437bff833c7959b952593611553dc4ca2e99385101c958a35b3750dce9fb27f9",
+  "male-scene/geometry.bin": "db65c7cf994a14f374bdeac1f71c88606b783ab55413435f6398f1d80ebeb116",
+  "male-scene/index.json": "e9810243dab2085ebe34bdc52f15c48ad2e8b124f102ef6e757f030eb69894bc",
+  "female-skin-points.bin": "a26006ede1ae12b92c1712239c72fdaa7ab64453664c8ba69a8f570b89af95b5",
+  "male-skin-points.bin": "38eac96c2f66a871d8d4db4c52504cdb546f873fbae73a29d2c35ed170a5d713"
+ },
+ "field": {
+  "path": ".cache/female-transport/field.npz",
+  "sha256": "87b7b784f170604d2cb7218f08b9d7647525a5435875abe796abd74e6d81a817"
+ },
+ "guidesExcluded": {
+  "crosses the female skin": [
+   "Distal phalanx of left big toe",
+   "Distal phalanx of left little toe",
+   "Distal phalanx of left thumb",
+   "Distal phalanx of right little toe",
+   "Frontal bone",
+   "Left calcaneus",
+   "Left fifth metatarsal bone",
+   "Left parietal bone",
+   "Middle phalanx of left little toe",
+   "Middle phalanx of right little toe",
+   "Occipital bone",
+   "Proximal phalanx of left little toe",
+   "Proximal phalanx of right index finger",
+   "Proximal phalanx of right little toe",
+   "Right calcaneus",
+   "Right fifth metacarpal bone",
+   "Right fifth metatarsal bone",
+   "Right parietal bone",
+   "Right temporal bone"
+  ],
+  "borrowed thorax or shoulder girdle": [
+   "Left clavicle",
+   "Left eighth rib",
+   "Left eleventh rib",
+   "Left fifth costal cartilage",
+   "Left fifth rib",
+   "Left first costal cartilage",
+   "Left first rib",
+   "Left fourth costal cartilage",
+   "Left fourth rib",
+   "Left ninth rib",
+   "Left scapula",
+   "Left second costal cartilage",
+   "Left second rib",
+   "Left seventh costal cartilage",
+   "Left seventh rib",
+   "Left sixth costal cartilage",
+   "Left sixth rib",
+   "Left tenth rib",
+   "Left third costal cartilage",
+   "Left third rib",
+   "Left twelfth rib",
+   "Right clavicle",
+   "Right eighth rib",
+   "Right eleventh rib",
+   "Right fifth costal cartilage",
+   "Right fifth rib",
+   "Right first costal cartilage",
+   "Right first rib",
+   "Right fourth costal cartilage",
+   "Right fourth rib",
+   "Right ninth rib",
+   "Right scapula",
+   "Right second costal cartilage",
+   "Right second rib",
+   "Right seventh costal cartilage",
+   "Right seventh rib",
+   "Right sixth costal cartilage",
+   "Right sixth rib",
+   "Right tenth rib",
+   "Right third costal cartilage",
+   "Right third rib",
+   "Right twelfth rib"
+  ]
+ },
+ "segments": {
+  "foot-left": {
+   "controls": 1092,
+   "scale": 1.0734,
+   "rotationDeg": 6.64,
+   "rmsMm": 1.57
+  },
+  "foot-right": {
+   "controls": 1124,
+   "scale": 1.0659,
+   "rotationDeg": 6.55,
+   "rmsMm": 2.67
+  },
+  "forearm-left": {
+   "controls": 1273,
+   "scale": 0.9658,
+   "rotationDeg": 30.5,
+   "rmsMm": 4.6
+  },
+  "forearm-right": {
+   "controls": 1200,
+   "scale": 0.967,
+   "rotationDeg": 30.59,
+   "rmsMm": 5.05
+  },
+  "head": {
+   "controls": 2240,
+   "scale": 1.0444,
+   "rotationDeg": 1.69,
+   "rmsMm": 5.77
+  },
+  "leg-left": {
+   "controls": 537,
+   "scale": 1.0092,
+   "rotationDeg": 18.63,
+   "rmsMm": 13.74
+  },
+  "leg-right": {
+   "controls": 537,
+   "scale": 1.0114,
+   "rotationDeg": 20.25,
+   "rmsMm": 14.42
+  },
+  "thigh-left": {
+   "controls": 220,
+   "scale": 0.9598,
+   "rotationDeg": 5.1,
+   "rmsMm": 2.56
+  },
+  "thigh-right": {
+   "controls": 220,
+   "scale": 0.9594,
+   "rotationDeg": 5.57,
+   "rmsMm": 2.6
+  },
+  "torso": {
+   "controls": 7128,
+   "scale": 0.9712,
+   "rotationDeg": 3.32,
+   "rmsMm": 20.0
+  },
+  "upperarm-left": {
+   "controls": 220,
+   "scale": 0.8869,
+   "rotationDeg": 13.19,
+   "rmsMm": 1.08
+  },
+  "upperarm-right": {
+   "controls": 220,
+   "scale": 0.8826,
+   "rotationDeg": 12.57,
+   "rmsMm": 1.12
+  }
+ },
+ "skin": [
+  {
+   "radiusMm": 50.0,
+   "pairs": 17689,
+   "heldOutMedianMm": 1.83,
+   "heldOutP90Mm": 3.37,
+   "heldOutOutside": 0.0313
+  },
+  {
+   "radiusMm": 25.0,
+   "pairs": 17640,
+   "heldOutMedianMm": 1.8,
+   "heldOutP90Mm": 3.16,
+   "heldOutOutside": 0.0273
+  },
+  {
+   "radiusMm": 15.0,
+   "pairs": 17699,
+   "heldOutMedianMm": 1.77,
+   "heldOutP90Mm": 3.06,
+   "heldOutOutside": 0.0253
+  },
+  {
+   "stage": "skin layer",
+   "residualPoints": 53694,
+   "heldOutMedianMm": 1.54,
+   "heldOutP90Mm": 2.56,
+   "heldOutOutside": 0.0063
+  }
+ ],
+ "heldOut": {
+  "native": {
+   "pairs": 60,
+   "medianOfMediansMm": 2.08,
+   "maxMm": 4.28
+  },
+  "borrowed": {
+   "pairs": 114,
+   "medianOfMediansMm": 2.18,
+   "maxMm": 8.37
+  },
+  "eye": {
+   "pairs": 1,
+   "medianOfMediansMm": 4.88,
+   "maxMm": 4.88
+  },
+  "organ": {
+   "pairs": 8,
+   "medianOfMediansMm": 7.33,
+   "maxMm": 10.91
+  }
+ },
+ "folding": {
+  "samples": 71301,
+  "folded": 9,
+  "detMin": -0.12,
+  "detP01": 0.404,
+  "detMedian": 1.08,
+  "detP99": 2.76,
+  "secondDifferenceUmMedian": 2.96,
+  "secondDifferenceUmMax": 322.0
+ },
+ "pairs": [
+  {
+   "kind": "native",
+   "male": [
+    "body of sternum"
+   ],
+   "female": [
+    "HRAF0823"
+   ],
+   "similarity": {
+    "scale": 0.7576,
+    "rotationDeg": 9.87
+   },
+   "icpRmsMm": 3.24,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "manubrium"
+   ],
+   "female": [
+    "HRAF0824"
+   ],
+   "similarity": {
+    "scale": 0.9394,
+    "rotationDeg": 11.21
+   },
+   "icpRmsMm": 4.03,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "sacrum"
+   ],
+   "female": [
+    "HRAF0825"
+   ],
+   "similarity": {
+    "scale": 1.075,
+    "rotationDeg": 9.2
+   },
+   "icpRmsMm": 5.58,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "right hip bone"
+   ],
+   "female": [
+    "HRAF0827",
+    "HRAF0958",
+    "HRAF0960"
+   ],
+   "similarity": {
+    "scale": 1.0765,
+    "rotationDeg": 2.41
+   },
+   "icpRmsMm": 6.9,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "left hip bone"
+   ],
+   "female": [
+    "HRAF0828",
+    "HRAF0959",
+    "HRAF0961"
+   ],
+   "similarity": {
+    "scale": 1.0647,
+    "rotationDeg": 4.23
+   },
+   "icpRmsMm": 7.21,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "first thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0831"
+   ],
+   "similarity": {
+    "scale": 1.0343,
+    "rotationDeg": 12.33
+   },
+   "icpRmsMm": 2.31,
+   "controls": 181
+  },
+  {
+   "kind": "native",
+   "male": [
+    "second thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0832"
+   ],
+   "similarity": {
+    "scale": 1.0309,
+    "rotationDeg": 6.89
+   },
+   "icpRmsMm": 2.28,
+   "controls": 202
+  },
+  {
+   "kind": "native",
+   "male": [
+    "third thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0833"
+   ],
+   "similarity": {
+    "scale": 1.0362,
+    "rotationDeg": 3.44
+   },
+   "icpRmsMm": 2.68,
+   "controls": 215
+  },
+  {
+   "kind": "native",
+   "male": [
+    "fourth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0834"
+   ],
+   "similarity": {
+    "scale": 1.025,
+    "rotationDeg": 3.18
+   },
+   "icpRmsMm": 2.37,
+   "controls": 216
+  },
+  {
+   "kind": "native",
+   "male": [
+    "fifth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0835"
+   ],
+   "similarity": {
+    "scale": 1.0052,
+    "rotationDeg": 1.95
+   },
+   "icpRmsMm": 2.45,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "sixth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0836"
+   ],
+   "similarity": {
+    "scale": 0.9706,
+    "rotationDeg": 1.98
+   },
+   "icpRmsMm": 2.67,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "seventh thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0837"
+   ],
+   "similarity": {
+    "scale": 0.9675,
+    "rotationDeg": 6.62
+   },
+   "icpRmsMm": 2.48,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "eighth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0838"
+   ],
+   "similarity": {
+    "scale": 0.9539,
+    "rotationDeg": 10.53
+   },
+   "icpRmsMm": 2.67,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "ninth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0839"
+   ],
+   "similarity": {
+    "scale": 0.9291,
+    "rotationDeg": 9.5
+   },
+   "icpRmsMm": 2.14,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "tenth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0840"
+   ],
+   "similarity": {
+    "scale": 0.963,
+    "rotationDeg": 15.96
+   },
+   "icpRmsMm": 2.37,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "eleventh thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0841"
+   ],
+   "similarity": {
+    "scale": 0.9584,
+    "rotationDeg": 14.12
+   },
+   "icpRmsMm": 2.75,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "twelfth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0842"
+   ],
+   "similarity": {
+    "scale": 0.9767,
+    "rotationDeg": 15.08
+   },
+   "icpRmsMm": 2.79,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "atlas"
+   ],
+   "female": [
+    "HRAF0843"
+   ],
+   "similarity": {
+    "scale": 1.0976,
+    "rotationDeg": 7.36
+   },
+   "icpRmsMm": 2.76,
+   "controls": 154
+  },
+  {
+   "kind": "native",
+   "male": [
+    "axis"
+   ],
+   "female": [
+    "HRAF0844"
+   ],
+   "similarity": {
+    "scale": 1.0994,
+    "rotationDeg": 5.17
+   },
+   "icpRmsMm": 2.76,
+   "controls": 169
+  },
+  {
+   "kind": "native",
+   "male": [
+    "third cervical vertebra"
+   ],
+   "female": [
+    "HRAF0845"
+   ],
+   "similarity": {
+    "scale": 1.0714,
+    "rotationDeg": 17.88
+   },
+   "icpRmsMm": 1.96,
+   "controls": 131
+  },
+  {
+   "kind": "native",
+   "male": [
+    "fourth cervical vertebra"
+   ],
+   "female": [
+    "HRAF0846"
+   ],
+   "similarity": {
+    "scale": 1.0679,
+    "rotationDeg": 20.71
+   },
+   "icpRmsMm": 1.92,
+   "controls": 138
+  },
+  {
+   "kind": "native",
+   "male": [
+    "fifth cervical vertebra"
+   ],
+   "female": [
+    "HRAF0847"
+   ],
+   "similarity": {
+    "scale": 1.089,
+    "rotationDeg": 15.69
+   },
+   "icpRmsMm": 2.28,
+   "controls": 153
+  },
+  {
+   "kind": "native",
+   "male": [
+    "sixth cervical vertebra"
+   ],
+   "female": [
+    "HRAF0848"
+   ],
+   "similarity": {
+    "scale": 1.0562,
+    "rotationDeg": 13.23
+   },
+   "icpRmsMm": 2.22,
+   "controls": 156
+  },
+  {
+   "kind": "native",
+   "male": [
+    "seventh cervical vertebra"
+   ],
+   "female": [
+    "HRAF0849"
+   ],
+   "similarity": {
+    "scale": 1.0432,
+    "rotationDeg": 11.55
+   },
+   "icpRmsMm": 2.24,
+   "controls": 171
+  },
+  {
+   "kind": "native",
+   "male": [
+    "fifth lumbar vertebra"
+   ],
+   "female": [
+    "HRAF0851"
+   ],
+   "similarity": {
+    "scale": 1.0349,
+    "rotationDeg": 16.36
+   },
+   "icpRmsMm": 3.47,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "fourth lumbar vertebra"
+   ],
+   "female": [
+    "HRAF0852"
+   ],
+   "similarity": {
+    "scale": 1.0895,
+    "rotationDeg": 11.95
+   },
+   "icpRmsMm": 3.4,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "third lumbar vertebra"
+   ],
+   "female": [
+    "HRAF0853"
+   ],
+   "similarity": {
+    "scale": 1.0836,
+    "rotationDeg": 5.93
+   },
+   "icpRmsMm": 3.31,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "second lumbar vertebra"
+   ],
+   "female": [
+    "HRAF0854"
+   ],
+   "similarity": {
+    "scale": 1.068,
+    "rotationDeg": 4.57
+   },
+   "icpRmsMm": 2.98,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "first lumbar vertebra"
+   ],
+   "female": [
+    "HRAF0855"
+   ],
+   "similarity": {
+    "scale": 1.0264,
+    "rotationDeg": 14.44
+   },
+   "icpRmsMm": 3.83,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of axis"
+   ],
+   "female": [
+    "HRAF0856"
+   ],
+   "similarity": {
+    "scale": 0.8655,
+    "rotationDeg": 11.91
+   },
+   "icpRmsMm": 0.86,
+   "controls": 25
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of third cervical vertebra"
+   ],
+   "female": [
+    "HRAF0857"
+   ],
+   "similarity": {
+    "scale": 0.888,
+    "rotationDeg": 20.65
+   },
+   "icpRmsMm": 0.85,
+   "controls": 24
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of fourth cervical vertebra"
+   ],
+   "female": [
+    "HRAF0858"
+   ],
+   "similarity": {
+    "scale": 0.8778,
+    "rotationDeg": 17.85
+   },
+   "icpRmsMm": 1.07,
+   "controls": 28
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of fifth cervical vertebra"
+   ],
+   "female": [
+    "HRAF0859"
+   ],
+   "similarity": {
+    "scale": 0.8315,
+    "rotationDeg": 12.19
+   },
+   "icpRmsMm": 0.95,
+   "controls": 28
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of sixth cervical vertebra"
+   ],
+   "female": [
+    "HRAF0860"
+   ],
+   "similarity": {
+    "scale": 0.9252,
+    "rotationDeg": 7.27
+   },
+   "icpRmsMm": 1.02,
+   "controls": 28
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of seventh cervical vertebra"
+   ],
+   "female": [
+    "HRAF0861"
+   ],
+   "similarity": {
+    "scale": 0.8219,
+    "rotationDeg": 8.78
+   },
+   "icpRmsMm": 1.04,
+   "controls": 35
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of first thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0880"
+   ],
+   "similarity": {
+    "scale": 0.8905,
+    "rotationDeg": 5.12
+   },
+   "icpRmsMm": 0.98,
+   "controls": 38
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of second thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0881"
+   ],
+   "similarity": {
+    "scale": 0.8258,
+    "rotationDeg": 3.7
+   },
+   "icpRmsMm": 1.21,
+   "controls": 44
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of third thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0882"
+   ],
+   "similarity": {
+    "scale": 0.8448,
+    "rotationDeg": 6.92
+   },
+   "icpRmsMm": 1.56,
+   "controls": 45
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of fourth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0883"
+   ],
+   "similarity": {
+    "scale": 0.7801,
+    "rotationDeg": 7.64
+   },
+   "icpRmsMm": 1.55,
+   "controls": 54
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of fifth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0884"
+   ],
+   "similarity": {
+    "scale": 0.7632,
+    "rotationDeg": 2.71
+   },
+   "icpRmsMm": 1.59,
+   "controls": 59
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of sixth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0885"
+   ],
+   "similarity": {
+    "scale": 0.7031,
+    "rotationDeg": 1.5
+   },
+   "icpRmsMm": 1.43,
+   "controls": 71
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of seventh thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0886"
+   ],
+   "similarity": {
+    "scale": 0.718,
+    "rotationDeg": 9.32
+   },
+   "icpRmsMm": 1.68,
+   "controls": 79
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of eighth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0887"
+   ],
+   "similarity": {
+    "scale": 0.7388,
+    "rotationDeg": 11.33
+   },
+   "icpRmsMm": 1.36,
+   "controls": 78
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of ninth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0888"
+   ],
+   "similarity": {
+    "scale": 0.7844,
+    "rotationDeg": 13.01
+   },
+   "icpRmsMm": 1.35,
+   "controls": 85
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of tenth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0889"
+   ],
+   "similarity": {
+    "scale": 0.7741,
+    "rotationDeg": 13.97
+   },
+   "icpRmsMm": 1.79,
+   "controls": 96
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of eleventh thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0890"
+   ],
+   "similarity": {
+    "scale": 0.7979,
+    "rotationDeg": 14.12
+   },
+   "icpRmsMm": 1.82,
+   "controls": 107
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of twelfth thoracic vertebra"
+   ],
+   "female": [
+    "HRAF0891"
+   ],
+   "similarity": {
+    "scale": 0.829,
+    "rotationDeg": 10.5
+   },
+   "icpRmsMm": 1.74,
+   "controls": 108
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of first lumbar vertebra"
+   ],
+   "female": [
+    "HRAF0898"
+   ],
+   "similarity": {
+    "scale": 0.9316,
+    "rotationDeg": 5.77
+   },
+   "icpRmsMm": 1.81,
+   "controls": 107
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of second lumbar vertebra"
+   ],
+   "female": [
+    "HRAF0899"
+   ],
+   "similarity": {
+    "scale": 1.1137,
+    "rotationDeg": 6.47
+   },
+   "icpRmsMm": 1.89,
+   "controls": 106
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of third lumbar vertebra"
+   ],
+   "female": [
+    "HRAF0900"
+   ],
+   "similarity": {
+    "scale": 1.1148,
+    "rotationDeg": 10.13
+   },
+   "icpRmsMm": 2.06,
+   "controls": 116
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of fourth lumbar vertebra"
+   ],
+   "female": [
+    "HRAF0901"
+   ],
+   "similarity": {
+    "scale": 1.0218,
+    "rotationDeg": 13.41
+   },
+   "icpRmsMm": 2.01,
+   "controls": 126
+  },
+  {
+   "kind": "native",
+   "male": [
+    "intervertebral disk of fifth lumbar vertebra"
+   ],
+   "female": [
+    "HRAF0902"
+   ],
+   "similarity": {
+    "scale": 0.9379,
+    "rotationDeg": 25.67
+   },
+   "icpRmsMm": 2.01,
+   "controls": 143
+  },
+  {
+   "kind": "native",
+   "male": [
+    "right femur"
+   ],
+   "female": [
+    "HRAF0911",
+    "HRAF0912",
+    "HRAF0915",
+    "HRAF0916",
+    "HRAF0917",
+    "HRAF0918",
+    "HRAF0919",
+    "HRAF0920",
+    "HRAF0921"
+   ],
+   "similarity": {
+    "scale": 0.9582,
+    "rotationDeg": 5.45
+   },
+   "icpRmsMm": 7.11,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "right tibia"
+   ],
+   "female": [
+    "HRAF0927"
+   ],
+   "similarity": {
+    "scale": 0.9789,
+    "rotationDeg": 29.01
+   },
+   "icpRmsMm": 5.56,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "right fibula"
+   ],
+   "female": [
+    "HRAF0928"
+   ],
+   "similarity": {
+    "scale": 0.928,
+    "rotationDeg": 30.09
+   },
+   "icpRmsMm": 4.16,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "right patella"
+   ],
+   "female": [
+    "HRAF0929"
+   ],
+   "similarity": {
+    "scale": 1.206,
+    "rotationDeg": 23.71
+   },
+   "icpRmsMm": 2.5,
+   "controls": 97
+  },
+  {
+   "kind": "native",
+   "male": [
+    "left femur"
+   ],
+   "female": [
+    "HRAF0937",
+    "HRAF0938",
+    "HRAF0944",
+    "HRAF0947",
+    "HRAF0948",
+    "HRAF0949",
+    "HRAF0950",
+    "HRAF0951",
+    "HRAF0952"
+   ],
+   "similarity": {
+    "scale": 0.9579,
+    "rotationDeg": 5.28
+   },
+   "icpRmsMm": 6.93,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "left patella"
+   ],
+   "female": [
+    "HRAF0953"
+   ],
+   "similarity": {
+    "scale": 1.2071,
+    "rotationDeg": 24.73
+   },
+   "icpRmsMm": 2.48,
+   "controls": 97
+  },
+  {
+   "kind": "native",
+   "male": [
+    "left tibia"
+   ],
+   "female": [
+    "HRAF0954"
+   ],
+   "similarity": {
+    "scale": 0.9794,
+    "rotationDeg": 26.88
+   },
+   "icpRmsMm": 5.49,
+   "controls": 220
+  },
+  {
+   "kind": "native",
+   "male": [
+    "left fibula"
+   ],
+   "female": [
+    "HRAF0955"
+   ],
+   "similarity": {
+    "scale": 0.929,
+    "rotationDeg": 25.72
+   },
+   "icpRmsMm": 4.04,
+   "controls": 220
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "hyoid bone"
+   ],
+   "female": [
+    "BM0002",
+    "BM0005"
+   ],
+   "similarity": {
+    "scale": 0.9431,
+    "rotationDeg": 1.06
+   },
+   "icpRmsMm": 0.84,
+   "controls": 45
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "ethmoid"
+   ],
+   "female": [
+    "BM0003"
+   ],
+   "similarity": {
+    "scale": 1.0791,
+    "rotationDeg": 7.92
+   },
+   "icpRmsMm": 1.91,
+   "controls": 153
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left maxilla"
+   ],
+   "female": [
+    "BM0006"
+   ],
+   "similarity": {
+    "scale": 1.0416,
+    "rotationDeg": 0.12
+   },
+   "icpRmsMm": 1.26,
+   "controls": 220
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left nasal bone"
+   ],
+   "female": [
+    "BM0007"
+   ],
+   "similarity": {
+    "scale": 1.0049,
+    "rotationDeg": 1.12
+   },
+   "icpRmsMm": 0.87,
+   "controls": 21
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left palatine bone"
+   ],
+   "female": [
+    "BM0008"
+   ],
+   "similarity": {
+    "scale": 1.1416,
+    "rotationDeg": 3.96
+   },
+   "icpRmsMm": 2.13,
+   "controls": 73
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left temporal bone"
+   ],
+   "female": [
+    "BM0010"
+   ],
+   "similarity": {
+    "scale": 1.036,
+    "rotationDeg": 0.13
+   },
+   "icpRmsMm": 1.76,
+   "controls": 220
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left zygomatic bone"
+   ],
+   "female": [
+    "BM0011"
+   ],
+   "similarity": {
+    "scale": 1.0115,
+    "rotationDeg": 0.17
+   },
+   "icpRmsMm": 1.44,
+   "controls": 88
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "mandible"
+   ],
+   "female": [
+    "BM0012"
+   ],
+   "similarity": {
+    "scale": 1.0448,
+    "rotationDeg": 0.25
+   },
+   "icpRmsMm": 2.48,
+   "controls": 220
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right maxilla"
+   ],
+   "female": [
+    "BM0014"
+   ],
+   "similarity": {
+    "scale": 1.0422,
+    "rotationDeg": 0.05
+   },
+   "icpRmsMm": 1.25,
+   "controls": 220
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right nasal bone"
+   ],
+   "female": [
+    "BM0015"
+   ],
+   "similarity": {
+    "scale": 1.0054,
+    "rotationDeg": 0.17
+   },
+   "icpRmsMm": 0.84,
+   "controls": 19
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right palatine bone"
+   ],
+   "female": [
+    "BM0016"
+   ],
+   "similarity": {
+    "scale": 1.144,
+    "rotationDeg": 4.04
+   },
+   "icpRmsMm": 1.92,
+   "controls": 71
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right zygomatic bone"
+   ],
+   "female": [
+    "BM0019"
+   ],
+   "similarity": {
+    "scale": 1.0157,
+    "rotationDeg": 0.33
+   },
+   "icpRmsMm": 1.38,
+   "controls": 89
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "sphenoid bone"
+   ],
+   "female": [
+    "BM0020"
+   ],
+   "similarity": {
+    "scale": 1.0455,
+    "rotationDeg": 0.1
+   },
+   "icpRmsMm": 1.66,
+   "controls": 220
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "vomer"
+   ],
+   "female": [
+    "BM0021"
+   ],
+   "similarity": {
+    "scale": 1.1463,
+    "rotationDeg": 23.45
+   },
+   "icpRmsMm": 1.93,
+   "controls": 53
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of left index finger"
+   ],
+   "female": [
+    "BM0060"
+   ],
+   "similarity": {
+    "scale": 0.9273,
+    "rotationDeg": 34.06
+   },
+   "icpRmsMm": 0.64,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of left little finger"
+   ],
+   "female": [
+    "BM0061"
+   ],
+   "similarity": {
+    "scale": 0.9243,
+    "rotationDeg": 34.36
+   },
+   "icpRmsMm": 0.62,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of left middle finger"
+   ],
+   "female": [
+    "BM0062"
+   ],
+   "similarity": {
+    "scale": 0.9223,
+    "rotationDeg": 33.66
+   },
+   "icpRmsMm": 0.65,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of left ring finger"
+   ],
+   "female": [
+    "BM0063"
+   ],
+   "similarity": {
+    "scale": 0.9167,
+    "rotationDeg": 33.63
+   },
+   "icpRmsMm": 0.59,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of right index finger"
+   ],
+   "female": [
+    "BM0065"
+   ],
+   "similarity": {
+    "scale": 0.9217,
+    "rotationDeg": 34.23
+   },
+   "icpRmsMm": 0.63,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of right little finger"
+   ],
+   "female": [
+    "BM0066"
+   ],
+   "similarity": {
+    "scale": 0.9048,
+    "rotationDeg": 33.65
+   },
+   "icpRmsMm": 0.67,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of right middle finger"
+   ],
+   "female": [
+    "BM0067"
+   ],
+   "similarity": {
+    "scale": 0.9268,
+    "rotationDeg": 34.04
+   },
+   "icpRmsMm": 0.67,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of right ring finger"
+   ],
+   "female": [
+    "BM0068"
+   ],
+   "similarity": {
+    "scale": 0.9011,
+    "rotationDeg": 33.27
+   },
+   "icpRmsMm": 0.6,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of right thumb"
+   ],
+   "female": [
+    "BM0069"
+   ],
+   "similarity": {
+    "scale": 0.9389,
+    "rotationDeg": 49.0
+   },
+   "icpRmsMm": 0.71,
+   "controls": 17
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left first metacarpal bone"
+   ],
+   "female": [
+    "BM0071"
+   ],
+   "similarity": {
+    "scale": 0.9511,
+    "rotationDeg": 36.36
+   },
+   "icpRmsMm": 1.04,
+   "controls": 56
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left second metacarpal bone"
+   ],
+   "female": [
+    "BM0072"
+   ],
+   "similarity": {
+    "scale": 0.9538,
+    "rotationDeg": 34.6
+   },
+   "icpRmsMm": 1.12,
+   "controls": 79
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left third metacarpal bone"
+   ],
+   "female": [
+    "BM0073"
+   ],
+   "similarity": {
+    "scale": 0.9551,
+    "rotationDeg": 33.95
+   },
+   "icpRmsMm": 1.1,
+   "controls": 76
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left fourth metacarpal bone"
+   ],
+   "female": [
+    "BM0074"
+   ],
+   "similarity": {
+    "scale": 0.9522,
+    "rotationDeg": 34.42
+   },
+   "icpRmsMm": 0.98,
+   "controls": 57
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left fifth metacarpal bone"
+   ],
+   "female": [
+    "BM0075"
+   ],
+   "similarity": {
+    "scale": 0.9548,
+    "rotationDeg": 33.85
+   },
+   "icpRmsMm": 0.92,
+   "controls": 53
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left capitate"
+   ],
+   "female": [
+    "BM0076"
+   ],
+   "similarity": {
+    "scale": 0.9354,
+    "rotationDeg": 34.28
+   },
+   "icpRmsMm": 0.75,
+   "controls": 31
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left hamate"
+   ],
+   "female": [
+    "BM0077"
+   ],
+   "similarity": {
+    "scale": 0.9374,
+    "rotationDeg": 34.01
+   },
+   "icpRmsMm": 0.8,
+   "controls": 28
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left humerus"
+   ],
+   "female": [
+    "BM0078"
+   ],
+   "similarity": {
+    "scale": 0.8863,
+    "rotationDeg": 13.22
+   },
+   "icpRmsMm": 3.24,
+   "controls": 220
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left lunate"
+   ],
+   "female": [
+    "BM0079"
+   ],
+   "similarity": {
+    "scale": 0.9257,
+    "rotationDeg": 34.15
+   },
+   "icpRmsMm": 0.79,
+   "controls": 21
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left pisiform"
+   ],
+   "female": [
+    "BM0080"
+   ],
+   "similarity": {
+    "scale": 0.9185,
+    "rotationDeg": 33.93
+   },
+   "icpRmsMm": 0.74,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left radius"
+   ],
+   "female": [
+    "BM0081"
+   ],
+   "similarity": {
+    "scale": 0.9572,
+    "rotationDeg": 31.23
+   },
+   "icpRmsMm": 2.69,
+   "controls": 220
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left scaphoid"
+   ],
+   "female": [
+    "BM0082"
+   ],
+   "similarity": {
+    "scale": 0.9302,
+    "rotationDeg": 34.54
+   },
+   "icpRmsMm": 0.74,
+   "controls": 26
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left trapezium"
+   ],
+   "female": [
+    "BM0084"
+   ],
+   "similarity": {
+    "scale": 0.9331,
+    "rotationDeg": 34.29
+   },
+   "icpRmsMm": 0.8,
+   "controls": 24
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left trapezoid"
+   ],
+   "female": [
+    "BM0085"
+   ],
+   "similarity": {
+    "scale": 0.9277,
+    "rotationDeg": 33.91
+   },
+   "icpRmsMm": 0.89,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left triquetral"
+   ],
+   "female": [
+    "BM0086"
+   ],
+   "similarity": {
+    "scale": 0.9288,
+    "rotationDeg": 32.69
+   },
+   "icpRmsMm": 0.79,
+   "controls": 17
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left ulna"
+   ],
+   "female": [
+    "BM0087"
+   ],
+   "similarity": {
+    "scale": 0.9568,
+    "rotationDeg": 30.38
+   },
+   "icpRmsMm": 2.61,
+   "controls": 220
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of left ring finger"
+   ],
+   "female": [
+    "BM0088"
+   ],
+   "similarity": {
+    "scale": 0.9409,
+    "rotationDeg": 34.85
+   },
+   "icpRmsMm": 0.74,
+   "controls": 23
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of right ring finger"
+   ],
+   "female": [
+    "BM0089"
+   ],
+   "similarity": {
+    "scale": 0.9428,
+    "rotationDeg": 34.09
+   },
+   "icpRmsMm": 0.82,
+   "controls": 23
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of left index finger"
+   ],
+   "female": [
+    "BM0090"
+   ],
+   "similarity": {
+    "scale": 0.9349,
+    "rotationDeg": 33.82
+   },
+   "icpRmsMm": 0.74,
+   "controls": 19
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of left little finger"
+   ],
+   "female": [
+    "BM0091"
+   ],
+   "similarity": {
+    "scale": 0.9307,
+    "rotationDeg": 33.16
+   },
+   "icpRmsMm": 0.7,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of left middle finger"
+   ],
+   "female": [
+    "BM0092"
+   ],
+   "similarity": {
+    "scale": 0.9464,
+    "rotationDeg": 34.06
+   },
+   "icpRmsMm": 0.7,
+   "controls": 25
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of right index finger"
+   ],
+   "female": [
+    "BM0093"
+   ],
+   "similarity": {
+    "scale": 0.9355,
+    "rotationDeg": 33.29
+   },
+   "icpRmsMm": 0.73,
+   "controls": 19
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of right little finger"
+   ],
+   "female": [
+    "BM0094"
+   ],
+   "similarity": {
+    "scale": 0.9341,
+    "rotationDeg": 34.2
+   },
+   "icpRmsMm": 0.73,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of right middle finger"
+   ],
+   "female": [
+    "BM0095"
+   ],
+   "similarity": {
+    "scale": 0.9476,
+    "rotationDeg": 34.42
+   },
+   "icpRmsMm": 0.67,
+   "controls": 25
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of left index finger"
+   ],
+   "female": [
+    "BM0096"
+   ],
+   "similarity": {
+    "scale": 0.9474,
+    "rotationDeg": 33.47
+   },
+   "icpRmsMm": 0.87,
+   "controls": 40
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of left little finger"
+   ],
+   "female": [
+    "BM0097"
+   ],
+   "similarity": {
+    "scale": 0.9403,
+    "rotationDeg": 33.7
+   },
+   "icpRmsMm": 0.88,
+   "controls": 29
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of left middle finger"
+   ],
+   "female": [
+    "BM0098"
+   ],
+   "similarity": {
+    "scale": 0.9516,
+    "rotationDeg": 33.98
+   },
+   "icpRmsMm": 0.92,
+   "controls": 47
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of left ring finger"
+   ],
+   "female": [
+    "BM0099"
+   ],
+   "similarity": {
+    "scale": 0.9465,
+    "rotationDeg": 33.45
+   },
+   "icpRmsMm": 0.88,
+   "controls": 39
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of left thumb"
+   ],
+   "female": [
+    "BM0100"
+   ],
+   "similarity": {
+    "scale": 0.9394,
+    "rotationDeg": 36.14
+   },
+   "icpRmsMm": 0.99,
+   "controls": 31
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of right little finger"
+   ],
+   "female": [
+    "BM0102"
+   ],
+   "similarity": {
+    "scale": 0.9413,
+    "rotationDeg": 34.42
+   },
+   "icpRmsMm": 0.92,
+   "controls": 29
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of right middle finger"
+   ],
+   "female": [
+    "BM0103"
+   ],
+   "similarity": {
+    "scale": 0.9516,
+    "rotationDeg": 34.23
+   },
+   "icpRmsMm": 0.93,
+   "controls": 47
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of right ring finger"
+   ],
+   "female": [
+    "BM0104"
+   ],
+   "similarity": {
+    "scale": 0.948,
+    "rotationDeg": 33.66
+   },
+   "icpRmsMm": 0.92,
+   "controls": 40
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of right thumb"
+   ],
+   "female": [
+    "BM0105"
+   ],
+   "similarity": {
+    "scale": 0.9426,
+    "rotationDeg": 49.66
+   },
+   "icpRmsMm": 0.95,
+   "controls": 32
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right radius"
+   ],
+   "female": [
+    "BM0106"
+   ],
+   "similarity": {
+    "scale": 0.9592,
+    "rotationDeg": 28.95
+   },
+   "icpRmsMm": 2.75,
+   "controls": 220
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right first metacarpal bone"
+   ],
+   "female": [
+    "BM0107"
+   ],
+   "similarity": {
+    "scale": 0.9509,
+    "rotationDeg": 49.8
+   },
+   "icpRmsMm": 1.04,
+   "controls": 56
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right second metacarpal bone"
+   ],
+   "female": [
+    "BM0108"
+   ],
+   "similarity": {
+    "scale": 0.9552,
+    "rotationDeg": 35.08
+   },
+   "icpRmsMm": 1.13,
+   "controls": 79
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right third metacarpal bone"
+   ],
+   "female": [
+    "BM0109"
+   ],
+   "similarity": {
+    "scale": 0.9543,
+    "rotationDeg": 34.89
+   },
+   "icpRmsMm": 1.12,
+   "controls": 76
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right fourth metacarpal bone"
+   ],
+   "female": [
+    "BM0110"
+   ],
+   "similarity": {
+    "scale": 0.95,
+    "rotationDeg": 34.55
+   },
+   "icpRmsMm": 0.98,
+   "controls": 58
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right capitate"
+   ],
+   "female": [
+    "BM0112"
+   ],
+   "similarity": {
+    "scale": 0.9398,
+    "rotationDeg": 33.43
+   },
+   "icpRmsMm": 0.79,
+   "controls": 31
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right hamate"
+   ],
+   "female": [
+    "BM0114"
+   ],
+   "similarity": {
+    "scale": 0.9415,
+    "rotationDeg": 34.45
+   },
+   "icpRmsMm": 0.84,
+   "controls": 28
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right humerus"
+   ],
+   "female": [
+    "BM0115"
+   ],
+   "similarity": {
+    "scale": 0.8815,
+    "rotationDeg": 12.42
+   },
+   "icpRmsMm": 3.31,
+   "controls": 220
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right lunate"
+   ],
+   "female": [
+    "BM0116"
+   ],
+   "similarity": {
+    "scale": 0.924,
+    "rotationDeg": 34.81
+   },
+   "icpRmsMm": 0.81,
+   "controls": 21
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right pisiform"
+   ],
+   "female": [
+    "BM0117"
+   ],
+   "similarity": {
+    "scale": 0.9199,
+    "rotationDeg": 32.74
+   },
+   "icpRmsMm": 0.69,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right scaphoid"
+   ],
+   "female": [
+    "BM0118"
+   ],
+   "similarity": {
+    "scale": 0.9311,
+    "rotationDeg": 34.33
+   },
+   "icpRmsMm": 0.74,
+   "controls": 26
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right trapezium"
+   ],
+   "female": [
+    "BM0120"
+   ],
+   "similarity": {
+    "scale": 0.941,
+    "rotationDeg": 34.6
+   },
+   "icpRmsMm": 0.78,
+   "controls": 24
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right trapezoid"
+   ],
+   "female": [
+    "BM0121"
+   ],
+   "similarity": {
+    "scale": 0.9269,
+    "rotationDeg": 34.26
+   },
+   "icpRmsMm": 0.8,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right triquetral"
+   ],
+   "female": [
+    "BM0122"
+   ],
+   "similarity": {
+    "scale": 0.9127,
+    "rotationDeg": 33.11
+   },
+   "icpRmsMm": 0.77,
+   "controls": 17
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right ulna"
+   ],
+   "female": [
+    "BM0123"
+   ],
+   "similarity": {
+    "scale": 0.9571,
+    "rotationDeg": 28.8
+   },
+   "icpRmsMm": 2.5,
+   "controls": 220
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of left second toe"
+   ],
+   "female": [
+    "BM0124"
+   ],
+   "similarity": {
+    "scale": 1.0232,
+    "rotationDeg": 8.57
+   },
+   "icpRmsMm": 0.69,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of left third toe"
+   ],
+   "female": [
+    "BM0125"
+   ],
+   "similarity": {
+    "scale": 1.0183,
+    "rotationDeg": 12.51
+   },
+   "icpRmsMm": 0.68,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of left fourth toe"
+   ],
+   "female": [
+    "BM0126"
+   ],
+   "similarity": {
+    "scale": 1.017,
+    "rotationDeg": 16.03
+   },
+   "icpRmsMm": 0.64,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left first metatarsal bone"
+   ],
+   "female": [
+    "BM0129"
+   ],
+   "similarity": {
+    "scale": 1.0661,
+    "rotationDeg": 5.72
+   },
+   "icpRmsMm": 1.43,
+   "controls": 119
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left second metatarsal bone"
+   ],
+   "female": [
+    "BM0130"
+   ],
+   "similarity": {
+    "scale": 1.0665,
+    "rotationDeg": 5.84
+   },
+   "icpRmsMm": 1.29,
+   "controls": 80
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left third metatarsal bone"
+   ],
+   "female": [
+    "BM0131"
+   ],
+   "similarity": {
+    "scale": 1.0636,
+    "rotationDeg": 5.73
+   },
+   "icpRmsMm": 1.19,
+   "controls": 77
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left fourth metatarsal bone"
+   ],
+   "female": [
+    "BM0132"
+   ],
+   "similarity": {
+    "scale": 1.0569,
+    "rotationDeg": 5.76
+   },
+   "icpRmsMm": 1.19,
+   "controls": 74
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left cuboid bone"
+   ],
+   "female": [
+    "BM0135"
+   ],
+   "similarity": {
+    "scale": 1.0631,
+    "rotationDeg": 5.77
+   },
+   "icpRmsMm": 1.07,
+   "controls": 91
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left intermediate cuneiform bone"
+   ],
+   "female": [
+    "BM0136"
+   ],
+   "similarity": {
+    "scale": 1.0526,
+    "rotationDeg": 6.35
+   },
+   "icpRmsMm": 0.87,
+   "controls": 36
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "sesamoid bone of left foot"
+   ],
+   "female": [
+    "BM0137",
+    "BM0139"
+   ],
+   "similarity": {
+    "scale": 1.0125,
+    "rotationDeg": 4.85
+   },
+   "icpRmsMm": 0.87,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left lateral cuneiform bone"
+   ],
+   "female": [
+    "BM0138"
+   ],
+   "similarity": {
+    "scale": 1.0569,
+    "rotationDeg": 5.73
+   },
+   "icpRmsMm": 0.99,
+   "controls": 50
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left medial cuneiform bone"
+   ],
+   "female": [
+    "BM0140"
+   ],
+   "similarity": {
+    "scale": 1.0605,
+    "rotationDeg": 5.97
+   },
+   "icpRmsMm": 0.97,
+   "controls": 74
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "left talus"
+   ],
+   "female": [
+    "BM0141"
+   ],
+   "similarity": {
+    "scale": 1.06,
+    "rotationDeg": 5.64
+   },
+   "icpRmsMm": 1.56,
+   "controls": 186
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of left second toe"
+   ],
+   "female": [
+    "BM0142"
+   ],
+   "similarity": {
+    "scale": 1.0324,
+    "rotationDeg": 8.01
+   },
+   "icpRmsMm": 0.72,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of left third toe"
+   ],
+   "female": [
+    "BM0143"
+   ],
+   "similarity": {
+    "scale": 1.031,
+    "rotationDeg": 12.6
+   },
+   "icpRmsMm": 0.68,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of left fourth toe"
+   ],
+   "female": [
+    "BM0144"
+   ],
+   "similarity": {
+    "scale": 1.0241,
+    "rotationDeg": 15.69
+   },
+   "icpRmsMm": 0.69,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "navicular bone of left foot"
+   ],
+   "female": [
+    "BM0146"
+   ],
+   "similarity": {
+    "scale": 1.0536,
+    "rotationDeg": 6.25
+   },
+   "icpRmsMm": 1.17,
+   "controls": 74
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of left third toe"
+   ],
+   "female": [
+    "BM0147"
+   ],
+   "similarity": {
+    "scale": 1.0534,
+    "rotationDeg": 13.03
+   },
+   "icpRmsMm": 0.77,
+   "controls": 22
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of left fourth toe"
+   ],
+   "female": [
+    "BM0148"
+   ],
+   "similarity": {
+    "scale": 1.0484,
+    "rotationDeg": 16.5
+   },
+   "icpRmsMm": 0.77,
+   "controls": 20
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of left second toe"
+   ],
+   "female": [
+    "BM0150"
+   ],
+   "similarity": {
+    "scale": 1.051,
+    "rotationDeg": 8.3
+   },
+   "icpRmsMm": 0.84,
+   "controls": 25
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of left big toe"
+   ],
+   "female": [
+    "BM0151"
+   ],
+   "similarity": {
+    "scale": 1.058,
+    "rotationDeg": 6.99
+   },
+   "icpRmsMm": 1.02,
+   "controls": 52
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of right second toe"
+   ],
+   "female": [
+    "BM0152"
+   ],
+   "similarity": {
+    "scale": 1.0023,
+    "rotationDeg": 13.39
+   },
+   "icpRmsMm": 0.7,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of right third toe"
+   ],
+   "female": [
+    "BM0153"
+   ],
+   "similarity": {
+    "scale": 1.0143,
+    "rotationDeg": 18.75
+   },
+   "icpRmsMm": 0.68,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of right fourth toe"
+   ],
+   "female": [
+    "BM0154"
+   ],
+   "similarity": {
+    "scale": 1.0088,
+    "rotationDeg": 23.39
+   },
+   "icpRmsMm": 0.7,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "distal phalanx of right big toe"
+   ],
+   "female": [
+    "BM0155"
+   ],
+   "similarity": {
+    "scale": 1.0461,
+    "rotationDeg": 4.99
+   },
+   "icpRmsMm": 0.77,
+   "controls": 29
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of right second toe"
+   ],
+   "female": [
+    "BM0157"
+   ],
+   "similarity": {
+    "scale": 1.0257,
+    "rotationDeg": 12.34
+   },
+   "icpRmsMm": 0.81,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of right third toe"
+   ],
+   "female": [
+    "BM0158"
+   ],
+   "similarity": {
+    "scale": 1.0277,
+    "rotationDeg": 18.59
+   },
+   "icpRmsMm": 0.69,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "middle phalanx of right fourth toe"
+   ],
+   "female": [
+    "BM0159"
+   ],
+   "similarity": {
+    "scale": 1.0289,
+    "rotationDeg": 23.59
+   },
+   "icpRmsMm": 0.67,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "navicular bone of right foot"
+   ],
+   "female": [
+    "BM0161"
+   ],
+   "similarity": {
+    "scale": 1.0471,
+    "rotationDeg": 5.19
+   },
+   "icpRmsMm": 1.17,
+   "controls": 75
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of right big toe"
+   ],
+   "female": [
+    "BM0162"
+   ],
+   "similarity": {
+    "scale": 1.054,
+    "rotationDeg": 4.92
+   },
+   "icpRmsMm": 1.02,
+   "controls": 52
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of right second toe"
+   ],
+   "female": [
+    "BM0163"
+   ],
+   "similarity": {
+    "scale": 1.0483,
+    "rotationDeg": 12.94
+   },
+   "icpRmsMm": 0.83,
+   "controls": 25
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of right third toe"
+   ],
+   "female": [
+    "BM0164"
+   ],
+   "similarity": {
+    "scale": 1.052,
+    "rotationDeg": 18.6
+   },
+   "icpRmsMm": 0.79,
+   "controls": 22
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "proximal phalanx of right fourth toe"
+   ],
+   "female": [
+    "BM0165"
+   ],
+   "similarity": {
+    "scale": 1.0494,
+    "rotationDeg": 23.77
+   },
+   "icpRmsMm": 0.81,
+   "controls": 20
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right first metatarsal bone"
+   ],
+   "female": [
+    "BM0167"
+   ],
+   "similarity": {
+    "scale": 1.0619,
+    "rotationDeg": 4.72
+   },
+   "icpRmsMm": 1.52,
+   "controls": 119
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right second metatarsal bone"
+   ],
+   "female": [
+    "BM0168"
+   ],
+   "similarity": {
+    "scale": 1.0587,
+    "rotationDeg": 4.99
+   },
+   "icpRmsMm": 1.26,
+   "controls": 80
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right third metatarsal bone"
+   ],
+   "female": [
+    "BM0169"
+   ],
+   "similarity": {
+    "scale": 1.0594,
+    "rotationDeg": 4.72
+   },
+   "icpRmsMm": 1.17,
+   "controls": 77
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right fourth metatarsal bone"
+   ],
+   "female": [
+    "BM0170"
+   ],
+   "similarity": {
+    "scale": 1.0594,
+    "rotationDeg": 5.04
+   },
+   "icpRmsMm": 1.21,
+   "controls": 74
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right cuboid bone"
+   ],
+   "female": [
+    "BM0173"
+   ],
+   "similarity": {
+    "scale": 1.0595,
+    "rotationDeg": 4.81
+   },
+   "icpRmsMm": 1.08,
+   "controls": 91
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right intermediate cuneiform bone"
+   ],
+   "female": [
+    "BM0174"
+   ],
+   "similarity": {
+    "scale": 1.044,
+    "rotationDeg": 5.32
+   },
+   "icpRmsMm": 0.95,
+   "controls": 36
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "sesamoid bone of right foot"
+   ],
+   "female": [
+    "BM0175",
+    "BM0177"
+   ],
+   "similarity": {
+    "scale": 1.0151,
+    "rotationDeg": 5.06
+   },
+   "icpRmsMm": 0.85,
+   "controls": 16
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right lateral cuneiform bone"
+   ],
+   "female": [
+    "BM0176"
+   ],
+   "similarity": {
+    "scale": 1.0499,
+    "rotationDeg": 5.32
+   },
+   "icpRmsMm": 1.06,
+   "controls": 51
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right medial cuneiform bone"
+   ],
+   "female": [
+    "BM0178"
+   ],
+   "similarity": {
+    "scale": 1.0589,
+    "rotationDeg": 5.03
+   },
+   "icpRmsMm": 0.95,
+   "controls": 74
+  },
+  {
+   "kind": "borrowed",
+   "male": [
+    "right talus"
+   ],
+   "female": [
+    "BM0179"
+   ],
+   "similarity": {
+    "scale": 1.0586,
+    "rotationDeg": 4.84
+   },
+   "icpRmsMm": 1.52,
+   "controls": 187
+  },
+  {
+   "kind": "eye",
+   "male": [
+    "eyeball"
+   ],
+   "female": [
+    "HRAF0026",
+    "HRAF0041",
+    "HRAF0050",
+    "HRAF0065"
+   ],
+   "similarity": {
+    "scale": 1.0098,
+    "rotationDeg": 1.79
+   },
+   "icpRmsMm": 4.71,
+   "controls": 180
+  },
+  {
+   "kind": "organ",
+   "male": [
+    "upper lobe of right lung",
+    "lower lobe of right lung",
+    "middle lobe of lung"
+   ],
+   "female": [
+    "HRAF0753",
+    "HRAF0754",
+    "HRAF0755",
+    "HRAF0756",
+    "HRAF0757",
+    "HRAF0759",
+    "HRAF0760",
+    "HRAF0762",
+    "HRAF0763",
+    "HRAF0764"
+   ],
+   "similarity": {
+    "scale": 0.9291,
+    "rotationDeg": 8.77
+   },
+   "icpRmsMm": 7.89,
+   "controls": 400
+  },
+  {
+   "kind": "organ",
+   "male": [
+    "upper lobe of left lung",
+    "lower lobe of left lung"
+   ],
+   "female": [
+    "HRAF0741",
+    "HRAF0742",
+    "HRAF0743",
+    "HRAF0744",
+    "HRAF0745",
+    "HRAF0746",
+    "HRAF0747",
+    "HRAF0748",
+    "HRAF0749",
+    "HRAF0750"
+   ],
+   "similarity": {
+    "scale": 0.8866,
+    "rotationDeg": 8.14
+   },
+   "icpRmsMm": 9.27,
+   "controls": 400
+  },
+  {
+   "kind": "organ",
+   "male": [
+    "wall of heart"
+   ],
+   "female": [
+    "HRAF0616",
+    "HRAF0617",
+    "HRAF0618",
+    "HRAF0619"
+   ],
+   "similarity": {
+    "scale": 1.017,
+    "rotationDeg": 12.96
+   },
+   "icpRmsMm": 6.05,
+   "controls": 400
+  },
+  {
+   "kind": "organ",
+   "male": [
+    "liver"
+   ],
+   "female": [
+    "HRAF0474"
+   ],
+   "similarity": {
+    "scale": 1.1264,
+    "rotationDeg": 11.73
+   },
+   "icpRmsMm": 11.43,
+   "controls": 400
+  },
+  {
+   "kind": "organ",
+   "male": [
+    "right kidney"
+   ],
+   "female": [
+    "HRAF0554"
+   ],
+   "similarity": {
+    "scale": 1.1004,
+    "rotationDeg": 15.95
+   },
+   "icpRmsMm": 4.37,
+   "controls": 400
+  },
+  {
+   "kind": "organ",
+   "male": [
+    "left kidney"
+   ],
+   "female": [
+    "HRAF0528"
+   ],
+   "similarity": {
+    "scale": 1.2527,
+    "rotationDeg": 16.59
+   },
+   "icpRmsMm": 4.16,
+   "controls": 400
+  },
+  {
+   "kind": "organ",
+   "male": [
+    "trachea"
+   ],
+   "female": [
+    "HRAF0773"
+   ],
+   "similarity": {
+    "scale": 0.9538,
+    "rotationDeg": 22.56
+   },
+   "icpRmsMm": 2.91,
+   "controls": 256
+  },
+  {
+   "kind": "organ",
+   "male": [
+    "thyroid cartilage"
+   ],
+   "female": [
+    "HRAF0770"
+   ],
+   "similarity": {
+    "scale": 1.143,
+    "rotationDeg": 3.22
+   },
+   "icpRmsMm": 2.5,
+   "controls": 104
+  }
+ ]
+}

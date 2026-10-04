@@ -1,0 +1,2631 @@
+{
+ "version": 1,
+ "createdBy": "scripts/female-transport/warp.py",
+ "field": {
+  "path": ".cache/female-transport/field.npz",
+  "sha256": "87b7b784f170604d2cb7218f08b9d7647525a5435875abe796abd74e6d81a817"
+ },
+ "selection": {
+  "chosen": {
+   "nerve-full.glb": 263,
+   "vessel-full.glb": 524,
+   "ligament-full.glb": 342,
+   "tendon-full.glb": 58,
+   "muscle.glb": 435,
+   "bone.glb": 15,
+   "reference/lymphatic_male.glb": 137
+  },
+  "skipped": {
+   "vessel-full.glb · female heart source": 27,
+   "nerve-full.glb · female brain/spinal cord sources": 236,
+   "vessel-full.glb · female vessel source": 73,
+   "vessel-full.glb · male-only": 10,
+   "vessel-full.glb · male external genital course": 6,
+   "nerve-full.glb · female eye source": 22,
+   "nerve-full.glb · female optic nerve source": 2,
+   "nerve-full.glb · male external genital course": 2,
+   "ligament-full.glb · female knee source": 16,
+   "muscle.glb · female knee source": 2,
+   "reference/lymphatic_male.glb · female spleen/thymus/tonsil source": 5
+  }
+ },
+ "skipped": [
+  {
+   "id": "ZA_vessel_right_inferolateral_branch_of_right_coronary_artery",
+   "name": "Right inferolateral branch of right coronary artery",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_nerve_wing_of_central_lobule_l",
+   "name": "Wing of central lobule (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_wing_of_central_lobule_r",
+   "name": "Wing of central lobule (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_vessel_abdominal_aorta",
+   "name": "Abdominal aorta",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_ascending_aorta",
+   "name": "Ascending aorta",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_thoracic_aorta",
+   "name": "Thoracic aorta",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_nerve_aqueduct_of_midbrain",
+   "name": "Aqueduct of midbrain",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_vessel_aortic_arch",
+   "name": "Aortic arch",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_superior_anorectal_artery",
+   "name": "Superior anorectal artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_central_retinal_artery_l",
+   "name": "Central retinal artery (left)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_central_retinal_artery_r",
+   "name": "Central retinal artery (right)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_circumflex_artery_of_heart",
+   "name": "Circumflex artery of heart",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_right_colic_artery",
+   "name": "Right colic artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_middle_colic_artery",
+   "name": "Middle colic artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_left_colic_artery",
+   "name": "Left colic artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_right_coronary_artery",
+   "name": "Right coronary artery",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_left_coronary_artery",
+   "name": "Left coronary artery",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_dorsal_artery_of_penis_l",
+   "name": "Dorsal artery of penis (left)",
+   "source": "vessel-full.glb",
+   "reason": "male-only"
+  },
+  {
+   "id": "ZA_vessel_dorsal_artery_of_penis_r",
+   "name": "Dorsal artery of penis (right)",
+   "source": "vessel-full.glb",
+   "reason": "male-only"
+  },
+  {
+   "id": "ZA_vessel_common_hepatic_artery",
+   "name": "Common hepatic artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_proper_hepatic_artery",
+   "name": "Proper hepatic artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_ileocolic_artery",
+   "name": "Ileocolic artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_anterior_interventricular_artery",
+   "name": "Anterior interventricular artery",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_marginal_artery",
+   "name": "Marginal artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_inferior_mesenteric_artery",
+   "name": "Inferior mesenteric artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_superior_mesenteric_artery",
+   "name": "Superior mesenteric artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_ophthalmic_artery_l",
+   "name": "Ophthalmic artery (left)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_ophthalmic_artery_r",
+   "name": "Ophthalmic artery (right)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_deep_artery_of_penis_l",
+   "name": "Deep artery of penis (left)",
+   "source": "vessel-full.glb",
+   "reason": "male-only"
+  },
+  {
+   "id": "ZA_vessel_deep_artery_of_penis_r",
+   "name": "Deep artery of penis (right)",
+   "source": "vessel-full.glb",
+   "reason": "male-only"
+  },
+  {
+   "id": "ZA_vessel_deep_external_pudendal_artery_l",
+   "name": "Deep external pudendal artery (left)",
+   "source": "vessel-full.glb",
+   "reason": "male external genital course"
+  },
+  {
+   "id": "ZA_vessel_deep_external_pudendal_artery_r",
+   "name": "Deep external pudendal artery (right)",
+   "source": "vessel-full.glb",
+   "reason": "male external genital course"
+  },
+  {
+   "id": "ZA_vessel_superficial_external_pudendal_artery_l",
+   "name": "Superficial external pudendal artery (left)",
+   "source": "vessel-full.glb",
+   "reason": "male external genital course"
+  },
+  {
+   "id": "ZA_vessel_superficial_external_pudendal_artery_r",
+   "name": "Superficial external pudendal artery (right)",
+   "source": "vessel-full.glb",
+   "reason": "male external genital course"
+  },
+  {
+   "id": "ZA_vessel_right_pulmonary_artery",
+   "name": "Right pulmonary artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_left_pulmonary_artery",
+   "name": "Left pulmonary artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_left_renal_artery",
+   "name": "Left renal artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_right_renal_artery",
+   "name": "Right renal artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_splenic_artery",
+   "name": "Splenic artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_left_subclavian_artery",
+   "name": "Left subclavian artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_right_testicular_artery_r",
+   "name": "Right testicular artery (right)",
+   "source": "vessel-full.glb",
+   "reason": "male-only"
+  },
+  {
+   "id": "ZA_vessel_left_testicular_artery",
+   "name": "Left testicular artery",
+   "source": "vessel-full.glb",
+   "reason": "male-only"
+  },
+  {
+   "id": "ZA_vessel_short_posterior_ciliary_arteries_l",
+   "name": "Short posterior ciliary arteries (left)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_short_posterior_ciliary_arteries_r",
+   "name": "Short posterior ciliary arteries (right)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_long_posterior_ciliary_arteries_l",
+   "name": "Long posterior ciliary arteries (left)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_long_posterior_ciliary_arteries_r",
+   "name": "Long posterior ciliary arteries (right)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_intrarenal_arteries_of_right_kidney",
+   "name": "Intrarenal arteries of right kidney",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_intrarenal_arteries_of_left_kidney",
+   "name": "Intrarenal arteries of left kidney",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_sigmoid_arteries",
+   "name": "Sigmoid arteries",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_right_atrium",
+   "name": "Right atrium",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_left_atrium",
+   "name": "Left atrium",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_nerve_base_of_peduncle_l",
+   "name": "Base of peduncle (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_base_of_peduncle_r",
+   "name": "Base of peduncle (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_vessel_bifurcation_of_pulmonary_trunk",
+   "name": "Bifurcation of pulmonary trunk",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_nerve_anterior_chamber_of_eyeball_l",
+   "name": "Anterior chamber of eyeball (left)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_anterior_chamber_of_eyeball_r",
+   "name": "Anterior chamber of eyeball (right)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_central_canal",
+   "name": "Central canal",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_vessel_left_common_carotid_artery",
+   "name": "Left common carotid artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_nerve_optic_chiasm_l",
+   "name": "Optic chiasm (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_optic_chiasm_r",
+   "name": "Optic chiasm (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_inferior_colliculus_l",
+   "name": "Inferior colliculus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_inferior_colliculus_r",
+   "name": "Inferior colliculus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_colliculus_l",
+   "name": "Superior colliculus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_colliculus_r",
+   "name": "Superior colliculus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_anterior_commissure",
+   "name": "Anterior commissure",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_hippocampal_commissure",
+   "name": "Hippocampal commissure",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterior_commissure",
+   "name": "Posterior commissure",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_cornea_l",
+   "name": "Cornea (left)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_cornea_r",
+   "name": "Cornea (right)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_anterior_horn_of_spinal_cord",
+   "name": "Anterior horn of spinal cord",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterior_horn_of_spinal_cord",
+   "name": "Posterior horn of spinal cord",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_amygdaloid_body_l",
+   "name": "Amygdaloid body (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_amygdaloid_body_r",
+   "name": "Amygdaloid body (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_corpus_callosum",
+   "name": "Corpus callosum",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lateral_geniculate_body_l",
+   "name": "Lateral geniculate body (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lateral_geniculate_body_r",
+   "name": "Lateral geniculate body (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_medial_geniculate_body_l",
+   "name": "Medial geniculate body (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_medial_geniculate_body_r",
+   "name": "Medial geniculate body (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_mamillary_body_l",
+   "name": "Mamillary body (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_mamillary_body_r",
+   "name": "Mamillary body (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_vitreous_body_l",
+   "name": "Vitreous body (left)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_vitreous_body_r",
+   "name": "Vitreous body (right)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_culmen",
+   "name": "Culmen",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_cuneus_l",
+   "name": "Cuneus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_cuneus_r",
+   "name": "Cuneus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_vessel_inferior_leaflet_of_right_atrioventricular_valve",
+   "name": "Inferior leaflet of right atrioventricular valve",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_posterior_leaflet_of_left_atrioventricular_valve",
+   "name": "Posterior leaflet of left atrioventricular valve",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_septal_leaflet_of_right_atrioventricular_valve",
+   "name": "Septal leaflet of right atrioventricular valve",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_nerve_declive",
+   "name": "Declive",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_spinal_dura",
+   "name": "Spinal dura",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_falx_cerebri",
+   "name": "Falx cerebri",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_cuneate_fasciculus",
+   "name": "Cuneate fasciculus",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_gracile_fasciculus",
+   "name": "Gracile fasciculus",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterolateral_tract",
+   "name": "Posterolateral tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_anterior_fasciculus_proprius",
+   "name": "Anterior fasciculus proprius",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lateral_fasciculus_proprius",
+   "name": "Lateral fasciculus proprius",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterior_fasciculus_proprius",
+   "name": "Posterior fasciculus proprius",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_zonular_fibres_l",
+   "name": "Zonular fibres (left)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_zonular_fibres_r",
+   "name": "Zonular fibres (right)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_flocculus_l",
+   "name": "Flocculus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_flocculus_r",
+   "name": "Flocculus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_folium_of_vermis",
+   "name": "Folium of vermis",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_fornix_l",
+   "name": "Fornix (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_fornix_r",
+   "name": "Fornix (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_interpeduncular_fossa_l",
+   "name": "Interpeduncular fossa (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_interpeduncular_fossa_r",
+   "name": "Interpeduncular fossa (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_globus_pallidus_l",
+   "name": "Globus pallidus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_globus_pallidus_r",
+   "name": "Globus pallidus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_occipital_gyri_l",
+   "name": "Superior occipital gyri (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_occipital_gyri_r",
+   "name": "Superior occipital gyri (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_orbital_gyri_l",
+   "name": "Orbital gyri (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_orbital_gyri_r",
+   "name": "Orbital gyri (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_transverse_temporal_gyri_l",
+   "name": "Transverse temporal gyri (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_transverse_temporal_gyri_r",
+   "name": "Transverse temporal gyri (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_angular_gyrus_l",
+   "name": "Angular gyrus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_angular_gyrus_r",
+   "name": "Angular gyrus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_middle_frontal_gyrus_l",
+   "name": "Middle frontal gyrus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_middle_frontal_gyrus_r",
+   "name": "Middle frontal gyrus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_frontal_gyrus_l",
+   "name": "Superior frontal gyrus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_frontal_gyrus_r",
+   "name": "Superior frontal gyrus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lingual_gyrus_l",
+   "name": "Lingual gyrus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lingual_gyrus_r",
+   "name": "Lingual gyrus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lateral_occipitotemporal_gyrus_l",
+   "name": "Lateral occipitotemporal gyrus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lateral_occipitotemporal_gyrus_r",
+   "name": "Lateral occipitotemporal gyrus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_postcentral_gyrus_l",
+   "name": "Postcentral gyrus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_postcentral_gyrus_r",
+   "name": "Postcentral gyrus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_precentral_gyrus_l",
+   "name": "Precentral gyrus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_precentral_gyrus_r",
+   "name": "Precentral gyrus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_supramarginal_gyrus_l",
+   "name": "Supramarginal gyrus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_supramarginal_gyrus_r",
+   "name": "Supramarginal gyrus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_inferior_temporal_gyrus_l",
+   "name": "Inferior temporal gyrus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_inferior_temporal_gyrus_r",
+   "name": "Inferior temporal gyrus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_middle_temporal_gyrus_l",
+   "name": "Middle temporal gyrus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_middle_temporal_gyrus_r",
+   "name": "Middle temporal gyrus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_habenula",
+   "name": "Habenula",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_hippocampus_l",
+   "name": "Hippocampus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_hippocampus_r",
+   "name": "Hippocampus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_hypothalamus",
+   "name": "Hypothalamus",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_iris_l",
+   "name": "Iris (left)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_iris_r",
+   "name": "Iris (right)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_lens_l",
+   "name": "Lens (left)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_lens_r",
+   "name": "Lens (right)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_suspensory_ligament_of_eyeball_l",
+   "name": "Suspensory ligament of eyeball (left)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_suspensory_ligament_of_eyeball_r",
+   "name": "Suspensory ligament of eyeball (right)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_lingula_of_cerebellum",
+   "name": "Lingula of cerebellum",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_biventral_lobule_l",
+   "name": "Biventral lobule (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_biventral_lobule_r",
+   "name": "Biventral lobule (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_central_lobule",
+   "name": "Central lobule",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_gracile_lobule_l",
+   "name": "Gracile lobule (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_gracile_lobule_r",
+   "name": "Gracile lobule (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_parietal_lobule_l",
+   "name": "Superior parietal lobule (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_parietal_lobule_r",
+   "name": "Superior parietal lobule (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_anterior_quadrangular_lobule_l",
+   "name": "Anterior quadrangular lobule (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_anterior_quadrangular_lobule_r",
+   "name": "Anterior quadrangular lobule (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterior_quadrangular_lobule_l",
+   "name": "Posterior quadrangular lobule (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterior_quadrangular_lobule_r",
+   "name": "Posterior quadrangular lobule (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_inferior_semilunar_lobule_l",
+   "name": "Inferior semilunar lobule (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_inferior_semilunar_lobule_r",
+   "name": "Inferior semilunar lobule (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_semilunar_lobule_l",
+   "name": "Superior semilunar lobule (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_semilunar_lobule_r",
+   "name": "Superior semilunar lobule (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_medulla_oblongata_l",
+   "name": "Medulla oblongata (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_medulla_oblongata_r",
+   "name": "Medulla oblongata (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_midbrain_l",
+   "name": "Midbrain (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_midbrain_r",
+   "name": "Midbrain (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_vessel_anterior_papillary_muscle_of_right_ventricle",
+   "name": "Anterior papillary muscle of right ventricle",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_inferior_papillary_muscle_of_right_ventricle",
+   "name": "Inferior papillary muscle of right ventricle",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_inferior_papillary_muscle_of_left_ventricle",
+   "name": "Inferior papillary muscle of left ventricle",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_septal_papillary_muscle_of_right_ventricle",
+   "name": "Septal papillary muscle of right ventricle",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_nerve_optic_nerve_ii_l",
+   "name": "Optic nerve (II) (left)",
+   "source": "nerve-full.glb",
+   "reason": "female optic nerve source"
+  },
+  {
+   "id": "ZA_nerve_optic_nerve_ii_r",
+   "name": "Optic nerve (II) (right)",
+   "source": "nerve-full.glb",
+   "reason": "female optic nerve source"
+  },
+  {
+   "id": "ZA_nerve_nodule_of_vermis",
+   "name": "Nodule of vermis",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_septal_nuclei",
+   "name": "Septal nuclei",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_vestibular_nuclei_l",
+   "name": "Vestibular nuclei (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_vestibular_nuclei_r",
+   "name": "Vestibular nuclei (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_accessory_nucleus_of_oculomotor_nerve_l",
+   "name": "Accessory nucleus of oculomotor nerve (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_accessory_nucleus_of_oculomotor_nerve_r",
+   "name": "Accessory nucleus of oculomotor nerve (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_ambiguus_l",
+   "name": "Nucleus ambiguus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_ambiguus_r",
+   "name": "Nucleus ambiguus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_caudate_nucleus_l",
+   "name": "Caudate nucleus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_caudate_nucleus_r",
+   "name": "Caudate nucleus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_anterior_cochlear_nucleus_l",
+   "name": "Anterior cochlear nucleus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_anterior_cochlear_nucleus_r",
+   "name": "Anterior cochlear nucleus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterior_cochlear_nucleus_l",
+   "name": "Posterior cochlear nucleus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterior_cochlear_nucleus_r",
+   "name": "Posterior cochlear nucleus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_intermediolateral_nucleus",
+   "name": "Intermediolateral nucleus",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_intermediomedial_nucleus",
+   "name": "Intermediomedial nucleus",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lentiform_nucleus_l",
+   "name": "Lentiform nucleus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lentiform_nucleus_r",
+   "name": "Lentiform nucleus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_of_abducens_nerve_l",
+   "name": "Nucleus of abducens nerve (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_of_abducens_nerve_r",
+   "name": "Nucleus of abducens nerve (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_of_accessory_nerve_l",
+   "name": "Nucleus of accessory nerve (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_of_accessory_nerve_r",
+   "name": "Nucleus of accessory nerve (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_motor_nucleus_of_facial_nerve_l",
+   "name": "Motor nucleus of facial nerve (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_motor_nucleus_of_facial_nerve_r",
+   "name": "Motor nucleus of facial nerve (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_of_hypoglossal_nerve_l",
+   "name": "Nucleus of hypoglossal nerve (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_of_hypoglossal_nerve_r",
+   "name": "Nucleus of hypoglossal nerve (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_of_oculomotor_nerve_l",
+   "name": "Nucleus of oculomotor nerve (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_of_oculomotor_nerve_r",
+   "name": "Nucleus of oculomotor nerve (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_of_trochlear_nerve_l",
+   "name": "Nucleus of trochlear nerve (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_of_trochlear_nerve_r",
+   "name": "Nucleus of trochlear nerve (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterior_nucleus_of_vagus_nerve_l",
+   "name": "Posterior nucleus of vagus nerve (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterior_nucleus_of_vagus_nerve_r",
+   "name": "Posterior nucleus of vagus nerve (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_proprius",
+   "name": "Nucleus proprius",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_red_nucleus_l",
+   "name": "Red nucleus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_red_nucleus_r",
+   "name": "Red nucleus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_inferior_salivatory_nucleus_l",
+   "name": "Inferior salivatory nucleus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_inferior_salivatory_nucleus_r",
+   "name": "Inferior salivatory nucleus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_salivatory_nucleus_l",
+   "name": "Superior salivatory nucleus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_salivatory_nucleus_r",
+   "name": "Superior salivatory nucleus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_of_solitary_tract_l",
+   "name": "Nucleus of solitary tract (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_nucleus_of_solitary_tract_r",
+   "name": "Nucleus of solitary tract (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_olive_l",
+   "name": "Olive (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_olive_r",
+   "name": "Olive (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_opercular_part_of_inferior_frontal_gyrus_l",
+   "name": "Opercular part of inferior frontal gyrus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_opercular_part_of_inferior_frontal_gyrus_r",
+   "name": "Opercular part of inferior frontal gyrus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_triangular_part_of_inferior_frontal_gyrus_l",
+   "name": "Triangular part of inferior frontal gyrus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_triangular_part_of_inferior_frontal_gyrus_r",
+   "name": "Triangular part of inferior frontal gyrus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_cerebellar_peduncle_l",
+   "name": "Superior cerebellar peduncle (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_cerebellar_peduncle_r",
+   "name": "Superior cerebellar peduncle (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_peduncle_of_flocculus_l",
+   "name": "Peduncle of flocculus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_peduncle_of_flocculus_r",
+   "name": "Peduncle of flocculus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_temporal_plane_l",
+   "name": "Temporal plane (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_temporal_plane_r",
+   "name": "Temporal plane (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_choroid_plexus_l",
+   "name": "Choroid plexus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_choroid_plexus_r",
+   "name": "Choroid plexus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_occipital_pole_l",
+   "name": "Occipital pole (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_occipital_pole_r",
+   "name": "Occipital pole (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_temporal_pole_l",
+   "name": "Temporal pole (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_temporal_pole_r",
+   "name": "Temporal pole (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_pons_l",
+   "name": "Pons (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_pons_r",
+   "name": "Pons (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_precuneus_l",
+   "name": "Precuneus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_precuneus_r",
+   "name": "Precuneus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_spinal_reticular_process",
+   "name": "Spinal reticular process",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_putamen_l",
+   "name": "Putamen (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_putamen_r",
+   "name": "Putamen (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_pyramid_of_medulla_oblongata_l",
+   "name": "Pyramid of medulla oblongata (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_pyramid_of_medulla_oblongata_r",
+   "name": "Pyramid of medulla oblongata (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_pyramis_of_vermis",
+   "name": "Pyramis of vermis",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_anterior_root_of_spinal_nerve_l",
+   "name": "Anterior root of spinal nerve (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_anterior_root_of_spinal_nerve_r",
+   "name": "Anterior root of spinal nerve (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterior_root_of_spinal_nerve_l",
+   "name": "Posterior root of spinal nerve (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterior_root_of_spinal_nerve_r",
+   "name": "Posterior root of spinal nerve (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_vessel_septal_branches_of_anterior_interventricular_artery",
+   "name": "Septal branches of anterior interventricular artery",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_anterior_branch_of_renal_artery_l",
+   "name": "Anterior branch of renal artery (left)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_anterior_branch_of_renal_artery_r",
+   "name": "Anterior branch of renal artery (right)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_ascending_branch_of_left_colic_artery",
+   "name": "Ascending branch of left colic artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_colic_branch_of_ileocolic_artery",
+   "name": "Colic branch of ileocolic artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_descending_branch_of_left_colic_artery",
+   "name": "Descending branch of left colic artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_nerve_genital_branch_of_genitofemoral_nerve_l",
+   "name": "Genital branch of genitofemoral nerve (left)",
+   "source": "nerve-full.glb",
+   "reason": "male external genital course"
+  },
+  {
+   "id": "ZA_nerve_genital_branch_of_genitofemoral_nerve_r",
+   "name": "Genital branch of genitofemoral nerve (right)",
+   "source": "nerve-full.glb",
+   "reason": "male external genital course"
+  },
+  {
+   "id": "ZA_vessel_ileal_branch_of_ileocolic_artery",
+   "name": "Ileal branch of ileocolic artery",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_posterior_branch_of_renal_artery_l",
+   "name": "Posterior branch of renal artery (left)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_posterior_branch_of_renal_artery_r",
+   "name": "Posterior branch of renal artery (right)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_nerve_retina_l",
+   "name": "Retina (left)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_retina_r",
+   "name": "Retina (right)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_sclera_l",
+   "name": "Sclera (left)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_sclera_r",
+   "name": "Sclera (right)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_anterior_segment_of_eyeball_l",
+   "name": "Anterior segment of eyeball (left)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_anterior_segment_of_eyeball_r",
+   "name": "Anterior segment of eyeball (right)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_posterior_segment_of_eyeball_l",
+   "name": "Posterior segment of eyeball (left)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_posterior_segment_of_eyeball_r",
+   "name": "Posterior segment of eyeball (right)",
+   "source": "nerve-full.glb",
+   "reason": "female eye source"
+  },
+  {
+   "id": "ZA_nerve_septum_pellucidum",
+   "name": "Septum pellucidum",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_vessel_coronary_sinus",
+   "name": "Coronary sinus",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_nerve_stria_medullaris_thalami_l",
+   "name": "Stria medullaris thalami (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_stria_medullaris_thalami_r",
+   "name": "Stria medullaris thalami (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_stria_terminalis_l",
+   "name": "Stria terminalis (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_stria_terminalis_r",
+   "name": "Stria terminalis (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_white_matter_of_spinal_cord",
+   "name": "White matter of spinal cord",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_white_matter_of_telencephalon_l",
+   "name": "White matter of telencephalon (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_white_matter_of_telencephalon_r",
+   "name": "White matter of telencephalon (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lateral_intermediate_substance",
+   "name": "Lateral intermediate substance",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_calcarine_sulcus_l",
+   "name": "Calcarine sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_calcarine_sulcus_r",
+   "name": "Calcarine sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_central_sulcus_l",
+   "name": "Central sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_central_sulcus_r",
+   "name": "Central sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_circular_sulcus_of_insula_l",
+   "name": "Circular sulcus of insula (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_circular_sulcus_of_insula_r",
+   "name": "Circular sulcus of insula (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_collateral_sulcus_l",
+   "name": "Collateral sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_collateral_sulcus_r",
+   "name": "Collateral sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_inferior_frontal_sulcus_l",
+   "name": "Inferior frontal sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_inferior_frontal_sulcus_r",
+   "name": "Inferior frontal sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_frontal_sulcus_l",
+   "name": "Superior frontal sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_frontal_sulcus_r",
+   "name": "Superior frontal sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_intraparietal_sulcus_l",
+   "name": "Intraparietal sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_intraparietal_sulcus_r",
+   "name": "Intraparietal sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_transverse_occipital_sulcus_l",
+   "name": "Transverse occipital sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_transverse_occipital_sulcus_r",
+   "name": "Transverse occipital sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_olfactory_sulcus_l",
+   "name": "Olfactory sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_olfactory_sulcus_r",
+   "name": "Olfactory sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_paracentral_sulcus_l",
+   "name": "Paracentral sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_paracentral_sulcus_r",
+   "name": "Paracentral sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_parieto_occipital_sulcus_l",
+   "name": "Parieto-occipital sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_parieto_occipital_sulcus_r",
+   "name": "Parieto-occipital sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_postcentral_sulcus_l",
+   "name": "Postcentral sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_postcentral_sulcus_r",
+   "name": "Postcentral sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_subparietal_sulcus_l",
+   "name": "Subparietal sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_subparietal_sulcus_r",
+   "name": "Subparietal sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_inferior_temporal_sulcus_l",
+   "name": "Inferior temporal sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_inferior_temporal_sulcus_r",
+   "name": "Inferior temporal sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_temporal_sulcus_l",
+   "name": "Superior temporal sulcus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_superior_temporal_sulcus_r",
+   "name": "Superior temporal sulcus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_tentorium_cerebelli_l",
+   "name": "Tentorium cerebelli (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_tentorium_cerebelli_r",
+   "name": "Tentorium cerebelli (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_thalamus_l",
+   "name": "Thalamus (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_thalamus_r",
+   "name": "Thalamus (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_tonsil_of_cerebellum_l",
+   "name": "Tonsil of cerebellum (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_tonsil_of_cerebellum_r",
+   "name": "Tonsil of cerebellum (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_anterior_corticospinal_tract",
+   "name": "Anterior corticospinal tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lateral_corticospinal_tract",
+   "name": "Lateral corticospinal tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_optic_tract_l",
+   "name": "Optic tract (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_optic_tract_r",
+   "name": "Optic tract (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lateral_reticulospinal_tract",
+   "name": "Lateral reticulospinal tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_medial_reticulospinal_tract",
+   "name": "Medial reticulospinal tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_rubrospinal_tract",
+   "name": "Rubrospinal tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_anterior_spinocerebellar_tract",
+   "name": "Anterior spinocerebellar tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_posterior_spinocerebellar_tract",
+   "name": "Posterior spinocerebellar tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_spinotectal_tract",
+   "name": "Spinotectal tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_anterior_spinothalamic_tract",
+   "name": "Anterior spinothalamic tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lateral_spinothalamic_tract",
+   "name": "Lateral spinothalamic tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_tectospinal_tract",
+   "name": "Tectospinal tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lateral_vestibulospinal_tract",
+   "name": "Lateral vestibulospinal tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_medial_vestibulospinal_tract",
+   "name": "Medial vestibulospinal tract",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_vessel_brachiocephalic_trunk",
+   "name": "Brachiocephalic trunk",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_coeliac_trunk",
+   "name": "Coeliac trunk",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_pulmonary_trunk",
+   "name": "Pulmonary trunk",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_nerve_tuber_of_vermis",
+   "name": "Tuber of vermis",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_uvula_of_vermis",
+   "name": "Uvula of vermis",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_vessel_right_coronary_leaflet",
+   "name": "Right coronary leaflet",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_left_coronary_leaflet",
+   "name": "Left coronary leaflet",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_non_coronary_leaflet",
+   "name": "Non-coronary leaflet",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_anterior_semilunar_leaflet_of_pulmonary_valve",
+   "name": "Anterior semilunar leaflet of pulmonary valve",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_right_semilunar_leaflet_of_pulmonary_valve",
+   "name": "Right semilunar leaflet of pulmonary valve",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_left_semilunar_leaflet_of_pulmonary_valve",
+   "name": "Left semilunar leaflet of pulmonary valve",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_inferior_vena_cava_abdominal_part",
+   "name": "Inferior vena cava (abdominal part)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_inferior_vena_cava_thoracic_part",
+   "name": "Inferior vena cava (thoracic part)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_superior_vena_cava",
+   "name": "Superior vena cava",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_right_colic_vein",
+   "name": "Right colic vein",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_middle_colic_vein",
+   "name": "Middle colic vein",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_deep_dorsal_vein_of_penis",
+   "name": "Deep dorsal vein of penis",
+   "source": "vessel-full.glb",
+   "reason": "male-only"
+  },
+  {
+   "id": "ZA_vessel_common_iliac_vein_l",
+   "name": "Common iliac vein (left)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_common_iliac_vein_r",
+   "name": "Common iliac vein (right)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_internal_iliac_vein_l",
+   "name": "Internal iliac vein (left)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_internal_iliac_vein_r",
+   "name": "Internal iliac vein (right)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_inferior_vein_of_left_ventricle",
+   "name": "Inferior vein of left ventricle",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_great_cardiac_vein",
+   "name": "Great cardiac vein",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_middle_cardiac_vein",
+   "name": "Middle cardiac vein",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_vessel_inferior_mesenteric_vein",
+   "name": "Inferior mesenteric vein",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_superior_mesenteric_vein",
+   "name": "Superior mesenteric vein",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_inferior_ophthalmic_vein_l",
+   "name": "Inferior ophthalmic vein (left)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_inferior_ophthalmic_vein_r",
+   "name": "Inferior ophthalmic vein (right)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_superior_ophthalmic_vein_l",
+   "name": "Superior ophthalmic vein (left)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_superior_ophthalmic_vein_r",
+   "name": "Superior ophthalmic vein (right)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_hepatic_portal_vein",
+   "name": "Hepatic portal vein",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_internal_pudendal_vein_l",
+   "name": "Internal pudendal vein (left)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_internal_pudendal_vein_r",
+   "name": "Internal pudendal vein (right)",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_right_inferior_pulmonary_vein",
+   "name": "Right inferior pulmonary vein",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_right_superior_pulmonary_vein",
+   "name": "Right superior pulmonary vein",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_left_inferior_pulmonary_vein",
+   "name": "Left inferior pulmonary vein",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_left_superior_pulmonary_vein",
+   "name": "Left superior pulmonary vein",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_right_renal_vein",
+   "name": "Right renal vein",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_left_renal_vein",
+   "name": "Left renal vein",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_splenic_vein",
+   "name": "Splenic vein",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_right_testicular_vein",
+   "name": "Right testicular vein",
+   "source": "vessel-full.glb",
+   "reason": "male-only"
+  },
+  {
+   "id": "ZA_vessel_left_testicular_vein",
+   "name": "Left testicular vein",
+   "source": "vessel-full.glb",
+   "reason": "male-only"
+  },
+  {
+   "id": "ZA_vessel_superficial_dorsal_veins_of_penis",
+   "name": "Superficial dorsal veins of penis",
+   "source": "vessel-full.glb",
+   "reason": "male-only"
+  },
+  {
+   "id": "ZA_vessel_hepatic_veins",
+   "name": "Hepatic veins",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_intrarenal_veins_of_right_kidney",
+   "name": "Intrarenal veins of right kidney",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_intrarenal_veins_of_left_kidney",
+   "name": "Intrarenal veins of left kidney",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_external_pudendal_veins_l",
+   "name": "External pudendal veins (left)",
+   "source": "vessel-full.glb",
+   "reason": "male external genital course"
+  },
+  {
+   "id": "ZA_vessel_external_pudendal_veins_r",
+   "name": "External pudendal veins (right)",
+   "source": "vessel-full.glb",
+   "reason": "male external genital course"
+  },
+  {
+   "id": "ZA_vessel_sigmoid_veins",
+   "name": "Sigmoid veins",
+   "source": "vessel-full.glb",
+   "reason": "female vessel source"
+  },
+  {
+   "id": "ZA_vessel_right_ventricle",
+   "name": "Right ventricle",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_nerve_lateral_ventricle_l",
+   "name": "Lateral ventricle (left)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_lateral_ventricle_r",
+   "name": "Lateral ventricle (right)",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_nerve_fourth_ventricle",
+   "name": "Fourth ventricle",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_vessel_left_ventricle",
+   "name": "Left ventricle",
+   "source": "vessel-full.glb",
+   "reason": "female heart source"
+  },
+  {
+   "id": "ZA_nerve_third_ventricle",
+   "name": "Third ventricle",
+   "source": "nerve-full.glb",
+   "reason": "female brain/spinal cord sources"
+  },
+  {
+   "id": "ZA_ligament_fibular_collateral_ligament_l",
+   "name": "Fibular collateral ligament (left)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_fibular_collateral_ligament_r",
+   "name": "Fibular collateral ligament (right)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_anterior_cruciate_ligament_l",
+   "name": "Anterior cruciate ligament (left)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_anterior_cruciate_ligament_r",
+   "name": "Anterior cruciate ligament (right)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_posterior_cruciate_ligament_l",
+   "name": "Posterior cruciate ligament (left)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_posterior_cruciate_ligament_r",
+   "name": "Posterior cruciate ligament (right)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_meniscopatellar_ligament_l",
+   "name": "Meniscopatellar ligament (left)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_meniscopatellar_ligament_r",
+   "name": "Meniscopatellar ligament (right)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_lateral_meniscus_l",
+   "name": "Lateral meniscus (left)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_lateral_meniscus_r",
+   "name": "Lateral meniscus (right)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_medial_meniscus_l",
+   "name": "Medial meniscus (left)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_medial_meniscus_r",
+   "name": "Medial meniscus (right)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_deep_part_of_tibial_collateral_ligament_l",
+   "name": "Deep part of tibial collateral ligament (left)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_deep_part_of_tibial_collateral_ligament_r",
+   "name": "Deep part of tibial collateral ligament (right)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_superficial_part_of_tibial_collateral_ligament_l",
+   "name": "Superficial part of tibial collateral ligament (left)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_ligament_superficial_part_of_tibial_collateral_ligament_r",
+   "name": "Superficial part of tibial collateral ligament (right)",
+   "source": "ligament-full.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "FMA38928",
+   "name": "right rectus femoris",
+   "source": "muscle.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "FMA38929",
+   "name": "left rectus femoris",
+   "source": "muscle.glb",
+   "reason": "female knee source"
+  },
+  {
+   "id": "ZA_lymph_spleen",
+   "name": "Spleen",
+   "source": "reference/lymphatic_male.glb",
+   "reason": "female spleen/thymus/tonsil source"
+  },
+  {
+   "id": "ZA_lymph_right_lobe_of_thymus",
+   "name": "Right lobe of thymus",
+   "source": "reference/lymphatic_male.glb",
+   "reason": "female spleen/thymus/tonsil source"
+  },
+  {
+   "id": "ZA_lymph_left_lobe_of_thymus",
+   "name": "Left lobe of thymus",
+   "source": "reference/lymphatic_male.glb",
+   "reason": "female spleen/thymus/tonsil source"
+  },
+  {
+   "id": "ZA_lymph_palatine_tonsil_l",
+   "name": "Palatine tonsil (left)",
+   "source": "reference/lymphatic_male.glb",
+   "reason": "female spleen/thymus/tonsil source"
+  },
+  {
+   "id": "ZA_lymph_palatine_tonsil_r",
+   "name": "Palatine tonsil (right)",
+   "source": "reference/lymphatic_male.glb",
+   "reason": "female spleen/thymus/tonsil source"
+  }
+ ],
+ "systems": {
+  "nerve": {
+   "structures": 263,
+   "vertices": 622763,
+   "triangles": 1220204,
+   "outsideMaleSkin": 1536,
+   "outsideFemaleSkin": 0,
+   "newlyOutside": 0,
+   "invertedTriangles": 220,
+   "skinContact": 56
+  },
+  "vessel": {
+   "structures": 524,
+   "vertices": 1310929,
+   "triangles": 2589418,
+   "outsideMaleSkin": 3339,
+   "outsideFemaleSkin": 136,
+   "newlyOutside": 136,
+   "invertedTriangles": 0,
+   "skinContact": 65
+  },
+  "ligament": {
+   "structures": 342,
+   "vertices": 165035,
+   "triangles": 240467,
+   "outsideMaleSkin": 24,
+   "outsideFemaleSkin": 0,
+   "newlyOutside": 0,
+   "invertedTriangles": 0,
+   "skinContact": 22
+  },
+  "tendon": {
+   "structures": 58,
+   "vertices": 42532,
+   "triangles": 81628,
+   "outsideMaleSkin": 0,
+   "outsideFemaleSkin": 0,
+   "newlyOutside": 0,
+   "invertedTriangles": 0,
+   "skinContact": 22
+  },
+  "muscle": {
+   "structures": 435,
+   "vertices": 467280,
+   "triangles": 933712,
+   "outsideMaleSkin": 641,
+   "outsideFemaleSkin": 6,
+   "newlyOutside": 6,
+   "invertedTriangles": 165,
+   "skinContact": 91
+  },
+  "bone": {
+   "structures": 15,
+   "vertices": 9960,
+   "triangles": 19872,
+   "outsideMaleSkin": 1,
+   "outsideFemaleSkin": 0,
+   "newlyOutside": 0,
+   "invertedTriangles": 0,
+   "skinContact": 1
+  },
+  "lymph": {
+   "structures": 137,
+   "vertices": 54610,
+   "triangles": 106680,
+   "outsideMaleSkin": 141,
+   "outsideFemaleSkin": 0,
+   "newlyOutside": 0,
+   "invertedTriangles": 0,
+   "skinContact": 4
+  }
+ },
+ "borrowed": {
+  "bones": 180,
+  "meanMoveMm": {
+   "median": 3.27,
+   "max": 55.45
+  },
+  "before": {
+   "leftClavicleMedialToSternumMm": 24.8,
+   "rightClavicleMedialToSternumMm": 29.8,
+   "ribToVertebraMm": {
+    "median": 0.3,
+    "max": 0.6
+   },
+   "costalCartilage1to7ToSternumMm": {
+    "median": 1.0,
+    "max": 6.3
+   },
+   "ribVerticesWithin1mmOfLung": 60,
+   "verticesOutsideSkin": 3145,
+   "bonesOutsideSkin": 21
+  },
+  "after": {
+   "leftClavicleMedialToSternumMm": 0.6,
+   "rightClavicleMedialToSternumMm": 0.8,
+   "ribToVertebraMm": {
+    "median": 0.4,
+    "max": 1.4
+   },
+   "costalCartilage1to7ToSternumMm": {
+    "median": 0.5,
+    "max": 0.9
+   },
+   "ribVerticesWithin1mmOfLung": 67,
+   "verticesOutsideSkin": 55,
+   "bonesOutsideSkin": 2
+  },
+  "largestMoves": [
+   [
+    "Left clavicle",
+    55.4
+   ],
+   [
+    "Right clavicle",
+    53.6
+   ],
+   [
+    "Left twelfth rib",
+    52.3
+   ],
+   [
+    "Left eleventh rib",
+    42.9
+   ],
+   [
+    "Right twelfth rib",
+    41.3
+   ],
+   [
+    "Right sixth costal cartilage",
+    34.6
+   ],
+   [
+    "Left seventh costal cartilage",
+    34.2
+   ],
+   [
+    "Right eleventh rib",
+    34.2
+   ],
+   [
+    "Left scapula",
+    34.2
+   ],
+   [
+    "Right scapula",
+    31.2
+   ],
+   [
+    "Right seventh costal cartilage",
+    31.1
+   ],
+   [
+    "Left sixth costal cartilage",
+    30.6
+   ],
+   [
+    "Left tenth rib",
+    28.6
+   ],
+   [
+    "Right tenth rib",
+    24.2
+   ],
+   [
+    "Left sixth rib",
+    23.6
+   ],
+   [
+    "Right first rib",
+    23.4
+   ],
+   [
+    "Left fourth rib",
+    22.6
+   ],
+   [
+    "Left first rib",
+    22.2
+   ],
+   [
+    "Left eighth rib",
+    22.1
+   ],
+   [
+    "Left ninth rib",
+    22.1
+   ]
+  ]
+ }
+}

@@ -35,6 +35,8 @@ export type ViewState = {
   labels: boolean;
   // Ligaments, joint structures and separately modelled tendons.
   connective: boolean;
+  // "성기 가리기": hide the external genitalia under a plain cover.
+  modesty: boolean;
   selection: Selection | null;
   detail: { id: string; name: string; ids: string[]; layers: Layers } | null;
   detailReturn: ReturnView | null;
@@ -77,6 +79,7 @@ export function initialView(pointId = ""): ViewState {
     markers: "filtered",
     labels: false,
     connective: true,
+    modesty: false,
     selection: null,
     detail: null,
     detailReturn: null,
@@ -112,6 +115,7 @@ export type ViewAction =
   | { type: "markers"; value: ViewState["markers"] }
   | { type: "labels"; value: boolean }
   | { type: "connective"; value: boolean }
+  | { type: "modesty"; value: boolean }
   | { type: "connective-only"; ids: string[] }
   | { type: "target"; value: ViewState["selectionTarget"] }
   | { type: "select"; selection: Selection; layer?: Layer; region?: ViewState["anatomyRegion"]; detail?: NonNullable<ViewState["detail"]> }
@@ -251,6 +255,8 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return { ...s, labels: a.value };
     case "connective":
       return { ...s, connective: a.value };
+    case "modesty":
+      return a.value === s.modesty ? s : { ...s, modesty: a.value };
     case "connective-only": {
       // Ligaments and tendons alone, over the muscle and bone layers. Leaving
       // the selection returns to the view it was opened from.
@@ -375,7 +381,8 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
     case "reset-filters":
       return { ...s, filters: initialView().filters };
     case "reset":
-      return initialView(s.pointId);
+      // Covering the genitalia is the viewer's preference, not part of the view.
+      return { ...initialView(s.pointId), modesty: s.modesty };
   }
 }
 // Saved state is untrusted, versioned and catalog-checked. Unknown snapshots reset safely.
@@ -438,6 +445,9 @@ export function restoreView(
     // Sessions saved before ligaments and tendons existed show them.
     if (s.connective === undefined) s.connective = base.connective;
     if (typeof s.connective !== "boolean") return base;
+    // Sessions saved before the cover existed leave it off.
+    if (s.modesty === undefined) s.modesty = base.modesty;
+    if (typeof s.modesty !== "boolean") return base;
     if (!["dissection", "layers"].includes(s.displayMode)) return base;
     s.dissection = quantizeDepth(s.dissection);
     if (s.displayMode === "dissection" && !s.selection && !s.detail && keys.every(k => typeof s.layers?.[k] === "boolean")) {

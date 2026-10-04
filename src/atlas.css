@@ -422,11 +422,13 @@ body:has(.ax) .site-footer { display: none; }
   .ax-top { gap: 6px; }
   .ax-search { flex: 1 1 auto; height: 38px; }
   .ax-search kbd { display: none; }
-  .ax-top-actions { gap: 5px; }
+  .ax-top-actions { gap: 4px; }
   .ax-segment { flex: 0 0 auto; }
   .ax-segment button { padding: 0 7px; min-height: 30px; font-size: 12px; }
-  .ax-select { width: 72px; height: 38px; font-size: 12px; padding: 0 4px; }
+  .ax-select { width: 64px; height: 38px; font-size: 12px; padding: 0 4px; }
   .ax-icon { width: 36px; height: 36px; }
+  /* Four top-bar icons (cover, settings, help) share the row with search on phones. */
+  .ax-top-actions > .ax-icon { width: 33px; }
   /* Phone panels open over the scene and stay within 45% of it: search results
      under the search box, other panels as bottom sheets within thumb reach. */
   .ax-results { top: calc(var(--ax-gap) + 44px); left: var(--ax-gap); right: var(--ax-gap); width: auto; max-height: 45%; }

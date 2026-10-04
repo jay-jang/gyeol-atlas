@@ -16,6 +16,7 @@ import maleDetailGroups from "../data/male-detail-groups.json";
 import maleDetailStructures from "../data/male-detail-structures.json";
 import femaleDetailStructures from "../data/female-detail-structures.json";
 import femaleDetailGroups from "../data/female-detail-groups.json";
+import femaleTransportCatalogue from "../data/female-transport-structures.json";
 import {pelvicStructureDisplay} from "./female-pelvic-bindings";
 export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.find(detail => detail.id === group.id) || group), ...femaleOrganGroups, ...femaleAirwayGroups, ...femaleBiliaryGroups, ...femaleAdditionalOrganGroups, ...femaleDetailGroups];
 // Source-defined composite structures are available from their selection card,
@@ -64,7 +65,25 @@ const baseStructures = inputs.assets.map((s) => ({
 // scopes only annotate existing source-defined female meshes at runtime.
 const additionalFemaleGroupById = new Map(femaleAdditionalOrganGroups.flatMap(group => group.ids.map(id => [id, group] as const)));
 const featuredFemaleGroupById = new Map(femaleAirwayGroups.flatMap(group => group.ids.map(id => [id, group] as const)));
-export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...connectiveStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures.filter(s => s.sex === "male"), ...femaleAtlasStructures, ...maleDetailStructures, ...femaleDetailStructures].map(s => {
+// Male-derived structures carried into the female body (scripts/female-transport/).
+// Each keeps the male entry's names, Latin, hierarchy, label and FMA ID.
+export const FEMALE_TRANSPORT_NOTE = "남성 원본을 여성 골격·피부 대응으로 옮긴 보완 구조입니다. 여성 원본에서 직접 만든 형상이 아니며, 위치는 학습용 근사입니다.";
+const transportLayer = { nerve: "nerve", vessel: "vessel", muscle: "muscle", ligament: "bone", tendon: "muscle", lymph: "lymph", bone: "bone" } as const;
+const maleSource = new Map<string, { name: string; label?: string; latin?: string; kind?: string; bodyRegion?: string; hierarchy?: string[]; description?: string; source?: string }>(
+  [...baseStructures, ...fullSystemStructures, ...connectiveStructures, ...sexLymphStructures.filter(s => s.sex === "male")].map(s => [s.id, s]));
+const femaleTransportStructures = femaleTransportCatalogue.map(row => {
+  const male = maleSource.get(row.transport)!, layer = transportLayer[row.system as keyof typeof transportLayer];
+  return {
+    id: `FT_${row.transport}`, transport: row.transport, name: male.name, label: male.label || male.name, layer, sex: "female" as const,
+    model: `female-transport/${row.system}.glb`, hierarchy: male.hierarchy || [layerNames[layer]],
+    ...(male.latin ? { latin: male.latin } : {}), ...(male.kind ? { kind: male.kind } : {}), ...(male.bodyRegion ? { bodyRegion: male.bodyRegion } : {}),
+    ...(row.transport.startsWith("FMA") ? { fmaId: row.transport } : {}),
+    description: male.description ? `${male.description} ${FEMALE_TRANSPORT_NOTE}` : FEMALE_TRANSPORT_NOTE,
+    source: `${male.source || "BodyParts3D 3.0 (DBCLS)"} · 여성 정합 보완`,
+    ...("surfaceTone" in row && row.surfaceTone ? { surfaceTone: true } : {}),
+  };
+});
+export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...connectiveStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures.filter(s => s.sex === "male"), ...femaleAtlasStructures, ...femaleTransportStructures, ...maleDetailStructures, ...femaleDetailStructures].map(s => {
   const additional = s.sex === "female" && !("group" in s && s.group) ? additionalFemaleGroupById.get(s.id) : undefined;
   const featured = s.sex === "female" && !("group" in s && s.group) ? featuredFemaleGroupById.get(s.id) : undefined;
   const grouped = additional ? { ...s, group: additional.id, hierarchy: ["reproductive", additional.name, additional.id] }
@@ -89,6 +108,8 @@ export const structures = [...baseStructures, ...fullSystemStructures.map(s => (
   group?: string;
   detailOnly?: boolean;
   kind?: string;
+  // Female structures carried from a male source by the registration field.
+  transport?: string;
 }[];
 // Ligaments, joint structures and separately modelled tendons. Supplement
 // meshes carry their kind; existing base meshes of these kinds are tagged.
@@ -100,10 +121,12 @@ export const connectiveKindNames: Record<string, string> = {
 const connectiveKindById = new Map<string, string>([
   ...connectiveStructures.map((s) => [s.id, s.kind] as [string, string]),
   ...Object.entries(connectiveTags.male), ...Object.entries(connectiveTags.female),
+  ...femaleTransportStructures.filter((s) => "kind" in s && s.kind).map((s) => [s.id, (s as { kind: string }).kind] as [string, string]),
 ]);
 export const connectiveKindOf = (id: string) => connectiveKindById.get(id);
 export const connectiveIdsForSex = (sex: "male" | "female") =>
-  sex === "male" ? [...connectiveStructures.map((s) => s.id), ...Object.keys(connectiveTags.male)] : Object.keys(connectiveTags.female);
+  sex === "male" ? [...connectiveStructures.map((s) => s.id), ...Object.keys(connectiveTags.male)]
+    : [...Object.keys(connectiveTags.female), ...femaleTransportStructures.filter((s) => "kind" in s && s.kind).map((s) => s.id)];
 export const maleOnlyStructureIds = new Set([
   "FMA18247", "FMA18256", "FMA18257", "FMA19235", "FMA19236", "FMA19387",
   "FMA19388", "FMA19617nsn", "FMA19618", "FMA7211", "FMA7212", "FMA9600",
@@ -161,14 +184,16 @@ export function stageDescription(stage: number, sex: "male" | "female") {
   if (sex === "male") return stages[stage].description;
   const layer = stages[stage].layer;
   const count = structuresForSex(sex).filter(s => s.layer === layer && !s.detailOnly).length;
+  const moved = structuresForSex(sex).filter(s => s.layer === layer && s.transport).length;
+  const carried = moved ? ` 그중 ${moved}개는 남성 원본을 여성 골격·피부 대응(정합장)으로 옮긴 보완 구조로, 출처에 표시합니다.` : "";
   const limitations: Record<Layer, string> = {
     skin: "여성 표면의 경혈 좌표는 검수 전이므로 표식을 표시하지 않습니다.",
-    muscle: "별도 제작된 Visible Human Female 하체 근육을 포함하며 일부는 피부 밖으로 벗어나는 정렬 문제가 남아 있습니다. 상체 근육 전체는 수록되어 있지 않습니다.",
-    bone: "남성 유래 보완 골격 180개를 회청색과 출처로 구분합니다. 팔·손뼈 60개와 발가락뼈 20개의 위치를 부분 교정했고, 그중 양쪽 약지·새끼손가락과 다섯째 손허리뼈 14개를 추가 조정했습니다. 엄지·검지, 새끼발가락·뒤꿈치 등 정렬은 아직 미완료입니다. 여성 고유 골격으로 해석하지 마세요. 인대는 원본에 있는 무릎 인대·반달연골만 수록되어 있습니다.",
-    organ: "여성 CT 자료는 전신에 합쳐지지 않은 별도 상세입니다. 전통적 장부 대응은 압력 전달 경로가 아닙니다.",
-    vessel: "여성 원본에 수록된 혈관을 검색·선택합니다. 전신 미세혈관 전체를 뜻하지 않습니다.",
-    lymph: "여성 원본에 명명된 림프 구조입니다. 남성 자료와 수록 범위가 다릅니다.",
-    nerve: "뇌 묶음은 Allen 참조 282개와 Visible Human 시신경교차 1개입니다. 현재 뇌 모형 35개가 남성 유래 차용 머리뼈와 표면 교차합니다. 위치·신경 연결 검증은 미완료이며, 전신 말초신경 전체를 포함하지 않습니다.",
+    muscle: "전신 근육은 BodyParts3D 남성 근육을 옮긴 보완입니다. 별도 Visible Human Female 하체 근육 76개는 검색·선택할 때만 보입니다(전신 정합 미완료). 여성 고유 형상이 아닙니다.",
+    bone: "남성 유래 보완 골격 180개(회청색)는 여성 고유 뼈와 피부에 맞춘 같은 정합장으로 다시 놓았습니다. 여성 고유 골격으로 해석하지 마세요. 인대는 무릎만 여성 원본이고 나머지는 남성 원본을 옮긴 보완입니다.",
+    organ: "여성 CT 자료는 전신에 합쳐지지 않은 별도 상세입니다. 위·식도·부신·갑상샘은 전신 모형에 없습니다. 전통적 장부 대응은 압력 전달 경로가 아닙니다.",
+    vessel: "장기 주변 혈관 110개는 여성 원본, 팔다리·머리·몸통벽 혈관은 남성 원본을 옮긴 보완입니다. 미세혈관 전체를 뜻하지 않으며 난소 혈관은 두 원본 모두에 없습니다.",
+    lymph: "비장·흉선·림프절 예시는 여성 원본, 전신 림프절은 남성 원본을 옮긴 보완입니다.",
+    nerve: "뇌는 Allen 참조 282개와 Visible Human 시신경교차 1개, 척수는 여성 원본이고 말초신경·뇌신경은 남성 원본을 옮긴 보완입니다. 신경 주행의 개인차와 위치 검증은 미완료입니다.",
   };
-  return `여성 전신 참조의 ${layerNames[layer]} 모형 ${count}개. ${limitations[layer]}`;
+  return `여성 전신 참조의 ${layerNames[layer]} 모형 ${count}개.${carried} ${limitations[layer]}`;
 }

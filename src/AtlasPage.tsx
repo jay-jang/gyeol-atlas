@@ -1,7 +1,7 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type ReactNode } from "react";
 import {
   ArrowUpRight, BookOpen, Bookmark, Check, ChevronDown, CircleHelp, Eye, Focus, Link2, List, LoaderCircle,
-  Minus, Plus, RotateCcw, Search, SlidersHorizontal, Tag, X,
+  Minus, Plus, RotateCcw, Search, ShieldCheck, SlidersHorizontal, Tag, X,
 } from "lucide-react";
 import AnatomyControls from "./AnatomyControls";
 import PointTradition from "./PointTradition";
@@ -505,6 +505,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             sex={state.sex}
             anatomyRegion={state.anatomyRegion}
             connective={state.connective}
+            modesty={state.modesty}
             glideFraming={placed !== "" && (!selectionKey || selectionKey === placed)}
           />
         </Suspense>
@@ -533,6 +534,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             dispatch({ type: "anatomy-region", value });
             requestAnimationFrame(() => camera(value === "whole" ? "fit" : "anatomy-region"));
           }}>{Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}</select>
+          <button className="ax-icon" aria-label="성기 가리기" data-tip={state.modesty ? "성기 가리기 끄기" : "성기 가리기"} aria-pressed={state.modesty} onClick={() => dispatch({ type: "modesty", value: !state.modesty })}><ShieldCheck size={18} /></button>
           <button className="ax-icon" aria-label="표시 설정" data-tip="표시 설정" aria-expanded={panel === "display"} onClick={(e) => openPanel("display", e.currentTarget)}><SlidersHorizontal size={18} /></button>
           <button className="ax-icon" aria-label="도움말" data-tip="도움말" aria-expanded={panel === "help"} onClick={(e) => openPanel("help", e.currentTarget)}><CircleHelp size={18} /></button>
         </div>
@@ -738,9 +740,10 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               {state.comparison && <p className="comparison-note">{selected.name} · {state.comparison.name} 비교 — 전통적 대응, 압력 경로 아님</p>}
               {state.sex === "male" && sourceKey === "male-detail" && selectedGroup === "stomach" && <p className="selection-description" data-stomach-frame-warning>별도 4.0 상세 원본입니다. 전신 3.0 위와 상자 중심이 약 42mm 달라 같은 위치로 정합된 화면이 아닙니다.</p>}
               {selectedAnatomy?.description && sourceKey !== "female-detail" && <p className="selection-description">{selectedAnatomy.description}</p>}
+              {selectedAnatomy?.id.startsWith("VHF") && <p className="selection-description" data-donor-muscle-note>별도 Visible Human Female 기증자 다리 근육입니다. 전신 정합이 끝나지 않아 개요에서는 숨기고, 개요의 다리 근육은 남성 원본을 여성 몸에 맞춰 옮긴 보완으로 보여 줍니다.</p>}
               {connectiveBundle && <p className="selection-description">{state.sex === "male"
                 ? "원본에 따로 모델링된 인대·관절 구조와 힘줄·힘줄집만 모았습니다. 대부분의 힘줄은 근육 모형에 포함되어 있어 이 묶음에 없습니다. 인대는 두 원본이 공유하는 골격에 맞춘 전신 보정만 적용했으며 구조별 정합은 하지 않았습니다."
-                : "여성 원본에 따로 수록된 무릎 인대·반달연골과 넙다리네갈래근 힘줄입니다."}</p>}
+                : "여성 원본의 무릎 인대·반달연골·넙다리네갈래근 힘줄과, 남성 원본에 따로 모델링된 관절 인대·힘줄을 여성 골격·피부 대응으로 옮긴 보완을 모았습니다. 옮긴 구조는 여성 고유 형상이 아닙니다."}</p>}
               {selectedAnatomy?.latin && <small className="selection-latin">TA2 · {selectedAnatomy.latin}</small>}
               {selectedAnatomy?.source && sourceKey !== "female-detail" && <small className="selection-source">{selectedAnatomy.source} · 학습용 비진단 모델</small>}
               {selectedComposite && <details className="anatomy-source-details" data-composite-provenance>
@@ -767,9 +770,9 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
                 <p className="selection-description">BodyParts3D 4.0의 위 1개, 좌우 위동맥·위정맥 4개와 위그물막동맥·정맥 4개를 같은 원본 좌표계에서 별도 선택합니다. 이 9개는 각각의 공식 개념에 대응하며 공식 ‘위의 9개 하위 부품’ 관계는 아닙니다. 위벽 층은 분할되지 않았고 혈관의 연결·관류나 기존 3.0 전신과의 국소 정합은 검증되지 않았습니다. 한국어 이름은 편집 표기이며 원문명·FMA ID를 유지합니다.</p>
               </details>}
               {state.sex === "female" && selectedOrgan?.id === "brain" && <div data-brain-provenance>
-                <p className="selection-description">뇌 묶음: Allen 참조 282개 + Visible Human 시신경교차 1개 · 차용 머리뼈와 뇌 모형 35개 표면 교차 · 위치 검증 미완료</p>
+                <p className="selection-description">뇌 묶음: Allen 참조 282개 + Visible Human 시신경교차 1개 · 차용 머리뼈와 뇌 모형 55개 표면 교차 · 위치 검증 미완료</p>
                 <details className="anatomy-source-details"><summary>뇌 출처·방향 주의</summary>
-                  <p className="selection-description">282개는 Allen 참조 구조를 대칭 복제하고 여성 신체에 맞춰 크기를 조정한 모델로, 여성 기증자 뇌 스캔이 아닙니다. 시신경교차 1개는 Visible Human 여성 자료로 그대로 유지합니다. Allen 원본의 좌우 표기가 전신의 눈·대퇴골 기준과 반대여서, 원문 이름·ID는 유지하고 대응하는 반대쪽 원본 형상을 연결했습니다. 전체 뇌 형상은 바꾸지 않았습니다. 현재 뇌 모형 35개와 남성 유래 보완 머리뼈 6개 사이에 표면 교차 55쌍이 남아 있습니다. 이 수치는 모형 쌍의 기하 교차로, 뇌 손상이나 임상적 관통 깊이가 아닙니다. 개별 설명에 실제 형상 출처를 표시하며, 일반적인 위치·신경 연결 교정이나 임상적 좌우 검증이 완료된 것은 아닙니다.</p>
+                  <p className="selection-description">282개는 Allen 참조 구조를 대칭 복제하고 여성 신체에 맞춰 크기를 조정한 모델로, 여성 기증자 뇌 스캔이 아닙니다. 시신경교차 1개는 Visible Human 여성 자료로 그대로 유지합니다. Allen 원본의 좌우 표기가 전신의 눈·대퇴골 기준과 반대여서, 원문 이름·ID는 유지하고 대응하는 반대쪽 원본 형상을 연결했습니다. 전체 뇌 형상은 바꾸지 않았습니다. 현재 뇌 모형 55개와 남성 유래 보완 머리뼈 7개 사이에 표면 교차 87쌍이 남아 있습니다. 보완 머리뼈를 여성 머리 피부 안으로 다시 놓으면서(이전에는 머리뼈가 피부를 뚫고 55쌍) 늘었습니다. Allen 참조 뇌의 바깥면이 여성 두피에서 최소 1.3mm까지 붙어 있어 머리뼈가 들어갈 자리가 모자란 곳이 있습니다. 이 수치는 모형 쌍의 기하 교차로, 뇌 손상이나 임상적 관통 깊이가 아닙니다. 개별 설명에 실제 형상 출처를 표시하며, 일반적인 위치·신경 연결 교정이나 임상적 좌우 검증이 완료된 것은 아닙니다.</p>
                   <p className="selection-source"><a href="https://3d.nih.gov/entries/3DPX-020959" target="_blank" rel="noreferrer">HRA / NIH 3D 출처 설명</a> · CC BY 4.0 · 학습용 비진단 모델</p>
                 </details>
               </div>}
@@ -834,7 +837,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               <span><i className="legend-reference" />경혈 참조</span>
             </span>
           )}
-          <span className="ax-source"><span className="scope-source">{sourceKey === "female-detail" ? "여성 CT 별도 상세 · HRA 전신과 다른 신체" : state.sex === "female" ? "HRA 전신 1,220개 + 여성 CT 별도 상세 11개 · 보완 골격·근육 정렬 미완료" : "BodyParts3D 남성 참조 · 림프 142개 포함"}</span> · <a className="scene-guide" href="#wiki/massage-anatomy">학습용 근사 · 근거 읽기 ↗</a></span>
+          <span className="ax-source"><span className="scope-source">{sourceKey === "female-detail" ? "여성 CT 별도 상세 · HRA 전신과 다른 신체" : state.sex === "female" ? "HRA 여성 전신 1,220개 + 남성 원본 정합 보완 1,774개 · 여성 CT 별도 상세 11개" : "BodyParts3D 남성 참조 · 림프 142개 포함"}</span> · <a className="scene-guide" href="#wiki/massage-anatomy">학습용 근사 · 근거 읽기 ↗</a></span>
         </div>
         <div className="ax-point-bar" role="toolbar" aria-label="경혈 표시">
           {femaleMarkers ? (<>

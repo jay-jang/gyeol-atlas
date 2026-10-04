@@ -11,7 +11,7 @@ test('female reference brain exposes provenance for bundle and individual select
   await (await organs(page)).filter({has:page.getByText('뇌',{exact:true})}).click();await ready(page);
   const notice=page.locator('[data-brain-provenance]');await expect(notice).toBeVisible();
   await expect(notice).toContainText('Allen 참조 282개 + Visible Human 시신경교차 1개');
-  await expect(notice).toContainText('차용 머리뼈와 뇌 모형 35개 표면 교차');
+  await expect(notice).toContainText('차용 머리뼈와 뇌 모형 55개 표면 교차');
   expect((await snapshot(page)).selection.ids).toHaveLength(283);
   const fit=async()=>{
     await expect.poll(async()=>(await detailProjection(page,fiberUrl)).clearance).toBeGreaterThan(4);
@@ -34,7 +34,7 @@ test('female reference brain exposes provenance for bundle and individual select
   }
   await page.setViewportSize({width:1440,height:900});
   await notice.locator('summary').click();
-  await expect(notice).toContainText('표면 교차 55쌍');
+  await expect(notice).toContainText('표면 교차 87쌍');
   await expect(notice.getByRole('link')).toHaveAttribute('href','https://3d.nih.gov/entries/3DPX-020959');
   for(const [label,width,height] of [['desktop',1440,900],['mobile',390,844],['landscape',844,390]] as const){
     await page.setViewportSize({width,height});await fit();

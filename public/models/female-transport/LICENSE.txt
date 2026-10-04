@@ -1,0 +1,30 @@
+GYEOL female transport models (models/female-transport/)
+
+Male-derived structures carried into the NIH Human Reference Atlas female body
+(united-female v1.10) by one fitted registration field, and the new positions
+of the 180 male-derived ("borrowed") bones placed by the same field.
+
+Sources and licences
+- nerve.glb, vessel.glb, ligament.glb, tendon.glb, lymph.glb: Z-Anatomy
+  (https://github.com/Z-Anatomy/Models-of-human-anatomy), web export by
+  Anatria-3D commit 4211d717b0b624604a8bda174ffcae31a76f4581, itself derived
+  from BodyParts3D (DBCLS). Creative Commons Attribution-ShareAlike 4.0
+  International: https://creativecommons.org/licenses/by-sa/4.0/
+- muscle.glb, bone.glb and borrowed.bin.gz: BodyParts3D (c) The Database Center
+  for Life Science, Creative Commons Attribution-ShareAlike 2.1 Japan:
+  https://creativecommons.org/licenses/by-sa/2.1/jp/
+- Target body: NIH Human Reference Atlas female (Visible Human Female, U.S.
+  National Library of Medicine), Creative Commons Attribution 4.0
+  International: https://creativecommons.org/licenses/by/4.0/
+
+GYEOL modifications: every vertex moved by the registration field (articulated
+pre-pose, residual cubic B-spline deformation, skin layer); normals recomputed;
+Draco re-encoding (16-bit positions). Selection rules, fitting inputs and
+measurements: data/catalog/female-transport.json,
+data/catalog/female-transport-fit.json,
+docs/anatomy-alignment/FEMALE_TRANSPORT.md. Reproduction:
+scripts/female-transport/ and scripts/build-female-transport.mjs.
+These modified files are shared under the same licences.
+
+The geometry is a male-derived educational approximation placed in a female
+body; it is not female anatomy and not clinical registration.

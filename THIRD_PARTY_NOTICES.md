@@ -29,6 +29,10 @@ The whole-body nervous and cardiovascular reference layers are adapted from **Z-
 
 GYEOL modification: the two system exports are loaded as non-diagnostic whole-body reference overlays alongside the individually searchable BodyParts3D structures. Materials are replaced at runtime to match the GYEOL layer legend. The geometry is not clinically registered and may have local alignment differences even though its measured whole-body bounds match the BodyParts3D scene coordinate range.
 
+### Female transport (2026-10-04)
+
+`public/models/female-transport/` carries 1,324 of these Z-Anatomy structures (nerves, vessels, ligaments, tendons, lymph) and 450 BodyParts3D structures (muscles, missing bones) into the HRA female body with one fitted registration field, and stores new positions for the 180 male-derived borrowed bones. Every vertex is moved by the field; normals are recomputed and the files are re-encoded with Draco. The modified files keep their licences (CC BY-SA 4.0 for Z-Anatomy derivatives, CC BY-SA 2.1 JP for BodyParts3D). They are male-derived educational approximations, not female anatomy. Notice: `public/models/female-transport/LICENSE.txt`; method and measurements: `docs/anatomy-alignment/FEMALE_TRANSPORT.md`.
+
 ## NIH Human Reference Atlas female reference
 
 The female cardiovascular, digestive, integumentary, lymphatic, renal, reproductive and skeletal reference layers derive from the **NIH Human Reference Atlas (HRA) 3D Reference Organ Library**, based on the Visible Human Female dataset of the U.S. National Library of Medicine. They are licensed under **CC BY 4.0**.

@@ -43,7 +43,12 @@ try {
     await page.getByRole("button", { name, exact: true }).click();
     await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
   }
-  assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, maleModels.length, "Female mode must not load legacy male/female overlay GLBs");
+  // Female mode adds the seven transported systems, never the legacy reference overlays.
+  const femaleTransport = ["nerve", "vessel", "muscle", "ligament", "tendon", "lymph", "bone"].map((name) => `female-transport/${name}`);
+  assert.deepEqual(new Set(requests.filter((r) => r.endsWith(".glb")).map((r) => r.replace(/^.*\/models\//, "").replace(/\.glb$/, ""))), new Set([...maleModels, ...femaleTransport]), "Female mode loads only its transported systems");
+  assert.equal(new Set(requests.filter((r) => /\/female-transport\/borrowed\.bin\.gz$/.test(r))).size, 1);
+  assert.equal(await page.locator("canvas").getAttribute("data-female-transport-parts"), "1774");
+  assert.equal((await fetch(origin + "/models/female-transport/LICENSE.txt")).status, 200);
   assert.equal(new Set(requests.filter((r) => /\/female\/.*\.bin\.gz$/.test(r))).size, 15);
   assert.equal(requests.filter(r => /\/female-detail\//.test(r)).length, 0, "CT detail must not download until requested");
   await (await (async()=>{const input=page.getByLabel('경혈·구조 검색');await input.click();await input.fill('');return page.locator('.featured-anatomy > button');})()).filter({has:page.getByText('위 (여성 CT)',{exact:true})}).click();
@@ -95,7 +100,7 @@ try {
   await page.locator('.wiki-sidebar').getByRole('link',{name:'원혈·모혈·오수혈·낙혈의 구분',exact:true}).waitFor();
   assert.deepEqual(errors, []);
   console.log(
-    "Production smoke passed: static wiki, lazy 3D, 11 male GLBs (incl. ligaments/tendons), 15 HRA female chunks, 1 on-demand independent female CT chunk, lymph, bundle/wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
+    "Production smoke passed: static wiki, lazy 3D, 11 male GLBs (incl. ligaments/tendons), 15 HRA female chunks + 7 transported female systems, 1 on-demand independent female CT chunk, lymph, bundle/wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
   );
 } finally {
   await browser?.close();

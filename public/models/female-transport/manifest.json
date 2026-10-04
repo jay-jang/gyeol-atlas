@@ -1,0 +1,1146 @@
+{
+ "version": 1,
+ "field": {
+  "sha256": "87b7b784f170604d2cb7218f08b9d7647525a5435875abe796abd74e6d81a817",
+  "report": "data/catalog/female-transport-fit.json"
+ },
+ "files": [
+  {
+   "system": "nerve",
+   "path": "models/female-transport/nerve.glb",
+   "bytes": 3060224,
+   "sha256": "5df5f11550d9f91a0030ebffc1d9e6aef9aab2c11037e2e7ba76efba4a3c8a43",
+   "structures": 263
+  },
+  {
+   "system": "vessel",
+   "path": "models/female-transport/vessel.glb",
+   "bytes": 6584828,
+   "sha256": "f1ff64c42c88daed260944686634fc2a2fcd489db85f4b1007b4795a6d127df4",
+   "structures": 524
+  },
+  {
+   "system": "muscle",
+   "path": "models/female-transport/muscle.glb",
+   "bytes": 3937396,
+   "sha256": "89feef71ae7acb63aeab602c587ed95e71059326304ef2f7f0057d1827a656eb",
+   "structures": 435
+  },
+  {
+   "system": "ligament",
+   "path": "models/female-transport/ligament.glb",
+   "bytes": 1110484,
+   "sha256": "3730ccc3db50c796590309c68bf57274ee5b29c9288b4f93dd193049f040b45d",
+   "structures": 342
+  },
+  {
+   "system": "tendon",
+   "path": "models/female-transport/tendon.glb",
+   "bytes": 316020,
+   "sha256": "001a28e7891a2bb852f290eef573228d6b2e648c6ffaa4916fb8e4e9c52cf752",
+   "structures": 58
+  },
+  {
+   "system": "lymph",
+   "path": "models/female-transport/lymph.glb",
+   "bytes": 478880,
+   "sha256": "f2c06b7fa7c70b9a05f33c87fbdd6d44ca1d140dca05514bd20f1153cc8aec1e",
+   "structures": 137
+  },
+  {
+   "system": "bone",
+   "path": "models/female-transport/bone.glb",
+   "bytes": 88660,
+   "sha256": "b34c44c136ceaab8896e680e1efe81d839fb0bb50582d741b90d0e45256674a4",
+   "structures": 15
+  }
+ ],
+ "borrowed": {
+  "url": "models/female-transport/borrowed.bin.gz",
+  "bytes": 1191612,
+  "gzipBytes": 936919,
+  "sha256": "1e46f7f7f8ed8c2c1fba9af716810b8f2b52c6e5fe2567eb44e13e02597abba8",
+  "parts": [
+   {
+    "id": "BM0000",
+    "offset": 0,
+    "vertexCount": 210,
+    "sourceSha256": "e71a0a60c3978b9d797c5d27cc6e019198f5cdbd0d5ecb95270587914dceacf7"
+   },
+   {
+    "id": "BM0001",
+    "offset": 2520,
+    "vertexCount": 236,
+    "sourceSha256": "e1d23b39c6c4355a35aaef34454b6b66bfa0e11ef0a6b23696a29c84539e5eec"
+   },
+   {
+    "id": "BM0002",
+    "offset": 5352,
+    "vertexCount": 604,
+    "sourceSha256": "e3c685e8b1d40ca573cae963d8e0f5fc416af892d8bf30be7fc373fc2300f72a"
+   },
+   {
+    "id": "BM0003",
+    "offset": 12600,
+    "vertexCount": 5334,
+    "sourceSha256": "8303cdd91b1758af741db09bf7c375edc9e3189e04f96696f88d3ffe7a4ae6d4"
+   },
+   {
+    "id": "BM0004",
+    "offset": 76608,
+    "vertexCount": 3315,
+    "sourceSha256": "a52dd5b930d8b5a38bd8b755e8fc9b07d90db6eb44ba9b76c981609162e4cbc1"
+   },
+   {
+    "id": "BM0005",
+    "offset": 116388,
+    "vertexCount": 604,
+    "sourceSha256": "e3c685e8b1d40ca573cae963d8e0f5fc416af892d8bf30be7fc373fc2300f72a"
+   },
+   {
+    "id": "BM0006",
+    "offset": 123636,
+    "vertexCount": 2678,
+    "sourceSha256": "95e1ec51cc05a141de357fa8680b35503d8d28741ba29ce51200e77bf5ce202d"
+   },
+   {
+    "id": "BM0007",
+    "offset": 155772,
+    "vertexCount": 236,
+    "sourceSha256": "b02fe2e6ad74096b0ba8ca31704422f604cd8bd7b971aebfdb67e4d9feec3427"
+   },
+   {
+    "id": "BM0008",
+    "offset": 158604,
+    "vertexCount": 986,
+    "sourceSha256": "497ed4b3eadce8f98cac7c1c07cb21bb0a85aabb89be1f24e76399b8df19ad40"
+   },
+   {
+    "id": "BM0009",
+    "offset": 170436,
+    "vertexCount": 2927,
+    "sourceSha256": "26edc9dad87e52a9e129340ced089c3ca04c754934bfc2e5358c7bb3dbd1b32f"
+   },
+   {
+    "id": "BM0010",
+    "offset": 205560,
+    "vertexCount": 1835,
+    "sourceSha256": "2f75f6e46850963ea3b8e019df3b25b34af56197e4cc2252715ed844153d049b"
+   },
+   {
+    "id": "BM0011",
+    "offset": 227580,
+    "vertexCount": 721,
+    "sourceSha256": "b799592f7d19b00de62568fa2f6bf52a69f4f1c6f4bc2844b2a8da961a4f4592"
+   },
+   {
+    "id": "BM0012",
+    "offset": 236232,
+    "vertexCount": 1207,
+    "sourceSha256": "41edb93cdaedd188662dd028a774bbd9830253df75be7da9ec48e411d62ba832"
+   },
+   {
+    "id": "BM0013",
+    "offset": 250716,
+    "vertexCount": 2938,
+    "sourceSha256": "c1964d779555aa01c24f91ab435b2e0849f51754efc301dd3a2b19f254817dc6"
+   },
+   {
+    "id": "BM0014",
+    "offset": 285972,
+    "vertexCount": 2591,
+    "sourceSha256": "fc5c987552ee17f1c02fd90456f251dc7ad2f0dcb0e9db63d0202c7f08758835"
+   },
+   {
+    "id": "BM0015",
+    "offset": 317064,
+    "vertexCount": 253,
+    "sourceSha256": "0363d17d594d367ba68e30c568fad8e40c924f865c7df258793189c4c84716a5"
+   },
+   {
+    "id": "BM0016",
+    "offset": 320100,
+    "vertexCount": 994,
+    "sourceSha256": "2ce779327c1803b9538a6960b00d0bfa2ac19a51b6506a9bf722e04569bb6f2a"
+   },
+   {
+    "id": "BM0017",
+    "offset": 332028,
+    "vertexCount": 2734,
+    "sourceSha256": "6b91b3c8c4dbb02c5fdc72274e8bb62e537fa211e4969d630594a48bc63a1f71"
+   },
+   {
+    "id": "BM0018",
+    "offset": 364836,
+    "vertexCount": 1976,
+    "sourceSha256": "e80ce9425bac8df3f71348aa51d7cbd8beab353db41cfcbf8cf730737d25057e"
+   },
+   {
+    "id": "BM0019",
+    "offset": 388548,
+    "vertexCount": 717,
+    "sourceSha256": "59be47908580cdcd0ea9cea9908e9f4d846817d7423238f1509efebbd9c420b8"
+   },
+   {
+    "id": "BM0020",
+    "offset": 397152,
+    "vertexCount": 2791,
+    "sourceSha256": "29abcd57ccab339258593b14d4e26a7d7294e2c62090b34611cf926f8673ca3e"
+   },
+   {
+    "id": "BM0021",
+    "offset": 430644,
+    "vertexCount": 820,
+    "sourceSha256": "f014b12414ae4190a36179db7a7daadccc238c19a20a7f624bfbf4d8abe267b4"
+   },
+   {
+    "id": "BM0022",
+    "offset": 440484,
+    "vertexCount": 754,
+    "sourceSha256": "5fb2a0d0ea3748488d8bc484a17f9963ecff0761fad71a3561e26b8f484116ee"
+   },
+   {
+    "id": "BM0023",
+    "offset": 449532,
+    "vertexCount": 537,
+    "sourceSha256": "427c2b5ece77c9a780d3a242dff971cb6507c047203c7563d50edfbee424c8cc"
+   },
+   {
+    "id": "BM0024",
+    "offset": 455976,
+    "vertexCount": 367,
+    "sourceSha256": "6224663d07e1a7bf50615b22aa2a31c809c10bd900e4be09ed7566424abc22cf"
+   },
+   {
+    "id": "BM0025",
+    "offset": 460380,
+    "vertexCount": 507,
+    "sourceSha256": "d06ad1f95f8440dc643714cbc0f7c4fe7f55e6b6002c7db9666cf9c610ae69b7"
+   },
+   {
+    "id": "BM0026",
+    "offset": 466464,
+    "vertexCount": 656,
+    "sourceSha256": "9d2f051d4432a0251d366aaa04fae00ebe1f994a586be50067dd3eac866deb01"
+   },
+   {
+    "id": "BM0027",
+    "offset": 474336,
+    "vertexCount": 802,
+    "sourceSha256": "a465b169507a10bd46a027b273c30de43cca8ba1f1b805b7fc2f99785de58a52"
+   },
+   {
+    "id": "BM0028",
+    "offset": 483960,
+    "vertexCount": 981,
+    "sourceSha256": "a2b5b1b94b059c0ad6637bb4d92224a216e0075d9c760c95562b6318ef3c63b8"
+   },
+   {
+    "id": "BM0029",
+    "offset": 495732,
+    "vertexCount": 1095,
+    "sourceSha256": "e1383777bd12571d3f55916e685872cb4bd0b79e74b822ae7e86b1a38065f3f7"
+   },
+   {
+    "id": "BM0030",
+    "offset": 508872,
+    "vertexCount": 1147,
+    "sourceSha256": "ec405080a13ab7e5b490598210d77801084429465a1a3f9f442c13cfe1dba363"
+   },
+   {
+    "id": "BM0031",
+    "offset": 522636,
+    "vertexCount": 1122,
+    "sourceSha256": "7a188168d7bc9c6f4a18006dce23accf2e27a366f56e5fdda2516054410c8cc4"
+   },
+   {
+    "id": "BM0032",
+    "offset": 536100,
+    "vertexCount": 936,
+    "sourceSha256": "8fbfd28f5d49a3f084a84d8f094ffc162a3a58ba5a185330d12dd4f8647870ee"
+   },
+   {
+    "id": "BM0033",
+    "offset": 547332,
+    "vertexCount": 843,
+    "sourceSha256": "62c2e9747c8d547a24e6c86000a6fe5498d9e7dec5daf858adccd1a19efe4576"
+   },
+   {
+    "id": "BM0034",
+    "offset": 557448,
+    "vertexCount": 391,
+    "sourceSha256": "375665d93e1a82590adc405f978a545589a7c64dd6b2cc785e8308bb56d09d50"
+   },
+   {
+    "id": "BM0035",
+    "offset": 562140,
+    "vertexCount": 309,
+    "sourceSha256": "caded97ec0aa81ddd6c7af909404654468751da590e2d168f8581769c0103c63"
+   },
+   {
+    "id": "BM0036",
+    "offset": 565848,
+    "vertexCount": 306,
+    "sourceSha256": "723b320918db4fff177a26b9aa0153bf0008540c39aeec105bd7eaf4a30f39c4"
+   },
+   {
+    "id": "BM0037",
+    "offset": 569520,
+    "vertexCount": 318,
+    "sourceSha256": "e7216daa2d7be6a6832245e010cb075e5ac923a4e9bfccc33189967e7ce86d63"
+   },
+   {
+    "id": "BM0038",
+    "offset": 573336,
+    "vertexCount": 365,
+    "sourceSha256": "cc03db3b6df9d41bfb70fa1343c423896fbadcb2b18a28c03b9a0f1ab646d472"
+   },
+   {
+    "id": "BM0039",
+    "offset": 577716,
+    "vertexCount": 350,
+    "sourceSha256": "a0980f073d602b523b83a4cb6148689f5242e60029e685b16faa7f03d33fba6a"
+   },
+   {
+    "id": "BM0040",
+    "offset": 581916,
+    "vertexCount": 523,
+    "sourceSha256": "44ef1712dddffa7b2164a36305d4cfd7b4db49b1677de5df663f7917164dff87"
+   },
+   {
+    "id": "BM0041",
+    "offset": 588192,
+    "vertexCount": 754,
+    "sourceSha256": "a62490025551472dabff4507670a68131f66a9cf7ae281e6946357185a63c607"
+   },
+   {
+    "id": "BM0042",
+    "offset": 597240,
+    "vertexCount": 538,
+    "sourceSha256": "f765f571c626ee96b6b1a6a0c0686c3f2706b4c8476230b8939f805152d2a4cb"
+   },
+   {
+    "id": "BM0043",
+    "offset": 603696,
+    "vertexCount": 372,
+    "sourceSha256": "8d0f662c0876a487e4b7f65074ea4c3c8c96a9966f77c94d462ce1cb09cc4673"
+   },
+   {
+    "id": "BM0044",
+    "offset": 608160,
+    "vertexCount": 401,
+    "sourceSha256": "640ce22b62fe37316b1e1c9faba3608f73f86e838f96100eeac585dd5c4cfe2d"
+   },
+   {
+    "id": "BM0045",
+    "offset": 612972,
+    "vertexCount": 519,
+    "sourceSha256": "cc3ee06ccfd7d90c0de0fcab1378883fad34f8a99b94aaceaab12c5aa43b9d90"
+   },
+   {
+    "id": "BM0046",
+    "offset": 619200,
+    "vertexCount": 346,
+    "sourceSha256": "dd8775edfee9dd1ca2589c515f38c2391e39c5c61c82b53d3b236c1d4e8b38a6"
+   },
+   {
+    "id": "BM0047",
+    "offset": 623352,
+    "vertexCount": 648,
+    "sourceSha256": "b9490c022a06f2548497400a597ca17c13f3891d7f4ea769ebe5922cf0fee787"
+   },
+   {
+    "id": "BM0048",
+    "offset": 631128,
+    "vertexCount": 355,
+    "sourceSha256": "fa72437bb61977f39455487091ae92ef58a30daa20e953b6bd0e0d25a976a0a7"
+   },
+   {
+    "id": "BM0049",
+    "offset": 635388,
+    "vertexCount": 800,
+    "sourceSha256": "3973585566034752ff07b287788eeed2fd48c50d25d75ec93a173c1763713cd6"
+   },
+   {
+    "id": "BM0050",
+    "offset": 644988,
+    "vertexCount": 332,
+    "sourceSha256": "8b27dd78faa48cc71cb156a5908fe92323e193d520cf1a5732c26f5b31f26639"
+   },
+   {
+    "id": "BM0051",
+    "offset": 648972,
+    "vertexCount": 979,
+    "sourceSha256": "0f898c0d94957740004e70b5e4e0717ff232a89791461b0c5630ba9e10de4da2"
+   },
+   {
+    "id": "BM0052",
+    "offset": 660720,
+    "vertexCount": 358,
+    "sourceSha256": "b4ef3e7ca2528eba1dbe22ba095f850d52848af4b27239c46085183b07999853"
+   },
+   {
+    "id": "BM0053",
+    "offset": 665016,
+    "vertexCount": 1093,
+    "sourceSha256": "d8e6576b72c22702007cb96c701f06cf31bad7881ac5951eb8366d7bbf96d316"
+   },
+   {
+    "id": "BM0054",
+    "offset": 678132,
+    "vertexCount": 444,
+    "sourceSha256": "fc1ca716ebb79b79c4ae8c3c974270a42767932cb10ec0f50bcf77953b7b200a"
+   },
+   {
+    "id": "BM0055",
+    "offset": 683460,
+    "vertexCount": 1147,
+    "sourceSha256": "fa86e885ca602151b6579c3018c94f36676244ceac9fca78b980420fc68e09d0"
+   },
+   {
+    "id": "BM0056",
+    "offset": 697224,
+    "vertexCount": 514,
+    "sourceSha256": "2b46e0dfc0ecd5853ec1f166b1d75620d69b6e9f7673d753093d69bc128d8c51"
+   },
+   {
+    "id": "BM0057",
+    "offset": 703392,
+    "vertexCount": 1122,
+    "sourceSha256": "dbddf106302a689953abb7858cbd0de7e54860580d4347c71862aabb4619ab63"
+   },
+   {
+    "id": "BM0058",
+    "offset": 716856,
+    "vertexCount": 928,
+    "sourceSha256": "1bf156fb1bacab4ff254d4d88524b4bb54f6205795df5b3b8ba86f147b98f16b"
+   },
+   {
+    "id": "BM0059",
+    "offset": 727992,
+    "vertexCount": 842,
+    "sourceSha256": "5d173aa5283cd43e4e7644f0c7cc5da1911da935661c5378beb577ad4c655be6"
+   },
+   {
+    "id": "BM0060",
+    "offset": 738096,
+    "vertexCount": 198,
+    "sourceSha256": "9ed7ec88d4396f0704ce9ca50926f855d35305c1daed13a8717d89094a7377a4"
+   },
+   {
+    "id": "BM0061",
+    "offset": 740472,
+    "vertexCount": 154,
+    "sourceSha256": "0c0ab6d59477efef900f3f75330041f67c71c751b9520cb788be179d8f9a8561"
+   },
+   {
+    "id": "BM0062",
+    "offset": 742320,
+    "vertexCount": 170,
+    "sourceSha256": "9262480cf7c6187ce4f40261266b838c43555220d2256891de50dd92e7a4d3c7"
+   },
+   {
+    "id": "BM0063",
+    "offset": 744360,
+    "vertexCount": 138,
+    "sourceSha256": "a35e6828ee1c512f8719e03becfe25b981279b38ce2f63f23cf1333b1e771a9a"
+   },
+   {
+    "id": "BM0064",
+    "offset": 746016,
+    "vertexCount": 185,
+    "sourceSha256": "6c535601f1b61fb94449b0e1cdaa6c71353288c64c5baf2212187a54314e2cee"
+   },
+   {
+    "id": "BM0065",
+    "offset": 748236,
+    "vertexCount": 187,
+    "sourceSha256": "cab86aea1846082f4c06ff2006cb7bec536612c9f9dc2b76b5ded96e8d17b825"
+   },
+   {
+    "id": "BM0066",
+    "offset": 750480,
+    "vertexCount": 138,
+    "sourceSha256": "7e132e8bafc291fbe5902db45b4c64e6de1e0011232cfa85a9a22320f90c627e"
+   },
+   {
+    "id": "BM0067",
+    "offset": 752136,
+    "vertexCount": 141,
+    "sourceSha256": "d6e320a164bf845d09695dfc649b071240513bb7d18f7562aa187ecab157b815"
+   },
+   {
+    "id": "BM0068",
+    "offset": 753828,
+    "vertexCount": 114,
+    "sourceSha256": "65e63e47b4329e1663add39f4c0cb4d0c95943c6a4e64ad55da19e9f13baafd5"
+   },
+   {
+    "id": "BM0069",
+    "offset": 755196,
+    "vertexCount": 181,
+    "sourceSha256": "b5b76d720358e21aa9310bc48b86ac67b8bc801b492830854006bb3f74c66bc1"
+   },
+   {
+    "id": "BM0070",
+    "offset": 757368,
+    "vertexCount": 426,
+    "sourceSha256": "6e8a2aacd22e8bb497789f6640a13cb864743a198dd7e166647fa2c04c18f6dd"
+   },
+   {
+    "id": "BM0071",
+    "offset": 762480,
+    "vertexCount": 293,
+    "sourceSha256": "348fed6a209708b69c54d76bc69e35a5ea75d3b09a1835e2072baa19f4bab979"
+   },
+   {
+    "id": "BM0072",
+    "offset": 765996,
+    "vertexCount": 328,
+    "sourceSha256": "8a7638bac186ec649cfa98b1246b8f2e89c8ff05dd361ba0f148cf4a7071945f"
+   },
+   {
+    "id": "BM0073",
+    "offset": 769932,
+    "vertexCount": 328,
+    "sourceSha256": "3bad2cbd5a184c48a8d5cb9f3f0b837334e756fbc99cdc81950562b89eadb3e7"
+   },
+   {
+    "id": "BM0074",
+    "offset": 773868,
+    "vertexCount": 267,
+    "sourceSha256": "377e7d97a7a42a8a45213a3f0e7da0b0f17688f9e61728e592deced0af69308c"
+   },
+   {
+    "id": "BM0075",
+    "offset": 777072,
+    "vertexCount": 265,
+    "sourceSha256": "506527edbdca06610926a3fbb6fa3e31012a01fcfd85ee63589a4e0b3fbdce75"
+   },
+   {
+    "id": "BM0076",
+    "offset": 780252,
+    "vertexCount": 230,
+    "sourceSha256": "b28ce9d912707329cb54ba815bc1eedf5dfdb4cdfdb8ce453f51173a691c838d"
+   },
+   {
+    "id": "BM0077",
+    "offset": 783012,
+    "vertexCount": 274,
+    "sourceSha256": "3077d6d7298aa178f5df9fe87e75dae7cb8c87089f40ff18c275566340efb2a2"
+   },
+   {
+    "id": "BM0078",
+    "offset": 786300,
+    "vertexCount": 586,
+    "sourceSha256": "191b77a41da112172d7c791f807ee84b79023cadf11a5e8335fe4b3c9b62b4cd"
+   },
+   {
+    "id": "BM0079",
+    "offset": 793332,
+    "vertexCount": 184,
+    "sourceSha256": "8c43a0356cfa5e4923f5c87a18e326d06914326538812cd6b98a8385dfc348d7"
+   },
+   {
+    "id": "BM0080",
+    "offset": 795540,
+    "vertexCount": 116,
+    "sourceSha256": "89def844c9d040de0e06f538128d5be400c0a0154640ff1bed7164d2606e591d"
+   },
+   {
+    "id": "BM0081",
+    "offset": 796932,
+    "vertexCount": 250,
+    "sourceSha256": "eb734aea1707db41ed5de8984e34ec33f44618b7010f8f2a0afe6f65a7ce6a2e"
+   },
+   {
+    "id": "BM0082",
+    "offset": 799932,
+    "vertexCount": 172,
+    "sourceSha256": "94028362286f9dd892efebfa3b4f5e2625ce90b566fd6e4fcd5eb5855ff241f9"
+   },
+   {
+    "id": "BM0083",
+    "offset": 801996,
+    "vertexCount": 3097,
+    "sourceSha256": "d7ecd4251f97229bec5c6325571757ffca5602b12a7ca39326e3c693c0aa8fe1"
+   },
+   {
+    "id": "BM0084",
+    "offset": 839160,
+    "vertexCount": 222,
+    "sourceSha256": "68b093a40e2f9852608e707e0a4fe84bfa32c63f27425ac87ddea4e2913ef21a"
+   },
+   {
+    "id": "BM0085",
+    "offset": 841824,
+    "vertexCount": 278,
+    "sourceSha256": "b87843652d110e6577277cf2536de63a7e9092ea0c551f74d47d111ecf85e83d"
+   },
+   {
+    "id": "BM0086",
+    "offset": 845160,
+    "vertexCount": 178,
+    "sourceSha256": "a3dabc387aab650658ec622cbfc01a4f29077d45e705b5cbb6fd31aa8cd88f3e"
+   },
+   {
+    "id": "BM0087",
+    "offset": 847296,
+    "vertexCount": 283,
+    "sourceSha256": "f522766d559a34fa4f49ff415e2920f1dc95e4ec96619cdf65c502eec2b8c94f"
+   },
+   {
+    "id": "BM0088",
+    "offset": 850692,
+    "vertexCount": 208,
+    "sourceSha256": "fb33f11614a0579fd5897077d3cca698880db04a4221a97c2b8519dcad3bc988"
+   },
+   {
+    "id": "BM0089",
+    "offset": 853188,
+    "vertexCount": 214,
+    "sourceSha256": "07788e8f472f2d64ca9c93f349cb03509b0235e2aa2f0a25cbb3a682f0dcf8dd"
+   },
+   {
+    "id": "BM0090",
+    "offset": 855756,
+    "vertexCount": 184,
+    "sourceSha256": "c4120bab26b8843fa1ea1dd2342c0a64de592407b7f265c109e0124b0efe01cb"
+   },
+   {
+    "id": "BM0091",
+    "offset": 857964,
+    "vertexCount": 190,
+    "sourceSha256": "ecea0946ddec0f9cd183dad22ec301b6de0f1b0755d61d1a1c816f66be313765"
+   },
+   {
+    "id": "BM0092",
+    "offset": 860244,
+    "vertexCount": 220,
+    "sourceSha256": "2622b850a28c40085102a6c9190ef76c0b41834d7eb3959fd9ded396da7fd321"
+   },
+   {
+    "id": "BM0093",
+    "offset": 862884,
+    "vertexCount": 186,
+    "sourceSha256": "cfd7b7c2852ddb0de84511a7a60cdb1d7bd8a8ccd16d1872483c5e7ca26f7eea"
+   },
+   {
+    "id": "BM0094",
+    "offset": 865116,
+    "vertexCount": 168,
+    "sourceSha256": "3e948911125198ee218ff3dd079bba4f96004b69d5432b37bdcfdbe4c6fe3b11"
+   },
+   {
+    "id": "BM0095",
+    "offset": 867132,
+    "vertexCount": 221,
+    "sourceSha256": "8972e8d99649006f381bc68dd8b94b6cf6e437c0a7d56cf09dea18b9723610d6"
+   },
+   {
+    "id": "BM0096",
+    "offset": 869784,
+    "vertexCount": 218,
+    "sourceSha256": "406861f27dbcf63a006a974dc0472aae3e4c13db22f74236f7dc03c3177171ab"
+   },
+   {
+    "id": "BM0097",
+    "offset": 872400,
+    "vertexCount": 162,
+    "sourceSha256": "09e62742dce249559dfde765303c369e97da85a5b8e94ca709eb506444d08d57"
+   },
+   {
+    "id": "BM0098",
+    "offset": 874344,
+    "vertexCount": 253,
+    "sourceSha256": "99ceba1b1f7432afa3c25acf35883561d70ec83ba0b50637ae20ac56d34668c5"
+   },
+   {
+    "id": "BM0099",
+    "offset": 877380,
+    "vertexCount": 200,
+    "sourceSha256": "d364c1c15973cd9aec4af9ad1b1fb62aa37ca022a856e16147f77441da70e470"
+   },
+   {
+    "id": "BM0100",
+    "offset": 879780,
+    "vertexCount": 197,
+    "sourceSha256": "b2f2a3ea9a2baa81e7ec3ecd84b7fe3b2719bb022a2d3fb91621c7516835a551"
+   },
+   {
+    "id": "BM0101",
+    "offset": 882144,
+    "vertexCount": 213,
+    "sourceSha256": "7135772fca108cd096d3fa7f1cbabcf61ecb12159768a90393eceeaa5e5125b0"
+   },
+   {
+    "id": "BM0102",
+    "offset": 884700,
+    "vertexCount": 186,
+    "sourceSha256": "1601679a7981bfcf3bb52722931eb44ead444e120baa88ce161e66e0a22aeb01"
+   },
+   {
+    "id": "BM0103",
+    "offset": 886932,
+    "vertexCount": 266,
+    "sourceSha256": "cd043e2af5634124ad563db5094fba210610d05cfe3befd22550124fcf86da4f"
+   },
+   {
+    "id": "BM0104",
+    "offset": 890124,
+    "vertexCount": 202,
+    "sourceSha256": "2387413136ee168b061f3bc2a82d88a05c3923f57f9bd6f000d121498bfa6778"
+   },
+   {
+    "id": "BM0105",
+    "offset": 892548,
+    "vertexCount": 196,
+    "sourceSha256": "584f78e2bb93e0edd820986711f05ac970b9030d9f82e3bdab58d49a152fdf1c"
+   },
+   {
+    "id": "BM0106",
+    "offset": 894900,
+    "vertexCount": 249,
+    "sourceSha256": "3d429d2d58b4b4a6156a9f971c80478b0fa3685ce0799bf13e9923232d80765e"
+   },
+   {
+    "id": "BM0107",
+    "offset": 897888,
+    "vertexCount": 287,
+    "sourceSha256": "b14c746160516c8f8a137abcafe7c667284f5d68e6646b3f585135effefdddd1"
+   },
+   {
+    "id": "BM0108",
+    "offset": 901332,
+    "vertexCount": 347,
+    "sourceSha256": "67af8396aace2e29cb370aad9d3c4d48b76f48c797be5cf6bf1692cd181cbf46"
+   },
+   {
+    "id": "BM0109",
+    "offset": 905496,
+    "vertexCount": 345,
+    "sourceSha256": "77d74aadc9594f13ab7b080f9e1c6f33fa1f529c4fd448c65aacf11fb9c016c8"
+   },
+   {
+    "id": "BM0110",
+    "offset": 909636,
+    "vertexCount": 280,
+    "sourceSha256": "6bf205c2bd27611f2fa19d1eb97871bee29c2153f838431b205ccec431618405"
+   },
+   {
+    "id": "BM0111",
+    "offset": 912996,
+    "vertexCount": 236,
+    "sourceSha256": "41c3d98cfdc564c4e1693f156cfdce1e00a1a266fad45003fb4017e4e647c739"
+   },
+   {
+    "id": "BM0112",
+    "offset": 915828,
+    "vertexCount": 245,
+    "sourceSha256": "884da57105584e365741f78bc4645816170b07abc24c76c77b73d56cba6a8c34"
+   },
+   {
+    "id": "BM0113",
+    "offset": 918768,
+    "vertexCount": 420,
+    "sourceSha256": "6b41fd633c2f7c87b6c318857919a060112f0f90df88bfe87d979d04c34ab7c4"
+   },
+   {
+    "id": "BM0114",
+    "offset": 923808,
+    "vertexCount": 316,
+    "sourceSha256": "82618cf11723cbd199516c4f446b44e218b62750b2b0abf1cfffffc0452047f1"
+   },
+   {
+    "id": "BM0115",
+    "offset": 927600,
+    "vertexCount": 794,
+    "sourceSha256": "6ced11196062c0afc4a484beb2cabd4255ea2ba1079ab45adf57b7e90595f16c"
+   },
+   {
+    "id": "BM0116",
+    "offset": 937128,
+    "vertexCount": 191,
+    "sourceSha256": "035c56c9319cf117a740754c58849bf76fc01463babce9325d0da483ab2bb052"
+   },
+   {
+    "id": "BM0117",
+    "offset": 939420,
+    "vertexCount": 110,
+    "sourceSha256": "fe60d3c52a049190b563200b2ac55edb00a1d7d6a704884bddbac6534a97ef0c"
+   },
+   {
+    "id": "BM0118",
+    "offset": 940740,
+    "vertexCount": 185,
+    "sourceSha256": "259f3631b8175bffab932d96473a46315db16485b2248408dc43c62e8fb0c6d8"
+   },
+   {
+    "id": "BM0119",
+    "offset": 942960,
+    "vertexCount": 2896,
+    "sourceSha256": "33d611f0b27ae6054cdef34f7a021ed309ef2a09cc88a55f27b30695ed2d8cfc"
+   },
+   {
+    "id": "BM0120",
+    "offset": 977712,
+    "vertexCount": 272,
+    "sourceSha256": "0072bf45714d1a4797c994ff71537dbe1705a8dc28a90c0d866b0566fec41982"
+   },
+   {
+    "id": "BM0121",
+    "offset": 980976,
+    "vertexCount": 267,
+    "sourceSha256": "e25219a8f41fbdb9077d8ddaaaffbd5e6bc894737f5efc934163103778e53a8d"
+   },
+   {
+    "id": "BM0122",
+    "offset": 984180,
+    "vertexCount": 139,
+    "sourceSha256": "64db31a66fdfd5ac2170abf5ffff0fcecf8cc0914d2858e377c08bf596675a25"
+   },
+   {
+    "id": "BM0123",
+    "offset": 985848,
+    "vertexCount": 305,
+    "sourceSha256": "8463e77a3cf4ba3f8efa16bc2fa7d7714e5736437a10a3145682f57c9dfbdb2e"
+   },
+   {
+    "id": "BM0124",
+    "offset": 989508,
+    "vertexCount": 168,
+    "sourceSha256": "41c6dec9c5e54d0b015b8284769062ef34fc90183a57a14f1a1b7943a1a040bd"
+   },
+   {
+    "id": "BM0125",
+    "offset": 991524,
+    "vertexCount": 188,
+    "sourceSha256": "8a7df5bc29f97ec4f19308fb506b0e4a95db1a6cabe1cecb365ee3d13b9d8c2e"
+   },
+   {
+    "id": "BM0126",
+    "offset": 993780,
+    "vertexCount": 146,
+    "sourceSha256": "2e875f14f54babae6520bc900ffbcf96062c176c8b8100c6b545006dd91a1cd7"
+   },
+   {
+    "id": "BM0127",
+    "offset": 995532,
+    "vertexCount": 249,
+    "sourceSha256": "07671eb3d684a36cfd6be0f93ae9898035228e79eb99d8fbacde138f411a4eb4"
+   },
+   {
+    "id": "BM0128",
+    "offset": 998520,
+    "vertexCount": 160,
+    "sourceSha256": "1a23c3f0a3559e2a2f5e6c84a5c06c738ab3e587fe0faa5f3cd45567516b246a"
+   },
+   {
+    "id": "BM0129",
+    "offset": 1000440,
+    "vertexCount": 497,
+    "sourceSha256": "9a1672821cac1416dd7d5d3ed3710f491cbe5a248ecea3b0fd3ea441d3dc38d0"
+   },
+   {
+    "id": "BM0130",
+    "offset": 1006404,
+    "vertexCount": 401,
+    "sourceSha256": "8104943491db612bf65e96e8e762937bf3e78c37ca411239e6471b93b74c00bc"
+   },
+   {
+    "id": "BM0131",
+    "offset": 1011216,
+    "vertexCount": 367,
+    "sourceSha256": "79150a018b7e4cf34239706f74d980eaead0969903c97142970e16831841b36d"
+   },
+   {
+    "id": "BM0132",
+    "offset": 1015620,
+    "vertexCount": 353,
+    "sourceSha256": "fa715bd63cccca2a5ec67e4e9e8b71d93ec8a896f40f1f39dad7a0c8dfbb3408"
+   },
+   {
+    "id": "BM0133",
+    "offset": 1019856,
+    "vertexCount": 366,
+    "sourceSha256": "8052850a309da1614c46d4319a85e116aac5078cfc729ae95beb1ba2901fd845"
+   },
+   {
+    "id": "BM0134",
+    "offset": 1024248,
+    "vertexCount": 632,
+    "sourceSha256": "5e788318957f0203d3d7c6f29d854f2c90ff67963bd780c47c5f2fcfaa7ee1ef"
+   },
+   {
+    "id": "BM0135",
+    "offset": 1031832,
+    "vertexCount": 449,
+    "sourceSha256": "957949495a93abb659c0b1bd7f1fe584048132e52cb401eb2cab7f93950d48e6"
+   },
+   {
+    "id": "BM0136",
+    "offset": 1037220,
+    "vertexCount": 291,
+    "sourceSha256": "705e22c781b1e956f77bf4186cc74b981a3e912e939d39efb77e2d3c726f42fe"
+   },
+   {
+    "id": "BM0137",
+    "offset": 1040712,
+    "vertexCount": 78,
+    "sourceSha256": "c382ca37dd6b2ffb3999877adf6c7d7075b2dc60fd51a06eefbb0598b1d291d4"
+   },
+   {
+    "id": "BM0138",
+    "offset": 1041648,
+    "vertexCount": 389,
+    "sourceSha256": "15c5fc6416e85a7e918fb25503c07e2e339ab114ac0902d0b6a0f7b73d7d728a"
+   },
+   {
+    "id": "BM0139",
+    "offset": 1046316,
+    "vertexCount": 95,
+    "sourceSha256": "e22edd412e1b20ec6dac6bd5fbff11a399a29dc2fa8b55f0f2715ad0417f8eda"
+   },
+   {
+    "id": "BM0140",
+    "offset": 1047456,
+    "vertexCount": 513,
+    "sourceSha256": "cfc4ef5a7c17fc028019be921dc66d9d43e1b784ed1348e1abbc983c223e3aac"
+   },
+   {
+    "id": "BM0141",
+    "offset": 1053612,
+    "vertexCount": 666,
+    "sourceSha256": "e1ac039db3ff82b3fd3c7362ca6476268f9285b3f1087d1570be414f07b891a4"
+   },
+   {
+    "id": "BM0142",
+    "offset": 1061604,
+    "vertexCount": 196,
+    "sourceSha256": "dcee0a90148de90ea9e6db1323cd3776e79dfe81398e35b644528ab77b15b8d9"
+   },
+   {
+    "id": "BM0143",
+    "offset": 1063956,
+    "vertexCount": 181,
+    "sourceSha256": "58120602b5945d0eba6ee94b3c56379b4f51f7998c39b5d23f51892593a1d198"
+   },
+   {
+    "id": "BM0144",
+    "offset": 1066128,
+    "vertexCount": 181,
+    "sourceSha256": "3e80fa415b2fb045a928b093264987fa0c4b06426d4e0ce8532bec07d7e82eb0"
+   },
+   {
+    "id": "BM0145",
+    "offset": 1068300,
+    "vertexCount": 142,
+    "sourceSha256": "9bc5f7d76d5ec071ce92bb2f3b3085c6edfecc047bb74b4960ce4d1106242242"
+   },
+   {
+    "id": "BM0146",
+    "offset": 1070004,
+    "vertexCount": 396,
+    "sourceSha256": "a8671c99f2d3193063c3fd0d60f3c593f7a7ed98d57dd6ac917dff4a04134aae"
+   },
+   {
+    "id": "BM0147",
+    "offset": 1074756,
+    "vertexCount": 237,
+    "sourceSha256": "9a5d236888771d47b5105ce333dd121b9ee6ca94c84901fac11fcc3b325a5a1c"
+   },
+   {
+    "id": "BM0148",
+    "offset": 1077600,
+    "vertexCount": 245,
+    "sourceSha256": "264c546523a693f767c3f87e5849630d01c0d348e4640892a3daf3356ffef99c"
+   },
+   {
+    "id": "BM0149",
+    "offset": 1080540,
+    "vertexCount": 226,
+    "sourceSha256": "85a147bb738cab942822fda3455a9ea147c37ffe58b25b141b345c65ea5e04f5"
+   },
+   {
+    "id": "BM0150",
+    "offset": 1083252,
+    "vertexCount": 230,
+    "sourceSha256": "32f539dd190ba0fa1b0b514c90456b03d6c9096e315992e4fea013a76910eb3e"
+   },
+   {
+    "id": "BM0151",
+    "offset": 1086012,
+    "vertexCount": 310,
+    "sourceSha256": "94e448ad96962fb033ca9fa800f76296184f62e195de92ceec93a996bfa45e02"
+   },
+   {
+    "id": "BM0152",
+    "offset": 1089732,
+    "vertexCount": 168,
+    "sourceSha256": "6c1d739fc970690100e9126c146af51269269782cedf093aa7f1a7c3488c7ee5"
+   },
+   {
+    "id": "BM0153",
+    "offset": 1091748,
+    "vertexCount": 161,
+    "sourceSha256": "0fb4c1461d8a971d2c91acf1b29f00489a0fd341ae97a5dddfb763f72cc58d17"
+   },
+   {
+    "id": "BM0154",
+    "offset": 1093680,
+    "vertexCount": 142,
+    "sourceSha256": "229d99f283d2536bd2d6d3bf12f0c57370cef80138c8ffeca6bfd6416573f176"
+   },
+   {
+    "id": "BM0155",
+    "offset": 1095384,
+    "vertexCount": 271,
+    "sourceSha256": "31b6bf968bbb1f362afedf36819aa517b371b8f54fa5f2b24ab7e607c9702142"
+   },
+   {
+    "id": "BM0156",
+    "offset": 1098636,
+    "vertexCount": 178,
+    "sourceSha256": "7b94d90da482ac75510c715fc1c90d855176f3580f6ff09a892bbcc841c227cf"
+   },
+   {
+    "id": "BM0157",
+    "offset": 1100772,
+    "vertexCount": 189,
+    "sourceSha256": "82226c9ba62a3464d8d22fb71d05c0ac3c74dba817394bda95ee1adcd96e6ca0"
+   },
+   {
+    "id": "BM0158",
+    "offset": 1103040,
+    "vertexCount": 190,
+    "sourceSha256": "719995cadc527fbed8bc5950056f4a1dc0193421a7d5cfe9d1981af05ad9c432"
+   },
+   {
+    "id": "BM0159",
+    "offset": 1105320,
+    "vertexCount": 216,
+    "sourceSha256": "4c0298bc615fc96127a3c921912edda81b251cb01d50845261a493f37a299946"
+   },
+   {
+    "id": "BM0160",
+    "offset": 1107912,
+    "vertexCount": 102,
+    "sourceSha256": "e0481209edd4ec056b0fcdf96838266bc6448608dd4b21e7143c08a68160321e"
+   },
+   {
+    "id": "BM0161",
+    "offset": 1109136,
+    "vertexCount": 404,
+    "sourceSha256": "6240c1582c38b18db7716205c22e37bfbfe041e63e428996440eca86b04e1197"
+   },
+   {
+    "id": "BM0162",
+    "offset": 1113984,
+    "vertexCount": 272,
+    "sourceSha256": "1dc1726aa60aabb4946fca39753d56f320d82c6684f0864983249b01ccd383cb"
+   },
+   {
+    "id": "BM0163",
+    "offset": 1117248,
+    "vertexCount": 225,
+    "sourceSha256": "92b18b6c6be80c329a484bded9b2e31e082dd3c02a7e2b49d0a32991972f3971"
+   },
+   {
+    "id": "BM0164",
+    "offset": 1119948,
+    "vertexCount": 264,
+    "sourceSha256": "d24739af6a59634debc3a1e55fea3bf440e30e85044a8f63da3c4348b9077d47"
+   },
+   {
+    "id": "BM0165",
+    "offset": 1123116,
+    "vertexCount": 244,
+    "sourceSha256": "980b8d42c38fabc50c7735862f3d403e5d2aaaa46857f7ffe06973fcda5522e5"
+   },
+   {
+    "id": "BM0166",
+    "offset": 1126044,
+    "vertexCount": 228,
+    "sourceSha256": "63a14e7dc1357ac6168c49e5adc7fc71c45fe9bef1c4aa38633a81fd7e8ca895"
+   },
+   {
+    "id": "BM0167",
+    "offset": 1128780,
+    "vertexCount": 492,
+    "sourceSha256": "c931287cc4b4f396d0b1b47d16471a60511ab10019a177d433e52c5fbca04f35"
+   },
+   {
+    "id": "BM0168",
+    "offset": 1134684,
+    "vertexCount": 434,
+    "sourceSha256": "39f1d2dc3cd33cf6e198b9f11d14c5db3bddcfb019fabb5be801a28abe545a54"
+   },
+   {
+    "id": "BM0169",
+    "offset": 1139892,
+    "vertexCount": 381,
+    "sourceSha256": "6308ef35159c8172753327d7c2c6887b9830a274b9aa4d8cf958cde30778e413"
+   },
+   {
+    "id": "BM0170",
+    "offset": 1144464,
+    "vertexCount": 333,
+    "sourceSha256": "ac84e31586b69a50ab0981e5f78d5162ee5c28be47cd32d7c19b9dd6108aa4e7"
+   },
+   {
+    "id": "BM0171",
+    "offset": 1148460,
+    "vertexCount": 371,
+    "sourceSha256": "2021bde44bc7efb937827a7743d4e3b512db1f1c676e717c7b6ef6b24ca78ea5"
+   },
+   {
+    "id": "BM0172",
+    "offset": 1152912,
+    "vertexCount": 641,
+    "sourceSha256": "d5d9f46e8a2ebe6625d93a83d854db9a8c75bfa9d2529d9220af03f81eab2df5"
+   },
+   {
+    "id": "BM0173",
+    "offset": 1160604,
+    "vertexCount": 488,
+    "sourceSha256": "9be95820fce35906789047b999998bfef9b9703f644edd1b446988e7b9023d62"
+   },
+   {
+    "id": "BM0174",
+    "offset": 1166460,
+    "vertexCount": 278,
+    "sourceSha256": "1b07aa59b0e1d4cd4426c425327eb9865ec68903975d66fa20a862a60ee52746"
+   },
+   {
+    "id": "BM0175",
+    "offset": 1169796,
+    "vertexCount": 73,
+    "sourceSha256": "f6b8ec7d7e64df0520915db08f8ed70785f10d20307984fcc260ec689dd82b1b"
+   },
+   {
+    "id": "BM0176",
+    "offset": 1170672,
+    "vertexCount": 380,
+    "sourceSha256": "8767aace9af77c70727d08e96dd17b36d03262df292608d512a95af26893eea0"
+   },
+   {
+    "id": "BM0177",
+    "offset": 1175232,
+    "vertexCount": 103,
+    "sourceSha256": "5aaed81777b2e42fa5aaad2a4ff09e06eec1982c157949cad9191974734a8f18"
+   },
+   {
+    "id": "BM0178",
+    "offset": 1176468,
+    "vertexCount": 553,
+    "sourceSha256": "802fa094406c84ab43b7ee976e768c7c11655ec5c71e230563649ad6d423bd48"
+   },
+   {
+    "id": "BM0179",
+    "offset": 1183104,
+    "vertexCount": 709,
+    "sourceSha256": "7c07c82ad5d71ffa31cd17eba0717ff9ceac41683835a321ef85327d8fd44ec4"
+   }
+  ]
+ }
+}

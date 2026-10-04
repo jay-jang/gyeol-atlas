@@ -5,7 +5,9 @@ const read=(p:string)=>JSON.parse(fs.readFileSync(p,'utf8'));
 const catalog:{id:string;model:string}[]=read('data/connective-structures.json');
 const tags=read('data/connective-tags.json');
 const maleIds=new Set([...catalog.map(e=>e.id),...Object.keys(tags.male)]);
-const femaleIds=new Set(Object.keys(tags.female));
+// Female: the HRA knee structures plus the male-source ligaments and tendons carried by the registration field.
+const transported:{transport:string;system:string}[]=read('data/female-transport-structures.json');
+const femaleIds=new Set([...Object.keys(tags.female),...transported.filter(r=>r.system==='ligament'||r.system==='tendon').map(r=>`FT_${r.transport}`)]);
 const visible=async(page:Page)=>new Set(((await page.locator('canvas').getAttribute('data-visible-structure-ids'))||'').split(',').filter(Boolean));
 const openDisplay=(page:Page)=>page.getByRole('button',{name:'표시 설정',exact:true}).click();
 
@@ -59,7 +61,7 @@ test('male ligaments and tendons are present, peel with their systems and can be
   expect(errors).toEqual([]);
 });
 
-test('female reference shows only its source knee ligaments, menisci and quadriceps tendons',async({page})=>{
+test('female reference shows its source knee structures and the carried ligaments and tendons',async({page})=>{
   test.setTimeout(180000);
   await page.goto('/');await ready(page);
   await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);

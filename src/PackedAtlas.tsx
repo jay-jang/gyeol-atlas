@@ -8,7 +8,7 @@ import { connectiveKindOf, dissectionLayerOpacity, layerKeys, structures, type L
 import type { AtlasProps } from "./Atlas";
 import { musclePeelOpacity } from "./dissection";
 import { musclePeelRanks } from "./muscle-peel";
-import { CONNECTIVE_COLOR, clippingPlanes, configurePicking, releasedDrag, type SceneClick } from "./anatomy-rendering";
+import { CONNECTIVE_COLOR, SKIN_COLOR, SURFACE_TONES, clippingPlanes, configurePicking, releasedDrag, type SceneClick } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { applyFemaleArmRegistration } from "./female-arm-registration";
 import { applyFemaleFootRegistration } from "./female-foot-registration";
@@ -19,6 +19,8 @@ import { anatomyRegionMatches } from "./anatomy-region";
 import { femaleBrainBindings, resolveFemaleBrainGeometryPart, verifyFemaleBrainManifest } from "./female-brain-bindings";
 import { femalePelvicBindings, resolveFemalePelvicGeometryPart, verifyFemalePelvicManifestVersion } from "./female-pelvic-bindings";
 import { verifyPackedSourceManifest } from "./packed-source-guard";
+import { applyBorrowedPlacement, femaleTransportPeelRanks, loadFemaleTransport } from "./female-transport";
+import { buildCover, isGenitalStructure, COVER_NAME } from "./modesty";
 
 type FemalePart = {
   id: string;
@@ -55,6 +57,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
   const dataset = referenceSourceFor(props.sex, [...props.selectionIds, ...props.detailIds]);
   const [object, setObject] = useState<Group | null>(null);
   const [manifest, setManifest] = useState<FemaleManifest | null>(null);
+  const [transportCount, setTransportCount] = useState(0);
   const [error, setError] = useState<Error | null>(null);
   const { gl, invalidate } = useThree();
   useEffect(() => {
@@ -69,7 +72,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         return JSON.parse(text) as FemaleManifest;
       });
       verifyPackedSourceManifest(dataset,props.sex,atlas.parts,catalogById);
-      const [buffers,restoredSource,restoredKnee] = await Promise.all([Promise.all(atlas.chunks.map(async (chunk) => {
+      const [buffers,restoredSource,restoredKnee,transport] = await Promise.all([Promise.all(atlas.chunks.map(async (chunk) => {
         const file = chunk.gzip.split("/").pop()!;
         const response = await fetch(assetUrl(`models/${dataset}/${file}`), { signal: abort.signal });
         if (!response.ok) throw new Error(`참조 모델 ${file} ${response.status}`);
@@ -82,7 +85,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         const response=await fetch(assetUrl(femaleKneeSourceRestoration.url),{signal:abort.signal});
         if(!response.ok)throw new Error(`무릎 원본 모형 ${response.status}`);
         return inflate(response,femaleKneeSourceRestoration.bytes);
-      })() : Promise.resolve(null)]);
+      })() : Promise.resolve(null),dataset === "female" ? loadFemaleTransport(abort.signal) : Promise.resolve(null)]);
       if (abort.signal.aborted) return;
       const group = new Group();
       group.name = `${dataset}-atlas`;
@@ -106,6 +109,8 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         applyFemaleArmRegistration(geometry, dataset, part.id, part.system);
         applyFemaleFootRegistration(geometry, dataset, part.id, part.system);
         applyFemaleCordRegistration(geometry,dataset,part.id,part.system);
+        // The registration field's placement supersedes the regional transforms.
+        if (part.system === "borrowed") applyBorrowedPlacement(geometry, transport?.borrowed.get(part.id));
         geometry.computeBoundingBox();
         geometry.computeBoundingSphere();
         const actualBounds = [geometry.boundingBox!.min.toArray(), geometry.boundingBox!.max.toArray()];
@@ -114,8 +119,17 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         mesh.name = part.id;
         mesh.userData = { layer, system: part.system, bounds: actualBounds, sourceName: geometryPart.name, sourceGeometryId:geometryPart.id };
         group.add(mesh);
+        if (part.id === "HRAF0003") mesh.add(buildCover(mesh, "female"));
       }
-      const muscles = group.children.filter(mesh => mesh.userData.layer === "muscle");
+      // Male-derived structures carried into this body by the same field.
+      for (const mesh of transport?.meshes || []) {
+        const entry = catalogById.get(mesh.name)!;
+        mesh.geometry.computeBoundingBox();
+        mesh.material = new MeshStandardMaterial({ color: layerColor[entry.layer], roughness: .74, metalness: .01, side: DoubleSide });
+        mesh.userData = { layer: entry.layer, system: "transport", transport: true, bounds: [mesh.geometry.boundingBox!.min.toArray(), mesh.geometry.boundingBox!.max.toArray()], peelRank: femaleTransportPeelRanks.get(mesh.name) };
+        group.add(mesh);
+      }
+      const muscles = group.children.filter(mesh => mesh.userData.layer === "muscle" && !mesh.userData.transport);
       const ranks = musclePeelRanks(muscles.map(mesh => {
         const [min, max] = mesh.userData.bounds as FemalePart["bounds"];
         return { id: mesh.name, score: Math.hypot((max[0] + min[0]) / 2, (max[2] + min[2]) / 2) };
@@ -123,6 +137,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       muscles.forEach(mesh => { mesh.userData.peelRank = ranks.get(mesh.name)!; });
       built = group;
       setManifest(atlas);
+      setTransportCount(transport?.meshes.length ?? 0);
       setObject(group);
     })().catch(error => {
       if (!abort.signal.aborted) setError(error instanceof Error ? error : new Error(String(error)));
@@ -138,28 +153,48 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
     };
   }, [props.onLoading, dataset]);
   const partById = useMemo(() => new Map(manifest?.parts.map(part => [part.id, part]) || []), [manifest]);
+  const pickable = (id: string) => partById.has(id) || (dataset === "female" && catalogById.get(id)?.sex === "female");
   useLayoutEffect(() => {
     if (!object) return;
     const progressive = props.displayMode === "dissection";
     const counts = Object.fromEntries(layerKeys.map(layer => [layer, 0])) as Record<Layer, number>;
+    let transportVisible = 0, coverVisible = false;
+    // While the skin covers the surface, structures that touch it in their
+    // source (and the transported ones within 1 mm of the male skin) take the
+    // skin tone, as the male face does; peeled or selected, their own colour.
+    const skinOpaque = props.layers.skin && props.selectionTarget !== "internal"
+      && props.layerOpacity.skin * dissectionLayerOpacity("skin", props.dissection, progressive) >= .5;
     object.traverse(item => {
       if (!(item instanceof Mesh)) return;
+      if (item.name === COVER_NAME) return;
       const layer = item.userData.layer as Layer;
       const selected = props.selectionIds.includes(item.name);
       const highlighted = props.highlight.includes(item.name);
       const part = partById.get(item.name);
-      const depthAlpha = dissectionLayerOpacity(layer, props.dissection, progressive) * (progressive && layer === "muscle" ? musclePeelOpacity(props.dissection, item.userData.peelRank) : 1);
+      // Separately modelled tendons fade with the whole muscle layer (as in the male supplements).
+      const peelRank = item.userData.peelRank as number | undefined;
+      const depthAlpha = dissectionLayerOpacity(layer, props.dissection, progressive) * (progressive && layer === "muscle" && peelRank !== undefined ? musclePeelOpacity(props.dissection, peelRank) : 1);
       const duplicateDonor = part?.system === "donor-muscle" && (part.name === "Rectus femoris (left)" || part.name === "Rectus femoris (right)");
       const donorSelected = (item.name === "HRAF0394" && props.selectionIds.includes("VHF0009")) || (item.name === "HRAF0396" && props.selectionIds.includes("VHF0047"));
-      item.visible = (!duplicateDonor || selected) && (part?.system !== "pregnancy" || selected) && props.layers[layer] && (!props.isolated || selected) && (selected || depthAlpha > .01) && (!part || selected || anatomyRegionMatches(item.userData.bounds, props.anatomyRegion, catalogById.get(item.name)));
+      // The separately sourced Visible Human Female leg muscles are kept for
+      // search and selection; the overview shows one muscle source, the
+      // transported set, as the male view does with its supplements.
+      const donor = part?.system === "donor-muscle" && Boolean(transportCount);
+      item.visible = (!duplicateDonor || selected) && (!donor || selected) && (part?.system !== "pregnancy" || selected) && props.layers[layer] && (!props.isolated || selected) && (selected || depthAlpha > .01) && (selected || anatomyRegionMatches(item.userData.bounds, props.anatomyRegion, catalogById.get(item.name)));
+      if (props.modesty && !selected && isGenitalStructure(item.name, catalogById.get(item.name)?.name)) item.visible = false;
       item.visible = item.visible && !donorSelected;
       item.visible = item.visible && (!props.detailIds.length || props.detailIds.includes(item.name));
       if (props.sex === "male" && !props.detailIds.length) item.visible = item.visible && selected;
       const connective = Boolean(connectiveKindOf(item.name));
       if (connective && !props.connective && !selected) item.visible = false;
       if (item.visible) counts[layer]++;
+      if (item.visible && item.userData.transport) transportVisible++;
       const material = item.material as MeshStandardMaterial;
-      material.color.set(selected && props.selectionIds.length === 1 ? "#34d3dd" : highlighted ? "#e5b24f" : connective ? CONNECTIVE_COLOR : part?.system === "venous" ? "#356fb3" : part?.system === "borrowed" ? "#9aa7b1" : layerColor[layer]);
+      const transported = item.userData.transport as boolean | undefined;
+      const vein = part?.system === "venous" || (transported && layer === "vessel" && /vein|vena cava/i.test(catalogById.get(item.name)?.name || ""));
+      const entry = catalogById.get(item.name) as { surfaceTone?: boolean } | undefined;
+      const tone = !selected && !highlighted && skinOpaque && (SURFACE_TONES[item.name] || entry?.surfaceTone) ? SKIN_COLOR : undefined;
+      material.color.set(selected && props.selectionIds.length === 1 ? "#34d3dd" : highlighted ? "#e5b24f" : tone ?? (connective ? CONNECTIVE_COLOR : vein ? "#356fb3" : part?.system === "borrowed" || (transported && layer === "bone") ? "#9aa7b1" : layerColor[layer]));
       material.opacity = selectionOpacity(props.layerOpacity[layer] * depthAlpha, selected, props.contextDimmed);
       const planes = clippingPlanes(layer, props);
       const transparent = !opacityWritesDepth(material.opacity);
@@ -168,18 +203,29 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       material.depthWrite = !transparent;
       material.clippingPlanes = planes;
       configurePicking(item, layer, props.selectionTarget);
+      const cover = item.getObjectByName(COVER_NAME) as Mesh | undefined;
+      if (cover) {
+        cover.visible = props.modesty && item.visible;
+        const coverMaterial = cover.material as MeshStandardMaterial;
+        coverMaterial.opacity = material.opacity; coverMaterial.transparent = material.transparent; coverMaterial.depthWrite = material.depthWrite;
+        coverMaterial.clippingPlanes = planes;
+        coverVisible ||= cover.visible;
+      }
     });
     for (const layer of layerKeys) gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(counts[layer]);
     for (const [source, key] of [["female", "femaleAtlasParts"], ["female-detail", "femaleDetailParts"], ["male-detail", "maleDetailParts"]])
-      gl.domElement.dataset[key] = source === dataset ? String(object.children.length) : "0";
+      gl.domElement.dataset[key] = source === dataset ? String(manifest?.parts.length ?? 0) : "0";
+    gl.domElement.dataset.femaleTransportParts = String(transportCount);
+    gl.domElement.dataset.femaleTransportVisible = String(transportVisible);
+    gl.domElement.dataset.modestyCover = String(coverVisible);
     object.visible = true;
     invalidate();
-  }, [object, partById, props.layers, props.isolated, props.selectionIds, props.detailIds, props.highlight, props.dissection, props.displayMode, props.selectionTarget, props.layerOpacity, props.contextDimmed, props.anatomyRegion, props.cutaway, props.connective, gl, invalidate]);
+  }, [object, partById, manifest, transportCount, props.layers, props.isolated, props.selectionIds, props.detailIds, props.highlight, props.dissection, props.displayMode, props.selectionTarget, props.layerOpacity, props.contextDimmed, props.anatomyRegion, props.cutaway, props.connective, props.modesty, gl, invalidate]);
   useEffect(() => { if (object) { layerKeys.forEach(props.onReady); props.onLoading(false); } }, [object, props.onReady, props.onLoading]);
   if (error) throw error;
   if (!object) return <Html center><div className="model-loading">참조 모델 불러오는 중</div></Html>;
   return <primitive object={object} onClick={(event: SceneClick) => {
-    if (releasedDrag(event) || !partById.has(event.object.name)) return;
+    if (releasedDrag(event) || !pickable(event.object.name)) return;
     event.stopPropagation();
     props.onStructure(selectionHitId(event.object.name, event.intersections, props.selectionIds, props.contextDimmed));
   }} />;

@@ -1,0 +1,677 @@
+{
+ "version": 1,
+ "scene": "before (drawn HRA + borrowed + donor muscles)",
+ "directions": 120,
+ "spacingMm": 5,
+ "rays": 15638520,
+ "showThroughRays": 108642,
+ "skinTonedRays": 0,
+ "otherColourRays": 108642,
+ "byKind": {
+  "borrowed": 46679,
+  "donor muscle": 61531,
+  "HRA female": 432
+ },
+ "structures": [
+  {
+   "id": "BM0017",
+   "name": "Right parietal bone",
+   "rays": 19665,
+   "at": [
+    -0.07,
+    1.581,
+    -0.032
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0043",
+   "name": "Gastrocnemius medial (right)",
+   "rays": 10614,
+   "at": [
+    -0.086,
+    0.306,
+    -0.15
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0005",
+   "name": "Gastrocnemius medial (left)",
+   "rays": 10327,
+   "at": [
+    0.07,
+    0.298,
+    -0.155
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0013",
+   "name": "Occipital bone",
+   "rays": 6764,
+   "at": [
+    -0.031,
+    1.574,
+    -0.163
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0058",
+   "name": "Gastrocnemius lateral (right)",
+   "rays": 6755,
+   "at": [
+    -0.16,
+    0.315,
+    -0.155
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0009",
+   "name": "Left parietal bone",
+   "rays": 5567,
+   "at": [
+    0.001,
+    1.614,
+    -0.152
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0060",
+   "name": "Soleus (right)",
+   "rays": 5518,
+   "at": [
+    -0.167,
+    0.298,
+    -0.15
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0020",
+   "name": "Gastrocnemius lateral (left)",
+   "rays": 4165,
+   "at": [
+    0.157,
+    0.335,
+    -0.156
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0021",
+   "name": "Peroneus longus (left)",
+   "rays": 4164,
+   "at": [
+    0.179,
+    0.294,
+    -0.132
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0059",
+   "name": "Peroneus longus (right)",
+   "rays": 4159,
+   "at": [
+    -0.18,
+    0.275,
+    -0.135
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0004",
+   "name": "Frontal bone",
+   "rays": 4050,
+   "at": [
+    -0.067,
+    1.597,
+    -0.023
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0063",
+   "name": "Gluteus maximus (right)",
+   "rays": 3325,
+   "at": [
+    -0.181,
+    0.811,
+    -0.15
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0014",
+   "name": "Vastus lateralis (left)",
+   "rays": 3174,
+   "at": [
+    0.187,
+    0.638,
+    -0.099
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0022",
+   "name": "Soleus (left)",
+   "rays": 2062,
+   "at": [
+    0.101,
+    0.115,
+    -0.14
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0003",
+   "name": "Biceps femoris long (left)",
+   "rays": 2018,
+   "at": [
+    0.137,
+    0.609,
+    -0.149
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0133",
+   "name": "Left fifth metatarsal bone",
+   "rays": 1880,
+   "at": [
+    0.17,
+    0.019,
+    -0.065
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0172",
+   "name": "Right calcaneus",
+   "rays": 1452,
+   "at": [
+    -0.152,
+    0.024,
+    -0.145
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0025",
+   "name": "Gluteus maximus (left)",
+   "rays": 1309,
+   "at": [
+    0.185,
+    0.815,
+    -0.143
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0134",
+   "name": "Left calcaneus",
+   "rays": 1307,
+   "at": [
+    0.128,
+    0.011,
+    -0.145
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0075",
+   "name": "Tensor fasciae latae (right)",
+   "rays": 1305,
+   "at": [
+    -0.183,
+    0.821,
+    -0.031
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0171",
+   "name": "Right fifth metatarsal bone",
+   "rays": 1068,
+   "at": [
+    -0.183,
+    0.019,
+    -0.06
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0048",
+   "name": "Sartorius (right)",
+   "rays": 992,
+   "at": [
+    -0.163,
+    0.822,
+    -0.01
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0149",
+   "name": "Proximal phalanx of left little toe",
+   "rays": 556,
+   "at": [
+    0.183,
+    0.008,
+    0.01
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0166",
+   "name": "Proximal phalanx of right little toe",
+   "rays": 540,
+   "at": [
+    -0.2,
+    0.01,
+    0.01
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0056",
+   "name": "Flexor digitorum longus (right)",
+   "rays": 425,
+   "at": [
+    -0.107,
+    0.114,
+    -0.109
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0016",
+   "name": "Extensor digitorum longus (left)",
+   "rays": 385,
+   "at": [
+    0.182,
+    0.36,
+    -0.091
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0018",
+   "name": "Flexor digitorum longus (left)",
+   "rays": 374,
+   "at": [
+    0.094,
+    0.093,
+    -0.115
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0101",
+   "name": "Proximal phalanx of right index finger",
+   "rays": 354,
+   "at": [
+    -0.437,
+    0.82,
+    -0.04
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "HRAF0928",
+   "name": "Fibula (right)",
+   "rays": 278,
+   "at": [
+    -0.169,
+    0.131,
+    -0.12
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0096",
+   "name": "Proximal phalanx of left index finger",
+   "rays": 246,
+   "at": [
+    0.444,
+    0.811,
+    -0.035
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0023",
+   "name": "Tibialis anterior (left)",
+   "rays": 246,
+   "at": [
+    0.176,
+    0.363,
+    -0.076
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0018",
+   "name": "Right temporal bone",
+   "rays": 234,
+   "at": [
+    -0.074,
+    1.571,
+    -0.052
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "VHF0064",
+   "name": "Gluteus medius (right)",
+   "rays": 214,
+   "at": [
+    -0.172,
+    0.884,
+    -0.037
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0000",
+   "name": "Right major alar cartilage",
+   "rays": 212,
+   "at": [
+    -0.017,
+    1.508,
+    0.047
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0127",
+   "name": "Distal phalanx of left big toe",
+   "rays": 192,
+   "at": [
+    0.119,
+    0.015,
+    0.065
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0111",
+   "name": "Right fifth metacarpal bone",
+   "rays": 164,
+   "at": [
+    -0.377,
+    0.816,
+    -0.05
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0128",
+   "name": "Distal phalanx of left little toe",
+   "rays": 161,
+   "at": [
+    0.194,
+    0.009,
+    0.04
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0156",
+   "name": "Distal phalanx of right little toe",
+   "rays": 150,
+   "at": [
+    -0.204,
+    0.011,
+    0.045
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0088",
+   "name": "Middle phalanx of left ring finger",
+   "rays": 145,
+   "at": [
+    0.417,
+    0.769,
+    -0.028
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0145",
+   "name": "Middle phalanx of left little toe",
+   "rays": 129,
+   "at": [
+    0.189,
+    0.01,
+    0.035
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0160",
+   "name": "Middle phalanx of right little toe",
+   "rays": 124,
+   "at": [
+    -0.205,
+    0.011,
+    0.035
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "HRAF0955",
+   "name": "Fibula (left)",
+   "rays": 124,
+   "at": [
+    0.165,
+    0.066,
+    -0.122
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0093",
+   "name": "Middle phalanx of right index finger",
+   "rays": 121,
+   "at": [
+    -0.455,
+    0.802,
+    -0.03
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0075",
+   "name": "Left fifth metacarpal bone",
+   "rays": 118,
+   "at": [
+    0.37,
+    0.823,
+    -0.05
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0110",
+   "name": "Right fourth metacarpal bone",
+   "rays": 115,
+   "at": [
+    -0.391,
+    0.818,
+    -0.051
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0104",
+   "name": "Proximal phalanx of right ring finger",
+   "rays": 106,
+   "at": [
+    -0.403,
+    0.796,
+    -0.045
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0090",
+   "name": "Middle phalanx of left index finger",
+   "rays": 102,
+   "at": [
+    0.453,
+    0.803,
+    -0.03
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0129",
+   "name": "Left first metatarsal bone",
+   "rays": 100,
+   "at": [
+    0.114,
+    0.017,
+    0.015
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0001",
+   "name": "Left major alar cartilage",
+   "rays": 98,
+   "at": [
+    -0.002,
+    1.502,
+    0.054
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0089",
+   "name": "Middle phalanx of right ring finger",
+   "rays": 77,
+   "at": [
+    -0.419,
+    0.765,
+    -0.025
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0094",
+   "name": "Middle phalanx of right little finger",
+   "rays": 73,
+   "at": [
+    -0.387,
+    0.777,
+    -0.035
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0066",
+   "name": "Distal phalanx of right little finger",
+   "rays": 67,
+   "at": [
+    -0.394,
+    0.768,
+    -0.025
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0124",
+   "name": "Distal phalanx of left second toe",
+   "rays": 66,
+   "at": [
+    0.149,
+    0.016,
+    0.08
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0153",
+   "name": "Distal phalanx of right third toe",
+   "rays": 58,
+   "at": [
+    -0.173,
+    0.023,
+    0.08
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0152",
+   "name": "Distal phalanx of right second toe",
+   "rays": 58,
+   "at": [
+    -0.163,
+    0.023,
+    0.09
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0137",
+   "name": "Sesamoid bone of left foot",
+   "rays": 47,
+   "at": [
+    0.114,
+    0.015,
+    0.02
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0126",
+   "name": "Distal phalanx of left fourth toe",
+   "rays": 47,
+   "at": [
+    0.174,
+    0.017,
+    0.07
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0061",
+   "name": "Distal phalanx of left little finger",
+   "rays": 46,
+   "at": [
+    0.391,
+    0.756,
+    -0.02
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0125",
+   "name": "Distal phalanx of left third toe",
+   "rays": 39,
+   "at": [
+    0.163,
+    0.019,
+    0.084
+   ],
+   "skinToned": false
+  },
+  {
+   "id": "BM0097",
+   "name": "Proximal phalanx of left little finger",
+   "rays": 37,
+   "at": [
+    0.373,
+    0.809,
+    -0.045
+   ],
+   "skinToned": false
+  }
+ ]
+}

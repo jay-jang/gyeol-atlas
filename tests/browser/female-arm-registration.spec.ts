@@ -16,7 +16,13 @@ const kneeRestoration=JSON.parse(fs.readFileSync('data/catalog/female-knee-sourc
 const kneeBytes=gunzipSync(fs.readFileSync(`public/${kneeRestoration.url}`));
 const brainBindings=JSON.parse(fs.readFileSync('data/catalog/female-brain-bindings.json','utf8'));
 const pelvicBindings=JSON.parse(fs.readFileSync('data/catalog/female-pelvic-bindings.json','utf8'));
+// The registration field's placement of the borrowed bones supersedes the regional calibration.
+const transport=JSON.parse(fs.readFileSync('public/models/female-transport/manifest.json','utf8'));
+const placedBytes=gunzipSync(fs.readFileSync(`public/${transport.borrowed.url}`));
+const placed=new Map(transport.borrowed.parts.map((r:any)=>[r.id,r]));
 const expected=Object.fromEntries(atlas.parts.map((p:any)=>{
+  const field=placed.get(p.id) as any;
+  if(field)return [p.id,createHash('sha256').update(placedBytes.subarray(field.offset,field.offset+field.vertexCount*12)).digest('hex')];
   const knee=kneeRestoration.records.find((r:any)=>r.id===p.id);
   if(knee)return [p.id,createHash('sha256').update(kneeBytes.subarray(knee.positions,knee.positions+knee.vertexCount*12)).digest('hex')];
   const restored=sourceRestoration.records.find((r:any)=>r.id===p.id);

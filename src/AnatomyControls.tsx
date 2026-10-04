@@ -15,7 +15,7 @@ export default function AnatomyControls({
 }) {
   const connectiveIds = connectiveIdsForSex(state.sex);
   const scopeControls = state.sex === "female" ? <div className="anatomy-scope-controls">
-    <p className="control-hint">HRA 여성 전신과 여성 CT 보완 상세는 서로 다른 신체 자료입니다. 위·부신·식도 구간·등 근육군 구간은 검색하거나 주요 기관에서 별도 CT 모형으로 볼 수 있습니다. 하체 근육은 별도 제작된 Visible Human Female 자료이며 전신 정합은 미완료입니다. 회청색 보완 골격 180개는 남성 유래입니다. 상체 근육 전체·일부 말초신경은 아직 미수록입니다. 여성 경혈 좌표는 검수 전이므로 표식을 숨깁니다.</p>
+    <p className="control-hint">HRA 여성 전신과 여성 CT 보완 상세는 서로 다른 신체 자료입니다. 위·부신·식도 구간·등 근육군 구간은 검색하거나 주요 기관에서 별도 CT 모형으로 볼 수 있습니다. 근육·팔다리 혈관·말초신경·인대·힘줄·전신 림프절은 남성 원본을 여성 고유 뼈·피부에 맞춘 하나의 정합장으로 옮긴 보완이며, 회청색 보완 골격 180개도 같은 정합장으로 놓았습니다. 여성 고유 형상이 아닙니다. 별도 Visible Human Female 하체 근육은 검색할 때만 보입니다. 여성 경혈 좌표는 검수 전이므로 표식을 숨깁니다.</p>
   </div> : null;
   return (
     <div className="layer-settings">
@@ -78,9 +78,18 @@ export default function AnatomyControls({
         <p className="control-hint">
           {state.sex === "male"
             ? "관절 인대·관절주머니·반달연골과 따로 모델링된 힘줄·널힘줄·지지띠·힘줄집입니다. 인대는 골격과 함께, 힘줄은 근육과 함께 박리됩니다. 대부분의 힘줄은 원본에서 근육 모형에 포함되어 따로 보이지 않습니다."
-            : "여성 원본에는 무릎 인대·반달연골과 넙다리네갈래근 힘줄만 따로 수록되어 있습니다."}
+            : "무릎 인대·반달연골과 넙다리네갈래근 힘줄은 여성 원본이고, 나머지 관절 인대·힘줄은 남성 원본을 여성 몸에 맞춰 옮긴 보완입니다. 인대는 골격과 함께, 힘줄은 근육과 함께 박리됩니다."}
         </p>
       </div>
+      <label className="setting-check">
+        <input
+          type="checkbox"
+          checked={state.modesty}
+          onChange={(e) => dispatch({ type: "modesty", value: e.target.checked })}
+        />
+        성기 가리기
+      </label>
+      <p className="control-hint">외부 생식기를 숨기고 그 부위 피부를 무늬 없는 덮개로 가립니다. 상단의 방패 버튼으로도 켜고 끌 수 있습니다. 검색으로 직접 고른 구조는 보입니다.</p>
       <p className="coverage-description">{stageDescription(state.stage, state.sex)}</p>
       <label className="setting-select">
         경혈 표식

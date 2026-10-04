@@ -57,6 +57,7 @@ import { musclePeelOpacity } from "./dissection";
 import { selectionOpacity, selectionHitId, opacityWritesDepth } from "./selection-context";
 import { besideMarker, type ScreenSize } from "./marker-label";
 import { hitRadius, markerDotPx, markersFirst, nearestMarker, releasedDragPress, trackPresses } from "./marker-picking";
+import { buildCover, isGenitalStructure, COVER_NAME } from "./modesty";
 
 const structureById = new Map(structures.map(s => [s.id, s]));
 
@@ -281,6 +282,7 @@ type Props = {
   sex: "male" | "female";
   anatomyRegion: "whole" | "head" | "upper-body" | "lower-body" | "upper-limb" | "lower-limb" | "chest" | "abdomen" | "pelvis";
   connective: boolean;
+  modesty: boolean;
   // The selection was made in place on the model: slide the picture aside for
   // its card (and back) instead of jumping.
   glideFraming: boolean;
@@ -357,6 +359,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     muscleMeshes.forEach(({ mesh }) => {
       mesh.userData.peelRank = ranks.get(mesh.name)!;
     });
+    if (layer === "skin") clone.traverse(o => { if (o instanceof Mesh && o.name === "FMA7163") o.add(buildCover(o, "male")); });
     return clone;
   }, [model.scene, layer]);
   useEffect(() => () => object.traverse(o => {
@@ -374,7 +377,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     ]);
     let visibleCount = 0;
     object.traverse((o) => {
-      if (!(o instanceof Mesh)) return;
+      if (!(o instanceof Mesh) || o.name === COVER_NAME) return;
       const id = structureById.has(o.name)
         ? o.name
         : o.parent?.name || "";
@@ -399,6 +402,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       if ((layer === "nerve" || layer === "vessel") && !selected && !props.detailIds.includes(id)) o.visible = false;
       const connective = Boolean(connectiveKindOf(id));
       if (connective && !props.connective && !selected) o.visible = false;
+      if (props.modesty && !selected && isGenitalStructure(id, structureById.get(id)?.name)) o.visible = false;
       if (o.visible) visibleCount++;
       // Selection is an opaque emphasis, as in PackedAtlas and the supplements.
       // Keep the user's layer alpha in view-state; it applies again on deselect.
@@ -417,6 +421,14 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       material.opacity = alpha;
       material.depthWrite = !transparent;
       material.clippingPlanes = planes;
+      const cover = o.getObjectByName(COVER_NAME) as Mesh | undefined;
+      if (cover) {
+        cover.visible = props.modesty && o.visible;
+        const coverMaterial = cover.material as MeshStandardMaterial;
+        coverMaterial.opacity = alpha; coverMaterial.transparent = transparent; coverMaterial.depthWrite = !transparent;
+        coverMaterial.clippingPlanes = planes;
+        gl.domElement.dataset.modestyCover = String(cover.visible);
+      }
     });
     gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(visibleCount);
     object.visible = true;
@@ -440,6 +452,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     props.layers,
     props.anatomyRegion,
     props.connective,
+    props.modesty,
     gl,
     invalidate,
   ]);
@@ -499,6 +512,7 @@ function SupplementModel({ url, layer, entries, color, connective = false, signa
       item.visible = item.visible && (!props.detailIds.length || props.detailIds.includes(item.name));
       if (connective && !props.connective && !selected) item.visible = false;
       if (baseEyeball && !selected && isSupplementEyePart(item.userData.entry?.name || "")) item.visible = false;
+      if (props.modesty && !selected && isGenitalStructure(item.name, item.userData.entry?.name)) item.visible = false;
       const material = item.material as MeshStandardMaterial;
       // A category bundle keeps its tissue colour; one chosen structure is emphasised.
       material.color.set((connective ? props.selectedStructure === item.name : selected) ? "#34d3dd" : color(item.userData.entry));
@@ -518,7 +532,7 @@ function SupplementModel({ url, layer, entries, color, connective = false, signa
     });
     object.visible = true;
     invalidate();
-  }, [object, layer, color, connective, props.connective, props.selectedStructure, props.isolated, props.selectionIds, props.detailIds, props.layerOpacity, props.contextDimmed, props.cutaway, props.dissection, props.displayMode, props.selectionTarget, props.anatomyRegion, props.layers, invalidate]);
+  }, [object, layer, color, connective, props.connective, props.modesty, props.selectedStructure, props.isolated, props.selectionIds, props.detailIds, props.layerOpacity, props.contextDimmed, props.cutaway, props.dissection, props.displayMode, props.selectionTarget, props.anatomyRegion, props.layers, invalidate]);
   useEffect(() => {
     if (signalsReady) props.onReady(layer);
   }, [object, layer, signalsReady, props.onReady]);
@@ -822,7 +836,7 @@ function Scene(props: Props) {
       for (const layer of layerKeys) gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(counts[layer]);
     });
     return () => cancelAnimationFrame(frame);
-  }, [revision, props.sex, props.layers, props.selectionIds, props.detailIds, props.isolated, props.dissection, props.anatomyRegion, props.connective, scene, gl]);
+  }, [revision, props.sex, props.layers, props.selectionIds, props.detailIds, props.isolated, props.dissection, props.anatomyRegion, props.connective, props.modesty, scene, gl]);
   useEffect(() => {
     const c = controls.current;
     if (!c) return;
