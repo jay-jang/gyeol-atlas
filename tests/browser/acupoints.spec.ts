@@ -49,3 +49,14 @@ test('mobile regions and 34-site Jiaji retain the scene and expose sourced conte
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await page.screenshot({path:'docs/acupoint-expansion/mobile-theory.png'});
 });
+
+test('the acupoint bar names meridians in Korean and still filters by meridian', async ({page}) => {
+  await page.goto('/'); await ready(page);
+  const chips = page.locator('.ax-meridians button');
+  await expect(chips).toHaveText(['전체','폐경','대장경','위경','비경','심경','소장경','방광경','신경(腎)','심포경','삼초경','담경','간경','독맥','임맥','경외기혈']);
+  for (const text of await chips.allTextContents()) expect(text).not.toMatch(/[A-Z]{2}/);
+  await page.getByRole('button',{name:'족양명위경 경혈만 보기'}).click(); await ready(page);
+  expect((await snapshot(page)).filters.meridian).toBe('ST');
+  await expect(page.locator('canvas')).toHaveAttribute('data-rendered-markers', String(points.filter(p=>p.meridian==='ST').reduce((n,p)=>n+p.markerCount,0)));
+  await page.screenshot({path:'docs/ui-renewal/meridian-bar-korean.png'});
+});

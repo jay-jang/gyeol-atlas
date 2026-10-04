@@ -367,7 +367,10 @@ body:has(.ax) .site-footer { display: none; }
 }
 .ax-status > * { pointer-events: auto; }
 .ax-status .scene-status, .ax-status .scene-legend, .ax-status .ax-source { display: flex; align-items: center; gap: 7px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; max-width: 100%; }
-.ax-status .ax-source { display: block; white-space: normal; line-height: 1.45; }
+.ax-status .ax-source { display: block; white-space: normal; line-height: 1.45; word-break: keep-all; }
+/* Korean meridian names make the acupoint bar wider; its chips scroll, so on
+   wide screens the status column keeps room for its two lines. */
+@media (min-width: 1181px) { .ax-status { min-width: 240px; } }
 .ax-status .click-target { color: #8ea3ad; }
 .ax-status .scene-legend span { display: inline-flex; align-items: center; gap: 4px; }
 .ax-status .scene-legend i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }

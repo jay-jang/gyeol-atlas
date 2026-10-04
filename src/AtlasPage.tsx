@@ -129,6 +129,11 @@ function PointDetail({ point, onFocus, saved, onSave, onCompare, onClose, compar
   );
 }
 
+// The acupoint bar names meridians in Korean (폐경, 위경 …). The kidney
+// meridian's short name 신경(腎經) reads like the nerve layer 신경(神經), so it
+// carries its character; the full name stays in the tooltip.
+const meridianChipName = (m: { id: string; shortName: string }) => m.id === "KI" ? "신경(腎)" : m.shortName;
+
 export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate }: {
   id: string; saved: string[]; toggle: (id: string) => void; state: ViewState; dispatch: Dispatch<ViewAction>; navigate: (path: string) => void;
 }) {
@@ -844,7 +849,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               {meridians.map((m) => (
                 <button key={m.id} style={{ ["--c" as string]: m.color }} aria-pressed={meridian === m.id && state.markers === "filtered"} aria-label={`${m.name} 경혈만 보기`} data-tip={`${m.name} · ${m.total}혈`} data-tip-side="top"
                   onClick={() => { setFilter({ meridian: meridian === m.id ? "all" : m.id }); dispatch({ type: "markers", value: "filtered" }); }}>
-                  <i />{m.id}
+                  <i />{meridianChipName(m)}
                 </button>
               ))}
             </div>
