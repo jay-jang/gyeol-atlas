@@ -2,8 +2,11 @@
 import json, re
 MALE_ONLY = re.compile(r'penis|penile|scrot|testic|testis|sperm|prostat|cremaster|seminal|deferen|epididym|bulbourethral|glans', re.I)
 # Structures the female sources already model (HRA v1.10): kept from the female source.
-FEMALE_VESSELS = re.compile(r'^(Abdominal aorta|Ascending aorta|Thoracic aorta|Aortic arch|Brachiocephalic trunk|Left common carotid artery|Left subclavian artery|'
-    r'Pulmonary trunk|Bifurcation of pulmonary trunk|(Right|Left) pulmonary artery|(Right|Left) (superior|inferior) pulmonary vein|Superior vena cava|Inferior vena cava.*|'
+# The HRA left common carotid, left subclavian and left pulmonary arteries are
+# short partial segments; the whole male vessels are carried so their branches
+# connect, and the partial female segments wait for search (src/female-transport.ts).
+FEMALE_VESSELS = re.compile(r'^(Abdominal aorta|Ascending aorta|Thoracic aorta|Aortic arch|Brachiocephalic trunk|'
+    r'Pulmonary trunk|Bifurcation of pulmonary trunk|Right pulmonary artery|(Right|Left) (superior|inferior) pulmonary vein|Superior vena cava|Inferior vena cava.*|'
     r'Coeliac trunk|(Superior|Inferior) mesenteric (artery|vein)|(Right|Middle|Left) colic (artery|vein)|(Ascending|Descending) branch of left colic artery|Ileocolic (artery|vein)|'
     r'(Colic|Ileal) branch of ileocolic artery|Sigmoid (arteries|veins)|Superior anorectal (artery|vein)|Marginal artery|Splenic (artery|vein)|(Common|Proper) hepatic artery|Hepatic veins|'
     r'Hepatic portal vein|(Right|Left) renal (artery|vein)|(Anterior|Posterior) branch of renal artery.*|Intrarenal (arteries|veins) of .*|Common iliac vein.*|Internal iliac vein.*|'
@@ -36,6 +39,9 @@ def connective_rule(s):
     return None
 LYMPH_DUP = re.compile(r'^(Spleen|(Right|Left) lobe of thymus|Palatine tonsil.*)$')
 def lymph_rule(s): return 'female spleen/thymus/tonsil source' if LYMPH_DUP.match(s['name']) else None
+# Organs the female whole body lacks (her stomach, oesophagus and adrenals are
+# only in the separate CT detail); carried like the other male structures.
+ORGANS_MISSING = {'FMA7131', 'FMA7148', 'FMA15629', 'FMA15630', 'FJ3670', 'FJ3671', 'FJ3672', 'FJ3673', 'FJ3674', 'FJ3675', 'FJ3676', 'FMA13889'}
 BONE_MISSING = re.compile(r'^(xiphoid process|(right|left) lacrimal bone|(right|left) inferior nasal concha|sesamoid bone of (right|left) foot|interosseous membrane of (right|left) (forearm|leg)|(right|left) long plantar ligament|(right|left) costal cartilage)$')
 def selection():
     fss = json.load(open('data/full-system-structures.json')); cs = json.load(open('data/connective-structures.json'))
@@ -48,6 +54,7 @@ def selection():
     for a in inputs:
         if a['layer'] == 'muscle': take('muscle.glb', a, 'muscle', muscle_rule(a))
         elif a['layer'] == 'bone' and BONE_MISSING.match(a['name']): take('bone.glb', a, 'bone', None)
+        elif a['layer'] == 'organ' and a['id'] in ORGANS_MISSING: take('organ.glb', a, 'organ', None)
     for s in lymph: take('reference/lymphatic_male.glb', s, 'lymph', lymph_rule(s))
     return out, skipped
 if __name__ == '__main__':

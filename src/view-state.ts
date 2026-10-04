@@ -37,6 +37,9 @@ export type ViewState = {
   connective: boolean;
   // "성기 가리기": hide the external genitalia under a plain cover.
   modesty: boolean;
+  // Female acupoint markers are unreviewed approximations (male anchors
+  // carried by the registration field): shown only when asked for.
+  femaleMarkers: boolean;
   selection: Selection | null;
   detail: { id: string; name: string; ids: string[]; layers: Layers } | null;
   detailReturn: ReturnView | null;
@@ -80,6 +83,7 @@ export function initialView(pointId = ""): ViewState {
     labels: false,
     connective: true,
     modesty: false,
+    femaleMarkers: false,
     selection: null,
     detail: null,
     detailReturn: null,
@@ -116,6 +120,7 @@ export type ViewAction =
   | { type: "labels"; value: boolean }
   | { type: "connective"; value: boolean }
   | { type: "modesty"; value: boolean }
+  | { type: "female-markers"; value: boolean }
   | { type: "connective-only"; ids: string[] }
   | { type: "target"; value: ViewState["selectionTarget"] }
   | { type: "select"; selection: Selection; layer?: Layer; region?: ViewState["anatomyRegion"]; detail?: NonNullable<ViewState["detail"]> }
@@ -257,6 +262,8 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return { ...s, connective: a.value };
     case "modesty":
       return a.value === s.modesty ? s : { ...s, modesty: a.value };
+    case "female-markers":
+      return a.value === s.femaleMarkers ? s : { ...s, femaleMarkers: a.value, markers: a.value && s.markers === "hidden" ? "filtered" : s.markers };
     case "connective-only": {
       // Ligaments and tendons alone, over the muscle and bone layers. Leaving
       // the selection returns to the view it was opened from.
@@ -448,6 +455,8 @@ export function restoreView(
     // Sessions saved before the cover existed leave it off.
     if (s.modesty === undefined) s.modesty = base.modesty;
     if (typeof s.modesty !== "boolean") return base;
+    if (s.femaleMarkers === undefined) s.femaleMarkers = base.femaleMarkers;
+    if (typeof s.femaleMarkers !== "boolean") return base;
     if (!["dissection", "layers"].includes(s.displayMode)) return base;
     s.dissection = quantizeDepth(s.dissection);
     if (s.displayMode === "dissection" && !s.selection && !s.detail && keys.every(k => typeof s.layers?.[k] === "boolean")) {

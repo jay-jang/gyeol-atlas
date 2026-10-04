@@ -60,6 +60,7 @@ import { hitRadius, markerDotPx, markersFirst, nearestMarker, releasedDragPress,
 import { buildCover, isGenitalStructure, COVER_NAME } from "./modesty";
 
 const structureById = new Map(structures.map(s => [s.id, s]));
+const NO_ANCHORS: typeof anchors = [];
 
 const labelAnchor = new Vector3();
 function toCanvas(point: Vector3, camera: Camera, size: ScreenSize): [number, number] {
@@ -283,6 +284,7 @@ type Props = {
   anatomyRegion: "whole" | "head" | "upper-body" | "lower-body" | "upper-limb" | "lower-limb" | "chest" | "abdomen" | "pelvis";
   connective: boolean;
   modesty: boolean;
+  femaleMarkers: boolean;
   // The selection was made in place on the model: slide the picture aside for
   // its card (and back) instead of jumping.
   glideFraming: boolean;
@@ -796,9 +798,22 @@ function Scene(props: Props) {
     },
     [emitPose],
   );
+  // Female anchors are approximations carried from the male ones; fetched only
+  // when the viewer asks for them (scripts/build-female-anchors.mjs).
+  const [femaleAnchors, setFemaleAnchors] = useState<typeof anchors | null>(null);
+  const wantsFemaleAnchors = props.sex === "female" && props.femaleMarkers;
+  useEffect(() => {
+    if (!wantsFemaleAnchors || femaleAnchors) return;
+    const abort = new AbortController();
+    fetch(assetUrl("models/acupoint-anchors-female.json"), { signal: abort.signal })
+      .then(response => { if (!response.ok) throw new Error(`여성 근사 표식 ${response.status}`); return response.json(); })
+      .then(setFemaleAnchors).catch(() => {});
+    return () => abort.abort();
+  }, [wantsFemaleAnchors, femaleAnchors]);
+  const anchorSource = props.sex === "female" ? (wantsFemaleAnchors && femaleAnchors) || NO_ANCHORS : anchors;
   const markers = useMemo(
     () =>
-      (props.sex === "female" || props.detailIds.length ? [] : anchors)
+      (props.detailIds.length ? [] : anchorSource)
         .filter((a) => points.some((p) => p.id === a.pointId))
         .map((a) => ({
           point: points.find((p) => p.id === a.pointId)!,
@@ -815,7 +830,7 @@ function Scene(props: Props) {
                 ? "왼쪽"
                 : "정중선",
         })),
-    [points, props.sex, props.detailIds.length],
+    [points, anchorSource, props.detailIds.length],
   );
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
@@ -972,7 +987,7 @@ function Scene(props: Props) {
       c.target.set(0, 1.55, 0);
       camera.position.set(0, 1.55, 0.65);
     } else if (action.kind === "focus") {
-      const anchor = anchors.find(
+      const anchor = anchorSource.find(
         (a) => a.pointId === selected.id && a.side !== "left",
       );
       if (!anchor) return;

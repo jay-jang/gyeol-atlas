@@ -1,6 +1,7 @@
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
+import {readFileSync} from 'node:fs';
 import { inflateSync } from 'node:zlib';
 const origin = process.env.PAGES_ORIGIN || 'http://127.0.0.1:4184/gyeol-atlas/';
 // Count bright (R>90) pixels of an 8-bit RGBA PNG screenshot.
@@ -35,7 +36,7 @@ try {
  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
  await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
  await page.waitForFunction(()=>document.querySelector('canvas')?.dataset.femaleAtlasParts==='1220');
-await page.waitForFunction(()=>document.querySelector('canvas')?.dataset.femaleTransportParts==='1774');
+await page.waitForFunction(n=>document.querySelector('canvas')?.dataset.femaleTransportParts===String(n),JSON.parse(readFileSync('data/female-transport-structures.json','utf8')).length);
  assert.equal(new Set(requests.filter(u=>/\/female\/.*\.bin\.gz$/.test(u))).size,15);
  await (await (async()=>{const input=page.getByLabel('경혈·구조 검색');await input.click();await input.fill('');return page.locator('.featured-anatomy > button');})()).filter({has:page.getByText('뇌',{exact:true})}).click();
  await page.waitForFunction(()=>document.querySelector('canvas')?.dataset.visibleStructureIds?.split(',').length===283);
@@ -54,6 +55,6 @@ await page.waitForFunction(()=>document.querySelector('canvas')?.dataset.femaleT
  const bodyPixels=litPixels(await page.screenshot({clip:{x:60,y:250,width:270,height:150}}));
  assert.ok(bodyPixels>500,`scene above the open phone panel is blank (${bodyPixels} lit pixels)`);
  assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
- const result={origin,checkedAt:new Date().toISOString(),points:409,staticSearch:true,initialWikiModelRequests:0,femaleParts:1220,femaleTransportParts:1774,femaleBrainParts:283,maleHeartParts:83,errors,failures};
+ const result={origin,checkedAt:new Date().toISOString(),points:409,staticSearch:true,initialWikiModelRequests:0,femaleParts:1220,femaleTransportParts:JSON.parse(readFileSync('data/female-transport-structures.json','utf8')).length,femaleBrainParts:283,maleHeartParts:83,errors,failures};
  await fs.writeFile('docs/acupoint-expansion/pages-verification.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
 } finally {await browser.close();}

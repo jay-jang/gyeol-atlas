@@ -19,7 +19,7 @@ import { anatomyRegionMatches } from "./anatomy-region";
 import { femaleBrainBindings, resolveFemaleBrainGeometryPart, verifyFemaleBrainManifest } from "./female-brain-bindings";
 import { femalePelvicBindings, resolveFemalePelvicGeometryPart, verifyFemalePelvicManifestVersion } from "./female-pelvic-bindings";
 import { verifyPackedSourceManifest } from "./packed-source-guard";
-import { applyBorrowedPlacement, femaleTransportPeelRanks, loadFemaleTransport } from "./female-transport";
+import { applyFieldPlacement, femalePartialVesselIds, femaleTransportPeelRanks, loadFemaleTransport } from "./female-transport";
 import { buildCover, isGenitalStructure, COVER_NAME } from "./modesty";
 
 type FemalePart = {
@@ -58,6 +58,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
   const [object, setObject] = useState<Group | null>(null);
   const [manifest, setManifest] = useState<FemaleManifest | null>(null);
   const [transportCount, setTransportCount] = useState(0);
+  const [placementTones, setPlacementTones] = useState<Set<string>>(() => new Set());
   const [error, setError] = useState<Error | null>(null);
   const { gl, invalidate } = useThree();
   useEffect(() => {
@@ -109,8 +110,8 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         applyFemaleArmRegistration(geometry, dataset, part.id, part.system);
         applyFemaleFootRegistration(geometry, dataset, part.id, part.system);
         applyFemaleCordRegistration(geometry,dataset,part.id,part.system);
-        // The registration field's placement supersedes the regional transforms.
-        if (part.system === "borrowed") applyBorrowedPlacement(geometry, transport?.borrowed.get(part.id));
+        // The registration field's placement supersedes the regional transforms (borrowed bones, reference brain).
+        applyFieldPlacement(geometry, transport?.placement.get(part.id));
         geometry.computeBoundingBox();
         geometry.computeBoundingSphere();
         const actualBounds = [geometry.boundingBox!.min.toArray(), geometry.boundingBox!.max.toArray()];
@@ -138,6 +139,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       built = group;
       setManifest(atlas);
       setTransportCount(transport?.meshes.length ?? 0);
+      setPlacementTones(transport?.toned ?? new Set());
       setObject(group);
     })().catch(error => {
       if (!abort.signal.aborted) setError(error instanceof Error ? error : new Error(String(error)));
@@ -176,10 +178,10 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       const depthAlpha = dissectionLayerOpacity(layer, props.dissection, progressive) * (progressive && layer === "muscle" && peelRank !== undefined ? musclePeelOpacity(props.dissection, peelRank) : 1);
       const duplicateDonor = part?.system === "donor-muscle" && (part.name === "Rectus femoris (left)" || part.name === "Rectus femoris (right)");
       const donorSelected = (item.name === "HRAF0394" && props.selectionIds.includes("VHF0009")) || (item.name === "HRAF0396" && props.selectionIds.includes("VHF0047"));
-      // The separately sourced Visible Human Female leg muscles are kept for
-      // search and selection; the overview shows one muscle source, the
-      // transported set, as the male view does with its supplements.
-      const donor = part?.system === "donor-muscle" && Boolean(transportCount);
+      // The separately sourced Visible Human Female leg muscles (and the partial
+      // HRA vessel segments) are kept for search and selection; the overview
+      // shows one source, the transported set, as the male view does with its supplements.
+      const donor = (part?.system === "donor-muscle" || femalePartialVesselIds.has(item.name)) && Boolean(transportCount);
       item.visible = (!duplicateDonor || selected) && (!donor || selected) && (part?.system !== "pregnancy" || selected) && props.layers[layer] && (!props.isolated || selected) && (selected || depthAlpha > .01) && (selected || anatomyRegionMatches(item.userData.bounds, props.anatomyRegion, catalogById.get(item.name)));
       if (props.modesty && !selected && isGenitalStructure(item.name, catalogById.get(item.name)?.name)) item.visible = false;
       item.visible = item.visible && !donorSelected;
@@ -193,7 +195,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       const transported = item.userData.transport as boolean | undefined;
       const vein = part?.system === "venous" || (transported && layer === "vessel" && /vein|vena cava/i.test(catalogById.get(item.name)?.name || ""));
       const entry = catalogById.get(item.name) as { surfaceTone?: boolean } | undefined;
-      const tone = !selected && !highlighted && skinOpaque && (SURFACE_TONES[item.name] || entry?.surfaceTone) ? SKIN_COLOR : undefined;
+      const tone = !selected && !highlighted && skinOpaque && (SURFACE_TONES[item.name] || entry?.surfaceTone || placementTones.has(item.name)) ? SKIN_COLOR : undefined;
       material.color.set(selected && props.selectionIds.length === 1 ? "#34d3dd" : highlighted ? "#e5b24f" : tone ?? (connective ? CONNECTIVE_COLOR : vein ? "#356fb3" : part?.system === "borrowed" || (transported && layer === "bone") ? "#9aa7b1" : layerColor[layer]));
       material.opacity = selectionOpacity(props.layerOpacity[layer] * depthAlpha, selected, props.contextDimmed);
       const planes = clippingPlanes(layer, props);
@@ -220,7 +222,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
     gl.domElement.dataset.modestyCover = String(coverVisible);
     object.visible = true;
     invalidate();
-  }, [object, partById, manifest, transportCount, props.layers, props.isolated, props.selectionIds, props.detailIds, props.highlight, props.dissection, props.displayMode, props.selectionTarget, props.layerOpacity, props.contextDimmed, props.anatomyRegion, props.cutaway, props.connective, props.modesty, gl, invalidate]);
+  }, [object, partById, manifest, transportCount, placementTones, props.layers, props.isolated, props.selectionIds, props.detailIds, props.highlight, props.dissection, props.displayMode, props.selectionTarget, props.layerOpacity, props.contextDimmed, props.anatomyRegion, props.cutaway, props.connective, props.modesty, gl, invalidate]);
   useEffect(() => { if (object) { layerKeys.forEach(props.onReady); props.onLoading(false); } }, [object, props.onReady, props.onLoading]);
   if (error) throw error;
   if (!object) return <Html center><div className="model-loading">참조 모델 불러오는 중</div></Html>;

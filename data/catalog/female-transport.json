@@ -3,22 +3,23 @@
  "createdBy": "scripts/female-transport/warp.py",
  "field": {
   "path": ".cache/female-transport/field.npz",
-  "sha256": "87b7b784f170604d2cb7218f08b9d7647525a5435875abe796abd74e6d81a817"
+  "sha256": "6cf76767d1a53cd0cdbed2684f7e499abd433927ba5b0de1a7fe0b419fb223e5"
  },
  "selection": {
   "chosen": {
    "nerve-full.glb": 263,
-   "vessel-full.glb": 524,
+   "vessel-full.glb": 527,
    "ligament-full.glb": 342,
    "tendon-full.glb": 58,
    "muscle.glb": 435,
+   "organ.glb": 12,
    "bone.glb": 15,
    "reference/lymphatic_male.glb": 137
   },
   "skipped": {
    "vessel-full.glb · female heart source": 27,
    "nerve-full.glb · female brain/spinal cord sources": 236,
-   "vessel-full.glb · female vessel source": 73,
+   "vessel-full.glb · female vessel source": 70,
    "vessel-full.glb · male-only": 10,
    "vessel-full.glb · male external genital course": 6,
    "nerve-full.glb · female eye source": 22,
@@ -241,12 +242,6 @@
    "reason": "female vessel source"
   },
   {
-   "id": "ZA_vessel_left_pulmonary_artery",
-   "name": "Left pulmonary artery",
-   "source": "vessel-full.glb",
-   "reason": "female vessel source"
-  },
-  {
    "id": "ZA_vessel_left_renal_artery",
    "name": "Left renal artery",
    "source": "vessel-full.glb",
@@ -261,12 +256,6 @@
   {
    "id": "ZA_vessel_splenic_artery",
    "name": "Splenic artery",
-   "source": "vessel-full.glb",
-   "reason": "female vessel source"
-  },
-  {
-   "id": "ZA_vessel_left_subclavian_artery",
-   "name": "Left subclavian artery",
    "source": "vessel-full.glb",
    "reason": "female vessel source"
   },
@@ -371,12 +360,6 @@
    "name": "Central canal",
    "source": "nerve-full.glb",
    "reason": "female brain/spinal cord sources"
-  },
-  {
-   "id": "ZA_vessel_left_common_carotid_artery",
-   "name": "Left common carotid artery",
-   "source": "vessel-full.glb",
-   "reason": "female vessel source"
   },
   {
    "id": "ZA_nerve_optic_chiasm_l",
@@ -2445,18 +2428,18 @@
    "outsideMaleSkin": 1536,
    "outsideFemaleSkin": 0,
    "newlyOutside": 0,
-   "invertedTriangles": 220,
-   "skinContact": 56
+   "invertedTriangles": 54,
+   "skinContact": 27
   },
   "vessel": {
-   "structures": 524,
-   "vertices": 1310929,
-   "triangles": 2589418,
-   "outsideMaleSkin": 3339,
-   "outsideFemaleSkin": 136,
-   "newlyOutside": 136,
+   "structures": 527,
+   "vertices": 1313125,
+   "triangles": 2593738,
+   "outsideMaleSkin": 3434,
+   "outsideFemaleSkin": 86,
+   "newlyOutside": 86,
    "invertedTriangles": 0,
-   "skinContact": 65
+   "skinContact": 40
   },
   "ligament": {
    "structures": 342,
@@ -2466,7 +2449,7 @@
    "outsideFemaleSkin": 0,
    "newlyOutside": 0,
    "invertedTriangles": 0,
-   "skinContact": 22
+   "skinContact": 15
   },
   "tendon": {
    "structures": 58,
@@ -2476,17 +2459,27 @@
    "outsideFemaleSkin": 0,
    "newlyOutside": 0,
    "invertedTriangles": 0,
-   "skinContact": 22
+   "skinContact": 21
   },
   "muscle": {
    "structures": 435,
    "vertices": 467280,
    "triangles": 933712,
    "outsideMaleSkin": 641,
-   "outsideFemaleSkin": 6,
-   "newlyOutside": 6,
-   "invertedTriangles": 165,
-   "skinContact": 91
+   "outsideFemaleSkin": 5,
+   "newlyOutside": 5,
+   "invertedTriangles": 0,
+   "skinContact": 51
+  },
+  "organ": {
+   "structures": 12,
+   "vertices": 8306,
+   "triangles": 16304,
+   "outsideMaleSkin": 0,
+   "outsideFemaleSkin": 0,
+   "newlyOutside": 0,
+   "invertedTriangles": 0,
+   "skinContact": 0
   },
   "bone": {
    "structures": 15,
@@ -2496,7 +2489,7 @@
    "outsideFemaleSkin": 0,
    "newlyOutside": 0,
    "invertedTriangles": 0,
-   "skinContact": 1
+   "skinContact": 0
   },
   "lymph": {
    "structures": 137,
@@ -2506,14 +2499,14 @@
    "outsideFemaleSkin": 0,
    "newlyOutside": 0,
    "invertedTriangles": 0,
-   "skinContact": 4
+   "skinContact": 1
   }
  },
  "borrowed": {
   "bones": 180,
   "meanMoveMm": {
    "median": 3.27,
-   "max": 55.45
+   "max": 55.37
   },
   "before": {
    "leftClavicleMedialToSternumMm": 24.8,
@@ -2538,11 +2531,11 @@
     "max": 1.4
    },
    "costalCartilage1to7ToSternumMm": {
-    "median": 0.5,
-    "max": 0.9
+    "median": 0.3,
+    "max": 0.6
    },
-   "ribVerticesWithin1mmOfLung": 67,
-   "verticesOutsideSkin": 55,
+   "ribVerticesWithin1mmOfLung": 58,
+   "verticesOutsideSkin": 73,
    "bonesOutsideSkin": 2
   },
   "largestMoves": [
@@ -2560,19 +2553,11 @@
    ],
    [
     "Left eleventh rib",
-    42.9
+    42.8
    ],
    [
     "Right twelfth rib",
     41.3
-   ],
-   [
-    "Right sixth costal cartilage",
-    34.6
-   ],
-   [
-    "Left seventh costal cartilage",
-    34.2
    ],
    [
     "Right eleventh rib",
@@ -2580,51 +2565,59 @@
    ],
    [
     "Left scapula",
-    34.2
+    34.1
    ],
    [
     "Right scapula",
-    31.2
+    31.3
    ],
    [
-    "Right seventh costal cartilage",
-    31.1
-   ],
-   [
-    "Left sixth costal cartilage",
-    30.6
+    "Left seventh costal cartilage",
+    29.7
    ],
    [
     "Left tenth rib",
     28.6
    ],
    [
+    "Left sixth costal cartilage",
+    24.6
+   ],
+   [
     "Right tenth rib",
     24.2
    ],
    [
-    "Left sixth rib",
-    23.6
+    "Right seventh costal cartilage",
+    24.2
    ],
    [
     "Right first rib",
-    23.4
+    23.3
    ],
    [
     "Left fourth rib",
+    23.0
+   ],
+   [
+    "Left sixth rib",
+    22.7
+   ],
+   [
+    "Left fifth rib",
     22.6
+   ],
+   [
+    "Left fifth costal cartilage",
+    22.4
+   ],
+   [
+    "Left eighth rib",
+    22.3
    ],
    [
     "Left first rib",
     22.2
-   ],
-   [
-    "Left eighth rib",
-    22.1
-   ],
-   [
-    "Left ninth rib",
-    22.1
    ]
   ]
  }

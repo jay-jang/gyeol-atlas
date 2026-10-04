@@ -18,13 +18,16 @@ const slice = (b, off, bytes, T) => new T(b.buffer.slice(b.byteOffset + off, b.b
 const out = JSON.parse(fs.readFileSync(`${CACHE}/out/index.json`, "utf8"));
 const borrowedBlob = fs.readFileSync(`${CACHE}/out/borrowed.bin`);
 const borrowed = new Map(out.borrowed.map(p => [p.id, slice(borrowedBlob, p.offset, p.vertexCount * 12, Float32Array)]));
+// The reference brain fitted into the field's cranium (brain.py).
+const brainOut = JSON.parse(fs.readFileSync(`${CACHE}/out/brain.json`, "utf8")), brainBlob = fs.readFileSync(`${CACHE}/out/brain.bin`);
+let brainOffset = 0; for (const p of brainOut.parts) { borrowed.set(p.id, slice(brainBlob, brainOffset, p.vertexCount * 12, Float32Array)); brainOffset += p.vertexCount * 12; }
 const catalogue = new Map(JSON.parse(fs.readFileSync("data/female-atlas-structures.json", "utf8")).map(s => [s.id, s]));
 const transported = JSON.parse(fs.readFileSync("data/female-transport-structures.json", "utf8"));
 const maleNames = new Map([...JSON.parse(fs.readFileSync("data/full-system-structures.json", "utf8")), ...JSON.parse(fs.readFileSync("data/connective-structures.json", "utf8")),
   ...JSON.parse(fs.readFileSync("data/sex-lymph-structures.json", "utf8")), ...JSON.parse(fs.readFileSync("scripts/model-inputs.json", "utf8")).assets].map(s => [s.id, s.name]));
 const names = new Map(transported.map(s => [`FT_${s.transport}`, maleNames.get(s.transport)]));
 // Skin-toned while the skin is drawn (src/anatomy-rendering.ts SURFACE_TONES, catalogue surfaceTone).
-const toned = new Set([...transported.filter(s => s.surfaceTone).map(s => `FT_${s.transport}`), "HRAF0928", "HRAF0955", "BM0000", "BM0001"]);
+const toned = new Set([...transported.filter(s => s.surfaceTone).map(s => `FT_${s.transport}`), ...out.borrowed.filter(p => p.surfaceTone).map(p => p.id), "HRAF0928", "HRAF0955", "HRAF0908", "BM0000", "BM0001"]);
 const parts = [];
 for (const p of index) {
   if (!/^(HRAF|BM|VHF)/.test(p.name)) continue;
@@ -34,7 +37,7 @@ for (const p of index) {
   const pos = !baseline && borrowed.has(p.name) ? borrowed.get(p.name) : slice(blob, p.posOffset, p.posBytes, Float32Array);
   parts.push({ id: p.name, name: p.sourceName, skin: p.layer === "skin", pos, idx: slice(blob, p.idxOffset, p.idxBytes, Uint32Array) });
 }
-if (!baseline) for (const system of ["nerve", "vessel", "muscle", "ligament", "tendon", "lymph", "bone"]) {
+if (!baseline) for (const system of ["nerve", "vessel", "muscle", "ligament", "tendon", "lymph", "bone", "organ"]) {
   const b = fs.readFileSync(`${CACHE}/out/${system}.bin`);
   for (const e of out[system]) parts.push({ id: `FT_${e.id}`, name: names.get(`FT_${e.id}`), skin: false, pos: slice(b, e.posOffset, e.vertexCount * 12, Float32Array), idx: slice(b, e.idxOffset, e.indexCount * 4, Uint32Array) });
 }

@@ -55,7 +55,7 @@ test('leaving an independent detail frame for peeling fits the loaded overview a
 test('female help and layer descriptions use the female overview inventory', async ({page}) => {
   await page.goto('/'); await ready(page);
   await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click(); await ready(page);
-  await expect(page.locator('.scope-source')).toContainText('남성 원본 정합 보완 1,774개');
+  await expect(page.locator('.scope-source')).toContainText('남성 원본 정합 보완 1,789개');
   for (const [label,layer] of [['근육','muscle'],['골격','bone'],['신경','nerve']]) {
     await page.getByRole('button',{name:`${label} 빠른 보기`,exact:true}).click(); await ready(page);
     const count=femaleStructures.filter(s=>s.layer===layer).length+femaleTransport.filter(r=>transportLayer[r.system]===layer).length;

@@ -22,6 +22,8 @@ import pointData from "../data/points.json";
 import meridians from "../data/meridians.json";
 import sources from "../data/sources.json";
 
+// Male-source structures carried into the female body (src/anatomy.ts).
+const transportedCount = structures.filter((s) => s.transport).length;
 const Atlas = lazy(() => import("./Atlas"));
 const points = pointData as Point[];
 const pointConcepts = conceptData as Record<string, { categories: string[]; shuType: string | null; traditionalName: string | null; organIds: string[] }>;
@@ -177,7 +179,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     `${p.id} ${p.name} ${p.hanja} ${p.pinyin} ${p.landmarks.join(" ")} ${meridianOf(p)?.name}`.toLowerCase().includes(normalizePointQuery(query))),
   [region, bodyRegion, catalogue, meridian, concept, onlySaved, saved, query]);
   const camera = (kind: CameraAction["kind"]) => {
-    if (kind === "focus" && state.sex === "female") {
+    if (kind === "focus" && state.sex === "female" && !state.femaleMarkers) {
       setComparisonNotice("여성 표면의 경혈 좌표는 검수 전입니다. 남성 기준 좌표로 이동하지 않습니다.");
       setSeparateDetailIds([]);
       setPanel("detail");
@@ -255,7 +257,8 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
       return;
     }
     setComparisonNotice("");
-    setSeparateDetailIds([]);
+    // A separate female CT organ stays one explicit choice away from the comparison.
+    setSeparateDetailIds(separateGroupIds);
     dispatch({
       type: "compare",
       name: c.traditionalName || selected.name,
@@ -333,9 +336,15 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   useEffect(() => {
     const row = bottomRef.current, root = workspaceRef.current;
     if (!row || !root) return;
-    const measure = () => root.style.setProperty("--ax-bottom-h", `${Math.ceil(row.getBoundingClientRect().height)}px`);
+    // On phones the row is split up and only the acupoint bar stays at the
+    // bottom; sheets and the camera column sit above its wrapped height.
+    const bar = row.querySelector<HTMLElement>(".ax-point-bar");
+    const measure = () => {
+      root.style.setProperty("--ax-bottom-h", `${Math.ceil(row.getBoundingClientRect().height)}px`);
+      if (bar) root.style.setProperty("--ax-bar-h", `${Math.ceil(bar.getBoundingClientRect().height)}px`);
+    };
     const observer = new ResizeObserver(measure);
-    observer.observe(row); measure();
+    observer.observe(row); if (bar) observer.observe(bar); measure();
     return () => observer.disconnect();
   }, []);
   useEffect(() => {
@@ -451,8 +460,9 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
 
   const depthName = (depth: number) => layerNames[stages[depthStage(depth)].layer];
   const soloLayer = layerKeys.filter((layer) => state.layers[layer]).length === 1 ? layerKeys.find((layer) => state.layers[layer]) : null;
-  const femaleMarkers = state.sex === "female";
-  const markerCount = femaleMarkers || state.detail ? 0 : markers.length;
+  // Female markers are unreviewed approximations, hidden until asked for.
+  const femaleHidden = state.sex === "female" && !state.femaleMarkers;
+  const markerCount = femaleHidden || state.detail ? 0 : markers.length;
   const statusText = !enabledLayers.length ? "레이어를 켜서 구조를 표시하세요"
     : ready ? "해부 모델 로드 완료"
     : loadedLayers.length ? `표시 중 · 내부 계통 불러오는 중 ${loadedLayers.length}/${enabledLayers.length}` : "해부 모델 준비 중";
@@ -506,6 +516,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             anatomyRegion={state.anatomyRegion}
             connective={state.connective}
             modesty={state.modesty}
+            femaleMarkers={state.femaleMarkers}
             glideFraming={placed !== "" && (!selectionKey || selectionKey === placed)}
           />
         </Suspense>
@@ -738,6 +749,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               </span>
               <strong>{state.selection.name} <small>{state.selection.ids.length}개 구조</small></strong>
               {state.comparison && <p className="comparison-note">{selected.name} · {state.comparison.name} 비교 — 전통적 대응, 압력 경로 아님</p>}
+              {state.comparison && state.sex === "female" && state.selection.ids.some((id) => id.startsWith("FT_")) && <p className="selection-description" data-carried-comparison>남성 원본을 여성 골격·피부 대응으로 옮긴 보완 구조로, 여성 고유 형상이 아닙니다.{separateDetailIds.length > 0 && " 여성 CT 자료는 아래 별도 상세에서 따로 봅니다."}</p>}
               {state.sex === "male" && sourceKey === "male-detail" && selectedGroup === "stomach" && <p className="selection-description" data-stomach-frame-warning>별도 4.0 상세 원본입니다. 전신 3.0 위와 상자 중심이 약 42mm 달라 같은 위치로 정합된 화면이 아닙니다.</p>}
               {selectedAnatomy?.description && sourceKey !== "female-detail" && <p className="selection-description">{selectedAnatomy.description}</p>}
               {selectedAnatomy?.id.startsWith("VHF") && <p className="selection-description" data-donor-muscle-note>별도 Visible Human Female 기증자 다리 근육입니다. 전신 정합이 끝나지 않아 개요에서는 숨기고, 개요의 다리 근육은 남성 원본을 여성 몸에 맞춰 옮긴 보완으로 보여 줍니다.</p>}
@@ -770,9 +782,9 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
                 <p className="selection-description">BodyParts3D 4.0의 위 1개, 좌우 위동맥·위정맥 4개와 위그물막동맥·정맥 4개를 같은 원본 좌표계에서 별도 선택합니다. 이 9개는 각각의 공식 개념에 대응하며 공식 ‘위의 9개 하위 부품’ 관계는 아닙니다. 위벽 층은 분할되지 않았고 혈관의 연결·관류나 기존 3.0 전신과의 국소 정합은 검증되지 않았습니다. 한국어 이름은 편집 표기이며 원문명·FMA ID를 유지합니다.</p>
               </details>}
               {state.sex === "female" && selectedOrgan?.id === "brain" && <div data-brain-provenance>
-                <p className="selection-description">뇌 묶음: Allen 참조 282개 + Visible Human 시신경교차 1개 · 차용 머리뼈와 뇌 모형 55개 표면 교차 · 위치 검증 미완료</p>
+                <p className="selection-description">뇌 묶음: Allen 참조 282개 + Visible Human 시신경교차 1개 · 머리뼈 안에 맞춤 · 차용 머리뼈와 뇌 모형 26개 표면 교차 · 위치 검증 미완료</p>
                 <details className="anatomy-source-details"><summary>뇌 출처·방향 주의</summary>
-                  <p className="selection-description">282개는 Allen 참조 구조를 대칭 복제하고 여성 신체에 맞춰 크기를 조정한 모델로, 여성 기증자 뇌 스캔이 아닙니다. 시신경교차 1개는 Visible Human 여성 자료로 그대로 유지합니다. Allen 원본의 좌우 표기가 전신의 눈·대퇴골 기준과 반대여서, 원문 이름·ID는 유지하고 대응하는 반대쪽 원본 형상을 연결했습니다. 전체 뇌 형상은 바꾸지 않았습니다. 현재 뇌 모형 55개와 남성 유래 보완 머리뼈 7개 사이에 표면 교차 87쌍이 남아 있습니다. 보완 머리뼈를 여성 머리 피부 안으로 다시 놓으면서(이전에는 머리뼈가 피부를 뚫고 55쌍) 늘었습니다. Allen 참조 뇌의 바깥면이 여성 두피에서 최소 1.3mm까지 붙어 있어 머리뼈가 들어갈 자리가 모자란 곳이 있습니다. 이 수치는 모형 쌍의 기하 교차로, 뇌 손상이나 임상적 관통 깊이가 아닙니다. 개별 설명에 실제 형상 출처를 표시하며, 일반적인 위치·신경 연결 교정이나 임상적 좌우 검증이 완료된 것은 아닙니다.</p>
+                  <p className="selection-description">282개는 Allen 참조 구조를 대칭 복제하고 여성 신체에 맞춰 크기를 조정한 모델로, 여성 기증자 뇌 스캔이 아닙니다. 시신경교차 1개는 Visible Human 여성 자료로 그대로 유지합니다. Allen 원본의 좌우 표기가 전신의 눈·대퇴골 기준과 반대여서, 원문 이름·ID는 유지하고 대응하는 반대쪽 원본 형상을 연결했습니다. Allen 참조 뇌는 두피에서 최소 1.3mm까지 붙어 있어 머리뼈가 들어갈 자리가 없었습니다. 그래서 정합장이 놓은 남성 뇌의 바깥면(머리뼈 안쪽)에 맞춰 부드럽게 맞췄습니다(이동 중앙 2.78mm·최대 13.92mm, 접힘 0). 시신경교차·시신경은 고정했고 두피까지 최소 8.2mm입니다. 현재 뇌 모형 26개와 남성 유래 보완 머리뼈 6개 사이에 표면 교차 30쌍이 남아 있습니다(이전 55쌍). 이 수치는 모형 쌍의 기하 교차로, 뇌 손상이나 임상적 관통 깊이가 아닙니다. 개별 설명에 실제 형상 출처를 표시하며, 일반적인 위치·신경 연결 교정이나 임상적 좌우 검증이 완료된 것은 아닙니다.</p>
                   <p className="selection-source"><a href="https://3d.nih.gov/entries/3DPX-020959" target="_blank" rel="noreferrer">HRA / NIH 3D 출처 설명</a> · CC BY 4.0 · 학습용 비진단 모델</p>
                 </details>
               </div>}
@@ -810,6 +822,9 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
                 if (pose) restoreOverviewPose(pose);
                 else requestAnimationFrame(() => camera("fit"));
               }}>전신으로 돌아가기</button>}
+              {state.comparison && featuredAnatomy.filter((group) => separateDetailIds.includes(group.id)).map((group) => <button key={group.id} onClick={() => {
+                setSeparateDetailIds([]); selectFeatured(group);
+              }}>{group.name} 상세</button>)}
               <button onClick={() => { setPanel(null); camera("structure"); }}>확대</button>
               {!fullCompositeDetail && !fullLungDetail && <button aria-pressed={state.isolated} onClick={() => {
                 const kind = state.isolated && state.detail ? "fit" : "structure";
@@ -837,13 +852,14 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               <span><i className="legend-reference" />경혈 참조</span>
             </span>
           )}
-          <span className="ax-source"><span className="scope-source">{sourceKey === "female-detail" ? "여성 CT 별도 상세 · HRA 전신과 다른 신체" : state.sex === "female" ? "HRA 여성 전신 1,220개 + 남성 원본 정합 보완 1,774개 · 여성 CT 별도 상세 11개" : "BodyParts3D 남성 참조 · 림프 142개 포함"}</span> · <a className="scene-guide" href="#wiki/massage-anatomy">학습용 근사 · 근거 읽기 ↗</a></span>
+          <span className="ax-source"><span className="scope-source">{sourceKey === "female-detail" ? "여성 CT 별도 상세 · HRA 전신과 다른 신체" : state.sex === "female" ? `HRA 여성 전신 1,220개 + 남성 원본 정합 보완 ${transportedCount.toLocaleString("en-US")}개 · 여성 CT 별도 상세 11개` : "BodyParts3D 남성 참조 · 림프 142개 포함"}</span> · <a className="scene-guide" href="#wiki/massage-anatomy">학습용 근사 · 근거 읽기 ↗</a></span>
         </div>
         <div className="ax-point-bar" role="toolbar" aria-label="경혈 표시">
-          {femaleMarkers ? (<>
-            <p className="ax-note">여성 모델의 경혈 좌표는 검수 전이라 표식을 숨깁니다. <button onClick={() => dispatch({ type: "sex", value: "male" })}>남성 모델에서 경혈 보기</button></p>
+          {femaleHidden ? (<>
+            <p className="ax-note">여성 모델의 경혈 좌표는 검수 전이라 표식을 숨깁니다. <button onClick={() => dispatch({ type: "female-markers", value: true })}>근사 위치로 보기</button> <button onClick={() => dispatch({ type: "sex", value: "male" })}>남성 모델에서 경혈 보기</button></p>
             <button className="ax-toggle" aria-expanded={panel === "points"} aria-label="경혈 찾기" data-tip="경혈 목록 · 장부 비교할 경혈 고르기" data-tip-side="top" onClick={(e) => openPanel("points", e.currentTarget)}><List size={15} /></button>
           </>) : <>
+            {state.sex === "female" && <button className="ax-toggle ax-approx" aria-pressed="true" aria-label="여성 근사 표식 끄기" data-tip="남성 표식을 여성 골격·피부 대응으로 옮긴 근사 위치 · 검수 전 · 누르면 숨김" data-tip-side="top" onClick={() => dispatch({ type: "female-markers", value: false })}>근사</button>}
             <button className="ax-toggle" aria-pressed={state.markers !== "hidden"} onClick={() => dispatch({ type: "markers", value: state.markers === "hidden" ? "filtered" : "hidden" })}>
               <span className="ax-dot" />경혈 <small>{markerCount}</small>
             </button>

@@ -22,6 +22,10 @@ class Field:
                 if g in self.T: clouds.setdefault(g, []).append(mby[a['id']]['pos'])
         self.trees = {s: cKDTree(np.vstack(clouds[s])) for s in self.segs}
         self.skin = cKDTree(z['skinPoints']); self.residual = z['skinResidual']; self.skinSigma = float(z['skinSigma']); self.skinMass = float(z['skinMass'])
+        self.vessel = cKDTree(z['vesselPoints']); self.vresidual = z['vesselResidual']; self.vSigma = float(z['vesselSigma']); self.vMass = float(z['vesselMass'])
+    def vessel_layer(self, P):
+        d, j = self.vessel.query(P, k=64, workers=-1); K = np.exp(-d ** 2 / (2 * self.vSigma ** 2))
+        return (K[:, :, None] * self.vresidual[j]).sum(1) / np.maximum(K.sum(1), self.vMass)[:, None]
     def skin_layer(self, P):
         d, j = self.skin.query(P, k=64, workers=-1); K = np.exp(-d ** 2 / (2 * self.skinSigma ** 2))
         return (K[:, :, None] * self.residual[j]).sum(1) / np.maximum(K.sum(1), self.skinMass)[:, None]

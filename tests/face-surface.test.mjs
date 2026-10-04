@@ -14,9 +14,9 @@ test("face surface tones name real BodyParts3D meshes of the face", () => {
   for (const [id, tone] of Object.entries(SURFACE_TONES)) assert.equal(tone, id === "FMA12513" ? "#e2dbcf" : SKIN_COLOR, id);
 });
 
-test("female surface tones are the source-crossing fibulae and the borrowed nose cartilages", () => {
+test("female surface tones are the source-crossing fibulae and ligament and the borrowed nose cartilages", () => {
   const ids = Object.keys(SURFACE_TONES).filter((id) => !id.startsWith("FMA"));
-  assert.deepEqual(ids.map((id) => female.get(id)?.name), ["Fibula (right)", "Fibula (left)", "Right major alar cartilage", "Left major alar cartilage"]);
+  assert.deepEqual(ids.map((id) => female.get(id)?.name), ["Fibula (right)", "Fibula (left)", "Fibular collateral ligament (right)", "Right major alar cartilage", "Left major alar cartilage"]);
 });
 
 test("only Z-Anatomy eyeball parts count as the duplicate eye", () => {

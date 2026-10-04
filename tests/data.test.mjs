@@ -165,6 +165,33 @@ test("all 834 bilateral/multiple-location anchors are on the bundled skin surfac
   }
 });
 
+test("surface anchors sit on the skin the viewer sees, not on an inner face of the skin shell", async () => {
+  const { BufferGeometry, BufferAttribute, Mesh, MeshBasicMaterial, Raycaster, DoubleSide, Vector3 } = await import("three");
+  const { MeshBVH, acceleratedRaycast } = await import("three-mesh-bvh");
+  const doc = await new NodeIO().read("public/models/skin.glb");
+  const prim = doc.getRoot().listMeshes()[0].listPrimitives()[0];
+  const geometry = new BufferGeometry().setAttribute("position", new BufferAttribute(prim.getAttribute("POSITION").getArray(), 3)).setIndex(new BufferAttribute(prim.getIndices().getArray(), 1));
+  geometry.boundsTree = new MeshBVH(geometry);
+  const skin = new Mesh(geometry, new MeshBasicMaterial({ side: DoubleSide }));
+  skin.raycast = acceleratedRaycast; skin.updateMatrixWorld(true);
+  const ray = new Raycaster(), ahead = new Raycaster(); ray.firstHitOnly = true;
+  const directions = Array.from({ length: 1024 }, (_, i) => { const y = 1 - (2 * (i + 0.5)) / 1024, r = Math.sqrt(1 - y * y), t = Math.PI * (3 - Math.sqrt(5)) * i; return new Vector3(Math.cos(t) * r, y, Math.sin(t) * r); });
+  const openAir = (p) => directions.some((d) => { ray.set(p, d); ray.far = 5; return !ray.intersectObject(skin).length; });
+  const closed = [];
+  for (const a of read("data/anchors.json")) {
+    if (a.mode === "region-reference") continue;
+    const surface = new Vector3(...a.surfacePoint), out = new Vector3(...a.position).sub(surface).normalize();
+    ahead.set(surface.clone().addScaledVector(out, 0.0005), out); ahead.far = 0.3;
+    const next = ahead.intersectObject(skin)[0];
+    if (openAir(surface.clone().addScaledVector(out, 0.0015)) || (next && next.distance > 0.003 && openAir(surface.clone().lerp(next.point, 0.5)))) continue;
+    // A closed pocket against another part: the next skin met is entered, not left.
+    assert.ok(next && next.face.normal.dot(out) < 0 && next.distance < 0.03, a.key);
+    closed.push(a.pointId);
+  }
+  // The arm on the chest wall and the thigh beside the scrotum leave no open air.
+  assert.deepEqual([...new Set(closed)].sort(), ["HT2", "LR10", "LR11"]);
+});
+
 test("complete Yuan and Mu sets are distinct from Shu and traditional organ mappings remain valid", () => {
   const map = read("data/point-concepts.json");
   const yuan = [

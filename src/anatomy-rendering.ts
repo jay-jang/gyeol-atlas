@@ -16,9 +16,11 @@ export const SURFACE_TONES: Record<string, string> = {
   FMA46782: SKIN_COLOR, // orbital part of right orbicularis oculi
   FMA46783: SKIN_COLOR, // orbital part of left orbicularis oculi
   FMA71704: SKIN_COLOR, // set of nasal cartilages
-  // Female (HRA): the fibula crosses the HRA skin at the lateral malleolus in
-  // the source itself; the borrowed alar cartilages are the nose's surface.
-  HRAF0928: SKIN_COLOR, HRAF0955: SKIN_COLOR, BM0000: SKIN_COLOR, BM0001: SKIN_COLOR,
+  // Female (HRA): the fibulae and the right fibular collateral ligament cross
+  // the HRA skin in the source itself; the borrowed alar cartilages are the
+  // nose's surface. Borrowed bones and carried structures that touch the male
+  // skin in their source are listed by the transport manifest.
+  HRAF0928: SKIN_COLOR, HRAF0955: SKIN_COLOR, HRAF0908: SKIN_COLOR, BM0000: SKIN_COLOR, BM0001: SKIN_COLOR,
 };
 // The Z-Anatomy nervous export carries its own eyeball parts. While the
 // BodyParts3D eyeball is drawn they are a second eye in the same place (the

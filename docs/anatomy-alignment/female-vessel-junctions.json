@@ -1,0 +1,140 @@
+{
+ "version": 1,
+ "createdBy": "scripts/female-transport/junctions.py",
+ "before": {
+  "junctions": 108,
+  "medianMm": 6.94,
+  "p90Mm": 33.99,
+  "maxMm": 89.56,
+  "over5Mm": 61
+ },
+ "after": {
+  "junctions": 108,
+  "medianMm": 2.76,
+  "p90Mm": 22.7,
+  "maxMm": 37.44,
+  "over5Mm": 41
+ },
+ "largestAfter": [
+  {
+   "branch": "Common iliac artery (right)",
+   "trunk": "Internal iliac vein (right)",
+   "maleGapMm": 0.24,
+   "femaleGapMm": 37.44
+  },
+  {
+   "branch": "Common iliac artery (left)",
+   "trunk": "Internal iliac vein (left)",
+   "maleGapMm": 0.66,
+   "femaleGapMm": 36.76
+  },
+  {
+   "branch": "Left gastro-omental vein",
+   "trunk": "Marginal artery of Drummond",
+   "maleGapMm": 0.18,
+   "femaleGapMm": 35.02
+  },
+  {
+   "branch": "Appendicular artery",
+   "trunk": "Superior mesenteric vein",
+   "maleGapMm": 0.16,
+   "femaleGapMm": 33.39
+  },
+  {
+   "branch": "Appendicular artery",
+   "trunk": "Superior mesenteric artery",
+   "maleGapMm": 0.17,
+   "femaleGapMm": 33.1
+  },
+  {
+   "branch": "Left ascending lumbar vein",
+   "trunk": "Internal iliac vein (left)",
+   "maleGapMm": 0.3,
+   "femaleGapMm": 32.8
+  },
+  {
+   "branch": "Inferior gluteal veins (left)",
+   "trunk": "Internal iliac vein (left)",
+   "maleGapMm": 0.05,
+   "femaleGapMm": 25.93
+  },
+  {
+   "branch": "Superior gluteal veins (left)",
+   "trunk": "Internal iliac vein (left)",
+   "maleGapMm": 0.08,
+   "femaleGapMm": 25.91
+  },
+  {
+   "branch": "Iliolumbar vein (left)",
+   "trunk": "Internal iliac vein (left)",
+   "maleGapMm": 0.45,
+   "femaleGapMm": 25.18
+  },
+  {
+   "branch": "Lumbar arteries (right)",
+   "trunk": "Inferior mesenteric artery",
+   "maleGapMm": 0.44,
+   "femaleGapMm": 24.4
+  },
+  {
+   "branch": "Posterior vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "maleGapMm": 0.08,
+   "femaleGapMm": 24.06
+  },
+  {
+   "branch": "Anterior division of internal iliac artery (left)",
+   "trunk": "Internal iliac vein (left)",
+   "maleGapMm": 0.75,
+   "femaleGapMm": 22.12
+  },
+  {
+   "branch": "Posterior division of internal iliac artery (left)",
+   "trunk": "Internal iliac vein (left)",
+   "maleGapMm": 0.74,
+   "femaleGapMm": 22.11
+  },
+  {
+   "branch": "Right gastro-omental vein",
+   "trunk": "Middle colic vein",
+   "maleGapMm": 0.08,
+   "femaleGapMm": 21.1
+  },
+  {
+   "branch": "Gastroduodenal artery",
+   "trunk": "Proper hepatic artery",
+   "maleGapMm": 0.26,
+   "femaleGapMm": 20.66
+  },
+  {
+   "branch": "Iliolumbar vein (right)",
+   "trunk": "Internal iliac vein (right)",
+   "maleGapMm": 0.45,
+   "femaleGapMm": 20.29
+  },
+  {
+   "branch": "Gastroduodenal artery",
+   "trunk": "Common hepatic artery",
+   "maleGapMm": 0.44,
+   "femaleGapMm": 18.84
+  },
+  {
+   "branch": "Common iliac artery (left)",
+   "trunk": "Right common iliac vein",
+   "maleGapMm": 0.86,
+   "femaleGapMm": 18.75
+  },
+  {
+   "branch": "Internal iliac artery (left)",
+   "trunk": "Internal iliac vein (left)",
+   "maleGapMm": 0.38,
+   "femaleGapMm": 18.48
+  },
+  {
+   "branch": "External iliac vein (left)",
+   "trunk": "Internal iliac vein (left)",
+   "maleGapMm": 0.46,
+   "femaleGapMm": 16.62
+  }
+ ]
+}

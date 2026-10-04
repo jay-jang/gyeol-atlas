@@ -1,0 +1,10 @@
+{
+  "note": "Male organ meshes with no organ group, matched to the same anatomical scope in the HRA female body (FMA part-of). The rectum, appendix, caecum and ileocecal valve are separate male meshes and stay out of these comparisons too.",
+  "counterparts": {
+    "FMA14543nsn": {"name": "colon", "group": "intestine", "ids": ["HRAF0519", "HRAF0517", "HRAF0518", "HRAF0526", "HRAF0521", "HRAF0525"]},
+    "FMA7206": {"name": "duodenum", "group": "intestine", "ids": ["HRAF0506", "HRAF0507", "HRAF0508", "HRAF0509", "HRAF0510", "HRAF0511"]},
+    "FMA7207": {"name": "jejunum", "group": "intestine", "ids": ["HRAF0512"]},
+    "FMA7208": {"name": "ileum", "group": "intestine", "ids": ["HRAF0513", "HRAF0514"]},
+    "FMA7202": {"name": "gallbladder", "group": "gallbladder"}
+  }
+}

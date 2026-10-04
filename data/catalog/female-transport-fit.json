@@ -18,11 +18,21 @@
    "skin": 0.4,
    "eye": 0.6,
    "organ": 0.08,
-   "borrowed": 0.1
+   "borrowed": 0.1,
+   "trunk": 0.5,
+   "visceral": 0.15
   },
+  "vesselRadii": [
+   0.06,
+   0.03,
+   0.015
+  ],
   "outsideMm": 2.0,
   "snapMm": 6.0,
-  "seed": 7
+  "seed": 7,
+  "lumbosacral": "male L1-L5 <-> female L1-L5, sacrum <-> sacrum",
+  "vesselCorrespondences": false,
+  "vesselSigma": 0.025
  },
  "inputs": {
   "female-scene/geometry.bin": "99a91c49f3194ffa88d321007ed5628af0b5989af34fecf47dd5d26474ea71ce",
@@ -34,7 +44,7 @@
  },
  "field": {
   "path": ".cache/female-transport/field.npz",
-  "sha256": "87b7b784f170604d2cb7218f08b9d7647525a5435875abe796abd74e6d81a817"
+  "sha256": "6cf76767d1a53cd0cdbed2684f7e499abd433927ba5b0de1a7fe0b419fb223e5"
  },
  "guidesExcluded": {
   "crosses the female skin": [
@@ -180,64 +190,454 @@
  "skin": [
   {
    "radiusMm": 50.0,
-   "pairs": 17689,
-   "heldOutMedianMm": 1.83,
-   "heldOutP90Mm": 3.37,
-   "heldOutOutside": 0.0313
+   "pairs": 16845,
+   "heldOutMedianMm": 1.81,
+   "heldOutP90Mm": 3.15,
+   "heldOutOutside": 0.0353
   },
   {
    "radiusMm": 25.0,
-   "pairs": 17640,
-   "heldOutMedianMm": 1.8,
-   "heldOutP90Mm": 3.16,
-   "heldOutOutside": 0.0273
+   "pairs": 16795,
+   "heldOutMedianMm": 1.79,
+   "heldOutP90Mm": 3.04,
+   "heldOutOutside": 0.028
   },
   {
    "radiusMm": 15.0,
-   "pairs": 17699,
-   "heldOutMedianMm": 1.77,
-   "heldOutP90Mm": 3.06,
-   "heldOutOutside": 0.0253
+   "pairs": 16872,
+   "heldOutMedianMm": 1.78,
+   "heldOutP90Mm": 3.0,
+   "heldOutOutside": 0.028
   },
   {
    "stage": "skin layer",
-   "residualPoints": 53694,
-   "heldOutMedianMm": 1.54,
-   "heldOutP90Mm": 2.56,
+   "residualPoints": 51253,
+   "heldOutMedianMm": 1.58,
+   "heldOutP90Mm": 2.57,
    "heldOutOutside": 0.0063
+  }
+ ],
+ "vessels": [
+  {
+   "radiusMm": 60.0,
+   "matched": 0,
+   "of": 2081
+  },
+  {
+   "radiusMm": 30.0,
+   "matched": 0,
+   "of": 2081
+  },
+  {
+   "radiusMm": 15.0,
+   "matched": 0,
+   "of": 2081
+  }
+ ],
+ "vesselLayer": [
+  {
+   "female": "Ascending aorta",
+   "beforeMm": 6.0,
+   "afterMm": 0.0,
+   "shiftMm": 10.2,
+   "used": true
+  },
+  {
+   "female": "Aortic arch",
+   "beforeMm": 7.1,
+   "afterMm": 0.0,
+   "shiftMm": 14.4,
+   "used": true
+  },
+  {
+   "female": "Descending aorta a/Descending aorta b",
+   "beforeMm": 9.7,
+   "afterMm": 0.0,
+   "shiftMm": 11.9,
+   "used": true
+  },
+  {
+   "female": "Brachiocephalic artery a/Brachiocephalic artery b",
+   "beforeMm": 6.5,
+   "afterMm": 0.0,
+   "shiftMm": 8.5,
+   "used": true
+  },
+  {
+   "female": "Left common carotid artery a/Left common carotid artery b",
+   "beforeMm": 13.4,
+   "afterMm": 0.0,
+   "shiftMm": 19.9,
+   "used": true
+  },
+  {
+   "female": "Left subclavian artery a/Left subclavian artery b",
+   "beforeMm": 4.7,
+   "afterMm": 0.0,
+   "shiftMm": 10.5,
+   "used": true
+  },
+  {
+   "female": "Pulmonary trunk",
+   "beforeMm": 12.0,
+   "afterMm": 0.0,
+   "shiftMm": 16.4,
+   "used": true
+  },
+  {
+   "female": "Pulmonary artery (right)",
+   "beforeMm": 3.7,
+   "afterMm": 0.0,
+   "shiftMm": 1.5,
+   "used": true
+  },
+  {
+   "female": "Pulmonary artery (left)",
+   "beforeMm": 20.1,
+   "afterMm": 0.0,
+   "shiftMm": 25.0,
+   "used": true
+  },
+  {
+   "female": "Pulmonary vein superior (right)",
+   "beforeMm": 5.5,
+   "afterMm": 0.0,
+   "shiftMm": 5.7,
+   "used": true
+  },
+  {
+   "female": "Pulmonary vein inferior (right)",
+   "beforeMm": 5.4,
+   "afterMm": 0.0,
+   "shiftMm": 7.8,
+   "used": true
+  },
+  {
+   "female": "Pulmonary vein superior (left)",
+   "beforeMm": 0.9,
+   "afterMm": 0.0,
+   "shiftMm": 0.8,
+   "used": true
+  },
+  {
+   "female": "Pulmonary vein inferior (left)",
+   "beforeMm": 4.2,
+   "afterMm": 0.0,
+   "shiftMm": 4.3,
+   "used": true
+  },
+  {
+   "female": "Superior vena cava",
+   "beforeMm": 7.2,
+   "afterMm": 0.0,
+   "shiftMm": 14.9,
+   "used": true
+  },
+  {
+   "female": "Inferior vena cava a/Inferior vena cava b",
+   "beforeMm": 5.5,
+   "afterMm": 0.0,
+   "shiftMm": 8.9,
+   "used": true
+  },
+  {
+   "female": "Celiac trunk",
+   "beforeMm": 9.9,
+   "afterMm": 0.0,
+   "shiftMm": 11.8,
+   "used": true
+  },
+  {
+   "female": "Superior mesenteric artery",
+   "beforeMm": 12.3,
+   "afterMm": 0.0,
+   "shiftMm": 11.6,
+   "used": true
+  },
+  {
+   "female": "Inferior mesenteric artery",
+   "beforeMm": 21.7,
+   "afterMm": 0.0,
+   "shiftMm": 42.5,
+   "used": true
+  },
+  {
+   "female": "Superior mesenteric vein",
+   "beforeMm": 26.5,
+   "afterMm": 15.8,
+   "shiftMm": 16.5,
+   "used": true
+  },
+  {
+   "female": "Inferior mesenteric vein",
+   "beforeMm": 24.4,
+   "afterMm": 0.0,
+   "shiftMm": 52.5,
+   "used": true
+  },
+  {
+   "female": "Right colic artery",
+   "beforeMm": 53.4,
+   "afterMm": 10.1,
+   "shiftMm": 62.0,
+   "used": true
+  },
+  {
+   "female": "Middle colic artery",
+   "beforeMm": 29.3,
+   "afterMm": 0.0,
+   "shiftMm": 37.1,
+   "used": true
+  },
+  {
+   "female": "Left colic artery",
+   "beforeMm": 90.2,
+   "afterMm": 0.0,
+   "shiftMm": 93.8,
+   "used": true
+  },
+  {
+   "female": "Right colic vein",
+   "beforeMm": 36.1,
+   "afterMm": 0.0,
+   "shiftMm": 35.0,
+   "used": true
+  },
+  {
+   "female": "Middle colic vein",
+   "beforeMm": 12.2,
+   "afterMm": 0.0,
+   "shiftMm": 12.5,
+   "used": true
+  },
+  {
+   "female": "Ileocolic artery",
+   "beforeMm": 46.7,
+   "afterMm": 0.0,
+   "shiftMm": 51.2,
+   "used": true
+  },
+  {
+   "female": "Sigmoid artery a/Sigmoid artery b/Sigmoid artery c",
+   "beforeMm": 65.0,
+   "afterMm": 15.0,
+   "shiftMm": 67.4,
+   "used": true
+  },
+  {
+   "female": "Sigmoid vein a/Sigmoid vein b/Sigmoid vein c",
+   "beforeMm": 65.0,
+   "afterMm": 10.4,
+   "shiftMm": 75.2,
+   "used": true
+  },
+  {
+   "female": "Superior rectal artery",
+   "beforeMm": 47.5,
+   "afterMm": 40.6,
+   "shiftMm": 28.1,
+   "used": true
+  },
+  {
+   "female": "Marginal artery of Drummond",
+   "beforeMm": 20.9,
+   "afterMm": 0.0,
+   "shiftMm": 28.1,
+   "used": true
+  },
+  {
+   "female": "Splenic artery",
+   "beforeMm": 15.9,
+   "afterMm": 0.0,
+   "shiftMm": 18.2,
+   "used": true
+  },
+  {
+   "female": "Splenic vein",
+   "beforeMm": 36.1,
+   "afterMm": 0.0,
+   "shiftMm": 46.7,
+   "used": true
+  },
+  {
+   "female": "Common hepatic artery",
+   "beforeMm": 11.3,
+   "afterMm": 0.0,
+   "shiftMm": 9.0,
+   "used": true
+  },
+  {
+   "female": "Proper hepatic artery",
+   "beforeMm": 54.8,
+   "afterMm": 0.0,
+   "shiftMm": 57.9,
+   "used": true
+  },
+  {
+   "female": "Right hepatic vein/Middle hepatic vein/Left hepatic vein",
+   "beforeMm": 5.6,
+   "afterMm": 0.0,
+   "shiftMm": 6.9,
+   "used": true
+  },
+  {
+   "female": "Hepatic portal vein/Right branch of portal vein/Left branch of portal vein",
+   "beforeMm": 21.8,
+   "afterMm": 0.0,
+   "shiftMm": 22.6,
+   "used": true
+  },
+  {
+   "female": "Right renal artery",
+   "beforeMm": 34.6,
+   "afterMm": 0.0,
+   "shiftMm": 36.4,
+   "used": true
+  },
+  {
+   "female": "Left renal artery",
+   "beforeMm": 33.8,
+   "afterMm": 0.0,
+   "shiftMm": 37.3,
+   "used": true
+  },
+  {
+   "female": "Right renal vein",
+   "beforeMm": 17.7,
+   "afterMm": 0.0,
+   "shiftMm": 25.1,
+   "used": true
+  },
+  {
+   "female": "Left renal vein",
+   "beforeMm": 16.4,
+   "afterMm": 0.0,
+   "shiftMm": 21.2,
+   "used": true
+  },
+  {
+   "female": "Left common iliac vein",
+   "beforeMm": 35.2,
+   "afterMm": 0.0,
+   "shiftMm": 45.2,
+   "used": true
+  },
+  {
+   "female": "Right common iliac vein",
+   "beforeMm": 35.3,
+   "afterMm": 0.0,
+   "shiftMm": 46.9,
+   "used": true
+  },
+  {
+   "female": "Internal iliac vein (left)",
+   "beforeMm": 82.6,
+   "afterMm": 0.0,
+   "shiftMm": 87.8,
+   "used": true
+  },
+  {
+   "female": "Internal iliac vein (right)",
+   "beforeMm": 75.4,
+   "afterMm": 0.0,
+   "shiftMm": 87.0,
+   "used": true
+  },
+  {
+   "female": "Internal pudendal vein (left)",
+   "beforeMm": 37.8,
+   "afterMm": 28.4,
+   "shiftMm": 24.2,
+   "used": true
+  },
+  {
+   "female": "Internal pudendal vein (right)",
+   "beforeMm": 9.0,
+   "afterMm": 0.0,
+   "shiftMm": 16.6,
+   "used": true
+  },
+  {
+   "female": "Right coronary artery",
+   "beforeMm": 18.1,
+   "afterMm": 13.7,
+   "shiftMm": 14.9,
+   "used": true
+  },
+  {
+   "female": "Left coronary artery",
+   "beforeMm": 8.7,
+   "afterMm": 0.0,
+   "shiftMm": 9.5,
+   "used": true
+  },
+  {
+   "female": "Left anterior descending artery",
+   "beforeMm": 2.7,
+   "afterMm": 0.0,
+   "shiftMm": 1.0,
+   "used": true
+  },
+  {
+   "female": "Left circumflex artery",
+   "beforeMm": 23.1,
+   "afterMm": 6.2,
+   "shiftMm": 22.3,
+   "used": true
+  },
+  {
+   "female": "Coronary sinus",
+   "beforeMm": 12.2,
+   "afterMm": 0.0,
+   "shiftMm": 16.5,
+   "used": true
+  },
+  {
+   "female": "Great cardiac vein",
+   "beforeMm": 10.7,
+   "afterMm": 10.2,
+   "shiftMm": 4.9,
+   "used": true
+  },
+  {
+   "female": "Middle cardiac vein",
+   "beforeMm": 4.6,
+   "afterMm": 0.0,
+   "shiftMm": 4.5,
+   "used": true
   }
  ],
  "heldOut": {
   "native": {
    "pairs": 60,
-   "medianOfMediansMm": 2.08,
-   "maxMm": 4.28
+   "medianOfMediansMm": 2.07,
+   "maxMm": 4.3
   },
   "borrowed": {
    "pairs": 114,
-   "medianOfMediansMm": 2.18,
-   "maxMm": 8.37
+   "medianOfMediansMm": 2.15,
+   "maxMm": 8.42
   },
   "eye": {
    "pairs": 1,
-   "medianOfMediansMm": 4.88,
-   "maxMm": 4.88
+   "medianOfMediansMm": 4.78,
+   "maxMm": 4.78
   },
   "organ": {
    "pairs": 8,
-   "medianOfMediansMm": 7.33,
-   "maxMm": 10.91
+   "medianOfMediansMm": 7.35,
+   "maxMm": 10.51
   }
  },
  "folding": {
   "samples": 71301,
-  "folded": 9,
-  "detMin": -0.12,
-  "detP01": 0.404,
+  "folded": 2,
+  "detMin": -0.103,
+  "detP01": 0.419,
   "detMedian": 1.08,
-  "detP99": 2.76,
-  "secondDifferenceUmMedian": 2.96,
-  "secondDifferenceUmMax": 322.0
+  "detP99": 2.767,
+  "secondDifferenceUmMedian": 2.89,
+  "secondDifferenceUmMax": 308.4
  },
  "pairs": [
   {

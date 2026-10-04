@@ -6,10 +6,11 @@ import {
   Mesh,
   MeshBasicMaterial,
   Raycaster,
+  DoubleSide,
   Vector3,
   Triangle,
 } from "three";
-import { MeshBVH } from "three-mesh-bvh";
+import { MeshBVH, acceleratedRaycast } from "three-mesh-bvh";
 const points = JSON.parse(await fs.readFile("data/points.json", "utf8"));
 // A marker that already exists for the same seed keeps the surface it was
 // placed on: after a skin rebuild it moves to the closest point of the new
@@ -46,6 +47,51 @@ skin.updateMatrixWorld(true);
 const ray = new Raycaster(),
   anchors = [],
   missing = [];
+// The bundled skin is a thick shell whose inner faces connect to the outer
+// one, so neither connectivity nor crossing parity tells them apart (a ray can
+// also run on into an arm or the other thigh). A marker belongs on a face the
+// viewer can see: just outside it, or midway across the gap in front of it,
+// some ray reaches open air. Otherwise it moves outward along its own
+// direction to the first face leaving the skin that passes the same test,
+// never sideways across the midline. Internal region references stay.
+const outerRay = new Raycaster(), airRay = new Raycaster(), lifted = [], enclosed = [];
+airRay.firstHitOnly = true;
+const airGeometry = geometry.clone();
+airGeometry.boundsTree = new MeshBVH(airGeometry);
+const bothSides = new Mesh(airGeometry, new MeshBasicMaterial({ side: DoubleSide }));
+bothSides.raycast = acceleratedRaycast;
+bothSides.updateMatrixWorld(true);
+const AIR_DIRECTIONS = Array.from({ length: 512 }, (_, i) => {
+  const y = 1 - (2 * (i + 0.5)) / 512, r = Math.sqrt(1 - y * y), t = Math.PI * (3 - Math.sqrt(5)) * i;
+  return new Vector3(Math.cos(t) * r, y, Math.sin(t) * r);
+});
+function reachesOpenAir(point) {
+  for (const d of AIR_DIRECTIONS) {
+    airRay.set(point, d); airRay.far = 3;
+    if (!airRay.intersectObject(bothSides).length) return true;
+  }
+  return false;
+}
+function outerSurface(key, point, outward, mode) {
+  if (mode === "region-reference") return point;
+  outerRay.set(point.clone().addScaledVector(outward, 0.0005), outward); outerRay.far = 0.3;
+  const hits = outerRay.intersectObject(bothSides);
+  const open = (at, next) => reachesOpenAir(at.clone().addScaledVector(outward, 0.0015))
+    || Boolean(next && next.distance - at.distanceTo(point) > 0.003 && reachesOpenAir(at.clone().lerp(next.point, 0.5)));
+  if (open(point, hits[0])) return point;
+  const ahead = hits.filter((hit) => !(Math.abs(outward.x) > 0.7 && hit.point.x * point.x < 0));
+  for (const [i, hit] of ahead.entries()) {
+    if (hit.face.normal.dot(outward) <= 0 || !open(hit.point, ahead[i + 1])) continue;
+    lifted.push(`${key} ${(hit.distance * 1000 + 0.5).toFixed(1)} mm`);
+    return hit.point.clone();
+  }
+  // Touching parts (the arm on the chest wall, the thigh on the scrotum) close
+  // the gap in front, so no ray escapes: the first face leaving the skin before
+  // the midline, or the marker's own face when it already faces the contact.
+  const exit = ahead.find((hit) => hit.face.normal.dot(outward) > 0);
+  enclosed.push(`${key} ${exit ? `${(exit.distance * 1000 + 0.5).toFixed(1)} mm` : "kept"}`);
+  return exit ? exit.point.clone() : point;
+}
 for (const p of points)
  for (const [occurrence, coordinates] of (p.occurrences || [p.position]).entries())
   for (const sign of p.bilateral ? [-1, 1] : [1]) {
@@ -70,9 +116,10 @@ for (const p of points)
       if (nearest.distance * 1000 > KEEP_SURFACE_MAX_MM)
         throw Error(`${key}: its surface moved ${(nearest.distance * 1000).toFixed(1)} mm; review before re-projecting.`);
       // Already on this skin: keep the stored coordinates exactly.
-      const onSkin = nearest.distance < 1e-9;
-      const surfacePoint = onSkin ? new Vector3(...before.surfacePoint) : nearest.point.clone();
       const outward = new Vector3(...before.position).sub(new Vector3(...before.surfacePoint)).normalize();
+      const kept = nearest.distance < 1e-9 ? new Vector3(...before.surfacePoint) : nearest.point.clone();
+      const surfacePoint = outerSurface(key, kept, outward, p.markerMode);
+      const onSkin = nearest.distance < 1e-9 && surfacePoint === kept;
       anchors.push({
         pointId: p.id, occurrence, key, mode: p.markerMode || "surface-illustration", method: before.method,
         side: seed.x < 0 ? "right" : seed.x > 0 ? "left" : "midline",
@@ -113,6 +160,7 @@ for (const p of points)
       missing.push(`${p.id} ${sign}`);
       continue;
     }
+    hit = { point: outerSurface(`${p.id}-${occurrence}-${sign}`, hit.point.clone(), direction.clone().negate(), p.markerMode) };
     const position = hit.point.clone().addScaledVector(direction, -0.003);
     anchors.push({
       pointId: p.id,
@@ -129,6 +177,8 @@ for (const p of points)
       status: "illustrative-unreviewed",
     });
   }
+if (lifted.length) console.log(`Moved ${lifted.length} anchors out to the visible skin surface: ${lifted.join(", ")}`);
+if (enclosed.length) console.log(`Placed ${enclosed.length} anchors facing a closed contact pocket: ${enclosed.join(", ")}`);
 if (missing.length)
   throw Error(
     `No skin projection for ${missing.join(", ")}. Adjust seeds rather than placing floating markers.`,

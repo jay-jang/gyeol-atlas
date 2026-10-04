@@ -9,10 +9,10 @@ const browser = await chromium.launch({ headless: true, args: ["--no-sandbox", "
 const page = await browser.newPage({ viewport: { width: 1200, height: 800 }, reducedMotion: "reduce" });
 let fiberUrl = ""; page.on("request", r => { if (/\/@react-three_fiber\.js\?/.test(r.url())) fiberUrl = r.url(); });
 // The registration field is fitted to the scene as it was drawn before it:
-// leave out the transported structures and the borrowed bones' field placement.
+// leave out the transported structures and the field placements (borrowed bones, brain).
 await page.route("**/models/female-transport/manifest.json", async route => {
   const manifest = await (await route.fetch()).json();
-  await route.fulfill({ json: { ...manifest, files: [], borrowed: { ...manifest.borrowed, parts: [] } } });
+  await route.fulfill({ json: { ...manifest, files: [], placement: { ...manifest.placement, parts: [] } } });
 });
 await page.goto("http://127.0.0.1:5174/");
 await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 180000 });

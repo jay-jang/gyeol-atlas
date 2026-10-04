@@ -2,6 +2,7 @@ import {test,expect} from '@playwright/test';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
+import {BufferGeometry,BufferAttribute} from 'three';
 import {ready,snapshot,organs} from './helpers';
 import {detailProjection} from './detail-projection';
 import bindings from '../../data/catalog/female-brain-bindings.json' with {type:'json'};
@@ -10,10 +11,22 @@ const brain=atlas.parts.filter((p:any)=>p.system==='brain');
 const parts=new Map<string,any>(atlas.parts.map((p:any)=>[p.id,p]));
 const records=new Map(bindings.records.map(r=>[r.id,r]));
 const chunks=atlas.chunks.map((c:any)=>gunzipSync(fs.readFileSync(`public/models/female/${c.gzip.split('/').pop()}`)));
+// The reference brain is fitted into the registration field's cranium
+// (scripts/female-transport/brain.py): its positions come from the placement
+// file and its normals are recomputed; the VHF optic chiasm keeps its source.
+const transport=JSON.parse(fs.readFileSync('public/models/female-transport/manifest.json','utf8'));
+const placedBytes=gunzipSync(fs.readFileSync(`public/${transport.placement.url}`));
+const placed=new Map<string,any>(transport.placement.parts.map((r:any)=>[r.id,r]));
 const hash=createHash('sha256');
 for(const p of brain){
-  const q=parts.get(records.get(p.id)?.partnerId||p.id),b=chunks[q.chunk];
-  for(const [offset,length] of [[q.positions,q.vertexCount*12],[q.normals,q.vertexCount*6],[q.indices,q.indexCount*4]])hash.update(b.subarray(offset,offset+length));
+  const q=parts.get(records.get(p.id)?.partnerId||p.id),b=chunks[q.chunk],field=placed.get(p.id);
+  const indices=b.subarray(q.indices,q.indices+q.indexCount*4);
+  if(field){
+    const positions=new Float32Array(placedBytes.buffer.slice(placedBytes.byteOffset+field.offset,placedBytes.byteOffset+field.offset+field.vertexCount*12));
+    const g=new BufferGeometry();g.setAttribute('position',new BufferAttribute(positions,3));
+    g.setIndex(new BufferAttribute(new Uint32Array(indices.buffer.slice(indices.byteOffset,indices.byteOffset+indices.length)),1));g.computeVertexNormals();
+    hash.update(Buffer.from(positions.buffer));hash.update(Buffer.from((g.attributes.normal.array as Float32Array).buffer));hash.update(indices);
+  } else for(const [offset,length] of [[q.positions,q.vertexCount*12],[q.normals,q.vertexCount*6],[q.indices,q.indexCount*4]])hash.update(b.subarray(offset,offset+length));
 }
 const expectedHash=hash.digest('hex');
 
@@ -38,7 +51,7 @@ test('brain source bindings, ray selection and every half-percent peel preserve 
     return {hash:Array.from(new Uint8Array(digest),v=>v.toString(16).padStart(2,'0')).join(''),rows};
   },{url:fiberUrl,ids:brain.map((p:any)=>p.id)});
   const first=await actual();expect(first.hash).toBe(expectedHash);
-  expect(first.rows).toEqual(brain.map((p:any)=>({id:p.id,source:records.get(p.id)?.partnerId||p.id,normalized:true,
+  expect(first.rows).toEqual(brain.map((p:any)=>({id:p.id,source:records.get(p.id)?.partnerId||p.id,normalized:!placed.has(p.id),
     tag:records.has(p.id)?{version:bindings.version,canonicalId:p.id,sourceGeometryId:records.get(p.id)!.partnerId}:null})));
   await page.evaluate(async url=>{
     const m=await import(/* @vite-ignore */ url),s=m._roots.get(document.querySelector('canvas')).store.getState();

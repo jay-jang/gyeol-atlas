@@ -1,5 +1,6 @@
+import fs from 'node:fs';
 import {test,expect} from '@playwright/test';
-import {ready,compare,snapshot,choosePoint,closeTool} from './helpers';
+import {ready,compare,snapshot,choosePoint} from './helpers';
 import {detailProjection} from './detail-projection';
 
 test('landscape comparisons and isolated bundles remain clear without changing their memberships',async({page})=>{
@@ -37,23 +38,23 @@ test('landscape comparisons and isolated bundles remain clear without changing t
   }
 });
 
-test('female stomach comparison offers a separate CT detail without replacing the overview until chosen',async({page})=>{
-  test.setTimeout(120000);
+test('female organ comparisons use the female body and keep the CT stomach one explicit choice away',async({page})=>{
+  test.setTimeout(180000);
   await page.setViewportSize({width:390,height:844});
   const requests:string[]=[];page.on('request',r=>requests.push(r.url()));
   await page.goto('/#atlas/CV12');await ready(page);
   await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   await compare(page);
-  const link=page.getByRole('button',{name:'위 (여성 CT) 별도 상세 보기',exact:true});
+  // The carried stomach joins the overview comparison and says where it comes from.
+  expect((await snapshot(page)).selection.ids).toEqual(['FT_FMA7148']);
+  await expect(page.locator('[data-carried-comparison]')).toContainText('남성 원본을 여성 골격·피부 대응으로 옮긴');
+  const link=page.getByRole('button',{name:'위 (여성 CT) 상세',exact:true});
   await expect(link).toBeVisible(); await expect(link).toBeInViewport();
-  await expect.poll(async()=>{
-    const button=await link.boundingBox(),dock=await page.locator('.detail-panel').boundingBox();
-    return dock!.y+dock!.height-button!.y-button!.height;
-  }).toBeGreaterThan(4);
-  await expect(page.locator('.comparison-feedback')).toContainText('전신에 합쳐지지 않은');
+  // The card and the camera column stay above the wrapped female marker note.
+  const bar=await page.locator('.ax-point-bar').boundingBox();
+  for(const sel of ['.ax-inspector','.ax-camera']){const b=await page.locator(sel).boundingBox();expect(b!.y+b!.height,sel).toBeLessThanOrEqual(bar!.y-4);}
   await page.screenshot({path:'docs/anatomy-alignment/comparison-female-ct-mobile.png'});
   expect(requests.filter(u=>u.includes('/female-detail/'))).toHaveLength(0);
-  expect((await snapshot(page)).comparison).toBe(null);
   await link.click();await ready(page);
   expect((await snapshot(page)).detail.id).toBe('stomach-ct');
   expect((await snapshot(page)).comparison).toBe(null);
@@ -64,6 +65,15 @@ test('female stomach comparison offers a separate CT detail without replacing th
   await choosePoint(page,'KI3');await compare(page);
   expect((await snapshot(page)).selection.ids).toHaveLength(50);
   expect((await snapshot(page)).selection.ids.every((id:string)=>id.startsWith('HRAF'))).toBe(true);
-  await page.locator('.point-summary').click(); await expect(link).toHaveCount(0);
-  await closeTool(page);
+  await expect(page.getByRole('button',{name:/여성 CT/})).toHaveCount(0);
+  // Colon, small intestine and gallbladder compare the HRA female organs, not a "no model" notice.
+  const {counterparts}=JSON.parse(fs.readFileSync('data/female-comparison-counterparts.json','utf8'));
+  const biliary=JSON.parse(fs.readFileSync('data/female-biliary-groups.json','utf8'))[0].ids;
+  for(const [point,ids] of [['LI4',counterparts.FMA14543nsn.ids],['SI4',['FMA7206','FMA7207','FMA7208'].flatMap(id=>counterparts[id].ids)],['GB24',biliary]] as const){
+    await choosePoint(page,point);await compare(page);
+    expect([...(await snapshot(page)).selection.ids].sort(),point).toEqual([...ids].sort());
+    await expect(page.locator('[data-carried-comparison]')).toHaveCount(0);
+    await expect(page.locator('.selection-card')).toBeInViewport();
+  }
+  await page.screenshot({path:'docs/anatomy-alignment/comparison-female-gallbladder-mobile.png'});
 });

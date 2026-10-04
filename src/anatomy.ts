@@ -17,8 +17,9 @@ import maleDetailStructures from "../data/male-detail-structures.json";
 import femaleDetailStructures from "../data/female-detail-structures.json";
 import femaleDetailGroups from "../data/female-detail-groups.json";
 import femaleTransportCatalogue from "../data/female-transport-structures.json";
+import femaleTransportGroups from "../data/female-transport-groups.json";
 import {pelvicStructureDisplay} from "./female-pelvic-bindings";
-export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.find(detail => detail.id === group.id) || group), ...femaleOrganGroups, ...femaleAirwayGroups, ...femaleBiliaryGroups, ...femaleAdditionalOrganGroups, ...femaleDetailGroups];
+export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.find(detail => detail.id === group.id) || group), ...femaleOrganGroups, ...femaleTransportGroups, ...femaleAirwayGroups, ...femaleBiliaryGroups, ...femaleAdditionalOrganGroups, ...femaleDetailGroups];
 // Source-defined composite structures are available from their selection card,
 // without changing the featured major-organ navigation or comparison bundles.
 export const compositeGroups = femaleCompositeGroups;
@@ -68,7 +69,8 @@ const featuredFemaleGroupById = new Map(femaleAirwayGroups.flatMap(group => grou
 // Male-derived structures carried into the female body (scripts/female-transport/).
 // Each keeps the male entry's names, Latin, hierarchy, label and FMA ID.
 export const FEMALE_TRANSPORT_NOTE = "남성 원본을 여성 골격·피부 대응으로 옮긴 보완 구조입니다. 여성 원본에서 직접 만든 형상이 아니며, 위치는 학습용 근사입니다.";
-const transportLayer = { nerve: "nerve", vessel: "vessel", muscle: "muscle", ligament: "bone", tendon: "muscle", lymph: "lymph", bone: "bone" } as const;
+const transportLayer = { nerve: "nerve", vessel: "vessel", muscle: "muscle", ligament: "bone", tendon: "muscle", lymph: "lymph", bone: "bone", organ: "organ" } as const;
+const transportGroupById = new Map(femaleTransportGroups.flatMap(group => group.ids.map(id => [id, group.id] as const)));
 const maleSource = new Map<string, { name: string; label?: string; latin?: string; kind?: string; bodyRegion?: string; hierarchy?: string[]; description?: string; source?: string }>(
   [...baseStructures, ...fullSystemStructures, ...connectiveStructures, ...sexLymphStructures.filter(s => s.sex === "male")].map(s => [s.id, s]));
 const femaleTransportStructures = femaleTransportCatalogue.map(row => {
@@ -78,8 +80,9 @@ const femaleTransportStructures = femaleTransportCatalogue.map(row => {
     model: `female-transport/${row.system}.glb`, hierarchy: male.hierarchy || [layerNames[layer]],
     ...(male.latin ? { latin: male.latin } : {}), ...(male.kind ? { kind: male.kind } : {}), ...(male.bodyRegion ? { bodyRegion: male.bodyRegion } : {}),
     ...(row.transport.startsWith("FMA") ? { fmaId: row.transport } : {}),
+    ...(transportGroupById.has(`FT_${row.transport}`) ? { group: transportGroupById.get(`FT_${row.transport}`) } : {}),
     description: male.description ? `${male.description} ${FEMALE_TRANSPORT_NOTE}` : FEMALE_TRANSPORT_NOTE,
-    source: `${male.source || "BodyParts3D 3.0 (DBCLS)"} · 여성 정합 보완`,
+    source: `${male.source || (row.transport.startsWith("FJ") ? "BodyParts3D 4.3 (DBCLS)" : "BodyParts3D 3.0 (DBCLS)")} · 여성 정합 보완`,
     ...("surfaceTone" in row && row.surfaceTone ? { surfaceTone: true } : {}),
   };
 });

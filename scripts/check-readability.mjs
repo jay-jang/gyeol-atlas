@@ -29,13 +29,16 @@ try {
     ['도움말', async()=>page.getByRole('button',{name:'도움말',exact:true}).click(), '[aria-label="도움말"][role="region"]'],
     ['경혈 상세', async()=>page.locator('.point-summary').click(), '.detail-panel'],
     ['효능·오행', async()=>{await page.locator('.point-summary').click();await page.getByRole('tab',{name:'효능·오행'}).click();await page.locator('.point-tradition').scrollIntoViewIfNeeded();}, '.detail-panel'],
-    ['여성 CT 비교 안내', async()=>{
+    ['여성 경혈 좌표 안내', async()=>{
       await page.goto(origin+'/#atlas/CV12');await page.getByText('해부 모델 로드 완료').waitFor({timeout:90000});
       await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await page.getByText('해부 모델 로드 완료').waitFor({timeout:90000});
-      await page.locator('.point-summary').click();await page.getByRole('button',{name:'대응 장부의 해부 구조 비교'}).click();
-      await page.getByRole('button',{name:'위 (여성 CT) 별도 상세 보기',exact:true}).waitFor({state:'visible'});
-      await page.locator('.comparison-feedback').scrollIntoViewIfNeeded();
+      await page.getByRole('button',{name:'선택 경혈 확대',exact:true}).click();
+      await page.locator('.comparison-feedback').waitFor({state:'visible'});await page.locator('.comparison-feedback').scrollIntoViewIfNeeded();
     }, '.detail-panel'],
+    ['여성 보완 위 비교', async()=>{
+      await page.locator('.point-summary').click();await page.getByRole('button',{name:'대응 장부의 해부 구조 비교'}).click();
+      await page.getByRole('button',{name:'위 (여성 CT) 상세',exact:true}).waitFor({state:'visible'});
+    }, '.selection-card'],
   ];
   for(const [name,open,root] of panels){
     await open();

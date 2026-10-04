@@ -243,6 +243,8 @@ body:has(.ax) .site-footer { display: none; }
 .ax-toggle[aria-pressed="true"], .ax-toggle[aria-expanded="true"] { color: #fff; background: var(--ax-raised); }
 .ax-toggle .ax-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ax-gold); box-shadow: 0 0 0 3px rgba(234, 184, 92, .2); }
 .ax-toggle[aria-pressed="false"] .ax-dot { background: #5f727b; box-shadow: none; }
+/* Female acupoint markers are approximations: a gold-outlined toggle says so. */
+.ax-toggle.ax-approx[aria-pressed="true"] { color: var(--ax-gold); box-shadow: inset 0 0 0 1px var(--ax-gold); }
 .ax-meridians { display: flex; gap: 3px; overflow-x: auto; scrollbar-width: none; min-width: 0; mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); padding-right: 22px; }
 .ax-meridians::-webkit-scrollbar { display: none; }
 .ax-meridians button { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 5px; min-height: 34px; padding: 0 8px; border-radius: 9px; color: var(--ax-muted); font-size: 12px; font-weight: 600; letter-spacing: .02em; }
@@ -432,7 +434,7 @@ body:has(.ax) .site-footer { display: none; }
   /* Phone panels open over the scene and stay within 45% of it: search results
      under the search box, other panels as bottom sheets within thumb reach. */
   .ax-results { top: calc(var(--ax-gap) + 44px); left: var(--ax-gap); right: var(--ax-gap); width: auto; max-height: 45%; }
-  .ax-side-panel { top: auto; bottom: calc(var(--ax-gap) + 54px); left: var(--ax-gap); right: var(--ax-gap); width: auto; max-height: 45%; }
+  .ax-side-panel { top: auto; bottom: calc(var(--ax-gap) + var(--ax-bar-h, 44px) + 10px); left: var(--ax-gap); right: var(--ax-gap); width: auto; max-height: 45%; }
   .ax-point-empty small { display: none; }
   .ax-depth {
     top: calc(var(--ax-gap) + 46px); left: var(--ax-gap); right: var(--ax-gap); bottom: auto; width: auto; height: 58px;
@@ -457,7 +459,7 @@ body:has(.ax) .site-footer { display: none; }
   .ax-point-bar { position: absolute; z-index: 20; left: var(--ax-gap); right: var(--ax-gap); bottom: var(--ax-gap); padding: 4px; }
   .ax-toggle { padding: 0 8px; }
   /* Fixed-width tool column so the bottom sheet keeps a known 8px gap beside it. */
-  .ax-camera { position: absolute; z-index: 20; right: var(--ax-gap); bottom: calc(var(--ax-gap) + 54px); width: 48px; flex-direction: column; align-items: stretch; gap: 6px; }
+  .ax-camera { position: absolute; z-index: 20; right: var(--ax-gap); bottom: calc(var(--ax-gap) + var(--ax-bar-h, 44px) + 10px); width: 48px; flex-direction: column; align-items: stretch; gap: 6px; }
   .ax-camera > * { box-sizing: border-box; width: 100%; }
   .ax .movement-pad summary { justify-content: center; padding: 0 4px; }
   .ax .view-tools { flex-direction: column; }
@@ -466,7 +468,7 @@ body:has(.ax) .site-footer { display: none; }
   .ax .view-tools button { width: 100%; }
   .ax-status { position: absolute; z-index: 15; left: var(--ax-gap); top: calc(var(--ax-gap) + 110px); max-width: calc(100% - 2 * var(--ax-gap) - 56px); }
   .ax-status .ax-source, .ax-status .click-target { display: none; }
-  .ax-inspector { top: auto; bottom: calc(var(--ax-gap) + 54px); left: var(--ax-gap); right: calc(var(--ax-gap) + 56px); width: auto; max-height: 45%; justify-content: flex-end; }
+  .ax-inspector { top: auto; bottom: calc(var(--ax-gap) + var(--ax-bar-h, 44px) + 10px); left: var(--ax-gap); right: calc(var(--ax-gap) + 56px); width: auto; max-height: 45%; justify-content: flex-end; }
   .ax-point-chip { align-self: stretch; }
   .ax-point-chip .point-summary { flex: 1; }
   /* The chip stays above a selection card so point details remain one tap away. */

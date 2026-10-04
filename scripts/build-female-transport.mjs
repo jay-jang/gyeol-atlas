@@ -3,8 +3,9 @@
 //   public/models/female-transport/{nerve,vessel,muscle,ligament,tendon,lymph,bone}.glb
 //     male-derived structures carried into the HRA female body by the fitted
 //     registration field (one node per structure, Draco, female metres).
-//   public/models/female-transport/borrowed.bin.gz + manifest.json
-//     new vertex positions of the 180 borrowed bones, placed by the same field.
+//   public/models/female-transport/placement.bin.gz + manifest.json
+//     new vertex positions of the 180 borrowed bones (same field) and of the
+//     282 reference-brain parts fitted into the field's cranium.
 //   data/female-transport-structures.json
 //     one row per carried structure (male source id, system, peel score,
 //     skin tone); src/anatomy.ts builds the FT_ entries from the male catalogue
@@ -30,7 +31,7 @@ const sources = new Map([
   ...(await read("data/full-system-structures.json")).map((s) => [s.id, s]),
   ...(await read("data/connective-structures.json")).map((s) => [s.id, s]),
   ...(await read("data/sex-lymph-structures.json")).filter((s) => s.sex === "male").map((s) => [s.id, s]),
-  ...inputs.filter((a) => a.layer === "muscle" || a.layer === "bone").map((a) => [a.id, { ...a, label: labels[a.id] || a.name, fmaId: a.id.startsWith("FMA") ? a.id : undefined, source: "BodyParts3D 3.0 (DBCLS)" }]),
+  ...inputs.filter((a) => ["muscle", "bone", "organ"].includes(a.layer)).map((a) => [a.id, { ...a, label: labels[a.id] || a.name, fmaId: a.id.startsWith("FMA") ? a.id : undefined, source: "BodyParts3D 3.0 (DBCLS)" }]),
 ]);
 const io = new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({
   "draco3d.decoder": await draco3d.createDecoderModule(),
@@ -60,7 +61,7 @@ function normals(pos, idx) {
 }
 await fs.mkdir(OUT, { recursive: true });
 const catalogue = [], files = [];
-for (const system of ["nerve", "vessel", "muscle", "ligament", "tendon", "lymph", "bone"]) {
+for (const system of ["nerve", "vessel", "muscle", "ligament", "tendon", "lymph", "bone", "organ"]) {
   const blob = await fs.readFile(`${CACHE}/${system}.bin`);
   const doc = new Document(), buffer = doc.createBuffer(), scene = doc.createScene("female-transport");
   for (const item of index[system]) {
@@ -91,13 +92,23 @@ for (const system of ["nerve", "vessel", "muscle", "ligament", "tendon", "lymph"
   files.push({ system, path: `models/female-transport/${system}.glb`, bytes: bytes.length, sha256: sha(bytes), structures: index[system].length });
   console.log(system, index[system].length, "structures", bytes.length, "bytes");
 }
-const borrowedRaw = await fs.readFile(`${CACHE}/borrowed.bin`), borrowedGz = gzipSync(borrowedRaw, { level: 9 });
-await fs.writeFile(`${OUT}/borrowed.bin.gz`, borrowedGz);
+// One placement file: the borrowed bones (warp.py) and the reference brain fitted
+// into the field's cranium (brain.py), new Float32 positions in vertex order.
+const brain = await read(`${CACHE}/brain.json`), brainRaw = await fs.readFile(`${CACHE}/brain.bin`);
+const borrowedOnly = await fs.readFile(`${CACHE}/borrowed.bin`);
+const placementRaw = Buffer.concat([borrowedOnly, brainRaw]);
+let brainOffset = borrowedOnly.length;
+const placementParts = [...index.borrowed.map((p) => ({ ...p, kind: "borrowed bone" })),
+  ...brain.parts.map((p) => { const row = { id: p.id, offset: brainOffset, vertexCount: p.vertexCount, sourceSha256: p.sourceSha256, kind: "reference brain" }; brainOffset += p.vertexCount * 12; return row; })];
+const placementGz = gzipSync(placementRaw, { level: 9 });
+await fs.rm(`${OUT}/borrowed.bin.gz`, { force: true });
+await fs.writeFile(`${OUT}/placement.bin.gz`, placementGz);
 await fs.writeFile(`${OUT}/manifest.json`, JSON.stringify({
   version: 1,
   field: { sha256: fit.field.sha256, report: "data/catalog/female-transport-fit.json" },
   files,
-  borrowed: { url: "models/female-transport/borrowed.bin.gz", bytes: borrowedRaw.length, gzipBytes: borrowedGz.length, sha256: sha(borrowedRaw), parts: index.borrowed },
+  placement: { url: "models/female-transport/placement.bin.gz", bytes: placementRaw.length, gzipBytes: placementGz.length, sha256: sha(placementRaw), parts: placementParts,
+    brain: brain.summary },
 }, null, 1) + "\n");
 await fs.writeFile("data/female-transport-structures.json", JSON.stringify(catalogue) + "\n");
-console.log("borrowed", index.borrowed.length, "bones", borrowedGz.length, "bytes gz;", catalogue.length, "catalogue entries; selection", JSON.stringify(transport.selection.chosen));
+console.log("placement", placementParts.length, "parts", placementGz.length, "bytes gz;", catalogue.length, "catalogue entries; selection", JSON.stringify(transport.selection.chosen));

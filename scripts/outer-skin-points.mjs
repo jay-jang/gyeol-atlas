@@ -3,12 +3,14 @@
 // one point per 4 mm voxel, with the hit triangle's outward normal. The male
 // BodyParts3D skin is a two-shelled mesh, so its own normals cannot tell the
 // outer shell apart. Input: a scripts/dump-drawn-geometry.mjs directory.
-// Usage: node scripts/outer-skin-points.mjs <dump dir> <mesh name> <out.bin> [spacing mm] [directions]
+// Usage: node scripts/outer-skin-points.mjs <dump dir> <mesh name> <out.bin> [spacing mm] [directions] [dense-out.bin]
+// The optional last file keeps every hit point thinned to 1 mm (Float32 xyz), a dense
+// sample of the outer surface for distance measurements.
 import fs from "node:fs";
 import { BufferGeometry, BufferAttribute, Mesh, MeshBasicMaterial, Raycaster, Vector3, DoubleSide } from "three";
 import { MeshBVH, acceleratedRaycast } from "three-mesh-bvh";
 Mesh.prototype.raycast = acceleratedRaycast;
-const [dir, name, outFile, spacingMm = "3", dirCount = "300"] = process.argv.slice(2);
+const [dir, name, outFile, spacingMm = "3", dirCount = "300", denseFile] = process.argv.slice(2);
 const index = JSON.parse(fs.readFileSync(`${dir}/index.json`, "utf8")).parts;
 const blob = fs.readFileSync(`${dir}/geometry.bin`);
 const part = index.find(p => p.name === name);
@@ -19,7 +21,7 @@ g.boundsTree = new MeshBVH(g); g.computeBoundingSphere();
 const mesh = new Mesh(g, new MeshBasicMaterial({ side: DoubleSide }));
 const ray = new Raycaster(); ray.firstHitOnly = true;
 const center = g.boundingSphere.center, radius = g.boundingSphere.radius + 0.05;
-const N = Number(dirCount), step = Number(spacingMm) / 1000, cell = 0.004, voxel = new Map();
+const N = Number(dirCount), step = Number(spacingMm) / 1000, cell = 0.004, voxel = new Map(), dense = new Map();
 const d = new Vector3(), u = new Vector3(), v = new Vector3(), o = new Vector3();
 for (let k = 0; k < N; k++) {
   const y = 1 - (k + .5) / N * 2, r = Math.sqrt(1 - y * y), phi = k * Math.PI * (3 - Math.sqrt(5));
@@ -30,6 +32,7 @@ for (let k = 0; k < N; k++) {
     ray.set(o, d); ray.far = 2 * radius;
     const h = ray.intersectObject(mesh)[0];
     if (!h) continue;
+    if (denseFile) { const k1 = `${Math.floor(h.point.x / 0.001)},${Math.floor(h.point.y / 0.001)},${Math.floor(h.point.z / 0.001)}`; if (!dense.has(k1)) dense.set(k1, [h.point.x, h.point.y, h.point.z]); }
     const key = `${Math.floor(h.point.x / cell)},${Math.floor(h.point.y / cell)},${Math.floor(h.point.z / cell)}`;
     if (voxel.has(key)) continue;
     const n = h.face.normal.clone(); if (n.dot(d) > 0) n.negate();
@@ -37,4 +40,5 @@ for (let k = 0; k < N; k++) {
   }
 }
 fs.writeFileSync(outFile, Buffer.from(Float32Array.from([...voxel.values()].flat()).buffer));
+if (denseFile) fs.writeFileSync(denseFile, Buffer.from(Float32Array.from([...dense.values()].flat()).buffer));
 console.log(name, "outer points", voxel.size, "->", outFile);

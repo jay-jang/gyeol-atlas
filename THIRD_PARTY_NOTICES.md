@@ -31,7 +31,7 @@ GYEOL modification: the two system exports are loaded as non-diagnostic whole-bo
 
 ### Female transport (2026-10-04)
 
-`public/models/female-transport/` carries 1,324 of these Z-Anatomy structures (nerves, vessels, ligaments, tendons, lymph) and 450 BodyParts3D structures (muscles, missing bones) into the HRA female body with one fitted registration field, and stores new positions for the 180 male-derived borrowed bones. Every vertex is moved by the field; normals are recomputed and the files are re-encoded with Draco. The modified files keep their licences (CC BY-SA 4.0 for Z-Anatomy derivatives, CC BY-SA 2.1 JP for BodyParts3D). They are male-derived educational approximations, not female anatomy. Notice: `public/models/female-transport/LICENSE.txt`; method and measurements: `docs/anatomy-alignment/FEMALE_TRANSPORT.md`.
+`public/models/female-transport/` carries 1,327 of these Z-Anatomy structures (nerves, vessels, ligaments, tendons, lymph) and 462 BodyParts3D structures (muscles, missing bones and organs) into the HRA female body with one fitted registration field, and stores new positions for the 180 male-derived borrowed bones and the 282-part reference brain. Every vertex is moved by the field; normals are recomputed and the files are re-encoded with Draco. The modified files keep their licences (CC BY-SA 4.0 for Z-Anatomy derivatives, CC BY-SA 2.1 JP for BodyParts3D). They are male-derived educational approximations, not female anatomy. Notice: `public/models/female-transport/LICENSE.txt`; method and measurements: `docs/anatomy-alignment/FEMALE_TRANSPORT.md`.
 
 ## NIH Human Reference Atlas female reference
 

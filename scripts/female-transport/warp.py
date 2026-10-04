@@ -21,6 +21,11 @@ def cloud(name):
     a = np.frombuffer(open(f'{CACHE}/{name}', 'rb').read(), dtype=np.float32).reshape(-1, 6).astype(np.float64); return a[:, :3], a[:, 3:]
 fs_, fn = cloud('female-skin-points.bin'); ftree = cKDTree(fs_); ms, mn = cloud('male-skin-points.bin'); mtree = cKDTree(ms)
 def outside(P, tree, pts, nrm): d, j = tree.query(P, workers=-1); return ((P - pts[j]) * nrm[j]).sum(1) > 0.002
+# Unsigned distance to the male skin's outer surface (every outside ray hit,
+# 1 mm apart; scripts/outer-skin-points.mjs): a structure within 1 mm of it
+# touches the skin in its source.
+outer_skin = cKDTree(np.frombuffer(open(f'{CACHE}/male-skin-outer-dense.bin', 'rb').read(), dtype=np.float32).reshape(-1, 3).astype(np.float64))
+def skin_touch_mm(P): return float(outer_skin.query(P, workers=-1)[0].min()) * 1000
 def inverted(P, Q, T):
     """Triangles whose orientation the field reverses (local Jacobian determinant <= 0)."""
     n0 = np.cross(P[T[:, 1]] - P[T[:, 0]], P[T[:, 2]] - P[T[:, 0]]); n1 = np.cross(Q[T[:, 1]] - Q[T[:, 0]], Q[T[:, 2]] - Q[T[:, 0]])
@@ -37,15 +42,17 @@ chosen, skipped = selection()
 systems = collections.defaultdict(list); metrics = collections.defaultdict(lambda: collections.Counter())
 for o in chosen:
     p = mby[o['id']]; P = p['pos']; Q = W(P)
+    # Vessels (and the lymph that follows them) join the female vessels of the same name.
+    if o['source'] in ('vessel-full.glb', 'reference/lymphatic_male.glb'): Q = Q + W.vessel_layer(P)
     om, of = outside(P, mtree, ms, mn), outside(Q, ftree, fs_, fn)
     sysname = {'nerve-full.glb': 'nerve', 'vessel-full.glb': 'vessel', 'ligament-full.glb': 'ligament', 'tendon-full.glb': 'tendon',
-               'muscle.glb': 'muscle', 'bone.glb': 'bone', 'reference/lymphatic_male.glb': 'lymph'}[o['source']]
+               'muscle.glb': 'muscle', 'bone.glb': 'bone', 'organ.glb': 'organ', 'reference/lymphatic_male.glb': 'lymph'}[o['source']]
     m = metrics[sysname]; m['structures'] += 1; m['vertices'] += len(P); m['triangles'] += len(p['tri'])
     m['outsideMaleSkin'] += int(om.sum()); m['outsideFemaleSkin'] += int(of.sum()); m['newlyOutside'] += int((of & ~om).sum())
     m['invertedTriangles'] += inverted(P, Q, p['tri'])
     # Depth below the male skin in the source (negative: outside). A structure
     # touching the skin there shows through any coarser skin, as in the male face.
-    d, j = mtree.query(P, workers=-1); depth = -float(((P - ms[j]) * mn[j]).sum(1).max())
+    depth = skin_touch_mm(P) / 1000
     m['skinContact'] += int(depth <= 0.001)
     systems[sysname].append(dict(id=o['id'], pos=Q.astype(np.float32), tri=p['tri'].astype(np.uint32), peelScore=peel_score(P) if sysname == 'muscle' else None, depth=depth))
 index = {}
@@ -68,14 +75,16 @@ for p in F:
     V = p['pos']; mb = mby[mid]['pos']
     src = mb[rng.choice(len(mb), min(2000, len(mb)), replace=False)]
     T, rms, _ = icp(src, V if len(V) < 5000 else V[rng.choice(len(V), 5000, replace=False)], init_centroid(src, V))
-    s, R, t = T; borrowed[p['name']] = W(((V - t) @ R) / s); info[p['name']] = dict(source=p['sourceName'], male=mid, icpRmsMm=round(rms * 1000, 2))
+    s, R, t = T; borrowed[p['name']] = W(((V - t) @ R) / s); info[p['name']] = dict(source=p['sourceName'], male=mid, icpRmsMm=round(rms * 1000, 2), skinTouchMm=round(skin_touch_mm(mb), 2))
 nasal = [n for n in borrowed if info[n]['source'].lower().endswith('nasal bone')]
 S = umeyama(np.vstack([fby[n]['pos'] for n in nasal]), np.vstack([borrowed[n] for n in nasal]))
 for p in F:   # alar cartilages have no male bone counterpart: follow the nasal bones
     if p['system'] == 'borrowed' and p['name'] not in borrowed: borrowed[p['name']] = apply(S, p['pos']); info[p['name']] = dict(source=p['sourceName'], male=None, follows='nasal bones')
 order = sorted(borrowed); blobs, entries, off = [], [], 0
 for n in order:
-    a = borrowed[n].astype(np.float32).tobytes(); entries.append(dict(id=n, offset=off, vertexCount=len(borrowed[n]), sourceSha256=hashlib.sha256(fby[n]['pos'].astype(np.float32).tobytes()).hexdigest()))
+    a = borrowed[n].astype(np.float32).tobytes()
+    entries.append(dict(id=n, offset=off, vertexCount=len(borrowed[n]), sourceSha256=hashlib.sha256(fby[n]['pos'].astype(np.float32).tobytes()).hexdigest(),
+                        **({'surfaceTone': True} if info[n].get('skinTouchMm', 99) <= 1 else {})))
     blobs.append(a); off += len(a)
 open(f'{OUT}/borrowed.bin', 'wb').write(b''.join(blobs)); index['borrowed'] = entries
 json.dump(index, open(f'{OUT}/index.json', 'w'))
