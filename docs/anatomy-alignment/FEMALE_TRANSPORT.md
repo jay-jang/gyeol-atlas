@@ -208,6 +208,8 @@
 
 첫 반영 공개 확인(2026-10-04, `bffa04a` 배포): 공개 `vessel.glb` 6,584,828바이트가 저장소와 같음, 공개 스모크(소프트웨어·GPU) 오류 0·여성 정합 보완 1,774개, `scripts/check-female-transport-pages.mjs` 데스크톱·모바일에서 옮긴 구조 1,774개 표시·기증자 근육 개요 0·성기 가리기 새로고침 유지·가로 넘침 없음, 확장 감사 8화면×3상태, 경혈 선택·연속성 확인 통과 — [공개 결과](female-transport-pages.json), [데스크톱](pages-female-transport-desktop.png)·[모바일 덮개](pages-modesty-mobile.png).
 
+후속 공개 확인(2026-10-04, `bb26fa4` 배포): 공개 `acupoint-anchors.json`·`acupoint-anchors-female.json`·`placement.bin.gz`·`organ.glb`가 저장소와 SHA-256 동일. 공개 스모크 오류 0(여성 정합 보완 1,789개·뇌 283개). `scripts/check-female-transport-pages.mjs`(확장판) 데스크톱·모바일에서 옮긴 구조 1,789개 표시·기증자 근육 개요 0·근사 표식 켜기(보기 상태 유지)·대장 비교 6구조·성기 가리기 새로고침 유지·가로 넘침 없음. 공개 비교 검사(옮긴 위 비교와 명시적 여성 CT 선택, CT 조기 내려받기 없음), 확장 감사 8화면×3상태, 공개 가독성 9표면 통과 — [공개 결과](female-transport-pages.json), [모바일](pages-female-transport-mobile.png)·[모바일 덮개](pages-modesty-mobile.png). 처음 실행한 확장판은 근사 표식·대장 비교를 덮개 캡처 앞에 두어 덮개 증거 화면이 비교 시점으로 남았고, 순서를 바꿔 다시 실행했습니다.
+
 ## 한계
 
 - 옮긴 구조는 남성 원본의 형상과 상호 관계를 여성 몸에 맞춘 근사입니다. 여성 해부의 실측이 아니며 신경 주행·혈관 분지의 개인차·성차를 반영하지 않습니다.

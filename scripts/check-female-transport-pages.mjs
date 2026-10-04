@@ -30,15 +30,6 @@ for (const [label, viewport] of [["desktop", { width: 1440, height: 900 }], ["mo
     sampleVisible: ["FT_ZA_nerve_sural_nerve_l", "FT_ZA_vessel_great_saphenous_vein_l", "FT_FMA13375"].every((id) => visible.has(id)),
   };
   await page.screenshot({ path: `docs/anatomy-alignment/pages-female-transport-${label}.png` });
-  // Approximate female acupoints stay hidden until asked for; LI4 compares the HRA colon.
-  await page.getByRole("button", { name: "근사 위치로 보기" }).click();
-  await page.getByRole("button", { name: "여성 근사 표식 끄기" }).waitFor({ timeout: 30000 });
-  result[label].femaleMarkers = await page.evaluate(() => JSON.parse(sessionStorage.getItem("gyeol-view-v2") || "{}").femaleMarkers);
-  await page.goto(origin + "#atlas/LI4"); await ready();
-  await page.locator(".point-summary").click(); await page.getByRole("button", { name: "대응 장부의 해부 구조 비교" }).click(); await ready();
-  result[label].colonComparison = await page.evaluate(() => JSON.parse(sessionStorage.getItem("gyeol-view-v2") || "{}").selection?.ids?.length);
-  await page.getByRole("button", { name: "구조 선택 해제", exact: true }).click();
-  await page.getByRole("button", { name: "여성 근사 표식 끄기" }).click();
   const toggle = page.locator(".ax-top").getByRole("button", { name: "성기 가리기" });
   await toggle.click();
   await page.waitForFunction(() => document.querySelector("canvas")?.dataset.modestyCover === "true", null, { timeout: 60000 });
@@ -48,6 +39,15 @@ for (const [label, viewport] of [["desktop", { width: 1440, height: 900 }], ["mo
   result[label].pressedAfterReload = await toggle.getAttribute("aria-pressed");
   await page.screenshot({ path: `docs/anatomy-alignment/pages-modesty-${label}.png` });
   result[label].noHorizontalScroll = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
+  // Approximate female acupoints stay hidden until asked for; LI4 compares the HRA colon.
+  await page.getByRole("button", { name: "근사 위치로 보기" }).click();
+  await page.getByRole("button", { name: "여성 근사 표식 끄기" }).waitFor({ timeout: 30000 });
+  result[label].femaleMarkers = await page.evaluate(() => JSON.parse(sessionStorage.getItem("gyeol-view-v2") || "{}").femaleMarkers);
+  await page.goto(origin + "#atlas/LI4"); await ready();
+  await page.locator(".point-summary").click(); await page.getByRole("button", { name: "대응 장부의 해부 구조 비교" }).click(); await ready();
+  result[label].colonComparison = await page.evaluate(() => JSON.parse(sessionStorage.getItem("gyeol-view-v2") || "{}").selection?.ids?.length);
+  await page.getByRole("button", { name: "구조 선택 해제", exact: true }).click();
+  await page.getByRole("button", { name: "여성 근사 표식 끄기" }).click();
   await page.close();
 }
 await browser.close();
