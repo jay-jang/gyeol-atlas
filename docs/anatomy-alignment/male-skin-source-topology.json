@@ -4,7 +4,7 @@
   "sourceSha256": "c7762a9b5044a7329ac99403b42551571a28325472103cf1900c379cd8dfcfb7",
   "sourceTriangles": 1586498,
   "sourceWeldedVertices": 791729,
-  "deployedTriangles": 102392,
+  "deployedTriangles": 112478,
   "componentCount": 528,
   "largestComponentTriangles": 1532176,
   "remainingTriangles": 54322,
@@ -565,19 +565,19 @@
   },
   "simplified": {
     "deployedPrune": {
-      "triangles": 102392,
-      "error": 0.0008340152562595904,
-      "components": 116,
-      "weldedVertices": 49380,
+      "triangles": 112478,
+      "error": 0.0007910632994025946,
+      "components": 120,
+      "weldedVertices": 54396,
       "edges": {
-        "edges": 153031,
+        "edges": 168185,
         "incidence": {
-          "2": 152480,
-          "4": 545,
-          "6": 6
+          "2": 167658,
+          "4": 522,
+          "6": 5
         },
         "boundaryEdges": 0,
-        "nonManifoldEdges": 551
+        "nonManifoldEdges": 527
       }
     },
     "singlePassPrune": {
@@ -689,7 +689,7 @@
   "files": [
     {
       "path": "public/models/manifest.json",
-      "sha256": "d565c9dcddadeda14ef89f5ca143d2e8bee44ef91044678104bd378641c920ae"
+      "sha256": "12393f754780686e7817447e68b0d2a709560da6bdd0442d263aee4387548377"
     },
     {
       "path": "scripts/audit-male-source-skin.mjs",

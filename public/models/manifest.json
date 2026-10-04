@@ -6,7 +6,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
   "attribution": "BodyParts3D, (c) The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan",
   "transform": "x=X/1000; y=(Z+13.5175)/1000; z=(-Y-96.5107)/1000. Original unit mm; scene unit m.",
-  "modifications": "STL to GLB, welded positions, meshoptimizer topology-aware simplification (the skin keeps a 0.4 mm absolute error over the hands and feet and 0.6 mm over the head, with 16-bit indices), smooth normals, coordinate transform; no clinical registration.",
+  "modifications": "STL to GLB, welded positions, meshoptimizer topology-aware simplification (the skin keeps a 0.4 mm absolute error over the hands and feet, 0.4 mm over the nose and mouth and 0.6 mm over the head and front of the neck, with 16-bit indices), smooth normals, coordinate transform; no clinical registration.",
   "assets": [
     {
       "id": "FMA7163",
@@ -16,8 +16,8 @@
       "sourceUrl": "https://raw.githubusercontent.com/Kevin-Mattheus-Moerman/BodyParts3D/f0eeb6e843380cfe6b83797cf8c3e1af74de5e61/assets/BodyParts3D_data/stl/FMA7163.stl",
       "sha256": "c7762a9b5044a7329ac99403b42551571a28325472103cf1900c379cd8dfcfb7",
       "originalTriangles": 1586498,
-      "triangles": 102392,
-      "simplificationError": 0.0008340152562595904,
+      "triangles": 112478,
+      "simplificationError": 0.0007910632994025946,
       "detail": [
         {
           "name": "hands and feet",
@@ -76,6 +76,26 @@
           "errorMm": 0.3977260887622833
         },
         {
+          "name": "nose and mouth",
+          "boxesMm": [
+            [
+              [
+                -65.17789840698242,
+                -215.0260009765625,
+                1455.47998046875
+              ],
+              [
+                63.312198638916016,
+                -114.33900451660156,
+                1561.3299560546875
+              ]
+            ]
+          ],
+          "padMm": 20,
+          "targetErrorMm": 0.4,
+          "errorMm": 0.39962977170944214
+        },
+        {
           "name": "head",
           "boxesMm": [
             [
@@ -93,7 +113,27 @@
           ],
           "padMm": 35,
           "targetErrorMm": 0.6,
-          "errorMm": 0.5994952917098999
+          "errorMm": 0.5987697243690491
+        },
+        {
+          "name": "front of neck",
+          "boxesMm": [
+            [
+              [
+                -68.28739929199219,
+                -219.072998046875,
+                1254.030029296875
+              ],
+              [
+                66.9636001586914,
+                -60.808998107910156,
+                1489.949951171875
+              ]
+            ]
+          ],
+          "padMm": 40,
+          "targetErrorMm": 0.6,
+          "errorMm": 0.5890680551528931
         }
       ]
     },

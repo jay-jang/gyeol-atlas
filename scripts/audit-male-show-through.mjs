@@ -10,6 +10,7 @@ import { KHRDracoMeshCompression } from "@gltf-transform/extensions";
 import draco from "draco3dgltf";
 import { Box3, BufferAttribute, BufferGeometry, DoubleSide, Matrix4, Ray, Vector3 } from "three";
 import { MeshBVH } from "three-mesh-bvh";
+import { isSupplementEyePart } from "../src/anatomy-rendering.ts";
 
 const read = (file) => JSON.parse(fs.readFileSync(file, "utf8"));
 const stored = read("data/catalog/male-registration.json");
@@ -32,6 +33,9 @@ async function glb(file, entries, registration) {
       if (primitive.getIndices()) geometry.setIndex(new BufferAttribute(new Uint32Array(primitive.getIndices().getArray()), 1));
       geometry.applyMatrix4(matrix);
       if (registration) { geometry.scale(registration.scale, registration.scale, registration.scale); geometry.translate(...registration.translation); }
+      // At 0% the BodyParts3D eyeball is drawn and Z-Anatomy's own eye parts
+      // are hidden as its duplicate (anatomy-rendering.ts), so they are not seen.
+      if (registration && isSupplementEyePart(entry.name || "")) continue;
       parts.push({ ...entry, geometry, source: file.split("/").pop() });
     }
   }
@@ -63,7 +67,9 @@ const region = (test, side) => {
   return box.expandByScalar(0.03);
 };
 // REGIONS=body screens the whole body instead (coarser STEP_MM recommended).
-const regions = process.env.REGIONS === "body"
+const regions = process.env.REGION_BOX
+  ? { box: new Box3(new Vector3(...process.env.REGION_BOX.split(",").slice(0, 3).map(Number)), new Vector3(...process.env.REGION_BOX.split(",").slice(3).map(Number))) }
+  : process.env.REGIONS === "body"
   ? { "whole body": (skin.geometry.computeBoundingBox(), skin.geometry.boundingBox.clone().expandByScalar(0.01)) }
   : { "right hand": region(handBone, "right"), "left hand": region(handBone, "left"), "right foot": region(footBone, "right"), "left foot": region(footBone, "left"), head: region(skullBone, "") };
 const directions = [];
@@ -83,7 +89,9 @@ async function audit(registration, skinGeometry = skin.geometry) {
   for (const [name, box] of Object.entries(regions)) {
     // One BVH over the triangles near this region, tagged with their part.
     const positions = [], owner = [];
-    const near = box.clone().expandByScalar(0.01), a = new Vector3(), b = new Vector3(), c = new Vector3();
+    // A box inside the body (REGION_BOX) needs every triangle, so rays enter
+    // through the real outer surface rather than starting inside it.
+    const near = process.env.REGION_BOX ? new Box3(new Vector3(-9, -9, -9), new Vector3(9, 9, 9)) : box.clone().expandByScalar(0.01), a = new Vector3(), b = new Vector3(), c = new Vector3();
     parts.forEach((p, index) => {
       const pos = p.geometry.getAttribute("position"), idx = p.geometry.getIndex();
       const count = idx ? idx.count : pos.count;
@@ -127,7 +135,7 @@ async function audit(registration, skinGeometry = skin.geometry) {
 // the record separates the registration fix from the skin detail.
 const baselineSkin = process.env.BASELINE_SKIN ? (await glb(process.env.BASELINE_SKIN, [{ id: "FMA7163" }]))[0].geometry : null;
 const report = { method: "First ray hit inside each hand/foot box (bones + 30 mm) on a grid from 14 directions; a non-skin first hit is tissue in front of the skin. Supplement rays exclude the base BodyParts3D muscle, bone and organ meshes.",
-  stepMm: step * 1000, skinTriangles: skin.geometry.getIndex().count / 3, states: {} };
+  stepMm: step * 1000, skinTriangles: (skin.geometry.getIndex()?.count ?? skin.geometry.getAttribute("position").count) / 3, states: {} };
 const states = [["final", stored, null]];
 if (baselineSkin) states.push(["registrationOnly", stored, baselineSkin]);
 if (baselineSkin && stored.previous) states.push(["original", stored.previous, baselineSkin]);
@@ -135,7 +143,7 @@ for (const [name, registration, skinGeometry] of states) {
   console.log(`== ${name}`);
   report.states[name] = { registration: { scale: registration.scale, translation: registration.translation },
     skin: skinGeometry ? process.env.BASELINE_SKIN_LABEL || process.env.BASELINE_SKIN : "public/models/skin.glb",
-    skinTriangles: (skinGeometry || skin.geometry).getIndex().count / 3, regions: await audit(registration, skinGeometry || skin.geometry) };
+    skinTriangles: ((skinGeometry || skin.geometry).getIndex()?.count ?? (skinGeometry || skin.geometry).getAttribute("position").count) / 3, regions: await audit(registration, skinGeometry || skin.geometry) };
 }
 report.files = ["data/catalog/male-registration.json", "public/models/skin.glb", "public/models/muscle.glb", "public/models/bone.glb", "public/models/organ.glb",
   "public/models/nerve-full.glb", "public/models/vessel-full.glb", "public/models/ligament-full.glb", "public/models/tendon-full.glb",

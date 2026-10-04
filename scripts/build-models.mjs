@@ -49,13 +49,14 @@ const manifest = {
   transform:
     "x=X/1000; y=(Z+13.5175)/1000; z=(-Y-96.5107)/1000. Original unit mm; scene unit m.",
   modifications:
-    "STL to GLB, welded positions, meshoptimizer topology-aware simplification (the skin keeps a 0.4 mm absolute error over the hands and feet and 0.6 mm over the head, with 16-bit indices), smooth normals, coordinate transform; no clinical registration.",
+    "STL to GLB, welded positions, meshoptimizer topology-aware simplification (the skin keeps a 0.4 mm absolute error over the hands and feet, 0.4 mm over the nose and mouth and 0.6 mm over the head and front of the neck, with 16-bit indices), smooth normals, coordinate transform; no clinical registration.",
   assets: [],
 };
 // The skin keeps finer detail where thin skin covers structures that sit just
-// under it (lib/detail-skin.mjs): hands and feet at 0.4 mm, the head (scalp,
-// face, ears) at 0.6 mm. Each box is the bounds of those source bones plus a
-// margin, in source millimetres, so the detail follows the source data.
+// under it (lib/detail-skin.mjs): hands, feet, nose and mouth at 0.4 mm, the
+// head (scalp, face, ears) and the front of the neck at 0.6 mm. Each box is
+// the bounds of those source bones plus a margin, in source millimetres, so
+// the detail follows the source data.
 const boneBounds = async (pattern, padMm) => {
   const min = [Infinity, Infinity, Infinity], max = [-Infinity, -Infinity, -Infinity];
   for (const a of inputs.assets.filter((a) => a.layer === "bone" && new RegExp(pattern).test(a.name))) {
@@ -71,7 +72,12 @@ const SKIN_DETAIL = [
     `phalanx of ${side} (.*finger|thumb)|${side} .*metacarpal|${side} (scaphoid|lunate|triquetral|pisiform|trapezium|trapezoid|capitate|hamate)$`,
     `phalanx of ${side} .*toe|${side} .*metatarsal|${side} (calcaneus|talus|navicular|cuboid|.*cuneiform)$`,
   ]) },
+  // The nose and mouth hold thin muscles and cartilage just under the skin
+  // (nasalis, nasal cartilages), so they get a finer region before the head.
+  { name: "nose and mouth", padMm: 20, errorMm: 0.4, patterns: ["^((right|left) nasal bone|(right|left) maxilla)$"] },
   { name: "head", padMm: 35, errorMm: 0.6, patterns: ["^(occipital bone|frontal bone|mandible|(right|left) (temporal|parietal|zygomatic|nasal) bone|(right|left) maxilla)$"] },
+  // The front of the neck: the platysma lies directly under its skin.
+  { name: "front of neck", padMm: 40, errorMm: 0.6, patterns: ["^(hyoid bone|manubrium)$"] },
 ];
 for (const region of SKIN_DETAIL) region.boxesMm = await Promise.all(region.patterns.map((pattern) => boneBounds(pattern, region.padMm)));
 for (const layer of ["skin", "bone", "muscle", "organ", "vessel", "nerve"]) {

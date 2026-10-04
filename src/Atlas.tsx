@@ -49,7 +49,7 @@ import maleRegistration from "../data/catalog/male-registration.json";
 import { movementKeys, translateView, type MoveDirection } from "./navigation";
 import { LoaderCircle, TriangleAlert } from "lucide-react";
 import PackedAtlas from "./PackedAtlas";
-import { CONNECTIVE_COLOR, clippingPlanes, configurePicking, releasedDrag, type SceneClick } from "./anatomy-rendering";
+import { CONNECTIVE_COLOR, SKIN_COLOR, SURFACE_TONES, clippingPlanes, configurePicking, isSupplementEyePart, releasedDrag, type SceneClick } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { framedDistance } from "./camera-framing";
 import { musclePeelRanks } from "./muscle-peel";
@@ -297,7 +297,7 @@ function clinicalColor(layer: Layer, name: string) {
     if (/heart/.test(lower)) return "#b52e3f";
     if (/stomach|intestin|colon/.test(lower)) return "#c47a68";
   }
-  return { skin: "#b9826f", bone: "#e8dec5", muscle: "#b43f3f", organ: "#a94d60", vessel: "#d33f49", lymph: "#58b99f", nerve: "#f0c94f" }[layer];
+  return { skin: SKIN_COLOR, bone: "#e8dec5", muscle: "#b43f3f", organ: "#a94d60", vessel: "#d33f49", lymph: "#58b99f", nerve: "#f0c94f" }[layer];
 }
 function inAnatomyRegion(mesh: Mesh, region: Props["anatomyRegion"], id = mesh.name) {
   if (region === "whole") return true;
@@ -365,6 +365,9 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
   const { invalidate, gl } = useThree();
   useLayoutEffect(() => {
     const progressive = props.displayMode === "dissection";
+    // The skin still covers the surface (not peeled, not see-through).
+    const skinOpaque = props.layers.skin && props.selectionTarget !== "internal"
+      && props.opacity * dissectionLayerOpacity("skin", props.dissection, progressive) >= .5;
     const mirrored = props.selected.structures.flatMap((id) => [
       id,
       (structurePairs as Record<string, string>)[id] || id,
@@ -403,7 +406,8 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       const vessel = structureById.get(id)?.name || "";
       const material = o.material as MeshStandardMaterial;
       configurePicking(o, layer, props.selectionTarget);
-      material.color.set(emphasis ? emphasis : connective ? CONNECTIVE_COLOR : clinicalColor(layer, vessel));
+      const tone = !selected && skinOpaque ? SURFACE_TONES[id] : undefined;
+      material.color.set(emphasis ? emphasis : connective ? CONNECTIVE_COLOR : tone ?? clinicalColor(layer, vessel));
       const transparent = !opacityWritesDepth(alpha);
       const planes = clippingPlanes(layer, props);
       const clipping = planes.length > 0;
@@ -485,12 +489,16 @@ function SupplementModel({ url, layer, entries, color, connective = false, signa
   const { invalidate } = useThree();
   useLayoutEffect(() => {
     const progressive = props.displayMode === "dissection";
+    // While the BodyParts3D eyeball is drawn, Z-Anatomy's own eye parts would
+    // be a second eye in the same place.
+    const baseEyeball = !props.isolated && props.layers.organ && props.layerOpacity.organ * dissectionLayerOpacity("organ", props.dissection, progressive) > .01;
     object.traverse((item) => {
       if (!(item instanceof Mesh)) return;
       const selected = props.selectionIds.includes(item.name);
       item.visible = item.userData.systemAllowed && (!props.isolated || selected) && (selected || inAnatomyRegion(item, props.anatomyRegion));
       item.visible = item.visible && (!props.detailIds.length || props.detailIds.includes(item.name));
       if (connective && !props.connective && !selected) item.visible = false;
+      if (baseEyeball && !selected && isSupplementEyePart(item.userData.entry?.name || "")) item.visible = false;
       const material = item.material as MeshStandardMaterial;
       // A category bundle keeps its tissue colour; one chosen structure is emphasised.
       material.color.set((connective ? props.selectedStructure === item.name : selected) ? "#34d3dd" : color(item.userData.entry));

@@ -1,7 +1,7 @@
 {
   "method": "First ray hit inside each hand/foot box (bones + 30 mm) on a grid from 14 directions; a non-skin first hit is tissue in front of the skin. Supplement rays exclude the base BodyParts3D muscle, bone and organ meshes.",
   "stepMm": 3,
-  "skinTriangles": 102392,
+  "skinTriangles": 112478,
   "states": {
     "final": {
       "registration": {
@@ -13,19 +13,19 @@
         ]
       },
       "skin": "public/models/skin.glb",
-      "skinTriangles": 102392,
+      "skinTriangles": 112478,
       "regions": {
         "whole body": {
-          "rays": 557465,
-          "skinFirst": 555049,
-          "showThroughRays": 2416,
-          "supplementRays": 296,
-          "showThroughStructures": 63,
+          "rays": 557505,
+          "skinFirst": 555058,
+          "showThroughRays": 2447,
+          "supplementRays": 282,
+          "showThroughStructures": 60,
           "bySource": {
-            "organ.glb": 2038,
-            "vessel-full.glb": 185,
-            "muscle.glb": 55,
-            "nerve-full.glb": 90,
+            "organ.glb": 2060,
+            "vessel-full.glb": 190,
+            "nerve-full.glb": 71,
+            "muscle.glb": 78,
             "bone.glb": 27,
             "tendon-full.glb": 18,
             "ligament-full.glb": 3
@@ -43,21 +43,21 @@
               "name": "labial part of mouth, nsn",
               "layer": "organ",
               "source": "organ.glb",
-              "rays": 249
+              "rays": 254
             },
             {
               "id": "FMA12513",
               "name": "eyeball",
               "layer": "organ",
               "source": "organ.glb",
-              "rays": 83
+              "rays": 100
             },
             {
               "id": "ZA_vessel_great_saphenous_vein_r",
               "name": "Great saphenous vein (right)",
               "layer": "vessel",
               "source": "vessel-full.glb",
-              "rays": 64
+              "rays": 73
             },
             {
               "id": "ZA_vessel_great_saphenous_vein_l",
@@ -67,17 +67,17 @@
               "rays": 48
             },
             {
-              "id": "FMA43883",
-              "name": "right gracilis",
-              "layer": "muscle",
-              "source": "muscle.glb",
-              "rays": 24
-            },
-            {
               "id": "ZA_nerve_dorsal_digital_branches_of_radial_nerve_r",
               "name": "Dorsal digital branches of radial nerve (right)",
               "layer": "nerve",
               "source": "nerve-full.glb",
+              "rays": 22
+            },
+            {
+              "id": "FMA38495",
+              "name": "right extensor carpi radialis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
               "rays": 22
             },
             {
@@ -86,6 +86,20 @@
               "layer": "vessel",
               "source": "vessel-full.glb",
               "rays": 22
+            },
+            {
+              "id": "FMA38496",
+              "name": "left extensor carpi radialis longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 20
+            },
+            {
+              "id": "FMA43883",
+              "name": "right gracilis",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 17
             },
             {
               "id": "ZA_nerve_dorsal_digital_branches_of_radial_nerve_l",
@@ -109,31 +123,10 @@
               "rays": 10
             },
             {
-              "id": "ZA_nerve_cornea_r",
-              "name": "Cornea (right)",
-              "layer": "nerve",
-              "source": "nerve-full.glb",
-              "rays": 8
-            },
-            {
-              "id": "ZA_nerve_sclera_r",
-              "name": "Sclera (right)",
-              "layer": "nerve",
-              "source": "nerve-full.glb",
-              "rays": 7
-            },
-            {
               "id": "ZA_vessel_proper_palmar_digital_arteries_r",
               "name": "Proper palmar digital arteries (right)",
               "layer": "vessel",
               "source": "vessel-full.glb",
-              "rays": 7
-            },
-            {
-              "id": "FMA45740",
-              "name": "left platysma",
-              "layer": "muscle",
-              "source": "muscle.glb",
               "rays": 7
             },
             {
@@ -209,32 +202,11 @@
               "rays": 5
             },
             {
-              "id": "ZA_nerve_saphenous_nerve_r",
-              "name": "Saphenous nerve (right)",
-              "layer": "nerve",
-              "source": "nerve-full.glb",
-              "rays": 5
-            },
-            {
               "id": "ZA_vessel_proper_palmar_digital_arteries_l",
               "name": "Proper palmar digital arteries (left)",
               "layer": "vessel",
               "source": "vessel-full.glb",
               "rays": 5
-            },
-            {
-              "id": "ZA_vessel_median_antebrachial_vein_l",
-              "name": "Median antebrachial vein (left)",
-              "layer": "vessel",
-              "source": "vessel-full.glb",
-              "rays": 5
-            },
-            {
-              "id": "FMA55606",
-              "name": "right nasalis",
-              "layer": "muscle",
-              "source": "muscle.glb",
-              "rays": 4
             },
             {
               "id": "FMA22551",
@@ -244,8 +216,8 @@
               "rays": 4
             },
             {
-              "id": "ZA_nerve_cornea_l",
-              "name": "Cornea (left)",
+              "id": "ZA_nerve_ulnar_nerve_l",
+              "name": "Ulnar nerve (left)",
               "layer": "nerve",
               "source": "nerve-full.glb",
               "rays": 4
@@ -301,6 +273,13 @@
               "rays": 3
             },
             {
+              "id": "ZA_nerve_saphenous_nerve_r",
+              "name": "Saphenous nerve (right)",
+              "layer": "nerve",
+              "source": "nerve-full.glb",
+              "rays": 3
+            },
+            {
               "id": "FMA24463",
               "name": "distal phalanx of right little finger",
               "layer": "bone",
@@ -331,22 +310,8 @@
               "rays": 2
             },
             {
-              "id": "ZA_nerve_ulnar_nerve_l",
-              "name": "Ulnar nerve (left)",
-              "layer": "nerve",
-              "source": "nerve-full.glb",
-              "rays": 2
-            },
-            {
               "id": "FMA43884",
               "name": "left gracilis",
-              "layer": "muscle",
-              "source": "muscle.glb",
-              "rays": 2
-            },
-            {
-              "id": "FMA46783",
-              "name": "orbital part of left orbicularis oculi",
               "layer": "muscle",
               "source": "muscle.glb",
               "rays": 2
@@ -457,6 +422,41 @@
               "layer": "nerve",
               "source": "nerve-full.glb",
               "rays": 1
+            },
+            {
+              "id": "FMA22548",
+              "name": "right extensor digitorum longus",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 1
+            },
+            {
+              "id": "ZA_vessel_dorsal_digital_veins_of_hand_l",
+              "name": "Dorsal digital veins of hand (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 1
+            },
+            {
+              "id": "ZA_vessel_cephalic_vein_r",
+              "name": "Cephalic vein (right)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 1
+            },
+            {
+              "id": "ZA_vessel_median_antebrachial_vein_l",
+              "name": "Median antebrachial vein (left)",
+              "layer": "vessel",
+              "source": "vessel-full.glb",
+              "rays": 1
+            },
+            {
+              "id": "FMA33585",
+              "name": "transverse part of left trapezius",
+              "layer": "muscle",
+              "source": "muscle.glb",
+              "rays": 1
             }
           ]
         }
@@ -476,15 +476,15 @@
       "regions": {
         "whole body": {
           "rays": 556466,
-          "skinFirst": 551630,
-          "showThroughRays": 4836,
-          "supplementRays": 954,
-          "showThroughStructures": 111,
+          "skinFirst": 551631,
+          "showThroughRays": 4835,
+          "supplementRays": 935,
+          "showThroughStructures": 108,
           "bySource": {
-            "organ.glb": 2075,
+            "organ.glb": 2093,
             "muscle.glb": 1727,
             "vessel-full.glb": 513,
-            "nerve-full.glb": 274,
+            "nerve-full.glb": 255,
             "tendon-full.glb": 109,
             "ligament-full.glb": 58,
             "bone.glb": 80
@@ -540,18 +540,18 @@
               "rays": 100
             },
             {
+              "id": "FMA12513",
+              "name": "eyeball",
+              "layer": "organ",
+              "source": "organ.glb",
+              "rays": 96
+            },
+            {
               "id": "ZA_vessel_great_saphenous_vein_r",
               "name": "Great saphenous vein (right)",
               "layer": "vessel",
               "source": "vessel-full.glb",
               "rays": 89
-            },
-            {
-              "id": "FMA12513",
-              "name": "eyeball",
-              "layer": "organ",
-              "source": "organ.glb",
-              "rays": 78
             },
             {
               "id": "FMA38501",
@@ -862,13 +862,6 @@
               "rays": 9
             },
             {
-              "id": "ZA_nerve_cornea_r",
-              "name": "Cornea (right)",
-              "layer": "nerve",
-              "source": "nerve-full.glb",
-              "rays": 8
-            },
-            {
               "id": "FMA46782",
               "name": "orbital part of right orbicularis oculi",
               "layer": "muscle",
@@ -915,6 +908,13 @@
             {
               "id": "FMA32658",
               "name": "distal phalanx of right little toe",
+              "layer": "bone",
+              "source": "bone.glb",
+              "rays": 6
+            },
+            {
+              "id": "FMA230986",
+              "name": "middle phalanx of right little toe",
               "layer": "bone",
               "source": "bone.glb",
               "rays": 6
@@ -1409,7 +1409,7 @@
     },
     {
       "path": "public/models/skin.glb",
-      "sha256": "a1c05589535b124367e4208df24041daa090073b2eb5108a32f04058de890a2e"
+      "sha256": "fab135cd16d34e7459b7e0981d4a0f7ecfda6b776bfc14272a973bb4111945d5"
     },
     {
       "path": "public/models/muscle.glb",
@@ -1445,7 +1445,7 @@
     },
     {
       "path": "scripts/audit-male-show-through.mjs",
-      "sha256": "222c174adedaced839bb46abecf146a7b079f8b4b48badf37524980816124a87"
+      "sha256": "5026b3281f450b7bb30a2d352361aaa288b95bb068e54448bd2306b97ebfa593"
     }
   ]
 }

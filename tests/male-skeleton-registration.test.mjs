@@ -69,7 +69,8 @@ test("finer head skin hides the scalp and facial muscles that showed through", (
 
 test("the deployed skin keeps finer hands, feet and head within the model budget", () => {
   const skin = read("public/models/manifest.json").assets.find((a) => a.id === "FMA7163");
-  assert.deepEqual(skin.detail.map((d) => [d.name, d.boxesMm.length, d.targetErrorMm]), [["hands and feet", 4, 0.4], ["head", 1, 0.6]]);
+  assert.deepEqual(skin.detail.map((d) => [d.name, d.boxesMm.length, d.targetErrorMm]),
+    [["hands and feet", 4, 0.4], ["nose and mouth", 1, 0.4], ["head", 1, 0.6], ["front of neck", 1, 0.6]]);
   for (const d of skin.detail) assert.ok(d.errorMm <= d.targetErrorMm, d.name);
   assert.equal(skin.triangles, read("docs/anatomy-alignment/male-skin-source-topology.json").simplified.deployedPrune.triangles);
   assert.equal(showThrough.skinTriangles, skin.triangles);
