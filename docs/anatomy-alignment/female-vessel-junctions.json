@@ -1,140 +1,806 @@
 {
- "version": 1,
+ "version": 2,
  "createdBy": "scripts/female-transport/junctions.py",
- "before": {
-  "junctions": 108,
-  "medianMm": 6.94,
-  "p90Mm": 33.99,
-  "maxMm": 89.56,
-  "over5Mm": 61
+ "definition": "Carried vessels touching (< 1 mm) a male vessel the female source models; gap to the HRA vessel of the same name after transport, 0 when inside it. Connections: branch/tributary/continuation (scripts/female-transport/vessel_connections.py, editorial TA2/FMA classification); contacts: every other touching pair.",
+ "stages": {
+  "field": {
+   "connections": {
+    "pairs": 47,
+    "medianMm": 5.05,
+    "p90Mm": 22.03,
+    "maxMm": 32.63,
+    "over5Mm": 24
+   },
+   "contacts": {
+    "pairs": 61,
+    "medianMm": 8.61,
+    "p90Mm": 43.83,
+    "maxMm": 89.56,
+    "over5Mm": 37
+   }
+  },
+  "vesselLayer": {
+   "connections": {
+    "pairs": 47,
+    "medianMm": 0.65,
+    "p90Mm": 17.41,
+    "maxMm": 25.93,
+    "over5Mm": 14
+   },
+   "contacts": {
+    "pairs": 61,
+    "medianMm": 4.15,
+    "p90Mm": 24.4,
+    "maxMm": 37.44,
+    "over5Mm": 25
+   }
+  },
+  "junctionLayer": {
+   "connections": {
+    "pairs": 47,
+    "medianMm": 0.0,
+    "p90Mm": 0.0,
+    "maxMm": 1.81,
+    "over5Mm": 0
+   },
+   "contacts": {
+    "pairs": 61,
+    "medianMm": 4.15,
+    "p90Mm": 24.4,
+    "maxMm": 37.44,
+    "over5Mm": 25
+   }
+  }
  },
- "after": {
-  "junctions": 108,
-  "medianMm": 2.76,
-  "p90Mm": 22.7,
-  "maxMm": 37.44,
-  "over5Mm": 41
+ "distortion": {
+  "vesselLayer": {
+   "triangles": 2593738,
+   "flippedTriangles": 1322,
+   "edges": 2593735,
+   "edgesBeyond25pct": 46507,
+   "movedStructures": 30,
+   "movedVerticesInsideFemaleBone": 4551
+  },
+  "junctionLayer": {
+   "triangles": 2593738,
+   "flippedTriangles": 1347,
+   "edges": 2593735,
+   "edgesBeyond25pct": 50926,
+   "movedStructures": 30,
+   "movedVerticesInsideFemaleBone": 4658
+  }
  },
- "largestAfter": [
+ "carriedContacts": {
+  "pairs": 97,
+  "over5MmBefore": 0,
+  "over5MmAfter": 12,
+  "separated": [
+   {
+    "a": "Superior gluteal veins (left)",
+    "b": "Lateral sacral veins (left)",
+    "vesselLayerMm": 0.45,
+    "junctionLayerMm": 18.86
+   },
+   {
+    "a": "Superior gluteal veins (left)",
+    "b": "Iliolumbar artery (left)",
+    "vesselLayerMm": 0.89,
+    "junctionLayerMm": 14.38
+   },
+   {
+    "a": "Inferior gluteal veins (left)",
+    "b": "Iliolumbar artery (left)",
+    "vesselLayerMm": 0.64,
+    "junctionLayerMm": 14.32
+   },
+   {
+    "a": "Superior gluteal veins (left)",
+    "b": "Anterior division of internal iliac artery (left)",
+    "vesselLayerMm": 0.73,
+    "junctionLayerMm": 13.94
+   },
+   {
+    "a": "Superior gluteal veins (left)",
+    "b": "Posterior division of internal iliac artery (left)",
+    "vesselLayerMm": 0.45,
+    "junctionLayerMm": 13.72
+   },
+   {
+    "a": "Inferior gluteal veins (left)",
+    "b": "Internal iliac artery (left)",
+    "vesselLayerMm": 0.75,
+    "junctionLayerMm": 13.42
+   },
+   {
+    "a": "Superior gluteal veins (left)",
+    "b": "Internal iliac artery (left)",
+    "vesselLayerMm": 0.7,
+    "junctionLayerMm": 13.38
+   },
+   {
+    "a": "Inferior gluteal veins (left)",
+    "b": "Posterior division of internal iliac artery (left)",
+    "vesselLayerMm": 0.03,
+    "junctionLayerMm": 13.17
+   },
+   {
+    "a": "Inferior gluteal veins (left)",
+    "b": "Anterior division of internal iliac artery (left)",
+    "vesselLayerMm": 0.49,
+    "junctionLayerMm": 11.88
+   },
+   {
+    "a": "Subcostal artery (right)",
+    "b": "Azygos vein",
+    "vesselLayerMm": 0.21,
+    "junctionLayerMm": 6.15
+   },
+   {
+    "a": "Inferior gluteal veins (left)",
+    "b": "Internal pudendal artery (left)",
+    "vesselLayerMm": 0.17,
+    "junctionLayerMm": 5.9
+   },
+   {
+    "a": "Subcostal artery (right)",
+    "b": "Right ascending lumbar vein",
+    "vesselLayerMm": 0.2,
+    "junctionLayerMm": 5.48
+   }
+  ]
+ },
+ "connectionsAfter": [
   {
-   "branch": "Common iliac artery (right)",
-   "trunk": "Internal iliac vein (right)",
-   "maleGapMm": 0.24,
-   "femaleGapMm": 37.44
-  },
-  {
-   "branch": "Common iliac artery (left)",
-   "trunk": "Internal iliac vein (left)",
-   "maleGapMm": 0.66,
-   "femaleGapMm": 36.76
-  },
-  {
-   "branch": "Left gastro-omental vein",
-   "trunk": "Marginal artery of Drummond",
-   "maleGapMm": 0.18,
-   "femaleGapMm": 35.02
-  },
-  {
-   "branch": "Appendicular artery",
-   "trunk": "Superior mesenteric vein",
-   "maleGapMm": 0.16,
-   "femaleGapMm": 33.39
-  },
-  {
-   "branch": "Appendicular artery",
-   "trunk": "Superior mesenteric artery",
-   "maleGapMm": 0.17,
-   "femaleGapMm": 33.1
-  },
-  {
-   "branch": "Left ascending lumbar vein",
-   "trunk": "Internal iliac vein (left)",
-   "maleGapMm": 0.3,
-   "femaleGapMm": 32.8
-  },
-  {
-   "branch": "Inferior gluteal veins (left)",
-   "trunk": "Internal iliac vein (left)",
-   "maleGapMm": 0.05,
-   "femaleGapMm": 25.93
-  },
-  {
-   "branch": "Superior gluteal veins (left)",
-   "trunk": "Internal iliac vein (left)",
-   "maleGapMm": 0.08,
-   "femaleGapMm": 25.91
-  },
-  {
-   "branch": "Iliolumbar vein (left)",
-   "trunk": "Internal iliac vein (left)",
-   "maleGapMm": 0.45,
-   "femaleGapMm": 25.18
-  },
-  {
-   "branch": "Lumbar arteries (right)",
-   "trunk": "Inferior mesenteric artery",
-   "maleGapMm": 0.44,
-   "femaleGapMm": 24.4
-  },
-  {
-   "branch": "Posterior vein of right lung",
-   "trunk": "Pulmonary vein superior (right)",
-   "maleGapMm": 0.08,
-   "femaleGapMm": 24.06
-  },
-  {
-   "branch": "Anterior division of internal iliac artery (left)",
-   "trunk": "Internal iliac vein (left)",
-   "maleGapMm": 0.75,
-   "femaleGapMm": 22.12
-  },
-  {
-   "branch": "Posterior division of internal iliac artery (left)",
-   "trunk": "Internal iliac vein (left)",
-   "maleGapMm": 0.74,
-   "femaleGapMm": 22.11
-  },
-  {
-   "branch": "Right gastro-omental vein",
-   "trunk": "Middle colic vein",
-   "maleGapMm": 0.08,
-   "femaleGapMm": 21.1
+   "branch": "Inferior phrenic artery",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "connection": true,
+   "gapMm": 1.81
   },
   {
    "branch": "Gastroduodenal artery",
    "trunk": "Proper hepatic artery",
-   "maleGapMm": 0.26,
-   "femaleGapMm": 20.66
+   "connection": true,
+   "gapMm": 1.56
   },
   {
-   "branch": "Iliolumbar vein (right)",
-   "trunk": "Internal iliac vein (right)",
-   "maleGapMm": 0.45,
-   "femaleGapMm": 20.29
+   "branch": "Subcostal artery (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "connection": true,
+   "gapMm": 1.5
+  },
+  {
+   "branch": "Inferior suprarenal artery (right)",
+   "trunk": "Right renal artery",
+   "connection": true,
+   "gapMm": 0.82
+  },
+  {
+   "branch": "Left subclavian artery",
+   "trunk": "Aortic arch",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Common iliac artery (left)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Common iliac artery (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Posterior intercostal arteries (left)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Posterior intercostal arteries (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Lumbar arteries (left)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Lumbar arteries (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Right subclavian artery",
+   "trunk": "Brachiocephalic artery a/Brachiocephalic artery b",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Right common carotid artery",
+   "trunk": "Brachiocephalic artery a/Brachiocephalic artery b",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Left pulmonary artery",
+   "trunk": "Pulmonary trunk",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Middle lobar artery of right lung",
+   "trunk": "Pulmonary artery (right)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Superior lobar artery of right lung",
+   "trunk": "Pulmonary artery (right)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Posterior segmental artery of right lung",
+   "trunk": "Pulmonary artery (right)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Anterior vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Apical vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Lateral vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Medial vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Posterior vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Inferior basal vein of right lung",
+   "trunk": "Pulmonary vein inferior (right)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Superior basal vein of right lung",
+   "trunk": "Pulmonary vein inferior (right)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Superior vein of right lung",
+   "trunk": "Pulmonary vein inferior (right)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Anterior vein of left lung",
+   "trunk": "Pulmonary vein superior (left)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Apicoposterior vein of left lung",
+   "trunk": "Pulmonary vein superior (left)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Lingular vein of left lung",
+   "trunk": "Pulmonary vein superior (left)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Inferior basal vein of left lung",
+   "trunk": "Pulmonary vein inferior (left)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Superior basal vein of left lung",
+   "trunk": "Pulmonary vein inferior (left)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Superior vein of left lung",
+   "trunk": "Pulmonary vein inferior (left)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Azygos vein",
+   "trunk": "Superior vena cava",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Right brachiocephalic vein",
+   "trunk": "Superior vena cava",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Left gastric artery",
+   "trunk": "Celiac trunk",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Inferior pancreaticoduodenal artery",
+   "trunk": "Superior mesenteric artery",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Right gastro-omental vein",
+   "trunk": "Superior mesenteric vein",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Left gastro-omental vein",
+   "trunk": "Splenic vein",
+   "connection": true,
+   "gapMm": 0.0
   },
   {
    "branch": "Gastroduodenal artery",
    "trunk": "Common hepatic artery",
-   "maleGapMm": 0.44,
-   "femaleGapMm": 18.84
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Inferior suprarenal artery (left)",
+   "trunk": "Left renal artery",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "External iliac vein (left)",
+   "trunk": "Left common iliac vein",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Right ascending lumbar vein",
+   "trunk": "Right common iliac vein",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Iliolumbar vein (left)",
+   "trunk": "Internal iliac vein (left)",
+   "connection": true,
+   "gapMm": 0.0,
+   "metAt": "Left common iliac vein"
+  },
+  {
+   "branch": "Inferior gluteal veins (left)",
+   "trunk": "Internal iliac vein (left)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Superior gluteal veins (left)",
+   "trunk": "Internal iliac vein (left)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Iliolumbar vein (right)",
+   "trunk": "Internal iliac vein (right)",
+   "connection": true,
+   "gapMm": 0.0,
+   "metAt": "Right common iliac vein"
+  },
+  {
+   "branch": "Inferior gluteal veins (right)",
+   "trunk": "Internal iliac vein (right)",
+   "connection": true,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Superior gluteal veins (right)",
+   "trunk": "Internal iliac vein (right)",
+   "connection": true,
+   "gapMm": 0.0
+  }
+ ],
+ "contactsAfter": [
+  {
+   "branch": "Common iliac artery (right)",
+   "trunk": "Internal iliac vein (right)",
+   "connection": false,
+   "gapMm": 37.44
+  },
+  {
+   "branch": "Common iliac artery (left)",
+   "trunk": "Internal iliac vein (left)",
+   "connection": false,
+   "gapMm": 36.76
+  },
+  {
+   "branch": "Left gastro-omental vein",
+   "trunk": "Marginal artery of Drummond",
+   "connection": false,
+   "gapMm": 34.86
+  },
+  {
+   "branch": "Appendicular artery",
+   "trunk": "Superior mesenteric vein",
+   "connection": false,
+   "gapMm": 33.39
+  },
+  {
+   "branch": "Appendicular artery",
+   "trunk": "Superior mesenteric artery",
+   "connection": false,
+   "gapMm": 33.1
+  },
+  {
+   "branch": "Left ascending lumbar vein",
+   "trunk": "Internal iliac vein (left)",
+   "connection": false,
+   "gapMm": 32.8
+  },
+  {
+   "branch": "Lumbar arteries (right)",
+   "trunk": "Inferior mesenteric artery",
+   "connection": false,
+   "gapMm": 24.4
+  },
+  {
+   "branch": "Anterior division of internal iliac artery (left)",
+   "trunk": "Internal iliac vein (left)",
+   "connection": false,
+   "gapMm": 22.12
+  },
+  {
+   "branch": "Posterior division of internal iliac artery (left)",
+   "trunk": "Internal iliac vein (left)",
+   "connection": false,
+   "gapMm": 22.11
+  },
+  {
+   "branch": "Right gastro-omental vein",
+   "trunk": "Middle colic vein",
+   "connection": false,
+   "gapMm": 21.1
   },
   {
    "branch": "Common iliac artery (left)",
    "trunk": "Right common iliac vein",
-   "maleGapMm": 0.86,
-   "femaleGapMm": 18.75
+   "connection": false,
+   "gapMm": 18.75
   },
   {
    "branch": "Internal iliac artery (left)",
    "trunk": "Internal iliac vein (left)",
-   "maleGapMm": 0.38,
-   "femaleGapMm": 18.48
+   "connection": false,
+   "gapMm": 18.48
   },
   {
    "branch": "External iliac vein (left)",
    "trunk": "Internal iliac vein (left)",
-   "maleGapMm": 0.46,
-   "femaleGapMm": 16.62
+   "connection": false,
+   "gapMm": 16.59
+  },
+  {
+   "branch": "Lumbar arteries (right)",
+   "trunk": "Left renal artery",
+   "connection": false,
+   "gapMm": 15.05
+  },
+  {
+   "branch": "Anterior inferior pancreaticoduodenal artery",
+   "trunk": "Middle colic artery",
+   "connection": false,
+   "gapMm": 12.55
+  },
+  {
+   "branch": "Superior lingular vein of left lung",
+   "trunk": "Great cardiac vein",
+   "connection": false,
+   "gapMm": 12.17
+  },
+  {
+   "branch": "Lumbar arteries (left)",
+   "trunk": "Right renal artery",
+   "connection": false,
+   "gapMm": 12.14
+  },
+  {
+   "branch": "Right gastro-omental vein",
+   "trunk": "Middle colic artery",
+   "connection": false,
+   "gapMm": 12.01
+  },
+  {
+   "branch": "Anterior inferior pancreaticoduodenal artery",
+   "trunk": "Marginal artery of Drummond",
+   "connection": false,
+   "gapMm": 9.48
+  },
+  {
+   "branch": "Inferior gluteal veins (left)",
+   "trunk": "Internal pudendal vein (left)",
+   "connection": false,
+   "gapMm": 8.62
+  },
+  {
+   "branch": "Internal pudendal artery (left)",
+   "trunk": "Internal pudendal vein (left)",
+   "connection": false,
+   "gapMm": 7.81
+  },
+  {
+   "branch": "Inferior pancreaticoduodenal artery",
+   "trunk": "Superior mesenteric vein",
+   "connection": false,
+   "gapMm": 6.22
+  },
+  {
+   "branch": "Anterior division of internal iliac artery (right)",
+   "trunk": "Internal iliac vein (right)",
+   "connection": false,
+   "gapMm": 6.01
+  },
+  {
+   "branch": "Posterior division of internal iliac artery (right)",
+   "trunk": "Internal iliac vein (right)",
+   "connection": false,
+   "gapMm": 6.0
+  },
+  {
+   "branch": "External iliac artery (left)",
+   "trunk": "Internal iliac vein (left)",
+   "connection": false,
+   "gapMm": 5.72
+  },
+  {
+   "branch": "Internal iliac artery (right)",
+   "trunk": "Internal iliac vein (right)",
+   "connection": false,
+   "gapMm": 4.93
+  },
+  {
+   "branch": "Appendicular artery",
+   "trunk": "Internal iliac vein (right)",
+   "connection": false,
+   "gapMm": 4.5
+  },
+  {
+   "branch": "Internal pudendal artery (right)",
+   "trunk": "Internal pudendal vein (right)",
+   "connection": false,
+   "gapMm": 4.49
+  },
+  {
+   "branch": "Inferior gluteal veins (right)",
+   "trunk": "Internal pudendal vein (right)",
+   "connection": false,
+   "gapMm": 4.36
+  },
+  {
+   "branch": "Right ascending lumbar vein",
+   "trunk": "Right renal artery",
+   "connection": false,
+   "gapMm": 4.34
+  },
+  {
+   "branch": "Common iliac artery (left)",
+   "trunk": "Sigmoid vein a/Sigmoid vein b/Sigmoid vein c",
+   "connection": false,
+   "gapMm": 4.15
+  },
+  {
+   "branch": "Lumbar arteries (right)",
+   "trunk": "Right renal artery",
+   "connection": false,
+   "gapMm": 3.78
+  },
+  {
+   "branch": "Right ascending lumbar vein",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "connection": false,
+   "gapMm": 3.43
+  },
+  {
+   "branch": "Medial segmental artery of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "connection": false,
+   "gapMm": 2.94
+  },
+  {
+   "branch": "Superior lobar artery of right lung",
+   "trunk": "Pulmonary trunk",
+   "connection": false,
+   "gapMm": 2.71
+  },
+  {
+   "branch": "Left superior intercostal vein",
+   "trunk": "Aortic arch",
+   "connection": false,
+   "gapMm": 2.45
+  },
+  {
+   "branch": "Appendicular artery",
+   "trunk": "Marginal artery of Drummond",
+   "connection": false,
+   "gapMm": 2.44
+  },
+  {
+   "branch": "Hemi-azygos vein",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "connection": false,
+   "gapMm": 2.28
+  },
+  {
+   "branch": "Median sacral artery",
+   "trunk": "Left common iliac vein",
+   "connection": false,
+   "gapMm": 1.94
+  },
+  {
+   "branch": "Middle lobar artery of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "connection": false,
+   "gapMm": 1.73
+  },
+  {
+   "branch": "Right ascending lumbar vein",
+   "trunk": "Right renal vein",
+   "connection": false,
+   "gapMm": 1.65
+  },
+  {
+   "branch": "Anterior inferior pancreaticoduodenal artery",
+   "trunk": "Superior mesenteric artery",
+   "connection": false,
+   "gapMm": 1.54
+  },
+  {
+   "branch": "Right brachiocephalic vein",
+   "trunk": "Aortic arch",
+   "connection": false,
+   "gapMm": 0.92
+  },
+  {
+   "branch": "Posterior intercostal arteries (left)",
+   "trunk": "Aortic arch",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Posterior intercostal arteries (right)",
+   "trunk": "Aortic arch",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Left brachiocephalic vein",
+   "trunk": "Aortic arch",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Accessory hemi-azygos vein",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Left brachiocephalic vein",
+   "trunk": "Brachiocephalic artery a/Brachiocephalic artery b",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Apical vein of right lung",
+   "trunk": "Pulmonary artery (right)",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Right ascending lumbar vein",
+   "trunk": "Inferior vena cava a/Inferior vena cava b",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Common iliac artery (left)",
+   "trunk": "Inferior mesenteric artery",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Anterior inferior pancreaticoduodenal artery",
+   "trunk": "Superior mesenteric vein",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Common iliac artery (left)",
+   "trunk": "Inferior mesenteric vein",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Appendicular artery",
+   "trunk": "Right colic vein",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Left gastric artery",
+   "trunk": "Splenic artery",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Left gastric artery",
+   "trunk": "Common hepatic artery",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Inferior pancreaticoduodenal artery",
+   "trunk": "Left renal vein",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Common iliac artery (left)",
+   "trunk": "Left common iliac vein",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "Common iliac artery (right)",
+   "trunk": "Right common iliac vein",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "External iliac artery (right)",
+   "trunk": "Internal iliac vein (right)",
+   "connection": false,
+   "gapMm": 0.0
+  },
+  {
+   "branch": "External iliac vein (right)",
+   "trunk": "Internal iliac vein (right)",
+   "connection": false,
+   "gapMm": 0.0
   }
  ]
 }

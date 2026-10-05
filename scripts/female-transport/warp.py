@@ -11,6 +11,7 @@ from scene import load
 from selection import selection
 from bonefit import icp, init_centroid, apply, umeyama
 from field import Field
+from vessel_connections import vessel_kind
 CACHE = '.cache/female-transport'; OUT = f'{CACHE}/out'; os.makedirs(OUT, exist_ok=True)
 rng = np.random.default_rng(0)
 def sha(path): return hashlib.sha256(open(path, 'rb').read()).hexdigest()
@@ -42,8 +43,10 @@ chosen, skipped = selection()
 systems = collections.defaultdict(list); metrics = collections.defaultdict(lambda: collections.Counter())
 for o in chosen:
     p = mby[o['id']]; P = p['pos']; Q = W(P)
-    # Vessels (and the lymph that follows them) join the female vessels of the same name.
-    if o['source'] in ('vessel-full.glb', 'reference/lymphatic_male.glb'): Q = Q + W.vessel_layer(P)
+    # Vessels (and the lymph that follows them) join the female vessels of the
+    # same name; arteries and veins meet their own female trunks.
+    if o['source'] == 'vessel-full.glb': Q = Q + W.vessel_layer(P, vessel_kind(o['name'])) + W.root_bend(o['id'], P)
+    if o['source'] == 'reference/lymphatic_male.glb': Q = Q + W.vessel_layer(P, 'lymph')
     om, of = outside(P, mtree, ms, mn), outside(Q, ftree, fs_, fn)
     sysname = {'nerve-full.glb': 'nerve', 'vessel-full.glb': 'vessel', 'ligament-full.glb': 'ligament', 'tendon-full.glb': 'tendon',
                'muscle.glb': 'muscle', 'bone.glb': 'bone', 'organ.glb': 'organ', 'reference/lymphatic_male.glb': 'lymph'}[o['source']]

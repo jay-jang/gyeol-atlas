@@ -1,0 +1,907 @@
+{
+ "version": 1,
+ "createdBy": "scripts/female-transport/junction_layer.py",
+ "config": {
+  "shared": [
+   "artery"
+  ],
+  "sigmaMm": {
+   "artery": 20.0,
+   "vein": 25.0
+  },
+  "contactMm": 1.0,
+  "pointsPerJunction": 16,
+  "mergeMm": 8.0,
+  "toleranceMm": 0.5,
+  "bendFromMm": 2.0,
+  "bendWidth": 1.5,
+  "bendMinMm": 10.0,
+  "insideProbe": 200,
+  "clusterMm": 10.0,
+  "originMm": 30.0,
+  "controlMm": 5.0,
+  "repeats": 3,
+  "seed": 11
+ },
+ "fieldSha256": "6cf76767d1a53cd0cdbed2684f7e499abd433927ba5b0de1a7fe0b419fb223e5",
+ "connections": 47,
+ "layers": {
+  "artery": {
+   "connections": 32,
+   "controls": 21,
+   "fitResidualMm": {
+    "median": 0.266,
+    "max": 3.124
+   },
+   "moveMm": {
+    "median": 0.0,
+    "max": 19.76
+   },
+   "slope": {
+    "maxGradient": 0.731,
+    "minJacobian": 0.415,
+    "samples": 1344
+   }
+  }
+ },
+ "rootBends": [
+  {
+   "branch": "Anterior vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "moveMm": 16.48,
+   "widthMm": 24.7
+  },
+  {
+   "branch": "Apical vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "moveMm": 0.71,
+   "widthMm": 10.0
+  },
+  {
+   "branch": "External iliac vein (left)",
+   "trunk": "Left common iliac vein",
+   "moveMm": 4.01,
+   "widthMm": 10.0
+  },
+  {
+   "branch": "Iliolumbar vein (left)",
+   "trunk": "Internal iliac vein (left)",
+   "moveMm": 11.27,
+   "widthMm": 16.9
+  },
+  {
+   "branch": "Iliolumbar vein (right)",
+   "trunk": "Internal iliac vein (right)",
+   "moveMm": 2.31,
+   "widthMm": 10.0
+  },
+  {
+   "branch": "Inferior gluteal veins (left)",
+   "trunk": "Internal iliac vein (left)",
+   "moveMm": 25.95,
+   "widthMm": 38.9
+  },
+  {
+   "branch": "Inferior gluteal veins (right)",
+   "trunk": "Internal iliac vein (right)",
+   "moveMm": 12.75,
+   "widthMm": 19.1
+  },
+  {
+   "branch": "Inferior suprarenal artery (left)",
+   "trunk": "Left renal artery",
+   "moveMm": 3.22,
+   "widthMm": 10.0
+  },
+  {
+   "branch": "Left gastro-omental vein",
+   "trunk": "Splenic vein",
+   "moveMm": 13.36,
+   "widthMm": 20.0
+  },
+  {
+   "branch": "Posterior intercostal arteries (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "moveMm": 2.86,
+   "widthMm": 10.0
+  },
+  {
+   "branch": "Posterior vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "moveMm": 24.08,
+   "widthMm": 36.1
+  },
+  {
+   "branch": "Right ascending lumbar vein",
+   "trunk": "Right common iliac vein",
+   "moveMm": 1.03,
+   "widthMm": 10.0
+  },
+  {
+   "branch": "Superior basal vein of left lung",
+   "trunk": "Pulmonary vein inferior (left)",
+   "moveMm": 0.8,
+   "widthMm": 10.0
+  },
+  {
+   "branch": "Superior gluteal veins (left)",
+   "trunk": "Internal iliac vein (left)",
+   "moveMm": 25.93,
+   "widthMm": 38.9
+  },
+  {
+   "branch": "Superior gluteal veins (right)",
+   "trunk": "Internal iliac vein (right)",
+   "moveMm": 12.77,
+   "widthMm": 19.2
+  },
+  {
+   "branch": "Superior vein of left lung",
+   "trunk": "Pulmonary vein inferior (left)",
+   "moveMm": 3.51,
+   "widthMm": 10.0
+  }
+ ],
+ "junctions": [
+  {
+   "branch": "Anterior vein of left lung",
+   "trunk": "Pulmonary vein superior (left)",
+   "met": "Pulmonary vein superior (left)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 81,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Anterior vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "met": "Pulmonary vein superior (right)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 115,
+   "insideTrunk": false,
+   "gapMm": 16.48,
+   "moveMm": 16.48,
+   "afterSharedMm": 16.48,
+   "rootBend": {
+    "moveMm": 16.48,
+    "widthMm": 24.7
+   }
+  },
+  {
+   "branch": "Apical vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "met": "Pulmonary vein superior (right)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 78,
+   "insideTrunk": false,
+   "gapMm": 0.71,
+   "moveMm": 0.71,
+   "afterSharedMm": 0.71,
+   "rootBend": {
+    "moveMm": 0.71,
+    "widthMm": 10.0
+   }
+  },
+  {
+   "branch": "Apicoposterior vein of left lung",
+   "trunk": "Pulmonary vein superior (left)",
+   "met": "Pulmonary vein superior (left)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 12,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Azygos vein",
+   "trunk": "Superior vena cava",
+   "met": "Superior vena cava",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 5,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Common iliac artery (left)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 12,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Common iliac artery (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 12,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "External iliac vein (left)",
+   "trunk": "Left common iliac vein",
+   "met": "Left common iliac vein",
+   "kind": "continuation",
+   "origin": 0,
+   "contactPoints": 12,
+   "insideTrunk": false,
+   "gapMm": 4.01,
+   "moveMm": 4.01,
+   "afterSharedMm": 4.01,
+   "rootBend": {
+    "moveMm": 4.01,
+    "widthMm": 10.0
+   }
+  },
+  {
+   "branch": "Gastroduodenal artery",
+   "trunk": "Common hepatic artery",
+   "met": "Common hepatic artery",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 10,
+   "insideTrunk": false,
+   "gapMm": 18.86,
+   "moveMm": 18.86,
+   "afterSharedMm": 0.31
+  },
+  {
+   "branch": "Gastroduodenal artery",
+   "trunk": "Proper hepatic artery",
+   "met": "Proper hepatic artery",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 24,
+   "insideTrunk": false,
+   "gapMm": 20.7,
+   "moveMm": 20.7,
+   "afterSharedMm": 1.62
+  },
+  {
+   "branch": "Iliolumbar vein (left)",
+   "trunk": "Internal iliac vein (left)",
+   "met": "Left common iliac vein",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 12,
+   "insideTrunk": false,
+   "gapMm": 11.27,
+   "moveMm": 11.27,
+   "afterSharedMm": 11.27,
+   "rootBend": {
+    "moveMm": 11.27,
+    "widthMm": 16.9
+   }
+  },
+  {
+   "branch": "Iliolumbar vein (right)",
+   "trunk": "Internal iliac vein (right)",
+   "met": "Right common iliac vein",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 12,
+   "insideTrunk": false,
+   "gapMm": 2.31,
+   "moveMm": 2.31,
+   "afterSharedMm": 2.31,
+   "rootBend": {
+    "moveMm": 2.31,
+    "widthMm": 10.0
+   }
+  },
+  {
+   "branch": "Inferior basal vein of left lung",
+   "trunk": "Pulmonary vein inferior (left)",
+   "met": "Pulmonary vein inferior (left)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 23,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Inferior basal vein of right lung",
+   "trunk": "Pulmonary vein inferior (right)",
+   "met": "Pulmonary vein inferior (right)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 24,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Inferior gluteal veins (left)",
+   "trunk": "Internal iliac vein (left)",
+   "met": "Internal iliac vein (left)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 24,
+   "insideTrunk": false,
+   "gapMm": 25.95,
+   "moveMm": 25.95,
+   "afterSharedMm": 25.95,
+   "rootBend": {
+    "moveMm": 25.95,
+    "widthMm": 38.9
+   }
+  },
+  {
+   "branch": "Inferior gluteal veins (right)",
+   "trunk": "Internal iliac vein (right)",
+   "met": "Internal iliac vein (right)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 24,
+   "insideTrunk": false,
+   "gapMm": 12.75,
+   "moveMm": 12.75,
+   "afterSharedMm": 12.75,
+   "rootBend": {
+    "moveMm": 12.75,
+    "widthMm": 19.1
+   }
+  },
+  {
+   "branch": "Inferior pancreaticoduodenal artery",
+   "trunk": "Superior mesenteric artery",
+   "met": "Superior mesenteric artery",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 35,
+   "insideTrunk": false,
+   "gapMm": 1.58,
+   "moveMm": 1.58,
+   "afterSharedMm": 0.46
+  },
+  {
+   "branch": "Inferior phrenic artery",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 7,
+   "insideTrunk": false,
+   "gapMm": 9.26,
+   "moveMm": 9.26,
+   "afterSharedMm": 1.87
+  },
+  {
+   "branch": "Inferior suprarenal artery (left)",
+   "trunk": "Left renal artery",
+   "met": "Left renal artery",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 36,
+   "insideTrunk": false,
+   "gapMm": 6.7,
+   "moveMm": 6.7,
+   "afterSharedMm": 3.22,
+   "rootBend": {
+    "moveMm": 3.22,
+    "widthMm": 10.0
+   }
+  },
+  {
+   "branch": "Inferior suprarenal artery (right)",
+   "trunk": "Right renal artery",
+   "met": "Right renal artery",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 10,
+   "insideTrunk": false,
+   "gapMm": 13.95,
+   "moveMm": 13.95,
+   "afterSharedMm": 0.84
+  },
+  {
+   "branch": "Lateral vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "met": "Pulmonary vein superior (right)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 15,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Left gastric artery",
+   "trunk": "Celiac trunk",
+   "met": "Celiac trunk",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 11,
+   "insideTrunk": false,
+   "gapMm": 0.67,
+   "moveMm": 0.67,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Left gastro-omental vein",
+   "trunk": "Splenic vein",
+   "met": "Splenic vein",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 53,
+   "insideTrunk": false,
+   "gapMm": 13.36,
+   "moveMm": 13.36,
+   "afterSharedMm": 13.36,
+   "rootBend": {
+    "moveMm": 13.36,
+    "widthMm": 20.0
+   }
+  },
+  {
+   "branch": "Left pulmonary artery",
+   "trunk": "Pulmonary trunk",
+   "met": "Pulmonary trunk",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 12,
+   "insideTrunk": false,
+   "gapMm": 1.17,
+   "moveMm": 1.17,
+   "afterSharedMm": 0.2
+  },
+  {
+   "branch": "Left subclavian artery",
+   "trunk": "Aortic arch",
+   "met": "Aortic arch",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 3,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Lingular vein of left lung",
+   "trunk": "Pulmonary vein superior (left)",
+   "met": "Pulmonary vein superior (left)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 73,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Lumbar arteries (left)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 12,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Lumbar arteries (left)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 1,
+   "contactPoints": 5,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Lumbar arteries (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 5,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Lumbar arteries (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 1,
+   "contactPoints": 2,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Lumbar arteries (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 2,
+   "contactPoints": 9,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Lumbar arteries (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 3,
+   "contactPoints": 4,
+   "insideTrunk": false,
+   "gapMm": 0.09,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.21
+  },
+  {
+   "branch": "Medial vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "met": "Pulmonary vein superior (right)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 27,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Middle lobar artery of right lung",
+   "trunk": "Pulmonary artery (right)",
+   "met": "Pulmonary artery (right)",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 16,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Posterior intercostal arteries (left)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 1,
+   "insideTrunk": false,
+   "gapMm": 1.06,
+   "moveMm": 1.06,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Posterior intercostal arteries (left)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 1,
+   "contactPoints": 3,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Posterior intercostal arteries (left)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 2,
+   "contactPoints": 5,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Posterior intercostal arteries (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 2,
+   "insideTrunk": false,
+   "gapMm": 14.55,
+   "moveMm": 14.55,
+   "afterSharedMm": 2.86,
+   "rootBend": {
+    "moveMm": 2.86,
+    "widthMm": 10.0
+   }
+  },
+  {
+   "branch": "Posterior intercostal arteries (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 1,
+   "contactPoints": 6,
+   "insideTrunk": false,
+   "gapMm": 14.75,
+   "moveMm": 14.75,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Posterior segmental artery of right lung",
+   "trunk": "Pulmonary artery (right)",
+   "met": "Pulmonary artery (right)",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 3,
+   "insideTrunk": false,
+   "gapMm": 0.42,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.41
+  },
+  {
+   "branch": "Posterior vein of right lung",
+   "trunk": "Pulmonary vein superior (right)",
+   "met": "Pulmonary vein superior (right)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 61,
+   "insideTrunk": false,
+   "gapMm": 24.08,
+   "moveMm": 24.08,
+   "afterSharedMm": 24.08,
+   "rootBend": {
+    "moveMm": 24.08,
+    "widthMm": 36.1
+   }
+  },
+  {
+   "branch": "Right ascending lumbar vein",
+   "trunk": "Right common iliac vein",
+   "met": "Right common iliac vein",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 1,
+   "insideTrunk": false,
+   "gapMm": 1.03,
+   "moveMm": 1.03,
+   "afterSharedMm": 1.03,
+   "rootBend": {
+    "moveMm": 1.03,
+    "widthMm": 10.0
+   }
+  },
+  {
+   "branch": "Right brachiocephalic vein",
+   "trunk": "Superior vena cava",
+   "met": "Superior vena cava",
+   "kind": "confluence",
+   "origin": 0,
+   "contactPoints": 18,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Right common carotid artery",
+   "trunk": "Brachiocephalic artery a/Brachiocephalic artery b",
+   "met": "Brachiocephalic artery a/Brachiocephalic artery b",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 16,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Right gastro-omental vein",
+   "trunk": "Superior mesenteric vein",
+   "met": "Superior mesenteric vein",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 53,
+   "insideTrunk": false,
+   "gapMm": 0.31,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.31
+  },
+  {
+   "branch": "Right subclavian artery",
+   "trunk": "Brachiocephalic artery a/Brachiocephalic artery b",
+   "met": "Brachiocephalic artery a/Brachiocephalic artery b",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 5,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Subcostal artery (right)",
+   "trunk": "Descending aorta a/Descending aorta b",
+   "met": "Descending aorta a/Descending aorta b",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 11,
+   "insideTrunk": false,
+   "gapMm": 8.7,
+   "moveMm": 8.7,
+   "afterSharedMm": 1.53
+  },
+  {
+   "branch": "Superior basal vein of left lung",
+   "trunk": "Pulmonary vein inferior (left)",
+   "met": "Pulmonary vein inferior (left)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 20,
+   "insideTrunk": false,
+   "gapMm": 0.8,
+   "moveMm": 0.8,
+   "afterSharedMm": 0.8,
+   "rootBend": {
+    "moveMm": 0.8,
+    "widthMm": 10.0
+   }
+  },
+  {
+   "branch": "Superior basal vein of right lung",
+   "trunk": "Pulmonary vein inferior (right)",
+   "met": "Pulmonary vein inferior (right)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 111,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Superior gluteal veins (left)",
+   "trunk": "Internal iliac vein (left)",
+   "met": "Internal iliac vein (left)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 24,
+   "insideTrunk": false,
+   "gapMm": 25.93,
+   "moveMm": 25.93,
+   "afterSharedMm": 25.93,
+   "rootBend": {
+    "moveMm": 25.93,
+    "widthMm": 38.9
+   }
+  },
+  {
+   "branch": "Superior gluteal veins (right)",
+   "trunk": "Internal iliac vein (right)",
+   "met": "Internal iliac vein (right)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 24,
+   "insideTrunk": false,
+   "gapMm": 12.77,
+   "moveMm": 12.77,
+   "afterSharedMm": 12.77,
+   "rootBend": {
+    "moveMm": 12.77,
+    "widthMm": 19.2
+   }
+  },
+  {
+   "branch": "Superior lobar artery of right lung",
+   "trunk": "Pulmonary artery (right)",
+   "met": "Pulmonary artery (right)",
+   "kind": "branch",
+   "origin": 0,
+   "contactPoints": 3,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Superior lobar artery of right lung",
+   "trunk": "Pulmonary artery (right)",
+   "met": "Pulmonary artery (right)",
+   "kind": "branch",
+   "origin": 1,
+   "contactPoints": 1,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Superior lobar artery of right lung",
+   "trunk": "Pulmonary artery (right)",
+   "met": "Pulmonary artery (right)",
+   "kind": "branch",
+   "origin": 2,
+   "contactPoints": 1,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Superior lobar artery of right lung",
+   "trunk": "Pulmonary artery (right)",
+   "met": "Pulmonary artery (right)",
+   "kind": "branch",
+   "origin": 3,
+   "contactPoints": 3,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Superior lobar artery of right lung",
+   "trunk": "Pulmonary artery (right)",
+   "met": "Pulmonary artery (right)",
+   "kind": "branch",
+   "origin": 4,
+   "contactPoints": 1,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  },
+  {
+   "branch": "Superior vein of left lung",
+   "trunk": "Pulmonary vein inferior (left)",
+   "met": "Pulmonary vein inferior (left)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 36,
+   "insideTrunk": false,
+   "gapMm": 3.51,
+   "moveMm": 3.51,
+   "afterSharedMm": 3.51,
+   "rootBend": {
+    "moveMm": 3.51,
+    "widthMm": 10.0
+   }
+  },
+  {
+   "branch": "Superior vein of right lung",
+   "trunk": "Pulmonary vein inferior (right)",
+   "met": "Pulmonary vein inferior (right)",
+   "kind": "tributary",
+   "origin": 0,
+   "contactPoints": 12,
+   "insideTrunk": true,
+   "gapMm": 0.0,
+   "moveMm": 0.0,
+   "afterSharedMm": 0.0
+  }
+ ]
+}

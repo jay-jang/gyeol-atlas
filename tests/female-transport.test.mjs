@@ -87,9 +87,28 @@ test("the registration field fits the female skin and bones without folding", ()
   assert.ok(fit.guidesExcluded["crosses the female skin"].includes("Occipital bone"));
 });
 
-test("carried vessels join the female trunks they branch from", () => {
+test("carried vessels open into the female vessels they branch from, without turning their walls over", () => {
   const j = read("docs/anatomy-alignment/female-vessel-junctions.json");
-  assert.ok(j.after.medianMm < j.before.medianMm / 2 && j.after.p90Mm < j.before.p90Mm, JSON.stringify({ before: j.before, after: j.after }));
+  const { field, vesselLayer, junctionLayer } = j.stages;
+  // Every branch/tributary that meets a female-modelled vessel in the male source meets it again.
+  assert.equal(junctionLayer.connections.pairs, 47);
+  assert.ok(junctionLayer.connections.over5Mm === 0 && junctionLayer.connections.maxMm < 3, JSON.stringify(junctionLayer.connections));
+  assert.ok(vesselLayer.connections.over5Mm > 10 && field.connections.over5Mm > vesselLayer.connections.over5Mm);
+  // Contacts (an artery on a vein, crossings) are not pulled together, and do not get worse.
+  assert.ok(junctionLayer.contacts.over5Mm <= vesselLayer.contacts.over5Mm);
+  // The junction layer bends vessels along their length: few extra flipped triangles or stretched edges.
+  const d = j.distortion;
+  assert.ok(d.junctionLayer.flippedTriangles - d.vesselLayer.flippedTriangles < 100, JSON.stringify(d));
+  assert.ok((d.junctionLayer.edgesBeyond25pct - d.vesselLayer.edgesBeyond25pct) / d.junctionLayer.edges < 0.005, JSON.stringify(d));
+  // Bending keeps the moved vessels' bone crossings close to before (+5% at most) and records the
+  // companions (artery beside vein, neighbouring tributaries) it separates; none of them is a branch.
+  assert.ok(d.junctionLayer.movedVerticesInsideFemaleBone < d.vesselLayer.movedVerticesInsideFemaleBone * 1.05, JSON.stringify(d));
+  assert.ok(j.carriedContacts.over5MmBefore === 0 && j.carriedContacts.separated.length === j.carriedContacts.over5MmAfter && j.carriedContacts.over5MmAfter <= 12);
+  const layer = read("data/catalog/female-junction-layer.json");
+  // Arteries share one field that never folds; veins bend one by one at their root, gently.
+  assert.deepEqual(Object.keys(layer.layers), ["artery"]);
+  assert.ok(layer.layers.artery.slope.minJacobian > 0 && layer.layers.artery.slope.maxGradient < 1, JSON.stringify(layer.layers.artery.slope));
+  assert.ok(layer.rootBends.length > 0 && layer.rootBends.every((b) => b.widthMm >= 1.5 * b.moveMm - 0.1), "root bends stay gentle");
 });
 
 test("carried structures stay under the female skin and borrowed bones regain their joints", () => {
