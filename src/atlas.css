@@ -12,6 +12,9 @@
   --ax-accent: #6fd3e3;
   --ax-accent-ink: #062028;
   --ax-gold: #eab85c;
+  /* Connective tissue in the scene (src/anatomy-rendering.ts). */
+  --ax-ligament: #a7b9e0;
+  --ax-tendon: #e9edf7;
   --ax-radius: 12px;
   --ax-gap: 14px;
   --ax-header: 52px;
@@ -193,7 +196,12 @@ body:has(.ax) .site-footer { display: none; }
 .ax .layer-dot.vessel { background: #d34b44; }
 .ax .layer-dot.lymph { background: #58c3a0; }
 .ax .layer-dot.nerve { background: #e5c35a; }
-.ax .layer-dot.connective { background: #a9c3d1; }
+.ax .layer-dot.connective { background: linear-gradient(90deg, var(--ax-ligament) 50%, var(--ax-tendon) 50%); }
+.ax .layer-dot.ligament { background: var(--ax-ligament); }
+.ax .layer-dot.tendon { background: var(--ax-tendon); box-shadow: inset -2px -2px 0 rgba(120, 140, 170, .35); }
+.ax .connective-key { list-style: none; margin: 0; padding: 0 0 0 2px; display: grid; gap: 4px; font-size: 13px; }
+.ax .connective-key li { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ax .connective-key small { color: var(--ax-muted); font-size: 12px; }
 
 /* Depth rail: drag, click a system, or solo it */
 .ax-depth {

@@ -109,3 +109,44 @@ test("the ligament-only view isolates the bundle over muscle and bone and return
   assert.equal(fromDetail.detail, null);
   assert.equal(viewReducer(fromDetail, { type: "clear-selection" }).dissection, 42);
 });
+
+test("ligaments and tendons are told apart by colour and finish, by their kind", async () => {
+  const { connectiveGroup, connectiveTone, LIGAMENT_COLOR, TENDON_COLOR, TENDON_KINDS } = await import("../src/anatomy-rendering.ts");
+  assert.deepEqual([...TENDON_KINDS].sort(), ["aponeurosis", "retinaculum", "sheath", "tendon", "tract"]);
+  for (const kind of kinds) assert.ok(["ligament", "tendon"].includes(connectiveGroup(kind)), kind);
+  // Every ligament-file structure is a ligament or joint structure; the tendon file holds four named ligaments.
+  assert.ok(catalog.filter((e) => e.model === "ligament-full.glb").every((e) => connectiveGroup(e.kind) === "ligament"));
+  assert.deepEqual(catalog.filter((e) => e.model === "tendon-full.glb" && connectiveGroup(e.kind) === "ligament").map((e) => e.name).sort(),
+    ["Superficial transverse metacarpal ligament (left)", "Superficial transverse metacarpal ligament (right)", "Superficial transverse metatarsal ligament (left)", "Superficial transverse metatarsal ligament (right)"]);
+  const tags = read("data/connective-tags.json");
+  assert.equal(connectiveGroup(tags.male.FMA258847), "tendon"); // calcaneal tendon
+  assert.equal(connectiveGroup(tags.female.HRAF0395), "tendon"); // HRA quadriceps tendon
+  assert.equal(connectiveGroup(tags.female.HRAF0910), "ligament"); // HRA meniscus
+  // CIEDE2000 between the two and from every colour they sit beside.
+  const lab = (hex) => {
+    const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
+    const f = (t) => (t > 216 / 24389 ? Math.cbrt(t) : (24389 / 27 * t + 16) / 116);
+    const [x, y, z] = [(r * 0.4124 + g * 0.3576 + b * 0.1805) / 0.95047, r * 0.2126 + g * 0.7152 + b * 0.0722, (r * 0.0193 + g * 0.1192 + b * 0.9505) / 1.08883].map(f);
+    return [116 * y - 16, 500 * (x - y), 200 * (y - z)];
+  };
+  const de2000 = (p, q) => {
+    const [L1, a1, b1] = lab(p), [L2, a2, b2] = lab(q), rad = Math.PI / 180;
+    const Cb = (Math.hypot(a1, b1) + Math.hypot(a2, b2)) / 2, G = 0.5 * (1 - Math.sqrt(Cb ** 7 / (Cb ** 7 + 25 ** 7)));
+    const A1 = (1 + G) * a1, A2 = (1 + G) * a2, C1 = Math.hypot(A1, b1), C2 = Math.hypot(A2, b2);
+    let h1 = Math.atan2(b1, A1) / rad; if (h1 < 0) h1 += 360; let h2 = Math.atan2(b2, A2) / rad; if (h2 < 0) h2 += 360;
+    let dh = C1 * C2 === 0 ? 0 : h2 - h1; if (dh > 180) dh -= 360; else if (dh < -180) dh += 360;
+    const dH = 2 * Math.sqrt(C1 * C2) * Math.sin((dh * rad) / 2), Lb = (L1 + L2) / 2, Cp = (C1 + C2) / 2;
+    const hb = C1 * C2 === 0 ? h1 + h2 : Math.abs(h1 - h2) > 180 ? (h1 + h2 + 360) / 2 : (h1 + h2) / 2;
+    const T = 1 - 0.17 * Math.cos((hb - 30) * rad) + 0.24 * Math.cos(2 * hb * rad) + 0.32 * Math.cos((3 * hb + 6) * rad) - 0.2 * Math.cos((4 * hb - 63) * rad);
+    const SL = 1 + (0.015 * (Lb - 50) ** 2) / Math.sqrt(20 + (Lb - 50) ** 2), SC = 1 + 0.045 * Cp, SH = 1 + 0.015 * Cp * T;
+    const RT = -2 * Math.sqrt(Cp ** 7 / (Cp ** 7 + 25 ** 7)) * Math.sin(60 * Math.exp(-(((hb - 275) / 25) ** 2)) * rad);
+    return Math.sqrt(((L2 - L1) / SL) ** 2 + ((C2 - C1) / SC) ** 2 + (dH / SH) ** 2 + RT * ((C2 - C1) / SC) * (dH / SH));
+  };
+  assert.ok(de2000(LIGAMENT_COLOR, TENDON_COLOR) > 15); // 16.0, plus about 19 L* of lightness and a different finish
+  const beside = { bone: "#e8dec5", borrowedBone: "#9aa7b1", muscle: "#b43f3f", skin: "#b9826f", vein: "#356fb3", selection: "#34d3dd", comparison: "#e5b24f" };
+  for (const [name, hex] of Object.entries(beside)) for (const c of [LIGAMENT_COLOR, TENDON_COLOR]) assert.ok(de2000(c, hex) > 10, `${c} vs ${name}`);
+  assert.ok(connectiveTone("tendon").roughness < connectiveTone("ligament").roughness, "tendons glisten, ligaments are matte");
+  // The legend swatches use the same colours.
+  const css = fs.readFileSync("src/atlas.css", "utf8");
+  assert.ok(css.includes(`--ax-ligament: ${LIGAMENT_COLOR};`) && css.includes(`--ax-tendon: ${TENDON_COLOR};`));
+});

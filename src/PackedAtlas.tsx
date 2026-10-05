@@ -8,7 +8,7 @@ import { connectiveKindOf, dissectionLayerOpacity, layerKeys, structures, type L
 import type { AtlasProps } from "./Atlas";
 import { musclePeelOpacity } from "./dissection";
 import { musclePeelRanks } from "./muscle-peel";
-import { CONNECTIVE_COLOR, SKIN_COLOR, SURFACE_TONES, clippingPlanes, configurePicking, releasedDrag, type SceneClick } from "./anatomy-rendering";
+import { SKIN_COLOR, SURFACE_TONES, clippingPlanes, configurePicking, connectiveTone, releasedDrag, type SceneClick } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { applyFemaleArmRegistration } from "./female-arm-registration";
 import { applyFemaleFootRegistration } from "./female-foot-registration";
@@ -187,7 +187,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       item.visible = item.visible && !donorSelected;
       item.visible = item.visible && (!props.detailIds.length || props.detailIds.includes(item.name));
       if (props.sex === "male" && !props.detailIds.length) item.visible = item.visible && selected;
-      const connective = Boolean(connectiveKindOf(item.name));
+      const kind = connectiveKindOf(item.name), connective = Boolean(kind);
       if (connective && !props.connective && !selected) item.visible = false;
       if (item.visible) counts[layer]++;
       if (item.visible && item.userData.transport) transportVisible++;
@@ -196,7 +196,9 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       const vein = part?.system === "venous" || (transported && layer === "vessel" && /vein|vena cava/i.test(catalogById.get(item.name)?.name || ""));
       const entry = catalogById.get(item.name) as { surfaceTone?: boolean } | undefined;
       const tone = !selected && !highlighted && skinOpaque && (SURFACE_TONES[item.name] || entry?.surfaceTone || placementTones.has(item.name)) ? SKIN_COLOR : undefined;
-      material.color.set(selected && props.selectionIds.length === 1 ? "#34d3dd" : highlighted ? "#e5b24f" : tone ?? (connective ? CONNECTIVE_COLOR : vein ? "#356fb3" : part?.system === "borrowed" || (transported && layer === "bone") ? "#9aa7b1" : layerColor[layer]));
+      const finish = connective ? connectiveTone(kind) : undefined;
+      material.color.set(selected && props.selectionIds.length === 1 ? "#34d3dd" : highlighted ? "#e5b24f" : tone ?? (finish ? finish.color : vein ? "#356fb3" : part?.system === "borrowed" || (transported && layer === "bone") ? "#9aa7b1" : layerColor[layer]));
+      if (finish) { material.roughness = finish.roughness; material.metalness = finish.metalness; }
       material.opacity = selectionOpacity(props.layerOpacity[layer] * depthAlpha, selected, props.contextDimmed);
       const planes = clippingPlanes(layer, props);
       const transparent = !opacityWritesDepth(material.opacity);

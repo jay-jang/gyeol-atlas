@@ -1,5 +1,6 @@
 import type { Dispatch } from "react";
-import { connectiveIdsForSex, layerKeys, layerNames, stageDescription } from "./anatomy";
+import { connectiveIdsForSex, connectiveKindOf, layerKeys, layerNames, stageDescription } from "./anatomy";
+import { connectiveGroup } from "./anatomy-rendering";
 import type { ViewState, ViewAction } from "./view-state";
 // Display settings for the atlas: per-system layers and opacity, acupoint
 // markers, click target and the front cutaway. Sex and body region live in
@@ -14,6 +15,7 @@ export default function AnatomyControls({
   onDone: () => void;
 }) {
   const connectiveIds = connectiveIdsForSex(state.sex);
+  const tendonCount = connectiveIds.filter((id) => connectiveGroup(connectiveKindOf(id)) === "tendon").length;
   const scopeControls = state.sex === "female" ? <div className="anatomy-scope-controls">
     <p className="control-hint">HRA 여성 전신과 여성 CT 보완 상세는 서로 다른 신체 자료입니다. 위·부신·식도 구간·등 근육군 구간은 검색하거나 주요 기관에서 별도 CT 모형으로 볼 수 있습니다. 근육·팔다리 혈관·말초신경·인대·힘줄·전신 림프절은 남성 원본을 여성 고유 뼈·피부에 맞춘 하나의 정합장으로 옮긴 보완이며, 회청색 보완 골격 180개도 같은 정합장으로 놓았습니다. 여성 고유 형상이 아닙니다. 별도 Visible Human Female 하체 근육은 검색할 때만 보입니다. 여성 경혈 좌표는 검수 전이므로 표식을 숨깁니다.</p>
   </div> : null;
@@ -72,13 +74,17 @@ export default function AnatomyControls({
           <i className="layer-dot connective" />
           인대·힘줄 표시 <small>{connectiveIds.length}개</small>
         </label>
+        <ul className="connective-key" aria-label="인대와 힘줄의 색 구분">
+          <li><i className="layer-dot ligament" />인대·관절 구조 <small>{connectiveIds.length - tendonCount}개 · 무광 연청색</small></li>
+          <li><i className="layer-dot tendon" />힘줄·힘줄집·지지띠 <small>{tendonCount}개 · 윤기 있는 진주색</small></li>
+        </ul>
         <button onClick={() => { dispatch({ type: "connective-only", ids: connectiveIds }); onDone(); }}>
           인대·힘줄만 보기
         </button>
         <p className="control-hint">
           {state.sex === "male"
-            ? "관절 인대·관절주머니·반달연골과 따로 모델링된 힘줄·널힘줄·지지띠·힘줄집입니다. 인대는 골격과 함께, 힘줄은 근육과 함께 박리됩니다. 대부분의 힘줄은 원본에서 근육 모형에 포함되어 따로 보이지 않습니다."
-            : "무릎 인대·반달연골과 넙다리네갈래근 힘줄은 여성 원본이고, 나머지 관절 인대·힘줄은 남성 원본을 여성 몸에 맞춰 옮긴 보완입니다. 인대는 골격과 함께, 힘줄은 근육과 함께 박리됩니다."}
+            ? "뼈와 뼈를 잇는 관절 인대·관절주머니·반달연골은 연청색, 근육을 뼈에 잇는 따로 모델링된 힘줄과 널힘줄·지지띠·힘줄집은 진주색으로 그립니다. 인대는 골격과 함께, 힘줄은 근육과 함께 박리됩니다. 대부분의 힘줄은 원본에서 근육 모형에 포함되어 근육색으로 보입니다."
+            : "뼈와 뼈를 잇는 인대·반달연골은 연청색, 근육을 뼈에 잇는 힘줄은 진주색입니다. 무릎 인대·반달연골과 넙다리네갈래근 힘줄은 여성 원본이고, 나머지는 남성 원본을 여성 몸에 맞춰 옮긴 보완입니다. 인대는 골격과 함께, 힘줄은 근육과 함께 박리됩니다."}
         </p>
       </div>
       <label className="setting-check">

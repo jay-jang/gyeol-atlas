@@ -754,8 +754,8 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               {selectedAnatomy?.description && sourceKey !== "female-detail" && <p className="selection-description">{selectedAnatomy.description}</p>}
               {selectedAnatomy?.id.startsWith("VHF") && <p className="selection-description" data-donor-muscle-note>별도 Visible Human Female 기증자 다리 근육입니다. 전신 정합이 끝나지 않아 개요에서는 숨기고, 개요의 다리 근육은 남성 원본을 여성 몸에 맞춰 옮긴 보완으로 보여 줍니다.</p>}
               {connectiveBundle && <p className="selection-description">{state.sex === "male"
-                ? "원본에 따로 모델링된 인대·관절 구조와 힘줄·힘줄집만 모았습니다. 대부분의 힘줄은 근육 모형에 포함되어 있어 이 묶음에 없습니다. 인대는 두 원본이 공유하는 골격에 맞춘 전신 보정만 적용했으며 구조별 정합은 하지 않았습니다."
-                : "여성 원본의 무릎 인대·반달연골·넙다리네갈래근 힘줄과, 남성 원본에 따로 모델링된 관절 인대·힘줄을 여성 골격·피부 대응으로 옮긴 보완을 모았습니다. 옮긴 구조는 여성 고유 형상이 아닙니다."}</p>}
+                ? "원본에 따로 모델링된 인대·관절 구조(연청색)와 힘줄·힘줄집(진주색)만 모았습니다. 대부분의 힘줄은 근육 모형에 포함되어 있어 이 묶음에 없습니다. 인대는 두 원본이 공유하는 골격에 맞춘 전신 보정만 적용했으며 구조별 정합은 하지 않았습니다."
+                : "여성 원본의 무릎 인대·반달연골·넙다리네갈래근 힘줄과, 남성 원본에 따로 모델링된 관절 인대·힘줄을 여성 골격·피부 대응으로 옮긴 보완을 모았습니다. 인대·관절 구조는 연청색, 힘줄 계열은 진주색입니다. 옮긴 구조는 여성 고유 형상이 아닙니다."}</p>}
               {selectedAnatomy?.latin && <small className="selection-latin">TA2 · {selectedAnatomy.latin}</small>}
               {selectedAnatomy?.source && sourceKey !== "female-detail" && <small className="selection-source">{selectedAnatomy.source} · 학습용 비진단 모델</small>}
               {selectedComposite && <details className="anatomy-source-details" data-composite-provenance>

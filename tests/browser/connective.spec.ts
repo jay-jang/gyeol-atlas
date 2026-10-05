@@ -1,6 +1,7 @@
 import {test,expect,type Page} from '@playwright/test';
 import fs from 'node:fs';
 import {ready,snapshot,closeTool,settledCamera} from './helpers';
+import {LIGAMENT_COLOR,TENDON_COLOR,connectiveGroup} from '../../src/anatomy-rendering';
 const read=(p:string)=>JSON.parse(fs.readFileSync(p,'utf8'));
 const catalog:{id:string;model:string}[]=read('data/connective-structures.json');
 const tags=read('data/connective-tags.json');
@@ -88,4 +89,37 @@ test('the ligament setting and its view fit a phone without replacing the scene'
   await expect(card.getByRole('button',{name:'구조 선택 해제',exact:true})).toBeInViewport();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await page.screenshot({path:'docs/anatomy-expansion/connective-only-mobile.png'});
+});
+
+test('ligaments and tendons are drawn apart in both bodies and the display settings name the two',async({page})=>{
+  test.setTimeout(240000);
+  let url='';page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))url=r.url();});
+  const kinds:Record<string,string>={...Object.fromEntries(catalog.map((e:any)=>[e.id,e.kind])),...tags.male,...tags.female};
+  const material=(ids:string[])=>page.evaluate(async({url,ids})=>{
+    const {_roots}=await import(/* @vite-ignore */url),s=_roots.get(document.querySelector('canvas')!).store.getState();
+    return Object.fromEntries(ids.map(id=>{const o=s.scene.getObjectByName(id);return [id,o&&{color:'#'+o.material.color.getHexString(),roughness:o.material.roughness}];}));
+  },{url,ids});
+  await page.goto('/');await ready(page);
+  await openDisplay(page);
+  const key=page.getByRole('list',{name:'인대와 힘줄의 색 구분'});
+  const tendons=[...maleIds].filter(id=>connectiveGroup(kinds[id])==='tendon').length;
+  await expect(key).toContainText(`인대·관절 구조 ${maleIds.size-tendons}개`);
+  await expect(key).toContainText(`힘줄·힘줄집·지지띠 ${tendons}개`);
+  await page.getByRole('button',{name:'인대·힘줄만 보기'}).click();await ready(page);
+  // Supplements (ligament and tendon files) and tagged base meshes alike.
+  const male=await material(['ZA_ligament_anterior_cruciate_ligament_r','ZA_tendon_synovial_sheaths_of_digits_of_hand_r','FMA258847','FMA44249']);
+  for(const id of ['ZA_ligament_anterior_cruciate_ligament_r','FMA44249'])expect(male[id]?.color,id).toBe(LIGAMENT_COLOR);
+  for(const id of ['ZA_tendon_synovial_sheaths_of_digits_of_hand_r','FMA258847'])expect(male[id]?.color,id).toBe(TENDON_COLOR);
+  expect(male.FMA258847!.roughness).toBeLessThan(male.FMA44249!.roughness);
+  await page.screenshot({path:'docs/anatomy-expansion/connective-kinds-male-desktop.png'});
+  await page.getByRole('button',{name:'구조 선택 해제',exact:true}).click();await ready(page);
+  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
+  await openDisplay(page);await page.getByRole('button',{name:'인대·힘줄만 보기'}).click();await ready(page);
+  // HRA knee: quadriceps tendon vs ligament and meniscus; carried: a joint capsule vs a tendon sheath.
+  const female=await material(['HRAF0395','HRAF0904','HRAF0910','FT_ZA_ligament_articular_capsule_of_acromioclavicular_joint_l','FT_ZA_tendon_synovial_sheaths_of_digits_of_hand_r']);
+  for(const id of ['HRAF0904','HRAF0910','FT_ZA_ligament_articular_capsule_of_acromioclavicular_joint_l'])expect(female[id]?.color,id).toBe(LIGAMENT_COLOR);
+  for(const id of ['HRAF0395','FT_ZA_tendon_synovial_sheaths_of_digits_of_hand_r'])expect(female[id]?.color,id).toBe(TENDON_COLOR);
+  await page.setViewportSize({width:390,height:844});
+  await openDisplay(page);await key.scrollIntoViewIfNeeded();await expect(key).toBeInViewport();
+  await page.screenshot({path:'docs/anatomy-expansion/connective-kinds-female-mobile.png'});
 });

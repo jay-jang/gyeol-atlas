@@ -49,7 +49,7 @@ import maleRegistration from "../data/catalog/male-registration.json";
 import { movementKeys, translateView, type MoveDirection } from "./navigation";
 import { LoaderCircle, TriangleAlert } from "lucide-react";
 import PackedAtlas from "./PackedAtlas";
-import { CONNECTIVE_COLOR, SKIN_COLOR, SURFACE_TONES, clippingPlanes, configurePicking, isSupplementEyePart, releasedDrag, type SceneClick } from "./anatomy-rendering";
+import { SKIN_COLOR, SURFACE_TONES, clippingPlanes, configurePicking, connectiveTone, isSupplementEyePart, releasedDrag, type SceneClick } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { framedDistance } from "./camera-framing";
 import { musclePeelRanks } from "./muscle-peel";
@@ -402,7 +402,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       // Use a single whole-body vascular/neural source in the overview. Retain
       // original BodyParts3D meshes for explicit searches and organ details.
       if ((layer === "nerve" || layer === "vessel") && !selected && !props.detailIds.includes(id)) o.visible = false;
-      const connective = Boolean(connectiveKindOf(id));
+      const kind = connectiveKindOf(id), connective = Boolean(kind);
       if (connective && !props.connective && !selected) o.visible = false;
       if (props.modesty && !selected && isGenitalStructure(id, structureById.get(id)?.name)) o.visible = false;
       if (o.visible) visibleCount++;
@@ -413,7 +413,9 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       const material = o.material as MeshStandardMaterial;
       configurePicking(o, layer, props.selectionTarget);
       const tone = !selected && skinOpaque ? SURFACE_TONES[id] : undefined;
-      material.color.set(emphasis ? emphasis : connective ? CONNECTIVE_COLOR : tone ?? clinicalColor(layer, vessel));
+      const finish = connective ? connectiveTone(kind) : undefined;
+      material.color.set(emphasis ? emphasis : finish ? finish.color : tone ?? clinicalColor(layer, vessel));
+      if (finish) { material.roughness = finish.roughness; material.metalness = finish.metalness; }
       const transparent = !opacityWritesDepth(alpha);
       const planes = clippingPlanes(layer, props);
       const clipping = planes.length > 0;
@@ -475,7 +477,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     />
   );
 }
-type SupplementEntry = { id: string; node: string; name: string; layer: string };
+type SupplementEntry = { id: string; node: string; name: string; layer: string; kind?: string };
 // A whole-body Z-Anatomy export placed with the male registration. Only the
 // catalogued nodes of this system are shown; the rest of the file stays hidden.
 function SupplementModel({ url, layer, entries, color, connective = false, signalsReady, props }: {
@@ -497,7 +499,8 @@ function SupplementModel({ url, layer, entries, color, connective = false, signa
       item.userData.entry = entry;
       item.visible = Boolean(entry);
       if (entry) item.name = entry.id;
-      item.material = new MeshStandardMaterial({ roughness: connective ? 0.58 : 0.76, side: DoubleSide });
+      const finish = connective ? connectiveTone(entry?.kind) : undefined;
+      item.material = new MeshStandardMaterial({ roughness: finish?.roughness ?? 0.76, metalness: finish?.metalness ?? 0, side: DoubleSide });
     });
     return clone;
   }, [model.scene, entries, connective]);
@@ -566,8 +569,9 @@ function WholeBodySupplement({ layer, props }: { layer: "nerve" | "vessel"; prop
     color={layer === "nerve" ? nerveColor : vesselColor} signalsReady props={props} />;
 }
 // Ligaments and joint structures peel with the skeleton; separately modelled
-// tendons, retinacula and tendon sheaths with the muscles.
-const connectiveColor = () => CONNECTIVE_COLOR;
+// tendons, retinacula and tendon sheaths with the muscles. Each is coloured
+// by its kind (a few ligaments ship in the tendon file).
+const connectiveColor = (entry: SupplementEntry | undefined) => connectiveTone(entry?.kind).color;
 const connectiveEntries = {
   bone: connectiveStructures.filter((item) => item.model === "ligament-full.glb"),
   muscle: connectiveStructures.filter((item) => item.model === "tendon-full.glb"),

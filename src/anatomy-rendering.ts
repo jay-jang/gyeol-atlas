@@ -1,6 +1,17 @@
-// Ligaments, joint structures and tendons: pale steel, apart from ivory bone
-// and red muscle, and from the cyan selection and gold comparison emphasis.
-export const CONNECTIVE_COLOR = "#a9c3d1";
+// Ligaments and joint structures (bone to bone) are matte periwinkle steel.
+// Tendons (muscle to bone) and what carries or holds them (aponeuroses,
+// tendon sheaths, retinacula, the iliotibial tract) are glistening pearl, as
+// tendons are drawn against red muscle. Colour follows the kind; peeling still
+// follows the source file. Both stay apart from ivory bone, the grey-blue borrowed bones, red
+// muscle and the cyan/gold emphasis (CIEDE2000 >= 11.6 from each; 16 apart,
+// with ~19 L* of lightness between them and a different finish).
+export const LIGAMENT_COLOR = "#a7b9e0";
+export const TENDON_COLOR = "#e9edf7";
+export const TENDON_KINDS = new Set(["tendon", "aponeurosis", "sheath", "retinaculum", "tract"]);
+export const connectiveGroup = (kind: string | undefined): "tendon" | "ligament" => (kind && TENDON_KINDS.has(kind) ? "tendon" : "ligament");
+export const connectiveTone = (kind: string | undefined) => connectiveGroup(kind) === "tendon"
+  ? { color: TENDON_COLOR, roughness: 0.32, metalness: 0.06 }
+  : { color: LIGAMENT_COLOR, roughness: 0.82, metalness: 0 };
 export const SKIN_COLOR = "#b9826f";
 // BodyParts3D meshes that are themselves the outer surface of the face:
 // the auricle and lips are skin-covered in the body, and the eye shows its
