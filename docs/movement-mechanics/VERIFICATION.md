@@ -33,6 +33,16 @@
 | 동작 페이지 촬영 `scripts/capture-movement.mjs` | 72장, 가로 넘침 0, 페이지 오류 0, 글자 표본 43,205건 ≥12px·≥4.5:1, 도식 선 912건 ≥3:1, 도식 이름표 잘림 0. 육안 검토: 데스크톱·노트북·태블릿·휴대폰·작은 휴대폰·가로 휴대폰 | `screens/`, `readability.json`(화면별 최솟값·가장 낮은 표본), `checks/capture-final.log` |
 | 근육 박리 감사(`Atlas.tsx` 해시) | 남녀 위반 0, 해시 갱신 | `checks/muscle-peel.log`, `docs/anatomy-alignment/muscle-peel-audit.json` |
 
+## 공개 배포 확인 (2026-10-18)
+
+커밋 `bbaf710`을 `main`에 푸시하고 GitHub Pages 배포(build·deploy 성공) 뒤 공개 주소 `https://jay-jang.github.io/gyeol-atlas/`에서 확인했습니다.
+
+| 검사 | 결과 | 기록 |
+| --- | --- | --- |
+| 공개 스모크 `scripts/smoke-pages.mjs` | 통과. 하위 경로의 `#movement`·걷기·팔 들기에서 모델·Atlas 요청 0, 위키 정적 검색, 경혈 409개, 여성 1,220+1,789 부품, 오류·4xx 0 | `checks/pages-smoke.log`, `docs/acupoint-expansion/pages-verification.json` |
+| 공개 겹침 감사 `SMOKE_ORIGIN=… npm run audit:overlays` | 8화면 × 11상태 통과 | `checks/pages-overlays.log` |
+| 공개 동작 페이지 육안 | 1440×900·360×740 걷기 말기 입각기: 페이지 오류 0, 가로 넘침 0, 360px 헤더 링크 각 한 줄 | — |
+
 ## 검토 결과
 
 세 검토자 모두 구현을 최종 승인했습니다(Claude·AGY 확인 1차, Codex 확인 3차). 과정은 [REVIEW.md](REVIEW.md)에 있습니다.
@@ -58,4 +68,4 @@
 - 팔 들기는 McClure 2001(8명) 그림 판독값이며, 어깨 3축 운동을 한 면에 투영했습니다.
 - 여성 보기는 남성 원본을 옮긴 보완(`FT_`)과 데이터에 명시한 전체 일치 대응만 엽니다: 넙다리곧은근 HRAF0396/HRAF0394(일어서기·앉기, 걷기는 오른쪽만), 팔 들어올리기의 오른쪽 빗장뼈·어깨뼈·위팔뼈 BM0113/BM0119/BM0115(여성 카탈로그의 BodyParts3D 차용 뼈). 둘 다 없는 행(예: 넙다리뼈 `femur-right` 묶음은 대응을 넣지 않음)은 ‘남성 모델에서 보기’를 보입니다. 별도 기증자 VHF 하체 근육은 대응으로 쓰지 않습니다.
 - 브라우저 검사가 실제로 아틀라스에서 연 링크는 남성 엉덩넙다리인대(인대·힘줄 표시 끔)·큰볼기근 좌우 쌍, 여성 FT_ 발꿈치힘줄입니다. 나머지 링크는 단위 검사로 id가 카탈로그에 있고 계통이 맞는지만 확인했습니다.
-- 공개 배포 확인은 커밋·푸시 뒤 공개 주소에서 `scripts/smoke-pages.mjs`(동작 경로 포함)로 따로 기록합니다.
+- 공개 확인은 데스크톱 Chromium(GPU) 한 환경에서 했습니다.
