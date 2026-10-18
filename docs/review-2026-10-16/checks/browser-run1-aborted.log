@@ -1,0 +1,237 @@
+
+Running 128 tests using 1 worker
+
+[1/128] tests/browser/acupoints.spec.ts:5:1 › 409 points, extra-point regional meshes, multiple locations and theory survive wiki return
+[2/128] tests/browser/acupoints.spec.ts:35:1 › mobile regions and 34-site Jiaji retain the scene and expose sourced content
+  1) tests/browser/acupoints.spec.ts:35:1 › mobile regions and 34-site Jiaji retain the scene and expose sourced content 
+
+    Test timeout of 150000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 150000ms exceeded.
+    Call log:
+      - waiting for getByLabel('모델 부위 선택')
+        - locator resolved to <select aria-label="모델 부위 선택">…</select>
+      - attempting select option action
+        2 × waiting for element to be visible and enabled
+          - element is not visible
+        - retrying select option action
+        - waiting 20ms
+        2 × waiting for element to be visible and enabled
+          - element is not visible
+        - retrying select option action
+          - waiting 100ms
+        288 × waiting for element to be visible and enabled
+            - element is not visible
+          - retrying select option action
+            - waiting 500ms
+
+
+      35 | test('mobile regions and 34-site Jiaji retain the scene and expose sourced content', async ({page}) => {
+      36 |   await page.setViewportSize({width:390,height:844}); await page.goto('/'); await ready(page);
+    > 37 |   await openTool(page,'경혈 찾기'); await page.getByLabel('모델 부위 선택').selectOption('등·허리');
+         |                                                                   ^
+      38 |   await page.getByLabel('경혈 검색').fill('협척');
+      39 |   await expect(page.locator('.point-item')).toHaveCount(1);
+      40 |   await expect(page.locator('canvas')).toHaveAttribute('data-rendered-markers','34');
+        at /Users/nuinuri/workspace/anatomy/tests/browser/acupoints.spec.ts:37:67
+
+    Error Context: test-results/acupoints-mobile-regions-a-bb4c5--and-expose-sourced-content/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/acupoints-mobile-regions-a-bb4c5--and-expose-sourced-content/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/acupoints-mobile-regions-a-bb4c5--and-expose-sourced-content/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[3/128] tests/browser/acupoints.spec.ts:53:1 › the acupoint bar names meridians in Korean and still filters by meridian
+  2) tests/browser/acupoints.spec.ts:53:1 › the acupoint bar names meridians in Korean and still filters by meridian 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('.ax-meridians button')
+    Timeout: 15000ms
+    - Expected  - 18
+    + Received  +  1
+
+    - Array [
+    -   "전체",
+    -   "폐경",
+    -   "대장경",
+    -   "위경",
+    -   "비경",
+    -   "심경",
+    -   "소장경",
+    -   "방광경",
+    -   "신경(腎)",
+    -   "심포경",
+    -   "삼초경",
+    -   "담경",
+    -   "간경",
+    -   "독맥",
+    -   "임맥",
+    -   "경외기혈",
+    - ]
+    + Array []
+
+    Call log:
+      - Expect "toHaveText" locator('.ax-meridians button') with timeout 15000ms
+      - waiting for locator('.ax-meridians button')
+        34 × locator resolved to 0 elements
+
+
+      54 |   await page.goto('/'); await ready(page);
+      55 |   // The meridian picker lists every meridian with its point count; none is hidden behind a scroll.
+    > 56 |   await page.locator('.ax-meridian-button').click();
+         |                       ^
+      57 |   const chips = page.locator('.ax-meridians button');
+      58 |   await expect(chips).toHaveText(['전체','폐경','대장경','위경','비경','심경','소장경','방광경','신경(腎)','심포경','삼초경','담경','간경','독맥','임맥','경외기혈'].map(name=>new RegExp(`^${name.replace(/[()]/g,'\\$&')}\\d+$`)));
+      59 |   for (const chip of await chips.all()) { expect(await chip.textContent()).not.toMatch(/[A-Z]{2}/); await expect(chip).toBeInViewport(); }
+        at /Users/nuinuri/workspace/anatomy/tests/browser/acupoints.spec.ts:56:23
+
+    Error Context: test-results/acupoints-the-acupoint-bar-95340-d-still-filters-by-meridian/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/acupoints-the-acupoint-bar-95340-d-still-filters-by-meridian/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/acupoints-the-acupoint-bar-95340-d-still-filters-by-meridian/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[4/128] tests/browser/anatomy-region.spec.ts:8:46 › male limb regions agree with search, rendered meshes, peeling and restore
+[5/128] tests/browser/anatomy-region.spec.ts:8:46 › female limb regions agree with search, rendered meshes, peeling and restore
+[6/128] tests/browser/anatomy.spec.ts:4:1 › continuous dissection peels individual muscle meshes and exposes deep systems
+[7/128] tests/browser/anatomy.spec.ts:18:1 › seven real systems and shared layer/isolation transitions; clipping and bilingual structure selection
+[8/128] tests/browser/anatomy.spec.ts:27:1 › hand and foot phalanges are searchable, selectable and frameable
+[9/128] tests/browser/anatomy.spec.ts:33:1 › whole-body vessels and nerves expose names, hierarchy, descriptions and isolation
+  3) tests/browser/anatomy.spec.ts:33:1 › whole-body vessels and nerves expose names, hierarchy, descriptions and isolation 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.structure-item').filter({ has: getByText('왼쪽 좌골신경', { exact: true }) })
+    Expected: 1
+    Received: 0
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.structure-item').filter({ has: getByText('왼쪽 좌골신경', { exact: true }) }) with timeout 15000ms
+      - waiting for locator('.structure-item').filter({ has: getByText('왼쪽 좌골신경', { exact: true }) })
+        34 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      33 | test('whole-body vessels and nerves expose names, hierarchy, descriptions and isolation',async({page})=>{
+      34 |  test.setTimeout(120000);await page.goto('/');await ready(page);
+    > 35 |  await openTool(page,'구조 찾기');await page.getByLabel('경혈·구조 검색').fill('좌골신경');const sciatic=page.locator('.structure-item').filter({has:page.getByText('왼쪽 좌골신경',{exact:true})});await expect(sciatic).toHaveCount(1);await sciatic.click();await ready(page);
+         |                                                                                                                                                                                                       ^
+      36 |  let selected=await snapshot(page);expect(selected.stage).toBe(6);expect(selected.dissection).toBe(95);expect(selected.layers).toEqual({skin:false,muscle:false,bone:false,organ:false,vessel:false,lymph:false,nerve:true});
+      37 |  await expect(page.locator('.selection-card')).toContainText('왼쪽 좌골신경');await expect(page.locator('.selection-card')).toContainText('말초신경계');await expect(page.locator('.selection-card')).toContainText('TA2');await expect(page.locator('.selection-card')).toContainText('Z-Anatomy');
+      38 |  await page.locator('.selection-card').getByRole('button',{name:'확대',exact:true}).click();await page.getByRole('button',{name:'선택 구조만 보기',exact:true}).click();expect((await snapshot(page)).selection.ids[0]).toMatch(/^ZA_nerve_/);await page.locator('canvas').screenshot({path:'docs/ui-renewal/sciatic-nerve-detail.png'});
+        at /Users/nuinuri/workspace/anatomy/tests/browser/anatomy.spec.ts:35:199
+
+    Error Context: test-results/anatomy-whole-body-vessels-a3666--descriptions-and-isolation/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/anatomy-whole-body-vessels-a3666--descriptions-and-isolation/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/anatomy-whole-body-vessels-a3666--descriptions-and-isolation/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[10/128] tests/browser/anatomy.spec.ts:41:1 › male and female references, body regions and lymph structures are independently explorable
+[11/128] tests/browser/anatomy.spec.ts:76:1 › point focus and marker preference survive stage changes
+[12/128] tests/browser/anatomy.spec.ts:80:1 › whole-organ bundles, internal click targeting and wiki/session restoration
+[13/128] tests/browser/anatomy.spec.ts:87:1 › mobile bundle comparison keeps its result visible and avoids page scroll; invalid snapshots recover
+[14/128] tests/browser/anterior-forearm-peel.spec.ts:5:1 › male anterior forearm preserves geometry and peels superficial, intermediate, then deep on desktop and mobile
+[15/128] tests/browser/anterior-thigh-peel.spec.ts:5:1 › female anterior thigh exposes vastus intermedius only after both rectus femoris sources peel
+[16/128] tests/browser/brain-bindings.spec.ts:33:1 › brain source bindings, ray selection and every half-percent peel preserve complete buffers
+tests/browser/brain-bindings.spec.ts:33:1 › brain source bindings, ray selection and every half-percent peel preserve complete buffers
+All 283 brain position/normal/index buffers unchanged at 0%
+
+All 283 brain position/normal/index buffers unchanged at 25%
+
+All 283 brain position/normal/index buffers unchanged at 50%
+
+All 283 brain position/normal/index buffers unchanged at 75%
+
+All 283 brain position/normal/index buffers unchanged at 100%
+
+[17/128] tests/browser/brain-bindings.spec.ts:129:1 › unreviewed female manifest is rejected before geometry download and retry recovers
+[18/128] tests/browser/brain-provenance.spec.ts:5:1 › female reference brain exposes provenance for bundle and individual selections
+[19/128] tests/browser/comparison-clear.spec.ts:4:45 › male: clearing a comparison removes the hidden highlight and survives reload
+[20/128] tests/browser/comparison-clear.spec.ts:4:45 › female: clearing a comparison removes the hidden highlight and survives reload
+[21/128] tests/browser/comparison-layout.spec.ts:6:1 › landscape comparisons and isolated bundles remain clear without changing their memberships
+[22/128] tests/browser/comparison-layout.spec.ts:41:1 › female organ comparisons use the female body and keep the CT stomach one explicit choice away
+[23/128] tests/browser/connective.spec.ts:15:1 › male ligaments and tendons are present, peel with their systems and can be hidden or viewed alone
+[24/128] tests/browser/connective.spec.ts:65:1 › female reference shows its source knee structures and the carried ligaments and tendons
+[25/128] tests/browser/connective.spec.ts:77:1 › the ligament setting and its view fit a phone without replacing the scene
+[26/128] tests/browser/connective.spec.ts:94:1 › ligaments and tendons are drawn apart in both bodies and the display settings name the two
+[27/128] tests/browser/continuity.spec.ts:10:1 › an organ stays in view and selected through peeling, acupoints and clearing
+[28/128] tests/browser/continuity.spec.ts:65:3 › motion › camera moves glide to the same pose that reduced motion jumps to
+[29/128] tests/browser/detail-context.spec.ts:24:29 › male heart: restoring detail context keeps every original member and the selected child
+  4) tests/browser/detail-context.spec.ts:24:29 › male heart: restoring detail context keeps every original member and the selected child 
+
+    Test timeout of 150000ms exceeded.
+
+    Error: locator.click: Test timeout of 150000ms exceeded.
+    Call log:
+      - waiting for locator('.view-presets').getByRole('button', { name: '측면', exact: true })
+
+
+      66 |   await expect.poll(frameError).toBeLessThan(.001);
+      67 |   for(const name of ['후면','측면','정면']){
+    > 68 |     await viewButton(page,name);
+         |                                 ^
+      69 |     await expect.poll(frameError).toBeLessThan(.001);
+      70 |     await expect.poll(async()=>(await projection()).canvasClearance).toBeGreaterThan(0);
+      71 |     await expect.poll(async()=>(await projection()).cardClearance).toBeGreaterThan(0);
+        at /Users/nuinuri/workspace/anatomy/tests/browser/detail-context.spec.ts:68:79
+
+    Error Context: test-results/detail-context-male-heart--ebc08-mber-and-the-selected-child/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/detail-context-male-heart--ebc08-mber-and-the-selected-child/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/detail-context-male-heart--ebc08-mber-and-the-selected-child/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[30/128] tests/browser/detail-context.spec.ts:24:29 › male liver: restoring detail context keeps every original member and the selected child
+  5) tests/browser/detail-context.spec.ts:24:29 › male liver: restoring detail context keeps every original member and the selected child 
+
+    Test timeout of 150000ms exceeded.
+
+    Error: locator.click: Test timeout of 150000ms exceeded.
+    Call log:
+      - waiting for locator('.view-presets').getByRole('button', { name: '측면', exact: true })
+
+
+      66 |   await expect.poll(frameError).toBeLessThan(.001);
+      67 |   for(const name of ['후면','측면','정면']){
+    > 68 |     await viewButton(page,name);
+         |                                 ^
+      69 |     await expect.poll(frameError).toBeLessThan(.001);
+      70 |     await expect.poll(async()=>(await projection()).canvasClearance).toBeGreaterThan(0);
+      71 |     await expect.poll(async()=>(await projection()).cardClearance).toBeGreaterThan(0);
+        at /Users/nuinuri/workspace/anatomy/tests/browser/detail-context.spec.ts:68:79
+
+    Error Context: test-results/detail-context-male-liver--931b4-mber-and-the-selected-child/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/detail-context-male-liver--931b4-mber-and-the-selected-child/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/detail-context-male-liver--931b4-mber-and-the-selected-child/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[31/128] tests/browser/detail-context.spec.ts:24:29 › male lung: restoring detail context keeps every original member and the selected child

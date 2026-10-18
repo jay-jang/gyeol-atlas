@@ -1,0 +1,19 @@
+
+Running 12 tests using 1 worker
+
+(node:25257) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/browser/dissection-input-scope.spec.ts:4:1 › Alt+arrows in a search field do not peel or move the model; canvas focus enables peeling (2.9s)
+  ✓   2 tests/browser/dissection-input-scope.spec.ts:22:1 › horizontal wheel over the depth slider leaves depth and camera unchanged (2.5s)
+  ✓   3 tests/browser/dissection-input-scope.spec.ts:38:1 › movement stops on canvas focus loss even before the held key is released (3.5s)
+  ✓   4 tests/browser/dissection-input-scope.spec.ts:51:1 › small Alt+wheel input on the canvas peels one half-step without zooming (2.8s)
+  ✓   5 tests/browser/panel-keyboard.spec.ts:8:5 › desktop › search shortcut returns to its trigger and idle Escape leaves canvas focus alone (3.3s)
+  ✓   6 tests/browser/panel-keyboard.spec.ts:41:5 › desktop › acupoint detail tabs support arrows, Home/End and labelled content (3.2s)
+  ✓   7 tests/browser/panel-keyboard.spec.ts:8:5 › mobile › search shortcut returns to its trigger and idle Escape leaves canvas focus alone (3.4s)
+  ✓   8 tests/browser/panel-keyboard.spec.ts:41:5 › mobile › acupoint detail tabs support arrows, Home/End and labelled content (3.2s)
+  ✓   9 tests/browser/panel-keyboard.spec.ts:73:3 › desktop: home and history keep the saved comparison's acupoint (5.3s)
+  ✓  10 tests/browser/panel-keyboard.spec.ts:73:3 › mobile: home and history keep the saved comparison's acupoint (4.9s)
+  ✓  11 tests/browser/panel-keyboard.spec.ts:102:1 › an atlas with no selected acupoint does not highlight the fallback ST36 structures (2.8s)
+  ✓  12 tests/browser/panel-keyboard.spec.ts:117:1 › a connective bundle keeps its own isolation label and tooltips describe icon actions (3.0s)
+
+  12 passed (41.2s)

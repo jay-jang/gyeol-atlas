@@ -1,0 +1,22 @@
+### 최종 패치 정적 검토 결과
+
+**1. 확정 P1/P2 잔류 여부: 없음**
+`.cache/review-2026-10-05/implementation.diff` 및 [tests/browser/panel-keyboard.spec.ts](file:///Users/nuinuri/workspace/anatomy/tests/browser/panel-keyboard.spec.ts) 검토 결과, 패치 범위 내 미해결 결함이나 새로운 P1/P2 회귀는 발견되지 않았습니다.
+
+**2. 합의된 8개 요구 충족 검증**
+1. **단축키 및 포커스 동기화**: `skipSearchFocus` ref를 통한 프로그램 포커스 시 `onFocus` 억제와 클릭 시 열기 보장, `/` 호출 시 원래 `triggerRef` 보존이 정확합니다 ([`AtlasPage.tsx`](file:///Users/nuinuri/workspace/anatomy/src/AtlasPage.tsx#L75-L79)).
+2. **Idle Escape 보호**: `panel === null`일 때 조기 리턴하여 캔버스 키보드 제어권을 박탈하지 않습니다.
+3. **모바일 상세 복귀**: 상세 패널 닫기 후 `requestAnimationFrame` 지연 포커스로 칩 재표시 후 정상 복귀합니다.
+4. **상세 탭 접근성**: 좌우 순환, Home/End, roving `tabIndex`, `aria-controls`/`labelledby`, 탭패널 포커스 아웃라인([`design-system.css`](file:///Users/nuinuri/workspace/anatomy/src/design-system.css#L204))이 WAI-ARIA 패턴을 만족합니다.
+5. **여성 CT 선택자 영속성**: `state.comparison.pointId` 및 `state.sex`에서 `comparisonDetailIds`를 동적 도출하여 새로고침·위키 복귀 후에도 CT 버튼이 유지되며 사전 다운로드가 없습니다.
+6. **#atlas 경로 경혈 명칭 보존**: `App.tsx`에서 `viewState.pointId`를 라우트 fallback으로 넘기고, 비교 문구에서 `comparisonPoint.name`을 우선 참조해 ST36 오표기를 방지합니다.
+7. **미선택 초기 강조 제거**: `fallbackPoint`의 `structures`/`landmarks`를 빈 배열로 지정해 비선택 시 ST36 색상 오염을 차단했습니다.
+8. **UI 문구 및 툴팁**: 비교/인대 묶음별 격리 버튼 레이블 세분화 및 닫기/선택해제 아이콘 3종에 `data-tip`을 추가했습니다.
+
+**3. 후속 추적 과제 (합의 범위 외)**
+- 비교 종료 후 `alpha.skin = 0.12` 잔류 시 `ReturnView` 스키마 마이그레이션
+- `displayMode === "layers"`에서 결합조직 단독보기 후 복귀 규칙 및 `reset` 액션 동기화
+- `femaleMarkers` 토글 시 비교 안내 문구 동기화
+
+**4. 최종 승인 및 한계**
+합의된 8개 UI 보정의 구현 및 브라우저 명세 충족을 확인하여 **본 패치를 승인(Approve)**합니다. 본 평가는 소스 코드 및 diff 정적 분석에 기반하며, 실제 런타임 렌더링 검사 및 임상 해부학 검증은 포함하지 않습니다.

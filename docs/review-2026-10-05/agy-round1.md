@@ -1,0 +1,145 @@
+## 1. 현재 상태 요약
+
+- **기준 커밋 및 최신 반영 상태**: HEAD [`0e9ce19`](file:///Users/nuinuri/workspace/anatomy) 기준. 최신 커밋([`3d5fb2b`](file:///Users/nuinuri/workspace/anatomy), [`0e9ce19`](file:///Users/nuinuri/workspace/anatomy))을 통해 인대·관절 구조(연청색 `#a7b9e0`, 거칠기 0.82)와 힘줄·힘줄집 계열(진주색 `#e9edf7`, 거칠기 0.32)의 재질 및 색상 분리가 남녀 공통으로 안정적으로 통합되어 있습니다.
+- **아키텍처 및 상태 흐름**:
+  - 인체 모델 중심 워크스페이스, `/` 단일 검색창, 좌측 깊이 탐색(0~100% 201단계 연속 박리), 하단 경혈/경맥 바, 우측 선택 카드/도구 패널 구조가 유지되고 있습니다.
+  - 모든 계통 전환, 선택, 박리 및 카메라/표식 선호 관리가 [`src/view-state.ts`](file:///Users/nuinuri/workspace/anatomy/src/view-state.ts)의 단일 감축기(`viewReducer`)와 세션 복원기(`restoreView`)를 중심으로 엄격하게 설계되어 있습니다.
+  - 3D 뷰어([`src/Atlas.tsx`](file:///Users/nuinuri/workspace/anatomy/src/Atlas.tsx), [`src/PackedAtlas.tsx`](file:///Users/nuinuri/workspace/anatomy/src/PackedAtlas.tsx))는 UI 상태 변경에 따른 불필요한 리렌더링을 억제하며, 인-플레이스 선택 시 카메라 거리를 유지하고 회전 중심만 이동시키는 피벗 및 뷰 오프셋 슬라이딩이 정밀하게 구현되어 있습니다.
+- **검토 범위 한정**: 본 검토는 읽기 전용 정적 분석으로 수행되었으며, 임의의 모델 수정이나 전체 기하 검증 스크립트 실행은 일절 수행하지 않았습니다.
+
+---
+
+## 2. 재현 가능한 코드 근거 기반 P1/P2 결함 분석 (최대 5건)
+
+### [P1] 여성 장부 비교 시 별도 CT 상세 버튼(`separateDetailIds`)이 새로고침/위키 왕복 시 영구 소실되는 상태 복원 결함
+- **근거 파일 및 줄**:
+  - [`src/AtlasPage.tsx:163`](file:///Users/nuinuri/workspace/anatomy/src/AtlasPage.tsx#L163): `const [separateDetailIds, setSeparateDetailIds] = useState<string[]>([]);`
+  - [`src/AtlasPage.tsx:256-261`](file:///Users/nuinuri/workspace/anatomy/src/AtlasPage.tsx#L256-L261): `compare()` 호출 시에만 `setSeparateDetailIds(separateGroupIds)` 설정
+  - [`src/AtlasPage.tsx:752`](file:///Users/nuinuri/workspace/anatomy/src/AtlasPage.tsx#L752): `{separateDetailIds.length > 0 && " 여성 CT 자료는 아래 별도 상세에서 따로 봅니다."}`
+  - [`src/AtlasPage.tsx:825-827`](file:///Users/nuinuri/workspace/anatomy/src/AtlasPage.tsx#L825-L827): `{state.comparison && featuredAnatomy.filter((group) => separateDetailIds.includes(group.id)).map(...)}`
+- **실제 경로 및 재현**:
+  1. 여성 모델에서 위(胃) 장부 대응 경혈(예: `CV12` 중완) 선택 후 "대응 장부의 해부 구조 비교" 클릭 (`compare` 액션 실행).
+  2. 선택 카드에 남성 원본 보완 위(`FT_FMA7148`) 비교와 함께 `위 (여성 CT) 상세` 진입 버튼 및 안내 문구가 정상 노출됨.
+  3. 이 상태에서 브라우저 새로고침(F5) 또는 상단 헤더의 `#wiki`로 이동했다가 다시 `3D 경혈 지도`로 복귀.
+  4. `view-state.ts`의 `restoreView`는 `state.comparison`을 정상 복원하나, `separateDetailIds`는 `AtlasPage` 컴포넌트의 단순 `useState([])`로 선언되어 있어 빈 배열로 초기화됨.
+  5. 복귀 후 비교 카드는 여전히 열려 있으나, CT 상세 안내 문구와 `위 (여성 CT) 상세` 버튼이 완전히 사라져 사용자가 별도 CT 상세 모델로 진입할 수 없음.
+- **영향 및 위반 기준**:
+  - **Q5 위반**: "위키 왕복과 새로고침이 경혈·레이어·비교·카메라를 복원"
+  - **Q33 위반**: "남성 원본에서 옮긴 기관(위)과 비교할 때는 카드에 그 출처를 적고, 여성 CT 별도 상세는 같은 카드에서 명시적으로 고를 때만 엽니다."
+  - **AGENTS.md 규칙 위반**: "Route all layer, isolation, comparison and marker transitions through `src/view-state.ts`. Do not add an independent control path that bypasses these rules."
+- **확신 및 검증 여부**: **[확신도: 높음 / 코드 정적 검증 완료]** (`separateDetailIds`가 `view-state`에 포함되지 않고 `useState`에만 고립되어 있음을 직접 확인).
+
+---
+
+### [P2] 인대·힘줄 묶음(`CONNECTIVE_BUNDLE`) 선택 시 격리 토글 버튼 문구가 장부 비교용 문구("비교 대상만 보기")로 잘못 노출되는 UI 문맥 결함
+- **근거 파일 및 줄**:
+  - [`src/AtlasPage.tsx:829-835`](file:///Users/nuinuri/workspace/anatomy/src/AtlasPage.tsx#L829-L835):
+    ```tsx
+    {!fullCompositeDetail && !fullLungDetail && <button aria-pressed={state.isolated} onClick={() => {
+      const kind = state.isolated && state.detail ? "fit" : "structure";
+      dispatch({ type: "isolate" });
+      if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
+      isolateCameraFrame.current = requestAnimationFrame(() => { isolateCameraFrame.current = null; camera(kind); });
+    }}>{state.isolated ? "전체 구조 보기" : state.selection.kind === "bundle" ? "비교 대상만 보기" : "선택 구조만 보기"}</button>}
+    ```
+- **실제 경로 및 재현**:
+  1. 표시 설정 패널에서 '인대·힘줄만 보기' 실행 (`connective-only` 액션 디스패치).
+  2. `state.selection`이 `{ kind: "bundle", name: CONNECTIVE_BUNDLE, ... }`, `state.isolated: true`로 진입.
+  3. 선택 카드의 버튼은 `전체 구조 보기`로 표시됨 (`state.isolated === true`).
+  4. 사용자가 인대·힘줄과 함께 전체 골격/근육을 관찰하기 위해 `전체 구조 보기` 버튼을 클릭 (`state.isolated`가 `false`로 토글).
+  5. 이때 버튼 라벨 평가식 `state.selection.kind === "bundle" ? "비교 대상만 보기" : "선택 구조만 보기"`에서 `kind === "bundle"`이 참이므로 버튼이 **"비교 대상만 보기"**로 변경됨.
+- **영향 및 위반 기준**:
+  - 인대·힘줄 묶음은 경혈의 전통 장부 비교(`state.comparison`)가 아님에도 장부 비교용 문구가 노출되어 사용자가 현재 뷰를 장부 비교 모드로 오인하게 됨.
+  - **화면 원칙 위반**: "선택 구조, 전통적 장부 비교, 경혈 참조는 범례·이름·조작 문맥으로 구분합니다."
+  - **AGENTS.md 규칙 위반**: "Distinguish one selected mesh from a complete traditional-organ comparison bundle."
+- **확신 및 검증 여부**: **[확신도: 높음 / 코드 정적 검증 완료]** (`CONNECTIVE_BUNDLE`의 `kind`가 `"bundle"`이며 `state.comparison` 체크가 누락되어 있음을 확인).
+
+---
+
+### [P2] 장부 비교 시작 시 덮어쓴 `alpha.skin = 0.12`가 비교 해제 후 영구 잔류하여 체표 불투명도가 오염되는 결함
+- **근거 파일 및 줄**:
+  - [`src/view-state.ts:357`](file:///Users/nuinuri/workspace/anatomy/src/view-state.ts#L357): `alpha: { ...s.alpha, skin: 0.12 },`
+  - [`src/view-state.ts:376-377`](file:///Users/nuinuri/workspace/anatomy/src/view-state.ts#L376-L377):
+    ```ts
+    case "clear-selection":
+      return s.detail ? closeDetail(s) : { ...s, ...(s.selectionReturn ? sceneOf(s.selectionReturn) : {}), selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false };
+    ```
+- **실제 경로 및 재현**:
+  1. 기본 뷰 상태(`state.alpha.skin === 1.0`)에서 경혈의 장부 비교 실행 (`compare` 액션).
+  2. `case "compare"`는 내부 장기를 피부 너머로 투과해 보여주기 위해 `alpha.skin`을 0.12로 직접 덮어쓰고, `selectionReturn: null`로 설정함.
+  3. 사용자가 선택 카드의 X 버튼을 눌러 비교를 해제(`clear-selection`).
+  4. `selectionReturn`이 `null`이므로 이전 `alpha`가 복원되지 않고 `state.alpha.skin`이 0.12로 영구 잔류함.
+  5. 사용자가 박리 슬라이더를 0%로 되돌리거나 표시 설정 패널을 열었을 때, 체표 불투명도가 영구적으로 12%로 고정되어 첫 화면 원칙인 온전한 체표 모델 관찰이 방해됨.
+- **영향 및 위반 기준**:
+  - **Q1 / Q2 위반**: 계통 및 선택 해제 경로에서 사용자의 보기 선호가 비정상 변경됨.
+  - **선택 맥락 원칙 위반**: [`src/selection-context.ts:3`](file:///Users/nuinuri/workspace/anatomy/src/selection-context.ts#L3) 주석("A temporary visual aid, not tissue depth or a change to the user's alpha")에 반하여 일시적 관찰 보조 투명도가 사용자의 영구 설정값으로 누수됨.
+- **확신 및 검증 여부**: **[확신도: 높음 / 코드 정적 검증 완료]** (`compare` 시 `alpha.skin` 직접 변형 및 복원 경로 부재 확인).
+
+---
+
+### [P2] `viewReducer`의 `"reset"` 액션 실행 시 인대·힘줄 표시 선호(`connective`)가 유실되는 Q27 위반 결함
+- **근거 파일 및 줄**:
+  - [`src/view-state.ts:390-393`](file:///Users/nuinuri/workspace/anatomy/src/view-state.ts#L390-L393):
+    ```ts
+    case "reset":
+      // Covering the genitalia is the viewer's preference, not part of the view.
+      return { ...initialView(s.pointId), modesty: s.modesty };
+    ```
+- **실제 경로 및 재현**:
+  1. 사용자가 표시 설정에서 '인대·힘줄 표시'를 체크 해제하여 숨김 (`connective: false`).
+  2. 뷰 초기화 액션(`{ type: "reset" }`)이 디스패치됨.
+  3. 감축기는 `modesty`만 유지한 채 `initialView(s.pointId)`로 전체 상태를 덮어씀.
+  4. `initialView()`의 기본값인 `connective: true`가 적용되어, 사용자가 명시적으로 꺼둔 인대·힘줄 표시가 강제로 다시 켜짐.
+- **영향 및 위반 기준**:
+  - **Q27 위반**: "인대·힘줄은 ... 표시 여부는 보기 상태의 선호로 카메라·표식 선호와 함께 보존됩니다."
+  - 사용자의 관찰 선호(보기 선호) 보존 원칙에 결손 발생.
+- **확신 및 검증 여부**: **[확신도: 높음 / 코드 정적 검증 완료]** (`case "reset"`에 `connective: s.connective` 보존 누락 확인).
+
+---
+
+### [P2] 커스텀 레이어 모드(`displayMode === "layers"`)에서 '인대·힘줄만 보기' 후 해제 시 이전 레이어 구성이 복원되지 않고 소실되는 결함
+- **근거 파일 및 줄**:
+  - [`src/view-state.ts:272-273`](file:///Users/nuinuri/workspace/anatomy/src/view-state.ts#L272-L273):
+    ```ts
+    const origin = s.detail ? closeDetail(s) : s;
+    const selectionReturn = origin.selectionReturn
+      ?? (!origin.comparison && origin.displayMode === "dissection" ? { ...returnView(origin), camera: origin.camera } : null);
+    ```
+- **실제 경로 및 재현**:
+  1. 사용자가 표시 설정에서 원하는 계통들(예: 골격 ON, 장기 ON, 피부 OFF)을 켜둔 `layers` 모드에 있음.
+  2. 표시 설정에서 '인대·힘줄만 보기'(`connective-only`) 클릭.
+  3. `origin.displayMode === "dissection"` 조건이 거짓이므로 `selectionReturn`이 `null`로 기록됨.
+  4. 선택 카드에서 '구조 선택 해제'(X) 클릭.
+  5. `clear-selection` 감축기에서 `selectionReturn`이 `null`이므로, 진입 시 설정된 `{ muscle: true, bone: true }` 레이어가 그대로 남아 이전의 골격+장기 레이어 조합이 영구 유실됨.
+- **영향 및 위반 기준**:
+  - 코드 주석("Leaving the selection returns to the view it was opened from") 및 Q1 레이어 변경 경로 불변 조건 불완전 이행.
+- **확신 및 검증 여부**: **[확신도: 높음 / 코드 정적 검증 완료]** (`origin.displayMode === "dissection"` 가드로 인해 레이어 모드에서의 복귀 스냅샷 생성이 차단됨을 확인).
+
+---
+
+## 3. 가장 먼저 할 작은 개선 묶음
+
+위 5개 항목 중 **상태 불변성을 완전히 지키면서도 회귀 위험이 극히 낮은 3가지 즉각 수정안**을 첫 번째 패치 묶음으로 추천합니다.
+
+1. **여성 장부 비교 CT 상세 버튼 상태 복원 일원화 ([`src/AtlasPage.tsx`](file:///Users/nuinuri/workspace/anatomy/src/AtlasPage.tsx))**:
+   - `separateDetailIds`를 별도 컴포넌트 `useState`로 두지 않고, `state.comparison`이 존재할 때 `c = pointConcepts[state.comparison.pointId]`로부터 `comparisonReference`를 메모이제이션(`useMemo`)하여 항상 일관되게 도출하도록 리팩토링.
+   - 효과: 위키 왕복이나 새로고침 후에도 `state.comparison`만 복원되면 '위 (여성 CT) 상세' 버튼이 완벽하게 유지됨 (Q5, Q33 동시 충족).
+
+2. **인대·힘줄 묶음 격리 버튼 라벨 조건 분기 보정 ([`src/AtlasPage.tsx:834`](file:///Users/nuinuri/workspace/anatomy/src/AtlasPage.tsx#L834))**:
+   - 버튼 텍스트를 `state.isolated ? "전체 구조 보기" : state.comparison ? "비교 대상만 보기" : state.selection.name === CONNECTIVE_BUNDLE ? "인대·힘줄만 보기" : state.selection.kind === "bundle" ? "묶음만 보기" : "선택 구조만 보기"`로 세분화.
+   - 효과: 인대·힘줄 묶음 관찰 중 혼란스러운 "비교 대상만 보기" 오표기 방지.
+
+3. **`viewReducer`의 `"reset"` 선호 보존 보강 ([`src/view-state.ts:392`](file:///Users/nuinuri/workspace/anatomy/src/view-state.ts#L392))**:
+   - `return { ...initialView(s.pointId), modesty: s.modesty, connective: s.connective };`로 수정하여 Q27의 "인대·힘줄 표시 선호 보존" 규격 준수.
+
+---
+
+## 4. 후속 추천 및 남은 한계
+
+1. **장부 비교 시 `alpha.skin` 일시 투명화 처리 방식 개선 후속안**:
+   - 현재 `compare` 액션이 `s.alpha.skin`을 직접 수정하는 방식 대신, `selection-context.ts`의 `selectionOpacity`와 유사하게 렌더링 시점에 `state.comparison`이 활성화되어 있을 때만 동적으로 피부 투명도를 감쇄하거나, `selectionReturn`에 진입 전 `alpha`를 저장하고 복원하도록 view-state 파이프라인 정비 필요.
+2. **`femaleMarkers` 토글 시 `comparisonNotice` 동기화**:
+   - [`src/AtlasPage.tsx:168`](file:///Users/nuinuri/workspace/anatomy/src/AtlasPage.tsx#L168)의 `useEffect` 의존성 배열에 `state.femaleMarkers`를 추가하여, 사용자가 '근사 위치로 보기'를 활성화했을 때 이전의 "남성 기준 좌표로 이동하지 않습니다" 안내 문구가 즉시 해제되도록 보완 추천.
+3. **남은 데이터/해부학적 한계 (문서 및 원본 수준)**:
+   - 여성 전신 원본에 없는 구조(난소 혈관, 외음부 근육 등)는 원본 부재로 인해 수록되지 않음 (공식 한계 명시 준수).
+   - 여성 혈관 분지 47쌍 연결 완료 후 남은 5mm 초과 접촉 25쌍, Allen 뇌-머리뼈 교차 30쌍 등은 이전 검증 기록의 기술적 한계로 정상 기록되어 있음.

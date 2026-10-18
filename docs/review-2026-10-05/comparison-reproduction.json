@@ -1,0 +1,47 @@
+{
+  "before": {
+    "ctButton": 1,
+    "alpha": {
+      "skin": 0.12,
+      "muscle": 1,
+      "bone": 1,
+      "organ": 1,
+      "vessel": 1,
+      "lymph": 1,
+      "nerve": 1
+    }
+  },
+  "reload": {
+    "ctButton": 0,
+    "comparison": {
+      "kind": "bundle",
+      "pointId": "CV12",
+      "ids": [
+        "FT_FMA7148"
+      ],
+      "name": "위"
+    }
+  },
+  "wikiReturn": {
+    "ctButton": 0,
+    "comparison": {
+      "kind": "bundle",
+      "pointId": "CV12",
+      "ids": [
+        "FT_FMA7148"
+      ],
+      "name": "위"
+    }
+  },
+  "afterClear": {
+    "alpha": {
+      "skin": 0.12,
+      "muscle": 1,
+      "bone": 1,
+      "organ": 1,
+      "vessel": 1,
+      "lymph": 1,
+      "nerve": 1
+    }
+  }
+}

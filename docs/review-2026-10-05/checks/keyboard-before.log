@@ -1,0 +1,162 @@
+
+Running 4 tests using 1 worker
+
+(node:24226) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/browser/panel-keyboard.spec.ts:8:5 › desktop › search shortcut returns to its trigger and idle Escape leaves canvas focus alone (18.9s)
+(node:24254) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 tests/browser/panel-keyboard.spec.ts:35:5 › desktop › acupoint detail tabs support arrows, Home/End and labelled content (18.7s)
+(node:24268) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 tests/browser/panel-keyboard.spec.ts:8:5 › mobile › search shortcut returns to its trigger and idle Escape leaves canvas focus alone (18.3s)
+(node:24287) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 tests/browser/panel-keyboard.spec.ts:35:5 › mobile › acupoint detail tabs support arrows, Home/End and labelled content (18.7s)
+
+
+  1) tests/browser/panel-keyboard.spec.ts:8:5 › desktop › search shortcut returns to its trigger and idle Escape leaves canvas focus alone 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('button', { name: '도움말', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('button', { name: '도움말', exact: true }) with timeout 15000ms
+      - waiting for getByRole('button', { name: '도움말', exact: true })
+        34 × locator resolved to <button data-tip="도움말" class="ax-icon" aria-label="도움말" aria-expanded="false">…</button>
+           - unexpected value "inactive"
+
+
+      15 |       await page.keyboard.press('Escape');
+      16 |       await expect(page.getByRole('region',{name:'검색 결과',exact:true})).toHaveCount(0);
+    > 17 |       await expect(trigger).toBeFocused();
+         |                             ^
+      18 |       // Escape with no panel must not move keyboard control away from the model.
+      19 |       const canvas=page.locator('canvas');await canvas.focus();await canvas.press('Escape');
+      20 |       await expect(canvas).toBeFocused();await expect(page.locator('.ax-panel')).toHaveCount(0);
+        at /Users/nuinuri/workspace/anatomy/tests/browser/panel-keyboard.spec.ts:17:29
+
+    Error Context: test-results/panel-keyboard-desktop-sea-d62ae-e-leaves-canvas-focus-alone/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/panel-keyboard-desktop-sea-d62ae-e-leaves-canvas-focus-alone/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/panel-keyboard-desktop-sea-d62ae-e-leaves-canvas-focus-alone/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests/browser/panel-keyboard.spec.ts:35:5 › desktop › acupoint detail tabs support arrows, Home/End and labelled content 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('tablist', { name: '경혈 정보' }).getByRole('tab', { name: '효능·오행', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('tablist', { name: '경혈 정보' }).getByRole('tab', { name: '효능·오행', exact: true }) with timeout 15000ms
+      - waiting for getByRole('tablist', { name: '경혈 정보' }).getByRole('tab', { name: '효능·오행', exact: true })
+        34 × locator resolved to <button role="tab" aria-selected="false">효능·오행</button>
+           - unexpected value "inactive"
+
+
+      41 |       await overview.press('ArrowRight');
+      42 |       const tradition=tabs.getByRole('tab',{name:'효능·오행',exact:true});
+    > 43 |       await expect(tradition).toBeFocused();await expect(tradition).toHaveAttribute('aria-selected','true');
+         |                               ^
+      44 |       await expect(page.getByRole('tabpanel',{name:'효능·오행',exact:true})).toBeVisible();
+      45 |       await tradition.press('End');
+      46 |       const sources=tabs.getByRole('tab',{name:'근거',exact:true});await expect(sources).toBeFocused();
+        at /Users/nuinuri/workspace/anatomy/tests/browser/panel-keyboard.spec.ts:43:31
+
+    Error Context: test-results/panel-keyboard-desktop-acu-d7eb2-me-End-and-labelled-content/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/panel-keyboard-desktop-acu-d7eb2-me-End-and-labelled-content/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/panel-keyboard-desktop-acu-d7eb2-me-End-and-labelled-content/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) tests/browser/panel-keyboard.spec.ts:8:5 › mobile › search shortcut returns to its trigger and idle Escape leaves canvas focus alone 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('button', { name: '도움말', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('button', { name: '도움말', exact: true }) with timeout 15000ms
+      - waiting for getByRole('button', { name: '도움말', exact: true })
+        34 × locator resolved to <button data-tip="도움말" class="ax-icon" aria-label="도움말" aria-expanded="false">…</button>
+           - unexpected value "inactive"
+
+
+      15 |       await page.keyboard.press('Escape');
+      16 |       await expect(page.getByRole('region',{name:'검색 결과',exact:true})).toHaveCount(0);
+    > 17 |       await expect(trigger).toBeFocused();
+         |                             ^
+      18 |       // Escape with no panel must not move keyboard control away from the model.
+      19 |       const canvas=page.locator('canvas');await canvas.focus();await canvas.press('Escape');
+      20 |       await expect(canvas).toBeFocused();await expect(page.locator('.ax-panel')).toHaveCount(0);
+        at /Users/nuinuri/workspace/anatomy/tests/browser/panel-keyboard.spec.ts:17:29
+
+    Error Context: test-results/panel-keyboard-mobile-sear-c21ab-e-leaves-canvas-focus-alone/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/panel-keyboard-mobile-sear-c21ab-e-leaves-canvas-focus-alone/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/panel-keyboard-mobile-sear-c21ab-e-leaves-canvas-focus-alone/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) tests/browser/panel-keyboard.spec.ts:35:5 › mobile › acupoint detail tabs support arrows, Home/End and labelled content 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('tablist', { name: '경혈 정보' }).getByRole('tab', { name: '효능·오행', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('tablist', { name: '경혈 정보' }).getByRole('tab', { name: '효능·오행', exact: true }) with timeout 15000ms
+      - waiting for getByRole('tablist', { name: '경혈 정보' }).getByRole('tab', { name: '효능·오행', exact: true })
+        34 × locator resolved to <button role="tab" aria-selected="false">효능·오행</button>
+           - unexpected value "inactive"
+
+
+      41 |       await overview.press('ArrowRight');
+      42 |       const tradition=tabs.getByRole('tab',{name:'효능·오행',exact:true});
+    > 43 |       await expect(tradition).toBeFocused();await expect(tradition).toHaveAttribute('aria-selected','true');
+         |                               ^
+      44 |       await expect(page.getByRole('tabpanel',{name:'효능·오행',exact:true})).toBeVisible();
+      45 |       await tradition.press('End');
+      46 |       const sources=tabs.getByRole('tab',{name:'근거',exact:true});await expect(sources).toBeFocused();
+        at /Users/nuinuri/workspace/anatomy/tests/browser/panel-keyboard.spec.ts:43:31
+
+    Error Context: test-results/panel-keyboard-mobile-acup-bbe7c-me-End-and-labelled-content/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/panel-keyboard-mobile-acup-bbe7c-me-End-and-labelled-content/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/panel-keyboard-mobile-acup-bbe7c-me-End-and-labelled-content/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    tests/browser/panel-keyboard.spec.ts:8:5 › desktop › search shortcut returns to its trigger and idle Escape leaves canvas focus alone 
+    tests/browser/panel-keyboard.spec.ts:35:5 › desktop › acupoint detail tabs support arrows, Home/End and labelled content 
+    tests/browser/panel-keyboard.spec.ts:8:5 › mobile › search shortcut returns to its trigger and idle Escape leaves canvas focus alone 
+    tests/browser/panel-keyboard.spec.ts:35:5 › mobile › acupoint detail tabs support arrows, Home/End and labelled content 

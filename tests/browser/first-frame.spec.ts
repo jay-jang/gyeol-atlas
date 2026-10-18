@@ -1,6 +1,6 @@
 import {test,expect,type Page} from '@playwright/test';
 import fs from 'node:fs';
-import {ready,organs} from './helpers';
+import {ready,organs,viewButton} from './helpers';
 const read=(p:string)=>JSON.parse(fs.readFileSync(p,'utf8'));
 const catalog=[...read('scripts/model-inputs.json').assets,...read('data/full-system-structures.json'),...read('data/connective-structures.json'),...read('data/sex-lymph-structures.json'),...read('data/female-atlas-structures.json'),...read('data/female-detail-structures.json')];
 const layerById=Object.fromEntries(catalog.map(s=>[s.id,s.layer]));
@@ -102,7 +102,7 @@ test('female and independent CT source mounts never draw the default all-visible
   }
   await page.screenshot({path:'docs/anatomy-alignment/first-frame-female-return-desktop.png'});
   await page.setViewportSize({width:390,height:844});
-  await page.getByRole('button',{name:'계통 전체 보기',exact:true}).click();
+  await viewButton(page,'계통 전체 보기');
   await page.screenshot({path:'docs/anatomy-alignment/first-frame-female-return-mobile.png'});
   }catch(error){
     let timer:ReturnType<typeof setTimeout>|undefined;

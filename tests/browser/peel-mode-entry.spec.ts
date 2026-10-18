@@ -29,7 +29,8 @@ for(const sex of ['male','female'])test(`${sex}: layer view has an explicit peel
       if(sex==='female'){await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
       await page.getByRole('button',{name:'장기 빠른 보기',exact:true}).click();await ready(page);
       await page.setViewportSize({width,height});
-      if(width===390){await page.reload();await ready(page);}
+      // On phones the entry sits in the depth band opened from the depth row.
+      if(width===390){await page.reload();await ready(page);await page.locator('.depth-toggle').click();}
       const entry=page.getByRole('button',{name:'현재 기준 76.0%에서 연속 박리 시작',exact:true});
       await expect(entry).toBeInViewport();
       await expect(page.getByLabel('연속 해부 박리 깊이')).toHaveAttribute('aria-valuetext','계통별 보기 중 · 박리 시작 기준 76.0%');

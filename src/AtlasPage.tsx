@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type ReactNode } from "react";
+import { lazy, Suspense, useCallback, useEffect, useId, useMemo, useRef, useState, type Dispatch, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from "react";
 import {
   ArrowUpRight, BookOpen, Bookmark, Check, ChevronDown, CircleHelp, Eye, Focus, Link2, List, LoaderCircle,
   Minus, Plus, RotateCcw, Search, ShieldCheck, SlidersHorizontal, Tag, X,
@@ -10,8 +10,11 @@ import { comparisonReference } from "./comparison-reference";
 import { referenceSourceFor } from "./reference-source";
 import { structureForSexId } from "./sex-structure";
 import { depthStage, stageDepth } from "./dissection";
+import { normalizeQuery, isExactPoint, isExactStructure, matchOrgans, rankPoints, rankStructures, splitExact } from "./search-rank";
 import { CONNECTIVE_BUNDLE, type ViewAction, type ViewState } from "./view-state";
-import {
+import { readOrigin, takeFocus } from "./movement-link";
+import { useMedia } from "./use-media";
+import { FEMALE_TRANSPORT_NOTE,
   anatomyRegionNames, compositeGroups, connectiveKindNames, connectiveKindOf, detailForStructure, layerKeys, layerNames, maleKidneyViews, maleLungViews,
   malePancreasViews, organGroups, stageDescription, stages, structureGroups, structures, structuresForSex, type Layer,
 } from "./anatomy";
@@ -30,11 +33,13 @@ const pointConcepts = conceptData as Record<string, { categories: string[]; shuT
 const sourceById = (id: string) => sources.find((s) => s.id === id)!;
 const meridianOf = (p: Point) => meridians.find((m) => m.id === p.meridian)!;
 const categoryText = (id: string) => pointConcepts[id]?.categories.map((c) => concepts.find((x) => x.id === c)?.name).join(" · ") || "일반 경혈";
-const normalizePointQuery = (q: string) => q.trim().toLowerCase().replace(/([a-z]+)\s+(\d+)/g, "$1$2");
 type Panel = "search" | "display" | "help" | "points" | "detail" | null;
+// Short pickers open over the scene without closing the open panel.
+type Popover = "meridian" | "depth" | null;
 // Stable empty lists keep the 3D scene from redrawing on UI-only updates.
 const NONE: string[] = [];
-const fallbackPoint = { ...points.find((p) => p.id === "ST36")!, id: "" };
+const fallbackPoint = { ...points.find((p) => p.id === "ST36")!, id: "", structures: [], landmarks: [] };
+const detailTabs = [["overview", "개요"], ["tradition", "효능·오행"], ["anatomy", "해부 구조"], ["sources", "근거"]] as const;
 
 function SourceLink({ id, page }: { id: string; page?: number | null }) {
   const s = sourceById(id);
@@ -57,6 +62,8 @@ function PointDetail({ point, onFocus, saved, onSave, onCompare, onClose, compar
     return () => cancelAnimationFrame(frame);
   }, [hasComparisonFeedback, point.id]);
   const [tab, setTab] = useState("overview");
+  const tabScope = useId();
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const [copied, setCopied] = useState(false);
   const concept = pointConcepts[point.id];
   useEffect(() => { setTab("overview"); setCopied(false); }, [point.id]);
@@ -69,63 +76,80 @@ function PointDetail({ point, onFocus, saved, onSave, onCompare, onClose, compar
   }
   return (
     <section className="detail-panel ax-card" aria-label="선택한 경혈 상세" id="atlas-dock">
-      <div className="ax-card-head">
-        <span className="ax-eyebrow">{point.catalogue === "extra" ? "경외기혈" : `${meridianOf(point).name} · 정규 경혈`} · {point.markerCount}곳 표시</span>
-        <button className="ax-icon" onClick={onSave} aria-label={saved ? "북마크 해제" : "북마크 저장"} data-tip={saved ? "북마크 해제" : "북마크 저장"} aria-pressed={saved}>
-          <Bookmark size={17} fill={saved ? "currentColor" : "none"} />
-        </button>
-        <button className="ax-icon" onClick={onClose} aria-label="도구 패널 닫기" data-tip="닫기"><X size={17} /></button>
-      </div>
-      <h2 className="ax-point-title"><span style={{ color: meridianOf(point).color }}>{point.id}</span>{point.name}<small>{point.hanja}</small></h2>
-      <p className="ax-pinyin">{point.pinyin}</p>
-      <section className="concept-reference">
-        <strong>{categoryText(point.id)} {concept?.shuType}</strong>
-        {concept?.traditionalName && <p>전통적 장부 대응: <b>{concept.traditionalName}</b></p>}
-        {!!concept?.organIds.length && <button className="ax-primary" onClick={onCompare}>대응 장부의 해부 구조 비교</button>}
-        {comparisonFeedback && <div ref={feedbackRef} className="comparison-feedback" role="status">{comparisonFeedback}</div>}
-        {concept?.traditionalName && !concept?.organIds.length && <p>이 전통 개념에 일대일 대응하는 장기 메쉬는 지정하지 않았습니다.</p>}
-        <small>장부 대응은 전통적 분류입니다. 체표에서 장기로 압력이 전달되거나 장기를 직접 마사지한다는 뜻이 아닙니다.</small>
-        <span className="ax-links"><a href="#wiki/point-categories">원혈·모혈 분류와 출처 ↗</a><a href="#wiki/massage-anatomy">마사지 전 해부학 참고 가이드 ↗</a></span>
-      </section>
-      <div className="detail-tabs" role="tablist" aria-label="경혈 정보">
-        {([["overview", "개요"], ["tradition", "효능·오행"], ["anatomy", "해부 구조"], ["sources", "근거"]] as const).map(([id, name]) =>
-          <button key={id} role="tab" aria-selected={tab === id} onClick={() => setTab(id)}>{name}</button>)}
-      </div>
-      <div className="detail-content" role="tabpanel">
-        {tab === "tradition" && <PointTradition point={point} />}
-        {tab === "overview" && <>
-          <p className="location-text">{point.location}</p>
-          <div className="reference-line">
-            <a href={point.nameSource} target="_blank" rel="noreferrer">KMCRIC 위치 원문 ↗</a>
-            {point.page && <span>WHO p. {point.page}</span>}
-          </div>
-          <button className="focus-link" onClick={onFocus}><Focus size={15} />3D에서 가까이 보기</button>
-          <div className="anatomy-tags">{point.landmarks.map((s) => <span key={s}>{s}</span>)}</div>
-          <p className="muted">{point.structures.length ? "골격·근육 레이어에서 관련 부위가 강조됩니다." : "이 경혈의 개별 기준점 메쉬는 아직 연결하지 않았습니다."}</p>
-          <p className="coordinate-note"><span className="status-dot" />학습용 근사 위치 · {point.markerNote} 전문가의 위치 검수는 아직 진행하지 않았습니다.</p>
-        </>}
-        {tab === "anatomy" && <>
-          <p className="location-text">{point.landmarks.join(" · ")}</p>
-          <div className="anatomy-tags">{point.structures.map((s) => <span key={s}>{s}</span>)}</div>
-          <p className="muted">표시된 메쉬는 기준점 또는 같은 부위의 참조 구조입니다. 신경·혈관·힘줄을 모두 포함하지 않으며, 경맥과 해부 구조가 동일하다는 뜻은 아닙니다.</p>
-          <button className="focus-link" onClick={onFocus}><Focus size={15} />관련 부위 확대</button>
-          <a className="text-link" href="#wiki/coordinate-method">좌표를 만든 방법 ↗</a>
-        </>}
-        {tab === "sources" && <>
-          <a className="source-link" href={point.nameSource} target="_blank" rel="noreferrer">{point.id} 명칭·위치 원문 ↗</a>
-          {point.catalogue === "classical" && <SourceLink id="who-locations" page={point.page} />}
-          <SourceLink id={point.traditionSourceId} />
-          <p className="muted">공식 PDF 접근 제한으로 WHO 문서의 <a href={sourceById("who-locations").accessUrl} target="_blank" rel="noreferrer">공개 재현본</a>과 대조했습니다. 위치 표준은 치료 효과의 근거가 아닙니다.</p>
-          <SourceLink id="bodyparts" />
-          <a className="text-link" href="#wiki/evidence">근거를 읽는 방법 ↗</a>
-        </>}
-      </div>
-      <div className="detail-bottom">
-        <a className="ax-primary" href={`#wiki/points/${point.id}`}><BookOpen size={15} />위키에서 더 알아보기</a>
-        <div className="related-points" aria-label="연결된 경혈">
-          {point.related.slice(0, 3).map((id) => <a key={id} href={`#atlas/${id}`}>{points.find((p) => p.id === id)?.name}<span>{id}</span></a>)}
+      <div className="detail-head">
+        <div className="ax-card-head">
+          <span className="ax-eyebrow">{point.catalogue === "extra" ? "경외기혈" : `${meridianOf(point).name} · 정규 경혈`} · {point.markerCount}곳 표시</span>
+          <button className="ax-icon" onClick={onSave} aria-label={saved ? "북마크 해제" : "북마크 저장"} data-tip={saved ? "북마크 해제" : "북마크 저장"} aria-pressed={saved}>
+            <Bookmark size={17} fill={saved ? "currentColor" : "none"} />
+          </button>
+          <button className="ax-icon" onClick={onClose} aria-label="도구 패널 닫기" data-tip="닫기"><X size={17} /></button>
         </div>
-        <button className="share-link" onClick={share}>{copied ? <Check size={14} /> : <Link2 size={14} />}{copied ? "링크를 복사했습니다" : "이 경혈 링크 복사"}</button>
+        <h2 className="ax-point-title"><span><i style={{ background: meridianOf(point).color }} />{point.id}</span>{point.name}<small>{point.hanja}</small></h2>
+        <p className="ax-pinyin">{point.pinyin} · {categoryText(point.id)}{concept?.shuType ? ` ${concept.shuType}` : ""}{concept?.traditionalName ? <> · 전통적 장부 대응: <b>{concept.traditionalName}</b></> : null}</p>
+        <div className="detail-actions">
+          {/* Short visible labels; each accessible name contains its label. */}
+          {!!concept?.organIds.length && <button className="ax-primary" aria-label="대응 장부의 해부 구조 비교" onClick={onCompare}>해부 구조 비교</button>}
+          <button className="focus-link" aria-label="3D에서 가까이 보기" onClick={onFocus}><Focus size={15} />가까이 보기</button>
+          <a className="focus-link" aria-label="위키에서 더 알아보기" href={`#wiki/points/${point.id}`}><BookOpen size={15} />위키</a>
+        </div>
+        {comparisonFeedback && <div ref={feedbackRef} className="comparison-feedback" role="status">{comparisonFeedback}</div>}
+        <p className="concept-notice">
+          {concept?.traditionalName && !concept.organIds.length && "이 전통 개념에 일대일 대응하는 장기 메쉬는 지정하지 않았습니다. "}
+          장부 대응은 전통적 분류입니다. 체표에서 장기로 압력이 전달되거나 장기를 직접 마사지한다는 뜻이 아닙니다.
+        </p>
+      </div>
+      <div className="detail-scroll">
+        <div className="detail-tabs" role="tablist" aria-label="경혈 정보">
+          {detailTabs.map(([id, name], index) =>
+            <button key={id} ref={(element) => { tabRefs.current[index] = element; }}
+              id={`${tabScope}-${id}`} role="tab" aria-selected={tab === id}
+              aria-controls={`${tabScope}-panel`} tabIndex={tab === id ? 0 : -1}
+              onClick={() => setTab(id)} onKeyDown={(event) => {
+                if (event.altKey || event.ctrlKey || event.metaKey) return;
+                const next = event.key === "ArrowRight" ? (index + 1) % detailTabs.length
+                  : event.key === "ArrowLeft" ? (index + detailTabs.length - 1) % detailTabs.length
+                  : event.key === "Home" ? 0 : event.key === "End" ? detailTabs.length - 1 : -1;
+                if (next < 0) return;
+                event.preventDefault();
+                setTab(detailTabs[next][0]);
+                tabRefs.current[next]?.focus({ preventScroll: true });
+              }}>{name}</button>)}
+        </div>
+        <div className="detail-content" role="tabpanel" id={`${tabScope}-panel`} aria-labelledby={`${tabScope}-${tab}`} tabIndex={0}>
+          {tab === "tradition" && <PointTradition point={point} />}
+          {tab === "overview" && <>
+            <p className="location-text">{point.location}</p>
+            <div className="reference-line">
+              <a href={point.nameSource} target="_blank" rel="noreferrer">KMCRIC 위치 원문 ↗</a>
+              {point.page && <span>WHO p. {point.page}</span>}
+            </div>
+            <div className="anatomy-tags">{point.landmarks.map((s) => <span key={s}>{s}</span>)}</div>
+            <p className="muted">{point.structures.length ? "골격·근육 레이어에서 관련 부위가 강조됩니다." : "이 경혈의 개별 기준점 메쉬는 아직 연결하지 않았습니다."}</p>
+            <p className="coordinate-note"><span className="status-dot" />학습용 근사 위치 · {point.markerNote} 전문가의 위치 검수는 아직 진행하지 않았습니다.</p>
+            <span className="ax-links"><a href="#wiki/point-categories">원혈·모혈 분류와 출처 ↗</a><a href="#wiki/massage-anatomy">마사지 전 해부학 참고 가이드 ↗</a></span>
+          </>}
+          {tab === "anatomy" && <>
+            <p className="location-text">{point.landmarks.join(" · ")}</p>
+            <div className="anatomy-tags">{point.structures.map((s) => <span key={s}>{s}</span>)}</div>
+            <p className="muted">표시된 메쉬는 기준점 또는 같은 부위의 참조 구조입니다. 신경·혈관·힘줄을 모두 포함하지 않으며, 경맥과 해부 구조가 동일하다는 뜻은 아닙니다.</p>
+            <button className="focus-link" onClick={onFocus}><Focus size={15} />관련 부위 확대</button>
+            <a className="text-link" href="#wiki/coordinate-method">좌표를 만든 방법 ↗</a>
+          </>}
+          {tab === "sources" && <>
+            <a className="source-link" href={point.nameSource} target="_blank" rel="noreferrer">{point.id} 명칭·위치 원문 ↗</a>
+            {point.catalogue === "classical" && <SourceLink id="who-locations" page={point.page} />}
+            <SourceLink id={point.traditionSourceId} />
+            <p className="muted">공식 PDF 접근 제한으로 WHO 문서의 <a href={sourceById("who-locations").accessUrl} target="_blank" rel="noreferrer">공개 재현본</a>과 대조했습니다. 위치 표준은 치료 효과의 근거가 아닙니다.</p>
+            <SourceLink id="bodyparts" />
+            <a className="text-link" href="#wiki/evidence">근거를 읽는 방법 ↗</a>
+          </>}
+          <div className="detail-bottom">
+            {point.related.length > 0 && <div className="related-points" aria-label="연결된 경혈">
+              {point.related.slice(0, 3).map((id) => <a key={id} href={`#atlas/${id}`}>{points.find((p) => p.id === id)?.name}<span>{id}</span></a>)}
+            </div>}
+            <button className="share-link" onClick={share}>{copied ? <Check size={14} /> : <Link2 size={14} />}{copied ? "링크를 복사했습니다" : "이 경혈 링크 복사"}</button>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -136,15 +160,33 @@ function PointDetail({ point, onFocus, saved, onSave, onCompare, onClose, compar
 // carries its character; the full name stays in the tooltip.
 const meridianChipName = (m: { id: string; shortName: string }) => m.id === "KI" ? "신경(腎)" : m.shortName;
 
-export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate }: {
+export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate, notice, onNotice }: {
   id: string; saved: string[]; toggle: (id: string) => void; state: ViewState; dispatch: Dispatch<ViewAction>; navigate: (path: string) => void;
+  // A movement-page link that named structures this body does not have.
+  notice?: string; onNotice?: () => void;
 }) {
   const routeSelection = points.find((p) => p.id === id);
   const hasSelected = Boolean(routeSelection);
   const selected = routeSelection || fallbackPoint;
   const [panel, setPanel] = useState<Panel>(null);
+  const [popover, setPopover] = useState<Popover>(null);
+  const popoverTrigger = useRef<HTMLElement | null>(null);
+  // Presenting hides the exploration tools but keeps the selection, its
+  // notices and the camera; it is a UI mode, not part of the saved view.
+  const [presenting, setPresenting] = useState(false);
+  const presentTrigger = useRef<HTMLElement | null>(null);
+  const phone = useMedia("(max-width: 700px)");
+  // Short landscape phones also take the compact camera group.
+  const compactCamera = useMedia("(max-width: 700px), (max-height: 500px)");
   const [search, setSearch] = useState("");
   const triggerRef = useRef<HTMLElement | null>(null);
+  // Programmatic focus must not open search or replace the shortcut's trigger.
+  const skipSearchFocus = useRef(false);
+  const focusWithoutOpeningSearch = useCallback((element: HTMLElement | null) => {
+    skipSearchFocus.current = true;
+    try { element?.focus({ preventScroll: true }); }
+    finally { skipSearchFocus.current = false; }
+  }, []);
   const dockRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const workspaceRef = useRef<HTMLElement>(null);
@@ -161,6 +203,13 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const [loadingReference, setLoadingReference] = useState(false);
   const [comparisonNotice, setComparisonNotice] = useState("");
   const [separateDetailIds, setSeparateDetailIds] = useState<string[]>([]);
+  const comparisonPoint = points.find((point) => point.id === state.comparison?.pointId);
+  // A successful comparison's CT choices survive reload/wiki return with it.
+  // Local separateDetailIds is only for the unsuccessful-comparison notice.
+  const comparisonDetailIds = useMemo(() => {
+    const concept = state.comparison && pointConcepts[state.comparison.pointId];
+    return concept ? comparisonReference(state.sex, concept.organIds, structures, organGroups).separateGroupIds : NONE;
+  }, [state.sex, state.comparison?.pointId]);
   // The selection made in place on the model (placeStructure), kept through
   // its clearing so the picture glides back too; another selection or an
   // explicit camera action ends it.
@@ -168,6 +217,18 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   useEffect(() => { setComparisonNotice(""); setSeparateDetailIds([]); }, [state.sex, state.pointId]);
   const { query, region, meridian, concept, onlySaved, bodyRegion, catalogue } = state.filters;
   const setFilter = (value: Partial<ViewState["filters"]>) => dispatch({ type: "filters", value });
+  // Results come first; the filters fold away where height is short unless
+  // one of them is in use (QUALITY: 상세 필터는 필요할 때 펼칩니다).
+  const roomy = useMedia("(min-width: 701px) and (min-height: 761px)");
+  const activeFilters = [
+    concept !== "all" && concepts.find((c) => c.id === concept)?.name,
+    bodyRegion !== "전체" && bodyRegion,
+    meridian !== "all" && meridians.find((m) => m.id === meridian)?.name,
+    catalogue !== "all" && (catalogue === "extra" ? "경외기혈" : "정규 경혈"),
+    region !== "전체" && region,
+  ].filter(Boolean).join(" · ");
+  const [filtersChoice, setFiltersOpen] = useState<boolean | null>(null);
+  const filtersOpen = filtersChoice ?? (roomy || Boolean(activeFilters));
   const resetFilters = () => dispatch({ type: "reset-filters" });
   const found = useMemo(() => points.filter((p) =>
     (region === "전체" || p.region === region) &&
@@ -176,7 +237,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     (meridian === "all" || p.meridian === meridian) &&
     (concept === "all" || pointConcepts[p.id]?.categories.includes(concept)) &&
     (!onlySaved || saved.includes(p.id)) &&
-    `${p.id} ${p.name} ${p.hanja} ${p.pinyin} ${p.landmarks.join(" ")} ${meridianOf(p)?.name}`.toLowerCase().includes(normalizePointQuery(query))),
+    `${p.id} ${p.name} ${p.hanja} ${p.pinyin} ${p.landmarks.join(" ")} ${meridianOf(p)?.name}`.toLowerCase().includes(normalizeQuery(query))),
   [region, bodyRegion, catalogue, meridian, concept, onlySaved, saved, query]);
   const camera = (kind: CameraAction["kind"]) => {
     if (kind === "focus" && state.sex === "female" && !state.femaleMarkers) {
@@ -205,13 +266,20 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   }, [state.sex]);
   const closePanel = () => {
     setPanel(null);
-    requestAnimationFrame(() => triggerRef.current?.focus());
+    requestAnimationFrame(() => focusWithoutOpeningSearch(triggerRef.current));
   };
   const openPanel = (name: Panel, trigger?: HTMLElement) => {
     if (trigger) triggerRef.current = trigger;
     setPanel((current) => (current === name ? null : name));
   };
   useEffect(() => {
+    // Reopening the list brings the current row to its top when out of view.
+    if (panel === "points") requestAnimationFrame(() => {
+      const list = dockRef.current?.querySelector<HTMLElement>(".point-list"), row = list?.querySelector<HTMLElement>(".point-item.active");
+      if (!list || !row || list.scrollHeight <= list.clientHeight) return;
+      const top = row.offsetTop - list.offsetTop;
+      if (top < list.scrollTop || top + row.offsetHeight > list.scrollTop + list.clientHeight) list.scrollTop = Math.max(0, top - 4);
+    });
     if (panel && panel !== "search" && panel !== "detail") {
       dockRef.current?.querySelector<HTMLElement>("input:not([type=checkbox]),select,button:not([aria-label='도구 패널 닫기'])")?.focus({ preventScroll: true });
     }
@@ -220,22 +288,70 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     const key = (e: KeyboardEvent) => {
       const typing = e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLSelectElement;
       if (e.key === "Escape") {
+        if (e.defaultPrevented) return;
+        const pad = workspaceRef.current?.querySelector<HTMLDetailsElement>("details.movement-pad[open]");
+        if (pad) { pad.open = false; pad.querySelector("summary")?.focus({ preventScroll: true }); return; }
+        if (popover) { setPopover(null); requestAnimationFrame(() => focusWithoutOpeningSearch(popoverTrigger.current)); return; }
+        if (!panel) {
+          if (presenting) stopPresenting();
+          return;
+        }
         setPanel(null);
         if (typing && e.target === searchRef.current) searchRef.current?.blur();
-        triggerRef.current?.focus();
+        // On phones the point chip is hidden while its detail is open.
+        // Restore focus after closing makes the trigger visible again.
+        requestAnimationFrame(() => focusWithoutOpeningSearch(triggerRef.current));
       } else if (e.key === "/" && !typing && !e.metaKey && !e.ctrlKey) {
         e.preventDefault();
         triggerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
         setPanel("search");
-        searchRef.current?.focus();
+        focusWithoutOpeningSearch(searchRef.current);
       }
     };
     addEventListener("keydown", key);
     return () => removeEventListener("keydown", key);
-  }, []);
+  }, [panel, popover, presenting, focusWithoutOpeningSearch]);
+  // A picker closes when the pointer goes down anywhere outside it.
+  useEffect(() => {
+    if (!popover) return;
+    const down = (event: PointerEvent) => {
+      // The trigger and its picker share one root element.
+      if (popoverTrigger.current?.closest("[data-popover-root]")?.contains(event.target as Node)) return;
+      setPopover(null);
+    };
+    addEventListener("pointerdown", down, true);
+    return () => removeEventListener("pointerdown", down, true);
+  }, [popover]);
+  const togglePopover = (name: NonNullable<Popover>, trigger: HTMLElement) => {
+    popoverTrigger.current = trigger;
+    setPopover((current) => current === name ? null : name);
+  };
+  const closePopover = () => {
+    setPopover(null);
+    requestAnimationFrame(() => popoverTrigger.current?.focus({ preventScroll: true }));
+  };
+  const startPresenting = (trigger: HTMLElement) => {
+    presentTrigger.current = trigger;
+    setPanel(null); setPopover(null); setPresenting(true);
+    requestAnimationFrame(() => workspaceRef.current?.querySelector<HTMLElement>(".ax-present-exit")?.focus({ preventScroll: true }));
+  };
+  // The phone entry sits in the settings panel, which closed on entry.
+  const presentReturn = () => presentTrigger.current?.isConnected ? presentTrigger.current
+    : workspaceRef.current?.querySelector<HTMLElement>('[aria-label="표시 설정"]') ?? null;
+  const stopPresenting = () => {
+    setPresenting(false);
+    requestAnimationFrame(() => focusWithoutOpeningSearch(presentReturn()));
+  };
   // Choosing an acupoint keeps the camera where the viewer is looking. Only
   // an independent detail source (its own frame) returns to the whole body.
+  // A result chosen inside a closing panel hands focus to what it opened;
+  // a marker clicked on the canvas keeps the canvas focus (Q13).
+  const focusAfterPanel = (selector: string) => {
+    if (!dockRef.current?.contains(document.activeElement)) return;
+    requestAnimationFrame(() => requestAnimationFrame(() => focusWithoutOpeningSearch(workspaceRef.current?.querySelector<HTMLElement>(selector) ?? null)));
+  };
   const select = (p: Point) => {
+    focusAfterPanel(".point-summary");
     const leavingDetail = Boolean(state.detail);
     const returnPose = leavingDetail ? state.detailReturn?.camera : null;
     if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
@@ -258,7 +374,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     }
     setComparisonNotice("");
     // A separate female CT organ stays one explicit choice away from the comparison.
-    setSeparateDetailIds(separateGroupIds);
+    setSeparateDetailIds([]);
     dispatch({
       type: "compare",
       name: c.traditionalName || selected.name,
@@ -279,6 +395,11 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const loadedLayers = loaded.source === sourceKey ? enabledLayers.filter((l) => loaded.layers.includes(l)) : [];
   const ready = loaded.source === sourceKey && enabledLayers.every((l) => loaded.layers.includes(l)) && !loadingReference;
   const selectionKey = state.selection?.ids.join("|") || "";
+  // Opened from the movement page: the card links back while that selection lasts.
+  const movementOrigin = useMemo(() => {
+    const origin = selectionKey ? readOrigin() : null;
+    return origin && origin.ids.join("|") === selectionKey ? origin : null;
+  }, [selectionKey]);
   const framedSource = useRef(sourceKey);
   useEffect(() => {
     if (!ready || framedSource.current === sourceKey) return;
@@ -297,6 +418,9 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   useEffect(() => { if (selectionKey && selectionKey !== placed) setPlaced(""); }, [selectionKey, placed]);
   useEffect(() => {
     if (!selectionKey) { focusedSelection.current = ""; return; }
+    // A "3D에서 맞춰 보기" link asks for one fit even when it reopens the
+    // selection the atlas already had.
+    if (takeFocus(selectionKey)) focusedSelection.current = "";
     if (focusedSelection.current === selectionKey || !ready || state.comparison) return;
     const frame = requestAnimationFrame(() => {
       focusedSelection.current = selectionKey;
@@ -313,9 +437,26 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     : state.markers === "selected" || state.isolated ? (hasSelected ? [selected] : [])
     : hasSelected && !found.some((p) => p.id === selected.id) ? [...found, selected] : found,
   [state.markers, state.isolated, hasSelected, selected, found]);
+  // Previous/next follow the current filter results. A comparison or detail
+  // source belongs to its acupoint, so stepping waits until it is closed;
+  // stepping replaces the history entry and never moves the camera.
+  const stepAt = hasSelected ? found.findIndex((p) => p.id === selected.id) : -1;
+  const stepBlocked = Boolean(state.comparison || state.detail);
+  const prevPoint = stepBlocked || stepAt <= 0 ? null : found[stepAt - 1];
+  const nextPoint = stepBlocked ? null : stepAt < 0 ? found[0] ?? null : found[stepAt + 1] ?? null;
+  const stepTip = (p: Point | null, edge: string) => p
+    ? `${p.name} ${p.id} · ${found.indexOf(p) + 1}/${found.length}`
+    : stepBlocked ? "비교·기관 상세를 닫으면 넘길 수 있습니다" : found.length ? edge : "필터 결과가 없습니다";
+  const step = (p: Point | null) => {
+    if (!p) return;
+    dispatch({ type: "point", id: p.id });
+    history.replaceState(history.state, "", `#atlas/${p.id}`);
+    dispatchEvent(new HashChangeEvent("hashchange"));
+  };
   const featuredAnatomy = organGroups.filter((group) => group.sex === state.sex)
     .map((group) => ({ ...group, detail: group.ids.length > 1 ? `${group.ids.length}개 세부 모형` : "단일 원본 모형" }));
   const selectFeatured = (item: { id: string; name: string; ids: string[] }) => {
+    focusAfterPanel(".selection-card");
     dispatch({
       type: "detail",
       detail: { id: item.id, name: item.name, ids: item.ids, layers: Object.fromEntries(layerKeys.map((layer) => [layer, structures.some((s) => s.layer === layer && item.ids.includes(s.id))])) as Layers },
@@ -353,7 +494,8 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     const wheel = (event: WheelEvent) => {
       const target = event.target;
       if (!(target instanceof Element)) return;
-      const depthControl = Boolean(target.closest(".depth-explorer"));
+      // The region select inside the depth group keeps its own wheel.
+      const depthControl = Boolean(target.closest(".depth-explorer")) && !target.closest("select");
       if (!depthControl && !(event.altKey && target instanceof HTMLCanvasElement)) return;
       // A non-passive listener actually prevents native scrolling/zooming.
       // A horizontal gesture is consumed here without changing peel depth.
@@ -396,7 +538,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const movementButtons = <div>{([
     ["move-up", "위로 이동", "↑"], ["move-forward", "앞으로 이동", "전진"], ["move-down", "아래로 이동", "↓"],
     ["move-left", "왼쪽으로 이동", "←"], ["move-backward", "뒤로 이동", "후진"], ["move-right", "오른쪽으로 이동", "→"],
-  ] as const).map(([kind, label, text]) => <button key={kind} aria-label={label} title={label} onClick={() => camera(kind)}>{text}</button>)}</div>;
+  ] as const).map(([kind, label, text]) => <button key={kind} aria-label={label} data-tip={label} data-tip-side="top" onClick={() => camera(kind)}>{text}</button>)}</div>;
   // Clearing a selection restores the systems it replaced but keeps the
   // camera; only an independent detail source returns to its overview pose.
   const leaveSelection = () => {
@@ -408,27 +550,48 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     else if (state.detail) requestAnimationFrame(() => camera("fit"));
   };
 
-  // Unified search: acupoints, organ details and every catalogued structure.
+  // Unified search: acupoints, organ details and every catalogued structure,
+  // ranked so an exact name/code/FMA match comes first (src/search-rank.ts).
   const q = search.trim().toLowerCase();
-  const pointResults = q ? points.filter((p) =>
-    `${p.id} ${p.name} ${p.hanja} ${p.pinyin} ${p.landmarks.join(" ")} ${meridianOf(p)?.name}`.toLowerCase().includes(normalizePointQuery(q))).slice(0, 40) : [];
-  const organResults = q ? featuredAnatomy.filter((g) => g.name.toLowerCase().includes(q)) : featuredAnatomy;
-  const structureResults = useMemo(() => !q ? [] : structuresForSex(state.sex).filter((s) =>
-    `${s.label} ${s.name} ${s.id} ${s.fmaId || ""} ${s.latin || ""} ${(s.hierarchy || []).join(" ")}`.toLowerCase().includes(q),
-  ).sort((a, b) => {
-    const score = (s: ReturnType<typeof structuresForSex>[number]) => {
-      const direct = [s.label, s.name, s.id, s.fmaId || ""].map((value) => (value || "").toLowerCase());
-      if (direct.some((value) => value === q)) return 0;
-      if (direct.some((value) => value.startsWith(q))) return 1;
-      if (direct.some((value) => value.includes(q))) return 2;
-      return 3;
-    };
-    return score(a) - score(b) || (a.label || a.name).localeCompare(b.label || b.name);
-  }), [q, state.sex]);
+  const [allPointResults, setAllPointResults] = useState(false);
+  useEffect(() => setAllPointResults(false), [q]);
+  const sexList = useMemo(() => structuresForSex(state.sex), [state.sex]);
+  const sexStructures = useMemo(() => new Map(sexList.map((item) => [item.id, item])), [sexList]);
+  const rankedPoints = useMemo(() => q ? rankPoints(points, q, (p) => meridianOf(p)?.name) : [], [q]);
+  const organResults = q ? matchOrgans(featuredAnatomy, q, (sid) => sexStructures.get(sid)) : featuredAnatomy;
+  const structureResults = useMemo(() => q ? rankStructures(sexList, q) : [], [q, sexList]);
   const visibleStructures = structureResults.slice(0, 240);
+  const exactStructures = splitExact(visibleStructures, (item) => isExactStructure(item, q));
+  const exactPoints = splitExact(rankedPoints, (p) => isExactPoint(p, q));
+  const pointResults = allPointResults ? exactPoints.rest : exactPoints.rest.slice(0, 6);
+  const resultCount = rankedPoints.length + organResults.length + structureResults.length;
+  const structureRow = (item: ReturnType<typeof structuresForSex>[number]) => (
+    <button key={item.id} className="structure-item" aria-pressed={state.selection?.kind === "structure" && state.selection.ids[0] === item.id} onClick={() => pickStructure(item)}>
+      <strong>{item.label || item.name}</strong><span className="structure-layer" aria-hidden="true">{layerNames[item.layer as Layer]}</span>
+      <small>{item.name}{item.latin ? ` · ${item.latin}` : ""} · {item.id}{item.fmaId && item.fmaId !== item.id ? ` · ${item.fmaId}` : ""} · {item.source || "BodyParts3D 남성 참조"}</small>
+      {item.hierarchy?.length ? <small className="structure-path">{item.hierarchy.join(" › ")}</small> : null}
+    </button>
+  );
+  const pointRow = (p: Point) => (
+    <button key={p.id} className={`point-item ${p.id === selected.id ? "active" : ""}`} aria-pressed={p.id === selected.id} onClick={() => select(p)}>
+      <i style={{ background: meridianOf(p).color }} />
+      <span><strong>{p.name} <small>{p.id}</small></strong><small className="classification-text">{meridianOf(p).shortName} · {p.region} · {categoryText(p.id)}</small></span>
+    </button>
+  );
+  // ↓/↑ move between results; ↑ from the first result returns to the input.
+  const resultKeys = (event: ReactKeyboardEvent) => {
+    if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
+    const items = [...(dockRef.current?.querySelectorAll<HTMLElement>("button") ?? [])];
+    const at = items.indexOf(document.activeElement as HTMLElement);
+    const next = event.target === searchRef.current ? (event.key === "ArrowDown" ? items[0] : null) : at < 0 ? null : items[at + (event.key === "ArrowDown" ? 1 : -1)] ?? (event.key === "ArrowUp" ? searchRef.current : null);
+    if (!next) return;
+    event.preventDefault();
+    focusWithoutOpeningSearch(next);
+  };
   const layersOf = (ids: string[]) => [...new Set(ids.map((id) => structureForSexId(structures, state.sex, id)?.layer).filter(Boolean))] as Layer[];
   // Picking closes the results but keeps the query; focusing search reopens it.
   const pickStructure = (s: ReturnType<typeof structuresForSex>[number]) => {
+    focusAfterPanel(".selection-card");
     setPanel((current) => current === "search" ? null : current);
     dispatch({
       type: "select", layer: s.layer as Layer, detail: detailForStructure(s),
@@ -460,13 +623,21 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
 
   const depthName = (depth: number) => layerNames[stages[depthStage(depth)].layer];
   const soloLayer = layerKeys.filter((layer) => state.layers[layer]).length === 1 ? layerKeys.find((layer) => state.layers[layer]) : null;
+  // Outside continuous peeling the heading names the mode instead of a depth.
+  const depthMode = state.comparison ? "장부 비교 표시 중" : state.detail ? "기관 상세 모형" : soloLayer ? `${layerNames[soloLayer]}만 보기` : "계통 직접 조합";
+  const depthSummary = state.displayMode === "dissection" ? `${state.dissection.toFixed(1)}% · ${depthName(state.dissection)}` : depthMode;
   // Female markers are unreviewed approximations, hidden until asked for.
   const femaleHidden = state.sex === "female" && !state.femaleMarkers;
   const markerCount = femaleHidden || state.detail ? 0 : markers.length;
   const statusText = !enabledLayers.length ? "레이어를 켜서 구조를 표시하세요"
     : ready ? "해부 모델 로드 완료"
     : loadedLayers.length ? `표시 중 · 내부 계통 불러오는 중 ${loadedLayers.length}/${enabledLayers.length}` : "해부 모델 준비 중";
-  const closeButton = <button className="ax-icon ax-close" aria-label="도구 패널 닫기" onClick={closePanel}><X size={18} /></button>;
+  const closeButton = <button className="ax-icon ax-close" aria-label="도구 패널 닫기" data-tip="닫기" onClick={closePanel}><X size={18} /></button>;
+  // While a tool panel covers the comparison card, its limits stay in view (Q25).
+  const carriedComparison = Boolean(state.comparison && state.sex === "female" && state.selection?.ids.some((sid) => sid.startsWith("FT_")));
+  const comparisonLine = state.comparison ? <p className="panel-comparison-note">
+    {comparisonPoint?.name || state.comparison.pointId} · {state.comparison.name} 비교 — 전통적 대응, 압력 경로 아님{carriedComparison && " · 남성 원본을 여성 골격·피부 대응으로 옮긴 보완 구조"}
+  </p> : null;
 
   return (
     <main
@@ -474,6 +645,8 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
       ref={workspaceRef}
       aria-label="인체 구조 탐색"
       data-panel={panel || "none"}
+      data-popover={popover || "none"}
+      data-present={presenting}
       data-detail={Boolean(state.detail)}
       data-lung-part={selectedLungPart}
       data-selection={Boolean(state.selection)}
@@ -515,6 +688,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             sex={state.sex}
             anatomyRegion={state.anatomyRegion}
             connective={state.connective}
+            connectiveCategory={connectiveBundle}
             modesty={state.modesty}
             femaleMarkers={state.femaleMarkers}
             glideFraming={placed !== "" && (!selectionKey || selectionKey === placed)}
@@ -528,35 +702,43 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
           <input
             ref={searchRef}
             aria-label="경혈·구조 검색"
-            placeholder="경혈 · 구조 · 기관 검색"
+            placeholder={phone ? "검색" : "경혈 · 구조 · 기관 검색"}
             value={search}
-            onFocus={(e) => { if (panel !== "search") { triggerRef.current = e.currentTarget; setPanel("search"); } }}
+            onFocus={(e) => { if (!skipSearchFocus.current && panel !== "search") { triggerRef.current = e.currentTarget; setPanel("search"); } }}
+            onClick={(e) => { if (panel !== "search") triggerRef.current = e.currentTarget; setPanel("search"); }}
             onChange={(e) => { setSearch(e.target.value); setPanel("search"); }}
+            onKeyDown={(e) => { if (panel === "search") resultKeys(e); }}
           />
-          {panel === "search" ? <button className="ax-icon" aria-label="도구 패널 닫기" onClick={() => { setSearch(""); setPanel(null); }}><X size={16} /></button> : <kbd aria-hidden="true">/</kbd>}
+          {panel === "search" ? <button className="ax-icon" aria-label="도구 패널 닫기" data-tip="닫기" onClick={() => { setSearch(""); closePanel(); }}><X size={16} /></button> : <kbd aria-hidden="true">/</kbd>}
         </div>
         <div className="ax-top-actions">
           <div className="ax-segment" role="group" aria-label="인체 성별 기준">
             <button aria-pressed={state.sex === "male"} onClick={() => dispatch({ type: "sex", value: "male" })}>남성</button>
             <button aria-pressed={state.sex === "female"} onClick={() => dispatch({ type: "sex", value: "female" })}>여성</button>
           </div>
-          <select className="ax-select" aria-label="전신 부위 선택" value={state.anatomyRegion} onChange={(e) => {
-            const value = e.target.value as ViewState["anatomyRegion"];
-            dispatch({ type: "anatomy-region", value });
-            requestAnimationFrame(() => camera(value === "whole" ? "fit" : "anatomy-region"));
-          }}>{Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}</select>
           <button className="ax-icon" aria-label="성기 가리기" data-tip={state.modesty ? "성기 가리기 끄기" : "성기 가리기"} aria-pressed={state.modesty} onClick={() => dispatch({ type: "modesty", value: !state.modesty })}><ShieldCheck size={18} /></button>
           <button className="ax-icon" aria-label="표시 설정" data-tip="표시 설정" aria-expanded={panel === "display"} onClick={(e) => openPanel("display", e.currentTarget)}><SlidersHorizontal size={18} /></button>
           <button className="ax-icon" aria-label="도움말" data-tip="도움말" aria-expanded={panel === "help"} onClick={(e) => openPanel("help", e.currentTarget)}><CircleHelp size={18} /></button>
+          {!phone && <button className="ax-text-button" onClick={(e) => startPresenting(e.currentTarget)}>발표 보기</button>}
         </div>
+        {presenting && <button className="ax-present-exit" onClick={stopPresenting}>발표 종료</button>}
       </div>
 
       {panel === "search" && (
-        <div className="ax-panel ax-results" role="region" aria-label="검색 결과" ref={dockRef}>
+        <div className="ax-panel ax-results" role="region" aria-label="검색 결과" ref={dockRef} onKeyDown={resultKeys}>
+          {comparisonLine}
           {!q && <>
-            <p className="ax-hint">경혈 코드·이름, 구조의 한국어·영어·FMA로 찾습니다.</p>
+            <p className="ax-hint">경혈 코드·이름(ST36, 족삼리, zusanli), 구조의 한국어·영어·FMA(위, stomach, FMA7148)로 찾습니다.</p>
             <h3 className="ax-group-title">기관 상세 <small>{featuredAnatomy.length}</small></h3>
           </>}
+          {q && <p className="ax-hint" aria-live="polite">{resultCount ? `경혈 ${rankedPoints.length} · 기관 상세 ${organResults.length} · 구조 ${structureResults.length.toLocaleString()}` : "일치하는 경혈·구조가 없습니다. 다른 이름이나 코드를 입력하세요."}</p>}
+          {(exactStructures.exact.length > 0 || exactPoints.exact.length > 0) && (
+            <section className="ax-exact-results">
+              <h3 className="ax-group-title">정확히 일치</h3>
+              {exactStructures.exact.map(structureRow)}
+              {exactPoints.exact.map(pointRow)}
+            </section>
+          )}
           {organResults.length > 0 && (
             <div className="featured-anatomy">
               {q && <h3 className="ax-group-title">기관 상세 <small>{organResults.length}</small></h3>}
@@ -570,43 +752,26 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
           {!q && <button className="all-anatomy-button" onClick={showAllSystems}>전체 인체 구조 보기 <small>7개 계통 · {structuresForSex(state.sex).filter((s) => !s.detailOnly).length.toLocaleString()}개 구조</small></button>}
           {pointResults.length > 0 && (
             <section className="ax-point-results">
-              <h3 className="ax-group-title">경혈 <small>{pointResults.length}</small></h3>
-              {pointResults.map((p) => (
-                <button key={p.id} className={`point-item ${p.id === selected.id ? "active" : ""}`} aria-pressed={p.id === selected.id} onClick={() => select(p)}>
-                  <i style={{ background: meridianOf(p).color }} />
-                  <span><strong>{p.name} <small>{p.id}</small></strong><small className="classification-text">{meridianOf(p).shortName} · {p.region} · {categoryText(p.id)}</small></span>
-                </button>
-              ))}
+              <h3 className="ax-group-title">경혈 <small>{exactPoints.rest.length}</small></h3>
+              {pointResults.map(pointRow)}
+              {exactPoints.rest.length > pointResults.length && <button className="ax-more" onClick={() => setAllPointResults(true)}>경혈 {exactPoints.rest.length}개 모두 보기</button>}
             </section>
           )}
-          {q && (
-            <div className="structure-browser">
-              <p className="control-hint">{structureResults.length.toLocaleString()}개 구조 · 이름·라틴명·계통 경로로 검색{structureResults.length > visibleStructures.length && ` · 상위 ${visibleStructures.length}개 표시`}</p>
-              {layerKeys.map((l) => {
-                const items = visibleStructures.filter((s) => s.layer === l);
-                return items.length > 0 && (
-                  <section className="structure-group" key={l}>
-                    <h3 className="ax-group-title">{layerNames[l]} <small>{items.length}</small></h3>
-                    {items.map((s) => (
-                      <button key={s.id} className="structure-item" aria-pressed={state.selection?.kind === "structure" && state.selection.ids[0] === s.id} onClick={() => pickStructure(s)}>
-                        <strong>{s.label || s.name}</strong>
-                        <small>{s.name}{s.latin ? ` · ${s.latin}` : ""} · {s.id}{s.fmaId && s.fmaId !== s.id ? ` · ${s.fmaId}` : ""} · {s.source || "BodyParts3D 남성 참조"}</small>
-                        {s.hierarchy?.length ? <small className="structure-path">{s.hierarchy.join(" › ")}</small> : null}
-                      </button>
-                    ))}
-                  </section>
-                );
-              })}
-              {!structureResults.length && !pointResults.length && !organResults.length && <p className="ax-hint">일치하는 경혈·구조가 없습니다. 다른 이름이나 코드를 입력하세요.</p>}
-              {state.selection && <button className="structure-focus" onClick={() => { setPanel(null); camera("structure"); }}>선택 구조 확대</button>}
-            </div>
+          {q && exactStructures.rest.length > 0 && (
+            <section className="structure-browser">
+              <h3 className="ax-group-title">구조 <small>{structureResults.length.toLocaleString()}{structureResults.length > visibleStructures.length ? ` · 상위 ${visibleStructures.length}개 표시` : ""}</small></h3>
+              {exactStructures.rest.map(structureRow)}
+            </section>
           )}
+          {q && state.selection && <button className="structure-focus" onClick={() => { setPanel(null); camera("structure"); }}>선택 구조 확대</button>}
         </div>
       )}
 
       {panel === "display" && (
         <div className="ax-panel ax-side-panel" role="region" aria-label="표시 설정" ref={dockRef}>
           <div className="ax-panel-head"><strong>표시 설정</strong>{closeButton}</div>
+          {comparisonLine}
+          {phone && <button className="ax-text-button ax-present-entry" onClick={(e) => startPresenting(e.currentTarget)}>발표 보기 <small>도구를 접고 모델·선택 정보만 표시</small></button>}
           <AnatomyControls state={state} dispatch={dispatch} onDone={() => setPanel(null)} />
         </div>
       )}
@@ -614,10 +779,22 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
       {panel === "help" && (
         <div className="ax-panel ax-side-panel" role="region" aria-label="도움말" ref={dockRef}>
           <div className="ax-panel-head"><strong>도움말</strong>{closeButton}</div>
+          {comparisonLine}
           <div className="viewer-help">
-            <p>왼쪽 깊이 막대를 끌거나 계통 이름을 눌러 바깥부터 한 겹씩 걷어 냅니다. 처음에는 모든 계통이 몸 안에 함께 있고, 피부 → 근육(개별 근육 순서) → 골격 → 장기 → 혈관 → 림프 순서로 사라지며 신경이 남습니다. 눈 모양 버튼은 그 계통만 따로 봅니다.</p>
-            <p>아래 경맥 막대로 경혈을 한꺼번에 몸 위에 표시합니다. 표식에 마우스를 올리면 이름이, 누르면 경혈 정보가 열립니다. 보이지 않는 뒷면의 표식은 몸을 돌리면 나타납니다.</p>
-            <p>모델을 클릭한 뒤 W/S로 전진·후진, A/D로 좌우, Q/E로 아래·위로 이동합니다. Shift를 누르면 빠르게 이동합니다. 드래그로 회전, 일반 휠·핀치로 확대·축소합니다. Alt/Option을 누른 채 휠을 돌리거나 ↑/↓를 누르면 박리 깊이를 조절합니다. / 키로 검색을 엽니다.</p>
+            <table className="help-table">
+              <thead><tr><th scope="col">하려는 일</th><th scope="col">마우스·키보드</th><th scope="col">터치</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">경혈 찾기</th><td>검색(/ 키), 경맥 선택, 경혈 찾기 목록, 표식 클릭</td><td>검색, 아래 경혈 도구, 표식 누르기</td></tr>
+                <tr><th scope="row">차례로 보기</th><td colSpan={2}>경혈 칩의 이전·다음 — 현재 경맥·필터 결과 순서</td></tr>
+                <tr><th scope="row">돌리기·확대</th><td>드래그로 회전, 휠로 확대·축소, 정면·후면·측면</td><td>한 손가락 회전, 두 손가락 확대, 오른쪽 +·−·시점</td></tr>
+                <tr><th scope="row">이동</th><td>모델을 클릭한 뒤 W/S 전진·후진, A/D 좌우, Q/E 아래·위, Shift는 빠르게</td><td>시점 안의 이동 버튼</td></tr>
+                <tr><th scope="row">겉에서 속으로</th><td>깊이 막대 끌기·계통 이름 누르기, Alt/Option+휠 또는 모델에 초점을 둔 채 Alt/Option+↑/↓</td><td>아래 깊이 줄, 단계 버튼에서 계통 고르기</td></tr>
+                <tr><th scope="row">한 계통만</th><td>계통 옆 눈 버튼</td><td>단계 버튼 → 눈 버튼</td></tr>
+                <tr><th scope="row">장부 비교</th><td colSpan={2}>경혈 상세의 ‘대응 장부의 해부 구조 비교’</td></tr>
+              </tbody>
+            </table>
+            <h3>알아둘 점</h3>
+            <p>처음에는 모든 계통이 몸 안에 함께 있고, 피부 → 근육(개별 근육 순서) → 골격 → 장기 → 혈관 → 림프 순서로 사라지며 신경이 남습니다. 보이지 않는 뒷면의 표식은 몸을 돌리면 나타납니다.</p>
             <p>박리 백분율은 실제 조직 깊이가 아닌 교육용 표시 순서입니다. 가슴·복벽·엉덩이·종아리의 확인된 근육 관계는 표층부터 제거하며, 그 밖의 근육 순서는 기하학적 추정이므로 전체 해부 층서가 검증된 것은 아닙니다.</p>
             <p>표식은 체표 기준의 학습용 근사입니다. 장부 대응은 전통적 분류이며 압력 전달 경로가 아닙니다.</p>
             <p>{stageDescription(state.stage, state.sex)}</p>
@@ -631,33 +808,43 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
       {panel === "points" && (
         <div className="ax-panel ax-side-panel ax-point-list" role="region" aria-label="경혈 목록" ref={dockRef}>
           <div className="ax-panel-head"><strong>경혈 목록 <small>{found.length}/{points.length}</small></strong>{closeButton}</div>
-          <label className="ax-field">이름·코드<input aria-label="경혈 검색" placeholder="이름, 코드, 해부 구조 검색" value={query} onChange={(e) => setFilter({ query: e.target.value })} /></label>
-          <div className="ax-filter-grid">
-            <label className="ax-field">경혈 분류<select aria-label="경혈 분류" value={concept} onChange={(e) => setFilter({ concept: e.target.value })}>
-              <option value="all">전체 분류</option>
-              {concepts.map((c) => <option key={c.id} value={c.id}>{c.name} · {points.filter((p) => pointConcepts[p.id]?.categories.includes(c.id)).length}/{c.expectedTotal}</option>)}
-            </select></label>
-            <label className="ax-field">모델에서 볼 부위<select aria-label="모델 부위 선택" value={bodyRegion} onChange={(e) => { dispatch({ type: "region-filter", value: e.target.value }); camera("region"); }}>
-              <option value="전체">전체 부위</option>
-              {[...new Set(points.map((p) => p.bodyRegion))].map((r) => <option key={r} value={r}>{r} · {points.filter((p) => p.bodyRegion === r).length}</option>)}
-            </select></label>
-            <label className="ax-field">경맥<select aria-label="경맥 선택" value={meridian} onChange={(e) => setFilter({ meridian: e.target.value })}>
-              <option value="all">14경맥 + 경외기혈</option>
-              {meridians.map((m) => <option key={m.id} value={m.id}>{m.name} ({m.id})</option>)}
-            </select></label>
-            <label className="ax-field">수록 범위<select aria-label="수록 범위" value={catalogue} onChange={(e) => setFilter({ catalogue: e.target.value })}>
-              <option value="all">전체 409개</option><option value="classical">정규 경혈 361개</option><option value="extra">경외기혈 48개</option>
-            </select></label>
+          {comparisonLine}
+          <div className="ax-list-search">
+            <input aria-label="경혈 검색" placeholder="이름·코드·해부 구조로 찾기" value={query} onChange={(e) => setFilter({ query: e.target.value })} />
+            <button className="ax-ghost" aria-pressed={onlySaved} onClick={() => setFilter({ onlySaved: !onlySaved })}><Bookmark size={12} />저장 {saved.length}</button>
           </div>
-          <div className="ax-chips" role="group" aria-label="신체 부위">
-            {["전체", "머리·목", "몸통", "팔·손", "다리·발"].map((r) => <button key={r} aria-pressed={region === r} onClick={() => setFilter({ region: r })}>{r}</button>)}
-            <button aria-pressed={onlySaved} onClick={() => setFilter({ onlySaved: !onlySaved })}><Bookmark size={12} />저장 {saved.length}</button>
-          </div>
-          {concept !== "all" && <p className="ax-hint">{concepts.find((c) => c.id === concept)?.description}</p>}
-          <div className="ax-row">
+          <details className="ax-filters" open={filtersOpen} onToggle={(e) => setFiltersOpen(e.currentTarget.open)}>
+            <summary>필터 <small>{activeFilters || "분류 · 부위 · 경맥 · 수록 범위"}</small></summary>
+            <div className="ax-filter-grid">
+              <label className="ax-field">경혈 분류<select aria-label="경혈 분류" value={concept} onChange={(e) => setFilter({ concept: e.target.value })}>
+                <option value="all">전체 분류</option>
+                {concepts.map((c) => <option key={c.id} value={c.id}>{c.name} · {points.filter((p) => pointConcepts[p.id]?.categories.includes(c.id)).length}/{c.expectedTotal}</option>)}
+              </select></label>
+              <label className="ax-field">모델에서 볼 부위<select aria-label="모델 부위 선택" value={bodyRegion} onChange={(e) => { dispatch({ type: "region-filter", value: e.target.value }); camera("region"); }}>
+                <option value="전체">전체 부위</option>
+                {[...new Set(points.map((p) => p.bodyRegion))].map((r) => <option key={r} value={r}>{r} · {points.filter((p) => p.bodyRegion === r).length}</option>)}
+              </select></label>
+              <label className="ax-field">경맥<select aria-label="경맥 선택" value={meridian} onChange={(e) => setFilter({ meridian: e.target.value })}>
+                <option value="all">14경맥 + 경외기혈</option>
+                {meridians.map((m) => <option key={m.id} value={m.id}>{m.name} ({m.id})</option>)}
+              </select></label>
+              <label className="ax-field">수록 범위<select aria-label="수록 범위" value={catalogue} onChange={(e) => setFilter({ catalogue: e.target.value })}>
+                <option value="all">전체 409개</option><option value="classical">정규 경혈 361개</option><option value="extra">경외기혈 48개</option>
+              </select></label>
+            </div>
+            <div className="ax-chips" role="group" aria-label="신체 부위">
+              {["전체", "머리·목", "몸통", "팔·손", "다리·발"].map((r) => <button key={r} aria-pressed={region === r} onClick={() => setFilter({ region: r })}>{r}</button>)}
+            </div>
+            {concept !== "all" && <p className="ax-hint">{concepts.find((c) => c.id === concept)?.description}</p>}
+            <div className="ax-row">
+              <button className="ax-ghost" onClick={resetFilters}><RotateCcw size={13} />초기화</button>
+              <p className="coverage-note">14개 경맥 · 경혈 {points.length}개 · 정규 361경혈 + 표준 경외기혈 48개</p>
+            </div>
+          </details>
+          {/* Applying the results to the model matters only when they differ from what is shown. */}
+          {(found.length !== points.length || state.markers !== "filtered" || state.selection) && (
             <button className="show-filtered-button ax-primary" disabled={!found.length} onClick={() => { dispatch({ type: "show-filtered" }); camera("region"); setPanel(null); }}>필터 결과 {found.length}개를 모델에서 보기</button>
-            <button className="ax-ghost" onClick={resetFilters}><RotateCcw size={13} />초기화</button>
-          </div>
+          )}
           <div className="point-list">
             {found.map((p) => (
               <button key={p.id} className={`point-item ${p.id === selected.id ? "active" : ""}`} onClick={() => select(p)} aria-pressed={p.id === selected.id}>
@@ -668,17 +855,32 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             ))}
             {!found.length && <div className="empty-state"><strong>{onlySaved ? "저장한 경혈이 없습니다" : "일치하는 경혈이 없습니다"}</strong><button onClick={resetFilters}>전체 경혈 보기</button></div>}
           </div>
-          <p className="coverage-note">14개 경맥 · 경혈 {points.length}개 · 정규 361경혈 + 표준 경외기혈 48개</p>
         </div>
       )}
 
-      <nav className="depth-explorer ax-depth" aria-label="인체 깊이 탐색" data-mode={state.displayMode}>
-        <div className="depth-heading">
-          {state.displayMode === "dissection"
-            ? <strong aria-live="polite">{state.dissection.toFixed(1)}%<small>{depthName(state.dissection)}</small></strong>
-            : <button className="peel-entry" aria-label={`현재 기준 ${state.dissection.toFixed(1)}%에서 연속 박리 시작`} onClick={() => dispatch({ type: "dissection", value: state.dissection })}>박리<small>{state.dissection.toFixed(1)}%</small></button>}
+      <nav className="depth-explorer ax-depth" aria-label="인체 깊이 탐색" data-mode={state.displayMode} data-open={popover === "depth"} data-popover-root>
+        <select className="ax-select ax-region" aria-label="전신 부위 선택" value={state.anatomyRegion} onChange={(e) => {
+          const value = e.target.value as ViewState["anatomyRegion"];
+          dispatch({ type: "anatomy-region", value });
+          requestAnimationFrame(() => camera(value === "whole" ? "fit" : "anatomy-region"));
+        }}>{Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}</select>
+        <button className="depth-toggle" aria-expanded={popover === "depth"} aria-label={`깊이 단계 선택: ${depthSummary}`} onClick={(e) => togglePopover("depth", e.currentTarget)}>
+          {depthSummary}<ChevronDown size={14} />
+        </button>
+        <div className="depth-band">
+          <div className="depth-heading">
+            {state.displayMode === "dissection"
+              ? <strong aria-live="polite">{state.dissection.toFixed(1)}%<small>{depthName(state.dissection)}</small></strong>
+              : <>
+                <strong className="depth-mode">{depthMode}</strong>
+                <button className="peel-entry" aria-label={`현재 기준 ${state.dissection.toFixed(1)}%에서 연속 박리 시작`} onClick={() => dispatch({ type: "dissection", value: state.dissection })}>{state.dissection.toFixed(1)}%에서 연속 박리</button>
+              </>}
+          </div>
+          <p className="depth-band-hint">이름: 그 계통까지 박리 · 눈: 그 계통만 보기</p>
+          {/* Only the phone band covers the comparison card; the wide rail never does. */}
+          {phone && comparisonLine}
         </div>
-        <div className="ax-depth-track">
+        <div className="ax-depth-track" style={{ ["--fill" as string]: `${state.dissection}%` }}>
           <input
             type="range" min="0" max="100" step="0.5"
             value={state.dissection}
@@ -686,16 +888,20 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             aria-valuetext={state.displayMode === "dissection" ? `${state.dissection.toFixed(1)}% 해부 깊이 · ${depthName(state.dissection)}` : `계통별 보기 중 · 박리 시작 기준 ${state.dissection.toFixed(1)}%`}
             onChange={(event) => dispatch({ type: "dissection", value: Number(event.target.value) })}
           />
+          <span className="depth-ticks" aria-hidden="true">{stageDepth.map((depth, index) => <i key={index} style={{ ["--at-f" as string]: depth / 100 }} />)}</span>
           <ol className="depth-steps">
             {stages.map((stage, index) => {
               const peeled = state.displayMode === "dissection" && index < state.stage;
               const current = state.displayMode === "dissection" ? index === state.stage : soloLayer === stage.layer;
+              // Proportional to the real depth, but pushed up so neighbouring
+              // systems never share a pointer target (the ticks keep the true depth).
+              const top = `max(calc(var(--thumb) / 2), min(${stageDepth.slice(index).map((depth, offset) => `calc(var(--thumb) / 2 + (100% - var(--thumb)) * ${depth / 100} - ${offset} * var(--stop-gap))`).join(", ")}))`;
               return (
-                <li key={stage.layer} style={{ ["--at-f" as string]: stageDepth[index] / 100 }} className={current ? "active" : peeled ? "peeled" : ""}>
-                  <button className="ax-stop" onClick={() => dispatch({ type: "dissection", value: stageDepth[index] })} aria-label={`${layerNames[stage.layer]}까지 박리`} title={`${layerNames[stage.layer]}까지 박리 · ${stageDepth[index]}%`}>
+                <li key={stage.layer} style={{ ["--at-f" as string]: stageDepth[index] / 100, ["--stop-top" as string]: top }} className={current ? "active" : peeled ? "peeled" : ""}>
+                  <button className="ax-stop" onClick={() => { dispatch({ type: "dissection", value: stageDepth[index] }); setPopover(null); }} aria-label={`${layerNames[stage.layer]}까지 박리`} data-tip={`${layerNames[stage.layer]}까지 박리 · ${stageDepth[index]}%`} data-tip-side="right">
                     <i className={`layer-dot ${stage.layer}`} /><span className="ax-stop-name">{layerNames[stage.layer]}</span>
                   </button>
-                  <button className="ax-solo" aria-label={`${layerNames[stage.layer]} 빠른 보기`} data-tip={`${layerNames[stage.layer]}만 보기`} data-tip-side="right" aria-pressed={soloLayer === stage.layer} onClick={() => dispatch({ type: "stage", index })}><Eye size={13} /></button>
+                  <button className="ax-solo" aria-label={`${layerNames[stage.layer]} 빠른 보기`} data-tip={`${layerNames[stage.layer]}만 보기`} data-tip-side="right" aria-pressed={soloLayer === stage.layer} onClick={() => { dispatch({ type: "stage", index }); setPopover(null); }}><Eye size={13} /></button>
                 </li>
               );
             })}
@@ -704,15 +910,10 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
       </nav>
 
       <aside className="ax-inspector" aria-label="선택 정보">
-        {!hasSelected && (
-          <div className="floating-point ax-point-chip">
-            <button className="ax-point-empty" aria-label="경혈 선택 — 표식을 누르거나 목록에서 고르기" onClick={(e) => openPanel("points", e.currentTarget)}>
-              <span className="ax-dot" />경혈 선택<small>표식을 누르거나 목록에서</small>
-            </button>
-          </div>
-        )}
-        {hasSelected && (
-          <div className="floating-point ax-point-chip">
+        {notice && <p className="ax-link-notice ax-card" role="status">{notice} <button type="button" onClick={onNotice}>닫기</button></p>}
+        <div className="floating-point ax-point-chip">
+          <button className="ax-step" aria-label="이전 경혈" aria-disabled={!prevPoint} data-tip={stepTip(prevPoint, "첫 경혈입니다")} onClick={() => step(prevPoint)}>이전</button>
+          {hasSelected ? <>
             <button className="point-summary" aria-expanded={panel === "detail"} onClick={(e) => openPanel("detail", e.currentTarget)}>
               <i style={{ background: meridianOf(selected).color }} />
               <span>{selected.id}</span>
@@ -721,8 +922,13 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               <ChevronDown size={15} />
             </button>
             <button className="ax-icon" aria-label="선택 경혈 확대" data-tip="선택 경혈 확대" onClick={() => camera("focus")}><Focus size={17} /></button>
-          </div>
-        )}
+          </> : (
+            <button className="ax-point-empty" aria-label="경혈 선택 — 표식을 누르거나 목록에서 고르기" onClick={(e) => openPanel("points", e.currentTarget)}>
+              <span className="ax-dot" />경혈 선택<small>표식을 누르거나 목록에서</small>
+            </button>
+          )}
+          <button className="ax-step" aria-label="다음 경혈" aria-disabled={!nextPoint} data-tip={stepTip(nextPoint, "마지막 경혈입니다")} onClick={() => step(nextPoint)}>다음</button>
+        </div>
         {panel === "detail" && hasSelected && (
           <PointDetail
             point={selected}
@@ -741,15 +947,24 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
           />
         )}
         {state.selection && (
-          <section className="selection-card ax-card" data-detail={Boolean(state.detail)} data-selection="true" data-lung-part={selectedLungPart} aria-label="선택 구조 조작">
+          <section className="selection-card ax-card" tabIndex={-1} data-detail={Boolean(state.detail)} data-selection="true" data-lung-part={selectedLungPart} aria-label="선택 구조 조작">
             <div key={selectionKey}>
               <span className={`selection-kind ${state.selection.kind}`}>
                 {state.comparison ? "전통 장부 비교" : state.detail ? `${state.detail.name} · ${selectedComposite ? "구조" : "기관"} 상세 모델` : state.selection.kind === "bundle" ? "구조 묶음" : "선택 구조"}
                 {selectedKind && ` · ${connectiveKindNames[selectedKind]}`}
               </span>
               <strong>{state.selection.name} <small>{state.selection.ids.length}개 구조</small></strong>
-              {state.comparison && <p className="comparison-note">{selected.name} · {state.comparison.name} 비교 — 전통적 대응, 압력 경로 아님</p>}
-              {state.comparison && state.sex === "female" && state.selection.ids.some((id) => id.startsWith("FT_")) && <p className="selection-description" data-carried-comparison>남성 원본을 여성 골격·피부 대응으로 옮긴 보완 구조로, 여성 고유 형상이 아닙니다.{separateDetailIds.length > 0 && " 여성 CT 자료는 아래 별도 상세에서 따로 봅니다."}</p>}
+              {movementOrigin && <a className="movement-return" href={movementOrigin.href}>← 동작 역학으로 돌아가기 <small>{movementOrigin.label}</small></a>}
+              {/* The comparison's limits come first, right under its name (Q25). */}
+              {state.comparison && <p className="comparison-note">{comparisonPoint?.name || state.comparison.pointId} · {state.comparison.name} 비교 — 전통적 대응, 압력 경로 아님</p>}
+              {selectedAnatomy && <small className="selection-identity">{selectedAnatomy.name}{selectedAnatomy.fmaId && selectedAnatomy.fmaId !== selectedAnatomy.id ? ` · ${selectedAnatomy.fmaId}` : ""} · {selectedAnatomy.id} · {layerNames[selectedAnatomy.layer as Layer]}</small>}
+              <span className="scene-legend">
+                {state.selection.kind === "structure" && <span><i className="legend-selected" />선택 구조</span>}
+                {state.comparison && <span><i className="legend-compare" />전통 장부 대응</span>}
+                {hasSelected && selected.structures.length > 0 && <span><i className="legend-reference" />경혈 참조</span>}
+              </span>
+              {carriedComparison && <p className="selection-description" data-carried-comparison>남성 원본을 여성 골격·피부 대응으로 옮긴 보완 구조로, 여성 고유 형상이 아닙니다.{comparisonDetailIds.length > 0 && " 여성 CT 자료는 아래 별도 상세에서 따로 봅니다."}</p>}
+              {!state.comparison && state.sex === "female" && state.selection.kind === "bundle" && state.selection.ids.every((id) => id.startsWith("FT_")) && <p className="selection-description" data-carried-bundle>{FEMALE_TRANSPORT_NOTE}</p>}
               {state.sex === "male" && sourceKey === "male-detail" && selectedGroup === "stomach" && <p className="selection-description" data-stomach-frame-warning>별도 4.0 상세 원본입니다. 전신 3.0 위와 상자 중심이 약 42mm 달라 같은 위치로 정합된 화면이 아닙니다.</p>}
               {selectedAnatomy?.description && sourceKey !== "female-detail" && <p className="selection-description">{selectedAnatomy.description}</p>}
               {selectedAnatomy?.id.startsWith("VHF") && <p className="selection-description" data-donor-muscle-note>별도 Visible Human Female 기증자 다리 근육입니다. 전신 정합이 끝나지 않아 개요에서는 숨기고, 개요의 다리 근육은 남성 원본을 여성 몸에 맞춰 옮긴 보완으로 보여 줍니다.</p>}
@@ -795,6 +1010,10 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
                   <p className="selection-source">원본 해상도 1.5mm · Jakob Wasserthal, 바젤대학병원 · <a href="https://zenodo.org/records/10047292" target="_blank" rel="noreferrer">TotalSegmentator 2.0.1</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a> · 표면 변환·축 변환·공통 이동. 진단·시술용이 아닙니다.</p>
                 </details>
               </>}
+              {state.selection.kind === "structure" && state.selection.ids.length === 1 && !state.comparison && !state.isolated && <label className="selection-context">
+                <input type="checkbox" aria-label="주변 반투명" aria-describedby="selection-context-help" checked={state.fadeContext} onChange={(e) => dispatch({ type: "fade-context", value: e.target.checked })} />
+                <span>주변 반투명 <small id="selection-context-help">관찰 보조 · 실제 박리 아님</small></span>
+              </label>}
               {detailParts.length > 1 && (
                 <details className="organ-detail-parts" open={detailPartsOpen} onToggle={(e) => setPartsOpen({ scope: partsScope, open: e.currentTarget.open })}>
                   <summary>세부 구조 {detailParts.length}개 선택</summary>
@@ -805,10 +1024,6 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               )}
             </div>
             <div className="selection-actions">
-              {state.selection.kind === "structure" && state.selection.ids.length === 1 && !state.comparison && !state.isolated && <label className="selection-context">
-                <input type="checkbox" aria-label="주변 반투명" aria-describedby="selection-context-help" checked={state.fadeContext} onChange={(e) => dispatch({ type: "fade-context", value: e.target.checked })} />
-                <span>주변 반투명 <small id="selection-context-help">관찰 보조 · 실제 박리 아님</small></span>
-              </label>}
               {sourceKey === "female-detail" && state.detail?.id !== "abdomen-ct" && <button aria-label="같은 여성 CT의 주변 기관 보기" onClick={() => selectFeatured(featuredAnatomy.find((item) => item.id === "abdomen-ct")!)}>주변 기관 함께 보기</button>}
               {fullLungDetail && lungViewOptions}
               {fullPancreasDetail && pancreasViewOptions}
@@ -822,7 +1037,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
                 if (pose) restoreOverviewPose(pose);
                 else requestAnimationFrame(() => camera("fit"));
               }}>전신으로 돌아가기</button>}
-              {state.comparison && featuredAnatomy.filter((group) => separateDetailIds.includes(group.id)).map((group) => <button key={group.id} onClick={() => {
+              {state.comparison && featuredAnatomy.filter((group) => comparisonDetailIds.includes(group.id)).map((group) => <button key={group.id} onClick={() => {
                 setSeparateDetailIds([]); selectFeatured(group);
               }}>{group.name} 상세</button>)}
               <button onClick={() => { setPanel(null); camera("structure"); }}>확대</button>
@@ -831,8 +1046,8 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
                 dispatch({ type: "isolate" });
                 if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
                 isolateCameraFrame.current = requestAnimationFrame(() => { isolateCameraFrame.current = null; camera(kind); });
-              }}>{state.isolated ? "전체 구조 보기" : state.selection.kind === "bundle" ? "비교 대상만 보기" : "선택 구조만 보기"}</button>}
-              <button aria-label="구조 선택 해제" onClick={leaveSelection}><X size={15} /></button>
+              }}>{state.isolated ? "전체 구조 보기" : state.comparison ? "비교 대상만 보기" : connectiveBundle ? "인대·힘줄만 보기" : state.selection.kind === "bundle" ? "묶음만 보기" : "선택 구조만 보기"}</button>}
+              <button className="clear-selection" aria-label="구조 선택 해제" data-tip="구조 선택 해제" data-tip-side="top" onClick={leaveSelection}><X size={15} /><span className="clear-text">해제</span></button>
             </div>
           </section>
         )}
@@ -843,52 +1058,81 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
           <span className="scene-status">
             <span className={`status-dot ${ready ? "live" : ""}`} />
             <span role="status">{statusText}</span>
-            <span className="click-target">선택 대상: {state.selectionTarget === "internal" ? "내부 구조" : state.selectionTarget === "skin" ? "체표" : "보이는 구조"}</span>
+            {state.selectionTarget !== "visible" && <span className="click-target"><span className="click-label">선택 대상: </span>{state.selectionTarget === "internal" ? "내부 구조" : "체표"}<span className="click-suffix"> 선택</span></span>}
           </span>
-          {(state.selection || state.comparison) && (
-            <span className="scene-legend">
-              <span><i className="legend-selected" />선택 구조</span>
-              <span><i className="legend-compare" />전통 장부 대응</span>
-              <span><i className="legend-reference" />경혈 참조</span>
-            </span>
-          )}
-          <span className="ax-source"><span className="scope-source">{sourceKey === "female-detail" ? "여성 CT 별도 상세 · HRA 전신과 다른 신체" : state.sex === "female" ? `HRA 여성 전신 1,220개 + 남성 원본 정합 보완 ${transportedCount.toLocaleString("en-US")}개 · 여성 CT 별도 상세 11개` : "BodyParts3D 남성 참조 · 림프 142개 포함"}</span> · <a className="scene-guide" href="#wiki/massage-anatomy">학습용 근사 · 근거 읽기 ↗</a></span>
+          <span className="ax-source">
+            <span className="scope-source">{sourceKey === "female-detail" ? "여성 CT 별도 상세 · HRA 전신과 다른 신체" : state.sex === "female" ? `HRA 여성 전신 1,220개 + 남성 원본 정합 보완 ${transportedCount.toLocaleString("en-US")}개 · 여성 CT 별도 상세 11개` : "BodyParts3D 남성 참조 · 림프 142개 포함"}</span>
+            <span className="scope-short">{sourceKey === "female-detail" ? "여성 CT 별도 상세" : state.sex === "female" ? "여성 HRA·남성 보완" : "남성 참조"}</span>
+            {" · "}<a className="scene-guide" href="#wiki/massage-anatomy">학습용 근사<span className="guide-more"> · 근거 읽기</span> ↗</a>
+          </span>
         </div>
         <div className="ax-point-bar" role="toolbar" aria-label="경혈 표시">
           {femaleHidden ? (<>
-            <p className="ax-note">여성 모델의 경혈 좌표는 검수 전이라 표식을 숨깁니다. <button onClick={() => dispatch({ type: "female-markers", value: true })}>근사 위치로 보기</button> <button onClick={() => dispatch({ type: "sex", value: "male" })}>남성 모델에서 경혈 보기</button></p>
+            <p className="ax-note"><span className="note-long">여성 모델의 경혈 좌표는 검수 전이라 표식을 숨깁니다.</span><span className="note-short">여성 경혈 좌표는 검수 전이라 숨깁니다.</span> <button aria-label="근사 위치로 보기" onClick={() => dispatch({ type: "female-markers", value: true })}>근사 위치<span className="note-long">로 보기</span></button> <button aria-label="남성 모델에서 경혈 보기" onClick={() => dispatch({ type: "sex", value: "male" })}>남성 모델<span className="note-long">에서 경혈 보기</span></button></p>
             <button className="ax-toggle" aria-expanded={panel === "points"} aria-label="경혈 찾기" data-tip="경혈 목록 · 장부 비교할 경혈 고르기" data-tip-side="top" onClick={(e) => openPanel("points", e.currentTarget)}><List size={15} /></button>
           </>) : <>
             {state.sex === "female" && <button className="ax-toggle ax-approx" aria-pressed="true" aria-label="여성 근사 표식 끄기" data-tip="남성 표식을 여성 골격·피부 대응으로 옮긴 근사 위치 · 검수 전 · 누르면 숨김" data-tip-side="top" onClick={() => dispatch({ type: "female-markers", value: false })}>근사</button>}
             <button className="ax-toggle" aria-pressed={state.markers !== "hidden"} onClick={() => dispatch({ type: "markers", value: state.markers === "hidden" ? "filtered" : "hidden" })}>
               <span className="ax-dot" />경혈 <small>{markerCount}</small>
             </button>
-            <div className="ax-meridians">
-              <button aria-pressed={meridian === "all" && state.markers === "filtered"} aria-label="모든 경맥의 경혈 보기" onClick={() => { setFilter({ meridian: "all" }); dispatch({ type: "markers", value: "filtered" }); }}>전체</button>
-              {meridians.map((m) => (
-                <button key={m.id} style={{ ["--c" as string]: m.color }} aria-pressed={meridian === m.id && state.markers === "filtered"} aria-label={`${m.name} 경혈만 보기`} data-tip={`${m.name} · ${m.total}혈`} data-tip-side="top"
-                  onClick={() => { setFilter({ meridian: meridian === m.id ? "all" : m.id }); dispatch({ type: "markers", value: "filtered" }); }}>
-                  <i />{meridianChipName(m)}
-                </button>
-              ))}
+            <div className="ax-meridian-picker" data-popover-root>
+              <button className="ax-toggle ax-meridian-button" aria-expanded={popover === "meridian"} onClick={(e) => togglePopover("meridian", e.currentTarget)}>
+                {meridian === "all" ? <>경맥 <span>전체</span></> : <><i style={{ background: meridians.find((m) => m.id === meridian)?.color }} />경맥 <span>{meridianChipName(meridians.find((m) => m.id === meridian)!)}</span></>}
+                <ChevronDown size={14} />
+              </button>
+              {popover === "meridian" && (
+                <div className="ax-popover ax-meridians" role="group" aria-label="경맥 선택">
+                  {comparisonLine}
+                  <button aria-pressed={meridian === "all" && state.markers === "filtered"} aria-label="모든 경맥의 경혈 보기" onClick={() => { setFilter({ meridian: "all" }); dispatch({ type: "markers", value: "filtered" }); closePopover(); }}>
+                    전체<small>{points.length}</small>
+                  </button>
+                  {meridians.map((m) => (
+                    <button key={m.id} style={{ ["--c" as string]: m.color }} aria-pressed={meridian === m.id && state.markers === "filtered"} aria-label={`${m.name} 경혈만 보기`}
+                      onClick={() => { setFilter({ meridian: meridian === m.id ? "all" : m.id }); dispatch({ type: "markers", value: "filtered" }); closePopover(); }}>
+                      <i />{meridianChipName(m)}<small>{m.total}</small>
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
-            <button className="ax-toggle" aria-pressed={state.labels} aria-label="표식 이름 표시" data-tip="표식 이름 표시" data-tip-side="top" onClick={() => dispatch({ type: "labels", value: !state.labels })}><Tag size={14} /></button>
-            <button className="ax-toggle" aria-expanded={panel === "points"} aria-label="경혈 찾기" data-tip="경혈 목록·필터" data-tip-side="top" onClick={(e) => openPanel("points", e.currentTarget)}><List size={15} /></button>
+            <button className="ax-toggle" aria-pressed={state.labels} aria-label="표식 이름 표시" data-tip="표식 이름 표시" data-tip-side="top" onClick={() => dispatch({ type: "labels", value: !state.labels })}><Tag size={14} /><span>이름</span></button>
+            <button className="ax-toggle" aria-expanded={panel === "points"} aria-label="경혈 찾기" data-tip="경혈 목록·필터" data-tip-side="top" onClick={(e) => openPanel("points", e.currentTarget)}><List size={15} /><span>경혈 찾기</span></button>
           </>}
         </div>
         <div className="ax-camera">
-          <details className="movement-pad" aria-label="화면 이동">
-            <summary title="키보드: WASD · Q/E">이동</summary>{movementButtons}
-          </details>
-          <div className="view-presets" role="group" aria-label="시점">
-            {(["front", "back", "side"] as const).map((v, i) => <button key={v} onClick={() => camera(v)}>{["정면", "후면", "측면"][i]}</button>)}
-          </div>
-          <div className="view-tools">
-            <button aria-label="확대" data-tip="확대" data-tip-side="top" onClick={() => camera("zoomIn")}><Plus size={17} /></button>
-            <button aria-label="축소" data-tip="축소" data-tip-side="top" onClick={() => camera("zoomOut")}><Minus size={17} /></button>
-            <button aria-label="계통 전체 보기" data-tip="계통 전체 보기" data-tip-side="top" onClick={() => camera("fit")}><Focus size={16} /></button>
-            <button aria-label="시점 초기화" data-tip="시점 초기화" data-tip-side="top" onClick={() => camera("reset")}><RotateCcw size={16} /></button>
-          </div>
+          {compactCamera ? <>
+            <div className="view-tools">
+              <button aria-label="확대" data-tip="확대" onClick={() => camera("zoomIn")}><Plus size={17} /></button>
+              <button aria-label="축소" data-tip="축소" onClick={() => camera("zoomOut")}><Minus size={17} /></button>
+            </div>
+            <div className="view-presets" role="group" aria-label="시점">
+              <button onClick={() => camera("front")}>정면</button>
+              <button onClick={() => camera("back")}>후면</button>
+            </div>
+            <details className="movement-pad" aria-label="화면 이동">
+              <summary>시점</summary>
+              <div>
+                {comparisonLine}
+                <button onClick={() => camera("side")}>측면</button>
+                <button aria-label="계통 전체 보기" onClick={() => camera("fit")}>전체</button>
+                <button aria-label="시점 초기화" onClick={() => camera("reset")}>초기화</button>
+                {movementButtons}
+              </div>
+            </details>
+          </> : <>
+            <details className="movement-pad" aria-label="화면 이동">
+              <summary data-tip="키보드: WASD · Q/E" data-tip-side="top">이동</summary>{movementButtons}
+            </details>
+            <div className="view-presets" role="group" aria-label="시점">
+              {(["front", "back", "side"] as const).map((v, i) => <button key={v} onClick={() => camera(v)}>{["정면", "후면", "측면"][i]}</button>)}
+            </div>
+            <div className="view-tools">
+              <button aria-label="확대" data-tip="확대" data-tip-side="top" onClick={() => camera("zoomIn")}><Plus size={17} /></button>
+              <button aria-label="축소" data-tip="축소" data-tip-side="top" onClick={() => camera("zoomOut")}><Minus size={17} /></button>
+              <button aria-label="계통 전체 보기" data-tip="계통 전체 보기" data-tip-side="top" onClick={() => camera("fit")}><Focus size={16} /></button>
+              <button aria-label="시점 초기화" data-tip="시점 초기화" data-tip-side="top" onClick={() => camera("reset")}><RotateCcw size={16} /></button>
+            </div>
+          </>}
         </div>
       </div>
 

@@ -1,0 +1,53 @@
+
+> anatomy2@1.0.0 build
+> node scripts/build-anchors.mjs && node scripts/build-wiki.mjs && tsc && vite build
+
+Placed 6 anchors facing a closed contact pocket: HT2-0--1 kept, HT2-0-1 kept, LR10-0--1 kept, LR10-0-1 kept, LR11-0--1 kept, LR11-0-1 kept
+Projected 834 anchors; largest seed adjustment 67.6 mm (not a clinical accuracy measurement).
+Built 419 wiki articles; internal links verified.
+file:///Users/nuinuri/workspace/anatomy/node_modules/rolldown/dist/shared/binding-DmImI4pj.mjs:597
+			const error = /* @__PURE__ */ new Error("Cannot find native binding. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.");
+			                              ^
+
+Error: Cannot find native binding. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+    at file:///Users/nuinuri/workspace/anatomy/node_modules/rolldown/dist/shared/binding-DmImI4pj.mjs:597:34
+    at file:///Users/nuinuri/workspace/anatomy/node_modules/rolldown/dist/shared/binding-DmImI4pj.mjs:9:49
+    ... 2 lines matching cause stack trace ...
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26) {
+  cause: Error: Cannot find module '@rolldown/binding-wasm32-wasi'
+  Require stack:
+  - /Users/nuinuri/workspace/anatomy/node_modules/rolldown/dist/shared/binding-DmImI4pj.mjs
+      at file:///Users/nuinuri/workspace/anatomy/node_modules/rolldown/dist/shared/binding-DmImI4pj.mjs:494:18
+      ... 6 lines matching cause stack trace ...
+      at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26) {
+    cause: Error: Cannot find module './rolldown-binding.wasi.cjs'
+    Require stack:
+    - /Users/nuinuri/workspace/anatomy/node_modules/rolldown/dist/shared/binding-DmImI4pj.mjs
+        at file:///Users/nuinuri/workspace/anatomy/node_modules/rolldown/dist/shared/binding-DmImI4pj.mjs:494:18
+        ... 6 lines matching cause stack trace ...
+        at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26) {
+      cause: Error: dlopen(/Users/nuinuri/workspace/anatomy/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node, 0x0001): tried: '/Users/nuinuri/workspace/anatomy/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node' (code signature in <68E288F2-D92F-3B6F-8A18-509D88429DCC> '/Users/nuinuri/workspace/anatomy/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node' not valid for use in process: mapping process and mapped file (non-platform) have different Team IDs), '/System/Volumes/Preboot/Cryptexes/OS/Users/nuinuri/workspace/anatomy/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node' (no such file), '/Users/nuinuri/workspace/anatomy/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node' (code signature in <68E288F2-D92F-3B6F-8A18-509D88429DCC> '/Users/nuinuri/workspace/anatomy/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node' not valid for use in process: mapping process and mapped file (non-platform) have different Team IDs)
+          at file:///Users/nuinuri/workspace/anatomy/node_modules/rolldown/dist/shared/binding-DmImI4pj.mjs:494:18
+          ... 6 lines matching cause stack trace ...
+          at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26) {
+        cause: Error: Cannot find module './rolldown-binding.darwin-arm64.node'
+        Require stack:
+        - /Users/nuinuri/workspace/anatomy/node_modules/rolldown/dist/shared/binding-DmImI4pj.mjs
+            at file:///Users/nuinuri/workspace/anatomy/node_modules/rolldown/dist/shared/binding-DmImI4pj.mjs:494:18
+            ... 6 lines matching cause stack trace ...
+            at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26) {
+          cause: Error: Cannot find module '@rolldown/binding-darwin-universal'
+          Require stack:
+          - /Users/nuinuri/workspace/anatomy/node_modules/rolldown/dist/shared/binding-DmImI4pj.mjs
+              at file:///Users/nuinuri/workspace/anatomy/node_modules/rolldown/dist/shared/binding-DmImI4pj.mjs:494:18
+              ... 6 lines matching cause stack trace ...
+              at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26) {
+            cause: [Error]
+          }
+        }
+      }
+    }
+  }
+}
+
+Node.js v24.14.0

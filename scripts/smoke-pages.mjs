@@ -15,11 +15,15 @@ try {
  const requests=[],errors=[],failures=[];
  page.on('request',r=>requests.push(r.url()));page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400) failures.push(`${r.status()} ${r.url()}`)});
  await page.goto(origin+'#wiki');
- await page.getByRole('heading',{name:'위키에 물어보기'}).waitFor();
+ await page.getByRole('heading',{name:'질문으로 문서 찾기'}).waitFor();
  assert.equal(requests.filter(u=>u.endsWith('.glb')||u.endsWith('.bin.gz')||/\/assets\/Atlas-/.test(u)).length,0);
  await page.getByLabel('위키 질문').fill('내관과 외관');await page.getByRole('button',{name:'질문 보내기'}).click();
  await page.locator('.answer').waitFor();assert.match(await page.locator('.answer').innerText(),/PC6/);assert.match(await page.locator('.answer').innerText(),/TE5/);
  assert.equal(requests.filter(u=>u.includes('/api/')).length,0);
+ // The movement page opens under the Pages subpath with 2D diagrams only (docs/movement-mechanics).
+ for(const route of ['#movement','#movement/walking/loading-response','#movement/arm-elevation']){await page.goto(origin+route);await page.locator('main.movement-page h1').waitFor();}
+ await page.locator('.mv-svg').waitFor();
+ assert.equal(requests.filter(u=>u.endsWith('.glb')||u.endsWith('.bin.gz')||/\/assets\/Atlas-/.test(u)).length,0,'movement page must not load the 3D viewer or models');
  await page.goto(origin+'#wiki/points/EX-UE11');
  await page.locator('article h1').waitFor();
  const download=await page.getByRole('link',{name:'Markdown'}).getAttribute('href');assert.ok(download.startsWith('/gyeol-atlas/wiki/'));
@@ -55,6 +59,6 @@ await page.waitForFunction(n=>document.querySelector('canvas')?.dataset.femaleTr
  const bodyPixels=litPixels(await page.screenshot({clip:{x:60,y:250,width:270,height:150}}));
  assert.ok(bodyPixels>500,`scene above the open phone panel is blank (${bodyPixels} lit pixels)`);
  assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
- const result={origin,checkedAt:new Date().toISOString(),points:409,staticSearch:true,initialWikiModelRequests:0,femaleParts:1220,femaleTransportParts:JSON.parse(readFileSync('data/female-transport-structures.json','utf8')).length,femaleBrainParts:283,maleHeartParts:83,errors,failures};
+ const result={origin,checkedAt:new Date().toISOString(),points:409,staticSearch:true,initialWikiModelRequests:0,movementModelRequests:0,femaleParts:1220,femaleTransportParts:JSON.parse(readFileSync('data/female-transport-structures.json','utf8')).length,femaleBrainParts:283,maleHeartParts:83,errors,failures};
  await fs.writeFile('docs/acupoint-expansion/pages-verification.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
 } finally {await browser.close();}

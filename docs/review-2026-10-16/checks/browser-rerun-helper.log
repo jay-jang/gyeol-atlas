@@ -1,0 +1,25 @@
+
+Running 21 tests using 1 worker
+
+[1/21] tests/browser/comparison-layout.spec.ts:6:1 › landscape comparisons and isolated bundles remain clear without changing their memberships
+[2/21] tests/browser/comparison-layout.spec.ts:41:1 › female organ comparisons use the female body and keep the CT stomach one explicit choice away
+[3/21] tests/browser/detail-context.spec.ts:24:29 › male heart: restoring detail context keeps every original member and the selected child
+[4/21] tests/browser/detail-context.spec.ts:24:29 › male liver: restoring detail context keeps every original member and the selected child
+[5/21] tests/browser/detail-context.spec.ts:24:29 › male lung: restoring detail context keeps every original member and the selected child
+[6/21] tests/browser/detail-context.spec.ts:24:29 › female abdomen-ct: restoring detail context keeps every original member and the selected child
+[7/21] tests/browser/detail-layout.spec.ts:13:4 › male-heart detail remains above its card and presets retain organ focus
+[8/21] tests/browser/detail-layout.spec.ts:13:4 › female-brain detail remains above its card and presets retain organ focus
+[9/21] tests/browser/detail-layout.spec.ts:13:4 › female-ct detail remains above its card and presets retain organ focus
+[10/21] tests/browser/detail-layout.spec.ts:64:1 › every major organ detail fits beside its collapsed and expanded card
+[11/21] tests/browser/first-frame.spec.ts:42:1 › overview meshes that mount mid-peel use their peel opacity on their first draw
+[12/21] tests/browser/first-frame.spec.ts:72:1 › female and independent CT source mounts never draw the default all-visible packed scene
+[13/21] tests/browser/first-frame.spec.ts:118:1 › cancelled female and CT downloads cannot expose a late source after switching back
+[14/21] tests/browser/panel-keyboard.spec.ts:8:5 › desktop › search shortcut returns to its trigger and idle Escape leaves canvas focus alone
+[15/21] tests/browser/panel-keyboard.spec.ts:41:5 › desktop › acupoint detail tabs support arrows, Home/End and labelled content
+[16/21] tests/browser/panel-keyboard.spec.ts:8:5 › mobile › search shortcut returns to its trigger and idle Escape leaves canvas focus alone
+[17/21] tests/browser/panel-keyboard.spec.ts:41:5 › mobile › acupoint detail tabs support arrows, Home/End and labelled content
+[18/21] tests/browser/panel-keyboard.spec.ts:73:3 › desktop: home and history keep the saved comparison's acupoint
+[19/21] tests/browser/panel-keyboard.spec.ts:73:3 › mobile: home and history keep the saved comparison's acupoint
+[20/21] tests/browser/panel-keyboard.spec.ts:102:1 › an atlas with no selected acupoint does not highlight the fallback ST36 structures
+[21/21] tests/browser/panel-keyboard.spec.ts:117:1 › a connective bundle keeps its own isolation label and tooltips describe icon actions
+  21 passed (2.1m)

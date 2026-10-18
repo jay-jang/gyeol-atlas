@@ -1,5 +1,5 @@
 import {test,expect,type Page} from '@playwright/test';
-import {ready,snapshot,organs} from './helpers';
+import {ready,snapshot,organs,viewButton} from './helpers';
 import fs from 'node:fs';
 import maleGroups from '../../data/male-detail-groups.json' with {type:'json'};
 import femaleGroups from '../../data/female-detail-groups.json' with {type:'json'};
@@ -65,7 +65,7 @@ for(const sample of samples)test(`${sample.sex} ${sample.group.id}: restoring de
   await page.setViewportSize({width:390,height:844});
   await expect.poll(frameError).toBeLessThan(.001);
   for(const name of ['후면','측면','정면']){
-    await page.locator('.view-presets').getByRole('button',{name,exact:true}).click();
+    await viewButton(page,name);
     await expect.poll(frameError).toBeLessThan(.001);
     await expect.poll(async()=>(await projection()).canvasClearance).toBeGreaterThan(0);
     await expect.poll(async()=>(await projection()).cardClearance).toBeGreaterThan(0);

@@ -18,7 +18,8 @@ export type Selection = {
   // change while all of them stay drawn (sessions saved without it do not).
   layers?: Layer[];
 };
-type ReturnView = Pick<ViewState, "anatomyRegion" | "stage" | "dissection" | "displayMode" | "layers" | "cutaway" | "selectionTarget"> & { camera?: CameraPose | null };
+// skinAlpha: the skin opacity a comparison replaced (absent elsewhere).
+type ReturnView = Pick<ViewState, "anatomyRegion" | "stage" | "dissection" | "displayMode" | "layers" | "cutaway" | "selectionTarget"> & { camera?: CameraPose | null; skinAlpha?: number };
 export type ViewState = {
   version: 4;
   brainBindingVersion?: string;
@@ -125,6 +126,7 @@ export type ViewAction =
   | { type: "target"; value: ViewState["selectionTarget"] }
   | { type: "select"; selection: Selection; layer?: Layer; region?: ViewState["anatomyRegion"]; detail?: NonNullable<ViewState["detail"]> }
   | { type: "pick"; selection: Selection }
+  | { type: "open-structures"; ids: string[]; name: string; layers: Layer[]; region?: ViewState["anatomyRegion"] }
   | { type: "detail"; detail: NonNullable<ViewState["detail"]> }
   | { type: "detail-close" }
   | { type: "compare"; name: string; ids: string[]; layers?: Layers; selectionLayers?: Layer[] }
@@ -142,21 +144,31 @@ const returnView = (s: ViewState): ReturnView => ({
   displayMode: s.displayMode, layers: { ...s.layers }, cutaway: s.cutaway,
   selectionTarget: s.selectionTarget, camera: s.camera,
 });
+// The scene a part selection returns to: an earlier selection's or detail's
+// origin, else the progressive scene it leaves (a comparison has its own).
+const selectionOrigin = (s: ViewState) => s.selectionReturn ?? s.detailReturn
+  ?? (!s.comparison && s.displayMode === "dissection" ? { ...returnView(s), camera: s.camera } : null);
 const detailOrigin = (s: ViewState) => s.detailReturn
   ?? s.selectionReturn ?? returnView(s.detail ? initialView(s.pointId) : s);
+// A comparison dims the skin to this value. Returning from it restores the
+// opacity it replaced only while the viewer has left it there.
+const COMPARISON_SKIN = 0.12;
+const backTo = (s: ViewState, { skinAlpha, ...view }: ReturnView): ViewState => ({
+  ...s, ...view,
+  ...(skinAlpha !== undefined && s.alpha.skin === COMPARISON_SKIN ? { alpha: { ...s.alpha, skin: skinAlpha } } : {}),
+});
 function closeDetail(s: ViewState): ViewState {
-  const previous = detailOrigin(s);
-  return { ...s, ...previous, detail: null, detailReturn: null, selectionReturn: null, selection: null,
+  return { ...backTo(s, detailOrigin(s)), detail: null, detailReturn: null, selectionReturn: null, selection: null,
     comparison: null, isolated: false };
 }
 // Leaving a selection restores the systems and depth it replaced, never its
 // camera: the viewer keeps looking where they are (an independent detail
 // source is a different frame and still returns through closeDetail).
-const sceneOf = (view: ReturnView) => { const { camera: _camera, ...scene } = view; return scene; };
+const sceneOf = (view: ReturnView): ReturnView => { const { camera: _camera, ...scene } = view; return scene; };
 function leaveSelection(s: ViewState): ViewState {
   if (s.detail) return closeDetail(s);
   if (!s.selectionReturn) return s;
-  return { ...s, ...sceneOf(s.selectionReturn), selection: null, selectionReturn: null,
+  return { ...backTo(s, sceneOf(s.selectionReturn)), selection: null, selectionReturn: null,
     comparison: null, isolated: false };
 }
 // A selection carries on through a peel, stage or system change while every
@@ -173,7 +185,8 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       // sync as a new user selection and discard the saved atlas view.
       return a.id === s.pointId ? s : viewReducer(s, { type: "point", id: a.id });
     case "sex":
-      return a.value === s.sex ? s : { ...s, sex: a.value, stage: 0, dissection: 0, displayMode: "dissection", anatomyRegion: "whole", layers: dissectionLayers(0), alpha: initialView().alpha, selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false, cutaway: 0 };
+      // A new body starts from its default scene, including what a click picks.
+      return a.value === s.sex ? s : { ...s, sex: a.value, stage: 0, dissection: 0, displayMode: "dissection", anatomyRegion: "whole", layers: dissectionLayers(0), alpha: initialView().alpha, selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false, cutaway: 0, selectionTarget: "visible" };
     case "anatomy-region":
       return a.value === s.anatomyRegion && !s.detail ? s
         : { ...leaveSelection(s), anatomyRegion: a.value, selection: null,
@@ -296,9 +309,10 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       // A normal part selection temporarily changes the layer, but leaving it
       // should reveal the same progressive scene. Carry its origin through a
       // chain of selections and through a later transition into detail.
-      const selectionReturn = !detail && stage >= 0
-        ? s.selectionReturn ?? s.detailReturn ?? (!s.comparison && s.displayMode === "dissection" ? { ...returnView(s), camera: s.camera } : null)
-        : null;
+      // A part chosen inside a comparison keeps the view the comparison left.
+      const selectionReturn = detail ? null : stage >= 0
+        ? selectionOrigin(s)
+        : s.comparison ? s.selectionReturn : null;
       return {
         ...s,
         ...(stage >= 0
@@ -320,6 +334,33 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         isolated: Boolean(detail),
       };
     }
+    case "open-structures": {
+      // A link from the movement page opens named structures (one muscle, its
+      // parts or a left/right pair) with every system they belong to, and
+      // returns like a search selection. Markers, labels, camera and the
+      // ligament/tendon preference stay: selected connective meshes are drawn
+      // even while that preference hides the others.
+      const layers = keys.filter(layer => a.layers.includes(layer));
+      if (!a.ids.length || !layers.length) return s;
+      const stage = keys.indexOf(layers[0]);
+      const selectionReturn = selectionOrigin(s);
+      return {
+        ...s,
+        stage,
+        dissection: stageDepth[stage],
+        displayMode: "layers",
+        layers: Object.fromEntries(keys.map(layer => [layer, layers.includes(layer)])) as Layers,
+        anatomyRegion: a.region ?? "whole",
+        selection: { kind: a.ids.length === 1 ? "structure" : "bundle", ids: [...a.ids], name: a.name, layers },
+        detail: null,
+        detailReturn: null,
+        selectionReturn,
+        comparison: null,
+        isolated: false,
+        cutaway: 0,
+        selectionTarget: "visible",
+      };
+    }
     case "pick": {
       // A part clicked on the model is selected where it is. Systems, depth,
       // region, cut, isolation and camera stay (the clicked part is already
@@ -336,12 +377,16 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
     }
     case "detail-close":
       return s.detail ? closeDetail(s) : s;
-    case "compare":
+    case "compare": {
+      // Keep the scene and skin opacity the comparison replaces (an organ
+      // detail's own origin, or an earlier comparison's) so leaving it
+      // returns there. Clearing it still keeps the camera (Q30).
+      const origin = s.detail ? detailOrigin(s) : (s.selectionReturn ?? returnView(s));
       return {
         ...s,
         detail: null,
         detailReturn: null,
-        selectionReturn: null,
+        selectionReturn: { ...origin, skinAlpha: origin.skinAlpha ?? s.alpha.skin },
         stage: 0,
         dissection: 0,
         displayMode: "layers",
@@ -354,7 +399,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
           lymph: false,
           nerve: false,
         },
-        alpha: { ...s.alpha, skin: 0.12 },
+        alpha: { ...s.alpha, skin: COMPARISON_SKIN },
         selection: { kind: "bundle", ids: a.ids, name: a.name, ...(a.selectionLayers ? { layers: a.selectionLayers } : {}) },
         comparison: {
           kind: "bundle",
@@ -366,6 +411,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         selectionTarget: "internal",
         cutaway: 0,
       };
+    }
     case "isolate":
       return s.selection?.ids.length ? {
         ...s, isolated: !s.isolated,
@@ -374,7 +420,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         ...(s.isolated && s.detail ? { layers: s.detail.layers, anatomyRegion: "whole" as const } : {}),
       } : s;
     case "clear-selection":
-      return s.detail ? closeDetail(s) : { ...s, ...(s.selectionReturn ? sceneOf(s.selectionReturn) : {}), selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false };
+      return s.detail ? closeDetail(s) : { ...(s.selectionReturn ? backTo(s, sceneOf(s.selectionReturn)) : s), selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false };
     case "cutaway":
       return { ...s, cutaway: Math.max(0, Math.min(1, a.value)) };
     case "camera":
@@ -439,6 +485,7 @@ export function restoreView(
         && keys.every(key => typeof r.layers?.[key] === "boolean")
         && Number.isFinite(r.cutaway) && r.cutaway >= 0 && r.cutaway <= 1
         && ["visible", "internal", "skin"].includes(r.selectionTarget)
+        && (r.skinAlpha === undefined || (Number.isFinite(r.skinAlpha) && r.skinAlpha >= 0.05 && r.skinAlpha <= 1))
         && validCamera(r.camera));
     if (!validReturn(s.detailReturn) || !validReturn(s.selectionReturn)) return base;
     // Progressive views follow the current peel schedule rather than a saved
@@ -523,7 +570,9 @@ export function restoreView(
     // Older explicit deselections could leave a comparison highlight without
     // its selection card. Keep valid selections within a comparison intact.
     if (!s.selection) s.comparison = null;
-    if (!s.selection || s.detail || s.comparison) s.selectionReturn = null;
+    // A comparison keeps only the return view it recorded on entry; older
+    // comparisons saved without one are not given a guessed scene.
+    if (!s.selection || s.detail || (s.comparison && s.selectionReturn?.skinAlpha === undefined)) s.selectionReturn = null;
     if (s.detail && (!s.detail.ids?.length || typeof s.detail.name !== "string" || typeof s.detail.id !== "string" || !keys.every(key => typeof s.detail!.layers?.[key] === "boolean") || !s.detail.ids.every(id => assets.some(a => a.id === id && (!a.sex || a.sex === s.sex))))) return base;
     if (hasMixedReferenceFrames(s.sex, [...(s.selection?.ids || []), ...(s.detail?.ids || [])])) return base;
     const currentLungIds = maleDetailGroups.find(group => group.id === "lung")?.ids || [];

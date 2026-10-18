@@ -1,25 +1,31 @@
-/* Minimal atlas: the body is the workspace; tools float in a few quiet groups.
-   Opaque dark surfaces keep text contrast measurable on the rendered panel. */
+/* Atlas workspace: the body is the workspace; tools float in a few quiet
+   groups on opaque neutral surfaces with one accent (docs/review-2026-10-16). */
 :root {
   --ax-stage: #07141c;
   --ax-surface: #0f1d25;
   --ax-surface-2: #16272f;
   --ax-raised: #1c313b;
+  --ax-selected: #173b46;
   --ax-line: #2b434e;
-  --ax-line-strong: #3d5a67;
+  --ax-line-strong: #4f6d7a;
   --ax-text: #e9f1f4;
   --ax-muted: #a9bcc5;
   --ax-accent: #6fd3e3;
   --ax-accent-ink: #062028;
+  /* Acupoint markers only: scene marker, canvas label, approximate toggle. */
   --ax-gold: #eab85c;
   /* Connective tissue in the scene (src/anatomy-rendering.ts). */
   --ax-ligament: #a7b9e0;
   --ax-tendon: #e9edf7;
-  --ax-radius: 12px;
+  --ax-radius: 8px;
+  --ax-radius-ctl: 4px;
+  --ax-shadow: 0 8px 24px rgba(0, 0, 0, .35);
   --ax-gap: 14px;
   --ax-header: 52px;
-  --ax-font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Pretendard", system-ui, sans-serif;
+  --ax-tap: 36px;
+  --ax-font: var(--font-sans, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", system-ui, sans-serif);
 }
+@media (pointer: coarse) { :root { --ax-tap: 44px; } }
 
 /* Header — one slim bar on every page. */
 .site-header {
@@ -37,11 +43,11 @@
 }
 .site-header .brand { display: flex; align-items: center; gap: 9px; color: var(--ax-text); }
 .site-header .brand-symbol {
-  width: 28px; height: 28px; line-height: 26px; font-size: 16px; border-radius: 8px;
+  width: 28px; height: 28px; line-height: 26px; font-size: 16px; border-radius: 6px;
   border: 1px solid #4a6773; color: #fff; text-align: center; position: relative;
 }
-.site-header .brand-symbol > span { width: 6px; height: 6px; bottom: 4px; right: 3px; border: 0; background: var(--ax-gold); position: absolute; border-radius: 50%; }
-.site-header .brand strong { font-size: 15px; letter-spacing: .12em; font-weight: 650; }
+.site-header .brand-symbol > span { display: none; }
+.site-header .brand strong { font-size: 15px; letter-spacing: .08em; font-weight: 650; }
 .site-header .brand small { display: none; }
 .site-header nav { display: flex; gap: 22px; height: 100%; align-items: stretch; position: static; width: auto; border: 0; margin: 0; padding: 0; }
 .site-header nav a {
@@ -52,6 +58,18 @@
 .site-header nav a.active { color: #fff; border-bottom-color: var(--ax-accent); }
 .site-header nav a svg { width: 15px; height: 15px; }
 .site-header .header-about { display: none; }
+/* The movement link has a short name for narrow headers. These rules live
+   here, loaded on every page, not in the lazily loaded movement CSS. */
+.site-header nav a .nav-short { display: none; }
+@media (max-width: 374px) {
+  /* Four links fit on one line each: the wordmark gives way to the 결 mark
+     (the link keeps its name "결 홈"). */
+  .site-header .brand strong { display: none; }
+  .site-header nav { gap: 8px; }
+  .site-header nav a { min-width: 44px; justify-content: center; white-space: nowrap; }
+  .site-header nav a .nav-long { display: none; }
+  .site-header nav a .nav-short { display: inline; }
+}
 body:has(.ax) .site-footer { display: none; }
 .app-shell.atlas { height: calc(100dvh - var(--ax-header)); min-height: 440px; max-width: none; margin: 0; padding: 0; }
 
@@ -59,11 +77,16 @@ body:has(.ax) .site-footer { display: none; }
 .ax {
   position: relative; height: 100%; overflow: hidden; background: var(--ax-stage);
   color: var(--ax-text); font-family: var(--ax-font); font-size: 13px;
+  /* Free area for framing the model (read by src/Atlas.tsx on phones). */
+  --ax-observe-top: 150px; --ax-observe-bottom: 64px; --ax-observe-right: 56px;
+  --stop-gap: 28px;
 }
+@media (pointer: coarse) { .ax { --stop-gap: 44px; } }
 .ax button, .ax select, .ax input { font-family: inherit; color: inherit; }
 /* Meaningful text stays at 12px or larger, including <small> labels. */
 .ax small { font-size: max(12px, 1em * .86); }
 .ax button { cursor: pointer; background: none; border: 0; }
+.ax button[aria-disabled="true"] { cursor: default; color: #7f949d; }
 .ax :focus-visible { outline: 2px solid var(--ax-accent); outline-offset: 2px; }
 .ax-viewer { position: absolute; inset: 0; }
 .ax-viewer canvas { display: block; }
@@ -73,13 +96,18 @@ body:has(.ax) .site-footer { display: none; }
 
 /* Shared pieces */
 .ax-icon {
-  width: 38px; height: 38px; border-radius: 10px; display: inline-grid; place-items: center;
-  color: var(--ax-text); background: rgba(15, 29, 37, .9); border: 1px solid var(--ax-line);
+  width: var(--ax-tap); height: var(--ax-tap); border-radius: var(--ax-radius-ctl); display: inline-grid; place-items: center;
+  color: var(--ax-text); background: var(--ax-surface); border: 1px solid var(--ax-line);
 }
 .ax-icon:hover, .ax-icon[aria-expanded="true"], .ax-icon[aria-pressed="true"] { border-color: var(--ax-accent); color: var(--ax-accent); }
+.ax-text-button {
+  min-height: var(--ax-tap); padding: 0 12px; border-radius: var(--ax-radius-ctl);
+  background: var(--ax-surface) !important; border: 1px solid var(--ax-line) !important; color: var(--ax-text); font-size: 13px; white-space: nowrap;
+}
+.ax-text-button:hover { border-color: var(--ax-accent) !important; }
 .ax-card, .ax-panel {
   background: var(--ax-surface); border: 1px solid var(--ax-line); border-radius: var(--ax-radius);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, .38); color: var(--ax-text);
+  box-shadow: var(--ax-shadow); color: var(--ax-text);
 }
 .ax-panel { position: absolute; z-index: 40; overflow: auto; overscroll-behavior: contain; padding: 14px; }
 .ax-panel-head { display: flex; align-items: center; justify-content: space-between; margin: -4px 0 10px; }
@@ -90,23 +118,27 @@ body:has(.ax) .site-footer { display: none; }
 .ax-group-title { font-size: 12px; font-weight: 650; letter-spacing: .02em; color: var(--ax-muted); margin: 14px 0 6px; text-transform: none; }
 .ax-group-title small { font-weight: 450; margin-left: 3px; }
 .ax-primary {
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 36px; padding: 0 14px;
-  border-radius: 9px; background: var(--ax-accent) !important; color: var(--ax-accent-ink) !important; font-weight: 650; font-size: 13px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: var(--ax-tap); padding: 0 14px;
+  border-radius: var(--ax-radius-ctl); background: var(--ax-accent) !important; color: var(--ax-accent-ink) !important; font-weight: 650; font-size: 13px;
 }
 .ax-primary:disabled { opacity: .5; cursor: default; }
-.ax-ghost { display: inline-flex; align-items: center; gap: 5px; min-height: 36px; padding: 0 10px; border-radius: 9px; border: 1px solid var(--ax-line) !important; color: var(--ax-text); font-size: 12px; }
+.ax-ghost { display: inline-flex; align-items: center; gap: 5px; min-height: var(--ax-tap); padding: 0 10px; border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line) !important; color: var(--ax-text); font-size: 12px; }
 .ax-row { display: flex; gap: 8px; align-items: center; margin: 10px 0; }
 .ax-row .ax-primary { flex: 1; }
 .ax-field { display: grid; gap: 4px; color: var(--ax-muted); font-size: 12px; }
 .ax-field input, .ax-field select, .ax-select, .ax .search-box input, .ax .ax-panel select {
-  min-height: 36px; border-radius: 9px; border: 1px solid var(--ax-line); background: var(--ax-surface-2); color: var(--ax-text); padding: 0 10px; font-size: 13px;
+  min-height: var(--ax-tap); border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line-strong); background: var(--ax-surface-2); color: var(--ax-text); padding: 0 10px; font-size: 13px;
 }
 .ax-filter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
 .ax-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.ax-chips button { display: inline-flex; align-items: center; gap: 4px; min-height: 30px; padding: 0 10px; border-radius: 15px; border: 1px solid var(--ax-line); color: var(--ax-muted); font-size: 12px; }
-.ax-chips button[aria-pressed="true"] { border-color: var(--ax-accent); color: var(--ax-text); background: #173b46; }
+.ax-chips button { display: inline-flex; align-items: center; gap: 4px; min-height: 30px; padding: 0 10px; border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line); color: var(--ax-muted); font-size: 12px; }
+.ax-chips button[aria-pressed="true"] { border-color: var(--ax-accent); color: var(--ax-text); background: var(--ax-selected); }
 .ax .muted { color: var(--ax-muted); font-size: 12px; line-height: 1.55; }
 .ax a { color: var(--ax-accent); }
+.ax details > summary { cursor: pointer; }
+/* Folded sections say they open: a plain marker where flex hides the native one. */
+.ax :is(.setting-details, .ax-filters) > summary::before { content: "▸"; display: inline-block; width: 1em; color: var(--ax-muted); }
+.ax :is(.setting-details, .ax-filters)[open] > summary::before { content: "▾"; }
 
 /* Top row: search + scope */
 .ax-top {
@@ -116,76 +148,119 @@ body:has(.ax) .site-footer { display: none; }
 .ax-top > * { pointer-events: auto; }
 .ax-search {
   flex: 0 1 360px; min-width: 0; height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 8px 0 12px;
-  border-radius: 11px; background: rgba(15, 29, 37, .94); border: 1px solid var(--ax-line); color: var(--ax-muted);
+  border-radius: var(--ax-radius-ctl); background: var(--ax-surface); border: 1px solid var(--ax-line-strong); color: var(--ax-muted);
 }
 .ax-search:focus-within { border-color: var(--ax-accent); }
 .ax-search input:focus-visible { outline: none; }
 .ax-search input { flex: 1; min-width: 0; height: 100%; border: 0; background: transparent; outline: none; font-size: 14px; color: var(--ax-text); }
 .ax-search input::placeholder { color: #93a7b0; opacity: 1; }
-.ax-search kbd { font: 12px/1 var(--ax-font); padding: 4px 7px; border-radius: 6px; border: 1px solid var(--ax-line); color: var(--ax-muted); }
+.ax-search kbd { font: 12px/1 var(--ax-font); padding: 4px 7px; border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line); color: var(--ax-muted); }
 .ax-search .ax-icon { width: 30px; height: 30px; background: transparent; border: 0; }
 .ax-top-actions { display: flex; align-items: center; gap: 8px; }
-.ax-segment { display: inline-flex; padding: 3px; border-radius: 11px; background: rgba(15, 29, 37, .94); border: 1px solid var(--ax-line); }
-.ax-segment button { min-height: 32px; padding: 0 12px; border-radius: 8px; color: var(--ax-muted); font-size: 13px; white-space: nowrap; }
+.ax-segment { display: inline-flex; padding: 2px; border-radius: var(--ax-radius-ctl); background: var(--ax-surface); border: 1px solid var(--ax-line); }
+.ax-segment button { min-height: calc(var(--ax-tap) - 6px); padding: 0 12px; border-radius: 3px; color: var(--ax-muted); font-size: 13px; white-space: nowrap; }
 .ax-segment button[aria-pressed="true"] { background: var(--ax-raised); color: #fff; box-shadow: inset 0 0 0 1px var(--ax-line-strong); }
-.ax-select { height: 40px; border-radius: 11px; background: rgba(15, 29, 37, .94); max-width: 132px; }
+.ax-select { height: var(--ax-tap); border-radius: var(--ax-radius-ctl); background: var(--ax-surface); max-width: 132px; }
+.ax-present-exit {
+  min-height: var(--ax-tap); padding: 0 14px; margin-left: auto; border-radius: var(--ax-radius-ctl);
+  background: var(--ax-surface) !important; border: 1px solid var(--ax-accent) !important; color: #fff; font-size: 13px;
+}
 
 /* Search results */
-.ax-results { top: calc(var(--ax-gap) + 48px); left: var(--ax-gap); width: min(400px, calc(100% - 2 * var(--ax-gap))); max-height: calc(100% - 150px); }
+.ax-results { top: calc(var(--ax-gap) + 48px); left: var(--ax-gap); width: min(400px, calc(100% - 2 * var(--ax-gap))); max-height: calc(100% - var(--ax-gap) * 2 - 48px - var(--ax-bottom-h, 64px) - 12px); }
 .ax .featured-anatomy { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
 .ax .featured-anatomy .ax-group-title { grid-column: 1 / -1; margin-top: 4px; }
 .ax .featured-anatomy > button, .ax .all-anatomy-button {
-  display: grid; gap: 2px; text-align: left; padding: 9px 11px; border-radius: 10px; background: var(--ax-surface-2); border: 1px solid var(--ax-line);
+  display: grid; gap: 2px; text-align: left; padding: 9px 11px; border-radius: var(--ax-radius-ctl); background: var(--ax-surface-2); border: 1px solid var(--ax-line);
 }
 .ax .featured-anatomy > button:hover, .ax .all-anatomy-button:hover { border-color: var(--ax-accent); }
 .ax .featured-anatomy strong { font-size: 13px; font-weight: 600; }
 .ax .featured-anatomy small, .ax .all-anatomy-button small { color: var(--ax-muted); font-size: 12px; }
 .ax .all-anatomy-button { width: 100%; margin-top: 8px; font-size: 13px; }
 .ax .point-item, .ax .structure-item {
-  width: 100%; display: flex; align-items: center; gap: 10px; text-align: left; padding: 8px 10px; border-radius: 9px; border: 1px solid transparent;
+  width: 100%; display: flex; align-items: center; gap: 10px; text-align: left; padding: 6px 10px; border-radius: var(--ax-radius-ctl); border: 1px solid transparent;
 }
-.ax .structure-item { display: grid; gap: 2px; }
+.ax .structure-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; }
+.ax .structure-item > :not(strong):not(.structure-layer) { grid-column: 1 / -1; }
 .ax .point-item:hover, .ax .structure-item:hover { background: var(--ax-surface-2); border-color: var(--ax-line); }
-.ax .point-item[aria-pressed="true"], .ax .structure-item[aria-pressed="true"] { background: #173b46; border-color: var(--ax-accent); }
+.ax .point-item[aria-pressed="true"], .ax .structure-item[aria-pressed="true"] { background: var(--ax-selected); border-color: var(--ax-accent); }
 .ax .point-item > i { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
 .ax .point-item > span { display: grid; gap: 2px; min-width: 0; flex: 1; }
 .ax .point-item strong, .ax .structure-item strong { font-size: 13px; font-weight: 600; }
+.ax .structure-item .structure-layer { color: var(--ax-muted); font-size: 12px; align-self: baseline; }
 .ax .point-item strong small { color: var(--ax-muted); font-weight: 450; margin-left: 4px; }
 .ax .point-item .classification-text, .ax .structure-item small { color: var(--ax-muted); font-size: 12px; line-height: 1.4; overflow-wrap: anywhere; }
-.ax .structure-item .structure-path { color: #8ea3ad; font-size: 12px; }
-.ax .structure-focus { margin-top: 10px; min-height: 36px; width: 100%; border-radius: 9px; border: 1px solid var(--ax-line); }
+.ax .structure-item .structure-path { color: #9db0b9; font-size: 12px; }
+.ax .ax-exact-results { border-bottom: 1px solid var(--ax-line); padding-bottom: 6px; }
+.ax .ax-exact-results .ax-group-title { margin-top: 4px; }
+.ax .ax-more { width: 100%; min-height: 32px; margin-top: 4px; border-radius: var(--ax-radius-ctl); color: var(--ax-accent); font-size: 12px; text-align: left; padding: 0 10px; }
+.ax .ax-more:hover { background: var(--ax-surface-2); }
+.ax .structure-focus { margin-top: 10px; min-height: var(--ax-tap); width: 100%; border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line); }
 .ax .empty-state { display: grid; gap: 8px; padding: 16px 4px; color: var(--ax-muted); }
-.ax .empty-state button { justify-self: start; min-height: 32px; padding: 0 12px; border: 1px solid var(--ax-line); border-radius: 8px; }
+.ax .empty-state button { justify-self: start; min-height: 32px; padding: 0 12px; border: 1px solid var(--ax-line); border-radius: var(--ax-radius-ctl); }
 
-/* Side panels: display settings, help, point list */
-.ax-side-panel { top: calc(var(--ax-gap) + 48px); right: var(--ax-gap); width: min(372px, calc(100% - 2 * var(--ax-gap))); max-height: calc(100% - 140px); }
-.ax .point-list { display: grid; gap: 2px; margin-top: 6px; }
-.ax .viewer-help p { color: var(--ax-text); font-size: 13px; line-height: 1.7; margin: 0 0 10px; }
+/* Side panels: display settings, help, point list. They open in the right
+   column under the acupoint chip; the cards below the chip step aside. */
+.ax-side-panel { top: calc(var(--ax-gap) + 54px + 48px); right: var(--ax-gap); width: min(372px, calc(100% - 2 * var(--ax-gap))); max-height: calc(100% - var(--ax-gap) * 2 - 102px - var(--ax-bottom-h, 64px) - 12px); }
+.ax .panel-comparison-note { margin: 0 0 10px; padding: 8px 10px; border-radius: var(--ax-radius-ctl); background: #2a2413; color: #f4e3c0; font-size: 12px; line-height: 1.5; }
+.ax :is(.ax-meridians, .movement-pad > div) .panel-comparison-note { grid-column: 1 / -1; margin: 0 0 4px; }
+.ax .movement-pad > div:has(.panel-comparison-note) { width: 240px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ax .depth-band .panel-comparison-note { margin: 4px 0 0; }
+.ax .note-short, .ax .click-suffix { display: none; }
+/* With the filters open the whole list panel scrolls, so no filter is cut off. */
+.ax .ax-point-list:has(.ax-filters[open]) { overflow: auto; }
+.ax .ax-point-list:has(.ax-filters[open]) .point-list { overflow: visible; flex: none; min-height: 0; }
+.ax .ax-present-entry { display: grid; justify-items: start; gap: 2px; width: 100%; padding: 8px 12px; margin-bottom: 10px; text-align: left; }
+.ax .ax-present-entry small { color: var(--ax-muted); }
+/* The list scrolls by itself; head, filters and actions stay in view. */
+.ax .ax-point-list { display: flex; flex-direction: column; overflow: hidden; }
+.ax .ax-point-list > * { flex: 0 0 auto; }
+.ax .point-list { display: grid; align-content: start; gap: 2px; margin-top: 6px; flex: 1 1 auto; min-height: 96px; overflow: auto; overscroll-behavior: contain; }
+.ax .point-list .point-item.active { scroll-margin: 40px; }
+.ax .ax-list-search { display: flex; gap: 6px; }
+.ax .ax-list-search input { flex: 1; min-width: 0; min-height: var(--ax-tap); border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line-strong); background: var(--ax-surface-2); color: var(--ax-text); padding: 0 10px; font-size: 13px; }
+.ax .ax-list-search input::placeholder { color: #93a7b0; opacity: 1; }
+.ax .ax-filters .ax-row { flex-wrap: wrap; margin-bottom: 0; }
+.ax .ax-filters .coverage-note { margin: 0; }
+.ax .ax-point-list .show-filtered-button { width: 100%; margin-bottom: 4px; }
+.ax .ax-filters { border: 1px solid var(--ax-line); border-radius: var(--ax-radius-ctl); padding: 0 10px; margin: 6px 0; }
+.ax .ax-filters > summary { min-height: var(--ax-tap); display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ax-text); }
+.ax .ax-filters > summary small { color: var(--ax-muted); }
+.ax .ax-filters[open] { padding-bottom: 10px; }
+/* Help: what to do, by input method. */
+.ax .viewer-help p { color: var(--ax-text); font-size: 13px; line-height: 1.65; margin: 0 0 8px; }
+.ax .viewer-help h3 { font-size: 13px; margin: 14px 0 6px; color: var(--ax-muted); }
 .ax .viewer-help a { display: block; margin-top: 6px; font-size: 13px; }
+.ax .help-table { width: 100%; border-collapse: collapse; font-size: 12px; line-height: 1.5; }
+.ax .help-table th, .ax .help-table td { text-align: left; vertical-align: top; padding: 6px 6px 6px 0; border-bottom: 1px solid var(--ax-line); }
+.ax .help-table thead th { color: var(--ax-muted); font-weight: 600; }
+.ax .help-table tbody th { font-weight: 600; white-space: nowrap; padding-right: 10px; }
 /* Layer settings (AnatomyControls) */
 .ax .layer-settings { display: grid; gap: 10px; }
+.ax .setting-details { border-top: 1px solid var(--ax-line); padding-top: 8px; }
+.ax .setting-details > summary { min-height: 30px; display: flex; align-items: center; font-size: 13px; color: var(--ax-text); }
 .ax .anatomy-scope-controls { display: grid; gap: 8px; }
 .ax .anatomy-scope-controls fieldset { border: 0; padding: 0; margin: 0; display: flex; gap: 6px; align-items: center; }
 .ax .anatomy-scope-controls legend { color: var(--ax-muted); font-size: 12px; margin-bottom: 4px; }
-.ax .anatomy-scope-controls fieldset button { min-height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--ax-line); }
-.ax .anatomy-scope-controls fieldset button[aria-pressed="true"] { border-color: var(--ax-accent); background: #173b46; }
+.ax .anatomy-scope-controls fieldset button { min-height: 32px; padding: 0 12px; border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line); }
+.ax .anatomy-scope-controls fieldset button[aria-pressed="true"] { border-color: var(--ax-accent); background: var(--ax-selected); }
 .ax .anatomy-scope-controls label { display: grid; gap: 4px; color: var(--ax-muted); font-size: 12px; }
-.ax .layer-row { display: grid; grid-template-columns: 1fr 120px 42px; align-items: center; gap: 8px; font-size: 13px; }
+.ax .layer-row { display: grid; grid-template-columns: 1fr 120px 42px; align-items: center; gap: 8px; font-size: 13px; min-height: 32px; }
 .ax .layer-row label { display: flex; align-items: center; gap: 8px; }
 .ax .layer-row input[type="checkbox"], .ax .setting-check input, .ax .selection-context input { width: 18px; height: 18px; accent-color: var(--ax-accent); }
 .ax .layer-row input[type="range"], .ax .cutaway-setting input[type="range"] { accent-color: var(--ax-accent); width: 100%; }
 .ax .layer-row output { color: var(--ax-muted); font-size: 12px; text-align: right; }
-.ax .coverage-description { color: var(--ax-muted); font-size: 12px; line-height: 1.55; margin: 0; padding: 10px; border-radius: 9px; background: var(--ax-surface-2); }
+.ax .coverage-description { color: var(--ax-muted); font-size: 12px; line-height: 1.55; margin: 0; padding: 10px; border-radius: var(--ax-radius-ctl); background: var(--ax-surface-2); }
 .ax .setting-select, .ax .setting-check { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 13px; }
 .ax .setting-select select { min-width: 150px; }
 .ax .cutaway-setting { display: grid; gap: 6px; font-size: 13px; }
 .ax .cutaway-setting label { display: grid; gap: 6px; }
-.ax .cutaway-setting button { justify-self: start; min-height: 32px; padding: 0 10px; border: 1px solid var(--ax-line); border-radius: 8px; font-size: 12px; }
+.ax .cutaway-setting button { justify-self: start; min-height: 32px; padding: 0 10px; border: 1px solid var(--ax-line); border-radius: var(--ax-radius-ctl); font-size: 12px; }
 .ax .cutaway-setting p { color: var(--ax-muted); font-size: 12px; margin: 0; }
 .ax .connective-setting { display: grid; gap: 8px; padding: 10px 0; border-block: 1px solid var(--ax-line); font-size: 13px; }
 .ax .connective-setting .setting-check { justify-content: flex-start; }
 .ax .connective-setting .setting-check small { color: var(--ax-muted); font-size: 12px; }
-.ax .connective-setting button { justify-self: start; min-height: 32px; padding: 0 10px; border: 1px solid var(--ax-line); border-radius: 8px; font-size: 12px; }
+.ax .connective-setting button { justify-self: start; min-height: 32px; padding: 0 10px; border: 1px solid var(--ax-line); border-radius: var(--ax-radius-ctl); font-size: 12px; }
 .ax .connective-setting button:hover, .ax .connective-setting button:focus-visible { border-color: var(--ax-accent); color: var(--ax-accent); }
 .ax .connective-setting p { margin: 0; }
 .ax .layer-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: 0 0 auto; }
@@ -203,35 +278,47 @@ body:has(.ax) .site-footer { display: none; }
 .ax .connective-key li { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .ax .connective-key small { color: var(--ax-muted); font-size: 12px; }
 
-/* Depth rail: drag, click a system, or solo it */
+/* Depth group: body region, mode, continuous peel and the seven systems.
+   Wide screens: a rail at the left. Stops sit at their real depth, pushed up
+   just enough that neighbours never share a pointer target; ticks keep the
+   true depth on the track. */
 .ax-depth {
-  position: absolute; z-index: 20; left: var(--ax-gap); top: calc(var(--ax-gap) + 58px); bottom: calc(var(--ax-gap) + var(--ax-bottom-h, 64px) + 16px); width: 136px;
-  display: flex; flex-direction: column; gap: 10px; padding: 12px 10px 14px; border-radius: 14px;
-  background: rgba(15, 29, 37, .9); border: 1px solid var(--ax-line);
+  --thumb: 16px;
+  position: absolute; z-index: 20; left: var(--ax-gap); top: calc(var(--ax-gap) + 54px); width: 140px;
+  height: min(520px, calc(100% - var(--ax-gap) * 2 - 54px - var(--ax-bottom-h, 64px) - 16px));
+  display: flex; flex-direction: column; gap: 8px; padding: 10px 10px 12px; border-radius: var(--ax-radius);
+  background: var(--ax-surface); border: 1px solid var(--ax-line);
 }
-.ax-depth .depth-heading strong, .ax-depth .peel-entry { display: grid; font-size: 20px; font-weight: 650; line-height: 1.1; color: #fff; text-align: left; }
-.ax-depth .depth-heading small { font-size: 12px; font-weight: 500; color: var(--ax-accent); margin-top: 3px; }
-.ax-depth .peel-entry { width: 100%; min-height: 40px; padding: 6px 8px; border-radius: 9px; border: 1px solid var(--ax-accent); background: var(--ax-surface-2); font-size: 14px; }
-.ax-depth-track { --thumb: 16px; position: relative; flex: 1; min-height: 180px; }
+.ax-depth .ax-region { width: 100%; max-width: none; min-height: 32px; height: auto; font-size: 13px; }
+.ax-depth .depth-toggle, .ax-depth .depth-band-hint { display: none; }
+.ax-depth .depth-heading strong, .ax-depth .peel-entry { display: grid; font-size: 18px; font-weight: 650; line-height: 1.15; color: #fff; text-align: left; }
+.ax-depth .depth-heading small { font-size: 12px; font-weight: 500; color: var(--ax-accent); margin-top: 2px; }
+.ax-depth .depth-heading .depth-mode { font-size: 13px; color: var(--ax-text); margin-bottom: 6px; }
+.ax-depth .peel-entry { width: 100%; min-height: 32px; padding: 4px 8px; border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-accent); background: var(--ax-surface-2); font-size: 12px; font-weight: 600; }
+.ax-depth-track { position: relative; flex: 1; min-height: 160px; }
 .ax-depth-track input[type="range"] {
   position: absolute; left: 0; top: 0; height: 100%; width: 22px; margin: 0; writing-mode: vertical-lr; direction: ltr;
-  appearance: none; -webkit-appearance: none; background: transparent; cursor: ns-resize;
+  appearance: none; -webkit-appearance: none; background: transparent; cursor: ns-resize; z-index: 1;
 }
-.ax-depth-track input[type="range"]::-webkit-slider-runnable-track { width: 4px; border-radius: 2px; background: linear-gradient(#c98b73, #c0504a 22%, #e3d7b3 70%, #c07a86 78%, #d34b44 86%, #58c3a0 92%, #e5c35a); }
-.ax-depth-track input[type="range"]::-moz-range-track { width: 4px; border-radius: 2px; background: linear-gradient(#c98b73, #c0504a 22%, #e3d7b3 70%, #c07a86 78%, #d34b44 86%, #58c3a0 92%, #e5c35a); }
-.ax-depth-track input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: var(--thumb); height: var(--thumb); margin-left: -6px; border-radius: 50%; background: #fff; border: 3px solid var(--ax-accent); box-shadow: 0 0 0 4px rgba(111, 211, 227, .18); }
+/* A plain track with an accent fill up to the current depth. */
+.ax-depth-track input[type="range"]::-webkit-slider-runnable-track { width: 4px; border-radius: 2px; background: linear-gradient(var(--ax-accent) var(--fill, 0%), var(--ax-line-strong) var(--fill, 0%)); }
+.ax-depth-track input[type="range"]::-moz-range-track { width: 4px; border-radius: 2px; background: var(--ax-line-strong); }
+.ax-depth-track input[type="range"]::-moz-range-progress { width: 4px; background: var(--ax-accent); }
+.ax-depth-track input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: var(--thumb); height: var(--thumb); margin-left: -6px; border-radius: 50%; background: #fff; border: 3px solid var(--ax-accent); }
 .ax-depth-track input[type="range"]::-moz-range-thumb { width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 3px solid var(--ax-accent); }
+.ax-depth .depth-ticks { position: absolute; left: 3px; top: 0; bottom: 0; width: 16px; pointer-events: none; }
+.ax-depth .depth-ticks i { position: absolute; left: 0; width: 16px; height: 1px; background: var(--ax-muted); top: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--at-f, 0)); }
 .ax-depth .depth-steps { list-style: none; margin: 0; padding: 0; position: absolute; left: 26px; right: 0; top: 0; bottom: 0; }
 .ax-depth .depth-steps li {
-  position: absolute; left: 0; right: 0; top: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--at-f, 0)); transform: translateY(-50%);
+  position: absolute; left: 0; right: 0; top: var(--stop-top); transform: translateY(-50%);
   display: flex; align-items: center; gap: 2px;
 }
-.ax-stop { flex: 1; min-width: 0; display: flex; align-items: center; gap: 7px; min-height: 26px; padding: 0 6px; border-radius: 7px; color: var(--ax-muted); font-size: 13px; text-align: left; }
+.ax-stop { flex: 1; min-width: 0; display: flex; align-items: center; gap: 7px; min-height: 26px; padding: 0 6px; border-radius: var(--ax-radius-ctl); color: var(--ax-muted); font-size: 13px; text-align: left; }
 .ax-stop:hover { color: #fff; background: var(--ax-surface-2); }
-.ax-solo { width: 26px; height: 26px; border-radius: 7px; display: grid; place-items: center; color: #8ea3ad; }
+.ax-solo { width: 26px; height: 26px; border-radius: var(--ax-radius-ctl); display: grid; place-items: center; color: #9db0b9; }
 .ax-solo:hover, .ax-solo[aria-pressed="true"] { color: var(--ax-accent); background: var(--ax-surface-2); }
 .ax-depth li.active .ax-stop { color: #fff; font-weight: 650; background: var(--ax-raised); }
-.ax-depth li.peeled .ax-stop { color: #7f949d; text-decoration: line-through; text-decoration-color: #526a75; }
+.ax-depth li.peeled .ax-stop { color: #8ea3ad; text-decoration: line-through; text-decoration-color: #526a75; }
 .ax-depth li.peeled .layer-dot { opacity: .35; }
 
 /* Bottom row: status | acupoint bar | camera. One flex row, so the three
@@ -243,24 +330,34 @@ body:has(.ax) .site-footer { display: none; }
 .ax-bottom > * { pointer-events: auto; }
 /* Acupoint bar */
 .ax-point-bar {
-  flex: 0 1 auto; min-width: 0; display: flex; align-items: center; gap: 6px; padding: 5px; border-radius: 14px;
-  background: rgba(15, 29, 37, .94); border: 1px solid var(--ax-line);
+  flex: 0 1 auto; min-width: 0; display: flex; align-items: center; gap: 4px; padding: 4px; border-radius: var(--ax-radius);
+  background: var(--ax-surface); border: 1px solid var(--ax-line);
 }
-.ax-toggle { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 10px; border-radius: 10px; color: var(--ax-muted); font-size: 13px; }
+.ax-toggle { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; min-height: calc(var(--ax-tap) - 2px); padding: 0 10px; border-radius: var(--ax-radius-ctl); color: var(--ax-muted); font-size: 13px; white-space: nowrap; }
 .ax-toggle small { color: var(--ax-muted); font-size: 12px; }
+.ax-toggle:hover { color: #fff; }
 .ax-toggle[aria-pressed="true"], .ax-toggle[aria-expanded="true"] { color: #fff; background: var(--ax-raised); }
-.ax-toggle .ax-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ax-gold); box-shadow: 0 0 0 3px rgba(234, 184, 92, .2); }
-.ax-toggle[aria-pressed="false"] .ax-dot { background: #5f727b; box-shadow: none; }
+.ax-toggle .ax-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ax-gold); }
+.ax-toggle[aria-pressed="false"] .ax-dot { background: #5f727b; }
 /* Female acupoint markers are approximations: a gold-outlined toggle says so. */
 .ax-toggle.ax-approx[aria-pressed="true"] { color: var(--ax-gold); box-shadow: inset 0 0 0 1px var(--ax-gold); }
-.ax-meridians { display: flex; gap: 3px; overflow-x: auto; scrollbar-width: none; min-width: 0; mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); padding-right: 22px; }
-.ax-meridians::-webkit-scrollbar { display: none; }
-.ax-meridians button { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 5px; min-height: 34px; padding: 0 8px; border-radius: 9px; color: var(--ax-muted); font-size: 12px; font-weight: 600; letter-spacing: .02em; }
-.ax-meridians button i { width: 7px; height: 7px; border-radius: 50%; background: var(--c); }
-.ax-meridians button:hover { color: #fff; }
-.ax-meridians button[aria-pressed="true"] { color: #fff; background: var(--ax-raised); box-shadow: inset 0 0 0 1px var(--c, var(--ax-line-strong)); }
+.ax-meridian-picker { position: relative; flex: 0 0 auto; }
+.ax-meridian-button > i { width: 8px; height: 8px; border-radius: 50%; }
+.ax-meridian-button > span { color: #fff; }
+.ax-popover {
+  position: absolute; z-index: 45; background: var(--ax-surface); border: 1px solid var(--ax-line-strong); border-radius: var(--ax-radius); box-shadow: var(--ax-shadow);
+}
+.ax-meridians {
+  bottom: calc(100% + 8px); left: 0; width: 336px; padding: 6px;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px;
+}
+.ax-meridians button { display: flex; align-items: center; gap: 8px; min-height: var(--ax-tap); padding: 0 10px; border-radius: var(--ax-radius-ctl); color: var(--ax-text); font-size: 13px; text-align: left; }
+.ax-meridians button i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); flex: 0 0 auto; }
+.ax-meridians button small { margin-left: auto; color: var(--ax-muted); }
+.ax-meridians button:hover { background: var(--ax-surface-2); }
+.ax-meridians button[aria-pressed="true"] { background: var(--ax-selected); box-shadow: inset 0 0 0 1px var(--ax-accent); }
 .ax-note { margin: 0; padding: 4px 8px; font-size: 12px; color: var(--ax-muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.ax-note button { min-height: 30px; padding: 0 10px; border-radius: 8px; border: 1px solid var(--ax-accent); color: #fff; font-size: 12px; }
+.ax-note button { min-height: 30px; padding: 0 10px; border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-accent); color: #fff; font-size: 12px; }
 
 /* Inspector: point chip, point detail, selection card */
 .ax-inspector {
@@ -268,18 +365,20 @@ body:has(.ax) .site-footer { display: none; }
   display: flex; flex-direction: column; gap: 8px; pointer-events: none;
 }
 .ax-inspector > * { pointer-events: auto; }
-.ax-point-chip { display: flex; gap: 6px; align-self: flex-end; max-width: 100%; }
+.ax-point-chip { display: flex; gap: 4px; align-self: flex-end; max-width: 100%; flex: 0 0 auto; }
 .ax-point-chip .point-summary {
-  min-width: 0; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border-radius: 11px;
-  background: rgba(15, 29, 37, .94); border: 1px solid var(--ax-line); color: var(--ax-text); font-size: 13px;
+  min-width: 0; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border-radius: var(--ax-radius-ctl); white-space: nowrap;
+  background: var(--ax-surface); border: 1px solid var(--ax-line); color: var(--ax-text); font-size: 13px;
 }
-.ax-point-chip .point-summary[aria-expanded="true"] { border-color: var(--ax-gold); }
+.ax-point-chip .point-summary[aria-expanded="true"] { border-color: var(--ax-accent); }
 .ax-point-chip .point-summary i { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
-.ax-point-chip .point-summary span { color: var(--ax-gold); font-weight: 650; }
+.ax-point-chip .point-summary span { color: #fff; font-weight: 650; }
 .ax-point-chip .point-summary strong { font-weight: 650; }
 .ax-point-chip .point-summary small { color: var(--ax-muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .ax-point-chip .ax-icon { width: 40px; height: 40px; }
-.ax-point-empty { display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border-radius: 11px; background: rgba(15, 29, 37, .94); border: 1px dashed var(--ax-line-strong); color: var(--ax-text); font-size: 13px; }
+.ax-step { flex: 0 0 auto; min-width: 44px; height: 40px; padding: 0 10px; border-radius: var(--ax-radius-ctl); background: var(--ax-surface) !important; border: 1px solid var(--ax-line) !important; font-size: 13px; }
+.ax-step:not([aria-disabled="true"]):hover { border-color: var(--ax-accent) !important; }
+.ax-point-empty { display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border-radius: var(--ax-radius-ctl); background: var(--ax-surface); border: 1px dashed var(--ax-line-strong); color: var(--ax-text); font-size: 13px; }
 .ax-point-empty small { color: var(--ax-muted); font-size: 12px; }
 .ax-point-empty .ax-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ax-gold); }
 .ax-card { padding: 14px; min-height: 0; overflow: auto; overscroll-behavior: contain; }
@@ -287,35 +386,40 @@ body:has(.ax) .site-footer { display: none; }
 .ax-eyebrow { color: var(--ax-muted); font-size: 12px; }
 .ax-card-head .ax-icon { width: 32px; height: 32px; background: transparent; }
 .ax-card-head .ax-eyebrow { flex: 1; }
-.ax-point-title { margin: 6px 0 0; display: flex; align-items: baseline; gap: 8px; font-size: 20px; font-weight: 700; color: #fff; }
-.ax-point-title span { font-size: 14px; font-weight: 700; }
+/* Point detail: the head (title, concept, actions, notice) stays put; the
+   tabs stick to the top of the scrolling body. */
+.ax .detail-panel { display: flex; flex-direction: column; padding: 0; overflow: hidden; }
+.ax .detail-head { flex: 0 0 auto; display: grid; gap: 8px; padding: 12px 14px 10px; border-bottom: 1px solid var(--ax-line); }
+.ax .detail-scroll { flex: 1 1 auto; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 0 14px 14px; }
+.ax-point-title { margin: 0; display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; font-size: 20px; font-weight: 700; color: #fff; }
+.ax-point-title span { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--ax-text); }
+.ax-point-title span i { width: 9px; height: 9px; border-radius: 50%; }
 .ax-point-title small { font-size: 14px; font-weight: 450; color: var(--ax-muted); }
-.ax-pinyin { margin: 2px 0 10px; color: var(--ax-muted); font-size: 12px; }
-.ax .concept-reference { display: grid; gap: 7px; padding: 12px; border-radius: 10px; background: var(--ax-surface-2); }
-.ax .concept-reference strong { font-size: 14px; font-weight: 650; }
-.ax .concept-reference p, .ax .concept-reference small { margin: 0; font-size: 12px; line-height: 1.55; color: var(--ax-muted); }
-.ax .concept-reference p b { color: var(--ax-text); }
-.ax .concept-reference .ax-primary { justify-self: start; }
+.ax-pinyin { margin: 0; color: var(--ax-muted); font-size: 12px; line-height: 1.5; }
+.ax-pinyin b { color: var(--ax-text); }
+.ax .detail-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.ax .concept-notice { margin: 0; color: var(--ax-muted); font-size: 12px; line-height: 1.5; }
 .ax-links { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; }
-.ax .comparison-feedback { display: grid; gap: 6px; padding: 10px; border-radius: 9px; background: #2a2413; color: #f4e3c0; }
-.ax .comparison-feedback p { color: #f4e3c0; }
-.ax .comparison-feedback button { justify-self: start; min-height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--ax-gold); color: #fff; font-size: 12px; }
-.ax .detail-tabs { display: flex; gap: 2px; margin: 12px 0 8px; border-bottom: 1px solid var(--ax-line); }
-.ax .detail-tabs button { min-height: 34px; padding: 0 10px; color: var(--ax-muted); font-size: 13px; border-bottom: 2px solid transparent; margin-bottom: -1px; }
-.ax .detail-tabs button[aria-selected="true"] { color: #fff; border-bottom-color: var(--ax-gold); }
+.ax .comparison-feedback { display: grid; gap: 6px; padding: 10px; border-radius: var(--ax-radius-ctl); background: #2a2413; color: #f4e3c0; }
+.ax .comparison-feedback p { color: #f4e3c0; margin: 0; }
+.ax .comparison-feedback button { justify-self: start; min-height: 32px; padding: 0 12px; border-radius: var(--ax-radius-ctl); border: 1px solid #b8913f; color: #fff; font-size: 12px; }
+.ax .detail-tabs { position: sticky; top: 0; z-index: 1; display: flex; gap: 2px; margin: 0 0 8px; background: var(--ax-surface); border-bottom: 1px solid var(--ax-line); }
+.ax .detail-tabs button { min-height: var(--ax-tap); padding: 0 10px; color: var(--ax-muted); font-size: 13px; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.ax .detail-tabs button[aria-selected="true"] { color: #fff; border-bottom-color: var(--ax-accent); }
 .ax .detail-content { display: grid; gap: 9px; font-size: 13px; line-height: 1.65; }
 .ax .location-text { margin: 0; color: var(--ax-text); }
 .ax .reference-line { display: flex; gap: 10px; font-size: 12px; color: var(--ax-muted); }
-.ax .focus-link { justify-self: start; display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 10px; border-radius: 8px; border: 1px solid var(--ax-line); font-size: 12px; }
+.ax .focus-link { justify-self: start; display: inline-flex; align-items: center; gap: 6px; min-height: var(--ax-tap); padding: 0 10px; border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line-strong); color: var(--ax-text); font-size: 12px; text-decoration: none; }
+.ax .focus-link:hover { border-color: var(--ax-accent); }
 .ax .anatomy-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-.ax .anatomy-tags span { padding: 3px 8px; border-radius: 12px; background: var(--ax-surface-2); color: var(--ax-muted); font-size: 12px; }
+.ax .anatomy-tags span { padding: 2px 8px; border-radius: var(--ax-radius-ctl); background: var(--ax-surface-2); color: var(--ax-muted); font-size: 12px; }
 .ax .coordinate-note { display: flex; gap: 7px; align-items: baseline; margin: 0; color: var(--ax-muted); font-size: 12px; line-height: 1.5; }
-.ax .source-link { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 9px 10px; border-radius: 9px; background: var(--ax-surface-2); color: var(--ax-text); font-size: 13px; }
+.ax .source-link { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 9px 10px; border-radius: var(--ax-radius-ctl); background: var(--ax-surface-2); color: var(--ax-text); font-size: 13px; }
 .ax .source-link small { display: block; color: var(--ax-muted); font-size: 12px; }
 .ax .text-link { font-size: 12px; }
-.ax .detail-bottom { display: grid; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--ax-line); }
+.ax .detail-bottom { display: grid; gap: 8px; margin-top: 4px; padding-top: 10px; border-top: 1px solid var(--ax-line); }
 .ax .related-points { display: flex; gap: 6px; flex-wrap: wrap; }
-.ax .related-points a { padding: 5px 9px; border-radius: 9px; background: var(--ax-surface-2); color: var(--ax-text); font-size: 12px; }
+.ax .related-points a { padding: 5px 9px; border-radius: var(--ax-radius-ctl); background: var(--ax-surface-2); color: var(--ax-text); font-size: 12px; }
 .ax .related-points span { color: var(--ax-muted); margin-left: 4px; }
 .ax .share-link { justify-self: start; display: inline-flex; gap: 6px; align-items: center; color: var(--ax-muted); font-size: 12px; min-height: 30px; }
 .ax .point-tradition { font-size: 13px; line-height: 1.7; color: var(--ax-text); }
@@ -324,19 +428,29 @@ body:has(.ax) .site-footer { display: none; }
 .ax .point-tradition > a, .ax .point-tradition > small { display: block; font-size: 12px; margin-top: 8px; color: var(--ax-muted); }
 .ax .point-tradition > a { color: var(--ax-accent); }
 .ax .theory-facts { margin: 8px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.ax .theory-facts > div { background: var(--ax-surface-2); border: 1px solid var(--ax-line); padding: 7px; border-radius: 8px; }
+.ax .theory-facts > div { background: var(--ax-surface-2); border: 1px solid var(--ax-line); padding: 7px; border-radius: var(--ax-radius-ctl); }
 .ax .theory-facts dt { color: var(--ax-muted); font-size: 12px; }
 .ax .theory-facts dd { margin: 3px 0 0; font-size: 13px; font-weight: 650; }
 .ax .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #6b7f88; display: inline-block; flex: 0 0 auto; }
 .ax .status-dot.live { background: #6fd39a; }
 
 .ax .selection-card { display: flex; flex-direction: column; gap: 10px; padding: 0; overflow: hidden; max-height: 100%; }
+.ax .selection-card:focus-visible { outline-offset: -2px; }
 .ax .selection-card > div:first-child { min-height: 0; overflow: auto; padding: 14px 14px 0; display: grid; gap: 6px; align-content: start; }
 .ax .selection-kind { font-size: 12px; font-weight: 650; color: var(--ax-accent); }
-.ax .selection-kind.bundle { color: var(--ax-gold); }
+.ax .selection-kind.bundle { color: var(--ax-text); }
 .ax .selection-card strong { font-size: 17px; font-weight: 650; }
 .ax .selection-card strong small { font-size: 12px; font-weight: 450; color: var(--ax-muted); margin-left: 4px; }
-.ax .selection-card .comparison-note { margin: 0; padding: 8px 10px; border-radius: 8px; background: #2a2413; color: #f4e3c0; font-size: 12px; line-height: 1.5; }
+.ax .movement-return { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; min-height: var(--ax-tap); align-self: flex-start; font-size: 13px; color: var(--ax-accent); text-decoration: underline; text-underline-offset: 3px; }
+.ax .movement-return small { font-size: 12px; color: var(--ax-muted); text-decoration: none; }
+.ax .ax-link-notice { margin: 0 0 var(--ax-gap); padding: 10px 12px; font-size: 13px; line-height: 1.5; color: var(--ax-text); }
+.ax .ax-link-notice button { min-height: var(--ax-tap); margin-left: 6px; padding: 0 10px; border: 1px solid var(--ax-line-strong); border-radius: var(--ax-radius-ctl); color: var(--ax-text); }
+.ax .selection-identity { color: var(--ax-muted); font-size: 12px; line-height: 1.45; overflow-wrap: anywhere; }
+.ax .selection-card .scene-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--ax-muted); }
+.ax .selection-card .scene-legend:empty { display: none; }
+.ax .selection-card .scene-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.ax .selection-card .scene-legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.ax .selection-card .comparison-note { margin: 0; padding: 8px 10px; border-radius: var(--ax-radius-ctl); background: #2a2413; color: #f4e3c0; font-size: 12px; line-height: 1.5; }
 .ax .selection-description, .ax .ct-source-details, .ax .anatomy-source-details { margin: 0; color: var(--ax-muted); font-size: 12px; line-height: 1.55; }
 .ax .selection-latin, .ax .selection-source { display: block; color: var(--ax-muted); font-size: 12px; line-height: 1.45; }
 .ax .anatomy-source-details summary, .ax .ct-source-details summary { cursor: pointer; color: var(--ax-text); }
@@ -346,12 +460,15 @@ body:has(.ax) .site-footer { display: none; }
    area, however long the source notes above it are; opened, it scrolls normally. */
 .ax .organ-detail-parts:not([open]) { position: sticky; bottom: 0; z-index: 1; background: var(--ax-surface); padding-bottom: 2px; }
 .ax .organ-detail-parts > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; max-height: 210px; overflow: auto; margin-top: 6px; }
-.ax .organ-detail-parts button { min-height: 38px; padding: 5px 8px; text-align: left; border-radius: 8px; background: var(--ax-surface-2); border: 1px solid var(--ax-line); font-size: 12px; }
-.ax .organ-detail-parts button[aria-pressed="true"] { border-color: var(--ax-accent); background: #173b46; }
+.ax .organ-detail-parts button { min-height: 38px; padding: 5px 8px; text-align: left; border-radius: var(--ax-radius-ctl); background: var(--ax-surface-2); border: 1px solid var(--ax-line); font-size: 12px; }
+.ax .organ-detail-parts button[aria-pressed="true"] { border-color: var(--ax-accent); background: var(--ax-selected); }
 .ax .organ-detail-parts button small { display: block; color: var(--ax-muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ax .selection-actions { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 14px 14px; }
+.ax .selection-actions { position: relative; display: flex; flex-wrap: wrap; gap: 6px; padding: 0 14px 14px; }
+/* Keep the explanation inside the card even when the close button wraps. */
+.ax .selection-actions .clear-selection { position: static; display: inline-flex; align-items: center; gap: 4px; }
+.ax .selection-actions .clear-text { display: none; }
 .ax details .selection-actions { padding: 6px 0 0; }
-.ax .selection-actions button { min-height: 36px; padding: 0 12px; border-radius: 9px; border: 1px solid var(--ax-line-strong); background: var(--ax-surface-2); font-size: 13px; }
+.ax .selection-actions button { min-height: var(--ax-tap); padding: 0 12px; border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line-strong); background: var(--ax-surface-2); font-size: 13px; }
 .ax .selection-actions button:hover { border-color: var(--ax-accent); }
 .ax .selection-actions button[aria-pressed="true"] { background: var(--ax-accent); color: var(--ax-accent-ink); border-color: var(--ax-accent); }
 .ax .selection-context { flex-basis: 100%; display: flex; align-items: center; gap: 8px; min-height: 32px; font-size: 13px; }
@@ -359,42 +476,43 @@ body:has(.ax) .site-footer { display: none; }
 
 /* Camera */
 .ax-camera { flex: 0 0 auto; display: flex; align-items: flex-end; gap: 8px; }
-.ax .view-presets, .ax .view-tools { display: flex; padding: 4px; gap: 2px; border-radius: 12px; background: rgba(15, 29, 37, .94); border: 1px solid var(--ax-line); }
-.ax .view-presets button { min-height: 34px; padding: 0 10px; border-radius: 8px; font-size: 12px; color: var(--ax-muted); }
+.ax .view-presets, .ax .view-tools { display: flex; padding: 3px; gap: 2px; border-radius: var(--ax-radius); background: var(--ax-surface); border: 1px solid var(--ax-line); }
+.ax .view-presets button { min-height: calc(var(--ax-tap) - 2px); padding: 0 10px; border-radius: var(--ax-radius-ctl); font-size: 12px; color: var(--ax-muted); }
 .ax .view-presets button:hover, .ax .view-tools button:hover { color: #fff; background: var(--ax-raised); }
-.ax .view-tools button { width: 34px; height: 34px; border-radius: 8px; display: grid; place-items: center; color: var(--ax-text); }
-.ax .movement-pad { position: relative; border-radius: 12px; background: rgba(15, 29, 37, .94); border: 1px solid var(--ax-line); padding: 4px; }
-.ax .movement-pad summary { list-style: none; min-height: 34px; display: flex; align-items: center; gap: 6px; padding: 0 10px; cursor: pointer; font-size: 12px; color: var(--ax-muted); }
+.ax .view-tools button { width: calc(var(--ax-tap) - 2px); height: calc(var(--ax-tap) - 2px); border-radius: var(--ax-radius-ctl); display: grid; place-items: center; color: var(--ax-text); }
+.ax .movement-pad { position: relative; border-radius: var(--ax-radius); background: var(--ax-surface); border: 1px solid var(--ax-line); padding: 3px; }
+.ax .movement-pad summary { list-style: none; min-height: calc(var(--ax-tap) - 2px); display: flex; align-items: center; gap: 6px; padding: 0 10px; cursor: pointer; font-size: 12px; color: var(--ax-muted); }
 .ax .movement-pad summary::-webkit-details-marker { display: none; }
-.ax .movement-pad summary small { font-size: 12px; color: #8ea3ad; }
 .ax .movement-pad[open] summary { color: #fff; }
-.ax .movement-pad > div { position: absolute; bottom: calc(100% + 6px); right: 0; display: grid; grid-template-columns: repeat(3, 44px); gap: 4px; padding: 6px; border-radius: 12px; background: var(--ax-surface); border: 1px solid var(--ax-line); }
-.ax .movement-pad > div button { min-height: 38px; border-radius: 8px; background: var(--ax-surface-2); font-size: 12px; }
+.ax .movement-pad > div { position: absolute; bottom: calc(100% + 6px); right: 0; display: grid; grid-template-columns: repeat(3, 44px); gap: 4px; padding: 6px; border-radius: var(--ax-radius); background: var(--ax-surface); border: 1px solid var(--ax-line-strong); box-shadow: var(--ax-shadow); }
+.ax .movement-pad > div > div { display: contents; }
+/* The open camera menu rises above the selection card it may overlap. */
+.ax:has(.movement-pad[open]) .ax-bottom, .ax:has(.movement-pad[open]) .ax-camera { z-index: 41; }
+.ax .movement-pad > div button { min-height: 40px; border-radius: var(--ax-radius-ctl); background: var(--ax-surface-2); font-size: 12px; }
 
-/* Status and context legend */
+/* Status and source line */
 .ax-status {
   flex: 0 1 300px; min-width: 150px; display: grid; gap: 5px; font-size: 12px; color: var(--ax-muted); pointer-events: none;
 }
 .ax-status > * { pointer-events: auto; }
-.ax-status .scene-status, .ax-status .scene-legend, .ax-status .ax-source { display: flex; align-items: center; gap: 7px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; max-width: 100%; }
+.ax-status .scene-status { display: flex; align-items: center; gap: 7px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; max-width: 100%; }
 .ax-status .ax-source { display: block; white-space: normal; line-height: 1.45; word-break: keep-all; }
-/* Korean meridian names make the acupoint bar wider; its chips scroll, so on
-   wide screens the status column keeps room for its two lines. */
+.ax-status .scope-short { display: none; }
+/* Korean meridian names make the acupoint bar wider; on wide screens the
+   status column keeps room for its two lines. */
 @media (min-width: 1181px) { .ax-status { min-width: 240px; } }
-.ax-status .click-target { color: #8ea3ad; }
-.ax-status .scene-legend span { display: inline-flex; align-items: center; gap: 4px; }
-.ax-status .scene-legend i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+.ax-status .click-target { color: #c9d6dc; }
 .ax .legend-selected { background: #238b91; }
 .ax .legend-compare { background: #e5b24f; }
 .ax .legend-reference { background: #bca77a; }
-.ax .scene-status, .ax .scene-legend, .ax .ax-source { background: rgba(7, 20, 28, .82); padding: 3px 8px; border-radius: 7px; justify-self: start; }
-.ax .cutaway-reset { position: absolute; z-index: 22; top: calc(var(--ax-gap) + 54px); left: 50%; transform: translateX(-50%); min-height: 34px; padding: 0 14px; border-radius: 17px; background: #2a2413; color: #f4e3c0; border: 1px solid var(--ax-gold); font-size: 12px; }
+.ax .scene-status, .ax .ax-source { background: var(--ax-stage); padding: 3px 8px; border-radius: var(--ax-radius-ctl); justify-self: start; }
+.ax .cutaway-reset { position: absolute; z-index: 22; top: calc(var(--ax-gap) + 54px); left: 50%; transform: translateX(-50%); min-height: 34px; padding: 0 14px; border-radius: var(--ax-radius-ctl); background: var(--ax-surface); color: var(--ax-text); border: 1px solid var(--ax-line-strong); font-size: 12px; }
 
 /* Tooltips: shown on mouse hover and on keyboard focus for icon-only controls. */
 .ax [data-tip] { position: relative; }
 .ax [data-tip]::after {
   content: attr(data-tip); position: absolute; z-index: 60; top: calc(100% + 6px); right: 0; pointer-events: none; white-space: nowrap;
-  padding: 5px 8px; border-radius: 7px; background: #0b1820; border: 1px solid var(--ax-line-strong); color: #fff;
+  padding: 5px 8px; border-radius: var(--ax-radius-ctl); background: #0b1820; border: 1px solid var(--ax-line-strong); color: #fff;
   font: 500 12px/1.3 var(--ax-font); letter-spacing: 0; opacity: 0; transform: translateY(-2px); transition: opacity .12s, transform .12s;
 }
 .ax [data-tip]:hover::after, .ax [data-tip]:focus-visible::after { opacity: 1; transform: none; }
@@ -409,103 +527,264 @@ body:has(.ax) .site-footer { display: none; }
 /* Canvas labels */
 .ax .point-label {
   display: flex; align-items: center; gap: 5px; white-space: nowrap; font: 600 12px/1.2 var(--ax-font);
-  padding: 4px 8px; border-radius: 7px; color: #fff4dc; background: rgba(12, 24, 31, .92); border: 1px solid #8a6a2e; cursor: pointer;
+  padding: 4px 8px; border-radius: var(--ax-radius-ctl); color: #fff4dc; background: #0c181f; border: 1px solid #8a6a2e; cursor: pointer;
 }
-.ax .point-label.active { border-color: var(--ax-gold); box-shadow: 0 0 0 3px rgba(234, 184, 92, .2); }
+.ax .point-label.active { border-color: var(--ax-gold); border-width: 2px; }
 /* A hover-only name: the pointer keeps its marker target underneath it. */
 .ax .point-label.peek { pointer-events: none; }
 
-/* Narrow desktop: keep the bottom row clear */
+/* Covered tools step aside while a panel or picker is open. Visibility (not
+   display) keeps the selection card measured, so the camera stays (Q30). */
+.ax[data-panel="search"] .ax-depth { visibility: hidden; }
+.ax[data-panel="display"] .ax-inspector > :not(.ax-point-chip),
+.ax[data-panel="help"] .ax-inspector > :not(.ax-point-chip),
+.ax[data-panel="points"] .ax-inspector > :not(.ax-point-chip) { visibility: hidden; }
+
+/* Presenting: exploration tools fold away; the selection, its notices, the
+   legend, the source line and the camera stay. Layout does not move. */
+.ax[data-present="true"] .ax-search,
+.ax[data-present="true"] .ax-top-actions,
+.ax[data-present="true"] .ax-depth,
+.ax[data-present="true"] .ax-point-bar:not(:has(.ax-note)),
+.ax[data-present="true"] .ax-point-bar > :not(.ax-note) { visibility: hidden; }
+
+/* Narrow desktop and tablets */
+@media (max-width: 1000px) and (min-width: 701px) {
+  /* Icon and name in the tooltip/accessible name; the bar keeps its width. */
+  .ax-point-bar > .ax-toggle > span:not(.ax-dot) { display: none; }
+}
+@media (max-width: 380px) {
+  .ax-point-chip .point-summary small { display: none; }
+  /* The three detail actions stay on one line. */
+  .ax .detail-actions .focus-link svg { display: none; }
+  .ax .detail-actions > * { padding: 0 8px; }
+  .ax .detail-head { padding: 8px 12px; gap: 6px; }
+}
+/* Phones and short landscape: a selection card scrolls as a whole, so its
+   name, identity and notices never shrink to nothing above the actions. */
+@media (max-width: 700px), (min-width: 701px) and (max-height: 560px) {
+  .ax .selection-card { overflow: auto; }
+  .ax .selection-card > div:first-child { overflow: visible; min-height: auto; }
+  .ax .organ-detail-parts:not([open]) { position: static; }
+  /* The actions stay pinned at the card's bottom edge while the body scrolls. */
+  .ax .selection-card > .selection-actions { position: sticky; bottom: 0; z-index: 1; padding-top: 8px; background: var(--ax-surface); }
+}
+/* Short phones: the whole detail scrolls (tabs stick to its top). */
+@media (max-width: 700px) and (max-height: 760px) {
+  .ax .detail-panel { overflow: auto; }
+  .ax .detail-scroll { overflow: visible; }
+}
+/* Where the meridian picker would cover other tools, they step aside while it is open. */
+@media (min-width: 701px) and (max-width: 1180px), (min-width: 701px) and (max-height: 560px) {
+  .ax[data-popover="meridian"] :is(.ax-top, .ax-depth, .ax-status, .ax-inspector) { visibility: hidden; }
+}
+@media (min-width: 701px) and (max-height: 560px) {
+  .ax-meridians {
+    position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(var(--ax-gap) + var(--ax-bottom-h, 40px) + 8px);
+    grid-template-columns: repeat(4, minmax(0, 1fr)); width: min(560px, calc(100vw - 2 * var(--ax-gap)));
+  }
+}
+/* Tablets: the status and source line gets its own row above the tools. */
+@media (max-width: 1100px) and (min-width: 701px) {
+  .ax-bottom { flex-wrap: wrap; row-gap: 6px; }
+  .ax-status { flex: 1 0 100%; display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .ax-status .scene-status { flex: 0 0 auto; }
+  .ax-status .ax-source { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ax-point-bar { margin-right: auto; }
+}
 @media (max-width: 1180px) and (min-width: 701px) {
   .ax-inspector { width: 320px; }
+  .ax-side-panel { width: min(340px, calc(100% - 2 * var(--ax-gap))); }
   .ax .view-presets button { padding: 0 7px; }
+  .ax-text-button { padding: 0 9px; }
 }
 
-/* Phone */
+/* Phone: inputs on top, the thumb zone at the bottom (acupoint chip, depth,
+   acupoint tools), camera on the right edge. Panels stay within 45%. */
 @media (max-width: 700px) {
   :root { --ax-gap: 8px; --ax-header: 48px; }
+  .ax { --ax-observe-top: 84px; --ax-observe-bottom: 172px; --ax-observe-right: 56px; --row: 44px; --bar: var(--ax-bar-h, 52px); }
   .site-header { padding: 0 12px; gap: 10px; }
   .site-header .brand strong { font-size: 13px; }
   .site-header nav { gap: 12px; }
   .site-header nav a { font-size: 12px; }
   .site-header nav a svg { display: none; }
   .ax-top { gap: 6px; }
-  .ax-search { flex: 1 1 auto; height: 38px; }
+  .ax-search { flex: 1 1 auto; height: var(--ax-tap); }
   .ax-search kbd { display: none; }
   .ax-top-actions { gap: 4px; }
-  .ax-segment { flex: 0 0 auto; }
-  .ax-segment button { padding: 0 7px; min-height: 30px; font-size: 12px; }
-  .ax-select { width: 64px; height: 38px; font-size: 12px; padding: 0 4px; }
-  .ax-icon { width: 36px; height: 36px; }
-  /* Four top-bar icons (cover, settings, help) share the row with search on phones. */
-  .ax-top-actions > .ax-icon { width: 33px; }
-  /* Phone panels open over the scene and stay within 45% of it: search results
-     under the search box, other panels as bottom sheets within thumb reach. */
-  .ax-results { top: calc(var(--ax-gap) + 44px); left: var(--ax-gap); right: var(--ax-gap); width: auto; max-height: 45%; }
-  .ax-side-panel { top: auto; bottom: calc(var(--ax-gap) + var(--ax-bar-h, 44px) + 10px); left: var(--ax-gap); right: var(--ax-gap); width: auto; max-height: 45%; }
-  .ax-point-empty small { display: none; }
-  .ax-depth {
-    top: calc(var(--ax-gap) + 46px); left: var(--ax-gap); right: var(--ax-gap); bottom: auto; width: auto; height: 58px;
-    flex-direction: row; align-items: center; gap: 8px; padding: 6px 10px;
+  .ax-segment button { padding: 0 8px; font-size: 12px; }
+  /* While results are open the field takes the whole row over the other
+     controls, which stay in the tab order; closing results gives them back
+     even though focus returns to the field (R1). */
+  .ax[data-panel="search"] .ax-search { position: absolute; left: 0; right: 0; z-index: 1; }
+  .ax[data-panel="search"] .ax-top-actions { visibility: hidden; }
+  /* One status line under the top row: load state, source, approximation. */
+  .ax-status {
+    position: absolute; z-index: 15; left: var(--ax-gap); right: var(--ax-gap); top: calc(var(--ax-gap) + var(--ax-tap) + 6px);
+    display: flex; align-items: center; gap: 0; min-width: 0; flex-wrap: nowrap; overflow: hidden;
+    justify-self: start; width: fit-content; max-width: calc(100% - 2 * var(--ax-gap)); padding: 2px 8px; border-radius: var(--ax-radius-ctl); background: var(--ax-stage);
   }
-  .ax-depth .depth-heading { flex: 0 0 60px; }
-  .ax-depth .depth-heading strong, .ax-depth .peel-entry { font-size: 16px; }
-  .ax-depth .peel-entry { padding: 4px 6px; }
-  .ax-depth-track { min-height: 0; height: 44px; }
-  .ax-depth-track input[type="range"] { writing-mode: horizontal-tb; width: 100%; height: 22px; top: 0; cursor: ew-resize; }
-  .ax-depth-track input[type="range"]::-webkit-slider-runnable-track { width: auto; height: 4px; background: linear-gradient(90deg, #c98b73, #c0504a 22%, #e3d7b3 70%, #c07a86 78%, #d34b44 86%, #58c3a0 92%, #e5c35a); }
-  .ax-depth-track input[type="range"]::-webkit-slider-thumb { margin-left: 0; margin-top: -6px; }
-  .ax-depth .depth-steps { left: 0; right: 0; top: 22px; bottom: 0; }
-  .ax-depth .depth-steps li { top: 0; left: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--at-f, 0)); right: auto; transform: translateX(-50%); }
-  .ax-stop { min-height: 22px; padding: 0 2px; gap: 3px; }
-  .ax-stop .layer-dot { width: 10px; height: 10px; }
-  .ax-depth li:not(.active) .ax-stop-name { display: none; }
-  .ax-depth li.active .ax-stop { font-size: 12px; padding: 0 5px; background: var(--ax-raised); }
-  .ax-solo { display: none; }
-  .ax-depth li.peeled .ax-stop { text-decoration: none; }
+  .ax .scene-status, .ax .ax-source { background: none; padding: 0; }
+  .ax-status .scene-status { flex: 0 0 auto; }
+  .ax-status .ax-source { flex: 1 1 auto; min-width: 0; display: flex; gap: 4px; white-space: nowrap; overflow: hidden; }
+  .ax-status .ax-source::before { content: "·"; margin-left: 4px; order: -2; }
+  /* '학습용 근사' always shows; only the source summary may be shortened. */
+  .ax-status .scene-guide { order: -1; flex: none; }
+  .ax-status .ax-source .scope-short { order: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .ax-status .click-label { display: none; }
+  .ax-status .click-suffix { display: inline; }
+  .ax-status .scope-source, .ax-status .guide-more { display: none; }
+  .ax-status .scope-short { display: inline; }
+  .ax-status .click-target { margin-left: 4px; }
+  /* Search results under the status line, full width. */
+  .ax-results { top: calc(var(--ax-gap) + var(--ax-tap) + 30px); left: var(--ax-gap); right: var(--ax-gap); width: auto; max-height: 45%; }
+  .ax[data-panel="search"] .ax-camera, .ax[data-panel="search"] .ax-inspector { visibility: hidden; }
+  .ax[data-panel="search"] .ax-depth { visibility: visible; }
+  /* Acupoint tools at the bottom edge. */
   .ax-bottom { display: contents; }
-  .ax-point-bar { position: absolute; z-index: 20; left: var(--ax-gap); right: var(--ax-gap); bottom: var(--ax-gap); padding: 4px; }
-  .ax-toggle { padding: 0 8px; }
-  /* Fixed-width tool column so the bottom sheet keeps a known 8px gap beside it. */
-  .ax-camera { position: absolute; z-index: 20; right: var(--ax-gap); bottom: calc(var(--ax-gap) + var(--ax-bar-h, 44px) + 10px); width: 48px; flex-direction: column; align-items: stretch; gap: 6px; }
-  .ax-camera > * { box-sizing: border-box; width: 100%; }
-  .ax .movement-pad summary { justify-content: center; padding: 0 4px; }
-  .ax .view-tools { flex-direction: column; }
-  .ax .view-presets { flex-direction: column; }
-  .ax .view-presets button { min-height: 30px; padding: 0 4px; }
-  .ax .view-tools button { width: 100%; }
-  .ax-status { position: absolute; z-index: 15; left: var(--ax-gap); top: calc(var(--ax-gap) + 110px); max-width: calc(100% - 2 * var(--ax-gap) - 56px); }
-  .ax-status .ax-source, .ax-status .click-target { display: none; }
-  .ax-inspector { top: auto; bottom: calc(var(--ax-gap) + var(--ax-bar-h, 44px) + 10px); left: var(--ax-gap); right: calc(var(--ax-gap) + 56px); width: auto; max-height: 45%; justify-content: flex-end; }
+  .ax-point-bar { position: absolute; z-index: 20; left: var(--ax-gap); right: var(--ax-gap); bottom: var(--ax-gap); padding: 3px; gap: 2px; min-height: 52px; }
+  .ax-point-bar > .ax-toggle, .ax-point-bar > .ax-meridian-picker { flex: 1 1 0; min-width: 0; }
+  /* Female markers hidden: the notice takes the row, the list stays one tap away. */
+  .ax-point-bar > .ax-note { flex: 1 1 auto; min-width: 0; }
+  .ax-point-bar > .ax-note ~ .ax-toggle { flex: 0 0 44px; }
+  .ax-point-bar .ax-toggle { justify-content: center; padding: 0 4px; min-height: 44px; font-size: 12px; gap: 4px; }
+  .ax-meridian-picker .ax-toggle { width: 100%; }
+  .ax-meridians { position: fixed; left: var(--ax-gap); right: calc(var(--ax-gap) + 56px); width: auto; bottom: calc(var(--ax-gap) + var(--bar) + 6px); max-height: 45vh; overflow: auto; }
+  .ax[data-popover="meridian"] .ax-depth { visibility: hidden; }
+  /* Depth row above the acupoint tools: band toggle, slider, body region. */
+  .ax-depth {
+    top: auto; left: var(--ax-gap); right: var(--ax-gap); bottom: calc(var(--ax-gap) + var(--bar) + 6px); width: auto; height: var(--row);
+    flex-direction: row; align-items: center; gap: 6px; padding: 0 4px;
+  }
+  .ax-depth .depth-toggle { display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto; height: 100%; padding: 0 8px; border-radius: var(--ax-radius-ctl); font-size: 12px; font-weight: 600; color: #fff; white-space: nowrap; max-width: 42%; overflow: hidden; }
+  .ax-depth .ax-region { order: 3; flex: 0 0 auto; width: 76px; min-height: 36px; padding: 0 4px; font-size: 12px; }
+  .ax-depth-track { position: static; flex: 1 1 auto; min-height: 0; height: 100%; display: flex; align-items: center; }
+  .ax-depth-track input[type="range"] { position: relative; writing-mode: horizontal-tb; width: 100%; height: 100%; cursor: ew-resize; }
+  .ax-depth-track input[type="range"]::-webkit-slider-runnable-track { width: auto; height: 4px; background: linear-gradient(90deg, var(--ax-accent) var(--fill, 0%), var(--ax-line-strong) var(--fill, 0%)); }
+  .ax-depth-track input[type="range"]::-webkit-slider-thumb { margin-left: 0; margin-top: -6px; }
+  .ax-depth .depth-ticks { display: none; }
+  /* The band: seven systems, "까지 박리" and "만 보기", opened by the toggle. */
+  .ax-depth .depth-band, .ax-depth .depth-steps { display: none; }
+  .ax-depth[data-open="true"] .depth-band, .ax-depth[data-open="true"] .depth-steps { display: grid; }
+  .ax-depth[data-open="true"] .depth-band {
+    position: absolute; left: 0; right: 56px; bottom: calc(100% + 6px + 196px); gap: 4px; padding: 10px 10px 4px;
+    background: var(--ax-surface); border: 1px solid var(--ax-line-strong); border-bottom: 0; border-radius: var(--ax-radius) var(--ax-radius) 0 0;
+  }
+  .ax-depth .depth-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .ax-depth .depth-heading strong { display: flex; align-items: baseline; gap: 6px; font-size: 16px; }
+  .ax-depth .depth-heading .depth-mode { margin: 0; }
+  .ax-depth .peel-entry { width: auto; display: inline-flex; align-items: center; min-height: 36px; }
+  .ax-depth .depth-band-hint { display: block; margin: 0; color: var(--ax-muted); font-size: 12px; }
+  .ax-depth[data-open="true"] .depth-steps {
+    position: absolute; left: 0; right: 56px; top: auto; bottom: calc(100% + 6px); height: 196px; padding: 4px 6px 8px;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px;
+    background: var(--ax-surface); border: 1px solid var(--ax-line-strong); border-top: 0; border-radius: 0 0 var(--ax-radius) var(--ax-radius); box-shadow: var(--ax-shadow);
+  }
+  .ax-depth .depth-steps li { position: static; transform: none; display: grid; grid-template-rows: 1fr 1fr; gap: 2px; }
+  .ax-depth .ax-stop { flex-direction: column; justify-content: center; gap: 2px; min-height: 44px; padding: 0; font-size: 12px; text-align: center; }
+  .ax-depth .ax-stop .layer-dot { width: 10px; height: 10px; }
+  .ax-depth .ax-solo { width: 100%; height: 44px; }
+  .ax-depth li.peeled .ax-stop { text-decoration: none; }
+  .ax-depth [data-tip]::after { display: none; }
+  /* Chip, detail and cards stack above the depth row, beside the camera column. */
+  .ax-inspector {
+    top: auto; bottom: calc(var(--ax-gap) + var(--bar) + 6px + var(--row) + 6px); left: var(--ax-gap); right: calc(var(--ax-gap) + 56px); width: auto;
+    max-height: 45%; justify-content: flex-end;
+  }
   .ax-point-chip { align-self: stretch; }
-  .ax-point-chip .point-summary { flex: 1; }
-  /* The chip stays above a selection card so point details remain one tap away. */
-  .ax[data-panel="detail"] .ax-point-chip { display: none; }
-  /* The open direction buttons pop up over the sheet; the chip steps aside meanwhile. */
-  .ax:has(.movement-pad[open]) .ax-point-chip { visibility: hidden; }
-  .ax[data-panel="detail"] .ax-inspector, .ax[data-selection="true"] .ax-inspector { max-height: 45%; }
+  .ax-point-chip .point-summary { flex: 1; height: 44px; }
+  .ax-point-chip .ax-step, .ax-point-chip .ax-icon, .ax-point-empty { height: 44px; }
+  .ax-point-empty { flex: 1; }
+  .ax-point-empty small { display: none; }
+  .ax-inspector .detail-panel, .ax-inspector .selection-card { flex: 0 1 auto; min-height: 0; }
+  .ax .movement-pad > div:has(.panel-comparison-note) { width: min(300px, calc(100vw - 80px)); }
   .ax .organ-detail-parts > div { grid-template-columns: 1fr; max-height: 140px; }
-  .ax[data-panel="search"] .ax-inspector, .ax[data-panel="points"] .ax-inspector, .ax[data-panel="display"] .ax-inspector, .ax[data-panel="help"] .ax-inspector { display: none; }
-  .ax .cutaway-reset { top: calc(var(--ax-gap) + 112px); }
+  /* Tool sheets open in the same place; the cards wait underneath. */
+  .ax-side-panel { top: auto; bottom: calc(var(--ax-gap) + var(--bar) + 6px + var(--row) + 6px); left: var(--ax-gap); right: calc(var(--ax-gap) + 56px); width: auto; max-height: 45%; }
+  .ax[data-panel="display"] .ax-inspector, .ax[data-panel="help"] .ax-inspector, .ax[data-panel="points"] .ax-inspector,
+  .ax[data-popover="depth"] .ax-inspector, .ax[data-popover="meridian"] .ax-inspector, .ax:has(.movement-pad[open]) .ax-inspector { visibility: hidden; }
+  .ax .help-table thead { display: none; }
+  .ax .help-table tr { display: grid; grid-template-columns: 1fr; padding: 6px 0; border-bottom: 1px solid var(--ax-line); }
+  .ax .help-table th, .ax .help-table td { border: 0; padding: 1px 0; }
+  .ax .help-table td::before { color: var(--ax-muted); }
+  .ax .help-table td:nth-of-type(1)::before { content: "마우스·키보드 · "; }
+  .ax .help-table td:nth-of-type(2)::before { content: "터치 · "; }
+  .ax .help-table td[colspan]::before { content: none; }
+  /* Camera column on the right edge: zoom, front/back, then the view menu. */
+  .ax-camera {
+    position: absolute; z-index: 20; right: var(--ax-gap); bottom: calc(var(--ax-gap) + var(--bar) + 6px + var(--row) + 6px); width: 48px;
+    flex-direction: column; align-items: stretch; gap: 4px;
+  }
+  .ax-camera > * { box-sizing: border-box; width: 100%; }
+  .ax .view-tools, .ax .view-presets { flex-direction: column; }
+  .ax .view-tools button, .ax .view-presets button { width: 100%; height: 44px; min-height: 44px; padding: 0; }
+  .ax .movement-pad summary { justify-content: center; padding: 0; min-height: 44px; color: var(--ax-text); }
+  .ax .movement-pad > div { bottom: 0; right: calc(100% + 6px); grid-template-columns: repeat(3, 52px); }
+  .ax .movement-pad > div button { min-height: 44px; }
+  .ax .cutaway-reset { top: calc(var(--ax-gap) + var(--ax-tap) + 30px); }
+  .ax .selection-actions .clear-text { display: inline; }
 }
 
-/* Short landscape */
+/* Short landscape: compact rail; panels stay within 45% of the scene and end
+   above the bottom row. */
 @media (max-height: 560px) and (min-width: 701px) {
   :root { --ax-gap: 10px; --ax-header: 44px; }
   .app-shell.atlas { min-height: 0; }
   .site-header .brand strong { font-size: 13px; }
+  .ax { --stop-gap: 14px; }
   /* Deep systems sit close together on a short rail: dots, and the current name. */
   .ax-depth li:not(.active) .ax-stop-name { display: none; }
   .ax-depth li:not(.active) .ax-solo { display: none; }
-  .ax-depth { top: calc(var(--ax-gap) + 50px); bottom: calc(var(--ax-gap) + var(--ax-bottom-h, 40px) + 8px); width: 124px; padding: 8px; gap: 6px; }
-  .ax-depth .depth-heading strong, .ax-depth .peel-entry { font-size: 16px; }
-  .ax-depth-track { min-height: 120px; }
+  .ax-depth { top: calc(var(--ax-gap) + 50px); height: calc(100% - var(--ax-gap) * 2 - 50px - var(--ax-bottom-h, 40px) - 8px); width: 124px; padding: 8px; gap: 6px; }
+  .ax-depth .ax-region { min-height: 30px; font-size: 12px; }
+  .ax-depth .depth-heading strong, .ax-depth .peel-entry { font-size: 15px; }
+  .ax-depth-track { min-height: 90px; }
   .ax-stop { min-height: 20px; font-size: 12px; }
   .ax-solo { width: 22px; height: 22px; }
-  .ax-inspector { top: calc(var(--ax-gap) + 48px); bottom: calc(var(--ax-gap) + var(--ax-bottom-h, 40px) + 8px); width: 300px; }
+  .ax-inspector { top: calc(var(--ax-gap) + 48px); bottom: calc(var(--ax-gap) + var(--ax-bottom-h, 40px) + 8px); width: 344px; }
+  /* One row of card actions leaves the name and notices in view above them. */
+  .ax .selection-actions { gap: 4px; }
+  .ax .selection-actions button { padding: 0 8px; font-size: 12px; }
+  /* Opened panels (the point detail) stay within 45%; a selection card is the
+     selection's context and uses the column, so its name, notices and actions fit. */
+  .ax-inspector > .detail-panel { max-height: calc((100dvh - var(--ax-header)) * .45); }
+  .ax .ax-point-list { overflow: auto; }
+  .ax .point-list { overflow: visible; min-height: 0; }
+  .ax-side-panel { top: auto; bottom: calc(var(--ax-gap) + var(--ax-bottom-h, 40px) + 8px); max-height: 45%; }
+  .ax-results { max-height: 45%; }
   .ax-status { flex-basis: 124px; min-width: 110px; }
   .ax-status .scene-status { white-space: normal; }
-  .ax-status .click-target, .ax-status .ax-source, .ax-status .scene-legend { display: none; }
-  .ax-results, .ax-side-panel { max-height: calc(100% - 70px); }
+  .ax-status .click-target { display: none; }
+  .ax-status .ax-source { display: block; }
+  .ax-status .scope-source, .ax-status .guide-more { display: none; }
+  .ax-status .scope-short { display: inline; }
+  .ax .note-long { display: none; }
+  .ax .note-short { display: inline; }
+  /* The list title steps aside so the first rows fit within 45%. */
+  .ax .ax-point-list { padding: 8px 10px; }
+  .ax .ax-point-list .ax-panel-head { position: absolute; top: 8px; right: 8px; margin: 0; }
+  .ax .ax-point-list .ax-panel-head strong { display: none; }
+  .ax .ax-point-list .ax-list-search { margin-right: 40px; }
+  .ax .detail-panel { overflow: auto; }
+  .ax .detail-scroll { overflow: visible; }
+  .ax .detail-head { padding: 8px 12px; gap: 6px; }
+  .ax-point-title { font-size: 17px; }
+}
+
+/* Touch: every control changed here reaches 44px. Markers and canvas labels
+   keep their own pointer targets (Q28). */
+@media (pointer: coarse) {
+  .ax-segment { padding: 0; }
+  .ax-segment button { min-height: 44px; min-width: 44px; }
+  .ax-step, .ax-point-chip .point-summary, .ax-point-empty, .ax-point-chip .ax-icon { height: 44px; }
+  .ax .detail-tabs button, .ax .focus-link, .ax-primary, .ax .selection-actions button, .ax .ax-more, .ax .ax-filters > summary, .ax-close,
+  .ax .organ-detail-parts summary, .ax .setting-details > summary, .ax .share-link, .ax-note button { min-height: 44px; }
+  .ax-close, .ax-card-head .ax-icon { width: 44px; height: 44px; }
+  .ax .point-item, .ax .structure-item { min-height: 44px; }
+}
+@media (pointer: coarse) and (min-width: 701px) and (min-height: 561px) {
+  .ax-depth .ax-stop { min-height: 44px; }
+  .ax-depth .ax-solo { width: 44px; height: 44px; }
 }
 @media (prefers-reduced-motion: reduce) { .ax .spin { animation: none; } }

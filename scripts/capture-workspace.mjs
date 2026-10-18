@@ -2,7 +2,7 @@ import {chromium} from '@playwright/test';import fs from 'node:fs/promises';impo
 const origin=process.env.SMOKE_ORIGIN||'http://127.0.0.1:5174';const dir='docs/ui-renewal';await fs.mkdir(dir,{recursive:true});
 // Scene tools must not cover one another, and point labels must stay on the canvas.
 // Hover/focus tooltips are transient; nested elements belong to their container.
-const OVERLAYS=['.ax-search','.ax-top-actions','.ax-depth','.ax-point-bar','.ax-point-chip','.detail-panel','.selection-card','.movement-pad','.view-presets','.view-tools','.ax-status .scene-status','.ax-status .scene-legend','.ax-status .ax-source','.cutaway-reset','.comparison-note'];
+const OVERLAYS=['.ax-search','.ax-top-actions','.ax-depth','.ax-point-bar','.ax-point-chip','.detail-panel','.selection-card','.movement-pad','.view-presets','.view-tools','.ax-status .scene-status','.ax-status .ax-source','.cutaway-reset','.comparison-note','.ax-results','.ax-side-panel','.ax-popover','.ax-depth .depth-band','.ax-depth .depth-steps'];
 const layout=page=>page.evaluate(selectors=>{
  const shown=el=>{const s=getComputedStyle(el),r=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)>0&&r.width>0&&r.height>0;};
  const boxes=[...new Set(selectors.flatMap(sel=>[...document.querySelectorAll(sel)]))].filter(shown).map(el=>({el,name:el.className,r:el.getBoundingClientRect()}));

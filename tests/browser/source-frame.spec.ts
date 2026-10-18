@@ -79,6 +79,8 @@ test('female help and layer descriptions use the female overview inventory', asy
   await page.locator('.coverage-description').scrollIntoViewIfNeeded();
   await expect(page.locator('.coverage-description')).toBeInViewport();
   await page.screenshot({path:'docs/anatomy-alignment/female-coverage-mobile.png'});
+  // The female source scope is folded under its own summary in the settings.
+  await page.locator('.anatomy-scope-controls > summary').click();
   const donorHint=page.locator('.anatomy-scope-controls .control-hint').filter({hasText:'Visible Human Female'});
   await donorHint.scrollIntoViewIfNeeded();await expect(donorHint).toBeInViewport();
   await page.screenshot({path:'docs/anatomy-alignment/female-donor-help-mobile.png'});

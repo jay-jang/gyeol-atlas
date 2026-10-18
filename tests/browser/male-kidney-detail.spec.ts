@@ -42,6 +42,8 @@ test('male kidney detail exposes original kidney, ureter and artery meshes and r
   await page.getByRole('button',{name:'양쪽 콩팥 전체 보기'}).click();await ready(page);
   await expect.poll(visible).toEqual([...group.ids].sort());
   await page.setViewportSize({width:390,height:844});
+  // The phone camera column (with its 시점 menu) replaces the desktop groups.
+  await expect(page.locator('.movement-pad summary')).toHaveText('시점');
   const card=await page.locator('.selection-card').boundingBox();
   const movement=await page.locator('.movement-pad').boundingBox();
   // The phone tool column sits beside the card: the two never overlap.

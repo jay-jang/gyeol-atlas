@@ -27,12 +27,12 @@ test('movement, wheel zoom and modifier-wheel dissection work on the actual canv
   await expect.poll(async()=>(await snapshot(page)).dissection).toBe(1);
   await page.keyboard.down('Alt');await page.keyboard.press('ArrowUp');await page.keyboard.up('Alt');
   await expect.poll(async()=>(await snapshot(page)).dissection).toBe(.5);
-  const depth=page.getByLabel('연속 해부 박리 깊이');await page.locator('.depth-explorer').hover({position:{x:20,y:20}});const beforeCardWheel=distance((await snapshot(page)).camera);await page.mouse.wheel(0,100);
+  const depth=page.getByLabel('연속 해부 박리 깊이');await page.locator('.depth-explorer .depth-heading').hover();const beforeCardWheel=distance((await snapshot(page)).camera);await page.mouse.wheel(0,100);
   await expect.poll(async()=>(await snapshot(page)).dissection).toBe(1);expect(distance((await snapshot(page)).camera)).toBeCloseTo(beforeCardWheel,5);
   await canvas.focus();await page.keyboard.down('Alt');await page.keyboard.down('Shift');await page.keyboard.press('ArrowDown');await page.keyboard.up('Shift');await page.keyboard.up('Alt');
   await expect.poll(async()=>(await snapshot(page)).dissection).toBe(6);
   await page.getByRole('button',{name:'경혈 찾기',exact:true}).click();
-  const input=page.locator('input[placeholder="이름, 코드, 해부 구조 검색"]'); await input.fill('wasd');
+  const input=page.getByLabel('경혈 검색',{exact:true}); await input.fill('wasd');
   const stable=(await snapshot(page)).camera;await page.waitForTimeout(300);expect((await snapshot(page)).camera).toEqual(stable);
   await page.getByRole('button',{name:'도구 패널 닫기',exact:true}).click();await page.getByRole('button',{name:'시점 초기화'}).click();
   await expect.poll(async()=> (await snapshot(page)).camera.target[0]).toBe(0);

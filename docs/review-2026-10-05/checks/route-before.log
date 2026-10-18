@@ -1,0 +1,84 @@
+
+Running 2 tests using 1 worker
+
+(node:24510) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/browser/panel-keyboard.spec.ts:67:3 › desktop: home and history keep the saved comparison's acupoint (19.7s)
+(node:24517) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 tests/browser/panel-keyboard.spec.ts:67:3 › mobile: home and history keep the saved comparison's acupoint (18.8s)
+
+
+  1) tests/browser/panel-keyboard.spec.ts:67:3 › desktop: home and history keep the saved comparison's acupoint 
+
+    Error: expect(locator).not.toContainText(expected) failed
+
+    Locator: locator('.comparison-note')
+    Expected substring: not "족삼리"
+    Received string: "족삼리 · 신 비교 — 전통적 대응, 압력 경로 아님"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "not toContainText" locator('.comparison-note') with timeout 15000ms
+      - waiting for locator('.comparison-note')
+        34 × locator resolved to <p class="comparison-note">족삼리 · 신 비교 — 전통적 대응, 압력 경로 아님</p>
+           - unexpected value "족삼리 · 신 비교 — 전통적 대응, 압력 경로 아님"
+
+
+      75 |     await expect(page.locator('.point-summary')).toContainText('KI3');
+      76 |     await expect(page.locator('.comparison-note')).toContainText('태계');
+    > 77 |     await expect(page.locator('.comparison-note')).not.toContainText('족삼리');
+         |                                                        ^
+      78 |     await page.goBack();await expect(page).toHaveURL(/#atlas\/KI3$/);
+      79 |     await page.goBack();await expect(page).toHaveURL(/#atlas$/);
+      80 |     await expect(page.locator('.point-summary')).toContainText('KI3');
+        at /Users/nuinuri/workspace/anatomy/tests/browser/panel-keyboard.spec.ts:77:56
+
+    Error Context: test-results/panel-keyboard-desktop-hom-adfd3-saved-comparison-s-acupoint/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/panel-keyboard-desktop-hom-adfd3-saved-comparison-s-acupoint/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/panel-keyboard-desktop-hom-adfd3-saved-comparison-s-acupoint/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests/browser/panel-keyboard.spec.ts:67:3 › mobile: home and history keep the saved comparison's acupoint 
+
+    Error: expect(locator).not.toContainText(expected) failed
+
+    Locator: locator('.comparison-note')
+    Expected substring: not "족삼리"
+    Received string: "족삼리 · 신 비교 — 전통적 대응, 압력 경로 아님"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "not toContainText" locator('.comparison-note') with timeout 15000ms
+      - waiting for locator('.comparison-note')
+        34 × locator resolved to <p class="comparison-note">족삼리 · 신 비교 — 전통적 대응, 압력 경로 아님</p>
+           - unexpected value "족삼리 · 신 비교 — 전통적 대응, 압력 경로 아님"
+
+
+      75 |     await expect(page.locator('.point-summary')).toContainText('KI3');
+      76 |     await expect(page.locator('.comparison-note')).toContainText('태계');
+    > 77 |     await expect(page.locator('.comparison-note')).not.toContainText('족삼리');
+         |                                                        ^
+      78 |     await page.goBack();await expect(page).toHaveURL(/#atlas\/KI3$/);
+      79 |     await page.goBack();await expect(page).toHaveURL(/#atlas$/);
+      80 |     await expect(page.locator('.point-summary')).toContainText('KI3');
+        at /Users/nuinuri/workspace/anatomy/tests/browser/panel-keyboard.spec.ts:77:56
+
+    Error Context: test-results/panel-keyboard-mobile-home-a3d4e-saved-comparison-s-acupoint/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/panel-keyboard-mobile-home-a3d4e-saved-comparison-s-acupoint/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/panel-keyboard-mobile-home-a3d4e-saved-comparison-s-acupoint/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    tests/browser/panel-keyboard.spec.ts:67:3 › desktop: home and history keep the saved comparison's acupoint 
+    tests/browser/panel-keyboard.spec.ts:67:3 › mobile: home and history keep the saved comparison's acupoint 

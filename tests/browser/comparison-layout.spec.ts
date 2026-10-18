@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import {test,expect} from '@playwright/test';
-import {ready,compare,snapshot,choosePoint} from './helpers';
+import {ready,compare,snapshot,choosePoint,settledCamera,viewButton} from './helpers';
 import {detailProjection} from './detail-projection';
 
 test('landscape comparisons and isolated bundles remain clear without changing their memberships',async({page})=>{
@@ -22,7 +22,7 @@ test('landscape comparisons and isolated bundles remain clear without changing t
       expect((await snapshot(page)).detail).toBe(null);
     }
     for(const name of ['후면','측면','정면']) {
-      await page.locator('.view-presets').getByRole('button',{name,exact:true}).click();
+      await viewButton(page,name);
       await expect.poll(async()=>(await detailProjection(page,fiberUrl)).targetError).toBeLessThan(.001);
       await expect.poll(async()=>(await detailProjection(page,fiberUrl)).clearance).toBeGreaterThan(4);
       await expect.poll(async()=>(await detailProjection(page,fiberUrl)).canvasClearance).toBeGreaterThan(0);
@@ -54,6 +54,19 @@ test('female organ comparisons use the female body and keep the CT stomach one e
   const bar=await page.locator('.ax-point-bar').boundingBox();
   for(const sel of ['.ax-inspector','.ax-camera']){const b=await page.locator(sel).boundingBox();expect(b!.y+b!.height,sel).toBeLessThanOrEqual(bar!.y-4);}
   await page.screenshot({path:'docs/anatomy-alignment/comparison-female-ct-mobile.png'});
+  expect(requests.filter(u=>u.includes('/female-detail/'))).toHaveLength(0);
+  // The explicit CT choice belongs to the restored comparison, including
+  // reloads and wiki returns. It must not cause an early CT model download.
+  await settledCamera(page);const comparisonBefore=await snapshot(page);
+  await page.reload();await ready(page);await settledCamera(page);
+  await expect(link).toBeVisible();
+  await page.getByRole('link',{name:'지식 위키',exact:true}).click();
+  await expect(page.locator('canvas')).toHaveCount(0);
+  await page.getByRole('link',{name:'3D 경혈 지도',exact:true}).click();
+  await ready(page);await settledCamera(page);await expect(link).toBeVisible();
+  expect((await snapshot(page)).comparison).toEqual(comparisonBefore.comparison);
+  for(const key of ['position','target'] as const)for(let axis=0;axis<3;axis++)
+    expect((await snapshot(page)).camera[key][axis]).toBeCloseTo(comparisonBefore.camera[key][axis],8);
   expect(requests.filter(u=>u.includes('/female-detail/'))).toHaveLength(0);
   await link.click();await ready(page);
   expect((await snapshot(page)).detail.id).toBe('stomach-ct');

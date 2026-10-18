@@ -20,12 +20,23 @@ try {
   page.on("request", (r) => requests.push(r.url()));
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto(origin + "/#wiki");
-  await page.getByRole("heading", { name: "위키에 물어보기" }).waitFor();
+  await page.getByRole("heading", { name: "질문으로 문서 찾기" }).waitFor();
   assert.equal(
     requests.filter((r) => r.endsWith(".glb") || r.endsWith(".bin.gz") || /\/assets\/Atlas-/.test(r))
       .length,
     0,
     "Wiki must not fetch the 3D chunk or models",
+  );
+  // The movement page draws 2D diagrams only (Q9 extended, docs/movement-mechanics).
+  for (const route of ["#movement", "#movement/walking/loading-response", "#movement/arm-elevation"]) {
+    await page.goto(origin + "/" + route);
+    await page.locator("main.movement-page h1").waitFor();
+  }
+  await page.locator(".mv-svg").waitFor();
+  assert.equal(
+    requests.filter((r) => r.endsWith(".glb") || r.endsWith(".bin.gz") || /\/assets\/Atlas-/.test(r)).length,
+    0,
+    "Movement page must not fetch the 3D chunk or models",
   );
   await page.getByRole("link", { name: "3D 경혈 지도" }).click();
   await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
@@ -101,7 +112,7 @@ try {
   await page.locator('.wiki-sidebar').getByRole('link',{name:'원혈·모혈·오수혈·낙혈의 구분',exact:true}).waitFor();
   assert.deepEqual(errors, []);
   console.log(
-    "Production smoke passed: static wiki, lazy 3D, 11 male GLBs (incl. ligaments/tendons), 15 HRA female chunks + 8 transported female systems, 1 on-demand independent female CT chunk, lymph, bundle/wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
+    "Production smoke passed: static wiki and movement page, lazy 3D, 11 male GLBs (incl. ligaments/tendons), 15 HRA female chunks + 8 transported female systems, 1 on-demand independent female CT chunk, lymph, bundle/wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
   );
 } finally {
   await browser?.close();

@@ -32,6 +32,8 @@ test('male stomach and named vessel detail retains peel, selected vessel and sex
   expect((await snapshot(page)).selection.ids).toEqual(['BP4_FJ3501']);
   await expect.poll(visible).toEqual(['BP4_FJ3501']);
   await page.setViewportSize({width:390,height:844});
+  // The phone camera group replaces the desktop one after the resize; measure once it is there.
+  await expect(page.locator('details.movement-pad > summary')).toHaveText('시점');
   const card=await page.locator('.selection-card').boundingBox();
   const movement=await page.locator('.movement-pad').boundingBox();
   // The phone tool column sits beside the card: the two never overlap.

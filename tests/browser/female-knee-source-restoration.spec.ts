@@ -8,7 +8,7 @@ const expectedHash=createHash('sha256').update(gunzipSync(fs.readFileSync(`publi
 test('38 female knee source surfaces retain buffers and placement through all 201 peel values and selection',async({page})=>{
   test.setTimeout(600000);let fiberUrl='';const errors:string[]=[],requests:string[]=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{requests.push(r.url());if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
-  await page.goto('/#wiki');await expect(page.getByRole('heading',{name:'위키에 물어보기'})).toBeVisible();
+  await page.goto('/#wiki');await expect(page.getByRole('heading',{name:'질문으로 문서 찾기'})).toBeVisible();
   expect(requests.some(url=>url.includes(spec.url))).toBe(false);
   await page.getByRole('link',{name:'3D 경혈 지도',exact:true}).click();await ready(page);
   expect(requests.some(url=>url.includes(spec.url))).toBe(false);

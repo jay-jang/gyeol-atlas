@@ -1,0 +1,323 @@
+/* Movement mechanics page (#movement). Light reading surface like the wiki;
+   tokens from design-system.css. Diagram strokes are in metres (SVG user
+   units). Contraction is shown by text first, line style second, one accent
+   colour (docs/movement-mechanics/CONSENSUS.md §4). */
+.movement-page {
+  --mv-bone: #7f7767;
+  --mv-bone-fill: #efeadf;
+  --mv-far: #8b8474;
+  --mv-prop: #7c8a90;
+  color: var(--doc-ink);
+  padding-bottom: var(--sp-6);
+  /* Original English names and catalogue ids (e.g. ZA_ligament_…) are long. */
+  overflow-wrap: anywhere;
+}
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+.movement-page h1 { font-size: 28px; line-height: 1.3; font-weight: 700; margin: 0 0 var(--sp-2); }
+.movement-page h1 span[lang="en"] { display: block; font-size: 15px; font-weight: 450; color: var(--doc-ink-2); margin-top: 2px; }
+.movement-page h2 { font-size: 18px; line-height: 1.4; font-weight: 650; margin: 0 0 var(--sp-2); }
+.movement-page h3 { font-size: 15px; line-height: 1.4; font-weight: 650; margin: var(--sp-4) 0 var(--sp-2); }
+.movement-page p { line-height: 1.7; }
+.mv-notice {
+  max-width: 72ch; margin: 0 0 var(--sp-4); padding: var(--sp-2) var(--sp-3);
+  border-left: 3px solid var(--doc-line-strong); background: var(--doc-surface-2);
+  font-size: 13px; line-height: 1.6; color: var(--doc-ink-2); word-break: keep-all;
+}
+.mv-cite { font-size: 12px; color: var(--doc-ink-2); white-space: normal; }
+.movement-page small { font-size: 12px; }
+.mv-cite button { display: inline; min-height: 0; padding: 0; border: 0; background: none; font: inherit; font-size: 12px; color: var(--doc-accent); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.mv-cite button:hover { background: none; color: var(--doc-ink); }
+.mv-cite::before { content: "("; }
+.mv-cite::after { content: ")"; }
+.mv-en { font-size: 12px; color: var(--doc-ink-2); }
+
+/* List page */
+.movement-home { max-width: 880px; padding-top: var(--sp-2); }
+.mv-list { list-style: none; margin: 0 0 var(--sp-4); padding: 0; border-top: 1px solid var(--doc-line); }
+.mv-list a {
+  display: grid; grid-template-columns: 9em 1fr; column-gap: var(--sp-4); row-gap: 2px;
+  padding: var(--sp-3) var(--sp-2); border-bottom: 1px solid var(--doc-line); color: var(--doc-ink);
+}
+.mv-list a:hover { background: var(--doc-surface-2); color: var(--doc-ink); }
+.mv-list strong { font-size: 17px; font-weight: 650; grid-row: span 2; }
+.mv-list span[lang="en"] { font-size: 13px; color: var(--doc-ink-2); }
+.mv-list small { font-size: 12px; color: var(--doc-ink-2); grid-column: 2; }
+.mv-list p { grid-column: 2; margin: 2px 0 0; font-size: 14px; line-height: 1.6; color: var(--doc-ink); }
+.mv-later { font-size: 13px; color: var(--doc-ink-2); margin: 0 0 var(--sp-2); }
+.mv-later a { color: var(--doc-accent); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Detail layout */
+.mv-layout { display: grid; grid-template-columns: 180px minmax(0, 1fr); column-gap: 40px; align-items: start; }
+.mv-nav { position: sticky; top: var(--sp-3); padding: var(--sp-2) var(--sp-4) var(--sp-4) 0; border-right: 1px solid var(--doc-line); }
+.mv-home-link { display: block; padding: 6px var(--sp-2); font-size: 13px; font-weight: 600; color: var(--doc-ink-2); }
+.mv-links { list-style: none; margin: 0; padding: 0; }
+.mv-links a { display: block; padding: 7px var(--sp-2); border-radius: var(--radius-ctl); font-size: 14px; line-height: 1.45; color: var(--doc-ink); }
+.mv-links a:hover { background: var(--doc-surface-2); color: var(--doc-ink); }
+.mv-links a[aria-current="page"] { background: var(--doc-surface-2); color: var(--doc-accent); font-weight: 600; }
+.mv-nav-later { margin: var(--sp-4) 0 0; padding: var(--sp-3) var(--sp-2) 0; border-top: 1px solid var(--doc-line); font-size: 12px; line-height: 1.6; color: var(--doc-ink-2); }
+.mv-main { min-width: 0; padding-top: var(--sp-2); }
+.mv-nav-fold > summary {
+  min-height: 44px; display: flex; align-items: center; gap: var(--sp-2); padding: 0 var(--sp-3);
+  border: 1px solid var(--doc-line-strong); border-radius: var(--radius-ctl); background: var(--doc-surface);
+  font-size: 15px; font-weight: 600; cursor: pointer;
+}
+.mv-nav-fold > summary span { font-size: 13px; font-weight: 400; color: var(--doc-ink-2); }
+.mv-nav-fold[open] > summary { margin-bottom: var(--sp-2); }
+.mv-head { max-width: 880px; }
+.mv-title-row { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--sp-2) var(--sp-4); }
+.mv-title-row h1 { flex: 1 1 14em; }
+.mv-title-row .mv-nav { flex: 0 1 auto; }
+.mv-conditions { margin: 0 0 var(--sp-2); font-size: 14px; color: var(--doc-ink-2); word-break: keep-all; }
+
+.mv-stage { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: var(--sp-5); align-items: start; margin-bottom: var(--sp-4); }
+.mv-figure-wrap { min-width: 0; display: flex; flex-direction: column; }
+.mv-figure-wrap > * { min-width: 0; }
+.mv-figure { border: 1px solid var(--doc-line); border-radius: var(--radius-panel); background: var(--doc-surface); padding: var(--sp-2); }
+.mv-figure:focus-visible { outline: 3px solid var(--doc-focus); outline-offset: 2px; }
+/* The diagram keeps its aspect ratio and is limited by height: width follows. */
+.mv-figure { --mv-maxh: min(60vh, 560px); }
+.mv-svg { display: block; width: 100%; height: auto; max-width: calc(var(--mv-maxh) * var(--mv-ratio, 1)); margin: 0 auto; }
+.mv-figure-note { margin: var(--sp-2) 0; font-size: 12px; line-height: 1.6; color: var(--doc-ink-2); }
+
+/* Diagram */
+.mv-bone .mv-long { stroke: var(--mv-bone); stroke-width: 0.026; stroke-linecap: round; fill: none; }
+.mv-bone .mv-femur { stroke-width: 0.03; }
+.mv-bone .mv-arm { stroke-width: 0.021; }
+.mv-bone .mv-fibula { stroke: var(--mv-bone); stroke-width: 0.011; stroke-linecap: round; fill: none; }
+.mv-foot, .mv-pelvis, .mv-ribs, .mv-skull, .mv-scapula, .mv-patella { fill: var(--mv-bone-fill); stroke: var(--mv-bone); stroke-width: 0.007; stroke-linejoin: round; }
+.mv-scapula:not(.mv-far) { fill: #e0d7c4; stroke: #625b4c; stroke-width: 0.009; }
+.mv-spine, .mv-clavicle, .mv-scap-spine { fill: none; stroke: var(--mv-bone); stroke-width: 0.014; stroke-linecap: round; stroke-linejoin: round; }
+.mv-vertebra { fill: var(--mv-bone-fill); stroke: var(--mv-bone); stroke-width: 0.005; }
+.mv-joint { fill: var(--doc-surface); stroke: var(--mv-bone); stroke-width: 0.006; }
+.mv-far .mv-long, .mv-far.mv-long, .mv-far .mv-fibula { stroke: var(--mv-far); }
+.mv-far .mv-foot, .mv-far.mv-scapula { fill: none; stroke: var(--mv-far); stroke-dasharray: 0.02 0.012; }
+.mv-far .mv-joint { stroke: var(--mv-far); }
+.mv-floor { stroke: var(--doc-line-strong); stroke-width: 0.006; }
+.mv-chair path { fill: none; stroke: var(--mv-prop); stroke-width: 0.012; stroke-linejoin: round; }
+.mv-bos { fill: var(--doc-ink-2); }
+.mv-com path { stroke: var(--doc-ink); stroke-width: 0.005; stroke-dasharray: 0.02 0.014; }
+.mv-grf path { stroke: var(--doc-ink); stroke-width: 0.008; }
+.mv-arrowhead { fill: var(--doc-ink); }
+.mv-line { fill: none; stroke: var(--doc-accent); stroke-linecap: round; stroke-linejoin: round; stroke-width: 0.012; }
+.mv-line-concentric { stroke-width: 0.016; }
+.mv-line-isometric { stroke-width: 0.014; }
+.mv-line-active { stroke-width: 0.007; }
+.mv-badge circle { fill: var(--doc-surface); stroke: var(--doc-accent); stroke-width: 0.005; }
+.mv-badge text { fill: var(--doc-accent); font-weight: 700; }
+.mv-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 4px var(--sp-3); margin: var(--sp-2) 0 0; padding: 0; font-size: 13px; }
+.mv-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.mv-overlay-key { list-style: none; display: flex; flex-wrap: wrap; gap: 4px var(--sp-3); margin: var(--sp-2) 0 0; padding: 0; font-size: 13px; color: var(--doc-ink); }
+.mv-overlay-key li { display: inline-flex; align-items: center; gap: 6px; }
+.mv-overlay-key i { display: inline-block; width: 22px; }
+.mv-key-bos { height: 5px; background: var(--doc-ink-2); }
+.mv-key-com { height: 0; border-top: 2px dashed var(--doc-ink); }
+.mv-key-grf { height: 2px; background: var(--doc-ink); position: relative; }
+.mv-key-grf::after { content: ""; position: absolute; right: -2px; top: -4px; border: 5px solid transparent; border-left: 7px solid var(--doc-ink); border-right: 0; }
+.mv-legend-no { display: inline-grid; place-items: center; width: 20px; height: 20px; border: 1px solid var(--doc-accent); border-radius: 50%; color: var(--doc-accent); font-size: 12px; font-weight: 700; }
+
+/* Contraction label: words first, the line sample repeats the diagram. */
+.mv-c { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.mv-c i { display: inline-block; width: 20px; border-top: 3px solid var(--doc-accent); }
+.mv-c-eccentric i { border-top-style: dashed; }
+.mv-c-isometric i { border-top-style: dotted; }
+.mv-c-active i { border-top-width: 1px; }
+.mv-c-inhibited i, .mv-c-silent i, .mv-c-nodata i { display: none; }
+.mv-c-silent, .mv-c-inhibited { font-weight: 500; color: var(--doc-ink-2); }
+.mv-c-nodata { font-weight: 400; color: var(--doc-ink-2); }
+.mv-evidence { display: inline-block; margin-left: 4px; font-size: 12px; color: var(--doc-ink-2); }
+
+/* Controls */
+.mv-controls { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center; }
+.mv-controls button, .mv-steps button, .mv-options select {
+  min-height: 40px; min-width: 40px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 0 var(--sp-3); border: 1px solid var(--doc-line-strong); border-radius: var(--radius-ctl);
+  background: var(--doc-surface); color: var(--doc-ink); font-size: 14px;
+}
+.mv-controls button:hover:not(:disabled), .mv-steps button:hover { background: var(--doc-surface-2); }
+.mv-play { min-width: 104px !important; font-weight: 600; }
+.mv-play[aria-pressed="true"] { border-color: var(--doc-accent); color: var(--doc-accent); }
+.mv-slider { display: grid; gap: 4px; margin: var(--sp-3) 0 0; }
+.mv-slider-text { font-size: 13px; color: var(--doc-ink-2); }
+.mv-slider input { width: 100%; min-height: 32px; accent-color: var(--doc-accent); }
+.mv-options { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); align-items: center; margin-top: var(--sp-3); font-size: 13px; color: var(--doc-ink-2); }
+.mv-options label { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; }
+.mv-options input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--doc-accent); }
+.mv-options select { min-height: 32px; padding: 0 var(--sp-2); font-size: 13px; }
+.mv-fold { margin-top: var(--sp-2); font-size: 13px; color: var(--doc-ink-2); }
+.mv-fold > summary, .mv-legend-fold > summary { min-height: 32px; display: flex; align-items: center; cursor: pointer; color: var(--doc-ink); font-size: 13px; }
+.mv-fold p { margin: 4px 0 0; font-size: 13px; line-height: 1.6; word-break: keep-all; }
+.mv-legend-fold { margin-top: var(--sp-2); }
+.mv-now { margin: var(--sp-2) 0 0; font-size: 14px; line-height: 1.5; }
+.mv-now span { font-size: 13px; color: var(--doc-ink-2); }
+.mv-cell-more { margin-top: 2px; }
+.mv-cell-more > summary { display: inline-flex; align-items: center; min-height: 24px; font-size: 12px; color: var(--doc-accent); cursor: pointer; }
+.mv-cell-more p { margin: 2px 0 0; font-size: 12.5px; line-height: 1.55; color: var(--doc-ink); }
+.mv-source-list li:focus { outline: 3px solid var(--doc-focus); outline-offset: 2px; }
+
+/* Current phase */
+.mv-phase { min-width: 0; }
+.mv-steps { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 var(--sp-3); padding: 0; }
+.mv-steps button { padding: 0 var(--sp-2); font-size: 13px; }
+.mv-steps button[aria-current="step"] { border-color: var(--doc-accent); background: var(--doc-surface-2); color: var(--doc-accent); font-weight: 650; }
+.mv-step-no { font-size: 12px; color: var(--doc-ink-2); }
+.mv-steps button[aria-current="step"] .mv-step-no { color: var(--doc-accent); }
+.mv-phase h2 span[lang="en"] { font-size: 13px; font-weight: 450; color: var(--doc-ink-2); }
+.mv-range { margin: 0 0 var(--sp-2); font-size: 13px; color: var(--doc-ink-2); }
+.mv-events { margin: 0 0 var(--sp-2); font-size: 14px; }
+.mv-events strong { margin-right: 6px; font-size: 13px; color: var(--doc-ink-2); }
+.mv-bullets { margin: 0 0 var(--sp-3); padding-left: 1.2em; line-height: 1.7; font-size: 14px; }
+.mv-bullets li + li { margin-top: 4px; }
+.mv-frames { margin: 0 0 var(--sp-2); font-size: 13px; }
+.mv-frames div { padding: 6px 0; border-top: 1px solid var(--doc-line); }
+.mv-frames dt { font-weight: 650; }
+.mv-frames dd { margin: 2px 0 0; color: var(--doc-ink); line-height: 1.6; }
+.mv-frames small, .mv-joint-table small, .mv-bullets small { color: var(--doc-ink-2); font-size: 12px; }
+.mv-phase-muscles { list-style: none; margin: 0; padding: 0; }
+.mv-phase-muscles li { padding: var(--sp-2) 0; border-top: 1px solid var(--doc-line); }
+.mv-pm-name { font-weight: 650; margin-right: var(--sp-2); }
+.mv-phase-muscles p { margin: 4px 0 0; font-size: 14px; line-height: 1.6; }
+
+.mv-sticky {
+  position: sticky; top: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3);
+  min-height: 40px; max-height: 56px; margin: 0 0 var(--sp-3); padding: 4px var(--sp-2);
+  border-bottom: 1px solid var(--doc-line); background: var(--doc-bg); font-size: 14px; font-weight: 650;
+}
+.mv-sticky .mv-controls { flex-wrap: nowrap; gap: 4px; }
+.mv-sticky .mv-controls button { min-height: 44px; min-width: 44px; padding: 0 8px; }
+.mv-sticky .mv-play { min-width: 44px !important; }
+
+/* Sections and tables */
+.mv-section { margin: 0 0 var(--sp-6); }
+.mv-section > h2 { padding-bottom: var(--sp-2); border-bottom: 1px solid var(--doc-line); }
+.mv-table-note { max-width: 80ch; margin: 0 0 var(--sp-3); font-size: 13px; line-height: 1.6; color: var(--doc-ink-2); word-break: keep-all; }
+.mv-table-wrap { overflow-x: auto; }
+.mv-muscle-table, .mv-joint-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.mv-muscle-table th, .mv-muscle-table td, .mv-joint-table th, .mv-joint-table td { padding: var(--sp-2); border-bottom: 1px solid var(--doc-line); text-align: left; vertical-align: top; line-height: 1.5; }
+.mv-muscle-table thead th { font-size: 12px; font-weight: 650; color: var(--doc-ink-2); border-bottom: 1px solid var(--doc-line-strong); }
+.mv-muscle-table thead th[aria-current="true"] { color: var(--doc-accent); box-shadow: inset 0 3px 0 var(--doc-accent); }
+.mv-muscle-table td[data-current] { background: var(--doc-surface-2); }
+.mv-muscle-table tbody th { min-width: 11em; font-weight: 400; }
+.mv-row-name { display: block; font-size: 14px; font-weight: 650; }
+.mv-ids { display: block; margin: 2px 0; font-size: 12px; color: var(--doc-ink-2); overflow-wrap: anywhere; }
+.mv-muscle-table td .mv-c { display: flex; }
+.mv-muscle-table td .mv-evidence { margin: 2px 0 0; display: block; }
+.mv-muscle-table td .mv-cite { display: block; margin-top: 2px; }
+.mv-atlas { display: inline-flex; align-items: center; gap: 3px; min-height: 32px; font-size: 13px; color: var(--doc-accent); text-decoration: underline; text-underline-offset: 3px; }
+.mv-atlas-missing { display: inline-block; font-size: 12px; color: var(--doc-ink-2); }
+.mv-joint-table thead th { font-size: 12px; color: var(--doc-ink-2); border-bottom: 1px solid var(--doc-line-strong); }
+.mv-joint-table tbody th { font-weight: 650; white-space: nowrap; }
+
+.mv-strip { display: grid; gap: 4px; max-width: 880px; }
+.mv-strip-row { display: grid; grid-template-columns: 10em minmax(0, 1fr); align-items: center; gap: var(--sp-3); font-size: 13px; }
+.mv-track { position: relative; height: 16px; }
+.mv-track i { position: absolute; top: 2px; bottom: 2px; border-right: 1px solid var(--doc-surface); }
+.mv-track i[data-state="on"] { background: var(--doc-accent); }
+.mv-track i[data-state="off"] { background: var(--doc-surface); box-shadow: inset 0 0 0 1px var(--doc-line-strong); }
+.mv-track i[data-state="none"] { background: repeating-linear-gradient(135deg, var(--doc-line) 0 3px, transparent 3px 6px); }
+.mv-strip-axis .mv-track { height: 22px; }
+.mv-strip-axis .mv-track span { position: absolute; top: 0; overflow: hidden; font-size: 12px; color: var(--doc-ink-2); white-space: nowrap; text-overflow: clip; border-left: 1px solid var(--doc-line-strong); padding-left: 2px; }
+.mv-strip-axis .mv-track span[data-current] { color: var(--doc-accent); font-weight: 650; }
+
+.mv-passive { list-style: none; margin: 0; padding: 0; }
+.mv-passive li { padding: var(--sp-2) 0; border-bottom: 1px solid var(--doc-line); }
+.mv-passive p { margin: 4px 0; font-size: 14px; }
+.mv-absent { margin: var(--sp-3) 0 0; font-size: 13px; color: var(--doc-ink-2); }
+.mv-absent strong { margin-right: 6px; color: var(--doc-ink); }
+.mv-myths { margin: 0; }
+.mv-myths div { padding: var(--sp-2) 0; border-bottom: 1px solid var(--doc-line); }
+.mv-myths dt { font-weight: 650; }
+.mv-myths dd { margin: 4px 0 0; font-size: 14px; line-height: 1.7; }
+.mv-limits { margin: 0 0 var(--sp-3); padding-left: 1.2em; font-size: 14px; line-height: 1.7; }
+.mv-source-list { margin: 0; padding-left: 1.5em; font-size: 13px; line-height: 1.6; }
+.mv-source-list li { padding: 3px 0; }
+.mv-source-list a { color: var(--doc-accent); text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }
+.mv-source-list small { color: var(--doc-ink-2); font-size: 12px; }
+.mv-source-list strong { font-weight: 650; }
+.mv-others .mv-links { display: flex; flex-wrap: wrap; gap: 4px; }
+
+
+/* Wide screens: the diagram stays in view while the phase text scrolls. */
+@media (min-width: 1024px) and (min-height: 501px) {
+  .mv-figure-wrap { position: sticky; top: var(--sp-3); }
+}
+@media (max-width: 1023px) {
+  .mv-layout { column-gap: 28px; grid-template-columns: 150px minmax(0, 1fr); }
+  .mv-stage { grid-template-columns: 1fr; gap: var(--sp-4); }
+  .mv-figure { --mv-maxh: 52vh; }
+}
+/* Short landscape and phones: one column, the movement list folds away. */
+@media (max-width: 700px), (max-height: 500px) {
+  .mv-layout { display: block; }
+  .mv-nav { position: static; margin: 0 0 var(--sp-3); padding: 0; border: 0; }
+}
+/* Short landscape: diagram and controls stay on the left while the phase
+   text scrolls on the right. */
+@media (max-height: 500px) and (min-width: 701px) {
+  .mv-stage { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .mv-figure-wrap { position: sticky; top: 0; z-index: 2; background: var(--doc-bg); padding-top: 4px; }
+  .mv-figure { --mv-maxh: 36vh; padding: 4px; }
+  .mv-controls button { min-height: 44px; min-width: 44px; }
+  .movement-page h1 { font-size: 20px; }
+  .movement-page h1 span[lang="en"] { display: inline; margin-left: 6px; font-size: 13px; }
+  .mv-notice { margin-bottom: var(--sp-2); padding: 4px var(--sp-3); }
+  .app-shell.movement { padding-top: var(--sp-2); }
+  .mv-figure-wrap > .mv-figure { order: 1; }
+  .mv-figure-wrap > .mv-controls { order: 2; margin-top: var(--sp-2); }
+  .mv-figure-wrap > .mv-slider { order: 3; margin-top: 4px; }
+  .mv-figure-wrap > * { order: 4; }
+  .mv-sticky { display: none; }
+}
+@media (max-width: 700px) {
+  .movement-page h1 { font-size: 22px; }
+  .mv-notice { font-size: 12.5px; }
+  .mv-figure { padding: 4px; }
+  .mv-figure { --mv-maxh: 38vh; }
+  /* Phone: diagram, controls and position first; the number key follows. */
+  .mv-figure-wrap > .mv-figure { order: 1; }
+  .mv-figure-wrap > .mv-controls { order: 2; margin-top: var(--sp-2); }
+  .mv-figure-wrap > .mv-slider { order: 3; margin-top: var(--sp-2); }
+  .mv-figure-wrap > .mv-legend, .mv-figure-wrap > .mv-legend-fold, .mv-figure-wrap > .mv-now { order: 4; }
+  .mv-figure-wrap > .mv-overlay-key { order: 5; }
+  .mv-figure-wrap > .mv-figure-note { order: 6; }
+  .mv-figure-wrap > * { order: 7; }
+  .mv-controls { justify-content: space-between; }
+  .mv-controls button { min-height: 44px; min-width: 44px; }
+  .mv-play { flex: 1 1 auto; }
+  .mv-steps button { min-height: 44px; }
+  .mv-options label, .mv-fold > summary, .mv-legend-fold > summary, .mv-cell-more > summary { min-height: 44px; }
+  .mv-list a { grid-template-columns: 1fr; }
+  .mv-list strong, .mv-list small, .mv-list p { grid-row: auto; grid-column: 1; }
+  .mv-strip-row { grid-template-columns: 7.5em minmax(0, 1fr); gap: var(--sp-2); }
+
+}
+@media (pointer: coarse) {
+  .mv-controls button, .mv-steps button { min-height: 44px; min-width: 44px; }
+  .mv-options label, .mv-atlas, .mv-fold > summary, .mv-legend-fold > summary, .mv-cell-more > summary { min-height: 44px; }
+}
+
+/* Folded sections show that they open (flex summaries lose the marker). */
+.movement-page details > summary { list-style: none; }
+.movement-page details > summary::-webkit-details-marker { display: none; }
+.movement-page details > summary::before { content: "▸"; display: inline-block; width: 1em; margin-right: 4px; color: var(--doc-ink-2); font-size: 12px; }
+.movement-page details[open] > summary::before { content: "▾"; }
+
+/* Muscle cards and the stacked joint table: phones and short landscape. */
+@media (max-width: 700px), (max-height: 500px) {
+  .mv-all > summary { min-height: 44px; display: flex; align-items: center; font-weight: 600; cursor: pointer; }
+  .mv-muscle-cards { list-style: none; margin: var(--sp-2) 0 0; padding: 0; }
+  .mv-muscle-cards > li { padding: var(--sp-3) 0; border-top: 1px solid var(--doc-line); }
+  .mv-muscle-cards .mv-atlas { margin-left: var(--sp-2); min-height: 44px; }
+  .mv-muscle-cards dl { margin: var(--sp-2) 0 0; display: grid; gap: 2px; }
+  .mv-muscle-cards dl div { display: grid; grid-template-columns: 8.5em 1fr; gap: var(--sp-2); padding: 3px 4px; font-size: 13px; }
+  .mv-muscle-cards dl div[data-current] { background: var(--doc-surface-2); }
+  .mv-muscle-cards dt { color: var(--doc-ink-2); }
+  .mv-muscle-cards dd { margin: 0; }
+  .mv-atlas { min-height: 44px; }
+  .mv-joint-table, .mv-joint-table tbody, .mv-joint-table tr, .mv-joint-table th, .mv-joint-table td { display: block; }
+  .mv-joint-table thead { display: none; }
+  .mv-joint-table tr { padding: var(--sp-2) 0; border-bottom: 1px solid var(--doc-line); }
+  .mv-joint-table th, .mv-joint-table td { padding: 2px 0; border: 0; white-space: normal; }
+}

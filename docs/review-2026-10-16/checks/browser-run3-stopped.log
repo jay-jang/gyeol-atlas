@@ -1,0 +1,270 @@
+
+Running 128 tests using 1 worker
+
+[1/128] tests/browser/acupoints.spec.ts:5:1 › 409 points, extra-point regional meshes, multiple locations and theory survive wiki return
+[2/128] tests/browser/acupoints.spec.ts:35:1 › mobile regions and 34-site Jiaji retain the scene and expose sourced content
+[3/128] tests/browser/acupoints.spec.ts:53:1 › the acupoint bar names meridians in Korean and still filters by meridian
+[4/128] tests/browser/anatomy-region.spec.ts:8:46 › male limb regions agree with search, rendered meshes, peeling and restore
+[5/128] tests/browser/anatomy-region.spec.ts:8:46 › female limb regions agree with search, rendered meshes, peeling and restore
+[6/128] tests/browser/anatomy.spec.ts:4:1 › continuous dissection peels individual muscle meshes and exposes deep systems
+[7/128] tests/browser/anatomy.spec.ts:18:1 › seven real systems and shared layer/isolation transitions; clipping and bilingual structure selection
+[8/128] tests/browser/anatomy.spec.ts:27:1 › hand and foot phalanges are searchable, selectable and frameable
+[9/128] tests/browser/anatomy.spec.ts:33:1 › whole-body vessels and nerves expose names, hierarchy, descriptions and isolation
+[10/128] tests/browser/anatomy.spec.ts:41:1 › male and female references, body regions and lymph structures are independently explorable
+[11/128] tests/browser/anatomy.spec.ts:76:1 › point focus and marker preference survive stage changes
+[12/128] tests/browser/anatomy.spec.ts:80:1 › whole-organ bundles, internal click targeting and wiki/session restoration
+[13/128] tests/browser/anatomy.spec.ts:87:1 › mobile bundle comparison keeps its result visible and avoids page scroll; invalid snapshots recover
+[14/128] tests/browser/anterior-forearm-peel.spec.ts:5:1 › male anterior forearm preserves geometry and peels superficial, intermediate, then deep on desktop and mobile
+[15/128] tests/browser/anterior-thigh-peel.spec.ts:5:1 › female anterior thigh exposes vastus intermedius only after both rectus femoris sources peel
+[16/128] tests/browser/brain-bindings.spec.ts:33:1 › brain source bindings, ray selection and every half-percent peel preserve complete buffers
+tests/browser/brain-bindings.spec.ts:33:1 › brain source bindings, ray selection and every half-percent peel preserve complete buffers
+All 283 brain position/normal/index buffers unchanged at 0%
+
+All 283 brain position/normal/index buffers unchanged at 25%
+
+All 283 brain position/normal/index buffers unchanged at 50%
+
+All 283 brain position/normal/index buffers unchanged at 75%
+
+All 283 brain position/normal/index buffers unchanged at 100%
+
+  1) tests/browser/brain-bindings.spec.ts:33:1 › brain source bindings, ray selection and every half-percent peel preserve complete buffers 
+
+    Error: expect(locator).toBeInViewport() failed
+
+    Locator:  getByRole('button', { name: '전신으로 돌아가기', exact: true })
+    Expected: in viewport
+    Received: viewport ratio 0
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeInViewport" getByRole('button', { name: '전신으로 돌아가기', exact: true }) with timeout 15000ms
+      - waiting for getByRole('button', { name: '전신으로 돌아가기', exact: true })
+        32 × locator resolved to <button>전신으로 돌아가기</button>
+           - unexpected value "viewport ratio 0"
+
+
+      105 |     await page.setViewportSize({width,height});
+      106 |     await expect.poll(async()=>(await detailProjection(page,fiberUrl)).clearance).toBeGreaterThan(4);
+    > 107 |     await expect(page.getByRole('button',{name:'전신으로 돌아가기',exact:true})).toBeInViewport();
+          |                                                                          ^
+      108 |     await page.screenshot({path:`docs/anatomy-alignment/brain-binding-${label}.png`});
+      109 |   }
+      110 |   await page.reload();await ready(page);expect((await snapshot(page)).selection.ids).toEqual(['HRAF0200']);expect(await actual()).toEqual(first);
+        at /Users/nuinuri/workspace/anatomy/tests/browser/brain-bindings.spec.ts:107:74
+
+    Error Context: test-results/brain-bindings-brain-sourc-800a6-l-preserve-complete-buffers/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/brain-bindings-brain-sourc-800a6-l-preserve-complete-buffers/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/brain-bindings-brain-sourc-800a6-l-preserve-complete-buffers/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[17/128] tests/browser/brain-bindings.spec.ts:129:1 › unreviewed female manifest is rejected before geometry download and retry recovers
+[18/128] tests/browser/brain-provenance.spec.ts:5:1 › female reference brain exposes provenance for bundle and individual selections
+  2) tests/browser/brain-provenance.spec.ts:5:1 › female reference brain exposes provenance for bundle and individual selections 
+
+    Error: expect(locator).toBeInViewport() failed
+
+    Locator:  getByRole('button', { name: '전신으로 돌아가기', exact: true })
+    Expected: in viewport
+    Received: viewport ratio 0
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeInViewport" getByRole('button', { name: '전신으로 돌아가기', exact: true }) with timeout 15000ms
+      - waiting for getByRole('button', { name: '전신으로 돌아가기', exact: true })
+        33 × locator resolved to <button>전신으로 돌아가기</button>
+           - unexpected value "viewport ratio 0"
+
+
+      22 |     const warning=notice.locator('p').first();await warning.scrollIntoViewIfNeeded();
+      23 |     await expect(warning).toBeInViewport();
+    > 24 |     await expect(page.getByRole('button',{name:'전신으로 돌아가기',exact:true})).toBeInViewport();
+         |                                                                          ^
+      25 |     const readability=await warning.evaluate(el=>{
+      26 |       const rgb=(value:string)=>value.match(/[\d.]+/g)!.slice(0,3).map(Number);
+      27 |       const luminance=(v:number[])=>v.map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4;}).reduce((n,x,i)=>n+x*[.2126,.7152,.0722][i],0);
+        at /Users/nuinuri/workspace/anatomy/tests/browser/brain-provenance.spec.ts:24:74
+
+    Error Context: test-results/brain-provenance-female-re-0641d-e-and-individual-selections/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/brain-provenance-female-re-0641d-e-and-individual-selections/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/brain-provenance-female-re-0641d-e-and-individual-selections/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[19/128] tests/browser/comparison-clear.spec.ts:4:45 › male: clearing a comparison removes the hidden highlight and survives reload
+[20/128] tests/browser/comparison-clear.spec.ts:4:45 › female: clearing a comparison removes the hidden highlight and survives reload
+[21/128] tests/browser/comparison-layout.spec.ts:6:1 › landscape comparisons and isolated bundles remain clear without changing their memberships
+  3) tests/browser/comparison-layout.spec.ts:6:1 › landscape comparisons and isolated bundles remain clear without changing their memberships 
+
+    Test timeout of 180000ms exceeded.
+
+    Error: locator.click: Test timeout of 180000ms exceeded.
+    Call log:
+      - waiting for locator('details.movement-pad').getByRole('button', { name: '측면', exact: true })
+        - locator resolved to <button>측면</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <span class="scene-legend">…</span> from <aside aria-label="선택 정보" class="ax-inspector">…</aside> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <span class="scene-legend">…</span> from <aside aria-label="선택 정보" class="ax-inspector">…</aside> subtree intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        344 × waiting for element to be visible, enabled and stable
+            - element is visible, enabled and stable
+            - scrolling into view if needed
+            - done scrolling
+            - <span class="scene-legend">…</span> from <aside aria-label="선택 정보" class="ax-inspector">…</aside> subtree intercepts pointer events
+          - retrying click action
+            - waiting 500ms
+
+
+       at helpers.ts:45
+
+      43 |   const pad=page.locator('details.movement-pad');
+      44 |   if(!await pad.evaluate(el=>(el as HTMLDetailsElement).open))await pad.locator('summary').click();
+    > 45 |   await pad.getByRole('button',{name,exact:true}).click();
+         |                                                   ^
+      46 |   await pad.evaluate(el=>{(el as HTMLDetailsElement).open=false;});
+      47 | }
+      48 | // The meridian chips live in a picker opened from the acupoint bar.
+        at viewButton (/Users/nuinuri/workspace/anatomy/tests/browser/helpers.ts:45:51)
+        at /Users/nuinuri/workspace/anatomy/tests/browser/comparison-layout.spec.ts:25:7
+
+    Error Context: test-results/comparison-layout-landscap-7cc15--changing-their-memberships/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/comparison-layout-landscap-7cc15--changing-their-memberships/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/comparison-layout-landscap-7cc15--changing-their-memberships/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[22/128] tests/browser/comparison-layout.spec.ts:41:1 › female organ comparisons use the female body and keep the CT stomach one explicit choice away
+[23/128] tests/browser/connective.spec.ts:15:1 › male ligaments and tendons are present, peel with their systems and can be hidden or viewed alone
+[24/128] tests/browser/connective.spec.ts:65:1 › female reference shows its source knee structures and the carried ligaments and tendons
+[25/128] tests/browser/connective.spec.ts:77:1 › the ligament setting and its view fit a phone without replacing the scene
+[26/128] tests/browser/connective.spec.ts:94:1 › ligaments and tendons are drawn apart in both bodies and the display settings name the two
+[27/128] tests/browser/continuity.spec.ts:10:1 › an organ stays in view and selected through peeling, acupoints and clearing
+[28/128] tests/browser/continuity.spec.ts:65:3 › motion › camera moves glide to the same pose that reduced motion jumps to
+[29/128] tests/browser/detail-context.spec.ts:24:29 › male heart: restoring detail context keeps every original member and the selected child
+[30/128] tests/browser/detail-context.spec.ts:24:29 › male liver: restoring detail context keeps every original member and the selected child
+[31/128] tests/browser/detail-context.spec.ts:24:29 › male lung: restoring detail context keeps every original member and the selected child
+[32/128] tests/browser/detail-context.spec.ts:24:29 › female abdomen-ct: restoring detail context keeps every original member and the selected child
+[33/128] tests/browser/detail-layout.spec.ts:13:4 › male-heart detail remains above its card and presets retain organ focus
+[34/128] tests/browser/detail-layout.spec.ts:13:4 › female-brain detail remains above its card and presets retain organ focus
+[35/128] tests/browser/detail-layout.spec.ts:13:4 › female-ct detail remains above its card and presets retain organ focus
+[36/128] tests/browser/detail-layout.spec.ts:64:1 › every major organ detail fits beside its collapsed and expanded card
+[37/128] tests/browser/detail-peel-return.spec.ts:8:12 › 남성 심장: direct detail return restores its original camera after reload
+[38/128] tests/browser/detail-peel-return.spec.ts:8:12 › 여성 뇌: direct detail return restores its original camera after reload
+[39/128] tests/browser/detail-peel-return.spec.ts:8:12 › 여성 위 (여성 CT): direct detail return restores its original camera after reload
+[40/128] tests/browser/detail-peel-return.spec.ts:31:1 › a point chosen from a directly opened heart detail returns to the original camera
+[41/128] tests/browser/detail-peel-return.spec.ts:52:12 › 남성 심장: detail return restores the actual 50.5% peel
+[42/128] tests/browser/detail-peel-return.spec.ts:52:12 › 여성 뇌: detail return restores the actual 50.5% peel
+[43/128] tests/browser/detail-peel-return.spec.ts:52:12 › 여성 위 (여성 CT): detail return restores the actual 50.5% peel
+[44/128] tests/browser/detail-peel-return.spec.ts:92:1 › selecting a point from heart detail restores peel layers and whole-body framing
+[45/128] tests/browser/detail-peel-return.spec.ts:109:1 › changing body region from female CT detail returns to the same female overview peel
+[46/128] tests/browser/details.spec.ts:7:1 › female uterine tubes and vagina have complete source-defined detail views on desktop and mobile
+[47/128] tests/browser/details.spec.ts:50:1 › organ details use their own complete source memberships and individual parts survive reload
+[48/128] tests/browser/details.spec.ts:113:1 › female peeling exposes each system and does not leak male anatomy
+[49/128] tests/browser/details.spec.ts:133:1 › a failed female geometry chunk shows a recoverable error and retry loads the independent body
+[50/128] tests/browser/details.spec.ts:146:1 › surface targeting exits organ detail and isolation for both reference bodies
+[51/128] tests/browser/dissection-input-scope.spec.ts:4:1 › Alt+arrows in a search field do not peel or move the model; canvas focus enables peeling
+[52/128] tests/browser/dissection-input-scope.spec.ts:22:1 › horizontal wheel over the depth slider leaves depth and camera unchanged
+[53/128] tests/browser/dissection-input-scope.spec.ts:38:1 › movement stops on canvas focus loss even before the held key is released
+[54/128] tests/browser/dissection-input-scope.spec.ts:51:1 › small Alt+wheel input on the canvas peels one half-step without zooming
+[55/128] tests/browser/expansion.spec.ts:3:1 › added muscles, spinal cord and thyroid can be searched, isolated and framed
+[56/128] tests/browser/face-surface.spec.ts:16:1 › the face reads as skin at 0% and shows its own systems once peeled
+[57/128] tests/browser/female-airway.spec.ts:9:1 › female tracheobronchial tree opens every source mesh and keeps individual selection on desktop and mobile
+[58/128] tests/browser/female-airway.spec.ts:42:1 › female airway search keeps its original English name and enters the same source group
+[59/128] tests/browser/female-arm-registration.spec.ts:41:1 › female arm and toe rest poses match calibrated geometry through peeling, search, reload and sex changes
+[60/128] tests/browser/female-detail.spec.ts:5:1 › female CT details preserve source isolation, search, nearby organs, reload and HRA return
+[61/128] tests/browser/female-detail.spec.ts:67:1 › returning from female CT waits for the actual HRA source to reload
+[62/128] tests/browser/female-detail.spec.ts:81:1 › female CT chunk failure is recoverable without substituting male or HRA organs
+[63/128] tests/browser/female-gallbladder.spec.ts:8:1 › female gallbladder detail opens four actual meshes and restores the prior peel
+[64/128] tests/browser/female-gallbladder.spec.ts:37:1 › female cystic artery keeps its English source name and opens the abdominal group
+[65/128] tests/browser/female-knee-source-restoration.spec.ts:8:1 › 38 female knee source surfaces retain buffers and placement through all 201 peel values and selection
+tests/browser/female-knee-source-restoration.spec.ts:8:1 › 38 female knee source surfaces retain buffers and placement through all 201 peel values and selection
+Verified all 38 knee buffers/matrices at 0%
+
+Verified all 38 knee buffers/matrices at 25%
+
+Verified all 38 knee buffers/matrices at 50%
+
+Verified all 38 knee buffers/matrices at 75%
+
+Verified all 38 knee buffers/matrices at 100%
+
+[66/128] tests/browser/female-knee-source-restoration.spec.ts:51:1 › knee source fetch failure is visible and retry restores female source geometry
+[67/128] tests/browser/female-pelvic-bindings.spec.ts:18:1 › female uterine round-ligament IDs select the appropriate existing side at every peel step
+[68/128] tests/browser/female-source-restoration-failure.spec.ts:3:1 › female source restoration failure shows an error and retry loads the restored source without a male substitute
+[69/128] tests/browser/female-source-restoration.spec.ts:8:1 › female native source surface remains unchanged across all 201 peel values and selection restoration
+tests/browser/female-source-restoration.spec.ts:8:1 › female native source surface remains unchanged across all 201 peel values and selection restoration
+Verified source buffers at peel 0%
+
+Verified source buffers at peel 25%
+
+Verified source buffers at peel 50%
+
+Verified source buffers at peel 75%
+
+Verified source buffers at peel 100%
+
+  4) tests/browser/female-source-restoration.spec.ts:8:1 › female native source surface remains unchanged across all 201 peel values and selection restoration 
+
+    Error: expect(locator).toBeInViewport() failed
+
+    Locator:  getByRole('region', { name: '선택 구조 조작' }).getByRole('button', { name: '구조 선택 해제', exact: true })
+    Expected: in viewport
+    Received: viewport ratio 0
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeInViewport" getByRole('region', { name: '선택 구조 조작' }).getByRole('button', { name: '구조 선택 해제', exact: true }) with timeout 15000ms
+      - waiting for getByRole('region', { name: '선택 구조 조작' }).getByRole('button', { name: '구조 선택 해제', exact: true })
+        34 × locator resolved to <button data-tip="구조 선택 해제" data-tip-side="top" aria-label="구조 선택 해제" class="clear-selection">…</button>
+           - unexpected value "viewport ratio 0"
+
+
+      37 |   for(const [name,width,height] of [['desktop',1440,900],['mobile',390,844],['landscape',844,390]] as const){
+      38 |     await page.setViewportSize({width,height});await page.waitForTimeout(1000);
+    > 39 |     await expect(card.getByRole('button',{name:'구조 선택 해제',exact:true})).toBeInViewport();
+         |                                                                         ^
+      40 |     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+      41 |     await page.screenshot({path:`docs/ui-renewal/female-ilium-source-${name}.png`});
+      42 |     expect(await actual()).toEqual(initial);
+        at /Users/nuinuri/workspace/anatomy/tests/browser/female-source-restoration.spec.ts:39:73
+
+    Error Context: test-results/female-source-restoration--0b4c6-s-and-selection-restoration/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/female-source-restoration--0b4c6-s-and-selection-restoration/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/female-source-restoration--0b4c6-s-and-selection-restoration/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[70/128] tests/browser/female-transport.spec.ts:20:1 › the female body is complete with the carried systems, peels in order and keeps sources
+[71/128] tests/browser/female-transport.spec.ts:69:1 › the genital cover hides external genitalia in both bodies and is remembered

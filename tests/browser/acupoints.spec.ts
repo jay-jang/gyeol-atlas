@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import points from '../../data/points.json' with { type: 'json' };
-import { ready, openTool, closeTool, snapshot, choosePoint } from './helpers';
+import { ready, openTool, closeTool, snapshot, choosePoint,openFilters} from './helpers';
 
 test('409 points, extra-point regional meshes, multiple locations and theory survive wiki return', async ({page}) => {
   await page.goto('/'); await ready(page);
@@ -34,7 +34,7 @@ test('409 points, extra-point regional meshes, multiple locations and theory sur
 
 test('mobile regions and 34-site Jiaji retain the scene and expose sourced content', async ({page}) => {
   await page.setViewportSize({width:390,height:844}); await page.goto('/'); await ready(page);
-  await openTool(page,'경혈 찾기'); await page.getByLabel('모델 부위 선택').selectOption('등·허리');
+  await openTool(page,'경혈 찾기'); await openFilters(page); await page.getByLabel('모델 부위 선택').selectOption('등·허리');
   await page.getByLabel('경혈 검색').fill('협척');
   await expect(page.locator('.point-item')).toHaveCount(1);
   await expect(page.locator('canvas')).toHaveAttribute('data-rendered-markers','34');
@@ -52,10 +52,13 @@ test('mobile regions and 34-site Jiaji retain the scene and expose sourced conte
 
 test('the acupoint bar names meridians in Korean and still filters by meridian', async ({page}) => {
   await page.goto('/'); await ready(page);
+  // The meridian picker lists every meridian with its point count; none is hidden behind a scroll.
+  await page.locator('.ax-meridian-button').click();
   const chips = page.locator('.ax-meridians button');
-  await expect(chips).toHaveText(['전체','폐경','대장경','위경','비경','심경','소장경','방광경','신경(腎)','심포경','삼초경','담경','간경','독맥','임맥','경외기혈']);
-  for (const text of await chips.allTextContents()) expect(text).not.toMatch(/[A-Z]{2}/);
+  await expect(chips).toHaveText(['전체','폐경','대장경','위경','비경','심경','소장경','방광경','신경(腎)','심포경','삼초경','담경','간경','독맥','임맥','경외기혈'].map(name=>new RegExp(`^${name.replace(/[()]/g,'\\$&')}\\d+$`)));
+  for (const chip of await chips.all()) { expect(await chip.textContent()).not.toMatch(/[A-Z]{2}/); await expect(chip).toBeInViewport(); }
   await page.getByRole('button',{name:'족양명위경 경혈만 보기'}).click(); await ready(page);
+  await expect(page.locator('.ax-meridian-button')).toHaveText(/경맥\s*위경/);
   expect((await snapshot(page)).filters.meridian).toBe('ST');
   await expect(page.locator('canvas')).toHaveAttribute('data-rendered-markers', String(points.filter(p=>p.meridian==='ST').reduce((n,p)=>n+p.markerCount,0)));
   await page.screenshot({path:'docs/ui-renewal/meridian-bar-korean.png'});

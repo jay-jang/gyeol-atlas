@@ -1,0 +1,520 @@
+[
+ {
+  "cluster": "misc (Hayamizu STS, Perry stance/swing, 1st MTP, Gatev, Loram & Lakie, Esola, Kippers & Parker, Keller, Orendurff)",
+  "claims": [
+   {
+    "claim": "Hayamizu 2025 (J Clin Med 14(7):2514), Table 3, healthy older women controls: hip flexion 72→96→87→0°, knee flexion 88→83→76→8°, ankle dorsiflexion 12→17→20→4° (start → seat-off → max dorsiflexion → standing)",
+    "who": "Codex",
+    "verdict": "supported",
+    "correct": "The paper exists: Hayamizu Y et al., 'Comparing Electromyographic Muscle Activities and Kinematics During Sit-to-Stand Transitions in Patients with Adult Spinal Deformity Versus Healthy Controls', J Clin Med 2025;14(7):2514, PMC11989561. Table 3 control group (n=17, community-dwelling healthy older women, age 71.9±5.8): hip flexion 72.2±5.3 → 95.5±10.0 → 86.7±10.1 → −1.0±4.9; knee flexion 88.4±5.8 → 82.8±6.0 → 76.2±6.0 → 7.8±5.0; ankle dorsiflexion 12.0±8.3 → 16.8±7.5 → 20.1±8.5 → 4.2±6.7. The time points are start posture (sitting), between Phase 1 and 2 (buttocks leave the seat), between Phase 2 and 3 (maximum ankle dorsiflexion), and end posture (hip extension ceased), so the event labels are correct. Fixes needed: (a) the standing hip value is −1°, not 0° (−1.0 rounds to −1). (b) Angles came from one 2D camera at 100 fps on the right side. Markers were on the acromion, greater trochanter, lateral femoral condyle, fibular head, lateral malleolus, and the 5th metatarsal base and head. There were no pelvic markers, so the 'hip flexion' value is most likely the trunk–thigh angle, not pelvis–femur hip flexion. This is my inference: the paper does not state how the angle was built. (c) Seat height was set to the knee joint line, with no armrests or backrest. Codex's caveat (\"measurement angle definition and population fit need checking\") is warranted.",
+    "evidence": "Hayamizu Y, Nagafusa T, Sasaki K, et al. J Clin Med. 2025;14(7):2514. doi:10.3390/jcm14072514. PMID 40217963. Full text (Table 3, Methods) read via Europe PMC fullTextXML for PMC11989561: https://pmc.ncbi.nlm.nih.gov/articles/PMC11989561/ (the MDPI page returned 403).",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Perry & Burnfield: stance about 62% / swing about 38% (the detailed phase timeline) versus the generic 60%/40%; phases PSw 50–62, ISw 62–75, MSw 75–87, TSw 87–100% GC",
+    "who": "Codex (also Claude for phase intervals)",
+    "verdict": "supported",
+    "correct": "Perry & Burnfield, Gait Analysis 2nd ed. (SLACK 2010; reissued by CRC Press 2024), Table 1-1 'Floor Contact Periods'. Generic: stance 60%, initial double stance 10%, single limb support 40%, terminal double stance 10%, swing 40%. At the customary 82 m/min (1.36 m/s): stance 62%, initial double stance 12%, SLS 38%, terminal double stance 12%, swing 38%. The text says durations vary with walking speed. Phase intervals in chapter 2: IC 0–2%, LR 2–12%, MSt 12–31%, TSt 31–50%, PSw 50–62%, ISw 62–75%, MSw 75–87%, TSw 87–100% GC. The 50–62 PSw boundary fits the 62/38 (82 m/min) split, not 60/40, so Codex's warning against mixing the two on one time axis is correct.",
+    "evidence": "Perry J, Burnfield JM. Gait Analysis: Normal and Pathological Function, 2nd ed., 2010 (CRC Press 2024 printing), ch.1 Table 1-1 and ch.2 phase intervals. Publisher preview PDF opened and its text extracted: https://api.pageplace.de/preview/DT0400.9781040143698_A49203435/preview-9781040143698_A49203435.pdf",
+    "sourceOpened": true
+   },
+   {
+    "claim": "First MTP joint dorsiflexion (extension) about 45–55° during TSt–PSw",
+    "who": "AGY",
+    "verdict": "partly",
+    "correct": "Measured peak 1st MTP dorsiflexion in normal walking is usually below the 45–55° band, and it is a single peak near the end of stance (pre-swing / toe-off), not a range held across TSt–PSw. Nawoczenski 1999 (n=33, electromagnetic tracking): mean dorsiflexion during gait 42°. Halstead & Redmond 2006: maximum hallux dorsiflexion while walking 36.9±7.9° in controls and 36.4±9.1° in cases. Ramanathan 2014 Dundee thesis (40 subjects, 80 feet): stance range 9° plantarflexion to 53° dorsiflexion, with two dorsiflexion peaks, at initial contact and at pre-swing. Suggested wording: 'peak about 35–55° (depends on the measurement method), reached in PSw'. Avoid giving 45–55° as the normal value for all of TSt–PSw.",
+    "evidence": "Nawoczenski DA, Baumhauer JF, Umberger BR. J Bone Joint Surg Am. 1999;81(3):370-6. PMID 10199275 (abstract via Europe PMC). Halstead J, Redmond AC. J Orthop Sports Phys Ther. 2006;36(8):550-6. PMID 16915976 (abstract via Europe PMC). Ramanathan AK. PhD thesis, Univ. of Dundee, 2014: https://discovery.dundee.ac.uk/en/studentTheses/biomechanical-investigation-of-the-hallux-metatarsophalangeal-joi/",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Gatev 1999: centre-of-mass anteroposterior sway SD about 4–5 mm, range about 2 cm (n=7); written in the draft as '몸통질량중심' (trunk centre of mass)",
+    "who": "Claude",
+    "verdict": "partly",
+    "correct": "The numbers match. Gatev et al. 1999 report that whole-body centre of gravity (COG) AP sway had an s.d. of 4.13–4.90 mm and a range of 18–21 mm across all four conditions (natural stance / feet together × eyes open / closed). Subjects were 7 healthy men aged 24–54. ML sway was about half the AP value in normal stance and grew to roughly equal it with the feet together (no ML numbers are given). The label is wrong: the quantity is the whole-body COG/COM (신체/온몸 질량중심), not the trunk centre of mass (몸통질량중심). Also say the sample was men only.",
+    "evidence": "Gatev P, Thomas S, Kepple T, Hallett M. Feedforward ankle strategy of balance during quiet stance in adults. J Physiol. 1999;514(Pt 3):915-928. doi:10.1111/j.1469-7793.1999.915ad.x. PMID 9882761. Full text opened at https://pmc.ncbi.nlm.nih.gov/articles/PMC2269093/ (Results text and Table 1 F-statistics).",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Loram & Lakie 2002: intrinsic ankle stiffness is 91±23% of what is required, so active control is still needed",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "Abstract: 'On average the directly determined intrinsic stiffness is 91 +/- 23 % (mean +/- S.D.) of that necessary to provide minimal stabilisation.' The stiffness was close to constant, rising only slightly with ankle torque, and cannot be neurally regulated in quiet standing. The authors attribute it to the foot, Achilles tendon and aponeurosis rather than the active calf muscle fibres. They conclude that extra torque modulation is needed, delivered as predictive, ballistic-like control of the spring's proximal offset.",
+    "evidence": "Loram ID, Lakie M. Direct measurement of human ankle stiffness during quiet standing: the intrinsic mechanical stiffness is insufficient for stability. J Physiol. 2002;545(3):1041-1053. PMID 12482906, PMC2290720. Abstract read via Europe PMC REST API (https://europepmc.org/article/MED/12482906).",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Esola 1996: lumbar-to-hip ratio 1.9 → 0.9 → 0.4; full forward bending about 111° = lumbar about 42° + hip about 69° (n=41, markers)",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "Abstract: mean total forward bending for all subjects 111° = 41.6° lumbar + 69.4° hip. Mean lumbar-to-hip ratios for early (0–30°), middle (30–60°) and late (60–90°) forward bending were 1.9, 0.9 and 0.4. Method: 3D optoelectronic motion analysis. Sample: 41 = 20 with a history of low back pain + 21 without, and the 'all subjects' figures pool both groups. The LBP-history group had a significantly lower lumbar:hip ratio in the middle phase (P<0.01). The page should give the angle bands (0–30/30–60/60–90°) and note that the sample mixes subjects with and without back pain.",
+    "evidence": "Esola MA, McClure PW, Fitzgerald GK, Siegler S. Spine. 1996;21(1):71-78. PMID 9122766. Abstract read via Europe PMC REST API (https://europepmc.org/article/MED/9122766).",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Kippers & Parker 1984: flexion-relaxation (erector spinae myoelectric silence) begins at about 2/3 of maximum trunk flexion",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "Abstract (n=40 adults): both the start and the end of electrical silence occurred at two-thirds of maximum trunk flexion (mean 80°±13°). Hip flexion at onset was slightly above half its maximum (about 40°±12° at reactivation). The most reproducible measure was vertebral flexion, 89% of maximum (48°±6°, r=0.88). Holding 10.1 kg (11 men) moved silence onset and reactivation to greater vertebral flexion. Note: 'about 2/3' refers to trunk inclination. Relative to spinal flexion, onset is at about 89% of maximum, which matches the 48±6° in claude-research.json.",
+    "evidence": "Kippers V, Parker AW. Posture related to myoelectric silence of erectores spinae during trunk flexion. Spine. 1984;9(7):740-745. PMID 6505844. Abstract read via Europe PMC REST API (https://europepmc.org/article/MED/6505844).",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Keller 1996: peak vertical GRF about 1.2 BW at 1.5 m/s walking",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "Abstract: 13 male and 10 female recreational athletes; walking and slow jogging at 1.5–3.0 m/s, running at 3.5–6.0 m/s. 'F(z) increased linearly during walking and running from 1.2 BW to approximately 2.5 BW at 6.0 m/s.' Slow jogging produced more than 50% higher F(z) than walking. The 1.2 BW is the walking value at the slowest speed tested, 1.5 m/s, but the abstract does not print a per-speed table (full text not opened). Also note that 1.5 m/s is brisk walking, faster than Perry's customary 1.36 m/s.",
+    "evidence": "Keller TS, Weisberger AM, Ray JL, Hasan SS, Shiavi RG, Spengler DM. Relationship between vertical ground reaction force and speed during walking, slow jogging, and running. Clin Biomech. 1996;11(5):253-259. doi:10.1016/0268-0033(95)00068-2. PMID 11415629. Abstract read via Europe PMC REST API (https://europepmc.org/article/MED/11415629).",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Orendurff 2004: vertical CoM excursion 2.7–4.8 cm depending on speed",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "Abstract (n=10 normal subjects; self-selected speed plus 0.7, 1.0, 1.2 and 1.6 m/s; 15-segment full-body model): vertical COM excursion rose from 2.74±0.52 cm at the slowest speed (0.7 m/s) to 4.83±0.92 cm at the fastest (1.6 m/s). Mediolateral COM displacement fell from 6.99±1.34 cm to 3.85±1.41 cm (p<0.05).",
+    "evidence": "Orendurff MS, Segal AD, Klute GK, Berge JS, Rohr ES, Kadel NJ. The effect of walking speed on center of mass displacement. J Rehabil Res Dev. 2004;41(6A):829-834. doi:10.1682/jrrd.2003.10.0150. PMID 15685471. Abstract read via Europe PMC REST API (https://europepmc.org/article/MED/15685471).",
+    "sourceOpened": true
+   }
+  ]
+ },
+ {
+  "cluster": "Stand-to-sit (앉기) phase definitions and joint angles: Kralj 1990, Kerr 1997, Dubost 2005, Lin & Lee 2022, Jeon 2024/2025",
+  "claims": [
+   {
+    "claim": "앉기는 3단계(굽힘 개시·전방 경사 → 제어 하강 → 착석·안정)이며 근거는 Kralj et al. 1990과 Kerr et al. 1997 (agy-round1.md 2.3)",
+    "who": "AGY",
+    "verdict": "contradicted",
+    "correct": "Kralj 1990의 앉기 구분은 4단계다. Cunha 2014의 2차 기술에 따르면 initial phase(몸통 앞기울임), descending(수직 변위), seat loading(좌면으로 체중 이전), stabilization(몸통·균형 조정)이다. Kralj 원 초록(20명, 시상면 각도계와 힘판)은 사건을 주로 지면반력 변화로 정의하고 상대 시간 구간을 쓴다고만 적는다. Kerr 1997 초록은 rising/descending과 forward lean, vertical displacement, 둘의 overlap만 언급한다. 3단계 정의는 없다. 이 3단계 구분은 두 출처 어디에도 나오지 않는다.",
+    "evidence": "Cunha MJ et al. 2014, Fisioter Mov 27(2), doi:10.1590/0103-5150.027.002.AO10 (https://scielo.br/j/fm/a/w9BWzD6XcvnvvFYGqwk8v7j/?lang=en). Kralj A, Jaeger RJ, Munih M. J Biomech 1990;23(11):1123-38, PMID 2277047. Europe PMC 초록 확인. Kerr KM et al. Clin Biomech 1997;12(4):236-245, doi:10.1016/s0268-0033(96)00077-0. Europe PMC 초록 확인. Kralj 원문 전문은 열지 못했다.",
+    "sourceOpened": true
+   },
+   {
+    "claim": "앉기 단계 비율 0–25% / 25–80% / 80–100%, 둔부 착석(seat-on)은 약 80–85%",
+    "who": "AGY",
+    "verdict": "contradicted",
+    "correct": "이 %를 보고한 출처는 찾지 못했다. 단계별 %를 실제로 보고한 Lin & Lee 2022(비낙상 남성 노인 10명)는 initiation 3±1.7%, flexion 44±10.0%, momentum transfer 27±9.1%, extension 27±16.4%다. 누적하면 0–3, 3–47, 47–74, 74–100%다. flexion은 수직 지면반력 최대에서 끝나고, momentum transfer는 큰돌기 속도가 0.1 m/s 이하로 떨어질 때 끝난다(골반 정지). 따라서 골반 하강은 평균 약 74%에 끝나고 이후는 몸통 펴기 구간이다. 착석이 80–85%라는 값은 이 자료와 맞지 않는다. 다만 Lin & Lee는 좌면 접촉 시점을 따로 정의하지 않았다. 낙상군은 flexion 36%, momentum 33%다.",
+    "evidence": "Lin YT, Lee HJ 2022, Arch Rehabil Res Clin Transl 4(1):100181, doi:10.1016/j.arrct.2022.100181, Table 2 (https://pmc.ncbi.nlm.nih.gov/articles/PMC8867046/). Kralj 1990과 Kerr 1997 초록에는 % 값이 없다.",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Lin & Lee 2022 사건 정의: 시작 약 0–5%, 굽힘·조절 하강 약 5–50%(끝 = 수직 지면반력 최대), 운동량 전달·좌면 접촉 약 50–75%(좌면 하중), 펴기·안정 약 75–100%(안정). 대상은 낙상 경험 없는 노인 10명, 표준편차가 큼",
+    "who": "Claude",
+    "verdict": "partly",
+    "correct": "수치와 사건은 대체로 맞다. 비낙상군 평균 누적은 0–3 / 3–47 / 47–74 / 74–100%이고, Claude의 값은 이를 반올림한 근사다. 국면 경계는 다음과 같다. T0는 큰돌기 속도 ≥0.1 m/s, T1은 어깨 속도 ≥0.1 m/s, T2는 수직 GRF 최대(flexion 종료), T3는 큰돌기 속도 ≤0.1 m/s, T4는 어깨 속도 ≤0.1 m/s다. 대상은 비낙상 남성 노인 10명(70.0±5.0세)이고, extension의 SD가 ±16.4%로 크다. 한계가 있다. Lin & Lee의 국면 이름은 initiation, flexion, momentum transfer, extension뿐이다. 이 논문은 좌면 접촉을 정의하지 않고, Kralj 1990도 인용하지 않는다. 'seat loading'과 'stabilization'을 붙인 것은 Claude의 편집 대응이다. 이 대응은 출처에 없다. 'stabilization'은 Lin & Lee에서 일어서기 국면 이름이다.",
+    "evidence": "Lin YT, Lee HJ 2022, PMC8867046, Methods 국면 정의와 Table 2 (https://pmc.ncbi.nlm.nih.gov/articles/PMC8867046/). Kralj 이름은 Cunha 2014를 통해서만 확인했다(https://scielo.br/j/fm/a/w9BWzD6XcvnvvFYGqwk8v7j/?lang=en).",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Jeon 등 2025 PLOS One 표 2: 건강한 젊은 성인, 기준 발 위치(REF) 조건에서 보고된 최대값이 엉덩관절 굽힘 약 90°, 무릎 굽힘 76°, 발목 발등굽힘 13°",
+    "who": "Codex",
+    "verdict": "partly",
+    "correct": "숫자는 맞다. Table 2 REF 행은 발목 발등굽힘 12.53±4.72°, 무릎 굽힘 76.21±7.70°, 엉덩관절 굽힘 89.87±13.07°, 몸통 굽힘 38.68±8.11°, 외반각 5.17±2.24°다. 대상은 건강한 젊은 성인 12명이다. 그러나 표 제목은 'Angular displacement ... during stand-to-sit'이다. 이 값을 최대값(peak)이라고 표기하지 않았다. 측정 구간은 하강기(앉기 시작부터 수직 GRF가 줄기 직전까지)다. Results는 발목·무릎·몸통을 stage 3에, 엉덩관절을 stage 5(조절 하강의 마지막 순간)에 연결한다. 따라서 '최대값'이 아니라 '하강기 각변위'로 적어야 한다. 참고로 Wide 조건은 엉덩관절 100.50°, 무릎 80.12°, TO 조건은 무릎 87.74°, 발목 18.09°다.",
+    "evidence": "Jeon W, Dalby A, Dong XN, Goh C-H 2025, PLoS ONE 20(2):e0315738, doi:10.1371/journal.pone.0315738, Table 2와 Fig 4 캡션 (https://pmc.ncbi.nlm.nih.gov/articles/PMC11828351/; https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0315738)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "무릎: 조절 하강 끝에 70–80° 굽힘 (Jeon 2024·2025)",
+    "who": "Claude",
+    "verdict": "partly",
+    "correct": "자기 선택 속도와 기준 조건 값은 범위 안에 든다. Jeon 2024의 reference 조건은 73.40±9.26°이고, Jeon 2025의 REF 조건은 76.21±7.70°다. 둘 다 젊은 성인 12명이다. 그러나 이 값은 하강기 동안의 각변위다. '하강 끝의 절대 각도'로 보고된 값이 아니다. Jeon 2024 smooth 조건(81.11±8.84°)과 Jeon 2025 Wide·TO 조건(80.12°, 87.74°)은 80°를 넘는다. 하강기 정의도 일관되지 않다. Jeon 2024 Methods는 '좌면 접촉 직전까지', Discussion은 '수직 GRF 감소 시작까지'로 쓴다. Jeon 2025는 '수직 GRF 감소 직전까지'로 정의한다.",
+    "evidence": "Jeon W, Dong XN, Dalby A, Goh C-H 2024, Front Hum Neurosci 18:1399179, doi:10.3389/fnhum.2024.1399179 (https://pmc.ncbi.nlm.nih.gov/articles/PMC11112120/). Jeon 2025 PLoS ONE Table 2 (https://pmc.ncbi.nlm.nih.gov/articles/PMC11828351/)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "주요 관절 대표 각도(Kerr et al. 1997): 엉덩관절 하강 말 최대 90–100°, 착석 85–90°; 무릎 85–95°; 발목 하강 후반 12–18° 발등굽힘, 착석 후 0–5°",
+    "who": "AGY",
+    "verdict": "unsupported",
+    "correct": "Kerr 1997 초록에 따르면 측정 변수는 C7 가속도계·vector stereograph로 잰 몸통 선변위·가속도, 그리고 가쪽 무릎 전자각도계로 잰 무릎 각변위뿐이다. 엉덩관절과 발목 각도는 측정 대상이 아니다. 따라서 엉덩관절·발목 값을 Kerr에 귀속할 수 없다. 무릎 85–95°의 수치도 초록에서 확인되지 않는다. 비교 기준으로, 젊은 성인 기준 조건의 하강기 무릎 각변위는 73–76°다(Jeon 2024·2025).",
+    "evidence": "Kerr KM, White JA, Barr DA, Mollan RA 1997, Clin Biomech 12(4):236-245, doi:10.1016/s0268-0033(96)00077-0, PMID 11415728 (Europe PMC 초록. 전문은 유료라 열지 못함)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "앉기 소요 시간 약 2초 (Kerr 1997)",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "Kerr 1997은 50명(20.1–78.3세, 평균 46.8세)을 자기 선택 속도로 측정했다. 평균 일어서기 시간은 1.91초, 앉기 시간은 1.97초다. 일어서기의 전방 기울임 속도가 더 컸고, 앉기의 회복 속도가 더 컸다(P<0.001). Lin & Lee 2022의 비낙상 노인은 앉기 2.0±0.5초, 일어서기 1.7±0.3초였다(P=.139).",
+    "evidence": "Kerr et al. 1997 Europe PMC 초록 (doi:10.1016/s0268-0033(96)00077-0). Lin & Lee 2022 Table 2 (https://pmc.ncbi.nlm.nih.gov/articles/PMC8867046/)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "노인은 젊은 성인보다 앉기 중 몸통 각변위가 약 10° 작음 (Dubost 2005); Dubost 2005가 앉기 국면 정의의 근거로 쓰일 수 있음",
+    "who": "Claude",
+    "verdict": "partly",
+    "correct": "약 10° 차이는 맞다. Dubost 2005(노인 10명 평균 약 76세, 젊은 성인 9명 평균 약 27세)는 앉기에서 노인의 몸통 운동이 약 10° 작다고 보고했다. 정강이 기울기 최대값은 나이에 따라 다르지 않았고, 일어서기에서는 두 각도 모두 차이가 없었다. 측정값은 수직선 대비 최대 각변위다. 그러나 이 논문은 앉기 국면이나 % 구간을 정의하지 않는다. 국면 정의의 근거로 인용하면 안 된다. 초록에는 절대 각도값도 없다.",
+    "evidence": "Dubost V et al. 2005, Phys Ther 85(5):404-412, 'Decreased trunk angular displacement during sitting down: an early feature of aging' (https://archive-ouverte.unige.ch/unige:28077, 초록 확인)",
+    "sourceOpened": true
+   }
+  ]
+ },
+ {
+  "cluster": "Quiet standing: line of gravity vs ankle/knee/hip, lumbar lordosis, postural muscle activity",
+  "claims": [
+   {
+    "claim": "In quiet standing the line of gravity passes about 3–5 cm anterior to the ankle (talocrural) axis.",
+    "who": "AGY",
+    "verdict": "partly",
+    "correct": "방향(발목 앞)은 맞고 크기도 대략 맞지만, 열어 본 측정치는 상한이 더 큽니다. Di Giulio & Baltzopoulos 2019(n=13, 걷다가 멈춰 7.6초 조용히 선 자세)에서 무게중심 앞뒤 투영(CoG_AP)은 발목관절 중심보다 처음 38 mm, 중간 47.27±4.08 mm, 끝 58.33±5.29 mm 앞이었습니다(±는 SEM). 발목 중심은 가쪽복사와 발목 너비로 계산했으며 목말정강관절 축 자체는 아닙니다. 제안 문구: '발목관절 중심보다 약 4–6 cm 앞(개인·시점에 따라 다름)'. 또는 '몇 cm 앞'으로 쓰고 Di Giulio 2019를 인용합니다. O'Rahilly 18장은 'in front of the knee and ankle joints'라고만 하고 수치는 없습니다. 주의: Smith 1957 J Anat의 '0.1 ft(3 cm)'는 아킬레스힘줄과 발목 축 사이 거리(모멘트팔)이므로 중력선 거리로 인용하면 안 됩니다.",
+    "evidence": "Di Giulio I, Baltzopoulos V et al. 2019, Front Physiol 10:625, 'Attainment of Quiet Standing in Humans', https://pmc.ncbi.nlm.nih.gov/articles/PMC6593307/ (Results: CoGAP–Ankle_Mid 47.27±4.08 mm, End 58.33±5.29 mm; 'Initially, CoGAP was in front of ankle, knee, and hip by 38, 28, and 25 mm'). O'Rahilly Basic Human Anatomy ch.18, https://humananatomy.host.dartmouth.edu/BHA/public_html/part_3/chapter_18.html (no numbers). Smith JW 1957 J Anat 91:545, PMC1244908, p.561–562 (3 cm = tendo calcaneus–ankle axis distance, not LoG).",
+    "sourceOpened": true
+   },
+   {
+    "claim": "The line of gravity passes slightly anterior to the knee joint axis and slightly posterior to the hip joint axis in quiet standing.",
+    "who": "AGY",
+    "verdict": "supported",
+    "correct": "지지됩니다. 무릎: Åkerblom 1948(Joseph & Nightingale 1954 인용)에서 23명 중 무릎 중심 앞 평균 1.6±0.2 cm였고, 1명은 일관되게 뒤였습니다. Di Giulio 2019에서는 무릎 중심 앞 약 26–32 mm로 더 컸습니다. 엉덩관절: Åkerblom에서 10명 중 9명은 중심 뒤, 1명은 중심을 통과했습니다. Le Huec 2011은 'very slightly behind the femoral heads'라고 썼습니다. Di Giulio 2019에서는 +1.8 mm(중간), −5.3 mm(끝)로 사실상 중심 부근이었고, 서기 직후에는 25 mm 앞이었습니다. 따라서 엉덩관절은 '중심을 지나거나 약간 뒤'라고 써야 하며, 거리가 작아 쉽게 앞으로 넘어간다는 단서를 붙이는 것이 정확합니다.",
+    "evidence": "Joseph J & Nightingale A 1954, J Physiol 126:81–85, p.85 (scanned page image read), https://pmc.ncbi.nlm.nih.gov/articles/PMC1365642/; Le Huec JC et al. 2011, Eur Spine J 20(Suppl 5):558–563, https://pmc.ncbi.nlm.nih.gov/articles/PMC3175916/; Di Giulio 2019, https://pmc.ncbi.nlm.nih.gov/articles/PMC6593307/",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Line of gravity passes 1.6±0.2 cm anterior to the knee centre (Åkerblom 1948 via Joseph & Nightingale 1954); 1 of 23 subjects passed behind.",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "원문과 일치합니다. 원문 인용: \"in twenty-three subjects standing comfortably and symmetrically the gravity line was in front of the centre of the knee joints, the mean value being 1·6 ± 0·2 cm. Only in one subject did the gravity line fall consistently behind the centre of the knee joint.\" 다만 ±0.2가 SD인지 SE인지 원문에 없습니다. 23명의 개인차를 생각하면 SD 0.2 cm는 비현실적으로 작아 SE일 가능성이 있으므로, 'SD'라고 쓰지 말고 '±0.2'로만 표기하기를 권합니다. Åkerblom 원저(1948, Standing and Sitting Posture, pp.102–126)는 열지 못했습니다. 현대 측정(Di Giulio 2019)은 무릎 중심 앞 약 2.6–3.2 cm로 더 큽니다.",
+    "evidence": "Joseph J & Nightingale A 1954, J Physiol 126:81–85, Discussion p.85, https://pmc.ncbi.nlm.nih.gov/articles/PMC1365642/ (page images jphysiol01402-0099 read); Di Giulio 2019, https://pmc.ncbi.nlm.nih.gov/articles/PMC6593307/",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Line of gravity passes at or just posterior to the hip joint centre (Le Huec 2011; O'Rahilly ch.18).",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "지지됩니다. Le Huec 2011: 'Laterally, the body's line of gravity is situated very slightly behind the femoral heads'. 같은 논문 Fig.6은 'passes through the femoral head'라고 씁니다. 거리 수치는 없습니다. O'Rahilly 18장 그림 설명은 'through or behind the hip joints'입니다. Åkerblom(Joseph & Nightingale 1954 인용)에서는 10명 중 9명이 중심 뒤, 1명이 중심을 통과했습니다. Di Giulio 2019 측정값은 +1.8 mm에서 −5.3 mm로 사실상 0 근처였습니다.",
+    "evidence": "Le Huec JC et al. 2011, Eur Spine J 20(Suppl 5):558–563, https://pmc.ncbi.nlm.nih.gov/articles/PMC3175916/; Dartmouth BHA ch.18, https://humananatomy.host.dartmouth.edu/BHA/public_html/part_3/chapter_18.html; Joseph & Nightingale 1954 p.85, https://pmc.ncbi.nlm.nih.gov/articles/PMC1365642/",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Natural lumbar lordosis in standing is about Cobb 40–60°.",
+    "who": "AGY",
+    "verdict": "partly",
+    "correct": "측정 분절을 밝히지 않으면 범위가 맞지 않습니다. Vialle 2005(무증상 300명, 선 자세 X선)에서 최대 허리앞굽이(maximum lumbar lordosis)는 평균 60°±10°(SD)였습니다. 이 기준에서는 60°가 상한이 아니라 평균이고, ±1SD 범위는 약 50–70°입니다. L1–L5 기준으로는 Dominguez & Le Huec 2016(정상 137명)에서 평균 45.51°였습니다. 따라서 '40–60°'는 L1–L5 값과 L1–S1·최대 앞굽이 값을 섞은 범위입니다. 수정 제안: 'L1–S1(최대 앞굽이) 평균 약 60°±10°(Vialle 2005), L1–L5 평균 약 45°'처럼 분절을 명시합니다. AGY도 스스로 '확인 필요'로 표시해 두었습니다.",
+    "evidence": "Vialle R et al. 2005, J Bone Joint Surg Am 87(2):260–267, PMID 15687145 (PubMed abstract fetched via E-utilities: 'mean values (and standard deviations) were 60 degrees ± 10 degrees for maximum lumbar lordosis'); Dominguez D, ... Le Huec JC 2016, Eur Spine J (L5 incidence), https://www.springermedicine.com/normative-values-for-the-l5-incidence-in-a-subgroup-of-transitio/21230216 (L1–L5 lordosis mean 45.51, N=137; SD not visible)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Gluteus maximus and the vasti are essentially inactive in quiet standing because of passive extension moments (Basmajian & De Luca 1985).",
+    "who": "AGY",
+    "verdict": "supported",
+    "correct": "내용은 1차 근전도 문헌으로 지지됩니다. 다만 인용한 Basmajian & De Luca 1985(Muscles Alive)는 열지 못했으므로, 1차 문헌으로 바꿔 인용하기를 권합니다. 큰볼기근: Joseph & Williams 1957은 18~42세 남성 18명에서 'no demonstrable postural activity in the iliopsoas, gluteus medius and minimus, and the gluteus maximus muscles during symmetrical standing at ease'를 보고했습니다. 넓은근: Joseph & Nightingale 1954는 가쪽·안쪽넓은근 위에 전극을 두었고, 편히 선 자세에서 넙다리네갈래근 전위는 14명 중 2명에게서만 나왔습니다(10/14는 앞·뒤 넓적다리 모두 무전위). 설명은 '체중선이 무릎 중심 앞에 있어 인대가 지지'입니다. 단서: 뒤로 흔들려 체중선이 무릎 뒤로 가면 가쪽넓은근이 수축합니다(Fig.3). 따라서 '항상 휴지'가 아니라 '평균 정렬에서 검출되는 활동 없음'이라고 써야 정확합니다.",
+    "evidence": "Joseph J & Williams PL 1957, J Anat 91:286–294, Summary p.293, https://pmc.ncbi.nlm.nih.gov/articles/PMC1244945/ (page image janat00452-0173 read); Joseph J & Nightingale A 1954, J Physiol 126:81–85, Table 1 & Summary, https://pmc.ncbi.nlm.nih.gov/articles/PMC1365642/. Basmajian & De Luca 1985 not opened.",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Psoas major shows low-level tonic (isometric) activity in quiet standing.",
+    "who": "AGY",
+    "verdict": "partly",
+    "correct": "근거가 서로 엇갈립니다. 지지하는 쪽: Nachemson 1966은 바늘 근전도로 L3 원판 높이의 오른쪽 큰허리근을 정상인 8명(남 4, 여 4)에서 기록했고, 'a varying amount of activity in the upright positions studied'를 보고하며 척추부 큰허리근이 직립 유지에 관여한다고 결론지었습니다. 반대하는 쪽: Joseph & Williams 1957은 표면전극으로 엉덩허리근을 18명에서 기록했고, 편히 선 자세에서 'no demonstrable postural activity in the iliopsoas'였습니다. 표면전극은 큰허리근을 직접 잡기 어려워 이 결과의 해석에는 한계가 있습니다. Andersson 1995(세선 전극, 7명) 초록은 과제 특이적 활성(곧은 등 앉기, 반대쪽 부하)만 기술하고, 편히 선 자세의 수준은 초록에 없습니다. 권장 문구: '심부(바늘) 근전도에서는 선 자세에서 다양한 정도의 활동이 기록됨(Nachemson 1966), 표면 근전도에서는 검출 안 됨(Joseph & Williams 1957)'. 'tonic 저강도 등척성'이라고 단정하지 않습니다. 참고로 Claude 표의 '엉덩근·큰허리근 검출 활동 없음'도 같은 이유로 단서가 필요합니다.",
+    "evidence": "Nachemson A 1966, Acta Orthop Scand 37:177–190, Summary p.187, https://actaorthop.org/actao/article/download/30213/35089/83685 (PDF pages rendered and read); Joseph & Williams 1957 J Anat 91:286, https://pmc.ncbi.nlm.nih.gov/articles/PMC1244945/; Andersson E et al. 1995 Scand J Med Sci Sports 5:10–16, PMID 7882121 (abstract)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Transversus abdominis shows low-level tonic (isometric) activity in quiet standing.",
+    "who": "AGY",
+    "verdict": "unverifiable",
+    "correct": "편히 선 자세에서 배가로근이 지속적으로 활동한다는 직접 근거는 찾지 못했습니다. 열어 본 문헌의 내용은 다음과 같습니다. Cresswell 1992(세선 전극, 남 6명) 초록은 부하·움직임 과제와 배안압의 관계만 다루고 조용히 선 자세의 데이터는 없습니다. Hodges & Gandevia 2000(J Appl Physiol)에서 배가로근이 tonic이었던 것은 '반복적인 팔다리 움직임 중'이며, 같은 그룹의 J Physiol 2000은 이를 'in contrast to standing at rest'와 대비했습니다. De Troyer 1990은 앉은 자세에서 호기 부하 시 배가로근이 우선 동원됨을 보였습니다. Floyd & Silver 1950(표면 근전도, 편히 선 자세 16명)은 배속빗근 ++, 배바깥빗근 +, 배곧은근 0이었고 배가로근은 따로 기록하지 않았습니다. 따라서 '배가로근 저강도 등척성'은 근거 미확인으로 표시하거나 '아래쪽 옆배벽(배속빗근 부위)에 약한 활동(Floyd & Silver 1950, 표면 근전도)'으로 바꾸기를 권합니다.",
+    "evidence": "Cresswell AG et al. 1992 Acta Physiol Scand 144:409–418, PMID 1534959 (abstract); Hodges PW & Gandevia SC 2000 J Appl Physiol 89:967–976, PMID 10956340 (abstract); Hodges & Gandevia 2000 J Physiol 522:165, PMID 10618161 (abstract); De Troyer A et al. 1990 J Appl Physiol 68:1010, PMID 2140344; Floyd WF & Silver PHS 1950 J Anat 84:132–145, Table 1 p.144, https://pmc.ncbi.nlm.nih.gov/articles/PMC1273340/",
+    "sourceOpened": true
+   }
+  ]
+ },
+ {
+  "cluster": "Sit-to-stand: muscle activity before seat-off, phase timing, adductor magnus, and Lombard's paradox",
+  "claims": [
+   {
+    "claim": "In phase 1 (flexion momentum, 0–27%), the iliacus and psoas major contract concentrically and start the anterior pelvic tilt and forward trunk lean.",
+    "who": "AGY (agy-round1.md §2.2, 1단계)",
+    "verdict": "unsupported",
+    "correct": "No sit-to-stand EMG study I opened recorded iliopsoas activity tied to a phase. Goulart & Valls-Solé 1999 (8 muscles), Millington 1992, Tebbache & Hamaoui 2021 (12 surface muscles, no iliopsoas) and Doorenbosch 1994 (9 leg muscles) all left it out. The one fine-wire psoas study, Okubo 2024 (ISSLS poster), split the movement into flexion and extension phases. Its only reported psoas result was 'no difference by seat height'. It gave no timing or amplitude. In the EMG literature, the muscles credited with tilting the trunk forward are the head and trunk flexors (SCM, abdominals; Tebbache 2021 citing Goulart 1999), plus gravity. Tebbache 2021, citing Millington 1992, says that when the trunk starts upright, trunk flexion 'benefits from' gravity. With a reclined backrest it has to start against gravity, and RA and SCOM activity rises. The only model support is one simulation of 7 patients before and after knee replacement (Blessinger 2025, computed muscle control). It estimated the largest psoas force in phase 1 (916 N before TKA), but the role it assigned was vertical braking of the centre of mass. It did not show a concentric contraction or that psoas starts the lean. Suggested wording: '엉덩관절 굽힘근 관여는 근전도로 확인되지 않음(모델 추정만 있음)'.",
+    "evidence": "Goulart FR, Valls-Solé J. Clin Neurophysiol 1999;110:1634-40 (Europe PMC abstract, PMID 10479031); Tebbache N, Hamaoui A. Front Hum Neurosci 2021;15:678302 https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2021.678302/full; Millington PJ et al. Arch Phys Med Rehabil 1992;73:609-17 (PMID 1622314); Okubo Y, Morito T, Kaneoka K. ISSLS 2024 poster https://issls-2024.p.asnevents.com.au/days/2024-05-30/abstract/100965; Blessinger KS et al. 2025 PMC12457571 https://pmc.ncbi.nlm.nih.gov/articles/PMC12457571/",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Tibialis anterior is the first muscle active at the start of sit-to-stand.",
+    "who": "Claude (claude-round1.md §2-3 table, row I 시작); AGY lists TA in phase 1 as concentric/isometric",
+    "verdict": "supported",
+    "correct": "Goulart 1999 abstract: TA, abdominals and SCM 'were the muscles activated first in the most natural condition', but in the other conditions their activity was 'suppressed or greatly diminished'. Tebbache 2021: 'The first muscle to be activated during the STS task is the tibialis anterior'. In its 90° condition at comfortable speed, TA onset came first (51 ms), then SCOM (59 ms) and RA (105 ms). At maximal speed SCOM came first (−46 ms). So 'first' depends on speed and condition. Goulart treats TA as a preparatory postural muscle, not one that carries out the movement. AGY's contraction labels for TA ('단축성·등척성', 'pulling the tibia forward') are not documented in these sources.",
+    "evidence": "Goulart & Valls-Solé 1999, PMID 10479031 (Europe PMC abstract); Tebbache & Hamaoui 2021, Front Hum Neurosci 15:678302, Table 1 and Discussion",
+    "sourceOpened": true
+   },
+   {
+    "claim": "The soleus is inhibited at the start and the centre of pressure moves backward (cited as Goulart & Valls-Solé 1999; Tebbache 2021).",
+    "who": "Claude",
+    "verdict": "partly",
+    "correct": "The finding itself is real, but it is credited to the wrong sources. Crenna & Frigo 1991 (J Physiol) is the primary source. It describes soleus inhibition followed by a TA burst before fast forward-oriented movements, 'standing up' among them. The earliest mechanical effect was a backward shift of the centre of foot pressure. Below a certain speed the full sequence is not used. Goulart 1999 does not report soleus inhibition. Its abstract says 'The soleus was the last muscle activated' and stays active in standing. Tebbache 2021 only repeats Crenna & Frigo as background. In its own data the soleus started late (481 ms at comfortable speed), and it did not report inhibition. Fix: cite Crenna & Frigo 1991 for the soleus inhibition and note that it applies to fast movements.",
+    "evidence": "Crenna P, Frigo C. J Physiol 1991;437:635-53 (PMID 1890653, Europe PMC abstract); Goulart & Valls-Solé 1999 abstract; Tebbache & Hamaoui 2021 full text",
+    "sourceOpened": true
+   },
+   {
+    "claim": "The abdominals and sternocleidomastoid are active early (shortening), and their activity drops a lot in other conditions.",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "Goulart 1999: ABD and SCM are among the first muscles activated in the natural condition, but their activity was 'suppressed or greatly diminished' in other conditions, so they count as postural muscles. Tebbache 2021: 'Head (sternocleidomastoid) and trunk (abdominal muscles) flexors are recruited to perform the forward tilt of the trunk.' Tilting the backrest back increased SCOM and RA activity. One caution: in Millington 1992, which studied older adults, the rectus abdominis started only in phase 2 (transition). The timing differs by age group and setup.",
+    "evidence": "Goulart & Valls-Solé 1999 (PMID 10479031); Tebbache & Hamaoui 2021 abstract (PMID 34566599); Millington 1992 (PMID 1622314)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Erector spinae, quadriceps and hamstrings fire in a fixed sequence time-locked to seat-off.",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "Goulart 1999 abstract: lumbar paraspinal, quadriceps and hamstrings 'were activated in a patterned sequence that was invariable in all conditions, and time locked to the moment of take-off from the seat'. These three are called the executional muscles. Millington 1992 (10 older adults): ES, rectus femoris and vastus medialis started in phase 1 (weight shift), and BF, gluteus maximus and rectus abdominis in phase 2. Claude's labels 'ES lengthening to isometric' and 'Q isometric' are its own inference, as the proposal already says.",
+    "evidence": "Goulart & Valls-Solé 1999 abstract; Millington PJ, Myklebust BM, Shambes GM. Arch Phys Med Rehabil 1992;73:609-17 (PMID 1622314)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Phase percentages are 0–27 / 27–40 / 40–85 / 85–100%, with seat-off at about 27–30%.",
+    "who": "AGY",
+    "verdict": "unsupported",
+    "correct": "AGY gives no source for these numbers. The Schenkman 1990 abstract defines the four phases by events (seat-off, maximal ankle dorsiflexion and so on) and gives no percentages. Li 2021 (Medicine) puts seat-off at 18%T, maximal dorsiflexion at 40%T and the end of the rise at 91%T. Only the 40% boundary matches AGY. In Yoshioka 2009, seat-off falls at about 44% of movement time. Across studies the value ranges from about 18% to 44%, depending on how the start is defined, the speed and the chair height. AGY's '27–30%' falls inside that range, but it should not be shown as a standard value. Each number needs its source, or the boundaries should be given only as events.",
+    "evidence": "Schenkman M et al. Phys Ther 1990;70:638-48 (PMID 2217543, abstract); Li et al. 2021, Medicine, PMC8183776 https://pmc.ncbi.nlm.nih.gov/articles/PMC8183776; Yoshioka S et al. Biomed Eng Online 2009;8:27, PMC2771026",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Li 2021 reports the phase boundaries at 18%, 40% and 91% of total time.",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "Li 2021 names the phases initial, balancing, rising and stable. The initial phase lasts from the start until just before the hips leave the chair (18%T). Balancing runs from 18%T to maximal ankle dorsiflexion (40%T), rising from 40%T to 91%T, and stable from 91%T to the end. These match the Schenkman events, but the names differ. Li 2021 did not record EMG. Its statements about muscles come from other papers.",
+    "evidence": "Li et al. 2021, 'Kinematic analysis of the human body during sit-to-stand in healthy young adults', Medicine, PMC8183776",
+    "sourceOpened": true
+   },
+   {
+    "claim": "In Yoshioka 2009, seat-off occurs at about 44% of movement time.",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "The paper gives no percentage. It gives absolute seat-off times: 0.44, 0.88, 1.76 and 3.07 s for movement times of 1, 2, 4 and 7 s. Each works out to about 44% (43.9% for the 7 s case). The movements are one experimental movement stretched or compressed in time, so the ratio stays the same. The start was the moment the right shoulder's height moved more than 3 SD away from its value at rest, and the paper says it uses this definition. Present the figure as calculated from the paper's times, not as a value the authors report.",
+    "evidence": "Yoshioka S, Nagano A, Hay DC, Fukashiro S. Biomed Eng Online 2009;8:27 (PMID 19849859), https://pmc.ncbi.nlm.nih.gov/articles/PMC2771026/",
+    "sourceOpened": true
+   },
+   {
+    "claim": "In phase 2 (27–40%), the adductor magnus contracts strongly and concentrically, along with the vasti and gluteus maximus.",
+    "who": "AGY",
+    "verdict": "unsupported",
+    "correct": "I found no primary EMG study that measured the adductor magnus during sit-to-stand. Goulart 1999, Millington 1992, Tebbache 2021 and Doorenbosch 1994 did not record it. In its introduction, Ko 2019 (Physiother Theory Pract) says only that 'previous EMG studies' showed the adductor magnus working as a hip extensor in tasks such as sit-to-stand, which is a second-hand statement. One simulation of knee-replacement patients (Blessinger 2025) estimated large adductor magnus forces and a contribution to upward acceleration. It gave no phase or contraction type. 'Strong concentric in phase 2' should not be used. At most: '엉덩관절 폄 보조 가능성(모델 추정), 근전도 직접 확인 없음'.",
+    "evidence": "Blessinger KS et al. 2025, PMC12457571; Ko H et al. 2019, Physiother Theory Pract (introduction, seen via search snippet only, not opened); Goulart 1999; Tebbache 2021 (muscle list)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Rectus femoris and the hamstrings co-contract in sit-to-stand under Lombard's paradox (Lombard 1903; Gregor et al. 1985). STS is the textbook example.",
+    "who": "AGY",
+    "verdict": "partly",
+    "correct": "Teaching sources do describe Lombard's paradox with rising from sitting: quadriceps and hamstrings are active together, and the usual explanation is the difference in moment arms at the hip and knee (Wikipedia; OUHSC lecture notes; Kirtley's Clinical Gait Analysis teach-in). Goulart 1999 shows QUA and HMS both firing as executional muscles, which supports the co-activation. The citations are weak. Gregor, Cavanagh & LaFortune 1985 (J Biomech 18:307-16) is about cycling, not sit-to-stand. The original work these sources usually cite is Lombard & Abbott 1907 (Am J Physiol 20:1-60), a study of the frog thigh. I could not confirm a Lombard 1903 paper on humans. The Wellcome catalogue lists a 1903 Lombard work on two-joint muscles of the frog's hind leg. Suggested fix: cite Lombard & Abbott 1907 and give Doorenbosch 1994 as the sit-to-stand EMG evidence. It compared biarticular muscle EMG across two rising strategies.",
+    "evidence": "https://en.wikipedia.org/wiki/Lombard%27s_paradox; https://clinicalgaitanalysis.com/teach-in/lombard; https://ouhsc.edu/bserdac/dthompso/web/namics/lombard.htm; Doorenbosch CA et al. J Biomech 1994 (PMID 7798280, abstract); Goulart 1999 abstract",
+    "sourceOpened": true
+   },
+   {
+    "claim": "The four phases follow Schenkman 1990: flexion momentum until seat-off, momentum transfer from seat-off to maximal ankle dorsiflexion, extension, and stabilization.",
+    "who": "Claude and AGY",
+    "verdict": "supported",
+    "correct": "Schenkman 1990 abstract (9 healthy people): 'Phase I is a flexion-momentum phase used to generate the initial momentum for rising. Phase II begins as the individual leaves the chair seat and ends at maximal ankle dorsiflexion... Phase III is an extension phase... Phase IV is a stabilization phase.' The abstract gives no percentages for the phases and names no muscles.",
+    "evidence": "Schenkman M, Berger RA, Riley PO, Mann RW, Hodge WA. Phys Ther 1990;70(10):638-48, PMID 2217543 (Europe PMC abstract)",
+    "sourceOpened": true
+   }
+  ]
+ },
+ {
+  "cluster": "팔 들어올리기 (arm elevation / scapulohumeral rhythm)",
+  "claims": [
+   {
+    "claim": "전체 거상 180° = 오목위팔관절 약 120° + 어깨가슴관절 위쪽돌림 약 60° (Inman, Saunders & Abbott 1944)",
+    "who": "AGY",
+    "verdict": "partly",
+    "correct": "120/60 분할은 Inman의 '전체 2:1'을 180°에 적용한 교과서식 산술이다. Braman 2009와 McClure 2001은 Inman이 일정한 2:1을 보고했다고만 다시 적는다. McClure 2001 표가 Inman의 그래프에서 추정한 값은 굽힘 30–150°에서 위쪽돌림 50°, 이마면 벌림 30–150°에서 40°로, 60°가 아니다. 뼈핀 측정값은 이렇다. McClure 2001은 어깨뼈면 거상(위팔-가슴 11–147°)에서 위쪽돌림 50°(SD 4.8)를 보고했다. Braman 2009는 최대 거상에서 48.6°(±4.0)였고, 이때 평균 최대 위팔-가슴 거상은 132.9°(±9.9)였다. Ludewig 2009는 120°까지 오목위팔 거상 85°를 보고했다. 측정 표본에서 180° 도달은 관찰되지 않았다. Brookbush의 Inman 요약(2차 자료)은 오목위팔을 '능동 90°/수동 120°', 어깨뼈를 60°로 적는다. Inman 원문은 유료여서 열지 못했다.",
+    "evidence": "McClure PW et al. 2001, J Shoulder Elbow Surg 10:269–277, PMID 11408911, 본문 PDF https://pages.uoregon.edu/biomech/obl/articles/2001_mcclure_jses2001.pdf (Table: Inman 추정값과 현 연구 범위); Braman JP et al. 2009 JSES 18:960–967, https://pmc.ncbi.nlm.nih.gov/articles/PMC2841046/; Ludewig PM et al. 2009 JBJS Am 91:378–389, https://pmc.ncbi.nlm.nih.gov/articles/PMC2657311; https://brookbushinstitute.com/articles/observations-on-the-function-of-the-shoulder-joint (JBJS 원문 402 Payment Required)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "복장빗장관절 올림 약 15–25°, 빗장뼈 뒤쪽돌림 약 20–35°, 봉우리빗장관절 위쪽돌림 약 20–30° (Inman 1944; Neumann 2017)",
+    "who": "AGY",
+    "verdict": "partly",
+    "correct": "뒤쪽돌림만 현대 자료와 맞는다. 뼈핀 측정(Ludewig 2009, 세 평면 평균)에서 빗장뼈 뒤쪽 긴축돌림은 +31°, 올림은 +6°(11→17°), 뒤당김은 +16°였다. 봉우리빗장관절 위쪽돌림은 +11°(5→16°)에 그쳤고, 이 관절에서는 뒤기울임 +19°가 주된 움직임이었다. McClure 2001에서 빗장뼈 올림은 어깨뼈면 10°, 굽힘 9°였다. 15–25° 올림과 20–30° AC 위쪽돌림은 Inman 그래프 추정값(빗장뼈 올림 25–30°, 뒤쪽돌림 30°, McClure 표)에 가깝고, 3D 뼈핀 값보다 크다. Lawrence 2020(투시촬영, 60명)에서 30–60° 구간 어깨가슴 위쪽돌림의 84.2%는 AC 위쪽돌림이었고 SC 올림은 10–11% 미만이었다. 60–120° 구간에서는 AC 위쪽돌림과 SC 뒤쪽돌림이 각각 약 32–42%였다. Neumann 원문은 열지 못했다.",
+    "evidence": "Ludewig 2009, https://pmc.ncbi.nlm.nih.gov/articles/PMC2657311 (Results: Sternoclavicular/Acromioclavicular Joint Motion); McClure 2001 PDF Table, https://pages.uoregon.edu/biomech/obl/articles/2001_mcclure_jses2001.pdf; Lawrence RL, Braman JP, Keefe DF, Ludewig PM 2020, Phys Ther 100(2), https://www.healthpartners.com/knowledgeexchange/display/document-rn20910",
+    "sourceOpened": true
+   },
+   {
+    "claim": "3단계 시간 비율: 1단계 0–30°=0–17%, 2단계 30–120°=17–67%(2:1 결합), 3단계 120–180°=67–100%이며 3단계에서 180°에 도달",
+    "who": "AGY",
+    "verdict": "unsupported",
+    "correct": "이 백분율은 30/180, 120/180을 단순 환산한 값이다. 180° 도달과 일정한 각속도를 가정하며, 시간 비율을 제시한 출처는 없다. Inman의 '자리 잡기 구간'은 벌림 첫 30°, 굽힘 첫 60°로 평면마다 다르다(2차 요약). Bagg & Forrest 1988은 세 단계를 구분하되, 어깨뼈의 상대 회전이 가장 큰 구간을 벌림 80–140°로 보고했다. 2단계 30–120°를 일정한 2:1 구간으로 본 AGY 구분과 다르다. 뼈핀 표본의 최대 위팔-가슴 거상은 약 133–153°(Braman 132.9°, McClure 147°/153°)로, 120–180° 단계와 '180° 도달'을 뒷받침하지 않는다.",
+    "evidence": "Bagg SD, Forrest WJ 1988 Am J Phys Med Rehabil 67:238–245, PMID 3196449 (PubMed 초록 확인); Braman 2009 PMC2841046; McClure 2001 PDF Table; Brookbush Inman 요약 https://brookbushinstitute.com/articles/observations-on-the-function-of-the-shoulder-joint",
+    "sourceOpened": true
+   },
+   {
+    "claim": "McClure 2001 뼈핀 측정에서 어깨뼈 위쪽돌림 전체 범위 약 50°",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "8명(남 5, 여 3), 어깨뼈가시에 1.6 mm 핀 2개를 박아 측정했다. 능동 어깨뼈면 거상에서 위쪽돌림 50°(SD 4.8), 뒤기울임 30°(SD 13.0), 가쪽돌림 24°(SD 12.8)였다. 이 값은 휴식 자세에서 최대 거상까지의 총 이동량이며, 위팔-가슴 범위는 11–147°였다. 굽힘에서는 46°였다. 오목위팔:어깨가슴 평균 비는 1.7:1이었다.",
+    "evidence": "McClure PW, Michener LA, Sennett BJ, Karduna AR 2001, J Shoulder Elbow Surg 10(3):269–277, doi:10.1067/mse.2001.112954, PMID 11408911 (PubMed 초록), 본문 https://pages.uoregon.edu/biomech/obl/articles/2001_mcclure_jses2001.pdf",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Ludewig 2009 뼈핀 30→120° 구간: 어깨뼈 위쪽돌림 약 39°, 빗장뼈 뒤당김 약 16°, 올림 약 6°, 긴축 뒤돌림 약 31°",
+    "who": "Claude",
+    "verdict": "partly",
+    "correct": "숫자는 원문과 같다. 위쪽돌림 +39°(11→50°), 뒤당김 +16°(23→39°), 올림 +6°(11→17°), 뒤쪽 긴축돌림 +31°(0°부터)이며 세 평면 평균이다. 다만 원문에 '30→120°'라는 구간은 없다. 각도는 휴식 자세, 15°, 이후 5° 간격으로 추출해 120°까지 그렸다. 30–120°는 평면 간 통계 비교 지점일 뿐이다. 같은 구간 오목위팔 거상이 85°(0°부터)이므로 85+39≈124°가 되고, 이는 30°가 아니라 휴식 자세 부근에서 120°까지의 변화량으로 보인다. 표기는 '120°까지(시작점: 원문 미정의)'가 맞다.",
+    "evidence": "Ludewig PM, Phadke V, Braman JP, Hassett DR, Cieminski CJ, LaPrade RF 2009, JBJS Am 91(2):378–389, PMID 19181982, https://pmc.ncbi.nlm.nih.gov/articles/PMC2657311 (Methods: 'extracted at rest, at 15°... each 5° increment'; 'plotted to 120°'; 'evaluated at each humerothoracic elevation angle (30° to 120°)')",
+    "sourceOpened": true
+   },
+   {
+    "claim": "어깨-위팔 리듬 비는 1.7–2.7:1 (McClure 2001; Ludewig 2009; Braman 2009), 고전 2:1은 근사",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "세 연구의 값은 이렇다. McClure 2001은 어깨뼈면 1.7, 굽힘 2.0이었고, 위팔 시작각을 0°로 두면 1.9와 2.3이 된다. Ludewig 2009는 벌림 2.1, 어깨뼈면 2.2, 굽힘 2.4였다. Braman 2009는 올리기 2.3, 내리기 2.7이었다. 따라서 1.7–2.7은 이 세 뼈핀 연구 값의 범위로 정확하다. 정의는 연구마다 조금 다르다. Ludewig와 Braman은 오목위팔 거상을 어깨뼈 위쪽돌림에 회귀한 기울기를 썼다. 문헌 전체 범위는 더 넓어서 McClure는 1.25–3.2를 인용했고, Braman은 구간별 비가 최대 7.29라고 적었다.",
+    "evidence": "McClure 2001 PDF Discussion https://pages.uoregon.edu/biomech/obl/articles/2001_mcclure_jses2001.pdf; Ludewig 2009 PMC2657311 ('2.1:1 for abduction, 2.4:1 for flexion'); Braman 2009 PMC2841046, PMID 19395283",
+    "sourceOpened": true
+   },
+   {
+    "claim": "최대 위팔-가슴 거상은 측정 표본에서 대개 160–170°대",
+    "who": "Claude",
+    "verdict": "partly",
+    "correct": "뼈핀 표본의 최대값은 더 낮다. McClure 2001은 어깨뼈면 11–147°, 굽힘 16–153°였다. Braman 2009는 평균 최대 132.9°(±9.9)였다. Ludewig 2009는 '모두 120° 이상'이라고만 적고 최대값을 보고하지 않았다. 비침습 2D 연구는 Bagg & Forrest 1988이 0–168°, Doody 1970이 5–176°였다(McClure 표). Wickham 2010 EMG의 과제 범위는 0–166°였다. 160–170°는 비침습 표본에만 해당하며, 같은 절에서 인용한 뼈핀 표본에는 맞지 않는다.",
+    "evidence": "McClure 2001 PDF Table ('Current study... SP abd 11°-147°', 'Flexion 16°-153°'); Braman 2009 PMC2841046 (mean peak humerothoracic elevation 132.9°±9.9°); Ludewig 2009 PMC2657311; Wickham 2010 PMID 19625195",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Braman 2009: 리듬 비 올리기 약 2.3, 내리기 약 2.7",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "12명, 뼈핀 전자기 센서, 평면 제약 없이 머리 위로 손을 뻗는 과제였다. 오목위팔 거상 대 어깨뼈 위쪽돌림 비는 올리기 2.3, 내리기 2.7로 유의하게 달랐다. 오목위팔 1°당 어깨뼈 위쪽돌림은 올리기 0.43°, 내리기 0.37°였다. 리듬 비는 올리기 첫 구간에서 가장 컸다. 오목위팔 125°까지 어깨뼈는 안쪽돌림하고 그 뒤로는 가쪽돌림했다.",
+    "evidence": "Braman JP, Engel SC, LaPrade RF, Ludewig PM 2009, J Shoulder Elbow Surg 18(6):960–967, doi:10.1016/j.jse.2009.02.001, PMID 19395283, https://pmc.ncbi.nlm.nih.gov/articles/PMC2841046/",
+    "sourceOpened": true
+   },
+   {
+    "claim": "어깨뼈 상대 회전은 약 80–140°에서 가장 큼 (Bagg & Forrest 1988)",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "건강한 젊은 남성 20명, 어깨뼈면 벌림을 측정했다. 가장 흔한 패턴은 세 단계였고, 어깨뼈의 상대 회전은 벌림 80–140°에서 가장 컸다. 회전 순간중심은 처음에는 어깨뼈가시 안쪽 뿌리에 있다가 봉우리빗장관절 쪽으로 이동했다.",
+    "evidence": "Bagg SD, Forrest WJ 1988, Am J Phys Med Rehabil 67(6):238–245, PMID 3196449 (PubMed 초록)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "0–30° 초기에는 어깨뼈 기여가 작고 사람마다 다름",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "McClure 2001은 위팔-가슴 거상 첫 30° 동안 어깨뼈가 거의 움직이지 않는다고 적었다. Braman 2009는 리듬 비가 올리기 첫 구간에서 가장 컸다고 보고했고, Inman의 0–30° 자리 잡기 구간이 사람마다 크게 달랐다고 언급했다. Scibek 2012는 열지 못했다.",
+    "evidence": "McClure 2001 PDF Discussion ('During the first 30° of humerothoracic elevation, the scapula moves very little'); Braman 2009 PMC2841046",
+    "sourceOpened": true
+   },
+   {
+    "claim": "어깨뼈 뒤기울임 약 20–30°; 위팔뼈 가쪽돌림량은 연구마다 10–55°",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "어깨가슴 뒤기울임은 Ludewig 2009에서 +21°(−13→8°), McClure 2001에서 30°(SD 13.0)였다. 오목위팔 가쪽돌림은 Ludewig 2009에서 평면에 따라 +10°~+51°였다. 상한을 55°로 적은 것은 이 연구 기준으로는 약간 넉넉하다.",
+    "evidence": "Ludewig 2009 PMC2657311; McClure 2001 PMID 11408911",
+    "sourceOpened": true
+   },
+   {
+    "claim": "오해: '가시위근이 처음 15°, 그다음은 어깨세모근' → 근전도상 둘 다 처음부터 활동 (Wickham 2010; Howell 1986)",
+    "who": "Claude",
+    "verdict": "partly",
+    "correct": "'둘 다 처음부터 활동'은 맞다. Wickham 2010(24명, 표면·미세철선 EMG 15근, 이마면 0–166°)에서 움직임 시작 전 가시위근은 −0.102 s, 중간 등세모근은 −0.014 s가 아니라 −0.019 s, 중간 어깨세모근은 −0.014 s에 활성화됐다. 그러나 Wickham 초록은 '가시위근이 움직임을 개시했다(initiated)'고 쓴다. 가시위근이 가장 먼저 켜졌다는 보고이므로 '가시위근 개시' 통념을 반박하는 근거로는 약하다. Howell 1986은 근전도 개시 연구가 아니다. 어깨위신경·겨드랑신경을 선택적으로 차단하고 등속성 회전력을 측정했으며, 적분 EMG를 회전력 계산에 썼다. 결론은 기능 평면에서 가시위근과 어깨세모근이 회전력을 똑같이 담당한다는 것이고, 실제 제목은 'Clarification of the role of the supraspinatus muscle in shoulder function'이다. 통념을 직접 반박하는 근거는 Reed 2013이다. 7근 모두 움직임 전에 활성화됐고, 가시위근은 가시아래근·어깨세모근·몸통-어깨뼈근보다 이르지 않았으며, 저자는 '가시위근이 벌림을 개시한다'는 진술이 오해를 부른다고 결론지었다.",
+    "evidence": "Wickham J et al. 2010, J Electromyogr Kinesiol 20(2):212–222, PMID 19625195; Howell SM, Imobersteg AM, Seger DH, Marone PJ 1986, JBJS Am 68(3):398–404, PMID 3949834; Reed D, Cathers I, Halaki M, Ginn K 2013, J Electromyogr Kinesiol 23(2):425–429, PMID 23265661 (모두 PubMed E-utilities 초록 확인)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "오해: '0–30°는 가시위근만, 30° 이후는 어깨세모근만' → 실제로는 두 근육 모두 0°부터 함께 활성화 (Reed et al. 2013; Neumann 2017)",
+    "who": "AGY",
+    "verdict": "supported",
+    "correct": "Reed 2013(14명, 세 평면, 최대 부하의 25·50·75%)에서 가시위근·가시아래근·위/아래 등세모근·앞톱니근·어깨세모근은 모두 움직임 전에 비슷한 시점에 활성화됐다. 어깨밑근만 유의하게 늦었다. 부하와 평면의 효과는 유의하지 않았다. Wickham 2010도 중간 어깨세모근이 움직임 전(−0.014 s)에 활성화됨을 보여 '30° 이후 어깨세모근만'을 반박한다. Brookbush의 Inman 요약도 가시위근이 전 범위에서 활동한다고 적는다. Neumann 2017은 열지 못했다.",
+    "evidence": "Reed 2013 PMID 23265661; Wickham 2010 PMID 19625195; https://brookbushinstitute.com/articles/observations-on-the-function-of-the-shoulder-joint",
+    "sourceOpened": true
+   }
+  ]
+ },
+ {
+  "cluster": "걷기(gait): Perry/Rancho 국면 %, 시상면 관절 각도, 엉덩관절 수동 탄성(H2/H3), 엉덩넙다리인대·엉덩정강근막띠·발꿈치힘줄 탄성",
+  "claims": [
+   {
+    "claim": "Perry & Burnfield 2010 국면 %: IC 0–2, LR 2–12, MSt 12–31, TSt 31–50, PSw 50–62, ISw 62–75, MSw 75–87, TSw 87–100 (Claude는 AAPMR가 P&B 2010을 인용한 값이며 원서는 열람하지 못했다고 명시)",
+    "who": "Claude",
+    "verdict": "supported",
+    "correct": "2차 출처 두 곳이 P&B 2010을 인용해 같은 값을 줌. AAPMR: IC 0–2, LR 2–12, MSt 12–31, TSt 31–50, PSw 50–62, ISw 62–75, MSw 75–87, TSw 87–100 (이 timing의 출처로 P&B 2010 ref.2 명시). ProtoKinetics(P&B 2010 인용)는 IC를 '처음 3%', LR 3–12%로 적고 나머지는 같음. Hersco(P&B 인용): 82 m/min에서 디딤 62%, 흔들기 38%로 PSw 끝 62%와 맞음. 원서 표나 그림은 직접 열지 못함. archive.org의 1992 초판은 열람 제한(403). 따라서 'Perry & Burnfield 2010 (AAPMR 경유)'처럼 2차 인용임을 표기하고 IC 경계(0–2 또는 0–3)는 출처마다 다르다고 적어야 함.",
+    "evidence": "AAPMR PM&R KnowledgeNOW 'Biomechanics of Normal Gait' https://now.aapmr.org/biomechanics-normal-gait/ (ref. 2 = Perry J, Burnfield JM. Gait Analysis 2nd ed. SLACK 2010); ProtoKinetics 'Phases of the Gait Cycle' https://protokinetics.com/understanding-phases-of-the-gait-cycle/ (Perry & Burnfield 2010 인용); Hersco https://hersco.com/education-center/gait-cycle-1/ (원서 직접 미열람: archive.org gaitanalysisnorm0000perr 열람 제한)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "Rancho 8국면 (Perry & Burnfield 2010; Neumann 2017): IC 0–2, LR 2–12, MSt 12–31, TSt 31–50, PSw 50–60, ISw 60–73, MSw 73–87, TSw 87–100",
+    "who": "AGY",
+    "verdict": "partly",
+    "correct": "두 관례가 섞여 있음. 디딤기 경계(2/12/31/50)는 P&B 2010을 인용한 AAPMR·ProtoKinetics 값과 맞음. 그러나 PSw 50–60, ISw 60–73, MSw 73–87은 그 출처들의 P&B 2010 값(PSw 50–62, ISw 62–75, MSw 75–87)과 다름. 이 경계들은 반올림된 구 RLA 관례(LR 0–10, MSt 10–30, TSt 30–50, PSw 50–60, ISw 60–73, MSw 73–87, TSw 87–100)에서 옴. 섞어 쓰면 첫 양발지지는 12%, 둘째 양발지지는 10%가 되어 비대칭임. 한 관례를 골라 일관되게 써야 함: P&B 2010판(12/31/50/62/75/87) 또는 구 RLA판(10/30/50/60/73/87). Neumann 2017의 수치는 확인하지 못함.",
+    "evidence": "AAPMR https://now.aapmr.org/biomechanics-normal-gait/ ; ProtoKinetics https://protokinetics.com/understanding-phases-of-the-gait-cycle/ ; UW Division of PT 'Normal Gait Reference'(Sara Morgan PhD CPO, Univ. Washington) https://cdn.fs.pathlms.com/E3PjXjmSi2dIV9YWr0HI (LR 0–10, MSt 10–30, TSt 30–50, PSw 50–60, ISw 60–73, MSw 73–87, TSw 87–100; stance 60/swing 40)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "흔히 쓰이는 변형 경계 10/30/50/60/73/87 (디딤 60% / 흔들기 40%)",
+    "who": "task note (variant)",
+    "verdict": "supported",
+    "correct": "이 변형은 실제로 쓰임. UW 'Normal Gait Reference'(RLA Phases): LR 0–10, MSt 10–30, TSt 30–50, PSw 50–60, ISw 60–73, MSw 73–87, TSw 87–100, 양발지지 각 10%. Newcastle FRCS 강의(de Gheldere)는 같은 경계에 IC 0–3, LR 3–10을 씀. 이 변형이 Perry 1992 초판의 그림이라는 귀속은 원서를 열지 못해 확인하지 못함. Pirker & Katzenschlager 2017은 디딤 약 60%, 흔들기 약 40%, 양발지지 각 약 10–12%라고 해 두 관례 모두와 맞음(Claude의 'Pirker 2017, 각 10–12%' 인용은 정확).",
+    "evidence": "UW Normal Gait Reference https://cdn.fs.pathlms.com/E3PjXjmSi2dIV9YWr0HI ; de Gheldere, Newcastle 'Normal gait – FRCS revision' https://lists.ncl.ac.uk/wws/d_read/orthnorth/Basic%20Science%202013/Normal%20gait%20-%20FRCS%20revision.pdf ; Pirker W, Katzenschlager R. Wien Klin Wochenschr 2017;129:81–95, PMC5318488 https://pmc.ncbi.nlm.nih.gov/articles/PMC5318488/",
+    "sourceOpened": true
+   },
+   {
+    "claim": "LR 발목 발바닥굽힘: AGY 5–7°, Claude 5–10°",
+    "who": "AGY vs Claude",
+    "verdict": "partly",
+    "correct": "AAPMR 디딤기 표에는 중간디딤기 시작(=LR 끝)의 발목이 'Initial: PF 10°'로, 끝이 'DF 7°'로 나옴. 따라서 LR 최대 발바닥굽힘은 약 10°이며 Claude의 5–10°는 이 값을 포함함. AGY의 5–7°는 10°를 빠뜨려 좁고, 5–7°를 뒷받침하는 출처(예: Winter 정상 자료)는 찾아 열지 못함. Brockett & Chapman 2016은 LR 각도를 숫자로 주지 않음. 권고: '약 5–10° 발바닥굽힘'으로 쓰고 출처별 차이를 표기.",
+    "evidence": "AAPMR 'Biomechanic of gait Table 1 Stance Phase' PDF https://now.aapmr.org/wp-content/uploads/2017/03/Biomechanic-of-gait-Table-1-Stance-Phase.pdf (Midstance Ankle: Initial PF 10°, Final DF 7°); Brockett CL, Chapman GJ. Orthop Trauma 2016;30(3):232–238, PMC4994968",
+    "sourceOpened": true
+   },
+   {
+    "claim": "발가락 떼기(toe-off)/PSw 발목 발바닥굽힘: AGY 15–20°, Claude 14–20°",
+    "who": "AGY, Claude",
+    "verdict": "supported",
+    "correct": "AAPMR 표의 PSw 발목은 'moves from DF 10° to PF 20°'임. Brockett & Chapman 2016은 'maximum plantarflexion (approximately 14°) being achieved at toe-off'라고 함. Newcastle 강의도 PSw 'Fast PF up to 20°'라고 함. Claude의 14–20°가 두 출처를 정확히 포괄함. AGY의 15–20°는 근사로는 맞지만 하한이 Brockett의 14°보다 높음. TSt 발등굽힘 약 10°(AAPMR 'DF to 10°')도 두 제안 모두 맞음.",
+    "evidence": "AAPMR stance table PDF https://now.aapmr.org/wp-content/uploads/2017/03/Biomechanic-of-gait-Table-1-Stance-Phase.pdf ; Brockett & Chapman 2016 https://pmc.ncbi.nlm.nih.gov/articles/PMC4994968/",
+    "sourceOpened": true
+   },
+   {
+    "claim": "TSt 최대 엉덩관절 폄: 10° vs 약 20° (Claude: AAPMR 10°, Kerrigan 2001 20.4±4.0°, 기준계 차이로 범위 표기; AGY: 약 10–20° 폄)",
+    "who": "Claude, AGY",
+    "verdict": "supported",
+    "correct": "AAPMR 표의 TSt 엉덩관절은 'Extension 10°'임. Kerrigan et al. 2001(Arch Phys Med Rehabil 82:26–30)에서 편한 속도의 peak hip extension은 젊은 성인 20.4°±4.0°(n=30), 건강 노인 14.3°±4.4°, 낙상 노인 11.1°±4.8°였음. 두 수치 모두 정확히 인용되어 범위 10–20°는 타당함. 다만 차이의 원인을 '기준계 차이'로 본 설명은 Kerrigan 초록이 각도 정의를 밝히지 않아 확인하지 못함(측정법·표본 차이일 수도 있음). 나이에 따라 감소한다는 점을 함께 적으면 좋음.",
+    "evidence": "AAPMR stance table PDF (Terminal Stance Hip Extension 10°); Kerrigan DC, Lee LW, Collins JJ, Riley PO, Lipsitz LA. Arch Phys Med Rehabil 2001;82(1):26–30, doi:10.1053/apmr.2001.18584, PMID 11239282 (초록 열람)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "무릎 최대 약 60° 굽힘은 ISw (Claude는 PSw 35–40° 포함)",
+    "who": "Claude, AGY",
+    "verdict": "supported",
+    "correct": "OUHSC 용어 페이지: 초기흔들기(ISw)는 무릎 최대 굽힘(60°)에서 끝남. Newcastle 강의: 'Max flexion at the end of initial swing', 'Knee = 60°'. AAPMR 표의 PSw 무릎은 'moves to 35° of flexion'(Passive knee flexion)이어서 Claude의 PSw 35–40°와 맞음. LR 무릎은 AAPMR 15–18°, Newcastle 'up to 20°'로 두 제안의 15–20°와 맞음.",
+    "evidence": "OUHSC 'Conventions for naming parts of the gait cycle' https://ouhsc.edu/bserdac/dthompso/web/gait/terms.htm ; AAPMR stance table PDF; Newcastle FRCS revision slides (de Gheldere)",
+    "sourceOpened": true
+   },
+   {
+    "claim": "IC 엉덩관절 굽힘 20–30° (두 제안 모두 25–30°)",
+    "who": "AGY, Claude",
+    "verdict": "partly",
+    "correct": "AAPMR 표는 IC와 LR 모두 'Hip: Flexion 30°', Newcastle 강의도 'Initial contact: 30° flexion'임. 25–30°는 이 값과 맞음. 20°라는 하한(Perry식 넙다리–수직선 기준값으로 흔히 인용됨)은 원서를 열지 못해 확인하지 못함. AAPMR 본문은 각도 숫자 없이 'The hip is flexed'라고만 함. 권고: '약 30° 굽힘(골반 기준, AAPMR)'으로 쓰고 기준계 주석을 다는 정도.",
+    "evidence": "AAPMR stance table PDF https://now.aapmr.org/wp-content/uploads/2017/03/Biomechanic-of-gait-Table-1-Stance-Phase.pdf ; https://now.aapmr.org/biomechanics-normal-gait/ ; Newcastle FRCS revision slides",
+    "sourceOpened": true
+   },
+   {
+    "claim": "MSt–TSt 동안 늘어난 엉덩넙다리인대(iliofemoral ligament)의 수동 탄성이 PSw–ISw 추진을 보조",
+    "who": "AGY",
+    "verdict": "partly",
+    "correct": "메커니즘 자체는 있음. Whittington et al. 2008: 수동 엉덩관절 굽힘 모멘트는 late stance부터 early swing까지 컸고, 엉덩관절 폄 중 순 음의 일의 약 40%(본문 38% of H2)를 흡수했으며, H3 양의 일의 절반 이상(본문 평균 58%)을 냈음. 수동 모멘트 최대는 약 0.88 Nm/kg로 순 굽힘 모멘트의 약 35%였음. 그러나 이 연구는 '단관절 구조물(uniarticular structures)'과 이관절근(넙다리곧은근)을 뭉뚱그려 모델링했고, 엉덩넙다리인대를 따로 정량하지 않았음(관절주머니·인대는 가정 부분에서 일반적으로만 언급). 또 이 작용은 몸통 '추진'이 아니라 다리 전진(흔들기 개시)을 돕는 것임. 권고: '엉덩관절 앞쪽 수동 구조(관절주머니·인대·늘어난 굽힘근)'로 쓰고 인대 단독 기여는 '확인 필요'로 표기.",
+    "evidence": "Whittington B, Silder A, Heiderscheit B, Thelen DG. Gait Posture 2008;27(4):628–634, doi:10.1016/j.gaitpost.2007.08.005, PMID 17928228, PMC2505349 https://pmc.ncbi.nlm.nih.gov/articles/PMC2505349/",
+    "sourceOpened": true
+   },
+   {
+    "claim": "엉덩정강근막띠(iliotibial tract)의 수동 탄성이 걷기 PSw–ISw 추진을 보조",
+    "who": "AGY",
+    "verdict": "unsupported",
+    "correct": "걷기에서 이 주장은 뒷받침되지 않음. Eng et al. 2015 J Biomech는 '달리기'(2–5 m/s)만 다루며, ITB가 보폭당 느린 달리기에서 약 1 J, 빠른 달리기에서 7 J(아킬레스힘줄의 약 14%)을 저장한다고 추정함. Eng et al. 2015 JEB의 걷기 모델 추정값은 아주 작음: 앞쪽 ITB(TFL 연결)는 late stance에 약 2% 신장, 보폭당 0.0018–0.0089 J/kg; 뒤쪽 ITB(큰볼기근 연결)는 late swing에 신장, 0.013–0.062 J/kg. 저자들은 이 에너지가 흔들기·엉덩굽힘·추진을 돕는다고 말하지 않았고, 'potentially contributes to locomotor economy'라고만 함. Harvard Gazette도 저장 능력이 걷기보다 달리기에서 상당히 크다고 함. PSw–ISw '추진 보조'라는 문장은 삭제하거나 '달리기 모델 연구에서 탄성 저장 가능성 제기' 수준으로 낮춰야 함.",
+    "evidence": "Eng CM, Arnold AS, Lieberman DE, Biewener AA. J Biomech 2015;48(12):3341–3348, doi:10.1016/j.jbiomech.2015.06.017, PMID 26162548 (초록 열람); Eng CM et al. J Exp Biol 2015;218:2382–2393, doi:10.1242/jeb.117952, PMID 26026035 https://journals.biologists.com/jeb/article/doi/10.1242/jeb.117952/258225/ ; Harvard Gazette 2015-08 'Understanding the IT band' https://news.harvard.edu/gazette/story/2015/08/understanding-the-it-band/",
+    "sourceOpened": true
+   },
+   {
+    "claim": "MSt–TSt에 늘어난 발꿈치힘줄 탄성이 PSw–ISw 추진을 보조 (AGY 같은 문장)",
+    "who": "AGY",
+    "verdict": "partly",
+    "correct": "Fukunaga et al. 2001(3 km/h, 초음파): 안쪽장딴지근 근섬유는 디딤기에 거의 등척성(약 50 mm)이었고, 힘줄은 한발지지 동안 약 7 mm 늘어났다가 push-off에서 되튐. 되튐 시점은 TSt 말–PSw(밀어내기)이지 ISw가 아님. Whittington 2008은 수동 발목 기여가 A2 파워의 약 10%라고 함. 권고: 'TSt–PSw 밀어내기를 보조'로 고쳐 쓰기. Claude의 'MSt–TSt 근섬유 거의 등척, 힘줄 약 7 mm 신장(Fukunaga 2001)'은 정확함.",
+    "evidence": "Fukunaga T et al. Proc Biol Sci 2001;268(1464):229–233, doi:10.1098/rspb.2000.1361, PMID 11217891 (초록 열람); Whittington 2008 PMID 17928228",
+    "sourceOpened": true
+   },
+   {
+    "claim": "TSt에서 엉덩근·큰허리근이 신장성 수축(H2)하고, 음의 일 일부를 수동 구조가 흡수함 [Lewis & Ferris 2008; Whittington 2008]",
+    "who": "Claude",
+    "verdict": "partly",
+    "correct": "수동 흡수 부분은 Whittington 2008이 뒷받침함: 엉덩관절 폄 중 순 음의 일의 약 40%(H2의 38%)를 수동 구조가 흡수함. Lewis & Ferris 2008은 H2를 엉덩관절 굽힘 파워(음수)로 보고함(Natural pushoff에서 H2 −27.9±13.1 W, 발목 push-off를 늘리면 20% 감소). 그러나 이 논문은 엉덩굽힘근의 신장성 작용이나 수동 구조를 다루지 않으므로 '수동 흡수'의 근거로는 맞지 않음. '엉덩근·큰허리근 신장성'은 순 관절 모멘트에서 끌어낸 추론임(두 논문 모두 근육을 따로 분리하지 않음). OUHSC 교육 자료는 'The iliopsoas becomes active, eccentrically controlling the rate of hip extension'(TSt), PSw에서 eccentric에서 concentric으로 전환이라고 적어 해석 자체는 통용됨. 덧붙일 점: Whittington에 따르면 H3 양의 일의 절반 이상(58%)도 수동이므로, Claude 표의 'PSw–ISw 엉덩근·큰허리근 단축(H3)'에 수동 반동 비중을 함께 적어야 함.",
+    "evidence": "Lewis CL, Ferris DP. J Biomech 2008;41(10):2082–2089, PMC2562040 https://pmc.ncbi.nlm.nih.gov/articles/PMC2562040/ ; Whittington et al. Gait Posture 2008;27:628–634, PMID 17928228, PMC2505349 ; OUHSC 'Muscle activity during the gait cycle' https://www.ouhsc.edu/bserdac/dthompso/web/gait/kinetics/mmactsum.htm",
+    "sourceOpened": true
+   }
+  ]
+ }
+]

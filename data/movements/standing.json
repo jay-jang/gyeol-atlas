@@ -1,0 +1,1024 @@
+{
+ "slug": "standing",
+ "name": "서 있기",
+ "nameEn": "Quiet upright standing",
+ "view": "side",
+ "plane": "시상면",
+ "order": 1,
+ "summary": "두 발로 편히 서 있는 자세입니다. 몸은 발목을 축으로 앞뒤로 조금씩 흔들리고, 발목에서는 근육이, 무릎·엉덩관절에서는 주로 인대와 관절주머니가 몸무게의 모멘트를 받습니다.",
+ "conditions": "건강한 성인, 두 발을 나란히 보통 너비로 두고 눈을 뜬 채 팔을 내리고 조용히 선 자세. 출처마다 발 너비·팔 위치·대상이 조금씩 달라 수치마다 대상 집단과 조건을 따로 적었습니다.",
+ "duration": {
+  "seconds": 5.5,
+  "sources": [
+   "loram2005"
+  ],
+  "note": "편집값입니다. 앞쪽 끝에서 뒤쪽 끝까지 한 방향 흔들림(고리의 0.2)이 1×에서 약 1.1초가 되도록 맞췄습니다. 1.1초는 Loram 2005의 ‘한 방향 흔들림당 조정 2.8회’를 ‘초당 2.6회’로 나눈 추론값입니다."
+ },
+ "loop": true,
+ "phaseKind": "상태",
+ "phases": [
+  {
+   "id": "mean-alignment",
+   "name": "평균 정렬",
+   "nameEn": "Mean aligned posture",
+   "start": 0,
+   "end": 0.3,
+   "range": "흔들림을 시간으로 평균한 자세",
+   "events": "시작과 끝을 정하는 사건이 없는 상태입니다. 도식에서는 이 자세에 머문 뒤 앞쪽으로 움직이기 시작합니다(편집 구분).",
+   "summary": "체중심 수직선은 발목 중심 앞과 무릎 중심 앞을 지나고, 엉덩관절에서는 중심을 지나거나 약간 뒤를 지납니다. 발목에는 몸을 앞으로 넘기려는 모멘트가 계속 걸리고, 가자미근이 이를 받습니다. 넙다리와 볼기 근육은 대개 표면 근전도로 검출되는 활동이 없습니다.",
+   "mechanics": [
+    "발목: 체중심이 앞에 있어 근육이 모멘트를 받습니다.",
+    "무릎: 중력선이 중심 앞을 지나 무릎을 펴는 쪽 모멘트가 생기고, 인대 장치가 이를 받는다고 설명됩니다.",
+    "엉덩관절: 중력선이 중심과 몇 mm 차이라 모멘트의 방향이 바뀔 수 있습니다(Di Giulio 2019에서 0.5초와 7.6초의 부호가 다름)."
+   ],
+   "sources": [
+    "digiulio2019",
+    "josephnightingale1952",
+    "josephnightingale1954",
+    "josephwilliams1957",
+    "lehuec2011",
+    "orahilly2004"
+   ]
+  },
+  {
+   "id": "forward-sway",
+   "name": "앞쪽으로 흔들림",
+   "nameEn": "Forward sway",
+   "start": 0.3,
+   "end": 0.7,
+   "range": "체중심이 평균보다 약 4.5 mm 앞(표준편차 1배) · 도식 ×8",
+   "events": "체중심이 평균 위치보다 앞으로 간 상태입니다. 도식에서는 앞쪽 끝에 머문 뒤 평균을 지나 뒤쪽으로 향합니다(편집 구분).",
+   "summary": "체중심이 앞으로 가면 발목에 걸리는 넘어지는 모멘트가 커지고, 가자미근과 장딴지근 안쪽갈래의 운동단위 동원이 늘어납니다. 이때 근섬유는 오히려 짧아지는 때가 많습니다. 넙다리와 볼기 근육은 대개 조용합니다. 지시에 따라 발목에서 앞으로 흔들면 뒤넙다리근이 활동했습니다.",
+   "mechanics": [
+    "몸 전체가 발목을 축으로 조금 앞으로 기웁니다(실제 약 0.3°, 추론).",
+    "도식은 8배로 키워, 체중심 수직선과 엉덩관절 중심 사이 거리 변화도 실제보다 크게 보입니다."
+   ],
+   "sources": [
+    "gatev1999",
+    "heroux2014",
+    "loram2005",
+    "digiulio2009",
+    "josephnightingale1954"
+   ]
+  },
+  {
+   "id": "backward-sway",
+   "name": "뒤쪽으로 흔들림",
+   "nameEn": "Backward sway",
+   "start": 0.7,
+   "end": 1,
+   "range": "체중심이 평균보다 약 4.5 mm 뒤(표준편차 1배) · 도식 ×8",
+   "events": "체중심이 평균 위치보다 뒤로 간 상태입니다. 도식에서는 뒤쪽 끝에 머문 뒤 평균으로 돌아옵니다(편집 구분).",
+   "summary": "체중심은 뒤로 흔들려도 대개 발목 앞에 머뭅니다(추론). 가자미근은 계속 활동하지만 받아야 할 토크는 줄어들고, 근섬유는 길어지는 때가 많습니다. 체중심이 발목에 가까울 때 일부 사람(9명 중 4명)에서 앞정강근 활동 변동이 보고되었습니다. 지시에 따라 발목에서 뒤로 흔들어 어느 지점을 넘으면 가쪽넓은근이 활동했고, 저자는 이를 중력선이 무릎 중심 뒤로 간 때로 설명했습니다.",
+   "mechanics": [
+    "발목 중심과 체중심 수직선 사이 평균 거리(수 cm, 관절 대표값 표)가 앞뒤 흔들림 범위(약 2 cm)보다 커서, 보통의 흔들림에서는 중력선이 발목과 무릎 앞에 남습니다(추론).",
+    "넙다리네갈래근(가쪽넓은근) 활동은 지시에 따라 발목에서 뒤로 흔들어 어느 지점을 넘었을 때 기록되었습니다(7명)."
+   ],
+   "sources": [
+    "digiulio2019",
+    "gatev1999",
+    "loram2005",
+    "digiulio2009",
+    "josephnightingale1954"
+   ]
+  }
+ ],
+ "keyframes": [
+  {
+   "t": 0.0,
+   "event": "평균 정렬",
+   "angles": {
+    "ankle": 4,
+    "knee": -1,
+    "hip": -5
+   },
+   "sources": [
+    "digiulio2019",
+    "loramlakie2002"
+   ],
+   "note": "추론: Di Giulio 2019에서 멈춘 뒤 7.6초 무렵 체중심 수직선은 발목 중심 앞 58 mm, 무릎 중심 앞 32 mm, 엉덩관절 중심 뒤 5 mm였습니다. 저장소 다리 길이(정강이 0.37 m, 넙다리 0.39 m)에 이 거리를 맞추면 정강이 약 4° 앞기울임, 무릎 약 1° 과다폄이 됩니다. 엉덩관절 5° 폄은 골반·몸통을 수직으로 둔 편집값입니다. 발목 4°는 Loram & Lakie 2002가 적은 평균 발목 각도 1.5–4° 안에 있습니다.",
+   "com": {
+    "dx": 0.058,
+    "sources": [
+     "digiulio2019"
+    ],
+    "note": "멈춘 뒤 7.55–7.6초 구간 평균 58.33±5.29 mm(±SEM), 13명. 0.5–0.55초 구간은 47.27±4.08 mm."
+   }
+  },
+  {
+   "t": 0.2,
+   "angles": {
+    "ankle": 4,
+    "knee": -1,
+    "hip": -5
+   },
+   "sources": [
+    "digiulio2019",
+    "loramlakie2002"
+   ],
+   "com": {
+    "dx": 0.058,
+    "sources": [
+     "digiulio2019"
+    ],
+    "note": "멈춘 뒤 7.55–7.6초 구간 평균 58.33±5.29 mm(±SEM), 13명. 0.5–0.55초 구간은 47.27±4.08 mm."
+   }
+  },
+  {
+   "t": 0.3,
+   "angles": {
+    "ankle": 6.2,
+    "knee": -1,
+    "hip": -5
+   },
+   "sources": [
+    "gatev1999",
+    "loramlakie2002",
+    "digiulio2019"
+   ],
+   "com": {
+    "dx": 0.094,
+    "sources": [
+     "digiulio2019",
+     "gatev1999"
+    ],
+    "note": "과장 ×8: 평균 58 mm + 4.5 mm×8."
+   }
+  },
+  {
+   "t": 0.4,
+   "event": "앞쪽 끝(과장)",
+   "angles": {
+    "ankle": 6.2,
+    "knee": -1,
+    "hip": -5
+   },
+   "sources": [
+    "gatev1999",
+    "loramlakie2002",
+    "digiulio2019"
+   ],
+   "note": "과장 ×8. 실제 체중심 이동 약 4.5 mm(Gatev 1999 표준편차 4.13–4.90 mm)를 36 mm로 키웠습니다. 발목 각 변화 2.2°는 이 거리를 발목 위 체중심 높이 0.92 m(Loram & Lakie 2002 표 1 평균)로 나눈 값입니다(추론). 실제 각 변화는 약 0.3°입니다. 무릎·엉덩관절 각도는 고정한 한 분절 역진자로 그렸습니다.",
+   "com": {
+    "dx": 0.094,
+    "sources": [
+     "digiulio2019",
+     "gatev1999"
+    ],
+    "note": "과장 ×8: 평균 58 mm + 4.5 mm×8."
+   }
+  },
+  {
+   "t": 0.5,
+   "angles": {
+    "ankle": 6.2,
+    "knee": -1,
+    "hip": -5
+   },
+   "sources": [
+    "gatev1999",
+    "loramlakie2002",
+    "digiulio2019"
+   ],
+   "com": {
+    "dx": 0.094,
+    "sources": [
+     "digiulio2019",
+     "gatev1999"
+    ],
+    "note": "과장 ×8: 평균 58 mm + 4.5 mm×8."
+   }
+  },
+  {
+   "t": 0.6,
+   "angles": {
+    "ankle": 4,
+    "knee": -1,
+    "hip": -5
+   },
+   "sources": [
+    "digiulio2019",
+    "loramlakie2002"
+   ],
+   "com": {
+    "dx": 0.058,
+    "sources": [
+     "digiulio2019"
+    ],
+    "note": "멈춘 뒤 7.55–7.6초 구간 평균 58.33±5.29 mm(±SEM), 13명. 0.5–0.55초 구간은 47.27±4.08 mm."
+   }
+  },
+  {
+   "t": 0.7,
+   "angles": {
+    "ankle": 1.8,
+    "knee": -1,
+    "hip": -5
+   },
+   "sources": [
+    "gatev1999",
+    "loramlakie2002",
+    "digiulio2019"
+   ],
+   "com": {
+    "dx": 0.022,
+    "sources": [
+     "digiulio2019",
+     "gatev1999"
+    ],
+    "note": "과장 ×8: 평균 58 mm − 4.5 mm×8."
+   }
+  },
+  {
+   "t": 0.8,
+   "event": "뒤쪽 끝(과장)",
+   "angles": {
+    "ankle": 1.8,
+    "knee": -1,
+    "hip": -5
+   },
+   "sources": [
+    "gatev1999",
+    "loramlakie2002",
+    "digiulio2019"
+   ],
+   "note": "과장 ×8. 실제 체중심 이동 약 4.5 mm(Gatev 1999 표준편차 4.13–4.90 mm)를 36 mm로 키웠습니다. 발목 각 변화 2.2°는 이 거리를 발목 위 체중심 높이 0.92 m(Loram & Lakie 2002 표 1 평균)로 나눈 값입니다(추론). 실제 각 변화는 약 0.3°입니다. 무릎·엉덩관절 각도는 고정한 한 분절 역진자로 그렸습니다.",
+   "com": {
+    "dx": 0.022,
+    "sources": [
+     "digiulio2019",
+     "gatev1999"
+    ],
+    "note": "과장 ×8: 평균 58 mm − 4.5 mm×8."
+   }
+  },
+  {
+   "t": 0.85,
+   "angles": {
+    "ankle": 1.8,
+    "knee": -1,
+    "hip": -5
+   },
+   "sources": [
+    "gatev1999",
+    "loramlakie2002",
+    "digiulio2019"
+   ],
+   "com": {
+    "dx": 0.022,
+    "sources": [
+     "digiulio2019",
+     "gatev1999"
+    ],
+    "note": "과장 ×8: 평균 58 mm − 4.5 mm×8."
+   }
+  }
+ ],
+ "timingNote": "상태 구간과 머무는 시간은 편집 구분이며, 실제 흔들림은 규칙적으로 반복되지 않습니다.",
+ "sway": {
+  "exaggeration": 8
+ },
+ "muscles": [
+  {
+   "id": "soleus",
+   "name": "가자미근",
+   "nameEn": "Soleus",
+   "structures": [
+    "FMA22558",
+    "FMA22559"
+   ],
+   "line": "soleus",
+   "cells": {
+    "mean-alignment": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "ultrasound"
+     ],
+     "sources": [
+      "josephnightingale1952",
+      "heroux2014",
+      "digiulio2009"
+     ],
+     "role": "계속 활동. 발목 앞 체중심이 만드는 넘어지는 모멘트를 받음",
+     "note": "표면 근전도: 편히 선 남성 12명 모두 활동(Joseph & Nightingale 1952 표 1). 근육 속 가는 철사 전극 운동단위: 선 자세 내내 지속 활동(Héroux 2014, 7명). 초음파: 근섬유 길이가 흔들림과 반대로 변한 시간 80.8±15.8%(Di Giulio 2009, 9명). 그래서 등척성으로 단정하지 않습니다."
+    },
+    "forward-sway": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "ultrasound"
+     ],
+     "sources": [
+      "heroux2014",
+      "loram2005",
+      "digiulio2009"
+     ],
+     "role": "운동단위 동원 증가. 근섬유는 오히려 짧아지는 때가 많음",
+     "note": "활동 운동단위 수가 앞뒤 토크와 선형 관계(Héroux 2014). 체중심이 앞으로 갈 때 근섬유가 짧아지는 역설적 길이 변화(Loram 2005; Di Giulio 2009)."
+    },
+    "backward-sway": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "ultrasound",
+      "inference"
+     ],
+     "sources": [
+      "heroux2014",
+      "loram2005"
+     ],
+     "role": "계속 활동하나 받을 토크는 줄어듦(추론). 근섬유는 길어지는 때가 많음",
+     "note": "가자미근 활동은 선 자세 내내 지속(Héroux 2014). Loram 2005: 체중심 각이 줄 때 근육 길이가 늘어남. 활동 감소는 토크–동원 관계에서 추론한 것입니다."
+    }
+   }
+  },
+  {
+   "id": "gastrocnemius-medial",
+   "name": "장딴지근 안쪽갈래",
+   "nameEn": "Gastrocnemius, medial head",
+   "structures": [
+    "FMA45957",
+    "FMA45958"
+   ],
+   "line": "gastrocnemius",
+   "cells": {
+    "mean-alignment": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "heroux2014",
+      "josephnightingale1952"
+     ],
+     "role": "간헐적으로 켜짐",
+     "note": "근육 속 가는 철사 전극(운동단위): 가자미근보다 동원 역치가 높고 간헐적으로 활동(Héroux 2014). 표면 근전도로 편히 선 12명 중 7명에서 장딴지근 활동(Joseph & Nightingale 1952, 갈래 구분 없음)."
+    },
+    "forward-sway": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "heroux2014"
+     ],
+     "role": "앞뒤 토크가 커질 때 운동단위가 새로 동원됨",
+     "note": "운동단위 동원·해제가 앞뒤·좌우 토크의 증감과 함께 나타남(Héroux 2014)."
+    },
+    "backward-sway": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "heroux2014"
+     ],
+     "role": "방향별 자료 없음. 토크가 줄 때 운동단위가 꺼지는 경향만 보고됨"
+    }
+   }
+  },
+  {
+   "id": "gastrocnemius-lateral",
+   "name": "장딴지근 가쪽갈래",
+   "nameEn": "Gastrocnemius, lateral head",
+   "structures": [
+    "FMA45960",
+    "FMA45961"
+   ],
+   "cells": {
+    "mean-alignment": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "heroux2014",
+      "gatev1999"
+     ],
+     "role": "운동단위 활동이 드묾(1개만 계속 활동, 근육 속 가는 철사 전극)",
+     "note": "운동단위 1개만 계속 활동, 3개는 시간의 8.7·4.1·2.3%만 활동(Héroux 2014, 7명; 저자는 제목에서 ‘활동 없음’으로 요약). Gatev 1999의 근전도(쌍극 전극)에서는 앞뒤 체중심 이동과 약한 양의 상관이 있는 활동이 보고되어 결과가 엇갈립니다."
+    },
+    "forward-sway": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "gatev1999",
+      "heroux2014"
+     ],
+     "role": "결과 엇갈림: 근전도 크기가 앞쪽 체중심 이동과 약한 양의 상관(Gatev). 운동단위는 발을 내디딜 만큼 앞으로 기울어야 새로 켜짐(Héroux)",
+     "note": "Gatev 1999(남성 7명): 가쪽갈래 근전도와 체중심 앞뒤 이동 사이에 250–300 ms 시간차의 낮은 양의 상관(앞쪽이 양, 보통 너비 자세). 저자는 앞먹임(예측) 조절로 해석. Héroux 2014(7명): 운동단위 활동을 끌어내려면 발을 내디딜 지경의 앞기울임이 필요했음."
+    },
+    "backward-sway": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "heroux2014"
+     ],
+     "role": "방향별 자료 없음. 선 자세 기록 전체에서 운동단위 활동 드묾"
+    }
+   }
+  },
+  {
+   "id": "tibialis-anterior",
+   "name": "앞정강근",
+   "nameEn": "Tibialis anterior",
+   "structures": [
+    "FMA22544",
+    "FMA22545"
+   ],
+   "line": "tibialis-anterior",
+   "cells": {
+    "mean-alignment": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephnightingale1952",
+      "digiulio2009"
+     ],
+     "role": "편히 선 12명 중 0명에서 전위",
+     "note": "Di Giulio 2009(9명, 표면 근전도·초음파): 활동이 흔들림에 따라 변하지 않았고(활동이 없다는 뜻은 아님), 깊은 구획의 근육 길이는 84±9% 시간 동안 흔들림을 그대로 따랐습니다."
+    },
+    "forward-sway": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephnightingale1952",
+      "digiulio2009"
+     ],
+     "role": "검출 안 됨",
+     "note": "편히 선 자세 기록(자연 흔들림 포함) 기준이며, 흔들림 방향별로 나눈 분석은 아닙니다."
+    },
+    "backward-sway": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "inference"
+     ],
+     "sources": [
+      "digiulio2009",
+      "josephnightingale1952"
+     ],
+     "role": "일부 사람(9명 중 4명)에서 체중심이 발목에 가까울 때 활동 변동. 뒤쪽 흔들림 상태로 옮긴 것은 해석",
+     "note": "Di Giulio 2009: 9명 중 4명(S1·S3·S5·S7)에서 체중심이 발목에 가까울 때 활동 변동, 그 거리는 사람마다 크게 달랐음. Joseph & Nightingale 1952 고찰(489쪽): 몇 사람에서 앞뒤로 흔들어 만든 자세마다 다리 앞 또는 뒤 근육에서 전위가 기록됨(뒤로 흔들 때 앞쪽이라는 대응은 문맥 해석)."
+    }
+   }
+  },
+  {
+   "id": "quadriceps",
+   "name": "넙다리네갈래근",
+   "nameEn": "Quadriceps femoris (rectus femoris, vastus lateralis, vastus medialis, vastus intermedius)",
+   "structures": [
+    "FMA38928",
+    "FMA38929",
+    "FMA38930",
+    "FMA38931",
+    "FMA38932",
+    "FMA38933",
+    "FMA38934",
+    "FMA38935"
+   ],
+   "line": "vasti",
+   "cells": {
+    "mean-alignment": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephnightingale1954"
+     ],
+     "role": "편히 선 14명 중 12명에서 검출 안 됨",
+     "note": "전극은 가쪽·안쪽넓은근 위(넙다리곧은근은 따로 기록하지 않음). 저자 해석: 중력선이 대개 무릎 중심 앞을 지나, 무릎 인대나 장딴지근(또는 둘 다)이 체중을 받음."
+    },
+    "forward-sway": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephnightingale1954"
+     ],
+     "role": "검출 안 됨",
+     "note": "편히 선 자세 기록(자연 흔들림 포함) 기준이며, 흔들림 방향별로 나눈 분석은 아닙니다. 발목에서 앞으로 흔들 때의 동시 기록(그림 3B)에서는 넙다리두갈래근 전위만 표시됨."
+    },
+    "backward-sway": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephnightingale1954"
+     ],
+     "role": "검출 안 됨. 발목에서 뒤로 흔들어 어느 지점을 넘으면 가쪽넓은근 활동(저자는 중력선이 무릎 뒤로 간 때로 설명)",
+     "note": "지시에 따라 발목에서 뒤로 흔드는 동안(7명) 약 5초간 전위 없음(그림 3C), 어느 지점을 넘자 가쪽넓은근 전위(그림 3D). 도식의 뒤쪽 끝(과장 ×8)에서도 체중심 수직선은 무릎 앞에 있습니다."
+    }
+   }
+  },
+  {
+   "id": "hamstrings",
+   "name": "뒤넙다리근",
+   "nameEn": "Hamstrings (biceps femoris long and short heads, semitendinosus, semimembranosus)",
+   "structures": [
+    "FMA45888",
+    "FMA45889",
+    "FMA45891",
+    "FMA45892",
+    "FMA22358",
+    "FMA22359",
+    "FMA22448",
+    "FMA22449"
+   ],
+   "line": "hamstrings",
+   "cells": {
+    "mean-alignment": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephnightingale1954"
+     ],
+     "role": "편히 선 14명 중 11명에서 검출 안 됨",
+     "note": "전극은 안쪽(반막근·반힘줄근)과 가쪽(넙다리두갈래근) 위."
+    },
+    "forward-sway": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephnightingale1954",
+      "josephwilliams1957"
+     ],
+     "role": "대개 검출 안 됨. 지시에 따라 발목에서 앞으로 흔들거나 팔을 앞으로 들면 활동",
+     "note": "편히 선 자세 기록(자연 흔들림 포함) 기준이며, 흔들림 방향별로 나눈 분석은 아닙니다. 발목에서 앞으로 흔들거나(7명) 팔을 앞으로 들면(7명, 약 15°부터) 활동(Joseph & Nightingale 1954). Joseph & Williams 1957: 무릎을 편 채 발목에서 약 5° 앞으로 흔들 때 뒤넙다리근 수축. 저자 해석: 중력선이 엉덩관절 앞으로 가면 엉덩관절 굽힘을 막음."
+    },
+    "backward-sway": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephnightingale1954"
+     ],
+     "role": "뒤로 흔들 때 전위가 사라짐",
+     "note": "그림 3C: 뒤로 흔드는 동안 가쪽넓은근·넙다리두갈래근 모두 전위 없음."
+    }
+   }
+  },
+  {
+   "id": "gluteus-maximus",
+   "name": "큰볼기근",
+   "nameEn": "Gluteus maximus",
+   "structures": [
+    "FMA22328",
+    "FMA22329"
+   ],
+   "line": "gluteus-maximus",
+   "cells": {
+    "mean-alignment": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephwilliams1957"
+     ],
+     "role": "18명 모두 자세 유지 활동 검출 안 됨"
+    },
+    "forward-sway": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephwilliams1957"
+     ],
+     "role": "앞으로 흔들 때 수축하는 것은 뒤넙다리근이고 큰볼기근은 아님",
+     "note": "Joseph & Williams 1957 고찰(293쪽). 이 관찰은 지시한 약 5° 앞 흔들기(287쪽 방법)에서 나왔습니다."
+    },
+    "backward-sway": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephwilliams1957"
+     ],
+     "role": "편히 선 자세 기록 기준(뒤로 흔든 기록 없음)",
+     "note": "편히 선 자세 기록(자연 흔들림 포함) 기준이며, 흔들림 방향별로 나눈 분석은 아닙니다."
+    }
+   }
+  },
+  {
+   "id": "gluteus-medius-minimus",
+   "name": "중간볼기근·작은볼기근",
+   "nameEn": "Gluteus medius and gluteus minimus",
+   "structures": [
+    "FMA22330",
+    "FMA22331",
+    "FMA22332",
+    "FMA22333"
+   ],
+   "line": "gluteus-medius",
+   "cells": {
+    "mean-alignment": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephwilliams1957"
+     ],
+     "role": "18명 모두 검출 안 됨(대칭으로 편히 선 자세)"
+    },
+    "forward-sway": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephwilliams1957"
+     ],
+     "role": "편히 선 자세 기록 기준",
+     "note": "편히 선 자세 기록(자연 흔들림 포함) 기준이며, 흔들림 방향별로 나눈 분석은 아닙니다."
+    },
+    "backward-sway": {
+     "contraction": "silent",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephwilliams1957"
+     ],
+     "role": "편히 선 자세 기록 기준",
+     "note": "편히 선 자세 기록(자연 흔들림 포함) 기준이며, 흔들림 방향별로 나눈 분석은 아닙니다."
+    }
+   }
+  },
+  {
+   "id": "psoas-major",
+   "name": "큰허리근",
+   "nameEn": "Psoas major",
+   "structures": [
+    "FMA22342",
+    "FMA22343"
+   ],
+   "line": "iliopsoas",
+   "cells": {
+    "mean-alignment": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "nachemson1966",
+      "josephwilliams1957"
+     ],
+     "role": "바늘 근전도에서 다양한 정도의 활동. 표면 근전도로는 검출 안 됨",
+     "note": "Nachemson 1966: 셋째 허리 사이원반 높이에서 오른쪽 큰허리근에 동심 바늘 전극, 8명(남 4·여 4, 21–47세), 편히 선 자세에서 다양한 양의 활동. Joseph & Williams 1957: 샅고랑인대 아래(위앞엉덩뼈가시 약 4 cm 아래·안쪽)에 표면 전극, 남성 18명, 엉덩허리근 활동 검출 안 됨. 두 연구는 전극 종류와 기록 부위가 다르며, 결과 차이의 이유는 단정하지 않습니다."
+    },
+    "forward-sway": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "nachemson1966"
+     ],
+     "role": "흔들림 방향별 자료 없음"
+    },
+    "backward-sway": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "nachemson1966"
+     ],
+     "role": "흔들림 방향별 자료 없음"
+    }
+   }
+  },
+  {
+   "id": "internal-oblique",
+   "name": "배속빗근",
+   "nameEn": "Internal oblique",
+   "structures": [
+    "FMA13892",
+    "FMA13893"
+   ],
+   "line": "abdominals",
+   "cells": {
+    "mean-alignment": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "floydsilver1950"
+     ],
+     "role": "배속빗근 아래쪽 섬유 부위 약한 지속 수축(표 1 등급 ++)",
+     "note": "편히 선 16명 평균 등급(4단계 0·+·++·+++, 정성 판정). 같은 기록에서 배바깥빗근 +, 배곧은근 0. 전극은 샅고랑 위 삼각(배바깥빗근 널힘줄 뒤)의 섬유만 기록해 배속빗근 전체를 대표하지 않으며, 배가로근 맨 아래 섬유가 섞였을 수 있습니다(저자). 배가로근은 표면 전극으로 따로 기록할 수 없었습니다. 전체 대상 21명(남 15·여 6, 18–25세)."
+    },
+    "forward-sway": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "floydsilver1950"
+     ],
+     "role": "편히 선 자세 기록 기준. 선 자세에서 이 섬유의 수축은 연속적이라는 기록",
+     "note": "편히 선 자세 기록(자연 흔들림 포함) 기준이며, 흔들림 방향별로 나눈 분석은 아닙니다. 139쪽: 선 자세에서 배속빗근 섬유의 수축은 연속적이고, 배바깥빗근·배곧은근은 앞뒤·좌우 움직임에 따라 달라질 수 있음. 그림 9·10은 몸통을 앞으로 굽히거나(엉덩관절 30° 굽힘) 뒤로 젖힌 동작이라 발목 흔들림과 다릅니다."
+    },
+    "backward-sway": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "floydsilver1950"
+     ],
+     "role": "편히 선 자세 기록 기준. 선 자세에서 이 섬유의 수축은 연속적이라는 기록",
+     "note": "편히 선 자세 기록(자연 흔들림 포함) 기준이며, 흔들림 방향별로 나눈 분석은 아닙니다. 139쪽: 선 자세에서 배속빗근 섬유의 수축은 연속적이고, 배바깥빗근·배곧은근은 앞뒤·좌우 움직임에 따라 달라질 수 있음. 그림 9·10은 몸통을 앞으로 굽히거나(엉덩관절 30° 굽힘) 뒤로 젖힌 동작이라 발목 흔들림과 다릅니다."
+    }
+   }
+  },
+  {
+   "id": "erector-spinae",
+   "name": "척추세움근",
+   "nameEn": "Erector spinae (iliocostalis lumborum and thoracis, longissimus thoracis, spinalis thoracis); recorded as posterior vertebral muscles",
+   "structures": [
+    "FMA22740",
+    "FMA22741",
+    "FMA22742",
+    "FMA22743",
+    "FMA22751",
+    "FMA22753",
+    "FMA22779",
+    "FMA22780"
+   ],
+   "line": "erector-spinae",
+   "cells": {
+    "mean-alignment": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "josephmccoll1961"
+     ],
+     "role": "아래 등 부위 중등도~뚜렷, 허리·목 부위는 거의 없음",
+     "note": "20명, 12개 높이 기록. 저자 해석: 허리 위 몸무게의 선이 허리뼈 관절 축 뒤, 아래 등뼈 관절 축 앞을 지남(옆 X선)."
+    },
+    "forward-sway": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "josephmccoll1961"
+     ],
+     "role": "흔들림 방향별 자료 없음"
+    },
+    "backward-sway": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "josephmccoll1961"
+     ],
+     "role": "흔들림 방향별 자료 없음"
+    }
+   }
+  }
+ ],
+ "joints": [
+  {
+   "joint": "발목(정강이 기울기)",
+   "values": "평균 발목 각도 1.5–4°(정의 미기재). 체중심 수직선은 발목 중심 앞 약 4.7 cm(멈춘 뒤 0.5초), 5.8 cm(7.6초)",
+   "population": "Loram & Lakie 2002: 15명(남 8), 20–68세 · Di Giulio 2019: 13명(여 7·남 6), 46±13세, 걷다 멈춘 뒤 7.6초",
+   "sources": [
+    "loramlakie2002",
+    "digiulio2019",
+    "josephnightingale1952"
+   ],
+   "note": "각도의 정의가 원문에 분명하지 않습니다. 거리의 ±는 SEM(4.08·5.29 mm). Hellebrandt 외 1938(Joseph & Nightingale 1952 서론 인용): 가쪽복사 앞 약 5 cm. 도식 4°는 거리에서 계산한 근사입니다."
+  },
+  {
+   "joint": "무릎",
+   "values": "완전 폄 근처. 체중심 수직선은 무릎 중심 앞 약 2.6–3.2 cm(Di Giulio 2019), 1.6±0.2 cm(Åkerblom 1948)",
+   "population": "Di Giulio 2019: 위와 같음 · Åkerblom 1948: 편하게 대칭으로 선 23명(1명은 일관되게 무릎 뒤)",
+   "sources": [
+    "digiulio2019",
+    "josephnightingale1954",
+    "orahilly2004"
+   ],
+   "note": "Åkerblom 원저는 열람하지 못했고 Joseph & Nightingale 1954 인용으로만 확인했습니다. ±의 종류는 적혀 있지 않습니다. ‘폄 상태’는 O'Rahilly 서술. 도식의 무릎 1° 과다폄은 거리에 맞춘 편집 근사입니다."
+  },
+  {
+   "joint": "엉덩관절",
+   "values": "체중심 수직선이 중심을 지나거나 약간 뒤. Di Giulio 2019: 중심 앞 1.8 mm(0.5초), 뒤 5.3 mm(7.6초). Åkerblom: 10명 중 9명 뒤, 1명 통과",
+   "population": "Di Giulio 2019: 위와 같음 · Åkerblom 1948: 10명 · Le Huec 2011: 넙다리뼈머리 아주 약간 뒤(서술)",
+   "sources": [
+    "digiulio2019",
+    "josephnightingale1954",
+    "lehuec2011",
+    "orahilly2004"
+   ],
+   "note": "엉덩관절 각도 수치의 출처는 찾지 못했습니다. 도식의 엉덩관절 5° 폄은 골반·몸통을 수직으로 둔 편집값입니다."
+  },
+  {
+   "joint": "온몸 체중심 앞뒤 흔들림",
+   "values": "표준편차 4.13–4.90 mm, 범위 18–21 mm(조건별 집단 평균)",
+   "population": "건강한 남성 7명, 24–54세 · 보통 너비·모은 발 × 눈 뜸·감음 네 조건",
+   "sources": [
+    "gatev1999"
+   ],
+   "note": "체중심은 오른쪽 표지점과 Dempster 1956 비율로 계산한 값으로, 저자는 실제 체중심보다 오른쪽에 놓인다고 적었습니다. 앞뒤 값은 그대로 씁니다."
+  },
+  {
+   "joint": "몸 기울기 흔들림(발목 기준)",
+   "values": "한 방향 흔들림 평균 0.13°(눈 뜸), 0.23°(눈 감음). 종아리 근육 조정 평균 초당 2.6회",
+   "population": "10명(여 1·남 9), 25–50세, 발을 보통 너비로 나란히 둠",
+   "sources": [
+    "loram2005"
+   ]
+  }
+ ],
+ "mechanics": [
+  {
+   "text": "앞뒤 방향의 조용한 선 자세는 발목을 축으로 한 역진자로 다룹니다. 체중심이 발목 앞 몇 cm에 있어, 발목에는 몸을 앞으로 넘기려는 중력 모멘트가 계속 걸립니다.",
+   "sources": [
+    "loramlakie2002",
+    "digiulio2019"
+   ]
+  },
+  {
+   "text": "발목의 고유(수동) 강성은 최소한의 안정에 필요한 값의 91±23%로, 이것만으로는 부족합니다. 그래서 종아리 근육의 능동 조절이 계속 필요합니다.",
+   "sources": [
+    "loramlakie2002"
+   ]
+  },
+  {
+   "text": "종아리 근육은 평균 초당 2.6회 짧은 조정을 합니다. 근섬유 길이는 몸의 흔들림과 반대로 변하는 때가 많아, 몸이 앞으로 갈 때 오히려 짧아집니다.",
+   "sources": [
+    "loram2005",
+    "digiulio2009"
+   ]
+  },
+  {
+   "text": "발목의 모멘트는 근육이 받고, 무릎·엉덩관절의 모멘트는 관절주머니와 인대가 받는다고 설명됩니다. 편히 선 자세에서 넙다리와 볼기 근육은 대개 표면 근전도로 검출되는 활동이 없습니다.",
+   "sources": [
+    "orahilly2004",
+    "josephnightingale1954",
+    "josephwilliams1957"
+   ],
+   "note": "Di Giulio 2019는 멈춘 뒤 7.6초 무렵 무릎·엉덩관절 모멘트가 커진 것을 들어, 수동 기전만으로는 설명이 부족하다고 보았습니다."
+  },
+  {
+   "text": "체중심의 앞뒤 흔들림은 표준편차 약 4–5 mm로 작습니다. 도식은 이를 8배로 키워 그렸습니다.",
+   "sources": [
+    "gatev1999"
+   ]
+  },
+  {
+   "text": "체중심은 뒤로 흔들려도 대개 발목 앞에 머뭅니다. 발목 중심과의 평균 거리(약 4.7–5.8 cm)가 앞뒤 흔들림 범위(평균 18–21 mm)보다 크기 때문입니다.",
+   "sources": [
+    "digiulio2019",
+    "gatev1999",
+    "loramlakie2002"
+   ],
+   "note": "대상이 다른 두 연구(Di Giulio 2019, 13명; Gatev 1999, 남성 7명)의 값을 견준 추론입니다."
+  }
+ ],
+ "passive": [
+  {
+   "name": "엉덩넙다리인대",
+   "nameEn": "Iliofemoral ligament (transverse and descending parts)",
+   "structures": [
+    "ZA_ligament_transverse_part_of_iliofemoral_ligament_r",
+    "ZA_ligament_transverse_part_of_iliofemoral_ligament_l",
+    "ZA_ligament_descending_part_of_iliofemoral_ligament_r",
+    "ZA_ligament_descending_part_of_iliofemoral_ligament_l"
+   ],
+   "role": "중력선이 엉덩관절 중심 뒤를 지날 때 몸무게가 엉덩관절을 펴려 하고, 이를 엉덩넙다리인대가 받는다고 설명됩니다. 사체 시험에서 두 부분은 뒤쪽 궁둥넙다리인대보다 파단력과 강성이 컸습니다.",
+   "sources": [
+    "orahilly2004",
+    "hewitt2002"
+   ]
+  },
+  {
+   "name": "무릎관절 관절주머니",
+   "nameEn": "Articular capsule of knee joint",
+   "structures": [
+    "ZA_ligament_articular_capsule_of_knee_joint_r",
+    "ZA_ligament_articular_capsule_of_knee_joint_l"
+   ],
+   "role": "중력선이 무릎 중심 앞을 지날 때 생기는 펴는 쪽 모멘트는 무릎의 인대 장치가 받는다고 설명됩니다. 출처는 개별 인대를 특정하지 않습니다.",
+   "sources": [
+    "josephnightingale1954",
+    "orahilly2004"
+   ],
+   "note": "O'Rahilly는 뒤넙다리근 작용도 함께 들지만, Joseph & Nightingale 1954 근전도에서는 편히 선 14명 중 11명에서 검출되지 않았습니다. Joseph & Nightingale 1954는 체중을 받는 구조를 무릎 인대 또는 장딴지근(또는 둘 다)으로 적었습니다."
+  },
+  {
+   "name": "발꿈치힘줄",
+   "nameEn": "Calcaneal tendon (Achilles tendon)",
+   "structures": [
+    "FMA258847",
+    "FMA264844"
+   ],
+   "role": "선 자세에서 측정한 발목 고유 강성(필요량의 91±23%)은 근섬유보다 발·발꿈치힘줄·널힘줄에서 나온다고 해석되었습니다.",
+   "sources": [
+    "loramlakie2002"
+   ]
+  },
+  {
+   "name": "발바닥널힘줄",
+   "nameEn": "Plantar aponeurosis",
+   "structures": [
+    "ZA_tendon_plantar_aponeurosis_r",
+    "ZA_tendon_plantar_aponeurosis_l"
+   ],
+   "role": "체중이 실려 아치가 낮아지면 널힘줄 쪽 장치가 풀리며 발가락이 바닥을 누릅니다. 널힘줄을 자르면 이 효과가 사라졌습니다(실험 발).",
+   "sources": [
+    "hicks1954"
+   ]
+  }
+ ],
+ "absent": [
+  "종아리세갈래근 널힘줄(Loram & Lakie 2002가 발목 고유 강성의 출처로 든 구조)"
+ ],
+ "misconceptions": [
+  {
+   "wrong": "서 있는 동안 다리와 몸통의 큰 근육이 모두 힘을 쓴다.",
+   "better": "편히 선 자세에서 꾸준히 활동이 기록되는 것은 주로 가자미근입니다. 넙다리 앞뒤 근육은 14명 중 10명, 볼기근은 18명 모두에서 표면 근전도로 검출되는 활동이 없었습니다.",
+   "sources": [
+    "josephnightingale1952",
+    "josephnightingale1954",
+    "josephwilliams1957"
+   ]
+  },
+  {
+   "wrong": "무릎은 넙다리네갈래근이 수축해서 잠근다.",
+   "better": "중력선이 대개 무릎 중심 앞을 지나 무릎을 펴는 쪽 모멘트가 생기고, 인대(또는 장딴지근)가 이를 받는다고 설명됩니다. 넙다리네갈래근은 발목에서 뒤로 흔들어 어느 지점을 넘었을 때 활동했고, 저자는 이를 중력선이 무릎 뒤로 간 때로 설명했습니다.",
+   "sources": [
+    "josephnightingale1954"
+   ]
+  },
+  {
+   "wrong": "종아리 근육은 일정한 길이로(등척성으로) 버티거나, 늘어나며 버틴다.",
+   "better": "근섬유 길이는 몸의 흔들림과 반대로 변하는 때가 많습니다. 몸이 앞으로 갈 때 오히려 짧아집니다. 발목의 수동 강성만으로는 안정에 부족합니다.",
+   "sources": [
+    "loram2005",
+    "digiulio2009",
+    "loramlakie2002"
+   ]
+  },
+  {
+   "wrong": "발목 전략과 엉덩 전략은 조용히 서 있을 때 균형을 잡는 두 방법이다.",
+   "better": "두 전략은 발판이 갑자기 앞뒤로 움직일 때의 반응에 붙인 이름입니다. 엉덩 전략은 발 길이보다 짧은 지지면 위에서 나타났습니다.",
+   "sources": [
+    "horaknashner1986"
+   ]
+  },
+  {
+   "wrong": "중력선은 누구에게나 엉덩관절 뒤, 무릎 앞, 발목 앞의 정해진 자리를 지난다.",
+   "better": "엉덩관절에서는 중심과 몇 mm 차이라 ‘지나거나 약간 뒤’로 적습니다. 무릎에서도 23명 중 1명은 중력선이 일관되게 뒤를 지났습니다. 교과서의 정렬선과 개인 측정값은 다릅니다.",
+   "sources": [
+    "orahilly2004",
+    "josephnightingale1954",
+    "digiulio2019"
+   ]
+  },
+  {
+   "wrong": "가자미근과 장딴지근은 서 있을 때 같은 일을 한다.",
+   "better": "가자미근은 계속, 장딴지근 안쪽갈래는 간헐적으로 활동했고, 가쪽갈래는 운동단위 활동이 드물었습니다(근육 속 가는 철사 전극, 7명).",
+   "sources": [
+    "heroux2014"
+   ]
+  },
+  {
+   "wrong": "몸이 흔들리는 것은 균형에 문제가 있다는 뜻이다.",
+   "better": "조용히 선 건강한 성인에게서도 체중심은 늘 앞뒤로 흔들렸고, 흔들림 범위는 조건별 평균 18–21 mm였습니다(남성 7명).",
+   "sources": [
+    "gatev1999"
+   ]
+  }
+ ],
+ "limitations": [
+  "조용히 선 자세의 발목·무릎·엉덩관절 절대 각도를 본문 수치로 보고한 열람 출처가 없습니다(Gatev 1999는 표지점으로 정의한 발목·엉덩 각을 그림으로만 제시). Loram & Lakie 2002의 ‘평균 발목 각도 1.5–4°’는 정의가 분명하지 않습니다. 도식 각도는 Di Giulio 2019의 관절 중심–체중심 수직선 거리를 저장소 다리 길이에 맞춰 계산한 근사입니다.",
+  "엉덩관절 5° 폄과 수직인 몸통은 편집값입니다. 몸통 기울기의 출처는 넣지 않았습니다.",
+  "흔들림 상태는 8배 과장했습니다. 실제 발목 각 변화는 약 0.3°입니다(표준편차 4.5 mm ÷ 체중심 높이 0.92 m, 추론). 과장 때문에 그림에서는 체중심 수직선과 엉덩관절·무릎 중심 사이 거리 변화도 8배로 커 보입니다. 실제 변화는 표준편차 1배 흔들림에서 엉덩관절 약 1 mm, 무릎 약 3 mm입니다(추론).",
+  "흔들림 동안 무릎·엉덩관절 각도를 고정한 한 분절 역진자로 그렸습니다. Di Giulio 2019는 선 자세에서 무릎·엉덩관절 위치도 시간에 따라 달라진다고 보고했습니다.",
+  "상태 구간의 길이와 머무는 시간은 재생용 편집 구분입니다. 실제 흔들림은 규칙적으로 반복되지 않습니다.",
+  "체중심 수직선 위치는 Di Giulio 2019 표본(13명, 걷다 멈춘 뒤 7.6초)의 평균입니다. 도식의 몸 비율로 계산한 체중심이 아닙니다.",
+  "근전도 근거의 대부분은 1950–60년대 남성 표면 근전도(12–20명)입니다. 여성 자료(Joseph & Nightingale 1956)는 열람하지 못했고, 성별 차이는 주장하지 않습니다.",
+  "넙다리·볼기·배 근육과 앞정강근 앞쪽 흔들림 칸은 편히 선 자세 전체 기록(자연 흔들림 포함)에서 가져왔습니다. 흔들림 방향별로 나눈 분석이 아닙니다. 지시에 따라 흔든 실험 결과는 따로 적었고, Floyd & Silver 1950의 앞뒤 기울이기는 몸통 굽힘·젖힘이라 흔들림 상태의 근거로 쓰지 않았습니다.",
+  "장딴지근 가쪽갈래는 근육 속 가는 철사 전극(Héroux 2014: 운동단위 활동 드묾)과 쌍극 전극 근전도(Gatev 1999: 앞쪽 이동과 약한 양의 상관)의 결과가 다릅니다. 큰허리근은 바늘 근전도(Nachemson 1966, 허리 높이)와 표면 근전도(Joseph & Williams 1957, 샅고랑인대 아래)의 결과가 다르며 기록 부위도 다릅니다.",
+  "배가로근의 지속 활동은 근거를 확인하지 못해 넣지 않았습니다.",
+  "좌우 흔들림과 엉덩관절 벌림·모음 기전은 옆면 도식이라 다루지 않았습니다. 발판 외란에 대한 발목·엉덩 전략은 이 동작의 단계로 쓰지 않았습니다.",
+  "여성 대응은 넣지 않았습니다. 여성 카탈로그(HRA)에는 이 표의 근육 묶음 전체와 같은 구조가 없고(넙다리곧은근 HRAF0394/0396만 있음), VHF 기증자 다리 근육은 전신과 정합되지 않은 별도 자료라 대응으로 쓰지 않습니다. 여성 보기에서는 남성 원본을 옮긴 사본(FT_)이 있으면 그것을 엽니다.",
+  "지면반력 겹쳐 그리기는 넣지 않았습니다."
+ ]
+}

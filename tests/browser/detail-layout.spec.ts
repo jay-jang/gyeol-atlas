@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {ready, snapshot,organs} from './helpers';
+import {ready,snapshot,organs,viewButton} from './helpers';
 import {detailProjection} from './detail-projection';
 import maleGroups from '../../data/male-organ-groups.json' with {type:'json'};
 import maleDetailGroups from '../../data/male-detail-groups.json' with {type:'json'};
@@ -34,10 +34,10 @@ for (const sample of [
   const source=page.locator('.ct-source-details summary');
   if(await source.count()) {await source.click(); await unobscured(); await source.click();}
   for(const name of ['후면','측면','정면']) {
-    await page.locator('.view-presets').getByRole('button',{name,exact:true}).click();
+    await viewButton(page,name);
     await unobscured();
   }
-  await page.getByRole('button',{name:'시점 초기화',exact:true}).click(); await unobscured();
+  await viewButton(page,'시점 초기화'); await unobscured();
   await page.screenshot({path:`docs/anatomy-alignment/detail-layout-${sample.id}.png`});
   await page.getByRole('button',{name:'축소',exact:true}).click();
   const before=(await snapshot(page)).camera;

@@ -1,0 +1,107 @@
+
+Running 23 tests using 1 worker
+
+[1/23] tests/browser/first-frame.spec.ts:72:1 › female and independent CT source mounts never draw the default all-visible packed scene
+[2/23] tests/browser/male-kidney-detail.spec.ts:5:1 › male kidney detail exposes original kidney, ureter and artery meshes and restores peeling
+[3/23] tests/browser/navigation.spec.ts:3:1 › movement, wheel zoom and modifier-wheel dissection work on the actual canvas
+[4/23] tests/browser/panel-keyboard.spec.ts:8:5 › desktop › search shortcut returns to its trigger and idle Escape leaves canvas focus alone
+[5/23] tests/browser/panel-keyboard.spec.ts:41:5 › desktop › acupoint detail tabs support arrows, Home/End and labelled content
+[6/23] tests/browser/panel-keyboard.spec.ts:8:5 › mobile › search shortcut returns to its trigger and idle Escape leaves canvas focus alone
+  1) tests/browser/panel-keyboard.spec.ts:8:5 › mobile › search shortcut returns to its trigger and idle Escape leaves canvas focus alone 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('region', { name: '검색 결과', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('region', { name: '검색 결과', exact: true }) with timeout 15000ms
+      - waiting for getByRole('region', { name: '검색 결과', exact: true })
+
+
+      32 |       // Deliberately refocusing the field also reopens it.
+      33 |       await page.keyboard.press('Tab');await page.keyboard.press('Shift+Tab');
+    > 34 |       await expect(page.getByRole('region',{name:'검색 결과',exact:true})).toBeVisible();
+         |                                                                        ^
+      35 |       await page.keyboard.press('Escape');
+      36 |       expect((await snapshot(page)).camera).toEqual(before.camera);
+      37 |       expect((await snapshot(page)).dissection).toBe(before.dissection);
+        at /Users/nuinuri/workspace/anatomy/tests/browser/panel-keyboard.spec.ts:34:72
+
+    Error Context: test-results/panel-keyboard-mobile-sear-c21ab-e-leaves-canvas-focus-alone/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/panel-keyboard-mobile-sear-c21ab-e-leaves-canvas-focus-alone/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/panel-keyboard-mobile-sear-c21ab-e-leaves-canvas-focus-alone/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[7/23] tests/browser/panel-keyboard.spec.ts:41:5 › mobile › acupoint detail tabs support arrows, Home/End and labelled content
+[8/23] tests/browser/panel-keyboard.spec.ts:73:3 › desktop: home and history keep the saved comparison's acupoint
+[9/23] tests/browser/panel-keyboard.spec.ts:73:3 › mobile: home and history keep the saved comparison's acupoint
+[10/23] tests/browser/panel-keyboard.spec.ts:102:1 › an atlas with no selected acupoint does not highlight the fallback ST36 structures
+[11/23] tests/browser/panel-keyboard.spec.ts:117:1 › a connective bundle keeps its own isolation label and tooltips describe icon actions
+[12/23] tests/browser/peel-mode-entry.spec.ts:6:1 › a backward peel input at zero enters peeling from a comparison instead of being discarded
+[13/23] tests/browser/peel-mode-entry.spec.ts:21:36 › male: layer view has an explicit peel entry on desktop and touch
+[14/23] tests/browser/peel-mode-entry.spec.ts:21:36 › female: layer view has an explicit peel entry on desktop and touch
+[15/23] tests/browser/selection-navigation-return.spec.ts:6:1 › female same-point click keeps an ordinary organ selection; clearing returns to the prior peel
+[16/23] tests/browser/selection-navigation-return.spec.ts:47:13 › male: acupoints keep an ordinary selection; region navigation leaves it for the prior peel
+[17/23] tests/browser/selection-navigation-return.spec.ts:47:13 › female: acupoints keep an ordinary selection; region navigation leaves it for the prior peel
+[18/23] tests/browser/site.spec.ts:7:1 › model-first scene, actual marker click, search, bookmarks and source-linked wiki
+[19/23] tests/browser/site.spec.ts:20:1 › mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links
+  2) tests/browser/site.spec.ts:20:1 › mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links 
+
+    Test timeout of 150000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 150000ms exceeded.
+    Call log:
+      - waiting for getByLabel('경혈 분류', { exact: true })
+        - locator resolved to <select aria-label="경혈 분류">…</select>
+      - attempting select option action
+        2 × waiting for element to be visible and enabled
+          - element is not visible
+        - retrying select option action
+        - waiting 20ms
+        2 × waiting for element to be visible and enabled
+          - element is not visible
+        - retrying select option action
+          - waiting 100ms
+        288 × waiting for element to be visible and enabled
+            - element is not visible
+          - retrying select option action
+            - waiting 500ms
+
+
+      20 | test('mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links',async({page})=>{
+      21 |  await page.setViewportSize({width:390,height:844});await page.goto('/');await ready(page);const canvas=await page.locator('canvas').boundingBox();expect(canvas!.y).toBeLessThan(100);expect(canvas!.y+canvas!.height).toBeLessThanOrEqual(844);
+    > 22 |  await openTool(page,'경혈 찾기');const dock=await page.locator('.ax-panel').boundingBox();expect(dock!.height).toBeLessThan(canvas!.height*.45);expect(dock!.y-canvas!.y).toBeGreaterThan(canvas!.height*.35);expect(dock!.y+dock!.height).toBeLessThanOrEqual((await page.locator('.ax-depth').boundingBox())!.y);await page.getByLabel('경혈 검색').fill('없는경혈');await expect(page.getByText('일치하는 경혈이 없습니다')).toBeVisible();await page.getByRole('button',{name:'전체 경혈 보기'}).click();await expect(page.locator('.point-item')).toHaveCount(409);await page.getByLabel('경혈 분류',{exact:true}).selectOption('yuan');await expect(page.locator('.point-item')).toHaveCount(12);await expect(page.locator('.classification-text').first()).toContainText('원혈');await page.getByLabel('경혈 분류',{exact:true}).selectOption('mu');await expect(page.locator('.point-item')).toHaveCount(12);
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+      23 |  await page.keyboard.press('Escape');await expect(page.locator('.ax-panel')).toHaveCount(0);await expect(page.getByRole('button',{name:'경혈 찾기',exact:true})).toBeFocused();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+      24 |  await page.goto('/#wiki/points/ST36');await expect(page.locator('article h1')).toHaveText('족삼리 ST36');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.goto('/#wiki/not-found');await expect(page.getByRole('heading',{name:'문서를 찾지 못했습니다'})).toBeVisible();
+      25 | });
+        at /Users/nuinuri/workspace/anatomy/tests/browser/site.spec.ts:22:569
+
+    Error Context: test-results/site-mobile-canvas-and-ove-f2120-rd-dismissal-and-deep-links/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/site-mobile-canvas-and-ove-f2120-rd-dismissal-and-deep-links/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/site-mobile-canvas-and-ove-f2120-rd-dismissal-and-deep-links/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[20/23] tests/browser/site.spec.ts:26:1 › failed GLB leaves wiki access and retry available
+[21/23] tests/browser/site.spec.ts:43:1 › wiki and sources open without 3D or web fonts, read clearly at 390 and 1440, and keep a skip link
+[22/23] tests/browser/site.spec.ts:82:3 › touch reading pages at 390 › wiki and sources read clearly and keep 44px touch targets
+[23/23] tests/browser/site.spec.ts:82:3 › touch reading pages at 1440 › wiki and sources read clearly and keep 44px touch targets
+  2 failed
+    tests/browser/panel-keyboard.spec.ts:8:5 › mobile › search shortcut returns to its trigger and idle Escape leaves canvas focus alone 
+    tests/browser/site.spec.ts:20:1 › mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links 
+  21 passed (4.7m)

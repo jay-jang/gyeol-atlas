@@ -12,7 +12,9 @@ try {
   for(const sex of ['male','female'])for(const [width,height] of [[1440,900],[390,844]]){
     await page.setViewportSize({width,height});
     if((await state()).sex!==sex){await page.locator('.ax-top').getByRole('button',{name:sex==='male'?'남성':'여성',exact:true}).click();await ready();}
-    await page.locator('.point-summary').click();
+    // G-10: clearing returns to the scene this comparison replaced.
+    const entry=await state();
+    if(await page.locator('.point-summary').getAttribute('aria-expanded')!=='true')await page.locator('.point-summary').click();
     await page.getByRole('button',{name:'대응 장부의 해부 구조 비교'}).click();await ready();
     await page.getByRole('button',{name:'비교 대상만 보기',exact:true}).click();
     await page.waitForFunction(()=>JSON.parse(sessionStorage.getItem('gyeol-view-v2')).isolated===true);
@@ -21,7 +23,9 @@ try {
     await page.waitForFunction(()=>JSON.parse(sessionStorage.getItem('gyeol-view-v2')).comparison===null);
     assert.equal(await page.locator('.selection-card').count(),0);assert.equal(await page.locator('.comparison-note').count(),0);
     const after=await state();assert.equal(after.selection,null);assert.equal(after.isolated,false);
-    for(const key of ['layers','alpha','markers','pointId'])assert.deepEqual(after[key],before[key]);
+    for(const key of ['layers','alpha','dissection','displayMode','selectionTarget'])assert.deepEqual(after[key],entry[key]);
+    for(const key of ['markers','pointId'])assert.deepEqual(after[key],before[key]);
+    assert.equal(after.selectionReturn,null);
     await page.evaluate(comparison=>{
       const s=JSON.parse(sessionStorage.getItem('gyeol-view-v2'));
       sessionStorage.setItem('gyeol-view-v2',JSON.stringify({...s,comparison}));

@@ -1,0 +1,66 @@
+
+Running 19 tests using 1 worker
+
+(node:24606) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/browser/comparison-clear.spec.ts:4:45 › male: clearing a comparison removes the hidden highlight and survives reload (10.3s)
+  ✓   2 tests/browser/comparison-clear.spec.ts:4:45 › female: clearing a comparison removes the hidden highlight and survives reload (13.5s)
+  ✓   3 tests/browser/comparison-layout.spec.ts:6:1 › landscape comparisons and isolated bundles remain clear without changing their memberships (7.5s)
+  ✓   4 tests/browser/comparison-layout.spec.ts:41:1 › female organ comparisons use the female body and keep the CT stomach one explicit choice away (11.1s)
+  ✓   5 tests/browser/dissection-input-scope.spec.ts:4:1 › Alt+arrows in a search field do not peel or move the model; canvas focus enables peeling (2.9s)
+  ✓   6 tests/browser/dissection-input-scope.spec.ts:22:1 › horizontal wheel over the depth slider leaves depth and camera unchanged (3.0s)
+  ✓   7 tests/browser/dissection-input-scope.spec.ts:38:1 › movement stops on canvas focus loss even before the held key is released (4.5s)
+  ✓   8 tests/browser/dissection-input-scope.spec.ts:51:1 › small Alt+wheel input on the canvas peels one half-step without zooming (2.8s)
+  ✓   9 tests/browser/panel-keyboard.spec.ts:8:5 › desktop › search shortcut returns to its trigger and idle Escape leaves canvas focus alone (3.2s)
+  ✓  10 tests/browser/panel-keyboard.spec.ts:39:5 › desktop › acupoint detail tabs support arrows, Home/End and labelled content (3.1s)
+  ✓  11 tests/browser/panel-keyboard.spec.ts:8:5 › mobile › search shortcut returns to its trigger and idle Escape leaves canvas focus alone (3.2s)
+  ✘  12 tests/browser/panel-keyboard.spec.ts:39:5 › mobile › acupoint detail tabs support arrows, Home/End and labelled content (18.9s)
+(node:24763) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 tests/browser/panel-keyboard.spec.ts:71:3 › desktop: home and history keep the saved comparison's acupoint (5.2s)
+  ✓  14 tests/browser/panel-keyboard.spec.ts:71:3 › mobile: home and history keep the saved comparison's acupoint (4.7s)
+  ✓  15 tests/browser/panel-keyboard.spec.ts:100:1 › an atlas with no selected acupoint does not highlight the fallback ST36 structures (2.6s)
+  ✓  16 tests/browser/panel-keyboard.spec.ts:115:1 › a connective bundle keeps its own isolation label and tooltips describe icon actions (2.9s)
+  ✓  17 tests/browser/site.spec.ts:5:1 › model-first scene, actual marker click, search, bookmarks and source-linked wiki (5.9s)
+  ✓  18 tests/browser/site.spec.ts:17:1 › mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links (3.1s)
+  ✓  19 tests/browser/site.spec.ts:23:1 › failed GLB leaves wiki access and retry available (2.0s)
+
+
+  1) tests/browser/panel-keyboard.spec.ts:39:5 › mobile › acupoint detail tabs support arrows, Home/End and labelled content 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('.point-summary')
+    Expected: focused
+    Received: inactive
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('.point-summary') with timeout 15000ms
+      - waiting for locator('.point-summary')
+        34 × locator resolved to <button class="point-summary" aria-expanded="false">…</button>
+           - unexpected value "inactive"
+
+
+      60 |       await anatomy.focus();await anatomy.press('Tab');await expect(panel).toBeFocused();
+      61 |       await page.keyboard.press('Escape');await expect(page.locator('.detail-panel')).toHaveCount(0);
+    > 62 |       await expect(trigger).toBeFocused();
+         |                             ^
+      63 |       const after=await snapshot(page);
+      64 |       expect(after.camera).toEqual(before.camera);expect(after.dissection).toBe(before.dissection);
+      65 |       expect(after.pointId).toBe('CV12');expect(after.markers).toBe(before.markers);
+        at /Users/nuinuri/workspace/anatomy/tests/browser/panel-keyboard.spec.ts:62:29
+
+    Error Context: test-results/panel-keyboard-mobile-acup-bbe7c-me-End-and-labelled-content/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/panel-keyboard-mobile-acup-bbe7c-me-End-and-labelled-content/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/panel-keyboard-mobile-acup-bbe7c-me-End-and-labelled-content/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests/browser/panel-keyboard.spec.ts:39:5 › mobile › acupoint detail tabs support arrows, Home/End and labelled content 
+  18 passed (1.9m)

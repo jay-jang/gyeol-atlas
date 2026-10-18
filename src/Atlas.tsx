@@ -283,6 +283,8 @@ type Props = {
   sex: "male" | "female";
   anatomyRegion: "whole" | "head" | "upper-body" | "lower-body" | "upper-limb" | "lower-limb" | "chest" | "abdomen" | "pelvis";
   connective: boolean;
+  // The selection is the ligament/tendon category bundle (tissue colours kept).
+  connectiveCategory?: boolean;
   modesty: boolean;
   femaleMarkers: boolean;
   // The selection was made in place on the model: slide the picture aside for
@@ -519,8 +521,9 @@ function SupplementModel({ url, layer, entries, color, connective = false, signa
       if (baseEyeball && !selected && isSupplementEyePart(item.userData.entry?.name || "")) item.visible = false;
       if (props.modesty && !selected && isGenitalStructure(item.name, item.userData.entry?.name)) item.visible = false;
       const material = item.material as MeshStandardMaterial;
-      // A category bundle keeps its tissue colour; one chosen structure is emphasised.
-      material.color.set((connective ? props.selectedStructure === item.name : selected) ? "#34d3dd" : color(item.userData.entry));
+      // The ligament/tendon category bundle keeps its tissue colours; a named
+      // structure or pair (e.g. from the movement page) is emphasised.
+      material.color.set((connective ? props.selectedStructure === item.name || (selected && !props.connectiveCategory) : selected) ? "#34d3dd" : color(item.userData.entry));
       const alpha = selectionOpacity(props.layerOpacity[layer] * dissectionLayerOpacity(layer, props.dissection, progressive), selected, props.contextDimmed);
       item.visible = item.visible && alpha > .01;
       const clipped = props.cutaway > 0;
@@ -537,7 +540,7 @@ function SupplementModel({ url, layer, entries, color, connective = false, signa
     });
     object.visible = true;
     invalidate();
-  }, [object, layer, color, connective, props.connective, props.modesty, props.selectedStructure, props.isolated, props.selectionIds, props.detailIds, props.layerOpacity, props.contextDimmed, props.cutaway, props.dissection, props.displayMode, props.selectionTarget, props.anatomyRegion, props.layers, invalidate]);
+  }, [object, layer, color, connective, props.connective, props.connectiveCategory, props.modesty, props.selectedStructure, props.isolated, props.selectionIds, props.detailIds, props.layerOpacity, props.contextDimmed, props.cutaway, props.dissection, props.displayMode, props.selectionTarget, props.anatomyRegion, props.layers, invalidate]);
   useEffect(() => {
     if (signalsReady) props.onReady(layer);
   }, [object, layer, signalsReady, props.onReady]);
@@ -668,16 +671,21 @@ function Scene(props: Props) {
   // the bottom on phones; the free region on the other side frames the model.
   const cardSide = !hasSelection || !selectionCard ? null
     : selectionCard.left > size.width * .5 ? "right" : selectionCard.right < size.width * .5 ? "left" : "bottom";
-  // Phone overlays: search row and depth bar at the top, tools on the right,
-  // the acupoint bar at the bottom. Desktop keeps the depth rail at the left.
-  // (Phone top overlays end below the status pill at about 140px.)
-  const observationTop = mobile ? 150 : hasSelection ? 64 : 0;
+  // Phone overlays (top row and status line, the thumb-zone rows at the
+  // bottom, the camera column at the right) are sized in atlas.css, which
+  // publishes their extent as --ax-observe-*; they change only with the layout.
+  const phoneInsets = useMemo(() => {
+    const css = gl.domElement.closest(".ax") ? getComputedStyle(gl.domElement.closest(".ax")!) : null;
+    const read = (name: string, fallback: number) => { const value = parseFloat(css?.getPropertyValue(name) || ""); return Number.isFinite(value) ? value : fallback; };
+    return { top: read("--ax-observe-top", 150), bottom: read("--ax-observe-bottom", 64), right: read("--ax-observe-right", 56) };
+  }, [gl, size.width, size.height]);
+  const observationTop = mobile ? phoneInsets.top : hasSelection ? 64 : 0;
   const observationBottom = cardSide === "bottom" && selectionCardTop !== null
     ? Math.max(observationTop + 1, Math.min(size.height, selectionCardTop - 16))
-    : mobile ? Math.max(observationTop + 120, size.height - 64) : hasSelection ? size.height - 70 : size.height;
+    : mobile ? Math.max(observationTop + 120, size.height - phoneInsets.bottom) : hasSelection ? size.height - 70 : size.height;
   const observationHeight = observationBottom - observationTop;
   const observationLeft = cardSide === "left" ? Math.max(80, selectionCard!.right + 16) : hasSelection && !mobile ? 156 : 0;
-  const observationRight = cardSide === "right" ? selectionCard!.left - 16 : mobile ? size.width - 56 : size.width;
+  const observationRight = cardSide === "right" ? selectionCard!.left - 16 : mobile ? size.width - phoneInsets.right : size.width;
   const observationWidth = Math.max(1, observationRight - observationLeft);
   const framed = mobile || hasSelection || limbScope;
   // The projection centre follows the free area beside the tool overlays. The

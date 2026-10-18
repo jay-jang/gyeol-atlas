@@ -1,0 +1,1454 @@
+{
+ "slug": "walking",
+ "name": "평지 걷기",
+ "nameEn": "Level walking (gait cycle)",
+ "view": "side",
+ "plane": "시상면",
+ "order": 4,
+ "summary": "한쪽 발이 바닥에 처음 닿은 때부터 같은 발이 다시 닿을 때까지를 한 주기로 보고, Perry & Burnfield의 8국면으로 나눕니다. 오른다리를 기준으로 그리며, 왼다리는 반 주기 늦게 같은 움직임을 합니다.",
+ "conditions": "건강한 성인이 평지를 편한 속도로 걷는 대표 패턴 하나를 근사했습니다. 국면 경계는 82 m/min(1.36 m/s) 기준입니다. 각도·근전도 값은 대상(젊은 성인, 교육용 요약)·속도·신발 조건이 서로 다른 출처에서 모았습니다.",
+ "duration": {
+  "seconds": 1.07,
+  "sources": [
+   "schmitz2009",
+   "pirker2017"
+  ],
+  "note": "Schmitz 2009 젊은 성인 18명의 선호 속도(1.33 m/s) 보행률 112걸음/분에서 계산한 한 주기(2걸음) 시간입니다 [추론]. Pirker 2017이 정리한 젊은 성인 보행률 115–120걸음/분이면 약 1.0–1.04초입니다."
+ },
+ "loop": true,
+ "phaseKind": "국면",
+ "phases": [
+  {
+   "id": "initial-contact",
+   "name": "초기 접지기",
+   "nameEn": "Initial contact (IC)",
+   "start": 0,
+   "end": 0.02,
+   "range": "주기 0–2%",
+   "events": "오른발이 바닥에 처음 닿는 순간과 그 직후 반응입니다. 건강한 성인의 평지 보행에서는 대개 발꿈치가 먼저 닿습니다. 첫 양발 지지가 시작됩니다.",
+   "summary": "엉덩관절은 굽고 무릎은 거의 펴져 있으며 발목은 중립입니다. 발꿈치를 축으로 구르는 발꿈치 흔들대가 시작됩니다.",
+   "mechanics": [
+    "말기 유각기 끝에 발꿈치는 바닥에서 약 1 cm 위에 있다가 짧게 떨어지듯 닿습니다. 이 충격이 수직 지면반력 곡선의 오르막에 짧고 날카로운 파형(발꿈치 충격파)으로 나타납니다."
+   ],
+   "sources": [
+    "perry2010",
+    "aapmr2025"
+   ]
+  },
+  {
+   "id": "loading-response",
+   "name": "부하 반응기",
+   "nameEn": "Loading response (LR)",
+   "start": 0.02,
+   "end": 0.12,
+   "range": "주기 2–12%",
+   "events": "첫 양발 지지의 나머지 구간입니다. 왼발이 바닥을 떠나면 끝납니다.",
+   "summary": "체중이 앞다리로 옮겨 갑니다. 발꿈치가 닿은 뒤 발목이 짧게 발바닥굽힘하고, 앞정강근이 발이 떨어지는 속도를 늦춥니다. 무릎은 15–20° 굽어 충격을 받고, 12% 무렵 발바닥 전체가 바닥에 닿습니다.",
+   "mechanics": [
+    "지면반력 작용선이 엉덩관절 앞, 무릎과 발목 뒤를 지납니다. 무릎은 굽히려는 힘을 받고 넓은근이 이를 제동합니다.",
+    "수직 지면반력의 첫 봉우리가 발이 평평해진 뒤, 반대발이 떨어지기 전에 생깁니다."
+   ],
+   "sources": [
+    "perry2010",
+    "aapmr2025",
+    "anderson2003"
+   ]
+  },
+  {
+   "id": "mid-stance",
+   "name": "중간 입각기",
+   "nameEn": "Mid stance (MSt)",
+   "start": 0.12,
+   "end": 0.31,
+   "range": "주기 12–31%",
+   "events": "왼발이 떨어지며 한발 지지가 시작되고, 체중이 앞발 위로 올 때까지입니다.",
+   "summary": "발은 바닥에 고정되고 정강이가 발목을 축으로 앞으로 넘어갑니다(발목 흔들대). 무릎과 엉덩관절은 펴집니다. 가자미근이 정강이가 넘어가는 속도를 늦춥니다.",
+   "mechanics": [
+    "초기에는 작용선이 무릎 약간 뒤·발목 앞을, 끝 무렵에는 발목과 무릎 앞·엉덩관절 뒤를 지납니다.",
+    "안쪽장딴지근 근섬유는 길이가 거의 변하지 않고 힘줄이 늘어납니다(초음파, 3 km/h).",
+    "모델 연구에서 이 시기의 수직 지지는 중간·작은볼기근과 중력이 크게 맡습니다."
+   ],
+   "sources": [
+    "perry2010",
+    "aapmr2025",
+    "fukunaga2001",
+    "anderson2003"
+   ]
+  },
+  {
+   "id": "terminal-stance",
+   "name": "말기 입각기",
+   "nameEn": "Terminal stance (TSt)",
+   "start": 0.31,
+   "end": 0.5,
+   "range": "주기 31–50%",
+   "events": "오른발 발꿈치가 들리면서 시작해 왼발이 바닥에 닿으면 끝납니다.",
+   "summary": "발허리뼈머리를 축으로 몸이 발보다 앞으로 나갑니다(앞발 흔들대). 엉덩관절은 가장 많이 펴지고, 무릎은 폄을 마친 뒤 다시 굽기 시작합니다.",
+   "mechanics": [
+    "작용선이 엉덩관절 뒤, 무릎 앞을 지나고 발목에서 가장 앞에 놓입니다. 몸이 앞으로 떨어지는 속도는 장딴지근·가자미근이 제어합니다.",
+    "엉덩관절이 펴지는 동안 굽힘 쪽 모멘트가 걸려 음의 일률(H2)이 생깁니다. 모델 추정에서 그 음의 일 중 평균 38%를 수동 구조가 흡수합니다."
+   ],
+   "sources": [
+    "perry2010",
+    "aapmr2025",
+    "whittington2008"
+   ]
+  },
+  {
+   "id": "pre-swing",
+   "name": "전유각기",
+   "nameEn": "Pre-swing (PSw)",
+   "start": 0.5,
+   "end": 0.62,
+   "range": "주기 50–62%",
+   "events": "왼발이 처음 닿으면서 시작해 오른발 발가락이 떨어지면 끝납니다. 두 번째 양발 지지입니다.",
+   "summary": "체중이 빠르게 왼다리로 옮겨 갑니다. 발목은 빠르게 발바닥굽힘하고 무릎은 약 35°까지 굽으며, 엄지발가락 관절은 크게 발등굽힘합니다.",
+   "mechanics": [
+    "발목에서 주기 중 가장 큰 양의 일률이 나옵니다. Perry & Burnfield는 이를 늘어난 가자미근·장딴지근 근육–힘줄 복합체의 탄성 반동으로 설명합니다.",
+    "엉덩관절 굽힘의 양의 일(H3) 중 평균 58%는 늘어났던 수동 구조가 되돌려 준다는 모델 추정이 있습니다. 개별 근육이나 특정 인대의 기여율은 아닙니다.",
+    "엄지발가락 발등굽힘으로 발바닥널힘줄이 감기는 감아올림 기전(windlass)이 이 시기에 작동한다고 설명됩니다."
+   ],
+   "sources": [
+    "perry2010",
+    "aapmr2025",
+    "whittington2008",
+    "lin2013"
+   ]
+  },
+  {
+   "id": "initial-swing",
+   "name": "초기 유각기",
+   "nameEn": "Initial swing (ISw)",
+   "start": 0.62,
+   "end": 0.75,
+   "range": "주기 62–75%",
+   "events": "오른발이 바닥을 떠나면서 시작해, 흔드는 발이 디딤발 옆을 지날 때 끝납니다.",
+   "summary": "무릎이 가장 많이 굽어 발이 바닥에 끌리지 않게 하고, 엉덩관절 굽힘으로 다리가 앞으로 나갑니다. 발목 발등굽힘은 아직 덜 된 상태입니다.",
+   "mechanics": [
+    "유각 초기의 빠른 엉덩관절 굽힘이 주기 중 양의 일률이 두드러지는 네 구간 가운데 하나입니다."
+   ],
+   "sources": [
+    "perry2010",
+    "aapmr2025",
+    "aapmr2017swing"
+   ]
+  },
+  {
+   "id": "mid-swing",
+   "name": "중간 유각기",
+   "nameEn": "Mid swing (MSw)",
+   "start": 0.75,
+   "end": 0.87,
+   "range": "주기 75–87%",
+   "events": "흔드는 발이 디딤발 옆을 지날 때부터, 다리가 앞으로 나와 정강이가 수직이 될 때까지입니다.",
+   "summary": "엉덩관절이 더 굽고 무릎은 중력에 따라 펴지기 시작하며, 발목은 중립까지 발등굽힘합니다.",
+   "sources": [
+    "perry2010",
+    "aapmr2025",
+    "aapmr2017swing"
+   ]
+  },
+  {
+   "id": "terminal-swing",
+   "name": "말기 유각기",
+   "nameEn": "Terminal swing (TSw)",
+   "start": 0.87,
+   "end": 1,
+   "range": "주기 87–100%",
+   "events": "정강이가 수직인 때부터 오른발이 다시 바닥에 닿을 때까지입니다.",
+   "summary": "무릎이 펴지며 다리 내밀기를 마칩니다. 엉덩관절 굽힘은 약간 줄고 발목은 중립을 유지합니다. 뒤넙다리근이 앞으로 흔들리는 다리를 감속합니다.",
+   "sources": [
+    "perry2010",
+    "aapmr2025",
+    "aapmr2017swing",
+    "schmitz2009"
+   ]
+  }
+ ],
+ "keyframes": [
+  {
+   "t": 0,
+   "event": "오른발 초기 접지(발꿈치 닿기)",
+   "angles": {
+    "ankle": 0,
+    "knee": 0,
+    "hip": 20,
+    "trunk": 0,
+    "toe": 0
+   },
+   "sources": [
+    "perry2010"
+   ],
+   "note": "세 관절 모두 Perry & Burnfield 2010의 초기 접지 서술에서 가져왔습니다. 엉덩관절 20°는 3장의 '입각 시작에 넙다리는 20°만 굽어 있다'로, 넙다리와 수직선 사이의 각입니다. 도식은 골반을 수직으로 고정하므로 이 값을 그대로 엉덩관절 각도로 그렸습니다. 무릎 0°와 발목 0°는 그림 2-2 설명('엉덩관절은 굽고 무릎은 펴지며 발목은 중립까지 발등굽힘')을 숫자로 옮긴 값입니다. 몸통 0°는 Perry의 곧게 선 몸통 정렬을 단순화한 값이고, 엄지발가락 0°는 수치를 확인하지 못해 중립으로 둔 편집값입니다 [추론]. 각도 기준이 다른 값(AAPMR 표 30°, Kerrigan 2001의 골반 대비 관절각)은 관절 대표값 표에 따로 적었습니다."
+  },
+  {
+   "t": 0.02,
+   "event": "부하 반응기 시작",
+   "angles": {
+    "ankle": -5,
+    "knee": 5,
+    "hip": 20,
+    "trunk": 0,
+    "toe": 0
+   },
+   "sources": [
+    "perry2010"
+   ],
+   "note": "발목 −5°는 Perry 2010의 '발꿈치 접촉이 5° 발바닥굽힘 호를 일으킨 뒤 정강이 앞 근육이 발을 잡는다'의 5°이고, 그 최대를 부하 반응기 시작에 둔 것은 편집 배치입니다 [추론]. Perry는 이 순간의 무릎·엉덩관절 수치를 주지 않습니다. 무릎 5°는 이전 값을 유지한 편집값이고, 엉덩관절 20°는 앞뒤 키프레임의 Perry 값(초기 접지 20°, 12% 20°)을 그대로 이은 편집값입니다 [추론].",
+   "grf": {
+    "angle": -10,
+    "size": "medium",
+    "from": "heel",
+    "sources": [
+     "perry2010"
+    ],
+    "note": "시작점은 발꿈치입니다. Perry 2010은 발꿈치뼈 융기의 둥근 면이 바닥에 닿고 그 점을 축으로 발이 구른다고 설명하며(발꿈치 흔들대), 그림 3-14A의 작용선도 발꿈치 아래에서 시작합니다. 방향은 그림 3-14A의 관계(엉덩관절 앞, 무릎·발목 뒤)를 이 도식의 자세에서 만족하는 범위(약 −13°~−7.5°)에서 고른 편집 근사이며 측정 각도가 아닙니다 [추론]. 그림 3-14A를 재면 약 −7°입니다. 도식 엔진 확인: 작용선이 엉덩관절 앞 4.6 cm, 무릎 뒤 2.3 cm, 발목 뒤 5.5 cm를 지납니다. 크기: 수직 반력이 첫 봉우리로 오르는 중."
+   }
+  },
+  {
+   "t": 0.12,
+   "event": "왼발 발가락 떼기 · 오른발 발바닥 전체 접지",
+   "angles": {
+    "ankle": 0,
+    "knee": 20,
+    "hip": 20,
+    "trunk": 0,
+    "toe": 0
+   },
+   "sources": [
+    "perry2010"
+   ],
+   "note": "세 관절 모두 Perry 2010의 한 문장에서 가져왔습니다: '발꿈치 흔들대가 끝나는 12%에는 발 전체가 바닥에 닿고, 정강이는 수직이며, 무릎은 20° 굽는다.' 정강이가 수직이고 무릎이 20° 굽었으므로 넙다리는 수직선에서 앞으로 20° 기울고(엉덩관절 20°), 발바닥이 평평하고 정강이가 수직이므로 발목은 0°입니다 [추론, 기하 계산]. AAPMR 표·Godges의 무릎 15°와 발목 발바닥굽힘 10°는 관절 표에만 적었습니다.",
+   "grf": {
+    "angle": -6,
+    "size": "large",
+    "from": "mid",
+    "sources": [
+     "perry2010",
+     "anderson2003"
+    ],
+    "note": "시작점은 발 가운데(발꿈치와 발허리뼈머리의 중간)입니다. Perry 2010은 앞발이 닿은 뒤 작용선의 바닥점이 발을 따라 발허리뼈머리까지 나아간다고 설명합니다. 이 순간은 중간 입각기의 시작이므로 그림 3-14B '초기'(작용선이 무릎 약간 뒤, 발목 앞)를 따랐습니다. 이 도식은 12%에 정강이가 수직(Perry)이라 무릎이 발목 바로 위에 있어, 발꿈치에서 시작하면 두 관계를 함께 만족하는 방향이 없습니다. 그래서 시작점을 발 가운데로, 방향을 −6°(무릎 뒤 3 cm 이내가 되는 범위 약 −7.5°~−4°)로 고른 편집 근사입니다 [추론]. 그림 3-14B 초기의 작용선은 발 뒤쪽 절반에서 거의 수직으로 그려져 있어, 그림의 자세와 이 도식의 자세가 다릅니다. 도식 엔진 확인: 무릎 뒤 1.6 cm, 발목 앞 2.3 cm, 엉덩관절 앞 7.9 cm. 크기: 발이 평평해진 뒤 반대발이 떨어지기 전의 수직 반력 첫 봉우리(Anderson & Pandy 2003)."
+   }
+  },
+  {
+   "t": 0.31,
+   "event": "오른발 발꿈치 들림 시작",
+   "angles": {
+    "ankle": 7,
+    "knee": 5,
+    "hip": -2,
+    "trunk": 0,
+    "toe": 0
+   },
+   "sources": [
+    "perry2010",
+    "aapmr2017stance"
+   ],
+   "note": "Perry 2010은 이 순간(발꿈치 들림 시작)의 관절 수치를 주지 않아 이전 값을 유지했으며, 세 값 모두 편집값입니다. 발목 7°(발등굽힘)는 AAPMR 표의 중간 입각기 끝 값(Perry가 아닌 출처)이고, 무릎 5°는 Perry의 '말기 입각기에 무릎 폄을 마친다'에 맞춘 편집값입니다 [추론]. 엉덩관절 −2°는 발바닥이 바닥에 평평하도록 이 무릎·발목 값에서 계산한 넙다리–수직선 각도입니다 [추론]. 대조: Perry 그림 2-5(말기 입각기, 앞선 자세)를 재면 넙다리 약 −5°, 무릎 약 4°, 발목 약 9°로, 도식 그림의 판독 오차(몇 도) 안에서 이 값과 비슷합니다.",
+   "grf": {
+    "angle": -5,
+    "size": "medium",
+    "from": "mtp",
+    "sources": [
+     "perry2010",
+     "anderson2003"
+    ],
+    "note": "시작점은 발허리뼈머리입니다. Perry 2010: '작용선의 바닥점(압력중심)이 발허리뼈머리에 이르면 발꿈치가 들린다.' 방향은 그림 3-14B '후기'(발목과 무릎 앞, 엉덩관절 뒤)를 이 도식의 자세에서 만족하는 범위(약 −8.5°~−4°)에서 고른 편집 근사입니다 [추론]. 도식 엔진 확인: 엉덩관절 뒤 1.8 cm, 무릎 앞 3.0 cm, 발목 앞 10.7 cm. 크기: 중간 입각기의 수직 반력 골짜기(Perry 그림 3-29의 F2; Anderson & Pandy 2003)."
+   }
+  },
+  {
+   "t": 0.5,
+   "event": "왼발 초기 접지",
+   "angles": {
+    "ankle": 10,
+    "knee": 5,
+    "hip": -20,
+    "trunk": 0,
+    "toe": 15
+   },
+   "sources": [
+    "perry2010",
+    "aapmr2017stance"
+   ],
+   "note": "엉덩관절 −20°는 넙다리–수직선 기준 값입니다. Perry 2010은 이 순간의 수치를 주지 않고 그림 2-5 설명에서 '엉덩관절 폄이 늘고 발꿈치가 들려 다리가 더 뒤에 놓인다'고만 적었습니다. 그래서 왼다리가 Perry의 초기 접지 자세(넙다리 20°, 무릎 0°, 발목 0°)로 바닥에 닿을 때 오른발 앞발도 바닥에 닿도록 이 도식에서 계산한 값(−20.3°)을 반올림했습니다 [추론]. Perry 그림 2-5(말기 입각기 끝 자세), 그림 2-2의 뒷다리(전유각기 시작), 그림 3-14C를 재면 넙다리가 수직선 뒤로 약 20–23° 기울어 있어 이 값과 맞습니다(도식 그림, 판독 오차 몇 도). Kerrigan 2001의 최대 폄 20.4°는 골반에 대한 관절각으로 읽히는 값이라 이 키프레임에 쓰지 않고 관절 표에 따로 적었습니다. 무릎 5°는 Perry의 '무릎이 폄을 마친 뒤 다시 굽기 시작한다'에 맞춘 편집값이고, 발목 10°는 Perry 수치가 없어 이전 값을 유지한 편집값으로, AAPMR 표의 말기 입각기 값(Perry가 아닌 출처)입니다. 엄지발가락 15°는 발꿈치가 들린 발에서 발가락이 바닥에 놓이도록 맞춘 편집값입니다 [추론]. 계산한 엉덩관절 값은 이 편집값에 따라 달라집니다(예: 무릎 0–2°, 발목 7°이면 약 −23°).",
+   "grf": {
+    "angle": 12,
+    "size": "large",
+    "from": "mtp",
+    "sources": [
+     "perry2010",
+     "anderson2003"
+    ],
+    "note": "시작점은 발허리뼈머리입니다(앞발 흔들대, 그림 3-14C의 작용선도 앞발 아래에서 시작). 방향은 그림 3-14C(엉덩관절 뒤, 무릎 앞, 발목 앞 가장 먼 곳)를 이 도식의 자세에서 만족하는 범위(약 +8°~+13.5°)에서 고른 편집 근사입니다 [추론]. 그림 3-14C를 재면 약 +12°입니다. 도식 엔진 확인: 엉덩관절 뒤 2.4 cm, 무릎 앞 3.2 cm, 발목 앞 11.7 cm(입각기 화살표 가운데 발목에서 가장 멂). 크기: 입각기 후반의 수직 반력 두 번째 봉우리(Anderson & Pandy 2003)."
+   }
+  },
+  {
+   "t": 0.62,
+   "event": "오른발 발가락 떼기",
+   "angles": {
+    "ankle": -20,
+    "knee": 35,
+    "hip": -11,
+    "trunk": 0,
+    "toe": 40
+   },
+   "sources": [
+    "aapmr2017stance",
+    "perry2010"
+   ],
+   "note": "무릎 35°와 발목 발바닥굽힘 20°는 AAPMR 입각기 표의 같은 행(전유각기 끝: 무릎 35°로 굽힘, 발목 발등굽힘 10°에서 발바닥굽힘 20°로)에서 함께 가져온 값입니다. 서로 다른 연구의 최대값을 한 순간에 모으지 않으려고, 이전에 쓰던 Brockett & Chapman 2016(약 14°)·Nawoczenski 1999(엄지발가락 42°) 값은 관절 표에만 둡니다. Perry 2010 미리보기 본문은 이 순간의 관절 수치를 주지 않습니다(그림 2-6 설명: 발목 발바닥굽힘과 무릎 굽힘이 늘고 엉덩관절 폄이 줄어듦). 엉덩관절 −11°(넙다리–수직선)와 엄지발가락 40°는 왼다리가 Perry의 12% 자세(넙다리 20°, 무릎 20°, 정강이 수직)일 때 오른발 발끝이 바닥에 닿도록 이 도식에서 계산한 편집값입니다 [추론]. AAPMR 표의 엉덩관절 ‘중립 쪽으로’와 Perry 그림 2-6·2-7 판독(넙다리 약 −4°)보다 조금 더 뒤에 있습니다."
+  },
+  {
+   "t": 0.75,
+   "event": "흔드는 발이 디딤발 옆을 지남 · 무릎 최대 굽힘",
+   "angles": {
+    "ankle": -7.5,
+    "knee": 60,
+    "hip": 22,
+    "trunk": 0,
+    "toe": 0
+   },
+   "sources": [
+    "perry2010",
+    "aapmr2017swing"
+   ],
+   "note": "무릎 60°와 발목 발바닥굽힘 7.5°는 AAPMR 유각기 표의 같은 행(초기 유각기: 무릎 60–65°, 발목 발바닥굽힘 20°에서 5–10°로)의 값입니다(무릎은 범위의 아래 값, 발목은 범위의 가운데). 엉덩관절 22°는 다른 키프레임과 같은 넙다리–수직선 기준으로, Perry 2010의 국면 끝 정의(‘흔드는 발이 디딤발 맞은편’)를 이 도식에서 만족하도록 계산한 편집값입니다 [추론]: 이 값에서 흔드는 발의 발꿈치–발끝 구간이 디딤발 구간과 약 1.6 cm 겹치고, 23° 이상이면 흔드는 발끝이 바닥선에 닿습니다. 이 순간 흔드는 발은 바닥에서 약 0.1 cm로 거의 닿아 보입니다. Perry 그림 2-7·2-8 판독(넙다리 약 11–13°)과 AAPMR 표의 엉덩관절 20°(각도 기준 미기재)는 관절 표의 비교 값으로만 둡니다. 엄지발가락 0°는 수치를 확인하지 못해 중립으로 둔 편집값입니다."
+  },
+  {
+   "t": 0.87,
+   "event": "정강이 수직",
+   "angles": {
+    "ankle": 0,
+    "knee": 25,
+    "hip": 25,
+    "trunk": 0,
+    "toe": 0
+   },
+   "sources": [
+    "perry2010",
+    "godges2008",
+    "aapmr2017swing"
+   ],
+   "note": "Perry 2010: 중간 유각기 끝은 정강이가 수직(엉덩관절과 무릎 굽힘이 같음)이고 발목은 중립까지 발등굽힘하며, 이어 말기 유각기에 엉덩관절이 '약간 줄어 20°'가 됩니다. 그래서 엉덩관절과 무릎을 같은 값으로 두고, 그 값을 20°보다 약간 큰 25°로 정한 편집값입니다 [추론]. Perry 그림 2-8·2-9를 재면 이 순간 넙다리는 약 20°로, 본문의 '약간 줄어듦'을 그림에서는 구별하기 어렵습니다(판독 오차 몇 도). 20°로 하면 이 도식에서 흔드는 발끝이 바닥선 아래로 내려갑니다. 25°는 Godges(Rancho 자료 요약)의 중간 유각기 최대 굽힘과 같은 값입니다. AAPMR 표의 30°는 각도 기준이 적혀 있지 않아 관절 표에만 적었습니다."
+  }
+ ],
+ "timingNote": "국면 경계는 Perry & Burnfield 2010의 82 m/min 기준 값(입각 62%·유각 38%)을 따랐습니다. 재생 1×는 젊은 성인 선호 속도의 보행률(Schmitz 2009)에서 계산한 약 1.07초 주기입니다. 왼다리는 오른다리와 같은 곡선을 반 주기 늦게 따릅니다. 키프레임 사이는 보간한 근사이며 측정 궤적이 아닙니다.",
+ "muscles": [
+  {
+   "id": "tibialis-anterior",
+   "name": "앞정강근",
+   "nameEn": "Tibialis anterior",
+   "structures": [
+    "FMA22544"
+   ],
+   "line": "tibialis-anterior",
+   "cells": {
+    "initial-contact": {
+     "contraction": "eccentric",
+     "evidence": [
+      "emg",
+      "dynamics",
+      "inference"
+     ],
+     "sources": [
+      "schmitz2009",
+      "brockett2016",
+      "perry2010",
+      "aapmr2017stance"
+     ],
+     "role": "발이 바닥으로 떨어지는 발바닥굽힘을 제동",
+     "note": "Schmitz 2009: 0–10%에서 주기 평균의 2.6배(젊은 성인, 선호 속도). Brockett & Chapman 2016: 발꿈치가 닿을 때 발등굽힘 모멘트, 발등굽힘근 신장성. AAPMR 입각기 표와 Perry 2010은 긴발가락폄근·긴엄지폄근을 포함한 정강이 앞 근육 무리로 설명합니다."
+    },
+    "loading-response": {
+     "contraction": "eccentric",
+     "evidence": [
+      "emg",
+      "dynamics",
+      "inference"
+     ],
+     "sources": [
+      "schmitz2009",
+      "brockett2016",
+      "perry2010"
+     ],
+     "role": "발꿈치 흔들대 유지, 정강이를 앞으로 끎",
+     "note": "Perry 2010: 발 내리기 속도를 늦추면서 정강이를 앞으로 끌어 발꿈치 흔들대를 유지합니다. 근전도: Schmitz 2009(젊은 성인 18명, 표면 근전도)의 0–10% 구간에서 주기 평균의 2.6배."
+    },
+    "mid-stance": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 10–30%에서 주기 평균의 약 0.5배. 활동 유무를 가르는 기준은 제시되지 않았습니다."
+    },
+    "terminal-stance": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 30–60%에서 주기 평균의 약 0.4배."
+    },
+    "pre-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "initial-swing": {
+     "contraction": "concentric",
+     "evidence": [
+      "emg",
+      "inference"
+     ],
+     "sources": [
+      "aapmr2025",
+      "aapmr2017swing",
+      "perry2010"
+     ],
+     "role": "발바닥굽힘된 발목을 들어 발이 끌리지 않게 함",
+     "note": "AAPMR(Perry 인용, 2차 요약): 유각 초기에 발목 발등굽힘근이 수축해 발을 듭니다. 단축성은 발목이 발등굽힘 쪽으로 움직이는 데서 추론했습니다."
+    },
+    "mid-swing": {
+     "contraction": "concentric",
+     "evidence": [
+      "emg",
+      "inference"
+     ],
+     "sources": [
+      "aapmr2025",
+      "perry2010"
+     ],
+     "note": "AAPMR: 발등굽힘근이 계속 수축. Perry 2010: 발목이 중립까지 발등굽힘. 수축 방식은 관절 운동에서 추론했습니다."
+    },
+    "terminal-swing": {
+     "contraction": "isometric",
+     "evidence": [
+      "emg",
+      "inference"
+     ],
+     "sources": [
+      "aapmr2025",
+      "perry2010"
+     ],
+     "role": "착지 전 발목을 중립에 둠",
+     "note": "AAPMR: 말기 유각기에 발목 발등굽힘근이 수축. Perry 2010: 발목은 중립을 유지. 등척성은 관절 각도가 거의 변하지 않는 데서 추론했습니다."
+    }
+   }
+  },
+  {
+   "id": "vasti",
+   "name": "넓은근(가쪽·안쪽·중간넓은근)",
+   "nameEn": "Vasti (vastus lateralis, vastus medialis, vastus intermedius)",
+   "structures": [
+    "FMA38930",
+    "FMA38932",
+    "FMA38934"
+   ],
+   "line": "vasti",
+   "cells": {
+    "initial-contact": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "schmitz2009",
+      "aapmr2017stance"
+     ],
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 가쪽넓은근이 0–10%에서 주기 평균의 2.9배(가쪽넓은근만 측정). AAPMR 표: 초기 접지에 뒤넙다리근과 넙다리네갈래근이 무릎을 안정시킴."
+    },
+    "loading-response": {
+     "contraction": "eccentric",
+     "evidence": [
+      "emg",
+      "inference"
+     ],
+     "sources": [
+      "schmitz2009",
+      "perry2010",
+      "aapmr2025"
+     ],
+     "role": "무릎 굽힘을 제동해 충격을 받음",
+     "note": "작용선이 무릎 뒤를 지나 무릎이 굽는 동안 활동합니다(Perry 2010). 신장성은 무릎이 굽는 중의 폄근 활동에서 추론했습니다. 근전도는 가쪽넓은근만 측정했습니다(Schmitz 2009, 젊은 성인: 0–10%에서 주기 평균의 2.9배)."
+    },
+    "mid-stance": {
+     "contraction": "concentric",
+     "evidence": [
+      "emg",
+      "dynamics",
+      "inference"
+     ],
+     "sources": [
+      "perry2010",
+      "aapmr2017stance",
+      "schmitz2009"
+     ],
+     "role": "무릎을 다시 펴서 한발 지지를 세움",
+     "note": "Perry 2010: 중간 입각기 초기에 무릎 폄을 마치며 넙다리네갈래근의 양의 일률이 나타납니다. 관절 일률은 넙다리네갈래근 전체의 값이라, 넓은근의 단축성은 그 해석입니다 [추론]. AAPMR 표: 중간 입각기 초기에만. Schmitz 2009(젊은 성인, 가쪽넓은근만 측정): 10–30%에서 주기 평균의 1.3배."
+    },
+    "terminal-stance": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 가쪽넓은근 30–60%에서 주기 평균의 약 0.55배."
+    },
+    "pre-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "aapmr2017stance"
+     ],
+     "note": "AAPMR 표에 넙다리네갈래근이 적혀 있으나 수축 유형 열의 배치가 깨져 판독하지 않았습니다."
+    },
+    "initial-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "aapmr2017swing"
+     ],
+     "note": "AAPMR 유각기 표의 '넙다리네갈래근'은 열 배치가 깨져 넓은근 활동으로 판독하지 않았습니다."
+    },
+    "mid-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "terminal-swing": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "aapmr2025"
+     ],
+     "role": "착지 전 무릎 폄을 마무리",
+     "note": "AAPMR(2차 요약): 말기 유각기에 무릎 굽힘근과 폄근이 함께 수축해 착지를 준비합니다. 수축 방식은 정하지 않았습니다."
+    }
+   }
+  },
+  {
+   "id": "rectus-femoris",
+   "name": "넙다리곧은근",
+   "nameEn": "Rectus femoris",
+   "structures": [
+    "FMA38928"
+   ],
+   "female": [
+    "HRAF0396"
+   ],
+   "line": "rectus-femoris",
+   "cells": {
+    "initial-contact": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 0–10%에서 주기 평균의 1.7배. 이 근전도 구간은 초기 접지기와 부하 반응기를 함께 포함합니다."
+    },
+    "loading-response": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 0–10%에서 주기 평균의 1.7배."
+    },
+    "mid-stance": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 10–30%에서 주기 평균과 비슷한 1.06배."
+    },
+    "terminal-stance": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 30–60%에서 주기 평균의 약 0.8배."
+    },
+    "pre-swing": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "aapmr2017stance"
+     ],
+     "note": "AAPMR 표: 전유각기 엉덩관절 근육으로 엉덩허리근·넙다리곧은근·넙다리빗근·긴모음근을 적었습니다(2차 요약, 수축 유형 열은 판독하지 않음)."
+    },
+    "initial-swing": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "model"
+     ],
+     "sources": [
+      "schmitz2009",
+      "whittington2008"
+     ],
+     "role": "두 관절 사이 에너지 전달(모델 해석)",
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 60–73%에서 주기 평균의 1.2배. 무릎은 굽고 엉덩관절은 굽는 중이어서 두 관절에서 길이 변화 방향이 반대입니다. Whittington 2008(모델)은 전유각기·초기 유각기에 수동으로 늘어난 넙다리곧은근을 통해 무릎에서 흡수한 에너지가 엉덩관절로 옮겨 간다고 해석합니다(근수축이 아닌 수동 성분의 추정)."
+    },
+    "mid-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "terminal-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    }
+   }
+  },
+  {
+   "id": "gluteus-maximus",
+   "name": "큰볼기근",
+   "nameEn": "Gluteus maximus",
+   "structures": [
+    "FMA22328"
+   ],
+   "line": "gluteus-maximus",
+   "cells": {
+    "initial-contact": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "aapmr2025",
+      "aapmr2017stance"
+     ],
+     "note": "AAPMR(2차 요약): 초기 접지에 엉덩관절 폄근이 수축합니다."
+    },
+    "loading-response": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "dynamics"
+     ],
+     "sources": [
+      "lyons1983",
+      "perry2010",
+      "liu2006"
+     ],
+     "role": "엉덩관절 굽힘을 막고 몸통을 받침",
+     "note": "Lyons 1983(바늘 근전도, 11명): 큰모음근과 함께 부하 반응기의 주된 엉덩관절 폄근. Perry 2010: 이 국면 끝에 엉덩관절 폄이 시작되며 작은 양의 일률이 나타나므로 이 무렵은 단축성으로 해석할 수 있습니다 [추론]. Liu 2006(모델): 입각 전반에 몸을 받치면서 전진을 늦춥니다."
+    },
+    "mid-stance": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "aapmr2017stance"
+     ],
+     "note": "AAPMR 표: 중간 입각기 초기에만 엉덩관절 폄."
+    },
+    "terminal-stance": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "pre-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "initial-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "mid-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "terminal-swing": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "aapmr2017swing",
+      "aapmr2025",
+      "lyons1983"
+     ],
+     "role": "앞으로 흔들리는 넙다리를 감속",
+     "note": "AAPMR(2차 요약)는 말기 유각기에 큰볼기근을 적었습니다. Lyons 1983(바늘 근전도, 11명)은 이 시기에 활동을 시작하는 엉덩관절 폄근으로 큰모음근을 보고했고, 큰볼기근의 시작 시점은 초록에서 확인하지 못했습니다."
+    }
+   }
+  },
+  {
+   "id": "gluteus-medius",
+   "name": "중간볼기근",
+   "nameEn": "Gluteus medius",
+   "structures": [
+    "FMA22330"
+   ],
+   "line": "gluteus-medius",
+   "cells": {
+    "initial-contact": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "aapmr2017stance"
+     ],
+     "note": "AAPMR 표: 초기 접지에 골반 안정."
+    },
+    "loading-response": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "semciw2013",
+      "aapmr2025"
+     ],
+     "role": "디딤다리 쪽에서 골반을 받침(이마면)",
+     "note": "Semciw 2013(바늘 근전도, 15명): 세 부분 모두 입각기에 두 번 활동합니다. 국면 배정은 AAPMR(2차)의 '부하 반응기에 엉덩관절 벌림근이 골반을 안정'을 따랐습니다. 수축 방식은 확인하지 못했습니다."
+    },
+    "mid-stance": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "model"
+     ],
+     "sources": [
+      "semciw2013",
+      "perry2010",
+      "anderson2003",
+      "liu2006"
+     ],
+     "role": "한발 지지 중 골반 지지",
+     "note": "Perry 2010: 한발 지지에서 엉덩관절 벌림근이 강하게 수축해 골반을 받칩니다. Anderson & Pandy 2003(모델): 중간 입각기 수직 지지의 대부분. Liu 2006(모델): 한발 지지 중 지지와 전진에 함께 기여. Semciw 2013(바늘 근전도, 15명, 초록): 세 부분 모두 입각기에 두 번 활동하며, 두 활동 묶음이 어느 국면인지는 초록에 없습니다. 수축 방식은 확인하지 못했습니다."
+    },
+    "terminal-stance": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "aapmr2017stance",
+      "semciw2013"
+     ],
+     "note": "AAPMR 표: 말기 입각기에 중간볼기근·넙다리근막긴장근. Semciw 2013(바늘 근전도, 15명) 초록은 두 번째 활동 묶음의 국면을 밝히지 않았습니다."
+    },
+    "pre-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "initial-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "mid-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "terminal-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    }
+   }
+  },
+  {
+   "id": "hamstrings",
+   "name": "뒤넙다리근(넙다리두갈래근 긴갈래·반힘줄근·반막근)",
+   "nameEn": "Hamstrings (biceps femoris long head, semitendinosus, semimembranosus)",
+   "structures": [
+    "FMA45888",
+    "FMA22358",
+    "FMA22448"
+   ],
+   "line": "hamstrings",
+   "cells": {
+    "initial-contact": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "schmitz2009",
+      "aapmr2025"
+     ],
+     "note": "AAPMR(2차 요약): 초기 접지에 무릎 굽힘근이 수축. Schmitz 2009(젊은 성인 표면 근전도): 0–10%에서 넙다리두갈래근 1.7배·안쪽 뒤넙다리근 1.7배(주기 평균 대비)."
+    },
+    "loading-response": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "schmitz2009",
+      "aapmr2017stance"
+     ],
+     "role": "엉덩관절 굽힘 제한",
+     "note": "AAPMR 표: 큰볼기근과 함께 엉덩관절 굽힘을 제한합니다. Schmitz 2009(젊은 성인 표면 근전도): 0–10%에서 넙다리두갈래근 1.7배·안쪽 뒤넙다리근 1.7배(주기 평균 대비)."
+    },
+    "mid-stance": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 10–30%에서 넙다리두갈래근 0.76배·안쪽 뒤넙다리근 0.87배."
+    },
+    "terminal-stance": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 30–60%에서 넙다리두갈래근 0.61배·안쪽 뒤넙다리근 0.49배."
+    },
+    "pre-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "initial-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "aapmr2017swing"
+     ],
+     "note": "AAPMR 유각기 표는 무릎 굽힘에 넙다리두갈래근을 적었으나 갈래를 구분하지 않았습니다."
+    },
+    "mid-swing": {
+     "contraction": "eccentric",
+     "evidence": [
+      "emg",
+      "inference"
+     ],
+     "sources": [
+      "lyons1983",
+      "aapmr2017swing"
+     ],
+     "role": "펴지는 무릎을 감속하기 시작",
+     "note": "Lyons 1983(바늘 근전도, 11명): 반막근과 넙다리두갈래근 긴갈래의 유각기 활동은 중간 유각기에 시작됩니다. AAPMR 유각기 표도 중간 유각기 감속에 뒤넙다리근을 적었습니다. 무릎이 펴지는 중의 활동이므로 신장성으로 해석했습니다 [추론]."
+    },
+    "terminal-swing": {
+     "contraction": "eccentric",
+     "evidence": [
+      "emg",
+      "inference"
+     ],
+     "sources": [
+      "schmitz2009",
+      "lyons1983",
+      "aapmr2025"
+     ],
+     "role": "앞으로 흔들리는 정강이와 넙다리를 감속",
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 87–100%에서 넙다리두갈래근 2.6배·안쪽 뒤넙다리근 3.0배(주기 평균 대비). 무릎 폄과 엉덩관절 굽힘을 늦추는 동안이라 신장성으로 해석했습니다 [추론]."
+    }
+   }
+  },
+  {
+   "id": "soleus",
+   "name": "가자미근",
+   "nameEn": "Soleus",
+   "structures": [
+    "FMA22558"
+   ],
+   "line": "soleus",
+   "cells": {
+    "initial-contact": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 0–10%에서 주기 평균의 약 0.5배."
+    },
+    "loading-response": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 0–10%에서 주기 평균의 약 0.5배."
+    },
+    "mid-stance": {
+     "contraction": "eccentric",
+     "evidence": [
+      "emg",
+      "model",
+      "inference"
+     ],
+     "sources": [
+      "perry2010",
+      "schmitz2009",
+      "neptune2001"
+     ],
+     "role": "정강이 전진 속도 제어(발목 흔들대)",
+     "note": "Perry 2010: 정강이가 앞으로 넘어가는 속도를 가자미근이 늦춥니다. 근육–힘줄 단위 기준의 해석이며, 가자미근 근섬유 길이는 확인한 출처에서 측정하지 않았습니다. Neptune 2001(모델): 한발 지지 초기에 신장성·등척성. Schmitz 2009(젊은 성인 표면 근전도): 10–30%에서 주기 평균과 비슷한 1.0배."
+    },
+    "terminal-stance": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "model"
+     ],
+     "sources": [
+      "schmitz2009",
+      "neptune2001",
+      "perry2010"
+     ],
+     "role": "앞발 흔들대에서 몸을 받침",
+     "note": "Schmitz 2009(젊은 성인 표면 근전도): 30–60%에서 주기 평균의 2.1배. Neptune 2001(모델): 한발 지지 중반 등척성, 후반 단축성. Perry 2010: 몸이 앞으로 떨어지는 속도를 가자미근·장딴지근이 강하게 제어합니다."
+    },
+    "pre-swing": {
+     "contraction": "concentric",
+     "evidence": [
+      "model"
+     ],
+     "sources": [
+      "neptune2001",
+      "perry2010"
+     ],
+     "role": "몸통을 앞으로 밂(모델)",
+     "note": "Neptune 2001(모델): 한발 지지 후반부터 전유각기까지 단축성이며 몸통을 앞으로 가속합니다. Perry 2010은 이 시기 발목 일률을 늘어난 근육–힘줄 복합체의 탄성 반동으로 설명합니다."
+    },
+    "initial-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "mid-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "terminal-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    }
+   }
+  },
+  {
+   "id": "gastrocnemius-medial",
+   "name": "장딴지근 안쪽갈래",
+   "nameEn": "Gastrocnemius, medial head",
+   "structures": [
+    "FMA45957"
+   ],
+   "line": "gastrocnemius",
+   "cells": {
+    "initial-contact": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009: 갈래를 밝히지 않은 장딴지근 표면 근전도가 0–10%에서 주기 평균의 약 0.3배(젊은 성인 18명, 선호 속도). 이 구간은 초기 접지기와 부하 반응기를 함께 포함하며, 안쪽갈래만의 값이 아닐 수 있습니다."
+    },
+    "loading-response": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "schmitz2009"
+     ],
+     "note": "Schmitz 2009: 갈래 미기재 장딴지근이 0–10%에서 주기 평균의 약 0.3배(젊은 성인)."
+    },
+    "mid-stance": {
+     "contraction": "isometric",
+     "evidence": [
+      "ultrasound",
+      "model"
+     ],
+     "sources": [
+      "fukunaga2001",
+      "hamard2021",
+      "neptune2001",
+      "schmitz2009"
+     ],
+     "role": "근섬유 길이를 거의 유지하고 힘줄이 늘어남(안쪽갈래 초음파, 남성 6명)",
+     "note": "Fukunaga 2001(초음파, 3 km/h 트레드밀, 남성 6명): 안쪽갈래 근섬유는 입각기에 거의 등척성이고 힘줄이 한발 지지 동안 약 7 mm 늘어납니다. 근육–힘줄 단위로는 길어집니다. Hamard 2021(15명, 선호 속도 트레드밀, 초음파·표면 근전도, 초록): 입각 초기에 안쪽갈래 근섬유가 늘어나는 양이 가쪽갈래보다 작아 더 등척성에 가깝습니다(입각 초기와 이 페이지 국면의 대응은 확인하지 못함). Neptune 2001(모델, 두 갈래를 하나의 장딴지근으로 다룸): 한발 지지 초기 신장성·등척성. Schmitz 2009(젊은 성인 표면 근전도): 갈래 미기재 장딴지근이 10–30%에서 주기 평균의 1.2배."
+    },
+    "terminal-stance": {
+     "contraction": "isometric",
+     "evidence": [
+      "ultrasound",
+      "emg"
+     ],
+     "sources": [
+      "perry2010",
+      "fukunaga2001",
+      "schmitz2009",
+      "neptune2001"
+     ],
+     "role": "근섬유 길이는 그대로, 근육–힘줄 단위는 길어짐(안쪽갈래 초음파)",
+     "note": "Perry 2010 머리말(안쪽장딴지근 초음파 연구 인용): 말기 입각기에 근육–힘줄 단위는 길어지고 근섬유 길이는 변하지 않으며 근전도는 강합니다. Schmitz 2009: 갈래 미기재 장딴지근이 30–60%에서 주기 평균의 2.1배(젊은 성인). Neptune 2001(모델, 갈래 구분 없음)은 한발 지지 후반을 단축성으로 봅니다. 등척성은 안쪽갈래 측정값이며 가쪽갈래로 넓히지 않습니다."
+    },
+    "pre-swing": {
+     "contraction": "concentric",
+     "evidence": [
+      "model"
+     ],
+     "sources": [
+      "neptune2001",
+      "perry2010"
+     ],
+     "role": "유각 시작에 에너지 공급(모델, 갈래 구분 없음)",
+     "note": "Neptune 2001(모델, 두 갈래를 하나의 장딴지근으로 다룸): 한발 지지 후반–전유각기 단축성이며 에너지를 대부분 다리로 보내 유각을 시작하게 합니다. Perry 2010 머리말이 인용한 안쪽장딴지근 초음파 연구는 전유각기에 근육–힘줄 단위가 빠르게 짧아지지만 근전도가 없고 근섬유 길이 변화가 작아 힘줄 반동으로 해석했습니다. 출처 사이 해석이 다릅니다."
+    },
+    "initial-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "mid-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "terminal-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    }
+   }
+  },
+  {
+   "id": "gastrocnemius-lateral",
+   "name": "장딴지근 가쪽갈래",
+   "nameEn": "Gastrocnemius, lateral head",
+   "structures": [
+    "FMA45960"
+   ],
+   "cells": {
+    "initial-contact": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "loading-response": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "mid-stance": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "dinardo2013",
+      "hamard2021"
+     ],
+     "note": "Di Nardo 2013(가쪽갈래 표면 근전도, 건강한 성인 14명, 선호 속도, 초록): 활동이 발바닥 전체 접지에서 밀어내기로 넘어가는 무렵에 모여 있습니다(모든 걸음). 그 시작이 중간 입각기 안인지는 초록에서 확인하지 못해 이 칸은 비워 두었습니다. Hamard 2021(15명, 초음파·표면 근전도, 초록): 입각 초기에 가쪽갈래 근섬유가 안쪽갈래보다 더 늘어납니다. 안쪽갈래의 '거의 등척성'(Fukunaga 2001)을 이 갈래에 넓히지 않습니다."
+    },
+    "terminal-stance": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "clancy2004",
+      "dinardo2013",
+      "hamard2021"
+     ],
+     "role": "활동의 주 봉우리가 이 국면에 있음(가쪽갈래 근전도, 수축 방식 미정)",
+     "note": "Clancy 2004(가쪽갈래 표면 근전도, 건강한 젊은 성인 15명, 트레드밀 0.5–2.1 m/s, 초록): 주 봉우리가 주기 40–45%이고 걷는 속도가 빠를수록 커집니다. Di Nardo 2013(14명, 초록): 발바닥 접지에서 밀어내기로 넘어가는 무렵 활동(모든 걸음). Hamard 2021(15명, 초록): 입각기 정규화 활성은 안쪽갈래보다 낮습니다. 수축 방식은 이 출처들로 정할 수 없어 '활동'으로만 적었습니다."
+    },
+    "pre-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "clancy2004"
+     ],
+     "note": "Clancy 2004 초록은 활동이 끝나는 시점을 수치로 적지 않았습니다."
+    },
+    "initial-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "mid-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "terminal-swing": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "dinardo2013"
+     ],
+     "role": "일부 걸음에서만 활동(가쪽갈래 근전도)",
+     "note": "Di Nardo 2013(가쪽갈래 표면 근전도, 건강한 성인 14명, 선호 속도, 초록): 유각 끝 무렵 활동이 전체 걸음의 67.1±15.9%에서만 나타나 걸음마다 다릅니다. 역할은 초록에서 확인하지 못했습니다."
+    }
+   }
+  },
+  {
+   "id": "iliopsoas",
+   "name": "엉덩근·큰허리근",
+   "nameEn": "Iliacus, psoas major (iliopsoas)",
+   "structures": [
+    "FMA22322",
+    "FMA22342"
+   ],
+   "line": "iliopsoas",
+   "cells": {
+    "initial-contact": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "loading-response": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "mid-stance": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "terminal-stance": {
+     "contraction": "eccentric",
+     "evidence": [
+      "dynamics",
+      "inference"
+     ],
+     "sources": [
+      "whittington2008",
+      "aapmr2017stance"
+     ],
+     "role": "엉덩관절 폄 속도 제어",
+     "note": "엉덩관절이 펴지는 동안 순 굽힘 모멘트와 음의 일률(H2)이 나타나는 데서 추론했습니다(Whittington 2008). 근육별 측정이 아니며, H2 음의 일의 평균 38%는 수동 구조가 흡수한다는 모델 추정이 있습니다. AAPMR 표도 말기 입각기에 엉덩허리근을 적었습니다."
+    },
+    "pre-swing": {
+     "contraction": "concentric",
+     "evidence": [
+      "dynamics",
+      "inference"
+     ],
+     "sources": [
+      "whittington2008",
+      "aapmr2025"
+     ],
+     "role": "다리를 앞으로 당기기 시작",
+     "note": "AAPMR(2차 요약): 전유각기에 엉덩관절 굽힘근이 수축을 시작합니다. H3 양의 일의 평균 58%는 늘어났던 수동 구조의 반동이라는 모델 추정이 있습니다(Whittington 2008). 나머지는 능동 근육 전체의 몫이며, 이 근육 하나의 기여율이 아닙니다."
+    },
+    "initial-swing": {
+     "contraction": "concentric",
+     "evidence": [
+      "emg",
+      "dynamics",
+      "inference"
+     ],
+     "sources": [
+      "aapmr2025",
+      "andersson1997",
+      "perry2010"
+     ],
+     "role": "엉덩관절 굽힘으로 다리를 앞으로 보냄",
+     "note": "AAPMR: 초기 유각기에 엉덩관절 굽힘근 수축. Andersson 1997(트레드밀 11명, 바늘 근전도): 엉덩근·큰허리근에 엉덩관절 굽힘과 관련된 활동 구간이 있음(초록, 국면별 시점 미확인). Perry 2010: 유각 초기의 빠른 엉덩관절 굽힘이 양의 일률 구간."
+    },
+    "mid-swing": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "aapmr2017swing"
+     ],
+     "note": "AAPMR 유각기 표: 중간 유각기 엉덩관절 굽힘에 엉덩허리근(2차 요약)."
+    },
+    "terminal-swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    }
+   }
+  }
+ ],
+ "joints": [
+  {
+   "joint": "넙다리 기울기(넙다리와 수직선 사이, 앞쪽 +) — 도식의 엉덩관절 값",
+   "values": "초기 접지 20°(본문) → 12% 20°(본문의 '정강이 수직·무릎 20°'에서 계산) → 말기 입각기 끝 약 −20~−23°(그림 2-2·2-5·3-14C 판독) → 발가락 떼기 무렵 약 −4°(그림 2-6·2-7 판독; 도식은 발끝 접지를 위해 −11°) → 초기 유각기 끝 약 11–13°(그림 2-7·2-8 판독; 도식은 Perry의 국면 끝 정의에서 계산한 22°) → 중간 유각기 끝 엉덩관절 = 무릎(본문, 수치 없음; 그림 판독 약 20°) → 말기 유각기 20°(그림 2-9 설명 '약간 줄어 20°')",
+   "population": "Perry & Burnfield 2010 교재(Rancho Los Amigos 관찰 보행 분석 체계). 출판사 미리보기(1–3장)의 본문·그림 설명의 수치와 도식 그림 판독값이며, 대상 수는 미리보기에 없습니다.",
+   "sources": [
+    "perry2010"
+   ],
+   "note": "그림 판독값은 교재의 도식 그림을 잰 대략값(몇 도 오차)이며 측정값이 아닙니다. 도식은 골반을 수직으로 고정하므로 이 기준의 값을 엉덩관절 각도로 그렸습니다. 도식의 31%(−2°), 50%(−20°), 62%(−9°)는 Perry의 국면 정의(발바닥 평평, 두 발 접지)를 이 도식에서 만족하도록 계산한 값입니다."
+  },
+  {
+   "joint": "엉덩관절 최대 폄(골반에 대한 관절각)",
+   "values": "편한 속도에서 젊은 성인 20.4±4.0°, 건강한 노인 14.3±4.4°(Kerrigan 2001)",
+   "population": "Kerrigan 2001: 건강한 젊은 성인 30명, 건강한 노인 23명, 3차원 광학 측정, 편한 속도.",
+   "sources": [
+    "kerrigan2001"
+   ],
+   "note": "초록은 다리 관절 운동과 골반 운동을 따로 측정했다고 적어, 이 값을 골반에 대한 관절각으로 읽었습니다(원문의 각도 정의는 확인하지 못함). 넙다리–수직선 기준과는 골반 기울기만큼 다를 수 있어 도식 키프레임에는 쓰지 않았습니다."
+  },
+  {
+   "joint": "엉덩관절(교육용 표, 각도 기준 미기재, 굽힘 +)",
+   "values": "AAPMR 표: 초기 접지 30° → 말기 입각기 폄 10° → 전유각기 중립 쪽 → 초기 유각기 20° → 중간 유각기 30° → 말기 유각기 30°에서 멈춤. Godges: 초기 접지 25°, 말기 입각기 최대 폄 20°, 중간 유각기 최대 25°.",
+   "population": "AAPMR·Godges: Perry·Rancho 관찰 보행 분석에 기반한 교육용 요약(대상 수 없음).",
+   "sources": [
+    "aapmr2017stance",
+    "aapmr2017swing",
+    "godges2008"
+   ],
+   "note": "두 자료 모두 각도 기준을 적지 않았고, Perry 본문의 넙다리 20°와 AAPMR 초기 접지 30°의 차이가 기준 차이 때문인지는 확인하지 못했습니다. 이 도식에서 초기 접지에 30°를 쓰면 오른발이 바닥에서 약 5 cm 뜹니다."
+  },
+  {
+   "joint": "무릎관절(시상면, 굽힘 +)",
+   "values": "초기 접지 거의 폄(Perry 그림 2-2: 폄) → 부하 반응기 끝 15–18°(AAPMR 표) · 15°(Godges) · 20°(Perry, 도식 값) → 중간·말기 입각기 0–5° → 발가락 떼기 약 35°(AAPMR 표, 도식 값) · 약 40°(Godges) → 초기 유각기 끝 최대 60–65°(AAPMR 표, 도식 60°) · 60°(Godges) → 중간 유각기 끝 약 30°(AAPMR 표; Perry는 엉덩관절과 같은 값이라고만 적음, 도식 25°) → 말기 유각기 끝 거의 0°",
+   "population": "교육용 요약(AAPMR, Godges)과 Perry & Burnfield 2010 미리보기 본문.",
+   "sources": [
+    "aapmr2017stance",
+    "aapmr2017swing",
+    "aapmr2025",
+    "godges2008",
+    "perry2010"
+   ]
+  },
+  {
+   "joint": "발목관절(시상면, 발등굽힘 +)",
+   "values": "초기 접지 중립(Perry 그림 2-2, AAPMR; Brockett은 약간 발바닥굽힘) → 발꿈치 접촉 뒤 발바닥굽힘 5° 호(Perry) → 12% 발바닥 평평·정강이 수직이므로 0°(Perry에서 계산, 도식 값) · 부하 반응기 발바닥굽힘 10°(Godges; AAPMR 표는 중간 입각기 시작 값으로 10°) → 중간 입각기 끝 발등굽힘 7°(AAPMR 표) → 말기 입각기 발등굽힘 10°(AAPMR 표) · 10–20°(Godges) → 발가락 떼기 발바닥굽힘 약 14°(Brockett) · 20°(AAPMR 표, 도식 값·Godges) → 유각기에 중립으로(Perry). 걷기에 쓰이는 시상면 범위는 최대 약 30°(Brockett).",
+   "population": "교육용 요약과 종설(Brockett & Chapman 2016, 보행 분석 예시 자료).",
+   "sources": [
+    "perry2010",
+    "aapmr2017stance",
+    "aapmr2017swing",
+    "godges2008",
+    "brockett2016"
+   ]
+  },
+  {
+   "joint": "엄지발가락 발허리발가락관절(시상면, 발등굽힘 +)",
+   "values": "전유각기 무렵 한 번 최대: 평균 42°(Nawoczenski 1999) · 36.9±7.9°(Halstead & Redmond 2006, 대조군) · 맨발 48.0±7.3°(Lin 2013). Godges 요약은 65°. 도식의 40°는 발가락 떼기 순간 발끝이 바닥에 닿도록 맞춘 편집값이며 위 측정값과 비교하는 값이 아닙니다",
+   "population": "Nawoczenski 1999: 발·발목 질환 병력 없는 33명, 전자기 추적. Halstead & Redmond 2006: 대조군 15명, 전자기 추적. Lin 2013: 정상 지원자 10명, 맨발, 피부 표지 운동 분석.",
+   "sources": [
+    "nawoczenski1999",
+    "halstead2006",
+    "lin2013",
+    "godges2008"
+   ],
+   "note": "측정법에 따라 값이 크게 다릅니다. 초록에서는 최대 시점이 국면 단위로만 확인됩니다(Lin 2013: 발바닥널힘줄 최대 장력과 함께 전유각기)."
+  }
+ ],
+ "mechanics": [
+  {
+   "text": "발이 몸을 앞으로 굴려 보내는 축이 차례로 바뀝니다. 부하 반응기에는 발꿈치(발꿈치 흔들대), 중간 입각기에는 발목(발목 흔들대), 말기 입각기에는 발허리뼈머리(앞발 흔들대), 전유각기에는 엄지발가락 쪽 앞발 끝(발가락 흔들대)이 축입니다.",
+   "sources": [
+    "perry2010",
+    "aapmr2025"
+   ],
+   "note": "AAPMR은 세 흔들대만, Perry & Burnfield 2010은 발가락 흔들대를 더해 네 흔들대를 씁니다."
+  },
+  {
+   "text": "지면반력 작용선과 관절의 관계는 입각기 동안 계속 바뀝니다. 부하 반응기에는 엉덩관절 앞·무릎과 발목 뒤, 중간 입각기 끝에는 발목과 무릎 앞·엉덩관절 뒤, 말기 입각기에는 엉덩관절 뒤·무릎 앞을 지나고 발목에서 가장 앞에 놓입니다. 그래서 입각 초기에는 엉덩관절·무릎 폄근이, 한발 지지 중에는 발바닥굽힘근이 몸이 쓰러지는 것을 늦춥니다.",
+   "sources": [
+    "perry2010"
+   ]
+  },
+  {
+   "text": "수직 지면반력은 봉우리가 둘인 곡선입니다. 첫 봉우리는 발이 평평해진 뒤 반대발이 떨어지기 전에, 두 번째 봉우리는 입각기 후반에 생기고, 그 사이 중간 입각기에 골짜기가 있습니다. 모델 연구에서 첫 봉우리는 큰볼기근·넓은근·중간·작은볼기근 뒤쪽이, 두 번째 봉우리는 발바닥굽힘근이 주로 만듭니다.",
+   "sources": [
+    "perry2010",
+    "anderson2003"
+   ]
+  },
+  {
+   "text": "1.5 m/s로 걸을 때 수직 지면반력 최대값은 체중의 약 1.2배입니다. 1.5 m/s는 Perry & Burnfield가 기준으로 쓴 82 m/min(1.36 m/s)보다 빠른 걸음입니다.",
+   "sources": [
+    "keller1996",
+    "perry2010"
+   ],
+   "note": "Keller 1996 초록(23명). 속도별 표는 본문을 열람하지 못해 확인하지 않았습니다."
+  },
+  {
+   "text": "입각기 전반에는 넓은근·큰볼기근이 몸을 받치면서 전진을 늦추고, 후반에는 가자미근·장딴지근이 몸을 받치면서 앞으로 밉니다. 중간볼기근은 한발 지지 중 두 역할을 함께 합니다.",
+   "sources": [
+    "liu2006"
+   ],
+   "note": "근육 힘을 바꿔 본 3차원 모의실험(모델) 결과입니다."
+  },
+  {
+   "text": "체중심의 위아래 움직임은 걷는 속도가 빠를수록 커집니다(0.7 m/s 약 2.7 cm → 1.6 m/s 약 4.8 cm). 좌우 움직임은 반대로 줄어듭니다(약 7.0 cm → 3.9 cm).",
+   "sources": [
+    "orendurff2004"
+   ],
+   "note": "10명, 15분절 전신 모델로 계산한 체중심."
+  },
+  {
+   "text": "한발 지지 동안 몸은 디딤다리 위에서 거꾸로 선 진자처럼 호를 그립니다. 이 움직임 자체에는 일이 거의 필요 없지만, 다음 다리로 넘어갈 때 체중심 속도의 방향을 바꾸는 데 일이 들고, 이 다리 전환의 일이 걷기 대사 비용의 주요 결정 요인으로 보고됩니다.",
+   "sources": [
+    "kuo2007",
+    "donelan2002"
+   ]
+  },
+  {
+   "text": "주기 중 양의 일률이 두드러지는 구간은 넷입니다. 부하 반응기 끝의 엉덩관절 폄 시작, 중간 입각기 초기의 무릎 폄 완료, 전유각기의 발목(가장 큼), 유각 초기의 엉덩관절 굽힘입니다.",
+   "sources": [
+    "perry2010"
+   ]
+  },
+  {
+   "text": "늘어났다가 되돌아오는 수동 구조가 근육의 일을 덜어 줍니다. 모델 추정에서 엉덩관절 굽힘 쪽 수동 모멘트는 말기 입각기 음의 일(H2)의 평균 38%를 흡수하고 전유각기·초기 유각기 양의 일(H3)의 평균 58%를 냈으며, 발목 A2 일의 평균 15%가 수동 성분이었습니다. 넙다리곧은근과 장딴지근을 통해 무릎과 엉덩관절·발목 사이에 에너지가 옮겨 간다는 결과도 있습니다.",
+   "sources": [
+    "whittington2008"
+   ],
+   "note": "건강한 젊은 성인 20명, 선호 속도의 80·100·120%. 수동 구조는 관절주머니·인대·늘어난 근육을 합친 것입니다."
+  },
+  {
+   "text": "근전도는 근육이 신경 자극을 받는 시점을 보여 줄 뿐, 근육이 늘어나는지 짧아지는지는 보여 주지 않습니다. 신장성에서 단축성으로 바뀌는 시점은 관절 일률 분석으로 판단합니다.",
+   "sources": [
+    "perry2010"
+   ]
+  }
+ ],
+ "passive": [
+  {
+   "name": "발꿈치힘줄",
+   "nameEn": "Calcaneal tendon (Achilles tendon)",
+   "structures": [
+    "FMA258847"
+   ],
+   "role": "한발 지지 동안 약 7 mm 늘어났다가 밀어내기에서 되돌아오는 탄성 요소입니다. 이때 안쪽장딴지근 근섬유는 거의 등척성으로 일합니다. 수동 성분은 발목 A2 일의 평균 약 15%라는 모델 추정이 있습니다.",
+   "sources": [
+    "fukunaga2001",
+    "whittington2008",
+    "perry2010"
+   ],
+   "note": "Fukunaga 2001은 3 km/h 트레드밀, 남성 6명, 안쪽장딴지근 쪽 힘줄 측정입니다. 되돌아오는 시점은 말기 입각기 끝–전유각기입니다."
+  },
+  {
+   "name": "엉덩관절 앞쪽 수동 구조(엉덩넙다리인대·관절주머니)",
+   "nameEn": "Anterior hip passive structures: iliofemoral ligament (descending and transverse parts), hip joint capsule",
+   "structures": [
+    "ZA_ligament_descending_part_of_iliofemoral_ligament_r",
+    "ZA_ligament_transverse_part_of_iliofemoral_ligament_r",
+    "ZA_ligament_articular_capsule_of_hip_joint_r"
+   ],
+   "role": "말기 입각기에 엉덩관절이 펴질 때 늘어나는 앞쪽 구조입니다. Perry & Burnfield는 엉덩넙다리인대가 엉덩관절 폄을 제한한다고 설명합니다. 모델 추정의 수동 굽힘 모멘트(H2 음의 일 약 38% 흡수, H3 양의 일 약 58%)는 관절주머니·인대·늘어난 근육을 합친 값입니다.",
+   "sources": [
+    "perry2010",
+    "whittington2008"
+   ],
+   "note": "인대 단독 기여는 확인하지 못했습니다(확인 필요)."
+  },
+  {
+   "name": "발바닥널힘줄",
+   "nameEn": "Plantar aponeurosis",
+   "structures": [
+    "ZA_tendon_plantar_aponeurosis_r"
+   ],
+   "role": "전유각기에 엄지발가락이 발등굽힘하면 발바닥널힘줄이 발허리뼈머리에 감기며 장력이 커지는 감아올림 기전(windlass)이 설명됩니다. 발바닥널힘줄의 최대 장력과 변형은 전유각기에 나타납니다.",
+   "sources": [
+    "lin2013",
+    "williams2022"
+   ],
+   "note": "발뒤꿈치 들기 실험에서는 아치가 올라가는 움직임 중 감아올림 기전으로 설명되는 몫이 약 1/6로 작고, 발 근육과 힘줄·인대의 탄성이 다른 결합 요인으로 제시되며, 발바닥널힘줄이 늘어나지 않는 줄처럼 작동하지 않는다는 결과가 있습니다(Williams 2022). 보행 중 기여 크기는 확인 필요입니다."
+  }
+ ],
+ "absent": [
+  "무릎인대(patellar ligament)와 넙다리네갈래근 힘줄: 남성 3D 모델에 메시가 없습니다. 여성 참조 아틀라스에만 있습니다(오른쪽 HRAF0909, HRAF0397).",
+  "목말종아리관절(발목관절) 관절주머니: 3D 모델에 메시가 없고 곁인대만 있습니다.",
+  "엄지발가락 발허리발가락관절 하나만의 관절주머니: 다섯 관절이 한 메시(ZA_ligament_articular_capsules_of_metatarsophalangeal_joints_r)로 묶여 있어 따로 고를 수 없습니다."
+ ],
+ "misconceptions": [
+  {
+   "wrong": "종아리 근육은 디딤기 내내 짧아지며 몸을 밀어낸다.",
+   "better": "중간 입각기에는 정강이가 넘어가는 속도를 늦추고, 안쪽장딴지근 근섬유는 거의 길이가 변하지 않은 채 힘줄이 늘어납니다. 짧아지며 미는 일은 말기 입각기 끝–전유각기에 몰리고, 늘어났던 힘줄의 반동이 더해집니다.",
+   "sources": [
+    "fukunaga2001",
+    "neptune2001",
+    "perry2010"
+   ]
+  },
+  {
+   "wrong": "유각기 무릎 굽힘은 뒤넙다리근이 당겨서 생긴다.",
+   "better": "AAPMR 입각기 표는 전유각기 무릎 굽힘을 '수동적 무릎 굽힘'으로 적습니다. 바늘 근전도에서 반막근·넙다리두갈래근 긴갈래의 유각기 활동은 중간 유각기에 시작했고(Lyons 1983), 표면 근전도로 잰 구간 가운데 뒤넙다리근 활동은 말기 유각기(87–100%)에 가장 컸으며(Schmitz 2009), 이 시기 활동은 펴지는 무릎을 감속하는 것으로 해석됩니다. 다만 AAPMR 유각기 표는 초기 유각기 무릎 굽힘에 넙다리두갈래근(갈래 구분 없음)·두덩정강근·넙다리빗근을 적고 있어, 초기 유각기에 근육 기여가 없다는 뜻은 아닙니다.",
+   "sources": [
+    "aapmr2017stance",
+    "aapmr2017swing",
+    "lyons1983",
+    "schmitz2009"
+   ]
+  },
+  {
+   "wrong": "다리를 앞으로 보내는 일은 모두 엉덩관절 굽힘근의 수축에서 나온다.",
+   "better": "전유각기·초기 유각기 엉덩관절 양의 일(H3)의 평균 58%는 말기 입각기에 늘어났던 수동 구조가 되돌려 준다는 모델 추정이 있습니다. 이 값은 개별 근육이나 특정 인대의 기여율이 아닙니다.",
+   "sources": [
+    "whittington2008"
+   ]
+  },
+  {
+   "wrong": "걸을 때는 언제나 발꿈치가 먼저 닿는다(heel strike).",
+   "better": "Perry & Burnfield는 닿는 부위를 정하지 않는 '초기 접지'라는 말을 씁니다. 건강한 성인의 평지 보행에서는 대개 발꿈치가 먼저 닿지만, 이를 모든 걸음에 일반화하지 않습니다.",
+   "sources": [
+    "perry2010",
+    "aapmr2025"
+   ]
+  },
+  {
+   "wrong": "체중심을 평평하게 유지할수록 힘이 덜 든다.",
+   "better": "체중심 경로를 평평하게 만들면 오히려 근육의 일과 힘이 늘어난다는 분석이 있습니다. 한발 지지는 거꾸로 선 진자처럼 호를 그리고, 다리를 바꿔 디딜 때 드는 일이 대사 비용의 주요 결정 요인으로 보고됩니다.",
+   "sources": [
+    "kuo2007",
+    "donelan2002"
+   ]
+  },
+  {
+   "wrong": "근전도에서 활동이 보이면 그 근육은 짧아지고 있다.",
+   "better": "근전도는 신경 자극의 시점만 보여 줍니다. 같은 활동이 신장성일 수도 단축성일 수도 있으며, 그 구분은 관절 운동과 일률에서 판단합니다. 이 페이지의 수축 방식 대부분은 그런 추론입니다.",
+   "sources": [
+    "perry2010"
+   ]
+  },
+  {
+   "wrong": "보행 국면의 %와 관절 각도는 누구에게나 같은 고정값이다.",
+   "better": "국면 길이는 걷는 속도에 따라 바뀌고, 같은 관절 각도도 출처마다 5–10° 이상 다르며(예: 말기 입각기 엉덩관절 폄 10°와 20°), 각도를 재는 기준(넙다리와 수직선 사이, 골반에 대한 관절각)도 출처마다 다릅니다. 젊은 성인과 노인의 값도 다릅니다. 이 페이지의 수치는 대표 패턴 하나의 근사입니다.",
+   "sources": [
+    "perry2010",
+    "aapmr2017stance",
+    "kerrigan2001"
+   ]
+  }
+ ],
+ "limitations": [
+  "도식은 골반을 수직으로 고정하고 시상면 움직임만 그립니다. 골반의 앞뒤 기울임·회전·좌우 처짐, 팔 흔들기, 몸통 움직임은 그리지 않습니다. 중간볼기근의 이마면 역할도 도식에 보이지 않습니다.",
+  "엉덩관절 키프레임은 모두 넙다리와 수직선 사이 각도이며 Perry & Burnfield 2010 한 출처의 기준을 따랐습니다. Perry가 수치로 준 것은 초기 접지 20°(본문), 12% 20°(본문의 정강이 수직·무릎 20°에서 계산), 말기 유각기 20°(그림 2-9 설명)뿐입니다. 나머지는 Perry의 국면 정의를 이 도식에서 만족하도록 계산한 값(31% −2°: 발바닥 평평, 50% −20°·62% −11°: 두 발 접지, 75% 22°: 흔드는 발이 디딤발 맞은편)과 그림 2-9 설명의 ‘약간 줄어 20°’에서 ‘약간’을 숫자로 옮긴 편집값(87% 25°)입니다. Perry 도식 그림을 잰 값(62% 약 −4°, 75% 약 11–13°)은 몇 도의 판독 오차가 있고 이 도식의 발 접지·국면 정의와 맞지 않아 관절 표에만 적었습니다. 골반에 대한 관절각(Kerrigan 2001)과 기준이 적히지 않은 교육용 표 값(AAPMR, Godges)은 관절 표에 따로 적었습니다.",
+  "엉덩관절을 뺀 관절 값 가운데 Perry 수치를 쓴 것은 초기 접지 무릎 0°·발목 0°, 12% 무릎 20°·발목 0°, 발꿈치 접촉 뒤 발바닥굽힘 5°, 중간 유각기 끝 무릎 = 엉덩관절, 유각기 발목 중립뿐입니다. 62%(무릎 35°·발목 발바닥굽힘 20°)와 75%(무릎 60°·발목 발바닥굽힘 7.5°)는 AAPMR 표의 같은 행에서 함께 가져와 한 순간의 자세로 썼고, 다른 연구의 최대값(Brockett 2016 발목 약 14°, Nawoczenski 1999 엄지발가락 42° 등)은 관절 표 비교로만 둡니다. 50%의 발목 10°(AAPMR)·무릎 5°·엄지발가락 15°, 62%의 엄지발가락 40°는 발 접지를 맞춘 편집값입니다. 키프레임 사이는 보간한 근사입니다. 이 도식(남성 BodyParts3D 분절 길이)에서 디딤발은 바닥에, 두 발 지지 중 두 발은 바닥에서 0.6 cm 안에 있고, 흔드는 발은 바닥을 뚫지 않습니다(가장 낮을 때 약 0.1 cm).",
+  "트레드밀처럼 엉덩관절 위치를 고정해 그리므로, 디딤발이 뒤로 움직이는 속도가 국면에 따라 고르지 않게 보일 수 있습니다.",
+  "국면 경계는 Perry & Burnfield 2010의 82 m/min 기준(입각 62%·유각 38%)입니다. 일반 분포(입각 60%·유각 40%)나 Perry 1992에 따른 경계(부하 반응기 0–10%, 중간 입각기 10–30% 등, Schmitz 2009가 사용)와 같은 시간축에 섞지 않았습니다. 초기 접지기의 길이도 출처마다 달라, 이 페이지는 Perry & Burnfield 2010의 0–2%를 쓰고, Schmitz 2009의 근전도 구간은 초기 접지기를 따로 두지 않고 0–10%를 부하 반응기로 묶습니다. 국면 길이는 걷는 속도에 따라 바뀝니다.",
+  "재생 1× 주기 1.07초는 측정된 주기 시간이 아니라 Schmitz 2009의 보행률(112걸음/분)에서 계산한 값입니다. 같은 연구의 유각기 비율은 34%로 Perry의 38%와 다릅니다.",
+  "근전도 칸의 Schmitz 2009 값은 각 근육의 주기 평균 대비 상대값이며 활동 크기나 최대 수의 수축 대비 비율이 아닙니다. 그 연구의 국면 구간(0–10, 10–30, 30–60, 60–73, 87–100%)은 이 페이지의 국면 경계와 다릅니다. 표면 근전도로 측정한 근육은 가쪽넓은근·넙다리곧은근·넙다리두갈래근·안쪽 뒤넙다리근·앞정강근·가자미근·장딴지근(갈래 미기재)뿐입니다.",
+  "AAPMR 입각기·유각기 표 PDF는 열 배치가 깨져 있어 근육이 단축성·신장성 열 중 어디에 속하는지 판독하지 않았습니다. 각도와 국면별 근육 이름만 썼습니다. AAPMR·Godges는 Perry·Rancho 자료를 요약한 2차 교육 자료입니다.",
+  "수축 방식(단축성·신장성·등척성)은 초음파로 측정한 안쪽장딴지근(Fukunaga 2001, 3 km/h, 남성 6명)을 빼면 관절 운동·모멘트·모델에서 끌어낸 해석입니다. 안쪽장딴지근 결과를 가쪽갈래나 가자미근으로 넓히지 않았습니다.",
+  "장딴지근 안쪽갈래의 전유각기 해석은 출처마다 다릅니다(Neptune 2001 모델: 단축성, Perry 2010이 인용한 안쪽장딴지근 초음파 연구: 근전도 없는 힘줄 반동).",
+  "장딴지근은 안쪽갈래(FMA45957)와 가쪽갈래(FMA45960)를 따로 적었습니다. 갈래를 밝히지 않은 출처(Schmitz 2009 근전도, Neptune 2001 모델, Perry 2010의 일반 서술)는 안쪽갈래 행에만 두었고, 가쪽갈래 행에는 가쪽갈래를 따로 기록한 근전도(Clancy 2004, Di Nardo 2013)와 두 갈래를 비교한 연구(Hamard 2021)만 썼습니다. 세 연구 모두 초록만 확인해, 가쪽갈래의 수축 방식과 국면별 시작·끝 시점은 정하지 않았습니다. 도식의 장딴지근 선은 안쪽갈래 행에만 연결했습니다.",
+  "엉덩근·큰허리근의 근전도는 Andersson 1997 초록만 확인해 국면별 시점을 알지 못합니다. 이 행의 입각기 칸은 순 관절 모멘트와 일률에서 추론한 것입니다. 중간볼기근의 수축 방식은 확인하지 못했고, Semciw 2013 초록은 두 활동 묶음의 국면을 밝히지 않았습니다.",
+  "지면반력 화살표의 시작점(압력중심)은 키프레임에 적은 점(발꿈치·발 가운데·발허리뼈머리) 사이를 직선으로 옮겨 가며, 그 사이의 실제 압력중심 경로를 측정한 값이 아닙니다. 부하 반응기 후반 일부 구간에서는 작용선과 발목의 앞뒤 관계가 본문 설명과 완전히 일치하지 않을 수 있습니다.",
+  "엄지발가락 최대 발등굽힘은 측정법에 따라 36.9–48°(교육 자료 65°)로 다르고, 도식의 발가락 떼기 40°는 발끝 접지를 맞춘 편집값이며 이 측정값들과 비교하는 값이 아닙니다. 초기 접지와 유각기의 엄지발가락 각도는 수치를 확인하지 못해 0°로 그렸습니다.",
+  "Perry & Burnfield 2010은 출판사 미리보기(1–3장)만 열람했습니다. 관절별 장(4–7장)과 근전도 그림은 보지 못했고, 이 페이지의 '그림 판독'은 2·3장의 도식 그림(그림 2-2~2-9, 3-14)을 잰 대략값입니다. Neumann, Winter 교과서는 열람하지 않았습니다.",
+  "여성 보기에서는 남성 원본을 여성 골격에 옮긴 보완 구조(FT_)를 엽니다. 넙다리곧은근만 옮긴 사본이 없어 HRA 여성 참조 아틀라스의 같은 이름 전체 구조(HRAF0396)를 대응으로 적었습니다. 별도 기증자 VHF 하체 근육은 전신과 정합되지 않은 별도 자료라 대응으로 쓰지 않았습니다. 옮긴 보완 구조는 여성 고유 형상이 아닙니다.",
+  "한국어 국면 용어는 입각기/디딤기, 유각기/흔듦기, 부하 반응기/하중 반응기 등이 섞여 쓰입니다. 이 페이지는 한 가지로 정해 영문 원어를 함께 적었습니다.",
+  "전유각기(50–62%)에는 지면반력 화살표가 50% 순간에만 보입니다. 발가락 떼기(62%)에는 힘이 0에 가까워지는데 방향을 적은 출처를 찾지 못해 키프레임에 값을 두지 않았고, 값이 없는 구간은 그리지 않습니다."
+ ]
+}

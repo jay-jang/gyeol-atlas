@@ -284,22 +284,134 @@ test("comparison retains the entire kidney/lung bundle; explicit selection and p
     assert.equal(s.comparison, null);
   }
 });
-test("explicit deselection ends comparisons without changing viewing preferences; old orphaned highlights are repaired", () => {
+test("explicit deselection ends comparisons and returns to the scene they replaced; old orphaned highlights are repaired", () => {
   for (const sex of ['male', 'female']) {
     const base = {...initialView('KI3'),sex,camera:{position:[0,1,3],target:[0,1,0]},markers:'hidden'};
     const compared = viewReducer(base,{type:'compare',name:'콩팥',ids:['kidney-left','kidney-right']});
+    assert.equal(compared.alpha.skin,0.12);assert.equal(compared.selectionReturn.skinAlpha,1);
     const assets = ['kidney-left','kidney-right'].map(id=>({id,layer:'organ',sex}));
     for (const isolated of [false,true]) {
       const before = {...compared,isolated};
       const next = viewReducer(before,{type:'clear-selection'});
-      assert.deepEqual(next,{...before,selection:null,detail:null,comparison:null,isolated:false});
+      assert.deepEqual(next,base);
+      assert.equal('skinAlpha' in next,false);
       assert.deepEqual(restoreView(JSON.stringify(next),['KI3'],assets),next);
       const legacy = {...next,comparison:compared.comparison};
       assert.deepEqual(restoreView(JSON.stringify(legacy),['KI3'],assets),next);
     }
     const child=viewReducer(compared,{type:'select',selection:{kind:'structure',ids:['kidney-left'],name:'왼 콩팥'}});
-    assert.deepEqual(restoreView(JSON.stringify(child),['KI3'],assets).comparison,compared.comparison);
-    assert.equal(viewReducer(child,{type:'clear-selection'}).comparison,null);
+    assert.deepEqual(child.selectionReturn,compared.selectionReturn);
+    const savedChild=restoreView(JSON.stringify(child),['KI3'],assets);
+    assert.deepEqual(savedChild.comparison,compared.comparison);
+    for (const s of [child,savedChild]) {
+      const cleared=viewReducer(s,{type:'clear-selection'});
+      assert.equal(cleared.comparison,null);assert.deepEqual(cleared,base);
+    }
+  }
+});
+const comparisonKeys = ["anatomyRegion", "stage", "dissection", "displayMode", "layers", "cutaway", "selectionTarget"];
+test("leaving a comparison restores the prior systems, depth, mode, target and skin opacity but keeps camera and markers", () => {
+  const pose = { position: [0.3, 1.1, 2.2], target: [0, 1, 0] };
+  const peeled = (sex) => [{ type: "sex", value: sex }, { type: "anatomy-region", value: "lower-body" }, { type: "dissection", value: 50.5 }, { type: "cutaway", value: 0.3 }, { type: "alpha", layer: "muscle", value: 0.6 }];
+  const combined = [{ type: "layers", layers: { skin: true, muscle: true, bone: true, organ: false, vessel: false, lymph: false, nerve: false } }, { type: "target", value: "internal" }, { type: "alpha", layer: "skin", value: 0.4 }];
+  for (const sex of ["male", "female"]) for (const steps of [peeled(sex), [{ type: "sex", value: sex }, ...combined]]) {
+    let before = initialView("KI3");
+    for (const action of [...steps, { type: "markers", value: "selected" }, { type: "camera", value: pose }]) before = viewReducer(before, action);
+    const compared = viewReducer(before, { type: "compare", name: "콩팥", ids: ["FMA7204", "FMA7205"], selectionLayers: ["organ"] });
+    assert.equal(compared.alpha.skin, 0.12); assert.equal(compared.selectionTarget, "internal"); assert.equal(compared.cutaway, 0);
+    // The viewer frames the comparison and hides the markers while comparing.
+    const framed = { position: [0.1, 1, 0.9], target: [0, 1, 0] };
+    let s = viewReducer(compared, { type: "camera", value: framed });
+    s = viewReducer(s, { type: "isolate" });
+    for (const action of [{ type: "clear-selection" }, { type: "point", id: "ST36" }, { type: "show-filtered" }, { type: "region-filter", value: "다리·발" }]) {
+      const left = viewReducer(s, action);
+      for (const key of comparisonKeys) assert.deepEqual(left[key], before[key], `${sex}/${action.type}/${key}`);
+      assert.deepEqual(left.alpha, before.alpha, `${sex}/${action.type}/alpha`);
+      assert.deepEqual(left.camera, framed, `${sex}/${action.type}/camera`);
+      assert.equal(left.selection, null); assert.equal(left.comparison, null); assert.equal(left.selectionReturn, null); assert.equal(left.isolated, false);
+      assert.equal("skinAlpha" in left, false);
+      if (action.type === "clear-selection") assert.equal(left.markers, "selected");
+    }
+    const hidden = viewReducer(viewReducer(s, { type: "markers", value: "hidden" }), { type: "clear-selection" });
+    assert.equal(hidden.markers, "hidden"); assert.deepEqual(hidden.layers, before.layers);
+    // Wiki round trip: the same route does not end the comparison.
+    assert.equal(viewReducer(s, { type: "route-point", id: "KI3" }), s);
+  }
+});
+test("opacity and scene edits made during a comparison are the viewer's and survive clearing it", () => {
+  const before = viewReducer(viewReducer(initialView("KI3"), { type: "dissection", value: 50.5 }), { type: "camera", value: { position: [0, 1, 3], target: [0, 1, 0] } });
+  const compared = viewReducer(before, { type: "compare", name: "콩팥", ids: ["FMA7204", "FMA7205"], selectionLayers: ["organ"] });
+  for (const [skin, kept] of [[0.5, 0.5], [0.12, 1], [1, 1]]) {
+    let s = viewReducer(compared, { type: "alpha", layer: "skin", value: skin });
+    s = viewReducer(s, { type: "alpha", layer: "organ", value: 0.7 });
+    const cleared = viewReducer(s, { type: "clear-selection" });
+    assert.equal(cleared.alpha.skin, kept, `skin ${skin}`); assert.equal(cleared.alpha.organ, 0.7);
+    assert.deepEqual(cleared.layers, before.layers); assert.equal(cleared.dissection, 50.5);
+  }
+  for (const action of [{ type: "dissection", value: 30 }, { type: "stage", index: 1 }, { type: "layers", layers: { ...compared.layers, bone: true } }]) {
+    const edited = viewReducer(compared, action);
+    assert.equal(edited.selectionReturn, null, action.type);
+    const cleared = viewReducer(edited, { type: "clear-selection" });
+    for (const key of [...comparisonKeys, "alpha", "camera", "markers"]) assert.deepEqual(cleared[key], edited[key], `${action.type}/${key}`);
+    assert.equal(cleared.alpha.skin, 0.12); assert.equal(cleared.comparison, null); assert.equal(cleared.selection, null);
+  }
+});
+test("a comparison's return view survives reload; legacy comparisons saved without one are not guessed", () => {
+  const catalog = [{ id: "FMA7204", layer: "organ", sex: "male" }, { id: "FMA7205", layer: "organ", sex: "male" }];
+  let before = viewReducer(initialView("KI3"), { type: "dissection", value: 50.5 });
+  before = viewReducer(before, { type: "alpha", layer: "skin", value: 0.8 });
+  before = viewReducer(before, { type: "camera", value: { position: [0, 1, 3], target: [0, 1, 0] } });
+  const compared = viewReducer(viewReducer(before, { type: "compare", name: "콩팥", ids: ["FMA7204", "FMA7205"], selectionLayers: ["organ"] }), { type: "isolate" });
+  const reloaded = restoreView(JSON.stringify(compared), ["KI3"], catalog);
+  assert.deepEqual(reloaded, compared);
+  assert.deepEqual(viewReducer(reloaded, { type: "clear-selection" }), before);
+  assert.deepEqual(viewReducer(restoreView(JSON.stringify(viewReducer(reloaded, { type: "clear-selection" })), ["KI3"], catalog), { type: "clear-selection" }), before);
+  // Saved by the previous release: no snapshot, or one without the opacity.
+  for (const selectionReturn of [null, (({ skinAlpha: _a, ...r }) => r)(compared.selectionReturn), undefined]) {
+    const legacy = { ...compared, selectionReturn }; if (selectionReturn === undefined) delete legacy.selectionReturn;
+    const restored = restoreView(JSON.stringify(legacy), ["KI3"], catalog);
+    assert.deepEqual(restored.comparison, compared.comparison); assert.equal(restored.selectionReturn, null);
+    const cleared = viewReducer(restored, { type: "clear-selection" });
+    assert.equal(cleared.comparison, null); assert.equal(cleared.selection, null);
+    assert.deepEqual(cleared.layers, compared.layers); assert.equal(cleared.alpha.skin, 0.12); assert.equal(cleared.displayMode, "layers");
+  }
+  for (const skinAlpha of [0, 1.5, "1", null])
+    assert.deepEqual(restoreView(JSON.stringify({ ...compared, selectionReturn: { ...compared.selectionReturn, skinAlpha } }), ["KI3"], catalog), initialView());
+});
+test("a comparison opened from an organ detail returns to the scene the detail replaced", () => {
+  const overview = { position: [0.4, 1.2, 2.1], target: [0.1, 1.1, 0] };
+  let before = viewReducer(initialView("KI3"), { type: "dissection", value: 50.5 });
+  before = viewReducer(before, { type: "camera", value: overview });
+  const detail = { id: "kidney", name: "콩팥", ids: ["FMA7204", "FMA7205"], layers: { ...initialView().layers, skin: false, muscle: false, bone: false, organ: true } };
+  let inside = viewReducer(before, { type: "detail", detail });
+  inside = viewReducer(inside, { type: "select", layer: "organ", selection: { kind: "structure", ids: ["FMA7204"], name: "오른콩팥" } });
+  inside = viewReducer(inside, { type: "camera", value: { position: [0, 1, 0.6], target: [0, 1, 0] } });
+  const compared = viewReducer(inside, { type: "compare", name: "콩팥", ids: ["FMA7204", "FMA7205"], selectionLayers: ["organ"] });
+  assert.equal(compared.detail, null); assert.equal(compared.detailReturn, null);
+  assert.deepEqual(compared.selectionReturn, { ...inside.detailReturn, skinAlpha: 1 });
+  const cleared = viewReducer(compared, { type: "clear-selection" });
+  for (const key of [...comparisonKeys, "alpha", "markers", "pointId"]) assert.deepEqual(cleared[key], before[key], key);
+  assert.deepEqual(cleared.camera, compared.camera);
+  // A detail opened from the comparison closes onto the same origin (a frame change, so with its camera).
+  const reopened = viewReducer(compared, { type: "detail", detail });
+  assert.deepEqual(reopened.detailReturn, compared.selectionReturn);
+  assert.deepEqual(viewReducer(reopened, { type: "detail-close" }), before);
+});
+test("comparing again, or choosing a part inside a comparison, keeps the original pre-comparison view", () => {
+  let before = viewReducer(initialView("KI3"), { type: "dissection", value: 50.5 });
+  before = viewReducer(before, { type: "alpha", layer: "skin", value: 0.7 });
+  const compared = viewReducer(before, { type: "compare", name: "콩팥", ids: ["FMA7204", "FMA7205"], selectionLayers: ["organ"] });
+  const twice = viewReducer(compared, { type: "compare", name: "콩팥", ids: ["FMA7204", "FMA7205"], selectionLayers: ["organ"] });
+  assert.equal(twice.alpha.skin, 0.12); assert.equal(twice.selectionReturn.skinAlpha, 0.7);
+  const picked = viewReducer(compared, { type: "pick", selection: { kind: "structure", ids: ["FMA7204"], name: "오른콩팥", layers: ["organ"] } });
+  assert.equal(picked.comparison, null); assert.deepEqual(picked.selectionReturn, compared.selectionReturn);
+  const searched = viewReducer(compared, { type: "select", layer: "organ", selection: { kind: "structure", ids: ["FMA7148"], name: "위", layers: ["organ"] } });
+  assert.equal(searched.comparison, null); assert.deepEqual(searched.selectionReturn, compared.selectionReturn);
+  const connective = viewReducer(compared, { type: "connective-only", ids: ["FMA7204"] });
+  assert.deepEqual(connective.selectionReturn, compared.selectionReturn);
+  for (const s of [twice, picked, viewReducer(picked, { type: "compare", name: "콩팥", ids: ["FMA7204", "FMA7205"] }), searched, connective]) {
+    const cleared = viewReducer(s, { type: "clear-selection" });
+    for (const key of [...comparisonKeys, "alpha", "camera", "markers"]) assert.deepEqual(cleared[key], before[key], key);
   }
 });
 test("continuous dissection keeps every deeper system present and peels from the outside in", () => {
@@ -453,4 +565,46 @@ test("leaving a selection never restores the camera it started from", () => {
     assert.deepEqual(left.camera, s.camera, action.type);
     assert.equal(left.dissection, 50.5, action.type);
   }
+});
+
+test("switching the body during a comparison returns clicks to the visible surface", () => {
+  // A comparison picks internal structures; a new body starts from its default scene.
+  const compared = viewReducer({ ...initialView("CV12") }, { type: "compare", name: "위", ids: ["stomach"] });
+  assert.equal(compared.selectionTarget, "internal");
+  const female = viewReducer(compared, { type: "sex", value: "female" });
+  assert.equal(female.comparison, null);
+  assert.equal(female.selectionTarget, "visible");
+  assert.equal(female.alpha.skin, initialView().alpha.skin);
+});
+
+test("a movement-page link opens structures in all their systems and returns like a search selection", () => {
+  let s = viewReducer(initialView("ST36"), { type: "dissection", value: 30 });
+  s = { ...s, camera: { position: [0, 1, 3], target: [0, 1, 0] }, markers: "hidden", labels: true, connective: false };
+  const opened = viewReducer(s, { type: "open-structures", ids: ["FMA22328", "FMA22329", "ZA_tendon_plantar_aponeurosis_r"], name: "큰볼기근 (좌우)", layers: ["muscle"] });
+  assert.equal(opened.selection.kind, "bundle");
+  assert.deepEqual(opened.selection.layers, ["muscle"]);
+  assert.deepEqual(Object.entries(opened.layers).filter(([, on]) => on).map(([layer]) => layer), ["muscle"]);
+  assert.equal(opened.displayMode, "layers");
+  // Preferences stay: markers, labels, camera, acupoint and the ligament/tendon toggle.
+  for (const key of ["camera", "markers", "labels", "pointId", "connective", "alpha", "sex"]) assert.deepEqual(opened[key], s[key], key);
+  assert.equal(opened.comparison, null);
+  const cleared = viewReducer(opened, { type: "clear-selection" });
+  assert.equal(cleared.selection, null);
+  assert.equal(cleared.dissection, 30);
+  assert.equal(cleared.displayMode, "dissection");
+  assert.deepEqual(cleared.camera, opened.camera);
+  // One id is a plain structure selection; several systems are all drawn (Q1).
+  const one = viewReducer(s, { type: "open-structures", ids: ["FMA24474"], name: "넙다리뼈", layers: ["bone"] });
+  assert.equal(one.selection.kind, "structure");
+  const both = viewReducer(s, { type: "open-structures", ids: ["FMA24474", "FMA22328"], name: "x", layers: ["muscle", "bone"] });
+  assert.ok(both.layers.bone && both.layers.muscle && !both.layers.skin);
+  assert.equal(viewReducer(s, { type: "open-structures", ids: [], name: "x", layers: ["bone"] }), s);
+  // A comparison is replaced, never mixed in.
+  const compared = viewReducer(initialView("CV12"), { type: "compare", name: "위", ids: ["FMA7148"], selectionLayers: ["organ"] });
+  const fromComparison = viewReducer(compared, { type: "open-structures", ids: ["FMA22558"], name: "가자미근", layers: ["muscle"] });
+  assert.equal(fromComparison.comparison, null);
+  assert.equal(viewReducer(fromComparison, { type: "clear-selection" }).alpha.skin, initialView().alpha.skin);
+  // The saved view round-trips.
+  const pair = viewReducer(s, { type: "open-structures", ids: ["FMA22328", "FMA22329"], name: "큰볼기근 (좌우)", layers: ["muscle"] });
+  assert.deepEqual(parse(JSON.stringify(pair)).selection, pair.selection);
 });

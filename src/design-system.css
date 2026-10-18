@@ -1,24 +1,43 @@
-/* Readability tokens shared by atlas tools, detail pages and wiki. */
+/* Shared tokens for the light reading pages (wiki, sources) and the atlas tools.
+   The atlas keeps its own dark --ax-* palette in atlas.css; old names below are aliases. */
 :root {
-  --ink: #172f29;
-  --ink-secondary: #43564f;
-  --surface: #ffffff;
-  --surface-subtle: #f0f4f2;
-  --border-strong: #a5b5ad;
-  --accent: #14553f;
-  --muted: #43564f;
-  --green: #14553f;
-  --line: #c6d2cb;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  --radius-ctl: 4px;
+  --radius-panel: 8px;
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  /* Light document palette. Contrast on --doc-bg: ink 14.6, ink-2 6.7, accent 6.4 (all >= 6 on surface-2). */
+  --doc-bg: #f7f8f8;
+  --doc-surface: #ffffff;
+  --doc-surface-2: #eef2f3;
+  --doc-line: #d3dbde;
+  --doc-line-strong: #7d8d93;
+  --doc-ink: #17262b;
+  --doc-ink-2: #4a5a60;
+  --doc-accent: #0b6474;
+  --doc-focus: #1f7f92;
+  --doc-error: #9a3b26;
+  --ink: var(--doc-ink);
+  --ink-secondary: var(--doc-ink-2);
+  --surface: var(--doc-surface);
+  --surface-subtle: var(--doc-surface-2);
+  --border-strong: var(--doc-line-strong);
+  --accent: var(--doc-accent);
+  --muted: var(--doc-ink-2);
+  --green: var(--doc-accent);
+  --line: var(--doc-line);
   color: var(--ink);
 }
 button, input, select, summary { font-size: max(1em, 12px); }
 
 input::placeholder { color: #586a61; opacity: 1; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible,
-summary:focus-visible, canvas:focus-visible { outline: 3px solid #166e9a; outline-offset: 2px; }
+summary:focus-visible, canvas:focus-visible, [role="tabpanel"]:focus-visible { outline: 3px solid var(--doc-focus); outline-offset: 2px; }
 svg { stroke-width: 2; }
-
-.wiki-article { color: var(--ink); }
 
 .search-box { color: var(--ink-secondary); }
 .search-box input { color: var(--ink); }

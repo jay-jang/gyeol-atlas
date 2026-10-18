@@ -20,7 +20,7 @@ try{
   browser=await chromium.launch({headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']});
   const page=await browser.newPage({viewport:{width:1440,height:900}}),errors=[],requests=[],records=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));
-  await page.goto(origin+'/#wiki');await page.getByRole('heading',{name:'위키에 물어보기'}).waitFor();
+  await page.goto(origin+'/#wiki');await page.getByRole('heading',{name:'질문으로 문서 찾기'}).waitFor();
   assert.equal(requests.filter(url=>/\.glb|\.bin\.gz|\/assets\/Atlas-/.test(url)).length,0);
   await page.getByRole('link',{name:'3D 경혈 지도',exact:true}).click();
   const ready=()=>page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});await ready();

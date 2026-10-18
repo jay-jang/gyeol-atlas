@@ -36,6 +36,20 @@ export async function organs(page:Page){
 }
 export async function choosePoint(page:Page,id:string){await openTool(page,'경혈 찾기');await page.getByLabel('경혈 검색').fill(id);await page.locator('.point-item').filter({hasText:id.replace(/\s/g,'')}).first().click();}
 export async function compare(page:Page){if(await page.locator('.point-summary').getAttribute('aria-expanded')!=='true')await page.locator('.point-summary').click();await page.getByRole('button',{name:'대응 장부의 해부 구조 비교'}).click();await ready(page);}
+// Phones and short landscape keep 측면, 계통 전체 보기, 시점 초기화 and the
+// moves in the 시점 menu. Wait until the camera group for this viewport has
+// rendered (a resize swaps it), then use the direct button when there is one.
+export async function viewButton(page:Page,name:string){
+  const compact=await page.evaluate(()=>matchMedia('(max-width: 700px), (max-height: 500px)').matches);
+  const pad=page.locator('details.movement-pad');
+  await expect(pad.locator('summary')).toHaveText(compact?'시점':'이동');
+  const direct=page.locator('.ax-camera > .view-presets, .ax-camera > .view-tools').getByRole('button',{name,exact:true});
+  if(await direct.count()){await direct.click();return;}
+  if(!await pad.evaluate(el=>(el as HTMLDetailsElement).open))await pad.locator('summary').click();
+  await pad.getByRole('button',{name,exact:true}).click();
+  await pad.evaluate(el=>{(el as HTMLDetailsElement).open=false;});
+}
+// The meridian chips live in a picker opened from the acupoint bar.
 export async function snapshot(page:Page){return page.evaluate(()=>JSON.parse(sessionStorage.getItem('gyeol-view-v2')||'null'));}
 // A pick closes the search results, so an already-closed panel is fine.
 export async function closeTool(page:Page){const close=page.getByRole('button',{name:'도구 패널 닫기',exact:true});if(await close.count())await close.first().click();}
@@ -54,3 +68,8 @@ export const markerScreenPoints=(page:Page,url:string)=>page.evaluate(async url=
   for(let i=0;i<mesh.count;i++){mesh.getMatrixAt(i,matrix);if(!matrix.elements[0])continue;v.setFromMatrixPosition(matrix).project(s.camera);points.push({x:rect.left+(v.x+1)*rect.width/2,y:rect.top+(1-v.y)*rect.height/2});}
   return points;
 },url);
+// Point-list filters fold away on short screens unless one is in use.
+export async function openFilters(page:Page){
+  const filters=page.locator('details.ax-filters');
+  if(!await filters.evaluate(el=>(el as HTMLDetailsElement).open))await filters.locator('summary').click();
+}

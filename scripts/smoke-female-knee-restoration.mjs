@@ -13,7 +13,7 @@ try{
   page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));
   page.on('response',r=>{if(r.status()>=400)failures.push({url:r.url(),status:r.status()});if(r.url().endsWith(spec.url))assetResponse=r;});
   const ready=()=>expect(page.getByText('해부 모델 로드 완료')).toBeVisible({timeout:120000});
-  await page.goto(`${origin}/#wiki`);await expect(page.getByRole('heading',{name:'위키에 물어보기'})).toBeVisible();assert.equal(requests.filter(u=>u.endsWith(spec.url)).length,0);
+  await page.goto(`${origin}/#wiki`);await expect(page.getByRole('heading',{name:'질문으로 문서 찾기'})).toBeVisible();assert.equal(requests.filter(u=>u.endsWith(spec.url)).length,0);
   await page.getByRole('link',{name:'3D 경혈 지도',exact:true}).click();await ready();assert.equal(requests.filter(u=>u.endsWith(spec.url)).length,0);
   await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready();assert.ok(assetResponse);
   const body=await assetResponse.body(),assetBodySha256=sha(body);assert.equal(assetBodySha256,body.length===spec.bytes?uncompressedSha:spec.sha256);
