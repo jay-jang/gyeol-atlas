@@ -1,34 +1,30 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from "react";
 import { ArrowUpRight, ChevronLeft, ChevronRight, Pause, Play, SkipBack } from "lucide-react";
 import standing from "../data/movements/standing.json";
 import sitToStand from "../data/movements/sit-to-stand.json";
 import standToSit from "../data/movements/stand-to-sit.json";
 import walking from "../data/movements/walking.json";
+import stairAscent from "../data/movements/stair-ascent.json";
+import stairDescent from "../data/movements/stair-descent.json";
 import armElevation from "../data/movements/arm-elevation.json";
 import sourceList from "../data/movement-sources.json";
+import contrastList from "../data/movement-contrasts.json";
 import { structures } from "./anatomy";
-import { evidenceNames, type BackAngles, type Keyframe, type Movement, type MuscleCell, type MuscleRow, type Phase, type SideAngles, type Source } from "./movement-types";
+import { evidenceNames, type BackAngles, type Contrast, type Keyframe, type Movement, type MuscleCell, type MuscleRow, type Phase, type SideAngles, type Source } from "./movement-types";
 import { ContractionLabel, MovementFigure, MuscleLegend, OverlayKey } from "./MovementFigure";
-import { cycle, drawnMuscles, figureAt, overlaysAt } from "./movement-figure";
+import { contactsOf, cycle, drawnMuscles, figureAt, overlaysAt } from "./movement-figure";
 import { idsForSex, saveOrigin, readOrigin, structureLink, type Sex } from "./movement-link";
+import { useMedia } from "./use-media";
 import "./movement.css";
 
-const movements = ([standing, sitToStand, standToSit, walking, armElevation] as unknown as Movement[]).sort((a, b) => a.order - b.order);
+const movements = ([standing, sitToStand, standToSit, walking, stairAscent, stairDescent, armElevation] as unknown as Movement[]).sort((a, b) => a.order - b.order);
 const sources = new Map((sourceList as Source[]).map((s) => [s.id, s]));
-// Later candidates agreed with Codex and AGY (docs/movement-mechanics/CONSENSUS.md §1).
-const LATER = "계단 오르기·내리기, 발끝 서기, 몸 앞으로 굽히기, 한 발 서기, 호흡";
+const contrasts = contrastList as Contrast[];
+// Later candidates agreed with Codex and AGY (docs/movement-mechanics/CONSENSUS.md §1;
+// stairs added per docs/movement-mechanics/stairs/CONSENSUS.md).
+const LATER = "발끝 서기, 몸 앞으로 굽히기, 한 발 서기, 호흡";
 const NOTICE = "건강한 성인의 대표 패턴 하나를 근사한 학습용 도식 · 진단·운동 처방 아님 · AI가 작성한 편집 초안, 해부·운동학 전문가 검수 전";
 
-const useMedia = (query: string) => {
-  const [match, setMatch] = useState(() => typeof matchMedia === "function" && matchMedia(query).matches);
-  useEffect(() => {
-    const media = matchMedia(query), update = () => setMatch(media.matches);
-    update();
-    media.addEventListener("change", update);
-    return () => media.removeEventListener("change", update);
-  }, [query]);
-  return match;
-};
 
 function phaseAt(m: Movement, t: number): Phase {
   const x = cycle(m, t);
@@ -39,13 +35,15 @@ function phaseAt(m: Movement, t: number): Phase {
 function shortCite(citation: string) {
   const authors = citation.split(". ")[0].split(", ");
   const surname = (a: string) => a.split(" ").filter((w, i, all) => i === 0 || i < all.length - 1 || !/^[A-Z][A-Z-]{0,3}$/.test(w)).join(" ");
-  const year = citation.slice(authors.join(", ").length).match(/\b(19|20)\d{2}\b/)?.[0] ?? "";
+  // A year in brackets can belong to the journal name ("J Appl Physiol (1985)"); prefer one outside.
+  const rest = citation.slice(authors.join(", ").length);
+  const year = (rest.match(/\b(19|20)\d{2}\b(?!\))/) ?? rest.match(/\b(19|20)\d{2}\b/))?.[0] ?? "";
   const who = authors.length === 1 ? surname(authors[0]) : authors.length === 2 && !/et al/.test(authors[1]) ? `${surname(authors[0])} & ${surname(authors[1])}` : `${surname(authors[0])} 외`;
   return `${who} ${year}`.trim();
 }
 // Same short name for two sources (e.g. two tables of one site): add a, b.
 const shortNames = (() => {
-  const names = new Map([...sources.values()].map((x) => [x.id, shortCite(x.citation)]));
+  const names = new Map([...sources.values()].map((x) => [x.id, x.short ?? shortCite(x.citation)]));
   const counts = new Map<string, number>(), seen = new Map<string, number>();
   for (const n of names.values()) counts.set(n, (counts.get(n) ?? 0) + 1);
   for (const [id, n] of names) if (counts.get(n)! > 1) { const k = seen.get(n) ?? 0; seen.set(n, k + 1); names.set(id, `${n}${"abcdefgh"[k]}`); }
@@ -93,7 +91,7 @@ function MovementList() {
   return (
     <main className="movement-page movement-home">
       <h1>동작 역학</h1>
-      <p className="doc-lead">서 있기, 일어서기, 앉기, 걷기, 팔 들어올리기에서 뼈와 관절이 어떻게 움직이고 어떤 근육이 언제 일하는지 단계별 도식으로 봅니다.</p>
+      <p className="doc-lead">서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어떻게 움직이고 어떤 근육이 언제 일하는지 단계별 도식으로 봅니다.</p>
       <p className="mv-notice">{NOTICE}</p>
       <ol className="mv-list">
         {movements.map((m) => (
@@ -121,7 +119,7 @@ function position(m: Movement, t: number, phase: Phase) {
     const lowering = t > (m.phases.find((p) => p.id.includes("lower"))?.start ?? 2);
     return `거상 ${Math.round(a.elevation)}° · ${lowering ? "내리는 중" : "올리는 중"} · ${phase.name}`;
   }
-  if (m.slug === "walking") return `${phase.name} · 주기 ${Math.round(cycle(m, t) * 100)}%`;
+  if (contactsOf(m)) return `${phase.name} · 주기 ${Math.round(cycle(m, t) * 100)}%`;
   return phase.name;
 }
 
@@ -131,6 +129,8 @@ function MovementDetail({ m, phaseId, sex }: { m: Movement; phaseId?: string; se
   // Phones and short landscape screens fold the movement list, conditions
   // and number key so the diagram and its controls share the first screen.
   const compact = useMedia("(max-width: 700px), (max-height: 500px)");
+  // Short desktop screens (laptops) fold the conditions too, so the diagram's feet stay on the first screen.
+  const short = useMedia("(max-height: 800px)");
   const initial = m.phases.find((p) => p.id === phaseId) ?? m.phases[0];
   const [t, setT] = useState(initial.start);
   const [playing, setPlaying] = useState(false);
@@ -217,7 +217,8 @@ function MovementDetail({ m, phaseId, sex }: { m: Movement; phaseId?: string; se
     ...m.phases.flatMap((p) => p.sources), ...keyframes.flatMap((k) => [...k.sources, ...(k.com?.sources ?? []), ...(k.grf?.sources ?? [])]),
     ...m.muscles.flatMap((r) => Object.values(r.cells).flatMap((c) => c.sources)), ...m.joints.flatMap((j) => j.sources),
     ...m.mechanics.flatMap((x) => x.sources), ...m.passive.flatMap((x) => x.sources), ...m.misconceptions.flatMap((x) => x.sources),
-    ...(m.duration?.sources ?? []),
+    ...(m.duration?.sources ?? []), ...(m.stairs?.sources ?? []), ...(m.emg?.sources ?? []),
+    ...contrasts.filter((c) => c.movements.includes(m.slug)).flatMap((c) => c.rows.flatMap((r) => r.sources)),
   ])].filter((id) => sources.has(id)), [m]); // keyframes is m.keyframes
 
   const controls = (
@@ -226,7 +227,7 @@ function MovementDetail({ m, phaseId, sex }: { m: Movement; phaseId?: string; se
       <button type="button" onClick={() => prev && goPhase(prev)} disabled={!prev} aria-label="이전 단계"><ChevronLeft size={18} aria-hidden="true" /></button>
       <button type="button" className="mv-play" onClick={togglePlay} aria-pressed={playing}>
         {playing ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}
-        {playing ? "일시정지" : smooth ? "재생" : "단계 재생"}
+        <span className="mv-play-text">{playing ? "일시정지" : smooth ? "재생" : "단계 재생"}</span>
       </button>
       <button type="button" onClick={() => next && goPhase(next)} disabled={!next} aria-label="다음 단계"><ChevronRight size={18} aria-hidden="true" /></button>
     </div>
@@ -254,7 +255,7 @@ function MovementDetail({ m, phaseId, sex }: { m: Movement; phaseId?: string; se
               <h1 id="mv-title">{m.name} <span lang="en">{m.nameEn}</span></h1>
               {compact && <nav className="mv-nav" aria-label="동작 목록">{fold}</nav>}
             </div>
-            {!compact && conditions}
+            {!compact && (short ? <details className="mv-fold mv-cond-fold"><summary>수행 조건</summary>{conditions}</details> : conditions)}
             <p className="mv-notice">{NOTICE}</p>
           </header>
 
@@ -268,24 +269,32 @@ function MovementDetail({ m, phaseId, sex }: { m: Movement; phaseId?: string; se
               {sliderUnit !== null && (
                 <label className="mv-slider">
                   <span className="mv-slider-text" aria-hidden="true">{sliderUnit}</span>
-                  <input type="range" min={0} max={1000} step={1} value={Math.round(cycle(m, t) * 1000)}
-                    aria-label={m.view === "back" ? "팔 거상 위치" : m.slug === "walking" ? "보행 주기 위치" : "재생 위치"}
-                    aria-valuetext={sliderUnit}
-                    onChange={(e) => { setPlaying(false); setT(Number(e.target.value) / 1000); }}
-                    onPointerUp={() => setPhaseHash(phaseAt(m, t).id)}
-                    onKeyUp={() => setPhaseHash(phaseAt(m, t).id)} />
+                  <span className="mv-track-wrap">
+                    <input type="range" min={0} max={1000} step={1} value={Math.round(cycle(m, t) * 1000)}
+                      aria-label={m.view === "back" ? "팔 거상 위치" : contactsOf(m) ? "보행 주기 위치" : "재생 위치"}
+                      aria-valuetext={sliderUnit}
+                      onChange={(e) => { setPlaying(false); setT(Number(e.target.value) / 1000); }}
+                      onPointerUp={() => setPhaseHash(phaseAt(m, t).id)}
+                      onKeyUp={() => setPhaseHash(phaseAt(m, t).id)} />
+                    {/* Stairs: contact events as solid ticks, the edited boundary (E1) dashed (stairs CONSENSUS §4). */}
+                    {m.stairs && <span className="mv-ticks" aria-hidden="true">
+                      {keyframes.filter((k) => k.event && k.t > 0 && /^(오른발|반대발|E1)/.test(k.event)).map((k) =>
+                        <i key={k.t} data-edited={k.event!.startsWith("E1") || undefined} style={{ "--at": k.t } as CSSProperties} />)}
+                    </span>}
+                  </span>
                 </label>
               )}
-              {compact && <p className="mv-now"><strong>{index + 1}/{m.phases.length} {phase.name}</strong>{phase.range && <span> · {phase.range}</span>}</p>}
+              {compact && <p className="mv-now" title={phase.range ? `${phase.name} · ${phase.range}` : phase.name}><strong>{index + 1}/{m.phases.length} {phase.name}</strong>{phase.range && <span> · {phase.range}</span>}</p>}
               {compact && drawn.length > 0
                 ? <details className="mv-legend-fold"><summary>도식의 근육 번호 {drawn.length}개</summary><MuscleLegend drawn={drawn} /></details>
                 : <MuscleLegend drawn={drawn} />}
               <OverlayKey state={overlaysAt(m, t, overlays)} />
               <p className="mv-figure-note">{m.view === "back" ? "뒤에서 본 어깨뼈면 투영입니다. 3축 운동을 한 면에 그렸습니다. " : "옆에서 본 시상면 도식입니다. "}
-                키프레임 사이는 보간한 근사이며 측정 궤적이 아닙니다.{m.sway ? ` 흔들림은 ${m.sway.exaggeration}배 과장했습니다.` : ""}</p>
+                {m.figureNote ?? "키프레임 사이는 보간한 근사이며 측정 궤적이 아닙니다."}{m.sway ? ` 흔들림은 ${m.sway.exaggeration}배 과장했습니다.` : ""}
+                {m.stairs && " 주기 막대 아래 눈금은 발 닿기·떼기(실선)와 체중심 수직 속도로 정한 편집 경계 E1(점선)입니다."}</p>
               <div className="mv-options">
                 <label><input type="checkbox" checked={overlays.muscles} onChange={(e) => setOverlays({ ...overlays, muscles: e.target.checked })} />근육 작용선</label>
-                {m.view === "side" && <label><input type="checkbox" checked={overlays.com} onChange={(e) => setOverlays({ ...overlays, com: e.target.checked })} />체중심·지지면</label>}
+                {m.view === "side" && <label><input type="checkbox" checked={overlays.com} onChange={(e) => setOverlays({ ...overlays, com: e.target.checked })} />{keyframes.some((k) => k.com) ? "체중심·지지면" : "지지면"}</label>}
                 {m.view === "side" && keyframes.some((k) => k.grf) && <label><input type="checkbox" checked={overlays.grf} onChange={(e) => setOverlays({ ...overlays, grf: e.target.checked })} />지면반력 방향</label>}
                 <label>속도 <select value={speed} onChange={(e) => setSpeed(Number(e.target.value))} aria-label="재생 속도">
                   <option value={0.25}>0.25×</option><option value={0.5}>0.5×</option><option value={1}>1×</option>
@@ -313,7 +322,8 @@ function MovementDetail({ m, phaseId, sex }: { m: Movement; phaseId?: string; se
               {phase.mechanics && phase.mechanics.length > 0 && <ul className="mv-bullets">{phase.mechanics.map((x) => <li key={x}>{x}</li>)}</ul>}
               {phaseFrames.length > 0 && (
                 <dl className="mv-frames">
-                  {phaseFrames.map((k) => <div key={k.t}><dt>{k.event}</dt><dd>{angleText(m, k)} <Cite ids={k.sources} />{k.note && <small> {k.note}</small>}</dd></div>)}
+                  {phaseFrames.map((k) => <div key={k.t}><dt>{k.event}</dt><dd>{angleText(m, k.measured ?? k)} <Cite ids={k.sources} />{k.note && <small> {k.note}</small>}
+                    {k.measured && <small> 도식은 {angleText(m, k, false)}로 조정했습니다.</small>}</dd></div>)}
                 </dl>
               )}
               <h3>이 {m.phaseKind}의 근육</h3>
@@ -342,7 +352,8 @@ function MovementDetail({ m, phaseId, sex }: { m: Movement; phaseId?: string; se
           </div>
 
           <MuscleTable m={m} phase={phase} sex={sex} origin={origin} cards={compact} />
-          <ActivityStrip m={m} phase={phase} />
+          {m.emg ? <EmgTable m={m} phase={phase} /> : <ActivityStrip m={m} phase={phase} />}
+          {contrasts.filter((c) => c.movements.includes(m.slug)).map((c) => <ContrastBox key={c.id} c={c} m={m} phase={phase} />)}
 
           <section className="mv-section" aria-labelledby="mv-joints">
             <h2 id="mv-joints">관절 대표값</h2>
@@ -407,7 +418,7 @@ function MovementDetail({ m, phaseId, sex }: { m: Movement; phaseId?: string; se
   );
 }
 
-function angleText(m: Movement, k: Keyframe<SideAngles | BackAngles>) {
+function angleText(m: Movement, k: Pick<Keyframe<SideAngles | BackAngles>, "angles">, trunk = true) {
   if (m.view === "back") {
     const a = k.angles as BackAngles;
     const change = (v: number) => `${v < 0 ? "−" : "+"}${Math.abs(v)}°`;
@@ -416,7 +427,7 @@ function angleText(m: Movement, k: Keyframe<SideAngles | BackAngles>) {
   const a = k.angles as SideAngles;
   const part = (name: string, v: number | undefined, pos: string, neg: string) => v === undefined ? null : `${name} ${Math.abs(v)}° ${v >= 0 ? pos : neg}`;
   return [part("엉덩관절", a.hip, "굽힘", "폄"), part("무릎", a.knee, "굽힘", "폄"), part("발목", a.ankle, "발등굽힘", "발바닥굽힘"),
-    a.trunk !== undefined ? part("몸통", a.trunk, "앞기울임", "뒤기울임") : null, a.toe ? part("엄지발가락", a.toe, "젖힘", "굽힘") : null].filter(Boolean).join(" · ");
+    trunk && a.trunk !== undefined ? part(m.stairs ? "몸통(편집 상수)" : "몸통", a.trunk, "앞기울임", "뒤기울임") : null, a.toe ? part("엄지발가락", a.toe, "젖힘", "굽힘") : null].filter(Boolean).join(" · ");
 }
 
 function MovementLinks({ current }: { current: string }) {
@@ -496,14 +507,68 @@ function MuscleTable({ m, phase, sex, origin, cards }: { m: Movement; phase: Pha
 }
 
 // Visual summary of the table (CONSENSUS T17): only cells backed by an EMG
-// record, at phase resolution, never an amplitude. Only walking has a
-// time axis (cycle %); other movements get one equal column per phase.
+// record, at phase resolution, never an amplitude. Only the gait cycles
+// (walking, stairs) have a time axis (cycle %); other movements get one
+// equal column per phase.
+// Phase means of one EMG recording (stairs): numbers, not on/off bars, so a
+// low mean is shown as low rather than as no activity.
+function EmgTable({ m, phase }: { m: Movement; phase: Phase }) {
+  const e = m.emg!;
+  return (
+    <section className="mv-section" aria-labelledby="mv-emg">
+      <h2 id="mv-emg">국면 평균 상대 근전도</h2>
+      <p className="mv-table-note">
+        각 {m.phaseKind}의 총평균 포락선 평균이며, {e.reference} 진한 칸은 {e.cut}% 이상, 옅은 칸은 {e.cut}% 미만입니다(편집 구분). 열 너비는 {m.phaseKind}의 길이가 아닙니다.
+        활동의 시작·끝이나 힘의 크기를 뜻하지 않습니다. 번호는 위 {m.phaseKind} 버튼의 번호입니다. <Cite ids={e.sources} />{e.note && <small> {e.note}</small>}
+      </p>
+      <div className="mv-table-wrap">
+        <table className="mv-emg-table">
+          <thead><tr><th scope="col">근육(측정 부위)</th>{m.phases.map((p, i) => <th scope="col" key={p.id} aria-current={p.id === phase.id ? "step" : undefined}><span className="mv-step-no">{i + 1}</span><span className="mv-emg-phase">{p.name} <small>주기 {Math.round(p.start * 100)}–{Math.round(p.end * 100)}%</small></span></th>)}</tr></thead>
+          <tbody>
+            {e.rows.map((r) => (
+              <tr key={r.muscle}>
+                <th scope="row">{r.label}</th>
+                {m.phases.map((p) => <td key={p.id} data-high={r.values[p.id] >= e.cut || undefined} data-current={p.id === phase.id || undefined}>{r.values[p.id]}%</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
+// The same comparison on both pages of a pair, with a link to the
+// corresponding phase of the other movement.
+function ContrastBox({ c, m, phase }: { c: Contrast; m: Movement; phase: Phase }) {
+  const here = c.movements.indexOf(m.slug), otherSlug = c.movements[1 - here];
+  const other = movements.find((x) => x.slug === otherSlug);
+  const pair = c.phases.find((p) => p[here] === phase.id);
+  const target = other?.phases.find((p) => p.id === pair?.[1 - here]);
+  const names = c.movements.map((slug) => movements.find((x) => x.slug === slug)?.name ?? slug);
+  return (
+    <section className="mv-section" aria-labelledby={`mv-contrast-${c.id}`}>
+      <h2 id={`mv-contrast-${c.id}`}>{c.title}</h2>
+      <p>{c.lead}</p>
+      <div className="mv-table-wrap">
+        <table className="mv-joint-table">
+          <thead><tr><th scope="col">항목</th>{names.map((n) => <th scope="col" key={n}>{n}</th>)}<th scope="col">출처</th></tr></thead>
+          {/* Phones stack the rows and hide the header, so each value names its movement. */}
+          <tbody>{c.rows.map((r) => <tr key={r.label}><th scope="row">{r.label}</th>{r.values.map((v, i) => <td key={c.movements[i]}><span className="mv-contrast-who">{names[i]}</span>{v}</td>)}<td><Cite ids={r.sources} />{r.note && <small> {r.note}</small>}</td></tr>)}</tbody>
+        </table>
+      </div>
+      {c.note && <p className="mv-table-note">{c.note}</p>}
+      {other && <p><a className="mv-contrast-link" href={`#movement/${other.slug}${target ? `/${target.id}` : ""}`}>{other.name}{target ? ` · ${target.name}` : ""} 보기</a></p>}
+    </section>
+  );
+}
+
 function ActivityStrip({ m, phase }: { m: Movement; phase: Phase }) {
   const rows = m.muscles.filter((row) => Object.values(row.cells).some((c) => c.evidence.includes("emg")));
   if (!rows.length) return null;
-  const timed = m.slug === "walking";
+  const timed = Boolean(contactsOf(m));
   const span = (p: Phase, i: number) => timed ? { left: `${p.start * 100}%`, width: `${(p.end - p.start) * 100}%` } : { left: `${(i / m.phases.length) * 100}%`, width: `${100 / m.phases.length}%` };
-  const reported = (c: MuscleCell | undefined) => Boolean(c && c.evidence.includes("emg") && !["silent", "nodata", "inhibited"].includes(c.contraction));
+  const reported = (c: MuscleCell | undefined) => Boolean(c && c.evidence.includes("emg") && !["silent", "low", "disputed", "nodata", "inhibited"].includes(c.contraction));
   return (
     <section className="mv-section" aria-labelledby="mv-strip">
       <h2 id="mv-strip">근전도로 보고된 활동 구간</h2>

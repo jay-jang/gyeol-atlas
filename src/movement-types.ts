@@ -12,16 +12,22 @@ export const evidenceNames: Record<Evidence, string> = {
 };
 
 // What a muscle does in one phase. "active" = active, mode not established;
-// "silent" = no activity detected by the cited recording; "nodata" = the
-// sources say nothing (never drawn as inactive).
-export type Contraction = "concentric" | "eccentric" | "isometric" | "active" | "inhibited" | "silent" | "nodata";
+// "low" = recorded, but the phase mean stays under the movement's stated
+// editorial cut (Movement.emg.cut; not a detection limit);
+// "silent" = no activity detected by the cited recording; "disputed" = the
+// sources disagree or report activity in only some subjects, so no call is
+// made (the note says why); "nodata" = the sources say nothing (never drawn
+// as inactive).
+export type Contraction = "concentric" | "eccentric" | "isometric" | "active" | "low" | "inhibited" | "silent" | "disputed" | "nodata";
 export const contractionNames: Record<Contraction, string> = {
   concentric: "단축성",
   eccentric: "신장성",
   isometric: "등척성",
   active: "활동",
+  low: "평균 진폭 낮음",
   inhibited: "억제",
   silent: "검출 안 됨",
+  disputed: "판정 보류",
   nodata: "자료 없음",
 };
 
@@ -29,9 +35,11 @@ export type Cited = { sources: string[]; note?: string };
 
 // Side view: degrees, positive = dorsiflexion / flexion. `trunk` is the
 // thorax inclination from vertical (forward +) where a source reports it;
-// otherwise pelvis and trunk stay rigid. Walking keyframes give the right
-// leg; the left leg is the same curve half a cycle later.
-export type SideAngles = { ankle: number; knee: number; hip: number; trunk?: number; toe?: number };
+// otherwise pelvis and trunk stay rigid. Walking and stair keyframes give
+// the right leg; the left leg is the same curve half a cycle later. In those
+// cycles the pelvis is drawn upright unless `pelvis` gives its tilt from the
+// same source (anterior +), and `hip` is then measured from the pelvis.
+export type SideAngles = { ankle: number; knee: number; hip: number; trunk?: number; toe?: number; pelvis?: number };
 // Back view of the right shoulder: humerothoracic elevation, scapular
 // upward rotation and clavicle elevation, all in degrees.
 export type BackAngles = { elevation: number; upwardRotation: number; clavicleElevation?: number };
@@ -40,6 +48,9 @@ export type Keyframe<A> = Cited & {
   t: number; // 0–1 of the drawn cycle
   event?: string;
   angles: A;
+  // Where the drawn angles were adjusted (stair double support, loop seam):
+  // the source values and the between-subject SD they stay within.
+  measured?: { angles: A; sd: A };
   // Optional overlays, each drawn only where a source supports it.
   com?: Cited & { dx: number }; // metres in front of the ankle centre
   // Ground reaction force of the right (reference) foot: direction from vertical
@@ -98,6 +109,11 @@ export type Movement = {
   // diagram draws a stool and adds the seat to the base of support then.
   seated?: [number, number][];
   sway?: { exaggeration: number }; // standing: drawn sway is magnified
+  // Stair gait (src/movement-figure.ts stairPose): the staircase of the
+  // cited study in metres, the right toe-off as a share of the cycle (left
+  // contact at half a cycle), and where each stance foot's
+  // metatarsophalangeal joint sits: metres from the step edge onto the tread.
+  stairs?: Cited & { direction: "up" | "down"; rise: number; going: number; stanceEnd: number; fromEdge: number };
   muscles: MuscleRow[];
   joints: JointRow[];
   mechanics: (Cited & { text: string })[];
@@ -105,13 +121,33 @@ export type Movement = {
   absent: string[]; // structures not modelled in the 3D atlas
   misconceptions: (Cited & { wrong: string; better: string })[];
   limitations: string[];
+  // Phase means of one EMG recording, shown instead of the activity strip:
+  // per muscle row (`label` names the muscle actually recorded), % of the
+  // reference named in `reference`; values under `cut` are drawn pale.
+  emg?: Cited & { reference: string; cut: number; rows: { muscle: string; label: string; values: Record<string, number> }[] };
+  figureNote?: string; // replaces the default note under the diagram
+};
+
+// A comparison shown on both pages of a pair of movements
+// (data/movement-contrasts.json): one value per movement in each row, and
+// the phases that correspond, so each page links to its counterpart.
+export type Contrast = {
+  id: string;
+  title: string;
+  movements: [string, string];
+  lead: string;
+  rows: (Cited & { label: string; values: [string, string] })[];
+  phases: [string, string][];
+  note?: string;
 };
 
 export type Source = {
   id: string;
   citation: string;
   url?: string;
-  // How far the claim was checked: full text, abstract, or a secondary source.
-  checked: "본문" | "초록" | "2차 인용" | "미리보기";
+  // How far the claim was checked: full text, abstract, a secondary source,
+  // or a public data file opened and computed from.
+  checked: "본문" | "초록" | "2차 인용" | "미리보기" | "공개 데이터";
   usedFor: string;
+  short?: string; // citation label when "first author 외 year" would be ambiguous (a dataset)
 };

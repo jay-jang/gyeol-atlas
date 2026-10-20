@@ -5,12 +5,13 @@ import { ready } from "./helpers";
 const heavy = (url: string) => url.endsWith(".glb") || url.endsWith(".bin.gz") || /\/src\/Atlas\.tsx|\/assets\/Atlas-/.test(url);
 const saved = (page: Page) => page.evaluate(() => JSON.parse(sessionStorage.getItem("gyeol-view-v2") || "null"));
 
-test("the movement page lists the five agreed movements without loading the 3D viewer", async ({ page }) => {
+test("the movement page lists the agreed movements without loading the 3D viewer", async ({ page }) => {
   const requests: string[] = [];
   page.on("request", (r) => requests.push(r.url()));
   await page.goto("/#movement");
   await expect(page.getByRole("heading", { level: 1, name: "동작 역학" })).toBeVisible();
-  await expect(page.locator(".mv-list > li strong")).toHaveText(["서 있기", "의자에서 일어서기", "의자에 앉기", "평지 걷기", "팔 들어올리기"]);
+  await expect(page.locator(".mv-list > li strong")).toHaveText(["서 있기", "의자에서 일어서기", "의자에 앉기", "평지 걷기", "계단 오르기", "계단 내리기", "팔 들어올리기"]);
+  await expect(page.locator(".mv-later").first()).not.toContainText("계단");
   await expect(page).toHaveTitle("동작 역학 — 결 GYEOL");
   await page.locator(".mv-list a").nth(3).click();
   await expect(page.locator(".mv-svg")).toBeVisible();
@@ -74,12 +75,80 @@ test("reduced motion steps through phases; continuous motion only on request", a
   await page.waitForTimeout(400);
   expect(await shape()).not.toBe(still);
   await page.getByRole("button", { name: /일시정지/ }).first().click();
+  // Walking draws no centre-of-mass line, so its option names only the base of support.
+  await expect(page.locator(".mv-options label").filter({ hasText: "지지면" })).toHaveText("지지면");
   // Walking reports its position in gait-cycle percent; arm elevation in degrees.
   await expect(page.getByLabel("보행 주기 위치")).toHaveAttribute("aria-valuetext", /주기 \d+%/);
   await page.goto("/#movement/arm-elevation");
   await expect(page.getByLabel("팔 거상 위치")).toHaveAttribute("aria-valuetext", /거상 \d+°/);
   await page.goto("/#movement/standing");
   await expect(page.locator(".mv-slider")).toHaveCount(0);
+});
+
+// docs/movement-mechanics/stairs/CONSENSUS.md §3–§7.
+test("stairs draw a staircase, report the cycle, tabulate one EMG recording and link the pair", async ({ page }) => {
+  const requests: string[] = [];
+  page.on("request", (r) => requests.push(r.url()));
+  await page.goto("/#movement/stair-ascent/pull-up");
+  await expect(page.locator(".mv-svg .mv-stairs")).toHaveCount(1);
+  await expect(page.locator(".mv-steps button[aria-current=step]")).toHaveText(/끌어올리기/);
+  await expect(page.getByLabel("보행 주기 위치")).toHaveAttribute("aria-valuetext", /끌어올리기 · 주기 1[4-9]%/);
+  // Contact events tick the cycle slider; the edited boundary (E1) is the one dashed tick.
+  await expect(page.locator(".mv-ticks i")).toHaveCount(4);
+  await expect(page.locator(".mv-ticks i[data-edited]")).toHaveCount(1);
+  // No centre-of-mass or force overlay on stairs: the option names only the base of support.
+  await expect(page.locator(".mv-options label").filter({ hasText: "지지면" })).toHaveText("지지면");
+  await expect(page.locator(".mv-options label").filter({ hasText: "지면반력" })).toHaveCount(0);
+  // Phase means, not on/off bars; pale cells are under the cut, not "not detected".
+  const emg = page.locator(".mv-emg-table");
+  await expect(emg.locator("tbody tr")).toHaveCount(6);
+  await expect(emg.locator("tbody tr").filter({ hasText: "가쪽넓은근" }).locator("td").first()).toHaveText(/^\d+%$/);
+  await expect(page.locator(".mv-strip")).toHaveCount(0);
+  await expect(page.locator(".mv-c-silent")).toHaveCount(0);
+  // The comparison links to the matching phase of the other movement.
+  await page.getByRole("link", { name: "계단 내리기 · 조절하며 내려가기 보기" }).click();
+  await expect(page).toHaveURL(/#movement\/stair-descent\/controlled-lowering$/);
+  await expect(page.locator("#mv-title")).toContainText("계단 내리기");
+  await expect(page.locator(".mv-steps button[aria-current=step]")).toHaveText(/조절하며 내려가기/);
+  // The phase survives a reload; keys move phases only while the diagram has focus.
+  await page.reload();
+  await expect(page.locator(".mv-steps button[aria-current=step]")).toHaveText(/조절하며 내려가기/);
+  await page.locator("body").press("ArrowRight");
+  await expect(page.locator(".mv-steps button[aria-current=step]")).toHaveText(/조절하며 내려가기/);
+  await page.locator(".mv-figure").focus();
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator(".mv-steps button[aria-current=step]")).toHaveText(/유각/);
+  await expect(page).toHaveURL(/#movement\/stair-descent\/swing$/);
+  await page.keyboard.press("ArrowLeft");
+  // Playing moves the staircase past the figure (the view follows the body).
+  const stairs = () => page.locator(".mv-svg .mv-stairs").getAttribute("d");
+  await page.getByLabel("연속 동작 보기").check().catch(() => {});
+  const before = await stairs();
+  await page.getByRole("button", { name: /^(재생|단계 재생)$/ }).first().click();
+  await page.waitForTimeout(500);
+  await page.getByRole("button", { name: /일시정지/ }).first().click();
+  expect(await stairs()).not.toBe(before);
+  expect(requests.filter(heavy)).toEqual([]);
+});
+
+test("every stair phase keeps the diagram, controls and current phase on a 360×740 first screen", async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 740 });
+  for (const slug of ["stair-ascent", "stair-descent"]) {
+    await page.goto(`/#movement/${slug}`);
+    const steps = page.locator(".mv-steps button");
+    for (let i = 0; i < await steps.count(); i++) {
+      if (i) await page.getByRole("button", { name: "다음 단계" }).first().click();
+      await expect(steps.nth(i)).toHaveAttribute("aria-current", "step");
+      expect(await page.locator(".mv-now").evaluate((el) => el.getBoundingClientRect().bottom), `${slug} phase ${i + 1}`).toBeLessThanOrEqual(740);
+      // Scrolled past it, the stuck bar holds the (long) phase name and four 44 px buttons.
+      await page.evaluate(() => { const bar = document.querySelector(".mv-sticky")!; scrollTo(0, bar.getBoundingClientRect().top + scrollY + 400); });
+      expect(await page.locator(".mv-sticky").evaluate((el) => Math.round(el.getBoundingClientRect().top))).toBeLessThanOrEqual(1);
+      const bar = await page.locator(".mv-sticky").evaluate((el) => { const b = el.getBoundingClientRect(), n = el.querySelector(":scope > span")!.getBoundingClientRect(); return { over: Math.max(b.top - n.top, n.bottom - b.bottom), min: Math.min(...[...el.querySelectorAll("button")].map((x) => x.getBoundingClientRect().height)) }; });
+      expect(bar.over, `${slug} phase ${i + 1} sticky name`).toBeLessThanOrEqual(0.5);
+      expect(bar.min).toBeGreaterThanOrEqual(44);
+      await page.evaluate(() => scrollTo(0, 0));
+    }
+  }
 });
 
 const drawnIds = async (page: Page) => new Set(((await page.locator("canvas").getAttribute("data-visible-structure-ids")) || "").split(",").filter(Boolean));
@@ -203,10 +272,11 @@ for (const width of [1440, 390, 360]) {
   });
 }
 
-for (const [width, height] of [[390, 844], [360, 740], [844, 390]]) {
-  test(`phone ${width}×${height}: one column, no sideways scroll, readable and touchable`, async ({ page }) => {
+for (const [width, height, route] of [[390, 844, "walking/loading-response"], [360, 740, "walking/loading-response"], [844, 390, "walking/loading-response"],
+  [390, 844, "stair-ascent/pull-up"], [360, 740, "stair-descent/controlled-lowering"], [844, 390, "stair-descent/weight-acceptance"]] as const) {
+  test(`phone ${width}×${height} ${route}: one column, no sideways scroll, readable and touchable`, async ({ page }) => {
     await page.setViewportSize({ width, height });
-    await page.goto("/#movement/walking/loading-response");
+    await page.goto(`/#movement/${route}`);
     await expect(page.locator(".mv-svg")).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(0);
     // Header: four links on one row; at 360 px the movement link uses its short name.
@@ -228,6 +298,12 @@ for (const [width, height] of [[390, 844], [360, 740], [844, 390]]) {
       await expect(page.locator(".mv-muscle-table")).toHaveCount(0);
       await page.locator(".mv-all > summary").click();
       expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(0);
+      if (width <= 700) {
+        // Portrait phones: the diagram takes at most 42% of the screen height (CONSENSUS §4; stairs §7).
+        expect(await page.locator(".mv-svg").evaluate((el) => el.getBoundingClientRect().height)).toBeLessThanOrEqual(height * 0.42 + 1);
+        // Tables fit their wrappers on stair pages (no hidden sideways scroll inside a table).
+        if (route.startsWith("stair")) for (const over of await page.locator(".mv-table-wrap").evaluateAll((ws) => ws.map((w) => w.scrollWidth - w.clientWidth))) expect(over).toBeLessThanOrEqual(1);
+      }
     }
     // Diagram labels stay inside the drawing.
     const outside = await page.locator(".mv-svg").evaluate((svg) => {

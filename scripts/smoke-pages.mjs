@@ -21,7 +21,7 @@ try {
  await page.locator('.answer').waitFor();assert.match(await page.locator('.answer').innerText(),/PC6/);assert.match(await page.locator('.answer').innerText(),/TE5/);
  assert.equal(requests.filter(u=>u.includes('/api/')).length,0);
  // The movement page opens under the Pages subpath with 2D diagrams only (docs/movement-mechanics).
- for(const route of ['#movement','#movement/walking/loading-response','#movement/arm-elevation']){await page.goto(origin+route);await page.locator('main.movement-page h1').waitFor();}
+ for(const route of ['#movement','#movement/walking/loading-response','#movement/stair-ascent/pull-up','#movement/stair-descent','#movement/arm-elevation']){await page.goto(origin+route);await page.locator('main.movement-page h1').waitFor();}
  await page.locator('.mv-svg').waitFor();
  assert.equal(requests.filter(u=>u.endsWith('.glb')||u.endsWith('.bin.gz')||/\/assets\/Atlas-/.test(u)).length,0,'movement page must not load the 3D viewer or models');
  await page.goto(origin+'#wiki/points/EX-UE11');

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "stairs",
+    "title": "계단 오르기·내리기 비교",
+    "movements": ["stair-ascent", "stair-descent"],
+    "lead": "두 동작 모두 같은 젊은 남성 12명이 같은 계단(단 높이 17 cm, 디딤판 29 cm, 맨발)을 오르내린 기록에서, 계단 가운데의 한 주기를 가져왔습니다. 내리기는 오르기를 거꾸로 돌린 것이 아닙니다.",
+    "rows": [
+      { "label": "속도와 한 주기 시간", "values": ["0.53 m/s · 1.12초", "0.56 m/s · 1.06초"], "sources": ["grimmer2020"], "note": "오르기 A5, 내리기 D6 주기입니다(본문·표 1)." },
+      { "label": "오른발 떼기", "values": ["주기 64.1%", "주기 65.2%"], "sources": ["grimmer2020"], "note": "디딤 시간 ÷ 주기 시간의 대상별 평균(duty factor, 표 1)입니다." },
+      { "label": "발 닿는 순간 발의 기울기", "values": ["약 4°, 거의 평평", "약 33°, 발끝이 아래"], "sources": ["darmstadt-stairs", "riener2002", "spanjaard2008jeb"], "note": "정강이 분절각에서 발목 각을 뺀 계산값입니다(발끝이 아래면 +). DD에는 발꿈치 표지점이 없어 어디가 먼저 닿는지는 측정되지 않았습니다. 내리기에서 앞발이 먼저 닿는다는 서술은 다른 연구(Riener 2002, Spanjaard 2008)의 것입니다." },
+      { "label": "한 주기의 관절 양의 일(J/kg)", "values": ["엉덩관절 0.51 · 무릎 0.59 · 발목 0.73", "엉덩관절 0.22 · 무릎 0.04 · 발목 0.18"], "sources": ["darmstadt-stairs"], "note": "대상별 일률 적분의 평균입니다. 같은 데이터의 Grimmer 2023 표 1은 오르기는 다른 주기(A6, 왼다리), 내리기는 같은 주기(D6)의 값입니다." },
+      { "label": "한 주기의 관절 음의 일(J/kg)", "values": ["엉덩관절 −0.03 · 무릎 −0.20 · 발목 −0.09", "엉덩관절 −0.02 · 무릎 −1.04 · 발목 −0.98"], "sources": ["darmstadt-stairs"], "note": "음의 일은 관절이 에너지를 흡수한 양입니다. 순 관절 값이며 개별 근육의 일이 아닙니다." },
+      { "label": "무릎이 가장 크게 일하는 국면", "values": ["끌어올리기: 양의 일 0.25 J/kg", "조절하며 내려가기: 음의 일 −0.70 J/kg"], "sources": ["darmstadt-stairs"], "note": "12명 총평균 일률 곡선을 국면 안에서 적분한 계산값입니다." },
+      { "label": "발목이 가장 크게 일하는 국면", "values": ["앞으로 이어가기: 양의 일 0.41 J/kg", "체중 받아들이기: 음의 일 −0.57 J/kg"], "sources": ["darmstadt-stairs"], "note": "같은 계산값입니다." },
+      { "label": "한 주기 동안 체중심 높이 변화", "values": ["+0.34 m(단 두 개)", "−0.34 m(단 두 개)"], "sources": ["darmstadt-stairs"], "note": "OpenSim 모델의 체중심 높이 총평균입니다." }
+    ],
+    "phases": [["weight-acceptance", "weight-acceptance"], ["pull-up", "controlled-lowering"], ["forward-continuance", "forward-continuance"], ["swing", "swing"]],
+    "note": "표의 일과 일률은 측정 곡선에서 계산했습니다. 위 도식은 편집 주기 모형이므로, 도식 자세로 일을 다시 계산하지 않았습니다."
+  }
+]

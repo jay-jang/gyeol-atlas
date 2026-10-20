@@ -7,6 +7,7 @@
   --mv-bone-fill: #efeadf;
   --mv-far: #8b8474;
   --mv-prop: #7c8a90;
+  --mv-step-fill: #eef1f2;
   color: var(--doc-ink);
   padding-bottom: var(--sp-6);
   /* Original English names and catalogue ids (e.g. ZA_ligament_…) are long. */
@@ -97,6 +98,7 @@
 .mv-far .mv-joint { stroke: var(--mv-far); }
 .mv-floor { stroke: var(--doc-line-strong); stroke-width: 0.006; }
 .mv-chair path { fill: none; stroke: var(--mv-prop); stroke-width: 0.012; stroke-linejoin: round; }
+.mv-stairs { fill: var(--mv-step-fill); stroke: var(--mv-prop); stroke-width: 0.01; stroke-linejoin: miter; }
 .mv-bos { fill: var(--doc-ink-2); }
 .mv-com path { stroke: var(--doc-ink); stroke-width: 0.005; stroke-dasharray: 0.02 0.014; }
 .mv-grf path { stroke: var(--doc-ink); stroke-width: 0.008; }
@@ -124,8 +126,8 @@
 .mv-c-eccentric i { border-top-style: dashed; }
 .mv-c-isometric i { border-top-style: dotted; }
 .mv-c-active i { border-top-width: 1px; }
-.mv-c-inhibited i, .mv-c-silent i, .mv-c-nodata i { display: none; }
-.mv-c-silent, .mv-c-inhibited { font-weight: 500; color: var(--doc-ink-2); }
+.mv-c-inhibited i, .mv-c-silent i, .mv-c-low i, .mv-c-disputed i, .mv-c-nodata i { display: none; }
+.mv-c-silent, .mv-c-inhibited, .mv-c-low, .mv-c-disputed { font-weight: 500; color: var(--doc-ink-2); }
 .mv-c-nodata { font-weight: 400; color: var(--doc-ink-2); }
 .mv-evidence { display: inline-block; margin-left: 4px; font-size: 12px; color: var(--doc-ink-2); }
 
@@ -142,6 +144,11 @@
 .mv-slider { display: grid; gap: 4px; margin: var(--sp-3) 0 0; }
 .mv-slider-text { font-size: 13px; color: var(--doc-ink-2); }
 .mv-slider input { width: 100%; min-height: 32px; accent-color: var(--doc-accent); }
+/* Event ticks under the cycle slider (stairs); --mv-thumb approximates the native thumb so a tick sits where the thumb centre would. */
+.mv-track-wrap { position: relative; display: block; --mv-thumb: 16px; }
+.mv-ticks { position: absolute; inset: 0; pointer-events: none; }
+.mv-ticks i { position: absolute; bottom: 1px; width: 2px; height: 8px; margin-left: -1px; left: calc(var(--mv-thumb) / 2 + var(--at) * (100% - var(--mv-thumb))); background: var(--doc-ink-2); }
+.mv-ticks i[data-edited] { height: 9px; background: repeating-linear-gradient(to bottom, var(--doc-ink-2) 0 2px, transparent 2px 4px); }
 .mv-options { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); align-items: center; margin-top: var(--sp-3); font-size: 13px; color: var(--doc-ink-2); }
 .mv-options label { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; }
 .mv-options input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--doc-accent); }
@@ -150,7 +157,8 @@
 .mv-fold > summary, .mv-legend-fold > summary { min-height: 32px; display: flex; align-items: center; cursor: pointer; color: var(--doc-ink); font-size: 13px; }
 .mv-fold p { margin: 4px 0 0; font-size: 13px; line-height: 1.6; word-break: keep-all; }
 .mv-legend-fold { margin-top: var(--sp-2); }
-.mv-now { margin: var(--sp-2) 0 0; font-size: 14px; line-height: 1.5; }
+/* One line on the first screen; the full range is in the phase panel below. */
+.mv-now { margin: var(--sp-2) 0 0; font-size: 14px; line-height: 1.5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mv-now span { font-size: 13px; color: var(--doc-ink-2); }
 .mv-cell-more { margin-top: 2px; }
 .mv-cell-more > summary { display: inline-flex; align-items: center; min-height: 24px; font-size: 12px; color: var(--doc-accent); cursor: pointer; }
@@ -185,7 +193,14 @@
   min-height: 40px; max-height: 56px; margin: 0 0 var(--sp-3); padding: 4px var(--sp-2);
   border-bottom: 1px solid var(--doc-line); background: var(--doc-bg); font-size: 14px; font-weight: 650;
 }
-.mv-sticky .mv-controls { flex-wrap: nowrap; gap: 4px; }
+.mv-sticky > span { flex: 1 1 auto; min-width: 0; line-height: 1.25; word-break: keep-all; }
+.mv-sticky .mv-controls { flex: 0 0 auto; flex-wrap: nowrap; gap: 4px; }
+.mv-sticky .mv-controls button { white-space: nowrap; }
+@media (max-width: 374px) {
+  /* Narrow phones (360 px, 320 px when zoomed): the phase name keeps room; the play button shows its icon only. */
+  .mv-sticky > span { min-width: 4.5em; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .mv-sticky .mv-play .mv-play-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
 .mv-sticky .mv-controls button { min-height: 44px; min-width: 44px; padding: 0 8px; }
 .mv-sticky .mv-play { min-width: 44px !important; }
 
@@ -217,6 +232,26 @@
 .mv-track i[data-state="on"] { background: var(--doc-accent); }
 .mv-track i[data-state="off"] { background: var(--doc-surface); box-shadow: inset 0 0 0 1px var(--doc-line-strong); }
 .mv-track i[data-state="none"] { background: repeating-linear-gradient(135deg, var(--doc-line) 0 3px, transparent 3px 6px); }
+.mv-emg-table { border-collapse: collapse; font-size: 13px; min-width: 100%; }
+.mv-emg-table th, .mv-emg-table td { padding: var(--sp-2); border-bottom: 1px solid var(--doc-line); text-align: left; vertical-align: top; line-height: 1.4; }
+.mv-emg-table thead th { font-size: 12px; font-weight: 600; color: var(--doc-ink-2); border-bottom: 1px solid var(--doc-line-strong); min-width: 6.5em; }
+.mv-emg-table thead th[aria-current] { color: var(--doc-ink); box-shadow: inset 0 -3px 0 var(--doc-accent); }
+.mv-emg-table thead .mv-step-no { margin-right: 4px; }
+.mv-emg-table thead small { display: block; font-size: 12px; font-weight: 400; }
+.mv-emg-table tbody th { font-weight: 650; white-space: nowrap; }
+.mv-emg-table td { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; background: var(--doc-surface-2); color: var(--doc-ink-2); border-left: 2px solid var(--doc-surface); }
+.mv-emg-table td[data-high] { background: var(--doc-accent); color: #ffffff; font-weight: 650; }
+.mv-emg-table td[data-current] { outline: 2px solid var(--doc-ink); outline-offset: -2px; }
+.mv-contrast-link { font-weight: 650; }
+.mv-contrast-who { display: none; }
+@media (max-width: 700px) {
+  .mv-emg-table th, .mv-emg-table td { padding: 6px 4px; }
+  .mv-emg-table thead th { min-width: 0; }
+  .mv-emg-table th { white-space: normal; word-break: keep-all; }
+  /* Phase names stay for screen readers; the number matches the phase buttons above. */
+  .mv-emg-table .mv-emg-phase { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .mv-emg-table thead th + th { text-align: right; }
+}
 .mv-strip-axis .mv-track { height: 22px; }
 .mv-strip-axis .mv-track span { position: absolute; top: 0; overflow: hidden; font-size: 12px; color: var(--doc-ink-2); white-space: nowrap; text-overflow: clip; border-left: 1px solid var(--doc-line-strong); padding-left: 2px; }
 .mv-strip-axis .mv-track span[data-current] { color: var(--doc-accent); font-weight: 650; }
@@ -319,5 +354,6 @@
   .mv-joint-table, .mv-joint-table tbody, .mv-joint-table tr, .mv-joint-table th, .mv-joint-table td { display: block; }
   .mv-joint-table thead { display: none; }
   .mv-joint-table tr { padding: var(--sp-2) 0; border-bottom: 1px solid var(--doc-line); }
-  .mv-joint-table th, .mv-joint-table td { padding: 2px 0; border: 0; white-space: normal; }
+  .mv-joint-table th, .mv-joint-table td, .mv-joint-table tbody th { padding: 2px 0; border: 0; white-space: normal; }
+  .mv-joint-table .mv-contrast-who { display: inline; margin-right: 6px; font-weight: 600; color: var(--doc-ink-2); }
 }

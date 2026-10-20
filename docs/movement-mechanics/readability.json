@@ -3,7 +3,7 @@
  "summary": [
   {
    "at": "desktop/00-list",
-   "textSamples": 26,
+   "textSamples": 34,
    "minFont": 12,
    "minContrast": 6.37,
    "weakest": [
@@ -18,7 +18,7 @@
      "contrast": 6.39
     },
     {
-     "text": "서 있기, 일어서기, 앉기, 걷기, 팔 들어올리기에서 뼈와 관절이 어떻게 움직이고 어떤 근",
+     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어",
      "font": 15,
      "contrast": 6.75
     }
@@ -29,7 +29,7 @@
   },
   {
    "at": "desktop/01-standing-mean-alignment",
-   "textSamples": 597,
+   "textSamples": 601,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -55,7 +55,7 @@
   },
   {
    "at": "desktop/02-standing-forward-sway",
-   "textSamples": 576,
+   "textSamples": 580,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -81,7 +81,7 @@
   },
   {
    "at": "desktop/03-sit-to-stand-flexion-momentum",
-   "textSamples": 679,
+   "textSamples": 683,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -107,7 +107,7 @@
   },
   {
    "at": "desktop/04-sit-to-stand-extension",
-   "textSamples": 668,
+   "textSamples": 672,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -133,7 +133,7 @@
   },
   {
    "at": "desktop/05-stand-to-sit-preparation",
-   "textSamples": 411,
+   "textSamples": 415,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -159,7 +159,7 @@
   },
   {
    "at": "desktop/06-stand-to-sit-seat-loading",
-   "textSamples": 409,
+   "textSamples": 413,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -185,7 +185,7 @@
   },
   {
    "at": "desktop/07-walking-initial-contact",
-   "textSamples": 841,
+   "textSamples": 845,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -211,7 +211,7 @@
   },
   {
    "at": "desktop/08-walking-pre-swing",
-   "textSamples": 828,
+   "textSamples": 832,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -236,8 +236,164 @@
    "clipped": []
   },
   {
-   "at": "desktop/09-arm-elevation-0-30",
-   "textSamples": 641,
+   "at": "desktop/09-stair-ascent-weight-acceptance",
+   "textSamples": 860,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "1체중 받아들이기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "1",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 19,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "desktop/10-stair-ascent-pull-up",
+   "textSamples": 866,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2끌어올리기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 18,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "desktop/11-stair-ascent-swing",
+   "textSamples": 847,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4유각(발 들어 넘기기·발 놓기)",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 15,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "desktop/12-stair-descent-weight-acceptance",
+   "textSamples": 823,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "1체중 받아들이기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "1",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 19,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "desktop/13-stair-descent-controlled-lowering",
+   "textSamples": 799,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "3조절하며 내려가기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "3",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 16,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "desktop/14-stair-descent-swing",
+   "textSamples": 770,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4유각(다리 끌어오기·발 놓기)",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "desktop/15-arm-elevation-0-30",
+   "textSamples": 645,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -262,8 +418,8 @@
    "clipped": []
   },
   {
-   "at": "desktop/10-arm-elevation-120-max",
-   "textSamples": 637,
+   "at": "desktop/16-arm-elevation-120-max",
+   "textSamples": 641,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -288,8 +444,8 @@
    "clipped": []
   },
   {
-   "at": "desktop/11-sit-to-stand-table",
-   "textSamples": 679,
+   "at": "desktop/17-sit-to-stand-table",
+   "textSamples": 683,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -314,8 +470,60 @@
    "clipped": []
   },
   {
+   "at": "desktop/18-stair-ascent-compare",
+   "textSamples": 866,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2끌어올리기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 18,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "desktop/19-stair-descent-contrast",
+   "textSamples": 799,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "3조절하며 내려가기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "3",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 16,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
    "at": "laptop/00-list",
-   "textSamples": 26,
+   "textSamples": 34,
    "minFont": 12,
    "minContrast": 6.37,
    "weakest": [
@@ -330,7 +538,7 @@
      "contrast": 6.39
     },
     {
-     "text": "서 있기, 일어서기, 앉기, 걷기, 팔 들어올리기에서 뼈와 관절이 어떻게 움직이고 어떤 근",
+     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어",
      "font": 15,
      "contrast": 6.75
     }
@@ -341,7 +549,7 @@
   },
   {
    "at": "laptop/01-standing-mean-alignment",
-   "textSamples": 597,
+   "textSamples": 602,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -367,7 +575,7 @@
   },
   {
    "at": "laptop/02-standing-forward-sway",
-   "textSamples": 576,
+   "textSamples": 581,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -393,7 +601,7 @@
   },
   {
    "at": "laptop/03-sit-to-stand-flexion-momentum",
-   "textSamples": 679,
+   "textSamples": 684,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -419,7 +627,7 @@
   },
   {
    "at": "laptop/04-sit-to-stand-extension",
-   "textSamples": 668,
+   "textSamples": 673,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -445,7 +653,7 @@
   },
   {
    "at": "laptop/05-stand-to-sit-preparation",
-   "textSamples": 411,
+   "textSamples": 416,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -471,7 +679,7 @@
   },
   {
    "at": "laptop/06-stand-to-sit-seat-loading",
-   "textSamples": 409,
+   "textSamples": 414,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -497,7 +705,7 @@
   },
   {
    "at": "laptop/07-walking-initial-contact",
-   "textSamples": 841,
+   "textSamples": 846,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -523,7 +731,7 @@
   },
   {
    "at": "laptop/08-walking-pre-swing",
-   "textSamples": 828,
+   "textSamples": 833,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -548,8 +756,164 @@
    "clipped": []
   },
   {
-   "at": "laptop/09-arm-elevation-0-30",
-   "textSamples": 641,
+   "at": "laptop/09-stair-ascent-weight-acceptance",
+   "textSamples": 861,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "1체중 받아들이기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "1",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 19,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "laptop/10-stair-ascent-pull-up",
+   "textSamples": 867,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2끌어올리기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 18,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "laptop/11-stair-ascent-swing",
+   "textSamples": 848,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4유각(발 들어 넘기기·발 놓기)",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 15,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "laptop/12-stair-descent-weight-acceptance",
+   "textSamples": 824,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "1체중 받아들이기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "1",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 19,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "laptop/13-stair-descent-controlled-lowering",
+   "textSamples": 800,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "3조절하며 내려가기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "3",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 16,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "laptop/14-stair-descent-swing",
+   "textSamples": 771,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4유각(다리 끌어오기·발 놓기)",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "laptop/15-arm-elevation-0-30",
+   "textSamples": 646,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -574,8 +938,8 @@
    "clipped": []
   },
   {
-   "at": "laptop/10-arm-elevation-120-max",
-   "textSamples": 637,
+   "at": "laptop/16-arm-elevation-120-max",
+   "textSamples": 642,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -600,8 +964,8 @@
    "clipped": []
   },
   {
-   "at": "laptop/11-sit-to-stand-table",
-   "textSamples": 679,
+   "at": "laptop/17-sit-to-stand-table",
+   "textSamples": 684,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -626,8 +990,60 @@
    "clipped": []
   },
   {
+   "at": "laptop/18-stair-ascent-compare",
+   "textSamples": 867,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2끌어올리기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 18,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "laptop/19-stair-descent-contrast",
+   "textSamples": 800,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "3조절하며 내려가기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "3",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 16,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
    "at": "tablet/00-list",
-   "textSamples": 26,
+   "textSamples": 34,
    "minFont": 12,
    "minContrast": 6.37,
    "weakest": [
@@ -642,7 +1058,7 @@
      "contrast": 6.39
     },
     {
-     "text": "서 있기, 일어서기, 앉기, 걷기, 팔 들어올리기에서 뼈와 관절이 어떻게 움직이고 어떤 근",
+     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어",
      "font": 15,
      "contrast": 6.75
     }
@@ -653,7 +1069,7 @@
   },
   {
    "at": "tablet/01-standing-mean-alignment",
-   "textSamples": 597,
+   "textSamples": 601,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -679,7 +1095,7 @@
   },
   {
    "at": "tablet/02-standing-forward-sway",
-   "textSamples": 576,
+   "textSamples": 580,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -705,7 +1121,7 @@
   },
   {
    "at": "tablet/03-sit-to-stand-flexion-momentum",
-   "textSamples": 679,
+   "textSamples": 683,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -731,7 +1147,7 @@
   },
   {
    "at": "tablet/04-sit-to-stand-extension",
-   "textSamples": 668,
+   "textSamples": 672,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -757,7 +1173,7 @@
   },
   {
    "at": "tablet/05-stand-to-sit-preparation",
-   "textSamples": 411,
+   "textSamples": 415,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -783,7 +1199,7 @@
   },
   {
    "at": "tablet/06-stand-to-sit-seat-loading",
-   "textSamples": 409,
+   "textSamples": 413,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -809,7 +1225,7 @@
   },
   {
    "at": "tablet/07-walking-initial-contact",
-   "textSamples": 841,
+   "textSamples": 845,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -835,7 +1251,7 @@
   },
   {
    "at": "tablet/08-walking-pre-swing",
-   "textSamples": 828,
+   "textSamples": 832,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -860,8 +1276,164 @@
    "clipped": []
   },
   {
-   "at": "tablet/09-arm-elevation-0-30",
-   "textSamples": 641,
+   "at": "tablet/09-stair-ascent-weight-acceptance",
+   "textSamples": 860,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "1체중 받아들이기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "1",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 19,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "tablet/10-stair-ascent-pull-up",
+   "textSamples": 866,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2끌어올리기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 18,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "tablet/11-stair-ascent-swing",
+   "textSamples": 847,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4유각(발 들어 넘기기·발 놓기)",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 15,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "tablet/12-stair-descent-weight-acceptance",
+   "textSamples": 823,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "1체중 받아들이기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "1",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 19,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "tablet/13-stair-descent-controlled-lowering",
+   "textSamples": 799,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "3조절하며 내려가기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "3",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 16,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "tablet/14-stair-descent-swing",
+   "textSamples": 770,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4유각(다리 끌어오기·발 놓기)",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "tablet/15-arm-elevation-0-30",
+   "textSamples": 645,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -886,8 +1458,8 @@
    "clipped": []
   },
   {
-   "at": "tablet/10-arm-elevation-120-max",
-   "textSamples": 637,
+   "at": "tablet/16-arm-elevation-120-max",
+   "textSamples": 641,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -912,8 +1484,8 @@
    "clipped": []
   },
   {
-   "at": "tablet/11-sit-to-stand-table",
-   "textSamples": 679,
+   "at": "tablet/17-sit-to-stand-table",
+   "textSamples": 683,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -938,8 +1510,60 @@
    "clipped": []
   },
   {
+   "at": "tablet/18-stair-ascent-compare",
+   "textSamples": 866,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2끌어올리기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 18,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "tablet/19-stair-descent-contrast",
+   "textSamples": 799,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "3조절하며 내려가기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "3",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 16,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
    "at": "mobile/00-list",
-   "textSamples": 26,
+   "textSamples": 34,
    "minFont": 12,
    "minContrast": 6.37,
    "weakest": [
@@ -954,7 +1578,7 @@
      "contrast": 6.39
     },
     {
-     "text": "서 있기, 일어서기, 앉기, 걷기, 팔 들어올리기에서 뼈와 관절이 어떻게 움직이고 어떤 근",
+     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어",
      "font": 15,
      "contrast": 6.75
     }
@@ -965,7 +1589,7 @@
   },
   {
    "at": "mobile/01-standing-mean-alignment",
-   "textSamples": 628,
+   "textSamples": 632,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -991,7 +1615,7 @@
   },
   {
    "at": "mobile/02-standing-forward-sway",
-   "textSamples": 607,
+   "textSamples": 611,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1017,7 +1641,7 @@
   },
   {
    "at": "mobile/03-sit-to-stand-flexion-momentum",
-   "textSamples": 716,
+   "textSamples": 720,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1043,7 +1667,7 @@
   },
   {
    "at": "mobile/04-sit-to-stand-extension",
-   "textSamples": 705,
+   "textSamples": 709,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1069,7 +1693,7 @@
   },
   {
    "at": "mobile/05-stand-to-sit-preparation",
-   "textSamples": 431,
+   "textSamples": 435,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1095,7 +1719,7 @@
   },
   {
    "at": "mobile/06-stand-to-sit-seat-loading",
-   "textSamples": 429,
+   "textSamples": 433,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1121,7 +1745,7 @@
   },
   {
    "at": "mobile/07-walking-initial-contact",
-   "textSamples": 914,
+   "textSamples": 918,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1147,7 +1771,7 @@
   },
   {
    "at": "mobile/08-walking-pre-swing",
-   "textSamples": 901,
+   "textSamples": 905,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1172,8 +1796,164 @@
    "clipped": []
   },
   {
-   "at": "mobile/09-arm-elevation-0-30",
-   "textSamples": 674,
+   "at": "mobile/09-stair-ascent-weight-acceptance",
+   "textSamples": 913,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "1체중 받아들이기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "1",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 19,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "mobile/10-stair-ascent-pull-up",
+   "textSamples": 919,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2끌어올리기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 18,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "mobile/11-stair-ascent-swing",
+   "textSamples": 900,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4유각(발 들어 넘기기·발 놓기)",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 15,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "mobile/12-stair-descent-weight-acceptance",
+   "textSamples": 876,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "1체중 받아들이기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "1",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 19,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "mobile/13-stair-descent-controlled-lowering",
+   "textSamples": 852,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "3조절하며 내려가기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "3",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 16,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "mobile/14-stair-descent-swing",
+   "textSamples": 823,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4유각(다리 끌어오기·발 놓기)",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "mobile/15-arm-elevation-0-30",
+   "textSamples": 678,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1198,8 +1978,8 @@
    "clipped": []
   },
   {
-   "at": "mobile/10-arm-elevation-120-max",
-   "textSamples": 670,
+   "at": "mobile/16-arm-elevation-120-max",
+   "textSamples": 674,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1224,8 +2004,8 @@
    "clipped": []
   },
   {
-   "at": "mobile/11-sit-to-stand-table",
-   "textSamples": 716,
+   "at": "mobile/17-sit-to-stand-table",
+   "textSamples": 720,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1250,8 +2030,60 @@
    "clipped": []
   },
   {
+   "at": "mobile/18-stair-ascent-compare",
+   "textSamples": 919,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2끌어올리기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 18,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "mobile/19-stair-descent-contrast",
+   "textSamples": 852,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "3조절하며 내려가기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "3",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 16,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
    "at": "small-mobile/00-list",
-   "textSamples": 26,
+   "textSamples": 34,
    "minFont": 12,
    "minContrast": 6.37,
    "weakest": [
@@ -1266,7 +2098,7 @@
      "contrast": 6.39
     },
     {
-     "text": "서 있기, 일어서기, 앉기, 걷기, 팔 들어올리기에서 뼈와 관절이 어떻게 움직이고 어떤 근",
+     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어",
      "font": 15,
      "contrast": 6.75
     }
@@ -1277,7 +2109,7 @@
   },
   {
    "at": "small-mobile/01-standing-mean-alignment",
-   "textSamples": 628,
+   "textSamples": 632,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1303,7 +2135,7 @@
   },
   {
    "at": "small-mobile/02-standing-forward-sway",
-   "textSamples": 607,
+   "textSamples": 611,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1329,7 +2161,7 @@
   },
   {
    "at": "small-mobile/03-sit-to-stand-flexion-momentum",
-   "textSamples": 716,
+   "textSamples": 720,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1355,7 +2187,7 @@
   },
   {
    "at": "small-mobile/04-sit-to-stand-extension",
-   "textSamples": 705,
+   "textSamples": 709,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1381,7 +2213,7 @@
   },
   {
    "at": "small-mobile/05-stand-to-sit-preparation",
-   "textSamples": 431,
+   "textSamples": 435,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1407,7 +2239,7 @@
   },
   {
    "at": "small-mobile/06-stand-to-sit-seat-loading",
-   "textSamples": 429,
+   "textSamples": 433,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1433,7 +2265,7 @@
   },
   {
    "at": "small-mobile/07-walking-initial-contact",
-   "textSamples": 914,
+   "textSamples": 918,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1459,7 +2291,7 @@
   },
   {
    "at": "small-mobile/08-walking-pre-swing",
-   "textSamples": 901,
+   "textSamples": 905,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1484,8 +2316,164 @@
    "clipped": []
   },
   {
-   "at": "small-mobile/09-arm-elevation-0-30",
-   "textSamples": 674,
+   "at": "small-mobile/09-stair-ascent-weight-acceptance",
+   "textSamples": 913,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "1체중 받아들이기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "1",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 19,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "small-mobile/10-stair-ascent-pull-up",
+   "textSamples": 919,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2끌어올리기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 18,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "small-mobile/11-stair-ascent-swing",
+   "textSamples": 900,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4유각(발 들어 넘기기·발 놓기)",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 15,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "small-mobile/12-stair-descent-weight-acceptance",
+   "textSamples": 876,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "1체중 받아들이기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "1",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 19,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "small-mobile/13-stair-descent-controlled-lowering",
+   "textSamples": 852,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "3조절하며 내려가기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "3",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 16,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "small-mobile/14-stair-descent-swing",
+   "textSamples": 823,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4유각(다리 끌어오기·발 놓기)",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "small-mobile/15-arm-elevation-0-30",
+   "textSamples": 678,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1510,8 +2498,8 @@
    "clipped": []
   },
   {
-   "at": "small-mobile/10-arm-elevation-120-max",
-   "textSamples": 670,
+   "at": "small-mobile/16-arm-elevation-120-max",
+   "textSamples": 674,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1536,8 +2524,8 @@
    "clipped": []
   },
   {
-   "at": "small-mobile/11-sit-to-stand-table",
-   "textSamples": 716,
+   "at": "small-mobile/17-sit-to-stand-table",
+   "textSamples": 720,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1562,8 +2550,60 @@
    "clipped": []
   },
   {
+   "at": "small-mobile/18-stair-ascent-compare",
+   "textSamples": 919,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2끌어올리기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 18,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "small-mobile/19-stair-descent-contrast",
+   "textSamples": 852,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "3조절하며 내려가기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "3",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 16,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
    "at": "landscape/00-list",
-   "textSamples": 26,
+   "textSamples": 34,
    "minFont": 12,
    "minContrast": 6.37,
    "weakest": [
@@ -1578,7 +2618,7 @@
      "contrast": 6.39
     },
     {
-     "text": "서 있기, 일어서기, 앉기, 걷기, 팔 들어올리기에서 뼈와 관절이 어떻게 움직이고 어떤 근",
+     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어",
      "font": 15,
      "contrast": 6.75
     }
@@ -1589,7 +2629,7 @@
   },
   {
    "at": "landscape/01-standing-mean-alignment",
-   "textSamples": 626,
+   "textSamples": 630,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1615,7 +2655,7 @@
   },
   {
    "at": "landscape/02-standing-forward-sway",
-   "textSamples": 605,
+   "textSamples": 609,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1641,7 +2681,7 @@
   },
   {
    "at": "landscape/03-sit-to-stand-flexion-momentum",
-   "textSamples": 714,
+   "textSamples": 718,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1667,7 +2707,7 @@
   },
   {
    "at": "landscape/04-sit-to-stand-extension",
-   "textSamples": 703,
+   "textSamples": 707,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1693,7 +2733,7 @@
   },
   {
    "at": "landscape/05-stand-to-sit-preparation",
-   "textSamples": 429,
+   "textSamples": 433,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1719,7 +2759,7 @@
   },
   {
    "at": "landscape/06-stand-to-sit-seat-loading",
-   "textSamples": 427,
+   "textSamples": 431,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1745,7 +2785,7 @@
   },
   {
    "at": "landscape/07-walking-initial-contact",
-   "textSamples": 912,
+   "textSamples": 916,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1771,7 +2811,7 @@
   },
   {
    "at": "landscape/08-walking-pre-swing",
-   "textSamples": 899,
+   "textSamples": 903,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1796,8 +2836,164 @@
    "clipped": []
   },
   {
-   "at": "landscape/09-arm-elevation-0-30",
-   "textSamples": 672,
+   "at": "landscape/09-stair-ascent-weight-acceptance",
+   "textSamples": 911,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "1체중 받아들이기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "1",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 19,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "landscape/10-stair-ascent-pull-up",
+   "textSamples": 917,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2끌어올리기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 18,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "landscape/11-stair-ascent-swing",
+   "textSamples": 898,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4유각(발 들어 넘기기·발 놓기)",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 15,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "landscape/12-stair-descent-weight-acceptance",
+   "textSamples": 874,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "1체중 받아들이기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "1",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 19,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "landscape/13-stair-descent-controlled-lowering",
+   "textSamples": 850,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "3조절하며 내려가기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "3",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 16,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "landscape/14-stair-descent-swing",
+   "textSamples": 821,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4유각(다리 끌어오기·발 놓기)",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "landscape/15-arm-elevation-0-30",
+   "textSamples": 676,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1822,8 +3018,8 @@
    "clipped": []
   },
   {
-   "at": "landscape/10-arm-elevation-120-max",
-   "textSamples": 668,
+   "at": "landscape/16-arm-elevation-120-max",
+   "textSamples": 672,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1848,8 +3044,8 @@
    "clipped": []
   },
   {
-   "at": "landscape/11-sit-to-stand-table",
-   "textSamples": 714,
+   "at": "landscape/17-sit-to-stand-table",
+   "textSamples": 718,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1871,6 +3067,58 @@
    ],
    "strokes": 19,
    "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "landscape/18-stair-ascent-compare",
+   "textSamples": 917,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 오르기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2끌어올리기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 18,
+   "minStrokeContrast": 3.56,
+   "clipped": []
+  },
+  {
+   "at": "landscape/19-stair-descent-contrast",
+   "textSamples": 850,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "계단 내리기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "3조절하며 내려가기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "3",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 16,
+   "minStrokeContrast": 3.56,
    "clipped": []
   }
  ]

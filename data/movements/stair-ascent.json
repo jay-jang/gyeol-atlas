@@ -1,0 +1,7829 @@
+{
+ "slug": "stair-ascent",
+ "name": "계단 오르기",
+ "nameEn": "Stair ascent (step-over-step)",
+ "view": "side",
+ "plane": "시상면",
+ "order": 5,
+ "summary": "같은 계단을 한 발씩 번갈아 디디며 두 단을 오르는 한 주기입니다. 오른발이 위 단에 닿은 때부터 같은 발이 두 단 위에 다시 닿을 때까지를 네 국면으로 나누고, 오른다리를 기준으로 그립니다. 도식에서는 왼다리를 반 주기 늦은 같은 곡선으로 그립니다(대칭 가정).",
+ "conditions": "Darmstadt 계단 데이터셋(DD)의 건강한 젊은 남성 12명(25.4±4.5세, 180.1±4.6 cm, 74.6±7.9 kg)이 맨발로 단 높이 17 cm·디딤판 29 cm(경사 30.4°) 계단을 한 발씩 번갈아 디디며 스스로 고른 속도(0.53 m/s)로 오른 기록입니다. 계단 가운데에서 속도가 일정해진(정상 상태) 주기(A5, 오른발 2번 단→4번 단)이며, 단 수(디딤판 5개와 위층)는 데이터 문서 그림을 판독한 값입니다. 난간은 출처에 기재가 없습니다. 이 페이지의 DD 값은 모두 이 조건의 12명 총평균(±대상 간 SD)이며, 근전도는 같은 대상·같은 다리의 평지 보행 주기 최대를 100으로 둔 상대값입니다(앞정강근만 10명).",
+ "duration": {
+  "seconds": 1.12,
+  "sources": [
+   "grimmer2020",
+   "darmstadt-stairs"
+  ],
+  "note": "Grimmer 2020 표 1의 A5 주기 시간입니다(디딤 0.72 s, 디딤 비율 64.1%). 공개 데이터의 같은 주기 평균은 1.121 s입니다."
+ },
+ "loop": true,
+ "phaseKind": "국면",
+ "phases": [
+  {
+   "id": "weight-acceptance",
+   "name": "체중 받아들이기",
+   "nameEn": "Weight acceptance (WA)",
+   "start": 0,
+   "end": 0.141,
+   "range": "발 닿기 → 반대발 떼기(도식 14.1%·DD 13.5%)",
+   "events": "오른발이 위 단에 닿은 순간부터 왼발이 아래 단을 떠날 때까지, 첫 양발 지지입니다. 이 페이지의 네 국면은 McFadyen & Winter의 기능명을 빌려 접촉 사건과 DD 체중심 속도로 경계를 정한 편집 구간이며, 원래 국면 정의를 재현한 것이 아닙니다.",
+   "summary": "엉덩관절(넙다리 50°)과 무릎(68°)이 크게 굽은 채 발이 닿고, 곧 둘 다 펴지기 시작합니다. 발목은 11% 무렵까지 발등굽힘이 21°로 조금 더 늘어납니다. 가쪽넓은근과 넙다리곧은근의 근전도가 주기 중 가장 큽니다.",
+   "mechanics": [
+    "엉덩관절과 무릎이 폄 모멘트를 내며 펴져 양의 일을 시작합니다(이 국면 엉덩관절 +0.18, 무릎 +0.17 J/kg). 무릎은 닿은 직후 3%까지만 짧게 음의 일률입니다.",
+    "발목은 발바닥굽힘 쪽 순 모멘트를 내면서 발등굽힘해(관절이 일을 흡수) 작은 음의 일(−0.06 J/kg)을 내고, 11% 무렵 양의 일률로 바뀝니다.",
+    "체중심은 이 국면에 약 5 cm 오르며 상승 속도가 빨라집니다."
+   ],
+   "sources": [
+    "darmstadt-stairs",
+    "mcfadyen1988",
+    "cluff2008"
+   ]
+  },
+  {
+   "id": "pull-up",
+   "name": "끌어올리기",
+   "nameEn": "Pull-up (PU)",
+   "start": 0.141,
+   "end": 0.4237,
+   "range": "반대발 떼기 → E1(DD 계산 42.4%)",
+   "events": "왼발이 떨어져 오른다리 한 발로 몸을 받칩니다. DD 총평균 체중심의 수직 속도가 처음 0이 되는 때(E1, 선형 보간)에 끝나는 편집 경계입니다.",
+   "summary": "무릎이 51°에서 10°로, 넙다리가 31°에서 거의 수직으로 펴지며 몸을 위 단으로 들어 올립니다. 체중심 상승 속도는 21% 무렵 가장 큽니다(0.59 m/s). 발목은 발바닥굽힘으로 돌아서며 양의 일을 냅니다.",
+   "mechanics": [
+    "무릎 양의 일률은 국면 시작 무렵(14%) 가장 크고(약 2.5 W/kg), 무릎 순 모멘트는 31% 무렵 굽힘 쪽으로 바뀝니다. 이 국면의 관절 일은 엉덩관절 +0.20, 무릎 +0.25, 발목 +0.28 J/kg입니다.",
+    "가쪽넓은근 초음파 연구에서는 무릎이 펴져 단을 오르는 동안 근섬유와 힘줄이 함께 짧아졌습니다(여성 33명, 초록).",
+    "체중심은 이 국면에 약 12 cm 오릅니다."
+   ],
+   "sources": [
+    "darmstadt-stairs",
+    "chleboun2008",
+    "mcfadyen1988",
+    "cluff2008"
+   ]
+  },
+  {
+   "id": "forward-continuance",
+   "name": "앞으로 이어가기",
+   "nameEn": "Forward continuance (FC)",
+   "start": 0.4237,
+   "end": 0.641,
+   "range": "E1 → 발 떼기(Grimmer 2020 64.1%)",
+   "events": "체중심 상승이 멈춘 뒤 왼발이 다음 단에 닿고(둘째 양발 지지 시작, 도식 50%·DD 계산 49.8%), 오른발이 아래 단을 떠날 때까지입니다. 발 떼기 64.1%는 Grimmer 2020 표 1의 디딤 비율입니다.",
+   "summary": "무릎은 54% 무렵 가장 펴진 뒤(약 8°) 다시 굽고, 발목은 발바닥굽힘 24°까지 빠르게 움직여 몸을 밀어 올립니다. 이 국면의 발목 양의 일(+0.41 J/kg)이 국면·관절별 값 가운데 가장 큽니다.",
+   "mechanics": [
+    "발목 양의 일률은 57% 무렵 가장 큽니다(3.85 W/kg). 무릎 일률은 52% 무렵 양으로 바뀌고, 54.5% 뒤 무릎이 다시 굽으면서 굽힘 쪽 순 모멘트로 작은 양의 일을 냅니다(+0.05 J/kg).",
+    "체중심 상승 속도는 42.4–49%에 0 아래로 조금 내려갔다가(최소 −0.03 m/s) 왼발이 닿을 즈음 다시 커집니다.",
+    "안쪽장딴지근은 반대발이 닿은 뒤 근활성이 가장 큰데, 이 시기 근섬유를 두고 ‘거의 등척성’이라는 결론과 ‘빠르게 짧아짐’이라는 서술이 같은 연구에 함께 있습니다(초음파, 남성 10명)."
+   ],
+   "sources": [
+    "darmstadt-stairs",
+    "grimmer2020",
+    "spanjaard2007",
+    "mcfadyen1988",
+    "cluff2008"
+   ]
+  },
+  {
+   "id": "swing",
+   "name": "유각(발 들어 넘기기·발 놓기)",
+   "nameEn": "Swing (foot clearance, foot placement)",
+   "start": 0.641,
+   "end": 1,
+   "range": "발 떼기(Grimmer 2020 64.1%) → 다음 발 닿기",
+   "events": "오른발이 아래 단을 떠나 중간 단을 넘어 두 단 위에 다시 닿을 때까지입니다. McFadyen & Winter는 이 구간을 발 들어 넘기기와 발 놓기로 나누지만, DD에 그 경계 사건이 없어 한 국면으로 둡니다.",
+   "summary": "엉덩관절이 넙다리 −2°에서 53°까지 굽고 무릎은 86% 무렵 94°까지 굽어, 발이 중간 단 모서리를 넘습니다. 그 뒤 무릎이 73°까지 펴지며 발을 다음 단에 놓습니다. 발목은 발등굽힘 21°로 돌아옵니다.",
+   "mechanics": [
+    "엉덩관절은 68–88%에 굽힘 모멘트와 양의 일률을 보입니다(이 국면 +0.12 J/kg). 무릎은 유각 초반에 양의 일(+0.10 J/kg)을, 중반 이후에 음의 일(−0.14 J/kg)을 내며 굽힘과 폄을 차례로 늦춥니다.",
+    "체중심은 이 국면에도 약 12 cm 오릅니다. 이때 몸을 들어 올리는 것은 반대쪽 디딤다리입니다."
+   ],
+   "sources": [
+    "darmstadt-stairs",
+    "mcfadyen1988",
+    "cluff2008"
+   ]
+  }
+ ],
+ "keyframes": [
+  {
+   "t": 0,
+   "event": "오른발 닿기",
+   "angles": {
+    "hip": 50.9,
+    "knee": 69.2,
+    "ankle": 15.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "note": "12명 총평균입니다. 엉덩관절은 넙다리와 수직선 사이 각(넙다리 분절각)이고, 골반 기준 엉덩관절 각은 관절 대표값 표에 따로 적었습니다. 몸통은 편집 근사입니다.",
+   "measured": {
+    "angles": {
+     "hip": 49.7,
+     "knee": 68,
+     "ankle": 13.9
+    },
+    "sd": {
+     "hip": 2.2,
+     "knee": 4.1,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.0025,
+   "angles": {
+    "hip": 50.8,
+    "knee": 69,
+    "ankle": 15.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 49.4,
+     "knee": 67.7,
+     "ankle": 13.9
+    },
+    "sd": {
+     "hip": 2.2,
+     "knee": 4.1,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.005,
+   "angles": {
+    "hip": 50.6,
+    "knee": 68.8,
+    "ankle": 15.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 49.2,
+     "knee": 67.5,
+     "ankle": 13.9
+    },
+    "sd": {
+     "hip": 2.2,
+     "knee": 4.1,
+     "ankle": 4.1
+    }
+   }
+  },
+  {
+   "t": 0.0075,
+   "angles": {
+    "hip": 50.4,
+    "knee": 68.7,
+    "ankle": 15.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 48.9,
+     "knee": 67.3,
+     "ankle": 13.9
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 4.1,
+     "ankle": 4
+    }
+   }
+  },
+  {
+   "t": 0.010101,
+   "angles": {
+    "hip": 50.2,
+    "knee": 68.5,
+    "ankle": 15.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 48.6,
+     "knee": 67,
+     "ankle": 13.9
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 4.1,
+     "ankle": 4
+    }
+   }
+  },
+  {
+   "t": 0.0125,
+   "angles": {
+    "hip": 50.1,
+    "knee": 68.3,
+    "ankle": 15.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 48.3,
+     "knee": 66.8,
+     "ankle": 14
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 4.1,
+     "ankle": 3.8
+    }
+   }
+  },
+  {
+   "t": 0.015,
+   "angles": {
+    "hip": 49.9,
+    "knee": 68.2,
+    "ankle": 15.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 48.1,
+     "knee": 66.7,
+     "ankle": 14.2
+    },
+    "sd": {
+     "hip": 2.4,
+     "knee": 4,
+     "ankle": 3.7
+    }
+   }
+  },
+  {
+   "t": 0.0175,
+   "angles": {
+    "hip": 49.6,
+    "knee": 68.1,
+    "ankle": 16.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 47.8,
+     "knee": 66.5,
+     "ankle": 14.6
+    },
+    "sd": {
+     "hip": 2.4,
+     "knee": 4,
+     "ankle": 3.6
+    }
+   }
+  },
+  {
+   "t": 0.020202,
+   "angles": {
+    "hip": 49.4,
+    "knee": 67.9,
+    "ankle": 16.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 47.4,
+     "knee": 66.3,
+     "ankle": 14.9
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4,
+     "ankle": 3.5
+    }
+   }
+  },
+  {
+   "t": 0.0225,
+   "angles": {
+    "hip": 49.2,
+    "knee": 67.8,
+    "ankle": 16.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 47.2,
+     "knee": 66.2,
+     "ankle": 15.2
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 3.9,
+     "ankle": 3.4
+    }
+   }
+  },
+  {
+   "t": 0.025,
+   "angles": {
+    "hip": 49,
+    "knee": 67.7,
+    "ankle": 17.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 46.9,
+     "knee": 66,
+     "ankle": 15.6
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 3.9,
+     "ankle": 3.2
+    }
+   }
+  },
+  {
+   "t": 0.0275,
+   "angles": {
+    "hip": 48.8,
+    "knee": 67.5,
+    "ankle": 17.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 46.6,
+     "knee": 65.9,
+     "ankle": 16
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 3.9,
+     "ankle": 3.1
+    }
+   }
+  },
+  {
+   "t": 0.030303,
+   "angles": {
+    "hip": 48.5,
+    "knee": 67.4,
+    "ankle": 18,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 46.2,
+     "knee": 65.7,
+     "ankle": 16.5
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 3.8,
+     "ankle": 2.9
+    }
+   }
+  },
+  {
+   "t": 0.0325,
+   "angles": {
+    "hip": 48.3,
+    "knee": 67.3,
+    "ankle": 18.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 46,
+     "knee": 65.5,
+     "ankle": 16.8
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 3.8,
+     "ankle": 2.8
+    }
+   }
+  },
+  {
+   "t": 0.035,
+   "angles": {
+    "hip": 48,
+    "knee": 67.1,
+    "ankle": 18.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 45.7,
+     "knee": 65.3,
+     "ankle": 17.2
+    },
+    "sd": {
+     "hip": 2.8,
+     "knee": 3.8,
+     "ankle": 2.7
+    }
+   }
+  },
+  {
+   "t": 0.0375,
+   "angles": {
+    "hip": 47.8,
+    "knee": 67,
+    "ankle": 18.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 45.4,
+     "knee": 65.2,
+     "ankle": 17.6
+    },
+    "sd": {
+     "hip": 2.8,
+     "knee": 3.8,
+     "ankle": 2.6
+    }
+   }
+  },
+  {
+   "t": 0.040404,
+   "angles": {
+    "hip": 47.5,
+    "knee": 66.8,
+    "ankle": 19.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 45,
+     "knee": 64.9,
+     "ankle": 18
+    },
+    "sd": {
+     "hip": 2.9,
+     "knee": 3.8,
+     "ankle": 2.5
+    }
+   }
+  },
+  {
+   "t": 0.0425,
+   "angles": {
+    "hip": 47.3,
+    "knee": 66.6,
+    "ankle": 19.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 44.8,
+     "knee": 64.7,
+     "ankle": 18.2
+    },
+    "sd": {
+     "hip": 3,
+     "knee": 3.8,
+     "ankle": 2.4
+    }
+   }
+  },
+  {
+   "t": 0.045,
+   "angles": {
+    "hip": 47.1,
+    "knee": 66.4,
+    "ankle": 19.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 44.5,
+     "knee": 64.5,
+     "ankle": 18.5
+    },
+    "sd": {
+     "hip": 3,
+     "knee": 3.8,
+     "ankle": 2.4
+    }
+   }
+  },
+  {
+   "t": 0.0475,
+   "angles": {
+    "hip": 46.8,
+    "knee": 66.2,
+    "ankle": 20.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 44.2,
+     "knee": 64.2,
+     "ankle": 18.8
+    },
+    "sd": {
+     "hip": 3.1,
+     "knee": 3.8,
+     "ankle": 2.3
+    }
+   }
+  },
+  {
+   "t": 0.050505,
+   "angles": {
+    "hip": 46.5,
+    "knee": 66,
+    "ankle": 20.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 43.8,
+     "knee": 63.9,
+     "ankle": 19.1
+    },
+    "sd": {
+     "hip": 3.2,
+     "knee": 3.9,
+     "ankle": 2.2
+    }
+   }
+  },
+  {
+   "t": 0.0525,
+   "angles": {
+    "hip": 46.3,
+    "knee": 65.8,
+    "ankle": 20.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 43.6,
+     "knee": 63.7,
+     "ankle": 19.3
+    },
+    "sd": {
+     "hip": 3.2,
+     "knee": 3.9,
+     "ankle": 2.2
+    }
+   }
+  },
+  {
+   "t": 0.055,
+   "angles": {
+    "hip": 46.1,
+    "knee": 65.6,
+    "ankle": 20.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 43.3,
+     "knee": 63.4,
+     "ankle": 19.5
+    },
+    "sd": {
+     "hip": 3.3,
+     "knee": 3.9,
+     "ankle": 2.2
+    }
+   }
+  },
+  {
+   "t": 0.0575,
+   "angles": {
+    "hip": 45.8,
+    "knee": 65.4,
+    "ankle": 21,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 43,
+     "knee": 63.1,
+     "ankle": 19.7
+    },
+    "sd": {
+     "hip": 3.3,
+     "knee": 3.9,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.060606,
+   "angles": {
+    "hip": 45.5,
+    "knee": 65.1,
+    "ankle": 21.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 42.6,
+     "knee": 62.7,
+     "ankle": 20
+    },
+    "sd": {
+     "hip": 3.4,
+     "knee": 4,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.0625,
+   "angles": {
+    "hip": 45.3,
+    "knee": 64.9,
+    "ankle": 21.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 42.3,
+     "knee": 62.5,
+     "ankle": 20.1
+    },
+    "sd": {
+     "hip": 3.4,
+     "knee": 4,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.065,
+   "angles": {
+    "hip": 45.1,
+    "knee": 64.7,
+    "ankle": 21.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 42,
+     "knee": 62.2,
+     "ankle": 20.2
+    },
+    "sd": {
+     "hip": 3.5,
+     "knee": 4,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.0675,
+   "angles": {
+    "hip": 44.8,
+    "knee": 64.5,
+    "ankle": 21.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 41.7,
+     "knee": 61.9,
+     "ankle": 20.4
+    },
+    "sd": {
+     "hip": 3.6,
+     "knee": 4,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.070707,
+   "angles": {
+    "hip": 44.5,
+    "knee": 64.3,
+    "ankle": 21.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 41.3,
+     "knee": 61.5,
+     "ankle": 20.5
+    },
+    "sd": {
+     "hip": 3.6,
+     "knee": 4.1,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.0725,
+   "angles": {
+    "hip": 44.3,
+    "knee": 64.1,
+    "ankle": 21.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 41.1,
+     "knee": 61.3,
+     "ankle": 20.6
+    },
+    "sd": {
+     "hip": 3.7,
+     "knee": 4.1,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.075,
+   "angles": {
+    "hip": 44,
+    "knee": 63.9,
+    "ankle": 22,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 40.8,
+     "knee": 61.1,
+     "ankle": 20.7
+    },
+    "sd": {
+     "hip": 3.7,
+     "knee": 4.1,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.0775,
+   "angles": {
+    "hip": 43.8,
+    "knee": 63.7,
+    "ankle": 22.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 40.5,
+     "knee": 60.8,
+     "ankle": 20.8
+    },
+    "sd": {
+     "hip": 3.7,
+     "knee": 4.1,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.080808,
+   "angles": {
+    "hip": 43.4,
+    "knee": 63.4,
+    "ankle": 22.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 40.1,
+     "knee": 60.4,
+     "ankle": 20.8
+    },
+    "sd": {
+     "hip": 3.8,
+     "knee": 4.2,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.0825,
+   "angles": {
+    "hip": 43.2,
+    "knee": 63.3,
+    "ankle": 22.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 39.9,
+     "knee": 60.2,
+     "ankle": 20.9
+    },
+    "sd": {
+     "hip": 3.8,
+     "knee": 4.2,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.085,
+   "angles": {
+    "hip": 43,
+    "knee": 63,
+    "ankle": 22.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 39.5,
+     "knee": 59.9,
+     "ankle": 20.9
+    },
+    "sd": {
+     "hip": 3.8,
+     "knee": 4.2,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.0875,
+   "angles": {
+    "hip": 42.7,
+    "knee": 62.8,
+    "ankle": 22.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 39.2,
+     "knee": 59.5,
+     "ankle": 21
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4.2,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.09,
+   "angles": {
+    "hip": 42.4,
+    "knee": 62.6,
+    "ankle": 22.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 38.8,
+     "knee": 59.2,
+     "ankle": 21
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4.2,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.090909,
+   "angles": {
+    "hip": 42.3,
+    "knee": 62.5,
+    "ankle": 22.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 38.7,
+     "knee": 59.1,
+     "ankle": 21.1
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4.3,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.0925,
+   "angles": {
+    "hip": 42.1,
+    "knee": 62.3,
+    "ankle": 22.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 38.5,
+     "knee": 58.9,
+     "ankle": 21.1
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4.3,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.095,
+   "angles": {
+    "hip": 41.8,
+    "knee": 62,
+    "ankle": 22.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 38.1,
+     "knee": 58.5,
+     "ankle": 21.1
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.0975,
+   "angles": {
+    "hip": 41.5,
+    "knee": 61.7,
+    "ankle": 22.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 37.8,
+     "knee": 58.2,
+     "ankle": 21.2
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1,
+   "angles": {
+    "hip": 41.3,
+    "knee": 61.4,
+    "ankle": 23,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 37.4,
+     "knee": 57.8,
+     "ankle": 21.2
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.10101,
+   "angles": {
+    "hip": 41.1,
+    "knee": 61.3,
+    "ankle": 23,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 37.3,
+     "knee": 57.6,
+     "ankle": 21.2
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1025,
+   "angles": {
+    "hip": 40.9,
+    "knee": 61.1,
+    "ankle": 23,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 37.1,
+     "knee": 57.4,
+     "ankle": 21.2
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.105,
+   "angles": {
+    "hip": 40.6,
+    "knee": 60.8,
+    "ankle": 23.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 36.7,
+     "knee": 57,
+     "ankle": 21.2
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1075,
+   "angles": {
+    "hip": 40.2,
+    "knee": 60.4,
+    "ankle": 23.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 36.3,
+     "knee": 56.6,
+     "ankle": 21.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.11,
+   "angles": {
+    "hip": 39.8,
+    "knee": 60.1,
+    "ankle": 23.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 35.9,
+     "knee": 56.2,
+     "ankle": 21.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.111111,
+   "angles": {
+    "hip": 39.7,
+    "knee": 59.9,
+    "ankle": 23.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 35.8,
+     "knee": 56.1,
+     "ankle": 21.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1125,
+   "angles": {
+    "hip": 39.5,
+    "knee": 59.7,
+    "ankle": 23.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 35.6,
+     "knee": 55.8,
+     "ankle": 21.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.115,
+   "angles": {
+    "hip": 39.1,
+    "knee": 59.3,
+    "ankle": 23.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 35.2,
+     "knee": 55.4,
+     "ankle": 21.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1175,
+   "angles": {
+    "hip": 38.7,
+    "knee": 58.9,
+    "ankle": 23.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 34.8,
+     "knee": 55,
+     "ankle": 21.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.12,
+   "angles": {
+    "hip": 38.4,
+    "knee": 58.5,
+    "ankle": 23.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 34.4,
+     "knee": 54.6,
+     "ankle": 21.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.121212,
+   "angles": {
+    "hip": 38.2,
+    "knee": 58.3,
+    "ankle": 23.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 34.3,
+     "knee": 54.4,
+     "ankle": 21.2
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1225,
+   "angles": {
+    "hip": 38,
+    "knee": 58.1,
+    "ankle": 23.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 34.1,
+     "knee": 54.2,
+     "ankle": 21.2
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.125,
+   "angles": {
+    "hip": 37.6,
+    "knee": 57.7,
+    "ankle": 23.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 33.7,
+     "knee": 53.8,
+     "ankle": 21.2
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1275,
+   "angles": {
+    "hip": 37.2,
+    "knee": 57.3,
+    "ankle": 23.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 33.3,
+     "knee": 53.3,
+     "ankle": 21.2
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.13,
+   "angles": {
+    "hip": 36.9,
+    "knee": 56.9,
+    "ankle": 23,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 32.9,
+     "knee": 52.9,
+     "ankle": 21.1
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.131313,
+   "angles": {
+    "hip": 36.7,
+    "knee": 56.7,
+    "ankle": 23,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 32.7,
+     "knee": 52.7,
+     "ankle": 21.1
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1325,
+   "angles": {
+    "hip": 36.5,
+    "knee": 56.5,
+    "ankle": 23,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 32.5,
+     "knee": 52.5,
+     "ankle": 21.1
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.135,
+   "angles": {
+    "hip": 36.1,
+    "knee": 56,
+    "ankle": 22.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 32.2,
+     "knee": 52.1,
+     "ankle": 21
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1375,
+   "angles": {
+    "hip": 35.7,
+    "knee": 55.6,
+    "ankle": 22.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 31.8,
+     "knee": 51.6,
+     "ankle": 21
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.14,
+   "angles": {
+    "hip": 35.3,
+    "knee": 55.1,
+    "ankle": 22.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 31.4,
+     "knee": 51.2,
+     "ankle": 20.9
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.141,
+   "event": "반대발 떼기(도식 14.1% · DD 계산 13.5%)",
+   "angles": {
+    "hip": 35.2,
+    "knee": 55,
+    "ankle": 22.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 31.2,
+     "knee": 51,
+     "ankle": 20.9
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.141414,
+   "angles": {
+    "hip": 35.1,
+    "knee": 54.9,
+    "ankle": 22.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 31.2,
+     "knee": 51,
+     "ankle": 20.9
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.3,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1425,
+   "angles": {
+    "hip": 34.9,
+    "knee": 54.7,
+    "ankle": 22.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 31,
+     "knee": 50.8,
+     "ankle": 20.8
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.2,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.145,
+   "angles": {
+    "hip": 34.5,
+    "knee": 54.2,
+    "ankle": 22.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 30.6,
+     "knee": 50.3,
+     "ankle": 20.8
+    },
+    "sd": {
+     "hip": 4.1,
+     "knee": 4.2,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1475,
+   "angles": {
+    "hip": 34.1,
+    "knee": 53.8,
+    "ankle": 22.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 30.2,
+     "knee": 49.9,
+     "ankle": 20.7
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.2,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.15,
+   "angles": {
+    "hip": 33.7,
+    "knee": 53.3,
+    "ankle": 22.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 29.9,
+     "knee": 49.5,
+     "ankle": 20.6
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.2,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.151515,
+   "angles": {
+    "hip": 33.4,
+    "knee": 53,
+    "ankle": 22.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 29.6,
+     "knee": 49.2,
+     "ankle": 20.5
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.2,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1525,
+   "angles": {
+    "hip": 33.2,
+    "knee": 52.7,
+    "ankle": 22.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 29.5,
+     "knee": 49,
+     "ankle": 20.5
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.2,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.155,
+   "angles": {
+    "hip": 32.7,
+    "knee": 52.2,
+    "ankle": 22.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 29.1,
+     "knee": 48.6,
+     "ankle": 20.4
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.2,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1575,
+   "angles": {
+    "hip": 32.2,
+    "knee": 51.7,
+    "ankle": 22,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 28.7,
+     "knee": 48.2,
+     "ankle": 20.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.2,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.16,
+   "angles": {
+    "hip": 31.7,
+    "knee": 51.1,
+    "ankle": 21.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 28.4,
+     "knee": 47.7,
+     "ankle": 20.2
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.2,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.161616,
+   "angles": {
+    "hip": 31.4,
+    "knee": 50.7,
+    "ankle": 21.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 28.1,
+     "knee": 47.5,
+     "ankle": 20.1
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.1,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1625,
+   "angles": {
+    "hip": 31.2,
+    "knee": 50.5,
+    "ankle": 21.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 28,
+     "knee": 47.3,
+     "ankle": 20
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.1,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.165,
+   "angles": {
+    "hip": 30.7,
+    "knee": 49.9,
+    "ankle": 21.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 27.6,
+     "knee": 46.9,
+     "ankle": 19.9
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.1,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1675,
+   "angles": {
+    "hip": 30.2,
+    "knee": 49.3,
+    "ankle": 21.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 27.2,
+     "knee": 46.4,
+     "ankle": 19.8
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.1,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.17,
+   "angles": {
+    "hip": 29.6,
+    "knee": 48.7,
+    "ankle": 21,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 26.9,
+     "knee": 46,
+     "ankle": 19.6
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.1,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.171717,
+   "angles": {
+    "hip": 29.2,
+    "knee": 48.3,
+    "ankle": 20.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 26.6,
+     "knee": 45.7,
+     "ankle": 19.5
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.1,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.175,
+   "angles": {
+    "hip": 28.5,
+    "knee": 47.5,
+    "ankle": 20.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 26.1,
+     "knee": 45.1,
+     "ankle": 19.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 4.1,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1775,
+   "angles": {
+    "hip": 28,
+    "knee": 46.9,
+    "ankle": 20.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 25.7,
+     "knee": 44.6,
+     "ankle": 19.2
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.18,
+   "angles": {
+    "hip": 27.4,
+    "knee": 46.2,
+    "ankle": 20,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 25.4,
+     "knee": 44.2,
+     "ankle": 19
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.181818,
+   "angles": {
+    "hip": 27,
+    "knee": 45.8,
+    "ankle": 19.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 25.1,
+     "knee": 43.9,
+     "ankle": 18.9
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.185,
+   "angles": {
+    "hip": 26.3,
+    "knee": 45,
+    "ankle": 19.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 24.6,
+     "knee": 43.3,
+     "ankle": 18.7
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1875,
+   "angles": {
+    "hip": 25.7,
+    "knee": 44.3,
+    "ankle": 19.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 24.3,
+     "knee": 42.8,
+     "ankle": 18.5
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.19,
+   "angles": {
+    "hip": 25.2,
+    "knee": 43.7,
+    "ankle": 19,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 23.9,
+     "knee": 42.4,
+     "ankle": 18.3
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.191919,
+   "angles": {
+    "hip": 24.8,
+    "knee": 43.2,
+    "ankle": 18.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 23.6,
+     "knee": 42,
+     "ankle": 18.2
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.195,
+   "angles": {
+    "hip": 24.1,
+    "knee": 42.4,
+    "ankle": 18.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 23.1,
+     "knee": 41.5,
+     "ankle": 18
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.1975,
+   "angles": {
+    "hip": 23.6,
+    "knee": 41.8,
+    "ankle": 18.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 22.8,
+     "knee": 41,
+     "ankle": 17.8
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.2,
+   "angles": {
+    "hip": 23.1,
+    "knee": 41.2,
+    "ankle": 17.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 22.4,
+     "knee": 40.5,
+     "ankle": 17.6
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.20202,
+   "angles": {
+    "hip": 22.7,
+    "knee": 40.7,
+    "ankle": 17.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 22.1,
+     "knee": 40.2,
+     "ankle": 17.5
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2
+    }
+   }
+  },
+  {
+   "t": 0.205,
+   "angles": {
+    "hip": 22.1,
+    "knee": 40,
+    "ankle": 17.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 21.7,
+     "knee": 39.6,
+     "ankle": 17.2
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.2075,
+   "angles": {
+    "hip": 21.6,
+    "knee": 39.4,
+    "ankle": 17.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 21.3,
+     "knee": 39.1,
+     "ankle": 17
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 4,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.21,
+   "angles": {
+    "hip": 21.1,
+    "knee": 38.9,
+    "ankle": 16.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 20.9,
+     "knee": 38.7,
+     "ankle": 16.8
+    },
+    "sd": {
+     "hip": 3.8,
+     "knee": 4,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.212121,
+   "angles": {
+    "hip": 20.8,
+    "knee": 38.4,
+    "ankle": 16.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 20.6,
+     "knee": 38.3,
+     "ankle": 16.7
+    },
+    "sd": {
+     "hip": 3.8,
+     "knee": 4,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.215,
+   "angles": {
+    "hip": 20.3,
+    "knee": 37.8,
+    "ankle": 16.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 20.2,
+     "knee": 37.7,
+     "ankle": 16.4
+    },
+    "sd": {
+     "hip": 3.8,
+     "knee": 4,
+     "ankle": 2.1
+    }
+   }
+  },
+  {
+   "t": 0.2175,
+   "angles": {
+    "hip": 19.9,
+    "knee": 37.3,
+    "ankle": 16.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.22,
+   "angles": {
+    "hip": 19.5,
+    "knee": 36.8,
+    "ankle": 16,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.222222,
+   "angles": {
+    "hip": 19.2,
+    "knee": 36.4,
+    "ankle": 15.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.232323,
+   "angles": {
+    "hip": 17.8,
+    "knee": 34.6,
+    "ankle": 14.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.242424,
+   "angles": {
+    "hip": 16.3,
+    "knee": 32.7,
+    "ankle": 14,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.252525,
+   "angles": {
+    "hip": 14.9,
+    "knee": 30.8,
+    "ankle": 13,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.262626,
+   "angles": {
+    "hip": 13.5,
+    "knee": 29,
+    "ankle": 12,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.272727,
+   "angles": {
+    "hip": 12.2,
+    "knee": 27.2,
+    "ankle": 11,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.282828,
+   "angles": {
+    "hip": 10.8,
+    "knee": 25.4,
+    "ankle": 10,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.292929,
+   "angles": {
+    "hip": 9.5,
+    "knee": 23.6,
+    "ankle": 9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.30303,
+   "angles": {
+    "hip": 8.3,
+    "knee": 21.9,
+    "ankle": 8.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.313131,
+   "angles": {
+    "hip": 7.1,
+    "knee": 20.4,
+    "ankle": 7.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.323232,
+   "angles": {
+    "hip": 6,
+    "knee": 18.9,
+    "ankle": 6.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.333333,
+   "angles": {
+    "hip": 4.9,
+    "knee": 17.5,
+    "ankle": 5.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.343434,
+   "angles": {
+    "hip": 3.9,
+    "knee": 16.2,
+    "ankle": 4.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.353535,
+   "angles": {
+    "hip": 3,
+    "knee": 15,
+    "ankle": 4.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.363636,
+   "angles": {
+    "hip": 2.1,
+    "knee": 14,
+    "ankle": 3.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.373737,
+   "angles": {
+    "hip": 1.4,
+    "knee": 13,
+    "ankle": 3.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.383838,
+   "angles": {
+    "hip": 0.6,
+    "knee": 12.2,
+    "ankle": 2.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.393939,
+   "angles": {
+    "hip": -0.1,
+    "knee": 11.5,
+    "ankle": 2.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.40404,
+   "angles": {
+    "hip": -0.7,
+    "knee": 10.9,
+    "ankle": 2.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.414141,
+   "angles": {
+    "hip": -1.3,
+    "knee": 10.4,
+    "ankle": 2.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.42,
+   "angles": {
+    "hip": -1.6,
+    "knee": 10.2,
+    "ankle": 2.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.4225,
+   "angles": {
+    "hip": -1.7,
+    "knee": 10,
+    "ankle": 2.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.4237,
+   "event": "E1 체중심 상승 멈춤(DD 계산 42.4%)",
+   "angles": {
+    "hip": -1.8,
+    "knee": 10,
+    "ankle": 2.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.424242,
+   "angles": {
+    "hip": -1.8,
+    "knee": 10,
+    "ankle": 2.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.4275,
+   "angles": {
+    "hip": -1.9,
+    "knee": 9.8,
+    "ankle": 2.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -2,
+     "knee": 9.9,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 7,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.43,
+   "angles": {
+    "hip": -2,
+    "knee": 9.7,
+    "ankle": 2.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -2.1,
+     "knee": 9.8,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 7,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.4325,
+   "angles": {
+    "hip": -2.1,
+    "knee": 9.6,
+    "ankle": 2.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -2.2,
+     "knee": 9.7,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 7,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.434343,
+   "angles": {
+    "hip": -2.2,
+    "knee": 9.5,
+    "ankle": 2.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -2.3,
+     "knee": 9.7,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 7,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.4375,
+   "angles": {
+    "hip": -2.3,
+    "knee": 9.4,
+    "ankle": 2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -2.5,
+     "knee": 9.6,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 6.9,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.44,
+   "angles": {
+    "hip": -2.3,
+    "knee": 9.2,
+    "ankle": 1.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -2.6,
+     "knee": 9.5,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 6.9,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.4425,
+   "angles": {
+    "hip": -2.4,
+    "knee": 9.1,
+    "ankle": 1.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -2.7,
+     "knee": 9.4,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 6.9,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.444444,
+   "angles": {
+    "hip": -2.5,
+    "knee": 9,
+    "ankle": 1.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -2.8,
+     "knee": 9.4,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 6.9,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.4475,
+   "angles": {
+    "hip": -2.5,
+    "knee": 8.8,
+    "ankle": 1.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3,
+     "knee": 9.3,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 6.9,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.45,
+   "angles": {
+    "hip": -2.6,
+    "knee": 8.7,
+    "ankle": 1.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3.1,
+     "knee": 9.3,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 6.9,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.4525,
+   "angles": {
+    "hip": -2.6,
+    "knee": 8.6,
+    "ankle": 1.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3.2,
+     "knee": 9.2,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 6.9,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.454545,
+   "angles": {
+    "hip": -2.7,
+    "knee": 8.5,
+    "ankle": 1.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3.3,
+     "knee": 9.2,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 6.9,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.4575,
+   "angles": {
+    "hip": -2.7,
+    "knee": 8.3,
+    "ankle": 1.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3.4,
+     "knee": 9.1,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 6.8,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.46,
+   "angles": {
+    "hip": -2.8,
+    "knee": 8.2,
+    "ankle": 1.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3.5,
+     "knee": 9.1,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 6.8,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.4625,
+   "angles": {
+    "hip": -2.8,
+    "knee": 8,
+    "ankle": 1.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3.7,
+     "knee": 9,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 6.8,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.464646,
+   "angles": {
+    "hip": -2.8,
+    "knee": 7.9,
+    "ankle": 1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3.8,
+     "knee": 9,
+     "ankle": 2.3
+    },
+    "sd": {
+     "hip": 4,
+     "knee": 6.7,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.4675,
+   "angles": {
+    "hip": -2.9,
+    "knee": 7.8,
+    "ankle": 0.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3.9,
+     "knee": 8.9,
+     "ankle": 2.2
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 6.7,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.47,
+   "angles": {
+    "hip": -2.9,
+    "knee": 7.7,
+    "ankle": 0.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -4,
+     "knee": 8.9,
+     "ankle": 2.2
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 6.7,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.4725,
+   "angles": {
+    "hip": -3,
+    "knee": 7.6,
+    "ankle": 0.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -4.1,
+     "knee": 8.8,
+     "ankle": 2.2
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 6.6,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.474747,
+   "angles": {
+    "hip": -3,
+    "knee": 7.5,
+    "ankle": 0.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -4.2,
+     "knee": 8.8,
+     "ankle": 2.2
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 6.6,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.4775,
+   "angles": {
+    "hip": -3.1,
+    "knee": 7.3,
+    "ankle": 0.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -4.4,
+     "knee": 8.8,
+     "ankle": 2.1
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 6.6,
+     "ankle": 4.3
+    }
+   }
+  },
+  {
+   "t": 0.48,
+   "angles": {
+    "hip": -3.2,
+    "knee": 7.2,
+    "ankle": 0.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -4.5,
+     "knee": 8.7,
+     "ankle": 2.1
+    },
+    "sd": {
+     "hip": 3.9,
+     "knee": 6.5,
+     "ankle": 4.3
+    }
+   }
+  },
+  {
+   "t": 0.4825,
+   "angles": {
+    "hip": -3.2,
+    "knee": 7.1,
+    "ankle": 0.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -4.6,
+     "knee": 8.7,
+     "ankle": 2.1
+    },
+    "sd": {
+     "hip": 3.8,
+     "knee": 6.5,
+     "ankle": 4.3
+    }
+   }
+  },
+  {
+   "t": 0.484848,
+   "angles": {
+    "hip": -3.3,
+    "knee": 7,
+    "ankle": 0,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -4.7,
+     "knee": 8.6,
+     "ankle": 2
+    },
+    "sd": {
+     "hip": 3.8,
+     "knee": 6.4,
+     "ankle": 4.3
+    }
+   }
+  },
+  {
+   "t": 0.4875,
+   "angles": {
+    "hip": -3.4,
+    "knee": 6.9,
+    "ankle": -0.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -4.9,
+     "knee": 8.6,
+     "ankle": 2
+    },
+    "sd": {
+     "hip": 3.8,
+     "knee": 6.4,
+     "ankle": 4.3
+    }
+   }
+  },
+  {
+   "t": 0.49,
+   "angles": {
+    "hip": -3.5,
+    "knee": 6.9,
+    "ankle": -0.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -5,
+     "knee": 8.5,
+     "ankle": 1.9
+    },
+    "sd": {
+     "hip": 3.8,
+     "knee": 6.3,
+     "ankle": 4.3
+    }
+   }
+  },
+  {
+   "t": 0.4925,
+   "angles": {
+    "hip": -3.6,
+    "knee": 6.8,
+    "ankle": -0.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -5.1,
+     "knee": 8.5,
+     "ankle": 1.8
+    },
+    "sd": {
+     "hip": 3.7,
+     "knee": 6.2,
+     "ankle": 4.4
+    }
+   }
+  },
+  {
+   "t": 0.494949,
+   "angles": {
+    "hip": -3.7,
+    "knee": 6.7,
+    "ankle": -0.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -5.2,
+     "knee": 8.4,
+     "ankle": 1.7
+    },
+    "sd": {
+     "hip": 3.7,
+     "knee": 6.2,
+     "ankle": 4.4
+    }
+   }
+  },
+  {
+   "t": 0.4975,
+   "angles": {
+    "hip": -3.8,
+    "knee": 6.7,
+    "ankle": -0.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -5.4,
+     "knee": 8.4,
+     "ankle": 1.6
+    },
+    "sd": {
+     "hip": 3.7,
+     "knee": 6.1,
+     "ankle": 4.4
+    }
+   }
+  },
+  {
+   "t": 0.5,
+   "event": "반대발 닿기(도식 50% · DD 계산 49.8%)",
+   "angles": {
+    "hip": -3.9,
+    "knee": 6.6,
+    "ankle": -0.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -5.5,
+     "knee": 8.4,
+     "ankle": 1.5
+    },
+    "sd": {
+     "hip": 3.6,
+     "knee": 6.1,
+     "ankle": 4.4
+    }
+   }
+  },
+  {
+   "t": 0.5025,
+   "angles": {
+    "hip": -4,
+    "knee": 6.5,
+    "ankle": -0.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -5.6,
+     "knee": 8.3,
+     "ankle": 1.4
+    },
+    "sd": {
+     "hip": 3.6,
+     "knee": 6,
+     "ankle": 4.5
+    }
+   }
+  },
+  {
+   "t": 0.505051,
+   "angles": {
+    "hip": -4,
+    "knee": 6.4,
+    "ankle": -1.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -5.7,
+     "knee": 8.3,
+     "ankle": 1.3
+    },
+    "sd": {
+     "hip": 3.6,
+     "knee": 5.9,
+     "ankle": 4.5
+    }
+   }
+  },
+  {
+   "t": 0.5075,
+   "angles": {
+    "hip": -4.1,
+    "knee": 6.4,
+    "ankle": -1.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -5.9,
+     "knee": 8.2,
+     "ankle": 1.1
+    },
+    "sd": {
+     "hip": 3.6,
+     "knee": 5.9,
+     "ankle": 4.5
+    }
+   }
+  },
+  {
+   "t": 0.51,
+   "angles": {
+    "hip": -4.2,
+    "knee": 6.3,
+    "ankle": -1.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6,
+     "knee": 8.2,
+     "ankle": 1
+    },
+    "sd": {
+     "hip": 3.5,
+     "knee": 5.8,
+     "ankle": 4.6
+    }
+   }
+  },
+  {
+   "t": 0.5125,
+   "angles": {
+    "hip": -4.2,
+    "knee": 6.2,
+    "ankle": -2.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.1,
+     "knee": 8.1,
+     "ankle": 0.8
+    },
+    "sd": {
+     "hip": 3.5,
+     "knee": 5.7,
+     "ankle": 4.6
+    }
+   }
+  },
+  {
+   "t": 0.515152,
+   "angles": {
+    "hip": -4.3,
+    "knee": 6.1,
+    "ankle": -2.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.3,
+     "knee": 8.1,
+     "ankle": 0.6
+    },
+    "sd": {
+     "hip": 3.5,
+     "knee": 5.6,
+     "ankle": 4.7
+    }
+   }
+  },
+  {
+   "t": 0.5175,
+   "angles": {
+    "hip": -4.4,
+    "knee": 6.1,
+    "ankle": -2.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.4,
+     "knee": 8,
+     "ankle": 0.4
+    },
+    "sd": {
+     "hip": 3.4,
+     "knee": 5.6,
+     "ankle": 4.7
+    }
+   }
+  },
+  {
+   "t": 0.52,
+   "angles": {
+    "hip": -4.5,
+    "knee": 6,
+    "ankle": -3.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.5,
+     "knee": 8,
+     "ankle": 0.2
+    },
+    "sd": {
+     "hip": 3.4,
+     "knee": 5.5,
+     "ankle": 4.8
+    }
+   }
+  },
+  {
+   "t": 0.5225,
+   "angles": {
+    "hip": -4.6,
+    "knee": 5.9,
+    "ankle": -3.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.6,
+     "knee": 7.9,
+     "ankle": 0
+    },
+    "sd": {
+     "hip": 3.4,
+     "knee": 5.4,
+     "ankle": 4.8
+    }
+   }
+  },
+  {
+   "t": 0.525253,
+   "angles": {
+    "hip": -4.7,
+    "knee": 5.9,
+    "ankle": -3.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.8,
+     "knee": 7.9,
+     "ankle": -0.3
+    },
+    "sd": {
+     "hip": 3.3,
+     "knee": 5.4,
+     "ankle": 4.9
+    }
+   }
+  },
+  {
+   "t": 0.5275,
+   "angles": {
+    "hip": -4.8,
+    "knee": 5.8,
+    "ankle": -4.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.9,
+     "knee": 7.9,
+     "ankle": -0.5
+    },
+    "sd": {
+     "hip": 3.3,
+     "knee": 5.3,
+     "ankle": 4.9
+    }
+   }
+  },
+  {
+   "t": 0.53,
+   "angles": {
+    "hip": -4.9,
+    "knee": 5.7,
+    "ankle": -4.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7,
+     "knee": 7.8,
+     "ankle": -0.8
+    },
+    "sd": {
+     "hip": 3.3,
+     "knee": 5.2,
+     "ankle": 5
+    }
+   }
+  },
+  {
+   "t": 0.5325,
+   "angles": {
+    "hip": -5,
+    "knee": 5.7,
+    "ankle": -4.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.1,
+     "knee": 7.8,
+     "ankle": -1.1
+    },
+    "sd": {
+     "hip": 3.2,
+     "knee": 5.2,
+     "ankle": 5.1
+    }
+   }
+  },
+  {
+   "t": 0.535354,
+   "angles": {
+    "hip": -5.1,
+    "knee": 5.6,
+    "ankle": -5.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.2,
+     "knee": 7.8,
+     "ankle": -1.4
+    },
+    "sd": {
+     "hip": 3.2,
+     "knee": 5.1,
+     "ankle": 5.1
+    }
+   }
+  },
+  {
+   "t": 0.5375,
+   "angles": {
+    "hip": -5.2,
+    "knee": 5.6,
+    "ankle": -5.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.3,
+     "knee": 7.8,
+     "ankle": -1.7
+    },
+    "sd": {
+     "hip": 3.2,
+     "knee": 5.1,
+     "ankle": 5.2
+    }
+   }
+  },
+  {
+   "t": 0.54,
+   "angles": {
+    "hip": -5.3,
+    "knee": 5.5,
+    "ankle": -6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.4,
+     "knee": 7.7,
+     "ankle": -2
+    },
+    "sd": {
+     "hip": 3.1,
+     "knee": 5,
+     "ankle": 5.3
+    }
+   }
+  },
+  {
+   "t": 0.5425,
+   "angles": {
+    "hip": -5.3,
+    "knee": 5.4,
+    "ankle": -6.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.5,
+     "knee": 7.7,
+     "ankle": -2.3
+    },
+    "sd": {
+     "hip": 3.1,
+     "knee": 4.9,
+     "ankle": 5.4
+    }
+   }
+  },
+  {
+   "t": 0.545455,
+   "angles": {
+    "hip": -5.4,
+    "knee": 5.4,
+    "ankle": -6.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.6,
+     "knee": 7.7,
+     "ankle": -2.8
+    },
+    "sd": {
+     "hip": 3.1,
+     "knee": 4.9,
+     "ankle": 5.4
+    }
+   }
+  },
+  {
+   "t": 0.5475,
+   "angles": {
+    "hip": -5.5,
+    "knee": 5.3,
+    "ankle": -7.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.6,
+     "knee": 7.7,
+     "ankle": -3.1
+    },
+    "sd": {
+     "hip": 3.1,
+     "knee": 4.8,
+     "ankle": 5.5
+    }
+   }
+  },
+  {
+   "t": 0.55,
+   "angles": {
+    "hip": -5.5,
+    "knee": 5.3,
+    "ankle": -7.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.7,
+     "knee": 7.8,
+     "ankle": -3.5
+    },
+    "sd": {
+     "hip": 3,
+     "knee": 4.8,
+     "ankle": 5.6
+    }
+   }
+  },
+  {
+   "t": 0.5525,
+   "angles": {
+    "hip": -5.6,
+    "knee": 5.3,
+    "ankle": -8.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.8,
+     "knee": 7.8,
+     "ankle": -3.9
+    },
+    "sd": {
+     "hip": 3,
+     "knee": 4.7,
+     "ankle": 5.6
+    }
+   }
+  },
+  {
+   "t": 0.555556,
+   "angles": {
+    "hip": -5.7,
+    "knee": 5.2,
+    "ankle": -8.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.9,
+     "knee": 7.8,
+     "ankle": -4.4
+    },
+    "sd": {
+     "hip": 3,
+     "knee": 4.7,
+     "ankle": 5.7
+    }
+   }
+  },
+  {
+   "t": 0.5575,
+   "angles": {
+    "hip": -5.7,
+    "knee": 5.2,
+    "ankle": -9.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.9,
+     "knee": 7.9,
+     "ankle": -4.8
+    },
+    "sd": {
+     "hip": 2.9,
+     "knee": 4.6,
+     "ankle": 5.8
+    }
+   }
+  },
+  {
+   "t": 0.56,
+   "angles": {
+    "hip": -5.7,
+    "knee": 5.2,
+    "ankle": -9.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -8,
+     "knee": 7.9,
+     "ankle": -5.3
+    },
+    "sd": {
+     "hip": 2.9,
+     "knee": 4.6,
+     "ankle": 5.9
+    }
+   }
+  },
+  {
+   "t": 0.5625,
+   "angles": {
+    "hip": -5.8,
+    "knee": 5.2,
+    "ankle": -10.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -8,
+     "knee": 8,
+     "ankle": -5.8
+    },
+    "sd": {
+     "hip": 2.9,
+     "knee": 4.5,
+     "ankle": 6
+    }
+   }
+  },
+  {
+   "t": 0.565657,
+   "angles": {
+    "hip": -5.8,
+    "knee": 5.2,
+    "ankle": -11.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -8,
+     "knee": 8.1,
+     "ankle": -6.4
+    },
+    "sd": {
+     "hip": 2.8,
+     "knee": 4.5,
+     "ankle": 6.1
+    }
+   }
+  },
+  {
+   "t": 0.5675,
+   "angles": {
+    "hip": -5.8,
+    "knee": 5.3,
+    "ankle": -11.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -8.1,
+     "knee": 8.1,
+     "ankle": -6.8
+    },
+    "sd": {
+     "hip": 2.8,
+     "knee": 4.4,
+     "ankle": 6.1
+    }
+   }
+  },
+  {
+   "t": 0.57,
+   "angles": {
+    "hip": -5.8,
+    "knee": 5.3,
+    "ankle": -12.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -8.1,
+     "knee": 8.2,
+     "ankle": -7.3
+    },
+    "sd": {
+     "hip": 2.8,
+     "knee": 4.4,
+     "ankle": 6.2
+    }
+   }
+  },
+  {
+   "t": 0.5725,
+   "angles": {
+    "hip": -5.8,
+    "knee": 5.3,
+    "ankle": -13.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -8.1,
+     "knee": 8.3,
+     "ankle": -7.9
+    },
+    "sd": {
+     "hip": 2.8,
+     "knee": 4.4,
+     "ankle": 6.3
+    }
+   }
+  },
+  {
+   "t": 0.575758,
+   "angles": {
+    "hip": -5.8,
+    "knee": 5.4,
+    "ankle": -14,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -8.1,
+     "knee": 8.5,
+     "ankle": -8.7
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 4.3,
+     "ankle": 6.4
+    }
+   }
+  },
+  {
+   "t": 0.5775,
+   "angles": {
+    "hip": -5.8,
+    "knee": 5.5,
+    "ankle": -14.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -8.1,
+     "knee": 8.6,
+     "ankle": -9.1
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 4.3,
+     "ankle": 6.4
+    }
+   }
+  },
+  {
+   "t": 0.58,
+   "angles": {
+    "hip": -5.8,
+    "knee": 5.6,
+    "ankle": -15.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -8,
+     "knee": 8.8,
+     "ankle": -9.7
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 4.3,
+     "ankle": 6.5
+    }
+   }
+  },
+  {
+   "t": 0.5825,
+   "angles": {
+    "hip": -5.8,
+    "knee": 5.7,
+    "ankle": -15.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -8,
+     "knee": 8.9,
+     "ankle": -10.4
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 4.3,
+     "ankle": 6.6
+    }
+   }
+  },
+  {
+   "t": 0.585,
+   "angles": {
+    "hip": -5.7,
+    "knee": 5.8,
+    "ankle": -16.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.9,
+     "knee": 9.1,
+     "ankle": -11
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 4.2,
+     "ankle": 6.6
+    }
+   }
+  },
+  {
+   "t": 0.585859,
+   "angles": {
+    "hip": -5.7,
+    "knee": 5.8,
+    "ankle": -17,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.9,
+     "knee": 9.2,
+     "ankle": -11.2
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.2,
+     "ankle": 6.7
+    }
+   }
+  },
+  {
+   "t": 0.5875,
+   "angles": {
+    "hip": -5.6,
+    "knee": 5.9,
+    "ankle": -17.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.9,
+     "knee": 9.3,
+     "ankle": -11.7
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.2,
+     "ankle": 6.7
+    }
+   }
+  },
+  {
+   "t": 0.59,
+   "angles": {
+    "hip": -5.6,
+    "knee": 6.1,
+    "ankle": -18.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.8,
+     "knee": 9.5,
+     "ankle": -12.3
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.2,
+     "ankle": 6.7
+    }
+   }
+  },
+  {
+   "t": 0.5925,
+   "angles": {
+    "hip": -5.5,
+    "knee": 6.3,
+    "ankle": -19.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.7,
+     "knee": 9.8,
+     "ankle": -13
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.2,
+     "ankle": 6.8
+    }
+   }
+  },
+  {
+   "t": 0.595,
+   "angles": {
+    "hip": -5.4,
+    "knee": 6.4,
+    "ankle": -19.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.6,
+     "knee": 10,
+     "ankle": -13.7
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.2,
+     "ankle": 6.8
+    }
+   }
+  },
+  {
+   "t": 0.59596,
+   "angles": {
+    "hip": -5.3,
+    "knee": 6.5,
+    "ankle": -20.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.5,
+     "knee": 10.2,
+     "ankle": -14
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.2,
+     "ankle": 6.8
+    }
+   }
+  },
+  {
+   "t": 0.5975,
+   "angles": {
+    "hip": -5.3,
+    "knee": 6.7,
+    "ankle": -20.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.4,
+     "knee": 10.3,
+     "ankle": -14.4
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.2,
+     "ankle": 6.8
+    }
+   }
+  },
+  {
+   "t": 0.6,
+   "angles": {
+    "hip": -5.1,
+    "knee": 6.9,
+    "ankle": -21.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.3,
+     "knee": 10.6,
+     "ankle": -15.1
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.2,
+     "ankle": 6.8
+    }
+   }
+  },
+  {
+   "t": 0.6025,
+   "angles": {
+    "hip": -5,
+    "knee": 7.2,
+    "ankle": -22.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -7.1,
+     "knee": 11,
+     "ankle": -15.8
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.2,
+     "ankle": 6.9
+    }
+   }
+  },
+  {
+   "t": 0.605,
+   "angles": {
+    "hip": -4.9,
+    "knee": 7.4,
+    "ankle": -23,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.9,
+     "knee": 11.3,
+     "ankle": -16.5
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.2,
+     "ankle": 6.9
+    }
+   }
+  },
+  {
+   "t": 0.606061,
+   "angles": {
+    "hip": -4.8,
+    "knee": 7.6,
+    "ankle": -23.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.9,
+     "knee": 11.5,
+     "ankle": -16.8
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.2,
+     "ankle": 6.9
+    }
+   }
+  },
+  {
+   "t": 0.6075,
+   "angles": {
+    "hip": -4.7,
+    "knee": 7.8,
+    "ankle": -23.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.7,
+     "knee": 11.7,
+     "ankle": -17.2
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.2,
+     "ankle": 6.8
+    }
+   }
+  },
+  {
+   "t": 0.61,
+   "angles": {
+    "hip": -4.6,
+    "knee": 8.1,
+    "ankle": -24.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.5,
+     "knee": 12.1,
+     "ankle": -17.9
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.2,
+     "ankle": 6.8
+    }
+   }
+  },
+  {
+   "t": 0.6125,
+   "angles": {
+    "hip": -4.4,
+    "knee": 8.5,
+    "ankle": -25.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.3,
+     "knee": 12.5,
+     "ankle": -18.5
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.3,
+     "ankle": 6.8
+    }
+   }
+  },
+  {
+   "t": 0.615,
+   "angles": {
+    "hip": -4.3,
+    "knee": 8.9,
+    "ankle": -25.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -6.1,
+     "knee": 13,
+     "ankle": -19.2
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.3,
+     "ankle": 6.7
+    }
+   }
+  },
+  {
+   "t": 0.616162,
+   "angles": {
+    "hip": -4.2,
+    "knee": 9.1,
+    "ankle": -26,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -5.9,
+     "knee": 13.2,
+     "ankle": -19.5
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.3,
+     "ankle": 6.7
+    }
+   }
+  },
+  {
+   "t": 0.6175,
+   "angles": {
+    "hip": -4.1,
+    "knee": 9.3,
+    "ankle": -26.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -5.8,
+     "knee": 13.4,
+     "ankle": -19.8
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.3,
+     "ankle": 6.7
+    }
+   }
+  },
+  {
+   "t": 0.62,
+   "angles": {
+    "hip": -3.9,
+    "knee": 9.7,
+    "ankle": -26.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -5.5,
+     "knee": 13.9,
+     "ankle": -20.4
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.4,
+     "ankle": 6.6
+    }
+   }
+  },
+  {
+   "t": 0.6225,
+   "angles": {
+    "hip": -3.7,
+    "knee": 10.2,
+    "ankle": -27.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -5.2,
+     "knee": 14.5,
+     "ankle": -21
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.4,
+     "ankle": 6.6
+    }
+   }
+  },
+  {
+   "t": 0.625,
+   "angles": {
+    "hip": -3.4,
+    "knee": 10.7,
+    "ankle": -27.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -4.9,
+     "knee": 15.1,
+     "ankle": -21.6
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.5,
+     "ankle": 6.5
+    }
+   }
+  },
+  {
+   "t": 0.626263,
+   "angles": {
+    "hip": -3.3,
+    "knee": 11,
+    "ankle": -28.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -4.7,
+     "knee": 15.4,
+     "ankle": -21.8
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.5,
+     "ankle": 6.5
+    }
+   }
+  },
+  {
+   "t": 0.6275,
+   "angles": {
+    "hip": -3.2,
+    "knee": 11.2,
+    "ankle": -28.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -4.6,
+     "knee": 15.7,
+     "ankle": -22
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 4.5,
+     "ankle": 6.5
+    }
+   }
+  },
+  {
+   "t": 0.63,
+   "angles": {
+    "hip": -2.9,
+    "knee": 11.8,
+    "ankle": -28.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -4.2,
+     "knee": 16.3,
+     "ankle": -22.5
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.6,
+     "ankle": 6.4
+    }
+   }
+  },
+  {
+   "t": 0.6325,
+   "angles": {
+    "hip": -2.7,
+    "knee": 12.4,
+    "ankle": -29.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3.9,
+     "knee": 17,
+     "ankle": -22.9
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.7,
+     "ankle": 6.4
+    }
+   }
+  },
+  {
+   "t": 0.635,
+   "angles": {
+    "hip": -2.4,
+    "knee": 13,
+    "ankle": -29.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3.5,
+     "knee": 17.7,
+     "ankle": -23.3
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.8,
+     "ankle": 6.3
+    }
+   }
+  },
+  {
+   "t": 0.636364,
+   "angles": {
+    "hip": -2.2,
+    "knee": 13.4,
+    "ankle": -29.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3.3,
+     "knee": 18.1,
+     "ankle": -23.4
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.8,
+     "ankle": 6.3
+    }
+   }
+  },
+  {
+   "t": 0.6375,
+   "angles": {
+    "hip": -2.1,
+    "knee": 13.7,
+    "ankle": -29.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -3.1,
+     "knee": 18.4,
+     "ankle": -23.6
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.8,
+     "ankle": 6.3
+    }
+   }
+  },
+  {
+   "t": 0.64,
+   "angles": {
+    "hip": -1.7,
+    "knee": 14.4,
+    "ankle": -29.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -2.7,
+     "knee": 19.2,
+     "ankle": -23.8
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.9,
+     "ankle": 6.3
+    }
+   }
+  },
+  {
+   "t": 0.641,
+   "event": "오른발 떼기(Grimmer 2020 64.1%)",
+   "angles": {
+    "hip": -1.6,
+    "knee": 14.7,
+    "ankle": -30,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -2.5,
+     "knee": 19.5,
+     "ankle": -23.9
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 4.9,
+     "ankle": 6.3
+    }
+   }
+  },
+  {
+   "t": 0.6425,
+   "angles": {
+    "hip": -1.4,
+    "knee": 15.2,
+    "ankle": -30.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -2.2,
+     "knee": 20,
+     "ankle": -24
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 5,
+     "ankle": 6.3
+    }
+   }
+  },
+  {
+   "t": 0.645,
+   "angles": {
+    "hip": -0.9,
+    "knee": 16.1,
+    "ankle": -30.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -1.8,
+     "knee": 20.9,
+     "ankle": -24.1
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 5,
+     "ankle": 6.3
+    }
+   }
+  },
+  {
+   "t": 0.646465,
+   "angles": {
+    "hip": -0.6,
+    "knee": 16.7,
+    "ankle": -30.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -1.5,
+     "knee": 21.4,
+     "ankle": -24.2
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 5.1,
+     "ankle": 6.3
+    }
+   }
+  },
+  {
+   "t": 0.6475,
+   "angles": {
+    "hip": -0.5,
+    "knee": 17,
+    "ankle": -30.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -1.3,
+     "knee": 21.7,
+     "ankle": -24.2
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 5.1,
+     "ankle": 6.3
+    }
+   }
+  },
+  {
+   "t": 0.65,
+   "angles": {
+    "hip": 0,
+    "knee": 18.1,
+    "ankle": -30,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -0.8,
+     "knee": 22.7,
+     "ankle": -24.1
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 5.2,
+     "ankle": 6.4
+    }
+   }
+  },
+  {
+   "t": 0.6525,
+   "angles": {
+    "hip": 0.5,
+    "knee": 19.1,
+    "ankle": -29.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": -0.3,
+     "knee": 23.6,
+     "ankle": -24.1
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 5.2,
+     "ankle": 6.4
+    }
+   }
+  },
+  {
+   "t": 0.655,
+   "angles": {
+    "hip": 1,
+    "knee": 20.2,
+    "ankle": -29.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 0.2,
+     "knee": 24.6,
+     "ankle": -24
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.3,
+     "ankle": 6.5
+    }
+   }
+  },
+  {
+   "t": 0.656566,
+   "angles": {
+    "hip": 1.3,
+    "knee": 21,
+    "ankle": -29.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 0.5,
+     "knee": 25.3,
+     "ankle": -23.9
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.3,
+     "ankle": 6.5
+    }
+   }
+  },
+  {
+   "t": 0.6575,
+   "angles": {
+    "hip": 1.5,
+    "knee": 21.4,
+    "ankle": -29.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 0.7,
+     "knee": 25.7,
+     "ankle": -23.8
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.3,
+     "ankle": 6.6
+    }
+   }
+  },
+  {
+   "t": 0.66,
+   "angles": {
+    "hip": 2,
+    "knee": 22.6,
+    "ankle": -28.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 1.2,
+     "knee": 26.7,
+     "ankle": -23.6
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.4,
+     "ankle": 6.7
+    }
+   }
+  },
+  {
+   "t": 0.6625,
+   "angles": {
+    "hip": 2.5,
+    "knee": 23.9,
+    "ankle": -28.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 1.8,
+     "knee": 27.8,
+     "ankle": -23.3
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.4,
+     "ankle": 6.7
+    }
+   }
+  },
+  {
+   "t": 0.665,
+   "angles": {
+    "hip": 3,
+    "knee": 25.2,
+    "ankle": -27.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 2.3,
+     "knee": 29,
+     "ankle": -23
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.5,
+     "ankle": 6.8
+    }
+   }
+  },
+  {
+   "t": 0.666667,
+   "angles": {
+    "hip": 3.4,
+    "knee": 26.1,
+    "ankle": -27.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 2.7,
+     "knee": 29.7,
+     "ankle": -22.7
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.5,
+     "ankle": 6.9
+    }
+   }
+  },
+  {
+   "t": 0.67,
+   "angles": {
+    "hip": 4.1,
+    "knee": 27.9,
+    "ankle": -26.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 3.5,
+     "knee": 31.3,
+     "ankle": -22.2
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.5,
+     "ankle": 7
+    }
+   }
+  },
+  {
+   "t": 0.6725,
+   "angles": {
+    "hip": 4.6,
+    "knee": 29.4,
+    "ankle": -25.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 4.1,
+     "knee": 32.5,
+     "ankle": -21.8
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.5,
+     "ankle": 7.2
+    }
+   }
+  },
+  {
+   "t": 0.675,
+   "angles": {
+    "hip": 5.2,
+    "knee": 30.8,
+    "ankle": -25,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 4.7,
+     "knee": 33.7,
+     "ankle": -21.3
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.6,
+     "ankle": 7.3
+    }
+   }
+  },
+  {
+   "t": 0.676768,
+   "angles": {
+    "hip": 5.6,
+    "knee": 31.8,
+    "ankle": -24.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 5.1,
+     "knee": 34.6,
+     "ankle": -20.9
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.6,
+     "ankle": 7.3
+    }
+   }
+  },
+  {
+   "t": 0.68,
+   "angles": {
+    "hip": 6.3,
+    "knee": 33.7,
+    "ankle": -23.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 5.9,
+     "knee": 36.2,
+     "ankle": -20.3
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.6,
+     "ankle": 7.5
+    }
+   }
+  },
+  {
+   "t": 0.6825,
+   "angles": {
+    "hip": 6.9,
+    "knee": 35.2,
+    "ankle": -22.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 6.5,
+     "knee": 37.5,
+     "ankle": -19.7
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.6,
+     "ankle": 7.6
+    }
+   }
+  },
+  {
+   "t": 0.685,
+   "angles": {
+    "hip": 7.5,
+    "knee": 36.7,
+    "ankle": -21.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 7.1,
+     "knee": 38.8,
+     "ankle": -19.1
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.7,
+     "ankle": 7.7
+    }
+   }
+  },
+  {
+   "t": 0.686869,
+   "angles": {
+    "hip": 7.9,
+    "knee": 37.9,
+    "ankle": -21.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 7.6,
+     "knee": 39.7,
+     "ankle": -18.7
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.7,
+     "ankle": 7.8
+    }
+   }
+  },
+  {
+   "t": 0.69,
+   "angles": {
+    "hip": 8.6,
+    "knee": 39.8,
+    "ankle": -20,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 8.3,
+     "knee": 41.4,
+     "ankle": -18
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.7,
+     "ankle": 8
+    }
+   }
+  },
+  {
+   "t": 0.6925,
+   "angles": {
+    "hip": 9.2,
+    "knee": 41.3,
+    "ankle": -19.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 9,
+     "knee": 42.7,
+     "ankle": -17.4
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.7,
+     "ankle": 8.1
+    }
+   }
+  },
+  {
+   "t": 0.695,
+   "angles": {
+    "hip": 9.8,
+    "knee": 42.8,
+    "ankle": -18.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 9.6,
+     "knee": 44,
+     "ankle": -16.7
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.7,
+     "ankle": 8.2
+    }
+   }
+  },
+  {
+   "t": 0.69697,
+   "angles": {
+    "hip": 10.3,
+    "knee": 44,
+    "ankle": -17.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 10.1,
+     "knee": 45,
+     "ankle": -16.3
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.8,
+     "ankle": 8.3
+    }
+   }
+  },
+  {
+   "t": 0.7,
+   "angles": {
+    "hip": 11,
+    "knee": 45.8,
+    "ankle": -16.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 10.9,
+     "knee": 46.6,
+     "ankle": -15.5
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.8,
+     "ankle": 8.4
+    }
+   }
+  },
+  {
+   "t": 0.7025,
+   "angles": {
+    "hip": 11.7,
+    "knee": 47.3,
+    "ankle": -15.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 11.5,
+     "knee": 47.9,
+     "ankle": -14.8
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.8,
+     "ankle": 8.5
+    }
+   }
+  },
+  {
+   "t": 0.705,
+   "angles": {
+    "hip": 12.3,
+    "knee": 48.7,
+    "ankle": -14.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 12.2,
+     "knee": 49.2,
+     "ankle": -14.2
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.8,
+     "ankle": 8.6
+    }
+   }
+  },
+  {
+   "t": 0.707071,
+   "angles": {
+    "hip": 12.8,
+    "knee": 49.9,
+    "ankle": -14.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 12.7,
+     "knee": 50.3,
+     "ankle": -13.7
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.9,
+     "ankle": 8.7
+    }
+   }
+  },
+  {
+   "t": 0.71,
+   "angles": {
+    "hip": 13.5,
+    "knee": 51.6,
+    "ankle": -13.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 13.5,
+     "knee": 51.8,
+     "ankle": -12.9
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.9,
+     "ankle": 8.8
+    }
+   }
+  },
+  {
+   "t": 0.7125,
+   "angles": {
+    "hip": 14.1,
+    "knee": 53,
+    "ankle": -12.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 14.1,
+     "knee": 53.1,
+     "ankle": -12.3
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.9,
+     "ankle": 8.9
+    }
+   }
+  },
+  {
+   "t": 0.715,
+   "angles": {
+    "hip": 14.8,
+    "knee": 54.3,
+    "ankle": -11.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 14.7,
+     "knee": 54.4,
+     "ankle": -11.6
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 5.9,
+     "ankle": 9
+    }
+   }
+  },
+  {
+   "t": 0.717172,
+   "angles": {
+    "hip": 15.3,
+    "knee": 55.5,
+    "ankle": -11.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.72,
+   "angles": {
+    "hip": 16,
+    "knee": 56.9,
+    "ankle": -10.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.727273,
+   "angles": {
+    "hip": 17.9,
+    "knee": 60.6,
+    "ankle": -8.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.737374,
+   "angles": {
+    "hip": 20.4,
+    "knee": 65.4,
+    "ankle": -5.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.747475,
+   "angles": {
+    "hip": 22.9,
+    "knee": 70,
+    "ankle": -3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.757576,
+   "angles": {
+    "hip": 25.4,
+    "knee": 74.2,
+    "ankle": -0.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.767677,
+   "angles": {
+    "hip": 27.8,
+    "knee": 78.1,
+    "ankle": 2.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.777778,
+   "angles": {
+    "hip": 30.1,
+    "knee": 81.5,
+    "ankle": 5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.787879,
+   "angles": {
+    "hip": 32.4,
+    "knee": 84.6,
+    "ankle": 7.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.79798,
+   "angles": {
+    "hip": 34.6,
+    "knee": 87.2,
+    "ankle": 9.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.808081,
+   "angles": {
+    "hip": 36.7,
+    "knee": 89.4,
+    "ankle": 11.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.818182,
+   "angles": {
+    "hip": 38.8,
+    "knee": 91.2,
+    "ankle": 13.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.828283,
+   "angles": {
+    "hip": 40.7,
+    "knee": 92.6,
+    "ankle": 15,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.838384,
+   "angles": {
+    "hip": 42.6,
+    "knee": 93.5,
+    "ankle": 16.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.848485,
+   "angles": {
+    "hip": 44.3,
+    "knee": 94,
+    "ankle": 17.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.858586,
+   "angles": {
+    "hip": 45.9,
+    "knee": 94.2,
+    "ankle": 18.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.859,
+   "event": "유각 무릎 최대 굽힘(DD 계산 85.9%)",
+   "angles": {
+    "hip": 46,
+    "knee": 94.2,
+    "ankle": 18.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ]
+  },
+  {
+   "t": 0.868687,
+   "angles": {
+    "hip": 47.4,
+    "knee": 93.8,
+    "ankle": 19.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 47.4,
+     "knee": 93.9,
+     "ankle": 19.2
+    },
+    "sd": {
+     "hip": 3.3,
+     "knee": 4.6,
+     "ankle": 5.4
+    }
+   }
+  },
+  {
+   "t": 0.878788,
+   "angles": {
+    "hip": 48.7,
+    "knee": 93,
+    "ankle": 19.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 48.7,
+     "knee": 93.3,
+     "ankle": 19.8
+    },
+    "sd": {
+     "hip": 3.3,
+     "knee": 4.4,
+     "ankle": 5.3
+    }
+   }
+  },
+  {
+   "t": 0.888889,
+   "angles": {
+    "hip": 49.8,
+    "knee": 91.7,
+    "ankle": 19.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 49.9,
+     "knee": 92.3,
+     "ankle": 20.3
+    },
+    "sd": {
+     "hip": 3.2,
+     "knee": 4.2,
+     "ankle": 5.2
+    }
+   }
+  },
+  {
+   "t": 0.89899,
+   "angles": {
+    "hip": 50.7,
+    "knee": 90,
+    "ankle": 19.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 50.9,
+     "knee": 91,
+     "ankle": 20.6
+    },
+    "sd": {
+     "hip": 3.1,
+     "knee": 4.1,
+     "ankle": 5.1
+    }
+   }
+  },
+  {
+   "t": 0.909091,
+   "angles": {
+    "hip": 51.4,
+    "knee": 87.9,
+    "ankle": 19.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 51.7,
+     "knee": 89.4,
+     "ankle": 20.9
+    },
+    "sd": {
+     "hip": 3,
+     "knee": 4,
+     "ankle": 5
+    }
+   }
+  },
+  {
+   "t": 0.919192,
+   "angles": {
+    "hip": 51.8,
+    "knee": 85.6,
+    "ankle": 19.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.2,
+     "knee": 87.5,
+     "ankle": 21
+    },
+    "sd": {
+     "hip": 2.9,
+     "knee": 3.9,
+     "ankle": 4.9
+    }
+   }
+  },
+  {
+   "t": 0.9225,
+   "angles": {
+    "hip": 52,
+    "knee": 84.8,
+    "ankle": 19.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.4,
+     "knee": 86.9,
+     "ankle": 21
+    },
+    "sd": {
+     "hip": 2.9,
+     "knee": 3.9,
+     "ankle": 4.9
+    }
+   }
+  },
+  {
+   "t": 0.925,
+   "angles": {
+    "hip": 52,
+    "knee": 84.2,
+    "ankle": 19.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.5,
+     "knee": 86.4,
+     "ankle": 21
+    },
+    "sd": {
+     "hip": 2.8,
+     "knee": 3.9,
+     "ankle": 4.9
+    }
+   }
+  },
+  {
+   "t": 0.9275,
+   "angles": {
+    "hip": 52.1,
+    "knee": 83.6,
+    "ankle": 19.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.6,
+     "knee": 85.9,
+     "ankle": 21
+    },
+    "sd": {
+     "hip": 2.8,
+     "knee": 3.9,
+     "ankle": 4.8
+    }
+   }
+  },
+  {
+   "t": 0.929293,
+   "angles": {
+    "hip": 52.2,
+    "knee": 83.1,
+    "ankle": 19.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.6,
+     "knee": 85.5,
+     "ankle": 21
+    },
+    "sd": {
+     "hip": 2.8,
+     "knee": 3.9,
+     "ankle": 4.8
+    }
+   }
+  },
+  {
+   "t": 0.9325,
+   "angles": {
+    "hip": 52.3,
+    "knee": 82.3,
+    "ankle": 19,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.7,
+     "knee": 84.9,
+     "ankle": 21
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 3.9,
+     "ankle": 4.8
+    }
+   }
+  },
+  {
+   "t": 0.935,
+   "angles": {
+    "hip": 52.3,
+    "knee": 81.7,
+    "ankle": 18.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.8,
+     "knee": 84.4,
+     "ankle": 20.9
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 3.9,
+     "ankle": 4.8
+    }
+   }
+  },
+  {
+   "t": 0.9375,
+   "angles": {
+    "hip": 52.4,
+    "knee": 81.1,
+    "ankle": 18.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.8,
+     "knee": 83.9,
+     "ankle": 20.9
+    },
+    "sd": {
+     "hip": 2.7,
+     "knee": 3.9,
+     "ankle": 4.8
+    }
+   }
+  },
+  {
+   "t": 0.939394,
+   "angles": {
+    "hip": 52.4,
+    "knee": 80.6,
+    "ankle": 18.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.8,
+     "knee": 83.5,
+     "ankle": 20.9
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 3.9,
+     "ankle": 4.8
+    }
+   }
+  },
+  {
+   "t": 0.9425,
+   "angles": {
+    "hip": 52.4,
+    "knee": 79.9,
+    "ankle": 18.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.8,
+     "knee": 82.8,
+     "ankle": 20.8
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 3.9,
+     "ankle": 4.8
+    }
+   }
+  },
+  {
+   "t": 0.945,
+   "angles": {
+    "hip": 52.5,
+    "knee": 79.3,
+    "ankle": 18.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.9,
+     "knee": 82.3,
+     "ankle": 20.7
+    },
+    "sd": {
+     "hip": 2.6,
+     "knee": 3.9,
+     "ankle": 4.8
+    }
+   }
+  },
+  {
+   "t": 0.9475,
+   "angles": {
+    "hip": 52.5,
+    "knee": 78.7,
+    "ankle": 18.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.9,
+     "knee": 81.8,
+     "ankle": 20.7
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 3.9,
+     "ankle": 4.8
+    }
+   }
+  },
+  {
+   "t": 0.949495,
+   "angles": {
+    "hip": 52.5,
+    "knee": 78.3,
+    "ankle": 18.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.9,
+     "knee": 81.4,
+     "ankle": 20.6
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 3.9,
+     "ankle": 4.8
+    }
+   }
+  },
+  {
+   "t": 0.9525,
+   "angles": {
+    "hip": 52.5,
+    "knee": 77.6,
+    "ankle": 18.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.8,
+     "knee": 80.8,
+     "ankle": 20.5
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 3.9,
+     "ankle": 4.7
+    }
+   }
+  },
+  {
+   "t": 0.955,
+   "angles": {
+    "hip": 52.5,
+    "knee": 77,
+    "ankle": 18,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.8,
+     "knee": 80.3,
+     "ankle": 20.4
+    },
+    "sd": {
+     "hip": 2.5,
+     "knee": 3.9,
+     "ankle": 4.7
+    }
+   }
+  },
+  {
+   "t": 0.9575,
+   "angles": {
+    "hip": 52.5,
+    "knee": 76.5,
+    "ankle": 17.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.8,
+     "knee": 79.8,
+     "ankle": 20.3
+    },
+    "sd": {
+     "hip": 2.4,
+     "knee": 3.9,
+     "ankle": 4.7
+    }
+   }
+  },
+  {
+   "t": 0.959596,
+   "angles": {
+    "hip": 52.5,
+    "knee": 76,
+    "ankle": 17.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.7,
+     "knee": 79.4,
+     "ankle": 20.2
+    },
+    "sd": {
+     "hip": 2.4,
+     "knee": 3.9,
+     "ankle": 4.7
+    }
+   }
+  },
+  {
+   "t": 0.9625,
+   "angles": {
+    "hip": 52.5,
+    "knee": 75.4,
+    "ankle": 17.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.6,
+     "knee": 78.8,
+     "ankle": 20.1
+    },
+    "sd": {
+     "hip": 2.4,
+     "knee": 3.9,
+     "ankle": 4.6
+    }
+   }
+  },
+  {
+   "t": 0.965,
+   "angles": {
+    "hip": 52.5,
+    "knee": 74.9,
+    "ankle": 17.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.6,
+     "knee": 78.4,
+     "ankle": 20
+    },
+    "sd": {
+     "hip": 2.4,
+     "knee": 3.9,
+     "ankle": 4.6
+    }
+   }
+  },
+  {
+   "t": 0.9675,
+   "angles": {
+    "hip": 52.4,
+    "knee": 74.4,
+    "ankle": 17.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.5,
+     "knee": 77.9,
+     "ankle": 19.9
+    },
+    "sd": {
+     "hip": 2.4,
+     "knee": 3.9,
+     "ankle": 4.6
+    }
+   }
+  },
+  {
+   "t": 0.969697,
+   "angles": {
+    "hip": 52.4,
+    "knee": 74,
+    "ankle": 17.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.4,
+     "knee": 77.5,
+     "ankle": 19.8
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 3.9,
+     "ankle": 4.5
+    }
+   }
+  },
+  {
+   "t": 0.9725,
+   "angles": {
+    "hip": 52.3,
+    "knee": 73.4,
+    "ankle": 17.2,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.3,
+     "knee": 77,
+     "ankle": 19.7
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 3.9,
+     "ankle": 4.5
+    }
+   }
+  },
+  {
+   "t": 0.975,
+   "angles": {
+    "hip": 52.2,
+    "knee": 73,
+    "ankle": 17,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.2,
+     "knee": 76.6,
+     "ankle": 19.5
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 3.9,
+     "ankle": 4.5
+    }
+   }
+  },
+  {
+   "t": 0.9775,
+   "angles": {
+    "hip": 52.2,
+    "knee": 72.5,
+    "ankle": 16.9,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52.1,
+     "knee": 76.2,
+     "ankle": 19.4
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 3.9,
+     "ankle": 4.4
+    }
+   }
+  },
+  {
+   "t": 0.979798,
+   "angles": {
+    "hip": 52.1,
+    "knee": 72.2,
+    "ankle": 16.7,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 52,
+     "knee": 75.8,
+     "ankle": 19.3
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 3.9,
+     "ankle": 4.4
+    }
+   }
+  },
+  {
+   "t": 0.9825,
+   "angles": {
+    "hip": 52,
+    "knee": 71.7,
+    "ankle": 16.5,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 51.9,
+     "knee": 75.4,
+     "ankle": 19.1
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 3.9,
+     "ankle": 4.4
+    }
+   }
+  },
+  {
+   "t": 0.985,
+   "angles": {
+    "hip": 51.9,
+    "knee": 71.3,
+    "ankle": 16.3,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 51.7,
+     "knee": 75,
+     "ankle": 18.9
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 3.9,
+     "ankle": 4.4
+    }
+   }
+  },
+  {
+   "t": 0.9875,
+   "angles": {
+    "hip": 51.8,
+    "knee": 70.9,
+    "ankle": 16.1,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 51.6,
+     "knee": 74.7,
+     "ankle": 18.7
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 3.9,
+     "ankle": 4.3
+    }
+   }
+  },
+  {
+   "t": 0.989899,
+   "angles": {
+    "hip": 51.6,
+    "knee": 70.6,
+    "ankle": 16,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 51.4,
+     "knee": 74.3,
+     "ankle": 18.5
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 3.9,
+     "ankle": 4.3
+    }
+   }
+  },
+  {
+   "t": 0.9925,
+   "angles": {
+    "hip": 51.5,
+    "knee": 70.2,
+    "ankle": 15.8,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 51.3,
+     "knee": 73.9,
+     "ankle": 18.3
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 3.9,
+     "ankle": 4.3
+    }
+   }
+  },
+  {
+   "t": 0.995,
+   "angles": {
+    "hip": 51.3,
+    "knee": 69.8,
+    "ankle": 15.6,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 51.1,
+     "knee": 73.6,
+     "ankle": 18.1
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 3.9,
+     "ankle": 4.2
+    }
+   }
+  },
+  {
+   "t": 0.9975,
+   "angles": {
+    "hip": 51.1,
+    "knee": 69.5,
+    "ankle": 15.4,
+    "trunk": 15
+   },
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "measured": {
+    "angles": {
+     "hip": 50.9,
+     "knee": 73.3,
+     "ankle": 17.9
+    },
+    "sd": {
+     "hip": 2.3,
+     "knee": 3.9,
+     "ankle": 4.2
+    }
+   }
+  }
+ ],
+ "stairs": {
+  "direction": "up",
+  "rise": 0.17,
+  "going": 0.29,
+  "stanceEnd": 0.641,
+  "fromEdge": 0.185,
+  "sources": [
+   "grimmer2020"
+  ],
+  "note": "단 높이 0.17 m·디딤판 0.29 m와 발 떼기(duty factor 64.1%)는 Grimmer 2020 본문·표 1의 값입니다. 디딤판 위 발 위치(단 모서리에서 발허리발가락관절까지 18.5 cm)는 편집값으로, 디딤 발이 앞뒤 챌판과 1 cm 이상 떨어지고 흔드는 발이 단 모서리에 걸리지 않도록 정했습니다."
+ },
+ "timingNote": "재생 1×는 Grimmer 2020 표 1의 A5 주기 시간 1.12초입니다. 도식의 키프레임은 DD 오른다리 총평균 곡선의 100개 표본(0–100% 양끝 포함, 약 1.01% 간격) 그대로이고, 그 사이는 단조 3차 보간으로 잇습니다. 양발 지지 보정 구간에는 0.25% 간격의 키프레임을 더해, 도식이 보정한 곡선을 표본 사이에서도 따르게 했습니다. 발 떼기 64.1%는 같은 표의 디딤 비율이고, 반대발 떼기·닿기(14.1%·50%)는 왼다리를 반 주기 늦게 그린 대칭 도식의 결과입니다(DD에서 계산하면 13.5%·49.8%). E1(42.4%)은 DD 총평균 체중심 수직 속도가 처음 0 이하가 되는 때(선형 보간)입니다. 국면 이름은 McFadyen & Winter의 기능명을 빌린 편집 구간입니다. 같은 12명 총평균 곡선에서 만든 편집 주기 모형입니다. 양발 지지에서 두 발이 디딤판에 닿도록 각도를 대상 간 표준편차 안에서 조정했고, 주기 끝을 처음과 이었으며, 발가락·몸통·발 위치는 편집값입니다. 엉덩관절 높이의 출렁임은 체중심 궤적이 아닙니다.",
+ "figureNote": "같은 12명 총평균 곡선에서 만든 편집 주기 모형입니다. 양발 지지에서 두 발이 디딤판에 닿도록 각도를 대상 간 표준편차 안에서 조정했고, 주기 끝을 처음과 이었으며, 발가락·몸통·발 위치는 편집값입니다. 엉덩관절 높이의 출렁임은 체중심 궤적이 아닙니다.",
+ "muscles": [
+  {
+   "id": "tibialis-anterior",
+   "name": "앞정강근",
+   "nameEn": "Tibialis anterior",
+   "structures": [
+    "FMA22544"
+   ],
+   "line": "tibialis-anterior",
+   "cells": {
+    "weight-acceptance": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "benedetti2012"
+     ],
+     "role": "발이 디딤판에 놓이는 동안 발목을 조절",
+     "note": "DD 국면 평균 35%(평지 보행 주기 최대 = 100, 앞정강근은 10명). Benedetti 2012(젊은 성인 16명, 맨발, 3단 16/28 cm(단 높이/디딤판), 표면 근전도 on–off): 대부분의 대상에서 유각기 활동이 발 닿은 뒤에도 이어져 발 놓기를 조절합니다. 이 시기 발목은 발바닥굽힘 쪽 순 모멘트를 내면서 발등굽힘하므로 앞정강근의 수축 방식은 정하지 않았습니다."
+    },
+    "pull-up": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "benedetti2012",
+      "lin2004"
+     ],
+     "role": "낮은 진폭의 활동(발의 안쪽·가쪽번짐 조절)",
+     "note": "DD 국면 평균 17%로 진폭은 낮습니다(30% 미만). Benedetti 2012는 많은 대상에서 디딤기 내내 어느 정도의 활동을, Lin 2004(젊은 성인 10명, 3단 18/46 cm, 최대 수의 등척성 수축 대비)는 디딤기 거의 내내 약 20% 활동을 보고해 ‘활동’으로 적었습니다. Benedetti 2012 그림 3(판독, 그 연구의 주기 %)에서 이 시기 앞정강근이 활동한 대상은 약 50–65%입니다. Benedetti는 한발 지지 중 이마면 균형을 위한 발의 안쪽·가쪽번짐 조절 역할을 강조했습니다. Benedetti는 보폭 시작·중간 디딤·유각기의 장딴지근·앞정강근 신호에 혼선(cross-talk)이 있었고, 뚜렷한 혼선은 on–off 검출에서 손으로 뺐다고 적었습니다."
+    },
+    "forward-continuance": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "benedetti2012",
+      "lin2004"
+     ],
+     "note": "DD 국면 평균 18%(30% 미만). Benedetti 2012와 Lin 2004가 디딤기 내내 낮은 수준의 활동을 보고했습니다. Benedetti 2012 그림 3(판독)에서 이 시기 활동한 대상은 약 50–80%입니다. Benedetti는 보폭 시작·중간 디딤·유각기의 장딴지근·앞정강근 신호에 혼선(cross-talk)이 있었고, 뚜렷한 혼선은 on–off 검출에서 손으로 뺐다고 적었습니다."
+    },
+    "swing": {
+     "contraction": "concentric",
+     "evidence": [
+      "emg",
+      "inference"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "josephwatson1967",
+      "benedetti2012"
+     ],
+     "role": "발목을 발등굽힘해 발끝이 중간 단 모서리에 걸리지 않게 함",
+     "note": "DD 국면 평균 87%(국면 안 최대 118%, 79% 무렵). Joseph & Watson 1967(초록, 대상 수·계단 조건 미기재): 앞정강근이 유각기에 발을 발등굽힘해 다리가 디딤발이 놓인 단을 넘게 돕습니다. Benedetti 2012도 유각기 활동을 보고했습니다. 단축성은 발목이 발 떼기의 발바닥굽힘 24°에서 92% 무렵 발등굽힘 21°로 움직이는 데서 추론했고, 주기 끝 무렵 발목은 조금 발바닥굽힘으로 돌아옵니다."
+    }
+   }
+  },
+  {
+   "id": "vasti",
+   "name": "넓은근(가쪽·안쪽·중간넓은근)",
+   "nameEn": "Vasti (vastus lateralis, vastus medialis, vastus intermedius)",
+   "structures": [
+    "FMA38930",
+    "FMA38932",
+    "FMA38934"
+   ],
+   "line": "vasti",
+   "cells": {
+    "weight-acceptance": {
+     "contraction": "concentric",
+     "evidence": [
+      "emg",
+      "ultrasound",
+      "dynamics",
+      "inference"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "chleboun2008",
+      "harper2018"
+     ],
+     "role": "무릎을 펴기 시작해 몸을 위 단으로 올림",
+     "note": "DD 국면 평균 218%(가쪽넓은근만 측정, 국면 안 최대 275%). DD 무릎은 68°에서 51°로 펴지며 폄 모멘트와 양의 일(+0.17 J/kg, 순 관절)을 보이고, 닿은 직후 3%까지만 짧게 음의 일률입니다. Chleboun 2008(초음파, 대학생 연령 여성 33명, 표준 4단, 초록): 체중 받아들이기 초기에 무릎이 3°만 펴지는 동안 가쪽넓은근 근활성이 최대로 오르고 근섬유는 짧아지며 힘줄은 늘어납니다. 안쪽·중간넓은근의 단축성은 추론입니다. Harper 2018(모델)은 디딤기 전반 수직 추진의 주된 기여를 넓은근으로 봅니다."
+    },
+    "pull-up": {
+     "contraction": "concentric",
+     "evidence": [
+      "emg",
+      "ultrasound",
+      "dynamics",
+      "inference"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "chleboun2008"
+     ],
+     "role": "무릎을 펴 몸을 끌어올림",
+     "note": "DD 국면 평균 74%(국면 안 최대 160%, 국면 시작). 무릎은 51°에서 10°로 펴지며, 이 국면 무릎 양의 일(+0.25 J/kg, 순 관절)은 대부분 무릎이 폄 모멘트를 내는 31% 전에 생깁니다. 31% 뒤에는 무릎 순 모멘트가 굽힘 쪽으로 바뀝니다. Chleboun 2008: 무릎이 펴져 단을 오르는 동안 가쪽넓은근 근섬유와 힘줄이 함께 짧아집니다. 안쪽·중간넓은근의 단축성은 추론입니다."
+    },
+    "forward-continuance": {
+     "contraction": "low",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "harper2018"
+     ],
+     "note": "DD 국면 평균 27%(30% 미만, 가쪽넓은근만 측정). 이 국면 무릎은 굽힘 쪽 순 모멘트를 내면서 54.5% 무렵까지 조금 더 펴진 뒤 다시 굽습니다. Harper 2018(모델)은 반대발이 닿은 뒤 발 떼기까지 넓은근이 다리의 일률을 흡수한다고 보지만, 측정 근전도를 따라 ‘낮은 진폭’으로 적었습니다."
+    },
+    "swing": {
+     "contraction": "low",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "harper2018"
+     ],
+     "note": "DD 국면 평균 10%(30% 미만). 다음 발 닿기 직전에 짧은 봉우리가 있어 국면 안 최대는 81%입니다. 국면 평균은 이런 짧은 활동을 지웁니다. Harper 2018(모델)은 유각 초기에 넓은근이 다리의 일률을 흡수한다고 봅니다."
+    }
+   }
+  },
+  {
+   "id": "rectus-femoris",
+   "name": "넙다리곧은근",
+   "nameEn": "Rectus femoris",
+   "structures": [
+    "FMA38928"
+   ],
+   "female": [
+    "HRAF0396"
+   ],
+   "line": "rectus-femoris",
+   "cells": {
+    "weight-acceptance": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "grimmer2023",
+      "lin2004",
+      "benedetti2012"
+     ],
+     "note": "DD 국면 평균 283%(국면 안 최대 358%). 엉덩관절과 무릎이 함께 펴지는 시기라 두관절근인 넙다리곧은근의 길이 변화 방향은 정하지 않았습니다. Grimmer 2023 보충자료: 디딤기 전반 무릎 양의 일률 증가가 넙다리곧은근·가쪽넓은근 근전도 증가와 함께 나타납니다. Lin 2004(10명, 3단 18/46 cm): 디딤기의 0–25%에 넙다리곧은근이 활동하며 봉우리에 이릅니다. Benedetti 2012는 표면 전극의 넙다리곧은근 신호에 다른 넙다리네갈래근 갈래의 활동이 섞일 수 있다고 적었습니다."
+    },
+    "pull-up": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "benedetti2012"
+     ],
+     "note": "DD 국면 평균 114%(국면 안 최대 190%, 국면 시작). Benedetti 2012(16명): 디딤기 전반에 활동합니다."
+    },
+    "forward-continuance": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs"
+     ],
+     "note": "DD 국면 평균 55%(국면 안 최대 119%, 국면 시작)."
+    },
+    "swing": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "model"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "grimmer2023",
+      "harper2018"
+     ],
+     "note": "DD 국면 평균 72%(국면 안 최대 150%, 77% 무렵). 이 시기 엉덩관절은 굽고 무릎은 86% 무렵까지 굽었다가 펴집니다. Grimmer 2023 보충자료는 유각 초기 무릎 양의 일률 증가가 넙다리곧은근 활동과 함께 나타난다고 해석했고, Harper 2018(모델)은 유각 후반 넙다리곧은근이 다리에 일률을 공급한다고 봅니다. 수축 방식은 정하지 않았습니다."
+    }
+   }
+  },
+  {
+   "id": "gluteus-maximus",
+   "name": "큰볼기근",
+   "nameEn": "Gluteus maximus",
+   "structures": [
+    "FMA22328"
+   ],
+   "line": "gluteus-maximus",
+   "cells": {
+    "weight-acceptance": {
+     "contraction": "concentric",
+     "evidence": [
+      "emg",
+      "dynamics",
+      "inference"
+     ],
+     "sources": [
+      "lyons1983",
+      "lin2004",
+      "darmstadt-stairs"
+     ],
+     "role": "엉덩관절을 펴 몸을 위 단으로 올림",
+     "note": "Lyons 1983(미세 철사 전극 근전도, 건강한 11명, 초록, 계단 치수 미확인): 계단 오르기에서 큰볼기근 아래 부분이 부하 반응기·중간 입각기의 주된 엉덩관절 폄근입니다. 그 국면 이름과 이 페이지 국면의 대응은 편집 판단입니다. Lin 2004(젊은 성인 10명, 3단 18/46 cm): 디딤기의 0–25%에 큰볼기근이 활동하며 봉우리에 이릅니다. DD 엉덩관절은 폄 모멘트를 내며 펴지고(넙다리 50°→31°) 양의 일 +0.18 J/kg(순 관절)입니다. 단축성은 이 관절 일을 큰볼기근에 돌린 추론입니다."
+    },
+    "pull-up": {
+     "contraction": "concentric",
+     "evidence": [
+      "emg",
+      "dynamics",
+      "model",
+      "inference"
+     ],
+     "sources": [
+      "lyons1983",
+      "josephwatson1967",
+      "darmstadt-stairs",
+      "harper2018"
+     ],
+     "role": "엉덩관절 폄을 이어 가며 몸을 끌어올림",
+     "note": "Lyons 1983(미세 철사 전극 근전도, 초록): 계단 오르기에서 중간 입각기에도 큰볼기근 아래 부분이 주된 엉덩관절 폄근입니다(국면 대응은 편집 판단). Joseph & Watson 1967(초록): 위 단으로 몸을 올리는 데 가자미근·넙다리네갈래근·뒤넙다리근·큰볼기근이 수축합니다. DD 엉덩관절은 넙다리 31°에서 거의 수직(−2°)까지 펴지며 양의 일 +0.20 J/kg(순 관절)입니다. Harper 2018(모델, 27명 자료 추종, 16단 17.8/27.9 cm, 80걸음/분)은 디딤기 전반 앞쪽 추진의 주된 기여를 큰볼기근으로 봅니다. 단축성은 추론입니다."
+    },
+    "forward-continuance": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "darmstadt-stairs"
+     ],
+     "note": "DD 엉덩관절 순 모멘트와 일이 거의 0입니다(이 국면 +0.006 J/kg). 확인한 근전도 출처는 이 시기 큰볼기근 활동을 적지 않았습니다."
+    },
+    "swing": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": [
+      "grimmer2023"
+     ],
+     "note": "Grimmer 2023 보충자료는 오르기 엉덩관절 일률 증가가 주로 말기 유각기부터 디딤기까지의 엉덩관절 폄 일률이라고 적었지만, 볼기근 근전도는 측정하지 않았습니다."
+    }
+   }
+  },
+  {
+   "id": "gluteus-medius",
+   "name": "중간볼기근",
+   "nameEn": "Gluteus medius",
+   "structures": [
+    "FMA22330"
+   ],
+   "line": "gluteus-medius",
+   "cells": {
+    "weight-acceptance": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "dynamics"
+     ],
+     "sources": [
+      "benedetti2012",
+      "lin2005"
+     ],
+     "role": "디딤다리 쪽에서 골반을 받침(이마면)",
+     "note": "Benedetti 2012(젊은 성인 16명, 맨발, 3단 16/28 cm(단 높이/디딤판), 표면 근전도 on–off): 걷기처럼 디딤기 전반에 활동합니다. Lin 2005(젊은 성인 10명, 3단 18/46 cm): 지면반력이 엉덩관절 중심 안쪽을 지나 디딤기 대부분 엉덩관절 벌림 모멘트가 필요하고, 오르기의 벌림 모멘트는 디딤 초기·후기 두 봉우리입니다. 수축 방식은 정하지 않았습니다."
+    },
+    "pull-up": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "dynamics",
+      "model"
+     ],
+     "sources": [
+      "josephwatson1967",
+      "benedetti2012",
+      "lin2004",
+      "harper2018"
+     ],
+     "role": "한발 지지 중 지지하지 않는 쪽으로 몸이 떨어지는 것을 막음(이마면)",
+     "note": "Joseph & Watson 1967(초록): 몸을 위 단으로 올리는 동안 중간볼기근이 지지하지 않는 쪽으로 몸이 떨어지는 것을 막습니다. Lin 2004(이마면): 첫 양발 지지를 뺀 디딤기 동안 엉덩관절 벌림 쪽 단축성 일률(최대 2.5% W/BW)이 있으나, 순 관절 값이고 디딤판 46 cm 한 연구라 수축 방식은 정하지 않았습니다. Harper 2018(모델): 중간볼기근 앞·뒤 부분이 안쪽 방향 조절의 주된 기여입니다."
+    },
+    "forward-continuance": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "model",
+      "dynamics"
+     ],
+     "sources": [
+      "benedetti2012",
+      "harper2018",
+      "lin2005",
+      "lin2004"
+     ],
+     "role": "체중을 반대 다리로 넘기는 동안 골반 조절",
+     "note": "Benedetti 2012 그림 3(판독, 그 연구의 주기 %)에서 중간볼기근이 활동한 대상 비율은 40% 무렵까지 100%이고, 50% 무렵 약 60%, 52% 무렵 약 50%로 줄어 58% 무렵 약 20%입니다. 본문은 ‘디딤기 전반’이라고 적었지만, 그림에서는 그 연구 주기 52% 무렵까지 절반 이상의 대상이 활동합니다(이 페이지 국면과의 대응은 편집 판단). Harper 2018(모델)은 디딤기 후반에도 중간볼기근을 안쪽 방향 조절의 주된 기여로 봅니다. Lin 2005의 엉덩관절 벌림 모멘트 둘째 봉우리(디딤 후기)는 체중을 반대 다리로 넘기는 시기로 해석됩니다(Lin 2004 고찰). 수축 방식은 정하지 않았습니다."
+    },
+    "swing": {
+     "contraction": "disputed",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "benedetti2012"
+     ],
+     "note": "Benedetti 2012 그림 3(판독)에서 이 시기 중간볼기근이 활동한 대상은 약 20–50%로 소수이고, 본문은 유각기 활동을 서술하지 않았습니다."
+    }
+   }
+  },
+  {
+   "id": "hamstrings",
+   "name": "뒤넙다리근(넙다리두갈래근 긴갈래·반힘줄근·반막근)",
+   "nameEn": "Hamstrings (biceps femoris long head, semitendinosus, semimembranosus)",
+   "structures": [
+    "FMA45888",
+    "FMA22358",
+    "FMA22448"
+   ],
+   "line": "hamstrings",
+   "cells": {
+    "weight-acceptance": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "dynamics"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "benedetti2012"
+     ],
+     "role": "엉덩관절 폄을 도움",
+     "note": "DD 국면 평균 60%(넙다리두갈래근만 측정, 국면 안 최대 79%). Benedetti 2012(16명): 뒤넙다리근 활동이 유각기 끝에 시작해 디딤 초기까지 이어지며 엉덩관절을 폅니다. DD 엉덩관절은 이 국면 양의 일(+0.18 J/kg, 순 관절)이지만 무릎도 함께 펴져, 두관절근의 길이 변화 방향은 정하지 않았습니다."
+    },
+    "pull-up": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "benedetti2012",
+      "josephwatson1967"
+     ],
+     "note": "DD 국면 평균 47%. Benedetti 2012: 대부분의 대상에서 중간 디딤에도 활동이 이어져 하중을 받는 엉덩관절을 고정합니다. Joseph & Watson 1967(초록): 몸을 위 단으로 올리는 데 뒤넙다리근도 수축합니다."
+    },
+    "forward-continuance": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "dynamics",
+      "model"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "grimmer2023",
+      "benedetti2012",
+      "harper2018"
+     ],
+     "role": "무릎 굽힘을 시작",
+     "note": "DD 국면 평균 70%(국면 안 최대 128%, 62% 무렵). DD 무릎 일률은 52% 무렵 양으로 바뀌고, 54.5% 뒤 무릎이 다시 굽으면서 굽힘 쪽 순 모멘트로 작은 양의 일을 냅니다(이 국면 +0.05 J/kg, 순 관절). Grimmer 2023 보충자료는 디딤기 후반–유각 초기 무릎 굽힘의 양의 일을 장딴지근·넙다리두갈래근이 돕는 것으로 해석했고, Benedetti 2012는 모든 대상이 발 떼기 무렵 다음 단을 넘기 위해 뒤넙다리근으로 무릎을 굽힌다고 적었습니다. Harper 2018(모델): 디딤기 후반 앞쪽 추진의 주된 기여입니다. 두관절근이라 수축 방식은 정하지 않았습니다."
+    },
+    "swing": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "dynamics",
+      "model"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "josephwatson1967",
+      "harper2018"
+     ],
+     "role": "유각 초반 무릎 굽힘, 끝 무렵 무릎 폄 감속",
+     "note": "DD 국면 평균 63%(국면 안 최대 119%, 95% 무렵). Joseph & Watson 1967(초록): 뒤넙다리근이 유각 초반에 무릎을 굽히고 끝 무렵 무릎 폄을 조절합니다. DD 무릎은 이 국면 초반에 양의 일(+0.10 J/kg), 중반 이후에 음의 일(−0.14 J/kg)을 냅니다(순 관절). Harper 2018(모델)도 유각 후반 뒤넙다리근이 다리를 감속한다고 봅니다. 수축 방식이 국면 안에서 바뀌는 것으로 해석되어 한 칸에 하나로 정하지 않았습니다."
+    }
+   }
+  },
+  {
+   "id": "soleus",
+   "name": "가자미근",
+   "nameEn": "Soleus",
+   "structures": [
+    "FMA22558"
+   ],
+   "line": "soleus",
+   "cells": {
+    "weight-acceptance": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "dynamics"
+     ],
+     "sources": [
+      "darmstadt-stairs"
+     ],
+     "note": "DD 국면 평균 92%(국면 안 최대 113%). 이 국면 발목은 발바닥굽힘 쪽 순 모멘트를 내면서 21°까지 발등굽힘해(관절이 일을 흡수) 작은 음의 일(−0.06 J/kg, 순 관절)을 내고, 11% 무렵 양의 일률로 바뀝니다. 가자미근 근섬유는 계단에서 측정되지 않아 수축 방식을 정하지 않았습니다."
+    },
+    "pull-up": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "dynamics"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "josephwatson1967"
+     ],
+     "role": "발목을 발바닥굽힘해 몸을 들어 올림(관절 수준)",
+     "note": "DD 국면 평균 72%(국면 안 최대 120%, 국면 끝). 발목은 21°에서 2°로 발바닥굽힘하며 양의 일 +0.28 J/kg(순 관절)입니다. Joseph & Watson 1967(초록): 위 단으로 몸을 올리는 데 가자미근이 수축합니다. 수축 방식은 정하지 않았습니다."
+    },
+    "forward-continuance": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "dynamics",
+      "model"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "spanjaard2007",
+      "harper2018"
+     ],
+     "role": "밀어 올리기: 발목 양의 일이 가장 큰 시기(관절 수준)",
+     "note": "DD 국면 평균 96%(국면 안 최대 168%, 49% 무렵). 발목은 발바닥굽힘 24°까지 움직이며 양의 일 +0.41 J/kg(순 관절, 일률 최대 3.85 W/kg, 57% 무렵)입니다. Spanjaard 2007은 떼기 무렵 안쪽장딴지근 근섬유가 거의 등척성이라 일을 거의 하지 않는다고 보고, 그 연구의 발목 일률 봉우리를 아마 가자미근이 만든다고 추정했습니다. 무릎 폄근이 만든 일률이 두관절근인 안쪽장딴지근을 거쳐 발목으로 전달될 가능성도 함께 적었습니다. Harper 2018(모델): 디딤기 후반 수직 추진의 주된 기여는 발바닥굽힘근(가자미근·장딴지근)입니다. 가자미근 근섬유 측정이 없어 수축 방식은 정하지 않았습니다."
+    },
+    "swing": {
+     "contraction": "low",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "harper2018"
+     ],
+     "note": "DD 국면 평균 12%(30% 미만, 국면 안 최대 46%는 다음 발 닿기 직전). Harper 2018(모델)은 유각 후반 가자미근·장딴지근이 발 닿기를 앞두고 다리의 일률을 흡수한다고 봅니다."
+    }
+   }
+  },
+  {
+   "id": "gastrocnemius-medial",
+   "name": "장딴지근 안쪽갈래",
+   "nameEn": "Gastrocnemius, medial head",
+   "structures": [
+    "FMA45957"
+   ],
+   "line": "gastrocnemius",
+   "cells": {
+    "weight-acceptance": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "ultrasound"
+     ],
+     "sources": [
+      "benedetti2012",
+      "spanjaard2007"
+     ],
+     "note": "Benedetti 2012(16명, 표면 근전도 on–off): 안쪽장딴지근은 발 닿기부터 디딤기 대부분 활동하며, 저자는 오르기 첫 지지가 앞발이라는 점으로 이를 설명했습니다(보폭 시작 무렵 신호 혼선 가능성도 저자가 적음). Spanjaard 2007(초음파, 건강한 젊은 남성 10명, 4단 17/28 cm, 맨발, 편한 속도, 왼다리): 첫 양발 지지에서 근섬유와 근육–힘줄 단위가 함께 약간 늘어나 힘줄 길이는 변하지 않습니다. 수축 방식은 정하지 않았습니다."
+    },
+    "pull-up": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "ultrasound"
+     ],
+     "sources": [
+      "spanjaard2007",
+      "benedetti2012"
+     ],
+     "role": "근섬유 길이를 유지하는 동안 힘줄이 늘어남(한발 지지 후반, 초음파)",
+     "note": "Spanjaard 2007: 한발 지지 전반에는 무릎이 펴지면서 근육–힘줄 단위가 늘어나고 근섬유는 그보다 덜 늘어납니다. 한발 지지 후반에는 근육이 활동하며 근섬유 길이가 일정한 채 근육–힘줄 단위가 더 늘어나 힘줄이 늘어납니다. 그 연구의 한발 지지 전반·후반과 이 페이지의 E1(42.4%)은 같은 경계가 아닙니다. Benedetti 2012도 디딤기 대부분의 활동을 보고했습니다."
+    },
+    "forward-continuance": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "ultrasound",
+      "dynamics"
+     ],
+     "sources": [
+      "spanjaard2007",
+      "spanjaard2008jb",
+      "darmstadt-stairs"
+     ],
+     "role": "밀어 올리기(발목 발바닥굽힘)",
+     "note": "Spanjaard 2007: 반대발이 닿은 뒤 근활성 봉우리와 함께 근섬유와 근육–힘줄 단위가 빠르게 짧아지며 발목 모멘트가 최대가 된다는 서술(‘이 단축성 활동’)과, 근전도가 높은 떼기 구간의 근섬유 단축이 0과 유의하게 다르지 않아 ‘거의 등척성’으로 볼 수 있다는 결론이 함께 있습니다. Spanjaard 2008(10명, 초록)은 단이 높을수록 근섬유 단축이 커졌다고 보고했습니다. 출처 서술이 엇갈려 수축 방식은 정하지 않았습니다. DD 발목 양의 일(+0.41 J/kg)은 순 관절 값입니다."
+    },
+    "swing": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "model"
+     ],
+     "sources": [
+      "benedetti2012",
+      "harper2018",
+      "spanjaard2007"
+     ],
+     "note": "Harper 2018(모델, 장딴지근 두 갈래 묶음): 유각 후반 발 닿기를 앞두고 장딴지근이 가자미근·뒤넙다리근과 함께 다리의 일률을 흡수하는 주된 근육입니다. Benedetti 2012 그림 3(판독, 그 연구의 주기 %): 안쪽장딴지근이 활동한 대상은 유각 초·중반 약 10–25%이고, 85% 무렵부터 늘어 주기 끝에 약 65%입니다. 저자는 유각기 장딴지근 신호에 혼선(cross-talk)이 있었다고 적었습니다. Spanjaard 2007: 유각기에는 발에 외력이 없어 근섬유가 근육–힘줄 단위를 따라 짧아지다가 발목이 발등굽힘하면 늘어납니다(근활성 서술 없음). DD는 이 갈래를 측정하지 않았습니다(가쪽갈래 국면 평균 15%). 수축 방식은 정하지 않았습니다.",
+     "role": "다음 발 닿기를 앞둔 활동(유각 후반, 모델·일부 대상 근전도)"
+    }
+   }
+  },
+  {
+   "id": "gastrocnemius-lateral",
+   "name": "장딴지근 가쪽갈래",
+   "nameEn": "Gastrocnemius, lateral head",
+   "structures": [
+    "FMA45960"
+   ],
+   "cells": {
+    "weight-acceptance": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs"
+     ],
+     "note": "DD 가쪽장딴지근 국면 평균 38%(국면 안 최대 46%). 이 갈래의 계단 초음파 자료가 없어 수축 방식은 정하지 않았습니다."
+    },
+    "pull-up": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs"
+     ],
+     "note": "DD 국면 평균 38%. 활동은 국면 끝으로 갈수록 커져 E1 무렵 112%입니다."
+    },
+    "forward-continuance": {
+     "contraction": "active",
+     "evidence": [
+      "emg",
+      "dynamics"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "grimmer2023"
+     ],
+     "role": "밀어 올리기 시기의 활동(가쪽갈래 근전도)",
+     "note": "DD 국면 평균 118%(국면 안 최대 196%, 50% 무렵). Grimmer 2023 보충자료는 디딤기 중간·밀어 올리기의 발목 일률 증가를 장딴지근·가자미근 활동 증가로 설명하고, 디딤기 후반 무릎 굽힘의 양의 일도 장딴지근이 돕는 것으로 해석했습니다. 안쪽갈래의 초음파 결과를 이 갈래로 넓히지 않습니다."
+    },
+    "swing": {
+     "contraction": "low",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "darmstadt-stairs",
+      "harper2018"
+     ],
+     "note": "DD 국면 평균 15%(30% 미만, 국면 안 최대 30%는 다음 발 닿기 직전). Harper 2018(모델, 두 갈래 묶음)은 유각 후반 장딴지근이 다리의 일률을 흡수한다고 봅니다."
+    }
+   }
+  },
+  {
+   "id": "iliopsoas",
+   "name": "엉덩근·큰허리근",
+   "nameEn": "Iliacus, psoas major (iliopsoas)",
+   "structures": [
+    "FMA22322",
+    "FMA22342"
+   ],
+   "line": "iliopsoas",
+   "cells": {
+    "weight-acceptance": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "pull-up": {
+     "contraction": "nodata",
+     "evidence": [],
+     "sources": []
+    },
+    "forward-continuance": {
+     "contraction": "active",
+     "evidence": [
+      "model"
+     ],
+     "sources": [
+      "harper2018"
+     ],
+     "role": "다리 흔들기 시작에 일률 공급(모델)",
+     "note": "Harper 2018(모델, 젊은 성인 27명 자료를 따라가는 모의실험, 16단 17.8/27.9 cm, 80걸음/분): 반대발이 닿은 뒤 발 떼기까지(유각 시작)에 엉덩근·큰허리근 묶음이 다리에 일률을 공급하는 주된 근육입니다. DD 엉덩관절 순 모멘트는 이 국면에 거의 0입니다. 계단 근전도 출처는 찾지 못했습니다."
+    },
+    "swing": {
+     "contraction": "active",
+     "evidence": [
+      "model",
+      "dynamics"
+     ],
+     "sources": [
+      "harper2018",
+      "darmstadt-stairs"
+     ],
+     "role": "엉덩관절을 굽혀 다리를 위 단으로 들어 올림",
+     "note": "Harper 2018(모델): 유각 초기와 후반에도 엉덩근·큰허리근 묶음이 다리에 일률을 공급하는 주된 근육입니다. DD 엉덩관절은 68–88%에 굽힘 모멘트와 양의 일률을 보입니다(이 국면 +0.12 J/kg, 순 관절). 계단 근전도 출처를 찾지 못해 수축 방식은 정하지 않았습니다."
+    }
+   }
+  },
+  {
+   "id": "erector-spinae",
+   "name": "허리 척추세움근",
+   "nameEn": "Lumbar erector spinae (surface EMG site): iliocostalis lumborum, longissimus thoracis",
+   "structures": [
+    "FMA22740",
+    "FMA22751"
+   ],
+   "line": "erector-spinae",
+   "cells": {
+    "weight-acceptance": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "benedetti2012"
+     ],
+     "role": "다리에 체중이 실리는 것을 조절",
+     "note": "Benedetti 2012(젊은 성인 16명, 맨발, 3단 16/28 cm(단 높이/디딤판), 허리 부위 표면 근전도 on–off): 디딤다리 쪽 척추세움근은 대개 디딤 초기에 활동해 다리에 체중이 실리는 것을 조절합니다. 그림 3(판독, 그 연구의 주기 %)에서 오른쪽 척추세움근이 활동한 대상은 발 닿기 무렵 약 70%이고 14% 무렵 약 10%로 줄어듭니다."
+    },
+    "pull-up": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "benedetti2012"
+     ],
+     "role": "반대 다리가 흔들리는 동안 골반을 고정(저자 해석, 일부 대상)",
+     "note": "Benedetti 2012 본문: 디딤다리 쪽 척추세움근은 중간 디딤에도 활동해 반대 다리가 흔들리는 동안 골반을 고정합니다. 다만 그림 3(판독)에서 이 시기 활동한 대상은 약 10–40%(26% 무렵 봉우리 약 40%)로, 대부분의 대상이 활동한 것은 아닙니다."
+    },
+    "forward-continuance": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "benedetti2012"
+     ],
+     "note": "Benedetti 2012 그림 3(판독, 그 연구의 주기 %): 오른쪽 척추세움근이 활동한 대상 비율은 42% 무렵 약 35%에서 늘어 54–61%에 거의 100%입니다. 저자는 디딤다리 반대쪽 척추세움근이 그 다리의 디딤기 내내 활동해 흔드는 다리 쪽 골반을 올린다고 해석했고, 반대발(왼발)이 닿은 뒤의 활동이 이에 해당합니다. 이 페이지 국면과의 대응은 편집 판단입니다.",
+     "role": "반대발이 닿을 무렵부터 오른쪽 골반을 받침(저자 해석은 반대 다리 디딤기의 활동)"
+    },
+    "swing": {
+     "contraction": "active",
+     "evidence": [
+      "emg"
+     ],
+     "sources": [
+      "benedetti2012"
+     ],
+     "note": "Benedetti 2012 그림 3(판독, 그 연구의 주기 %): 오른쪽 척추세움근은 유각기 내내 약 65–95%의 대상에서 활동합니다. 저자는 디딤다리(이때는 왼다리) 반대쪽 척추세움근이 디딤기 내내 활동해 흔드는 다리 쪽 골반을 올리고 그 다리가 다음 단을 넘게 돕는다고 해석했습니다. 같은 오른쪽 근육의 기록이며 반대쪽 값을 옮긴 것이 아닙니다.",
+     "role": "흔드는 다리 쪽 골반을 올려 다리가 다음 단을 넘게 도움(저자 해석)"
+    }
+   }
+  }
+ ],
+ "emg": {
+  "reference": "같은 대상·같은 다리의 평지 보행 주기 최대를 100%로 둔 값입니다(최대 수의적 수축 대비가 아님).",
+  "cut": 30,
+  "sources": [
+   "darmstadt-stairs"
+  ],
+  "note": "앞정강근은 대상 2명의 자료가 없어 10명 평균입니다. 넙다리두갈래근·가쪽넓은근만 측정했으므로 뒤넙다리근·넓은근의 다른 갈래는 이 표에 없습니다.",
+  "rows": [
+   {
+    "muscle": "hamstrings",
+    "label": "넙다리두갈래근",
+    "values": {
+     "weight-acceptance": 60,
+     "pull-up": 47,
+     "forward-continuance": 70,
+     "swing": 63
+    }
+   },
+   {
+    "muscle": "rectus-femoris",
+    "label": "넙다리곧은근",
+    "values": {
+     "weight-acceptance": 283,
+     "pull-up": 114,
+     "forward-continuance": 55,
+     "swing": 72
+    }
+   },
+   {
+    "muscle": "vasti",
+    "label": "가쪽넓은근",
+    "values": {
+     "weight-acceptance": 218,
+     "pull-up": 74,
+     "forward-continuance": 27,
+     "swing": 10
+    }
+   },
+   {
+    "muscle": "gastrocnemius-lateral",
+    "label": "장딴지근 가쪽갈래",
+    "values": {
+     "weight-acceptance": 38,
+     "pull-up": 38,
+     "forward-continuance": 118,
+     "swing": 15
+    }
+   },
+   {
+    "muscle": "soleus",
+    "label": "가자미근",
+    "values": {
+     "weight-acceptance": 92,
+     "pull-up": 72,
+     "forward-continuance": 96,
+     "swing": 12
+    }
+   },
+   {
+    "muscle": "tibialis-anterior",
+    "label": "앞정강근(10명)",
+    "values": {
+     "weight-acceptance": 35,
+     "pull-up": 17,
+     "forward-continuance": 18,
+     "swing": 87
+    }
+   }
+  ]
+ },
+ "joints": [
+  {
+   "joint": "넙다리 기울기(넙다리와 수직선 사이, 앞쪽 +) — 도식의 엉덩관절 값",
+   "values": "발 닿기 49.7±2.2° → 반대발 떼기(DD 계산 13.5%) 32.2±4.1° → E1(42.4%) −1.8±4.0° → 가장 뒤로 −8.1±2.7°(57.6%) → 발 떼기(64.1%) −2.4±2.6° → 유각 최대 52.9±2.5°(95%) → 주기 끝 50.7±2.3°",
+   "population": "DD 12명 총평균±대상 간 SD(오른다리 A5, 위 수행 조건)",
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "note": "저자가 골반 기울기와 엉덩관절 각도로 계산해 제공한 넙다리 분절각(Athi; 정강이 분절각은 여기에 무릎 각도를 더한 값)의 부호를 바꾼 값이며, 0°는 선 자세입니다. 도식은 골반을 수직으로 두므로 이 값을 엉덩관절 각도로 그립니다. 도식의 반대발 떼기(14.1%)에서는 31.2±4.1°, 반대발 닿기(DD 계산 49.8%)에서는 −5.4±3.7°입니다."
+  },
+  {
+   "joint": "무릎관절(시상면, 굽힘 +)",
+   "values": "발 닿기 68.0±4.1° → 반대발 떼기(DD 계산 13.5%) 52.1±4.3° → E1 10.0±6.9° → 가장 펴짐 7.7±4.9°(54.5%) → 발 떼기 19.6±4.9° → 유각 최대 94.2±4.8°(85.9%) → 주기 끝 72.9±3.9°",
+   "population": "DD 12명 총평균±대상 간 SD",
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "note": "주기 끝 값이 처음보다 4.97° 커서(끝점 SD 3.93°), 도식은 유각 무릎 최대 이후 이 차이를 매끄럽게 없앴습니다. 반대발 닿기(49.8%)에서는 8.4±6.1°입니다."
+  },
+  {
+   "joint": "발목관절(시상면, 발등굽힘 +)",
+   "values": "발 닿기 13.9±4.2° → 최대 발등굽힘 21.3±2.0°(11.1%) → E1 2.3±4.2° → 발 떼기 −23.8±6.3° → 최대 발바닥굽힘 −24.2±6.3°(64.6%) → 유각 중 발등굽힘 21.0±4.9°(91.9%) → 주기 끝 17.7±4.2°",
+   "population": "DD 12명 총평균±대상 간 SD",
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "note": "주기 끝 값이 처음보다 3.8° 커서(끝점 SD 4.16°), 도식은 무릎과 함께 이 차이도 유각 무릎 최대 이후 매끄럽게 없앴습니다. DD에는 발가락 각도가 없어 도식의 발가락은 편집값입니다."
+  },
+  {
+   "joint": "엉덩관절(골반에 대한 관절각, 굽힘 +) — 별도 행",
+   "values": "발 닿기 47.8±3.6° → 반대발 떼기(DD 계산 13.5%) 30.9±5.0° → 가장 펴짐 −7.4±5.3°(56.6%) → 발 떼기 −2.1±4.9° → 유각 최대 52.6±4.8°(95%)",
+   "population": "DD 12명 총평균±대상 간 SD",
+   "sources": [
+    "darmstadt-stairs",
+    "grimmer2020"
+   ],
+   "note": "OpenSim 모형의 골반 기준 엉덩관절각(Ahip)이며 Grimmer 2020 그림이 그린 기준입니다. 이 주기에서는 넙다리 기울기와 2° 안팎 차이가 납니다. 도식에는 쓰지 않습니다."
+  },
+  {
+   "joint": "순 관절 모멘트·일률의 최대(총평균 곡선)",
+   "values": "무릎 폄 모멘트 0.93±0.21 N·m/kg(14%) · 엉덩관절 폄 모멘트 0.69±0.12 N·m/kg(11%) · 발목 발바닥굽힘 모멘트 1.54±0.22 N·m/kg(52%). 양의 일률 최대: 무릎 2.5±0.7 W/kg(14%) · 엉덩관절 1.7±0.4 W/kg(12%) · 발목 3.9±1.0 W/kg(57%)",
+   "population": "DD 12명 총평균±같은 시점의 대상 간 SD",
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "note": "OpenSim 역동역학의 내부 순 관절 모멘트·일률(몸무게 정규화)이며 개별 근육의 값이 아닙니다. 총평균 곡선의 최대라서 대상별 최대값의 평균보다 작습니다."
+  },
+  {
+   "joint": "비교: 최대 관절 각도(다른 연구)",
+   "values": "자기 선호 속도 오르기: 디딤기 무릎 최대 굽힘 69.81±7.84°, 유각기 무릎 최대 96.68±14.18°, 디딤기 엉덩관절 최대 굽힘 61.75±8.02°, 유각기 엉덩관절 최대 65.47±9.90°, 디딤기 발목 최대 발등굽힘 18.48±3.78°",
+   "population": "Lewis 2015: 건강한 30명(남 15·여 15, 27.5±10.7세), 맞춤 3단 계단(디딤판 25.5 cm, 단 높이 20 cm), 속도 3종 중 자기 선호 속도, 둘째 단 디딤",
+   "sources": [
+    "lewis2015"
+   ],
+   "note": "최대값만 보고해 시점이 없고, 엉덩관절 각도의 기준은 확인하지 못했습니다. 3단 계단이라 계단 끝의 영향이 있었을 수 있고 일정한 속도(정상 상태)에 이르지 못했다고 저자가 적었습니다(빠른 속도에서 가장 뚜렷). 대상·계단이 달라 도식 각도와 섞지 않습니다."
+  },
+  {
+   "joint": "비교: 오르기와 내리기의 평균 차이(다른 연구)",
+   "values": "오르기가 내리기보다 엉덩관절 각도 28.10°(SD 4.08), 무릎 각도 3.39°(SD 7.20), 엉덩관절 모멘트 0.25 N·m/kg(SD 0.18), 무릎 모멘트 0.17 N·m/kg(SD 0.15) 더 큼. 내리기는 발목 발등굽힘 각도 9.90°(SD 3.80), 발바닥굽힘 각도 8.78°(SD 4.80) 더 큼",
+   "population": "Protopapadaki 2007: 젊은 건강인 33명(남 16·여 17, 18–39세), 4단 계단(단 18 cm, 디딤판 28.5 cm)",
+   "sources": [
+    "protopapadaki2007"
+   ],
+   "note": "초록 값이며 모두 오르기–내리기의 평균 차이입니다(절대 각도·모멘트가 아님). 각도 기준과 시점은 초록에 없습니다."
+  },
+  {
+   "joint": "비교: 오르기 하위국면 경계(다른 연구, 주기 %)",
+   "values": "체중 받아들이기 0–17% · 수직 밀어올리기 2–38% · 한발 지지 17–48% · 앞으로 이어가기 38–51% · 양발 지지 48–66% · 디딤기 0–65% · 발 들어 넘기기 65–82% · 발 놓기 82–100%(표 3 평균, 경계의 SD 3–6%)",
+   "population": "Zachazewski 1993: 26–70세 11명(남 3·여 8, 오르기 10명 28시행), 4단 계단(첫 단 2.5 cm, 이후 18 cm, 디딤판 28 cm), 난간 없음, 출발 직후 보폭(2번 단 닿기→4번 단 닿기), 주기 1.662±0.371 s",
+   "sources": [
+    "zachazewski1993"
+   ],
+   "note": "그 연구의 앞으로 이어가기는 둘째 양발 지지가 시작된 직후(51%)에 끝나, 발 떼기까지 잇는 이 페이지의 구간과 다릅니다. 저자는 수직 밀어올리기가 McFadyen & Winter의 끌어올리기(pull-up)와 비슷하다고 적었습니다. 본문은 수직 밀어올리기 2–37%, 앞으로 이어가기 37–51%, 양발 지지 48–65%로 표와 1%p 다르게 적었습니다. 대상·계단·시간축이 달라 이 페이지 국면 경계와 섞지 않습니다."
+  }
+ ],
+ "mechanics": [
+  {
+   "text": "이 주기에서 오른다리 관절의 양의 일은 엉덩관절 0.51±0.05, 무릎 0.59±0.12, 발목 0.73±0.16 J/kg이고, 음의 일은 무릎 −0.20±0.06, 발목 −0.09±0.05, 엉덩관절 −0.03±0.01 J/kg로 작습니다. 오르기의 관절 일은 대부분 몸을 들어 올리는 양의 일입니다. 같은 대상의 내리기 주기(D6)에서는 반대로 무릎 −1.04±0.19, 발목 −0.98±0.13 J/kg의 음의 일이 중심입니다.",
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "note": "공개 데이터의 대상별 주기 관절 일(12명 평균±SD)입니다. 순 관절 일이며 개별 근육의 일이 아니고, 도식(편집 주기 모형)에서 다시 계산한 값이 아닙니다."
+  },
+  {
+   "text": "양의 일을 맡는 관절은 국면마다 다릅니다. 체중 받아들이기와 끌어올리기에는 엉덩관절(0.18·0.20 J/kg)과 무릎(0.17·0.25 J/kg)이, 끌어올리기와 앞으로 이어가기에 걸쳐서는 발목(0.28·0.41 J/kg)이 일을 냅니다. 유각기에는 엉덩관절이 다리를 굽혀 올리며 0.12 J/kg를 냅니다.",
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "note": "총평균 일률 곡선을 이 페이지의 국면 경계로 적분한 값이라, 국면 합이 대상별 주기 일의 평균과 조금 다릅니다(예: 무릎 양의 일 국면 합 0.57 대 0.59 J/kg)."
+  },
+  {
+   "text": "디딤기 전반에는 엉덩관절과 무릎이 함께 폄 모멘트를 내며 펴집니다(무릎 폄 모멘트 최대 0.93 N·m/kg, 14%). 무릎 모멘트는 31% 무렵 굽힘 쪽으로 바뀌고 엉덩관절 폄 모멘트는 53% 무렵까지 이어지며, 디딤기 후반에는 발목 발바닥굽힘 모멘트가 커집니다(최대 1.54 N·m/kg, 52%).",
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "note": "OpenSim 역동역학의 내부 순 관절 모멘트 총평균(몸무게 정규화)입니다."
+  },
+  {
+   "text": "DeVita 2007도 오르기 디딤기의 양의 일이 디딤 초기에는 무릎, 디딤 후기에는 발목에서 나온다고 보고했습니다.",
+   "sources": [
+    "devita2007"
+   ],
+   "note": "DeVita 2007: 건강한 34명(남 16·여 18, 22.2±2.0세), 운동화, 4단 계단(단 0.19 m, 디딤판 0.28 m)의 둘째 단, 메트로놈 1.33 Hz(0.45 m/s), 디딤기만 분석. 같은 문단에서 계단의 엉덩관절 일률·일은 작았다고 적었습니다. DD 디딤기의 엉덩관절 양의 일은 0.38 J/kg(디딤기 관절 양의 일의 약 4분의 1, 총평균 일률 곡선 적분)입니다. 두 연구는 신발·메트로놈 속도(0.45 m/s)·단 높이(0.19 m)·계산 방법이 다르며, 차이의 원인은 확인하지 못했습니다."
+  },
+  {
+   "text": "‘계단 내리기가 다리에 더 큰 부하를 준다’는 인상은 일부 변수에서만 맞았습니다. 최대 관절 모멘트와 디딤기 전체의 각충격량은 대부분 오르기에서 더 컸고, 내리기에서 더 큰 것은 디딤 초기 몸쪽–먼쪽 방향 관절 힘의 첫 봉우리와 엉덩관절 벌림·발목 발바닥굽힘 모멘트였습니다. 오르기의 무릎 폄 모멘트 봉우리는 평지 보행의 약 2–3배였습니다.",
+   "sources": [
+    "lin2005"
+   ],
+   "note": "Lin 2005: 젊은 성인 10명(남 5·여 5, 21.9±1.6세), 3단 계단(단 18 cm, 디딤판 46 cm)의 둘째 단 힘판, 디딤기만 분석. 디딤판이 일반 계단보다 깊습니다."
+  },
+  {
+   "text": "이마면에서는 지면반력이 엉덩관절 중심 안쪽을 지나 디딤기 대부분 엉덩관절 벌림 모멘트가 필요합니다. 오르기의 벌림 모멘트는 체중을 받는 디딤 초기와 체중을 반대 다리로 넘기는 디딤 후기에 두 봉우리를 보였습니다. 이 도식은 시상면만 그려 이 작용을 보여 주지 않습니다.",
+   "sources": [
+    "lin2005",
+    "lin2004"
+   ],
+   "note": "Lin 2005 표 2: 오르기 벌림 모멘트 봉우리 8.11·9.33 %BW×LL. Lin 2004(같은 계단 조건): 첫 양발 지지를 뺀 디딤기 동안 엉덩관절 벌림 쪽 단축성 일률(최대 2.5% W/BW)."
+  },
+  {
+   "text": "Zachazewski 1993(26–70세 11명, 그림 판독)에서 수직 지면반력은 봉우리가 둘이었습니다. 한발 지지가 시작될 때 약 108% BW, 중간 디딤에 약 80% BW로 줄었다가, 둘째 양발 지지가 시작될 때 약 115% BW로 다시 커졌습니다.",
+   "sources": [
+    "zachazewski1993",
+    "stacoff2005"
+   ],
+   "note": "Zachazewski 1993 그림 8 판독값입니다(±2–3% BW, 그림의 점이 평균인지 명시 없음). 26–70세 11명(남 3·여 8, 오르기 10명 28시행), 4단 계단(첫 단 2.5 cm, 이후 18 cm, 디딤판 28 cm), 난간 없음, 맨 위 층계참 없음, 속도 지시 없음, 출발 직후 보폭(2번 단 닿기부터 4번 단 닿기까지)입니다. 그 연구의 사건 시점(17%·34%·51%)은 이 페이지의 시간축과 다릅니다. 가파른 계단 조건에서 평균 수직 하중이 체중의 1.6배까지 커졌다는 보고가 있어(Stacoff 2005, 20명, 초록) 이 크기를 일반화하지 않습니다."
+  },
+  {
+   "text": "체중심은 한 주기에 약 0.34 m(두 단 높이) 오릅니다. 오른다리 한발 지지 중 상승 속도는 21% 무렵 가장 크고(0.59±0.07 m/s), 42.4%에 처음 0이 됩니다(E1). 49% 무렵, 반대발이 닿을 즈음부터 다시 오릅니다.",
+   "sources": [
+    "darmstadt-stairs"
+   ],
+   "note": "OpenSim 모형의 체중심 높이·수직 속도 총평균입니다. 도식의 엉덩관절 높이 변화는 체중심 궤적이 아닙니다."
+  },
+  {
+   "text": "Zachazewski 1993은 체중심이 수직 밀어올리기 동안 오르고 앞으로 이어가기 동안에는 더 오르지 않으며, 좌우 이동은 중간 디딤에서 가장 크다고(4.4±1.2 cm) 기술했습니다.",
+   "sources": [
+    "zachazewski1993"
+   ],
+   "note": "대상·조건은 위 지면반력 항목과 같습니다."
+  },
+  {
+   "text": "McFadyen & Winter 1988은 단에서 단으로 나아가는 데 무릎 폄근이 주도적 역할을 하고 발목 발바닥굽힘근이 함께 작용하며, 운동 양상의 변동은 엉덩관절에서 가장 컸다고 요약했습니다.",
+   "sources": [
+    "mcfadyen1988"
+   ],
+   "note": "남성 3명, 5단 계단(단 22 cm, 디딤판 28 cm), 2→4번 단 주기, 오르기·내리기 각 24시행. 초록만 열람했습니다."
+  },
+  {
+   "text": "계단 경사가 달라지면 관절 일률이 크게 달라졌고, 저자는 이를 오르기에서 근육이 만들어야 하는 위치에너지의 양과 연결했습니다.",
+   "sources": [
+    "riener2002"
+   ],
+   "note": "Riener 2002: 10명, 5단 계단, 경사 24·30·42°, 초록. 같은 초록에서 시간 변수와 지면반력은 경사의 영향을 유의하게 받지 않았습니다."
+  },
+  {
+   "text": "DD 근전도는 근육마다 같은 대상·같은 다리의 평지 보행 주기 최대를 100으로 둔 상대값입니다. 근육 사이 크기를 비교하거나 힘·일로 읽을 수 없고, 수축 방식은 관절 운동과 일률, 초음파에서 판단합니다.",
+   "sources": [
+    "grimmer2023",
+    "darmstadt-stairs"
+   ]
+  }
+ ],
+ "passive": [
+  {
+   "name": "발꿈치힘줄",
+   "nameEn": "Calcaneal tendon (Achilles tendon)",
+   "structures": [
+    "FMA258847"
+   ],
+   "role": "오르기 한발 지지 후반에 안쪽장딴지근이 활동하며 근섬유 길이가 일정한 동안 근육–힘줄 단위가 더 늘어나 힘줄이 늘어납니다. 반대발이 닿은 뒤 근육–힘줄 단위가 짧아지며 발목 모멘트가 커집니다. 이 시기 근섬유를 두고 같은 연구에 ‘거의 등척성’ 결론과 ‘빠르게 짧아짐’ 서술이 함께 있어, 힘줄이 길이 변화를 얼마나 맡는지는 정하지 않았습니다.",
+   "sources": [
+    "spanjaard2007"
+   ],
+   "note": "Spanjaard 2007(초음파, 건강한 젊은 남성 10명, 4단 17/28 cm, 맨발, 편한 속도, 왼다리). 이 ‘힘줄’은 근육–힘줄 단위 길이 변화에서 근섬유 길이 변화를 빼서 추정한 안쪽장딴지근의 직렬 탄성 성분(자유 힘줄 + 널힘줄)이며 발꿈치힘줄만의 측정이 아닙니다. 2008년 정정 공고의 내용을 확인하지 못해 늘어난 길이 등 수치는 쓰지 않았습니다."
+  }
+ ],
+ "absent": [
+  "무릎인대(patellar ligament)와 넙다리네갈래근 힘줄(quadriceps tendon): 남성 3D 모델에 메시가 없습니다. 여성 참조 아틀라스에만 있습니다(오른쪽 HRAF0909, HRAF0397)."
+ ],
+ "misconceptions": [
+  {
+   "wrong": "계단 내리기는 오르기를 거꾸로 돌린 동작이다.",
+   "better": "같은 12명이 같은 계단을 오르내린 기록에서 발이 닿는 순간 발의 기울기는 오르기 약 4°(거의 평평), 내리기 약 33°(발끝이 아래, 앞발이 먼저 닿는 자세)로 다릅니다. 관절 일도 오르기는 양의 일이 중심이고(오르기 A5: 엉덩관절 0.51, 무릎 0.59, 발목 0.73 J/kg), 내리기는 무릎과 발목의 음의 일이 중심입니다(내리기 D6: 무릎 −1.04, 발목 −0.98 J/kg).",
+   "sources": [
+    "darmstadt-stairs",
+    "grimmer2023"
+   ],
+   "note": "발 기울기는 정강이 분절각에서 발목 각을 뺀 계산값이며, 발꿈치 표지점이 없어 실제로 어디가 먼저 닿는지는 측정되지 않았습니다. 일은 공개 데이터의 대상별 주기 관절 일 평균입니다. 내리기의 앞발 접촉은 Grimmer 2023 고찰도 서술했습니다."
+  },
+  {
+   "wrong": "계단 내리기는 언제나 오르기보다 관절에 더 큰 부하를 준다.",
+   "better": "변수에 따라 다릅니다. Lin 2005에서는 최대 관절 모멘트와 디딤기 각충격량의 대부분이 오르기에서 더 컸고, 내리기는 일부 변수(관절 힘의 첫 봉우리, 엉덩관절 벌림·발목 발바닥굽힘 모멘트)에서만 컸습니다. Protopapadaki 2007은 오르기의 엉덩·무릎 모멘트가 더 크다고, Andriacchi 1980은 내리기의 무릎 모멘트가 더 크다고 보고했으며, Lin 2005는 Andriacchi의 계산법이 발목보다 몸쪽 관절에서 오차를 키울 수 있다는 앞선 지적을 인용했습니다.",
+   "sources": [
+    "lin2005",
+    "protopapadaki2007",
+    "andriacchi1980"
+   ],
+   "note": "Lin 2005: 젊은 성인 10명, 18/46 cm. Protopapadaki 2007: 33명, 18/28.5 cm, 초록. Andriacchi 1980: 남성 10명, 초록(계단 치수 미확인)."
+  },
+  {
+   "wrong": "계단 오르기는 넙다리네갈래근(무릎 폄근)이 거의 다 한다.",
+   "better": "같은 주기에서 다리 관절의 양의 일은 발목 0.73, 무릎 0.59, 엉덩관절 0.51 J/kg입니다. 무릎은 주로 디딤기 전반에, 엉덩관절은 디딤기 전반과 유각기에, 발목은 끌어올리기부터 발 떼기까지 일을 냅니다. McFadyen & Winter의 요약도 무릎 폄근의 주도에 발목 발바닥굽힘근이 함께 작용한다는 것입니다. 이 값은 순 관절 일이며 근육별 몫이 아닙니다.",
+   "sources": [
+    "darmstadt-stairs",
+    "mcfadyen1988"
+   ]
+  },
+  {
+   "wrong": "계단에서도 발꿈치가 먼저 닿는다.",
+   "better": "오르기의 첫 접촉 부위는 출처마다 다릅니다. Riener 연구진은 경사 24–42° 계단에서 모든 대상이 오르기·내리기 모두 앞발로 닿았다고 보고했고, 24°보다 완만하면 발꿈치 접촉으로 바뀔 수 있다고 추정했습니다. Spanjaard 2007은 오르기에서 발을 디딤판에 수평으로 놓는다고 적었고, Benedetti 2012는 오르기 첫 지지가 앞발이라고 적었습니다. DD에는 발꿈치 표지점이 없어 이 도식은 접촉 부위를 강조하지 않습니다.",
+   "sources": [
+    "riener2002",
+    "riener2001",
+    "spanjaard2007",
+    "benedetti2012",
+    "darmstadt-stairs"
+   ],
+   "note": "Riener: 건강한 남성 10명(24–34세, ISB 2001 장문 초록), 2002 논문은 초록. Spanjaard 2007: 남성 10명, 17/28 cm, 맨발. Benedetti 2012: 16명, 16/28 cm, 맨발."
+  },
+  {
+   "wrong": "근전도가 큰 근육이 그만큼 더 많은 일을 한다.",
+   "better": "체중 받아들이기의 DD 국면 평균은 넙다리곧은근 283%, 가쪽넓은근 218%이지만, 넙다리곧은근이 더 많은 일을 한다고 읽을 수 없습니다. 각 값은 근육마다 평지 보행 최대로 따로 나눈 상대값이고, 표면 전극의 넙다리곧은근 신호에는 다른 넙다리네갈래근 갈래의 활동이 섞일 수 있습니다. 근전도는 신경 자극의 시점과 상대 크기를 보여 줄 뿐입니다.",
+   "sources": [
+    "darmstadt-stairs",
+    "grimmer2023",
+    "benedetti2012"
+   ]
+  },
+  {
+   "wrong": "관절이 펴지거나 굽는 정도를 보면 그 관절을 지나는 근육의 근섬유가 언제, 얼마나 짧아지거나 늘어나는지 알 수 있다.",
+   "better": "계단 오르기 초음파 연구 두 편은 그렇지 않은 시기를 보고했습니다. 가쪽넓은근은 체중 받아들이기 초기에 무릎이 3°만 펴지는 동안 근섬유가 짧아지고 힘줄이 늘어났고, 저자는 이 시기 근섬유 길이 변화가 무릎 관절 운동과 맞지 않았다고 결론지었습니다. 안쪽장딴지근은 활동이 큰 밀어 올리기 동안 근섬유가 거의 등척성으로 수축했고, 저자는 근섬유의 움직임이 관절 운동에서 계산한 근육–힘줄 길이 변화로 예상한 것과 다르다고 적었습니다. 두 예에서 근섬유 변화의 방향은 관절 운동과 크게 어긋나지 않았지만, 크기와 시점은 관절 운동만으로 예상한 것과 달랐습니다. 방향까지 반대인 예는 계단 내리기의 안쪽장딴지근입니다(발 닿기 직후 발목이 발등굽힘하는 동안 근섬유가 짧아짐). 관절 각도는 근육–힘줄 단위 전체의 길이를, 순 관절 일률은 그 관절을 지나는 모든 구조의 합을 반영할 뿐이며, 근섬유 길이 변화는 이 연구들처럼 초음파로 따로 측정한 자료에서 확인합니다.",
+   "sources": [
+    "chleboun2008",
+    "spanjaard2007"
+   ],
+   "note": "Chleboun 2008: 대학생 연령 여성 33명, 표준 4단, 초음파, 초록. Spanjaard 2007: 건강한 젊은 남성 10명, 4단 17/28 cm, 맨발, 초음파, 초록 결론(본문에는 같은 시기를 ‘단축성 활동’으로 쓴 서술도 있음). 두 연구 모두 근육 하나씩만 측정했고, 다른 근육으로 넓히지 않습니다."
+  }
+ ],
+ "limitations": [
+  "대상은 건강한 젊은 남성 12명(21–38세)이고 맨발입니다. 여성·노인·신발을 신은 조건으로 넓히지 않습니다.",
+  "난간은 두 논문과 데이터 문서에 기재가 없습니다. 문서 사진에 보행로를 따라 허리 높이의 가로대가 보이지만 난간인지, 사용했는지는 알 수 없습니다.",
+  "단 수(디딤판 5개와 위층)는 데이터 문서 그림 2를 판독한 값이며, 본문에 단 수를 적은 문장은 없습니다.",
+  "왼다리는 오른다리 곡선을 반 주기 늦게 그린 대칭 가정입니다. DD의 실제 왼다리 주기(A6)와는 차이가 있습니다(첫 접촉 무릎 A6 71.7°, A5 68.0°; A6 디딤 비율 62.5%).",
+  "도식은 같은 12명 총평균 곡선에서 만든 편집 주기 모형이며 한 사람의 실제 궤적이 아닙니다. 양발 지지에서 두 발이 디딤판에 닿도록 오른다리와 반 주기 뒤 곡선의 엉덩·무릎·발목 각도를 관절마다 대상 간 ±1 SD 안에서 조정했습니다. SD는 관측된 개인차이지 측정 오차가 아니고 관절 사이의 함께 변하는 관계를 보장하지 않으므로, 이 조정을 측정 자세에 충실하다는 근거로 쓰지 않습니다. 원래 값과 SD는 키프레임의 measured에 남겼습니다.",
+  "주기 끝과 처음의 차이(넙다리 1.0°, 무릎 5.0°(끝점 SD 3.93°), 발목 3.8°(끝점 SD 4.16°))는 유각 무릎 최대(85.9%) 이후 다음 발 닿기까지 속도가 이어지는 매끄러운 곡선으로 없앴습니다. 이음만의 편집은 무릎 끝점에서 최대 1.26 SD로 양발 지지 보정의 한도(1 SD)보다 큽니다. 주기 처음의 양발 지지 보정이 주기 끝에도 이어 붙어, 그린 각도와 원 곡선(표본 사이는 단조 3차)의 최종 차이를 0.01% 간격으로 재면, 이 구간에서 최대 0.97 SD(무릎, 99.5%), 양발 지지 보정 구간에서 최대 0.99 SD입니다.",
+  "발가락 각도는 DD에 없어 그리기 규칙으로 정했습니다(디딤 중 디딤판에 닿고, 발 닿기 전후 8%에 걸쳐 들어오고 나감). 몸통 앞기울임 15°는 DD 관절 운동학(골반 기울기 + 허리 폄)에서 계산한 편집 근사이며, 저자는 하지 운동학만 타당성을 검토했다고 밝혔습니다. 디딤판 위 발 위치는 발꿈치·발끝이 디딤판 안에 들고 챌판과 1 cm 이상 떨어지게 정한 편집값입니다.",
+  "도식 인체는 저장소 남성 BodyParts3D 뼈의 분절 길이(넙다리 0.39 m, 정강이 0.37 m)를 쓰며 대상(평균 키 180 cm)보다 작습니다. 같은 각도로 그리면 양발 지지에서 두 발 사이가 계단과 2.9–5.3 cm 어긋나며, 분절 길이를 대상 키에 맞춰 늘려도 오르기는 더 어긋나 각도를 ±1 SD 안에서 조정했습니다.",
+  "엉덩관절 높이의 출렁임은 각도와 발 고정에서 나온 도식 결과이며 체중심 궤적이 아닙니다. 체중심과 지면반력은 1차 출시에서 그리지 않습니다.",
+  "국면 이름은 McFadyen & Winter의 기능명을 빌린 편집 구간입니다. McFadyen & Winter 1988은 초록만 열람했고 이름은 학위논문의 2차 인용(Cluff 2008)에서 확인했습니다. 경계는 출처마다 다릅니다. 예를 들어 Zachazewski 1993의 앞으로 이어가기(38–51%)는 둘째 양발 지지(48–66%)가 시작된 직후에 끝나, 발 떼기까지 잇는 이 페이지의 구간과 다릅니다(관절 대표값 표의 비교 행).",
+  "반대발 사건(14.1%·50%)은 대칭 도식의 결과입니다. DD에서 계산한 반대발 떼기는 계산 방식에 따라 12.6–13.5%로 약 1%p 달라지며(이 페이지는 Grimmer 2020 표 1의 디딤 비율과 같은 디딤 시간 자료로 계산한 13.5%를 적음), 반대발 닿기 49.8%는 방식과 관계없이 같습니다.",
+  "근전도는 개인·다리별 평지 보행 주기 최대를 100으로 둔 상대값이며 최대 수의적 수축 대비 비율이 아닙니다. 국면 평균은 짧은 봉우리를 지웁니다(예: 가쪽넓은근 유각기 평균 10%, 국면 안 최대 81%). 국면 평균은 총평균 곡선을 국면 경계 사이에서 적분한 평균입니다(사다리꼴 공식). 30%는 이 페이지가 정한 편집 기준이며 활동의 시작·끝이나 ‘검출 안 됨’을 뜻하지 않습니다. 앞정강근은 10명(대상 6·8 제외), 나머지는 12명입니다. 저자는 넙다리두갈래근에서 오른다리 값이 더 큰 좌우 차이를 보고했습니다.",
+  "DD 근전도로 측정한 근육은 넙다리두갈래근(뒤넙다리근 행)·넙다리곧은근·가쪽넓은근(넓은근 행)·가쪽장딴지근·가자미근·앞정강근뿐입니다. 안쪽·중간넓은근, 반힘줄근·반막근, 안쪽장딴지근, 볼기근, 엉덩근·큰허리근, 척추세움근의 칸은 대상·계단이 다른 연구나 모델에서 가져왔고, 그 수치를 DD 시간축에 섞지 않았습니다. Joseph & Watson 1967(초록)은 양쪽 척추세움근이 한 걸음에 두 번 수축한다고만 적어 시점이 없으므로 국면 칸의 근거로 쓰지 않았습니다.",
+  "근섬유 수준의 측정은 가쪽넓은근(Chleboun 2008, 여성 33명, 초록)과 안쪽장딴지근(Spanjaard 2007, 남성 10명)뿐입니다. 나머지 수축 방식은 DD의 순 관절 일률과 관절 운동에서 끌어낸 해석이며, 순 관절 값은 개별 근육의 일률이 아닙니다.",
+  "Spanjaard 2007에는 2008년 정정 공고가 있으나 내용을 확인하지 못해, 그 연구의 수치(근섬유 길이·변화량)는 쓰지 않고 정성 서술만 옮겼습니다.",
+  "Benedetti 2012의 근전도는 활동 여부(on–off)를 ‘활동한 대상 비율’로 나타낸 것이라 진폭이 아니며, 저자는 장딴지근·앞정강근 신호의 혼선과 넙다리곧은근 표면 근전도의 한계를 적었습니다. 이 페이지에 적은 비율은 그림 3 막대를 판독한 값이며(16명이라 한 명이 약 6%), 그 연구의 주기 %를 이 페이지 국면에 대응시킨 것은 편집 판단입니다.",
+  "앞십자인대·뒤십자인대·정강쪽곁인대·종아리쪽곁인대와 무릎뼈 지지띠(ZA_ligament_anterior_cruciate_ligament_r, ZA_tendon_lateral_patellar_retinaculum_r 등)는 남성 모델에 메시가 있지만, 계단 오르기에서의 역할을 다룬 출처를 확인하지 못해 수동 구조로 배정하지 않았습니다."
+ ]
+}

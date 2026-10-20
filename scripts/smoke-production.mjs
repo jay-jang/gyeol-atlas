@@ -28,7 +28,7 @@ try {
     "Wiki must not fetch the 3D chunk or models",
   );
   // The movement page draws 2D diagrams only (Q9 extended, docs/movement-mechanics).
-  for (const route of ["#movement", "#movement/walking/loading-response", "#movement/arm-elevation"]) {
+  for (const route of ["#movement", "#movement/walking/loading-response", "#movement/stair-ascent/pull-up", "#movement/stair-descent", "#movement/arm-elevation"]) {
     await page.goto(origin + "/" + route);
     await page.locator("main.movement-page h1").waitFor();
   }

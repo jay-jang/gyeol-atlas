@@ -368,7 +368,7 @@
   "citation": "Lyons K, Perry J, Gronley JK, Barnes L, Antonelli D. Timing and relative intensity of hip extensor and abductor muscle action during level and stair ambulation. An EMG study. Phys Ther. 1983;63(10):1597-1605. doi:10.1093/ptj/63.10.1597. PMID 6622534.",
   "url": "https://doi.org/10.1093/ptj/63.10.1597",
   "checked": "초록",
-  "usedFor": "바늘 근전도 11명: 반막근·넙다리두갈래근 긴갈래의 유각기 활동이 중간 유각기에 시작, 큰모음근은 말기 유각기에 시작, 큰볼기근과 큰모음근이 부하 반응기의 주된 엉덩관절 폄근"
+  "usedFor": "평지 걷기 — 미세 철사 전극 근전도 11명: 반막근·넙다리두갈래근 긴갈래의 유각기 활동이 중간 유각기에 시작, 큰모음근은 말기 유각기에 시작, 큰볼기근과 큰모음근이 부하 반응기의 주된 엉덩관절 폄근 / 계단 오르기 — 큰볼기근 아래 부분이 부하 반응기와 중간 입각기의 주된 엉덩관절 폄근(초록, 계단 치수 미확인)"
  },
  {
   "id": "semciw2013",
@@ -600,5 +600,160 @@
   "url": "https://doi.org/10.1097/01.phm.0000130033.91894.5a",
   "checked": "초록",
   "usedFor": "건강한 젊은 성인 15명, 트레드밀(평소 속도와 0.5·1.8·2.1 m/s), 가쪽장딴지근 표면 근전도: 주 봉우리가 주기 40–45%, 속도가 빠를수록 커짐. 활동 시작·끝 수치는 초록에 없음"
+ },
+ {
+  "id": "darmstadt-stairs",
+  "short": "Darmstadt 데이터 2023",
+  "citation": "Grimmer M, Zhao G, Zeiss J, Weigand F, Lamm S, Steil M, Heller A. Darmstadt stair ambulation dataset including level walking, stair ascent, stair descent and gait transitions at three stair heights. Version 1.0. TUdatalib (TU Darmstadt); 2023. doi:10.48328/tudatalib-1182. CC BY 4.0. 데이터 문서 Documentation Version 1.0(2023-05-25).",
+  "url": "https://doi.org/10.48328/tudatalib-1182",
+  "checked": "공개 데이터",
+  "usedFor": "계단 오르기 — Data_fully_processed.mat의 보통 높이(normal, 0.17 m) 오르기 A5(오른다리) 12명 총평균·대상 간 SD를 직접 열어 계산(100점 = 0–100% 양끝 포함, t = i/99): 넙다리 분절각(Athi)·무릎·발목·골반 기준 엉덩관절각, 순 관절 모멘트·일률과 국면별 관절 일(일률 곡선 적분), 대상별 주기 관절 일(Whip_p 등), 체중심 높이·수직 속도(E1 42.4%), 표면 근전도 6개(평지 보행 주기 최대 = 100, 앞정강근 10명)의 국면 평균·최대, Touchdowns로 계산한 반대발 사건(13.5%·49.8%). 비교용 D6 관절 일(무릎 −1.04, 발목 −0.98 J/kg). 데이터 문서: 단 수 그림 판독(디딤판 5개 + 위층), 각도 0° = 선 자세, 모멘트 부호, ‘하지 운동학만 타당성 검토’, 표지점에 발꿈치 없음. / 계단 내리기 — Data_fully_processed.mat 보통 높이(0.17 m) 내리기 D6(오른다리)의 12명 총평균·대상 간 SD를 내보낸 파일(100점 = 주기 0–100% 양끝 포함)에서 직접 계산: 넙다리 분절각(−Athi)·무릎(−Akne)·발목(Aank)·골반 기준 엉덩관절(Ahip)의 사건 값과 극값, 발 닿기 발 기울기(정강이 분절각 − 발목 각) 약 33°, 관절 순 모멘트·일률과 국면별 일(총평균 일률 곡선 적분), 대상별 관절 일의 평균(D6, 비교용 A5), 체중심 높이·수직 속도(E1 = 한발 지지 중 수직 속도 최대 표본 23.2%, −0.08 m/s), 표면 근전도 6개의 국면 평균(평지 보행 주기 최대 = 100, 앞정강근 10명), 주기·디딤 시간, 왼다리 주기 D5·D7의 첫 접촉 값, 평지 A1 최대 무릎 굽힘. 반대발 사건 14.3%·49.7%(Touchdowns), 단 수(문서 그림), 난간 기재 없음, 몸통 앞기울임(Joint_Kinematics)은 조사·합의 단계에서 원 파일과 문서로 확인한 값."
+ },
+ {
+  "id": "grimmer2020",
+  "citation": "Grimmer M, Zeiss J, Weigand F, Zhao G, Lamm S, Steil M, Heller A. Lower limb joint biomechanics-based identification of gait transitions in between level walking and stair ambulation. PLoS One. 2020;15(9):e0239148. doi:10.1371/journal.pone.0239148. PMC7494088. PMID 32936793.",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7494088/",
+  "checked": "본문",
+  "usedFor": "계단 오르기 — DD 대상(남성 12명, 25.4±4.5세, 180.1±4.6 cm, 74.6±7.9 kg, 맨발)과 계단(디딤판 0.29 m 고정, 보통 높이(normal) 0.17 m만 분석), A5·A6을 계단 기준 주기로 사용, 표 1의 A5 속도 0.53 m/s·주기 1.12 s·디딤 0.72 s·디딤 비율 64.1%(발 떼기)와 A6 디딤 비율 62.5%, OpenSim 3.3 계산, 그림의 엉덩관절은 골반 기준 / 계단 내리기 — 대상(건강한 남성 12명, 25.4±4.5세, 180.1±4.6 cm, 74.6±7.9 kg, 맨발), 계단(디딤판 0.29 m 고정, 보통 단 높이 0.17 m, 30.4°), 내리기는 오른발로 계단에 들어섬, D5·D6을 계단 기준 주기로 사용, 표 1의 D6 속도 0.56 m/s·주기 1.06 s·디딤 0.69 s·duty factor 65.2%(디딤 시간 ÷ 주기 시간 × 100), OpenSim 3.3으로 관절 운동·역학·체중심 계산, 발 닿기·떼기 문턱값(20 N·10 N), 그림 4의 엉덩관절 각이 골반 기준 값임(조사 단계 그림 대조)"
+ },
+ {
+  "id": "grimmer2023",
+  "citation": "Grimmer M, Zeiss J, Weigand F, Zhao G. Joint power, joint work and lower limb muscle activity for transitions between level walking and stair ambulation at three inclinations. PLoS One. 2023;18(11):e0294161. doi:10.1371/journal.pone.0294161. PMC10653464. PMID 37972031. 보충자료 S1 File.",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10653464/",
+  "checked": "본문",
+  "usedFor": "계단 오르기 — DD 근전도 측정 근육(넙다리곧은근·가쪽넓은근·넙다리두갈래근·가쪽장딴지근·가자미근·앞정강근)과 정규화(개인·다리별 평지 보행 주기 최대 = 100%), 앞정강근 2명 제외, 넙다리두갈래근의 좌우 차이, 내리기 앞발 접촉 서술(고찰). 보충자료 S1의 일률–근전도 해석: 디딤기 전반 무릎 양의 일률과 넙다리곧은근·가쪽넓은근, 유각 초기 넙다리곧은근, 디딤기 후반–유각 초기 장딴지근·넙다리두갈래근의 무릎 굽힘 보조, 말기 유각기부터의 엉덩관절 폄 일률, 디딤기 중간·밀어 올리기의 장딴지근·가자미근 / 계단 내리기 — 표 1 보통 경사 D6의 관절 일(음의 일 무릎 −1.04±0.19·발목 −0.98±0.13·엉덩관절 −0.02±0.01 J/kg, 양의 일 엉덩관절 0.22±0.05·발목 0.18±0.03·무릎 0.04±0.02 J/kg)과 근전도 평균 진폭(BF 42·RF 117·VL 53·GAS 27·SOL 29·TA 23%, 평지 A1 30·34·25·22·28·31%), 내리기에서 넙다리곧은근만 평지보다 유의하게 증가, 근전도 정규화(대상·다리별 평지 보행 주기 최대, MVC 아님), 앞정강근 2명 제외, 다중 비교 보정과 제2종 오류 가능성에 대한 저자 서술, GAS = 가쪽장딴지근, 고찰의 앞발 접촉 서술과 신장성 활동 '추정', 한계(좌우 따로 정규화해 넙다리두갈래근 오른쪽 값이 큼, 맨발·신발 영향), S1 File의 일률–근전도 해석(내리기 엉덩관절은 주로 양의 일이며 굽힘·폄 서술은 다른 문헌 인용, 무릎 음의 일과 RF·VL 신장성 해석, 앞발 접촉과 GAS·SOL 활동)"
+ },
+ {
+  "id": "zachazewski1993",
+  "citation": "Zachazewski JE, Riley PO, Krebs DE. Biomechanical analysis of body mass transfer during stair ascent and descent of healthy subjects. J Rehabil Res Dev. 1993;30(4):412-422. PMID 8158557.",
+  "url": "http://web.archive.org/web/20150226144920/http://www.rehab.research.va.gov:80/jour/93/30/4/pdf/zachazewski.pdf",
+  "checked": "본문",
+  "usedFor": "계단 오르기 — 하위국면 %(표 3: 수직 밀어올리기 2–38%, 앞으로 이어가기 38–51%, 양발 지지 48–66%, 발 들어 넘기기 65–82%, 발 놓기 82–100%)를 관절 대표값 표의 비교 행으로만, 수직 지면반력 두 봉우리(그림 8 판독: 17% 약 108%, 34% 약 80%, 51% 약 115% BW), 체중심 서술(수직 밀어올리기 동안 상승, 앞으로 이어가기에는 수직 이동 없음, 좌우 최대 4.4±1.2 cm). 26–70세 11명(남 3·여 8, 오르기 10명 28시행), 4단(첫 단 2.5 cm, 이후 18 cm, 디딤판 28 cm), 난간 없음, 맨 위 층계참 없음, 2번 단→4번 단 보폭. 웨이백 보관 PDF로 열람 / 계단 내리기 — 11명(남 3·여 8, 34.2±15.2세, 26–70세) 가운데 내리기 분석 8명(26–59세, 여 5·남 3; 본문 22시행, 표 1 합계 24), 4단 실험 계단(첫 단 2.5 cm, 이후 18 cm, 깊이 28 cm), 난간 없음, 꼭대기 층계참 없음, 3번 단 → 1번 단 보폭, 속도 지시 없음(웨이백 보관 PDF). 표 4 내리기 구간(디딤 68±2%, 체중 받아들이기 0–14%, 앞으로 이어가기 14–34%, 조절하며 내려가기 34–68%), 앞으로 이어가기 동안 체중심 수직 이동 없음, 그림 13 수직 지면반력 두 봉우리(판독: 약 120%·약 100% 체중)"
+ },
+ {
+  "id": "spanjaard2007",
+  "citation": "Spanjaard M, Reeves ND, van Dieën JH, Baltzopoulos V, Maganaris CN. Gastrocnemius muscle fascicle behavior during stair negotiation in humans. J Appl Physiol (1985). 2007;102(4):1618-1623. doi:10.1152/japplphysiol.00353.2006. PMID 17185499. 정정 공고: J Appl Physiol. 2008;104(6):1857-1859(내용 미확인).",
+  "url": "https://web.archive.org/web/20231203221309/https://research.vu.nl/ws/files/43522329/spanjaard_jap_2007.pdf",
+  "checked": "본문",
+  "usedFor": "계단 오르기 — 안쪽장딴지근 근섬유·근육–힘줄 단위·힘줄(근육–힘줄 단위에서 근섬유를 뺀 직렬 탄성 성분 추정) 길이 변화의 정성 서술(초음파·근전도, 건강한 젊은 남성 10명, 4단 17/28 cm, 맨발, 편한 속도, 왼다리): 첫 양발 지지 함께 약간 늘어남, 한발 지지 전반 무릎 폄으로 근육–힘줄 단위 신장, 후반 근섬유 일정·힘줄 신장, 반대발 닿은 뒤 빠른 단축(‘이 단축성 활동’)과 떼기 구간 ‘거의 등척성’ 결론, 유각기 수동적 길이 변화, 발목 일률 봉우리를 가자미근이 만들 것이라는 저자 추정과 무릎 일률이 안쪽장딴지근을 거쳐 전달될 가능성, 초록 결론(근섬유 움직임이 관절 운동학에서 예상한 것과 다름), 오르기에서 발을 디딤판에 수평으로 놓는다는 고찰 서술. 정정 공고 미확인으로 표 1·2 등 수치는 쓰지 않음 / 계단 내리기 — 남성 10명(24.9±3.2세), 4단 계단(17×28 cm), 맨발, 편한 속도, 한 발씩(VU 저장소 PDF의 웨이백 보관본): 내리기 발 닿기 직후 안쪽장딴지근 근섬유가 높은 근전도와 함께 빠르게 짧아지고 근육–힘줄 단위·힘줄 쪽 조직이 늘어남, 한발 지지에서 근섬유 수동 신장·힘줄 단축, 둘째 양발 지지에서 근섬유 길이 비교적 일정, 유각 끝 능동 단축, 발꿈치 닿기 없이 앞발 착지, '힘줄'은 자유 힘줄+널힘줄의 뺄셈 추정, 저자 결론(늘어난 힘줄의 에너지가 나중에 늘어나는 근섬유에서 흩어짐). 정정 공고 내용을 확인하지 못해 수치(표 1·2, 초록의 약 7 mm)는 쓰지 않음"
+ },
+ {
+  "id": "spanjaard2008jb",
+  "citation": "Spanjaard M, Reeves ND, van Dieën JH, Baltzopoulos V, Maganaris CN. Influence of step-height and body mass on gastrocnemius muscle fascicle behavior during stair ascent. J Biomech. 2008;41(5):937-944. doi:10.1016/j.jbiomech.2008.01.003. PMID 18282576.",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/18282576/",
+  "checked": "초록",
+  "usedFor": "단 높이가 높을수록 안쪽장딴지근 근섬유 단축이 커지고 발목 모멘트도 커짐(10명, 4단, 표준 17 cm와 −50%·+50%·+75%, 체중 +20% 조건)"
+ },
+ {
+  "id": "chleboun2008",
+  "citation": "Chleboun GS, Harrigal ST, Odenthal JZ, Shula-Blanchard LA, Steed JN. Vastus lateralis fascicle length changes during stair ascent and descent. J Orthop Sports Phys Ther. 2008;38(10):624-631. doi:10.2519/jospt.2008.2816. PMID 18827324.",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/18827324/",
+  "checked": "초록",
+  "usedFor": "계단 오르기 — 가쪽넓은근 근섬유 길이(초음파, 대학생 연령 여성 33명, 표준 4단, 디딤기만): 체중 받아들이기 초기 무릎 3° 폄 동안 근활성 최대·근섬유 단축·힘줄 신장, 무릎이 펴져 단을 오르는 동안 근섬유와 힘줄 함께 단축. 힘줄 길이는 모델 계산. 결론: 체중 받아들이기 초기 근섬유 길이 변화가 무릎 관절 운동과 맞지 않음(오해 항목). 다른 넓은근으로 넓히지 않음 / 계단 내리기 — 건강한 대학생 연령 여성 33명, 표준 계단 4단(치수 미확인), 초음파·전기 각도계·발 스위치·표면 근전도, 디딤기만: 내리기 체중 받아들이기에서 가쪽넓은근 활동은 늘지만 근섬유 길이는 유의한 변화 없음·무릎 10° 굽힘 동안 힘줄 늘어남, 무릎이 굽어 내려갈 때 근활성 최대·근섬유와 힘줄 함께 늘어남(힘줄 길이는 모델 계산)"
+ },
+ {
+  "id": "devita2007",
+  "citation": "DeVita P, Helseth J, Hortobagyi T. Muscles do more positive than negative work in human locomotion. J Exp Biol. 2007;210(Pt 19):3361-3373. doi:10.1242/jeb.003970. PMC2577758. PMID 17872990.",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2577758/",
+  "checked": "본문",
+  "usedFor": "계단 오르기 — 디딤기 양의 일이 디딤 초기 무릎·디딤 후기 발목에서 나옴(그림 6 설명; 34명(남 16·여 18, 22.2±2.0세), 운동화, 4단 0.19/0.28 m의 둘째 단, 메트로놈 1.33 Hz·0.45 m/s, 디딤기만 분석). 무릎 비율(38%·48%)은 본문 안에서 엇갈려 쓰지 않음 / 계단 내리기 — 34명(남 16·여 18, 22.2±2.0세), 상업용 표준 계단(단 0.19 m·디딤 0.28 m), 운동화, 메트로놈 1.33 Hz(0.45 m/s), 디딤기만 분석(일은 걸음당 J): 계단 내리기 에너지 흡수는 디딤 초기 발목·디딤 후기 무릎, 무릎·발목이 음의 일의 49%·44%(그림 6 설명·결과). 본문은 웹 도구로 발췌해 대조"
+ },
+ {
+  "id": "lin2004",
+  "citation": "Lin HC, Lu TW, Hsu HC. Three-dimensional analysis of kinematic and kinetic coordination of the lower limb joints during stair ascent and descent. Biomed Eng Appl Basis Commun. 2004;16(2):101-108. doi:10.4015/S1016237204000153.",
+  "url": "https://scholars.lib.ntu.edu.tw/bitstream/123456789/83866/1/07.pdf",
+  "checked": "본문",
+  "usedFor": "계단 오르기 — 디딤기 근전도(최대 수의 등척성 수축 정규화, 디딤기 % 축): 0–25%에 큰볼기근·넙다리곧은근·넓은근 활동과 봉우리, 디딤기 거의 내내 앞정강근 약 20%; 이마면 엉덩관절 벌림 쪽 단축성 일률(첫 양발 지지 제외, 최대 2.5% W/BW)과 벌림 모멘트 두 봉우리의 해석(체중 받기·반대 다리로 넘기기). 젊은 성인 10명(남 5·여 5, 21.9±1.6세), 3단 계단(단 18 cm, 디딤판 46 cm)의 둘째 단 / 계단 내리기 — 젊은 성인 10명(남 5·여 5, 21.9±1.6세), 3단 계단(높이 18 cm·깊이 46 cm), 디딤기 정규화, 오른다리 근전도 8개(%MVIC): 내리기 디딤기 전반 넙다리곧은근·넙다리두갈래근 동시 수축, 첫 20% 앞정강근·장딴지근 동시 수축 뒤 앞정강근 활동 지속, 엉덩관절 폄 모멘트(0–20%·80–100%)를 저자가 주로 큰볼기근에 귀속, 엉덩관절 벌림근 일률(첫 75% 신장성, 80–100% 단축성). 그림 5 판독(내리기 활동 막대: 큰볼기근 디딤기 약 0–30%·약 87–100%, 안쪽장딴지근 약 0–20%)"
+ },
+ {
+  "id": "lin2005",
+  "citation": "Lin HC, Lu TW, Hsu HC. Comparisons of joint kinetics in the lower extremity between stair ascent and descent. J Mech. 2005;21(1):41-50. doi:10.1017/S1727719100000538.",
+  "url": "https://scholars.lib.ntu.edu.tw/bitstreams/e934e817-cae3-4323-aaf7-108b7e623eaa/download",
+  "checked": "본문",
+  "usedFor": "계단 오르기 — 결론: ‘내리기가 더 큰 부하’는 일부 변수(몸쪽–먼쪽 관절 힘 첫 봉우리, 엉덩관절 벌림·발목 발바닥굽힘 모멘트)에서만 성립하고 최대 관절 모멘트·각충격량은 대부분 오르기가 큼; 오르기 무릎 폄 모멘트 봉우리가 평지 보행의 약 2–3배; 지면반력이 엉덩관절 안쪽을 지나 디딤기 대부분 벌림 모멘트가 필요, 오르기 벌림 모멘트 봉우리 8.11·9.33 %BW×LL(표 2); Andriacchi 1980 계산법이 몸쪽 관절 모멘트 오차를 키운다는 앞선 지적의 인용. 젊은 성인 10명(남 5·여 5), 3단(18/46 cm)의 둘째 단, 디딤기만 / 계단 내리기 — 젊은 성인 10명(남 5·여 5, 21.9±1.6세), 3단 계단(18 cm·깊이 46 cm)의 둘째 단 힘판(NTU 저장소 PDF): 결론(내리기 부하가 크다는 인상은 근위–원위 힘 첫 봉우리·엉덩관절 벌림·발목 발바닥굽힘 모멘트에서만 성립, 최대 관절 모멘트·각충격량은 대부분 오르기가 큼), 표 2 엉덩관절 벌림 모멘트 두 봉우리(내리기 14.04·11.20, 오르기 8.11·9.33, 평지 9.55·9.98 %BW×LL)와 내리기 디딤 후기 엉덩관절 굽힘 모멘트, 지면반력이 디딤기 내내 발목 앞·앞발 접촉으로 내리기 초기 발바닥굽힘 모멘트가 큼, Andriacchi 1980 계산법의 몸쪽 관절 오차에 대한 다른 연구의 지적 인용"
+ },
+ {
+  "id": "josephwatson1967",
+  "citation": "Joseph J, Watson R. Telemetering electromyography of muscles used in walking up and down stairs. J Bone Joint Surg Br. 1967;49-B(4):774-780. doi:10.1302/0301-620X.49B4.774.",
+  "url": "https://doi.org/10.1302/0301-620X.49B4.774",
+  "checked": "초록",
+  "usedFor": "계단 오르기 — 요약 3항(오르기, 원격 측정 근전도): 위 단으로 몸을 올리는 데 가자미근·넙다리네갈래근·뒤넙다리근·큰볼기근이 수축하고 중간볼기근이 지지하지 않는 쪽으로 몸이 떨어지는 것을 막음, 앞정강근이 유각기 발등굽힘으로 단을 넘게 도움, 뒤넙다리근이 유각 초반 무릎 굽힘·끝 무렵 무릎 폄 조절, 양쪽 척추세움근이 한 걸음에 두 번 수축(시점이 없어 한계 칸에만 언급). 대상 수·계단 조건은 요약에 없음 / 계단 내리기 — 요약: 가자미근·넙다리네갈래근의 '조절된 늘어남'으로 몸을 아래 단에 내림, 중간볼기근이 지지하지 않는 쪽으로 떨어짐을 막음, 앞정강근이 디딤 시작에 발을 안쪽번짐하고 유각 중간에 발등굽힘, 뒤넙다리근이 유각 중간 무릎 폄을 조절, 양쪽 척추세움근이 한 걸음에 두 번 수축(1967년 원격 근전도의 해석, 대상 수·계단 조건은 초록에 없음)"
+ },
+ {
+  "id": "benedetti2012",
+  "citation": "Benedetti MG, Agostini V, Knaflitz M, Bonato P. Muscle activation patterns during level walking and stair ambulation. In: Steele C, editor. Applications of EMG in Clinical and Sports Medicine. Rijeka: InTech; 2012. p. 117-130. doi:10.5772/25792. CC BY 3.0.",
+  "url": "https://cdn.intechopen.com/pdfs/25822.pdf",
+  "checked": "본문",
+  "usedFor": "계단 오르기 — 표면 근전도 on–off(통계적 이중 문턱, ‘% 주기마다 활동한 대상 비율’; 젊은 성인 16명(남 9·여 7, 27.7±2.6세), 맨발, 편한 속도 43.9 cm/s, 나무 3단 계단(디딤판 28 cm, 단 16 cm), 1번 단→3번 단 주기): 디딤다리 쪽 허리 척추세움근 디딤 초기·중간 디딤, 반대쪽은 디딤기 내내; 중간볼기근·넙다리곧은근 디딤기 전반; 뒤넙다리근 유각 끝–디딤 초기·중간 디딤·발 떼기 무렵; 안쪽장딴지근 디딤기 대부분; 앞정강근 유각기와 발 닿은 뒤, 디딤기 내내 낮은 활동, 발의 안쪽·가쪽번짐 조절; 오르기 첫 지지는 앞발. 넙다리곧은근 표면 근전도의 한계와 장딴지근·앞정강근 신호 혼선(cross-talk) 서술. 그림 3(오르기 on–off 막대, 활동한 대상 비율) 판독: 오른쪽 척추세움근(디딤 초기·소수의 중간 디딤·반대발 닿기 무렵부터 유각기까지), 중간볼기근(그 연구 주기 40%까지 전원, 52% 무렵 절반), 안쪽장딴지근(유각 후반 증가), 앞정강근(디딤기 약 50–80%) / 계단 내리기 — 16명(남 9·여 7, 27.7±2.6세), 맨발, 나무 3단 계단(디딤판 28 cm·단 16 cm), 자기 선택 속도(내리기 48.1 cm/s), 오른쪽 8개 근육 표면 근전도의 이중 문턱 활동 여부(대상 비율): 내리기 중간볼기근 디딤기 대부분 활동(부하 반응기·반대발 닿기 두 구간), 넙다리곧은근 디딤 중 무릎 굽힘 조절·중간~말기 유각, 뒤넙다리근 디딤 시작·발 떼기·중간 유각(무릎 폄 감소)·유각 끝, 안쪽장딴지근 발 닿기 무렵~디딤 말기·유각 끝, 앞정강근 디딤기 전반·유각 초기, 척추세움근 발 닿기·발 떼기 두 번 켜짐, 넙다리곧은근 표면 신호 혼선 경고. 장의 5단계 대략 진폭(그림 5)은 쓰지 않음"
+ },
+ {
+  "id": "riener2001",
+  "citation": "Riener R, Rabuffetti M, Frigo C. Comparison of level and stair walking. In: XVIIIth Congress of the International Society of Biomechanics; 2001; Zürich, Switzerland. Long abstract 0900.",
+  "url": "https://isbweb.org/images/conf/2001/Longabstracts/PDF/0900_0999/0900.pdf",
+  "checked": "본문",
+  "usedFor": "계단 오르기 — 모든 대상이 경사 24–42°의 오르기·내리기에서 앞발로 디딤판에 닿음, 24°보다 완만한 경사에서 발꿈치 접촉으로 바뀔 수 있다는 저자 추정(건강한 남성 10명, 24–34세, 4단 중 아래 3단 계측, 계단 가운데 보폭) / 계단 내리기 — 건강한 남성 10명(24–34세), 4단 계단 중 아래 3단 계측, 경사 24·30·42°, 계단 가운데 보폭: 모든 대상이 모든 경사에서 오르기·내리기 모두 앞발로 디딤판에 닿음, 발꿈치에서 앞발 접촉으로의 전환이 24°보다 완만한 경사에서 일어날 수 있다는 저자 추정"
+ },
+ {
+  "id": "riener2002",
+  "citation": "Riener R, Rabuffetti M, Frigo C. Stair ascent and descent at different inclinations. Gait Posture. 2002;15(1):32-44. doi:10.1016/S0966-6362(01)00162-X. PMID 11809579.",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/11809579/",
+  "checked": "초록",
+  "usedFor": "계단 오르기 — 앞발이 먼저 닿음(오르내림 방향·경사와 무관), 경사에 따른 관절 일률 차이를 근육이 만들어야 하는(오르기) 위치에너지의 양과 연결, 시간 변수·지면반력은 경사의 영향을 유의하게 받지 않음(10명, 5단, 24·30·42°) / 계단 내리기 — 건강한 10명, 5단 계단(3단 힘 센서), 경사 24·30·42°: 오르내림·경사와 관계없이 앞발이 먼저 닿음, 관절 일률이 경사의 영향을 크게 받으며 근육이 흡수해야 할 위치에너지와 관련"
+ },
+ {
+  "id": "mcfadyen1988",
+  "citation": "McFadyen BJ, Winter DA. An integrated biomechanical analysis of normal stair ascent and descent. J Biomech. 1988;21(9):733-744. doi:10.1016/0021-9290(88)90282-5. PMID 3182877.",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/3182877/",
+  "checked": "2차 인용",
+  "usedFor": "계단 오르기 — 국면 기능명의 원 출처(이름은 Cluff 2008의 2차 인용으로 확인했고, 국면 정의·경계는 원문 미열람). 초록: 무릎 폄근이 단에서 단으로 나아가는 데 주도적이고 발목 발바닥굽힘근이 함께 작용, 변동은 엉덩관절에서 가장 큼(남성 3명, 5단 계단 22/28 cm, 2→4번 단 주기, 각 24시행) / 계단 내리기 — 국면 기능명(체중 받아들이기·앞으로 이어가기·조절하며 내려가기, 유각의 다리 끌어오기·발 놓기). 이름은 Cluff 2008 학위논문의 인용으로 확인했고, 초록에서는 조건(남성 3명, 5단 계단, 단 22 cm·디딤판 28 cm, 둘째–넷째 단 주기)과 '활보마다 진행을 위한 특정 국면이 있다'는 문장만 확인. 원 논문의 국면 정의·경계는 열람하지 못함"
+ },
+ {
+  "id": "cluff2008",
+  "citation": "Cluff T. Kinetic analysis of forwards, step-by-step and backwards stair descent [M.Sc. thesis]. Ottawa: University of Ottawa, School of Human Kinetics; 2008.",
+  "url": "https://ruor.uottawa.ca/bitstreams/eb11bc48-0d7c-4759-bf40-d02495c33301/download",
+  "checked": "본문",
+  "usedFor": "문헌 고찰(3쪽)의 McFadyen & Winter 1988 국면 이름 2차 인용: 오르기 디딤기 weight acceptance·pull-up·forward continuance, 유각기 foot clearance·positioning for foot placement; 내리기 디딤기 weight acceptance·forward continuance·controlled lowering, 유각기 pull-through·foot placement"
+ },
+ {
+  "id": "protopapadaki2007",
+  "citation": "Protopapadaki A, Drechsler WI, Cramp MC, Coutts FJ, Scott OM. Hip, knee, ankle kinematics and kinetics during stair ascent and descent in healthy young individuals. Clin Biomech (Bristol). 2007;22(2):203-210. doi:10.1016/j.clinbiomech.2006.09.010. PMID 17126461.",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/17126461/",
+  "checked": "초록",
+  "usedFor": "계단 오르기 — 오르기–내리기의 평균 차이(엉덩관절 각도 28.10°, 무릎 3.39°, 엉덩·무릎 모멘트 0.25·0.17 N·m/kg은 오르기가, 발목 발등굽힘 9.90°·발바닥굽힘 8.78°는 내리기가 큼)를 관절 표 비교 행과 오해 항목에만; 젊은 건강인 33명(남 16·여 17, 18–39세), 4단 계단(단 18 cm, 디딤판 28.5 cm) / 계단 내리기 — 젊은 건강인 33명(남 16·여 17, 18–39세), 4단 계단(단 18 cm·디딤판 28.5 cm): 오르기–내리기 평균 차이(오르기에서 엉덩관절 28.10°·무릎 3.39° 각과 엉덩관절 0.25·무릎 0.17 N·m/kg 모멘트가 큼, 내리기에서 발목 발등굽힘 9.90°·발바닥굽힘 8.78° 각이 큼)"
+ },
+ {
+  "id": "lewis2015",
+  "citation": "Lewis J, Freisinger G, Pan X, Siston R, Schmitt L, Chaudhari A. Changes in lower extremity peak angles, moments and muscle activations during stair climbing at different speeds. J Electromyogr Kinesiol. 2015;25(6):982-989. doi:10.1016/j.jelekin.2015.07.011. PMC4658237. PMID 26443891.",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4658237/",
+  "checked": "본문",
+  "usedFor": "계단 오르기 — 표 2 자기 선호 속도 오르기 최대 각도(디딤기 무릎 69.81±7.84°, 유각기 무릎 96.68±14.18°, 디딤기 엉덩관절 61.75±8.02°, 유각기 엉덩관절 65.47±9.90°, 디딤기 발목 발등굽힘 18.48±3.78°)를 비교 행으로만; 건강한 30명(남 15·여 15, 27.5±10.7세), 맞춤 3단 계단(디딤판 25.5 cm, 단 20 cm), 둘째 단 디딤. 저자 한계: 3단 계단이라 정상 상태 속도에 이르지 못함 / 계단 내리기 — 건강한 30명(남 15·여 15, 27.5±10.7세), 맞춤 3단 계단(디딤판 25.5 cm·단 20 cm), 표 2 자기 선택 속도 내리기 최대값(디딤 무릎 82.56±6.58°, 유각 무릎 93.69±6.10°, 디딤 엉덩관절 21.15±7.74°, 유각 엉덩관절 39.23±6.87°, 디딤 발등굽힘 30.64±7.31°, 유각 발바닥굽힘 31.73±7.45°). 내리기 디딤기 값은 1번 단 디딤에서 계산"
+ },
+ {
+  "id": "stacoff2005",
+  "citation": "Stacoff A, Diezi C, Luder G, Stüssi E, Kramers-de Quervain IA. Ground reaction forces on stairs: effects of stair inclination and age. Gait Posture. 2005;21(1):24-38. doi:10.1016/j.gaitpost.2003.11.003. PMID 15536031.",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/15536031/",
+  "checked": "초록",
+  "usedFor": "계단 오르기 — 가파른 계단 조건에서 평균 수직 하중이 체중의 1.6배까지 커짐(건강한 20명, 세 연령 집단, 경사 3종, 연속 두 걸음 측정) — Zachazewski 지면반력 크기를 일반화하지 않는 근거 / 계단 내리기 — 건강한 20명, 세 연령 집단(평균 33.7·63.6·76.5세), 경사가 다른 계단 세 가지: 가파른 계단에서 평균 수직 하중이 체중의 1.6배까지 증가, 가파른 계단 내리기의 변동·좌우 비대칭이 가장 큼. 수직 지면반력 크기를 일반화하지 않는 근거"
+ },
+ {
+  "id": "andriacchi1980",
+  "citation": "Andriacchi TP, Andersson GB, Fermier RW, Stern D, Galante JO. A study of lower-limb mechanics during stair-climbing. J Bone Joint Surg Am. 1980;62(5):749-757. doi:10.2106/00004623-198062050-00008. PMID 7391098.",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/7391098/",
+  "checked": "초록",
+  "usedFor": "계단 오르기 — 남성 10명의 최대 굽힘–폄 순 모멘트(무릎 오르기 57.1·내리기 146.6 N·m)와 ‘내리기에서 가장 큰 모멘트’라는 결론을 오해 항목에서 대비로만(계단 치수 미확인) / 계단 내리기 — 남성 10명: 최대 굽힘–폄 순 모멘트가 무릎 오르기 57.1·내리기 146.6 N·m, 저자 결론 '내리기에서 가장 큰 모멘트'(오해 항목의 반대 결과 예시)"
+ },
+ {
+  "id": "harper2018",
+  "citation": "Harper NG, Wilken JM, Neptune RR. Muscle function and coordination of stair ascent. J Biomech Eng. 2018;140(1):011001. doi:10.1115/1.4037791.",
+  "url": "https://sites.utexas.edu/neptune/wp-content/uploads/sites/6031/2020/07/jbme1401.pdf",
+  "checked": "본문",
+  "usedFor": "근골격 모의실험[모델](건강한 27명(여 15, 21.9±4.3세)의 집단 평균을 따라감, 16단 계단 17.78/27.94 cm, 한 발씩, 80걸음/분): 디딤기 전반 수직 추진 넓은근·후반 발바닥굽힘근, 앞쪽 추진 전반 큰볼기근·후반 뒤넙다리근, 안쪽 방향 조절 중간볼기근; 유각 시작(반대발 닿기→발 떼기)·유각 초기·후반 다리 일률 공급 엉덩근·큰허리근 묶음(IL), 유각 후반 넙다리곧은근·앞정강근 공급과 뒤넙다리근·가자미근·장딴지근(두 갈래 묶음) 흡수, 넓은근의 유각 시작·초기 흡수"
+ },
+ {
+  "id": "spanjaard2008jeb",
+  "citation": "Spanjaard M, Reeves ND, van Dieën JH, Baltzopoulos V, Maganaris CN. Lower-limb biomechanics during stair descent: influence of step-height and body mass. J Exp Biol. 2008;211(Pt 9):1368-1375. doi:10.1242/jeb.014589. PMID 18424670.",
+  "url": "https://journals.biologists.com/jeb/article/211/9/1368/18222/Lower-limb-biomechanics-during-stair-descent",
+  "checked": "본문",
+  "usedFor": "건강한 남성 10명(24.9±3.2세), 4단 강철 계단, 맨발, 한 발씩, 메트로놈 88/분: 모든 단 높이 조건에서 접촉기(주기 0–약 14%)에 안쪽장딴지근 근섬유가 능동적으로 짧아지고 무릎·발목 운동으로 계산한 근육–힘줄 단위는 늘어남(초록·그림 4 설명), '발끝이 다음 단에 먼저 닿고 발목 발등굽힘으로 발꿈치가 내려앉음'(고찰). 본문은 웹 도구로 발췌해 대조"
  }
 ]

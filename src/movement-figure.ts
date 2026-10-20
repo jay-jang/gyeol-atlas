@@ -42,6 +42,7 @@ export type Leg = { hip: Pt; knee: Pt; ankle: Pt; heel: Pt; mtp: Pt; toe: Pt; sh
 export type SidePose = {
   right: Leg;
   left: Leg;
+  steps?: StairSteps; // stair gait only
   pelvis: number;
   trunk: number;
   lumbosacral: Pt;
@@ -111,19 +112,124 @@ export function footFixedPose(a: SideAngles, arms: "crossed" | "hanging" = "cros
 // right stance 0–62%, loading response to 12%, left contact at 50%). The left
 // leg runs half a cycle behind the right.
 export const GAIT = { stanceEnd: 0.62, loadingEnd: 0.12, opposite: 0.5 } as const;
+export type Contacts = { stanceEnd: number; loadingEnd: number; opposite: number };
+const smooth = (v: number) => v * v * (3 - 2 * v);
+// t wrapped into [0, 1) without adding 1 first, so a phase start such as
+// 0.2323 stays exactly itself (1.2323 % 1 falls just below it).
+export const wrap = (t: number) => { const x = t % 1; return x < 0 ? x + 1 : x; };
+// Share of the body weight on the right leg (0 = all on the left): it moves
+// over in each double support.
+export function rightWeight(t: number, c: Contacts) {
+  const x = wrap(t);
+  return x < c.loadingEnd ? smooth(x / c.loadingEnd)
+    : x < c.opposite ? 1
+      : x < c.stanceEnd ? 1 - smooth((x - c.opposite) / (c.stanceEnd - c.opposite))
+        : 0;
+}
 export function walkingPose(right: SideAngles, left: SideAngles, t = 0): SidePose {
   const probe = { x: 0, y: 0 };
   const height = (a: SideAngles) => { const leg = legFromHip(probe, 0, a); return FLOOR_GAP - Math.min(leg.heel.y, leg.mtp.y, leg.toe.y); };
-  const hR = height(right), hL = height(left);
-  const x = ((t % 1) + 1) % 1;
-  const smooth = (v: number) => v * v * (3 - 2 * v);
-  // Weight on the right leg: 0 = all on the left.
-  const w = x < GAIT.loadingEnd ? smooth(x / GAIT.loadingEnd)
-    : x < GAIT.opposite ? 1
-      : x < GAIT.stanceEnd ? 1 - smooth((x - GAIT.opposite) / (GAIT.stanceEnd - GAIT.opposite))
-        : 0;
-  const hip = { x: 0, y: w * hR + (1 - w) * hL };
+  const w = rightWeight(t, GAIT);
+  const hip = { x: 0, y: w * height(right) + (1 - w) * height(left) };
   return { right: legFromHip(hip, 0, right), left: legFromHip(hip, 0, left), pelvis: 0, trunk: right.trunk ?? 0, ...upper(hip, 0, right.trunk ?? 0, "hanging") };
+}
+
+// Stair gait, one foot per step. The staircase is fixed in the world: tread
+// k spans x = k·going … (k+1)·going at height ±k·rise, its edge (nosing) at
+// the near end going up and the far end going down. The right foot stands on
+// tread 0 from contact to toe-off, the left on tread 1 from half a cycle
+// later, so a cycle climbs (or descends) two steps. Each stance foot is held
+// at its metatarsophalangeal joint, the pivot
+// of both a forefoot landing and a heel rise; in double support the hip moves
+// from one foot's hold to the other's as weight is accepted, as in walking.
+// The drawing follows the body at a constant speed (two steps per cycle), so
+// the staircase glides past like an escalator and the hip keeps its own small
+// surges.
+export type StairSteps = { origin: Pt; rise: number; going: number; dir: 1 | -1 };
+type StairSpec = NonNullable<Movement["stairs"]>;
+export const stairContacts = (s: Pick<StairSpec, "stanceEnd">): Contacts => ({ stanceEnd: s.stanceEnd, loadingEnd: s.stanceEnd - 0.5, opposite: 0.5 });
+// Joint centre above the tread when the foot is flat (heel and toe tip rest
+// FLOOR_GAP above it, as in the foot-flat poses).
+export const MTP_ABOVE = SEG.ankleHeight + SEG.mtp.y;
+export function stairHold(s: StairSpec, k: number): Pt {
+  const dir = s.direction === "up" ? 1 : -1;
+  return { x: k * s.going + (dir > 0 ? s.fromEdge : s.going - s.fromEdge), y: dir * k * s.rise + MTP_ABOVE };
+}
+// The sources give no toe angle on stairs. Drawing rule: a foot on its tread
+// rests its toes on it (flat, or reaching down when the joint is lifted),
+// easing in over TOE_EASE before contact and out after toe-off; elsewhere
+// the toes keep the keyframe angle.
+const TOE_EASE = 0.08;
+const TOE = { x: SEG.toe.x - SEG.mtp.x, y: SEG.toe.y - SEG.mtp.y };
+function stanceToes(leg: Leg, a: SideAngles, tread: number, k: number) {
+  if (k <= 0) return a.toe ?? 0;
+  // Clockwise turn of the toe segment that puts its tip FLOOR_GAP above the tread.
+  const len = Math.hypot(TOE.x, TOE.y), base = Math.atan2(-TOE.y, TOE.x);
+  const h = leg.mtp.y - tread - FLOOR_GAP;
+  const turn = ((Math.asin(Math.min(Math.max(h / len, -1), 1)) - base) * 180) / Math.PI;
+  // Somewhere between in line with the foot (0) and lying flat on the tread.
+  const target = Math.min(Math.max(leg.footPitch - turn, Math.min(leg.footPitch, 0)), Math.max(leg.footPitch, 0));
+  return (a.toe ?? 0) + k * (target - (a.toe ?? 0));
+}
+// 1 while the foot is on its tread [from, to) of the cycle, easing to 0 over TOE_EASE outside.
+function onTread(x: number, from: number, to: number) {
+  const len = wrap(to - from), u = wrap(x - from);
+  if (u < len) return 1;
+  const gap = Math.min(u - len, 1 - u);
+  return gap < TOE_EASE ? smooth(1 - gap / TOE_EASE) : 0;
+}
+export function stairPose(right: SideAngles, left: SideAngles, t: number, s: StairSpec): SidePose {
+  const probe = { x: 0, y: 0 };
+  // One pelvis carries both hips: the right-leg keyframe gives its tilt (in
+  // a symmetric cycle the tilt repeats every half cycle, so the left leg's
+  // shifted curve was measured against the same tilt).
+  const tilt = right.pelvis ?? 0;
+  const R = legFromHip(probe, tilt, right), L = legFromHip(probe, tilt, left);
+  const x = wrap(t);
+  const dir = s.direction === "up" ? 1 : -1;
+  const c = stairContacts(s);
+  const w = rightWeight(x, c);
+  const holdR = stairHold(s, 0), holdL = stairHold(s, x < c.opposite ? -1 : 1);
+  // World position of the hip.
+  const hipW = {
+    x: w * (holdR.x - R.mtp.x) + (1 - w) * (holdL.x - L.mtp.x),
+    y: w * (holdR.y - R.mtp.y) + (1 - w) * (holdL.y - L.mtp.y),
+  };
+  // The view moves two steps per cycle. It starts where a hip standing
+  // upright over the right foot's hold would be drawn at (0, 0.83), as in
+  // the foot-flat poses.
+  const view = { x: holdR.x - SEG.mtp.x + 2 * s.going * x, y: holdR.y - MTP_ABOVE + 2 * dir * s.rise * x };
+  const hip = { x: hipW.x - view.x, y: hipW.y - view.y };
+  const steps: StairSteps = { origin: { x: -view.x, y: -view.y }, rise: s.rise, going: s.going, dir };
+  const draw = (a: SideAngles, hold: Pt, from: number, to: number) => {
+    const leg = legFromHip(hip, tilt, a);
+    const toe = stanceToes(leg, a, hold.y - MTP_ABOVE - view.y, onTread(x, from, to));
+    return toe === (a.toe ?? 0) ? leg : legFromHip(hip, tilt, { ...a, toe });
+  };
+  // Easing in before contact, the toes reach for the tread the foot is about
+  // to land on (the right foot two steps on, the left one), so nothing jumps
+  // at contact.
+  const landing = (from: number) => wrap(from - x) <= TOE_EASE && wrap(from - x) > 0;
+  return {
+    right: draw(right, landing(0) ? stairHold(s, 2) : holdR, 0, c.stanceEnd),
+    left: draw(left, landing(c.opposite) ? stairHold(s, 1) : holdL, c.opposite, c.loadingEnd),
+    pelvis: tilt, trunk: right.trunk ?? tilt, steps, ...upper(hip, tilt, right.trunk ?? tilt, "hanging"),
+  };
+}
+// Height of the tread under x (drawing coordinates), and the staircase
+// outline between x0 and x1.
+export function stepTop(s: StairSteps, x: number) {
+  return s.origin.y + s.dir * Math.floor((x - s.origin.x) / s.going + 1e-9) * s.rise;
+}
+export function stepOutline(s: StairSteps, x0: number, x1: number): Pt[] {
+  let k = Math.floor((x0 - s.origin.x) / s.going + 1e-9);
+  const pts: Pt[] = [{ x: x0, y: stepTop(s, x0) }];
+  for (;;) {
+    const edge = s.origin.x + (k + 1) * s.going, y = s.origin.y + s.dir * k * s.rise;
+    if (edge >= x1) { pts.push({ x: x1, y }); return pts; }
+    pts.push({ x: edge, y }, { x: edge, y: y + s.dir * s.rise });
+    k++;
+  }
 }
 
 // Back view of the trunk and right arm. x is to the subject's right, which
@@ -190,7 +296,7 @@ export function monotone(xs: number[], ys: number[], x: number, loop: boolean): 
     // Close the cycle with the first frame one period later.
     xs = [...xs, xs[0] + 1];
     ys = [...ys, ys[0]];
-    x = ((x - xs[0]) % 1 + 1) % 1 + xs[0];
+    x = wrap(x - xs[0]) + xs[0];
   } else {
     if (x <= xs[0]) return ys[0];
     if (x >= xs[n - 1]) return ys[n - 1];
@@ -231,7 +337,7 @@ export function overlayAt(frames: Keyframe<SideAngles>[], t: number, key: "com" 
   const near = (a: number, b: number) => Math.abs(a - b) < 1e-6;
   // A looping movement closes the cycle with its first keyframe one period later.
   const list = loop && frames.length ? [...frames, { ...frames[0], t: frames[0].t + 1 }] : frames;
-  if (loop) t = ((t - frames[0].t) % 1 + 1) % 1 + frames[0].t;
+  if (loop) t = wrap(t - frames[0].t) + frames[0].t;
   for (let i = 0; i < list.length; i++) {
     const a = list[i], b = list[i + 1];
     if (near(t, a.t)) return a[key] ?? null;
@@ -283,7 +389,7 @@ export const backLines: Record<string, (p: BackPose) => Pt[]> = {
 
 // Position on a movement's timeline: a looping movement wraps, a single
 // movement stops at its ends.
-export const cycle = (m: Pick<Movement, "loop">, t: number) => m.loop ? ((t % 1) + 1) % 1 : Math.min(Math.max(t, 0), 1);
+export const cycle = (m: Pick<Movement, "loop">, t: number) => m.loop ? wrap(t) : Math.min(Math.max(t, 0), 1);
 
 // Angles drawn at time t (0–1). Walking draws the left leg half a cycle later.
 export function figureAt(m: Movement, t: number) {
@@ -295,6 +401,7 @@ export function sidePose(m: Movement, t: number): SidePose {
   const frames = m.keyframes as Keyframe<SideAngles>[];
   const right = interpolate(frames, t, m.loop);
   if (m.slug === "walking") return walkingPose(right, interpolate(frames, t + 0.5, m.loop), t);
+  if (m.stairs) return stairPose(right, interpolate(frames, t + 0.5, m.loop), t, m.stairs);
   return footFixedPose(right, m.slug === "standing" ? "hanging" : "crossed");
 }
 
@@ -310,13 +417,25 @@ export function drawnMuscles(m: Movement, phaseMuscles: PhaseMuscle[], on = true
   return on ? phaseMuscles.filter(({ row, cell }) => row.line && DRAWN.has(cell.contraction) && (m.view === "back" ? backLines[row.line] : sideLines[row.line])) : [];
 }
 
+// Contact events of the two-legged cycles (walking, stairs); null when the
+// right foot never leaves the ground.
+export function contactsOf(m: Movement): Contacts | null {
+  return m.slug === "walking" ? GAIT : m.stairs ? stairContacts(m.stairs) : null;
+}
+export function stanceAt(m: Movement, t: number) {
+  const c = contactsOf(m);
+  if (!c) return { right: true, left: false };
+  const x = cycle(m, t);
+  return { right: x < c.stanceEnd, left: (x + 0.5) % 1 < c.stanceEnd };
+}
+
 // Which overlays the diagram draws at time t (named in the key under it,
 // not inside the drawing, so no label is clipped or covers a muscle line).
-// Walking: the right foot carries the force only in its stance (0–62%).
+// Walking and stairs: the right foot carries the force only in its stance.
 export function overlaysAt(m: Movement, t: number, on: { com: boolean; grf: boolean }) {
   if (m.view !== "side") return { com: false, grf: false, bos: false, seat: false };
   const frames = m.keyframes as Keyframe<SideAngles>[];
   const x = m.loop ? cycle(m, t) : t;
-  const rightStance = m.slug !== "walking" || x < GAIT.stanceEnd;
+  const rightStance = stanceAt(m, x).right;
   return { com: on.com && Boolean(overlayAt(frames, x, "com", m.loop)), grf: on.grf && rightStance && Boolean(overlayAt(frames, x, "grf", m.loop)), bos: on.com, seat: on.com && within(m.seated, x) };
 }
