@@ -92,4 +92,15 @@
   - 이 폴더의 `desktop-excluded.png`, `desktop-edit.png`, `phone-band-edit.png`, `landscape-edit.png`, `tablet-rail.png`, `female-excluded.png`
   - 게이트의 데스크톱·가로 휴대폰 첫 화면·비교·단독 화면
   - 남성 얼굴 0%의 장기 포함/제외 비교, 360px 휴대폰 깊이 줄·띠, 90% 멈춤 화면
-- 전체 브라우저 실행은 `docs/` 아래의 기존 증거 PNG·JSON을 다시 썼습니다. 커밋과 공개 배포는 하지 않았습니다.
+- 전체 브라우저 실행은 `docs/` 아래의 기존 증거 PNG·JSON을 다시 썼습니다.
+
+## 공개 배포 확인 (2026-10-22)
+
+커밋 `1ad497f`만 따로 담은 작업 트리에서 빌드·단위(468 통과, 원본 메타데이터가 없는 뇌 출처 검사 1개 건너뜀)·`npm run test:production`이 통과한 뒤 `main`에 푸시했습니다. 동작 역학 미완성 변경은 커밋에 넣지 않았습니다.
+
+- GitHub Pages 배포(실행 39779607801)의 build·deploy가 성공했습니다.
+- https://jay-jang.github.io/gyeol-atlas/ 에서 `scripts/smoke-pages.mjs`와 `npm run audit:overlays`(8화면 × 11상태)가 통과했습니다.
+- 공개 아틀라스를 1440×900과 390×844(터치)에서 열어 다음을 확인했습니다. 두 크기 모두 페이지 오류와 4xx 응답은 없었습니다.
+  - 계통 빼기에서 골격·장기·혈관·림프·신경의 포함을 끄고 완료를 누르면, 버튼 이름이 ‘계통 빼기 · 5개 뺌’이 됩니다.
+  - 깊이를 90%로 밀면 56%(근육)에서 멈추고 켜진 계통은 근육뿐입니다.
+- 화면: `pages-desktop-muscle-only.png`(데스크톱 56% 멈춤), `pages-phone-edit.png`(휴대폰 띠의 포함 선택)
