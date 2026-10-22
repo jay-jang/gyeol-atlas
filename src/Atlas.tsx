@@ -49,7 +49,7 @@ import maleRegistration from "../data/catalog/male-registration.json";
 import { movementKeys, translateView, type MoveDirection } from "./navigation";
 import { LoaderCircle, TriangleAlert } from "lucide-react";
 import PackedAtlas from "./PackedAtlas";
-import { SKIN_COLOR, SURFACE_TONES, clippingPlanes, configurePicking, connectiveTone, isSupplementEyePart, releasedDrag, type SceneClick } from "./anatomy-rendering";
+import { SKIN_COLOR, SURFACE_LAYERS, SURFACE_TONES, clippingPlanes, configurePicking, connectiveTone, isSupplementEyePart, keepsSurface, releasedDrag, type SceneClick } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { framedDistance } from "./camera-framing";
 import { musclePeelRanks } from "./muscle-peel";
@@ -286,6 +286,8 @@ type Props = {
   // The selection is the ligament/tendon category bundle (tissue colours kept).
   connectiveCategory?: boolean;
   modesty: boolean;
+  // Systems "계통 빼기" leaves out of the peel (already off in layers).
+  excluded: Layer[];
   femaleMarkers: boolean;
   // The selection was made in place on the model: slide the picture aside for
   // its card (and back) instead of jumping.
@@ -375,6 +377,8 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     // The skin still covers the surface (not peeled, not see-through).
     const skinOpaque = props.layers.skin && props.selectionTarget !== "internal"
       && props.opacity * dissectionLayerOpacity("skin", props.dissection, progressive) >= .5;
+    // A system left out of the peel is mounted only for its surface parts.
+    const surfaceOnly = !props.layers[layer];
     const mirrored = props.selected.structures.flatMap((id) => [
       id,
       (structurePairs as Record<string, string>)[id] || id,
@@ -407,6 +411,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       const kind = connectiveKindOf(id), connective = Boolean(kind);
       if (connective && !props.connective && !selected) o.visible = false;
       if (props.modesty && !selected && isGenitalStructure(id, structureById.get(id)?.name)) o.visible = false;
+      if (surfaceOnly && !(id in SURFACE_TONES)) o.visible = false;
       if (o.visible) visibleCount++;
       // Selection is an opaque emphasis, as in PackedAtlas and the supplements.
       // Keep the user's layer alpha in view-state; it applies again on deselect.
@@ -414,6 +419,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       const vessel = structureById.get(id)?.name || "";
       const material = o.material as MeshStandardMaterial;
       configurePicking(o, layer, props.selectionTarget);
+      if (surfaceOnly) o.raycast = () => {};
       const tone = !selected && skinOpaque ? SURFACE_TONES[id] : undefined;
       const finish = connective ? connectiveTone(kind) : undefined;
       material.color.set(emphasis ? emphasis : finish ? finish.color : tone ?? clinicalColor(layer, vessel));
@@ -511,7 +517,7 @@ function SupplementModel({ url, layer, entries, color, connective = false, signa
     const progressive = props.displayMode === "dissection";
     // While the BodyParts3D eyeball is drawn, Z-Anatomy's own eye parts would
     // be a second eye in the same place.
-    const baseEyeball = !props.isolated && props.layers.organ && props.layerOpacity.organ * dissectionLayerOpacity("organ", props.dissection, progressive) > .01;
+    const baseEyeball = !props.isolated && (props.layers.organ || keepsSurface(props, "organ")) && props.layerOpacity.organ * dissectionLayerOpacity("organ", props.dissection, progressive) > .01;
     object.traverse((item) => {
       if (!(item instanceof Mesh)) return;
       const selected = props.selectionIds.includes(item.name);
@@ -540,7 +546,7 @@ function SupplementModel({ url, layer, entries, color, connective = false, signa
     });
     object.visible = true;
     invalidate();
-  }, [object, layer, color, connective, props.connective, props.connectiveCategory, props.modesty, props.selectedStructure, props.isolated, props.selectionIds, props.detailIds, props.layerOpacity, props.contextDimmed, props.cutaway, props.dissection, props.displayMode, props.selectionTarget, props.anatomyRegion, props.layers, invalidate]);
+  }, [object, layer, color, connective, props.connective, props.connectiveCategory, props.modesty, props.selectedStructure, props.isolated, props.selectionIds, props.detailIds, props.layerOpacity, props.contextDimmed, props.cutaway, props.dissection, props.displayMode, props.selectionTarget, props.anatomyRegion, props.layers, props.excluded, props.opacity, invalidate]);
   useEffect(() => {
     if (signalsReady) props.onReady(layer);
   }, [object, layer, signalsReady, props.onReady]);
@@ -1063,20 +1069,20 @@ function Scene(props: Props) {
             <PackedAtlas key={referenceSourceFor(props.sex, [...props.selectionIds, ...props.detailIds])} props={{ ...props, onReady: layerReady }} />
           </Suspense>
         ) : layerKeys
-          .filter((layer) => layers[layer])
+          .filter((layer) => layers[layer] || (SURFACE_LAYERS.includes(layer) && keepsSurface(props, layer)))
           .map((layer) => (
             <Suspense
               key={layer}
               fallback={layer === "skin" ? <Html center><div className="model-loading">인체 모델 불러오는 중</div></Html> : null}
             >
               {layer !== "lymph" && <AnatomyLayer layer={layer} props={{ ...props, onReady: layerReady }} />}
-              {(layer === "nerve" || layer === "vessel") && (
+              {layers[layer] && (layer === "nerve" || layer === "vessel") && (
                 <WholeBodySupplement
                   layer={layer}
                   props={{ ...props, onReady: layerReady }}
                 />
               )}
-              {(layer === "bone" || layer === "muscle") && <ConnectiveSupplement layer={layer} props={props} />}
+              {layers[layer] && (layer === "bone" || layer === "muscle") && <ConnectiveSupplement layer={layer} props={props} />}
               {layer === "lymph" && <ReferenceModel modelName="lymphatic_male.glb" layer="lymph" props={{ ...props, sex: "male", onReady: layerReady }} />}
             </Suspense>
           ))}

@@ -1,6 +1,6 @@
 import type { Layer } from "./anatomy";
 import type { Layers } from "./types";
-import { depthStage, dissectionLayers, quantizeDepth, stageDepth } from "./dissection.ts";
+import { depthStage, dissectionLayers, peelLayers, peelLimit, peelOrder, quantizeDepth, stageDepth } from "./dissection.ts";
 import { hasMixedReferenceFrames } from "./reference-source.ts";
 import { sourceOrganRegion } from "./anatomy-region.ts";
 import femaleBrainBindings from "../data/catalog/female-brain-bindings.json" with {type:"json"};
@@ -38,6 +38,10 @@ export type ViewState = {
   connective: boolean;
   // "성기 가리기": hide the external genitalia under a plain cover.
   modesty: boolean;
+  // "계통 빼기": systems the progressive peel leaves out at every depth, in
+  // peel order and never all seven. Explicit views (one system, a selection,
+  // a comparison or a detail) open their own systems.
+  excluded: Layer[];
   // Female acupoint markers are unreviewed approximations (male anchors
   // carried by the registration field): shown only when asked for.
   femaleMarkers: boolean;
@@ -84,6 +88,7 @@ export function initialView(pointId = ""): ViewState {
     labels: false,
     connective: true,
     modesty: false,
+    excluded: [],
     femaleMarkers: false,
     selection: null,
     detail: null,
@@ -121,6 +126,7 @@ export type ViewAction =
   | { type: "labels"; value: boolean }
   | { type: "connective"; value: boolean }
   | { type: "modesty"; value: boolean }
+  | { type: "excluded"; value: Layer[] }
   | { type: "female-markers"; value: boolean }
   | { type: "connective-only"; ids: string[] }
   | { type: "target"; value: ViewState["selectionTarget"] }
@@ -153,8 +159,15 @@ const detailOrigin = (s: ViewState) => s.detailReturn
 // A comparison dims the skin to this value. Returning from it restores the
 // opacity it replaced only while the viewer has left it there.
 const COMPARISON_SKIN = 0.12;
+// A progressive scene at this depth, without the systems left out of it.
+const peelScene = (depth: number, excluded: Layer[], region: ViewState["anatomyRegion"]) => {
+  const dissection = Math.min(quantizeDepth(depth), peelLimit(excluded, region));
+  return { dissection, layers: peelLayers(dissection, excluded), stage: depthStage(dissection, excluded) };
+};
 const backTo = (s: ViewState, { skinAlpha, ...view }: ReturnView): ViewState => ({
   ...s, ...view,
+  // A peel returns with the systems left out now, not when it was left.
+  ...(view.displayMode === "dissection" ? peelScene(view.dissection, s.excluded, view.anatomyRegion) : {}),
   ...(skinAlpha !== undefined && s.alpha.skin === COMPARISON_SKIN ? { alpha: { ...s.alpha, skin: skinAlpha } } : {}),
 });
 function closeDetail(s: ViewState): ViewState {
@@ -186,11 +199,14 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return a.id === s.pointId ? s : viewReducer(s, { type: "point", id: a.id });
     case "sex":
       // A new body starts from its default scene, including what a click picks.
-      return a.value === s.sex ? s : { ...s, sex: a.value, stage: 0, dissection: 0, displayMode: "dissection", anatomyRegion: "whole", layers: dissectionLayers(0), alpha: initialView().alpha, selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false, cutaway: 0, selectionTarget: "visible" };
-    case "anatomy-region":
-      return a.value === s.anatomyRegion && !s.detail ? s
-        : { ...leaveSelection(s), anatomyRegion: a.value, selection: null,
-            detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false };
+      return a.value === s.sex ? s : { ...s, sex: a.value, ...peelScene(0, s.excluded, "whole"), displayMode: "dissection", anatomyRegion: "whole", alpha: initialView().alpha, selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false, cutaway: 0, selectionTarget: "visible" };
+    case "anatomy-region": {
+      if (a.value === s.anatomyRegion && !s.detail) return s;
+      const left = leaveSelection(s);
+      // A peel keeps something to show in the new region (see peelLimit).
+      return { ...left, ...(left.displayMode === "dissection" && !left.detail ? peelScene(left.dissection, left.excluded, a.value) : {}),
+        anatomyRegion: a.value, selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false };
+    }
     case "point":
       if (a.id === s.pointId && !s.detail && !s.selection && !s.comparison && !s.selectionReturn) return s;
       // A structure being studied stays selected while acupoints are chosen
@@ -224,18 +240,19 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       };
     case "dissection-step": {
       if (!Number.isFinite(a.amount) || a.amount === 0) return s;
-      const depth = quantizeDepth(s.dissection + a.amount);
+      const depth = Math.min(quantizeDepth(s.dissection + a.amount), peelLimit(s.excluded, s.anatomyRegion));
       // A clamped depth can still be a real transition out of layer/detail
       // mode. Only an already progressive boundary is a no-op.
       return depth === s.dissection && s.displayMode === "dissection" ? s : viewReducer(s, { type: "dissection", value: depth });
     }
     case "dissection": {
-      const depth = quantizeDepth(a.value);
-      const layers = dissectionLayers(depth);
-      const stage = depthStage(depth);
+      const { dissection, layers, stage } = peelScene(a.value, s.excluded, s.anatomyRegion);
+      // Pushing past where the peel stops (systems left out) changes nothing,
+      // as at 100%: the view's isolation, cut and click target stay.
+      if (s.displayMode === "dissection" && !s.detail && dissection === s.dissection && quantizeDepth(a.value) > dissection) return s;
       return {
         ...s,
-        dissection: depth,
+        dissection,
         displayMode: "dissection",
         detail: null,
         detailReturn: null,
@@ -275,6 +292,20 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return { ...s, connective: a.value };
     case "modesty":
       return a.value === s.modesty ? s : { ...s, modesty: a.value };
+    case "excluded": {
+      // Choosing what the peel leaves out shows that peel at the current
+      // depth (clamped so one system remains), as the depth slider would.
+      const excluded = peelOrder.filter(layer => a.value.includes(layer));
+      if (excluded.length === peelOrder.length) return s;
+      const same = excluded.length === s.excluded.length && excluded.every((layer, i) => layer === s.excluded[i]);
+      if (same && s.displayMode === "dissection") return s;
+      const next = viewReducer({ ...s, excluded }, { type: "dissection", value: s.dissection });
+      // Within a peel the cut, the click target and the isolation of a
+      // selection that stays drawn are the viewer's and remain.
+      return s.displayMode === "dissection" && !s.detail
+        ? { ...next, cutaway: s.cutaway, selectionTarget: s.selectionTarget, isolated: s.isolated && Boolean(next.selection) }
+        : next;
+    }
     case "female-markers":
       return a.value === s.femaleMarkers ? s : { ...s, femaleMarkers: a.value, markers: a.value && s.markers === "hidden" ? "filtered" : s.markers };
     case "connective-only": {
@@ -488,11 +519,19 @@ export function restoreView(
         && (r.skinAlpha === undefined || (Number.isFinite(r.skinAlpha) && r.skinAlpha >= 0.05 && r.skinAlpha <= 1))
         && validCamera(r.camera));
     if (!validReturn(s.detailReturn) || !validReturn(s.selectionReturn)) return base;
+    // Sessions saved before "계통 빼기" existed leave nothing out.
+    if (s.excluded === undefined) s.excluded = base.excluded;
+    if (!Array.isArray(s.excluded) || !s.excluded.every(layer => keys.includes(layer))) return base;
+    s.excluded = peelOrder.filter(layer => s.excluded.includes(layer));
+    if (s.excluded.length === keys.length) return base;
     // Progressive views follow the current peel schedule rather than a saved
     // layer set, so a snapshot cannot hide a system that should be present.
     for (const r of [s.detailReturn, s.selectionReturn]) if (r) {
       r.dissection = quantizeDepth(r.dissection);
-      if (r.displayMode === "dissection") { r.layers = dissectionLayers(r.dissection); r.stage = depthStage(r.dissection); }
+      if (r.displayMode === "dissection") {
+        r.dissection = Math.min(r.dissection, peelLimit(s.excluded, r.anatomyRegion));
+        r.layers = peelLayers(r.dissection, s.excluded); r.stage = depthStage(r.dissection, s.excluded);
+      }
     }
     if (s.fadeContext === undefined) s.fadeContext = base.fadeContext;
     if (typeof s.fadeContext !== "boolean") return base;
@@ -506,9 +545,12 @@ export function restoreView(
     if (typeof s.femaleMarkers !== "boolean") return base;
     if (!["dissection", "layers"].includes(s.displayMode)) return base;
     s.dissection = quantizeDepth(s.dissection);
-    if (s.displayMode === "dissection" && !s.selection && !s.detail && keys.every(k => typeof s.layers?.[k] === "boolean")) {
-      s.layers = dissectionLayers(s.dissection);
-      s.stage = depthStage(s.dissection);
+    // A peel that carries a selection follows it too; the selection check
+    // below then drops a snapshot whose selected meshes are no longer drawn.
+    if (s.displayMode === "dissection" && !s.detail && keys.every(k => typeof s.layers?.[k] === "boolean")) {
+      s.dissection = Math.min(s.dissection, peelLimit(s.excluded, s.anatomyRegion));
+      s.layers = peelLayers(s.dissection, s.excluded);
+      s.stage = depthStage(s.dissection, s.excluded);
     }
     if (
       !keys.every(

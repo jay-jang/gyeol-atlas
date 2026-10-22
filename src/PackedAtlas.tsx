@@ -8,7 +8,7 @@ import { connectiveKindOf, dissectionLayerOpacity, layerKeys, structures, type L
 import type { AtlasProps } from "./Atlas";
 import { musclePeelOpacity } from "./dissection";
 import { musclePeelRanks } from "./muscle-peel";
-import { SKIN_COLOR, SURFACE_TONES, clippingPlanes, configurePicking, connectiveTone, releasedDrag, type SceneClick } from "./anatomy-rendering";
+import { SKIN_COLOR, SURFACE_TONES, clippingPlanes, configurePicking, connectiveTone, keepsSurface, releasedDrag, type SceneClick } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { applyFemaleArmRegistration } from "./female-arm-registration";
 import { applyFemaleFootRegistration } from "./female-foot-registration";
@@ -182,7 +182,11 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       // HRA vessel segments) are kept for search and selection; the overview
       // shows one source, the transported set, as the male view does with its supplements.
       const donor = (part?.system === "donor-muscle" || femalePartialVesselIds.has(item.name)) && Boolean(transportCount);
-      item.visible = (!duplicateDonor || selected) && (!donor || selected) && (part?.system !== "pregnancy" || selected) && props.layers[layer] && (!props.isolated || selected) && (selected || depthAlpha > .01) && (selected || anatomyRegionMatches(item.userData.bounds, props.anatomyRegion, catalogById.get(item.name)));
+      const entry = catalogById.get(item.name) as { surfaceTone?: boolean } | undefined;
+      const toned = Boolean(SURFACE_TONES[item.name] || entry?.surfaceTone || placementTones.has(item.name));
+      // A left-out system keeps the parts that are the body's surface while the skin covers it.
+      const surfaceOnly = !props.layers[layer] && toned && keepsSurface(props, layer);
+      item.visible = (!duplicateDonor || selected) && (!donor || selected) && (part?.system !== "pregnancy" || selected) && (props.layers[layer] || surfaceOnly) && (!props.isolated || selected) && (selected || depthAlpha > .01) && (selected || anatomyRegionMatches(item.userData.bounds, props.anatomyRegion, catalogById.get(item.name)));
       if (props.modesty && !selected && isGenitalStructure(item.name, catalogById.get(item.name)?.name)) item.visible = false;
       item.visible = item.visible && !donorSelected;
       item.visible = item.visible && (!props.detailIds.length || props.detailIds.includes(item.name));
@@ -194,8 +198,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       const material = item.material as MeshStandardMaterial;
       const transported = item.userData.transport as boolean | undefined;
       const vein = part?.system === "venous" || (transported && layer === "vessel" && /vein|vena cava/i.test(catalogById.get(item.name)?.name || ""));
-      const entry = catalogById.get(item.name) as { surfaceTone?: boolean } | undefined;
-      const tone = !selected && !highlighted && skinOpaque && (SURFACE_TONES[item.name] || entry?.surfaceTone || placementTones.has(item.name)) ? SKIN_COLOR : undefined;
+      const tone = !selected && !highlighted && skinOpaque && toned ? SKIN_COLOR : undefined;
       const finish = connective ? connectiveTone(kind) : undefined;
       material.color.set(selected && props.selectionIds.length === 1 ? "#34d3dd" : highlighted ? "#e5b24f" : tone ?? (finish ? finish.color : vein ? "#356fb3" : part?.system === "borrowed" || (transported && layer === "bone") ? "#9aa7b1" : layerColor[layer]));
       if (finish) { material.roughness = finish.roughness; material.metalness = finish.metalness; }
@@ -207,6 +210,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       material.depthWrite = !transparent;
       material.clippingPlanes = planes;
       configurePicking(item, layer, props.selectionTarget);
+      if (surfaceOnly) item.raycast = () => {};
       const cover = item.getObjectByName(COVER_NAME) as Mesh | undefined;
       if (cover) {
         cover.visible = props.modesty && item.visible;
@@ -224,7 +228,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
     gl.domElement.dataset.modestyCover = String(coverVisible);
     object.visible = true;
     invalidate();
-  }, [object, partById, manifest, transportCount, placementTones, props.layers, props.isolated, props.selectionIds, props.detailIds, props.highlight, props.dissection, props.displayMode, props.selectionTarget, props.layerOpacity, props.contextDimmed, props.anatomyRegion, props.cutaway, props.connective, props.modesty, gl, invalidate]);
+  }, [object, partById, manifest, transportCount, placementTones, props.layers, props.isolated, props.selectionIds, props.detailIds, props.highlight, props.dissection, props.displayMode, props.selectionTarget, props.layerOpacity, props.contextDimmed, props.anatomyRegion, props.cutaway, props.connective, props.modesty, props.excluded, gl, invalidate]);
   useEffect(() => { if (object) { layerKeys.forEach(props.onReady); props.onLoading(false); } }, [object, props.onReady, props.onLoading]);
   if (error) throw error;
   if (!object) return <Html center><div className="model-loading">참조 모델 불러오는 중</div></Html>;

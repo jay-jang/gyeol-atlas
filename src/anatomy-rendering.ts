@@ -43,6 +43,7 @@ import { Mesh, MeshStandardMaterial, Plane, Vector3, type Intersection } from "t
 import type { AtlasProps } from "./Atlas";
 import type { Layer } from "./anatomy";
 import { releasedDragPress } from "./marker-picking.ts";
+import { dissectionLayerOpacity } from "./dissection.ts";
 
 // Releasing an orbit drag over the body is not a pick (see marker-picking.ts).
 export type SceneClick = { stopPropagation: () => void; object: Mesh; point: Vector3; intersections: Intersection[]; delta: number; nativeEvent: MouseEvent };
@@ -57,6 +58,14 @@ export function clippingPlanes(layer: Layer, props: AtlasProps) {
   }
   return planes;
 }
+
+// "계통 빼기" can leave a system out while the skin still covers the body.
+// Its parts that are the body's surface there (SURFACE_TONES, and the female
+// toned parts) stay as skin, unpickable, until the skin is peeled or see-through.
+export const keepsSurface = (props: AtlasProps, layer: Layer) => props.displayMode === "dissection" && props.excluded.includes(layer)
+  && !props.isolated && props.layers.skin && props.layerOpacity.skin * dissectionLayerOpacity("skin", props.dissection) >= .5;
+// Male BodyParts3D layers that hold such surface parts (ears, lips, eyes, nose; eyelid muscle).
+export const SURFACE_LAYERS: readonly Layer[] = ["organ", "muscle"];
 
 export function configurePicking(mesh: Mesh, layer: Layer, target: AtlasProps["selectionTarget"]) {
   mesh.raycast = (raycaster, intersections) => {

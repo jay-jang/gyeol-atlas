@@ -30,9 +30,30 @@ export function dissectionLayers(depth: number) {
     .map(layer => [layer, dissectionLayerOpacity(layer, depth) > 0])) as Record<AnatomyLayerName, boolean>;
 }
 
-// The outermost layer still present at this depth.
-export function depthStage(depth: number) {
-  return peelOrder.findIndex(layer => dissectionLayerOpacity(layer, depth) > 0);
+// "계통 빼기": systems left out of the peel are not drawn at any depth. The
+// order and depths of the others stay, and the peel stops where the innermost
+// included system would begin to go, so the scene is never empty. Display
+// choice only, like the peel itself.
+// Muscles: 56 is the latest start of the last ranked muscle in the emptiest
+// body region (male arm, measured 2026-10-22; every region of both bodies
+// keeps a muscle there). The arm has no organs, so there the next included
+// system outside them sets the stop (tests/browser/system-exclusion.spec.ts).
+const peelEnd: Record<AnatomyLayerName, number> = { skin: 8, muscle: 56, bone: 68, organ: 76, vessel: 84, lymph: 90, nerve: 100 };
+const absentIn: Partial<Record<AnatomyLayerName, readonly string[]>> = { organ: ["upper-limb"] };
+export function peelLimit(excluded: readonly AnatomyLayerName[] = [], region = "whole") {
+  const innermost = [...peelOrder].reverse().find(layer => !excluded.includes(layer) && !absentIn[layer]?.includes(region))
+    ?? [...peelOrder].reverse().find(layer => !excluded.includes(layer));
+  return innermost ? peelEnd[innermost] : 100;
+}
+export function peelLayers(depth: number, excluded: readonly AnatomyLayerName[] = []) {
+  const layers = dissectionLayers(depth);
+  for (const layer of excluded) layers[layer] = false;
+  return layers;
+}
+
+// The outermost layer still present (and not left out) at this depth.
+export function depthStage(depth: number, excluded: readonly AnatomyLayerName[] = []) {
+  return peelOrder.findIndex(layer => !excluded.includes(layer) && dissectionLayerOpacity(layer, depth) > 0);
 }
 
 export function musclePeelOpacity(depth: number, rank: number) {

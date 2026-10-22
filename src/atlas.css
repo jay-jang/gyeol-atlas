@@ -300,8 +300,11 @@ body:has(.ax) .site-footer { display: none; }
   position: absolute; left: 0; top: 0; height: 100%; width: 22px; margin: 0; writing-mode: vertical-lr; direction: ltr;
   appearance: none; -webkit-appearance: none; background: transparent; cursor: ns-resize; z-index: 1;
 }
-/* A plain track with an accent fill up to the current depth. */
-.ax-depth-track input[type="range"]::-webkit-slider-runnable-track { width: 4px; border-radius: 2px; background: linear-gradient(var(--ax-accent) var(--fill, 0%), var(--ax-line-strong) var(--fill, 0%)); }
+/* A plain track with an accent fill up to the current depth. With systems
+   left out, the part past where the peel stops (--limit) is dashed. */
+.ax-depth-track input[type="range"]::-webkit-slider-runnable-track { width: 4px; border-radius: 2px;
+  background: linear-gradient(var(--ax-accent) var(--fill, 0%), var(--ax-line-strong) var(--fill, 0%) var(--limit, 100%), transparent var(--limit, 100%)),
+    repeating-linear-gradient(var(--ax-line-strong) 0 3px, transparent 3px 7px); }
 .ax-depth-track input[type="range"]::-moz-range-track { width: 4px; border-radius: 2px; background: var(--ax-line-strong); }
 .ax-depth-track input[type="range"]::-moz-range-progress { width: 4px; background: var(--ax-accent); }
 .ax-depth-track input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: var(--thumb); height: var(--thumb); margin-left: -6px; border-radius: 50%; background: #fff; border: 3px solid var(--ax-accent); }
@@ -320,6 +323,40 @@ body:has(.ax) .site-footer { display: none; }
 .ax-depth li.active .ax-stop { color: #fff; font-weight: 650; background: var(--ax-raised); }
 .ax-depth li.peeled .ax-stop { color: #8ea3ad; text-decoration: line-through; text-decoration-color: #526a75; }
 .ax-depth li.peeled .layer-dot { opacity: .35; }
+/* "계통 빼기" (rails): a square word button beside the depth ("계통 빼기",
+   or "N개 뺌"), the left-out names under it, and the checks in a picker
+   beside the rail, so the rail's stops keep their room. A left-out system is
+   drawn at no depth and keeps a hollow swatch. */
+.ax-depth .depth-band { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 4px 6px; }
+.ax-depth[data-mode="layers"] .depth-band { grid-template-columns: minmax(0, 1fr); }
+.ax-depth .depth-exclude { display: contents; }
+.ax-depth .exclude-toggle {
+  grid-column: 2; grid-row: 1; display: grid; place-items: center; width: 44px; min-height: 40px; padding: 2px; line-height: 1.15; text-align: center; word-break: keep-all;
+  border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line-strong); background: var(--ax-surface-2); color: var(--ax-text); font-size: 12px; font-weight: 600;
+}
+.ax-depth .exclude-toggle:hover { border-color: var(--ax-accent); }
+.ax-depth .exclude-toggle[aria-pressed="true"] { background: var(--ax-accent); border-color: var(--ax-accent); color: var(--ax-accent-ink); }
+.ax-depth .exclude-toggle:has(.exclude-short) .exclude-label { display: none; }
+.ax-depth .depth-excluded { grid-column: 1 / -1; display: grid; font-size: 12px; line-height: 1.3; color: var(--ax-muted); word-break: keep-all; }
+.ax-depth .exclude-picker {
+  position: absolute; z-index: 1; left: calc(100% + 8px); top: 0; width: 204px; padding: 8px;
+  background: var(--ax-surface); border: 1px solid var(--ax-line-strong); border-radius: var(--ax-radius); box-shadow: var(--ax-shadow);
+}
+.ax-depth .exclude-hint { margin: 0 0 6px; font-size: 12px; line-height: 1.35; color: var(--ax-muted); word-break: keep-all; }
+.ax-depth .exclude-picker ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; }
+.ax-include, .ax-depth .exclude-done {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; width: 100%; height: 100%; min-height: 44px; padding: 2px;
+  border-radius: var(--ax-radius-ctl); color: var(--ax-text); font-size: 12px; text-align: center; cursor: pointer;
+}
+.ax-include:hover { background: var(--ax-surface-2); }
+.ax-include-name { display: inline-flex; align-items: center; gap: 4px; }
+.ax-include input { flex: none; width: 16px; height: 16px; margin: 0; accent-color: var(--ax-accent); cursor: pointer; }
+.ax-include input:disabled { cursor: default; }
+.ax-include:has(input:not(:checked)) { color: var(--ax-muted); }
+.ax-depth .exclude-done { font-weight: 600; border: 1px solid var(--ax-accent); background: var(--ax-surface-2); }
+.ax-depth li.excluded .ax-stop { color: var(--ax-muted); }
+.ax-depth li.excluded .ax-stop:hover { color: var(--ax-muted); background: none; }
+.ax-depth li.excluded .layer-dot, .ax-include:has(input:not(:checked)) .layer-dot { background: transparent; box-shadow: inset 0 0 0 2px var(--ax-muted); }
 
 /* Bottom row: status | acupoint bar | camera. One flex row, so the three
    groups share the width instead of overlapping at any size. */
@@ -658,10 +695,16 @@ body:has(.ax) .site-footer { display: none; }
     flex-direction: row; align-items: center; gap: 6px; padding: 0 4px;
   }
   .ax-depth .depth-toggle { display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto; height: 100%; padding: 0 8px; border-radius: var(--ax-radius-ctl); font-size: 12px; font-weight: 600; color: #fff; white-space: nowrap; max-width: 42%; overflow: hidden; }
+  /* The depth name gives way first, so the count and the chevron stay. */
+  .ax-depth .depth-toggle-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .ax-depth .depth-toggle-count { flex: none; font-size: 12px; font-weight: 500; color: var(--ax-muted); }
+  .ax-depth .depth-toggle svg { flex: none; }
   .ax-depth .ax-region { order: 3; flex: 0 0 auto; width: 76px; min-height: 36px; padding: 0 4px; font-size: 12px; }
   .ax-depth-track { position: static; flex: 1 1 auto; min-height: 0; height: 100%; display: flex; align-items: center; }
   .ax-depth-track input[type="range"] { position: relative; writing-mode: horizontal-tb; width: 100%; height: 100%; cursor: ew-resize; }
-  .ax-depth-track input[type="range"]::-webkit-slider-runnable-track { width: auto; height: 4px; background: linear-gradient(90deg, var(--ax-accent) var(--fill, 0%), var(--ax-line-strong) var(--fill, 0%)); }
+  .ax-depth-track input[type="range"]::-webkit-slider-runnable-track { width: auto; height: 4px;
+    background: linear-gradient(90deg, var(--ax-accent) var(--fill, 0%), var(--ax-line-strong) var(--fill, 0%) var(--limit, 100%), transparent var(--limit, 100%)),
+      repeating-linear-gradient(90deg, var(--ax-line-strong) 0 3px, transparent 3px 7px); }
   .ax-depth-track input[type="range"]::-webkit-slider-thumb { margin-left: 0; margin-top: -6px; }
   .ax-depth .depth-ticks { display: none; }
   /* The band: seven systems, "까지 박리" and "만 보기", opened by the toggle. */
@@ -676,6 +719,23 @@ body:has(.ax) .site-footer { display: none; }
   .ax-depth .depth-heading .depth-mode { margin: 0; }
   .ax-depth .peel-entry { width: auto; display: inline-flex; align-items: center; min-height: 36px; }
   .ax-depth .depth-band-hint { display: block; margin: 0; color: var(--ax-muted); font-size: 12px; }
+  /* The band's own row: button and names; the checks take the stops' place. */
+  .ax-depth .depth-band { grid-template-columns: minmax(0, 1fr); }
+  .ax-depth .depth-exclude { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .ax-depth .exclude-toggle { display: inline-flex; width: auto; flex: none; min-height: 36px; padding: 0 10px; }
+  .ax-depth .exclude-toggle:has(.exclude-short) .exclude-label { display: inline; }
+  .ax-depth .exclude-short { display: none; }
+  .ax-depth .depth-excluded { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ax-depth .depth-excluded span + span::before { content: " · "; }
+  .ax-depth[data-excluding="true"] .depth-steps { display: none; }
+  .ax-depth .exclude-picker {
+    top: 100%; left: -1px; right: -1px; width: auto; height: 196px; padding: 4px 6px 8px;
+    border-top: 0; border-radius: 0 0 var(--ax-radius) var(--ax-radius);
+  }
+  .ax-depth .exclude-hint { display: none; }
+  .ax-depth .exclude-picker ul { height: 100%; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); }
+  /* Peeled and left-out cells differ in words too, not only in the swatch. */
+  .ax-depth li.excluded .ax-stop .ax-stop-name::after { content: " 뺌"; }
   .ax-depth[data-open="true"] .depth-steps {
     position: absolute; left: 0; right: 56px; top: auto; bottom: calc(100% + 6px); height: 196px; padding: 4px 6px 8px;
     grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px;
@@ -740,6 +800,8 @@ body:has(.ax) .site-footer { display: none; }
   .ax-depth .ax-region { min-height: 30px; font-size: 12px; }
   .ax-depth .depth-heading strong, .ax-depth .peel-entry { font-size: 15px; }
   .ax-depth-track { min-height: 90px; }
+  /* The left-out names give way to the button's count on the short rail. */
+  .ax-depth .depth-excluded { display: none; }
   .ax-stop { min-height: 20px; font-size: 12px; }
   .ax-solo { width: 22px; height: 22px; }
   .ax-inspector { top: calc(var(--ax-gap) + 48px); bottom: calc(var(--ax-gap) + var(--ax-bottom-h, 40px) + 8px); width: 344px; }
@@ -786,5 +848,11 @@ body:has(.ax) .site-footer { display: none; }
 @media (pointer: coarse) and (min-width: 701px) and (min-height: 561px) {
   .ax-depth .ax-stop { min-height: 44px; }
   .ax-depth .ax-solo { width: 44px; height: 44px; }
+  /* A 44px first row reaches 14px above the track: keep it off the band. */
+  .ax-depth-track { margin-top: 8px; }
 }
+@media (pointer: coarse) { .ax-depth .exclude-toggle, .ax-depth .exclude-done { min-height: 44px; } }
+/* Touch rails up to 700px tall need the room for 44px stops: the button's
+   "N개 뺌" and the hollow swatches carry the left-out systems there. */
+@media (pointer: coarse) and (min-width: 701px) and (max-height: 700px) { .ax-depth .depth-excluded { display: none; } }
 @media (prefers-reduced-motion: reduce) { .ax .spin { animation: none; } }
