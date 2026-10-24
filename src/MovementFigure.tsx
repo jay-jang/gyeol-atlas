@@ -1,5 +1,5 @@
 import { useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { add, backLines, backPose, contactsOf, cycle, drawnMuscles, figureAt, overlayAt, overlaysAt, rotate as rot, sideLines, sidePose, stanceAt, stepOutline, stepTop, within, type BackPose, type Leg, type PhaseMuscle, type Pt, type SidePose } from "./movement-figure";
+import { add, backLines, backPose, contactsOf, cycle, drawnMuscles, figureAt, overlayAt, overlaysAt, rotate as rot, sideLines, sidePose, stanceAt, stepOutline, stepTop, supportSpan, within, type BackPose, type Leg, type PhaseMuscle, type Pt, type SidePose } from "./movement-figure";
 import { contractionNames, type BackAngles, type Contraction, type Keyframe, type Movement, type MuscleCell, type MuscleRow, type SideAngles } from "./movement-types";
 
 const dash: Record<string, string | undefined> = { eccentric: "0.05 0.03", isometric: "0.004 0.022", active: undefined, concentric: undefined };
@@ -203,9 +203,10 @@ export function MovementFigure({ movement: m, t, overlays, phaseMuscles }: {
     // The surface under a foot: the floor, or its tread on the stairs.
     const ground = (leg: Leg) => p.steps ? stepTop(p.steps, leg.mtp.x) : 0;
     // Base of support: the ground under each stance foot (each on its own
-    // tread on the stairs), plus the seat while the buttocks rest on it.
+    // tread on the stairs; a lifted heel no longer counts), plus the seat
+    // while the buttocks rest on it.
     const feet = [stance.right && p.right, stance.left && p.left].filter(Boolean) as Leg[];
-    const spans = feet.map((leg) => ({ lo: Math.min(leg.heel.x, leg.toe.x, leg.mtp.x), hi: Math.max(leg.heel.x, leg.toe.x, leg.mtp.x), y: ground(leg) }));
+    const spans = feet.map((leg) => supportSpan(leg, ground(leg)));
     const bands = p.steps ? spans : spans.length ? [{ lo: Math.min(...spans.map((s) => s.lo)), hi: Math.max(...spans.map((s) => s.hi)), y: 0 }] : [];
     const seated = seat && within(m.seated, x);
     const from = (leg: Leg, where: string) => ({ heel: leg.heel, mid: { x: (leg.heel.x + leg.mtp.x) / 2, y: 0 }, mtp: leg.mtp, toe: leg.toe }[where] ?? leg.mtp);

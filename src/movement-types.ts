@@ -39,7 +39,10 @@ export type Cited = { sources: string[]; note?: string };
 // the right leg; the left leg is the same curve half a cycle later. In those
 // cycles the pelvis is drawn upright unless `pelvis` gives its tilt from the
 // same source (anterior +), and `hip` is then measured from the pelvis.
-export type SideAngles = { ankle: number; knee: number; hip: number; trunk?: number; toe?: number; pelvis?: number };
+// `foot` (foot-fixed poses only) pitches the foot about its
+// metatarsophalangeal joint, heel up +; `ankle` is then measured from the
+// pitched foot.
+export type SideAngles = { ankle: number; knee: number; hip: number; trunk?: number; toe?: number; pelvis?: number; foot?: number };
 // Back view of the right shoulder: humerothoracic elevation, scapular
 // upward rotation and clavicle elevation, all in degrees.
 export type BackAngles = { elevation: number; upwardRotation: number; clavicleElevation?: number };

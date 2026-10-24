@@ -86,23 +86,26 @@ function upper(hip: Pt, pelvis: number, trunkAngle: number, arms: "crossed" | "h
   return { lumbosacral, c7, shoulder, head, elbow, wrist };
 }
 
-// Rising, sitting and standing: the right foot stays flat on the floor and
-// the chain is built upward from the ankle. With a cited trunk inclination
-// the lumbar spine takes up the difference; otherwise the trunk follows the
-// pelvis.
+// Rising, sitting, standing and the heel raise: the right foot keeps its
+// metatarsophalangeal joint on one floor point and the chain is built upward
+// from the ankle. The foot is flat unless `foot` pitches it about that joint
+// (heel raise); the toes keep their resting line when `toe` equals `foot`.
+// With a cited trunk inclination the lumbar spine takes up the difference;
+// otherwise the trunk follows the pelvis.
+const MTP_FLOOR = { x: SEG.mtp.x, y: SEG.ankleHeight + SEG.mtp.y };
 export function footFixedPose(a: SideAngles, arms: "crossed" | "hanging" = "crossed"): SidePose {
-  const ankle = { x: 0, y: SEG.ankleHeight };
-  const shank = a.ankle;
+  const footPitch = a.foot ?? 0;
+  const ankle = add(MTP_FLOOR, rotate(SEG.mtp, footPitch), -1);
+  const shank = footPitch + a.ankle;
   const knee = add(ankle, dir(shank), SEG.shank);
   const thigh = shank - a.knee;
   const hip = add(knee, dir(thigh), SEG.thigh);
   const pelvis = thigh + a.hip;
   const trunk = a.trunk ?? pelvis;
-  const leg: Leg = {
-    hip, knee, ankle,
-    heel: add(ankle, SEG.heel), mtp: add(ankle, SEG.mtp), toe: add(ankle, SEG.toe),
-    shank, thigh, footPitch: 0,
-  };
+  const at = (p: Pt) => add(ankle, rotate(p, footPitch));
+  const mtp = at(SEG.mtp);
+  const toeVec = rotate({ x: SEG.toe.x - SEG.mtp.x, y: SEG.toe.y - SEG.mtp.y }, footPitch - (a.toe ?? 0));
+  const leg: Leg = { hip, knee, ankle, heel: at(SEG.heel), mtp, toe: add(mtp, toeVec), shank, thigh, footPitch };
   return { right: leg, left: leg, pelvis, trunk, ...upper(hip, pelvis, trunk, arms) };
 }
 
@@ -386,6 +389,14 @@ export const backLines: Record<string, (p: BackPose) => Pt[]> = {
   "trapezius-middle": () => [{ x: 0, y: 1.33 }, { x: 0.07, y: 1.335 }],
   "trapezius-lower": (p) => [{ x: 0, y: 1.06 }, along(p.scapula.root, p.scapula.spineMid, 0.1)],
 };
+
+// The ground a stance foot covers: the forefoot always, the heel only while
+// it is down (not in a heel raise or after heel-off in walking).
+export const HEEL_DOWN = FLOOR_GAP + 0.005;
+export function supportSpan(leg: Leg, ground: number) {
+  const xs = [leg.mtp.x, leg.toe.x, ...(leg.heel.y - ground <= HEEL_DOWN ? [leg.heel.x] : [])];
+  return { lo: Math.min(...xs), hi: Math.max(...xs), y: ground };
+}
 
 // Position on a movement's timeline: a looping movement wraps, a single
 // movement stops at its ends.
