@@ -11,12 +11,13 @@ const origin = (process.env.SMOKE_ORIGIN || "http://127.0.0.1:5174").replace(/\/
 const dir = process.argv[2] || "docs/movement-mechanics/screens";
 await fs.mkdir(dir, { recursive: true });
 const VIEWPORTS = [["desktop", 1440, 900], ["laptop", 1280, 720], ["tablet", 820, 1180], ["mobile", 390, 844], ["small-mobile", 360, 740], ["landscape", 844, 390]];
-const slugs = ["standing", "sit-to-stand", "stand-to-sit", "walking", "stair-ascent", "stair-descent", "arm-elevation"];
+const slugs = ["standing", "sit-to-stand", "stand-to-sit", "walking", "stair-ascent", "stair-descent", "arm-elevation", "heel-raise"];
 // Stairs: contact, the main knee phase and swing (docs/movement-mechanics/stairs/CONSENSUS.md §7).
-const STAIR_SCENES = { "stair-ascent": ["weight-acceptance", "pull-up", "swing"], "stair-descent": ["weight-acceptance", "controlled-lowering", "swing"] };
+// Heel raise: the preparatory shift and the peak, where the drawn heel rise must show (heel-raise CONSENSUS §5).
+const SCENES = { "stair-ascent": ["weight-acceptance", "pull-up", "swing"], "stair-descent": ["weight-acceptance", "controlled-lowering", "swing"], "heel-raise": ["anticipatory-adjustment", "lowering"] };
 const phases = Object.fromEntries(await Promise.all(slugs.map(async (slug) => {
   const m = JSON.parse(await fs.readFile(`data/movements/${slug}.json`, "utf8"));
-  return [slug, STAIR_SCENES[slug] ?? [m.phases[0].id, m.phases[Math.floor(m.phases.length / 2)].id]];
+  return [slug, SCENES[slug] ?? [m.phases[0].id, m.phases[Math.floor(m.phases.length / 2)].id]];
 })));
 
 const measure = (root) => {
@@ -40,7 +41,7 @@ const measure = (root) => {
     const color = svg ? rgb(s.fill) : rgb(s.color);
     return { text: el.textContent.trim().slice(0, 50), font: +size.toFixed(1), contrast: +ratio(color, background(el)).toFixed(2) };
   });
-  const strokes = [...root.querySelectorAll(".mv-svg .mv-long, .mv-svg .mv-line, .mv-svg .mv-floor, .mv-svg .mv-chair path, .mv-svg .mv-com path, .mv-svg .mv-grf path, .mv-svg .mv-bos, .mv-svg .mv-spine, .mv-svg .mv-stairs")].map((el) => {
+  const strokes = [...root.querySelectorAll(".mv-svg .mv-long, .mv-svg .mv-line, .mv-svg .mv-floor, .mv-svg .mv-chair path, .mv-svg .mv-com path, .mv-svg .mv-grf path, .mv-svg .mv-bos, .mv-svg .mv-spine, .mv-svg .mv-stairs, .mv-principle-svg .mv-pr-force, .mv-principle-svg .mv-pr-dim, .mv-principle-svg .mv-pr-foot")].map((el) => {
     const s = getComputedStyle(el), paint = s.stroke !== "none" ? s.stroke : s.fill;
     return { cls: el.getAttribute("class"), contrast: +ratio(rgb(paint), background(el.closest(".mv-figure"))).toFixed(2) };
   });

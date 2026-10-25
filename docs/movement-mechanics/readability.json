@@ -3,7 +3,7 @@
  "summary": [
   {
    "at": "desktop/00-list",
-   "textSamples": 34,
+   "textSamples": 38,
    "minFont": 12,
    "minContrast": 6.37,
    "weakest": [
@@ -18,7 +18,7 @@
      "contrast": 6.39
     },
     {
-     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어",
+     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기, 발끝 서기에서 뼈",
      "font": 15,
      "contrast": 6.75
     }
@@ -29,7 +29,7 @@
   },
   {
    "at": "desktop/01-standing-mean-alignment",
-   "textSamples": 601,
+   "textSamples": 603,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -55,7 +55,7 @@
   },
   {
    "at": "desktop/02-standing-forward-sway",
-   "textSamples": 580,
+   "textSamples": 582,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -81,7 +81,7 @@
   },
   {
    "at": "desktop/03-sit-to-stand-flexion-momentum",
-   "textSamples": 683,
+   "textSamples": 685,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -107,7 +107,7 @@
   },
   {
    "at": "desktop/04-sit-to-stand-extension",
-   "textSamples": 672,
+   "textSamples": 674,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -133,7 +133,7 @@
   },
   {
    "at": "desktop/05-stand-to-sit-preparation",
-   "textSamples": 415,
+   "textSamples": 417,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -159,7 +159,7 @@
   },
   {
    "at": "desktop/06-stand-to-sit-seat-loading",
-   "textSamples": 413,
+   "textSamples": 415,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -185,7 +185,7 @@
   },
   {
    "at": "desktop/07-walking-initial-contact",
-   "textSamples": 845,
+   "textSamples": 847,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -211,7 +211,7 @@
   },
   {
    "at": "desktop/08-walking-pre-swing",
-   "textSamples": 832,
+   "textSamples": 834,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -237,7 +237,7 @@
   },
   {
    "at": "desktop/09-stair-ascent-weight-acceptance",
-   "textSamples": 860,
+   "textSamples": 862,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -263,7 +263,7 @@
   },
   {
    "at": "desktop/10-stair-ascent-pull-up",
-   "textSamples": 866,
+   "textSamples": 868,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -289,7 +289,7 @@
   },
   {
    "at": "desktop/11-stair-ascent-swing",
-   "textSamples": 847,
+   "textSamples": 849,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -315,7 +315,7 @@
   },
   {
    "at": "desktop/12-stair-descent-weight-acceptance",
-   "textSamples": 823,
+   "textSamples": 825,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -341,7 +341,7 @@
   },
   {
    "at": "desktop/13-stair-descent-controlled-lowering",
-   "textSamples": 799,
+   "textSamples": 801,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -367,7 +367,7 @@
   },
   {
    "at": "desktop/14-stair-descent-swing",
-   "textSamples": 770,
+   "textSamples": 772,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -393,7 +393,7 @@
   },
   {
    "at": "desktop/15-arm-elevation-0-30",
-   "textSamples": 645,
+   "textSamples": 647,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -419,7 +419,7 @@
   },
   {
    "at": "desktop/16-arm-elevation-120-max",
-   "textSamples": 641,
+   "textSamples": 643,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -444,8 +444,60 @@
    "clipped": []
   },
   {
-   "at": "desktop/17-sit-to-stand-table",
-   "textSamples": 683,
+   "at": "desktop/17-heel-raise-anticipatory-adjustment",
+   "textSamples": 574,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "발끝 서기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2예비 자세 조정",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "desktop/18-heel-raise-lowering",
+   "textSamples": 563,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "발끝 서기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4내려오기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "desktop/19-sit-to-stand-table",
+   "textSamples": 685,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -470,8 +522,8 @@
    "clipped": []
   },
   {
-   "at": "desktop/18-stair-ascent-compare",
-   "textSamples": 866,
+   "at": "desktop/20-stair-ascent-compare",
+   "textSamples": 868,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -496,8 +548,8 @@
    "clipped": []
   },
   {
-   "at": "desktop/19-stair-descent-contrast",
-   "textSamples": 799,
+   "at": "desktop/21-stair-descent-contrast",
+   "textSamples": 801,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -523,7 +575,7 @@
   },
   {
    "at": "laptop/00-list",
-   "textSamples": 34,
+   "textSamples": 38,
    "minFont": 12,
    "minContrast": 6.37,
    "weakest": [
@@ -538,7 +590,7 @@
      "contrast": 6.39
     },
     {
-     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어",
+     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기, 발끝 서기에서 뼈",
      "font": 15,
      "contrast": 6.75
     }
@@ -549,7 +601,7 @@
   },
   {
    "at": "laptop/01-standing-mean-alignment",
-   "textSamples": 602,
+   "textSamples": 604,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -575,7 +627,7 @@
   },
   {
    "at": "laptop/02-standing-forward-sway",
-   "textSamples": 581,
+   "textSamples": 583,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -601,7 +653,7 @@
   },
   {
    "at": "laptop/03-sit-to-stand-flexion-momentum",
-   "textSamples": 684,
+   "textSamples": 686,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -627,7 +679,7 @@
   },
   {
    "at": "laptop/04-sit-to-stand-extension",
-   "textSamples": 673,
+   "textSamples": 675,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -653,7 +705,7 @@
   },
   {
    "at": "laptop/05-stand-to-sit-preparation",
-   "textSamples": 416,
+   "textSamples": 418,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -679,7 +731,7 @@
   },
   {
    "at": "laptop/06-stand-to-sit-seat-loading",
-   "textSamples": 414,
+   "textSamples": 416,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -705,7 +757,7 @@
   },
   {
    "at": "laptop/07-walking-initial-contact",
-   "textSamples": 846,
+   "textSamples": 848,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -731,7 +783,7 @@
   },
   {
    "at": "laptop/08-walking-pre-swing",
-   "textSamples": 833,
+   "textSamples": 835,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -757,7 +809,7 @@
   },
   {
    "at": "laptop/09-stair-ascent-weight-acceptance",
-   "textSamples": 861,
+   "textSamples": 863,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -783,7 +835,7 @@
   },
   {
    "at": "laptop/10-stair-ascent-pull-up",
-   "textSamples": 867,
+   "textSamples": 869,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -809,7 +861,7 @@
   },
   {
    "at": "laptop/11-stair-ascent-swing",
-   "textSamples": 848,
+   "textSamples": 850,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -835,7 +887,7 @@
   },
   {
    "at": "laptop/12-stair-descent-weight-acceptance",
-   "textSamples": 824,
+   "textSamples": 826,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -861,7 +913,7 @@
   },
   {
    "at": "laptop/13-stair-descent-controlled-lowering",
-   "textSamples": 800,
+   "textSamples": 802,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -887,7 +939,7 @@
   },
   {
    "at": "laptop/14-stair-descent-swing",
-   "textSamples": 771,
+   "textSamples": 773,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -913,7 +965,7 @@
   },
   {
    "at": "laptop/15-arm-elevation-0-30",
-   "textSamples": 646,
+   "textSamples": 648,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -939,7 +991,7 @@
   },
   {
    "at": "laptop/16-arm-elevation-120-max",
-   "textSamples": 642,
+   "textSamples": 644,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -964,8 +1016,60 @@
    "clipped": []
   },
   {
-   "at": "laptop/17-sit-to-stand-table",
-   "textSamples": 684,
+   "at": "laptop/17-heel-raise-anticipatory-adjustment",
+   "textSamples": 575,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "발끝 서기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2예비 자세 조정",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "laptop/18-heel-raise-lowering",
+   "textSamples": 564,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "발끝 서기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4내려오기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "laptop/19-sit-to-stand-table",
+   "textSamples": 686,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -990,8 +1094,8 @@
    "clipped": []
   },
   {
-   "at": "laptop/18-stair-ascent-compare",
-   "textSamples": 867,
+   "at": "laptop/20-stair-ascent-compare",
+   "textSamples": 869,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1016,8 +1120,8 @@
    "clipped": []
   },
   {
-   "at": "laptop/19-stair-descent-contrast",
-   "textSamples": 800,
+   "at": "laptop/21-stair-descent-contrast",
+   "textSamples": 802,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1043,7 +1147,7 @@
   },
   {
    "at": "tablet/00-list",
-   "textSamples": 34,
+   "textSamples": 38,
    "minFont": 12,
    "minContrast": 6.37,
    "weakest": [
@@ -1058,7 +1162,7 @@
      "contrast": 6.39
     },
     {
-     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어",
+     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기, 발끝 서기에서 뼈",
      "font": 15,
      "contrast": 6.75
     }
@@ -1069,7 +1173,7 @@
   },
   {
    "at": "tablet/01-standing-mean-alignment",
-   "textSamples": 601,
+   "textSamples": 603,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1095,7 +1199,7 @@
   },
   {
    "at": "tablet/02-standing-forward-sway",
-   "textSamples": 580,
+   "textSamples": 582,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1121,7 +1225,7 @@
   },
   {
    "at": "tablet/03-sit-to-stand-flexion-momentum",
-   "textSamples": 683,
+   "textSamples": 685,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1147,7 +1251,7 @@
   },
   {
    "at": "tablet/04-sit-to-stand-extension",
-   "textSamples": 672,
+   "textSamples": 674,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1173,7 +1277,7 @@
   },
   {
    "at": "tablet/05-stand-to-sit-preparation",
-   "textSamples": 415,
+   "textSamples": 417,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1199,7 +1303,7 @@
   },
   {
    "at": "tablet/06-stand-to-sit-seat-loading",
-   "textSamples": 413,
+   "textSamples": 415,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1225,7 +1329,7 @@
   },
   {
    "at": "tablet/07-walking-initial-contact",
-   "textSamples": 845,
+   "textSamples": 847,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1251,7 +1355,7 @@
   },
   {
    "at": "tablet/08-walking-pre-swing",
-   "textSamples": 832,
+   "textSamples": 834,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1277,7 +1381,7 @@
   },
   {
    "at": "tablet/09-stair-ascent-weight-acceptance",
-   "textSamples": 860,
+   "textSamples": 862,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1303,7 +1407,7 @@
   },
   {
    "at": "tablet/10-stair-ascent-pull-up",
-   "textSamples": 866,
+   "textSamples": 868,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1329,7 +1433,7 @@
   },
   {
    "at": "tablet/11-stair-ascent-swing",
-   "textSamples": 847,
+   "textSamples": 849,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1355,7 +1459,7 @@
   },
   {
    "at": "tablet/12-stair-descent-weight-acceptance",
-   "textSamples": 823,
+   "textSamples": 825,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1381,7 +1485,7 @@
   },
   {
    "at": "tablet/13-stair-descent-controlled-lowering",
-   "textSamples": 799,
+   "textSamples": 801,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1407,7 +1511,7 @@
   },
   {
    "at": "tablet/14-stair-descent-swing",
-   "textSamples": 770,
+   "textSamples": 772,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1433,7 +1537,7 @@
   },
   {
    "at": "tablet/15-arm-elevation-0-30",
-   "textSamples": 645,
+   "textSamples": 647,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1459,7 +1563,7 @@
   },
   {
    "at": "tablet/16-arm-elevation-120-max",
-   "textSamples": 641,
+   "textSamples": 643,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1484,8 +1588,60 @@
    "clipped": []
   },
   {
-   "at": "tablet/17-sit-to-stand-table",
-   "textSamples": 683,
+   "at": "tablet/17-heel-raise-anticipatory-adjustment",
+   "textSamples": 574,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "발끝 서기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2예비 자세 조정",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "tablet/18-heel-raise-lowering",
+   "textSamples": 563,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "발끝 서기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4내려오기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "tablet/19-sit-to-stand-table",
+   "textSamples": 685,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1510,8 +1666,8 @@
    "clipped": []
   },
   {
-   "at": "tablet/18-stair-ascent-compare",
-   "textSamples": 866,
+   "at": "tablet/20-stair-ascent-compare",
+   "textSamples": 868,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1536,8 +1692,8 @@
    "clipped": []
   },
   {
-   "at": "tablet/19-stair-descent-contrast",
-   "textSamples": 799,
+   "at": "tablet/21-stair-descent-contrast",
+   "textSamples": 801,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1563,7 +1719,7 @@
   },
   {
    "at": "mobile/00-list",
-   "textSamples": 34,
+   "textSamples": 38,
    "minFont": 12,
    "minContrast": 6.37,
    "weakest": [
@@ -1578,7 +1734,7 @@
      "contrast": 6.39
     },
     {
-     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어",
+     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기, 발끝 서기에서 뼈",
      "font": 15,
      "contrast": 6.75
     }
@@ -1589,7 +1745,7 @@
   },
   {
    "at": "mobile/01-standing-mean-alignment",
-   "textSamples": 632,
+   "textSamples": 634,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1615,7 +1771,7 @@
   },
   {
    "at": "mobile/02-standing-forward-sway",
-   "textSamples": 611,
+   "textSamples": 613,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1641,7 +1797,7 @@
   },
   {
    "at": "mobile/03-sit-to-stand-flexion-momentum",
-   "textSamples": 720,
+   "textSamples": 722,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1667,7 +1823,7 @@
   },
   {
    "at": "mobile/04-sit-to-stand-extension",
-   "textSamples": 709,
+   "textSamples": 711,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1693,7 +1849,7 @@
   },
   {
    "at": "mobile/05-stand-to-sit-preparation",
-   "textSamples": 435,
+   "textSamples": 437,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1719,7 +1875,7 @@
   },
   {
    "at": "mobile/06-stand-to-sit-seat-loading",
-   "textSamples": 433,
+   "textSamples": 435,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1745,7 +1901,7 @@
   },
   {
    "at": "mobile/07-walking-initial-contact",
-   "textSamples": 918,
+   "textSamples": 920,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1771,7 +1927,7 @@
   },
   {
    "at": "mobile/08-walking-pre-swing",
-   "textSamples": 905,
+   "textSamples": 907,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1797,7 +1953,7 @@
   },
   {
    "at": "mobile/09-stair-ascent-weight-acceptance",
-   "textSamples": 913,
+   "textSamples": 915,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1823,7 +1979,7 @@
   },
   {
    "at": "mobile/10-stair-ascent-pull-up",
-   "textSamples": 919,
+   "textSamples": 921,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1849,7 +2005,7 @@
   },
   {
    "at": "mobile/11-stair-ascent-swing",
-   "textSamples": 900,
+   "textSamples": 902,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1875,7 +2031,7 @@
   },
   {
    "at": "mobile/12-stair-descent-weight-acceptance",
-   "textSamples": 876,
+   "textSamples": 878,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1901,7 +2057,7 @@
   },
   {
    "at": "mobile/13-stair-descent-controlled-lowering",
-   "textSamples": 852,
+   "textSamples": 854,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1927,7 +2083,7 @@
   },
   {
    "at": "mobile/14-stair-descent-swing",
-   "textSamples": 823,
+   "textSamples": 825,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1953,7 +2109,7 @@
   },
   {
    "at": "mobile/15-arm-elevation-0-30",
-   "textSamples": 678,
+   "textSamples": 680,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -1979,7 +2135,7 @@
   },
   {
    "at": "mobile/16-arm-elevation-120-max",
-   "textSamples": 674,
+   "textSamples": 676,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2004,8 +2160,60 @@
    "clipped": []
   },
   {
-   "at": "mobile/17-sit-to-stand-table",
-   "textSamples": 720,
+   "at": "mobile/17-heel-raise-anticipatory-adjustment",
+   "textSamples": 599,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "발끝 서기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2예비 자세 조정",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "mobile/18-heel-raise-lowering",
+   "textSamples": 588,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "발끝 서기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4내려오기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "mobile/19-sit-to-stand-table",
+   "textSamples": 722,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2030,8 +2238,8 @@
    "clipped": []
   },
   {
-   "at": "mobile/18-stair-ascent-compare",
-   "textSamples": 919,
+   "at": "mobile/20-stair-ascent-compare",
+   "textSamples": 921,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2056,8 +2264,8 @@
    "clipped": []
   },
   {
-   "at": "mobile/19-stair-descent-contrast",
-   "textSamples": 852,
+   "at": "mobile/21-stair-descent-contrast",
+   "textSamples": 854,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2083,7 +2291,7 @@
   },
   {
    "at": "small-mobile/00-list",
-   "textSamples": 34,
+   "textSamples": 38,
    "minFont": 12,
    "minContrast": 6.37,
    "weakest": [
@@ -2098,7 +2306,7 @@
      "contrast": 6.39
     },
     {
-     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어",
+     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기, 발끝 서기에서 뼈",
      "font": 15,
      "contrast": 6.75
     }
@@ -2109,7 +2317,7 @@
   },
   {
    "at": "small-mobile/01-standing-mean-alignment",
-   "textSamples": 632,
+   "textSamples": 634,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2135,7 +2343,7 @@
   },
   {
    "at": "small-mobile/02-standing-forward-sway",
-   "textSamples": 611,
+   "textSamples": 613,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2161,7 +2369,7 @@
   },
   {
    "at": "small-mobile/03-sit-to-stand-flexion-momentum",
-   "textSamples": 720,
+   "textSamples": 722,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2187,7 +2395,7 @@
   },
   {
    "at": "small-mobile/04-sit-to-stand-extension",
-   "textSamples": 709,
+   "textSamples": 711,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2213,7 +2421,7 @@
   },
   {
    "at": "small-mobile/05-stand-to-sit-preparation",
-   "textSamples": 435,
+   "textSamples": 437,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2239,7 +2447,7 @@
   },
   {
    "at": "small-mobile/06-stand-to-sit-seat-loading",
-   "textSamples": 433,
+   "textSamples": 435,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2265,7 +2473,7 @@
   },
   {
    "at": "small-mobile/07-walking-initial-contact",
-   "textSamples": 918,
+   "textSamples": 920,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2291,7 +2499,7 @@
   },
   {
    "at": "small-mobile/08-walking-pre-swing",
-   "textSamples": 905,
+   "textSamples": 907,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2317,7 +2525,7 @@
   },
   {
    "at": "small-mobile/09-stair-ascent-weight-acceptance",
-   "textSamples": 913,
+   "textSamples": 915,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2343,7 +2551,7 @@
   },
   {
    "at": "small-mobile/10-stair-ascent-pull-up",
-   "textSamples": 919,
+   "textSamples": 921,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2369,7 +2577,7 @@
   },
   {
    "at": "small-mobile/11-stair-ascent-swing",
-   "textSamples": 900,
+   "textSamples": 902,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2395,7 +2603,7 @@
   },
   {
    "at": "small-mobile/12-stair-descent-weight-acceptance",
-   "textSamples": 876,
+   "textSamples": 878,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2421,7 +2629,7 @@
   },
   {
    "at": "small-mobile/13-stair-descent-controlled-lowering",
-   "textSamples": 852,
+   "textSamples": 854,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2447,7 +2655,7 @@
   },
   {
    "at": "small-mobile/14-stair-descent-swing",
-   "textSamples": 823,
+   "textSamples": 825,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2473,7 +2681,7 @@
   },
   {
    "at": "small-mobile/15-arm-elevation-0-30",
-   "textSamples": 678,
+   "textSamples": 680,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2499,7 +2707,7 @@
   },
   {
    "at": "small-mobile/16-arm-elevation-120-max",
-   "textSamples": 674,
+   "textSamples": 676,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2524,8 +2732,60 @@
    "clipped": []
   },
   {
-   "at": "small-mobile/17-sit-to-stand-table",
-   "textSamples": 720,
+   "at": "small-mobile/17-heel-raise-anticipatory-adjustment",
+   "textSamples": 599,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "발끝 서기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2예비 자세 조정",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "small-mobile/18-heel-raise-lowering",
+   "textSamples": 588,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "발끝 서기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4내려오기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "small-mobile/19-sit-to-stand-table",
+   "textSamples": 722,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2550,8 +2810,8 @@
    "clipped": []
   },
   {
-   "at": "small-mobile/18-stair-ascent-compare",
-   "textSamples": 919,
+   "at": "small-mobile/20-stair-ascent-compare",
+   "textSamples": 921,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2576,8 +2836,8 @@
    "clipped": []
   },
   {
-   "at": "small-mobile/19-stair-descent-contrast",
-   "textSamples": 852,
+   "at": "small-mobile/21-stair-descent-contrast",
+   "textSamples": 854,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2603,7 +2863,7 @@
   },
   {
    "at": "landscape/00-list",
-   "textSamples": 34,
+   "textSamples": 38,
    "minFont": 12,
    "minContrast": 6.37,
    "weakest": [
@@ -2618,7 +2878,7 @@
      "contrast": 6.39
     },
     {
-     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기에서 뼈와 관절이 어",
+     "text": "서 있기, 일어서기, 앉기, 걷기, 계단 오르기·내리기, 팔 들어올리기, 발끝 서기에서 뼈",
      "font": 15,
      "contrast": 6.75
     }
@@ -2629,7 +2889,7 @@
   },
   {
    "at": "landscape/01-standing-mean-alignment",
-   "textSamples": 630,
+   "textSamples": 632,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2655,7 +2915,7 @@
   },
   {
    "at": "landscape/02-standing-forward-sway",
-   "textSamples": 609,
+   "textSamples": 611,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2681,7 +2941,7 @@
   },
   {
    "at": "landscape/03-sit-to-stand-flexion-momentum",
-   "textSamples": 718,
+   "textSamples": 720,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2707,7 +2967,7 @@
   },
   {
    "at": "landscape/04-sit-to-stand-extension",
-   "textSamples": 707,
+   "textSamples": 709,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2733,7 +2993,7 @@
   },
   {
    "at": "landscape/05-stand-to-sit-preparation",
-   "textSamples": 433,
+   "textSamples": 435,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2759,7 +3019,7 @@
   },
   {
    "at": "landscape/06-stand-to-sit-seat-loading",
-   "textSamples": 431,
+   "textSamples": 433,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2785,7 +3045,7 @@
   },
   {
    "at": "landscape/07-walking-initial-contact",
-   "textSamples": 916,
+   "textSamples": 918,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2811,7 +3071,7 @@
   },
   {
    "at": "landscape/08-walking-pre-swing",
-   "textSamples": 903,
+   "textSamples": 905,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2837,7 +3097,7 @@
   },
   {
    "at": "landscape/09-stair-ascent-weight-acceptance",
-   "textSamples": 911,
+   "textSamples": 913,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2863,7 +3123,7 @@
   },
   {
    "at": "landscape/10-stair-ascent-pull-up",
-   "textSamples": 917,
+   "textSamples": 919,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2889,7 +3149,7 @@
   },
   {
    "at": "landscape/11-stair-ascent-swing",
-   "textSamples": 898,
+   "textSamples": 900,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2915,7 +3175,7 @@
   },
   {
    "at": "landscape/12-stair-descent-weight-acceptance",
-   "textSamples": 874,
+   "textSamples": 876,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2941,7 +3201,7 @@
   },
   {
    "at": "landscape/13-stair-descent-controlled-lowering",
-   "textSamples": 850,
+   "textSamples": 852,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2967,7 +3227,7 @@
   },
   {
    "at": "landscape/14-stair-descent-swing",
-   "textSamples": 821,
+   "textSamples": 823,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -2993,7 +3253,7 @@
   },
   {
    "at": "landscape/15-arm-elevation-0-30",
-   "textSamples": 676,
+   "textSamples": 678,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -3019,7 +3279,7 @@
   },
   {
    "at": "landscape/16-arm-elevation-120-max",
-   "textSamples": 672,
+   "textSamples": 674,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -3044,8 +3304,60 @@
    "clipped": []
   },
   {
-   "at": "landscape/17-sit-to-stand-table",
-   "textSamples": 718,
+   "at": "landscape/17-heel-raise-anticipatory-adjustment",
+   "textSamples": 597,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "발끝 서기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "2예비 자세 조정",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "2",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "landscape/18-heel-raise-lowering",
+   "textSamples": 586,
+   "minFont": 12,
+   "minContrast": 6.03,
+   "weakest": [
+    {
+     "text": "발끝 서기",
+     "font": 14,
+     "contrast": 6.03
+    },
+    {
+     "text": "4내려오기",
+     "font": 13,
+     "contrast": 6.03
+    },
+    {
+     "text": "4",
+     "font": 12,
+     "contrast": 6.03
+    }
+   ],
+   "strokes": 14,
+   "minStrokeContrast": 3.44,
+   "clipped": []
+  },
+  {
+   "at": "landscape/19-sit-to-stand-table",
+   "textSamples": 720,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -3070,8 +3382,8 @@
    "clipped": []
   },
   {
-   "at": "landscape/18-stair-ascent-compare",
-   "textSamples": 917,
+   "at": "landscape/20-stair-ascent-compare",
+   "textSamples": 919,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [
@@ -3096,8 +3408,8 @@
    "clipped": []
   },
   {
-   "at": "landscape/19-stair-descent-contrast",
-   "textSamples": 850,
+   "at": "landscape/21-stair-descent-contrast",
+   "textSamples": 852,
    "minFont": 12,
    "minContrast": 6.03,
    "weakest": [

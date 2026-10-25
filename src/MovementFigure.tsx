@@ -1,5 +1,5 @@
 import { useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { add, backLines, backPose, contactsOf, cycle, drawnMuscles, figureAt, overlayAt, overlaysAt, rotate as rot, sideLines, sidePose, stanceAt, stepOutline, stepTop, supportSpan, within, type BackPose, type Leg, type PhaseMuscle, type Pt, type SidePose } from "./movement-figure";
+import { add, backLines, backPose, contactsOf, cycle, drawnMuscles, figureAt, footFixedPose, overlayAt, overlaysAt, rotate as rot, sideLines, sidePose, stanceAt, stepOutline, stepTop, supportSpan, within, type BackPose, type Leg, type PhaseMuscle, type Pt, type SidePose } from "./movement-figure";
 import { contractionNames, type BackAngles, type Contraction, type Keyframe, type Movement, type MuscleCell, type MuscleRow, type SideAngles } from "./movement-types";
 
 const dash: Record<string, string | undefined> = { eccentric: "0.05 0.03", isometric: "0.004 0.022", active: undefined, concentric: undefined };
@@ -162,6 +162,62 @@ export function MuscleLegend({ drawn }: { drawn: PhaseMuscle[] }) {
   );
 }
 
+// Unscaled principle figure of the ankle moment arms (heel-raise CONSENSUS §5):
+// the drawn foot at its highest pitch as a free body, the Achilles tendon
+// pulling along the shank, the ground force under the forefoot (not pinned to
+// the metatarsophalangeal joint) and the perpendicular distances r and d from
+// the ankle centre, without numbers.
+export function AnkleMomentArms({ movement: m }: { movement: Movement }) {
+  const frames = m.keyframes as Keyframe<SideAngles>[];
+  const top = frames.reduce((a, k) => ((k.angles.foot ?? 0) > (a.angles.foot ?? 0) ? k : a), frames[0]);
+  const leg = footFixedPose(top.angles).right;
+  const K = 1000, x0 = leg.heel.x - 0.13, x1 = leg.toe.x + 0.09, y1 = leg.ankle.y + 0.2;
+  const S = (p: Pt) => `${((p.x - x0) * K).toFixed(1)},${((y1 - p.y) * K).toFixed(1)}`;
+  const path = (pts: Pt[]) => `M${pts.map(S).join("L")}`;
+  const along = { x: Math.sin((leg.shank * Math.PI) / 180), y: Math.cos((leg.shank * Math.PI) / 180) };
+  const mtpTop = add(leg.mtp, rot({ x: 0, y: 0.016 }, leg.footPitch));
+  const ankleBack = add(leg.ankle, rot({ x: -0.03, y: -0.01 }, leg.footPitch));
+  // Achilles line: from the back of the heel outline, parallel to the shank.
+  const insertion = { x: (leg.heel.x + ankleBack.x) / 2, y: (leg.heel.y + ankleBack.y) / 2 };
+  const tendonTop = add(insertion, along, 0.17);
+  // Ground force: vertical, from the underside of the forefoot a third of the
+  // way from the MTP joint to the toe tip; the floor line meets the toe tip
+  // (the drawn foot rests FLOOR_GAP above the diagram's floor).
+  const cop = { x: leg.mtp.x + (leg.toe.x - leg.mtp.x) / 3, y: leg.mtp.y + (leg.toe.y - leg.mtp.y) / 3 };
+  const floor = leg.toe.y;
+  const grfTop = { x: cop.x, y: 0.19 };
+  // Perpendicular feet from the ankle centre to both lines.
+  const k = (leg.ankle.x - insertion.x) * along.x + (leg.ankle.y - insertion.y) * along.y;
+  const rFoot = add(insertion, along, k), dFoot = { x: cop.x, y: leg.ankle.y };
+  const W = (x1 - x0) * K, H = y1 * K + 24;
+  const mid = (a: Pt, b: Pt) => ({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 });
+  const at = (p: Pt, dx = 0, dy = 0) => ({ x: (p.x - x0) * K + dx, y: (y1 - p.y) * K + dy });
+  const label = (p: { x: number; y: number }, text: string, anchor: "start" | "middle" | "end" = "start", cls = "") =>
+    <text x={p.x.toFixed(1)} y={p.y.toFixed(1)} textAnchor={anchor} className={cls || undefined}>{text}</text>;
+  return (
+    <svg className="mv-principle-svg" viewBox={`0 0 ${W.toFixed(0)} ${H.toFixed(0)}`} width={W.toFixed(0)} height={H.toFixed(0)} role="img"
+      aria-label="발목 모멘트팔 원리 그림: 발목 중심에서 발꿈치힘줄 작용선까지 수직거리 r, 지면반력 작용선까지 수직거리 d. 축척과 숫자 없음.">
+      <defs><marker id="mv-pr-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" className="mv-pr-head" /></marker></defs>
+      <path className="mv-pr-floor" d={path([{ x: x0, y: floor }, { x: x1, y: floor }])} />
+      <g className="mv-bone mv-pr-bone">
+        <path className="mv-pr-shank" d={path([leg.ankle, add(leg.ankle, along, 0.19)])} />
+        <path className="mv-pr-foot" d={`${path([leg.heel, ankleBack, leg.ankle, mtpTop, leg.toe, leg.mtp])}Z`} />
+      </g>
+      <path className="mv-pr-force" d={path([insertion, tendonTop])} markerEnd="url(#mv-pr-arrow)" />
+      <path className="mv-pr-force" d={path([cop, grfTop])} markerEnd="url(#mv-pr-arrow)" />
+      <path className="mv-pr-dim" d={path([leg.ankle, rFoot])} />
+      <path className="mv-pr-dim" d={path([leg.ankle, dFoot])} />
+      <circle cx={at(leg.ankle).x} cy={at(leg.ankle).y} r={5} className="mv-pr-ankle" />
+      {label(at(mid(leg.ankle, rFoot), 0, -8), "r", "middle", "mv-pr-dim-label")}
+      {label(at(mid(leg.ankle, dFoot), 0, 20), "d", "middle", "mv-pr-dim-label")}
+      {label(at(leg.ankle, 12, -12), "발목 중심")}
+      {label(at(tendonTop, -6, 4), "발꿈치힘줄 힘", "end")}
+      {label(at(grfTop, 6, 4), "지면반력")}
+      {label(at({ x: cop.x, y: floor }, 0, 20), "앞발 아래(압력중심)", "middle")}
+    </svg>
+  );
+}
+
 export function MovementFigure({ movement: m, t, overlays, phaseMuscles }: {
   movement: Movement; t: number; overlays: { muscles: boolean; com: boolean; grf: boolean }; phaseMuscles: PhaseMuscle[];
 }) {
@@ -202,9 +258,9 @@ export function MovementFigure({ movement: m, t, overlays, phaseMuscles }: {
     const grf = overlays.grf && stance.right ? overlayAt(frames, x, "grf", m.loop) : null;
     // The surface under a foot: the floor, or its tread on the stairs.
     const ground = (leg: Leg) => p.steps ? stepTop(p.steps, leg.mtp.x) : 0;
-    // Base of support: the ground under each stance foot (each on its own
-    // tread on the stairs; a lifted heel no longer counts), plus the seat
-    // while the buttocks rest on it.
+    // Base of support: the parts of each stance foot that are down (each on
+    // its own tread on the stairs; supportSpan), plus the seat while the
+    // buttocks rest on it.
     const feet = [stance.right && p.right, stance.left && p.left].filter(Boolean) as Leg[];
     const spans = feet.map((leg) => supportSpan(leg, ground(leg)));
     const bands = p.steps ? spans : spans.length ? [{ lo: Math.min(...spans.map((s) => s.lo)), hi: Math.max(...spans.map((s) => s.hi)), y: 0 }] : [];

@@ -2,10 +2,10 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import { FLOOR_GAP, GAIT, MTP_ABOVE, backLines, cycle, backPose, footFixedPose, interpolate, sideLines, sidePose, stairContacts, stairHold, stairPose, stepOutline, stepTop, walkingPose } from "../src/movement-figure.ts";
+import { FLOOR_GAP, GAIT, HEEL_DOWN, MTP_ABOVE, SEG, add, backLines, cycle, backPose, footFixedPose, supportSpan, interpolate, sideLines, sidePose, stairContacts, stairHold, stairPose, stepOutline, stepTop, walkingPose } from "../src/movement-figure.ts";
 
 const read = (path) => JSON.parse(fs.readFileSync(path, "utf8"));
-const slugs = ["standing", "sit-to-stand", "stand-to-sit", "walking", "stair-ascent", "stair-descent", "arm-elevation"];
+const slugs = ["standing", "sit-to-stand", "stand-to-sit", "walking", "stair-ascent", "stair-descent", "arm-elevation", "heel-raise"];
 const STAIRS = ["stair-ascent", "stair-descent"];
 const movements = slugs.map((slug) => read(`data/movements/${slug}.json`));
 const sources = read("data/movement-sources.json");
@@ -42,9 +42,15 @@ test("every source key resolves and every source says how far it was checked", (
       ...m.phases.flatMap((p) => p.sources), ...m.keyframes.flatMap((k) => [...k.sources, ...(k.com?.sources ?? []), ...(k.grf?.sources ?? [])]),
       ...m.muscles.flatMap((r) => Object.values(r.cells).flatMap((c) => c.sources)), ...m.joints.flatMap((j) => j.sources),
       ...m.mechanics.flatMap((x) => x.sources), ...m.passive.flatMap((x) => x.sources), ...m.misconceptions.flatMap((x) => x.sources),
-      ...(m.duration?.sources ?? []), ...(m.stairs?.sources ?? []), ...(m.emg?.sources ?? []),
+      ...(m.duration?.sources ?? []), ...(m.stairs?.sources ?? []), ...(m.emg?.sources ?? []), ...(m.related ?? []).flatMap((r) => r.sources), ...(m.principle?.sources ?? []),
     ];
     for (const id of cited) assert.ok(sourceIds.has(id), `${m.slug}: unknown source ${id}`);
+    // Sentence links point at a movement (and phase) that exists.
+    for (const r of m.related ?? []) {
+      const other = movements.find((x) => x.slug === r.slug);
+      assert.ok(other && other.slug !== m.slug && r.text.trim(), `${m.slug}: related ${r.slug}`);
+      if (r.phase) assert.ok(other.phases.some((p) => p.id === r.phase), `${m.slug}: related ${r.slug}/${r.phase}`);
+    }
     for (const p of m.phases) assert.ok(p.sources.length, `${m.slug}/${p.id} has no source`);
     for (const k of m.keyframes) assert.ok(k.sources.length, `${m.slug} keyframe ${k.t} has no source`);
     for (const j of m.joints) assert.ok(j.sources.length && j.population, `${m.slug} joint ${j.joint}`);
@@ -92,7 +98,7 @@ test("overlays say where they start and seated spans fit the timeline", () => {
 test("each movement shows its own unit: cycle % for walking, events for stairs, state, angle or playback otherwise", () => {
   const range = (slug) => movements.find((m) => m.slug === slug).phases.map((p) => p.range || "");
   assert.ok(range("walking").every((r) => /주기 \d+–\d+%/.test(r)), range("walking").join(" | "));
-  for (const slug of ["standing", "sit-to-stand", "stand-to-sit", "arm-elevation"]) assert.ok(range(slug).every((r) => !r.includes("%")), slug);
+  for (const slug of ["standing", "sit-to-stand", "stand-to-sit", "arm-elevation", "heel-raise"]) assert.ok(range(slug).every((r) => !r.includes("%")), slug);
   // Stairs: phases run from event to event; a % names where it comes from.
   for (const slug of STAIRS) for (const r of range(slug)) {
     assert.match(r, /→/, `${slug}: ${r}`);
@@ -120,6 +126,8 @@ test("muscle rows have a known call for every phase, with evidence and sources",
         // A contraction mode is never read off EMG timing alone.
         if (["concentric", "eccentric", "isometric"].includes(c.contraction) && c.evidence.every((e) => e === "emg"))
           assert.fail(`${m.slug}/${row.id}/${phase}: contraction from EMG alone`);
+        // Inhibition is a recorded EMG finding, never inferred.
+        if (c.contraction === "inhibited") assert.ok(c.evidence.includes("emg"), `${m.slug}/${row.id}/${phase}: inhibited without EMG`);
       }
       if (row.line) assert.ok((m.view === "back" ? backLines : sideLines)[row.line], `${m.slug}/${row.id} line ${row.line}`);
     }
@@ -130,7 +138,7 @@ const side = (s) => /^right |\(right\)|_r$/i.test(s.name) || /_r$/.test(s.id) ? 
 const partner = (s) => s.name.replace(/^right /i, "left ").replace(/\(right\)/i, "(left)").replace(/^left /i, "right ").replace(/\(left\)/i, "(right)");
 test("structure ids exist in the catalogue, in the right system, with sides listed one by one", () => {
   for (const m of movements) {
-    const symmetric = ["standing", "sit-to-stand", "stand-to-sit"].includes(m.slug);
+    const symmetric = ["standing", "sit-to-stand", "stand-to-sit", "heel-raise"].includes(m.slug);
     for (const row of [...m.muscles, ...m.passive]) {
       for (const id of row.structures) assert.ok(catalogue.has(id), `${m.slug}/${row.name}: ${id} not in catalogue`);
       const items = row.structures.map((id) => catalogue.get(id));
@@ -147,14 +155,15 @@ test("structure ids exist in the catalogue, in the right system, with sides list
   }
 });
 
-const FORBIDDEN = /강화하면|예방|치료|교정|바른 자세|정상 기준|진단|좋은 자세|나쁜 자세|처방|무릎에 (나쁘|좋)|관절에 무리|운동 효과|칼로리|심폐|강화|재활|안전한 계단|바른 계단|난간을 잡아야|무릎이 발끝|낙상 위험|연골 손상|정상 운동학/;
+const FORBIDDEN = /강화하면|예방|치료|교정|바른 자세|정상 기준|진단|좋은 자세|나쁜 자세|처방|무릎에 (나쁘|좋)|관절에 무리|운동 효과|칼로리|심폐|강화|재활|안전한 계단|바른 계단|난간을 잡아야|무릎이 발끝|낙상 위험|연골 손상|정상 운동학|정상값|정상 범위|정상 횟수|\d+회 (이상|미만)|종아리 운동|발목 건강|부상|힘줄염|근막염/;
 test("descriptions make no exercise, treatment or diagnostic claims", () => {
   for (const m of movements) {
     const texts = [m.summary, ...m.phases.flatMap((p) => [p.summary, p.events, ...(p.mechanics ?? [])]),
       ...m.muscles.flatMap((r) => Object.values(r.cells).flatMap((c) => [c.role ?? "", c.note ?? ""])), ...m.mechanics.map((x) => x.text), ...m.passive.map((x) => x.role),
       ...m.misconceptions.flatMap((x) => [x.wrong, x.better]), ...m.limitations, m.timingNote, m.conditions, m.figureNote ?? "",
       ...m.phases.map((p) => p.range ?? ""), ...m.keyframes.flatMap((k) => [k.event ?? "", k.note ?? ""]), m.stairs?.note ?? "",
-      m.emg?.note ?? "", m.emg?.reference ?? "", ...m.joints.flatMap((j) => [j.values, j.note ?? "", j.population])];
+      m.emg?.note ?? "", m.emg?.reference ?? "", ...m.joints.flatMap((j) => [j.values, j.note ?? "", j.population]),
+      ...(m.related ?? []).flatMap((r) => [r.text, r.note ?? ""]), m.principle?.caption ?? "", m.principle?.note ?? ""];
     for (const text of texts) assert.doesNotMatch(text, FORBIDDEN, `${m.slug}: ${text}`);
   }
   for (const c of contrasts) for (const text of [c.title, c.lead, c.note ?? "", ...c.rows.flatMap((r) => [r.label, ...r.values, r.note ?? ""])]) assert.doesNotMatch(text, FORBIDDEN, `${c.id}: ${text}`);
@@ -346,10 +355,13 @@ test("stairs: nothing jumps at foot contact or across the loop", () => {
   }
 });
 
-test("stairs: the EMG table is one recording's phase means and the cells agree with it", () => {
-  for (const slug of STAIRS) {
-    const m = stair(slug);
-    assert.ok(m.emg && m.emg.cut === 30 && m.emg.sources.length === 1 && m.emg.sources[0] === "darmstadt-stairs", slug);
+// An EMG table (stairs, heel raise) is one public recording's phase means.
+test("an EMG table is one recording's phase means and the cells agree with it", () => {
+  const recorded = movements.filter((m) => m.emg);
+  assert.deepEqual(recorded.map((m) => m.slug), [...STAIRS, "heel-raise"]);
+  for (const m of recorded) {
+    const slug = m.slug, ds = m.emg.sources[0];
+    assert.ok(m.emg.cut === 30 && m.emg.sources.length === 1 && sources.find((s) => s.id === ds).checked === "공개 데이터", slug);
     for (const r of m.emg.rows) {
       const row = m.muscles.find((x) => x.id === r.muscle);
       assert.ok(row, `${slug}: emg row ${r.muscle}`);
@@ -360,15 +372,18 @@ test("stairs: the EMG table is one recording's phase means and the cells agree w
         if (cell.contraction === "low") assert.ok(v < m.emg.cut, `${slug}/${r.muscle}/${phase}: low but ${v}`);
         // Under the cut but called active: only when another EMG source reports activity (the note says which).
         if (v < m.emg.cut && ["active", "concentric", "eccentric", "isometric"].includes(cell.contraction))
-          assert.ok(cell.evidence.includes("emg") && cell.sources.some((id) => id !== "darmstadt-stairs"), `${slug}/${r.muscle}/${phase}: ${v}% called ${cell.contraction} without another EMG source`);
+          assert.ok(cell.evidence.includes("emg") && cell.sources.some((id) => id !== ds), `${slug}/${r.muscle}/${phase}: ${v}% called ${cell.contraction} without another EMG source`);
         if (v >= m.emg.cut) assert.notEqual(cell.contraction, "low", `${slug}/${r.muscle}/${phase}: ${v} is not low`);
         assert.notEqual(cell.contraction, "silent", `${slug}/${r.muscle}/${phase}: a low mean is not 'not detected'`);
         // A cell that quotes the phase mean quotes the table's number.
-        const quoted = (cell.note ?? "").match(/국면 평균 (\d+)%/);
+        const quoted = (cell.note ?? "").match(/(?:국면|구간) 평균 (\d+)%/);
         if (quoted) assert.equal(Number(quoted[1]), v, `${slug}/${r.muscle}/${phase}: note says ${quoted[1]}%, table ${v}%`);
       }
     }
   }
+});
+
+test("stairs: sentences and the comparison box quote the Darmstadt numbers", () => {
   // Sentences quoting DD phase means use the table's numbers.
   const RECORDED = { 넙다리두갈래근: "hamstrings", 넙다리곧은근: "rectus-femoris", 가쪽넓은근: "vasti", "장딴지근 가쪽갈래": "gastrocnemius-lateral", 가쪽장딴지근: "gastrocnemius-lateral", 가자미근: "soleus", 앞정강근: "tibialis-anterior" };
   for (const slug of STAIRS) {
@@ -411,4 +426,119 @@ test("stairs: the EMG table is one recording's phase means and the cells agree w
   assert.deepEqual(c.movements, STAIRS);
   for (const [a, b] of c.phases) assert.ok(stair(STAIRS[0]).phases.some((p) => p.id === a) && stair(STAIRS[1]).phases.some((p) => p.id === b), `${a}/${b}`);
   for (const r of c.rows) { assert.equal(r.values.length, 2); for (const id of r.sources) assert.ok(sourceIds.has(id), id); }
+});
+
+// Heel raise (docs/movement-mechanics/heel-raise/CONSENSUS.md §4–§8): one public
+// dataset, four phases without a hold, the foot turning about a fixed MTP joint.
+const heel = () => movements.find((m) => m.slug === "heel-raise");
+test("heel raise: the agreed phases from one dataset, no overlays, links instead of a numbers box", () => {
+  const m = heel(), ds = m.emg.sources[0];
+  assert.deepEqual([m.view, m.loop, m.phaseKind, m.order], ["side", false, "구간", 8]);
+  assert.deepEqual(m.phases.map((p) => p.id), ["quiet-standing", "anticipatory-adjustment", "rise", "lowering"]);
+  assert.ok(m.keyframes.every((k) => k.sources.includes(ds)), "every keyframe cites the dataset");
+  assert.ok(m.keyframes.every((k) => !k.com && !k.grf), "no centre of mass, pressure or force overlay");
+  for (const p of m.phases) assert.doesNotMatch(`${p.name} ${p.range ?? ""}`, /%/, p.id);
+  // Two EMG rows; the gastrocnemius channel does not name a head.
+  assert.equal(m.emg.rows.length, 2);
+  assert.ok(m.emg.rows.some((r) => r.label.includes("앞정강근")) && m.emg.rows.some((r) => r.label.includes("갈래 미기재")), m.emg.rows.map((r) => r.label).join(", "));
+  assert.equal(contrasts.filter((c) => c.movements.includes("heel-raise")).length, 0);
+  assert.deepEqual((m.related ?? []).map((r) => r.slug).sort(), ["standing", "walking"]);
+  assert.equal(m.related.find((r) => r.slug === "walking").phase, "terminal-stance");
+  // A shortening or lengthening call needs fascicle evidence from the same
+  // head, in a bilateral level-ground heel raise, read in full text
+  // (CONSENSUS §6). Sources enter FASCICLE only after that check, with the
+  // muscle rows they may decide; none qualifies yet.
+  const FASCICLE = {};
+  const REJECTED = { obst2019: "abstract only; effects in single-leg tasks", zhou2017: "head not stated", kudo2015: "single or both legs not stated; 6 cm step" };
+  for (const id of Object.keys(REJECTED)) assert.ok(!(id in FASCICLE), id);
+  for (const row of m.muscles) for (const [phase, c] of Object.entries(row.cells)) {
+    if (!["concentric", "eccentric", "isometric"].includes(c.contraction)) continue;
+    assert.ok(c.evidence.includes("ultrasound"), `${row.id}/${phase}: ${c.contraction} without fascicle evidence`);
+    const ok = c.sources.filter((id) => FASCICLE[id]?.includes(row.id) && sources.find((s) => s.id === id).checked === "본문");
+    assert.ok(ok.length, `${row.id}/${phase}: ${c.contraction} rests on ${c.sources.join(", ")}, none checked for this head and task`);
+  }
+  // The head-unspecified gastrocnemius channel has its own row; the head rows carry none of its numbers.
+  const ga = m.emg.rows.find((r) => r.label.includes("갈래 미기재"));
+  assert.equal(ga.muscle, "gastrocnemius");
+  for (const id of ["gastrocnemius-medial", "gastrocnemius-lateral"]) {
+    const row = m.muscles.find((r) => r.id === id);
+    assert.ok(!row.line, `${id} is not drawn`);
+    for (const [phase, c] of Object.entries(row.cells)) if (phase !== "quiet-standing") assert.equal(c.contraction, "nodata", `${id}/${phase}`);
+  }
+  // The principle figure has no numbers.
+  assert.equal(m.principle.figure, "ankle-moment-arms");
+});
+
+test("the support band covers only the parts of a stance foot that are down", () => {
+  const at = (slug, t, side = "right") => { const m = movements.find((x) => x.slug === slug), l = sidePose(m, t)[side]; return { s: supportSpan(l, 0), l }; };
+  const covers = (s, x) => s.lo <= x + 1e-9 && s.hi >= x - 1e-9;
+  // Walking heel strike: a 3 cm patch under the heel, not the raised forefoot.
+  let { s, l } = at("walking", 0);
+  assert.ok(covers(s, l.heel.x) && !covers(s, l.mtp.x) && near(s.hi - s.lo, 0.03), `heel strike ${JSON.stringify(s)}`);
+  // Loading response: still the heel only while the forefoot comes down.
+  ({ s, l } = at("walking", 0.05));
+  assert.ok(covers(s, l.heel.x) && !covers(s, l.mtp.x), "loading response");
+  // Mid-stance: the whole foot.
+  ({ s, l } = at("walking", 0.2));
+  assert.ok(covers(s, l.heel.x) && covers(s, l.toe.x), "mid-stance");
+  // After heel-off: the forefoot only.
+  ({ s, l } = at("walking", 0.4));
+  assert.ok(!covers(s, l.heel.x) && covers(s, l.mtp.x) && covers(s, l.toe.x), "terminal stance");
+  // Heel raise: the whole foot in quiet standing, the forefoot at the peak.
+  ({ s, l } = at("heel-raise", 0));
+  assert.ok(covers(s, l.heel.x) && covers(s, l.toe.x), "heel raise quiet");
+  const peak = movements.find((x) => x.slug === "heel-raise").phases.find((p) => p.id === "lowering").start;
+  ({ s, l } = at("heel-raise", peak));
+  assert.ok(!covers(s, l.heel.x) && covers(s, l.mtp.x) && covers(s, l.toe.x), "heel raise peak");
+  // Flat-foot movements: heel to toe.
+  for (const slug of ["standing", "sit-to-stand", "stand-to-sit"]) {
+    ({ s, l } = at(slug, 0));
+    assert.ok(near(s.lo, l.heel.x) && near(s.hi, l.toe.x), slug);
+  }
+});
+
+test("heel raise: the foot turns about a fixed MTP joint, the toes keep their line, the heel rises and returns", () => {
+  const m = heel(), still = footFixedPose({ ankle: 0, knee: 0, hip: 0 }).right;
+  const at = Object.fromEntries(m.phases.map((p) => [p.id, p]));
+  let prev = null, top = { y: -Infinity, t: 0 };
+  for (let i = 0; i <= 2000; i++) {
+    const t = i / 2000, l = sidePose(m, t).right;
+    for (const k of ["mtp", "toe"]) assert.ok(near(l[k].x, still[k].x) && near(l[k].y, still[k].y), `t=${t} ${k} moved`);
+    // The foot outline never goes below the floor line.
+    for (const [a, b] of [[l.heel, l.mtp], [l.mtp, l.toe], [l.ankle, l.heel], [l.ankle, l.mtp]])
+      for (let k = 0; k <= 10; k++) assert.ok(a.y + (b.y - a.y) * k / 10 >= FLOOR_GAP - 1e-9, `t=${t} foot below the floor`);
+    // Heel on the floor until heel-off; up in the rise, down in the lowering.
+    if (t < at.rise.start) assert.ok(l.heel.y <= HEEL_DOWN + 1e-9, `t=${t} heel ${l.heel.y} before heel-off`);
+    if (prev && t > at.rise.start && t <= at.rise.end) assert.ok(l.heel.y >= prev - 1e-9, `t=${t} heel drops in the rise`);
+    if (prev && t > at.lowering.start) assert.ok(l.heel.y <= prev + 1e-9, `t=${t} heel rises in the lowering`);
+    if (l.heel.y > top.y) top = { y: l.heel.y, t };
+    prev = l.heel.y;
+  }
+  // Starts flat; ends at heel contact, the 5 mm event threshold (CONSENSUS §4), inside the support band.
+  assert.ok(near(sidePose(m, 0).right.heel.y, FLOOR_GAP, 1e-6), "heel on the floor at t=0");
+  const end = sidePose(m, 1).right.heel.y - FLOOR_GAP;
+  assert.ok(end >= 0 && end <= 0.005 + 1e-9 && end + FLOOR_GAP <= HEEL_DOWN, `heel ${end} m up at contact`);
+  // The peak is the rise/lowering boundary, about 10 cm up (group mean 107 mm, CONSENSUS §0.2).
+  assert.ok(Math.abs(top.t - at.lowering.start) <= 0.005, `peak at ${top.t}, boundary ${at.lowering.start}`);
+  assert.ok(top.y - FLOOR_GAP > 0.09 && top.y - FLOOR_GAP < 0.12, `heel rise ${top.y - FLOOR_GAP}`);
+  // Both feet are drawn as one (legs overlap): the left leg is the right leg.
+  const mid = sidePose(m, 0.5);
+  assert.equal(mid.left, mid.right);
+});
+
+test("the foot-fixed movements draw exactly as before the foot could turn", () => {
+  const dirv = (phi) => ({ x: Math.sin((phi * Math.PI) / 180), y: Math.cos((phi * Math.PI) / 180) });
+  // The flat-foot chain before the heel raise (commit da06376).
+  const flat = (a) => {
+    const ankle = { x: 0, y: SEG.ankleHeight }, knee = add(ankle, dirv(a.ankle), SEG.shank), thigh = a.ankle - a.knee, hip = add(knee, dirv(thigh), SEG.thigh);
+    return { ankle, knee, hip, heel: add(ankle, SEG.heel), mtp: add(ankle, SEG.mtp), toe: add(ankle, SEG.toe), pelvis: thigh + a.hip };
+  };
+  for (const slug of ["standing", "sit-to-stand", "stand-to-sit"]) {
+    const m = movements.find((x) => x.slug === slug);
+    for (let i = 0; i <= 1000; i++) {
+      const a = interpolate(m.keyframes, i / 1000, m.loop), p = footFixedPose(a), f = flat(a);
+      for (const k of ["ankle", "knee", "hip", "heel", "mtp", "toe"]) assert.ok(Math.hypot(p.right[k].x - f[k].x, p.right[k].y - f[k].y) < 1e-12, `${slug} ${k} moved`);
+      assert.ok(Math.abs(p.pelvis - f.pelvis) < 1e-12 && p.right.footPitch === 0, `${slug} pelvis`);
+    }
+  }
 });

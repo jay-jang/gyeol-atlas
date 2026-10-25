@@ -96,6 +96,7 @@ export type JointRow = Cited & { joint: string; values: string; population: stri
 export type Movement = {
   slug: string;
   name: string;
+  alias?: string; // another Korean name shown beside the title (heel raise: 발꿈치 들기)
   nameEn: string;
   view: "side" | "back";
   plane: string; // e.g. "시상면"
@@ -127,8 +128,16 @@ export type Movement = {
   // Phase means of one EMG recording, shown instead of the activity strip:
   // per muscle row (`label` names the muscle actually recorded), % of the
   // reference named in `reference`; values under `cut` are drawn pale.
-  emg?: Cited & { reference: string; cut: number; rows: { muscle: string; label: string; values: Record<string, number> }[] };
+  // `basis` says how the phase means were formed when not from grand-mean envelopes.
+  emg?: Cited & { basis?: string; reference: string; cut: number; rows: { muscle: string; label: string; values: Record<string, number> }[] };
   figureNote?: string; // replaces the default note under the diagram
+  // Sentence links to other movements where a numeric comparison box would
+  // pair unlike tasks (heel-raise CONSENSUS §8): the movement, optionally one
+  // of its phases, and what to compare.
+  related?: (Cited & { slug: string; phase?: string; text: string })[];
+  // An unscaled principle figure under the mechanics text (heel raise: the
+  // ankle moment arms r and d, src/MovementFigure.tsx AnkleMomentArms).
+  principle?: Cited & { figure: "ankle-moment-arms"; caption: string };
 };
 
 // A comparison shown on both pages of a pair of movements

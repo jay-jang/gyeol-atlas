@@ -10,8 +10,9 @@ test("the movement page lists the agreed movements without loading the 3D viewer
   page.on("request", (r) => requests.push(r.url()));
   await page.goto("/#movement");
   await expect(page.getByRole("heading", { level: 1, name: "동작 역학" })).toBeVisible();
-  await expect(page.locator(".mv-list > li strong")).toHaveText(["서 있기", "의자에서 일어서기", "의자에 앉기", "평지 걷기", "계단 오르기", "계단 내리기", "팔 들어올리기"]);
+  await expect(page.locator(".mv-list > li strong")).toHaveText(["서 있기", "의자에서 일어서기", "의자에 앉기", "평지 걷기", "계단 오르기", "계단 내리기", "팔 들어올리기", "발끝 서기"]);
   await expect(page.locator(".mv-later").first()).not.toContainText("계단");
+  await expect(page.locator(".mv-later").first()).not.toContainText("발끝 서기");
   await expect(page).toHaveTitle("동작 역학 — 결 GYEOL");
   await page.locator(".mv-list a").nth(3).click();
   await expect(page.locator(".mv-svg")).toBeVisible();
@@ -131,6 +132,42 @@ test("stairs draw a staircase, report the cycle, tabulate one EMG recording and 
   expect(requests.filter(heavy)).toEqual([]);
 });
 
+// docs/movement-mechanics/heel-raise/CONSENSUS.md §4–§8.
+test("the heel raise names its phases without a %, tabulates two EMG rows and links standing and walking", async ({ page }) => {
+  const requests: string[] = [];
+  page.on("request", (r) => requests.push(r.url()));
+  await page.goto("/#movement/heel-raise/rise");
+  await expect(page.locator(".mv-steps button")).toHaveText([/조용히 서기/, /예비 자세 조정/, /올라가기/, /내려오기/]);
+  await expect(page.locator(".mv-steps button[aria-current=step]")).toHaveText(/올라가기/);
+  // Playback position: the phase name only (no cycle %, no seconds on the slider).
+  await expect(page.getByLabel("재생 위치")).toHaveAttribute("aria-valuetext", "올라가기");
+  await expect(page.locator(".mv-slider-text")).not.toContainText("%");
+  await page.reload();
+  await expect(page.locator(".mv-steps button[aria-current=step]")).toHaveText(/올라가기/);
+  // No centre-of-mass, pressure or force overlay: the option names only the base of support.
+  await expect(page.locator(".mv-options label").filter({ hasText: "지지면" })).toHaveText("지지면");
+  await expect(page.locator(".mv-options label").filter({ hasText: "지면반력" })).toHaveCount(0);
+  // Two recorded muscles; the gastrocnemius channel names no head; no cycle % in the header.
+  const emg = page.locator(".mv-emg-table");
+  await expect(emg.locator("tbody tr")).toHaveCount(2);
+  await expect(emg.locator("tbody tr").filter({ hasText: "갈래 미기재" })).toHaveCount(1);
+  await expect(emg.locator("thead")).not.toContainText("%");
+  await expect(page.locator(".mv-strip")).toHaveCount(0);
+  await expect(page.locator(".mv-contrast-link")).toHaveCount(0);
+  // The unscaled moment-arm figure names r and d without numbers (CONSENSUS §5).
+  const principle = page.locator(".mv-principle-svg");
+  await expect(principle.locator("text")).toHaveText(["r", "d", "발목 중심", "발꿈치힘줄 힘", "지면반력", "앞발 아래(압력중심)"]);
+  expect(await principle.locator("text").allTextContents()).not.toContainEqual(expect.stringMatching(/\d/));
+  // Sentence links instead of a numbers box.
+  await expect(page.locator("#mv-related")).toHaveText("함께 볼 동작");
+  const related = page.locator(".mv-section").filter({ has: page.locator("#mv-related") });
+  await expect(related.getByRole("link", { name: /^서 있기/ })).toHaveCount(1);
+  await related.getByRole("link", { name: "평지 걷기 · 말기 입각기" }).click();
+  await expect(page).toHaveURL(/#movement\/walking\/terminal-stance$/);
+  await expect(page.locator(".mv-steps button[aria-current=step]")).toHaveText(/말기 입각기/);
+  expect(requests.filter(heavy)).toEqual([]);
+});
+
 test("every stair phase keeps the diagram, controls and current phase on a 360×740 first screen", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 740 });
   for (const slug of ["stair-ascent", "stair-descent"]) {
@@ -222,6 +259,11 @@ test("the female body opens carried copies, keeps the ligament preference, and o
   expect(view.selection.ids).toEqual(["FT_FMA258847", "FT_FMA264844"]);
   expect(view.connective).toBe(false);
   await expect(page.locator(".selection-card")).toContainText("남성 원본");
+  // Every heel-raise row has a female structure (CONSENSUS §8): none falls back to the male model.
+  await page.goto("/#movement/heel-raise");
+  await expect(page.locator("a.mv-atlas").first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /남성 모델에서 보기/ })).toHaveCount(0);
+  await expect(page.locator(".mv-atlas-missing")).toHaveCount(0);
   // A row without a carried copy opens the male model only when asked.
   await page.goto("/#movement/sit-to-stand");
   const male = page.getByRole("link", { name: /남성 모델에서 보기/ });
@@ -273,7 +315,8 @@ for (const width of [1440, 390, 360]) {
 }
 
 for (const [width, height, route] of [[390, 844, "walking/loading-response"], [360, 740, "walking/loading-response"], [844, 390, "walking/loading-response"],
-  [390, 844, "stair-ascent/pull-up"], [360, 740, "stair-descent/controlled-lowering"], [844, 390, "stair-descent/weight-acceptance"]] as const) {
+  [390, 844, "stair-ascent/pull-up"], [360, 740, "stair-descent/controlled-lowering"], [844, 390, "stair-descent/weight-acceptance"],
+  [360, 740, "heel-raise/lowering"], [844, 390, "heel-raise/rise"]] as const) {
   test(`phone ${width}×${height} ${route}: one column, no sideways scroll, readable and touchable`, async ({ page }) => {
     await page.setViewportSize({ width, height });
     await page.goto(`/#movement/${route}`);
@@ -304,6 +347,15 @@ for (const [width, height, route] of [[390, 844, "walking/loading-response"], [3
         // Tables fit their wrappers on stair pages (no hidden sideways scroll inside a table).
         if (route.startsWith("stair")) for (const over of await page.locator(".mv-table-wrap").evaluateAll((ws) => ws.map((w) => w.scrollWidth - w.clientWidth))) expect(over).toBeLessThanOrEqual(1);
       }
+    }
+    // At the peak the drawn heel rise shows on a 360 px phone (heel-raise CONSENSUS §5: about 16 px).
+    if (route === "heel-raise/lowering") {
+      const lift = await page.locator(".mv-svg").evaluate((svg) => {
+        const s = svg as SVGSVGElement, scale = s.getBoundingClientRect().height / s.viewBox.baseVal.height;
+        const heel = (s.querySelector(".mv-foot")!.getAttribute("d")!.match(/^M(-?[\d.]+),(-?[\d.]+)/)!);
+        return (-Number(heel[2]) - 0.01) * scale;
+      });
+      expect(lift).toBeGreaterThanOrEqual(12);
     }
     // Diagram labels stay inside the drawing.
     const outside = await page.locator(".mv-svg").evaluate((svg) => {

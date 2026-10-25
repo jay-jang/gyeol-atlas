@@ -390,12 +390,22 @@ export const backLines: Record<string, (p: BackPose) => Pt[]> = {
   "trapezius-lower": (p) => [{ x: 0, y: 1.06 }, along(p.scapula.root, p.scapula.spineMid, 0.1)],
 };
 
-// The ground a stance foot covers: the forefoot always, the heel only while
-// it is down (not in a heel raise or after heel-off in walking).
+// The ground a stance foot covers: only the parts that are down. The heel
+// counts within 5 mm of its flat-foot height (HEEL_DOWN, the heel-off and
+// heel-contact threshold of the heel raise); the metatarsophalangeal joint and
+// toe tip within 15 mm of theirs, because walking draws the mid-stance foot
+// (flat in the source) with the forefoot up to 11 mm high, while at heel
+// strike it is more than 15 mm up until about 6% of the cycle. If no part is
+// down, the lowest one counts. A single point gets a 3 cm patch.
 export const HEEL_DOWN = FLOOR_GAP + 0.005;
+const FOREFOOT_DOWN = 0.015;
 export function supportSpan(leg: Leg, ground: number) {
-  const xs = [leg.mtp.x, leg.toe.x, ...(leg.heel.y - ground <= HEEL_DOWN ? [leg.heel.x] : [])];
-  return { lo: Math.min(...xs), hi: Math.max(...xs), y: ground };
+  const lift = [leg.heel.y - ground - FLOOR_GAP, leg.mtp.y - ground - MTP_ABOVE, leg.toe.y - ground - FLOOR_GAP];
+  const pts = [leg.heel, leg.mtp, leg.toe];
+  const down = pts.filter((_, i) => lift[i] <= (i ? FOREFOOT_DOWN : HEEL_DOWN - FLOOR_GAP) + 1e-9);
+  const xs = (down.length ? down : [pts[lift.indexOf(Math.min(...lift))]]).map((p) => p.x);
+  const lo = Math.min(...xs), hi = Math.max(...xs), mid = (lo + hi) / 2;
+  return hi - lo >= 0.03 ? { lo, hi, y: ground } : { lo: mid - 0.015, hi: mid + 0.015, y: ground };
 }
 
 // Position on a movement's timeline: a looping movement wraps, a single
