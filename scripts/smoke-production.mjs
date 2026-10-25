@@ -44,14 +44,14 @@ try {
   // (seven systems, vessel/nerve supplements, ligaments and tendons; skin paints first).
   const maleModels = ["skin", "muscle", "bone", "organ", "vessel", "nerve", "vessel-full", "nerve-full", "ligament-full", "tendon-full", "reference/lymphatic_male"];
   assert.deepEqual(new Set(requests.filter((r) => r.endsWith(".glb")).map((r) => r.replace(/^.*\/models\//, "").replace(/\.glb$/, ""))), new Set(maleModels));
-  for (const name of ["근육 빠른 보기", "골격 빠른 보기", "장기 빠른 보기", "혈관 빠른 보기", "림프 빠른 보기", "신경 빠른 보기"]) {
+  for (const name of ["근육만 보기", "골격만 보기", "장기만 보기", "혈관만 보기", "림프만 보기", "신경만 보기"]) {
     await page.getByRole("button", { name, exact: true }).click();
     await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
   }
   assert.equal(new Set(requests.filter((r) => r.endsWith(".glb"))).size, maleModels.length);
   await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();
   await page.getByText('해부 모델 로드 완료').waitFor({timeout:60000});
-  for (const name of ["골격 빠른 보기", "장기 빠른 보기", "혈관 빠른 보기", "림프 빠른 보기"]) {
+  for (const name of ["골격만 보기", "장기만 보기", "혈관만 보기", "림프만 보기"]) {
     await page.getByRole("button", { name, exact: true }).click();
     await page.getByText("해부 모델 로드 완료").waitFor({ timeout: 60000 });
   }

@@ -27,7 +27,7 @@ for(const sex of ['male','female'])test(`${sex}: layer view has an explicit peel
     try {
       await page.goto(origin);await ready(page);
       if(sex==='female'){await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
-      await page.getByRole('button',{name:'장기 빠른 보기',exact:true}).click();await ready(page);
+      await page.getByRole('button',{name:'장기만 보기',exact:true}).click();await ready(page);
       await page.setViewportSize({width,height});
       // On phones the entry sits in the depth band opened from the depth row.
       if(width===390){await page.reload();await ready(page);await page.locator('.depth-toggle').click();}

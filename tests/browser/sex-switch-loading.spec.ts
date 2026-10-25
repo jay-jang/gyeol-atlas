@@ -16,7 +16,7 @@ test('switching to female removes male organs even while the female geometry is 
   });
   try {
     await page.goto('/');await ready(page);
-    await page.getByRole('button',{name:'장기 빠른 보기',exact:true}).click();await ready(page);
+    await page.getByRole('button',{name:'장기만 보기',exact:true}).click();await ready(page);
     await expect.poll(async()=>{
       const ids=await page.locator('canvas').getAttribute('data-visible-structure-ids');
       return (ids||'').split(',').includes('FMA7148');

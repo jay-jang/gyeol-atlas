@@ -16,7 +16,7 @@ try {
   await page.goto(origin);await ready();
   for(const sex of ['male','female']) {
     if(sex==='female') {await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready();}
-    await page.getByRole('button',{name:'골격 빠른 보기',exact:true}).click();await ready();
+    await page.getByRole('button',{name:'골격만 보기',exact:true}).click();await ready();
     const catalog=catalogs[sex],allIds=catalog.filter(s=>limbSkeletonRegion(s)).map(s=>s.id);
     for(const region of ['upper-limb','lower-limb','abdomen','pelvis','chest','upper-body','lower-body','whole']) {
       await page.getByLabel('전신 부위 선택').selectOption(region);
@@ -40,7 +40,7 @@ try {
       checks.push({sex,id,region:expected,passed:true});
     }
     await page.getByRole('button',{name:'도구 패널 닫기',exact:true}).click();
-    await page.getByRole('button',{name:'골격 빠른 보기',exact:true}).click();await ready();
+    await page.getByRole('button',{name:'골격만 보기',exact:true}).click();await ready();
     await page.getByLabel('전신 부위 선택').selectOption('upper-limb');
     await page.waitForFunction(()=>JSON.parse(sessionStorage.getItem('gyeol-view-v2'))?.anatomyRegion==='upper-limb');
     const desktopDistance=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('gyeol-view-v2')).camera.position[2]);

@@ -46,7 +46,7 @@ for(const sex of ['male','female'] as const)test(`${sex}: actual meshes obey sou
   const selected=await inspect();expect(selected[target].alpha).toBe(1);expect(selected[target].visible).toBe(true);expect(selected[target].bounds).toEqual(baseline[target].bounds);
   // Search intentionally frames its selection; normal layer switches preserve
   // that pose, rather than requiring the pre-search whole-body camera.
-  await page.getByRole('button',{name:'근육 빠른 보기',exact:true}).click();await ready(page);
+  await page.getByRole('button',{name:'근육만 보기',exact:true}).click();await ready(page);
   expect((await snapshot(page)).camera).toEqual(state.camera);
   await page.getByLabel('전신 부위 선택').selectOption('lower-limb');
   await depth.fill(String(24+baseline[target].rank*36));await ready(page);

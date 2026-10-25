@@ -56,6 +56,32 @@ try {
     ...await page.locator('.ax-depth').evaluate(measure),
     ...await page.locator('.ax-point-bar').evaluate(measure),
   ]});
+  // The open depth band sits above the depth row, outside the row's own box:
+  // measure the band and its steps on their own, as they open in the peel,
+  // with a system left out (summary, "뺌", the left-out stop's reason) and
+  // over a comparison (its notice takes the hint line). Fresh page, fresh view.
+  const band=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce',hasTouch:true});
+  try {
+    await band.goto(origin+'/#atlas/CV12'); await band.getByText('해부 모델 로드 완료').waitFor({timeout:90000});
+    const openBand=async()=>{if(await band.locator('.depth-toggle').getAttribute('aria-expanded')!=='true')await band.locator('.depth-toggle').click();await band.locator('.ax-depth .depth-steps').waitFor({state:'visible'});};
+    const bandSamples=async(name,expected)=>{
+      const samples=[...await band.locator('.ax-depth .depth-band').evaluate(measure),...await band.locator('.ax-depth .depth-steps').evaluate(measure)];
+      for(const text of expected)assert.ok(samples.some(s=>s.text.includes(text)),`${name}: "${text}" measured`);
+      records.push({name,samples});
+    };
+    await openBand();
+    await bandSamples('깊이 단계 띠',['체표','신경','포함: 넣고 빼기','이름: 여기까지 박리','눈: 이것만 보기']);
+    await band.getByRole('checkbox',{name:'장기 포함',exact:true}).click();
+    await band.getByRole('button',{name:'장기 뺌 — 박리에서 뺀 계통',exact:true}).click({force:true});
+    // The note is set a frame later (so a repeated note is announced again).
+    await band.locator('.ax-depth .depth-band-hint').filter({hasText:'장기 뺌 · 왼쪽 ‘포함’으로 다시 넣기'}).waitFor();
+    await bandSamples('깊이 단계 띠 · 장기 뺌',['장기 뺌','뺌','장기 뺌 · 왼쪽 ‘포함’으로 다시 넣기']);
+    await band.keyboard.press('Escape');
+    await band.locator('.point-summary').click();await band.getByRole('button',{name:'대응 장부의 해부 구조 비교'}).click();
+    await band.getByText('해부 모델 로드 완료').waitFor({timeout:90000});
+    await openBand();
+    await bandSamples('깊이 단계 띠 · 비교',['전통적 대응, 압력 경로 아님','연속 박리']);
+  } finally {await band.close();}
   await fs.writeFile('docs/acupoint-expansion/readability.json',JSON.stringify({origin,records},null,2)+'\n');
   const failures=records.flatMap(r=>r.samples.filter(s=>s.font<12||s.contrast<4.5).map(s=>({panel:r.name,...s})));
   assert.deepEqual(failures,[]); console.log(`Visible atlas text on 390×844: minimum 12px and contrast >= 4.5:1 passed (${records.reduce((n,r)=>n+r.samples.length,0)} samples, ${records.length} surfaces).`);

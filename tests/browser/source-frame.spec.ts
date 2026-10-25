@@ -15,7 +15,7 @@ test('leaving an independent detail frame for peeling fits the loaded overview a
     for (const exit of ['peeling','stage','surface']) {
     await (await organs(page)).filter({has:page.getByText(organ,{exact:true})}).click(); await ready(page);
     if (exit === 'peeling') await page.getByLabel('연속 해부 박리 깊이').fill('0');
-    else if (exit === 'stage') await page.getByRole('button',{name:'체표 빠른 보기',exact:true}).click();
+    else if (exit === 'stage') await page.getByRole('button',{name:'체표만 보기',exact:true}).click();
     else {
       await openTool(page,'레이어 조절');
       await page.getByLabel('클릭 선택 대상').selectOption('skin');
@@ -57,7 +57,7 @@ test('female help and layer descriptions use the female overview inventory', asy
   await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click(); await ready(page);
   await expect(page.locator('.scope-source')).toContainText('남성 원본 정합 보완 1,789개');
   for (const [label,layer] of [['근육','muscle'],['골격','bone'],['신경','nerve']]) {
-    await page.getByRole('button',{name:`${label} 빠른 보기`,exact:true}).click(); await ready(page);
+    await page.getByRole('button',{name:`${label}만 보기`,exact:true}).click(); await ready(page);
     const count=femaleStructures.filter(s=>s.layer===layer).length+femaleTransport.filter(r=>transportLayer[r.system]===layer).length;
     await openTool(page,'레이어 조절');
     await expect(page.locator('.anatomy-scope-controls')).toContainText('별도 Visible Human Female 하체 근육은 검색할 때만 보입니다');

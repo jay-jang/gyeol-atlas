@@ -2,7 +2,9 @@
 // sizes in the initial, comparison and isolated-comparison states. Reports
 // overlapping overlay pairs and active point labels outside the canvas.
 // The visual gate (capture-workspace.mjs) asserts the four standard sizes;
-// this audit adds laptop/tablet widths. It is not a physical-device test.
+// this audit adds laptop/tablet widths. Where the depth button shows (phones
+// and short landscape) the open depth band is measured too, alone and over a
+// comparison, and held to the 45% panel limit. It is not a physical-device test.
 import {chromium} from '@playwright/test';
 import fs from 'node:fs/promises';
 
@@ -61,6 +63,19 @@ try {
       const [box, canvas] = [await page.locator(selector).boundingBox(), await page.locator('canvas').boundingBox()];
       if (phone && box && canvas && box.height > canvas.height * .45 + 1) panelLimit.push(`${state}: ${selector} ${box.height.toFixed(1)} > 45% of ${canvas.height.toFixed(1)}`);
     };
+    // The depth band (phones: band over its steps; short landscape: the steps
+    // beside the rail) is measured as one panel: the union of what is shown.
+    const depthBand = async state => {
+      const parts = await page.locator('.ax-depth :is(.depth-band, .depth-steps)').evaluateAll(els => els.filter(el => {
+        const s = getComputedStyle(el), r = el.getBoundingClientRect();
+        // Visually hidden parts (the landscape heading kept for its live region) do not count.
+        return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 1 && r.height > 1;
+      }).map(el => { const r = el.getBoundingClientRect(); return [r.top, r.bottom]; }));
+      const canvas = await page.locator('canvas').boundingBox();
+      if (!parts.length) { panelLimit.push(`${state}: depth band not shown`); return; }
+      const height = Math.max(...parts.map(p => p[1])) - Math.min(...parts.map(p => p[0]));
+      if (phone && canvas && height > canvas.height * .45 + 1) panelLimit.push(`${state}: depth band ${height.toFixed(1)} > 45% of ${canvas.height.toFixed(1)}`);
+    };
     const view = () => page.evaluate(() => JSON.parse(sessionStorage.getItem('gyeol-view-v2') || 'null')?.camera);
     await page.getByLabel('경혈·구조 검색').click(); await page.getByLabel('경혈·구조 검색').fill('위');
     states.search = await settle('search'); await panelHeight('search', '.ax-results'); await page.keyboard.press('Escape');
@@ -82,7 +97,8 @@ try {
     if (!cardParts.title || !cardParts.actions) panelLimit.push(`structure: card title ${cardParts.title ? 'shown' : 'hidden'}, actions ${cardParts.actions ? 'shown' : 'hidden'}`);
     await page.getByRole('button', {name: '구조 선택 해제', exact: true}).click(); await page.getByText('해부 모델 로드 완료').waitFor();
     await page.getByLabel('경혈·구조 검색').fill(''); await page.keyboard.press('Escape');
-    if (await page.locator('.depth-toggle').isVisible()) { await page.locator('.depth-toggle').click(); states.depth = await settle('depth'); await page.keyboard.press('Escape'); }
+    // Phones and short landscape open the depth stops from the depth button.
+    if (await page.locator('.depth-toggle').isVisible()) { await page.locator('.depth-toggle').click(); states.depth = await settle('depth'); await depthBand('depth'); await page.keyboard.press('Escape'); }
     await page.locator('.point-summary').click();
     await page.getByRole('button', {name: '대응 장부의 해부 구조 비교'}).click();
     await page.getByText('해부 모델 로드 완료').waitFor();
@@ -94,6 +110,15 @@ try {
       return {note: note.top >= c.top - .5 && note.bottom <= Math.min(c.bottom, actions.top) + .5, actions: actions.top >= c.top - .5 && actions.bottom <= c.bottom + .5};
     });
     if (!compareCard.note || !compareCard.actions) panelLimit.push(`compare: card notice ${compareCard.note ? 'shown' : 'covered'}, actions ${compareCard.actions ? 'shown' : 'hidden'}`);
+    // The depth band over a comparison carries its limits (phones: in the
+    // band's hint line; short landscape: a row above the steps), within 45%.
+    if (await page.locator('.depth-toggle').isVisible()) {
+      await page.locator('.depth-toggle').click();
+      states['depth-compare'] = await settle('depth-compare'); await depthBand('depth-compare');
+      const bandNote = await page.locator('.ax-depth .panel-comparison-note').filter({visible: true}).first().innerText().catch(() => '');
+      if (!/전통적 대응, 압력 경로 아님/.test(bandNote)) panelLimit.push('depth-compare: comparison note missing in the open depth band');
+      await page.keyboard.press('Escape');
+    }
     // A tool panel over a comparison keeps its limits in view and the camera still.
     const before = await view();
     await page.getByRole('button', {name: '표시 설정', exact: true}).click();
@@ -117,5 +142,6 @@ const failures = results.flatMap(r => Object.entries(r.states).flatMap(([state, 
   ...m.labels.filter(l => !l.insideCanvas).map(l => `${r.name} ${state}: label ${l.text} outside canvas`),
   ...m.offscreen.map(o => `${r.name} ${state}: ${o} off screen`)]).concat(r.errors.map(e => `${r.name}: ${e}`), r.panelLimit.map(p => `${r.name} ${p}`)));
 await fs.writeFile(output, JSON.stringify({date: new Date().toISOString(), origin, viewports: results.length, failures, results}, null, 2) + '\n');
-console.log(failures.length ? failures.join('\n') : `Scene overlays separate, phone panels stay within 45% and point labels stay on canvas at ${results.length} viewports × ${Object.keys(results[0].states).length} states.`);
+const measured = results.reduce((n, r) => n + Object.keys(r.states).length, 0);
+console.log(failures.length ? failures.join('\n') : `Scene overlays separate, phone panels and depth bands stay within 45% and point labels stay on canvas at ${results.length} viewports (${measured} measured states; depth band states: ${results.filter(r => r.states.depth).map(r => r.name).join(', ')}).`);
 if (failures.length) process.exitCode = 1;

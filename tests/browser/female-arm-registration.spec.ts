@@ -95,7 +95,7 @@ test('female arm and toe rest poses match calibrated geometry through peeling, s
   },{url:fiberUrl,ids:Object.keys(expected)})).toBe(0);
   await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
   expect(await geometryHashes()).toEqual({hashes:expected,calibrated:60});
-  await page.getByRole('button',{name:'골격 빠른 보기',exact:true}).click();await ready(page);
+  await page.getByRole('button',{name:'골격만 보기',exact:true}).click();await ready(page);
   await page.getByRole('button',{name:'계통 전체 보기',exact:true}).click();
   await page.screenshot({path:'docs/anatomy-alignment/female-arms-registered.png'});
   await page.setViewportSize({width:390,height:844});

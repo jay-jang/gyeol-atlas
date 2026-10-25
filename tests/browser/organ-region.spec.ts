@@ -14,7 +14,7 @@ for(const sex of ['male','female'] as const)test(`${sex}: source organ regions, 
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   await page.goto('/');await ready(page);
   if(sex==='female'){await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
-  await page.getByRole('button',{name:'장기 빠른 보기',exact:true}).click();await ready(page);
+  await page.getByRole('button',{name:'장기만 보기',exact:true}).click();await ready(page);
   await openTool(page,'레이어 조절');
   for(const layer of (sex==='female'?['신경','체표','림프']:['신경','혈관']))await page.getByRole('checkbox',{name:`${layer} 레이어`,exact:true}).check();
   await ready(page);await closeTool(page);

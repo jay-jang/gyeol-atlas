@@ -170,19 +170,37 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const selected = routeSelection || fallbackPoint;
   const [panel, setPanel] = useState<Panel>(null);
   const [popover, setPopover] = useState<Popover>(null);
-  // "계통 빼기": the depth rail's systems become include/leave-out checks.
-  // The phone band opens on its usual peel stops again.
-  const [excluding, setExcluding] = useState(false);
-  const excludeToggle = useRef<HTMLButtonElement>(null);
   const popoverTrigger = useRef<HTMLElement | null>(null);
   // Presenting hides the exploration tools but keeps the selection, its
   // notices and the camera; it is a UI mode, not part of the saved view.
   const [presenting, setPresenting] = useState(false);
   const presentTrigger = useRef<HTMLElement | null>(null);
   const phone = useMedia("(max-width: 700px)");
-  useEffect(() => { if (phone && popover !== "depth") setExcluding(false); }, [phone, popover]);
-  // The choice belongs to the peel; an explicit view closes it.
-  useEffect(() => { if (state.displayMode !== "dissection") setExcluding(false); }, [state.displayMode]);
+  // Short landscape phones open the stops in a band beside the rail, like the phone band.
+  const shortLandscape = useMedia("(min-width: 701px) and (max-height: 560px)");
+  // What the rail says after a user changes what the peel keeps. Every note is
+  // announced (cleared first, so a repeated note is announced again); a reason
+  // (a refused last system, a pressed left-out stop) is also shown: beside its
+  // row on rails, in place of the band legend on phones and in landscape. A
+  // reason is transient: the next depth, selection or sex change, Escape or a
+  // pointer outside the depth group hides it.
+  type KeepNote = { text: string; reason: boolean; layer?: Layer };
+  const [keepNote, setKeepNote] = useState<KeepNote>({ text: "", reason: false });
+  const keepNoteReason = useRef(false);
+  keepNoteReason.current = keepNote.reason;
+  const announce = (next: KeepNote) => { setKeepNote({ text: "", reason: false }); requestAnimationFrame(() => setKeepNote(next)); };
+  const hideReason = () => setKeepNote((note) => note.reason ? { ...note, reason: false } : note);
+  useEffect(() => setKeepNote({ text: "", reason: false }), [popover, state.displayMode, state.anatomyRegion]);
+  useEffect(hideReason, [state.dissection, state.selection, state.sex, panel, presenting]);
+  useEffect(() => {
+    if (!keepNote.reason) return;
+    const down = (event: PointerEvent) => { if (!(event.target as Element | null)?.closest?.(".ax-depth")) hideReason(); };
+    addEventListener("pointerdown", down, true);
+    return () => removeEventListener("pointerdown", down, true);
+  }, [keepNote.reason]);
+  // A tool panel opening over the scene closes the stops band.
+  useEffect(() => { if (panel) setPopover((current) => current === "depth" ? null : current); }, [panel]);
+  const depthSlider = useRef<HTMLInputElement>(null);
   // Short landscape phones also take the compact camera group.
   const compactCamera = useMedia("(max-width: 700px), (max-height: 500px)");
   const [search, setSearch] = useState("");
@@ -293,14 +311,21 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   }, [panel]);
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
-      const typing = e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLSelectElement;
+      // Checks, sliders and buttons do not take text, so '/' still opens search there.
+      const typing = (e.target instanceof HTMLInputElement && !["checkbox", "radio", "range", "button", "submit", "reset", "color"].includes(e.target.type)) || e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLSelectElement;
       if (e.key === "Escape") {
         if (e.defaultPrevented) return;
         const pad = workspaceRef.current?.querySelector<HTMLDetailsElement>("details.movement-pad[open]");
         if (pad) { pad.open = false; pad.querySelector("summary")?.focus({ preventScroll: true }); return; }
-        if (popover) { setPopover(null); requestAnimationFrame(() => focusWithoutOpeningSearch(popoverTrigger.current)); return; }
-        // The rail's "계통 빼기" choice closes like a picker while it can be seen.
-        if (excluding && excludeToggle.current?.checkVisibility({ visibilityProperty: true })) { setExcluding(false); requestAnimationFrame(() => excludeToggle.current?.focus({ preventScroll: true })); return; }
+        // An open picker closes first while its trigger can be seen; one that
+        // cannot (a phone band left open across a resize) is cleared silently.
+        if (popover) {
+          const shown = popoverTrigger.current?.checkVisibility({ visibilityProperty: true }) ?? false;
+          setPopover(null);
+          if (shown) { requestAnimationFrame(() => focusWithoutOpeningSearch(popoverTrigger.current)); return; }
+        }
+        // Panels and presenting take Escape first; a visible reason closes after them.
+        if (keepNoteReason.current && !panel && !presenting) { hideReason(); return; }
         if (!panel) {
           if (presenting) stopPresenting();
           return;
@@ -312,14 +337,16 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
         requestAnimationFrame(() => focusWithoutOpeningSearch(triggerRef.current));
       } else if (e.key === "/" && !typing && !e.metaKey && !e.ctrlKey) {
         e.preventDefault();
-        triggerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+        const active = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+        // Search closes the stops band; Escape then returns to the band's toggle.
+        triggerRef.current = popover === "depth" && active?.closest(".depth-steps") ? popoverTrigger.current : active;
         setPanel("search");
         focusWithoutOpeningSearch(searchRef.current);
       }
     };
     addEventListener("keydown", key);
     return () => removeEventListener("keydown", key);
-  }, [panel, popover, presenting, excluding, focusWithoutOpeningSearch]);
+  }, [panel, popover, presenting, focusWithoutOpeningSearch]);
   // A picker closes when the pointer goes down anywhere outside it.
   useEffect(() => {
     if (!popover) return;
@@ -333,6 +360,12 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   }, [popover]);
   const togglePopover = (name: NonNullable<Popover>, trigger: HTMLElement) => {
     popoverTrigger.current = trigger;
+    // The stops band takes the scene's tool layer: a side panel and the 시점 menu close.
+    if (name === "depth" && popover !== "depth") {
+      setPanel(null);
+      const pad = workspaceRef.current?.querySelector<HTMLDetailsElement>("details.movement-pad[open]");
+      if (pad) pad.open = false;
+    }
     setPopover((current) => current === name ? null : name);
   };
   const closePopover = () => {
@@ -341,7 +374,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   };
   const startPresenting = (trigger: HTMLElement) => {
     presentTrigger.current = trigger;
-    setPanel(null); setPopover(null); setExcluding(false); setPresenting(true);
+    setPanel(null); setPopover(null); setPresenting(true);
     requestAnimationFrame(() => workspaceRef.current?.querySelector<HTMLElement>(".ax-present-exit")?.focus({ preventScroll: true }));
   };
   // The phone entry sits in the settings panel, which closed on entry.
@@ -642,8 +675,32 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const excludedCount = state.excluded.length ? `${state.excluded.length}개 뺌` : "";
   const depthState = state.displayMode === "dissection" ? `${state.dissection.toFixed(1)}% · ${depthName(state.dissection)}` : depthMode;
   const depthSummary = depthState + (excludedCount && ` · ${excludedCount}`);
-  const excludePickerId = useId();
+  const keepHelpId = useId(), lastHelpId = useId(), stepsId = useId();
   const setExcluded = (layer: Layer, included: boolean) => dispatch({ type: "excluded", value: included ? state.excluded.filter((l) => l !== layer) : [...state.excluded, layer] });
+  // Leaving systems out is part of the peel: each stop row carries its own
+  // "○○ 포함" check while peeling (explicit views show a static swatch).
+  const peeling = state.displayMode === "dissection";
+  const lastKept = state.excluded.length === stages.length - 1;
+  const LAST = "마지막 남은 계통은 뺄 수 없습니다";
+  const toggleKept = (layer: Layer, keep: boolean) => {
+    if (!keep && lastKept && !state.excluded.includes(layer)) { announce({ text: LAST, reason: true, layer }); return; }
+    const next = keep ? state.excluded.filter((l) => l !== layer) : [...state.excluded, layer];
+    setExcluded(layer, keep);
+    const limit = peelLimit(next, state.anatomyRegion);
+    announce({ text: `${layerNames[layer]} ${keep ? "다시 넣음" : "뺌"}${limit < 100 ? ` · ${limit}%까지` : ""}`, reason: false });
+  };
+  // The bands keep the three roles in view; the last-system rule takes the line while it applies.
+  const legend = <><span>포함: 넣고 빼기</span><span>이름: 여기까지 박리</span><span>눈: 이것만 보기</span></>;
+  const hint = keepNote.reason ? keepNote.text : peeling ? (lastKept ? LAST : legend) : "이름: 그 계통까지 박리 · 눈: 그 계통만 보기";
+  // A stop or eye run from a band closes it and hands focus back to its toggle.
+  const leaveBand = () => {
+    if (popover !== "depth") return;
+    setPopover(null);
+    requestAnimationFrame(() => popoverTrigger.current?.focus({ preventScroll: true }));
+  };
+  // The entry removes itself when the peel starts, so focus moves to the slider.
+  const peelEntry = (className: string) => <button className={className} aria-label={`현재 기준 ${peelStart.toFixed(1)}%에서 연속 박리 시작`}
+    onClick={() => { dispatch({ type: "dissection", value: state.dissection }); requestAnimationFrame(() => depthSlider.current?.focus({ preventScroll: true })); }}>{peelStart.toFixed(1)}%에서 연속 박리</button>;
   // Female markers are unreviewed approximations, hidden until asked for.
   const femaleHidden = state.sex === "female" && !state.femaleMarkers;
   const markerCount = femaleHidden || state.detail ? 0 : markers.length;
@@ -656,6 +713,45 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const comparisonLine = state.comparison ? <p className="panel-comparison-note">
     {comparisonPoint?.name || state.comparison.pointId} · {state.comparison.name} 비교 — 전통적 대응, 압력 경로 아님{carriedComparison && " · 남성 원본을 여성 골격·피부 대응으로 옮긴 보완 구조"}
   </p> : null;
+  const steps = (
+          <ol className="depth-steps" id={stepsId} aria-label="계통 단계">
+            {/* Landscape: the comparison notice tops the band; otherwise a reason does. */}
+            {shortLandscape && (comparisonLine || keepNote.reason) && <li className="depth-steps-note">{comparisonLine ?? <p className="depth-band-hint" aria-hidden="true">{keepNote.text}</p>}</li>}
+            {stages.map((stage, index) => {
+              const layer = stage.layer, name = layerNames[layer];
+              const left = state.excluded.includes(layer);
+              // Outside the peel a drawn system (an eye view) shows as current, not as left out.
+              const shownLeft = left && !(!peeling && state.layers[layer]);
+              const locked = lastKept && !left;
+              const peeled = peeling && index < state.stage;
+              const current = peeling ? index === state.stage : soloLayer === layer;
+              // Proportional to the real depth, but pushed up so neighbouring
+              // systems never share a pointer target (the ticks keep the true depth).
+              const top = `max(calc(var(--thumb) / 2), min(${stageDepth.slice(index).map((depth, offset) => `calc(var(--thumb) / 2 + (100% - var(--thumb)) * ${depth / 100} - ${offset} * var(--stop-gap))`).join(", ")}))`;
+              const stopTip = left ? `${name} 뺌 · ${peeling ? "왼쪽 ‘포함’으로 다시 넣기" : "연속 박리에서 다시 넣기"}` : `${name}까지 박리 · ${stageDepth[index]}%`;
+              return (
+                <li key={layer} style={{ ["--at-f" as string]: stageDepth[index] / 100, ["--stop-top" as string]: top }} className={current ? "active" : shownLeft ? "excluded" : peeled ? "peeled" : undefined}>
+                  {peeling
+                    ? <label className="ax-keep" data-tip-side="right" data-tip={locked ? LAST : left ? `${name} 다시 넣기` : `${name} 빼기 · 어느 깊이에서도 그리지 않음`}>
+                      <input type="checkbox" className={`ax-keep-input ax-swatch ${layer}`} aria-label={`${name} 포함`} checked={!left}
+                        aria-disabled={locked || undefined} aria-describedby={locked ? `${keepHelpId} ${lastHelpId}` : keepHelpId}
+                        onChange={(event) => toggleKept(layer, event.target.checked)} />
+                    </label>
+                    : <span className="ax-keep is-static" aria-hidden="true"><i className={`ax-swatch ${layer}`} /></span>}
+                  <button className="ax-stop" aria-disabled={left || undefined} onClick={() => { if (left) { announce({ text: stopTip, reason: true, layer }); return; } dispatch({ type: "dissection", value: stageDepth[index] }); leaveBand(); }} aria-label={left ? `${name} 뺌 — 박리에서 뺀 계통` : `${name}까지 박리`} data-tip={stopTip} data-tip-side="right">
+                    <span className="ax-stop-name">{name}</span>{shownLeft && <span className="ax-stop-left">뺌</span>}
+                  </button>
+                  <button className="ax-solo" aria-label={`${name}만 보기`} data-tip={`${name}만 보기`} data-tip-side="right" aria-pressed={!peeling && soloLayer === layer} onClick={() => { dispatch({ type: "stage", index }); leaveBand(); }}><Eye size={13} /></button>
+                  {/* Rails: a reason opens beside the row it is about (touch has no tooltips). */}
+                  {!phone && !shortLandscape && keepNote.reason && keepNote.layer === layer && <span className="ax-row-note" aria-hidden="true">{keepNote.text}</span>}
+                </li>
+              );
+            })}
+            {shortLandscape && (peeling
+              ? <li className="depth-steps-aside" aria-hidden="true"><p>{peeling && lastKept ? LAST : legend}</p></li>
+              : <li className="depth-steps-aside">{peelEntry("peel-entry")}</li>)}
+          </ol>
+  );
 
   return (
     <main
@@ -809,12 +905,12 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
                 <tr><th scope="row">이동</th><td>모델을 클릭한 뒤 W/S 전진·후진, A/D 좌우, Q/E 아래·위, Shift는 빠르게</td><td>시점 안의 이동 버튼</td></tr>
                 <tr><th scope="row">겉에서 속으로</th><td>깊이 막대 끌기·계통 이름 누르기, Alt/Option+휠 또는 모델에 초점을 둔 채 Alt/Option+↑/↓</td><td>아래 깊이 줄, 단계 버튼에서 계통 고르기</td></tr>
                 <tr><th scope="row">한 계통만</th><td>계통 옆 눈 버튼</td><td>단계 버튼 → 눈 버튼</td></tr>
-                <tr><th scope="row">계통 빼고 박리</th><td>깊이 막대의 ‘계통 빼기’ → 뺄 계통의 체크 끄기</td><td>단계 버튼 → ‘계통 빼기’ → 체크 끄기</td></tr>
+                <tr><th scope="row">계통 빼고 박리</th><td>깊이 막대 계통 행 왼쪽 ‘포함’ 체크 끄기(다시 체크하면 넣기)</td><td>단계 버튼 → 계통의 ‘포함’ 체크 끄기</td></tr>
                 <tr><th scope="row">장부 비교</th><td colSpan={2}>경혈 상세의 ‘대응 장부의 해부 구조 비교’</td></tr>
               </tbody>
             </table>
             <h3>알아둘 점</h3>
-            <p>처음에는 모든 계통이 몸 안에 함께 있고, 피부 → 근육(개별 근육 순서) → 골격 → 장기 → 혈관 → 림프 순서로 사라지며 신경이 남습니다. ‘계통 빼기’로 뺀 계통은 깊이와 관계없이 그리지 않고(예: 장기를 빼고 근육만 박리), 박리는 남긴 가장 안쪽 계통이 사라지기 전에 멈춥니다. 보이지 않는 뒷면의 표식은 몸을 돌리면 나타납니다.</p>
+            <p>처음에는 모든 계통이 몸 안에 함께 있고, 피부 → 근육(개별 근육 순서) → 골격 → 장기 → 혈관 → 림프 순서로 사라지며 신경이 남습니다. 깊이 막대에서 ‘포함’ 체크를 끈 계통은 깊이와 관계없이 그리지 않고(예: 장기를 빼고 근육만 박리), 박리는 남긴 가장 안쪽 계통이 사라지기 전에 멈춥니다. 보이지 않는 뒷면의 표식은 몸을 돌리면 나타납니다.</p>
             <p>박리 백분율은 실제 조직 깊이가 아닌 교육용 표시 순서입니다. 가슴·복벽·엉덩이·종아리의 확인된 근육 관계는 표층부터 제거하며, 그 밖의 근육 순서는 기하학적 추정이므로 전체 해부 층서가 검증된 것은 아닙니다.</p>
             <p>표식은 체표 기준의 학습용 근사입니다. 장부 대응은 전통적 분류이며 압력 전달 경로가 아닙니다.</p>
             <p>{stageDescription(state.stage, state.sex)}</p>
@@ -878,82 +974,49 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
         </div>
       )}
 
-      <nav className="depth-explorer ax-depth" aria-label="인체 깊이 탐색" data-mode={state.displayMode} data-open={popover === "depth"} data-excluding={excluding} data-popover-root>
+      <nav className="depth-explorer ax-depth" aria-label="인체 깊이 탐색" data-mode={state.displayMode} data-open={popover === "depth"} data-compare={Boolean(state.comparison)} data-popover-root>
         <select className="ax-select ax-region" aria-label="전신 부위 선택" value={state.anatomyRegion} onChange={(e) => {
           const value = e.target.value as ViewState["anatomyRegion"];
           dispatch({ type: "anatomy-region", value });
           requestAnimationFrame(() => camera(value === "whole" ? "fit" : "anatomy-region"));
         }}>{Object.entries(anatomyRegionNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}</select>
-        <button className="depth-toggle" aria-expanded={popover === "depth"} aria-label={`깊이 단계 선택: ${depthSummary}`} onClick={(e) => togglePopover("depth", e.currentTarget)}>
+        <button className="depth-toggle" aria-expanded={popover === "depth"} aria-controls={stepsId} aria-label={`깊이 단계 선택: ${depthSummary}`} onClick={(e) => togglePopover("depth", e.currentTarget)}>
           <span className="depth-toggle-text">{depthState}</span>{excludedCount && <small className="depth-toggle-count">{excludedCount}</small>}<ChevronDown size={14} />
         </button>
         <div className="depth-band">
           <div className="depth-heading">
-            {state.displayMode === "dissection"
+            {peeling
               ? <strong aria-live="polite">{state.dissection.toFixed(1)}%<small>{depthName(state.dissection)}</small></strong>
               : <>
                 <strong className="depth-mode">{depthMode}</strong>
-                <button className="peel-entry" aria-label={`현재 기준 ${peelStart.toFixed(1)}%에서 연속 박리 시작`} onClick={() => dispatch({ type: "dissection", value: state.dissection })}>{peelStart.toFixed(1)}%에서 연속 박리</button>
+                {peelEntry("peel-entry")}
               </>}
-          </div>
-          {/* Part of the peel: explicit views open their own systems, so the
-              choice waits for the peel there (the rows keep their hollow swatches). */}
-          {state.displayMode === "dissection" && <div className="depth-exclude">
-            {/* The name is set here: the CSS tooltip would otherwise join it. */}
-            <button ref={excludeToggle} className="exclude-toggle" aria-label={excludedCount ? `계통 빼기 · ${excludedCount}` : "계통 빼기"} aria-pressed={excluding} aria-controls={excluding ? excludePickerId : undefined}
-              data-tip="체크를 끈 계통은 박리 깊이와 관계없이 빠집니다" data-tip-side="right" onClick={() => setExcluding((value) => !value)}>
-              <span className="exclude-label">계통 빼기</span>{excludedCount && !excluding && <span className="exclude-short">{excludedCount}</span>}
-            </button>
-            {state.excluded.length > 0 && <small className="depth-excluded">
+            {peeling && state.excluded.length > 0 && <small className="depth-excluded">
               <span>{state.excluded.length > 3 ? `${state.excluded.length}개 계통` : excludedNames} 뺌</span>{peelEnd < 100 && <span>{peelEnd}%까지</span>}
             </small>}
-            {excluding && <div className="exclude-picker" id={excludePickerId} role="group" aria-label="박리에 포함할 계통">
-              <p className="exclude-hint">체크를 끈 계통은 박리 깊이와 관계없이 빠집니다</p>
-              <ul>
-                {stages.map((stage) => {
-                  const name = layerNames[stage.layer], left = state.excluded.includes(stage.layer);
-                  return <li key={stage.layer}><label className="ax-include">
-                    <input type="checkbox" aria-label={`${name} 포함`} checked={!left} disabled={!left && state.excluded.length === stages.length - 1} onChange={(event) => setExcluded(stage.layer, event.target.checked)} />
-                    <span className="ax-include-name"><i className={`layer-dot ${stage.layer}`} />{name}</span>
-                  </label></li>;
-                })}
-                <li><button className="exclude-done" onClick={() => { setExcluding(false); excludeToggle.current?.focus({ preventScroll: true }); }}>완료</button></li>
-              </ul>
-            </div>}
-          </div>}
-          <p className="depth-band-hint">{excluding ? "체크를 끈 계통은 박리 깊이와 관계없이 빠집니다" : "이름: 그 계통까지 박리 · 눈: 그 계통만 보기"}</p>
+          </div>
+          {peeling && !state.excluded.length && <small className="depth-keep-hint" aria-hidden="true">체크를 끄면 박리에서 뺍니다</small>}
+          {/* Rails: the three columns of every stop row, named once above them. */}
+          {peeling && <div className="depth-cols" aria-hidden="true"><span>포함</span><span>박리</span><span>만 보기</span></div>}
           {/* Only the phone band covers the comparison card; the wide rail never does. */}
-          {phone && comparisonLine}
+          {phone && comparisonLine ? comparisonLine : <p className="depth-band-hint" aria-hidden="true">{hint}</p>}
         </div>
         <div className="ax-depth-track" style={{ ["--fill" as string]: `${state.dissection}%`, ["--limit" as string]: `${peelEnd}%` }}>
           <input
+            ref={depthSlider}
             type="range" min="0" max="100" step="0.5"
             value={state.dissection}
             aria-label="연속 해부 박리 깊이"
-            aria-valuetext={(state.displayMode === "dissection" ? `${state.dissection.toFixed(1)}% 해부 깊이 · ${depthName(state.dissection)}` : `계통별 보기 중 · 박리 시작 기준 ${peelStart.toFixed(1)}%`) + (state.excluded.length ? ` · ${excludedNames} 뺌, ${peelEnd}%까지` : "")}
+            aria-valuetext={(peeling ? `${state.dissection.toFixed(1)}% 해부 깊이 · ${depthName(state.dissection)}` : `계통별 보기 중 · 박리 시작 기준 ${peelStart.toFixed(1)}%`) + (state.excluded.length ? ` · ${excludedNames} 뺌, ${peelEnd}%까지` : "")}
             onChange={(event) => dispatch({ type: "dissection", value: Number(event.target.value) })}
           />
           <span className="depth-ticks" aria-hidden="true">{stageDepth.map((depth, index) => <i key={index} style={{ ["--at-f" as string]: depth / 100 }} />)}</span>
-          <ol className="depth-steps">
-            {stages.map((stage, index) => {
-              const name = layerNames[stage.layer];
-              const left = state.excluded.includes(stage.layer);
-              const peeled = state.displayMode === "dissection" && index < state.stage;
-              const current = state.displayMode === "dissection" ? index === state.stage : soloLayer === stage.layer;
-              // Proportional to the real depth, but pushed up so neighbouring
-              // systems never share a pointer target (the ticks keep the true depth).
-              const top = `max(calc(var(--thumb) / 2), min(${stageDepth.slice(index).map((depth, offset) => `calc(var(--thumb) / 2 + (100% - var(--thumb)) * ${depth / 100} - ${offset} * var(--stop-gap))`).join(", ")}))`;
-              return (
-                <li key={stage.layer} style={{ ["--at-f" as string]: stageDepth[index] / 100, ["--stop-top" as string]: top }} className={current ? "active" : left ? "excluded" : peeled ? "peeled" : ""}>
-                  <button className="ax-stop" aria-disabled={left || undefined} onClick={() => { if (left) return; dispatch({ type: "dissection", value: stageDepth[index] }); setPopover(null); }} aria-label={left ? `${name}까지 박리 — 뺀 계통` : `${name}까지 박리`} data-tip={left ? `${name} 뺌 · ‘계통 빼기’에서 다시 넣기` : `${name}까지 박리 · ${stageDepth[index]}%`} data-tip-side="right">
-                      <i className={`layer-dot ${stage.layer}`} /><span className="ax-stop-name">{name}</span>
-                    </button>
-                  <button className="ax-solo" aria-label={`${name} 빠른 보기`} data-tip={`${name}만 보기`} data-tip-side="right" aria-pressed={soloLayer === stage.layer} onClick={() => { dispatch({ type: "stage", index }); setPopover(null); }}><Eye size={13} /></button>
-                </li>
-              );
-            })}
-          </ol>
+          {!shortLandscape && steps}
         </div>
+        {shortLandscape && steps}
+        <span id={keepHelpId} hidden>체크를 끄면 그 계통은 박리 깊이와 관계없이 그리지 않습니다</span>
+        <span id={lastHelpId} hidden>{LAST}</span>
+        <p className="depth-status ax-vh" role="status">{keepNote.text}</p>
       </nav>
 
       <aside className="ax-inspector" aria-label="선택 정보">

@@ -12,7 +12,7 @@ for(const sex of ['male','female'] as const) test(`${sex} limb regions agree wit
   page.on('request',r=>{if(/\/@react-three_fiber\.js\?/.test(r.url()))fiberUrl=r.url();});
   await page.goto('/');await ready(page);
   if(sex==='female') {await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);}
-  await page.getByRole('button',{name:'골격 빠른 보기',exact:true}).click();await ready(page);
+  await page.getByRole('button',{name:'골격만 보기',exact:true}).click();await ready(page);
   const catalog=sex==='female'?female:male;
   const ids=catalog.filter((s:any)=>limbSkeletonRegion(s)).map((s:any)=>s.id);
   const rendered=()=>page.evaluate(async({url,ids})=>{
@@ -54,7 +54,7 @@ for(const sex of ['male','female'] as const) test(`${sex} limb regions agree wit
   await page.getByLabel('연속 해부 박리 깊이').fill('44.5');await ready(page);
   expect((await snapshot(page)).anatomyRegion).toBe('upper-limb');
   expect((await rendered()).hashes).toEqual(original);
-  await page.getByRole('button',{name:'골격 빠른 보기',exact:true}).click();await ready(page);
+  await page.getByRole('button',{name:'골격만 보기',exact:true}).click();await ready(page);
   await page.getByLabel('전신 부위 선택').selectOption('upper-limb');
   if(await page.getByRole('button',{name:'도구 패널 닫기',exact:true}).isVisible())await closeTool(page);
   await page.screenshot({path:`docs/anatomy-alignment/${sex}-limb-region-desktop.png`});

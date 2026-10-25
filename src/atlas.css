@@ -264,13 +264,13 @@ body:has(.ax) .site-footer { display: none; }
 .ax .connective-setting button:hover, .ax .connective-setting button:focus-visible { border-color: var(--ax-accent); color: var(--ax-accent); }
 .ax .connective-setting p { margin: 0; }
 .ax .layer-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: 0 0 auto; }
-.ax .layer-dot.skin { background: #c98b73; }
-.ax .layer-dot.muscle { background: #c0504a; }
-.ax .layer-dot.bone { background: #e3d7b3; }
-.ax .layer-dot.organ { background: #c07a86; }
-.ax .layer-dot.vessel { background: #d34b44; }
-.ax .layer-dot.lymph { background: #58c3a0; }
-.ax .layer-dot.nerve { background: #e5c35a; }
+.ax .layer-dot.skin, .ax .ax-swatch.skin { background-color: #c98b73; }
+.ax .layer-dot.muscle, .ax .ax-swatch.muscle { background-color: #c0504a; }
+.ax .layer-dot.bone, .ax .ax-swatch.bone { background-color: #e3d7b3; }
+.ax .layer-dot.organ, .ax .ax-swatch.organ { background-color: #c07a86; }
+.ax .layer-dot.vessel, .ax .ax-swatch.vessel { background-color: #d34b44; }
+.ax .layer-dot.lymph, .ax .ax-swatch.lymph { background-color: #58c3a0; }
+.ax .layer-dot.nerve, .ax .ax-swatch.nerve { background-color: #e5c35a; }
 .ax .layer-dot.connective { background: linear-gradient(90deg, var(--ax-ligament) 50%, var(--ax-tendon) 50%); }
 .ax .layer-dot.ligament { background: var(--ax-ligament); }
 .ax .layer-dot.tendon { background: var(--ax-tendon); box-shadow: inset -2px -2px 0 rgba(120, 140, 170, .35); }
@@ -284,7 +284,8 @@ body:has(.ax) .site-footer { display: none; }
    true depth on the track. */
 .ax-depth {
   --thumb: 16px;
-  position: absolute; z-index: 20; left: var(--ax-gap); top: calc(var(--ax-gap) + 54px); width: 140px;
+  --keep-tip: 101px;
+  position: absolute; z-index: 20; left: var(--ax-gap); top: calc(var(--ax-gap) + 54px); width: 156px;
   height: min(520px, calc(100% - var(--ax-gap) * 2 - 54px - var(--ax-bottom-h, 64px) - 16px));
   display: flex; flex-direction: column; gap: 8px; padding: 10px 10px 12px; border-radius: var(--ax-radius);
   background: var(--ax-surface); border: 1px solid var(--ax-line);
@@ -292,7 +293,7 @@ body:has(.ax) .site-footer { display: none; }
 .ax-depth .ax-region { width: 100%; max-width: none; min-height: 32px; height: auto; font-size: 13px; }
 .ax-depth .depth-toggle, .ax-depth .depth-band-hint { display: none; }
 .ax-depth .depth-heading strong, .ax-depth .peel-entry { display: grid; font-size: 18px; font-weight: 650; line-height: 1.15; color: #fff; text-align: left; }
-.ax-depth .depth-heading small { font-size: 12px; font-weight: 500; color: var(--ax-accent); margin-top: 2px; }
+.ax-depth .depth-heading strong small { font-size: 12px; font-weight: 500; color: var(--ax-accent); margin-top: 2px; }
 .ax-depth .depth-heading .depth-mode { font-size: 13px; color: var(--ax-text); margin-bottom: 6px; }
 .ax-depth .peel-entry { width: 100%; min-height: 32px; padding: 4px 8px; border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-accent); background: var(--ax-surface-2); font-size: 12px; font-weight: 600; }
 .ax-depth-track { position: relative; flex: 1; min-height: 160px; }
@@ -316,47 +317,54 @@ body:has(.ax) .site-footer { display: none; }
   position: absolute; left: 0; right: 0; top: var(--stop-top); transform: translateY(-50%);
   display: flex; align-items: center; gap: 2px;
 }
-.ax-stop { flex: 1; min-width: 0; display: flex; align-items: center; gap: 7px; min-height: 26px; padding: 0 6px; border-radius: var(--ax-radius-ctl); color: var(--ax-muted); font-size: 13px; text-align: left; }
+.ax-stop { flex: 1; min-width: 0; display: flex; align-items: center; gap: 3px; min-height: 26px; padding: 0 4px; border-radius: var(--ax-radius-ctl); color: var(--ax-muted); font-size: 13px; text-align: left; }
+.ax-stop-name { white-space: nowrap; }
+.ax-stop-left { font-size: 12px; font-weight: 500; color: var(--ax-muted); white-space: nowrap; }
 .ax-stop:hover { color: #fff; background: var(--ax-surface-2); }
 .ax-solo { width: 26px; height: 26px; border-radius: var(--ax-radius-ctl); display: grid; place-items: center; color: #9db0b9; }
 .ax-solo:hover, .ax-solo[aria-pressed="true"] { color: var(--ax-accent); background: var(--ax-surface-2); }
 .ax-depth li.active .ax-stop { color: #fff; font-weight: 650; background: var(--ax-raised); }
 .ax-depth li.peeled .ax-stop { color: #8ea3ad; text-decoration: line-through; text-decoration-color: #526a75; }
-.ax-depth li.peeled .layer-dot { opacity: .35; }
-/* "계통 빼기" (rails): a square word button beside the depth ("계통 빼기",
-   or "N개 뺌"), the left-out names under it, and the checks in a picker
-   beside the rail, so the rail's stops keep their room. A left-out system is
-   drawn at no depth and keeps a hollow swatch. */
-.ax-depth .depth-band { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 4px 6px; }
-.ax-depth[data-mode="layers"] .depth-band { grid-template-columns: minmax(0, 1fr); }
-.ax-depth .depth-exclude { display: contents; }
-.ax-depth .exclude-toggle {
-  grid-column: 2; grid-row: 1; display: grid; place-items: center; width: 44px; min-height: 40px; padding: 2px; line-height: 1.15; text-align: center; word-break: keep-all;
-  border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line-strong); background: var(--ax-surface-2); color: var(--ax-text); font-size: 12px; font-weight: 600;
-}
-.ax-depth .exclude-toggle:hover { border-color: var(--ax-accent); }
-.ax-depth .exclude-toggle[aria-pressed="true"] { background: var(--ax-accent); border-color: var(--ax-accent); color: var(--ax-accent-ink); }
-.ax-depth .exclude-toggle:has(.exclude-short) .exclude-label { display: none; }
-.ax-depth .depth-excluded { grid-column: 1 / -1; display: grid; font-size: 12px; line-height: 1.3; color: var(--ax-muted); word-break: keep-all; }
-.ax-depth .exclude-picker {
-  position: absolute; z-index: 1; left: calc(100% + 8px); top: 0; width: 204px; padding: 8px;
-  background: var(--ax-surface); border: 1px solid var(--ax-line-strong); border-radius: var(--ax-radius); box-shadow: var(--ax-shadow);
-}
-.ax-depth .exclude-hint { margin: 0 0 6px; font-size: 12px; line-height: 1.35; color: var(--ax-muted); word-break: keep-all; }
-.ax-depth .exclude-picker ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; }
-.ax-include, .ax-depth .exclude-done {
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; width: 100%; height: 100%; min-height: 44px; padding: 2px;
-  border-radius: var(--ax-radius-ctl); color: var(--ax-text); font-size: 12px; text-align: center; cursor: pointer;
-}
-.ax-include:hover { background: var(--ax-surface-2); }
-.ax-include-name { display: inline-flex; align-items: center; gap: 4px; }
-.ax-include input { flex: none; width: 16px; height: 16px; margin: 0; accent-color: var(--ax-accent); cursor: pointer; }
-.ax-include input:disabled { cursor: default; }
-.ax-include:has(input:not(:checked)) { color: var(--ax-muted); }
-.ax-depth .exclude-done { font-weight: 600; border: 1px solid var(--ax-accent); background: var(--ax-surface-2); }
+/* Leaving systems out is part of the peel: each stop row starts with its
+   "○○ 포함" check (a square in the system colour with a check mark; hollow
+   when left out). Outside the peel the same column holds a static swatch.
+   The band is one column: heading with the left-out summary, or a caption
+   while nothing is left out. */
+.ax-depth .depth-band { display: grid; gap: 4px; }
+.ax-depth .depth-excluded { display: grid; margin-top: 4px; font-size: 12px; font-weight: 500; line-height: 1.3; color: var(--ax-muted); word-break: keep-all; }
+.ax-depth .depth-keep-hint { display: block; margin: 0; font-size: 12px; line-height: 1.3; color: var(--ax-muted); word-break: keep-all; }
+/* Column names over the stop rows (rails): 포함 | 박리 | 단독, aligned with
+   the check, the name and the eye (the track gutter is 26px). */
+.ax-depth .depth-cols { display: grid; grid-template-columns: 24px minmax(0, 1fr) 26px; gap: 2px; padding-left: 26px; font-size: 12px; line-height: 1.2; color: var(--ax-muted); }
+.ax-depth .depth-cols span { white-space: nowrap; }
+.ax-depth .depth-cols span:first-child, .ax-depth .depth-cols span:last-child { justify-self: center; }
+.ax-depth .depth-cols span:nth-child(2) { padding-left: 4px; }
+.ax-keep { position: relative; flex: none; display: grid; place-items: center; width: 24px; height: 26px; border-radius: var(--ax-radius-ctl); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.ax-keep.is-static { cursor: default; }
+@media (hover: hover) { .ax-keep:not(.is-static):not(:has([aria-disabled="true"])):hover { background: var(--ax-surface-2); } }
+.ax-swatch { display: block; flex: none; width: 14px; height: 14px; border-radius: 4px; }
+.ax-keep-input { appearance: none; -webkit-appearance: none; margin: 0; padding: 0; border: 0; cursor: pointer; }
+.ax-keep-input[aria-disabled="true"] { cursor: default; }
+.ax-keep-input:focus-visible { outline: 2px solid var(--ax-accent); outline-offset: 2px; }
+.ax-depth .ax-keep-input:checked { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M3 7.2l2.6 2.6L11 4.4' fill='none' stroke='%23062028' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: 100% 100%; }
+.ax-depth li.excluded .ax-swatch { background-color: transparent; background-image: none; box-shadow: inset 0 0 0 2px var(--ax-muted); }
 .ax-depth li.excluded .ax-stop { color: var(--ax-muted); }
 .ax-depth li.excluded .ax-stop:hover { color: var(--ax-muted); background: none; }
-.ax-depth li.excluded .layer-dot, .ax-include:has(input:not(:checked)) .layer-dot { background: transparent; box-shadow: inset 0 0 0 2px var(--ax-muted); }
+/* The check's explanation opens past the rail, not over its own row. */
+.ax-depth .ax-keep[data-tip]::after { left: calc(100% + var(--keep-tip)); }
+.ax-depth .ax-keep:has(> input:focus-visible)::after { opacity: 1; transform: translate(0, -50%); }
+@media (forced-colors: active) {
+  .ax-depth .ax-keep-input { appearance: auto; -webkit-appearance: auto; }
+  .ax-depth .is-static .ax-swatch { forced-color-adjust: none; }
+}
+/* Rails: a reason (a refused last system, a pressed left-out stop) opens
+   beside the row it is about, so touch rails without tooltips show it too. */
+.ax-depth .ax-row-note {
+  position: absolute; z-index: 3; left: calc(100% + 20px); top: 50%; transform: translateY(-50%); width: max-content; max-width: 220px; padding: 6px 8px;
+  background: var(--ax-surface); border: 1px solid var(--ax-line-strong); border-radius: var(--ax-radius-ctl); box-shadow: var(--ax-shadow);
+  color: var(--ax-text); font-size: 12px; line-height: 1.35; word-break: keep-all; pointer-events: none;
+}
+.ax .ax-vh { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 /* Bottom row: status | acupoint bar | camera. One flex row, so the three
    groups share the width instead of overlapping at any size. */
@@ -694,7 +702,8 @@ body:has(.ax) .site-footer { display: none; }
     top: auto; left: var(--ax-gap); right: var(--ax-gap); bottom: calc(var(--ax-gap) + var(--bar) + 6px); width: auto; height: var(--row);
     flex-direction: row; align-items: center; gap: 6px; padding: 0 4px;
   }
-  .ax-depth .depth-toggle { display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto; height: 100%; padding: 0 8px; border-radius: var(--ax-radius-ctl); font-size: 12px; font-weight: 600; color: #fff; white-space: nowrap; max-width: 42%; overflow: hidden; }
+  /* 44px tall: the row's border is covered, as the band's only way in on phones. */
+  .ax-depth .depth-toggle { display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto; height: calc(100% + 2px); margin: -1px 0; padding: 0 8px; border-radius: var(--ax-radius-ctl); font-size: 12px; font-weight: 600; color: #fff; white-space: nowrap; max-width: 42%; overflow: hidden; }
   /* The depth name gives way first, so the count and the chevron stay. */
   .ax-depth .depth-toggle-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
   .ax-depth .depth-toggle-count { flex: none; font-size: 12px; font-weight: 500; color: var(--ax-muted); }
@@ -719,33 +728,27 @@ body:has(.ax) .site-footer { display: none; }
   .ax-depth .depth-heading .depth-mode { margin: 0; }
   .ax-depth .peel-entry { width: auto; display: inline-flex; align-items: center; min-height: 36px; }
   .ax-depth .depth-band-hint { display: block; margin: 0; color: var(--ax-muted); font-size: 12px; }
-  /* The band's own row: button and names; the checks take the stops' place. */
+  /* The band's heading carries the left-out summary at its right; the hint
+     line is one legend (or the last note), joined by " · ". */
   .ax-depth .depth-band { grid-template-columns: minmax(0, 1fr); }
-  .ax-depth .depth-exclude { display: flex; align-items: center; gap: 8px; min-width: 0; }
-  .ax-depth .exclude-toggle { display: inline-flex; width: auto; flex: none; min-height: 36px; padding: 0 10px; }
-  .ax-depth .exclude-toggle:has(.exclude-short) .exclude-label { display: inline; }
-  .ax-depth .exclude-short { display: none; }
-  .ax-depth .depth-excluded { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .ax-depth .depth-excluded span + span::before { content: " · "; }
-  .ax-depth[data-excluding="true"] .depth-steps { display: none; }
-  .ax-depth .exclude-picker {
-    top: 100%; left: -1px; right: -1px; width: auto; height: 196px; padding: 4px 6px 8px;
-    border-top: 0; border-radius: 0 0 var(--ax-radius) var(--ax-radius);
-  }
-  .ax-depth .exclude-hint { display: none; }
-  .ax-depth .exclude-picker ul { height: 100%; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); }
-  /* Peeled and left-out cells differ in words too, not only in the swatch. */
-  .ax-depth li.excluded .ax-stop .ax-stop-name::after { content: " 뺌"; }
+  .ax-depth .depth-heading { min-width: 0; }
+  .ax-depth .depth-heading strong { flex: none; }
+  .ax-depth .depth-excluded { display: block; min-width: 0; margin: 0; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ax-depth .depth-excluded span + span::before, .ax-depth .depth-band-hint span + span::before { content: " · "; }
+  .ax-depth :is(.depth-keep-hint, .depth-cols) { display: none; }
+  .ax-depth .depth-band-hint { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* Seven rows in two columns, down each column in peel order:
+     [포함 44][이름][눈 44], each target 44 px. */
   .ax-depth[data-open="true"] .depth-steps {
-    position: absolute; left: 0; right: 56px; top: auto; bottom: calc(100% + 6px); height: 196px; padding: 4px 6px 8px;
-    grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px;
+    position: absolute; left: 0; right: 56px; top: auto; bottom: calc(100% + 6px); height: 196px; padding: 4px 4px 8px;
+    grid-auto-flow: column; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, 44px); gap: 2px; align-content: start;
     background: var(--ax-surface); border: 1px solid var(--ax-line-strong); border-top: 0; border-radius: 0 0 var(--ax-radius) var(--ax-radius); box-shadow: var(--ax-shadow);
   }
-  .ax-depth .depth-steps li { position: static; transform: none; display: grid; grid-template-rows: 1fr 1fr; gap: 2px; }
-  .ax-depth .ax-stop { flex-direction: column; justify-content: center; gap: 2px; min-height: 44px; padding: 0; font-size: 12px; text-align: center; }
-  .ax-depth .ax-stop .layer-dot { width: 10px; height: 10px; }
-  .ax-depth .ax-solo { width: 100%; height: 44px; }
-  .ax-depth li.peeled .ax-stop { text-decoration: none; }
+  .ax-depth .depth-steps li { position: static; transform: none; display: flex; align-items: stretch; gap: 2px; min-width: 0; }
+  .ax-depth .ax-keep, .ax-depth .ax-solo { width: 44px; height: 44px; }
+  .ax-depth .ax-swatch { width: 18px; height: 18px; }
+  .ax-depth .ax-stop { flex: 1; flex-direction: column; align-items: center; justify-content: center; gap: 0; min-width: 44px; min-height: 44px; padding: 0 2px; font-size: 12px; text-align: center; }
+  .ax-depth li.peeled .ax-stop { text-decoration: none; color: #8ea3ad; }
   .ax-depth [data-tip]::after { display: none; }
   /* Chip, detail and cards stack above the depth row, beside the camera column. */
   .ax-inspector {
@@ -792,18 +795,54 @@ body:has(.ax) .site-footer { display: none; }
   :root { --ax-gap: 10px; --ax-header: 44px; }
   .app-shell.atlas { min-height: 0; }
   .site-header .brand strong { font-size: 13px; }
-  .ax { --stop-gap: 14px; }
-  /* Deep systems sit close together on a short rail: dots, and the current name. */
-  .ax-depth li:not(.active) .ax-stop-name { display: none; }
-  .ax-depth li:not(.active) .ax-solo { display: none; }
-  .ax-depth { top: calc(var(--ax-gap) + 50px); height: calc(100% - var(--ax-gap) * 2 - 50px - var(--ax-bottom-h, 40px) - 8px); width: 124px; padding: 8px; gap: 6px; }
+  /* Short landscape: the rail keeps the region, a "깊이 단계" button and the
+     slider; the seven stop rows open in a band beside it (4 × 2 cells of
+     [포함 44][이름][눈 44], the eighth cell holds the legend or the peel
+     entry), within 45% of the scene. */
+  .ax-depth { top: calc(var(--ax-gap) + 50px); height: calc(100% - var(--ax-gap) * 2 - 50px - var(--ax-bottom-h, 40px) - 8px); width: 124px; padding: 8px; gap: 6px; --lw: min(580px, calc(100vw - 152px)); }
   .ax-depth .ax-region { min-height: 30px; font-size: 12px; }
-  .ax-depth .depth-heading strong, .ax-depth .peel-entry { font-size: 15px; }
-  .ax-depth-track { min-height: 90px; }
-  /* The left-out names give way to the button's count on the short rail. */
-  .ax-depth .depth-excluded { display: none; }
-  .ax-stop { min-height: 20px; font-size: 12px; }
-  .ax-solo { width: 22px; height: 22px; }
+  /* The heading stays in the accessibility tree (its live depth), out of sight. */
+  .ax-depth .depth-band { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .ax-depth .depth-band :is(.peel-entry, .depth-band-hint, .depth-keep-hint, .depth-cols) { display: none; }
+  .ax-depth .depth-toggle {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 4px; width: 100%; min-height: 44px; padding: 4px 6px;
+    border: 1px solid var(--ax-line-strong); border-radius: var(--ax-radius-ctl); background: var(--ax-surface-2); color: #fff; font-size: 12px; font-weight: 600; line-height: 1.25; text-align: left; word-break: keep-all;
+  }
+  .ax-depth .depth-toggle[aria-expanded="true"] { border-color: var(--ax-accent); }
+  .ax-depth .depth-toggle-text { grid-column: 1; text-wrap: balance; }
+  .ax-depth .depth-toggle-count { grid-column: 1; font-size: 12px; font-weight: 500; color: var(--ax-muted); }
+  .ax-depth .depth-toggle svg { grid-column: 2; grid-row: 1 / span 2; }
+  .ax-depth-track { min-height: 0; }
+  /* The list is a child of the rail here, so the band hangs from the rail box
+     (whose height already leaves the bottom row free). */
+  .ax-depth > .depth-steps { display: none; }
+  .ax-depth[data-open="true"] > .depth-steps {
+    display: grid; position: absolute; z-index: 2; left: calc(100% + 9px); right: auto; top: auto; bottom: -1px; width: var(--lw);
+    grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: 44px 44px; gap: 2px; padding: 4px;
+    background: var(--ax-surface); border: 1px solid var(--ax-line-strong); border-radius: var(--ax-radius); box-shadow: var(--ax-shadow);
+  }
+  /* A note row (comparison notice or a reason) on top takes its own height. */
+  .ax-depth[data-open="true"] > .depth-steps:has(> .depth-steps-note) { grid-template-rows: auto 44px 44px; }
+  .ax-depth .depth-steps li { position: static; transform: none; display: flex; align-items: stretch; gap: 2px; min-width: 0; }
+  .ax-depth .ax-keep, .ax-depth .ax-solo { width: 44px; height: 44px; }
+  .ax-depth .ax-swatch { width: 18px; height: 18px; }
+  .ax-depth .ax-stop { flex: 1; flex-direction: column; align-items: center; justify-content: center; gap: 0; min-width: 0; min-height: 44px; padding: 0 2px; font-size: 12px; text-align: center; }
+  .ax-depth li.peeled .ax-stop { text-decoration: none; color: #8ea3ad; }
+  .ax-depth .depth-steps [data-tip]::after { display: none; }
+  /* 701–760px: 1px gaps and 3px padding keep the name 44px wide (701px: 44.5px, 710px: 46.75px). */
+  @media (max-width: 760px) {
+    .ax-depth .depth-steps li { gap: 1px; }
+    .ax-depth[data-open="true"] > .depth-steps { gap: 1px; padding: 3px; }
+  }
+  .ax-depth .depth-steps-note { grid-column: 1 / -1; }
+  .ax-depth .depth-steps-note .panel-comparison-note { margin: 0; padding: 4px 8px; line-height: 1.3; }
+  .ax-depth .depth-steps-note .depth-band-hint { display: block; margin: 0; padding: 4px 8px; font-size: 12px; line-height: 1.3; color: var(--ax-text); }
+  .ax-depth .depth-steps-aside { display: flex; align-items: center; min-width: 0; }
+  .ax-depth .depth-steps-aside p { margin: 0; padding: 0 4px; font-size: 12px; line-height: 14px; color: var(--ax-muted); word-break: keep-all; }
+  .ax-depth .depth-steps-aside p span { display: block; }
+  .ax-depth .depth-steps-aside .peel-entry { width: 100%; min-height: 44px; padding: 2px 4px; place-content: center; text-align: center; font-size: 12px; font-weight: 600; border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-accent); background: var(--ax-surface-2); color: #fff; }
+  /* The open band takes the selection column's place, as the phone band does. */
+  .ax[data-popover="depth"] :is(.ax-inspector, .cutaway-reset) { visibility: hidden; }
   .ax-inspector { top: calc(var(--ax-gap) + 48px); bottom: calc(var(--ax-gap) + var(--ax-bottom-h, 40px) + 8px); width: 344px; }
   /* One row of card actions leaves the name and notices in view above them. */
   .ax .selection-actions { gap: 4px; }
@@ -837,6 +876,7 @@ body:has(.ax) .site-footer { display: none; }
 /* Touch: every control changed here reaches 44px. Markers and canvas labels
    keep their own pointer targets (Q28). */
 @media (pointer: coarse) {
+  .ax-depth .peel-entry, .ax .cutaway-reset { min-height: 44px; }
   .ax-segment { padding: 0; }
   .ax-segment button { min-height: 44px; min-width: 44px; }
   .ax-step, .ax-point-chip .point-summary, .ax-point-empty, .ax-point-chip .ax-icon { height: 44px; }
@@ -846,13 +886,24 @@ body:has(.ax) .site-footer { display: none; }
   .ax .point-item, .ax .structure-item { min-height: 44px; }
 }
 @media (pointer: coarse) and (min-width: 701px) and (min-height: 561px) {
-  .ax-depth .ax-stop { min-height: 44px; }
-  .ax-depth .ax-solo { width: 44px; height: 44px; }
+  /* Touch rails: 포함 44 + 이름 48 + 눈 44 with 2px gaps; the name stays on
+     one line and "뺌" takes a second. */
+  .ax-depth { width: 188px; --keep-tip: 113px; }
+  .ax-depth .ax-keep, .ax-depth .ax-solo { width: 44px; height: 44px; }
+  .ax-depth .ax-swatch { width: 18px; height: 18px; }
+  .ax-depth .ax-stop { min-height: 44px; flex-direction: column; align-items: flex-start; justify-content: center; gap: 0; }
+  .ax-depth .depth-cols { grid-template-columns: 44px minmax(0, 1fr) 44px; }
   /* A 44px first row reaches 14px above the track: keep it off the band. */
   .ax-depth-track { margin-top: 8px; }
 }
-@media (pointer: coarse) { .ax-depth .exclude-toggle, .ax-depth .exclude-done { min-height: 44px; } }
-/* Touch rails up to 700px tall need the room for 44px stops: the button's
-   "N개 뺌" and the hollow swatches carry the left-out systems there. */
-@media (pointer: coarse) and (min-width: 701px) and (max-height: 700px) { .ax-depth .depth-excluded { display: none; } }
+/* Touch rails up to 700px tall need the room for 44px stops: the hollow
+   checks and "뺌" carry the left-out systems there (the summary is still
+   announced by the status line). */
+@media (pointer: coarse) and (min-width: 701px) and (max-height: 700px) { .ax-depth :is(.depth-excluded, .depth-keep-hint) { display: none; } }
 @media (prefers-reduced-motion: reduce) { .ax .spin { animation: none; } }
+/* Narrow rails (701–1180px wide): the centred cutaway reset would run into the
+   point chip; it starts after the rail instead. */
+@media (min-width: 701px) and (max-width: 1180px) and (min-height: 561px) {
+  .ax .cutaway-reset { left: calc(var(--ax-gap) + 200px); transform: none; }
+}
+
