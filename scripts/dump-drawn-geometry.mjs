@@ -26,17 +26,18 @@ const index = await page.evaluate(async (url) => {
   const list = [];
   st.scene.updateMatrixWorld(true);
   st.scene.traverse(m => {
-    if (!m.isMesh || m.isInstancedMesh || !m.geometry?.attributes?.position || m.name === "modesty-cover") return;
+    // The source skin, not the groin closed by "성기 가리기" (src/modesty-skin.ts).
+    if (!m.isMesh || m.isInstancedMesh || !m.geometry?.attributes?.position || m.name === "modesty-patch") return;
     list.push(m);
   });
   window.__dump = list;
-  return list.map((m, i) => ({ i, name: m.name, parent: m.parent?.name || "", layer: m.userData.layer || "", system: m.userData.system || "", sourceName: m.userData.sourceName || m.userData.entry?.name || "", entryId: m.userData.entry?.id || "", vertexCount: m.geometry.attributes.position.count, indexCount: m.geometry.index ? m.geometry.index.count : 0 }));
+  return list.map((m, i) => ({ i, name: m.name, parent: m.parent?.name || "", layer: m.userData.layer || "", system: m.userData.system || "", sourceName: m.userData.sourceName || m.userData.entry?.name || "", entryId: m.userData.entry?.id || "", vertexCount: m.geometry.attributes.position.count, indexCount: (m.userData.modestSkin?.full ?? m.geometry).index?.count ?? 0 }));
 }, fiberUrl);
 const parts = [];
 let offset = 0; const chunks = [];
 for (const item of index) {
   const data = await page.evaluate((i) => {
-    const m = window.__dump[i], g = m.geometry, p = g.attributes.position, n = p.count;
+    const m = window.__dump[i], g = m.userData.modestSkin?.full ?? m.geometry, p = g.attributes.position, n = p.count;
     const out = new Float32Array(n * 3), v = new (m.matrixWorld.constructor === Object ? Object : m.matrixWorld.elements.constructor)(0);
     const e = m.matrixWorld.elements;
     for (let k = 0; k < n; k++) { const x = p.getX(k), y = p.getY(k), z = p.getZ(k);

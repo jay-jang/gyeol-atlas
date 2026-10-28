@@ -59,3 +59,18 @@ export function depthStage(depth: number, excluded: readonly AnatomyLayerName[] 
 export function musclePeelOpacity(depth: number, rank: number) {
   return 1 - ramp(depth, 24 + rank * 36, 28 + rank * 36);
 }
+
+// Within the organ window (76–84) the progressive peel lifts what covers the
+// pelvic viscera first. This is an editorial order for observation, not a
+// verified dissection sequence for every organ; it follows the relations the
+// source gives: the greater omentum "obscures the other viscera" and coils of
+// small intestine and the sigmoid colon rest on the uterus (rank 0: omentum,
+// jejunum, ileum, colon without the rectum, 76–78); the female peritoneum over
+// the uterus, tubes and ovaries — the broad ligament's folds and the lining of
+// the uterovesical pouch (rank 1, 78–79); then every other organ (rank 2,
+// 79–84). Gray's Anatomy, 20th ed. (1918), pp. 1149 and 1259;
+// data/female-organ-display.json lists the members. At 76 every organ is still opaque, so the stop and the peel
+// limit stay; selected or isolated organs are drawn as before.
+export function organPeelOpacity(depth: number, rank: 0 | 1 | 2) {
+  return rank === 0 ? 1 - ramp(depth, 76, 78) : rank === 1 ? 1 - ramp(depth, 78, 79) : 1 - ramp(depth, 79, 84);
+}

@@ -61,7 +61,7 @@ function viewer(sex = "male", region = "lower-body") {
     { type: "markers", value: "hidden" },
     { type: "labels", value: true },
     { type: "connective", value: false },
-    { type: "modesty", value: true },
+    { type: "modesty", value: false },
     { type: "fade-context", value: false },
     { type: "alpha", layer: "muscle", value: 0.6 },
     { type: "alpha", layer: "skin", value: 0.8 },

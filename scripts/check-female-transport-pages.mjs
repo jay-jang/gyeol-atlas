@@ -30,13 +30,18 @@ for (const [label, viewport] of [["desktop", { width: 1440, height: 900 }], ["mo
     sampleVisible: ["FT_ZA_nerve_sural_nerve_l", "FT_ZA_vessel_great_saphenous_vein_l", "FT_FMA13375"].every((id) => visible.has(id)),
   };
   await page.screenshot({ path: `docs/anatomy-alignment/pages-female-transport-${label}.png` });
+  // The genitals start hidden; the shield shows them and the choice is remembered.
   const toggle = page.locator(".ax-top").getByRole("button", { name: "성기 가리기" });
+  result[label].hiddenByDefault = await page.locator("canvas").getAttribute("data-modesty");
+  result[label].pressedByDefault = await toggle.getAttribute("aria-pressed");
   await toggle.click();
-  await page.waitForFunction(() => document.querySelector("canvas")?.dataset.modestyCover === "true", null, { timeout: 60000 });
+  await page.waitForFunction(() => document.querySelector("canvas")?.dataset.modesty === "shown", null, { timeout: 60000 });
   await page.reload(); await ready();
   await page.waitForFunction((n) => document.querySelector("canvas")?.dataset.femaleTransportParts === String(n), TRANSPORTED, { timeout: 240000 });
-  result[label].coverAfterReload = await page.locator("canvas").getAttribute("data-modesty-cover");
+  result[label].shownAfterReload = await page.locator("canvas").getAttribute("data-modesty");
   result[label].pressedAfterReload = await toggle.getAttribute("aria-pressed");
+  await toggle.click();
+  await page.waitForFunction(() => document.querySelector("canvas")?.dataset.modesty === "hidden", null, { timeout: 60000 });
   await page.screenshot({ path: `docs/anatomy-alignment/pages-modesty-${label}.png` });
   result[label].noHorizontalScroll = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
   // Approximate female acupoints stay hidden until asked for; LI4 compares the HRA colon.
@@ -52,7 +57,7 @@ for (const [label, viewport] of [["desktop", { width: 1440, height: 900 }], ["mo
 }
 await browser.close();
 const ok = ["desktop", "mobile"].every((k) => result[k].transportParts === String(TRANSPORTED) && result[k].transportVisible === String(TRANSPORTED) && result[k].donorVisible === 0
-  && result[k].sampleVisible && result[k].femaleMarkers === true && result[k].colonComparison === 6 && result[k].coverAfterReload === "true" && result[k].pressedAfterReload === "true" && result[k].noHorizontalScroll) && !result.errors.length;
+  && result[k].sampleVisible && result[k].femaleMarkers === true && result[k].colonComparison === 6 && result[k].hiddenByDefault === "hidden" && result[k].pressedByDefault === "true" && result[k].shownAfterReload === "shown" && result[k].pressedAfterReload === "false" && result[k].noHorizontalScroll) && !result.errors.length;
 result.ok = ok;
 fs.writeFileSync("docs/anatomy-alignment/female-transport-pages.json", JSON.stringify(result, null, 1) + "\n");
 console.log(JSON.stringify(result));

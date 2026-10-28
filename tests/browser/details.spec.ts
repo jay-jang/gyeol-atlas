@@ -139,7 +139,7 @@ test('a failed female geometry chunk shows a recoverable error and retry loads t
   await expect(page.getByRole('link', { name: '지식 위키', exact: true })).toBeVisible();
   await page.unroute('**/models/female/female-0.bin.gz');
   await page.getByRole('button', { name: '3D 다시 시도', exact: true }).click(); await ready(page);
-  await expect.poll(async () => Number(await page.locator('canvas').getAttribute('data-visible-skin'))).toBe(20);
+  await expect.poll(async () => Number(await page.locator('canvas').getAttribute('data-visible-skin'))).toBe(14);
   await expect(page.locator('canvas')).toHaveAttribute('data-model-sex', 'female');
 });
 
@@ -156,7 +156,7 @@ test('surface targeting exits organ detail and isolation for both reference bodi
     await page.getByLabel('클릭 선택 대상').selectOption('skin'); await ready(page);
     const state = await snapshot(page);
     expect(state.detail).toBe(null); expect(state.selection).toBe(null); expect(state.isolated).toBe(false);
-    await expect.poll(async()=>Number(await page.locator('canvas').getAttribute('data-visible-skin'))).toBe(label==='여성'?20:1);
+    await expect.poll(async()=>Number(await page.locator('canvas').getAttribute('data-visible-skin'))).toBe(label==='여성'?14:1);
     await closeTool(page);
   }
 });

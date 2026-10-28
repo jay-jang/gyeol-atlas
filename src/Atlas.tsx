@@ -38,7 +38,7 @@ import {
 import type { OrbitControls as OrbitType } from "three-stdlib";
 import type { CameraPose } from "./view-state";
 import type { Point, Layers, CameraAction } from "./types";
-import { connectiveKindOf, dissectionLayerOpacity, layerKeys, maleOnlyStructureIds, type Layer, structures } from "./anatomy";
+import { connectiveKindOf, dissectionLayerOpacity, layerKeys, maleOnlyStructureIds, organPeelRank, type Layer, structures } from "./anatomy";
 import meridians from "../data/meridians.json";
 import anchors from "../data/anchors.json";
 import structurePairs from "../data/structure-pairs.json";
@@ -49,18 +49,20 @@ import maleRegistration from "../data/catalog/male-registration.json";
 import { movementKeys, translateView, type MoveDirection } from "./navigation";
 import { LoaderCircle, TriangleAlert } from "lucide-react";
 import PackedAtlas from "./PackedAtlas";
-import { SKIN_COLOR, SURFACE_LAYERS, SURFACE_TONES, clippingPlanes, configurePicking, connectiveTone, isSupplementEyePart, keepsSurface, releasedDrag, type SceneClick } from "./anatomy-rendering";
+import { ORGAN_COLOR, SKIN_COLOR, SURFACE_LAYERS, SURFACE_TONES, clippingPlanes, configurePicking, connectiveTone, isSupplementEyePart, keepsSurface, organColor, releasedDrag, type SceneClick } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { framedDistance } from "./camera-framing";
 import { musclePeelRanks } from "./muscle-peel";
-import { musclePeelOpacity } from "./dissection";
+import { musclePeelOpacity, organPeelOpacity } from "./dissection";
 import { selectionOpacity, selectionHitId, opacityWritesDepth } from "./selection-context";
 import { besideMarker, type ScreenSize } from "./marker-label";
 import { hitRadius, markerDotPx, markersFirst, nearestMarker, releasedDragPress, trackPresses } from "./marker-picking";
-import { buildCover, isGenitalStructure, COVER_NAME } from "./modesty";
+import { hidesGenital } from "./modesty";
+import { applyModestSkin, modestAnchors, prepareModestSkin, PATCH_NAME } from "./modesty-skin";
 
 const structureById = new Map(structures.map(s => [s.id, s]));
 const NO_ANCHORS: typeof anchors = [];
+const MODEST_ANCHORS = modestAnchors(anchors);
 
 const labelAnchor = new Vector3();
 function toCanvas(point: Vector3, camera: Camera, size: ScreenSize): [number, number] {
@@ -295,17 +297,12 @@ type Props = {
 };
 export type AtlasProps = Props;
 const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
-function clinicalColor(layer: Layer, name: string) {
-  const lower = name.toLowerCase();
-  if (layer === "vessel") return /vein|vena cava/.test(lower) ? "#356fb3" : "#d33f49";
-  if (layer === "organ") {
-    if (/lung/.test(lower)) return "#c97f86";
-    if (/liver/.test(lower)) return "#8f3439";
-    if (/kidney/.test(lower)) return "#95534b";
-    if (/heart/.test(lower)) return "#b52e3f";
-    if (/stomach|intestin|colon/.test(lower)) return "#c47a68";
-  }
-  return { skin: SKIN_COLOR, bone: "#e8dec5", muscle: "#b43f3f", organ: "#a94d60", vessel: "#d33f49", lymph: "#58b99f", nerve: "#f0c94f" }[layer];
+// Organs take the shared palette by the tone src/anatomy.ts gives each mesh.
+function clinicalColor(layer: Layer, id: string) {
+  const entry = structureById.get(id);
+  if (layer === "vessel") return /vein|vena cava/.test((entry?.name || "").toLowerCase()) ? "#356fb3" : "#d33f49";
+  if (layer === "organ") return organColor(entry?.organTone);
+  return { skin: SKIN_COLOR, bone: "#e8dec5", muscle: "#b43f3f", organ: ORGAN_COLOR, vessel: "#d33f49", lymph: "#58b99f", nerve: "#f0c94f" }[layer];
 }
 function inAnatomyRegion(mesh: Mesh, region: Props["anatomyRegion"], id = mesh.name) {
   if (region === "whole") return true;
@@ -365,11 +362,13 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     muscleMeshes.forEach(({ mesh }) => {
       mesh.userData.peelRank = ranks.get(mesh.name)!;
     });
-    if (layer === "skin") clone.traverse(o => { if (o instanceof Mesh && o.name === "FMA7163") o.add(buildCover(o, "male")); });
+    if (layer === "skin") clone.traverse(o => { if (o instanceof Mesh && o.name === "FMA7163") prepareModestSkin(o); });
     return clone;
   }, [model.scene, layer]);
   useEffect(() => () => object.traverse(o => {
     if (o instanceof Mesh && o.material instanceof MeshStandardMaterial) o.material.dispose();
+    if (o instanceof Mesh && o.name === PATCH_NAME) o.geometry.dispose();
+    if (o instanceof Mesh && o.userData.modestSkin) { o.userData.modestSkin.modest.dispose(); o.geometry = o.userData.modestSkin.full; }
   }), [object]);
   const { invalidate, gl } = useThree();
   useLayoutEffect(() => {
@@ -385,7 +384,7 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
     ]);
     let visibleCount = 0;
     object.traverse((o) => {
-      if (!(o instanceof Mesh) || o.name === COVER_NAME) return;
+      if (!(o instanceof Mesh) || o.name === PATCH_NAME) return;
       const id = structureById.has(o.name)
         ? o.name
         : o.parent?.name || "";
@@ -402,6 +401,8 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       if (layer === "muscle" && progressive && !selected && !props.isolated) {
         dissectionAlpha *= musclePeelOpacity(props.dissection, o.userData.peelRank);
       }
+      // Bowel first, then everything else, inside the organ window (src/dissection.ts).
+      if (layer === "organ" && progressive && !selected && !props.isolated) dissectionAlpha = organPeelOpacity(props.dissection, organPeelRank(id));
       const unavailableForSex = props.sex === "female" && maleOnlyStructureIds.has(id);
       o.visible = !unavailableForSex && (!props.isolated || selected) && (selected || dissectionAlpha > .01) && (selected || inAnatomyRegion(o, props.anatomyRegion, id));
       o.visible = o.visible && (!props.detailIds.length || props.detailIds.includes(id));
@@ -410,19 +411,18 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       if ((layer === "nerve" || layer === "vessel") && !selected && !props.detailIds.includes(id)) o.visible = false;
       const kind = connectiveKindOf(id), connective = Boolean(kind);
       if (connective && !props.connective && !selected) o.visible = false;
-      if (props.modesty && !selected && isGenitalStructure(id, structureById.get(id)?.name)) o.visible = false;
+      if (hidesGenital(props.modesty, id, structureById.get(id)?.name, selected || props.detailIds.includes(id))) o.visible = false;
       if (surfaceOnly && !(id in SURFACE_TONES)) o.visible = false;
       if (o.visible) visibleCount++;
       // Selection is an opaque emphasis, as in PackedAtlas and the supplements.
       // Keep the user's layer alpha in view-state; it applies again on deselect.
       const alpha = selectionOpacity((layer === "skin" ? props.opacity : props.layerOpacity[layer]) * dissectionAlpha, selected, props.contextDimmed);
-      const vessel = structureById.get(id)?.name || "";
       const material = o.material as MeshStandardMaterial;
       configurePicking(o, layer, props.selectionTarget);
       if (surfaceOnly) o.raycast = () => {};
       const tone = !selected && skinOpaque ? SURFACE_TONES[id] : undefined;
       const finish = connective ? connectiveTone(kind) : undefined;
-      material.color.set(emphasis ? emphasis : finish ? finish.color : tone ?? clinicalColor(layer, vessel));
+      material.color.set(emphasis ? emphasis : finish ? finish.color : tone ?? clinicalColor(layer, id));
       if (finish) { material.roughness = finish.roughness; material.metalness = finish.metalness; }
       const transparent = !opacityWritesDepth(alpha);
       const planes = clippingPlanes(layer, props);
@@ -433,13 +433,10 @@ function AnatomyLayer({ layer, props }: { layer: Layer; props: Props }) {
       material.opacity = alpha;
       material.depthWrite = !transparent;
       material.clippingPlanes = planes;
-      const cover = o.getObjectByName(COVER_NAME) as Mesh | undefined;
-      if (cover) {
-        cover.visible = props.modesty && o.visible;
-        const coverMaterial = cover.material as MeshStandardMaterial;
-        coverMaterial.opacity = alpha; coverMaterial.transparent = transparent; coverMaterial.depthWrite = !transparent;
-        coverMaterial.clippingPlanes = planes;
-        gl.domElement.dataset.modestyCover = String(cover.visible);
+      // The male skin closes over the groin while the genitals are hidden.
+      if (o.userData.modestSkin) {
+        applyModestSkin(o, props.modesty);
+        configurePicking(o.getObjectByName(PATCH_NAME) as Mesh, layer, props.selectionTarget);
       }
     });
     gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(visibleCount);
@@ -525,7 +522,7 @@ function SupplementModel({ url, layer, entries, color, connective = false, signa
       item.visible = item.visible && (!props.detailIds.length || props.detailIds.includes(item.name));
       if (connective && !props.connective && !selected) item.visible = false;
       if (baseEyeball && !selected && isSupplementEyePart(item.userData.entry?.name || "")) item.visible = false;
-      if (props.modesty && !selected && isGenitalStructure(item.name, item.userData.entry?.name)) item.visible = false;
+      if (hidesGenital(props.modesty, item.name, item.userData.entry?.name, selected || props.detailIds.includes(item.name))) item.visible = false;
       const material = item.material as MeshStandardMaterial;
       // The ligament/tendon category bundle keeps its tissue colours; a named
       // structure or pair (e.g. from the movement page) is emphasised.
@@ -620,9 +617,10 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
       const entry = structureById.get(item.name);
       item.visible = item.userData.systemAllowed && (!props.isolated || selected) && (selected || depthAlpha > .01) && (selected || taggedRegionMatches(entry?.bodyRegion, props.anatomyRegion));
       item.visible = item.visible && (!props.detailIds.length || props.detailIds.includes(item.name));
+      if (hidesGenital(props.modesty, item.name, entry?.name, selected || props.detailIds.includes(item.name))) item.visible = false;
       if (item.visible) visibleCount++;
       const material = item.material as MeshStandardMaterial;
-      material.color.set(selected ? "#34d3dd" : clinicalColor(layer, entry?.name || ""));
+      material.color.set(selected ? "#34d3dd" : clinicalColor(layer, item.name));
       material.opacity = selectionOpacity(props.layerOpacity[layer] * depthAlpha, selected, props.contextDimmed);
       const planes = clippingPlanes(layer, props);
       const transparent = !opacityWritesDepth(material.opacity);
@@ -638,7 +636,7 @@ function ReferenceModel({ modelName, layer, props }: { modelName: string; layer:
     gl.domElement.dataset[`boundsReference${modelName.replace(/[^a-z0-9]/gi, "")}`] = JSON.stringify([bounds.min.toArray(), bounds.max.toArray()]);
     object.visible = true;
     invalidate();
-  }, [object, layer, modelName, props.anatomyRegion, props.isolated, props.layerOpacity, props.contextDimmed, props.selectionIds, props.detailIds, props.layers, props.dissection, props.displayMode, props.cutaway, props.selectionTarget, gl, invalidate]);
+  }, [object, layer, modelName, props.anatomyRegion, props.isolated, props.layerOpacity, props.contextDimmed, props.selectionIds, props.detailIds, props.layers, props.dissection, props.displayMode, props.cutaway, props.selectionTarget, props.modesty, gl, invalidate]);
   useEffect(() => { props.onReady(layer); }, [layer, object, props.onReady]);
   useEffect(() => () => object.traverse(item => { if (item instanceof Mesh && item.material instanceof MeshStandardMaterial) item.material.dispose(); }), [object]);
   return <primitive object={object} onClick={(event: SceneClick) => {
@@ -828,7 +826,7 @@ function Scene(props: Props) {
       .then(setFemaleAnchors).catch(() => {});
     return () => abort.abort();
   }, [wantsFemaleAnchors, femaleAnchors]);
-  const anchorSource = props.sex === "female" ? (wantsFemaleAnchors && femaleAnchors) || NO_ANCHORS : anchors;
+  const anchorSource = props.sex === "female" ? (wantsFemaleAnchors && femaleAnchors) || NO_ANCHORS : props.modesty ? MODEST_ANCHORS : anchors;
   const markers = useMemo(
     () =>
       (props.detailIds.length ? [] : anchorSource)
@@ -856,7 +854,9 @@ function Scene(props: Props) {
       const selectedBounds = new Box3();
       const ids: string[] = [];
       const counts = Object.fromEntries(layerKeys.map(layer => [layer, 0])) as Record<Layer, number>;
+      let closedSkin = false;
       scene.traverseVisible(obj => {
+        if (obj instanceof Mesh && obj.name === PATCH_NAME) closedSkin = true;
         if (!(obj instanceof Mesh) || !structureById.has(obj.name)) return;
         if ((obj.material as MeshStandardMaterial).opacity < .01) return;
         ids.push(obj.name);
@@ -866,6 +866,8 @@ function Scene(props: Props) {
       gl.domElement.dataset.visibleStructureIds = [...new Set(ids)].sort().join(",");
       gl.domElement.dataset.selectedWorldBounds = selectedBounds.isEmpty() ? "null" : JSON.stringify([selectedBounds.min.toArray(), selectedBounds.max.toArray()]);
       gl.domElement.dataset.modelSex = props.sex;
+      gl.domElement.dataset.modesty = props.modesty ? "hidden" : "shown";
+      gl.domElement.dataset.modestySkin = String(closedSkin);
       for (const layer of layerKeys) gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(counts[layer]);
     });
     return () => cancelAnimationFrame(frame);

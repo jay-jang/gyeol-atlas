@@ -1,4 +1,5 @@
 import type {Layer} from './anatomy';
+import femaleOrganDisplay from '../data/female-organ-display.json' with {type:'json'};
 
 export const packedSystemLayer: Record<string,Layer> = {
   integumentary: 'skin', muscular: 'muscle', 'donor-muscle': 'muscle',
@@ -9,6 +10,12 @@ export const packedSystemLayer: Record<string,Layer> = {
 };
 
 type PackedPart = {id:string;system:string};
+// The only meshes drawn in another system than their source one: the female
+// glandular breast (integumentary in HRA) peels with the organs. Listed by ID,
+// with the source system they must still carry (src/anatomy.ts).
+const {glandularBreast}=femaleOrganDisplay;
+export const displayLayerOverrides:ReadonlyMap<string,{system:string;layer:Layer}>=new Map(
+  glandularBreast.ids.map(id=>[id,{system:glandularBreast.sourceSystem,layer:glandularBreast.displayLayer as Layer}]));
 type CatalogPart = {id:string;sex:'male'|'female';layer:Layer};
 
 // Validate before downloading geometry. A source-frame name or a plausible
@@ -23,7 +30,8 @@ export function verifyPackedSourceManifest(
   for(const part of parts){
     if(seen.has(part.id))throw new Error(`참조 모형 ID 중복: ${source}/${part.id}`);
     seen.add(part.id);
-    const record=catalog.get(part.id),expectedLayer=packedSystemLayer[part.system];
+    const override=sex==='female'?displayLayerOverrides.get(part.id):undefined;
+    const record=catalog.get(part.id),expectedLayer=override?override.system===part.system&&override.layer:packedSystemLayer[part.system];
     if(!record||record.sex!==sex||!expectedLayer||record.layer!==expectedLayer)
       throw new Error(`참조 모형 성별·계통 불일치: ${source}/${part.id}/${part.system}`);
   }

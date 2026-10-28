@@ -1,3 +1,6 @@
 numpy==1.26.4
 nibabel==5.2.1
 scikit-image==0.22.0
+# scripts/modesty/gen.py: its output bytes depend on these versions
+scipy==1.13.1
+networkx==3.2.1

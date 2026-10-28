@@ -27,7 +27,7 @@
 
 부위 표는 원본에서 자동 제공한 임상 구획이 아니라 **기관을 통째로 탐색하기 위한 편집 규칙**입니다. 머리의 뇌, 흉부의 심장·폐, 복부/골반의 구분은 [NCI SEER 신체 공간 설명](https://training.seer.cancer.gov/anatomy/body/terminology.html)을 참고합니다. 갈비뼈 아래로 겹쳐 보이는 높이를 흉부 소속으로 해석하지 않습니다. 간의 복부 위치는 [소화 부속기관](https://training.seer.cancer.gov/anatomy/digestive/regions/accessory.html), 비장의 복부 위치는 [비장 설명](https://training.seer.cancer.gov/anatomy/lymphatic/components/spleen.html), 난소의 골반 위치는 [난소 설명](https://training.seer.cancer.gov/anatomy/reproductive/female/ovaries.html)을 대조했습니다. 유방의 가슴 분류는 [유방·큰가슴근 관계](https://training.seer.cancer.gov/anatomy/reproductive/female/glands.html)를 참고합니다. 자료 확인일2026-09-27.
 
-장·척수·서로 다른 기관을 합친 CT 묶음은 여러 부위에 걸쳐 있어 이 표에서 제외합니다. 검토하지 않은 모형은 기존 경계상자 겹침 추정이 남습니다. 예를 들어 왼 난소간막 HRAF0431은 난소 묶음에 없으므로 이번 변경으로 교정했다고 주장하지 않습니다. 임신·개인차에 따른 기관 확장이나 모든 주변 부속 조직까지 검증한 규칙이 아닙니다.
+장·척수·서로 다른 기관을 합친 CT 묶음은 여러 부위에 걸쳐 있어 이 표에서 제외합니다. 검토하지 않은 모형은 기존 경계상자 겹침 추정이 남습니다. 예를 들어 왼 난소간막 HRAF0431은 난소 묶음에 없으므로 이번 변경으로 교정했다고 주장하지 않습니다. (2026-10-26 교정: 묶음이 없는 여성 생식 구조 — 난소걸이인대·고유난소인대·자궁관간막·난소간막 등 — 와 자궁 혈관 4개는 HRA 개념 `HRA:reproductive_system`(태반 제외)·`HRA:blood_vasculature_of_uterus`에 따라 실행 시 골반 범위(`regionScope`)를 받습니다. 해시 고정 카탈로그와 묶음은 바꾸지 않았습니다 — [기록](FEMALE_ORGANS_AND_APPROXIMATIONS.md).) 임신·개인차에 따른 기관 확장이나 모든 주변 부속 조직까지 검증한 규칙이 아닙니다.
 
 이 변경은 **가시성/분류 수정이며 좌표 정합이 아닙니다**. 기존 여성 보완 골격·근육 이탈, 뇌/신경–골격 교차, 실제 근육 층서 미검증 한계는 그대로입니다.
 

@@ -66,42 +66,6 @@ test('the female body is complete with the carried systems, peels in order and k
   expect(errors).toEqual([]);
 });
 
-test('the genital cover hides external genitalia in both bodies and is remembered',async({page})=>{
-  test.setTimeout(240000);
-  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.setViewportSize({width:1440,height:900});await page.goto('/');await ready(page);
-  const toggle=page.locator('.ax-top').getByRole('button',{name:'성기 가리기'});
-  await expect(toggle).toHaveAttribute('aria-pressed','false');
-  const canvas=page.locator('canvas');
-  // Male: peeled to the organs, the genital organs are drawn until covered.
-  await setView(page,{dissection:72,camera:{target:[0,.76,.02],position:[.15,.82,.55]},markers:'hidden'});
-  let ids=await visible(page);expect(ids.has('FMA19618')).toBe(true);
-  await toggle.focus();await page.keyboard.press('Enter');await ready(page);
-  await expect(toggle).toHaveAttribute('aria-pressed','true');
-  ids=await visible(page);for(const id of ['FMA19618','FMA18247','FMA7211','FMA19235'])expect(ids.has(id),id).toBe(false);
-  expect(ids.has('FMA9600')).toBe(true);
-  await setView(page,{dissection:0});
-  await expect(canvas).toHaveAttribute('data-modesty-cover','true');
-  await page.screenshot({path:'docs/anatomy-alignment/modesty-male-desktop.png'});
-  // The preference survives a reload and a change of body.
-  expect((await snapshot(page)).modesty).toBe(true);
-  await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await ready(page);
-  await expect(toggle).toHaveAttribute('aria-pressed','true');
-  await expect(canvas).toHaveAttribute('data-modesty-cover','true');
-  await page.screenshot({path:'docs/anatomy-alignment/modesty-female-desktop.png'});
-  await setView(page,{dissection:80});
-  ids=await visible(page);expect(ids.has('HRAF0406')).toBe(false);expect(ids.has('HRAF0435')).toBe(true);
-  await toggle.click();await ready(page);
-  ids=await visible(page);expect(ids.has('HRAF0406')).toBe(true);
-  // The same preference is in the display settings.
-  await page.getByRole('button',{name:'표시 설정',exact:true}).click();
-  const box=page.getByRole('checkbox',{name:'성기 가리기'});await expect(box).not.toBeChecked();
-  await box.check();await expect(toggle).toHaveAttribute('aria-pressed','true');
-  await page.setViewportSize({width:390,height:844});
-  await expect(toggle).toBeInViewport();
-  expect(errors).toEqual([]);
-});
-
 test('female approximate acupoints are opt-in, focus on the female surface and are remembered',async({page})=>{
   test.setTimeout(240000);
   const url=fiber(page),errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));

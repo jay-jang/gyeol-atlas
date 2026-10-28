@@ -14,8 +14,9 @@ import { normalizeQuery, isExactPoint, isExactStructure, matchOrgans, rankPoints
 import { CONNECTIVE_BUNDLE, type ViewAction, type ViewState } from "./view-state";
 import { readOrigin, takeFocus } from "./movement-link";
 import { useMedia } from "./use-media";
+import { MODEST_MOVED_POINTS } from "./modesty";
 import { FEMALE_TRANSPORT_NOTE,
-  anatomyRegionNames, compositeGroups, connectiveKindNames, connectiveKindOf, detailForStructure, layerKeys, layerNames, maleKidneyViews, maleLungViews,
+  anatomyRegionNames, compositeGroups, connectiveKindNames, connectiveKindOf, detailForStructure, femaleBreastViews, femaleReproductiveViews, layerKeys, layerNames, maleKidneyViews, maleLungViews,
   malePancreasViews, organGroups, stageDescription, stages, structureGroups, structures, structuresForSex, type Layer,
 } from "./anatomy";
 import type { CameraAction, Layers, Point } from "./types";
@@ -24,6 +25,7 @@ import concepts from "../data/concepts.json";
 import pointData from "../data/points.json";
 import meridians from "../data/meridians.json";
 import sources from "../data/sources.json";
+import femaleAcupointNotes from "../data/female-acupoint-notes.json";
 
 // Male-source structures carried into the female body (src/anatomy.ts).
 const transportedCount = structures.filter((s) => s.transport).length;
@@ -51,8 +53,29 @@ function SourceLink({ id, page }: { id: string; page?: number | null }) {
   );
 }
 
-function PointDetail({ point, onFocus, saved, onSave, onCompare, onClose, comparisonFeedback }: {
-  point: Point; onFocus: () => void; saved: boolean; onSave: () => void; onCompare: () => void; onClose: () => void; comparisonFeedback?: ReactNode;
+// How the female approximate marker of a point was placed (shown only with those markers on).
+const femaleRuleCount = Object.values(femaleAcupointNotes.methods).reduce((sum, ids) => sum + ids.length, 0);
+const CHEST_RELATION_IDS = ["ST17", "ST18", "LR14", "GB24", "KI22", "KI23", "SP17", "SP18"];
+function femaleMarkerNote(id: string) {
+  const { methods } = femaleAcupointNotes;
+  const notes = [methods["female-landmark-cun"].includes(id)
+    ? "여성 배꼽·두덩결합·칼몸통결합(일부는 위앞엉덩뼈가시)과 두 젖꼭지 사이 8촌으로 WHO 비례촌을 다시 계산한 근사 위치입니다."
+    : methods["female-landmark-level"].includes(id) ? "높이만 여성 표지(배꼽·두덩결합 위모서리)에 맞추고, 가로 위치는 남성 표식을 옮긴 근사 위치입니다."
+    : methods["female-landmark"].includes(id) ? "여성 몸의 표지(젖꼭지 중심·유방 아래 주름·위앞엉덩뼈가시와 무릎뼈 바닥을 잇는 선)에 직접 놓은 근사 위치입니다."
+    : femaleAcupointNotes.regionReference.includes(id) ? "입·코 안의 내부 참조점을 남성 표식에서 옮긴 근사입니다."
+    : "남성 표식을 여성 골격·피부 대응(정합장)으로 옮긴 근사 위치입니다."];
+  if (id === "ST18") notes.push("WHO의 여성 기준(유방 아래 주름의 중점)을 따라 이 몸에서는 ST19보다 아래에 있습니다.");
+  // WHO relations the female ST17/ST18 cannot keep with the carried intercostal points (data/female-acupoint-rules.json).
+  if (CHEST_RELATION_IDS.includes(id) && femaleAcupointNotes.knownBoundaryFailures.includes("ST18 superior to LR14"))
+    notes.push("가슴 갈비사이공간 경혈은 아직 남성 표식을 옮긴 것이라, 여성 젖꼭지·유방 아래 주름에 놓은 ST17·ST18과 WHO가 정한 높이 관계(LR14는 젖꼭지 아래 등)가 이 몸에서 맞지 않습니다.");
+  if (id === "ST32" && femaleAcupointNotes.knownBoundaryFailures.includes("ST31-ST32 spacing")) notes.push("WHO 위치(무릎뼈 바닥 위 6촌)보다 약 100mm 위에 있습니다.");
+  if (id === "GB28") notes.push("WHO 본문(위앞엉덩뼈가시 기준)과 주석(GB27 기준)이 이 몸에서 달라 주석을 따랐고, 위앞엉덩뼈가시에서 약 30mm 떨어집니다.");
+  if (femaleAcupointNotes.breastSurface.includes(id)) notes.push("유방 표면에 놓인 표식이며, 기준 위치는 유방 아래 가슴벽일 수 있습니다.");
+  if (femaleAcupointNotes.facingException.includes(id)) notes.push("옮겨 온 방향에 맞는 피부면이 없어 반대쪽 면(가슴 옆벽)에 놓였고, 실제 위치와 다를 수 있습니다.");
+  return `여성 근사 표식 · ${notes.join(" ")} 전문가 검수 전입니다.`;
+}
+function PointDetail({ point, onFocus, saved, onSave, onCompare, onClose, comparisonFeedback, femaleNote, modestyNote }: {
+  point: Point; onFocus: () => void; saved: boolean; onSave: () => void; onCompare: () => void; onClose: () => void; comparisonFeedback?: ReactNode; femaleNote?: string; modestyNote?: string;
 }) {
   const feedbackRef = useRef<HTMLDivElement>(null);
   const hasComparisonFeedback = Boolean(comparisonFeedback);
@@ -126,6 +149,8 @@ function PointDetail({ point, onFocus, saved, onSave, onCompare, onClose, compar
             <div className="anatomy-tags">{point.landmarks.map((s) => <span key={s}>{s}</span>)}</div>
             <p className="muted">{point.structures.length ? "골격·근육 레이어에서 관련 부위가 강조됩니다." : "이 경혈의 개별 기준점 메쉬는 아직 연결하지 않았습니다."}</p>
             <p className="coordinate-note"><span className="status-dot" />학습용 근사 위치 · {point.markerNote} 전문가의 위치 검수는 아직 진행하지 않았습니다.</p>
+            {femaleNote && <p className="coordinate-note" data-female-marker-note>{femaleNote}</p>}
+            {modestyNote && <p className="coordinate-note" data-modesty-marker-note>{modestyNote}</p>}
             <span className="ax-links"><a href="#wiki/point-categories">원혈·모혈 분류와 출처 ↗</a><a href="#wiki/massage-anatomy">마사지 전 해부학 참고 가이드 ↗</a></span>
           </>}
           {tab === "anatomy" && <>
@@ -566,6 +591,18 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const lungViewOptions = viewOptions(maleLungViews, (v) => v === "lung" ? "폐실질 함께 보기" : v === "lung-internal" ? "혈관·기관지 보기" : "이전 세부 가지 별도 보기");
   const pancreasViewOptions = viewOptions(malePancreasViews, (v) => v === "pancreas" ? "췌장 전체 형상 보기" : "췌장 실질·관 가지 별도 보기");
   const kidneyViewOptions = viewOptions(maleKidneyViews, (v) => v === "kidney" ? "양쪽 콩팥 전체 보기" : v === "kidney-left" ? "왼쪽 콩팥·혈관 확대 보기" : "오른쪽 콩팥·혈관 확대 보기");
+  // Female breast and reproductive organs: the views that uncover what their
+  // own covering hides (the breast fat, the peritoneal folds over the uterus).
+  const reproductiveScope = state.sex === "female" && (["uterus", "ovary", "uterine-tube", "vagina"].includes(selectedGroup || "")
+    || femaleReproductiveViews.some((view) => view.id === selectedGroup) || Boolean(selectedAnatomy && femaleReproductiveViews[1].ids.includes(selectedAnatomy.id)));
+  const breastScope = state.sex === "female" && femaleBreastViews.some((view) => view.id === selectedGroup);
+  const femaleViewOptions = [
+    ...(reproductiveScope ? femaleReproductiveViews : []), ...(breastScope ? femaleBreastViews : []),
+  ].filter((view) => view.id !== (state.detail ? state.detail.id : selectedGroup)).map((view) => <button key={view.id} onClick={() => {
+    selectFeatured(view);
+    // The pressed button leaves the card with its view; keep focus on the card.
+    requestAnimationFrame(() => requestAnimationFrame(() => focusWithoutOpeningSearch(workspaceRef.current?.querySelector<HTMLElement>(".selection-card") ?? null)));
+  }}>{view.id === "female-reproductive" ? "여성 생식기관 함께 보기" : view.id === "female-reproductive-peritoneum" ? "복막 포함 보기" : view.id === "breast" ? "유방 전체 보기" : "젖샘엽·젖샘관 보기"}</button>);
   const fullCompositeDetail = Boolean(selectedComposite && state.detail && state.selection?.kind === "bundle"
     && state.selection.ids.length === selectedComposite.ids.length && selectedComposite.ids.every((cid) => state.selection!.ids.includes(cid)));
   const detailParts = selectedOrgan ? structuresForSex(state.sex).filter((item) => selectedOrgan.ids.includes(item.id))
@@ -831,7 +868,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             <button aria-pressed={state.sex === "male"} onClick={() => dispatch({ type: "sex", value: "male" })}>남성</button>
             <button aria-pressed={state.sex === "female"} onClick={() => dispatch({ type: "sex", value: "female" })}>여성</button>
           </div>
-          <button className="ax-icon" aria-label="성기 가리기" data-tip={state.modesty ? "성기 가리기 끄기" : "성기 가리기"} aria-pressed={state.modesty} onClick={() => dispatch({ type: "modesty", value: !state.modesty })}><ShieldCheck size={18} /></button>
+          <button className="ax-icon" aria-label="성기 가리기" data-tip={state.modesty ? "성기 보이기" : "성기 가리기"} aria-pressed={state.modesty} onClick={() => dispatch({ type: "modesty", value: !state.modesty })}><ShieldCheck size={18} /></button>
           <button className="ax-icon" aria-label="표시 설정" data-tip="표시 설정" aria-expanded={panel === "display"} onClick={(e) => openPanel("display", e.currentTarget)}><SlidersHorizontal size={18} /></button>
           <button className="ax-icon" aria-label="도움말" data-tip="도움말" aria-expanded={panel === "help"} onClick={(e) => openPanel("help", e.currentTarget)}><CircleHelp size={18} /></button>
           {!phone && <button className="ax-text-button" onClick={(e) => startPresenting(e.currentTarget)}>발표 보기</button>}
@@ -907,10 +944,11 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
                 <tr><th scope="row">한 계통만</th><td>계통 옆 눈 버튼</td><td>단계 버튼 → 눈 버튼</td></tr>
                 <tr><th scope="row">계통 빼고 박리</th><td>깊이 막대 계통 행 왼쪽 ‘포함’ 체크 끄기(다시 체크하면 넣기)</td><td>단계 버튼 → 계통의 ‘포함’ 체크 끄기</td></tr>
                 <tr><th scope="row">장부 비교</th><td colSpan={2}>경혈 상세의 ‘대응 장부의 해부 구조 비교’</td></tr>
+                <tr><th scope="row">성기 보이기</th><td colSpan={2}>기본으로 가려 둡니다 — 위쪽 방패 버튼이나 표시 설정의 ‘성기 가리기’ 끄기</td></tr>
               </tbody>
             </table>
             <h3>알아둘 점</h3>
-            <p>처음에는 모든 계통이 몸 안에 함께 있고, 피부 → 근육(개별 근육 순서) → 골격 → 장기 → 혈관 → 림프 순서로 사라지며 신경이 남습니다. 깊이 막대에서 ‘포함’ 체크를 끈 계통은 깊이와 관계없이 그리지 않고(예: 장기를 빼고 근육만 박리), 박리는 남긴 가장 안쪽 계통이 사라지기 전에 멈춥니다. 보이지 않는 뒷면의 표식은 몸을 돌리면 나타납니다.</p>
+            <p>처음에는 모든 계통이 몸 안에 함께 있고, 피부 → 근육(개별 근육 순서) → 골격 → 장기(그물막·장, 생식기관을 덮는 복막, 나머지 장기 순서) → 혈관 → 림프 순서로 사라지며 신경이 남습니다. 깊이 막대에서 ‘포함’ 체크를 끈 계통은 깊이와 관계없이 그리지 않고(예: 장기를 빼고 근육만 박리), 박리는 남긴 가장 안쪽 계통이 사라지기 전에 멈춥니다. 보이지 않는 뒷면의 표식은 몸을 돌리면 나타납니다.</p>
             <p>박리 백분율은 실제 조직 깊이가 아닌 교육용 표시 순서입니다. 가슴·복벽·엉덩이·종아리의 확인된 근육 관계는 표층부터 제거하며, 그 밖의 근육 순서는 기하학적 추정이므로 전체 해부 층서가 검증된 것은 아닙니다.</p>
             <p>표식은 체표 기준의 학습용 근사입니다. 장부 대응은 전통적 분류이며 압력 전달 경로가 아닙니다.</p>
             <p>{stageDescription(state.stage, state.sex)}</p>
@@ -1047,6 +1085,10 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             onSave={() => toggle(selected.id)}
             onCompare={compare}
             onClose={closePanel}
+            femaleNote={state.sex === "female" && state.femaleMarkers ? femaleMarkerNote(selected.id) : undefined}
+            modestyNote={state.sex === "male" && state.modesty && MODEST_MOVED_POINTS.includes(selected.id)
+              ? "성기 가리기 중 · 사타구니를 닫아 그린 면(편집 표시 면) 앞쪽에 옮겨 그린 표식입니다. 원래 표식은 넓적다리 안쪽 면에 있고, 성기 가리기를 끄면 그 자리로 돌아갑니다."
+              : undefined}
             comparisonFeedback={comparisonNotice ? <>
               <p>{comparisonNotice}</p>
               {separateDetailIds.length > 0 && <p>전신에 합쳐지지 않은 별도 여성 CT 자료는 아래에서 열 수 있습니다. 경혈 위치와 겹쳐 표시하지 않습니다.</p>}
@@ -1106,6 +1148,14 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
                 <summary>위·혈관 상세 출처와 한계</summary>
                 <p className="selection-description">BodyParts3D 4.0의 위 1개, 좌우 위동맥·위정맥 4개와 위그물막동맥·정맥 4개를 같은 원본 좌표계에서 별도 선택합니다. 이 9개는 각각의 공식 개념에 대응하며 공식 ‘위의 9개 하위 부품’ 관계는 아닙니다. 위벽 층은 분할되지 않았고 혈관의 연결·관류나 기존 3.0 전신과의 국소 정합은 검증되지 않았습니다. 한국어 이름은 편집 표기이며 원문명·FMA ID를 유지합니다.</p>
               </details>}
+              {reproductiveScope && <details className="anatomy-source-details" data-reproductive-provenance>
+                <summary>생식기관 보기·출처 한계</summary>
+                <p className="selection-description">Visible Human 여성 자료를 바탕으로 만든 HRA 참조 기관입니다. 자궁·자궁관·난소는 장과 넓은인대 등 복막 뒤에 있어, 전신 연속 박리에서는 장기 단계를 조금 더 지나(약 79%) 드러납니다. 장기만 남긴 박리(76%에서 멈춤)와 ‘장기만 보기’에서는 장이 남아 가리므로 이 상세에서 보세요. 난소는 남성 원본을 옮긴 골반 벽 혈관에 일부 가립니다. 외부생식기와 그 근육(망울해면체근 등)·여성 요도·난소 혈관은 두 원본 모두에 없어 만들지 않았고, 옮긴 골반 벽 혈관·근육은 이 기관들과 겹칠 수 있습니다. 한국어 이름은 편집 표기이며 원문명·ID를 유지합니다.</p>
+              </details>}
+              {breastScope && <details className="anatomy-source-details" data-breast-provenance>
+                <summary>유방 보기·출처 한계</summary>
+                <p className="selection-description">HRA 유방은 기증자 조직을 분할한 것이 아니라 문헌을 바탕으로 조형한 참조 모형입니다. 젖샘관팽대도 그 참조 표현이며, 수유 중 초음파 연구에서는 전형적인 팽대가 관찰되지 않았습니다(Ramsay 등 2005). 젖샘엽·젖샘관은 지방 속에 있어 ‘젖샘엽·젖샘관 보기’에서 드러나고, 전신에서는 장기와 함께 표시합니다(원본 분류는 피부계통). 유방 아래 가슴벽 근육은 남성 원본을 옮긴 보완이라 유방 조직과 겹칠 수 있습니다.</p>
+              </details>}
               {state.sex === "female" && selectedOrgan?.id === "brain" && <div data-brain-provenance>
                 <p className="selection-description">뇌 묶음: Allen 참조 282개 + Visible Human 시신경교차 1개 · 머리뼈 안에 맞춤 · 차용 머리뼈와 뇌 모형 26개 표면 교차 · 위치 검증 미완료</p>
                 <details className="anatomy-source-details"><summary>뇌 출처·방향 주의</summary>
@@ -1138,6 +1188,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               {fullLungDetail && lungViewOptions}
               {fullPancreasDetail && pancreasViewOptions}
               {fullKidneyDetail && kidneyViewOptions}
+              {femaleViewOptions}
               {!fullCompositeDetail && !fullLungDetail && !fullPancreasDetail && !fullKidneyDetail && selectedOrgan && !(sourceKey === "female-detail" && selectedOrgan.ids.length === 1 && state.detail) && <button onClick={() => selectFeatured(selectedOrgan)}>{selectedComposite ? `${selectedComposite.name} ${state.detail ? "전체 모형" : "전체 상세 보기"}` : state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
               {state.detail && <button onClick={() => {
                 if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
@@ -1181,7 +1232,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             <p className="ax-note"><span className="note-long">여성 모델의 경혈 좌표는 검수 전이라 표식을 숨깁니다.</span><span className="note-short">여성 경혈 좌표는 검수 전이라 숨깁니다.</span> <button aria-label="근사 위치로 보기" onClick={() => dispatch({ type: "female-markers", value: true })}>근사 위치<span className="note-long">로 보기</span></button> <button aria-label="남성 모델에서 경혈 보기" onClick={() => dispatch({ type: "sex", value: "male" })}>남성 모델<span className="note-long">에서 경혈 보기</span></button></p>
             <button className="ax-toggle" aria-expanded={panel === "points"} aria-label="경혈 찾기" data-tip="경혈 목록 · 장부 비교할 경혈 고르기" data-tip-side="top" onClick={(e) => openPanel("points", e.currentTarget)}><List size={15} /></button>
           </>) : <>
-            {state.sex === "female" && <button className="ax-toggle ax-approx" aria-pressed="true" aria-label="여성 근사 표식 끄기" data-tip="남성 표식을 여성 골격·피부 대응으로 옮긴 근사 위치 · 검수 전 · 누르면 숨김" data-tip-side="top" onClick={() => dispatch({ type: "female-markers", value: false })}>근사</button>}
+            {state.sex === "female" && <button className="ax-toggle ax-approx" aria-pressed="true" aria-label="여성 근사 표식 끄기" data-tip={`배·사타구니·가슴 ${femaleRuleCount}개 경혈은 여성 표지 기준, 나머지는 남성 표식을 옮긴 근사 위치 · 검수 전 · 누르면 숨김`} data-tip-side="top" onClick={() => dispatch({ type: "female-markers", value: false })}>근사</button>}
             <button className="ax-toggle" aria-pressed={state.markers !== "hidden"} onClick={() => dispatch({ type: "markers", value: state.markers === "hidden" ? "filtered" : "hidden" })}>
               <span className="ax-dot" />경혈 <small>{markerCount}</small>
             </button>

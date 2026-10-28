@@ -1,0 +1,35 @@
+[
+  {
+    "id": "female-reproductive",
+    "name": "여성 생식기관",
+    "sex": "female",
+    "featured": true,
+    "sourceConcepts": ["HRA:reproductive_system − HRA:placenta − HRA:broad_ligament − HRA:uterovesical_pouch"],
+    "description": "자궁·난소·자궁관·질과 자궁·난소 인대 32개 HRA 원본 표면입니다. 자궁을 덮는 복막(넓은인대·자궁관간막·난소간막의 주름 5개와 방광자궁오목의 복막 1개)은 ‘복막 포함 보기’에서 봅니다. 외부생식기와 그 근육·여성 요도·난소 혈관은 원본에 없습니다.",
+    "ids": ["HRAF0406", "HRAF0407", "HRAF0408", "HRAF0409", "HRAF0410", "HRAF0411", "HRAF0412", "HRAF0413", "HRAF0414", "HRAF0415", "HRAF0417", "HRAF0418", "HRAF0419", "HRAF0420", "HRAF0421", "HRAF0422", "HRAF0423", "HRAF0424", "HRAF0425", "HRAF0426", "HRAF0432", "HRAF0433", "HRAF0434", "HRAF0435", "HRAF0436", "HRAF0437", "HRAF0438", "HRAF0439", "HRAF0440", "HRAF0441", "HRAF0442", "HRAF0443"]
+  },
+  {
+    "id": "female-reproductive-peritoneum",
+    "name": "여성 생식기관 · 복막 포함",
+    "sex": "female",
+    "sourceConcepts": ["HRA:reproductive_system − HRA:placenta"],
+    "description": "여성 생식기관 32개에 넓은인대·자궁관간막·난소간막(복막 주름)과 방광자궁오목의 복막 6개를 더한 38개 표면입니다. 이 복막이 자궁과 자궁관 대부분을 덮습니다.",
+    "ids": ["HRAF0406", "HRAF0407", "HRAF0408", "HRAF0409", "HRAF0410", "HRAF0411", "HRAF0412", "HRAF0413", "HRAF0414", "HRAF0415", "HRAF0416", "HRAF0417", "HRAF0418", "HRAF0419", "HRAF0420", "HRAF0421", "HRAF0422", "HRAF0423", "HRAF0424", "HRAF0425", "HRAF0426", "HRAF0427", "HRAF0428", "HRAF0429", "HRAF0430", "HRAF0431", "HRAF0432", "HRAF0433", "HRAF0434", "HRAF0435", "HRAF0436", "HRAF0437", "HRAF0438", "HRAF0439", "HRAF0440", "HRAF0441", "HRAF0442", "HRAF0443"]
+  },
+  {
+    "id": "breast-gland",
+    "name": "유방 · 젖샘엽·젖샘관",
+    "sex": "female",
+    "sourceConcepts": ["HRA:mammary_lobes_L/R", "HRA:main_lactiferous_ducts_L/R", "HRA:main_lactiferous_sinuses_L/R"],
+    "description": "유방 16개 원본 표면 중 지방에 싸인 젖샘엽·젖샘관·젖샘관팽대 6개입니다. HRA 유방은 기증자 조직을 분할한 것이 아니라 문헌을 바탕으로 조형한 참조 모형입니다.",
+    "ids": ["HRAF0008", "HRAF0009", "HRAF0010", "HRAF0018", "HRAF0017", "HRAF0016"]
+  },
+  {
+    "id": "male-reproductive",
+    "name": "남성 생식기관",
+    "sex": "male",
+    "featured": true,
+    "description": "BodyParts3D의 고환·부고환·정관·정낭·전립샘·음경 12개 모형입니다. 요도는 비뇨기관으로 따로 둡니다.",
+    "ids": ["FMA7211", "FMA7212", "FMA18256", "FMA18257", "FMA19235", "FMA19236", "FMA19387", "FMA19388", "FMA9600", "FMA18247", "FMA19617nsn", "FMA19618"]
+  }
+]

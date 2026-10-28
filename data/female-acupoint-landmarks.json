@@ -1,0 +1,1961 @@
+{
+ "schema": 1,
+ "status": "approximate-unreviewed",
+ "generatedBy": "scripts/female-acupoints/landmarks.mjs",
+ "coordinates": "App world space (metres, y up, +z anterior, the body's right side at -x), as dumped by .cache/female-transport/dump-scene.mjs.",
+ "scenes": {
+  "female": {
+   "dir": ".cache/female-transport/female-scene",
+   "sha256": {
+    "index.json": "437bff833c7959b952593611553dc4ca2e99385101c958a35b3750dce9fb27f9",
+    "geometry.bin": "99a91c49f3194ffa88d321007ed5628af0b5989af34fecf47dd5d26474ea71ce"
+   }
+  },
+  "male": {
+   "dir": ".cache/female-transport/male-scene",
+   "sha256": {
+    "index.json": "e9810243dab2085ebe34bdc52f15c48ad2e8b124f102ef6e757f030eb69894bc",
+    "geometry.bin": "db65c7cf994a14f374bdeac1f71c88606b783ab55413435f6398f1d80ebeb116"
+   }
+  }
+ },
+ "female": {
+  "parts": {
+   "skin": "HRAF0003",
+   "umbilicusArea": "HRAF0000",
+   "sternum": [
+    "HRAF0823"
+   ],
+   "manubrium": "HRAF0824",
+   "pubis": {
+    "right": "HRAF0958",
+    "left": "HRAF0959"
+   },
+   "nipple": {
+    "right": "HRAF0014",
+    "left": "HRAF0006"
+   },
+   "clavicle": {
+    "right": "BM0113",
+    "left": "BM0070"
+   },
+   "costalCartilage7": {
+    "right": "BM0056",
+    "left": "BM0040"
+   },
+   "ilium": {
+    "right": "HRAF0827",
+    "left": "HRAF0828"
+   },
+   "patella": {
+    "right": "HRAF0929",
+    "left": "HRAF0953"
+   },
+   "breastFat": {
+    "right": "HRAF0012",
+    "left": "HRAF0004"
+   },
+   "rib11": {
+    "right": "BM0042",
+    "left": "BM0023"
+   }
+  },
+  "navel": {
+   "point": [
+    0,
+    0.9757,
+    0.07669
+   ],
+   "parts": [
+    "HRAF0003"
+   ],
+   "depthMm": 2,
+   "deepestXY": [
+    -0.001,
+    0.97515
+   ],
+   "method": "Frontal skin z-map (rays travelling -z, first hit = outer face). Coarse: 2 mm grid, |x| <= 30 mm, 25-75% of the way from the pubic symphysis to the xiphisternal junction. Fine: 1 mm grid within 30 mm of the coarse pit. Depth = mean z of the 21 mm window minus z; centre = depth-weighted centroid of the cells deeper than half the maximum within 8 mm of the deepest cell; z = frontal skin hit at that centre.",
+   "crossCheck": {
+    "part": "HRAF0000",
+    "sourceName": "Subcutaneous abdominal adipose tissue umbilicus area",
+    "limitMm": 2,
+    "vertexCentroid": [
+     0.00074,
+     0.97497,
+     0.07835
+    ],
+    "vertexCentroidFrontalDistanceMm": 1,
+    "areaCentroid": [
+     0.00147,
+     0.97207,
+     0.07804
+    ],
+    "areaCentroidFrontalDistanceMm": 3.9,
+    "footprint": {
+     "x": [
+      -0.03766,
+      0.04039
+     ],
+     "y": [
+      0.93497,
+      1.00856
+     ]
+    },
+    "passes": "vertex centroid only",
+    "note": "HRAF0000 is a closed adipose patch around the umbilicus, not a navel point: it reaches further below the navel than above it, so its area (and volume) centroid sits lower than its vertex centroid. The skin pit is the definitional landmark; HRAF0000 is only a coarse cross-check."
+   }
+  },
+  "xiphisternalJunction": {
+   "point": [
+    0.00696,
+    1.21974,
+    0.04414
+   ],
+   "boneLowestY": 1.19724,
+   "parts": [
+    "HRAF0823"
+   ],
+   "stepMm": 7,
+   "secondStep": {
+    "y": 1.22224,
+    "stepMm": 4.7
+   },
+   "method": "Sternum vertices in 5 mm slabs every 2.5 mm over the lowest 4 cm; the junction is the middle of the largest 5 mm increase in left-right width (xiphoid narrower than the sternal body); x = centre of that slab; z = frontal skin hit.",
+   "widthProfileYWidthMm": [
+    [
+     1.19974,
+     17.8
+    ],
+    [
+     1.20224,
+     18.9
+    ],
+    [
+     1.20474,
+     21.3
+    ],
+    [
+     1.20724,
+     23
+    ],
+    [
+     1.20974,
+     24
+    ],
+    [
+     1.21224,
+     24.9
+    ],
+    [
+     1.21474,
+     25
+    ],
+    [
+     1.21724,
+     25.1
+    ],
+    [
+     1.21974,
+     27.9
+    ],
+    [
+     1.22224,
+     32
+    ],
+    [
+     1.22474,
+     32.6
+    ],
+    [
+     1.22724,
+     33.4
+    ],
+    [
+     1.22974,
+     33.7
+    ],
+    [
+     1.23224,
+     33.6
+    ],
+    [
+     1.23474,
+     34.1
+    ]
+   ],
+   "costalCartilage7MedialEnds": {
+    "parts": {
+     "right": "BM0056",
+     "left": "BM0040"
+    },
+    "right": [
+     -0.00461,
+     1.22545,
+     0.00847
+    ],
+    "left": [
+     0.00225,
+     1.22537,
+     0.00816
+    ],
+    "meanY": 1.22541
+   },
+   "ambiguity": {
+    "alternatives": [
+     {
+      "method": "7th costal cartilage medial ends (borrowed BM0040/BM0056)",
+      "y": 1.22541
+     },
+     {
+      "method": "7th costal cartilage medial ends + the male offset from those ends to the male explicit xiphoid boundary",
+      "y": 1.22972
+     },
+     {
+      "method": "second-largest sternal width step",
+      "y": 1.22224
+     }
+    ],
+    "statedMm": 10,
+    "note": "HRA 'Sternum' (HRAF0823) includes the xiphoid; there is no separate xiphoid part. On the male scene, where the xiphoid is a separate part, the same width-step rule lands within 2.6 mm of the explicit boundary.",
+    "sensitivity": "1 cm on the junction changes the upper-abdomen cun by 4.1% and moves CV15 by 8.75 mm, CV14/KI21/ST19 by 7.5 mm."
+   }
+  },
+  "pubicSymphysisSuperior": {
+   "point": [
+    -0.00305,
+    0.79496,
+    0.00982
+   ],
+   "parts": [
+    "HRAF0958",
+    "HRAF0959"
+   ],
+   "asymmetryMm": 3.5,
+   "perSide": {
+    "right": {
+     "part": "HRAF0958",
+     "medialX": -0.002,
+     "top": [
+      -0.00736,
+      0.79321,
+      -0.02536
+     ]
+    },
+    "left": {
+     "part": "HRAF0959",
+     "medialX": -0.0041,
+     "top": [
+      0,
+      0.7967,
+      -0.0423
+     ]
+    }
+   },
+   "method": "Per side, the highest pubis vertex within 6 mm of that bone's medial (symphyseal) face; y = mean of the two sides, x = midpoint of the two medial faces; z = frontal skin hit over it."
+  },
+  "nipples": {
+   "parts": {
+    "right": "HRAF0014",
+    "left": "HRAF0006"
+   },
+   "right": [
+    -0.10963,
+    1.18489,
+    0.0793
+   ],
+   "left": [
+    0.10972,
+    1.18423,
+    0.07959
+   ],
+   "interNippleXMm": 219.3,
+   "interNipple3dMm": 219.3,
+   "levelDifferenceMm": 0.7,
+   "method": "Area-weighted centroid of each HRA nipple part; the inter-nipple distance is the left-right (x) separation in the frontal plane, not a path over the skin.",
+   "outerCentre": {
+    "parts": {
+     "right": "HRAF0014",
+     "left": "HRAF0006"
+    },
+    "right": [
+     -0.11054,
+     1.1851,
+     0.0818
+    ],
+    "left": [
+     0.11076,
+     1.18435,
+     0.08203
+    ],
+    "axis": {
+     "right": [
+      -0.3394,
+      0.0771,
+      0.9375
+     ],
+     "left": [
+      0.3921,
+      0.0435,
+      0.9189
+     ]
+    },
+    "aboveSkinMm": {
+     "right": 3.1,
+     "left": 3.5
+    },
+    "method": "Centre of the nipple on its outer surface: the axis through the nipple's area centroid along the area-weighted mean outward normal of the HRAF0003 skin faces within 10 mm; the outermost crossing of the nipple part on that axis."
+   }
+  },
+  "midclavicularLines": {
+   "parts": {
+    "right": "BM0113",
+    "left": "BM0070"
+   },
+   "right": -0.08911,
+   "left": 0.08068,
+   "method": "Midpoint of each clavicle's left-right extent. The female clavicles are borrowed male bones carried by the registration field (BM*), not HRA female bones."
+  },
+  "anteriorMedianLine": {
+   "parts": [
+    "HRAF0003"
+   ],
+   "samplesYXRmsMm": [
+    [
+     0.77,
+     -0.0016,
+     0.87
+    ],
+    [
+     0.775,
+     -0.0015,
+     0.69
+    ],
+    [
+     0.78,
+     -0.0014,
+     0.64
+    ],
+    [
+     0.785,
+     -0.0014,
+     0.64
+    ],
+    [
+     0.79,
+     -0.0009,
+     0.61
+    ],
+    [
+     0.795,
+     -0.0001,
+     0.51
+    ],
+    [
+     0.8,
+     0.0003,
+     0.42
+    ],
+    [
+     0.805,
+     0.0004,
+     0.41
+    ],
+    [
+     0.81,
+     0.0002,
+     0.35
+    ],
+    [
+     0.815,
+     0,
+     0.27
+    ],
+    [
+     0.82,
+     0.0001,
+     0.2
+    ],
+    [
+     0.825,
+     0,
+     0.18
+    ],
+    [
+     0.83,
+     -0.0002,
+     0.15
+    ],
+    [
+     0.835,
+     -0.0001,
+     0.14
+    ],
+    [
+     0.84,
+     0,
+     0.11
+    ],
+    [
+     0.845,
+     0,
+     0.11
+    ],
+    [
+     0.85,
+     -0.0002,
+     0.14
+    ],
+    [
+     0.855,
+     -0.0001,
+     0.13
+    ],
+    [
+     0.86,
+     -0.0001,
+     0.12
+    ],
+    [
+     0.865,
+     -0.0001,
+     0.1
+    ],
+    [
+     0.87,
+     -0.0001,
+     0.1
+    ],
+    [
+     0.875,
+     -0.0001,
+     0.11
+    ],
+    [
+     0.88,
+     0,
+     0.15
+    ],
+    [
+     0.885,
+     -0.0001,
+     0.12
+    ],
+    [
+     0.89,
+     -0.0001,
+     0.13
+    ],
+    [
+     0.895,
+     -0.0001,
+     0.15
+    ],
+    [
+     0.9,
+     -0.0001,
+     0.1
+    ],
+    [
+     0.905,
+     -0.0001,
+     0.12
+    ],
+    [
+     0.91,
+     0,
+     0.16
+    ],
+    [
+     0.915,
+     0,
+     0.16
+    ],
+    [
+     0.92,
+     0,
+     0.15
+    ],
+    [
+     0.925,
+     0,
+     0.11
+    ],
+    [
+     0.93,
+     -0.0001,
+     0.11
+    ],
+    [
+     0.935,
+     -0.0001,
+     0.13
+    ],
+    [
+     0.94,
+     -0.0001,
+     0.12
+    ],
+    [
+     0.945,
+     -0.0001,
+     0.1
+    ],
+    [
+     0.95,
+     -0.0001,
+     0.06
+    ],
+    [
+     0.955,
+     -0.0001,
+     0.09
+    ],
+    [
+     0.96,
+     -0.0001,
+     0.13
+    ],
+    [
+     0.965,
+     -0.0001,
+     0.11
+    ],
+    [
+     0.97,
+     -0.0001,
+     0.13
+    ],
+    [
+     0.975,
+     -0.0001,
+     0.11
+    ],
+    [
+     0.98,
+     -0.0001,
+     0.14
+    ],
+    [
+     0.985,
+     -0.0001,
+     0.12
+    ],
+    [
+     0.99,
+     -0.0001,
+     0.1
+    ],
+    [
+     0.995,
+     0,
+     0.12
+    ],
+    [
+     1,
+     -0.0001,
+     0.1
+    ],
+    [
+     1.005,
+     -0.0001,
+     0.1
+    ],
+    [
+     1.01,
+     -0.0001,
+     0.11
+    ],
+    [
+     1.015,
+     -0.0001,
+     0.11
+    ],
+    [
+     1.02,
+     -0.0001,
+     0.12
+    ],
+    [
+     1.025,
+     -0.0001,
+     0.1
+    ],
+    [
+     1.03,
+     -0.0001,
+     0.11
+    ],
+    [
+     1.035,
+     -0.0001,
+     0.12
+    ],
+    [
+     1.04,
+     -0.0001,
+     0.14
+    ],
+    [
+     1.045,
+     -0.0001,
+     0.26
+    ],
+    [
+     1.05,
+     -0.0001,
+     0.28
+    ],
+    [
+     1.055,
+     -0.0001,
+     0.27
+    ],
+    [
+     1.06,
+     0,
+     0.34
+    ],
+    [
+     1.065,
+     0,
+     0.39
+    ],
+    [
+     1.07,
+     0,
+     0.4
+    ],
+    [
+     1.075,
+     0,
+     0.37
+    ],
+    [
+     1.08,
+     0,
+     0.29
+    ],
+    [
+     1.085,
+     0.0002,
+     0.26
+    ],
+    [
+     1.09,
+     0.0003,
+     0.21
+    ],
+    [
+     1.095,
+     0.0004,
+     0.25
+    ],
+    [
+     1.1,
+     0.0006,
+     0.25
+    ],
+    [
+     1.105,
+     0.0006,
+     0.33
+    ],
+    [
+     1.11,
+     0.0006,
+     0.36
+    ],
+    [
+     1.115,
+     0.0005,
+     0.37
+    ],
+    [
+     1.12,
+     0.0005,
+     0.39
+    ],
+    [
+     1.125,
+     0.0004,
+     0.41
+    ],
+    [
+     1.13,
+     0.0004,
+     0.43
+    ],
+    [
+     1.135,
+     0.0005,
+     0.43
+    ],
+    [
+     1.14,
+     0.0002,
+     0.34
+    ],
+    [
+     1.145,
+     0,
+     0.4
+    ],
+    [
+     1.15,
+     -0.0003,
+     0.4
+    ],
+    [
+     1.155,
+     -0.0004,
+     0.33
+    ],
+    [
+     1.16,
+     -0.0004,
+     0.25
+    ],
+    [
+     1.165,
+     -0.0004,
+     0.28
+    ],
+    [
+     1.17,
+     -0.0003,
+     0.23
+    ],
+    [
+     1.175,
+     -0.0003,
+     0.17
+    ],
+    [
+     1.18,
+     -0.0002,
+     0.14
+    ],
+    [
+     1.185,
+     -0.0002,
+     0.12
+    ],
+    [
+     1.19,
+     -0.0001,
+     0.13
+    ],
+    [
+     1.195,
+     -0.0001,
+     0.12
+    ],
+    [
+     1.2,
+     -0.0001,
+     0.17
+    ],
+    [
+     1.205,
+     -0.0001,
+     0.2
+    ],
+    [
+     1.21,
+     -0.0001,
+     0.15
+    ],
+    [
+     1.215,
+     0,
+     0.15
+    ],
+    [
+     1.22,
+     -0.0001,
+     0.14
+    ],
+    [
+     1.225,
+     -0.0001,
+     0.08
+    ],
+    [
+     1.23,
+     -0.0001,
+     0.08
+    ],
+    [
+     1.235,
+     -0.0001,
+     0.09
+    ],
+    [
+     1.24,
+     -0.0001,
+     0.11
+    ]
+   ],
+   "medianX": -0.0001,
+   "method": "At each level, the x about which the frontal skin profile z(x) (1 mm samples, |x - s| from 10 to 120 mm) is mirror-symmetric (least squares, 0.1 mm search); linear between 5 mm samples.",
+   "landmarkOffsetsMm": {
+    "navel": 0.1,
+    "pubicSymphysis": -2.9,
+    "xiphisternalJunction": 7.1,
+    "nippleMidpoint": 0.2
+   }
+  },
+  "cun": {
+   "upperAbdomenMm": 30.5,
+   "lowerAbdomenMm": 36.1,
+   "xiphisternalToNavelMm": 244,
+   "navelToPubicMm": 180.7,
+   "lateralMm": 27.4,
+   "lateralMidclavicularMm": 21.2
+  },
+  "pubicSymphysisInferior": {
+   "point": [
+    -0.00305,
+    0.77046,
+    -0.00171
+   ],
+   "parts": [
+    "HRAF0958",
+    "HRAF0959"
+   ],
+   "asymmetryMm": 0.3,
+   "perSide": {
+    "right": {
+     "part": "HRAF0958",
+     "medialX": -0.002,
+     "low": [
+      -0.00696,
+      0.77031,
+      -0.05137
+     ]
+    },
+    "left": {
+     "part": "HRAF0959",
+     "medialX": -0.0041,
+     "low": [
+      0.001,
+      0.77061,
+      -0.05093
+     ]
+    }
+   },
+   "method": "Per side, the lowest pubis vertex within 6 mm of that bone's medial (symphyseal) face; y = mean of the two sides, x = midpoint of the two medial faces; z = frontal skin hit. The HRA model has no interpubic disc, so this is the lower end of the facing bony surfaces."
+  },
+  "asis": {
+   "parts": {
+    "right": "HRAF0827",
+    "left": "HRAF0828"
+   },
+   "right": [
+    -0.13806,
+    0.88164,
+    -0.01074
+   ],
+   "left": [
+    0.12568,
+    0.88509,
+    -0.00651
+   ],
+   "spreadMm": {
+    "right": 7.6,
+    "left": 7.1
+   },
+   "alternatives": {
+    "right": {
+     "superior20": [
+      -0.13704,
+      0.8889,
+      -0.0128
+     ],
+     "lateral20": [
+      -0.14404,
+      0.87833,
+      -0.01193
+     ],
+     "medial20": [
+      -0.1337,
+      0.88215,
+      -0.01147
+     ]
+    },
+    "left": {
+     "superior20": [
+      0.12415,
+      0.89187,
+      -0.00784
+     ],
+     "lateral20": [
+      0.12925,
+      0.88391,
+      -0.00705
+     ],
+     "medial20": [
+      0.12245,
+      0.88543,
+      -0.00681
+     ]
+    }
+   },
+   "skinDepthMm": {
+    "right": 8.7,
+    "left": 9.9
+   },
+   "method": "Anterior superior iliac spine: per side, the most anterior vertex (largest z) of the HRA ilium compact bone. spreadMm = largest distance to the support points tilted 20 degrees superiorly, laterally or medially (how sharply the spine stands out)."
+  },
+  "patellaBaseLateral": {
+   "parts": {
+    "right": "HRAF0929",
+    "left": "HRAF0953"
+   },
+   "right": [
+    -0.15811,
+    0.45731,
+    -0.03401
+   ],
+   "left": [
+    0.14942,
+    0.45731,
+    -0.03774
+   ],
+   "spreadMm": {
+    "right": 9.8,
+    "left": 9.8
+   },
+   "alternatives": {
+    "right": {
+     "deg30": [
+      -0.16323,
+      0.44896,
+      -0.03375
+     ],
+     "deg60": [
+      -0.15811,
+      0.45731,
+      -0.03401
+     ]
+    },
+    "left": {
+     "deg30": [
+      0.15454,
+      0.44896,
+      -0.03748
+     ],
+     "deg60": [
+      0.14942,
+      0.45731,
+      -0.03774
+     ]
+    }
+   },
+   "method": "Lateral end of the base (superior border) of the HRA patella: per side, the vertex furthest in the frontal-plane superolateral direction (45 degrees between lateral and superior). Alternatives at 30 and 60 degrees."
+  },
+  "inframammaryCrease": {
+   "parts": [
+    "HRAF0003",
+    "HRAF0012",
+    "HRAF0004"
+   ],
+   "right": {
+    "point": [
+     -0.10963,
+     1.13361,
+     0.02186
+    ],
+    "normal": [
+     -0.7271,
+     -0.1406,
+     0.672
+    ],
+    "depthMm": 44.6,
+    "onSkinMm": 0,
+    "breastFatDistanceMm": 12.4,
+    "belowNippleMm": 51.3,
+    "stabilityMm": 2.9,
+    "lowestOnCrease": {
+     "lateralOffsetMm": -30,
+     "y": 1.1279,
+     "z": 0.04264,
+     "higherThanLowestMm": 5.7
+    },
+    "lineLateralMmYZDepthFat": [
+     [
+      -60,
+      1.13787,
+      0.05371,
+      18,
+      18.4
+     ],
+     [
+      -55,
+      1.13775,
+      0.05243,
+      20.4,
+      15.8
+     ],
+     [
+      -50,
+      1.13533,
+      0.05089,
+      23.1,
+      15.3
+     ],
+     [
+      -45,
+      1.13254,
+      0.04932,
+      25.5,
+      15.6
+     ],
+     [
+      -40,
+      1.13051,
+      0.04734,
+      28,
+      15.3
+     ],
+     [
+      -35,
+      1.1291,
+      0.04505,
+      30.3,
+      15
+     ],
+     [
+      -30,
+      1.1279,
+      0.04264,
+      32.5,
+      14.8
+     ],
+     [
+      -25,
+      1.13025,
+      0.04045,
+      34.2,
+      11.9
+     ],
+     [
+      -20,
+      1.12989,
+      0.0375,
+      36.4,
+      12
+     ],
+     [
+      -15,
+      1.13011,
+      0.03418,
+      38.6,
+      12
+     ],
+     [
+      -10,
+      1.13058,
+      0.03066,
+      40.7,
+      12.3
+     ],
+     [
+      -5,
+      1.13186,
+      0.02646,
+      42.8,
+      12.3
+     ],
+     [
+      0,
+      1.13361,
+      0.02186,
+      44.6,
+      12.4
+     ],
+     [
+      5,
+      1.13613,
+      0.01668,
+      46.4,
+      12.6
+     ],
+     [
+      10,
+      1.13975,
+      0.01091,
+      48.3,
+      13
+     ],
+     [
+      15,
+      1.14461,
+      0.00469,
+      50.1,
+      13.9
+     ],
+     [
+      20,
+      1.15096,
+      -0.00307,
+      52.4,
+      15.6
+     ],
+     [
+      25,
+      1.16575,
+      -0.0105,
+      56.4,
+      13.3
+     ],
+     [
+      30,
+      1.18998,
+      -0.01273,
+      61.1,
+      8.2
+     ],
+     [
+      35,
+      1.19835,
+      0.01225,
+      22.9,
+      1.7
+     ]
+    ]
+   },
+   "left": {
+    "point": [
+     0.10972,
+     1.13137,
+     0.02271
+    ],
+    "normal": [
+     0.7112,
+     -0.1749,
+     0.6809
+    ],
+    "depthMm": 43.3,
+    "onSkinMm": 0,
+    "breastFatDistanceMm": 11.4,
+    "belowNippleMm": 52.9,
+    "stabilityMm": 5.2,
+    "lowestOnCrease": {
+     "lateralOffsetMm": -20,
+     "y": 1.12664,
+     "z": 0.03754,
+     "higherThanLowestMm": 4.7
+    },
+    "lineLateralMmYZDepthFat": [
+     [
+      -60,
+      1.13837,
+      0.05347,
+      18.2,
+      16.2
+     ],
+     [
+      -55,
+      1.13699,
+      0.05214,
+      20.9,
+      14.4
+     ],
+     [
+      -50,
+      1.13519,
+      0.05051,
+      23.7,
+      13.4
+     ],
+     [
+      -45,
+      1.13319,
+      0.04872,
+      26.1,
+      12.7
+     ],
+     [
+      -40,
+      1.13146,
+      0.04685,
+      28.3,
+      12.4
+     ],
+     [
+      -35,
+      1.13042,
+      0.04475,
+      30.5,
+      11.4
+     ],
+     [
+      -30,
+      1.12938,
+      0.04265,
+      32.3,
+      11.1
+     ],
+     [
+      -25,
+      1.12803,
+      0.04013,
+      34.2,
+      11.4
+     ],
+     [
+      -20,
+      1.12664,
+      0.03754,
+      35.8,
+      12.3
+     ],
+     [
+      -15,
+      1.12668,
+      0.03454,
+      37.6,
+      12.4
+     ],
+     [
+      -10,
+      1.12764,
+      0.03125,
+      39.2,
+      11.9
+     ],
+     [
+      -5,
+      1.12916,
+      0.02736,
+      41.1,
+      11.5
+     ],
+     [
+      0,
+      1.13137,
+      0.02271,
+      43.3,
+      11.4
+     ],
+     [
+      5,
+      1.13828,
+      0.01813,
+      45.7,
+      7.9
+     ],
+     [
+      10,
+      1.14017,
+      0.01141,
+      47.6,
+      10.6
+     ],
+     [
+      15,
+      1.14633,
+      0.00505,
+      49.3,
+      11.1
+     ],
+     [
+      20,
+      1.15029,
+      -0.00383,
+      52,
+      15.5
+     ],
+     [
+      25,
+      1.16534,
+      -0.01111,
+      56.6,
+      13.3
+     ],
+     [
+      30,
+      1.18765,
+      -0.01722,
+      64.3,
+      12
+     ],
+     [
+      35,
+      1.19937,
+      0.01406,
+      19.7,
+      0.8
+     ]
+    ]
+   },
+   "method": "Sagittal cross-section of the skin HRAF0003 at the nipple's x (the nipple's vertical meridian). From the frontmost skin point within 15 mm of the nipple height, the section is walked downward for 150 mm; the crease is the point deepest below the anterior convex hull of that walk (the fold where the breast's lower surface meets the chest skin). normal = mean outward skin normal within 5 mm. The same construction every 5 mm from 60 mm medial to 35 mm lateral of the nipple traces the crease line (lineLateralMmYZDepthFat: lateral offset, y, z, depth, distance to the breast fat HRAF0004/HRAF0012; samples more than 20 mm from the fat are not crease).",
+   "choice": "WHO ST18 (females): 'at the midpoint of the inferior crease of the breast'. The crease has no measurable ends on this mesh (it wraps round the side of the chest), so its midpoint is read as the crease point on the nipple's vertical meridian, which is also the 4 B-cun line of the WHO main text (the lateral B-cun is inter-nipple / 8). lowestOnCrease reports the lowest point of the traced crease as the alternative reading."
+  },
+  "rib11FreeEnd": {
+   "parts": {
+    "right": "BM0042",
+    "left": "BM0023"
+   },
+   "right": [
+    -0.09481,
+    1.07468,
+    -0.08939
+   ],
+   "left": [
+    0.09233,
+    1.07467,
+    -0.08939
+   ],
+   "method": "Most anterior vertex of the 11th rib. These are borrowed male ribs carried by the registration field (BM*), not HRA female bones; reported for the GB26 check only."
+  },
+  "asymmetry": {
+   "nippleMirrorMm": 0.8,
+   "pubicTopMm": 3.5,
+   "symmetryLimitMm": 6.5,
+   "pubicBottomMm": 0.3,
+   "asisMirrorMm": 13.3,
+   "patellaBaseMirrorMm": 9.3,
+   "nippleOuterMirrorMm": 0.9,
+   "creaseMirrorMm": 2.4
+  }
+ },
+ "maleQa": {
+  "note": "Same measurements on the male BodyParts3D scene for comparison only; male markers are never moved. The male skin has no nipple part.",
+  "parts": {
+   "skin": "FMA7163",
+   "sternum": [
+    "FMA7487",
+    "FMA7488"
+   ],
+   "sternalBody": "FMA7487",
+   "xiphoid": "FMA7488",
+   "manubrium": "FMA7486",
+   "pubis": {
+    "right": "FMA16586",
+    "left": "FMA16587"
+   },
+   "nipple": null,
+   "clavicle": {
+    "right": "FMA13322",
+    "left": "FMA13323"
+   },
+   "costalCartilage7": {
+    "right": "FMA8248",
+    "left": "FMA8275"
+   }
+  },
+  "navel": {
+   "point": [
+    -0.00087,
+    0.98882,
+    0.10704
+   ],
+   "parts": [
+    "FMA7163"
+   ],
+   "depthMm": 6.2,
+   "deepestXY": [
+    0,
+    0.99045
+   ],
+   "method": "Frontal skin z-map (rays travelling -z, first hit = outer face). Coarse: 2 mm grid, |x| <= 30 mm, 25-75% of the way from the pubic symphysis to the xiphisternal junction. Fine: 1 mm grid within 30 mm of the coarse pit. Depth = mean z of the 21 mm window minus z; centre = depth-weighted centroid of the cells deeper than half the maximum within 8 mm of the deepest cell; z = frontal skin hit at that centre."
+  },
+  "xiphisternalJunction": {
+   "point": [
+    -0.00071,
+    1.20003,
+    0.11323
+   ],
+   "boneLowestY": 1.18253,
+   "parts": [
+    "FMA7487",
+    "FMA7488"
+   ],
+   "stepMm": 9.7,
+   "secondStep": {
+    "y": 1.20253,
+    "stepMm": 8.6
+   },
+   "method": "Sternum vertices in 5 mm slabs every 2.5 mm over the lowest 4 cm; the junction is the middle of the largest 5 mm increase in left-right width (xiphoid narrower than the sternal body); x = centre of that slab; z = frontal skin hit.",
+   "widthProfileYWidthMm": [
+    [
+     1.18503,
+     10.1
+    ],
+    [
+     1.18753,
+     12.8
+    ],
+    [
+     1.19003,
+     15.7
+    ],
+    [
+     1.19253,
+     17.9
+    ],
+    [
+     1.19503,
+     18.4
+    ],
+    [
+     1.19753,
+     19.8
+    ],
+    [
+     1.20003,
+     23.3
+    ],
+    [
+     1.20253,
+     29.5
+    ],
+    [
+     1.20503,
+     31.9
+    ],
+    [
+     1.20753,
+     34.9
+    ],
+    [
+     1.21003,
+     37.5
+    ],
+    [
+     1.21253,
+     38.2
+    ],
+    [
+     1.21503,
+     41.4
+    ],
+    [
+     1.21753,
+     42.5
+    ],
+    [
+     1.22003,
+     44.1
+    ]
+   ],
+   "costalCartilage7MedialEnds": {
+    "parts": {
+     "right": "FMA8248",
+     "left": "FMA8275"
+    },
+    "right": [
+     -0.00678,
+     1.19807,
+     0.10588
+    ],
+    "left": [
+     0.00548,
+     1.19852,
+     0.10295
+    ],
+    "meanY": 1.19829
+   },
+   "explicitBoundary": {
+    "parts": [
+     "FMA7487",
+     "FMA7488"
+    ],
+    "y": 1.2026,
+    "sternalBodyLowestY": 1.20063,
+    "xiphoidHighestY": 1.20457,
+    "widthStepErrorMm": -2.6
+   }
+  },
+  "pubicSymphysisSuperior": {
+   "point": [
+    0.00047,
+    0.82725,
+    0.07834
+   ],
+   "parts": [
+    "FMA16586",
+    "FMA16587"
+   ],
+   "asymmetryMm": 1.2,
+   "perSide": {
+    "right": {
+     "part": "FMA16586",
+     "medialX": -0.00352,
+     "top": [
+      -0.00608,
+      0.82663,
+      0.04125
+     ]
+    },
+    "left": {
+     "part": "FMA16587",
+     "medialX": 0.00447,
+     "top": [
+      0.00844,
+      0.82787,
+      0.04335
+     ]
+    }
+   },
+   "method": "Per side, the highest pubis vertex within 6 mm of that bone's medial (symphyseal) face; y = mean of the two sides, x = midpoint of the two medial faces; z = frontal skin hit over it."
+  },
+  "midclavicularLines": {
+   "parts": {
+    "right": "FMA13322",
+    "left": "FMA13323"
+   },
+   "right": -0.08078,
+   "left": 0.07942,
+   "method": "Midpoint of each clavicle's left-right extent."
+  },
+  "anteriorMedianLine": {
+   "parts": [
+    "FMA7163"
+   ],
+   "samplesYXRmsMm": [
+    [
+     0.805,
+     -0.0007,
+     0.39
+    ],
+    [
+     0.81,
+     -0.0015,
+     0.28
+    ],
+    [
+     0.815,
+     -0.0011,
+     0.18
+    ],
+    [
+     0.82,
+     -0.0009,
+     0.24
+    ],
+    [
+     0.825,
+     -0.0009,
+     0.4
+    ],
+    [
+     0.83,
+     -0.0007,
+     0.48
+    ],
+    [
+     0.835,
+     -0.0005,
+     0.49
+    ],
+    [
+     0.84,
+     -0.0003,
+     0.48
+    ],
+    [
+     0.845,
+     -0.0003,
+     0.25
+    ],
+    [
+     0.85,
+     -0.0003,
+     0.29
+    ],
+    [
+     0.855,
+     -0.0003,
+     0.32
+    ],
+    [
+     0.86,
+     -0.0003,
+     0.34
+    ],
+    [
+     0.865,
+     -0.0004,
+     0.4
+    ],
+    [
+     0.87,
+     -0.0006,
+     0.53
+    ],
+    [
+     0.875,
+     -0.0008,
+     0.65
+    ],
+    [
+     0.88,
+     -0.0007,
+     0.59
+    ],
+    [
+     0.885,
+     -0.0004,
+     0.6
+    ],
+    [
+     0.89,
+     -0.0002,
+     0.62
+    ],
+    [
+     0.895,
+     -0.0003,
+     0.66
+    ],
+    [
+     0.9,
+     -0.0005,
+     0.68
+    ],
+    [
+     0.905,
+     -0.0006,
+     0.62
+    ],
+    [
+     0.91,
+     -0.0005,
+     0.6
+    ],
+    [
+     0.915,
+     -0.0005,
+     0.58
+    ],
+    [
+     0.92,
+     -0.0005,
+     0.71
+    ],
+    [
+     0.925,
+     -0.0006,
+     0.82
+    ],
+    [
+     0.93,
+     -0.0006,
+     0.78
+    ],
+    [
+     0.935,
+     -0.0007,
+     0.62
+    ],
+    [
+     0.94,
+     -0.0007,
+     0.56
+    ],
+    [
+     0.945,
+     -0.0009,
+     0.45
+    ],
+    [
+     0.95,
+     -0.0011,
+     0.46
+    ],
+    [
+     0.955,
+     -0.0008,
+     0.51
+    ],
+    [
+     0.96,
+     -0.0005,
+     0.51
+    ],
+    [
+     0.965,
+     -0.0002,
+     0.54
+    ],
+    [
+     0.97,
+     0,
+     0.47
+    ],
+    [
+     0.975,
+     0.0001,
+     0.48
+    ],
+    [
+     0.98,
+     -0.0001,
+     0.5
+    ],
+    [
+     0.985,
+     -0.0004,
+     0.56
+    ],
+    [
+     0.99,
+     -0.0006,
+     0.63
+    ],
+    [
+     0.995,
+     -0.0007,
+     0.96
+    ],
+    [
+     1,
+     -0.0009,
+     0.59
+    ],
+    [
+     1.005,
+     -0.0009,
+     0.52
+    ],
+    [
+     1.01,
+     -0.001,
+     0.5
+    ],
+    [
+     1.015,
+     -0.001,
+     0.61
+    ],
+    [
+     1.02,
+     -0.0009,
+     0.68
+    ],
+    [
+     1.025,
+     -0.0008,
+     0.7
+    ],
+    [
+     1.03,
+     -0.0007,
+     0.71
+    ],
+    [
+     1.035,
+     -0.0007,
+     0.71
+    ],
+    [
+     1.04,
+     -0.0007,
+     0.68
+    ],
+    [
+     1.045,
+     -0.0006,
+     0.6
+    ],
+    [
+     1.05,
+     -0.0006,
+     0.51
+    ],
+    [
+     1.055,
+     -0.0006,
+     0.43
+    ],
+    [
+     1.06,
+     -0.0006,
+     0.6
+    ],
+    [
+     1.065,
+     -0.0007,
+     0.83
+    ],
+    [
+     1.07,
+     -0.0006,
+     0.93
+    ],
+    [
+     1.075,
+     -0.0005,
+     0.87
+    ],
+    [
+     1.08,
+     -0.0004,
+     0.78
+    ],
+    [
+     1.085,
+     -0.0003,
+     0.67
+    ],
+    [
+     1.09,
+     -0.0003,
+     0.54
+    ],
+    [
+     1.095,
+     -0.0002,
+     0.45
+    ],
+    [
+     1.1,
+     -0.0002,
+     0.45
+    ],
+    [
+     1.105,
+     -0.0003,
+     0.52
+    ],
+    [
+     1.11,
+     -0.0003,
+     0.62
+    ],
+    [
+     1.115,
+     -0.0003,
+     0.53
+    ],
+    [
+     1.12,
+     -0.0004,
+     0.5
+    ],
+    [
+     1.125,
+     -0.0006,
+     0.43
+    ],
+    [
+     1.13,
+     -0.0007,
+     0.36
+    ],
+    [
+     1.135,
+     -0.0007,
+     0.38
+    ],
+    [
+     1.14,
+     -0.0006,
+     0.54
+    ],
+    [
+     1.145,
+     -0.0004,
+     0.59
+    ],
+    [
+     1.15,
+     -0.0002,
+     0.63
+    ],
+    [
+     1.155,
+     -0.0001,
+     0.68
+    ],
+    [
+     1.16,
+     -0.0001,
+     0.71
+    ],
+    [
+     1.165,
+     -0.0002,
+     0.69
+    ],
+    [
+     1.17,
+     -0.0004,
+     0.81
+    ],
+    [
+     1.175,
+     -0.0006,
+     0.85
+    ],
+    [
+     1.18,
+     -0.0007,
+     0.81
+    ],
+    [
+     1.185,
+     -0.0004,
+     0.8
+    ],
+    [
+     1.19,
+     -0.0007,
+     0.53
+    ],
+    [
+     1.195,
+     -0.0005,
+     0.41
+    ],
+    [
+     1.2,
+     -0.0003,
+     0.61
+    ],
+    [
+     1.205,
+     -0.0002,
+     0.77
+    ],
+    [
+     1.21,
+     -0.0004,
+     0.72
+    ],
+    [
+     1.215,
+     -0.0005,
+     0.36
+    ],
+    [
+     1.22,
+     -0.0006,
+     0.35
+    ],
+    [
+     1.225,
+     -0.0007,
+     0.55
+    ]
+   ],
+   "medianX": -0.0006,
+   "method": "At each level, the x about which the frontal skin profile z(x) (1 mm samples, |x - s| from 10 to 120 mm) is mirror-symmetric (least squares, 0.1 mm search); linear between 5 mm samples.",
+   "landmarkOffsetsMm": {
+    "navel": -0.3,
+    "pubicSymphysis": 1.3,
+    "xiphisternalJunction": -0.4
+   }
+  },
+  "cun": {
+   "upperAbdomenMm": 26.4,
+   "lowerAbdomenMm": 32.3,
+   "xiphisternalToNavelMm": 211.2,
+   "navelToPubicMm": 161.6,
+   "lateralMidclavicularMm": 20
+  }
+ }
+}

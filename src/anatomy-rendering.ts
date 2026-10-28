@@ -13,6 +13,18 @@ export const connectiveTone = (kind: string | undefined) => connectiveGroup(kind
   ? { color: TENDON_COLOR, roughness: 0.32, metalness: 0.06 }
   : { color: LIGAMENT_COLOR, roughness: 0.82, metalness: 0 };
 export const SKIN_COLOR = "#b9826f";
+export const ORGAN_COLOR = "#a94d60";
+// One organ palette for both bodies (src/anatomy.ts assigns each organ mesh a
+// tone: the male by its BodyParts3D name, the female by its HRA group). The
+// reproductive organs take an editorial violet, not a tissue colour, CIEDE2000
+// >= 18 from every scene colour and >= 14 from every meridian marker
+// (tests/female-organ-display.test.mjs). Colour is never the only cue: names
+// and the 표시 설정 key stay.
+export const ORGAN_TONES = {
+  lung: "#c97f86", liver: "#8f3439", kidney: "#95534b", heart: "#b52e3f", bowel: "#c47a68", reproductive: "#9b6bc0",
+} as const;
+export type OrganTone = keyof typeof ORGAN_TONES;
+export const organColor = (tone: string | undefined) => (tone && tone in ORGAN_TONES ? ORGAN_TONES[tone as OrganTone] : ORGAN_COLOR);
 // BodyParts3D meshes that are themselves the outer surface of the face:
 // the auricle and lips are skin-covered in the body, and the eye shows its
 // white. While the skin is drawn they take that look instead of the organ

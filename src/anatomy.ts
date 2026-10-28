@@ -19,7 +19,18 @@ import femaleDetailGroups from "../data/female-detail-groups.json";
 import femaleTransportCatalogue from "../data/female-transport-structures.json";
 import femaleTransportGroups from "../data/female-transport-groups.json";
 import {pelvicStructureDisplay} from "./female-pelvic-bindings";
-export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.find(detail => detail.id === group.id) || group), ...femaleOrganGroups, ...femaleTransportGroups, ...femaleAirwayGroups, ...femaleBiliaryGroups, ...femaleAdditionalOrganGroups, ...femaleDetailGroups];
+import femaleOrganDisplay from "../data/female-organ-display.json";
+import reproductiveGroups from "../data/reproductive-groups.json";
+import femaleReproductiveLabels from "../data/female-reproductive-labels.json";
+import type { OrganTone } from "./anatomy-rendering";
+// Older or common Korean terms (나팔관, 유선 …) find an organ detail as its name does.
+const groupAliases = femaleReproductiveLabels.groupAliases as Record<string, string[]>;
+const withAliases = <G extends { id: string }>(group: G): G & { aliases?: string[] } =>
+  groupAliases[group.id] ? { ...group, aliases: groupAliases[group.id] } : group;
+// The reproductive organs of each body are one featured detail; the female
+// one leaves out the peritoneal folds that cover the uterus (a sub-view adds them).
+const featuredReproductive = reproductiveGroups.filter(group => group.featured);
+export const organGroups = [...maleOrganGroups.map(group => maleDetailGroups.find(detail => detail.id === group.id) || group), ...femaleOrganGroups, ...femaleTransportGroups, ...femaleAirwayGroups, ...femaleBiliaryGroups, ...femaleAdditionalOrganGroups, ...femaleDetailGroups, ...featuredReproductive].map(withAliases);
 // Source-defined composite structures are available from their selection card,
 // without changing the featured major-organ navigation or comparison bundles.
 export const compositeGroups = femaleCompositeGroups;
@@ -39,7 +50,12 @@ export const maleLungViews = [lung, {
 }, maleDetailGroups.find(group => group.id === "lung-branches")!];
 export const malePancreasViews = [maleDetailGroups.find(group => group.id === "pancreas")!,
   maleDetailGroups.find(group => group.id === "pancreas-parenchyma")!];
-export const structureGroups = [...organGroups, ...compositeGroups, ...maleKidneyViews.slice(1), ...maleLungViews.slice(1), ...malePancreasViews.slice(1)];
+const reproductiveView = (id: string) => reproductiveGroups.find(group => group.id === id)!;
+// The whole breast hides its glandular parts inside the fat; the second view shows them.
+export const femaleBreastViews = [femaleOrganGroups.find(group => group.id === "breast")!, reproductiveView("breast-gland")];
+export const femaleReproductiveViews = [reproductiveView("female-reproductive"), reproductiveView("female-reproductive-peritoneum")];
+export const structureGroups = [...organGroups, ...compositeGroups, ...maleKidneyViews.slice(1), ...maleLungViews.slice(1), ...malePancreasViews.slice(1),
+  ...femaleBreastViews.slice(1), ...femaleReproductiveViews.slice(1)];
 export const layerNames = {
   skin: "체표",
   muscle: "근육",
@@ -86,14 +102,60 @@ const femaleTransportStructures = femaleTransportCatalogue.map(row => {
     ...("surfaceTone" in row && row.surfaceTone ? { surfaceTone: true } : {}),
   };
 });
+// The glandular breast (mammary lobes, main lactiferous ducts and sinuses) is
+// part of HRA's integumentary system, but it lies under the breast fat, so
+// with the skin it was never seen. It is drawn and peeled with the organs and
+// shown in '장기만 보기'; fat, areola, nipple and suspensory ligaments stay
+// with the skin. The ducts and sinuses reach the nipple surface and read as
+// skin while it covers them. The female reproductive parts without a group are
+// scoped to the pelvis by their HRA concept, not by height.
+const glandularBreast = new Set(femaleOrganDisplay.glandularBreast.ids);
+const glandularSurface = new Set(femaleOrganDisplay.glandularBreast.surfaceTone);
+const pelvicScope = new Set(femaleOrganDisplay.pelvicScope.ids);
+export const GLANDULAR_BREAST_NOTE = "HRA 원본에서는 피부계통(integumentary)인 유방의 젖샘 부분입니다. 지방 속에 있어 이 앱은 장기와 함께 박리·표시합니다(표시 분류). HRA 유방은 기증자 조직을 분할한 것이 아니라 문헌을 바탕으로 조형한 참조 모형입니다.";
+function femaleOrganDisplayFor<T extends { id: string; sex: string; layer: string; description?: string }>(s: T) {
+  if (s.sex !== "female") return s;
+  const scoped = pelvicScope.has(s.id) ? { ...s, regionScope: "pelvis" } : s;
+  if (!glandularBreast.has(s.id)) return scoped;
+  return { ...scoped, layer: "organ" as const, description: `${s.description ? `${s.description} ` : ""}${GLANDULAR_BREAST_NOTE}`,
+    ...(glandularSurface.has(s.id) ? { surfaceTone: true } : {}) };
+}
+// Korean labels for HRA breast and reproductive parts that had only their
+// English source name: editorial terms, not reviewed by an anatomist. The
+// English name and ID stay searchable, and older terms are aliases only.
+const reproductiveLabelById = new Map(femaleReproductiveLabels.labels.map(row => [row.id, row]));
+function reproductiveLabel<T extends { id: string; name: string; sex: string }>(s: T) {
+  const row = s.sex === "female" ? reproductiveLabelById.get(s.id) : undefined;
+  if (!row) return s;
+  if (row.name !== s.name) throw new Error(`여성 유방·생식기관 표기 원본 불일치: ${s.id}`);
+  return { ...s, label: row.label, ...("aliases" in row && row.aliases ? { aliases: row.aliases } : {}) };
+}
+// Organ colours: the male BodyParts3D organs by name (as before), the female
+// HRA organs by their group, and the reproductive organs of both bodies by ID.
+const reproductiveTone = new Set([...femaleOrganDisplay.reproductiveTone.ids, ...femaleOrganDisplay.male.reproductiveTone]);
+const femaleToneByGroup: Record<string, OrganTone> = { heart: "heart", lung: "lung", liver: "liver", kidney: "kidney", intestine: "bowel", stomach: "bowel" };
+function organToneOf(s: { id: string; name: string; sex: string; layer: string; group?: string }): OrganTone | undefined {
+  if (s.layer !== "organ") return undefined;
+  if (reproductiveTone.has(s.id)) return "reproductive";
+  if (s.sex === "female") return s.group ? femaleToneByGroup[s.group] : undefined;
+  const name = s.name.toLowerCase();
+  if (/lung/.test(name)) return "lung";
+  if (/liver/.test(name)) return "liver";
+  if (/kidney/.test(name)) return "kidney";
+  if (/heart/.test(name)) return "heart";
+  if (/stomach|intestin|colon|jejunum|ileum|duoden|rectum|appendix|taenia/.test(name)) return "bowel";
+  return undefined;
+}
 export const structures = [...baseStructures, ...fullSystemStructures.map(s => ({ ...s, sex: "male" as const })), ...connectiveStructures.map(s => ({ ...s, sex: "male" as const })), ...sexLymphStructures.filter(s => s.sex === "male"), ...femaleAtlasStructures, ...femaleTransportStructures, ...maleDetailStructures, ...femaleDetailStructures].map(s => {
   const additional = s.sex === "female" && !("group" in s && s.group) ? additionalFemaleGroupById.get(s.id) : undefined;
   const featured = s.sex === "female" && !("group" in s && s.group) ? featuredFemaleGroupById.get(s.id) : undefined;
   const grouped = additional ? { ...s, group: additional.id, hierarchy: ["reproductive", additional.name, additional.id] }
     : featured ? { ...s, group: featured.id, hierarchy: [...("hierarchy" in s && Array.isArray(s.hierarchy) ? s.hierarchy : []), featured.name, featured.id] } : s;
-  const displayed=femaleBiliaryDisplay(grouped);
+  const displayed = femaleOrganDisplayFor(femaleBiliaryDisplay(grouped));
   const region = limbSkeletonRegion(displayed) || sourceOrganRegion(displayed);
-  return { ...pelvicStructureDisplay(displayed), ...(region ? { bodyRegion: region } : {}) };
+  const shown = reproductiveLabel(pelvicStructureDisplay(displayed));
+  const tone = "detailOnly" in shown && shown.detailOnly ? undefined : organToneOf(shown);
+  return { ...shown, ...(tone ? { organTone: tone } : {}), ...(region ? { bodyRegion: region } : {}) };
 }) as {
   id: string;
   fmaId?: string;
@@ -113,7 +175,20 @@ export const structures = [...baseStructures, ...fullSystemStructures.map(s => (
   kind?: string;
   // Female structures carried from a male source by the registration field.
   transport?: string;
+  // Older or common terms that find this part in search (never shown as its name).
+  aliases?: string[];
+  // Display colour of an organ mesh (src/anatomy-rendering.ts ORGAN_TONES).
+  organTone?: OrganTone;
+  // Runtime region scope of an ungrouped part (src/anatomy-region.ts).
+  regionScope?: string;
+  surfaceTone?: boolean;
 }[];
+// Each organ mesh's peel rank inside the organ window (src/dissection.ts organPeelOpacity).
+export const organPeelRanks = new Map<string, 0 | 1>([
+  ...[...femaleOrganDisplay.gutFirst.ids, ...femaleOrganDisplay.male.gutFirst].map(id => [id, 0] as const),
+  ...femaleOrganDisplay.peritonealFolds.ids.map(id => [id, 1] as const),
+]);
+export const organPeelRank = (id: string): 0 | 1 | 2 => organPeelRanks.get(id) ?? 2;
 // Ligaments, joint structures and separately modelled tendons. Supplement
 // meshes carry their kind; existing base meshes of these kinds are tagged.
 export const connectiveKindNames: Record<string, string> = {
@@ -164,7 +239,7 @@ export const stages: { layer: Layer; description: string }[] = [
   {
     layer: "organ",
     description:
-      "67개 장기·부속 구조의 실제 모델 위치를 비교합니다. 전통적 장부 대응은 압력 전달 경로가 아닙니다.",
+      "67개 장기·부속 구조의 실제 모델 위치를 비교합니다. 장기 단계에서는 장을 먼저 걷어 콩팥·방광 등 뒤쪽 장기를 드러냅니다. 전통적 장부 대응은 압력 전달 경로가 아닙니다.",
   },
   {
     layer: "vessel",
@@ -190,10 +265,10 @@ export function stageDescription(stage: number, sex: "male" | "female") {
   const moved = structuresForSex(sex).filter(s => s.layer === layer && s.transport).length;
   const carried = moved ? ` 그중 ${moved}개는 남성 원본을 여성 골격·피부 대응(정합장)으로 옮긴 보완 구조로, 출처에 표시합니다.` : "";
   const limitations: Record<Layer, string> = {
-    skin: "여성 표면의 경혈 좌표는 검수 전이므로 표식을 표시하지 않습니다.",
+    skin: "여성 표면의 경혈 좌표는 검수 전이라 기본으로 숨기며, ‘근사 위치로 보기’로 켤 수 있습니다. 배·사타구니·가슴의 일부 경혈은 여성 배꼽·두덩결합·칼몸통결합·젖꼭지 기준 WHO 비례촌으로 다시 계산했고, 나머지는 남성 표식을 옮긴 근사입니다.",
     muscle: "전신 근육은 BodyParts3D 남성 근육을 옮긴 보완입니다. 별도 Visible Human Female 하체 근육 76개는 검색·선택할 때만 보입니다(전신 정합 미완료). 여성 고유 형상이 아닙니다.",
     bone: "남성 유래 보완 골격 180개(회청색)는 여성 고유 뼈와 피부에 맞춘 같은 정합장으로 다시 놓았습니다. 여성 고유 골격으로 해석하지 마세요. 인대는 무릎만 여성 원본이고 나머지는 남성 원본을 옮긴 보완입니다.",
-    organ: "여성 CT 자료는 전신에 합쳐지지 않은 별도 상세입니다. 위·식도·부신·갑상샘은 전신 모형에 없습니다. 전통적 장부 대응은 압력 전달 경로가 아닙니다.",
+    organ: "위·식도·부신·뇌하수체·갑상샘·부갑상샘은 남성 원본을 옮긴 보완이고, 여성 CT 자료는 전신에 합쳐지지 않은 별도 상세입니다. 유방의 젖샘엽·젖샘관은 장기와 함께 보입니다(원본은 피부계통). 장기 단계(76%)와 ‘장기만 보기’에서는 장과 복막이 자궁·난소·자궁관 앞을 덮습니다. 연속 박리로 조금 더 밀면(약 79%) 드러나고, ‘여성 생식기관’ 상세에서 바로 볼 수 있습니다. 전통적 장부 대응은 압력 전달 경로가 아닙니다.",
     vessel: "장기 주변 혈관 110개는 여성 원본, 팔다리·머리·몸통벽 혈관은 남성 원본을 옮긴 보완입니다. 미세혈관 전체를 뜻하지 않으며 난소 혈관은 두 원본 모두에 없습니다.",
     lymph: "비장·흉선·림프절 예시는 여성 원본, 전신 림프절은 남성 원본을 옮긴 보완입니다.",
     nerve: "뇌는 Allen 참조 282개와 Visible Human 시신경교차 1개, 척수는 여성 원본이고 말초신경·뇌신경은 남성 원본을 옮긴 보완입니다. 신경 주행의 개인차와 위치 검증은 미완료입니다.",

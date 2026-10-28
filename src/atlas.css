@@ -17,6 +17,8 @@
   /* Connective tissue in the scene (src/anatomy-rendering.ts). */
   --ax-ligament: #a7b9e0;
   --ax-tendon: #e9edf7;
+  /* Organ tones in the scene (src/anatomy-rendering.ts ORGAN_TONES). */
+  --ax-reproductive: #9b6bc0;
   --ax-radius: 8px;
   --ax-radius-ctl: 4px;
   --ax-shadow: 0 8px 24px rgba(0, 0, 0, .35);
@@ -277,6 +279,18 @@ body:has(.ax) .site-footer { display: none; }
 .ax .connective-key { list-style: none; margin: 0; padding: 0 0 0 2px; display: grid; gap: 4px; font-size: 13px; }
 .ax .connective-key li { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .ax .connective-key small { color: var(--ax-muted); font-size: 12px; }
+.ax .organ-key { display: grid; gap: 6px; padding: 10px 0 0; }
+.ax .organ-key strong { font-size: 13px; font-weight: 600; }
+.ax .organ-key strong small { color: var(--ax-muted); font-size: 12px; font-weight: 400; }
+.ax .organ-key ul { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.ax .organ-key li { gap: 6px; }
+.ax .layer-dot.heart { background: #b52e3f; }
+.ax .layer-dot.lung { background: #c97f86; }
+.ax .layer-dot.liver { background: #8f3439; }
+.ax .layer-dot.kidney { background: #95534b; }
+.ax .layer-dot.bowel { background: #c47a68; }
+.ax .layer-dot.reproductive { background: var(--ax-reproductive); }
+.ax .layer-dot.other-organ { background: #a94d60; }
 
 /* Depth group: body region, mode, continuous peel and the seven systems.
    Wide screens: a rail at the left. Stops sit at their real depth, pushed up

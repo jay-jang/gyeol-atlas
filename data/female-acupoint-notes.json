@@ -1,0 +1,98 @@
+{
+  "source": "public/models/acupoint-anchors-female.json (scripts/build-female-anchors.mjs); data/female-acupoint-rules.json",
+  "markers": 834,
+  "methods": {
+    "female-landmark-cun": [
+      "CV10",
+      "CV11",
+      "CV12",
+      "CV13",
+      "CV14",
+      "CV15",
+      "CV16",
+      "CV2",
+      "CV3",
+      "CV4",
+      "CV5",
+      "CV6",
+      "CV7",
+      "CV8",
+      "CV9",
+      "EX-CA1",
+      "GB27",
+      "GB28",
+      "KI11",
+      "KI12",
+      "KI13",
+      "KI14",
+      "KI15",
+      "KI16",
+      "KI17",
+      "KI18",
+      "KI19",
+      "KI20",
+      "KI21",
+      "LR12",
+      "SP13",
+      "SP14",
+      "SP15",
+      "SP16",
+      "ST19",
+      "ST20",
+      "ST21",
+      "ST22",
+      "ST23",
+      "ST24",
+      "ST25",
+      "ST26",
+      "ST27",
+      "ST28",
+      "ST29",
+      "ST30"
+    ],
+    "female-landmark-level": [
+      "GB26",
+      "SP12"
+    ],
+    "female-landmark": [
+      "ST17",
+      "ST18",
+      "ST31"
+    ]
+  },
+  "breastSurface": [
+    "GB24",
+    "KI22",
+    "KI23",
+    "KI24",
+    "KI25",
+    "LR14",
+    "PC1",
+    "SP19",
+    "SP20",
+    "ST14",
+    "ST15",
+    "ST16",
+    "ST19"
+  ],
+  "facingException": [
+    "HT2"
+  ],
+  "regionReference": [
+    "EX-HN10",
+    "EX-HN11",
+    "EX-HN12",
+    "EX-HN13",
+    "EX-HN9",
+    "GV28"
+  ],
+  "knownBoundaryFailures": [
+    "ST19-ST18",
+    "LR14 inferior to ST17",
+    "ST18 superior to LR14",
+    "ST18 superior to GB24",
+    "ST18 on the KI22-SP17 curve",
+    "ST17 on the KI23-SP18 curve",
+    "ST31-ST32 spacing"
+  ]
+}

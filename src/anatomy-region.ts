@@ -20,12 +20,16 @@ export const sourceOrganRegions = {
   liver: "abdomen", kidney: "abdomen", stomach: "abdomen", pancreas: "abdomen", "pancreas-parenchyma": "abdomen", gallbladder: "abdomen", spleen: "abdomen",
   uterus: "pelvis", ovary: "pelvis", "uterine-tube": "pelvis", vagina: "pelvis", bladder: "pelvis",
 } as const satisfies Record<string, AnatomyRegion>;
-export function sourceOrganRegion(structure: { layer: string; group?: string }) {
+// A runtime regionScope (src/anatomy.ts: female reproductive parts without a
+// group, by their HRA concept) scopes a part the same way; the importer's
+// source rows never carry one, so the pinned catalogue is unchanged.
+export function sourceOrganRegion(structure: { layer: string; group?: string; regionScope?: string }) {
+  if (structure.regionScope === "pelvis") return "pelvis" as const;
   return structure.group && Object.hasOwn(sourceOrganRegions, structure.group)
     ? sourceOrganRegions[structure.group as keyof typeof sourceOrganRegions] : undefined;
 }
 
-export function anatomyRegionMatches(bounds: RegionBounds, region: AnatomyRegion, structure?: { layer: string; name: string; group?: string }) {
+export function anatomyRegionMatches(bounds: RegionBounds, region: AnatomyRegion, structure?: { layer: string; name: string; group?: string; regionScope?: string }) {
   if (region === "whole") return true;
   const limb = structure && limbSkeletonRegion(structure);
   // Hanging hands are still upper limbs, regardless of their height or pose.

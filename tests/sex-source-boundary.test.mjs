@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {structureForSexId} from '../src/sex-structure.ts';
-import {verifyPackedSourceManifest} from '../src/packed-source-guard.ts';
+import {verifyPackedSourceManifest,displayLayerOverrides} from '../src/packed-source-guard.ts';
 import {initialView,viewReducer} from '../src/view-state.ts';
 
 const read=file=>JSON.parse(fs.readFileSync(file));
@@ -15,7 +15,8 @@ const structures=[
   ...read('scripts/model-inputs.json').assets.map(part=>({...part,sex:'male'})),
   ...read('data/full-system-structures.json').map(part=>({...part,sex:'male'})),
   ...read('data/sex-lymph-structures.json').filter(part=>part.sex==='male'),
-  ...read('data/female-atlas-structures.json'),
+  // src/anatomy.ts draws the female glandular breast with the organs at runtime.
+  ...read('data/female-atlas-structures.json').map(part=>displayLayerOverrides.has(part.id)?{...part,layer:displayLayerOverrides.get(part.id).layer}:part),
   ...read('data/male-detail-structures.json'),
   ...read('data/female-detail-structures.json'),
 ];
@@ -45,6 +46,19 @@ test('female source rejects a male organ, unknown ID, duplicate, system swap and
   assert.throws(()=>verifyPackedSourceManifest('female','female',[female[0],female[0]],catalog),/ID 중복/);
   assert.throws(()=>verifyPackedSourceManifest('female','female',[{...female[0],system:'digestive'}],catalog),/성별·계통 불일치/);
   assert.throws(()=>verifyPackedSourceManifest('male-detail','female',read(manifests[2].file).parts,catalog),/성별·출처 불일치/);
+});
+
+test('only the listed glandular breast parts may be drawn outside their source system',()=>{
+  const female=read(manifests[0].file).parts;
+  assert.deepEqual([...displayLayerOverrides.keys()].sort(),['HRAF0008','HRAF0009','HRAF0010','HRAF0016','HRAF0017','HRAF0018']);
+  for(const id of displayLayerOverrides.keys())assert.equal(female.find(part=>part.id===id).system,'integumentary',id);
+  const raw=new Map(read('data/female-atlas-structures.json').map(part=>[part.id,part]));
+  // The pinned catalogue still says skin; drawn as skin they would fail the guard.
+  assert.throws(()=>verifyPackedSourceManifest('female','female',female,new Map([...catalog,...[...displayLayerOverrides.keys()].map(id=>[id,raw.get(id)])])),/성별·계통 불일치/);
+  // Another integumentary part cannot borrow the organ layer, nor can a listed one change system.
+  assert.throws(()=>verifyPackedSourceManifest('female','female',female,new Map([...catalog,['HRAF0004',{...raw.get('HRAF0004'),layer:'organ'}]])),/성별·계통 불일치/);
+  assert.throws(()=>verifyPackedSourceManifest('female','female',[{id:'HRAF0008',system:'digestive'}],catalog),/성별·계통 불일치/);
+  assert.throws(()=>verifyPackedSourceManifest('male-detail','male',[{id:'HRAF0008',system:'integumentary'}],catalog),/성별·계통 불일치/);
 });
 
 test('sex switch discards selected male anatomy before female source is selected',()=>{

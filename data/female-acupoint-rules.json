@@ -1,0 +1,1504 @@
+{
+  "schema": 1,
+  "status": "approximate-unreviewed",
+  "source": {
+    "title": "WHO Standard Acupuncture Point Locations in the Western Pacific Region (WHO Regional Office for the Western Pacific, 2008)",
+    "isbn": "978-92-9061-248-7",
+    "quotes": "Location sentences copied from the point entries; whoPdfPage is the page of the PDF text extract, not the printed folio.",
+    "kmcric": "EX-CA1 (rule kmcric-EX-CA1) is not in WHO 2008, which covers the meridian points only; its rule quotes the KMCRIC location excerpt in data/points.json instead."
+  },
+  "scales": {
+    "upper": {
+      "from": "navel",
+      "to": "xiphisternalJunction",
+      "cun": 8,
+      "who": "from the midpoint of the xiphisternal synchondrosis to the centre of the umbilicus: 8 B-cun"
+    },
+    "lower": {
+      "from": "navel",
+      "to": "pubicSymphysisSuperior",
+      "cun": 5,
+      "who": "from the centre of the umbilicus to the superior border of the pubic symphysis: 5 B-cun"
+    },
+    "lateral": {
+      "between": "nipples",
+      "cun": 8,
+      "who": "Between the two nipples: 8 B-cun",
+      "editorial": true
+    }
+  },
+  "editorialChoices": {
+    "lateralScale": "Lateral B-cun = left-right distance between the HRA nipple centres / 8. The WHO table gives 'between the two nipples: 8 B-cun', but the WHO notes tie the nipple line to males (ST17: 'In males, the centre of the nipple is located in the fourth intercostal space'; ST18: 'In males ... nipple line ... In females, ST18 is located at the midpoint of the inferior crease of the breast'). On this donor the nipple lies about the 6th intercostal space / 7th rib of the borrowed ribs, not the 4th. Alternative reported, not used: the midclavicular lines of the borrowed clavicles taken as 4 B-cun from the median line (21.2 mm per B-cun instead of 27.4 mm).",
+    "verticalScale": "Above the umbilicus (navel -> xiphisternal junction) / 8; below it (navel -> superior border of the pubic symphysis) / 5; both as frontal-plane height (y) differences.",
+    "medianLine": "Lateral offsets are horizontal (x) distances from the anterior median line, the mirror axis of the frontal skin profile at that level. CV points other than CV8 lie on it.",
+    "projection": "The frontal-plane target (x, y) is projected along -z onto the outermost face of the HRA female skin HRAF0003; the marker sits 3 mm (the anchor's displayOffset) out along that face's normal.",
+    "pubicBorder": "The superior border of the pubic symphysis is bony (HRA pubis compact bone HRAF0958/HRAF0959); CV2 and ST30 sit on the skin in front of that level.",
+    "methods": "female-landmark-cun: frontal target from female landmarks and B-cun. female-landmark-level: WHO gives the level but no lateral distance, so the level comes from female landmarks and the carried marker's lateral position is kept. female-landmark: placed on a female landmark construction without B-cun (nipple, inframammary crease, ST31 line).",
+    "asis": "ASIS = most anterior vertex of the HRA ilium compact bone per side (landmarks asis). 'Medial to the ASIS' (GB27) is read with zero margin; 'medioinferior' (GB28) at 45 degrees.",
+    "breast": "ST17 sits on the HRA nipple's outer surface; ST18 on the inframammary crease below the nipple (WHO female notes). Other breast-region markers are not moved. Markers with method female-landmark are not flagged breastSurface: their position is defined by the breast itself.",
+    "carriedProjection": "Carried markers (field-ray) take the nearest skin crossing within 120 mm either way along the carried outward direction whose outward (winding) face normal agrees with that direction; if none agrees, the nearest crossing is kept and listed as facingException. field-closest markers use the outward normal of the closest face for their display offset.",
+    "GB28-reading": "GB28: WHO's main text measures 0.5 B-cun medioinferior from the anterior superior iliac spine, its note from GB27; on this donor GB27 (3 B-cun below the navel, at the ASIS) already lies 15-18 mm below the ASIS, so the two readings differ. The marker follows the note (from GB27) and is 28.8 / 32.1 mm from the ASIS, about twice the main text's 0.5 B-cun; the point card says so."
+  },
+  "block": [
+    "CV2-CV15",
+    "KI11-KI21",
+    "ST19-ST30",
+    "SP14-SP16"
+  ],
+  "knownBoundaryFailures": [
+    {
+      "pair": "ST19-ST18",
+      "sides": [
+        "right",
+        "left"
+      ],
+      "check": "order",
+      "reason": "ST18 follows the WHO female note (midpoint of the inferior crease of the breast). On this donor the breast reaches below the 6 B-cun level: the crease on the nipple meridian is 51-53 mm below the nipple and 25 mm (right) / 27 mm (left), 0.8-0.9 upper-abdomen B-cun, below ST19's level, so ST18 is below ST19 on the ST line. ST19 itself lies on the underside of the breast. The WHO order ST18 above ST19 holds for the male nipple-line reading (5th intercostal space)."
+    },
+    {
+      "pair": "LR14 inferior to ST17",
+      "sides": [
+        "left"
+      ],
+      "reason": "WHO LR14 note places it inferior to the nipple centre; the carried left LR14 is 11.8 mm above the female nipple (right: 6.6 mm below). ST17 and ST18 follow the female definitions (nipple centre; WHO female note: midpoint of the inferior crease of the breast). On this donor the nipple lies about at the 6th intercostal space and the crease 51-53 mm below it, while LR14, GB24, KI22, KI23, SP17 and SP18 are still male markers carried by the field (their intercostal spaces come from borrowed male ribs). WHO's chest relations assume the male nipple at the 4th intercostal space, so they cannot all hold until the intercostal points are rebuilt on female ribs."
+    },
+    {
+      "pair": "ST18 superior to LR14",
+      "sides": [
+        "right",
+        "left"
+      ],
+      "reason": "WHO intercostal order on the 4 B-cun line (ST18 5th, LR14 6th): ST18 at the female breast crease is 44.9 / 64.7 mm below the carried LR14. ST17 and ST18 follow the female definitions (nipple centre; WHO female note: midpoint of the inferior crease of the breast). On this donor the nipple lies about at the 6th intercostal space and the crease 51-53 mm below it, while LR14, GB24, KI22, KI23, SP17 and SP18 are still male markers carried by the field (their intercostal spaces come from borrowed male ribs). WHO's chest relations assume the male nipple at the 4th intercostal space, so they cannot all hold until the intercostal points are rebuilt on female ribs."
+    },
+    {
+      "pair": "ST18 superior to GB24",
+      "sides": [
+        "right",
+        "left"
+      ],
+      "reason": "WHO intercostal order (GB24 7th): ST18 is 15.5 / 28.9 mm below the carried GB24. ST17 and ST18 follow the female definitions (nipple centre; WHO female note: midpoint of the inferior crease of the breast). On this donor the nipple lies about at the 6th intercostal space and the crease 51-53 mm below it, while LR14, GB24, KI22, KI23, SP17 and SP18 are still male markers carried by the field (their intercostal spaces come from borrowed male ribs). WHO's chest relations assume the male nipple at the 4th intercostal space, so they cannot all hold until the intercostal points are rebuilt on female ribs."
+    },
+    {
+      "pair": "ST18 on the KI22-SP17 curve",
+      "sides": [
+        "right",
+        "left"
+      ],
+      "reason": "WHO SP17 note: SP17, ST18 and KI22 lie along the 5th intercostal space; ST18 is 75 / 88 mm below the line through the carried KI22 and SP17. ST17 and ST18 follow the female definitions (nipple centre; WHO female note: midpoint of the inferior crease of the breast). On this donor the nipple lies about at the 6th intercostal space and the crease 51-53 mm below it, while LR14, GB24, KI22, KI23, SP17 and SP18 are still male markers carried by the field (their intercostal spaces come from borrowed male ribs). WHO's chest relations assume the male nipple at the 4th intercostal space, so they cannot all hold until the intercostal points are rebuilt on female ribs."
+    },
+    {
+      "pair": "ST17 on the KI23-SP18 curve",
+      "sides": [
+        "right",
+        "left"
+      ],
+      "reason": "WHO SP18 note: SP18, ST17 and KI23 lie along the 4th intercostal space; ST17 is 53 / 64 mm below the line through the carried KI23 and SP18. ST17 and ST18 follow the female definitions (nipple centre; WHO female note: midpoint of the inferior crease of the breast). On this donor the nipple lies about at the 6th intercostal space and the crease 51-53 mm below it, while LR14, GB24, KI22, KI23, SP17 and SP18 are still male markers carried by the field (their intercostal spaces come from borrowed male ribs). WHO's chest relations assume the male nipple at the 4th intercostal space, so they cannot all hold until the intercostal points are rebuilt on female ribs."
+    },
+    {
+      "pair": "ST31-ST32 spacing",
+      "sides": [
+        "right",
+        "left"
+      ],
+      "reason": "Inherited from the carried ST32: WHO puts it 6 B-cun above the lateral end of the patellar base (thigh B-cun 18.8 mm = pubic top to patellar base / 18), about 200.6 mm below ST31's level; the carried ST32 is only 97.8 / 99.3 mm below ST31 (ratio 0.49), and 20-25 mm lateral of the ASIS-patella line. ST32 and ST33 could be rebuilt from the same ASIS and patella landmarks."
+    }
+  ],
+  "rules": [
+    {
+      "id": "who2008-CV2",
+      "pointId": "CV2",
+      "line": "CV",
+      "who": "On the lower abdomen, superior to the pubic symphysis, on the anterior median line.",
+      "whoPdfPage": 229,
+      "vertical": {
+        "from": "pubicSymphysisSuperior",
+        "cun": 0,
+        "scale": null
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "WHO says 'superior to the pubic symphysis' without a distance (KMCRIC: 두덩결합 위모서리); read as level with the bony superior border (HRA pubis compact bone), projected to the skin in front of it.",
+        "x is the skin mirror axis, not the bony symphysis centre (see landmarks anteriorMedianLine.landmarkOffsetsMm.pubicSymphysis)."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV3",
+      "pointId": "CV3",
+      "line": "CV",
+      "who": "On the lower abdomen, 4 B-cun inferior to the centre of the umbilicus, on the anterior median line.",
+      "whoPdfPage": 230,
+      "vertical": {
+        "from": "navel",
+        "cun": -4,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV4",
+      "pointId": "CV4",
+      "line": "CV",
+      "who": "On the lower abdomen, 3 B-cun inferior to the centre of the umbilicus, on the anterior median line.",
+      "whoPdfPage": 230,
+      "vertical": {
+        "from": "navel",
+        "cun": -3,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV5",
+      "pointId": "CV5",
+      "line": "CV",
+      "who": "On the lower abdomen, 2 B-cun inferior to the centre of the umbilicus, on the anterior median line.",
+      "whoPdfPage": 231,
+      "vertical": {
+        "from": "navel",
+        "cun": -2,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV6",
+      "pointId": "CV6",
+      "line": "CV",
+      "who": "On the lower abdomen, 1.5 B-cun inferior to the centre of the umbilicus, on the anterior median line.",
+      "whoPdfPage": 231,
+      "vertical": {
+        "from": "navel",
+        "cun": -1.5,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV7",
+      "pointId": "CV7",
+      "line": "CV",
+      "who": "On the lower abdomen, 1 B-cun inferior to the centre of the umbilicus, on the anterior median line.",
+      "whoPdfPage": 232,
+      "vertical": {
+        "from": "navel",
+        "cun": -1,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV8",
+      "pointId": "CV8",
+      "line": "CV",
+      "who": "On the upper abdomen, in the centre of the umbilicus.",
+      "whoPdfPage": 232,
+      "vertical": {
+        "from": "navel",
+        "cun": 0,
+        "scale": null
+      },
+      "lateral": {
+        "from": "navel",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "Centre of the umbilicus = the depth-weighted centre of the skin pit; the marker sits at the pit floor seen from the front."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV9",
+      "pointId": "CV9",
+      "line": "CV",
+      "who": "On the upper abdomen, 1 B-cun superior to the centre of the umbilicus, on the anterior median line.",
+      "whoPdfPage": 233,
+      "vertical": {
+        "from": "navel",
+        "cun": 1,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV10",
+      "pointId": "CV10",
+      "line": "CV",
+      "who": "On the upper abdomen, 2 B-cun superior to the centre of the umbilicus, on the anterior median line.",
+      "whoPdfPage": 233,
+      "vertical": {
+        "from": "navel",
+        "cun": 2,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV11",
+      "pointId": "CV11",
+      "line": "CV",
+      "who": "On the upper abdomen, 3 B-cun superior to the centre of the umbilicus, on the anterior median line.",
+      "whoPdfPage": 234,
+      "vertical": {
+        "from": "navel",
+        "cun": 3,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV12",
+      "pointId": "CV12",
+      "line": "CV",
+      "who": "On the upper abdomen, 4 B-cun superior to the centre of the umbilicus, on the anterior median line.",
+      "whoNote": "Note: CV12 is located at the midpoint of the line connecting the xiphisternal junction and the centre of umbilicus.",
+      "whoPdfPage": 234,
+      "vertical": {
+        "from": "navel",
+        "cun": 4,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "WHO note: midpoint of the xiphisternal junction and the umbilicus centre, which the 8 B-cun scale reproduces by construction."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV13",
+      "pointId": "CV13",
+      "line": "CV",
+      "who": "On the upper abdomen, 5 B-cun superior to the centre of the umbilicus, on the anterior median line.",
+      "whoPdfPage": 235,
+      "vertical": {
+        "from": "navel",
+        "cun": 5,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV14",
+      "pointId": "CV14",
+      "line": "CV",
+      "who": "On the upper abdomen, 6 B-cun superior to the centre of the umbilicus, on the anterior median line.",
+      "whoPdfPage": 235,
+      "vertical": {
+        "from": "navel",
+        "cun": 6,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV15",
+      "pointId": "CV15",
+      "line": "CV",
+      "who": "On the upper abdomen, 1 B-cun inferior to the xiphisternal junction, on the anterior median line.",
+      "whoPdfPage": 236,
+      "vertical": {
+        "from": "xiphisternalJunction",
+        "cun": -1,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "xiphisternalJunction",
+        "navel",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "Depends directly on the xiphisternal junction, whose level is ambiguous by about 1 cm on the HRA sternum (no separate xiphoid part)."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-KI11",
+      "pointId": "KI11",
+      "line": "KI",
+      "who": "On the lower abdomen, 5 B-cun inferior to the centre of the umbilicus, 0.5 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 150,
+      "vertical": {
+        "from": "navel",
+        "cun": -5,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0.5
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "5 B-cun below the umbilicus equals the superior border of the pubic symphysis by the scale definition, so KI11 is level with CV2."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-KI12",
+      "pointId": "KI12",
+      "line": "KI",
+      "who": "On the lower abdomen, 4 B-cun inferior to the centre of the umbilicus, 0.5 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 150,
+      "vertical": {
+        "from": "navel",
+        "cun": -4,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0.5
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-KI13",
+      "pointId": "KI13",
+      "line": "KI",
+      "who": "On the lower abdomen, 3 B-cun inferior to the centre of the umbilicus, 0.5 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 151,
+      "vertical": {
+        "from": "navel",
+        "cun": -3,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0.5
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-KI14",
+      "pointId": "KI14",
+      "line": "KI",
+      "who": "On the lower abdomen, 2 B-cun inferior to the centre of the umbilicus, 0.5 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 151,
+      "vertical": {
+        "from": "navel",
+        "cun": -2,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0.5
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-KI15",
+      "pointId": "KI15",
+      "line": "KI",
+      "who": "On the lower abdomen, 1 B-cun inferior to umbilicus, 0.5 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 152,
+      "vertical": {
+        "from": "navel",
+        "cun": -1,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0.5
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-KI16",
+      "pointId": "KI16",
+      "line": "KI",
+      "who": "On the upper abdomen, 0.5 B-cun lateral to the centre of the umbilicus.",
+      "whoPdfPage": 152,
+      "vertical": {
+        "from": "navel",
+        "cun": 0,
+        "scale": null
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0.5
+      },
+      "landmarks": [
+        "navel",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "WHO measures from the umbilicus centre; the median line is used so the two sides stay mirror images (the umbilicus centre is 0.1 mm from it)."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-KI17",
+      "pointId": "KI17",
+      "line": "KI",
+      "who": "On the upper abdomen, 2 B-cun superior to the centre of the umbilicus, 0.5 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 153,
+      "vertical": {
+        "from": "navel",
+        "cun": 2,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0.5
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-KI18",
+      "pointId": "KI18",
+      "line": "KI",
+      "who": "On the upper abdomen, 3 B-cun superior to the centre of the umbilicus, 0.5 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 153,
+      "vertical": {
+        "from": "navel",
+        "cun": 3,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0.5
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-KI19",
+      "pointId": "KI19",
+      "line": "KI",
+      "who": "On the upper abdomen, 4 B-cun superior to the centre of the umbilicus, 0.5 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 154,
+      "vertical": {
+        "from": "navel",
+        "cun": 4,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0.5
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-KI20",
+      "pointId": "KI20",
+      "line": "KI",
+      "who": "On the upper abdomen, 5 B-cun superior to the centre of the umbilicus, 0.5 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 154,
+      "vertical": {
+        "from": "navel",
+        "cun": 5,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0.5
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-KI21",
+      "pointId": "KI21",
+      "line": "KI",
+      "who": "On the upper abdomen, 6 B-cun superior to the centre of the umbilicus, 0.5 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 155,
+      "vertical": {
+        "from": "navel",
+        "cun": 6,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0.5
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-ST19",
+      "pointId": "ST19",
+      "line": "ST",
+      "who": "On the upper abdomen, 6 B-cun superior to the centre of the umbilicus, 2 B-cun lateral to the anterior median line.",
+      "whoNote": "Note 1: ST 19 is 2 B-cun lateral to CV14. Note 2: If the infrasternal angle is too sharp and the rib is located inferior to St19, St19 can be reached by oblique needling.",
+      "whoPdfPage": 64,
+      "vertical": {
+        "from": "navel",
+        "cun": 6,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "WHO note 2 (infrasternal angle too sharp, rib inferior to ST19) is not modelled. On this donor the frontal projection lands on the underside of the breast, not on abdominal skin: the skin face points downward (normal y -0.51 left, -0.55 right) and the frontal projection ray behind the marker runs through 49.3 mm (left) / 50.6 mm (right) of breast fat (HRAF0004/HRAF0012), entering it 5.5 / 7.4 mm under the skin. The breast reaches below the 6 B-cun level here (the inframammary crease is 0.8-0.9 B-cun lower; see ST18)."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-ST20",
+      "pointId": "ST20",
+      "line": "ST",
+      "who": "On the upper abdomen, 5 B-cun superior to the centre of the umbilicus, 2 B-cun lateral to the anterior median line.",
+      "whoNote": "Note: ST20 is 5 B-cun superior to ST25, 1 B-cun inferior to St19, 2 B-cun lateral to CV13.",
+      "whoPdfPage": 64,
+      "vertical": {
+        "from": "navel",
+        "cun": 5,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-ST21",
+      "pointId": "ST21",
+      "line": "ST",
+      "who": "On the upper abdomen, 4 B-cun superior to the centre of the umbilicus, 2 B-cun lateral to the anterior median line.",
+      "whoNote": "Note: ST21 is 4 B-cun superior to ST25, 1 B-cun inferior to St20, 2 B-cun lateral to CV12.",
+      "whoPdfPage": 65,
+      "vertical": {
+        "from": "navel",
+        "cun": 4,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-ST22",
+      "pointId": "ST22",
+      "line": "ST",
+      "who": "On the upper abdomen, 3 B-cun superior to the centre of the umbilicus, 2 B-cun lateral to the anterior median line.",
+      "whoNote": "Note: ST22 is located at the same level and lateral to KI18 and CV11.",
+      "whoPdfPage": 65,
+      "vertical": {
+        "from": "navel",
+        "cun": 3,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-ST23",
+      "pointId": "ST23",
+      "line": "ST",
+      "who": "On the upper abdomen, 2 B-cun superior to the centre of the umbilicus, 2 B-cun lateral to the anterior median line.",
+      "whoNote": "Note: ST23 is located at the same level and lateral to KI17 and CV10.",
+      "whoPdfPage": 66,
+      "vertical": {
+        "from": "navel",
+        "cun": 2,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-ST24",
+      "pointId": "ST24",
+      "line": "ST",
+      "who": "On the upper abdomen, 1 B-cun superior to the centre of the umbilicus, 2 B-cun lateral to the anterior median line.",
+      "whoNote": "Note: ST24 is at the same level and lateral to CV9.",
+      "whoPdfPage": 66,
+      "vertical": {
+        "from": "navel",
+        "cun": 1,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-ST25",
+      "pointId": "ST25",
+      "line": "ST",
+      "who": "On the upper abdomen, 2 B-cun lateral to the centre of the umbilicus.",
+      "whoPdfPage": 67,
+      "vertical": {
+        "from": "navel",
+        "cun": 0,
+        "scale": null
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2
+      },
+      "landmarks": [
+        "navel",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "WHO measures from the umbilicus centre; the median line is used so the two sides stay mirror images."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-ST26",
+      "pointId": "ST26",
+      "line": "ST",
+      "who": "On the lower abdomen, 1 B-cun inferior to the centre of the umbilicus, 2 B-cun lateral to the anterior median line.",
+      "whoNote": "Note: ST26 is at the same level and lateral to KI15 and CV7.",
+      "whoPdfPage": 67,
+      "vertical": {
+        "from": "navel",
+        "cun": -1,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-ST27",
+      "pointId": "ST27",
+      "line": "ST",
+      "who": "On the lower abdomen, 2 B-cun inferior to the centre of the umbilicus, 2 B-cun lateral to the anterior median line.",
+      "whoNote": "Note: ST27 is at the same level and lateral to KI14 and CV5.",
+      "whoPdfPage": 68,
+      "vertical": {
+        "from": "navel",
+        "cun": -2,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-ST28",
+      "pointId": "ST28",
+      "line": "ST",
+      "who": "On the lower abdomen, 3 B-cun inferior to the centre of the umbilicus, 2 B-cun lateral to the anterior median line.",
+      "whoNote": "Note: ST28 is 3 B-cun inferior to ST25, 1 B-cun inferior to St27, 2 B-cun lateral to CV4.",
+      "whoPdfPage": 68,
+      "vertical": {
+        "from": "navel",
+        "cun": -3,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-ST29",
+      "pointId": "ST29",
+      "line": "ST",
+      "who": "On the lower abdomen, 4 B-cun inferior to the centre of the umbilicus, 2 B-cun lateral to the anterior median line.",
+      "whoNote": "Note: ST29 is 4 B-cun inferior to ST25, 1 B-cun inferior to St28, 2 B-cun lateral to CV3.",
+      "whoPdfPage": 69,
+      "vertical": {
+        "from": "navel",
+        "cun": -4,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-ST30",
+      "pointId": "ST30",
+      "line": "ST",
+      "who": "In the groin region, at the same level as the superior border of the pubic symphysis, 2 B-cun lateral to the anterior median line, over the femoral artery.",
+      "whoNote": "Note: ST30 is 5 B-cun inferior to ST25, 2 B-cun lateral to CV2.",
+      "whoPdfPage": 69,
+      "vertical": {
+        "from": "pubicSymphysisSuperior",
+        "cun": 0,
+        "scale": null
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2
+      },
+      "landmarks": [
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "'Over the femoral artery' is not checked: the female model has no HRA femoral artery at this level to test against.",
+        "2 B-cun differs by about 12 mm between the nipple scale and the midclavicular alternative (landmarks cun.lateralMm vs cun.lateralMidclavicularMm)."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-SP14",
+      "pointId": "SP14",
+      "line": "SP",
+      "who": "On the lower abdomen, 1.3 B-cun inferior to the centre of the umbilicus, 4 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 85,
+      "vertical": {
+        "from": "navel",
+        "cun": -1.3,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 4
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "4 B-cun is the line most sensitive to the lateral scale: about 25 mm between the nipple scale and the midclavicular alternative."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-SP15",
+      "pointId": "SP15",
+      "line": "SP",
+      "who": "On the upper abdomen, 4 B-cun lateral to the centre of the umbilicus.",
+      "whoNote": "Note: At the same level and lateral to ST25, KI16 and CV8.",
+      "whoPdfPage": 86,
+      "vertical": {
+        "from": "navel",
+        "cun": 0,
+        "scale": null
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 4
+      },
+      "landmarks": [
+        "navel",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "4 B-cun is the line most sensitive to the lateral scale: about 25 mm between the nipple scale and the midclavicular alternative."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-SP16",
+      "pointId": "SP16",
+      "line": "SP",
+      "who": "On the upper abdomen, 3 B-cun superior to the centre of the umbilicus, 4 B-cun lateral to the anterior median line.",
+      "whoNote": "Note: 3 B-cun superior to SP15, at the same level as CV11.",
+      "whoPdfPage": 86,
+      "vertical": {
+        "from": "navel",
+        "cun": 3,
+        "scale": "upper"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 4
+      },
+      "landmarks": [
+        "navel",
+        "xiphisternalJunction",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "4 B-cun is the line most sensitive to the lateral scale: about 25 mm between the nipple scale and the midclavicular alternative."
+      ],
+      "method": "female-landmark-cun"
+    },
+    {
+      "id": "who2008-CV16",
+      "pointId": "CV16",
+      "line": "CV",
+      "method": "female-landmark-cun",
+      "who": "In the anterior thoracic region, at the midpoint of the xiphisternal junction, on the anterior median line.",
+      "whoPdfPage": 236,
+      "vertical": {
+        "from": "xiphisternalJunction",
+        "cun": 0,
+        "scale": null
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 0
+      },
+      "landmarks": [
+        "xiphisternalJunction",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "Depends directly on the xiphisternal junction, whose level is ambiguous by about 1 cm on the HRA sternum (no separate xiphoid part); CV15 and CV16 move together with it, so their 1 B-cun spacing is exact by construction.",
+        "Replaces the carried CV16, which sat 10 mm below the measured junction (round 1 CV15-CV16 spacing ratio 0.71 against a 0.7 limit)."
+      ]
+    },
+    {
+      "id": "who2008-SP13",
+      "pointId": "SP13",
+      "line": "SP",
+      "method": "female-landmark-cun",
+      "who": "On the lower abdomen, 4.3 B-cun inferior to the centre of the umbilicus, 4 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 85,
+      "vertical": {
+        "from": "navel",
+        "cun": -4.3,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 4
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "4 B-cun is the line most sensitive to the lateral scale: about 25 mm between the nipple scale and the midclavicular alternative.",
+        "Replaces the carried SP13, which sat about 60 mm too high (round 1 SP14-SP13 spacing ratio 0.46)."
+      ]
+    },
+    {
+      "id": "who2008-LR12",
+      "pointId": "LR12",
+      "line": "LR",
+      "method": "female-landmark-cun",
+      "who": "In the groin region, at the same level as the superior border of the pubic symphysis, and 2.5 B-cun lateral to the anterior median line.",
+      "whoPdfPage": 210,
+      "vertical": {
+        "from": "pubicSymphysisSuperior",
+        "cun": 0,
+        "scale": null
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 2.5
+      },
+      "landmarks": [
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "The superior border of the pubic symphysis is bony (HRA pubis compact bone); the marker sits on the skin in front of that level, level with CV2, KI11 and ST30.",
+        "2.5 B-cun is 68.5 mm on the nipple scale and 53.0 mm on the midclavicular alternative."
+      ]
+    },
+    {
+      "id": "who2008-SP12",
+      "pointId": "SP12",
+      "line": "SP",
+      "method": "female-landmark-level",
+      "who": "In the groin region, at the inguinal crease, lateral to the femoral artery.",
+      "whoNote": "Note: At the same level as CV2, medial and inferior to SP13.",
+      "whoPdfPage": 84,
+      "vertical": {
+        "from": "pubicSymphysisSuperior",
+        "cun": 0,
+        "scale": null
+      },
+      "lateral": {
+        "from": "transport"
+      },
+      "projection": "front",
+      "landmarks": [
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "Level only. WHO gives the level (Note: at the same level as CV2) but no lateral distance ('at the inguinal crease, lateral to the femoral artery'): the carried marker's left-right offset from the anterior median line is kept and the point is re-projected from the front at the CV2 level.",
+        "Neither the inguinal crease nor 'lateral to the femoral artery' is checked: the female model has no HRA femoral artery; the carried male artery is reported only.",
+        "WHO 'medial and inferior to SP13' is gated (G6)."
+      ]
+    },
+    {
+      "id": "kmcric-EX-CA1",
+      "pointId": "EX-CA1",
+      "line": "EX",
+      "method": "female-landmark-cun",
+      "who": null,
+      "kmcric": "아랫배부위, 배꼽 아래 4寸, 앞정중선 가쪽으로 3寸.",
+      "kmcricSource": "data/points.json locationExcerpt (KMCRIC)",
+      "vertical": {
+        "from": "navel",
+        "cun": -4,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "anteriorMedianLine",
+        "cun": 3
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "anteriorMedianLine",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "EX-CA1 is an extra point and is not in WHO 2008 (meridian points only); the rule follows the KMCRIC excerpt '배꼽 아래 4寸, 앞정중선 가쪽으로 3寸', read as B-cun on the same scales as the WHO abdominal points.",
+        "4 B-cun inferior to the umbilicus is the level of CV3 (WHO CV3); the same-level relation is gated (G6)."
+      ]
+    },
+    {
+      "id": "who2008-GB26",
+      "pointId": "GB26",
+      "line": "GB",
+      "method": "female-landmark-level",
+      "who": "On the lateral abdomen, inferior to the free extremity of the 11th rib, at the same level as the centre of umbilicus.",
+      "whoNote": "Note 1: GB26 can be located by first locating the tenth rib, then searching for the free extremity of the 11th rib that is situated immediately below the inferior border of the costal arch. Note 2: GB26 is inferior to LR13, at the same level as CV8.",
+      "whoPdfPage": 193,
+      "vertical": {
+        "from": "navel",
+        "cun": 0,
+        "scale": null
+      },
+      "lateral": {
+        "from": "transport"
+      },
+      "projection": "carried-horizontal",
+      "landmarks": [
+        "navel"
+      ],
+      "review": [
+        "Level only: the level is the umbilicus centre (WHO 'at the same level as the centre of umbilicus'; Note 2 'at the same level as CV8'). The carried marker's position round the trunk is kept: from the carried skin point moved to that level, the point is re-projected horizontally along the carried outward direction (its vertical component removed) to the nearest skin face that faces that direction.",
+        "'Inferior to the free extremity of the 11th rib' is not used: the female 11th ribs are borrowed male bones (BM0023/BM0042) carried by the registration field, and their most anterior ends lie 65-67 mm medial to the lateral abdominal skin at GB26 and about 100 mm above it; landmarks rib11FreeEnd reports them.",
+        "Note 2 'inferior to LR13' is checked only as an order (LR13 is an unchanged carried marker)."
+      ]
+    },
+    {
+      "id": "who2008-GB27",
+      "pointId": "GB27",
+      "line": "GB",
+      "method": "female-landmark-cun",
+      "who": "On the lower abdomen, 3 B-cun inferior to the centre of umbilicus, medial to the anterior superior iliac spine.",
+      "whoNote": "Note: GB27 is 3 B-cun inferior to GB26, at the same level as CV4.",
+      "whoPdfPage": 194,
+      "vertical": {
+        "from": "navel",
+        "cun": -3,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "asis",
+        "cun": 0
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "asis"
+      ],
+      "review": [
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "'Medial to the anterior superior iliac spine' gives no distance. x is the ASIS's own x (the vertical line through the spine, zero margin): WHO also puts GB28 0.5 B-cun medioinferior to both the ASIS and GB27, which places GB27 at the spine.",
+        "On this body the ASIS lies 2.6 (right) / 2.5 (left) B-cun below the umbilicus, so GB27 is 14-18 mm below the spine itself.",
+        "The HRA ilium is asymmetric: the right ASIS is 138 mm and the left 126 mm from the median line (mirror mismatch 13.3 mm, landmarks asymmetry.asisMirrorMm); each side uses its own spine. The spine itself is sharp to about 7.6 mm (landmarks asis.spreadMm).",
+        "Replaces the carried GB27, which sat 11 mm (right) / 30 mm (left) lateral to the ASIS on the side of the hip, contrary to WHO."
+      ]
+    },
+    {
+      "id": "who2008-GB28",
+      "pointId": "GB28",
+      "line": "GB",
+      "method": "female-landmark-cun",
+      "who": "On the lower abdomen, 0.5 B-cun medioinferior to the anterior superior iliac spine.",
+      "whoNote": "Note: GB28 is 0.5 B-cun medioinferior to gB27.",
+      "whoPdfPage": 194,
+      "vertical": {
+        "from": "navel",
+        "cun": -3,
+        "scale": "lower"
+      },
+      "lateral": {
+        "from": "asis",
+        "cun": 0
+      },
+      "offset": {
+        "from": "GB27",
+        "cun": 0.5,
+        "direction": "medioinferior",
+        "angleDeg": 45,
+        "verticalScale": "lower"
+      },
+      "landmarks": [
+        "navel",
+        "pubicSymphysisSuperior",
+        "asis",
+        "nipples"
+      ],
+      "review": [
+        "Lateral B-cun = female inter-nipple distance / 8 (editorial; see editorialChoices.lateralScale).",
+        "Vertical B-cun is a frontal-plane height difference, not a distance over the skin.",
+        "Measured from GB27 (WHO note). 'Medioinferior' has no angle in WHO: 45 degrees is editorial, so 0.5 B-cun splits into 0.354 lateral B-cun (9.7 mm) medial and 0.354 lower-abdomen B-cun (12.8 mm) inferior.",
+        "Measured from the ASIS tip instead (WHO main text) it would sit about 15 mm higher, because the spine is 14-18 mm above GB27's level on this body.",
+        "Inherits the ASIS asymmetry (13.3 mm mirror mismatch)."
+      ]
+    },
+    {
+      "id": "who2008-ST31",
+      "pointId": "ST31",
+      "line": "ST",
+      "method": "female-landmark",
+      "who": "On the anterior aspect of the thigh, in the depression among three muscles: the proximal portion of the rectus femoris muscle, the sartorius muscle and the tensor fasciae latae muscle.",
+      "whoNote": "Note 2: ST31 is located at the intersection of the line connecting the lateral end of the base of the patella with the anterior superior iliac spine, and the horizontal line of the inferior border of the pubic symphysis.",
+      "whoPdfPage": 70,
+      "construction": {
+        "type": "lineAtLevel",
+        "line": [
+          "asis",
+          "patellaBaseLateral"
+        ],
+        "level": "pubicSymphysisInferior"
+      },
+      "landmarks": [
+        "asis",
+        "patellaBaseLateral",
+        "pubicSymphysisInferior"
+      ],
+      "review": [
+        "Uses WHO Note 2 only: the frontal-plane (x, y) intersection of the line from the ASIS to the lateral end of the patellar base with the horizontal line of the inferior border of the pubic symphysis, projected from the front onto the thigh skin. The muscle depression of the main text and Note 1 (sartorius / tensor fasciae latae / rectus femoris triangle) is not checked.",
+        "The lateral end of the patellar base is ambiguous by about 10 mm (30/45/60 degree support points); ST31 lies about a quarter of the way down the line, so it moves by about a quarter of that.",
+        "Inherits the ASIS asymmetry (13.3 mm mirror mismatch).",
+        "Replaces the carried ST31, which sat at the level of the superior border of the pubic symphysis (round 1 ST30-ST31 order failure) and 28 mm (right) / 39 mm (left) further lateral."
+      ]
+    },
+    {
+      "id": "who2008-ST17",
+      "pointId": "ST17",
+      "line": "ST",
+      "method": "female-landmark",
+      "who": "In the anterior thoracic region, at the centre of the nipple.",
+      "whoNote": "Note: In males, the centre of the nipple is located in the fourth intercostal space.",
+      "whoPdfPage": 63,
+      "construction": {
+        "type": "nippleOuterCentre"
+      },
+      "landmarks": [
+        "nipples"
+      ],
+      "review": [
+        "Placed on the outer surface of the HRA nipple part (HRAF0014 right, HRAF0006 left), about 3 mm outside the skin HRAF0003; the marker's surfacePart names the part and its display offset follows the nipple axis.",
+        "The WHO note (males: 4th intercostal space) is not used; on this donor the nipple lies about the 6th intercostal space / 7th rib of the borrowed ribs."
+      ]
+    },
+    {
+      "id": "who2008-ST18",
+      "pointId": "ST18",
+      "line": "ST",
+      "method": "female-landmark",
+      "who": "In the anterior thoracic region, in the fifth intercostal space, 4 B-cun lateral to the anterior median line.",
+      "whoNote": "Note: In males, ST18 is located at the intersection of nipple line and the fifth intercostal space. In females, St18 is located at the midpoint of the inferior crease of the breast.",
+      "whoPdfPage": 63,
+      "construction": {
+        "type": "inframammaryCrease"
+      },
+      "landmarks": [
+        "nipples",
+        "inframammaryCrease"
+      ],
+      "review": [
+        "The WHO female note is used ('In females, ST18 is located at the midpoint of the inferior crease of the breast'), not the 5th intercostal space of the main text and the male note.",
+        "Operational choice: the crease is the fold of the skin HRAF0003 below the breast fat HRAF0004/HRAF0012 on the nipple's vertical meridian (landmarks inframammaryCrease.method). The crease has no measurable ends on this mesh, so its 'midpoint' is read as the point below the nipple, which is also the 4 B-cun line of the main text; the lowest point of the traced crease lies 20-30 mm medial and 4.7-5.7 mm lower (landmarks inframammaryCrease.*.lowestOnCrease).",
+        "On this donor the crease is 51-53 mm below the nipple and 25-27 mm (0.8-0.9 upper-abdomen B-cun) below ST19's level, so ST18 lies below ST19 on the ST line (knownBoundaryFailures)."
+      ]
+    }
+  ],
+  "round2": {
+    "cun": [
+      "CV16",
+      "SP13",
+      "LR12",
+      "EX-CA1",
+      "GB27",
+      "GB28"
+    ],
+    "level": [
+      "SP12",
+      "GB26"
+    ],
+    "landmark": [
+      "ST17",
+      "ST18",
+      "ST31"
+    ],
+    "note": "Neighbours whose WHO text uses the block's landmarks and levels (same-level relations with CV2, CV3, CV4 and CV8), the thigh point ST31 by WHO Note 2, and the female breast notes for ST17 and ST18."
+  }
+}

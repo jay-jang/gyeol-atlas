@@ -2,8 +2,8 @@
 // items match is unchanged from the original filters; this only orders them:
 // exact 0 < prefix 1 < substring 2 of a name/code < 3 found elsewhere.
 type PointLike = { id: string; name: string; hanja: string; pinyin: string; landmarks: readonly string[] };
-type StructureLike = { id: string; name: string; label?: string; fmaId?: string; latin?: string; hierarchy?: readonly string[] };
-type GroupLike = { id: string; name: string; ids: readonly string[] };
+type StructureLike = { id: string; name: string; label?: string; fmaId?: string; latin?: string; hierarchy?: readonly string[]; aliases?: readonly string[] };
+type GroupLike = { id: string; name: string; ids: readonly string[]; aliases?: readonly string[] };
 export type Score = 0 | 1 | 2 | 3;
 
 // "st 36" finds ST36. Structure search keeps the trimmed query, as before.
@@ -15,7 +15,8 @@ const tier = (fields: readonly (string | undefined)[], q: string): Score => {
   return direct.some((v) => v === q) ? 0 : direct.some((v) => v.startsWith(q)) ? 1 : direct.some((v) => v.includes(q)) ? 2 : 3;
 };
 const pointFields = (p: PointLike) => [p.id, p.name, p.hanja, p.pinyin];
-const structureFields = (s: StructureLike) => [s.label, s.name, s.id, s.fmaId];
+// Aliases are older or common terms (유두, 나팔관) a part is also known by.
+const structureFields = (s: StructureLike) => [s.label, s.name, s.id, s.fmaId, ...(s.aliases || [])];
 
 export function pointScore<T extends PointLike>(p: T, query: string, meridianName: (p: T) => string | undefined): Score | null {
   const q = normalizeQuery(query);
@@ -24,7 +25,7 @@ export function pointScore<T extends PointLike>(p: T, query: string, meridianNam
 }
 export function structureScore(s: StructureLike, query: string): Score | null {
   const q = plain(query);
-  if (!q || !`${s.label || ""} ${s.name} ${s.id} ${s.fmaId || ""} ${s.latin || ""} ${(s.hierarchy || []).join(" ")}`.toLowerCase().includes(q)) return null;
+  if (!q || !`${s.label || ""} ${s.name} ${s.id} ${s.fmaId || ""} ${s.latin || ""} ${(s.hierarchy || []).join(" ")} ${(s.aliases || []).join(" ")}`.toLowerCase().includes(q)) return null;
   return tier(structureFields(s), q);
 }
 // Besides today's Korean group name, a group matches its English organ key
@@ -32,12 +33,15 @@ export function structureScore(s: StructureLike, query: string): Score | null {
 // member mesh whose code, FMA ID or name is exactly the query, so "stomach",
 // "liver" and "FMA7148" open the details "위" and "간" do. Member names are
 // not prefix-matched: "위혀구역 폐실질" or "Left …" would list unrelated organs.
+// A group's aliases (older or common names: 나팔관, 유선) match whole, or by
+// their start from two characters while typing.
 export function organScore<S extends StructureLike>(group: GroupLike, query: string, structureById: (id: string) => S | undefined): 0 | 1 | null {
   const q = plain(query), name = group.name.toLowerCase(), key = group.id.toLowerCase().replace(/-/g, " "), spaced = q.replace(/-/g, " ");
   if (!q) return null;
   const member = (id: string) => { const s = structureById(id); return s ? values([s.id, s.fmaId, s.label, s.name]) : []; };
-  if (name === q || key === spaced || group.ids.some((id) => member(id).includes(q))) return 0;
-  return name.includes(q) || (q.length >= 3 && key.startsWith(spaced)) ? 1 : null;
+  const aliases = values(group.aliases || []);
+  if (name === q || key === spaced || aliases.includes(q) || group.ids.some((id) => member(id).includes(q))) return 0;
+  return name.includes(q) || (q.length >= 3 && key.startsWith(spaced)) || (q.length >= 2 && aliases.some((alias) => alias.startsWith(q))) ? 1 : null;
 }
 
 // An empty query keeps every point (the list view); ties keep data order.

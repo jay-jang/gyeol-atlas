@@ -46,6 +46,6 @@ test('switching to female removes male organs even while the female geometry is 
   }
   await ready(page);
   await expect(page.locator('canvas')).toHaveAttribute('data-model-sex','female');
-  await expect.poll(async()=>Number(await page.locator('canvas').getAttribute('data-visible-skin'))).toBe(20);
+  await expect.poll(async()=>Number(await page.locator('canvas').getAttribute('data-visible-skin'))).toBe(14);
   expect(errors).toEqual([]);
 });

@@ -48,7 +48,8 @@ test('overview meshes that mount mid-peel use their peel opacity on their first 
     {depth:'72',layer:'bone',prefix:'',count:278,alpha:.5,exclude:'ZA_'},
     {depth:'72',layer:'bone',prefix:'ZA_ligament_',count:358,alpha:.5},
     {depth:'66',layer:'muscle',prefix:'ZA_tendon_',count:58,alpha:.5},
-    {depth:'87',layer:'vessel',prefix:'ZA_',count:640,alpha:.5},
+    // 16 penile, testicular and external pudendal vessels are hidden by default (성기 가리기).
+    {depth:'87',layer:'vessel',prefix:'ZA_',count:624,alpha:.5},
     {depth:'92.5',layer:'lymph',prefix:'ZA_',count:142,alpha:.5},
   ];
   for(const sample of samples as {depth:string;layer:string;prefix:string;count:number;alpha:number;exclude?:string}[]) {

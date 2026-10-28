@@ -4,11 +4,11 @@ import { Html } from "@react-three/drei";
 import { BufferAttribute, BufferGeometry, DoubleSide, FrontSide, Group, Int16BufferAttribute, Mesh, MeshStandardMaterial, type Intersection } from "three";
 import { selectionOpacity, selectionHitId, opacityWritesDepth } from "./selection-context";
 import { assetUrl } from "./assets";
-import { connectiveKindOf, dissectionLayerOpacity, layerKeys, structures, type Layer } from "./anatomy";
+import { connectiveKindOf, dissectionLayerOpacity, layerKeys, organPeelRank, structures, type Layer } from "./anatomy";
 import type { AtlasProps } from "./Atlas";
-import { musclePeelOpacity } from "./dissection";
+import { musclePeelOpacity, organPeelOpacity } from "./dissection";
 import { musclePeelRanks } from "./muscle-peel";
-import { SKIN_COLOR, SURFACE_TONES, clippingPlanes, configurePicking, connectiveTone, keepsSurface, releasedDrag, type SceneClick } from "./anatomy-rendering";
+import { ORGAN_COLOR, SKIN_COLOR, SURFACE_TONES, clippingPlanes, configurePicking, connectiveTone, keepsSurface, organColor, releasedDrag, type SceneClick } from "./anatomy-rendering";
 import { referenceSourceFor } from "./reference-source";
 import { applyFemaleArmRegistration } from "./female-arm-registration";
 import { applyFemaleFootRegistration } from "./female-foot-registration";
@@ -20,7 +20,7 @@ import { femaleBrainBindings, resolveFemaleBrainGeometryPart, verifyFemaleBrainM
 import { femalePelvicBindings, resolveFemalePelvicGeometryPart, verifyFemalePelvicManifestVersion } from "./female-pelvic-bindings";
 import { verifyPackedSourceManifest } from "./packed-source-guard";
 import { applyFieldPlacement, femalePartialVesselIds, femaleTransportPeelRanks, loadFemaleTransport } from "./female-transport";
-import { buildCover, isGenitalStructure, COVER_NAME } from "./modesty";
+import { hidesGenital } from "./modesty";
 
 type FemalePart = {
   id: string;
@@ -40,7 +40,7 @@ type FemaleManifest = {
 };
 
 const layerColor: Record<Layer, string> = {
-  skin: "#b9826f", muscle: "#b43f3f", bone: "#e8dec5", organ: "#a94d60",
+  skin: "#b9826f", muscle: "#b43f3f", bone: "#e8dec5", organ: ORGAN_COLOR,
   vessel: "#d33f49", lymph: "#58b99f", nerve: "#f0c94f",
 };
 const catalogById = new Map(structures.map(structure => [structure.id, structure]));
@@ -120,7 +120,6 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
         mesh.name = part.id;
         mesh.userData = { layer, system: part.system, bounds: actualBounds, sourceName: geometryPart.name, sourceGeometryId:geometryPart.id };
         group.add(mesh);
-        if (part.id === "HRAF0003") mesh.add(buildCover(mesh, "female"));
       }
       // Male-derived structures carried into this body by the same field.
       for (const mesh of transport?.meshes || []) {
@@ -160,7 +159,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
     if (!object) return;
     const progressive = props.displayMode === "dissection";
     const counts = Object.fromEntries(layerKeys.map(layer => [layer, 0])) as Record<Layer, number>;
-    let transportVisible = 0, coverVisible = false;
+    let transportVisible = 0;
     // While the skin covers the surface, structures that touch it in their
     // source (and the transported ones within 1 mm of the male skin) take the
     // skin tone, as the male face does; peeled or selected, their own colour.
@@ -168,26 +167,27 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       && props.layerOpacity.skin * dissectionLayerOpacity("skin", props.dissection, progressive) >= .5;
     object.traverse(item => {
       if (!(item instanceof Mesh)) return;
-      if (item.name === COVER_NAME) return;
       const layer = item.userData.layer as Layer;
       const selected = props.selectionIds.includes(item.name);
       const highlighted = props.highlight.includes(item.name);
       const part = partById.get(item.name);
       // Separately modelled tendons fade with the whole muscle layer (as in the male supplements).
       const peelRank = item.userData.peelRank as number | undefined;
-      const depthAlpha = dissectionLayerOpacity(layer, props.dissection, progressive) * (progressive && layer === "muscle" && peelRank !== undefined ? musclePeelOpacity(props.dissection, peelRank) : 1);
+      // Organs peel in three ranks inside their window (bowel, folds, the rest).
+      const depthAlpha = progressive && layer === "organ" ? organPeelOpacity(props.dissection, organPeelRank(item.name))
+        : dissectionLayerOpacity(layer, props.dissection, progressive) * (progressive && layer === "muscle" && peelRank !== undefined ? musclePeelOpacity(props.dissection, peelRank) : 1);
       const duplicateDonor = part?.system === "donor-muscle" && (part.name === "Rectus femoris (left)" || part.name === "Rectus femoris (right)");
       const donorSelected = (item.name === "HRAF0394" && props.selectionIds.includes("VHF0009")) || (item.name === "HRAF0396" && props.selectionIds.includes("VHF0047"));
       // The separately sourced Visible Human Female leg muscles (and the partial
       // HRA vessel segments) are kept for search and selection; the overview
       // shows one source, the transported set, as the male view does with its supplements.
       const donor = (part?.system === "donor-muscle" || femalePartialVesselIds.has(item.name)) && Boolean(transportCount);
-      const entry = catalogById.get(item.name) as { surfaceTone?: boolean } | undefined;
+      const entry = catalogById.get(item.name) as { surfaceTone?: boolean; organTone?: string } | undefined;
       const toned = Boolean(SURFACE_TONES[item.name] || entry?.surfaceTone || placementTones.has(item.name));
       // A left-out system keeps the parts that are the body's surface while the skin covers it.
       const surfaceOnly = !props.layers[layer] && toned && keepsSurface(props, layer);
       item.visible = (!duplicateDonor || selected) && (!donor || selected) && (part?.system !== "pregnancy" || selected) && (props.layers[layer] || surfaceOnly) && (!props.isolated || selected) && (selected || depthAlpha > .01) && (selected || anatomyRegionMatches(item.userData.bounds, props.anatomyRegion, catalogById.get(item.name)));
-      if (props.modesty && !selected && isGenitalStructure(item.name, catalogById.get(item.name)?.name)) item.visible = false;
+      if (hidesGenital(props.modesty, item.name, catalogById.get(item.name)?.name, selected || props.detailIds.includes(item.name))) item.visible = false;
       item.visible = item.visible && !donorSelected;
       item.visible = item.visible && (!props.detailIds.length || props.detailIds.includes(item.name));
       if (props.sex === "male" && !props.detailIds.length) item.visible = item.visible && selected;
@@ -200,7 +200,7 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       const vein = part?.system === "venous" || (transported && layer === "vessel" && /vein|vena cava/i.test(catalogById.get(item.name)?.name || ""));
       const tone = !selected && !highlighted && skinOpaque && toned ? SKIN_COLOR : undefined;
       const finish = connective ? connectiveTone(kind) : undefined;
-      material.color.set(selected && props.selectionIds.length === 1 ? "#34d3dd" : highlighted ? "#e5b24f" : tone ?? (finish ? finish.color : vein ? "#356fb3" : part?.system === "borrowed" || (transported && layer === "bone") ? "#9aa7b1" : layerColor[layer]));
+      material.color.set(selected && props.selectionIds.length === 1 ? "#34d3dd" : highlighted ? "#e5b24f" : tone ?? (finish ? finish.color : vein ? "#356fb3" : part?.system === "borrowed" || (transported && layer === "bone") ? "#9aa7b1" : layer === "organ" ? organColor(entry?.organTone) : layerColor[layer]));
       if (finish) { material.roughness = finish.roughness; material.metalness = finish.metalness; }
       material.opacity = selectionOpacity(props.layerOpacity[layer] * depthAlpha, selected, props.contextDimmed);
       const planes = clippingPlanes(layer, props);
@@ -211,21 +211,12 @@ export default function PackedAtlas({ props }: { props: AtlasProps }) {
       material.clippingPlanes = planes;
       configurePicking(item, layer, props.selectionTarget);
       if (surfaceOnly) item.raycast = () => {};
-      const cover = item.getObjectByName(COVER_NAME) as Mesh | undefined;
-      if (cover) {
-        cover.visible = props.modesty && item.visible;
-        const coverMaterial = cover.material as MeshStandardMaterial;
-        coverMaterial.opacity = material.opacity; coverMaterial.transparent = material.transparent; coverMaterial.depthWrite = material.depthWrite;
-        coverMaterial.clippingPlanes = planes;
-        coverVisible ||= cover.visible;
-      }
     });
     for (const layer of layerKeys) gl.domElement.dataset[`visible${layer[0].toUpperCase()}${layer.slice(1)}`] = String(counts[layer]);
     for (const [source, key] of [["female", "femaleAtlasParts"], ["female-detail", "femaleDetailParts"], ["male-detail", "maleDetailParts"]])
       gl.domElement.dataset[key] = source === dataset ? String(manifest?.parts.length ?? 0) : "0";
     gl.domElement.dataset.femaleTransportParts = String(transportCount);
     gl.domElement.dataset.femaleTransportVisible = String(transportVisible);
-    gl.domElement.dataset.modestyCover = String(coverVisible);
     object.visible = true;
     invalidate();
   }, [object, partById, manifest, transportCount, placementTones, props.layers, props.isolated, props.selectionIds, props.detailIds, props.highlight, props.dissection, props.displayMode, props.selectionTarget, props.layerOpacity, props.contextDimmed, props.anatomyRegion, props.cutaway, props.connective, props.modesty, props.excluded, gl, invalidate]);

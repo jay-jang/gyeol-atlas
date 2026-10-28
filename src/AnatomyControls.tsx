@@ -18,7 +18,7 @@ export default function AnatomyControls({
   const tendonCount = connectiveIds.filter((id) => connectiveGroup(connectiveKindOf(id)) === "tendon").length;
   const scopeControls = state.sex === "female" ? <details className="anatomy-scope-controls setting-details">
     <summary>여성 모델 자료 범위 · 남성 원본을 옮긴 보완은 여성 고유 형상 아님</summary>
-    <p className="control-hint">HRA 여성 전신과 여성 CT 보완 상세는 서로 다른 신체 자료입니다. 위·부신·식도 구간·등 근육군 구간은 검색하거나 주요 기관에서 별도 CT 모형으로 볼 수 있습니다. 근육·팔다리 혈관·말초신경·인대·힘줄·전신 림프절은 남성 원본을 여성 고유 뼈·피부에 맞춘 하나의 정합장으로 옮긴 보완이며, 회청색 보완 골격 180개도 같은 정합장으로 놓았습니다. 여성 고유 형상이 아닙니다. 별도 Visible Human Female 하체 근육은 검색할 때만 보입니다. 여성 경혈 좌표는 검수 전이므로 표식을 숨깁니다.</p>
+    <p className="control-hint">HRA 여성 전신과 여성 CT 보완 상세는 서로 다른 신체 자료입니다. 위·식도·부신·뇌하수체·갑상샘·부갑상샘은 남성 원본을 옮긴 보완으로 전신에 그리고, 위·부신·식도 구간·등 근육군 구간은 검색하거나 주요 기관에서 별도 CT 모형으로도 볼 수 있습니다. 근육·팔다리 혈관·말초신경·인대·힘줄·전신 림프절은 남성 원본을 여성 고유 뼈·피부에 맞춘 하나의 정합장으로 옮긴 보완이며, 회청색 보완 골격 180개도 같은 정합장으로 놓았습니다. 여성 고유 형상이 아닙니다. 별도 Visible Human Female 하체 근육은 검색할 때만 보입니다. 유방의 젖샘엽·젖샘관은 장기와 함께 표시합니다(원본 분류는 피부계통). 여성 경혈 좌표는 검수 전이라 기본으로 숨기며 ‘근사 위치로 보기’로 켤 수 있습니다(배·사타구니·가슴 일부는 여성 표지 기준 WHO 비례촌으로 다시 계산).</p>
   </details> : null;
   return (
     <div className="layer-settings">
@@ -67,6 +67,13 @@ export default function AnatomyControls({
           반투명 표시 중 겹친 표면을 누르면 선택 구조를 우선합니다. 겹친 다른 구조는 반투명을 끄거나 검색해 선택하세요.
         </p>
       </details>
+      <div className="organ-key" role="group" aria-label="장기 색 구분">
+        <strong>장기 색 <small>편집 표시색 · 조직 색 아님</small></strong>
+        <ul className="connective-key">
+          {([["heart", "심장"], ["lung", "폐"], ["liver", "간"], ["kidney", "콩팥"], ["bowel", "위·장"], ["reproductive", "생식기관"], ["other-organ", "그 밖의 장기"]] as const)
+            .map(([key, name]) => <li key={key}><i className={`layer-dot ${key}`} />{name}</li>)}
+        </ul>
+      </div>
       {scopeControls}
       <div className="connective-setting">
         <label className="setting-check">
@@ -99,7 +106,7 @@ export default function AnatomyControls({
         />
         성기 가리기
       </label>
-      <p className="control-hint">외부 생식기를 숨기고 그 부위 피부를 무늬 없는 덮개로 가립니다. 상단의 방패 버튼으로도 켜고 끌 수 있습니다. 검색으로 직접 고른 구조는 보입니다.</p>
+      <p className="control-hint">기본으로 켜져 있습니다. 모든 계통에서 외부 생식기(음경·음낭·고환·부고환·정관·요도, 여성은 질)와 그리로 가는 혈관·신경 가지를 빼고, 남성 피부는 그 부위를 매끄러운 면으로 닫아 그립니다(편집 표시 면, 해부 구조 아님). 끄거나 상단의 방패 버튼을 누르면 보입니다. 검색으로 직접 고른 구조와 생식기관 상세는 켜져 있어도 보입니다.</p>
       <p className="coverage-description">{stageDescription(state.stage, state.sex)}</p>
       <label className="setting-select">
         경혈 표식

@@ -6,6 +6,7 @@ import { sourceOrganRegion } from "./anatomy-region.ts";
 import femaleBrainBindings from "../data/catalog/female-brain-bindings.json" with {type:"json"};
 import femalePelvicBindings from "../data/catalog/female-pelvic-bindings.json" with {type:"json"};
 import maleDetailGroups from "../data/male-detail-groups.json" with {type:"json"};
+import femaleOrganDisplay from "../data/female-organ-display.json" with {type:"json"};
 export type CameraPose = {
   position: [number, number, number];
   target: [number, number, number];
@@ -36,8 +37,12 @@ export type ViewState = {
   labels: boolean;
   // Ligaments, joint structures and separately modelled tendons.
   connective: boolean;
-  // "성기 가리기": hide the external genitalia under a plain cover.
+  // "성기 가리기": remove the external genitalia from every system (the male
+  // skin is closed by a smooth surface). On by default since 2026-10-26;
+  // "성기 보이기" (the top-bar shield or the display settings) turns it off.
   modesty: boolean;
+  // 2 = saved after hiding became the default (absent in older sessions).
+  modestyVersion?: 2;
   // "계통 빼기": systems the progressive peel leaves out at every depth, in
   // peel order and never all seven. Explicit views (one system, a selection,
   // a comparison or a detail) open their own systems.
@@ -87,7 +92,8 @@ export function initialView(pointId = ""): ViewState {
     markers: "filtered",
     labels: false,
     connective: true,
-    modesty: false,
+    modesty: true,
+    modestyVersion: 2,
     excluded: [],
     femaleMarkers: false,
     selection: null,
@@ -473,7 +479,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
 export function restoreView(
   raw: string | null,
   pointIds: string[],
-  assets: { id: string; layer: string; sex?: string; group?: string }[],
+  assets: { id: string; layer: string; sex?: string; group?: string; regionScope?: string }[],
 ): ViewState {
   const base = initialView();
   try {
@@ -538,8 +544,10 @@ export function restoreView(
     // Sessions saved before ligaments and tendons existed show them.
     if (s.connective === undefined) s.connective = base.connective;
     if (typeof s.connective !== "boolean") return base;
-    // Sessions saved before the cover existed leave it off.
-    if (s.modesty === undefined) s.modesty = base.modesty;
+    // Sessions saved while the genitals were shown by default (before
+    // 2026-10-26, with or without the opt-in cover) start hidden; a later
+    // choice to show them is kept.
+    if (s.modestyVersion !== 2) { s.modesty = true; s.modestyVersion = 2; }
     if (typeof s.modesty !== "boolean") return base;
     if (s.femaleMarkers === undefined) s.femaleMarkers = base.femaleMarkers;
     if (typeof s.femaleMarkers !== "boolean") return base;
@@ -590,6 +598,20 @@ export function restoreView(
         s.layers = layers;
         s.isolated = false;
       }
+    }
+    // The female glandular breast was drawn with the skin before it peeled with
+    // the organs (2026-10-25). A saved view that showed it with the skin layer
+    // keeps showing it: its organ layer is turned on rather than the view reset.
+    if (s.sex === "female") {
+      const glandular = (ids: unknown) => Array.isArray(ids) && ids.some(id => femaleOrganDisplay.glandularBreast.ids.includes(id));
+      if (s.detail && glandular(s.detail.ids) && s.detail.layers?.skin === true && s.detail.layers.organ === false) {
+        s.layers = { ...s.layers, organ: true };
+        s.detail = { ...s.detail, layers: { ...s.detail.layers, organ: true } };
+      }
+      if (glandular(s.selection?.ids) && s.layers?.skin === true && s.layers.organ === false && s.displayMode === "layers") s.layers = { ...s.layers, organ: true };
+      // The selection's systems are those its meshes are drawn in now.
+      if (glandular(s.selection?.ids) && Array.isArray(s.selection!.layers))
+        s.selection = { ...s.selection!, layers: keys.filter(key => s.selection!.ids.some(id => assets.some(a => a.id === id && a.layer === key))) };
     }
     const validSelection = (x: Selection | null) =>
       x === null ||

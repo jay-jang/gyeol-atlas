@@ -1,0 +1,30 @@
+{
+  "source": "HRA united female v1.10 concepts in public/models/female/atlas-female.json; tests/female-organ-display.test.mjs recomputes every list from them",
+  "reproductiveTone": {
+    "concepts": ["HRA:uterus", "HRA:ovary", "HRA:fallopian_tube", "HRA:vagina"],
+    "ids": ["HRAF0434", "HRAF0435", "HRAF0436", "HRAF0437", "HRAF0438", "HRAF0439", "HRAF0440", "HRAF0441", "HRAF0442", "HRAF0443", "HRAF0432", "HRAF0433", "HRAF0408", "HRAF0409", "HRAF0410", "HRAF0411", "HRAF0412", "HRAF0413", "HRAF0414", "HRAF0415", "HRAF0406", "HRAF0407"]
+  },
+  "peritonealFolds": {
+    "concepts": ["HRA:uterovesical_pouch", "HRA:broad_ligament"],
+    "ids": ["HRAF0416", "HRAF0427", "HRAF0428", "HRAF0429", "HRAF0430", "HRAF0431"]
+  },
+  "gutFirst": {
+    "concepts": ["HRA:omentum", "HRA:epiploic_appendage", "HRA:small_intestine − HRA:duodenum", "HRA:colon − HRA:rectum"],
+    "ids": ["HRAF0444", "HRAF0445", "HRAF0512", "HRAF0513", "HRAF0514", "HRAF0517", "HRAF0518", "HRAF0519", "HRAF0520", "HRAF0521", "HRAF0522", "HRAF0523", "HRAF0525", "HRAF0526"]
+  },
+  "glandularBreast": {
+    "concepts": ["HRA:mammary_lobes_L", "HRA:main_lactiferous_ducts_L", "HRA:main_lactiferous_sinuses_L", "HRA:mammary_lobes_R", "HRA:main_lactiferous_ducts_R", "HRA:main_lactiferous_sinuses_R"],
+    "ids": ["HRAF0008", "HRAF0009", "HRAF0010", "HRAF0018", "HRAF0017", "HRAF0016"],
+    "sourceSystem": "integumentary",
+    "displayLayer": "organ",
+    "surfaceTone": ["HRAF0009", "HRAF0010", "HRAF0017", "HRAF0016"]
+  },
+  "pelvicScope": {
+    "concepts": ["HRA:reproductive_system − HRA:placenta", "HRA:blood_vasculature_of_uterus"],
+    "ids": ["HRAF0406", "HRAF0407", "HRAF0408", "HRAF0409", "HRAF0410", "HRAF0411", "HRAF0412", "HRAF0413", "HRAF0414", "HRAF0415", "HRAF0416", "HRAF0417", "HRAF0418", "HRAF0419", "HRAF0420", "HRAF0421", "HRAF0422", "HRAF0423", "HRAF0424", "HRAF0425", "HRAF0426", "HRAF0427", "HRAF0428", "HRAF0429", "HRAF0430", "HRAF0431", "HRAF0432", "HRAF0433", "HRAF0434", "HRAF0435", "HRAF0436", "HRAF0437", "HRAF0438", "HRAF0439", "HRAF0440", "HRAF0441", "HRAF0442", "HRAF0443", "HRAF0629", "HRAF0630", "HRAF0631", "HRAF0632"]
+  },
+  "male": {
+    "reproductiveTone": ["FMA9600", "FMA7211", "FMA7212", "FMA18256", "FMA18257", "FMA19235", "FMA19236", "FMA19387", "FMA19388", "FMA18247", "FMA19617nsn", "FMA19618"],
+    "gutFirst": ["FMA7207", "FMA7208", "FMA14543nsn", "FMA14542", "FMA76891", "FMA76892", "FMA76893"]
+  }
+}

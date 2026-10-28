@@ -105,7 +105,7 @@
 | 갈비뼈 정점 중 폐 1mm 이내 | 60 | 58 |
 | 피부 밖 정점 / 뼈 | 3,145 / 21개 | 73 / 2개(좌우 큰코날개연골, 코의 표면이라 피부색) |
 
-앱은 `public/models/female-transport/placement.bin.gz`(보완 뼈 180개 + 뇌 282개, 원본 정점 해시로 대조)의 정점으로 기존 팔·발·척수 부위 보정 위에 덮어씁니다(`src/female-transport.ts`).
+앱은 `public/models/female-transport/placement.bin.gz`(보완 뼈 180개 + 뇌 282개, 원본 정점 해시로 대조)의 정점으로 기존 팔·발 부위 보정 위에 덮어씁니다(`src/female-transport.ts`). 척수 15분절의 표시용 국소 이동([기록](CORD_SECTION_GRID.md))은 배치 레코드가 없어 그대로 남습니다(2026-10-25 재확인: 팔 60/60·발 20/20 덮어씀, 척수 0/15).
 
 ### Allen 뇌를 머리뼈 안에 맞춤([기록](female-brain-skull.json))
 
@@ -157,28 +157,12 @@
 
 ## 성기 가리기
 
-상단 막대의 방패 버튼(‘성기 가리기’, `aria-pressed`)과 표시 설정의 같은 체크박스로 켭니다. 이 설정은 보기 상태의 선호입니다.
-- 성별 전환·박리·부위 변경·초기화·새로고침에도 유지됩니다.
-- 이전 세션은 꺼진 상태로 복원됩니다.
+2026-10-28부터 기본으로 켜져 있고, 남성은 덮개 대신 피부의 음경·음낭 삼각형을 빼고 매끄러운 닫는 면을 그립니다. 숨기는 구조·보이는 예외·닫는 면·한계는 [성기 가리기 기본값](MODESTY_DEFAULT.md)에 있습니다. 아래는 이 기록 당시(2026-10-04)의 첫 방식입니다.
 
-**숨기는 구조**
-
-| 성별 | 구조 |
-| --- | --- |
-| 남성 | 음경해면체·요도해면체·귀두·고환·부고환·정관·요도. 이름에 음경·음낭·고환이 들어간 Z 혈관·신경 |
-| 여성 | 질 |
-
-**덮개**
-
-| 성별 | 형태 |
-| --- | --- |
-| 남성 | 외부생식기 전체를 감싸는 매끄러운 타원체 |
-| 여성 | 외음부 위로 몇 mm 솟는 타원체 덮개 |
-
-- 덮개는 피부의 자식 메쉬라서 피부와 함께 보이고 사라집니다.
-- 덮개는 클릭을 가로채지 않습니다.
-- 검색으로 직접 고른 구조는 보입니다.
-- 처음 시도한 ‘피부 삼각형을 띄운 덮개’는 성기 윤곽을 그대로 드러내고 여성에서 가장자리가 들쭉날쭉해 바꿨습니다.
+- 상단 막대의 방패 버튼과 표시 설정 체크박스로 켜는 보기 선호였고, 이전 세션은 꺼진 상태로 복원했습니다.
+- 남성은 음경해면체·요도해면체·귀두·고환·부고환·정관·요도와 이름에 음경·음낭·고환이 들어간 Z 혈관·신경을, 여성은 질을 숨겼습니다.
+- 그 부위를 피부의 자식 메쉬인 짙은 타원체 덮개로 가렸습니다. 남성은 외부생식기 전체를 감쌌고, 여성 덮개는 실제로는 정중선에서 피부 앞으로 18–96mm 솟았습니다.
+- 처음 시도한 ‘피부 삼각형을 띄운 덮개’는 성기 윤곽을 그대로 드러내고 여성에서 가장자리가 들쭉날쭉해 타원체로 바꿨습니다. 타원체 덮개도 박리 중 피부가 옅어지거나 잘리면 같이 옅어지고 잘려, 2026-10-28에 삼각형 제거와 닫는 면으로 바꿨습니다.
 
 ## 한계 재검토와 보완
 
@@ -237,6 +221,7 @@
 `scripts/female-transport/anchor_rays.py`가 남성 표식의 피부 점과 바깥 방향(표시 오프셋 방향)을 정합장으로 옮기고, `scripts/build-female-anchors.mjs`가 그 방향의 앞뒤로 여성 피부(HRAF0003)에 광선을 쏴 가까운 교점에 놓습니다. 834개 중 826개는 광선, 8개는 가장 가까운 점입니다. 투영 거리는 중앙 0.34mm, 90% 3.31mm, 95% 6.5mm, 최대 64.8mm입니다.
 - 10mm를 넘는 것은 주로 유방 주변(ST15–19, KI22–24, CV15–18, LR14, GB24, PC1, SP17)입니다. 유방에 해당하는 남성 형상이 없어 정합장이 남성 가슴 피부를 유방 안쪽에 놓기 때문에, 바깥 방향 광선이 유방 표면까지 갑니다.
 - 입 안 부위 참조(GV28, EX-HN11·13), 막힌 접촉 틈(HT2, LR10, LR11), 꼬리뼈 끝 GV1도 10mm를 넘습니다.
+- 2026-10-26 개정: 빌드는 이제 옮겨 온 바깥 방향과 맞는 피부면을 고르고(반대쪽 면 8개 정정, HT2 좌우는 예외로 표시), 입·코 안 내부 참조 7개를 피부에 투영하지 않으며, 배·사타구니·가슴 51개 경혈(87표식)을 여성 표지(배꼽·두덩결합·칼몸통결합·젖꼭지·위앞엉덩뼈가시·유방 아래 주름)와 WHO 비례촌으로 다시 계산합니다. 위 투영 거리 수치는 개정 전 기록입니다 — [기록](FEMALE_ORGANS_AND_APPROXIMATIONS.md#4-이번에-한-근사값-개선--여성-근사-경혈).
 - 표식 상태는 `approximate-unreviewed`입니다. 기본은 숨김이고 경혈 막대의 ‘근사 위치로 보기’로 켜며, 금색 ‘근사’ 토글로 끕니다. 이 선택은 보기 상태(`femaleMarkers`)로 새로고침·성별 왕복에도 유지됩니다. 켜져 있을 때 초점 이동은 이 좌표를 씁니다.
 
 ## 공개 확인
@@ -268,7 +253,10 @@ node scripts/outer-skin-points.mjs .cache/female-transport/female-scene HRAF0003
 .cache/female-ct-venv/bin/python scripts/female-transport/warp.py
 .cache/female-ct-venv/bin/python scripts/female-transport/brain.py
 node scripts/build-female-transport.mjs
-.cache/female-ct-venv/bin/python scripts/female-transport/anchor_rays.py; node scripts/build-female-anchors.mjs
+.cache/female-ct-venv/bin/python scripts/female-transport/anchor_rays.py
+node scripts/female-acupoints/landmarks.mjs   # 여성 표지(규칙 경혈) — 장면 덤프가 바뀌면 먼저
+node scripts/build-female-anchors.mjs
+node scripts/female-acupoints/notes.mjs   # 경혈 카드 요약(data/female-acupoint-notes.json)
 node scripts/audit-female-show-through.mjs --write; BASELINE=1 node scripts/audit-female-show-through.mjs --write
 node scripts/audit-female-brain-skull.mjs --write
 .cache/female-ct-venv/bin/python scripts/female-transport/junctions.py --write   # 약 4분
