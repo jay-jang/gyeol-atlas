@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-28T06:12:41.829096+00:00",
+  "branch": "feat/acupoint-classification",
+  "baseCommit": "0b08c76b593f46776388e64e4d64d4e8e332dd95",
+  "worktree": "/Users/nuinuri/workspace/anatomy-worktrees/acupoint-classification",
+  "renderer": "Chromium ANGLE Metal (PLAYWRIGHT_GPU=1); production smoke uses SwiftShader",
+  "unit": {
+    "pass": 501,
+    "fail": 0,
+    "skip": 0
+  },
+  "browserFullBeforeFinalLayout": {
+    "pass": 184,
+    "fail": 1,
+    "resolved": "Old classification-text selector replaced with assertions on all 12 Yuan badges; site.spec.ts passes in final affected suite."
+  },
+  "browserFinalAffectedSuite": {
+    "pass": 26,
+    "fail": 0
+  },
+  "build": "passed",
+  "production": "passed",
+  "readability": {
+    "samples": 258,
+    "surfaces": 15,
+    "minimumFontPx": 12,
+    "minimumContrast": 4.5
+  },
+  "overlays": {
+    "viewports": 8,
+    "states": 94,
+    "failures": 0
+  },
+  "visual": {
+    "viewports": 4,
+    "passed": true,
+    "screenshotsInspected": true
+  },
+  "sourceSha256": {
+    "src/point-display.ts": "78472491a5451b549fb5c177c65a9a81b699494d441ffc95fb4f6d01af57f3d7",
+    "src/Atlas.tsx": "a8247e27226ed63306fac28edaff2d73abb0e578726314a4fb162c07831f1b35",
+    "src/AtlasPage.tsx": "dc127adf6a9972010c62e47eb33da6a4d1423aea1bee6973bc9f278841c9119e",
+    "src/view-state.ts": "78f687a49b516dc7a696762b7257135d971f3f894c9ea702f0ce33e1ffc257c2",
+    "src/atlas.css": "b9fa9360774898c6cb83443ebce6c1f49f19afa09f38f495942139de7378300e",
+    "data/concepts.json": "4ee3589a1b98c4fcccd452faec89716b89225c2a43ebdb16c03caeeed9116003",
+    "data/acupoint-theory.json": "da2e91fc3e47177c13fa878d1c18795b82760ec923dbb64c7c13f3619a7afa92",
+    "data/point-concepts.json": "f9009464d19e6727d2fd2598ce71b58b9c646f83a649fee2e1f55e2ca12e42bc",
+    "data/sources.json": "6fe8a94bf52c3bb6cc189696c9e2313284199eb16daccafd880ce106ae568470",
+    "package.json": "24a1b69d9608d4fd1bc5d88a87f8fd2edb449f04249da7c2aaf27dbb80032674",
+    "scripts/build-acupoint-theory.mjs": "7cfde320d065a1245e4cb0752a1175d6fcea339b8b4c6f2b04b6f7e9b0dae1e4",
+    "scripts/assemble-acupoints.py": "f4449ae4f8d28d65a0ec630e82803e5a5476d4bd7b9d731aba28b2f604cf5f31",
+    "scripts/check-readability.mjs": "20ec4b805888616d170bd548bd0c9e5ff8182f648bb5bd8746baa07fafe1cd3a",
+    "scripts/capture-workspace.mjs": "b19d426baeeeff89c6ce27a7db4016b81c1b3a5df90dca83ab8e8b07e53c4c0a",
+    "scripts/smoke-production.mjs": "0ce68e350faddebd004d7819491e9c08950c0ad3df87b93199f1000e25dda712",
+    "tests/point-display.test.mjs": "14368683754f71dbfea605854beb2a87e0c112504cb91df0c35dde5d68f11ab0",
+    "tests/browser/point-display.spec.ts": "9554ee85e24d1f05c8043f1b1a72d5b5253e2f8ced85507725c295408d8f4740",
+    "tests/browser/helpers.ts": "9b86ae73332f3ca5080561f7b1b22133a5668932c67e0dd8058f5574a333777b",
+    "tests/browser/site.spec.ts": "7f1cb51d2cec94abe4470ad826d959a4ab0f46832307de6354b4a90c29c61b4e"
+  }
+}

@@ -9,7 +9,7 @@ const measure=root=>{
   const rgb=s=>s.match(/[\d.]+/g)?.map(Number)||[255,255,255];
   const luminance=v=>v.slice(0,3).map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4}).reduce((sum,x,i)=>sum+x*[.2126,.7152,.0722][i],0);
   const box=root.getBoundingClientRect();
-  return [...root.querySelectorAll('p,label,small,strong,button,summary,select,dt,dd,a,span,h3,input')].filter(el=>{
+  return [...root.querySelectorAll('p,label,small,strong,button,summary,select,dt,dd,a,span,h3,input,i')].filter(el=>{
     const r=el.getBoundingClientRect();const s=getComputedStyle(el);
     return r.width&&r.height&&r.top<box.bottom&&r.bottom>box.top&&s.visibility!=='hidden'&&[...el.childNodes].some(n=>n.nodeType===3&&n.textContent.trim());
   }).map(el=>{
@@ -24,6 +24,29 @@ try {
   await page.goto(origin+'/#atlas/ST36'); await page.getByText('해부 모델 로드 완료').waitFor({timeout:90000});
   const panels=[
     ['경혈 목록', async()=>page.getByRole('button',{name:'경혈 찾기',exact:true}).click(), '[aria-label="경혈 목록"]'],
+    ['혈 분류색 범례', async()=>{
+      await page.getByRole('button',{name:'경혈 찾기',exact:true}).click();
+      const filters=page.locator('.ax-filters'); if(!await filters.evaluate(el=>el.open))await filters.locator(':scope > summary').click();
+      await page.getByRole('button',{name:'혈 분류 색',exact:true}).click();
+      await page.locator('.point-color-legend > summary').click();
+    }, '[aria-label="경혈 목록"]'],
+    ['장부색 범례', async()=>{
+      await page.getByRole('button',{name:'경혈 찾기',exact:true}).click();
+      const filters=page.locator('.ax-filters'); if(!await filters.evaluate(el=>el.open))await filters.locator(':scope > summary').click();
+      await page.getByRole('button',{name:'연결 장부 색',exact:true}).click();
+      await page.locator('.point-color-legend > summary').click();
+    }, '[aria-label="경혈 목록"]'],
+    ['극혈·장부 필터', async()=>{
+      await page.getByRole('button',{name:'경혈 찾기',exact:true}).click();
+      const legend=page.locator('.point-color-legend');
+      if(await legend.evaluate(el=>el.open))await legend.locator('summary').click();
+      const filters=page.locator('.ax-filters');
+      if(!await filters.evaluate(el=>el.open))await filters.locator(':scope > summary').click();
+      await page.getByLabel('경혈 분류',{exact:true}).selectOption('xi');
+      await page.getByLabel('연결 장부',{exact:true}).selectOption('KI');
+      await filters.locator(':scope > summary').click();
+      await page.locator('.point-item').first().scrollIntoViewIfNeeded();
+    }, '[aria-label="경혈 목록"]'],
     ['표시 설정', async()=>page.getByRole('button',{name:'표시 설정',exact:true}).click(), '[aria-label="표시 설정"][role="region"]'],
     ['검색', async()=>{await page.getByLabel('경혈·구조 검색').click();await page.getByLabel('경혈·구조 검색').fill('위');}, '[aria-label="검색 결과"]'],
     ['도움말', async()=>page.getByRole('button',{name:'도움말',exact:true}).click(), '[aria-label="도움말"][role="region"]'],

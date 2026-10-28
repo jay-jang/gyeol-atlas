@@ -1,0 +1,33 @@
+
+Running 26 tests using 1 worker
+
+(node:5793) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/browser/acupoints.spec.ts:5:1 › 409 points, extra-point regional meshes, multiple locations and theory survive wiki return (5.8s)
+  ✓   2 tests/browser/acupoints.spec.ts:35:1 › mobile regions and 34-site Jiaji retain the scene and expose sourced content (4.7s)
+  ✓   3 tests/browser/acupoints.spec.ts:53:1 › the acupoint bar names meridians in Korean and still filters by meridian (3.6s)
+  ✓   4 tests/browser/comparison-layout.spec.ts:6:1 › landscape comparisons and isolated bundles remain clear without changing their memberships (11.9s)
+  ✓   5 tests/browser/comparison-layout.spec.ts:41:1 › female organ comparisons use the female body and keep the CT stomach one explicit choice away (14.0s)
+  ✓   6 tests/browser/panel-keyboard.spec.ts:8:5 › desktop › search shortcut returns to its trigger and idle Escape leaves canvas focus alone (4.0s)
+  ✓   7 tests/browser/panel-keyboard.spec.ts:41:5 › desktop › acupoint detail tabs support arrows, Home/End and labelled content (4.0s)
+  ✓   8 tests/browser/panel-keyboard.spec.ts:8:5 › mobile › search shortcut returns to its trigger and idle Escape leaves canvas focus alone (4.8s)
+  ✓   9 tests/browser/panel-keyboard.spec.ts:41:5 › mobile › acupoint detail tabs support arrows, Home/End and labelled content (4.3s)
+  ✓  10 tests/browser/panel-keyboard.spec.ts:73:3 › desktop: home and history keep the saved comparison's acupoint (6.6s)
+  ✓  11 tests/browser/panel-keyboard.spec.ts:73:3 › mobile: home and history keep the saved comparison's acupoint (6.2s)
+  ✓  12 tests/browser/panel-keyboard.spec.ts:102:1 › an atlas with no selected acupoint does not highlight the fallback ST36 structures (2.9s)
+  ✓  13 tests/browser/panel-keyboard.spec.ts:117:1 › a connective bundle keeps its own isolation label and tooltips describe icon actions (3.1s)
+  ✓  14 tests/browser/point-display.spec.ts:11:3 › desktop: classification and organ filters paint the model and keep the scene (5.4s)
+  ✓  15 tests/browser/point-display.spec.ts:11:3 › mobile: classification and organ filters paint the model and keep the scene (4.9s)
+  ✓  16 tests/browser/point-display.spec.ts:11:3 › small-mobile: classification and organ filters paint the model and keep the scene (5.5s)
+  ✓  17 tests/browser/point-display.spec.ts:11:3 › landscape: classification and organ filters paint the model and keep the scene (5.1s)
+  ✓  18 tests/browser/point-display.spec.ts:57:1 › actual GPU instance colours, overlaps, selection, wiki return and reload retain display preferences (8.4s)
+  ✓  19 tests/browser/point-display.spec.ts:99:1 › keyboard and touch operate classification controls; system changes retain colour and filters (10.0s)
+  ✓  20 tests/browser/point-display.spec.ts:144:1 › a Back-Shu comparison opens the complete organ bundle and retains marker settings (3.3s)
+  ✓  21 tests/browser/site.spec.ts:7:1 › model-first scene, actual marker click, search, bookmarks and source-linked wiki (7.6s)
+  ✓  22 tests/browser/site.spec.ts:20:1 › mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links (4.4s)
+  ✓  23 tests/browser/site.spec.ts:26:1 › failed GLB leaves wiki access and retry available (2.6s)
+  ✓  24 tests/browser/site.spec.ts:43:1 › wiki and sources open without 3D or web fonts, read clearly at 390 and 1440, and keep a skip link (2.7s)
+  ✓  25 tests/browser/site.spec.ts:82:3 › touch reading pages at 390 › wiki and sources read clearly and keep 44px touch targets (1.4s)
+  ✓  26 tests/browser/site.spec.ts:82:3 › touch reading pages at 1440 › wiki and sources read clearly and keep 44px touch targets (1.3s)
+
+  26 passed (2.3m)

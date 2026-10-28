@@ -1,0 +1,251 @@
+[WebServer] (node:4780) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:4802) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 185 tests using 1 worker
+
+(node:4824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 tests/browser/acupoints.spec.ts:5:1 › 409 points, extra-point regional meshes, multiple locations and theory survive wiki return (4.6s)
+  ✓    2 tests/browser/acupoints.spec.ts:35:1 › mobile regions and 34-site Jiaji retain the scene and expose sourced content (3.5s)
+  ✓    3 tests/browser/acupoints.spec.ts:53:1 › the acupoint bar names meridians in Korean and still filters by meridian (2.9s)
+  ✓    4 tests/browser/anatomy-region.spec.ts:8:46 › male limb regions agree with search, rendered meshes, peeling and restore (7.5s)
+  ✓    5 tests/browser/anatomy-region.spec.ts:8:46 › female limb regions agree with search, rendered meshes, peeling and restore (11.2s)
+  ✓    6 tests/browser/anatomy.spec.ts:4:1 › continuous dissection peels individual muscle meshes and exposes deep systems (3.9s)
+  ✓    7 tests/browser/anatomy.spec.ts:18:1 › seven real systems and shared layer/isolation transitions; clipping and bilingual structure selection (5.9s)
+  ✓    8 tests/browser/anatomy.spec.ts:27:1 › hand and foot phalanges are searchable, selectable and frameable (3.5s)
+  ✓    9 tests/browser/anatomy.spec.ts:33:1 › whole-body vessels and nerves expose names, hierarchy, descriptions and isolation (4.9s)
+  ✓   10 tests/browser/anatomy.spec.ts:41:1 › male and female references, body regions and lymph structures are independently explorable (7.8s)
+  ✓   11 tests/browser/anatomy.spec.ts:76:1 › point focus and marker preference survive stage changes (2.8s)
+  ✓   12 tests/browser/anatomy.spec.ts:80:1 › whole-organ bundles, internal click targeting and wiki/session restoration (6.0s)
+  ✓   13 tests/browser/anatomy.spec.ts:87:1 › mobile bundle comparison keeps its result visible and avoids page scroll; invalid snapshots recover (3.7s)
+  ✓   14 tests/browser/anterior-forearm-peel.spec.ts:5:1 › male anterior forearm preserves geometry and peels superficial, intermediate, then deep on desktop and mobile (3.2s)
+  ✓   15 tests/browser/anterior-thigh-peel.spec.ts:5:1 › female anterior thigh exposes vastus intermedius only after both rectus femoris sources peel (5.3s)
+All 283 brain position/normal/index buffers unchanged at 0%
+All 283 brain position/normal/index buffers unchanged at 25%
+All 283 brain position/normal/index buffers unchanged at 50%
+All 283 brain position/normal/index buffers unchanged at 75%
+All 283 brain position/normal/index buffers unchanged at 100%
+  ✓   16 tests/browser/brain-bindings.spec.ts:33:1 › brain source bindings, ray selection and every half-percent peel preserve complete buffers (21.1s)
+  ✓   17 tests/browser/brain-bindings.spec.ts:129:1 › unreviewed female manifest is rejected before geometry download and retry recovers (4.2s)
+  ✓   18 tests/browser/brain-provenance.spec.ts:5:1 › female reference brain exposes provenance for bundle and individual selections (7.4s)
+  ✓   19 tests/browser/comparison-clear.spec.ts:4:45 › male: clearing a comparison removes the hidden highlight and survives reload (14.4s)
+  ✓   20 tests/browser/comparison-clear.spec.ts:4:45 › female: clearing a comparison removes the hidden highlight and survives reload (17.1s)
+  ✓   21 tests/browser/comparison-layout.spec.ts:6:1 › landscape comparisons and isolated bundles remain clear without changing their memberships (11.4s)
+  ✓   22 tests/browser/comparison-layout.spec.ts:41:1 › female organ comparisons use the female body and keep the CT stomach one explicit choice away (11.5s)
+  ✓   23 tests/browser/connective.spec.ts:15:1 › male ligaments and tendons are present, peel with their systems and can be hidden or viewed alone (5.2s)
+  ✓   24 tests/browser/connective.spec.ts:65:1 › female reference shows its source knee structures and the carried ligaments and tendons (3.8s)
+  ✓   25 tests/browser/connective.spec.ts:77:1 › the ligament setting and its view fit a phone without replacing the scene (2.6s)
+  ✓   26 tests/browser/connective.spec.ts:94:1 › ligaments and tendons are drawn apart in both bodies and the display settings name the two (4.9s)
+  ✓   27 tests/browser/continuity.spec.ts:10:1 › an organ stays in view and selected through peeling, acupoints and clearing (5.6s)
+  ✓   28 tests/browser/continuity.spec.ts:65:3 › motion › camera moves glide to the same pose that reduced motion jumps to (4.7s)
+  ✓   29 tests/browser/detail-context.spec.ts:24:29 › male heart: restoring detail context keeps every original member and the selected child (6.4s)
+  ✓   30 tests/browser/detail-context.spec.ts:24:29 › male liver: restoring detail context keeps every original member and the selected child (7.2s)
+  ✓   31 tests/browser/detail-context.spec.ts:24:29 › male lung: restoring detail context keeps every original member and the selected child (9.5s)
+  ✓   32 tests/browser/detail-context.spec.ts:24:29 › female abdomen-ct: restoring detail context keeps every original member and the selected child (7.6s)
+  ✓   33 tests/browser/detail-layout.spec.ts:13:4 › male-heart detail remains above its card and presets retain organ focus (7.5s)
+  ✓   34 tests/browser/detail-layout.spec.ts:13:4 › female-brain detail remains above its card and presets retain organ focus (9.2s)
+  ✓   35 tests/browser/detail-layout.spec.ts:13:4 › female-ct detail remains above its card and presets retain organ focus (7.1s)
+  ✓   36 tests/browser/detail-layout.spec.ts:64:1 › every major organ detail fits beside its collapsed and expanded card (10.0s)
+  ✓   37 tests/browser/detail-peel-return.spec.ts:8:12 › 남성 심장: direct detail return restores its original camera after reload (5.2s)
+  ✓   38 tests/browser/detail-peel-return.spec.ts:8:12 › 여성 뇌: direct detail return restores its original camera after reload (6.6s)
+  ✓   39 tests/browser/detail-peel-return.spec.ts:8:12 › 여성 위 (여성 CT): direct detail return restores its original camera after reload (6.7s)
+  ✓   40 tests/browser/detail-peel-return.spec.ts:31:1 › a point chosen from a directly opened heart detail returns to the original camera (3.2s)
+  ✓   41 tests/browser/detail-peel-return.spec.ts:52:12 › 남성 심장: detail return restores the actual 50.5% peel (3.1s)
+  ✓   42 tests/browser/detail-peel-return.spec.ts:52:12 › 여성 뇌: detail return restores the actual 50.5% peel (4.1s)
+  ✓   43 tests/browser/detail-peel-return.spec.ts:52:12 › 여성 위 (여성 CT): detail return restores the actual 50.5% peel (6.9s)
+  ✓   44 tests/browser/detail-peel-return.spec.ts:92:1 › selecting a point from heart detail restores peel layers and whole-body framing (4.2s)
+  ✓   45 tests/browser/detail-peel-return.spec.ts:109:1 › changing body region from female CT detail returns to the same female overview peel (5.5s)
+  ✓   46 tests/browser/details.spec.ts:7:1 › female uterine tubes and vagina have complete source-defined detail views on desktop and mobile (10.1s)
+  ✓   47 tests/browser/details.spec.ts:50:1 › organ details use their own complete source memberships and individual parts survive reload (16.4s)
+  ✓   48 tests/browser/details.spec.ts:113:1 › female peeling exposes each system and does not leak male anatomy (4.9s)
+  ✓   49 tests/browser/details.spec.ts:133:1 › a failed female geometry chunk shows a recoverable error and retry loads the independent body (3.6s)
+  ✓   50 tests/browser/details.spec.ts:146:1 › surface targeting exits organ detail and isolation for both reference bodies (4.9s)
+  ✓   51 tests/browser/dissection-input-scope.spec.ts:4:1 › Alt+arrows in a search field do not peel or move the model; canvas focus enables peeling (2.6s)
+  ✓   52 tests/browser/dissection-input-scope.spec.ts:22:1 › horizontal wheel over the depth slider leaves depth and camera unchanged (2.8s)
+  ✓   53 tests/browser/dissection-input-scope.spec.ts:38:1 › movement stops on canvas focus loss even before the held key is released (3.6s)
+  ✓   54 tests/browser/dissection-input-scope.spec.ts:51:1 › small Alt+wheel input on the canvas peels one half-step without zooming (2.4s)
+  ✓   55 tests/browser/expansion.spec.ts:3:1 › added muscles, spinal cord and thyroid can be searched, isolated and framed (4.6s)
+  ✓   56 tests/browser/face-surface.spec.ts:16:1 › the face reads as skin at 0% and shows its own systems once peeled (5.1s)
+  ✓   57 tests/browser/female-acupoints.spec.ts:30:3 › desktop › rule-placed markers sit on their female landmarks and the card names each method and exception (7.6s)
+  ✓   58 tests/browser/female-acupoints.spec.ts:30:3 › touch phone › rule-placed markers sit on their female landmarks and the card names each method and exception (6.9s)
+  ✓   59 tests/browser/female-airway.spec.ts:9:1 › female tracheobronchial tree opens every source mesh and keeps individual selection on desktop and mobile (6.8s)
+  ✓   60 tests/browser/female-airway.spec.ts:42:1 › female airway search keeps its original English name and enters the same source group (3.9s)
+  ✓   61 tests/browser/female-arm-registration.spec.ts:41:1 › female arm and toe rest poses match calibrated geometry through peeling, search, reload and sex changes (10.8s)
+  ✓   62 tests/browser/female-detail.spec.ts:5:1 › female CT details preserve source isolation, search, nearby organs, reload and HRA return (9.5s)
+  ✓   63 tests/browser/female-detail.spec.ts:67:1 › returning from female CT waits for the actual HRA source to reload (5.0s)
+  ✓   64 tests/browser/female-detail.spec.ts:81:1 › female CT chunk failure is recoverable without substituting male or HRA organs (4.4s)
+  ✓   65 tests/browser/female-gallbladder.spec.ts:8:1 › female gallbladder detail opens four actual meshes and restores the prior peel (4.2s)
+  ✓   66 tests/browser/female-gallbladder.spec.ts:37:1 › female cystic artery keeps its English source name and opens the abdominal group (3.9s)
+Verified all 38 knee buffers/matrices at 0%
+Verified all 38 knee buffers/matrices at 25%
+Verified all 38 knee buffers/matrices at 50%
+Verified all 38 knee buffers/matrices at 75%
+Verified all 38 knee buffers/matrices at 100%
+  ✓   67 tests/browser/female-knee-source-restoration.spec.ts:8:1 › 38 female knee source surfaces retain buffers and placement through all 201 peel values and selection (16.8s)
+  ✓   68 tests/browser/female-knee-source-restoration.spec.ts:51:1 › knee source fetch failure is visible and retry restores female source geometry (3.6s)
+  ✓   69 tests/browser/female-organs.spec.ts:30:1 › female-specific organs show in the peel and in 장기만 보기, in their own colours (4.1s)
+  ✓   70 tests/browser/female-organs.spec.ts:70:1 › female reproductive and breast views are found by common terms and return to the body (4.7s)
+  ✓   71 tests/browser/female-organs.spec.ts:115:1 › the male reproductive organs are one featured detail in the reproductive colour (2.9s)
+  ✓   72 tests/browser/female-organs.spec.ts:146:3 › on a touch phone › the reproductive views switch and return with 44 px targets and the card on screen (4.3s)
+  ✓   73 tests/browser/female-pelvic-bindings.spec.ts:18:1 › female uterine round-ligament IDs select the appropriate existing side at every peel step (14.0s)
+  ✓   74 tests/browser/female-source-restoration-failure.spec.ts:3:1 › female source restoration failure shows an error and retry loads the restored source without a male substitute (4.1s)
+Verified source buffers at peel 0%
+Verified source buffers at peel 25%
+Verified source buffers at peel 50%
+Verified source buffers at peel 75%
+Verified source buffers at peel 100%
+  ✓   75 tests/browser/female-source-restoration.spec.ts:8:1 › female native source surface remains unchanged across all 201 peel values and selection restoration (15.8s)
+  ✓   76 tests/browser/female-transport.spec.ts:20:1 › the female body is complete with the carried systems, peels in order and keeps sources (4.1s)
+  ✓   77 tests/browser/female-transport.spec.ts:69:1 › female approximate acupoints are opt-in, focus on the female surface and are remembered (9.0s)
+  ✓   78 tests/browser/femur-detail.spec.ts:7:1 › female femur selection opens every source child and keeps atomic selection separate (10.7s)
+  ✓   79 tests/browser/first-frame.spec.ts:42:1 › overview meshes that mount mid-peel use their peel opacity on their first draw (6.7s)
+  ✓   80 tests/browser/first-frame.spec.ts:73:1 › female and independent CT source mounts never draw the default all-visible packed scene (6.3s)
+  ✓   81 tests/browser/first-frame.spec.ts:119:1 › cancelled female and CT downloads cannot expose a late source after switching back (5.8s)
+  ✓   82 tests/browser/gluteal-peel.spec.ts:7:45 › male: sourced gluteal order and all existing relations hold in rendered meshes (6.9s)
+  ✓   83 tests/browser/gluteal-peel.spec.ts:7:45 › female: sourced gluteal order and all existing relations hold in rendered meshes (5.8s)
+  ✓   84 tests/browser/loading.spec.ts:4:1 › leaving a detailed reference does not mark unloaded overview layers ready (5.3s)
+  ✓   85 tests/browser/lung-source.spec.ts:9:34 › lung source views remain separate and selectable on desktop (11.0s)
+  ✓   86 tests/browser/lung-source.spec.ts:9:34 › lung source views remain separate and selectable on mobile (10.8s)
+  ✓   87 tests/browser/lung-source.spec.ts:47:1 › a retired fragment in a historical lung session restores a source bundle and preserves preferences (3.4s)
+  ✓   88 tests/browser/male-kidney-detail.spec.ts:5:1 › male kidney detail exposes original kidney, ureter and artery meshes and restores peeling (7.5s)
+  ✓   89 tests/browser/male-pancreas-detail.spec.ts:5:1 › male pancreas source views stay separate, expose original parts and return to the prior peel (6.8s)
+  ✓   90 tests/browser/male-stomach-detail.spec.ts:5:1 › male stomach and named vessel detail retains peel, selected vessel and sex boundary (7.3s)
+  ✓   91 tests/browser/marker-picking.spec.ts:43:1 › a near miss picks the acupoint, a drag is not a pick, and tissue is selected in place (8.0s)
+  ✓   92 tests/browser/marker-picking.spec.ts:103:3 › touch › a tap beside an acupoint picks it and tissue taps keep the camera on a phone (4.5s)
+  ✓   93 tests/browser/marker-picking.spec.ts:131:1 › over peeled tissue an acupoint keeps a smaller target, so organs near it stay clickable (3.4s)
+  ✓   94 tests/browser/modesty.spec.ts:18:1 › the genitals start hidden in every system and the shield or the settings show them (26.1s)
+  ✓   95 tests/browser/modesty.spec.ts:69:1 › a chosen genital structure and the reproductive detail are shown while hidden (4.0s)
+  ✓   96 tests/browser/modesty.spec.ts:105:1 › the groin markers the closure carries forward are drawn on it and say so on their card (3.0s)
+  ✓   97 tests/browser/movement.spec.ts:8:1 › the movement page lists the agreed movements without loading the 3D viewer (1.3s)
+  ✓   98 tests/browser/movement.spec.ts:24:1 › the movement page opens and plays while every model download fails (1.3s)
+  ✓   99 tests/browser/movement.spec.ts:36:1 › a movement opens paused on its first phase and steps without stacking history (2.3s)
+  ✓  100 tests/browser/movement.spec.ts:63:1 › reduced motion steps through phases; continuous motion only on request (4.7s)
+  ✓  101 tests/browser/movement.spec.ts:90:1 › stairs draw a staircase, report the cycle, tabulate one EMG recording and link the pair (3.1s)
+  ✓  102 tests/browser/movement.spec.ts:136:1 › the heel raise names its phases without a %, tabulates two EMG rows and links standing and walking (2.5s)
+  ✓  103 tests/browser/movement.spec.ts:171:1 › every stair phase keeps the diagram, controls and current phase on a 360×740 first screen (1.4s)
+  ✓  104 tests/browser/movement.spec.ts:201:1 › a structure link opens it once in the atlas, keeps preferences and links back (7.2s)
+  ✓  105 tests/browser/movement.spec.ts:242:1 › the female body opens carried copies, keeps the ligament preference, and offers the male model otherwise (5.1s)
+  ✓  106 tests/browser/movement.spec.ts:273:1 › citations move to the source list without leaving the page (1.2s)
+  ✓  107 tests/browser/movement.spec.ts:290:3 › header at 1440 px shows one movement label on one row without the movement page (1.1s)
+  ✓  108 tests/browser/movement.spec.ts:290:3 › header at 390 px shows one movement label on one row without the movement page (1.0s)
+  ✓  109 tests/browser/movement.spec.ts:290:3 › header at 360 px shows one movement label on one row without the movement page (1.1s)
+  ✓  110 tests/browser/movement.spec.ts:320:3 › phone 390×844 walking/loading-response: one column, no sideways scroll, readable and touchable (1.3s)
+  ✓  111 tests/browser/movement.spec.ts:320:3 › phone 360×740 walking/loading-response: one column, no sideways scroll, readable and touchable (1.3s)
+  ✓  112 tests/browser/movement.spec.ts:320:3 › phone 844×390 walking/loading-response: one column, no sideways scroll, readable and touchable (1.3s)
+  ✓  113 tests/browser/movement.spec.ts:320:3 › phone 390×844 stair-ascent/pull-up: one column, no sideways scroll, readable and touchable (1.3s)
+  ✓  114 tests/browser/movement.spec.ts:320:3 › phone 360×740 stair-descent/controlled-lowering: one column, no sideways scroll, readable and touchable (1.3s)
+  ✓  115 tests/browser/movement.spec.ts:320:3 › phone 844×390 stair-descent/weight-acceptance: one column, no sideways scroll, readable and touchable (1.3s)
+  ✓  116 tests/browser/movement.spec.ts:320:3 › phone 360×740 heel-raise/lowering: one column, no sideways scroll, readable and touchable (1.3s)
+  ✓  117 tests/browser/movement.spec.ts:320:3 › phone 844×390 heel-raise/rise: one column, no sideways scroll, readable and touchable (1.2s)
+  ✓  118 tests/browser/muscle-peel.spec.ts:5:45 › male: actual meshes obey sourced outer-to-inner peel precedence and selection restores a hidden muscle (6.1s)
+  ✓  119 tests/browser/muscle-peel.spec.ts:5:45 › female: actual meshes obey sourced outer-to-inner peel precedence and selection restores a hidden muscle (6.3s)
+  ✓  120 tests/browser/navigation.spec.ts:3:1 › movement, wheel zoom and modifier-wheel dissection work on the actual canvas (5.9s)
+  ✓  121 tests/browser/organ-region.spec.ts:10:45 › male: source organ regions, selection and restored scopes stay consistent (6.5s)
+  ✓  122 tests/browser/organ-region.spec.ts:10:45 › female: source organ regions, selection and restored scopes stay consistent (10.4s)
+  ✓  123 tests/browser/panel-keyboard.spec.ts:8:5 › desktop › search shortcut returns to its trigger and idle Escape leaves canvas focus alone (3.1s)
+  ✓  124 tests/browser/panel-keyboard.spec.ts:41:5 › desktop › acupoint detail tabs support arrows, Home/End and labelled content (2.9s)
+  ✓  125 tests/browser/panel-keyboard.spec.ts:8:5 › mobile › search shortcut returns to its trigger and idle Escape leaves canvas focus alone (3.0s)
+  ✓  126 tests/browser/panel-keyboard.spec.ts:41:5 › mobile › acupoint detail tabs support arrows, Home/End and labelled content (3.0s)
+  ✓  127 tests/browser/panel-keyboard.spec.ts:73:3 › desktop: home and history keep the saved comparison's acupoint (5.3s)
+  ✓  128 tests/browser/panel-keyboard.spec.ts:73:3 › mobile: home and history keep the saved comparison's acupoint (4.8s)
+  ✓  129 tests/browser/panel-keyboard.spec.ts:102:1 › an atlas with no selected acupoint does not highlight the fallback ST36 structures (2.4s)
+  ✓  130 tests/browser/panel-keyboard.spec.ts:117:1 › a connective bundle keeps its own isolation label and tooltips describe icon actions (2.7s)
+  ✓  131 tests/browser/peel-mode-entry.spec.ts:6:1 › a backward peel input at zero enters peeling from a comparison instead of being discarded (2.5s)
+  ✓  132 tests/browser/peel-mode-entry.spec.ts:21:36 › male: layer view has an explicit peel entry on desktop and touch (13.5s)
+  ✓  133 tests/browser/peel-mode-entry.spec.ts:21:36 › female: layer view has an explicit peel entry on desktop and touch (18.2s)
+  ✓  134 tests/browser/point-display.spec.ts:11:3 › desktop: classification and organ filters paint the model and keep the scene (4.3s)
+  ✓  135 tests/browser/point-display.spec.ts:11:3 › mobile: classification and organ filters paint the model and keep the scene (4.2s)
+  ✓  136 tests/browser/point-display.spec.ts:11:3 › small-mobile: classification and organ filters paint the model and keep the scene (4.3s)
+  ✓  137 tests/browser/point-display.spec.ts:11:3 › landscape: classification and organ filters paint the model and keep the scene (4.1s)
+  ✓  138 tests/browser/point-display.spec.ts:57:1 › actual GPU instance colours, overlaps, selection, wiki return and reload retain display preferences (6.9s)
+  ✓  139 tests/browser/point-display.spec.ts:99:1 › keyboard and touch operate classification controls; system changes retain colour and filters (8.1s)
+  ✓  140 tests/browser/point-display.spec.ts:132:1 › a Back-Shu comparison opens the complete organ bundle and retains marker settings (3.2s)
+  ✓  141 tests/browser/selection-context.spec.ts:51:75 › male: context aid reveals a selected internal organ without moving or isolating anatomy (8.5s)
+  ✓  142 tests/browser/selection-context.spec.ts:51:75 › female: context aid reveals a selected internal organ without moving or isolating anatomy (10.3s)
+  ✓  143 tests/browser/selection-context.spec.ts:118:1 › vascular, neural and lymph reference renderers share the aid and keyboard preference restoration (6.8s)
+  ✓  144 tests/browser/selection-navigation-return.spec.ts:6:1 › female same-point click keeps an ordinary organ selection; clearing returns to the prior peel (7.0s)
+  ✓  145 tests/browser/selection-navigation-return.spec.ts:47:13 › male: acupoints keep an ordinary selection; region navigation leaves it for the prior peel (5.3s)
+  ✓  146 tests/browser/selection-navigation-return.spec.ts:47:13 › female: acupoints keep an ordinary selection; region navigation leaves it for the prior peel (6.7s)
+  ✓  147 tests/browser/selection-opacity.spec.ts:7:45 › male: selection remains opaque without overwriting layer opacity preferences (3.6s)
+  ✓  148 tests/browser/selection-opacity.spec.ts:7:45 › female: selection remains opaque without overwriting layer opacity preferences (4.4s)
+  ✓  149 tests/browser/selection-peel-return.spec.ts:7:13 › male: clearing an ordinary structure restores the prior 50.5% peel and keeps the camera (6.6s)
+  ✓  150 tests/browser/selection-peel-return.spec.ts:7:13 › female: clearing an ordinary structure restores the prior 50.5% peel and keeps the camera (7.7s)
+  ✓  151 tests/browser/selection-peel-return.spec.ts:61:1 › female ordinary organ selection then detail returns to its original peel and pose (4.2s)
+  ✓  152 tests/browser/sex-switch-loading.spec.ts:4:1 › switching to female removes male organs even while the female geometry is delayed (4.2s)
+  ✓  153 tests/browser/site.spec.ts:7:1 › model-first scene, actual marker click, search, bookmarks and source-linked wiki (6.6s)
+  ✘  154 tests/browser/site.spec.ts:20:1 › mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links (19.0s)
+(node:5256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  155 tests/browser/site.spec.ts:26:1 › failed GLB leaves wiki access and retry available (2.1s)
+  ✓  156 tests/browser/site.spec.ts:43:1 › wiki and sources open without 3D or web fonts, read clearly at 390 and 1440, and keep a skip link (2.4s)
+  ✓  157 tests/browser/site.spec.ts:82:3 › touch reading pages at 390 › wiki and sources read clearly and keep 44px touch targets (1.3s)
+  ✓  158 tests/browser/site.spec.ts:82:3 › touch reading pages at 1440 › wiki and sources read clearly and keep 44px touch targets (1.2s)
+  ✓  159 tests/browser/source-frame.spec.ts:8:1 › leaving an independent detail frame for peeling fits the loaded overview and preserves later layer views (14.1s)
+  ✓  160 tests/browser/source-frame.spec.ts:55:1 › female help and layer descriptions use the female overview inventory (5.5s)
+  ✓  161 tests/browser/spinal-detail.spec.ts:6:1 › female spinal cord partial rest pose retains whole and individually selectable segments (11.7s)
+  ✓  162 tests/browser/system-exclusion.spec.ts:263:3 › desktop 1440×900, male › a) the rail's own checks leave bone and organs out, keep the view and draw muscles with or without organs (3.7s)
+  ✓  163 tests/browser/system-exclusion.spec.ts:350:3 › desktop 1440×900, male › b) a left-out innermost system stops the peel before it and the last included system stays (3.9s)
+  ✓  164 tests/browser/system-exclusion.spec.ts:409:3 › desktop 1440×900, male › c) a left-out stop is inert and says why, its eye still shows it alone, and the peel entry returns with the exclusion (3.9s)
+  ✓  165 tests/browser/system-exclusion.spec.ts:487:3 › desktop 1440×900, male › d) keyboard only: the checks in the stop rows and Alt+Arrow peeling stop at the limit (4.2s)
+  ✓  166 tests/browser/system-exclusion.spec.ts:531:3 › desktop 1440×900, male › e) the 표시 설정 system checks stay a direct combination; the peel then applies the exclusion again (3.5s)
+  ✓  167 tests/browser/system-exclusion.spec.ts:568:3 › desktop 1440×900, male › f) reload restores the exclusions and the clamp; the female body keeps them (8.6s)
+  ✓  168 tests/browser/system-exclusion.spec.ts:622:3 › desktop 1440×900, male › f2) invalid saved exclusions fall back to a safe view; older sessions leave nothing out (12.9s)
+  ✓  169 tests/browser/system-exclusion.spec.ts:643:3 › phone 390×844 touch › g) the depth band's rows carry the checks with 44px targets; a stop or eye closes it and hands focus back (4.1s)
+  ✓  170 tests/browser/system-exclusion.spec.ts:752:3 › phone 360×740 touch › g2) the narrow band keeps 44px targets and one-line notes (3.2s)
+  ✓  171 tests/browser/system-exclusion.spec.ts:780:3 › phone 360×740 touch › g2b) a comparison takes the narrow band's hint line (not stacked), within 45% (2.9s)
+  ✓  172 tests/browser/system-exclusion.spec.ts:797:3 › short landscape 844×390 touch › h) the rail keeps region, 깊이 단계 and slider; the rows open in a 4×2 band beside it (4.7s)
+  ✓  173 tests/browser/system-exclusion.spec.ts:903:3 › short landscape 844×390 touch › h2) a comparison adds its notice on top of the landscape band, within 45% (4.1s)
+  ✓  174 tests/browser/system-exclusion.spec.ts:930:3 › body regions 1440×900 › i) at its stop every body region of both bodies still draws the innermost kept system (8.1s)
+  ✓  175 tests/browser/system-exclusion.spec.ts:982:5 › rail 1024×768 touch › j) stops stay apart with systems left out, and the checks fit the rail (4.1s)
+  ✓  176 tests/browser/system-exclusion.spec.ts:982:5 › rail 1280×720 touch › j) stops stay apart with systems left out, and the checks fit the rail (3.5s)
+  ✓  177 tests/browser/system-exclusion.spec.ts:982:5 › rail 1024×680 touch › j) stops stay apart with systems left out, and the checks fit the rail (3.8s)
+  ✓  178 tests/browser/system-exclusion.spec.ts:982:5 › rail 768×1024 touch › j) stops stay apart with systems left out, and the checks fit the rail (3.5s)
+  ✓  179 tests/browser/system-exclusion.spec.ts:982:5 › rail 1180×580 › j) stops stay apart with systems left out, and the checks fit the rail (3.3s)
+  ✓  180 tests/browser/system-exclusion.spec.ts:982:5 › rail 1366×768 › j) stops stay apart with systems left out, and the checks fit the rail (3.2s)
+  ✓  181 tests/browser/system-exclusion.spec.ts:1062:3 › desktop 1440×900 keys and click target › k) Escape on a check changes nothing; a band left open across a resize does not hold Escape; presenting ends in one press (3.0s)
+  ✓  182 tests/browser/system-exclusion.spec.ts:1113:3 › desktop 1440×900 keys and click target › l) with the click target set to internal structures, the male face keeps its ears, lips and eyes (3.4s)
+  ✓  183 tests/browser/translucent-depth.spec.ts:4:45 › male: transparent peel meshes do not occlude later transparent anatomy (5.8s)
+  ✓  184 tests/browser/translucent-depth.spec.ts:4:45 › female: transparent peel meshes do not occlude later transparent anatomy (8.1s)
+  ✓  185 tests/browser/upper-back-peel.spec.ts:5:1 › male upper-back muscles peel after their covering trapezius, without moving meshes (3.7s)
+
+
+  1) tests/browser/site.spec.ts:20:1 › mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.classification-text').first()
+    Expected substring: "원혈"
+    Received string:    "폐경 · 팔·손"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" locator('.classification-text').first() with timeout 15000ms
+      - waiting for locator('.classification-text').first()
+        34 × locator resolved to <small class="classification-text">폐경 · 팔·손</small>
+           - unexpected value "폐경 · 팔·손"
+
+
+      20 | test('mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links',async({page})=>{
+      21 |  await page.setViewportSize({width:390,height:844});await page.goto('/');await ready(page);const canvas=await page.locator('canvas').boundingBox();expect(canvas!.y).toBeLessThan(100);expect(canvas!.y+canvas!.height).toBeLessThanOrEqual(844);
+    > 22 |  await openTool(page,'경혈 찾기');const dock=await page.locator('.ax-panel').boundingBox();expect(dock!.height).toBeLessThan(canvas!.height*.45);expect(dock!.y-canvas!.y).toBeGreaterThan(canvas!.height*.35);expect(dock!.y+dock!.height).toBeLessThanOrEqual((await page.locator('.ax-depth').boundingBox())!.y);await page.getByLabel('경혈 검색').fill('없는경혈');await expect(page.getByText('일치하는 경혈이 없습니다')).toBeVisible();await page.getByRole('button',{name:'전체 경혈 보기'}).click();await expect(page.locator('.point-item')).toHaveCount(409);await openFilters(page);await page.getByLabel('경혈 분류',{exact:true}).selectOption('yuan');await expect(page.locator('.point-item')).toHaveCount(12);await expect(page.locator('.classification-text').first()).toContainText('원혈');await page.getByLabel('경혈 분류',{exact:true}).selectOption('mu');await expect(page.locator('.point-item')).toHaveCount(12);
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^
+      23 |  await page.keyboard.press('Escape');await expect(page.locator('.ax-panel')).toHaveCount(0);await expect(page.getByRole('button',{name:'경혈 찾기',exact:true})).toBeFocused();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+      24 |  await page.goto('/#wiki/points/ST36');await expect(page.locator('article h1')).toHaveText('족삼리 ST36');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.goto('/#wiki/not-found');await expect(page.getByRole('heading',{name:'문서를 찾지 못했습니다'})).toBeVisible();
+      25 | });
+        at /Users/nuinuri/workspace/anatomy-worktrees/acupoint-classification/tests/browser/site.spec.ts:22:731
+
+    Error Context: test-results/site-mobile-canvas-and-ove-f2120-rd-dismissal-and-deep-links/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/site-mobile-canvas-and-ove-f2120-rd-dismissal-and-deep-links/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/site-mobile-canvas-and-ove-f2120-rd-dismissal-and-deep-links/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests/browser/site.spec.ts:20:1 › mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links
+  184 passed (18.1m)

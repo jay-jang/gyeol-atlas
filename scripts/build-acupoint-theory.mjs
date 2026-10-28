@@ -19,6 +19,8 @@ const shuTypes = ['정(井)', '형(滎)', '수(輸)', '경(經)', '합(合)'];
 const categories = {
   yuan: 'LU9 LI4 ST42 SP3 HT7 SI4 BL64 KI3 PC7 TE4 GB40 LR3'.split(' '),
   mu: 'LU1 ST25 CV12 LR13 CV14 CV4 CV3 GB25 CV17 CV5 GB24 LR14'.split(' '),
+  'back-shu': 'BL13 BL25 BL21 BL20 BL15 BL27 BL28 BL23 BL14 BL22 BL19 BL18'.split(' '),
+  xi: 'LU6 LI7 ST34 SP8 HT6 SI6 BL63 KI5 PC4 TE7 GB36 LR6 KI8 BL59 KI9 GB35'.split(' '),
   luo: 'LU7 LI6 ST40 SP4 HT5 SI7 BL58 KI4 PC6 TE5 GB37 LR5 GV1 CV15 SP21'.split(' '),
 };
 const theory = Object.fromEntries(catalogue.map(p => {
@@ -33,6 +35,7 @@ const theory = Object.fromEntries(catalogue.map(p => {
     traditionalOrgan: channel?.[3] || null,
     pairedMeridian: channel?.[4] || null,
     fiveShu: shu,
+    xiMeridian: ({ KI8: '음교맥', BL59: '양교맥', KI9: '음유맥', GB35: '양유맥' })[p.id] || null,
     categories: [...Object.entries(categories).filter(([, ids]) => ids.includes(p.id)).map(([k]) => k), ...(shu ? ['five-shu'] : [])],
     explanation: channel
       ? `${p.meridian}의 전통적 경맥 분류는 ${channel[1]}·${channel[2]}이며 ${channel[3]}에 대응합니다. ${shu ? `이 경혈은 오수혈의 ${shu.type}혈로 ${shu.element}에 배속됩니다.` : '이 경혈은 오수혈 60개에 속하지 않아 개별 오수혈 오행을 부여하지 않습니다.'}`
@@ -44,3 +47,24 @@ const theory = Object.fromEntries(catalogue.map(p => {
 }));
 fs.writeFileSync('data/acupoint-theory.json', JSON.stringify(theory, null, 2) + '\n');
 console.log(`Theory: ${Object.keys(theory).length} points; ${Object.values(theory).filter(t => t.fiveShu).length} Five Shu.`);
+
+// Keep the classification export and the atlas/wiki mapping in one generation step.
+// Original comparison bundles remain explicit; channel membership is a separate relation.
+const concepts = {};
+const existing = JSON.parse(fs.readFileSync('data/acupoint-authoring/legacy-point-concepts.json', 'utf8'));
+for (const p of catalogue) {
+  const t = theory[p.id], c = concepts[p.id] = { ...(existing[p.id] || {
+    traditionalChannel: null, traditionalName: null, organIds: [], sourceIds: ['point-categories'],
+    note: '전통 분류와 현대 해부학을 구분합니다.',
+  }) };
+  c.categories = t.categories;
+  c.shuType = t.fiveShu?.type || null;
+  const index = categories['back-shu'].indexOf(p.id);
+  if (index >= 0) {
+    const channel = channelRows[index], reference = existing[categories.yuan[index]];
+    Object.assign(c, { traditionalChannel: channel[0], traditionalName: channel[3],
+      organIds: reference.organIds, sourceIds: ['point-categories'],
+      note: '전통적 유혈 대응이며 소속 방광경이나 해부학적 압력 전달 경로와 구분합니다.' });
+  }
+}
+fs.writeFileSync('data/point-concepts.json', JSON.stringify(concepts, null, 2) + '\n');

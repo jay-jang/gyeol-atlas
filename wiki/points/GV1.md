@@ -35,7 +35,7 @@ review: illustrative-unreviewed
 
 ## 경혈 분류와 장부 대응
 
-낙혈. 전통적 분류는 압력 전달이나 장기 마사지 효과를 뜻하지 않습니다. [분류표와 출처](#wiki/point-categories) · [마사지 해부학 참고](#wiki/massage-anatomy)
+낙혈(락혈). 전통적 분류는 압력 전달이나 장기 마사지 효과를 뜻하지 않습니다. [분류표와 출처](#wiki/point-categories) · [마사지 해부학 참고](#wiki/massage-anatomy)
 
 ## 해부학적 연결
 

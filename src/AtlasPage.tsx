@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import AnatomyControls from "./AnatomyControls";
 import PointTradition from "./PointTradition";
+import { xiMeridian, pointCategories, pointOrgans, organChoices, organText, pointColor, UNASSIGNED_COLOR } from "./point-display";
 import { contextIsDimmed } from "./selection-context";
 import { comparisonReference } from "./comparison-reference";
 import { referenceSourceFor } from "./reference-source";
@@ -35,6 +36,12 @@ const pointConcepts = conceptData as Record<string, { categories: string[]; shuT
 const sourceById = (id: string) => sources.find((s) => s.id === id)!;
 const meridianOf = (p: Point) => meridians.find((m) => m.id === p.meridian)!;
 const categoryText = (id: string) => pointConcepts[id]?.categories.map((c) => concepts.find((x) => x.id === c)?.name).join(" · ") || "일반 경혈";
+function PointBadges({ id }: { id: string }) {
+  const categories = pointCategories(id);
+  return <span className="point-category-badges">{categories.length ? categories.map(c => <span className="point-category-badge" key={c.id} data-category={c.id}>
+    <i style={{ background: c.color }} aria-hidden="true">{c.symbol}</i>{c.name}{c.id === "xi" && xiMeridian(id) ? ` · ${xiMeridian(id)}` : ""}
+  </span>) : <span>일반 경혈</span>}</span>;
+}
 type Panel = "search" | "display" | "help" | "points" | "detail" | null;
 // Short pickers open over the scene without closing the open panel.
 type Popover = "meridian" | "depth" | null;
@@ -118,7 +125,7 @@ function PointDetail({ point, onFocus, saved, onSave, onCompare, onClose, compar
         {comparisonFeedback && <div ref={feedbackRef} className="comparison-feedback" role="status">{comparisonFeedback}</div>}
         <p className="concept-notice">
           {concept?.traditionalName && !concept.organIds.length && "이 전통 개념에 일대일 대응하는 장기 메쉬는 지정하지 않았습니다. "}
-          장부 대응은 전통적 분류입니다. 체표에서 장기로 압력이 전달되거나 장기를 직접 마사지한다는 뜻이 아닙니다.
+          장부 대응은 전통적 분류이며, 압력 전달·장기 마사지 경로가 아닙니다.
         </p>
       </div>
       <div className="detail-scroll">
@@ -141,6 +148,8 @@ function PointDetail({ point, onFocus, saved, onSave, onCompare, onClose, compar
         <div className="detail-content" role="tabpanel" id={`${tabScope}-panel`} aria-labelledby={`${tabScope}-${tab}`} tabIndex={0}>
           {tab === "tradition" && <PointTradition point={point} />}
           {tab === "overview" && <>
+            <PointBadges id={point.id} />
+            <p className="ax-pinyin" data-point-organs>장부 연결: {organText(point)}</p>
             <p className="location-text">{point.location}</p>
             <div className="reference-line">
               <a href={point.nameSource} target="_blank" rel="noreferrer">KMCRIC 위치 원문 ↗</a>
@@ -151,7 +160,7 @@ function PointDetail({ point, onFocus, saved, onSave, onCompare, onClose, compar
             <p className="coordinate-note"><span className="status-dot" />학습용 근사 위치 · {point.markerNote} 전문가의 위치 검수는 아직 진행하지 않았습니다.</p>
             {femaleNote && <p className="coordinate-note" data-female-marker-note>{femaleNote}</p>}
             {modestyNote && <p className="coordinate-note" data-modesty-marker-note>{modestyNote}</p>}
-            <span className="ax-links"><a href="#wiki/point-categories">원혈·모혈 분류와 출처 ↗</a><a href="#wiki/massage-anatomy">마사지 전 해부학 참고 가이드 ↗</a></span>
+            <span className="ax-links"><a href="#wiki/point-categories">경혈 분류·장부 대응과 출처 ↗</a><a href="#wiki/massage-anatomy">마사지 전 해부학 참고 가이드 ↗</a></span>
           </>}
           {tab === "anatomy" && <>
             <p className="location-text">{point.landmarks.join(" · ")}</p>
@@ -265,13 +274,14 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   // explicit camera action ends it.
   const [placed, setPlaced] = useState("");
   useEffect(() => { setComparisonNotice(""); setSeparateDetailIds([]); }, [state.sex, state.pointId]);
-  const { query, region, meridian, concept, onlySaved, bodyRegion, catalogue } = state.filters;
+  const { query, region, meridian, concept, organ, onlySaved, bodyRegion, catalogue } = state.filters;
   const setFilter = (value: Partial<ViewState["filters"]>) => dispatch({ type: "filters", value });
   // Results come first; the filters fold away where height is short unless
   // one of them is in use (QUALITY: 상세 필터는 필요할 때 펼칩니다).
   const roomy = useMedia("(min-width: 701px) and (min-height: 761px)");
   const activeFilters = [
     concept !== "all" && concepts.find((c) => c.id === concept)?.name,
+    organ !== "all" && (organChoices.find(o => o.id === organ)?.name || "장부 배속 없음"),
     bodyRegion !== "전체" && bodyRegion,
     meridian !== "all" && meridians.find((m) => m.id === meridian)?.name,
     catalogue !== "all" && (catalogue === "extra" ? "경외기혈" : "정규 경혈"),
@@ -286,9 +296,10 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     (catalogue === "all" || p.catalogue === catalogue) &&
     (meridian === "all" || p.meridian === meridian) &&
     (concept === "all" || pointConcepts[p.id]?.categories.includes(concept)) &&
+    (organ === "all" || (organ === "none" ? !pointOrgans(p).length : pointOrgans(p).includes(organ))) &&
     (!onlySaved || saved.includes(p.id)) &&
     `${p.id} ${p.name} ${p.hanja} ${p.pinyin} ${p.landmarks.join(" ")} ${meridianOf(p)?.name}`.toLowerCase().includes(normalizeQuery(query))),
-  [region, bodyRegion, catalogue, meridian, concept, onlySaved, saved, query]);
+  [region, bodyRegion, catalogue, meridian, concept, organ, onlySaved, saved, query]);
   const camera = (kind: CameraAction["kind"]) => {
     if (kind === "focus" && state.sex === "female" && !state.femaleMarkers) {
       setComparisonNotice("여성 표면의 경혈 좌표는 검수 전입니다. 남성 기준 좌표로 이동하지 않습니다.");
@@ -653,8 +664,8 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   );
   const pointRow = (p: Point) => (
     <button key={p.id} className={`point-item ${p.id === selected.id ? "active" : ""}`} aria-pressed={p.id === selected.id} onClick={() => select(p)}>
-      <i style={{ background: meridianOf(p).color }} />
-      <span><strong>{p.name} <small>{p.id}</small></strong><small className="classification-text">{meridianOf(p).shortName} · {p.region} · {categoryText(p.id)}</small></span>
+      <i style={{ background: pointColor(p, state.markerColor, concept, organ) }} />
+      <span><strong>{p.name} <small>{p.id}</small></strong><small className="classification-text">{meridianOf(p).shortName} · {p.region}</small><PointBadges id={p.id} /><small className="classification-text point-organs">{organText(p)}</small></span>
     </button>
   );
   // ↓/↑ move between results; ↑ from the first result returns to the input.
@@ -819,6 +830,9 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             layers={state.layers}
             opacity={state.alpha.skin}
             labels={state.labels}
+            markerColor={state.markerColor}
+            colorCategory={concept}
+            colorOrgan={organ}
             action={action}
             onReady={onReady}
             onLoading={setLoadingReference}
@@ -968,11 +982,28 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             <button className="ax-ghost" aria-pressed={onlySaved} onClick={() => setFilter({ onlySaved: !onlySaved })}><Bookmark size={12} />저장 {saved.length}</button>
           </div>
           <details className="ax-filters" open={filtersOpen} onToggle={(e) => setFiltersOpen(e.currentTarget.open)}>
-            <summary>필터 <small>{activeFilters || "분류 · 부위 · 경맥 · 수록 범위"}</small></summary>
+            <summary>필터 <small>{[activeFilters, state.markerColor !== "meridian" && (state.markerColor === "category" ? "혈 분류색" : "장부색")].filter(Boolean).join(" · ") || "분류 · 장부 · 표식 색상"}</small></summary>
+            <div className="point-color-field"><span>표식 색상</span><div className="ax-segment" role="group" aria-label="표식 색상">
+              {([['meridian', '경맥', '경맥 색'], ['category', '분류', '혈 분류 색'], ['organ', '장부', '연결 장부 색']] as const).map(([mode, label, name]) =>
+                <button key={mode} aria-label={name} aria-pressed={state.markerColor === mode} onClick={() => dispatch({ type: "marker-color", value: mode })}>{label}</button>)}
+            </div></div>
+            <details className="point-color-legend" key={state.markerColor}>
+              <summary>표식 범례 · {state.markerColor === "category" ? "혈 분류" : state.markerColor === "organ" ? "연결 장부" : "경맥"}</summary>
+              <div className="point-legend-swatches">{(state.markerColor === "category" ? concepts : state.markerColor === "organ" ? organChoices : meridians).map(c => <span key={c.id}><i style={{ background: c.color }} />{c.name}</span>)}
+                {state.markerColor !== "meridian" && <span><i style={{ background: UNASSIGNED_COLOR }} />{state.markerColor === "category" ? "일반 경혈" : "장부 배속 없음"}</span>}
+              </div>
+              <p className="ax-hint">{state.markerColor === "category" ? "겹친 분류는 선택한 분류의 색으로, 전체에서는 원·모·유·극·락·오수혈 순으로 칠합니다. 모든 분류는 이름 옆 표기로 확인할 수 있습니다." : state.markerColor === "organ" ? "모혈·유혈의 대응 장부를 우선하고, 그 밖에는 소속 경맥의 장부 색입니다. 장부 필터를 고르면 그 장부의 색으로 칠합니다. 전통 분류색이며 장기 메쉬 색과 별개입니다." : "소속 경맥의 색입니다. 선택한 경혈은 금색으로 강조합니다."} 선택은 큰 표식과 금색 이름표로 구분합니다.</p>
+            </details>
+
             <div className="ax-filter-grid">
               <label className="ax-field">경혈 분류<select aria-label="경혈 분류" value={concept} onChange={(e) => setFilter({ concept: e.target.value })}>
                 <option value="all">전체 분류</option>
                 {concepts.map((c) => <option key={c.id} value={c.id}>{c.name} · {points.filter((p) => pointConcepts[p.id]?.categories.includes(c.id)).length}/{c.expectedTotal}</option>)}
+              </select></label>
+              <label className="ax-field">연결 장부<select aria-label="연결 장부" value={organ} onChange={e => setFilter({ organ: e.target.value })}>
+                <option value="all">전체 장부</option>
+                {organChoices.map(o => <option key={o.id} value={o.id}>{o.name} · {points.filter(p => pointOrgans(p).includes(o.id)).length}</option>)}
+                <option value="none">장부 배속 없음 · {points.filter(p => !pointOrgans(p).length).length}</option>
               </select></label>
               <label className="ax-field">모델에서 볼 부위<select aria-label="모델 부위 선택" value={bodyRegion} onChange={(e) => { dispatch({ type: "region-filter", value: e.target.value }); camera("region"); }}>
                 <option value="전체">전체 부위</option>
@@ -989,12 +1020,14 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             <div className="ax-chips" role="group" aria-label="신체 부위">
               {["전체", "머리·목", "몸통", "팔·손", "다리·발"].map((r) => <button key={r} aria-pressed={region === r} onClick={() => setFilter({ region: r })}>{r}</button>)}
             </div>
+            <p className="ax-hint">장부는 전통적 분류입니다. 모혈·유혈의 대응과 소속 경맥을 함께 찾으며, 목록에 연결 근거를 표시합니다. 심포·삼초를 단일 해부 장기로 치환하지 않습니다.</p>
             {concept !== "all" && <p className="ax-hint">{concepts.find((c) => c.id === concept)?.description}</p>}
             <div className="ax-row">
               <button className="ax-ghost" onClick={resetFilters}><RotateCcw size={13} />초기화</button>
               <p className="coverage-note">14개 경맥 · 경혈 {points.length}개 · 정규 361경혈 + 표준 경외기혈 48개</p>
             </div>
           </details>
+          {hasSelected && !found.some(p => p.id === selected.id) && <p className="ax-hint" data-filter-reference>선택한 {selected.name}({selected.id})은 필터 밖에서도 참조로 남습니다.</p>}
           {/* Applying the results to the model matters only when they differ from what is shown. */}
           {(found.length !== points.length || state.markers !== "filtered" || state.selection) && (
             <button className="show-filtered-button ax-primary" disabled={!found.length} onClick={() => { dispatch({ type: "show-filtered" }); camera("region"); setPanel(null); }}>필터 결과 {found.length}개를 모델에서 보기</button>
@@ -1002,8 +1035,8 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
           <div className="point-list">
             {found.map((p) => (
               <button key={p.id} className={`point-item ${p.id === selected.id ? "active" : ""}`} onClick={() => select(p)} aria-pressed={p.id === selected.id}>
-                <i style={{ background: meridianOf(p).color }} />
-                <span><strong>{p.name} <small>{p.id}</small></strong><small className="classification-text">{meridianOf(p).shortName} · {p.region} · {categoryText(p.id)}</small></span>
+                <i style={{ background: pointColor(p, state.markerColor, concept, organ) }} />
+                <span><strong>{p.name} <small>{p.id}</small></strong><small className="classification-text">{meridianOf(p).shortName} · {p.region}</small><PointBadges id={p.id} /><small className="classification-text point-organs">{organText(p)}</small></span>
                 {saved.includes(p.id) && <Bookmark size={13} />}
               </button>
             ))}
@@ -1257,7 +1290,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               )}
             </div>
             <button className="ax-toggle" aria-pressed={state.labels} aria-label="표식 이름 표시" data-tip="표식 이름 표시" data-tip-side="top" onClick={() => dispatch({ type: "labels", value: !state.labels })}><Tag size={14} /><span>이름</span></button>
-            <button className="ax-toggle" aria-expanded={panel === "points"} aria-label="경혈 찾기" data-tip="경혈 목록·필터" data-tip-side="top" onClick={(e) => openPanel("points", e.currentTarget)}><List size={15} /><span>경혈 찾기</span></button>
+            <button className="ax-toggle" aria-expanded={panel === "points"} aria-label="경혈 찾기" data-tip="경혈 목록 · 분류·연결 장부 필터 · 표식 색상" data-tip-side="top" onClick={(e) => openPanel("points", e.currentTarget)}><List size={15} /><span>경혈 찾기</span></button>
           </>}
         </div>
         <div className="ax-camera">

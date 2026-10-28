@@ -1,5 +1,5 @@
 import {chromium} from '@playwright/test';import fs from 'node:fs/promises';import assert from 'node:assert/strict';
-const origin=process.env.SMOKE_ORIGIN||'http://127.0.0.1:5174';const dir='docs/ui-renewal';await fs.mkdir(dir,{recursive:true});
+const origin=process.env.SMOKE_ORIGIN||'http://127.0.0.1:5174';const dir=process.env.VISUAL_OUTPUT||'docs/ui-renewal';await fs.mkdir(dir,{recursive:true});
 // Scene tools must not cover one another, and point labels must stay on the canvas.
 // Hover/focus tooltips are transient; nested elements belong to their container.
 const OVERLAYS=['.ax-search','.ax-top-actions','.ax-depth','.ax-point-bar','.ax-point-chip','.detail-panel','.selection-card','.movement-pad','.view-presets','.view-tools','.ax-status .scene-status','.ax-status .ax-source','.cutaway-reset','.comparison-note','.ax-results','.ax-side-panel','.ax-popover','.ax-depth .depth-band','.ax-depth .depth-steps'];

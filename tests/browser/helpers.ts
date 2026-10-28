@@ -71,5 +71,5 @@ export const markerScreenPoints=(page:Page,url:string)=>page.evaluate(async url=
 // Point-list filters fold away on short screens unless one is in use.
 export async function openFilters(page:Page){
   const filters=page.locator('details.ax-filters');
-  if(!await filters.evaluate(el=>(el as HTMLDetailsElement).open))await filters.locator('summary').click();
+  if(!await filters.evaluate(el=>(el as HTMLDetailsElement).open))await filters.locator(':scope > summary').click();
 }

@@ -39,7 +39,7 @@ import type { OrbitControls as OrbitType } from "three-stdlib";
 import type { CameraPose } from "./view-state";
 import type { Point, Layers, CameraAction } from "./types";
 import { connectiveKindOf, dissectionLayerOpacity, layerKeys, maleOnlyStructureIds, organPeelRank, type Layer, structures } from "./anatomy";
-import meridians from "../data/meridians.json";
+import { pointColor, pointCategories, organText, type MarkerColorMode } from "./point-display";
 import anchors from "../data/anchors.json";
 import structurePairs from "../data/structure-pairs.json";
 import fullSystemStructures from "../data/full-system-structures.json";
@@ -111,13 +111,14 @@ function MarkerLabel({ outward, normal, peek = false, gap = 10, children }: { ou
 type Marker = { point: Point; key: string; occurrence: number; position: Vector3; normal: Vector3; side: string };
 const markerCapacity = anchors.length;
 const markerMatrix = new Matrix4(), markerScale = new Vector3(), markerQuaternion = new Quaternion(), markerColor = new Color();
-const markerColorOf = (m: Marker, selectedId: string) => m.point.id === selectedId ? "#e1ad5a" : meridians.find((x) => x.id === m.point.meridian)!.color;
 // All acupoint markers share one instanced draw call. Each keeps a constant
 // screen size; back-facing points (and filtered ones) get zero scale, while
-// the chosen point is larger, gold and visible from every direction. The
+// the chosen point is larger and visible from every direction, with a gold
+// name label. Category/organ colours keep their meaning on selection. The
 // pointer target is a wider screen circle (marker-picking.ts), shown as a halo
 // around the hovered point, and it wins over the tissue under the pointer.
-function Markers({ markers, selectedId, labels, overTissue, onSelect }: { markers: Marker[]; selectedId: string; labels: boolean; overTissue: boolean; onSelect: (p: Point) => void }) {
+function Markers({ markers, selectedId, labels, overTissue, onSelect, colorMode, colorCategory, colorOrgan }: { markers: Marker[]; selectedId: string; labels: boolean; overTissue: boolean; onSelect: (p: Point) => void; colorMode: MarkerColorMode; colorCategory: string; colorOrgan: string }) {
+  const colorOf = (m: Marker) => colorMode === "meridian" && m.point.id === selectedId ? "#e1ad5a" : pointColor(m.point, colorMode, colorCategory, colorOrgan);
   const mesh = useRef<InstancedMesh>(null);
   const halo = useRef<Group>(null);
   const shown = useRef<boolean[]>([]);
@@ -147,7 +148,7 @@ function Markers({ markers, selectedId, labels, overTissue, onSelect }: { marker
     if (!instances) return;
     instances.count = markers.length;
     markers.forEach((m, i) => {
-      instances.setColorAt(i, markerColor.set(markerColorOf(m, selectedId)));
+      instances.setColorAt(i, markerColor.set(colorOf(m)));
       instances.setMatrixAt(i, markerMatrix.makeScale(0, 0, 0));
     });
     if (instances.instanceColor) instances.instanceColor.needsUpdate = true;
@@ -155,15 +156,17 @@ function Markers({ markers, selectedId, labels, overTissue, onSelect }: { marker
     // Report committed membership, also useful for diagnosing crowded views.
     gl.domElement.dataset.renderedMarkers = String(markers.length);
     gl.domElement.dataset.renderedPointIds = [...new Set(markers.map((m) => m.point.id))].sort().join(",");
+    gl.domElement.dataset.markerColorMode = colorMode;
+    gl.domElement.dataset.markerColors = JSON.stringify(Object.fromEntries(markers.map(m => [m.point.id, colorOf(m)])));
     invalidate();
-  }, [markers, selectedId, gl, invalidate]);
+  }, [markers, selectedId, colorMode, colorCategory, colorOrgan, gl, invalidate]);
   useEffect(() => setHover(null), [markers]);
   useEffect(() => {
     const ring = halo.current;
     if (!ring || hover === null || !markers[hover]) return;
-    const color = markerColorOf(markers[hover], selectedId);
+    const color = colorOf(markers[hover]);
     ring.children.forEach((child) => ((child as Mesh).material as MeshBasicMaterial).color.set(color));
-  }, [hover, markers, selectedId]);
+  }, [hover, markers, selectedId, colorMode, colorCategory, colorOrgan]);
   useEffect(() => () => { document.body.style.cursor = "auto"; }, []);
   useFrame(() => {
     const instances = mesh.current;
@@ -241,14 +244,14 @@ function Markers({ markers, selectedId, labels, overTissue, onSelect }: { marker
               <button
                 className={`point-label ${active ? "active" : ""} ${persistent ? "" : "peek"}`}
                 data-point-id={m.point.id}
-                title={`${m.point.name} ${m.point.id} ${m.side}`}
+                title={`${m.point.name} ${m.point.id} ${m.side} · ${pointCategories(m.point.id).map(c => c.name).join(" · ") || "일반 경혈"} · ${organText(m.point)}`}
                 aria-label={`${m.point.name} ${m.point.id} ${m.side} 선택`}
                 tabIndex={persistent ? undefined : -1}
                 onPointerDown={(e) => e.stopPropagation()}
                 onPointerMove={(e) => e.stopPropagation()}
                 onClick={(e) => { e.stopPropagation(); onSelect(m.point); }}
               >
-                {m.point.name}
+                {m.point.name}{colorMode === "category" && pointCategories(m.point.id).map(c => <span key={c.id} className="marker-class-tag" style={{ color: c.color }}>{c.symbol}</span>)}
               </button>
             </MarkerLabel>
           </group>
@@ -265,6 +268,9 @@ type Props = {
   layers: Layers;
   opacity: number;
   labels: boolean;
+  markerColor: MarkerColorMode;
+  colorCategory: string;
+  colorOrgan: string;
   action: CameraAction;
   onReady: (layer: Layer) => void;
   onLoading: (value: boolean) => void;
@@ -1089,7 +1095,7 @@ function Scene(props: Props) {
             </Suspense>
           ))}
       </group>
-      <Markers markers={markers} selectedId={selected.id} labels={labels} overTissue={markersOverTissue} onSelect={onSelect} />
+      <Markers colorMode={props.markerColor} colorCategory={props.colorCategory} colorOrgan={props.colorOrgan} markers={markers} selectedId={selected.id} labels={labels} overTissue={markersOverTissue} onSelect={onSelect} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.018, 0]}>
         <circleGeometry args={[0.48, 64]} />
         <meshBasicMaterial color="#19313d" transparent opacity={0.58} />

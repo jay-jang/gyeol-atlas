@@ -79,3 +79,7 @@ for p in content:
     concepts[id]={**old_concepts.get(id,{'traditionalChannel':None,'traditionalName':None,'organIds':[],'sourceIds':['point-categories'],'note':'전통 분류와 현대 해부학을 구분합니다.'}), 'categories':t['categories'], 'shuType':t['fiveShu']['type'] if t['fiveShu'] else None}
 write('data/points.json',points);write('data/point-concepts.json',concepts)
 print('Assembled',len(points),'points with',sum(p['markerCount'] for p in points),'illustrative occurrences; projection pending.')
+
+# Refresh classifications and explicit Back-Shu bundles after reassembly.
+import subprocess
+subprocess.run(['node', 'scripts/build-acupoint-theory.mjs'], check=True)

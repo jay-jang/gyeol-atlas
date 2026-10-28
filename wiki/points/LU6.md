@@ -2,7 +2,7 @@
 id: points/LU6
 title: 공최 LU6
 category: 경혈
-sources: kmcric-points,tcm-wiki,five-shu-theory
+sources: kmcric-points,tcm-wiki,five-shu-theory,point-categories
 review: illustrative-unreviewed
 ---
 # 공최 LU6
@@ -35,7 +35,7 @@ LU의 전통적 경맥 분류는 음·금이며 폐에 대응합니다. 이 경�
 
 ## 경혈 분류와 장부 대응
 
-일반 경혈. 전통적 분류는 압력 전달이나 장기 마사지 효과를 뜻하지 않습니다. [분류표와 출처](#wiki/point-categories) · [마사지 해부학 참고](#wiki/massage-anatomy)
+극혈. 전통적 분류는 압력 전달이나 장기 마사지 효과를 뜻하지 않습니다. [분류표와 출처](#wiki/point-categories) · [마사지 해부학 참고](#wiki/massage-anatomy)
 
 ## 해부학적 연결
 

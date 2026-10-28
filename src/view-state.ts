@@ -1,3 +1,6 @@
+import type { MarkerColorMode } from "./point-display.ts";
+import concepts from "../data/concepts.json" with {type:"json"};
+import { organChoices } from "./point-display.ts";
 import type { Layer } from "./anatomy";
 import type { Layers } from "./types";
 import { depthStage, dissectionLayers, peelLayers, peelLimit, peelOrder, quantizeDepth, stageDepth } from "./dissection.ts";
@@ -35,6 +38,7 @@ export type ViewState = {
   alpha: Record<Layer, number>;
   markers: "hidden" | "selected" | "filtered";
   labels: boolean;
+  markerColor: MarkerColorMode;
   // Ligaments, joint structures and separately modelled tendons.
   connective: boolean;
   // "성기 가리기": remove the external genitalia from every system (the male
@@ -65,6 +69,7 @@ export type ViewState = {
     region: string;
     meridian: string;
     concept: string;
+    organ: string;
     onlySaved: boolean;
     bodyRegion: string;
     catalogue: string;
@@ -91,6 +96,7 @@ export function initialView(pointId = ""): ViewState {
     // An acupoint atlas shows its points on the body by default.
     markers: "filtered",
     labels: false,
+    markerColor: "meridian",
     connective: true,
     modesty: true,
     modestyVersion: 2,
@@ -111,6 +117,7 @@ export function initialView(pointId = ""): ViewState {
       region: "전체",
       meridian: "all",
       concept: "all",
+      organ: "all",
       onlySaved: false,
       bodyRegion: "전체",
       catalogue: "all",
@@ -129,6 +136,7 @@ export type ViewAction =
   | { type: "alpha"; layer: Layer; value: number }
   | { type: "fade-context"; value: boolean }
   | { type: "markers"; value: ViewState["markers"] }
+  | { type: "marker-color"; value: MarkerColorMode }
   | { type: "labels"; value: boolean }
   | { type: "connective"; value: boolean }
   | { type: "modesty"; value: boolean }
@@ -292,6 +300,8 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return { ...s, fadeContext: a.value };
     case "markers":
       return { ...s, markers: a.value };
+    case "marker-color":
+      return { ...s, markerColor: a.value };
     case "labels":
       return { ...s, labels: a.value };
     case "connective":
@@ -504,6 +514,7 @@ export function restoreView(
       return base;
     if (!Number.isFinite(s.dissection) || s.dissection < 0 || s.dissection > 100)
       return base;
+    s.markerColor ??= "meridian";
     s.displayMode ??= "layers";
     s.detail ??= null;
     s.detailReturn ??= null;
@@ -572,6 +583,7 @@ export function restoreView(
       return base;
     if (
       !["hidden", "selected", "filtered"].includes(s.markers) ||
+      !["meridian", "category", "organ"].includes(s.markerColor) ||
       !["visible", "internal", "skin"].includes(s.selectionTarget) ||
       typeof s.labels !== "boolean" ||
       typeof s.isolated !== "boolean" ||
@@ -660,7 +672,7 @@ export function restoreView(
       !["전체", "머리·목", "몸통", "팔·손", "다리·발"].includes(
         s.filters.region,
       ) ||
-      !["all", "yuan", "mu", "five-shu", "luo"].includes(s.filters.concept) ||
+      !["all", ...concepts.map(c => c.id)].includes(s.filters.concept) ||
       ![
         "all",
         "LU",
@@ -681,6 +693,7 @@ export function restoreView(
       ].includes(s.filters.meridian)
     )
       return base;
+    if (s.filters.organ !== undefined && !["all", "none", ...organChoices.map(o => o.id)].includes(s.filters.organ)) return base;
     const bodyRegions = ["전체", "머리·얼굴", "목", "가슴", "배·골반", "등·허리", "어깨·위팔", "팔꿈치·아래팔", "손목·손", "넓적다리", "무릎·종아리", "발목·발"];
     if (s.filters.bodyRegion !== undefined && !bodyRegions.includes(s.filters.bodyRegion)) return base;
     if (s.filters.catalogue !== undefined && !["all", "classical", "extra"].includes(s.filters.catalogue)) return base;

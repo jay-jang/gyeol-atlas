@@ -1,0 +1,36 @@
+
+Running 1 test using 1 worker
+
+(node:5322) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/browser/point-display.spec.ts:99:1 › keyboard and touch operate classification controls; system changes retain colour and filters (13.3s)
+
+
+  1) tests/browser/point-display.spec.ts:99:1 › keyboard and touch operate classification controls; system changes retain colour and filters
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 48
+    Received:    -12.8125
+
+      133 |       await p.setViewportSize({width,height:width===390?844:740});
+      134 |       const panel=await p.locator('.detail-panel').boundingBox(),tabs=await p.locator('.detail-tabs').boundingBox();
+    > 135 |       expect(panel!.y+panel!.height-(tabs!.y+tabs!.height)).toBeGreaterThanOrEqual(48);
+          |                                                             ^
+      136 |       await p.screenshot({path:`docs/acupoint-display/detail-tradition-${width}.png`});
+      137 |     }
+      138 |
+        at /Users/nuinuri/workspace/anatomy-worktrees/acupoint-classification/tests/browser/point-display.spec.ts:135:61
+
+    Error Context: .cache/detail-before-results/point-display-keyboard-and-a9708-s-retain-colour-and-filters/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .cache/detail-before-results/point-display-keyboard-and-a9708-s-retain-colour-and-filters/trace.zip
+    Usage:
+
+        npx playwright show-trace .cache/detail-before-results/point-display-keyboard-and-a9708-s-retain-colour-and-filters/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests/browser/point-display.spec.ts:99:1 › keyboard and touch operate classification controls; system changes retain colour and filters

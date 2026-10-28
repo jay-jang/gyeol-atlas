@@ -131,7 +131,7 @@ body:has(.ax) .site-footer { display: none; }
 .ax-field input, .ax-field select, .ax-select, .ax .search-box input, .ax .ax-panel select {
   min-height: var(--ax-tap); border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line-strong); background: var(--ax-surface-2); color: var(--ax-text); padding: 0 10px; font-size: 13px;
 }
-.ax-filter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+.ax-filter-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 10px 0; }
 .ax-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .ax-chips button { display: inline-flex; align-items: center; gap: 4px; min-height: 30px; padding: 0 10px; border-radius: var(--ax-radius-ctl); border: 1px solid var(--ax-line); color: var(--ax-muted); font-size: 12px; }
 .ax-chips button[aria-pressed="true"] { border-color: var(--ax-accent); color: var(--ax-text); background: var(--ax-selected); }
@@ -628,10 +628,11 @@ body:has(.ax) .site-footer { display: none; }
   /* The actions stay pinned at the card's bottom edge while the body scrolls. */
   .ax .selection-card > .selection-actions { position: sticky; bottom: 0; z-index: 1; padding-top: 8px; background: var(--ax-surface); }
 }
-/* Short phones: the whole detail scrolls (tabs stick to its top). */
-@media (max-width: 700px) and (max-height: 760px) {
+/* Phone details scroll as one sheet: a long heading cannot squeeze the
+   reading area away. Tabs stick while the body scrolls below them. */
+@media (max-width: 700px) {
   .ax .detail-panel { overflow: auto; }
-  .ax .detail-scroll { overflow: visible; }
+  .ax .detail-scroll { overflow: visible; flex: 0 0 auto; }
 }
 /* Where the meridian picker would cover other tools, they step aside while it is open. */
 @media (min-width: 701px) and (max-width: 1180px), (min-width: 701px) and (max-height: 560px) {
@@ -921,3 +922,25 @@ body:has(.ax) .site-footer { display: none; }
   .ax .cutaway-reset { left: calc(var(--ax-gap) + 200px); transform: none; }
 }
 
+
+/* Colour is a scene swatch; the category and relation remain readable as text. */
+.ax .point-category-badges { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-2); font-size: 12px; line-height: 1.5; color: var(--ax-text); }
+.ax .point-category-badge { display: inline-flex; align-items: center; gap: var(--sp-1); }
+.ax .point-category-badge > i { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: var(--radius-ctl); color: var(--ax-stage); font-style: normal; font-weight: 650; font-size: 12px; }
+.ax .point-color-field { display: flex; align-items: center; gap: var(--sp-2); margin-top: var(--sp-2); }
+.ax .point-color-field > .ax-segment { flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ax .point-color-field { color: var(--ax-muted); font-size: 12px; }
+.ax .point-color-field button { min-height: var(--ax-tap); font-size: 12px; }
+.ax .point-color-legend { margin-top: var(--sp-2); font-size: 12px; }
+.ax .point-color-legend summary { min-height: var(--ax-tap); display: flex; align-items: center; cursor: pointer; }
+.ax .point-color-legend summary::before { content: '▸'; margin-right: var(--sp-2); }
+.ax .point-color-legend[open] summary::before { content: '▾'; }
+.ax .point-legend-swatches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-2); }
+.ax .point-legend-swatches > span { display: flex; align-items: center; gap: var(--sp-1); font-size: 12px; }
+.ax .point-legend-swatches i { width: 10px; height: 10px; flex: 0 0 auto; border-radius: 50%; }
+.ax .ax-point-list:has(.point-color-legend[open]) { overflow: auto; }
+.ax .ax-point-list:has(.point-color-legend[open]) .point-list { overflow: visible; flex: none; }
+.point-label .marker-class-tag { margin-left: 4px; font-size: 12px; }
+
+.ax .ax-filter-grid .ax-field, .ax .ax-filter-grid select { min-width: 0; width: 100%; }
+.ax .ax-point-list .point-list { min-height: 0; }

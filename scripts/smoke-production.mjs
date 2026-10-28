@@ -109,7 +109,7 @@ try {
     assert.equal(answer.documents[0].id,expected);
   }
   await page.goto(origin+'/#wiki/point-categories');
-  await page.locator('.wiki-sidebar').getByRole('link',{name:'원혈·모혈·오수혈·낙혈의 구분',exact:true}).waitFor();
+  await page.locator('.wiki-sidebar').locator('a[href="#wiki/point-categories"]').waitFor();
   assert.deepEqual(errors, []);
   console.log(
     "Production smoke passed: static wiki and movement page, lazy 3D, 11 male GLBs (incl. ligaments/tendons), 15 HRA female chunks + 8 transported female systems, 1 on-demand independent female CT chunk, lymph, bundle/wiki restoration, citations API, Markdown export, attribution, zero browser errors.",
