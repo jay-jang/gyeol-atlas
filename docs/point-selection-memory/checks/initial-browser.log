@@ -1,0 +1,169 @@
+
+Running 8 tests using 1 worker
+
+(node:7842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/browser/point-selection.spec.ts:9:3 › desktop › clear selection keeps the camera, filters and last point without a selected label (19.2s)
+(node:7849) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 tests/browser/point-selection.spec.ts:9:3 › mobile › clear selection keeps the camera, filters and last point without a selected label (18.9s)
+(node:7885) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 tests/browser/point-selection.spec.ts:9:3 › small-mobile › clear selection keeps the camera, filters and last point without a selected label (18.9s)
+(node:7900) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 tests/browser/point-selection.spec.ts:9:3 › landscape › clear selection keeps the camera, filters and last point without a selected label (18.9s)
+(node:7907) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 tests/browser/point-selection.spec.ts:39:1 › closing the tab and returning with only local storage restores the last selected point; a new choice replaces it (6.1s)
+  ✓  6 tests/browser/point-selection.spec.ts:53:1 › an explicit point link wins over cached/session choices; wiki-only visits still download no 3D (2.9s)
+  ✓  7 tests/browser/point-selection.spec.ts:63:1 › clear ends an isolated point comparison but leaves an independent anatomy selection intact (4.4s)
+  ✓  8 tests/browser/point-selection.spec.ts:77:1 › bad or blocked local storage falls back to an empty selection and still allows clearing (4.9s)
+
+
+  1) tests/browser/point-selection.spec.ts:9:3 › desktop › clear selection keeps the camera, filters and last point without a selected label
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('.ax-point-empty')
+    Expected: focused
+    Received: inactive
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('.ax-point-empty') with timeout 15000ms
+      - waiting for locator('.ax-point-empty')
+        34 × locator resolved to <button class="ax-point-empty" aria-label="경혈 선택 — 표식을 누르거나 목록에서 고르기">…</button>
+           - unexpected value "inactive"
+
+
+      23 |    await page.mouse.move(1,1);await page.screenshot({path:`docs/point-selection-memory/${name}-selected.png`});
+      24 |    if(touch)await clear.tap();else{await clear.focus();await clear.press('Enter');}
+    > 25 |    await expect(page.locator('.ax-point-empty')).toBeVisible();await expect(page.locator('.ax-point-empty')).toBeFocused();
+         |                                                                                                              ^
+      26 |    await expect(page).toHaveURL(/#atlas$/);await expect(page.locator('.point-label.active')).toHaveCount(0);
+      27 |    const after=await snapshot(page);
+      28 |    expect(after.pointId).toBe('');for(const k of ['camera','markers','labels','markerColor','filters','layers','dissection'])expect(after[k]).toEqual(before[k]);
+        at /Users/nuinuri/workspace/anatomy-worktrees/acupoint-selection-memory/tests/browser/point-selection.spec.ts:25:110
+
+    Error Context: test-results/point-selection-desktop-cl-b49b0-nt-without-a-selected-label/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/point-selection-desktop-cl-b49b0-nt-without-a-selected-label/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/point-selection-desktop-cl-b49b0-nt-without-a-selected-label/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests/browser/point-selection.spec.ts:9:3 › mobile › clear selection keeps the camera, filters and last point without a selected label
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('.ax-point-empty')
+    Expected: focused
+    Received: inactive
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('.ax-point-empty') with timeout 15000ms
+      - waiting for locator('.ax-point-empty')
+        34 × locator resolved to <button class="ax-point-empty" aria-label="경혈 선택 — 표식을 누르거나 목록에서 고르기">…</button>
+           - unexpected value "inactive"
+
+
+      23 |    await page.mouse.move(1,1);await page.screenshot({path:`docs/point-selection-memory/${name}-selected.png`});
+      24 |    if(touch)await clear.tap();else{await clear.focus();await clear.press('Enter');}
+    > 25 |    await expect(page.locator('.ax-point-empty')).toBeVisible();await expect(page.locator('.ax-point-empty')).toBeFocused();
+         |                                                                                                              ^
+      26 |    await expect(page).toHaveURL(/#atlas$/);await expect(page.locator('.point-label.active')).toHaveCount(0);
+      27 |    const after=await snapshot(page);
+      28 |    expect(after.pointId).toBe('');for(const k of ['camera','markers','labels','markerColor','filters','layers','dissection'])expect(after[k]).toEqual(before[k]);
+        at /Users/nuinuri/workspace/anatomy-worktrees/acupoint-selection-memory/tests/browser/point-selection.spec.ts:25:110
+
+    Error Context: test-results/point-selection-mobile-cle-365f2-nt-without-a-selected-label/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/point-selection-mobile-cle-365f2-nt-without-a-selected-label/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/point-selection-mobile-cle-365f2-nt-without-a-selected-label/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) tests/browser/point-selection.spec.ts:9:3 › small-mobile › clear selection keeps the camera, filters and last point without a selected label
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('.ax-point-empty')
+    Expected: focused
+    Received: inactive
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('.ax-point-empty') with timeout 15000ms
+      - waiting for locator('.ax-point-empty')
+        34 × locator resolved to <button class="ax-point-empty" aria-label="경혈 선택 — 표식을 누르거나 목록에서 고르기">…</button>
+           - unexpected value "inactive"
+
+
+      23 |    await page.mouse.move(1,1);await page.screenshot({path:`docs/point-selection-memory/${name}-selected.png`});
+      24 |    if(touch)await clear.tap();else{await clear.focus();await clear.press('Enter');}
+    > 25 |    await expect(page.locator('.ax-point-empty')).toBeVisible();await expect(page.locator('.ax-point-empty')).toBeFocused();
+         |                                                                                                              ^
+      26 |    await expect(page).toHaveURL(/#atlas$/);await expect(page.locator('.point-label.active')).toHaveCount(0);
+      27 |    const after=await snapshot(page);
+      28 |    expect(after.pointId).toBe('');for(const k of ['camera','markers','labels','markerColor','filters','layers','dissection'])expect(after[k]).toEqual(before[k]);
+        at /Users/nuinuri/workspace/anatomy-worktrees/acupoint-selection-memory/tests/browser/point-selection.spec.ts:25:110
+
+    Error Context: test-results/point-selection-small-mobi-81d49-nt-without-a-selected-label/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/point-selection-small-mobi-81d49-nt-without-a-selected-label/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/point-selection-small-mobi-81d49-nt-without-a-selected-label/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) tests/browser/point-selection.spec.ts:9:3 › landscape › clear selection keeps the camera, filters and last point without a selected label
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('.ax-point-empty')
+    Expected: focused
+    Received: inactive
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('.ax-point-empty') with timeout 15000ms
+      - waiting for locator('.ax-point-empty')
+        34 × locator resolved to <button class="ax-point-empty" aria-label="경혈 선택 — 표식을 누르거나 목록에서 고르기">…</button>
+           - unexpected value "inactive"
+
+
+      23 |    await page.mouse.move(1,1);await page.screenshot({path:`docs/point-selection-memory/${name}-selected.png`});
+      24 |    if(touch)await clear.tap();else{await clear.focus();await clear.press('Enter');}
+    > 25 |    await expect(page.locator('.ax-point-empty')).toBeVisible();await expect(page.locator('.ax-point-empty')).toBeFocused();
+         |                                                                                                              ^
+      26 |    await expect(page).toHaveURL(/#atlas$/);await expect(page.locator('.point-label.active')).toHaveCount(0);
+      27 |    const after=await snapshot(page);
+      28 |    expect(after.pointId).toBe('');for(const k of ['camera','markers','labels','markerColor','filters','layers','dissection'])expect(after[k]).toEqual(before[k]);
+        at /Users/nuinuri/workspace/anatomy-worktrees/acupoint-selection-memory/tests/browser/point-selection.spec.ts:25:110
+
+    Error Context: test-results/point-selection-landscape--599e5-nt-without-a-selected-label/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/point-selection-landscape--599e5-nt-without-a-selected-label/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/point-selection-landscape--599e5-nt-without-a-selected-label/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    tests/browser/point-selection.spec.ts:9:3 › desktop › clear selection keeps the camera, filters and last point without a selected label
+    tests/browser/point-selection.spec.ts:9:3 › mobile › clear selection keeps the camera, filters and last point without a selected label
+    tests/browser/point-selection.spec.ts:9:3 › small-mobile › clear selection keeps the camera, filters and last point without a selected label
+    tests/browser/point-selection.spec.ts:9:3 › landscape › clear selection keeps the camera, filters and last point without a selected label
+  4 passed (1.6m)

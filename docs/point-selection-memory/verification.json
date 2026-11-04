@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-28T13:19:29.162369+00:00",
+  "branch": "feat/acupoint-selection-memory",
+  "baseCommit": "a35a58b4b31e88a869d949842f6e454b4dab876f",
+  "worktree": "/Users/nuinuri/workspace/anatomy-worktrees/acupoint-selection-memory",
+  "renderer": "Chromium ANGLE Metal; production smoke uses SwiftShader",
+  "unit": {
+    "passed": 505,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "scope": "48 applicable tests, including 8 new selection/storage tests",
+    "passed": 48,
+    "failed": 0
+  },
+  "readability": {
+    "samples": 258,
+    "surfaces": 15,
+    "fontMinimumPx": 12,
+    "contrastMinimum": 4.5
+  },
+  "sourceSha256": {
+    "src/App.tsx": "38eaed92f4c885645b99df94decb323b73ffb5063d35ac00bb696ca6593096ef",
+    "src/AtlasPage.tsx": "b9fa10b2104336202582003149f7993e56847d162e5541f16315e9f46a76d850",
+    "src/view-state.ts": "e0f7852a6d2f45f78f13205b7af6a3596a08e981922798ed0f887e8875a2b620",
+    "src/view-storage.ts": "88cfa1bc4b6b5d2b9f0f881fef94b076876ba8f9b4db815650304293e0b6e8ef",
+    "src/atlas.css": "56e9c0fae1328dd5f728dcdf2db75d21a9cb737ad8e9a1c617298f427fc65f20",
+    "tests/view-storage.test.mjs": "97dd2c8b5f30ea593fe7b626f7b2de6d1ac4375f03570d6a8e4f10d0e739d6db",
+    "tests/browser/point-selection.spec.ts": "9804a36055ffa23111996637ecb8b085b832c9fb0cb36c9be90c07f4f1307bfa",
+    "wiki/topics/layer-guide.md": "eefd9a9acb6d538d4845bf664f62e998a0e1949e949bf6ac01aaa829771040bc"
+  }
+}

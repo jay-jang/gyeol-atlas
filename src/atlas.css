@@ -426,14 +426,14 @@ body:has(.ax) .site-footer { display: none; }
 .ax-inspector > * { pointer-events: auto; }
 .ax-point-chip { display: flex; gap: 4px; align-self: flex-end; max-width: 100%; flex: 0 0 auto; }
 .ax-point-chip .point-summary {
-  min-width: 0; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border-radius: var(--ax-radius-ctl); white-space: nowrap;
+  min-width: 0; display: flex; align-items: center; gap: 6px; height: 40px; padding: 0 10px; border-radius: var(--ax-radius-ctl); white-space: nowrap;
   background: var(--ax-surface); border: 1px solid var(--ax-line); color: var(--ax-text); font-size: 13px;
 }
 .ax-point-chip .point-summary[aria-expanded="true"] { border-color: var(--ax-accent); }
 .ax-point-chip .point-summary i { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
 .ax-point-chip .point-summary span { color: #fff; font-weight: 650; }
 .ax-point-chip .point-summary strong { font-weight: 650; }
-.ax-point-chip .point-summary small { color: var(--ax-muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.ax-point-chip .point-summary small { flex: 1 1 auto; color: var(--ax-muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .ax-point-chip .ax-icon { width: 40px; height: 40px; }
 .ax-step { flex: 0 0 auto; min-width: 44px; height: 40px; padding: 0 10px; border-radius: var(--ax-radius-ctl); background: var(--ax-surface) !important; border: 1px solid var(--ax-line) !important; font-size: 13px; }
 .ax-step:not([aria-disabled="true"]):hover { border-color: var(--ax-accent) !important; }
@@ -944,3 +944,18 @@ body:has(.ax) .site-footer { display: none; }
 
 .ax .ax-filter-grid .ax-field, .ax .ax-filter-grid select { min-width: 0; width: 100%; }
 .ax .ax-point-list .point-list { min-height: 0; }
+
+/* Keep the point name/code and the new clear action inside a narrow chip. */
+.ax-point-chip .point-summary strong { flex: 0 0 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.ax-point-chip .ax-icon { flex: 0 0 auto; }
+@media (max-width: 700px) {
+  .ax-point-chip .point-summary { padding: 0 5px; gap: 4px; }
+  .ax-point-chip .point-summary > i { display: none; }
+}
+@media (max-width: 700px) {
+  .ax-point-chip .point-summary > svg, .ax-point-chip .point-summary small { display: none; }
+  .ax-point-chip .point-summary strong { flex-shrink: 1; }
+}
+@media (pointer: coarse) {
+  .ax-point-chip .ax-icon { width: 44px; min-width: 44px; }
+}

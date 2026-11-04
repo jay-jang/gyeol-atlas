@@ -127,6 +127,7 @@ export function initialView(pointId = ""): ViewState {
 export type ViewAction =
   | { type: "point"; id: string }
   | { type: "route-point"; id: string }
+  | { type: "clear-point" }
   | { type: "sex"; value: ViewState["sex"] }
   | { type: "anatomy-region"; value: ViewState["anatomyRegion"] }
   | { type: "stage"; index: number }
@@ -211,6 +212,13 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       // Returning from the wiki to the same URL must not reinterpret a route
       // sync as a new user selection and discard the saved atlas view.
       return a.id === s.pointId ? s : viewReducer(s, { type: "point", id: a.id });
+    case "clear-point": {
+      if (!s.pointId) return s;
+      // Only a traditional comparison belongs to the acupoint. Independent
+      // structure/detail selections and every viewing preference remain intact.
+      const view = s.comparison ? viewReducer(s, { type: "clear-selection" }) : s;
+      return { ...view, pointId: "" };
+    }
     case "sex":
       // A new body starts from its default scene, including what a click picks.
       return a.value === s.sex ? s : { ...s, sex: a.value, ...peelScene(0, s.excluded, "whole"), displayMode: "dissection", anatomyRegion: "whole", alpha: initialView().alpha, selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false, cutaway: 0, selectionTarget: "visible" };

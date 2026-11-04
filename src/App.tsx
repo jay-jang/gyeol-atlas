@@ -20,22 +20,19 @@ import Markdown, { defaultUrlTransform } from "react-markdown";
 import { assetUrl } from "./assets";
 import { createKnowledge } from "../shared/knowledge.mjs";
 import remarkGfm from "remark-gfm";
-import { initialView, restoreView, viewReducer } from "./view-state";
+import { viewReducer } from "./view-state";
+import { readBrowserView, saveTabView, rememberPoint } from "./view-storage";
 import { structures } from "./anatomy";
 import { parseStructureLink, requestFocus } from "./movement-link";
 import { useMedia } from "./use-media";
 
-const VIEW_KEY = "gyeol-view-v2";
 function readView() {
-  try {
-    return restoreView(
-      sessionStorage.getItem(VIEW_KEY),
-      pointData.map((p) => p.id),
-      structures,
-    );
-  } catch {
-    return initialView();
-  }
+  return readBrowserView(pointData.map(p => p.id), structures);
+}
+function initialStoredView() {
+  const view = readView();
+  const id = location.hash.match(/^#atlas\/([^/]+)$/)?.[1];
+  return id && pointData.some(p => p.id === id) ? viewReducer(view, { type: "route-point", id }) : view;
 }
 function returnToAtlas() {
   const pointId = readView().pointId;
@@ -529,14 +526,11 @@ function skipToMain() {
 export default function App() {
   const route = useRoute();
   const { saved, toggle } = useBookmarks();
-  const [viewState, dispatch] = useReducer(viewReducer, undefined, readView);
+  const [viewState, dispatch] = useReducer(viewReducer, undefined, initialStoredView);
   const [linkNotice, setLinkNotice] = useState("");
   useEffect(() => { if (!route.startsWith("atlas")) setLinkNotice(""); }, [route]);
-  useEffect(() => {
-    try {
-      sessionStorage.setItem(VIEW_KEY, JSON.stringify(viewState));
-    } catch {}
-  }, [viewState]);
+  useEffect(() => saveTabView(viewState), [viewState]);
+  useEffect(() => rememberPoint(viewState.pointId), [viewState.pointId]);
 
   const view = route.startsWith("wiki")
     ? "wiki"

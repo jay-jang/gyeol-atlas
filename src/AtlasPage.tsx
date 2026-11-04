@@ -249,6 +249,17 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const dockRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const workspaceRef = useRef<HTMLElement>(null);
+  const clearPointPending = useRef(false);
+  useEffect(() => {
+    if (hasSelected || !clearPointPending.current) return;
+    // The hash must have committed before the replacement chip exists.
+    const frame = requestAnimationFrame(() => {
+      focusWithoutOpeningSearch(workspaceRef.current?.querySelector<HTMLElement>(".ax-point-empty") ?? null);
+      clearPointPending.current = false;
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [hasSelected, focusWithoutOpeningSearch]);
+
   const [action, setAction] = useState<CameraAction>({
     // A validated selection with a deliberately cleared migration pose must
     // wait for its real meshes and frame them, not consume a no-op restore.
@@ -429,6 +440,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     requestAnimationFrame(() => requestAnimationFrame(() => focusWithoutOpeningSearch(workspaceRef.current?.querySelector<HTMLElement>(selector) ?? null)));
   };
   const select = (p: Point) => {
+    clearPointPending.current = false;
     focusAfterPanel(".point-summary");
     const leavingDetail = Boolean(state.detail);
     const returnPose = leavingDetail ? state.detailReturn?.camera : null;
@@ -440,6 +452,16 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     setSearch("");
     if (returnPose) restoreOverviewPose(returnPose);
     else if (leavingDetail) requestAnimationFrame(() => camera("fit"));
+  };
+  const clearPoint = () => {
+    clearPointPending.current = true;
+    if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
+    isolateCameraFrame.current = null;
+    dispatch({ type: "clear-point" });
+    navigate("atlas");
+    setPanel(current => current === "detail" ? null : current);
+    setComparisonNotice("");
+    setSeparateDetailIds([]);
   };
   const compare = () => {
     const c = pointConcepts[selected.id];
@@ -1095,7 +1117,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
         <div className="floating-point ax-point-chip">
           <button className="ax-step" aria-label="이전 경혈" aria-disabled={!prevPoint} data-tip={stepTip(prevPoint, "첫 경혈입니다")} onClick={() => step(prevPoint)}>이전</button>
           {hasSelected ? <>
-            <button className="point-summary" aria-expanded={panel === "detail"} onClick={(e) => openPanel("detail", e.currentTarget)}>
+            <button className="point-summary" title={`${selected.name} ${selected.id} · ${categoryText(selected.id)}`} aria-expanded={panel === "detail"} onClick={(e) => openPanel("detail", e.currentTarget)}>
               <i style={{ background: meridianOf(selected).color }} />
               <span>{selected.id}</span>
               <strong>{selected.name}</strong>
@@ -1103,6 +1125,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               <ChevronDown size={15} />
             </button>
             <button className="ax-icon" aria-label="선택 경혈 확대" data-tip="선택 경혈 확대" onClick={() => camera("focus")}><Focus size={17} /></button>
+            <button className="ax-icon ax-clear-point" aria-label="경혈 선택 해제" data-tip="경혈 선택 해제 · 마지막 선택은 다음 방문에 사용" onClick={clearPoint}><X size={17} /></button>
           </> : (
             <button className="ax-point-empty" aria-label="경혈 선택 — 표식을 누르거나 목록에서 고르기" onClick={(e) => openPanel("points", e.currentTarget)}>
               <span className="ax-dot" />경혈 선택<small>표식을 누르거나 목록에서</small>
