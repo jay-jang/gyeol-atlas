@@ -1,18 +1,18 @@
 import { lazy, Suspense, useCallback, useEffect, useId, useMemo, useRef, useState, type Dispatch, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from "react";
 import {
-  ArrowUpRight, BookOpen, Bookmark, Check, ChevronDown, CircleHelp, Eye, Focus, Link2, List, LoaderCircle,
+  ArrowUpRight, BookOpen, Bookmark, Check, ChevronDown, CircleHelp, Eye, Focus, Link2, List, ListFilter, LoaderCircle,
   Minus, Plus, RotateCcw, Search, ShieldCheck, SlidersHorizontal, Tag, X,
 } from "lucide-react";
 import AnatomyControls from "./AnatomyControls";
 import PointTradition from "./PointTradition";
-import { xiMeridian, pointCategories, pointOrgans, organChoices, organText, pointColor, UNASSIGNED_COLOR } from "./point-display";
+import { xiMeridian, pointCategories, pointOrgans, organChoices, organText, pointColor, UNASSIGNED_COLOR, KEY_CLASSES, isOrganChoice, luoNote, organClassPoints, organKeyPointIds, organLabel, organScopes, organsOfView, pointTermsMatch } from "./point-display";
 import { contextIsDimmed } from "./selection-context";
 import { comparisonReference } from "./comparison-reference";
 import { referenceSourceFor } from "./reference-source";
 import { structureForSexId } from "./sex-structure";
 import { depthStage, peelLimit, stageDepth } from "./dissection";
-import { normalizeQuery, isExactPoint, isExactStructure, matchOrgans, rankPoints, rankStructures, splitExact } from "./search-rank";
-import { CONNECTIVE_BUNDLE, type ViewAction, type ViewState } from "./view-state";
+import { isExactPoint, isExactStructure, matchOrgans, pointScore, rankPoints, rankStructures, splitExact } from "./search-rank";
+import { CONNECTIVE_BUNDLE, initialView, type ViewAction, type ViewState } from "./view-state";
 import { readOrigin, takeFocus } from "./movement-link";
 import { useMedia } from "./use-media";
 import { MODEST_MOVED_POINTS } from "./modesty";
@@ -41,6 +41,33 @@ function PointBadges({ id }: { id: string }) {
   return <span className="point-category-badges">{categories.length ? categories.map(c => <span className="point-category-badge" key={c.id} data-category={c.id}>
     <i style={{ background: c.color }} aria-hidden="true">{c.symbol}</i>{c.name}{c.id === "xi" && xiMeridian(id) ? ` · ${xiMeridian(id)}` : ""}
   </span>) : <span>일반 경혈</span>}</span>;
+}
+// One zang-fu's 원·모·유·극·락혈 and its 오수혈 (Q46), the same wherever a
+// view is about that zang-fu: the organ filter's list, an organ's card and a
+// comparison card. A point in two classes (LU9 원·수) has a chip in each.
+function OrganPoints({ organ, selectedId, onPick, children }: { organ: string; selectedId: string; onPick: (p: Point) => void; children?: ReactNode }) {
+  const name = organLabel(organ);
+  const groups = organClassPoints(organ, points);
+  // Inside 오수혈 the badge is the shu type (정·형·수·경·합); elsewhere the class.
+  const chip = (g: (typeof groups)[number], p: Point, label: string, shu = "") => (
+    <button key={`${g.concept.id}-${p.id}`} data-category={g.concept.id} aria-pressed={p.id === selectedId} aria-label={`${g.concept.name}${shu ? ` ${shu}` : ""} ${p.name} ${p.id}${label ? ` ${label}` : ""} 선택`} onClick={() => onPick(p)}>
+      <i style={{ background: g.concept.color }} aria-hidden="true">{shu ? shu[0] : g.concept.symbol}</i>{p.name}<small>{p.id}</small>{label && <small className="organ-point-note">{label}</small>}
+    </button>
+  );
+  const fiveShu = groups.find((g) => g.concept.id === "five-shu");
+  return (
+    <section className="organ-points" data-organ={organ} aria-label={`${name} 원·모·유·극·락혈`}>
+      <h3>{name}<small>원·모·유·극·락혈 · 전통 장부 대응</small></h3>
+      <div className="organ-point-chips">
+        {groups.filter((g) => KEY_CLASSES.includes(g.concept.id)).flatMap((g) => g.points.map((p) => chip(g, p, luoNote(p.id))))}
+      </div>
+      {fiveShu && <details className="organ-five-shu">
+        <summary>오수혈 {fiveShu.points.length}</summary>
+        <div className="organ-point-chips">{fiveShu.points.map((p) => chip(fiveShu, p, "", pointConcepts[p.id]?.shuType || "수"))}</div>
+      </details>}
+      {children}
+    </section>
+  );
 }
 type Panel = "search" | "display" | "help" | "points" | "detail" | null;
 // Short pickers open over the scene without closing the open panel.
@@ -81,8 +108,8 @@ function femaleMarkerNote(id: string) {
   if (femaleAcupointNotes.facingException.includes(id)) notes.push("옮겨 온 방향에 맞는 피부면이 없어 반대쪽 면(가슴 옆벽)에 놓였고, 실제 위치와 다를 수 있습니다.");
   return `여성 근사 표식 · ${notes.join(" ")} 전문가 검수 전입니다.`;
 }
-function PointDetail({ point, onFocus, saved, onSave, onCompare, onClose, comparisonFeedback, femaleNote, modestyNote }: {
-  point: Point; onFocus: () => void; saved: boolean; onSave: () => void; onCompare: () => void; onClose: () => void; comparisonFeedback?: ReactNode; femaleNote?: string; modestyNote?: string;
+function PointDetail({ point, swatch, onFocus, saved, onSave, onCompare, onClose, comparisonFeedback, femaleNote, modestyNote }: {
+  point: Point; swatch: string; onFocus: () => void; saved: boolean; onSave: () => void; onCompare: () => void; onClose: () => void; comparisonFeedback?: ReactNode; femaleNote?: string; modestyNote?: string;
 }) {
   const feedbackRef = useRef<HTMLDivElement>(null);
   const hasComparisonFeedback = Boolean(comparisonFeedback);
@@ -114,7 +141,7 @@ function PointDetail({ point, onFocus, saved, onSave, onCompare, onClose, compar
           </button>
           <button className="ax-icon" onClick={onClose} aria-label="도구 패널 닫기" data-tip="닫기"><X size={17} /></button>
         </div>
-        <h2 className="ax-point-title"><span><i style={{ background: meridianOf(point).color }} />{point.id}</span>{point.name}<small>{point.hanja}</small></h2>
+        <h2 className="ax-point-title"><span><i style={{ background: swatch }} />{point.id}</span>{point.name}<small>{point.hanja}</small></h2>
         <p className="ax-pinyin">{point.pinyin} · {categoryText(point.id)}{concept?.shuType ? ` ${concept.shuType}` : ""}{concept?.traditionalName ? <> · 전통적 장부 대응: <b>{concept.traditionalName}</b></> : null}</p>
         <div className="detail-actions">
           {/* Short visible labels; each accessible name contains its label. */}
@@ -210,6 +237,9 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const [presenting, setPresenting] = useState(false);
   const presentTrigger = useRef<HTMLElement | null>(null);
   const phone = useMedia("(max-width: 700px)");
+  // Up to 1000px the bar keeps one row and the status line whole: filters are
+  // counted on the list button and named in the list (Q46).
+  const compactBar = useMedia("(max-width: 1000px)");
   // Short landscape phones open the stops in a band beside the rail, like the phone band.
   const shortLandscape = useMedia("(min-width: 701px) and (max-height: 560px)");
   // What the rail says after a user changes what the peel keeps. Every note is
@@ -269,6 +299,9 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const isolateCameraFrame = useRef<number | null>(null);
   const sourceKey = referenceSourceFor(state.sex, [...(state.selection?.ids || []), ...(state.detail?.ids || [])]);
   const pendingOverviewPose = useRef<ViewState["camera"]>(null);
+  // A camera action asked for while a separate detail source returns to the
+  // overview (선택 경혈 확대) runs once the overview is ready, not its fit.
+  const pendingOverviewKind = useRef<CameraAction["kind"] | null>(null);
   const [loaded, setLoaded] = useState<{ source: string | null; layers: Layer[] }>({ source: null, layers: [] });
   const [loadingReference, setLoadingReference] = useState(false);
   const [comparisonNotice, setComparisonNotice] = useState("");
@@ -290,27 +323,38 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   // Results come first; the filters fold away where height is short unless
   // one of them is in use (QUALITY: 상세 필터는 필요할 때 펼칩니다).
   const roomy = useMedia("(min-width: 701px) and (min-height: 761px)");
-  const activeFilters = [
+  // The bottom bar names every filter that narrows the markers except the
+  // meridian, which its own picker shows; its ✕ clears exactly those (Q46).
+  const barFilters = [
+    query.trim() && `“${query.trim()}”`, onlySaved && "저장한 경혈",
     concept !== "all" && concepts.find((c) => c.id === concept)?.name,
-    organ !== "all" && (organChoices.find(o => o.id === organ)?.name || "장부 배속 없음"),
+    organ !== "all" && (isOrganChoice(organ) ? organLabel(organ) : "장부 배속 없음"),
     bodyRegion !== "전체" && bodyRegion,
-    meridian !== "all" && meridians.find((m) => m.id === meridian)?.name,
     catalogue !== "all" && (catalogue === "extra" ? "경외기혈" : "정규 경혈"),
     region !== "전체" && region,
-  ].filter(Boolean).join(" · ");
+  ].filter(Boolean) as string[];
+  // The pressed clear leaves with the filters; focus moves to `next`.
+  const clearFilters = (next: string) => {
+    dispatch({ type: "filters", value: { ...initialView().filters, meridian } });
+    requestAnimationFrame(() => focusWithoutOpeningSearch(workspaceRef.current?.querySelector<HTMLElement>(next) ?? null));
+  };
+  // The list's summary names the same filters, with the meridian.
+  const activeFilters = [...barFilters, meridian !== "all" && meridians.find((m) => m.id === meridian)?.name].filter(Boolean).join(" · ");
   const [filtersChoice, setFiltersOpen] = useState<boolean | null>(null);
   const filtersOpen = filtersChoice ?? (roomy || Boolean(activeFilters));
   const resetFilters = () => dispatch({ type: "reset-filters" });
-  const found = useMemo(() => points.filter((p) =>
+  // Every filter but the meridian; the meridian picker counts against it.
+  // The query uses the unified search's matcher, classes and zang-fu included.
+  const beforeMeridian = useMemo(() => points.filter((p) =>
     (region === "전체" || p.region === region) &&
     (bodyRegion === "전체" || p.bodyRegion === bodyRegion) &&
     (catalogue === "all" || p.catalogue === catalogue) &&
-    (meridian === "all" || p.meridian === meridian) &&
     (concept === "all" || pointConcepts[p.id]?.categories.includes(concept)) &&
     (organ === "all" || (organ === "none" ? !pointOrgans(p).length : pointOrgans(p).includes(organ))) &&
     (!onlySaved || saved.includes(p.id)) &&
-    `${p.id} ${p.name} ${p.hanja} ${p.pinyin} ${p.landmarks.join(" ")} ${meridianOf(p)?.name}`.toLowerCase().includes(normalizeQuery(query))),
-  [region, bodyRegion, catalogue, meridian, concept, organ, onlySaved, saved, query]);
+    pointScore(p, query, (x) => meridianOf(x)?.name, pointTermsMatch) !== null),
+  [region, bodyRegion, catalogue, concept, organ, onlySaved, saved, query]);
+  const found = useMemo(() => meridian === "all" ? beforeMeridian : beforeMeridian.filter((p) => p.meridian === meridian), [beforeMeridian, meridian]);
   const camera = (kind: CameraAction["kind"]) => {
     if (kind === "focus" && state.sex === "female" && !state.femaleMarkers) {
       setComparisonNotice("여성 표면의 경혈 좌표는 검수 전입니다. 남성 기준 좌표로 이동하지 않습니다.");
@@ -336,9 +380,12 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     pendingOverviewPose.current = null;
     camera("fit");
   }, [state.sex]);
+  // A trigger that left meanwhile (the bar's filter chip after clearing) hands
+  // focus to the list button.
+  const panelTrigger = () => triggerRef.current?.isConnected ? triggerRef.current : workspaceRef.current?.querySelector<HTMLElement>(".ax-list-toggle") ?? null;
   const closePanel = () => {
     setPanel(null);
-    requestAnimationFrame(() => focusWithoutOpeningSearch(triggerRef.current));
+    requestAnimationFrame(() => focusWithoutOpeningSearch(panelTrigger()));
   };
   const openPanel = (name: Panel, trigger?: HTMLElement) => {
     if (trigger) triggerRef.current = trigger;
@@ -353,7 +400,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
       if (top < list.scrollTop || top + row.offsetHeight > list.scrollTop + list.clientHeight) list.scrollTop = Math.max(0, top - 4);
     });
     if (panel && panel !== "search" && panel !== "detail") {
-      dockRef.current?.querySelector<HTMLElement>("input:not([type=checkbox]),select,button:not([aria-label='도구 패널 닫기'])")?.focus({ preventScroll: true });
+      dockRef.current?.querySelector<HTMLElement>("input:not([type=checkbox]),select,button:not([aria-label='도구 패널 닫기']):not(.ax-filter-release)")?.focus({ preventScroll: true });
     }
   }, [panel]);
   useEffect(() => {
@@ -381,7 +428,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
         if (typing && e.target === searchRef.current) searchRef.current?.blur();
         // On phones the point chip is hidden while its detail is open.
         // Restore focus after closing makes the trigger visible again.
-        requestAnimationFrame(() => focusWithoutOpeningSearch(triggerRef.current));
+        requestAnimationFrame(() => focusWithoutOpeningSearch(panelTrigger()));
       } else if (e.key === "/" && !typing && !e.metaKey && !e.ctrlKey) {
         e.preventDefault();
         const active = document.activeElement instanceof HTMLElement ? document.activeElement : null;
@@ -508,9 +555,10 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     // for the overview geometry before fitting it; ordinary peeling/layer
     // changes within one source must still preserve the user's camera.
     if (!selectionKey && !state.comparison) {
-      const returnPose = pendingOverviewPose.current;
-      pendingOverviewPose.current = null;
-      if (returnPose) setAction((a) => ({ kind: "pose", pose: returnPose, tick: a.tick + 1 }));
+      const returnPose = pendingOverviewPose.current, kind = pendingOverviewKind.current;
+      pendingOverviewPose.current = null; pendingOverviewKind.current = null;
+      if (kind) camera(kind);
+      else if (returnPose) setAction((a) => ({ kind: "pose", pose: returnPose, tick: a.tick + 1 }));
       else camera("fit");
     }
   }, [sourceKey, ready, selectionKey, state.comparison]);
@@ -544,9 +592,10 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const stepBlocked = Boolean(state.comparison || state.detail);
   const prevPoint = stepBlocked || stepAt <= 0 ? null : found[stepAt - 1];
   const nextPoint = stepBlocked ? null : stepAt < 0 ? found[0] ?? null : found[stepAt + 1] ?? null;
+  const offFilter = hasSelected && stepAt < 0;
   const stepTip = (p: Point | null, edge: string) => p
-    ? `${p.name} ${p.id} · ${found.indexOf(p) + 1}/${found.length}`
-    : stepBlocked ? "비교·기관 상세를 닫으면 넘길 수 있습니다" : found.length ? edge : "필터 결과가 없습니다";
+    ? `${offFilter ? "필터 결과 처음 · " : ""}${p.name} ${p.id} · ${found.indexOf(p) + 1}/${found.length}`
+    : stepBlocked ? "비교·기관 상세를 닫으면 넘길 수 있습니다" : !found.length ? "필터 결과가 없습니다" : offFilter ? "선택 경혈은 필터 결과 밖에 있습니다" : edge;
   const step = (p: Point | null) => {
     if (!p) return;
     dispatch({ type: "point", id: p.id });
@@ -612,6 +661,80 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const connectiveBundle = state.selection?.kind === "bundle" && state.selection.name === CONNECTIVE_BUNDLE && !state.detail;
   const selectedOrgan = structureGroups.find((group) => group.id === selectedGroup && group.sex === state.sex);
   const selectedComposite = compositeGroups.find((group) => group.id === selectedGroup && group.sex === state.sex);
+  // The zang-fu an organ view stands for: the meshes its traditional
+  // comparison uses, or a detail of their organ (a male lung/kidney/pancreas
+  // view counts as its organ). An explicit organ filter names its own points.
+  const scopes = useMemo(() => organScopes(state.sex, structures, organGroups), [state.sex]);
+  const detailOrganId = state.detail && ([maleLungViews, maleKidneyViews, malePancreasViews].find((views) => state.sex === "male" && views.some((view) => view.id === state.detail!.id))?.[0].id ?? state.detail.id);
+  // The whole detail maps through its organ; one picked part through its own
+  // id/FMA id or its single-concept group (point-display organsOfView).
+  const picked = state.selection?.kind === "structure" ? selectedAnatomy : null;
+  const viewDetail = state.detail && !picked ? detailOrganId || undefined : undefined;
+  const viewOrgans = useMemo(() => state.selection ? organsOfView(scopes, organGroups, state.sex, state.selection.ids,
+    { detailId: viewDetail, pickedGroup: picked?.group, fmaIds: picked?.fmaId ? [picked.fmaId] : [] }) : [],
+    [scopes, state.sex, state.selection, viewDetail, picked]);
+  const filterOrgan = isOrganChoice(organ) ? organ : "";
+  // The body names the organ filter's points and those of a body organ view.
+  const namedOrgans = [...new Set([filterOrgan, ...(state.detail ? [] : viewOrgans)].filter(Boolean))];
+  const namedKey = namedOrgans.join();
+  const namedPoints = useMemo(() => namedKey ? namedKey.split(",").flatMap((o) => organKeyPointIds(o, points)) : NONE, [namedKey]);
+  // "몸에서 보기": the zang-fu's points on the body. A detail returns to the
+  // view it was opened from; a body selection and the camera stay (Q30).
+  // Only the button that says "근사 위치로" turns female approximations on (Q26).
+  const showOrgan = (organId: string, approximate = false) => {
+    const pose = state.detail ? state.detailReturn?.camera : null;
+    const leavingDetail = Boolean(state.detail);
+    if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
+    isolateCameraFrame.current = null;
+    // A card that leaves with the detail or comparison hands keyboard focus on.
+    if (workspaceRef.current?.querySelector(".selection-card")?.contains(document.activeElement))
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        if (document.activeElement && document.activeElement !== document.body) return;
+        focusWithoutOpeningSearch(workspaceRef.current?.querySelector<HTMLElement>(".selection-card, .point-summary, .ax-list-toggle") ?? null);
+      }));
+    if (approximate && state.sex === "female" && !state.femaleMarkers) dispatch({ type: "female-markers", value: true });
+    dispatch({ type: "organ-points", organ: organId });
+    setPanel(null);
+    if (pose) restoreOverviewPose(pose);
+    else if (leavingDetail) requestAnimationFrame(() => camera("fit"));
+  };
+  const closeDetailView = () => {
+    if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
+    isolateCameraFrame.current = null;
+    const pose = state.detailReturn?.camera;
+    dispatch({ type: "detail-close" });
+    if (pose) restoreOverviewPose(pose);
+    else requestAnimationFrame(() => camera("fit"));
+  };
+  // The found points become the list query filter and are drawn: a detail
+  // returns to the body first, and the female button says "근사 위치로" (Q46).
+  const applySearch = () => {
+    focusAfterPanel(compactBar ? ".ax-list-toggle" : ".ax-filter-chip > .ax-toggle");
+    const leavingDetail = Boolean(state.detail), pose = state.detailReturn?.camera;
+    if (leavingDetail) dispatch({ type: "detail-close" });
+    if (femaleHidden) dispatch({ type: "female-markers", value: true });
+    dispatch({ type: "filters", value: { ...initialView().filters, query: search.trim() } });
+    setPanel(null); setSearch("");
+    if (!leavingDetail) camera("region");
+    else if (pose) restoreOverviewPose(pose);
+    else requestAnimationFrame(() => camera("fit"));
+  };
+  // A detail source draws no markers, so focusing a point returns to the body.
+  const focusPoint = () => {
+    if (!state.detail) { camera("focus"); return; }
+    if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
+    isolateCameraFrame.current = null;
+    pendingOverviewPose.current = null;
+    dispatch({ type: "detail-close" });
+    if (sourceKey !== referenceSourceFor(state.sex, [])) pendingOverviewKind.current = "focus";
+    else requestAnimationFrame(() => camera("focus"));
+  };
+  const toggleIsolation = () => {
+    const kind = state.isolated && state.detail ? "fit" : "structure";
+    dispatch({ type: "isolate" });
+    if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
+    isolateCameraFrame.current = requestAnimationFrame(() => { isolateCameraFrame.current = null; camera(kind); });
+  };
   const selectedLungPart = Boolean(state.sex === "male" && selectedAnatomy && maleLungViews.some((view) => view.id === selectedGroup));
   const bundleIs = (views: { id: string; ids: string[] }[]) => Boolean(state.sex === "male" && state.detail && state.selection?.kind === "bundle"
     && views.some((view) => view.id === state.detail!.id && view.ids.length === state.selection!.ids.length && view.ids.every((vid) => state.selection!.ids.includes(vid))));
@@ -669,7 +792,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   useEffect(() => setAllPointResults(false), [q]);
   const sexList = useMemo(() => structuresForSex(state.sex), [state.sex]);
   const sexStructures = useMemo(() => new Map(sexList.map((item) => [item.id, item])), [sexList]);
-  const rankedPoints = useMemo(() => q ? rankPoints(points, q, (p) => meridianOf(p)?.name) : [], [q]);
+  const rankedPoints = useMemo(() => q ? rankPoints(points, q, (p) => meridianOf(p)?.name, pointTermsMatch) : [], [q]);
   const organResults = q ? matchOrgans(featuredAnatomy, q, (sid) => sexStructures.get(sid)) : featuredAnatomy;
   const structureResults = useMemo(() => q ? rankStructures(sexList, q) : [], [q, sexList]);
   const visibleStructures = structureResults.slice(0, 240);
@@ -745,7 +868,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const excludedCount = state.excluded.length ? `${state.excluded.length}개 뺌` : "";
   const depthState = state.displayMode === "dissection" ? `${state.dissection.toFixed(1)}% · ${depthName(state.dissection)}` : depthMode;
   const depthSummary = depthState + (excludedCount && ` · ${excludedCount}`);
-  const keepHelpId = useId(), lastHelpId = useId(), stepsId = useId();
+  const keepHelpId = useId(), lastHelpId = useId(), stepsId = useId(), filterHelpId = useId();
   const setExcluded = (layer: Layer, included: boolean) => dispatch({ type: "excluded", value: included ? state.excluded.filter((l) => l !== layer) : [...state.excluded, layer] });
   // Leaving systems out is part of the peel: each stop row carries its own
   // "○○ 포함" check while peeling (explicit views show a static swatch).
@@ -773,7 +896,23 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
     onClick={() => { dispatch({ type: "dissection", value: state.dissection }); requestAnimationFrame(() => depthSlider.current?.focus({ preventScroll: true })); }}>{peelStart.toFixed(1)}%에서 연속 박리</button>;
   // Female markers are unreviewed approximations, hidden until asked for.
   const femaleHidden = state.sex === "female" && !state.femaleMarkers;
-  const markerCount = femaleHidden || state.detail ? 0 : markers.length;
+  // The count is what the model draws of the filter result, as the list
+  // header counts it; a chosen point outside the filter is a separate
+  // reference (Q26). Wherever the model shows less, the list says why (Q46).
+  const markerCount = femaleHidden || state.detail || state.markers === "hidden" ? 0
+    : state.markers === "selected" || state.isolated ? Number(hasSelected) : found.length;
+  // A note's button leaves with its note; focus stays in the open list.
+  const noteAction = (run: () => void) => () => {
+    run();
+    requestAnimationFrame(() => focusWithoutOpeningSearch(dockRef.current?.querySelector<HTMLElement>(".show-filtered-button, .ax-list-search input") ?? null));
+  };
+  const drawAll = <button onClick={noteAction(() => dispatch({ type: "markers", value: "filtered" }))}>결과 {found.length}개 그리기</button>;
+  const modelNote = femaleHidden ? <>여성 경혈 좌표는 검수 전이라 모델에 그리지 않습니다. <button onClick={noteAction(() => dispatch({ type: "female-markers", value: true }))}>근사 위치로 보기</button></>
+    : state.detail ? <>기관 상세 모형에는 경혈 표식을 그리지 않습니다. <button onClick={noteAction(closeDetailView)}>전신으로 돌아가기</button></>
+    : state.isolated ? <>선택 구조만 보는 동안에는 선택 경혈만 그립니다. <button onClick={noteAction(toggleIsolation)}>전체 구조 보기</button></>
+    : state.markers === "hidden" ? <>경혈 표식을 숨겼습니다. {drawAll}</>
+    : state.markers === "selected" ? <>선택 경혈만 그리는 중입니다. {drawAll}</>
+    : null;
   const statusText = !enabledLayers.length ? "레이어를 켜서 구조를 표시하세요"
     : ready ? "해부 모델 로드 완료"
     : loadedLayers.length ? `표시 중 · 내부 계통 불러오는 중 ${loadedLayers.length}/${enabledLayers.length}` : "해부 모델 준비 중";
@@ -855,6 +994,8 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             markerColor={state.markerColor}
             colorCategory={concept}
             colorOrgan={organ}
+            namedPoints={namedPoints}
+            referenceId={hasSelected && !found.some((p) => p.id === selected.id) ? selected.id : ""}
             action={action}
             onReady={onReady}
             onLoading={setLoadingReference}
@@ -895,7 +1036,12 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             onFocus={(e) => { if (!skipSearchFocus.current && panel !== "search") { triggerRef.current = e.currentTarget; setPanel("search"); } }}
             onClick={(e) => { if (panel !== "search") triggerRef.current = e.currentTarget; setPanel("search"); }}
             onChange={(e) => { setSearch(e.target.value); setPanel("search"); }}
-            onKeyDown={(e) => { if (panel === "search") resultKeys(e); }}
+            onKeyDown={(e) => {
+              if (panel !== "search") return;
+              // Enter takes the first result shown (an exact match leads), as a click would.
+              if (e.key === "Enter" && q && !e.nativeEvent.isComposing) { e.preventDefault(); dockRef.current?.querySelector<HTMLElement>(".ax-exact-results button, .featured-anatomy button, .ax-point-results .point-item, .structure-browser .structure-item")?.click(); return; }
+              resultKeys(e);
+            }}
           />
           {panel === "search" ? <button className="ax-icon" aria-label="도구 패널 닫기" data-tip="닫기" onClick={() => { setSearch(""); closePanel(); }}><X size={16} /></button> : <kbd aria-hidden="true">/</kbd>}
         </div>
@@ -927,6 +1073,9 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               {exactPoints.exact.map(pointRow)}
             </section>
           )}
+          {/* After the exact matches, the found acupoints become the marker filter (경혈 찾기's query),
+              shown and cleared like every other filter (Q46). */}
+          {q && rankedPoints.length > 0 && <button className="ax-more ax-search-apply" onClick={applySearch}>찾은 경혈 {rankedPoints.length}개만 {femaleHidden ? "근사 위치로 " : ""}모델에 표시</button>}
           {organResults.length > 0 && (
             <div className="featured-anatomy">
               {q && <h3 className="ax-group-title">기관 상세 <small>{organResults.length}</small></h3>}
@@ -942,7 +1091,11 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             <section className="ax-point-results">
               <h3 className="ax-group-title">경혈 <small>{exactPoints.rest.length}</small></h3>
               {pointResults.map(pointRow)}
-              {exactPoints.rest.length > pointResults.length && <button className="ax-more" onClick={() => setAllPointResults(true)}>경혈 {exactPoints.rest.length}개 모두 보기</button>}
+              {exactPoints.rest.length > pointResults.length && <button className="ax-more" onClick={() => {
+                setAllPointResults(true);
+                // The pressed button leaves; keyboard focus moves on to the first newly shown point.
+                requestAnimationFrame(() => focusWithoutOpeningSearch(dockRef.current?.querySelectorAll<HTMLElement>(".ax-point-results .point-item")[pointResults.length] ?? null));
+              }}>경혈 {exactPoints.rest.length}개 모두 보기</button>}
             </section>
           )}
           {q && exactStructures.rest.length > 0 && (
@@ -972,14 +1125,15 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             <table className="help-table">
               <thead><tr><th scope="col">하려는 일</th><th scope="col">마우스·키보드</th><th scope="col">터치</th></tr></thead>
               <tbody>
-                <tr><th scope="row">경혈 찾기</th><td>검색(/ 키), 경맥 선택, 경혈 찾기 목록, 표식 클릭</td><td>검색, 아래 경혈 도구, 표식 누르기</td></tr>
+                <tr><th scope="row">경혈 찾기</th><td>검색(/ 키, Enter로 첫 결과), 경맥 선택, 경혈 찾기 목록, 표식 클릭</td><td>검색, 아래 경혈 도구, 표식 누르기</td></tr>
+                <tr><th scope="row">필터 보기·해제</th><td>바꾸면 바로 모델에 표시 · 아래 막대의 필터 이름과 ✕</td><td>‘찾기’의 숫자 → 목록 머리 ‘필터 해제’</td></tr>
                 <tr><th scope="row">차례로 보기</th><td colSpan={2}>경혈 칩의 이전·다음 — 현재 경맥·필터 결과 순서</td></tr>
                 <tr><th scope="row">돌리기·확대</th><td>드래그로 회전, 휠로 확대·축소, 정면·후면·측면</td><td>한 손가락 회전, 두 손가락 확대, 오른쪽 +·−·시점</td></tr>
                 <tr><th scope="row">이동</th><td>모델을 클릭한 뒤 W/S 전진·후진, A/D 좌우, Q/E 아래·위, Shift는 빠르게</td><td>시점 안의 이동 버튼</td></tr>
                 <tr><th scope="row">겉에서 속으로</th><td>깊이 막대 끌기·계통 이름 누르기, Alt/Option+휠 또는 모델에 초점을 둔 채 Alt/Option+↑/↓</td><td>아래 깊이 줄, 단계 버튼에서 계통 고르기</td></tr>
                 <tr><th scope="row">한 계통만</th><td>계통 옆 눈 버튼</td><td>단계 버튼 → 눈 버튼</td></tr>
                 <tr><th scope="row">계통 빼고 박리</th><td>깊이 막대 계통 행 왼쪽 ‘포함’ 체크 끄기(다시 체크하면 넣기)</td><td>단계 버튼 → 계통의 ‘포함’ 체크 끄기</td></tr>
-                <tr><th scope="row">장부 비교</th><td colSpan={2}>경혈 상세의 ‘대응 장부의 해부 구조 비교’</td></tr>
+                <tr><th scope="row">장부 비교</th><td colSpan={2}>경혈 상세의 ‘대응 장부의 해부 구조 비교’ · 기관을 고르면 그 장부의 원·모·유·극·락혈과 ‘몸에서 보기’</td></tr>
                 <tr><th scope="row">성기 보이기</th><td colSpan={2}>기본으로 가려 둡니다 — 위쪽 방패 버튼이나 표시 설정의 ‘성기 가리기’ 끄기</td></tr>
               </tbody>
             </table>
@@ -997,12 +1151,15 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
 
       {panel === "points" && (
         <div className="ax-panel ax-side-panel ax-point-list" role="region" aria-label="경혈 목록" ref={dockRef}>
-          <div className="ax-panel-head"><strong>경혈 목록 <small>{found.length}/{points.length}</small></strong>{closeButton}</div>
+          <div className="ax-panel-head"><strong>경혈 목록 <small>{found.length}/{points.length}</small></strong>
+            {barFilters.length > 0 && <button className="ax-ghost ax-filter-release" aria-label="경혈 필터 해제" data-tip={`${barFilters.join(" · ")} 해제${meridian === "all" ? "" : " · 경맥 선택은 유지"}`} onClick={() => clearFilters(".ax-point-list input")}>필터 해제</button>}
+            {closeButton}</div>
           {comparisonLine}
           <div className="ax-list-search">
             <input aria-label="경혈 검색" placeholder="이름·코드·해부 구조로 찾기" value={query} onChange={(e) => setFilter({ query: e.target.value })} />
             <button className="ax-ghost" aria-pressed={onlySaved} onClick={() => setFilter({ onlySaved: !onlySaved })}><Bookmark size={12} />저장 {saved.length}</button>
           </div>
+          {filterOrgan && <OrganPoints organ={filterOrgan} selectedId={selected.id} onPick={select} />}
           <details className="ax-filters" open={filtersOpen} onToggle={(e) => setFiltersOpen(e.currentTarget.open)}>
             <summary>필터 <small>{[activeFilters, state.markerColor !== "meridian" && (state.markerColor === "category" ? "혈 분류색" : "장부색")].filter(Boolean).join(" · ") || "분류 · 장부 · 표식 색상"}</small></summary>
             <div className="point-color-field"><span>표식 색상</span><div className="ax-segment" role="group" aria-label="표식 색상">
@@ -1024,7 +1181,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               </select></label>
               <label className="ax-field">연결 장부<select aria-label="연결 장부" value={organ} onChange={e => setFilter({ organ: e.target.value })}>
                 <option value="all">전체 장부</option>
-                {organChoices.map(o => <option key={o.id} value={o.id}>{o.name} · {points.filter(p => pointOrgans(p).includes(o.id)).length}</option>)}
+                {organChoices.map(o => <option key={o.id} value={o.id}>{organLabel(o.id)} · {points.filter(p => pointOrgans(p).includes(o.id)).length}</option>)}
                 <option value="none">장부 배속 없음 · {points.filter(p => !pointOrgans(p).length).length}</option>
               </select></label>
               <label className="ax-field">모델에서 볼 부위<select aria-label="모델 부위 선택" value={bodyRegion} onChange={(e) => { dispatch({ type: "region-filter", value: e.target.value }); camera("region"); }}>
@@ -1050,9 +1207,13 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             </div>
           </details>
           {hasSelected && !found.some(p => p.id === selected.id) && <p className="ax-hint" data-filter-reference>선택한 {selected.name}({selected.id})은 필터 밖에서도 참조로 남습니다.</p>}
+          {modelNote && <p className="ax-hint model-note" data-model-note>{modelNote}</p>}
           {/* Applying the results to the model matters only when they differ from what is shown. */}
           {(found.length !== points.length || state.markers !== "filtered" || state.selection) && (
-            <button className="show-filtered-button ax-primary" disabled={!found.length} onClick={() => { dispatch({ type: "show-filtered" }); camera("region"); setPanel(null); }}>필터 결과 {found.length}개를 모델에서 보기</button>
+            <button className="show-filtered-button ax-primary" disabled={!found.length} onClick={() => {
+              if (femaleHidden) dispatch({ type: "female-markers", value: true });
+              dispatch({ type: "show-filtered" }); camera("region"); setPanel(null);
+            }}>필터 결과 {found.length}개를 {femaleHidden ? "근사 위치로 " : ""}모델에서 보기</button>
           )}
           <div className="point-list">
             {found.map((p) => (
@@ -1118,13 +1279,13 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
           <button className="ax-step" aria-label="이전 경혈" aria-disabled={!prevPoint} data-tip={stepTip(prevPoint, "첫 경혈입니다")} onClick={() => step(prevPoint)}>이전</button>
           {hasSelected ? <>
             <button className="point-summary" title={`${selected.name} ${selected.id} · ${categoryText(selected.id)}`} aria-expanded={panel === "detail"} onClick={(e) => openPanel("detail", e.currentTarget)}>
-              <i style={{ background: meridianOf(selected).color }} />
+              <i style={{ background: pointColor(selected, state.markerColor, concept, organ) }} />
               <span>{selected.id}</span>
               <strong>{selected.name}</strong>
               <small>{categoryText(selected.id)}</small>
               <ChevronDown size={15} />
             </button>
-            <button className="ax-icon" aria-label="선택 경혈 확대" data-tip="선택 경혈 확대" onClick={() => camera("focus")}><Focus size={17} /></button>
+            <button className="ax-icon" aria-label="선택 경혈 확대" data-tip={state.detail ? "전신으로 돌아가 선택 경혈 확대" : "선택 경혈 확대"} onClick={focusPoint}><Focus size={17} /></button>
             <button className="ax-icon ax-clear-point" aria-label="경혈 선택 해제" data-tip="경혈 선택 해제 · 마지막 선택은 다음 방문에 사용" onClick={clearPoint}><X size={17} /></button>
           </> : (
             <button className="ax-point-empty" aria-label="경혈 선택 — 표식을 누르거나 목록에서 고르기" onClick={(e) => openPanel("points", e.currentTarget)}>
@@ -1136,7 +1297,8 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
         {panel === "detail" && hasSelected && (
           <PointDetail
             point={selected}
-            onFocus={() => { setPanel(null); camera("focus"); }}
+            swatch={pointColor(selected, state.markerColor, concept, organ)}
+            onFocus={() => { setPanel(null); focusPoint(); }}
             saved={saved.includes(selected.id)}
             onSave={() => toggle(selected.id)}
             onCompare={compare}
@@ -1169,7 +1331,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               <span className="scene-legend">
                 {state.selection.kind === "structure" && <span><i className="legend-selected" />선택 구조</span>}
                 {state.comparison && <span><i className="legend-compare" />전통 장부 대응</span>}
-                {hasSelected && selected.structures.length > 0 && <span><i className="legend-reference" />경혈 참조</span>}
+                {hasSelected && selected.structures.length > 0 && !state.detail && <span><i className="legend-reference" />경혈 참조</span>}
               </span>
               {carriedComparison && <p className="selection-description" data-carried-comparison>남성 원본을 여성 골격·피부 대응으로 옮긴 보완 구조로, 여성 고유 형상이 아닙니다.{comparisonDetailIds.length > 0 && " 여성 CT 자료는 아래 별도 상세에서 따로 봅니다."}</p>}
               {!state.comparison && state.sex === "female" && state.selection.kind === "bundle" && state.selection.ids.every((id) => id.startsWith("FT_")) && <p className="selection-description" data-carried-bundle>{FEMALE_TRANSPORT_NOTE}</p>}
@@ -1238,6 +1400,15 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
                   </div>
                 </details>
               )}
+              {/* The organ's zang-fu points (Q46), after the card's own parts picker.
+                  A chip shows that zang-fu on the body with the point chosen; the
+                  button shows it without a choice. */}
+              {viewOrgans.length > 0 && <div className="organ-points-card" data-organ-points>
+                {viewOrgans.map((o) => <OrganPoints key={o} organ={o} selectedId={selected.id} onPick={(p) => { showOrgan(o); select(p); }}>
+                  <button className="organ-points-show" onClick={() => showOrgan(o, true)}>{organLabel(o)} 경혈 {femaleHidden ? "근사 위치로 " : ""}몸에서 보기</button>
+                </OrganPoints>)}
+                <p className="organ-points-note">전통 장부 분류상의 대응입니다. 장부명은 해부 장기와 같은 뜻이 아니며 해부학적 연결·압력 경로·효능을 뜻하지 않습니다.</p>
+              </div>}
             </div>
             <div className="selection-actions">
               {sourceKey === "female-detail" && state.detail?.id !== "abdomen-ct" && <button aria-label="같은 여성 CT의 주변 기관 보기" onClick={() => selectFeatured(featuredAnatomy.find((item) => item.id === "abdomen-ct")!)}>주변 기관 함께 보기</button>}
@@ -1246,24 +1417,12 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               {fullKidneyDetail && kidneyViewOptions}
               {femaleViewOptions}
               {!fullCompositeDetail && !fullLungDetail && !fullPancreasDetail && !fullKidneyDetail && selectedOrgan && !(sourceKey === "female-detail" && selectedOrgan.ids.length === 1 && state.detail) && <button onClick={() => selectFeatured(selectedOrgan)}>{selectedComposite ? `${selectedComposite.name} ${state.detail ? "전체 모형" : "전체 상세 보기"}` : state.detail ? "기관 전체 모형" : "기관 상세 보기"}</button>}
-              {state.detail && <button onClick={() => {
-                if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
-                isolateCameraFrame.current = null;
-                const pose = state.detailReturn?.camera;
-                dispatch({ type: "detail-close" });
-                if (pose) restoreOverviewPose(pose);
-                else requestAnimationFrame(() => camera("fit"));
-              }}>전신으로 돌아가기</button>}
+              {state.detail && <button onClick={closeDetailView}>전신으로 돌아가기</button>}
               {state.comparison && featuredAnatomy.filter((group) => comparisonDetailIds.includes(group.id)).map((group) => <button key={group.id} onClick={() => {
                 setSeparateDetailIds([]); selectFeatured(group);
               }}>{group.name} 상세</button>)}
               <button onClick={() => { setPanel(null); camera("structure"); }}>확대</button>
-              {!fullCompositeDetail && !fullLungDetail && <button aria-pressed={state.isolated} onClick={() => {
-                const kind = state.isolated && state.detail ? "fit" : "structure";
-                dispatch({ type: "isolate" });
-                if (isolateCameraFrame.current !== null) cancelAnimationFrame(isolateCameraFrame.current);
-                isolateCameraFrame.current = requestAnimationFrame(() => { isolateCameraFrame.current = null; camera(kind); });
-              }}>{state.isolated ? "전체 구조 보기" : state.comparison ? "비교 대상만 보기" : connectiveBundle ? "인대·힘줄만 보기" : state.selection.kind === "bundle" ? "묶음만 보기" : "선택 구조만 보기"}</button>}
+              {!fullCompositeDetail && !fullLungDetail && <button aria-pressed={state.isolated} onClick={toggleIsolation}>{state.isolated ? "전체 구조 보기" : state.comparison ? "비교 대상만 보기" : connectiveBundle ? "인대·힘줄만 보기" : state.selection.kind === "bundle" ? "묶음만 보기" : "선택 구조만 보기"}</button>}
               <button className="clear-selection" aria-label="구조 선택 해제" data-tip="구조 선택 해제" data-tip-side="top" onClick={leaveSelection}><X size={15} /><span className="clear-text">해제</span></button>
             </div>
           </section>
@@ -1289,8 +1448,8 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             <button className="ax-toggle" aria-expanded={panel === "points"} aria-label="경혈 찾기" data-tip="경혈 목록 · 장부 비교할 경혈 고르기" data-tip-side="top" onClick={(e) => openPanel("points", e.currentTarget)}><List size={15} /></button>
           </>) : <>
             {state.sex === "female" && <button className="ax-toggle ax-approx" aria-pressed="true" aria-label="여성 근사 표식 끄기" data-tip={`배·사타구니·가슴 ${femaleRuleCount}개 경혈은 여성 표지 기준, 나머지는 남성 표식을 옮긴 근사 위치 · 검수 전 · 누르면 숨김`} data-tip-side="top" onClick={() => dispatch({ type: "female-markers", value: false })}>근사</button>}
-            <button className="ax-toggle" aria-pressed={state.markers !== "hidden"} onClick={() => dispatch({ type: "markers", value: state.markers === "hidden" ? "filtered" : "hidden" })}>
-              <span className="ax-dot" />경혈 <small>{markerCount}</small>
+            <button className="ax-toggle ax-marker-toggle" aria-pressed={state.markers !== "hidden"} data-tip={state.markers === "hidden" ? "경혈 표식 보이기" : state.markers === "selected" || state.isolated ? "선택 경혈만 그림 · 누르면 숨김" : `모델에 그린 필터 결과 ${markerCount}개 · 누르면 숨김`} data-tip-side="top" onClick={() => dispatch({ type: "markers", value: state.markers === "hidden" ? "filtered" : "hidden" })}>
+              <span className="ax-dot" />경혈 <small>{markerCount}{found.length < points.length && <span className="ax-count-total">/{points.length}</span>}</small>
             </button>
             <div className="ax-meridian-picker" data-popover-root>
               <button className="ax-toggle ax-meridian-button" aria-expanded={popover === "meridian"} onClick={(e) => togglePopover("meridian", e.currentTarget)}>
@@ -1300,20 +1459,33 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               {popover === "meridian" && (
                 <div className="ax-popover ax-meridians" role="group" aria-label="경맥 선택">
                   {comparisonLine}
-                  <button aria-pressed={meridian === "all" && state.markers === "filtered"} aria-label="모든 경맥의 경혈 보기" onClick={() => { setFilter({ meridian: "all" }); dispatch({ type: "markers", value: "filtered" }); closePopover(); }}>
-                    전체<small>{points.length}</small>
+                  <button aria-pressed={meridian === "all" && state.markers === "filtered"} aria-label="모든 경맥의 경혈 보기" onClick={() => { setFilter({ meridian: "all" }); closePopover(); }}>
+                    전체<small>{beforeMeridian.length}</small>
                   </button>
                   {meridians.map((m) => (
                     <button key={m.id} style={{ ["--c" as string]: m.color }} aria-pressed={meridian === m.id && state.markers === "filtered"} aria-label={`${m.name} 경혈만 보기`}
-                      onClick={() => { setFilter({ meridian: meridian === m.id ? "all" : m.id }); dispatch({ type: "markers", value: "filtered" }); closePopover(); }}>
-                      <i />{meridianChipName(m)}<small>{m.total}</small>
+                      onClick={() => { setFilter({ meridian: meridian === m.id && state.markers === "filtered" ? "all" : m.id }); closePopover(); }}>
+                      <i />{meridianChipName(m)}<small>{beforeMeridian.filter((p) => p.meridian === m.id).length}</small>
                     </button>
                   ))}
                 </div>
               )}
             </div>
-            <button className="ax-toggle" aria-pressed={state.labels} aria-label="표식 이름 표시" data-tip="표식 이름 표시" data-tip-side="top" onClick={() => dispatch({ type: "labels", value: !state.labels })}><Tag size={14} /><span>이름</span></button>
-            <button className="ax-toggle" aria-expanded={panel === "points"} aria-label="경혈 찾기" data-tip="경혈 목록 · 분류·연결 장부 필터 · 표식 색상" data-tip-side="top" onClick={(e) => openPanel("points", e.currentTarget)}><List size={15} /><span>경혈 찾기</span></button>
+            {barFilters.length > 0 && !compactBar && presenting && <span className="ax-filter-chip ax-filter-status" role="status"><ListFilter size={14} aria-hidden="true" />필터 {barFilters.join(" · ")}</span>}
+            {barFilters.length > 0 && !compactBar && !presenting && <div className="ax-filter-chip" role="group" aria-label="적용 중인 경혈 필터">
+              <button className="ax-toggle" aria-expanded={panel === "points"} aria-label={`경혈 필터 ${barFilters.join(", ")} · 경혈 목록 열기`} data-tip={`필터 ${barFilters.join(" · ")} · 목록에서 바꾸기`} data-tip-side="top"
+                onClick={(e) => { setFiltersOpen(true); openPanel("points", e.currentTarget); }}>
+                <ListFilter size={14} aria-hidden="true" /><span>{barFilters.join(" · ")}</span><small aria-hidden="true">{barFilters.length}</small>
+              </button>
+              <button className="ax-toggle ax-filter-clear" aria-label="경혈 필터 해제" data-tip={meridian === "all" ? "필터 해제" : "필터 해제 · 경맥 선택은 유지"} data-tip-side="top" onClick={() => clearFilters(".ax-point-bar .ax-list-toggle")}><X size={14} /></button>
+            </div>}
+            <button className="ax-toggle ax-names-toggle" aria-pressed={state.labels} aria-label="표식 이름 표시" data-tip="표식 이름 표시" data-tip-side="top" onClick={() => dispatch({ type: "labels", value: !state.labels })}><Tag size={14} /><span>이름</span></button>
+            {/* Up to 1000px the list button counts the filters (named in the list). */}
+            <button className="ax-toggle ax-list-toggle" aria-expanded={panel === "points"} aria-label="경혈 찾기" aria-describedby={compactBar && barFilters.length ? filterHelpId : undefined}
+              data-tip={compactBar && barFilters.length ? `경혈 목록 · 필터 ${barFilters.join(" · ")}` : "경혈 목록 · 분류·연결 장부 필터 · 표식 색상"} data-tip-side="top" onClick={(e) => openPanel("points", e.currentTarget)}>
+              <List size={15} /><span>{phone && barFilters.length ? "찾기" : "경혈 찾기"}</span>{compactBar && barFilters.length > 0 && <small className="ax-filter-count" aria-hidden="true">{barFilters.length}</small>}
+            </button>
+            {compactBar && barFilters.length > 0 && <span id={filterHelpId} hidden>적용 중인 경혈 필터 {barFilters.length}개: {barFilters.join(", ")}</span>}
           </>}
         </div>
         <div className="ax-camera">

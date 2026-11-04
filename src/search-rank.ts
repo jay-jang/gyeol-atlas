@@ -18,9 +18,11 @@ const pointFields = (p: PointLike) => [p.id, p.name, p.hanja, p.pinyin];
 // Aliases are older or common terms (유두, 나팔관) a part is also known by.
 const structureFields = (s: StructureLike) => [s.label, s.name, s.id, s.fmaId, ...(s.aliases || [])];
 
-export function pointScore<T extends PointLike>(p: T, query: string, meridianName: (p: T) => string | undefined): Score | null {
+// `alsoMatches` finds a point by what it is besides its name and code (its
+// classes and related zang-fu); those hits rank with the other non-name matches.
+export function pointScore<T extends PointLike>(p: T, query: string, meridianName: (p: T) => string | undefined, alsoMatches?: (p: T, q: string) => boolean): Score | null {
   const q = normalizeQuery(query);
-  if (!`${p.id} ${p.name} ${p.hanja} ${p.pinyin} ${p.landmarks.join(" ")} ${meridianName(p)}`.toLowerCase().includes(q)) return null;
+  if (!`${p.id} ${p.name} ${p.hanja} ${p.pinyin} ${p.landmarks.join(" ")} ${meridianName(p)}`.toLowerCase().includes(q) && !alsoMatches?.(p, q)) return null;
   return q ? tier(pointFields(p), q) : 3;
 }
 export function structureScore(s: StructureLike, query: string): Score | null {
@@ -45,8 +47,8 @@ export function organScore<S extends StructureLike>(group: GroupLike, query: str
 }
 
 // An empty query keeps every point (the list view); ties keep data order.
-export function rankPoints<T extends PointLike>(points: readonly T[], query: string, meridianName: (p: T) => string | undefined): T[] {
-  return points.map((p, i) => ({ p, i, score: pointScore(p, query, meridianName) }))
+export function rankPoints<T extends PointLike>(points: readonly T[], query: string, meridianName: (p: T) => string | undefined, alsoMatches?: (p: T, q: string) => boolean): T[] {
+  return points.map((p, i) => ({ p, i, score: pointScore(p, query, meridianName, alsoMatches) }))
     .filter((r) => r.score !== null).sort((a, b) => a.score! - b.score! || a.i - b.i).map((r) => r.p);
 }
 // One ordered list, not regrouped by system; ties by displayed name.

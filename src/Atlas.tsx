@@ -117,7 +117,9 @@ const markerMatrix = new Matrix4(), markerScale = new Vector3(), markerQuaternio
 // name label. Category/organ colours keep their meaning on selection. The
 // pointer target is a wider screen circle (marker-picking.ts), shown as a halo
 // around the hovered point, and it wins over the tissue under the pointer.
-function Markers({ markers, selectedId, labels, overTissue, onSelect, colorMode, colorCategory, colorOrgan }: { markers: Marker[]; selectedId: string; labels: boolean; overTissue: boolean; onSelect: (p: Point) => void; colorMode: MarkerColorMode; colorCategory: string; colorOrgan: string }) {
+// A zang-fu view (organ filter, organ selection or comparison) also names its
+// source, front-mu, back-shu, xi-cleft and connecting points (`named`).
+function Markers({ markers, selectedId, labels, named, overTissue, onSelect, colorMode, colorCategory, colorOrgan }: { markers: Marker[]; selectedId: string; labels: boolean; named: readonly string[]; overTissue: boolean; onSelect: (p: Point) => void; colorMode: MarkerColorMode; colorCategory: string; colorOrgan: string }) {
   const colorOf = (m: Marker) => colorMode === "meridian" && m.point.id === selectedId ? "#e1ad5a" : pointColor(m.point, colorMode, colorCategory, colorOrgan);
   const mesh = useRef<InstancedMesh>(null);
   const halo = useRef<Group>(null);
@@ -158,9 +160,18 @@ function Markers({ markers, selectedId, labels, overTissue, onSelect, colorMode,
     gl.domElement.dataset.renderedPointIds = [...new Set(markers.map((m) => m.point.id))].sort().join(",");
     gl.domElement.dataset.markerColorMode = colorMode;
     gl.domElement.dataset.markerColors = JSON.stringify(Object.fromEntries(markers.map(m => [m.point.id, colorOf(m)])));
+    gl.domElement.dataset.namedPointIds = named.filter(id => markers.some(m => m.point.id === id)).join(",");
     invalidate();
-  }, [markers, selectedId, colorMode, colorCategory, colorOrgan, gl, invalidate]);
+  }, [markers, selectedId, colorMode, colorCategory, colorOrgan, named, gl, invalidate]);
   useEffect(() => setHover(null), [markers]);
+  // Each named point is labelled once. Taken from the top down, they alternate
+  // body sides so neighbours (LU7 above LU9 at the wrist) do not cover each
+  // other; a midline point keeps its only marker.
+  const namedSide = useMemo(() => new Map(named
+    .map((id) => markers.find((m) => m.point.id === id && m.occurrence === 0 && m.side !== "왼쪽"))
+    .filter((m): m is Marker => Boolean(m))
+    .sort((a, b) => b.position.y - a.position.y)
+    .map((m, i) => [m.point.id, i % 2 ? "왼쪽" : "오른쪽"])), [named, markers]);
   useEffect(() => {
     const ring = halo.current;
     if (!ring || hover === null || !markers[hover]) return;
@@ -232,7 +243,9 @@ function Markers({ markers, selectedId, labels, overTissue, onSelect, colorMode,
       </group>
       {markers.map((m, i) => {
         const active = m.point.id === selectedId;
-        const persistent = (active && m.side !== "왼쪽" && m.occurrence === 0) || (labels && m.occurrence === 0);
+        const side = namedSide.get(m.point.id);
+        const persistent = (active && m.side !== "왼쪽" && m.occurrence === 0) || (labels && m.occurrence === 0)
+          || (!active && Boolean(side) && m.occurrence === 0 && (m.side === side || m.side === "정중선"));
         return (persistent || hover === i) && (
           <group key={m.key} position={m.position}>
             <MarkerLabel outward={active ? -0.05 : 0.05} normal={active ? undefined : m.normal} peek={!persistent}
@@ -242,16 +255,17 @@ function Markers({ markers, selectedId, labels, overTissue, onSelect, colorMode,
                   On the body each point reads by its name (중완), not its
                   code (CV12); the code stays in the tooltip and search. */}
               <button
-                className={`point-label ${active ? "active" : ""} ${persistent ? "" : "peek"}`}
+                className={`point-label ${active ? "active" : ""} ${persistent ? "" : "peek"} ${side ? "named" : ""}`}
                 data-point-id={m.point.id}
                 title={`${m.point.name} ${m.point.id} ${m.side} · ${pointCategories(m.point.id).map(c => c.name).join(" · ") || "일반 경혈"} · ${organText(m.point)}`}
-                aria-label={`${m.point.name} ${m.point.id} ${m.side} 선택`}
+                aria-label={`${m.point.name}${pointCategories(m.point.id).map(c => ` ${c.symbol}`).join("")} ${m.point.id} ${m.side} 선택`}
                 tabIndex={persistent ? undefined : -1}
                 onPointerDown={(e) => e.stopPropagation()}
                 onPointerMove={(e) => e.stopPropagation()}
                 onClick={(e) => { e.stopPropagation(); onSelect(m.point); }}
               >
-                {m.point.name}{colorMode === "category" && pointCategories(m.point.id).map(c => <span key={c.id} className="marker-class-tag" style={{ color: c.color }}>{c.symbol}</span>)}
+                {/* Every colour mode names the classes (원·모·유·극·락·수) beside the name. */}
+                {m.point.name}{pointCategories(m.point.id).map(c => <span key={c.id} className="marker-class-tag" data-category={c.id} style={{ color: c.color }}>{c.symbol}</span>)}
               </button>
             </MarkerLabel>
           </group>
@@ -271,6 +285,9 @@ type Props = {
   markerColor: MarkerColorMode;
   colorCategory: string;
   colorOrgan: string;
+  namedPoints: readonly string[];
+  // A chosen point drawn outside the filter: it never widens region framing.
+  referenceId: string;
   action: CameraAction;
   onReady: (layer: Layer) => void;
   onLoading: (value: boolean) => void;
@@ -975,8 +992,11 @@ function Scene(props: Props) {
         mobile ? 1.3 : kind === "comparison" ? 2.6 : 1.65);
       camera.position.copy(c.target).addScaledVector(direction, distance);
     } else if (action.kind === "region") {
-      if (!markers.length) return;
-      const box = new Box3().setFromPoints(markers.map(m => m.position));
+      const framed = markers.filter(m => m.point.id !== props.referenceId);
+      // Approximate female anchors still loading: frame once they arrive.
+      // With nothing to frame otherwise the request ends, never firing later.
+      if (!framed.length) { if (!(wantsFemaleAnchors && !femaleAnchors)) executed.current = action.tick; return; }
+      const box = new Box3().setFromPoints(framed.map(m => m.position));
       const size = box.getSize(new Vector3());
       box.getCenter(c.target);
       const cam = camera as PerspectiveCamera;
@@ -1059,7 +1079,7 @@ function Scene(props: Props) {
     c.update();
     if (!glides) emitPose();
     invalidate();
-  }, [action, camera, invalidate, scene, revision, emitPose, props.anatomyRegion, layoutKey, hasSelection, selectionKey, selectionCardTop]);
+  }, [action, camera, invalidate, scene, revision, emitPose, props.anatomyRegion, layoutKey, hasSelection, selectionKey, selectionCardTop, anchorSource]);
   // Peeled (or see-through) skin leaves muscles and organs under the markers
   // as click targets of their own, so the markers' circles shrink.
   const skinAlpha = props.layers.skin ? props.layerOpacity.skin * dissectionLayerOpacity("skin", props.dissection, props.displayMode === "dissection") : 0;
@@ -1095,7 +1115,7 @@ function Scene(props: Props) {
             </Suspense>
           ))}
       </group>
-      <Markers colorMode={props.markerColor} colorCategory={props.colorCategory} colorOrgan={props.colorOrgan} markers={markers} selectedId={selected.id} labels={labels} overTissue={markersOverTissue} onSelect={onSelect} />
+      <Markers colorMode={props.markerColor} colorCategory={props.colorCategory} colorOrgan={props.colorOrgan} markers={markers} selectedId={selected.id} labels={labels} named={props.namedPoints} overTissue={markersOverTissue} onSelect={onSelect} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.018, 0]}>
         <circleGeometry args={[0.48, 64]} />
         <meshBasicMaterial color="#19313d" transparent opacity={0.58} />

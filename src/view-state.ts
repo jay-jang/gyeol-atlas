@@ -1,6 +1,6 @@
 import type { MarkerColorMode } from "./point-display.ts";
 import concepts from "../data/concepts.json" with {type:"json"};
-import { organChoices } from "./point-display.ts";
+import { organChoices, isOrganChoice } from "./point-display.ts";
 import type { Layer } from "./anatomy";
 import type { Layers } from "./types";
 import { depthStage, dissectionLayers, peelLayers, peelLimit, peelOrder, quantizeDepth, stageDepth } from "./dissection.ts";
@@ -159,6 +159,7 @@ export type ViewAction =
   | { type: "reset-filters" }
   | { type: "region-filter"; value: string }
   | { type: "show-filtered" }
+  | { type: "organ-points"; organ: string }
   | { type: "reset" };
 const returnView = (s: ViewState): ReturnView => ({
   anatomyRegion: s.anatomyRegion, stage: s.stage, dissection: s.dissection,
@@ -229,14 +230,21 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return { ...left, ...(left.displayMode === "dissection" && !left.detail ? peelScene(left.dissection, left.excluded, a.value) : {}),
         anatomyRegion: a.value, selection: null, detail: null, detailReturn: null, selectionReturn: null, comparison: null, isolated: false };
     }
-    case "point":
-      if (a.id === s.pointId && !s.detail && !s.selection && !s.comparison && !s.selectionReturn) return s;
+    case "point": {
+      // The chosen acupoint is always drawn (Q26): while markers are hidden
+      // it is shown alone, as "선택 경혈만".
+      const markers = s.markers === "hidden" ? "selected" as const : s.markers;
+      // Picking the chosen point again (its row, label or organ chip) keeps
+      // the scene, including the comparison that belongs to it.
+      if (a.id === s.pointId && !s.detail && (s.comparison?.pointId === a.id || (!s.selection && !s.comparison && !s.selectionReturn)))
+        return markers === s.markers ? s : { ...s, markers };
       // A structure being studied stays selected while acupoints are chosen
       // around it. A comparison belongs to its acupoint, and a detail source
       // has no acupoint markers, so those end.
-      if (s.selection && !s.comparison && !s.detail) return a.id === s.pointId ? s : { ...s, pointId: a.id };
+      if (s.selection && !s.comparison && !s.detail) return a.id === s.pointId && markers === s.markers ? s : { ...s, pointId: a.id, markers };
       return {
         ...leaveSelection(s),
+        markers,
         pointId: a.id,
         selection: null,
         detail: null,
@@ -245,6 +253,7 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
         comparison: null,
         isolated: false,
       };
+    }
     case "stage":
       return {
         ...s,
@@ -480,14 +489,31 @@ export function viewReducer(s: ViewState, a: ViewAction): ViewState {
       return { ...s, cutaway: Math.max(0, Math.min(1, a.value)) };
     case "camera":
       return { ...s, camera: a.value };
-    case "filters":
-      return { ...s, filters: { ...s.filters, ...a.value } };
+    // Changing what the acupoint filters keep is a request to see the result:
+    // it is drawn whichever marker mode or isolation hid it, so the list, the
+    // count and the model agree (Q46). A detail source draws no markers and
+    // says so. The region chips and the finer body region exclude each other.
+    // Camera, colours and labels stay.
+    case "filters": {
+      const filters = { ...s.filters, ...a.value };
+      if (a.value.region && a.value.region !== "전체" && a.value.bodyRegion === undefined) filters.bodyRegion = "전체";
+      if (a.value.bodyRegion && a.value.bodyRegion !== "전체" && a.value.region === undefined) filters.region = "전체";
+      return { ...s, filters, markers: "filtered", isolated: s.detail ? s.isolated : false };
+    }
     case "region-filter":
       return { ...leaveSelection(s), filters: { ...s.filters, bodyRegion: a.value, region: "전체" }, markers: "filtered", selection: null, selectionReturn: null, comparison: null, isolated: false };
     case "show-filtered":
       return { ...leaveSelection(s), markers: "filtered", selection: null, selectionReturn: null, comparison: null, isolated: false };
     case "reset-filters":
-      return { ...s, filters: initialView().filters };
+      return { ...s, filters: initialView().filters, markers: "filtered", isolated: s.detail ? s.isolated : false };
+    case "organ-points": {
+      // "몸에서 보기" of a zang-fu: its acupoints on the body, with no other
+      // filter hiding any of them. A detail source has no markers, so it
+      // returns to the scene it was opened from; a body selection stays.
+      if (!isOrganChoice(a.organ)) return s;
+      const base = s.detail ? closeDetail(s) : s;
+      return { ...base, filters: { ...initialView().filters, organ: a.organ }, markers: "filtered", isolated: false };
+    }
     case "reset":
       // Covering the genitalia is the viewer's preference, not part of the view.
       return { ...initialView(s.pointId), modesty: s.modesty };

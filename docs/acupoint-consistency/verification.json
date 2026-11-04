@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-04T13:19:02.911642+00:00",
+  "branch": "fix/acupoint-filter-consistency",
+  "baseCommit": "91c14cc9bb2d466a630d030522a531edbc9031ce",
+  "worktree": "/Users/nuinuri/workspace/anatomy-worktrees/acupoint-filter-consistency",
+  "renderer": "Chromium ANGLE Metal (PLAYWRIGHT_GPU=1); production smoke uses SwiftShader",
+  "unit": {
+    "passed": 513,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "full": {
+      "passed": 203,
+      "failed": 1,
+      "failedTest": "lung-source.spec.ts mobile (fixed)"
+    },
+    "afterFix": {
+      "scope": "lung-source, point-consistency, selection-context, detail-layout, comparison-layout, details",
+      "passed": 28,
+      "failed": 0
+    }
+  },
+  "readability": {
+    "samples": 343,
+    "surfaces": 17,
+    "fontMinimumPx": 12,
+    "contrastMinimum": 4.5
+  },
+  "overlays": {
+    "viewports": 8,
+    "states": 102,
+    "failures": 0
+  },
+  "visual": {
+    "viewports": 4,
+    "passed": true
+  },
+  "review": {
+    "findings": 24,
+    "confirmed": 24,
+    "fixed": 24
+  },
+  "sourceSha256": {
+    "src/Atlas.tsx": "3d9b31785e4e23f7fcd157ab4fc1e83ea9fec19b0e968a6387c832bbfa5c1414",
+    "src/AtlasPage.tsx": "49a7ba599d977f5b6b887c60c2454a83234cc98332eaacb4a84e4b5b40787624",
+    "src/atlas.css": "0ea7b902cee31fa755d917cdde174fd29a232bd9e4932cb9a03510b2c1249519",
+    "src/point-display.ts": "01039c15717be132c5dcf4091b69bb142544a3442113fc9486228a237abf4521",
+    "src/search-rank.ts": "adfae1191a0cbec17c5f0fee404b667856ffb693e8b06c78569375b781b28b1c",
+    "src/view-state.ts": "40c1eaea617eb883ef172f6acd10c03d4e4f8fc6b2334032fe3876b365e13fea",
+    "tests/point-consistency.test.mjs": "5a9e4e4c54accf2f55495a5c4ab46370abd67ed2927108d5482928af76d2f831",
+    "tests/browser/point-consistency.spec.ts": "6876dcdf50c492011db69cfd904ad173736fb4fafbd7bdb78222495fa739cb89",
+    "scripts/check-readability.mjs": "1aeca6045e8f4f6d2bafa84d063316cde858ed058503c7983567ee20d90c67f6",
+    "scripts/audit-scene-overlays.mjs": "0ee7e779e3b5c96ef1236ad4e5e489d46ede4a8529706a7b6829708f21259db9"
+  }
+}

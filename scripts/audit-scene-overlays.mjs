@@ -1,5 +1,5 @@
 // Measures scene overlays at desktop, laptop, tablet, mobile and landscape
-// sizes in the initial, comparison and isolated-comparison states. Reports
+// sizes in the initial, organ-filter, comparison and isolated-comparison states. Reports
 // overlapping overlay pairs and active point labels outside the canvas.
 // The visual gate (capture-workspace.mjs) asserts the four standard sizes;
 // this audit adds laptop/tablet widths. Where the depth button shows (phones
@@ -85,6 +85,18 @@ try {
       states[state] = await settle(state); await panelHeight(state, '.ax-side-panel'); await page.keyboard.press('Escape');
     }
     await page.locator('.ax-meridian-button').click(); states.meridian = await settle('meridian'); await page.keyboard.press('Escape');
+    // An organ filter (Q46): the bar names it (phones count it on the list
+    // button) and the zang-fu's 원·모·유·극·락혈 are labelled on the body.
+    await page.getByRole('button', {name: '경혈 찾기', exact: true}).first().click();
+    await page.getByRole('region', {name: '경혈 목록', exact: true}).waitFor();
+    const filters = page.locator('.ax-filters'); if (!await filters.evaluate(el => el.open)) await filters.locator(':scope > summary').click();
+    await page.getByLabel('연결 장부', {exact: true}).selectOption('LU');
+    await page.getByRole('button', {name: '도구 패널 닫기', exact: true}).first().click();
+    states['organ-filter'] = await settle('organ-filter');
+    if (await page.locator('.point-label.named').count() !== 5) panelLimit.push('organ-filter: the five LU class points are not all labelled');
+    await page.getByRole('button', {name: '경혈 찾기', exact: true}).first().click();
+    await page.getByRole('region', {name: '경혈 목록', exact: true}).getByRole('button', {name: '경혈 필터 해제', exact: true}).click();
+    await page.getByRole('button', {name: '도구 패널 닫기', exact: true}).first().click();
     // A selected structure keeps its name and its actions visible together in the card.
     await page.getByLabel('경혈·구조 검색').click(); await page.getByLabel('경혈·구조 검색').fill('stomach');
     await page.locator('.structure-item').first().click(); await page.getByText('해부 모델 로드 완료').waitFor();

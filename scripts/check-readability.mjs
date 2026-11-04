@@ -47,11 +47,19 @@ try {
       await filters.locator(':scope > summary').click();
       await page.locator('.point-item').first().scrollIntoViewIfNeeded();
     }, '[aria-label="경혈 목록"]'],
+    // The bar while those filters stay applied (the phone list button counts them).
+    ['필터 적용 중 경혈 막대', async()=>{}, '.ax-point-bar'],
     ['표시 설정', async()=>page.getByRole('button',{name:'표시 설정',exact:true}).click(), '[aria-label="표시 설정"][role="region"]'],
     ['검색', async()=>{await page.getByLabel('경혈·구조 검색').click();await page.getByLabel('경혈·구조 검색').fill('위');}, '[aria-label="검색 결과"]'],
     ['도움말', async()=>page.getByRole('button',{name:'도움말',exact:true}).click(), '[aria-label="도움말"][role="region"]'],
     ['경혈 상세', async()=>page.locator('.point-summary').click(), '.detail-panel'],
     ['효능·오행', async()=>{await page.locator('.point-summary').click();await page.getByRole('tab',{name:'효능·오행'}).click();await page.locator('.point-tradition').scrollIntoViewIfNeeded();}, '.detail-panel'],
+    ['장부 경혈 카드', async()=>{
+      await page.getByLabel('경혈·구조 검색').click();
+      await page.locator('.featured-anatomy > button').filter({hasText:/^폐/}).first().click();
+      await page.getByText('해부 모델 로드 완료').waitFor({timeout:90000});
+      await page.locator('.organ-points-card').scrollIntoViewIfNeeded();
+    }, '.selection-card'],
     ['여성 경혈 좌표 안내', async()=>{
       await page.goto(origin+'/#atlas/CV12');await page.getByText('해부 모델 로드 완료').waitFor({timeout:90000});
       await page.locator('.ax-top').getByRole('button',{name:'여성',exact:true}).click();await page.getByText('해부 모델 로드 완료').waitFor({timeout:90000});
