@@ -79,6 +79,15 @@
 - `PLAYWRIGHT_GPU=1 SMOKE_ORIGIN=… node scripts/check-readability.mjs`, `… AUDIT_OUTPUT=docs/acupoint-consistency/scene-overlays.json npm run audit:overlays`, `… VISUAL_OUTPUT=docs/acupoint-consistency/workspace npm run test:visual`. 검사가 다시 쓴 다른 기록의 PNG·JSON 113개와 `docs/acupoint-expansion/readability.json`은 원래 내용으로 되돌렸습니다.
 - [최종 소스 해시·검사 요약](verification.json).
 
+## 공개 배포 확인(2026-11-04)
+
+커밋 `3f6dd1d`을 main에 푸시한 뒤 GitHub Pages 배포(1분 21초)가 성공했고, https://jay-jang.github.io/gyeol-atlas/ 에서 다음을 확인했습니다.
+
+- 공개 스모크 통과: 경혈409, 정적 검색, 위키·동작 페이지 모델 요청0, 여성1,220+보완1,789, 뇌283, 남성 심장83, 오류0. [로그](checks/public-smoke.log)
+- 겹침 감사 8화면 102상태(‘organ-filter’ 포함) 실패0. [측정](public-scene-overlays.json) · [로그](checks/public-overlays.log)
+- 기능 확인(1440×900·390×844, [결과](public-check.json)): 처음 409개·이름표0, 표식 숨김 뒤 원혈 필터가 12개를 그리고 막대·목록이 모두 ‘12/409’, 데스크톱 막대 필터 칩·휴대폰 ‘찾기 1’, 해제 뒤 409, 통합 검색 ‘수혈’ 12개, ‘폐’ 12개 모델 적용, LU9 선택→해제(`#atlas`·칩 없음), 폐 상세 카드 원·모·유·극·락 칩5, 몸에서 보기 12개와 이름표5(LU9 ‘원·수’), 페이지 오류·4xx·가로 넘침0. [데스크톱 필터](public-desktop-filter.png) · [데스크톱 폐 카드](public-desktop-organ-card.png) · [휴대폰 몸에서 보기](public-mobile-organ-body.png)
+- 렌더러: 공개 스모크·겹침 감사는 SwiftShader, 기능 확인은 Chromium ANGLE Metal.
+
 ## 한계
 
-한국어 장부·분류명은 전문가 미검수 편집 표기입니다. 표식은 학습용 근사이며 여성 표식은 명시적으로 켤 때만 보입니다. 이름표 겹침은 좌우 교대로 줄였을 뿐 모든 시점에서 없앤 것은 아닙니다. 실기기 Safari·VoiceOver와 한글 IME 실기기 입력은 검증하지 않았습니다. 공개 배포·push는 포함하지 않았습니다.
+한국어 장부·분류명은 전문가 미검수 편집 표기입니다. 표식은 학습용 근사이며 여성 표식은 명시적으로 켤 때만 보입니다. 이름표 겹침은 좌우 교대로 줄였을 뿐 모든 시점에서 없앤 것은 아닙니다. 실기기 Safari·VoiceOver와 한글 IME 실기기 입력은 검증하지 않았습니다. 실기기 공개 화면은 확인하지 않았습니다.
