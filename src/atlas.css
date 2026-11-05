@@ -1011,3 +1011,15 @@ body:has(.ax) .site-footer { display: none; }
   .ax-search .ax-icon { width: 44px; height: 44px; }
   .ax-filter-chip > .ax-filter-clear { width: 44px; min-width: 44px; }
 }
+
+/* Per-meridian 원·모·유·극·락 filter in the meridian picker and a labelled
+   point deselect (Q47). */
+.ax .ax-meridians .ax-key-only { grid-column: 1 / -1; display: flex; align-items: center; gap: var(--sp-2); min-height: var(--ax-tap); margin: 0 0 4px; padding: 0 10px; border-radius: var(--ax-radius-ctl); background: var(--ax-surface-2); color: var(--ax-text); font-size: 13px; cursor: pointer; }
+.ax .ax-meridians .ax-key-only input { width: 16px; height: 16px; margin: 0; accent-color: var(--ax-accent); }
+.ax .ax-meridians .ax-key-only small { color: var(--ax-muted); font-size: 12px; margin-left: 4px; }
+.ax-point-chip .ax-clear-point .clear-text { display: none; }
+@media (min-width: 1001px) {
+  .ax-point-chip .ax-clear-point { width: auto; grid-auto-flow: column; gap: 4px; padding: 0 10px; font-size: 13px; }
+  .ax-point-chip .ax-clear-point .clear-text { display: inline; }
+}
+@media (pointer: coarse) { .ax .ax-meridians .ax-key-only { min-height: 44px; } }

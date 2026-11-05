@@ -1,0 +1,1859 @@
+{
+ "note": "WHO 2008 location cross-check of the zang-fu special points (원·모·유·극·락혈) on the male BodyParts3D body, 2026-11-05: Codex and Claude reviewed all 61 independently; points that either did not find at the WHO location were re-measured from the bone, muscle and skin meshes by an adjudicator. These right-side seeds replace the authored ones (mirrored for the left); markers remain educational approximations. Record: docs/acupoint-key-filter/VERIFICATION.md. Round 3 (same day): the umbilicus, xiphisternal junction and pubic symphysis were measured independently by Codex and Claude (within 1.4 mm); every umbilicus/xiphisternal/symphysis-defined anterior abdominal point was recomputed from WHO cun, and the unmoved neighbours whose order or same-level partner the corrections broke (GB35, GB38, GB39, TE6, BL62, SP17) were re-measured.",
+ "points": {
+  "BL28": {
+   "position": [
+    -0.038,
+    0.9,
+    -0.117
+   ],
+   "surface": "back",
+   "previous": {
+    "position": [
+     -0.038,
+     0.885,
+     -0.091
+    ],
+    "surface": "back"
+   },
+   "verdict": "minor",
+   "reviewers": {
+    "codex": "ok",
+    "claude": "minor",
+    "adjudicator": "claude",
+    "judges": 1
+   },
+   "confidence": "medium",
+   "basis": "I mapped the dorsal surface of the sacrum (FMA16202) with +z rays on a 2 mm grid, then a 1 mm grid near S2 (scripts .cache/adjudicate/bl_ray.mjs and bl_thick.mjs). The right side has four dorsal foramen pits: y 0.911-0.918 at x -0.026..-0.022 (floor z -0.041 against a -0.053..-0.060 rim, so S1); y 0.897-0.905 at x -0.022..-0.014 (floor -0.053..-0.056 against a -0.066..-0.068 rim, centre about 0.900, so S2); a through-hole at y 0.876-0.884 (S3); and a small hole at y 0.860 (S4). No pit lies above S1, only the superior articular processes at y 0.930-0.947. The median crest runs from y 0.930 down to 0.845, and below 0.845 the bone narrows to a stub. Measured along the dorsal surface the pits are about 2 cm apart. The model's own BL27 (0.913) and BL31 (0.918) sit on the S1 pit, which agrees with this count. The marker is at y 0.885, about 15 mm below the centre of the S2 pit and 5 mm above S3. Using the model's back scale (3 cun = 0.075, so 1 cun = 25 mm) that is about 0.6 cun. Codex's 'ok' relied on the BL32 marker (y 0.891), and BL32 is itself below S2. The x value of -0.038 (1.5 cun) is correct. The outer skin on a +z ray at (-0.038, 0.900) is at z -0.1168."
+  },
+  "BL58": {
+   "position": [
+    -0.108,
+    0.227,
+    -0.096
+   ],
+   "surface": "back",
+   "previous": {
+    "position": [
+     -0.108,
+     0.239,
+     -0.057
+    ],
+    "surface": "back"
+   },
+   "verdict": "minor",
+   "reviewers": {
+    "codex": "ok",
+    "claude": "minor",
+    "adjudicator": "claude",
+    "judges": 1
+   },
+   "confidence": "medium",
+   "basis": "The popliteal crease is BL40 at y 0.429. The lateral malleolus prominence, taken as the most lateral skin, is x -0.116 at y 0.068-0.072, so y 0.070; the fibula's most lateral bone is -0.1124 at y 0.066-0.076. 16 cun therefore spans 0.359 m, so 1 cun = 22.4 mm. 7 B-cun above the prominence (WHO: 7 cun above BL60, which is level with the prominence) is y 0.227. On the muscle map from +z rays (bl_who.mjs, 2 mm grid), the inferolateral border of the lateral gastrocnemius head (FMA45960) is at x -0.116 at y 0.246, x -0.112 at y 0.240, x -0.110 at y 0.236, x -0.108 at y 0.229 and x -0.106 at y 0.226. A thin strip of calcaneal tendon (FMA258847) lies along that border, with soleus lateral to it. At the marker (-0.108, 0.239) the first muscle hit is the lateral head (FMA45960), so the marker sits on the head itself, about 1 cm above its inferior border. At (-0.108, 0.227) the first hit is the tendon strip at the head's lower edge, which matches the WHO landmark, and the outer skin is at z -0.0958. The marker is 10-12 mm too high, about 0.45-0.54 cun. Codex measured from the BL60 marker at y 0.086, but BL60 sits 16 mm above the prominence, so its number carries that error."
+  },
+  "BL62": {
+   "position": [
+    -0.1083,
+    0.045,
+    -0.049
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.118,
+     0.054,
+     -0.025
+    ],
+    "surface": "lateral"
+   },
+   "verdict": "neighbour",
+   "reviewers": {
+    "codex": "round 2 neighbour note",
+    "claude": "round 2 neighbour note; round 3 re-measured"
+   },
+   "confidence": "medium",
+   "basis": "Prominence of the lateral malleolus: the skin's lateral bulge peaks at z -0.049/-0.050 (x -0.1166 at y 0.070-0.072). The fibula is lateral-most at z -0.047..-0.052 (y 0.061-0.076), and its tip (minY) is at (x -0.1057, y 0.0539, z -0.0491). 'Directly inferior' therefore means z of about -0.049. +x rays at z -0.049 scanned in y: the fibula's last hit is y 0.054 and the fibularis longus/brevis tendons are at y 0.048-0.058 (x about -0.093 to -0.099). The calcaneus's lateral bulge is at y 0.036-0.038 (x -0.0974). The skin depression is deepest at y 0.042-0.044 (x -0.1081/-0.1082). Seed y 0.045 lies between the malleolar tip (0.054) and the calcaneal bulge (0.037), 9 mm (0.4 cun) below the tip and 1.1 cun below the prominence, in that depression. Projection: right surface (-0.1081, 0.045, -0.049), marker (-0.1111, 0.045, -0.049), open air; left seedDist 1.4 mm. The current BL62 (-0.1105, 0.0538, -0.025) is 2.4 cm in front of the prominence and 2.3 mm from GB40. The new marker is 24.2 mm from GB40 (GB40 stays anterior and distal at z -0.027). BL63 (0.028, -0.016) is 38 mm away, distal and anterior, so the BL62-BL63-BL64 order holds. Unmoved neighbours, not changed here: BL61 (y 0.0529, z -0.0601) is 13.6 mm away and now 8 mm higher than BL62, although WHO puts BL61 directly below BL60 at the red-white skin border, near the sole. BL60 (y 0.086, z -0.045) sits on the upper malleolus. At y 0.070 the malleolus spans z -0.031..-0.056 and the calcaneal tendon z -0.074..-0.081, so BL60 belongs at about y 0.070, z -0.065."
+  },
+  "BL63": {
+   "position": [
+    -0.122,
+    0.028,
+    -0.016
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.124,
+     0.047,
+     0.0
+    ],
+    "surface": "lateral"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "I fitted a principal axis to the 5th metatarsal (FMA24515): centroid [-0.1201, 0.0246, 0.0242], axis [-0.333, -0.22, 0.917]. The tuberosity extends up to 9.9 mm lateral of the shaft axis at z -0.0065..-0.0035 and tapers to the shaft (5.0 mm) by about z 0.012. Its posterior tip is [-0.1141, 0.027, -0.0122]. The cuboid's lateral face is x -0.105..-0.113 at y 0.029-0.048, and its lower lateral edge at z -0.015 is at y about 0.034-0.037. The calcaneus ends anteriorly at z -0.014 to -0.022, and the front of the lateral malleolus is at z -0.031. On lateral +x rays at z -0.015..-0.020, the bone falls back to the long plantar ligament (FMA44249) at x -0.087 at y 0.028, against -0.101 to -0.107 for the cuboid above. That is the depression behind the tuberosity and below the cuboid. The outer skin there, at (y 0.028, z -0.016), is x -0.1217, and the sole is at y 0.008. The marker [-0.1174, 0.0468, 0] has its skin hit at x -0.1144. It is about 2 cm above the cuboid's lateral face (y 0.0355 at z 0) and sits at z 0 over the distal half of the tuberosity and the cuboid-5th metatarsal joint. It is not posterior to the tuberosity and not below the cuboid. The error is about 20 mm in height and 16 mm in front-back distance, about 26 mm or 1.1 cun in total."
+  },
+  "BL64": {
+   "position": [
+    -0.1365,
+    0.02,
+    0.014
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.122,
+     0.031,
+     0.078
+    ],
+    "surface": "lateral"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "The marker is at [-0.1115, 0.0302, 0.0777]. A lateral ray at (y 0.031, z 0.078) passes above the toes and hits the top of the forefoot at x -0.1072. The bone below the marker, seen from above, is the 3rd/4th metatarsal head region (FMA24511/FMA24513). The marker is also anterior to the whole 5th metatarsal, which ends at z 0.0592, and level with the little-toe proximal phalanx (z 0.06-0.08). That is about 6.5 cm (about 3 cun) too far toward the toes and on top of the foot, not on its lateral border. On the shaft-axis profile above, the tuberosity ends at about z 0.012 (bulge 5.0 mm at z 0.0115, 4.5 mm at z 0.015). Just distal to it, the bone's lateral face is [-0.1214, 0.025, 0.014] and its lower edge is at y 0.0217. The skin's most lateral edge, standing in for the red-white border, is at x -0.136 for y 0.016-0.022 at z 0.010-0.015, with the sole at y 0.007-0.012. The skin hit for (y 0.020, z 0.014) is x -0.1365. Codex's z of 0.004 still sits on the tuberosity. Claude's [-0.1385, 0.019, 0.011] is within 3 mm of my seed."
+  },
+  "CV10": {
+   "position": [
+    0,
+    1.0424,
+    0.1198
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.0,
+     1.056,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 2 B-cun above umbilicus. y = 0.989 + 2×0.02669 = 1.0424 (Δy −1.4 cm). Sim: midline open, 0 mm."
+  },
+  "CV11": {
+   "position": [
+    0,
+    1.0691,
+    0.1225
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.0,
+     1.083,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 3 B-cun above umbilicus. y = 0.989 + 3×0.02669 = 1.0691 (Δy −1.4 cm). Sim: midline open, 0 mm."
+  },
+  "CV12": {
+   "position": [
+    0,
+    1.0958,
+    0.1271
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     0,
+     1.11,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 4 B-cun above umbilicus (midpoint xiphisternal junction–umbilicus). y = 0.989 + 4×0.02669 = 1.0958 (Δy −1.4 cm). Sim: midline open, 0 mm."
+  },
+  "CV13": {
+   "position": [
+    0,
+    1.1224,
+    0.1266
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.0,
+     1.135,
+     0.137
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 5 B-cun above umbilicus. y = 0.989 + 5×0.02669 = 1.1224 (Δy −1.3 cm). Sim: midline open, 0 mm."
+  },
+  "CV14": {
+   "position": [
+    0,
+    1.1491,
+    0.1254
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     0,
+     1.16,
+     0.13
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 6 B-cun above umbilicus. y = 0.989 + 6×0.02669 = 1.1491 (Δy −1.1 cm). Sim: midline open, 0 mm."
+  },
+  "CV15": {
+   "position": [
+    0,
+    1.1758,
+    0.12
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.0,
+     1.188,
+     0.125
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 1 B-cun below the xiphisternal junction (=7 above umbilicus). y = 1.2025 − 0.02669 = 1.1758 (Δy −1.2 cm), 6.7 mm below the xiphoid tip at 1.1825. Sim: midline open, 0 mm."
+  },
+  "CV16": {
+   "position": [
+    0,
+    1.2025,
+    0.1132
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.0,
+     1.214,
+     0.117
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: midpoint of the xiphisternal junction. Midline anterior sternal-body/xiphoid interface y 1.2025 (Δy −1.1 cm). Sim: midline open, 0 mm."
+  },
+  "CV2": {
+   "position": [
+    0,
+    0.8266,
+    0.0779
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.0,
+     0.848,
+     0.115
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: superior border of the pubic symphysis (=5 B-cun below umbilicus). y = 0.989 − 5×0.03248 = 0.8266 (Δy −2.1 cm). x kept 0; z = first front skin hit. Sim (build-anchors replica): midline open, 0 mm."
+  },
+  "CV3": {
+   "position": [
+    0,
+    0.8591,
+    0.0935
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     0,
+     0.875,
+     0.12
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 4 B-cun below umbilicus. y = 0.989 − 4×0.03248 = 0.8591 (Δy −1.6 cm). x kept 0; z = first front skin hit. Sim: midline open, 0 mm."
+  },
+  "CV4": {
+   "position": [
+    0,
+    0.8916,
+    0.1045
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     0,
+     0.907,
+     0.12
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 3 B-cun below umbilicus. y = 0.989 − 3×0.03248 = 0.8916 (Δy −1.5 cm). x kept 0; z = first front skin hit. Sim: midline open, 0 mm."
+  },
+  "CV5": {
+   "position": [
+    0,
+    0.924,
+    0.1151
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     0,
+     0.94,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 2 B-cun below umbilicus. y = 0.989 − 2×0.03248 = 0.9240 (Δy −1.6 cm). x kept 0; z = first front skin hit. Sim: midline open, 0 mm."
+  },
+  "CV6": {
+   "position": [
+    0,
+    0.9403,
+    0.1178
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.0,
+     0.958,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 1.5 B-cun below umbilicus. y = 0.989 − 1.5×0.03248 = 0.9403 (Δy −1.8 cm). x kept 0; z = first front skin hit. Sim: midline open, 0 mm."
+  },
+  "CV7": {
+   "position": [
+    0,
+    0.9565,
+    0.1191
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.0,
+     0.976,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 1 B-cun below umbilicus. y = 0.989 − 0.03248 = 0.9565 (Δy −1.9 cm). x kept 0; z = first front skin hit. Sim: midline open, 0 mm."
+  },
+  "CV8": {
+   "position": [
+    0,
+    0.989,
+    0.1072
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.0,
+     1.005,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: centre of the umbilicus. Measured pit centroid y 0.9888–0.9890 (deepest 0.990, z 0.1065); y 0.989 (Δy −1.6 cm). Seed sits on the pit floor, so the marker (3 mm out) is at z ≈0.110. Sim: midline open, 0 mm."
+  },
+  "CV9": {
+   "position": [
+    0,
+    1.0157,
+    0.1149
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.0,
+     1.03,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 1 B-cun above umbilicus. y = 0.989 + 0.02669 = 1.0157 (Δy −1.4 cm). x kept 0; z = first front skin hit. Sim: midline open, 0 mm."
+  },
+  "EX-CA1": {
+   "position": [
+    -0.075,
+    0.8591,
+    0.0797
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.075,
+     0.875,
+     0.108
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "Extra point, not in WHO 2008. The standard definition (GB/T 12346) is 4 B-cun below the umbilicus (level of CV3) and 3 B-cun lateral; I scaled it with the same WHO lower-abdomen cun. y 0.8591 (Δy −1.6 cm). x kept −0.075. Sim: right open 0 mm; left open 1.2 mm."
+  },
+  "GB24": {
+   "position": [
+    -0.09,
+    1.122,
+    0.112
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.09,
+     1.142,
+     0.12
+    ],
+    "surface": "front"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "ok",
+    "adjudicator": "codex",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "WHO p.183: 7th intercostal space, 4 B-cun lateral to the anterior midline. The lateral distance is right: marker x=-0.0899 against ST17 x=-0.090. The level is wrong. I sliced the bone GLB in the sagittal plane x=-0.09, where the right 7th costal cartilage FMA8248 spans y 1.1318-1.1517 (z 0.089-0.096). The marker's y of 1.142 is exactly the centre of that cartilage. The right costal cartilage block BP28 (8th and lower cartilages) tops out at y 1.1123, so the 7th intercostal space at x=-0.09 is y 1.1123-1.1318, centre 1.122. The 6th cartilage FMA8194 and 6th rib FMA8175 start at y 1.1676, so the 6th space is 1.1517-1.1676, centre 1.160. The same values hold at x=-0.085 and x=-0.095. The marker is 0.020 m above the 7th-space centre and 0.018 m below the 6th-space centre. With a trunk cun of (1.2006-1.005)/8 = 0.02445 m, that is 0.82 cun, and the marker is not in the 7th space. Claude rated it ok because it had no cartilage data and interpolated the cartilage course. Skin check: a front ray at (-0.09, 1.122) hits the outer skin at z=0.1097, so the seed at z=0.112 is 2.3 mm outside it."
+  },
+  "GB25": {
+   "position": [
+    -0.13,
+    1.02,
+    -0.04
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.124,
+     1.046,
+     -0.043
+    ],
+    "surface": "lateral"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "claude",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "WHO 2008 p.184 puts GB25 on the lateral abdomen, inferior to the free extremity of the 12th rib. The KMCRIC text (옆배, 열두째 갈비뼈끝의 아래쪽) says the same. I re-measured the right 12th rib (FMA8533) by slicing the bone in x. Its centreline runs x -0.070 [y 1.0523, z -0.054], x -0.075 [1.0428, -0.0479], x -0.080 [1.0329, -0.040]. The free end is at x -0.083, with vertices at y 1.029-1.037 and z -0.034 to -0.041; its lowest bone point is [-0.0794, 1.0234, -0.0357]. The current marker is at [-0.1265, 1.046, -0.0428], from seed [-0.124, 1.046, -0.043] on the lateral surface. Seen from the side it lies over the rib shaft about 8 mm short of the end (the x -0.075 section spans y 1.032-1.055, z -0.053 to -0.043), not below the end. At 0.0245 m/cun (sternal body minY 1.2006 to CV8 y 1.005 = 8 cun), it sits 1.3-1.5 cm above the tip centre and 2.3 cm above the lowest bone edge. The target is about 2.6 cm (about 1.06 cun) lower. That is the wrong side of the named landmark, so the verdict is wrong; both reviewers also found it too high. New seed: y 1.020, which is 3 mm below the lowest bone edge, about 1.2 cm (about 0.5 cun) below the tip centre, and close to the L2 spinous lower border at 1.017. Horizontal position: from the tip, the outer skin in the y 1.02 plane is 39.5-40.6 mm away posterolaterally (-30 to -70 deg, e.g. [-0.1123, -0.0624]), 44.5 mm posteriorly and 50.6 mm laterally. So 'directly over the tip' alone cannot decide between lateral and posterolateral. I kept the lateral position at the tip's front-to-back level (z -0.04) because of the WHO region term 'lateral abdomen' and the classical rule that GB25 is 1.8 cun behind LR13. The 11th rib tip is at z about -0.001 (minX [-0.1165, 1.037, -0.0024]). Measured along the skin from the lateral skin there (x about -0.142, z 0) to z -0.04/-0.043 is 4.1-4.4 cm, about 1.7-1.8 cun. My emulation of build-anchors (lateral ray): seed [-0.130, 1.020, -0.040] hits the trunk skin at [-0.1302, 1.020, -0.040] (0.2 mm from the seed; the arm hits at x <= -0.197 are farther away). Air check passes ('kept'). Marker [-0.1332, 1.020, -0.040]. Left mirror: skin [0.129, 1.02, -0.04], marker [0.132, 1.02, -0.04]."
+  },
+  "GB27": {
+   "position": [
+    -0.131,
+    0.8916,
+    0.0634
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.131,
+     0.887,
+     0.04
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 3 B-cun below umbilicus (height is cun-defined; horizontal is 'medial to the ASIS'). y 0.8916 (Δy +0.5 cm). The ASIS (most anterior vertex of the hip bone) is at y 0.907–0.924, so GB27 stays below it. x kept −0.131. Sim: right open 0 mm; left open 0.6 mm."
+  },
+  "GB35": {
+   "position": [
+    -0.134,
+    0.226,
+    -0.057
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.127,
+     0.244,
+     -0.029
+    ],
+    "surface": "lateral"
+   },
+   "verdict": "neighbour",
+   "reviewers": {
+    "codex": "round 2 neighbour note",
+    "claude": "round 2 neighbour note; round 3 re-measured"
+   },
+   "confidence": "medium",
+   "basis": "Level: same as GB36. Prominence of the lateral malleolus y 0.070 (skin lateral-most x -0.1166 at y 0.070-0.072, z -0.049; fibula lateral-most -0.1123 at y 0.066-0.068), popliteal crease 0.429-0.431, so 1 cun = 0.0225 and 7 cun = y 0.2275. GB36 is at 0.226 (6.93 cun); GB35 goes to the same y. Side: y-slice at 0.226 gives fibula z -0.0372 (anterior, x -0.1094) to -0.0509 (posterior border, x -0.1120). Fibularis longus z -0.0415..-0.0595 (lateral face x -0.123). The soleus lateral edge starts at z about -0.058 (x -0.1161 at z -0.060). Skin contour from +x rays: x -0.1343 at z -0.056, -0.1338 at -0.058. Seed z -0.057 is 6 mm behind the fibula's posterior border, over the fibularis longus/soleus interval, so it is posterior to the fibula. Projection (build-anchors logic): right surface (-0.134, 0.226, -0.057), marker (-0.137, 0.226, -0.057), open air; left mirror seedDist 1.5 mm. Result: 27 mm straight behind GB36 at the same level, where they used to sit one above the other on one z line (old GB35 y 0.244, z -0.029, 0.8 cun high and in front of the fibula). No other marker within 27 mm; BL58 is 51 mm away."
+  },
+  "GB36": {
+   "position": [
+    -0.133,
+    0.226,
+    -0.03
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.13,
+     0.269,
+     -0.012
+    ],
+    "surface": "lateral"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "WHO: fibular aspect of the leg, anterior to the fibula, 7 B-cun proximal to the prominence of the lateral malleolus. Popliteal crease: y 0.430 (BL39 0.4313, BL40 0.429). Lateral malleolus prominence: y 0.068. The lateral-most fibula bone is x -0.1124 at y 0.0659, on a plateau from y 0.060 to 0.076. A lateral skin ray grid puts the most lateral skin at x -0.1166, y 0.070, z -0.050. 1 cun = (0.430-0.068)/16 = 0.02263 m, so 7 cun is at y 0.226. Any prominence from 0.066 to 0.072 gives 0.224 to 0.229. The marker's y of 0.269 is 0.043 m (1.9 cun) too high, which is about 7 cun measured down from the crease instead of up from the malleolus. Front-back placement: at y=0.226 the fibula spans z -0.051 to -0.037 (anterior border x -0.1094, z -0.0372). EDL spans z -0.041 to -0.025, tibialis anterior z -0.029 to -0.006. The marker's z of -0.012 is over the tibialis anterior, on ST40's line (ST40 z -0.0104). z=-0.030 is just anterior to the fibula, over EDL. Skin check: a lateral ray at (y 0.226, z -0.030) hits x -0.1322, 0.8 mm from the seed."
+  },
+  "GB37": {
+   "position": [
+    -0.123,
+    0.181,
+    -0.03
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.122,
+     0.214,
+     -0.014
+    ],
+    "surface": "lateral"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "WHO: anterior to the fibula, 5 B-cun proximal to the prominence of the lateral malleolus. Same frame as GB36: crease 0.430, prominence 0.068, 1 cun = 0.02263 m, so 5 cun is at y 0.181 (0.179-0.183 across the prominence range). The marker's y of 0.2136 is 0.0325 m (1.44 cun) too high. Even with the prominence taken at the BL60 level (0.086), 5 cun is at 0.194 and the marker is still about 0.9 cun high. At y=0.18 the fibula's anterior border is at z -0.0382 (x -0.1061). EDL spans z -0.041 to -0.029, and the tibialis anterior reaches z -0.013. The marker's z of -0.0125 is over the tibialis anterior and anterior to the GB line, so z=-0.030 is used. Skin check: lateral skin at y 0.18 is x -0.1223 at z -0.030 and x -0.1239 at z -0.035. A lateral ray at the seed hits x -0.1234, 0.4 mm away."
+  },
+  "GB38": {
+   "position": [
+    -0.118,
+    0.16,
+    -0.031
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.122,
+     0.189,
+     -0.008
+    ],
+    "surface": "lateral"
+   },
+   "verdict": "neighbour",
+   "reviewers": {
+    "codex": "round 2 neighbour note",
+    "claude": "round 2 neighbour note; round 3 re-measured"
+   },
+   "confidence": "medium",
+   "basis": "Level: 4 cun above the prominence = 0.070 + 4 x 0.0225 = y 0.160 (scale as for GB35/GB36). The current marker at y 0.1904 is 5.35 cun and 9 mm above GB37 (0.181). Side: y-slice at 0.160 gives the fibula's anterior border at (x -0.1061, z -0.0391), posterior at z -0.0531. EDL z -0.0294..-0.0395 (x -0.0967..-0.1043); fibularis brevis begins at z -0.0397. Skin from +x rays: x -0.1190 at z -0.032, -0.1173 at -0.030. A lateral ray at z -0.031 crosses EDL 8 mm in front of the fibula's anterior border, so it is anterior to the fibula. That keeps the GB36 (z -0.030) and GB37 (z -0.030) line. The old z of -0.013 was about 2.5 cm in front of the fibula, over tibialis anterior/EDL. Projection: right surface (-0.1181, 0.160, -0.031), marker (-0.1211, 0.160, -0.031), open air; left seedDist 1.7 mm. Order: GB37 0.181 > GB38 0.160 > GB39 0.1375. GB37 is 21.5 mm away (0.96 cun) and GB39 22.9 mm (1.0 cun). Nearest other marker: BL59 (-0.127, 0.176, -0.042) at 20 mm, no overlap. BL59 itself looks misplaced (over the fibula at 4.7 cun; WHO puts it 3 cun above BL60, posterior to the fibula). Not changed here."
+  },
+  "GB39": {
+   "position": [
+    -0.1135,
+    0.1375,
+    -0.031
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.118,
+     0.164,
+     -0.009
+    ],
+    "surface": "lateral"
+   },
+   "verdict": "neighbour",
+   "reviewers": {
+    "codex": "round 2 neighbour note",
+    "claude": "round 2 neighbour note; round 3 re-measured"
+   },
+   "confidence": "medium",
+   "basis": "Level: 3 cun above the prominence = 0.070 + 3 x 0.0225 = y 0.1375. The current marker at y 0.1658 is 4.26 cun and only 15 mm below GB37; the order was still right but the spacing was wrong. Side: y-slice at 0.1375 gives the fibula's anterior border at (x -0.1074, z -0.0393), posterior at z -0.0542. EDL z -0.0287..-0.0368 and fibularis tertius z -0.0363..-0.0389 lie directly in front of it; fibularis brevis starts at z -0.0438. Skin from +x rays: x -0.1142 at z -0.032, -0.1128 at -0.030. A lateral ray at z -0.031 crosses EDL about 8 mm in front of the fibula, so it is anterior to the fibula, in line with GB36/GB37/GB38. The old z of -0.016 was over tibialis anterior. Projection: right surface (-0.1138, 0.1375, -0.031), marker (-0.1168, 0.1375, -0.031), open air; left seedDist 1.7 mm. Order: GB37 0.181 > GB38 0.160 > GB39 0.1375 > GB40 0.055. Spacing is 1 cun to GB38 and 83 mm to GB40. No other marker within 35 mm."
+  },
+  "GB40": {
+   "position": [
+    -0.108,
+    0.055,
+    -0.027
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.114,
+     0.064,
+     0.019
+    ],
+    "surface": "front"
+   },
+   "verdict": "minor",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "minor",
+    "adjudicator": "claude",
+    "judges": 1
+   },
+   "confidence": "medium",
+   "basis": "WHO p.191: anterolateral ankle, in the depression lateral to the EDL tendon, anterior and distal to the lateral malleolus. The marker [-0.1137, 0.0641, -0.0397] sits on the malleolus itself. At y 0.064-0.065 the fibula spans z -0.0564 to -0.0316 and its lateral-most point is x -0.1124 at z -0.0476. The authored front seed (z 0.019) struck the bulge of the malleolus. Malleolus tip: y 0.0539 (z -0.049). The anterior border at y 0.058-0.074 is at about z -0.032. In the plane x=-0.106 there is no bone between y 0.047 (cuboid) and 0.058 (fibula) for z -0.04 to -0.01. Lateral skin rays show the depression: at y 0.055 the skin is least lateral at z -0.025 to -0.030 (x -0.1073), against x -0.1119 over the malleolus (z -0.05) and x -0.111 on the lateral foot (z 0.005). At y 0.050 it is x -0.1084 at z -0.030, and at y 0.060 x -0.1061 at z -0.020. The EDL tendon is at z 0.014-0.046 and peroneus tertius at z of about 0, so the target is clearly lateral to them. A lateral ray at the seed hits x -0.1073, 0.7 mm away. The shift from the marker is dy -0.009, dz +0.013, dx +0.006, about 0.016-0.018 m (0.7-0.8 cun)."
+  },
+  "KI11": {
+   "position": [
+    -0.013,
+    0.8266,
+    0.0774
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.013,
+     0.853,
+     0.112
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 5 B-cun below umbilicus, 0.5 B-cun lateral (level of CV2 = symphysis upper border). y 0.8266 (Δy −2.6 cm). x kept −0.013; z = first front skin hit (mons skin; penis root lies lower, y<0.815). Sim: right open 0 mm; left open 0.4 mm."
+  },
+  "KI12": {
+   "position": [
+    -0.013,
+    0.8591,
+    0.0935
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.013,
+     0.882,
+     0.121
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 4 B-cun below umbilicus, 0.5 lateral. y = 0.989 − 4×0.03248 = 0.8591 (Δy −2.3 cm). Sim: right open 0 mm; left open 0 mm."
+  },
+  "KI13": {
+   "position": [
+    -0.013,
+    0.8916,
+    0.1049
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.013,
+     0.911,
+     0.126
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 3 B-cun below umbilicus, 0.5 lateral. y 0.8916 (Δy −1.9 cm). Sim: right open 0 mm; left open 0.5 mm."
+  },
+  "KI14": {
+   "position": [
+    -0.013,
+    0.924,
+    0.1148
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.013,
+     0.94,
+     0.132
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 2 B-cun below umbilicus, 0.5 lateral. y 0.9240 (Δy −1.6 cm). Sim: right open 0 mm; left open 0.7 mm."
+  },
+  "KI15": {
+   "position": [
+    -0.013,
+    0.9565,
+    0.1201
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.013,
+     0.972,
+     0.137
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 1 B-cun below umbilicus, 0.5 lateral. y 0.9565 (Δy −1.6 cm). Sim: right open 0 mm; left open 0.7 mm."
+  },
+  "KI16": {
+   "position": [
+    -0.013,
+    0.989,
+    0.115
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.013,
+     1.005,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 0.5 B-cun lateral to the centre of the umbilicus. y 0.989 (Δy −1.6 cm); z 0.115 is the pit rim. Sim: right open 0 mm; left open 0.2 mm."
+  },
+  "KI17": {
+   "position": [
+    -0.013,
+    1.0424,
+    0.1199
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.013,
+     1.064,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 2 B-cun above umbilicus, 0.5 lateral. y 1.0424 (Δy −2.2 cm). Sim: right open 0 mm; left open 1.2 mm."
+  },
+  "KI18": {
+   "position": [
+    -0.013,
+    1.0691,
+    0.1223
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.013,
+     1.091,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 3 B-cun above umbilicus, 0.5 lateral. y 1.0691 (Δy −2.2 cm). Sim: right open 0 mm; left open 0.4 mm."
+  },
+  "KI19": {
+   "position": [
+    -0.013,
+    1.0958,
+    0.1274
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.013,
+     1.118,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 4 B-cun above umbilicus, 0.5 lateral. y 1.0958 (Δy −2.2 cm). Sim: right open 0 mm; left open 0.3 mm."
+  },
+  "KI20": {
+   "position": [
+    -0.013,
+    1.1224,
+    0.1278
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.013,
+     1.143,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 5 B-cun above umbilicus, 0.5 lateral. y 1.1224 (Δy −2.1 cm). Sim: right open 0 mm; left open 0.1 mm."
+  },
+  "KI21": {
+   "position": [
+    -0.013,
+    1.1491,
+    0.1268
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.013,
+     1.17,
+     0.132
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 6 B-cun above umbilicus, 0.5 lateral. y 1.1491 (Δy −2.1 cm). Sim: right open 0 mm; left open 0.1 mm."
+  },
+  "LI6": {
+   "position": [
+    -0.2712,
+    0.889,
+    -0.005
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.275,
+     0.89,
+     0.013
+    ],
+    "surface": "back"
+   },
+   "verdict": "minor",
+   "reviewers": {
+    "codex": "ok",
+    "claude": "minor",
+    "adjudicator": "claude",
+    "judges": 1
+   },
+   "confidence": "medium",
+   "basis": "Level: LI5 y 0.828 to LI11 y 1.0709 is 12 cun, so 1 cun is 0.0202 m and 3 cun is y 0.8887. The marker (surface y 0.8899) is level within about 0.06 cun, so the level is fine. Circumference: I ray-cast the skin contour at y 0.8895. The lateral extreme is x -0.2749 at z 0.003-0.0095. The marker surface point (-0.2737, 0.0124) is about 30 deg anterior of lateral: its offset normal points (-0.0027, +0.0004, +0.0013), i.e. anterolateral. It sits over the anterior edge of the brachioradialis (BR) tendon, which spans skin angle -30 to -7.5, BR surface z 0.0081 to 0.0022. Under the posterolateral face are ECRL at z 0 to -0.0022, ECRB at z -0.004 to -0.006, and APL from z -0.0067 posteriorly. Both neighbours sit behind the lateral extreme. LI5 (-0.2803, 0.828, 0.0081) lies between EPB (-0.2824, 0.0127) and EPL (-0.2720, 0.0073), about 2.0 cm posterior of the wrist extreme (-0.2893, 0.0258). LI7 (-0.270, 0.931, -0.0123) lies over ECRL (-0.2684, -0.0106), about 1.2 cm posterior of its extreme (-0.2717, 0). LI11 (-0.2448, 1.0709, -0.0029) is about 3.5 cm anterior of the elbow extreme (-0.2618, -0.031). Where the LI line should be at y 0.8895: unrolling LI5 to LI11 linearly in arc length gives about 0.6 cm posterior of the extreme, near (-0.274, 0.0). LI5 to LI7 interpolation gives about 1.5 cm posterior, near (-0.270, -0.008). A straight 3D chord gives (-0.2713, 0.0053) inside the skin, which projects to the extreme at z 0.005. Along the skin the marker is 0.7 / 1.27 / 1.7-2.2 cm (0.35 / 0.62 / 0.8-1.1 cun) anterior of these. WHO says 'posterolateral' and both neighbours are posterior of the extreme, so a posterior shift is warranted. Seed check: a lateral ray at (-0.2712, 0.889, -0.005) hits the skin first, exactly at the seed, with normal (-0.87, -0.06, -0.48), i.e. posterolateral; the marker lands at (-0.2742, 0.889, -0.005). The mirrored left seed hits at (0.2717, 0.889, -0.005), 0.5 mm off. The current seed's back ray at x -0.275 misses the skin entirely, so it lies just outside the lateral silhouette."
+  },
+  "LR12": {
+   "position": [
+    -0.0625,
+    0.8266,
+    0.0733
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.043,
+     0.855,
+     0.06
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level + lateral",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun",
+    "round4": {
+     "codex": "minor: 0.59 cun too medial, suggested x -0.05625",
+     "claude": "wrong: medial to ST30 at the same level, suggested x -0.065"
+    }
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: level of the superior border of the pubic symphysis, 2.5 B-cun lateral. y 0.8266 (Δy −2.8 cm). x kept −0.043 (see risks: this is medial to ST30). Sim: right open 0 mm; left open 1.0 mm. Round 4: both reviewers found the unchanged x 0.043 (about 1.7–1.9 cun) medial to ST30 at the same level; WHO puts LR12 2.5 B-cun lateral, 0.5 B-cun lateral to ST30, so x is set to 0.0625 (between the two suggestions, 0.5 cun lateral of ST30 at 0.05)."
+  },
+  "LR13": {
+   "position": [
+    -0.146,
+    1.02,
+    0.003
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.142,
+     1.079,
+     0.006
+    ],
+    "surface": "lateral"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "WHO p.202: lateral abdomen, inferior to the free extremity of the 11th rib. Right rib 11 (FMA8531) tip vertices: lowest at (-0.1099, 1.0258, -0.0009), most anterior at (-0.1119, 1.0305, 0.0042), most lateral at (-0.1165, 1.037, -0.0024). The tip is therefore at y 1.026-1.031, z about 0.002. The lowest part of the costal cartilage BP28, at (-0.1046, 1.0284, 0.040), continues from rib 10 (rib 10's lowest point is (-0.1176, 1.0389, 0.0184), next to BP28's minimum-z vertices at (-0.115, 1.040, 0.018)). It is not an 11th-rib tip and lies 3.6 cm anterior. At z 0, rib 10 spans y 1.0531-1.0744 and rib 9 spans 1.0954-1.1162. The current marker at y 1.079, z 0.006 therefore sits over the 9th intercostal space, about 5.3 cm above the rib-11 tip's lower edge and 5.9 cm (about 2.4 B-cun) above the target. The target is just below the tip, at y 1.020. The model's GB26 (-0.1498, 1.005, 0.002), directly below the same tip at umbilicus level, agrees with the tip's z. The lateral ray at y 1.020, z 0.003 hits torso skin at x -0.1429, with the arm 5 cm further out at -0.195. The build-anchors replica gives right surface [-0.1429,1.020,0.003] and marker [-0.1459,1.020,0.003], open. The left mirror lands 4.2 mm from its seed. In the bone image the dot sits beside the lateral ribs, well above the lowest costal ends."
+  },
+  "LR3": {
+   "position": [
+    -0.0835,
+    0.0615,
+    0.04
+   ],
+   "surface": "top",
+   "previous": {
+    "position": [
+     -0.075,
+     0.056,
+     0.11
+    ],
+    "surface": "top"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "WHO p.197: dorsum of foot, between MT1 and MT2, in the depression distal to the junction of their bases, over the dorsalis pedis artery. Measured from triangle and vertex slices of bone.glb in world coordinates. Right MT1 (FMA24507) base spans z 0.0215-0.035 and its head ends at z 0.083. Right MT2 (FMA24509) base starts at z 0.0156. The bases touch at z 0.025-0.030: MT1 lateral edge x -0.0837/-0.0840 against MT2 medial edge -0.0837. The gap opens at z 0.035 (-0.0835 vs -0.0863) and at z 0.040 (-0.0822 vs -0.0871), giving a gap centre of -0.0847. At z 0.040 the EHL tendon (FMA22546) is at x -0.0703 to -0.0674, so the target lies lateral to EHL. The dorsalis pedis artery (vessel-full.glb, world matrix applied) is at x -0.0809, y 0.0557 at z 0.040 and dives into the interspace at z about 0.049, x -0.0825. Dorsal skin at (x -0.0835, z 0.040) is y 0.0614. A replica of the build-anchors top ray gives right surface [-0.0835,0.0614,0.040] and marker [-0.0835,0.0644,0.040]; the left mirror marker is [0.0835,0.0647,0.040]. Both pass the open-air test. The current marker [-0.075,0.0308,0.110] is 2.7 cm beyond the MT1 head end (z 0.083), over the hallux MTP and proximal phalanx, and about 7 cm distal to the target."
+  },
+  "LR6": {
+   "position": [
+    -0.0704,
+    0.25,
+    -0.0106
+   ],
+   "surface": "medial",
+   "previous": {
+    "position": [
+     -0.045,
+     0.23,
+     -0.018
+    ],
+    "surface": "medial"
+   },
+   "verdict": "minor",
+   "reviewers": {
+    "codex": "minor",
+    "claude": "minor",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "medium",
+   "basis": "WHO: anteromedial leg, centre of the medial surface of the tibia, 7 B-cun above the medial malleolar prominence. Level: the medial malleolar prominence (max x of the tibia FMA24477 slice) is -0.0489 at y 0.086, consistent with KI3 at 0.0871. On the model's medial scale (SP9 y 0.392), 13 cun = 0.306 m and 1 cun = 0.0235 m, so 7 cun is at y 0.2508. LR5 sits exactly at 5 cun on this scale (0.2039). Even if the lower border of the condyle is read at the flare bend (tibia max x -0.0543 at y 0.375 vs -0.0479 at 0.385), 7 cun is y 0.2416. The current y 0.2298 is therefore 0.012-0.021 m low (0.5-0.9 cun). It is only 0.026 m (1.1 cun) above LR5 instead of 2 cun, and it is below SP7 (0.238). Mediolateral: at y 0.25 the tibia slice has its anterior crest at (-0.0842,-0.0047) and its medial border at (-0.0698,-0.0255), with the contour centre of the medial surface at (-0.0752,-0.0140). A ray along the surface normal (0.822,0,0.569) meets the outer skin at (-0.0703,0.25,-0.0106), 6 mm from the bone; the great saphenous vein is at (-0.0658,-0.0239), behind the target. A replica of the build-anchors medial ray gives right surface (-0.0704,0.25,-0.0106) and marker [-0.0674,0.25,-0.0106]; the left mirror marker is [0.0662,0.25,-0.0106]. Both are open. The stored right surface (-0.0627,0.2298,-0.0159) lies over the posterior third of the medial surface, about 0.8 cm from the saphenous vein (-0.0682,-0.0232 at y 0.23), which matches the muscle close-up."
+  },
+  "LU1": {
+   "position": [
+    -0.135,
+    1.327,
+    0.042
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.147,
+     1.315,
+     0.085
+    ],
+    "surface": "front"
+   },
+   "verdict": "minor",
+   "reviewers": {
+    "codex": "minor",
+    "claude": "minor",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "medium",
+   "basis": "WHO p.26: level with the 1st ICS, lateral to the infraclavicular fossa, 6 B-cun from the anterior midline, 1 B-cun below LU2. Transverse scale: ST17 x=-0.090 is 4 cun, so 0.0225 m/cun and 6 cun is x=-0.135. The right coracoid tip (scapula FMA13395 most anterior vertices) is at x -0.126 to -0.138, y 1.347, so it also points to about -0.135. The marker at x=-0.147 is 6.53 cun, 12 mm (0.53 cun) too lateral. Level: bone sections give the 1st ICS at the sternal margin as x=-0.03 between cartilage 2 (FMA7886) top 1.3162 and cartilage 1 (FMA7875) bottom 1.3356, centre 1.326. At x=-0.04 it lies between 1.3174 and 1.3378, centre 1.328. LU2 marker y 1.350 minus 1 cun (0.02445 m from sternal body minY 1.2006 to CV8 1.005 = 8 cun) gives 1.3256. The marker y 1.315 is at the top of cartilage 2, about 12 mm (0.49 cun) low. The combined error is about 17 mm (0.7 cun). In muscle.glb at y 1.327 the clavicular pectoralis major (FMA34690) spans x -0.1535 to -0.098 and the deltoid starts at -0.1497, so the new seed stays on the pectoralis, medial to the deltopectoral boundary. Front ray at (-0.135, 1.327) hits the outer skin at z 0.0412 (0.8 mm from the seed; left mirror z 0.0403), so the marker lands at about z 0.044."
+  },
+  "LU7": {
+   "position": [
+    -0.273,
+    0.86,
+    -0.001
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.274,
+     0.862,
+     0.045
+    ],
+    "surface": "front"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "unclear",
+    "claude": "wrong",
+    "adjudicator": "claude",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "WHO: on the radial aspect of the forearm, between the APL and EPB tendons, in the APL tendon groove, 1.5 B-cun above the palmar wrist crease. The forearm is supinated (FCR is palmar at +z). Muscle.glb sections at y=0.860: APL (FMA38516) x[-0.2732,-0.268] z[-0.001,0.004]; EPB (FMA38519) x[-0.2668,-0.2573] z[-0.0049,0.0011]; brachioradialis (FMA38486) x[-0.2766,-0.2712] z[0.0073,0.0151]. At y=0.862 the values are similar (APL centre -0.2697,0.0005; BR -0.2731,0.0107). Outer skin contour at y=0.862 (rays toward the limb centre): lateral-most point (-0.2804, 0.012), skin over APL about (-0.273, -0.001). The current front seed hits the skin at (-0.274, 0.862, 0.0257), which reproduces the marker. That is the anterolateral corner of the forearm, palmar to the BR tendon. It is about 31 mm along the skin contour (about 1.5 cun at 0.0206 m/cun) from the APL/EPB interval and on the same palmar-radial line as LU8 (marker x -0.2784, z 0.031). So it is on the wrong side of the named tendons. Level is fine: 1.5 cun above the wrist crease is y 0.8585 (from LU9 0.8276) or 0.862 (from PC7 0.831), so I use y 0.860. A lateral ray at (y 0.860, z -0.001) first hits the outer skin at x -0.2727 (0.3 mm from the seed). The mirrored left seed hits at x 0.2714, so the marker lands at about x -0.2757, over the dorsal-ulnar edge of APL next to EPB."
+  },
+  "PC4": {
+   "position": [
+    -0.2225,
+    0.934,
+    0.0232
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.255,
+     0.936,
+     0.045
+    ],
+    "surface": "front"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "ok",
+    "claude": "wrong",
+    "adjudicator": "claude",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "Level: the cubital crease is at PC3 y 1.0771 and the wrist crease at PC7 y 0.831 (the radial styloid minY is 0.8296). 12 cun = 0.2461 m, so 1 cun = 0.02051 m and the 5-cun level is y 0.9335. The marker at y 0.936 is only 0.12 cun high, so the level is fine. Transverse position: I re-measured from the GLBs (muscle.glb FMA38460 right FCR, FMA38463 PL, FMA38486 BR, FMA38640/38638 FDS, FMA38617 FCU; bone.glb FMA23464 radius, FMA23467 ulna), using front rays (-z) every 2 mm at y 0.936 with my script .cache/adjudicate/pc4-ray.mjs. Forearm skin runs from x -0.272 to -0.199. Topmost structure under the skin, radial to ulnar: BR at -0.268 to -0.258; the BR-FCR gutter over the radius and FDS radial head at -0.256 to -0.244; FCR at -0.242 to -0.223 (z 0.021-0.023, skin 0.0247); PL at -0.222 to -0.218; FDS humeral head at -0.216 to -0.212; FCU at -0.210 to -0.202. A horizontal section (pc4-section.mjs) agrees: FCR x [-0.2432, -0.2217], PL x [-0.2220, -0.2169]. The marker at x -0.2551 lies in the BR-FCR gutter, 1.2 cm radial of FCR's radial border and only 2.7 mm from the LU5-LU9 line (x -0.2578 at this height). So it is on the wrong side of the FCR tendon, about 3.3 cm (about 1.6 cun) from the PL-FCR interval. I side with Claude's 'wrong' verdict, not with Codex's 'ok'. Claude's corrected x of -0.245 (the PC3-PC7 line) is still 2 mm radial of FCR's border (-0.2432), so I do not use it. At y 0.934, FCR is on top up to x -0.223 and PL starts at -0.222, which puts the interval at x -0.2225. Front-ray skin z there is 0.0234 at -0.223 and 0.0229 at -0.222, so the seed z is 0.0232, on the anterior skin, which is the first surface a +z ray reaches."
+  },
+  "SI4": {
+   "position": [
+    -0.2245,
+    0.812,
+    0.027
+   ],
+   "surface": "medial",
+   "previous": {
+    "position": [
+     -0.247,
+     0.803,
+     0.02
+    ],
+    "surface": "back"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "WHO p.89: posteromedial wrist, in the depression between the base of the 5th metacarpal and the triquetrum, at the red-white flesh border (ulnar edge of the hand). KMCRIC gives the same location. Bone slices: the right 5th MC (FMA24472) base ends at y=0.8109, where its medial x is -0.2362 at y 0.810. The triquetrum (FMA24439) begins at y=0.8126, with medial x -0.2337 at y 0.814. At y 0.812 only the hamate is present, at medial x -0.2369, so the depression is at y≈0.812. The outer skin contour at y 0.812 (rays inward from [-0.255,0.025]) runs from the dorsum at z 0.0038-0.0047 to the palm at z 0.047. The ulnar border is the medial-most skin, x -0.2243…-0.2250 over z 0.025-0.030. The current marker is [-0.247,0.8029,0.0038] with its surface at z 0.0068. That is the dorsal skin over the 4th/5th MC base, 22.5 mm radial, 9 mm distal and 20 mm dorsal of the target: 31.6 mm, about 1.6 cun at 2.0 cm/cun (LU5/HT3 1.075 to HT7 0.835 = 12 cun). My mirror of the build-anchors axis-ray reproduces the current marker exactly. A medial seed [-0.2245,0.812,0.027] hits the ulnar-border skin at [-0.2245,0.812,0.0270], open air, seed distance 0. The marker goes to [-0.2215,0.812,0.027]. The left mirror hits [0.2232,0.812,0.027], also open. The thigh hits on this ray are at x≥-0.1432 and fall outside the nearest-hit choice."
+  },
+  "SI7": {
+   "position": [
+    -0.212,
+    0.937,
+    -0.031
+   ],
+   "surface": "back",
+   "previous": {
+    "position": [
+     -0.236,
+     0.944,
+     -0.015
+    ],
+    "surface": "back"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "WHO: posteromedial forearm, between the medial border of the ulna and FCU, 5 B-cun proximal to the dorsal wrist crease. KMCRIC matches. Level: crease about 0.835-0.837 (HT7 0.835, SI5 0.8368) plus 5 × 2.0 cm = 0.935-0.937. The SI5-SI8 midpoint (0.8368, 1.080) minus 1 cun gives 0.938, so y=0.937. The current y of 0.944 is only 0.35 cun high. The transverse error is the real problem. At y 0.944 the ulna (FMA23467) spans x -0.2201…-0.2331 and the radius (FMA23464) x -0.2413…-0.2574. The current marker [-0.236,0.944,-0.0468] (surface z -0.0438) is at x -0.236, over the radius-ulna interosseous gap at the posterior apex of the forearm (contour 270° = [-0.235,-0.0439]). That is radial to the ulna, in the TE corridor (TE7 x -0.239, TE8 x -0.244), on the wrong side of the bone. At y 0.938: ECU (BP45/BP47) covers the posterior ulna to maxX -0.2208 (z -0.0213), and the FCU ulnar head (FMA38619) begins at minX -0.2218 (z -0.0177). They meet at the ulna's posteromedial edge, about [-0.2225,-0.018]. The local skin normal there points about 309° (contour 310° [-0.2152,-0.0336] to 330° [-0.2065,-0.0265]). Projecting the edge along that normal gives skin at about [-0.2115,-0.031]. Inward rays from skin [-0.212,0.937,-0.031] confirm it: along 129° they reach the ECU edge at [-0.2210,-0.0201], then the ulna at [-0.2228,-0.0179]; straight anterior they reach FCU at [-0.212,-0.021]. This is the ulna-FCU interval. New surface vs old: dx 24 mm, dy 7 mm, dz 13 mm, 28 mm total, about 1.4 cun. A back seed [-0.212,0.937,-0.031] hits the skin at [-0.2120,0.937,-0.0309], open air, seed distance 0.1 mm. The marker goes to [-0.212,0.937,-0.0339]. The left mirror hits [0.212,0.937,-0.0318], open. The ray meets no trunk skin."
+  },
+  "SP13": {
+   "position": [
+    -0.1,
+    0.8493,
+    0.0748
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.1,
+     0.877,
+     0.06
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 4.3 B-cun below umbilicus, 4 lateral. y = 0.989 − 4.3×0.03248 = 0.8493 (Δy −2.8 cm). x kept −0.100. Sim: right open 0 mm; left open 0.1 mm."
+  },
+  "SP14": {
+   "position": [
+    -0.108,
+    0.9468,
+    0.0776
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.108,
+     0.974,
+     0.111
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 1.3 B-cun below umbilicus, 4 lateral. y = 0.989 − 1.3×0.03248 = 0.9468 (Δy −2.7 cm). x kept −0.108. Sim: right open 0 mm; left open 1.4 mm."
+  },
+  "SP15": {
+   "position": [
+    -0.112,
+    0.989,
+    0.0758
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.112,
+     1.005,
+     0.119
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 4 B-cun lateral to the centre of the umbilicus. y 0.989 (Δy −1.6 cm). x kept −0.112. Sim: right open 0 mm; left open 0.2 mm."
+  },
+  "SP16": {
+   "position": [
+    -0.13,
+    1.0691,
+    0.0544
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.13,
+     1.088,
+     0.092
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 3 B-cun above umbilicus, 4 lateral. y 1.0691 (Δy −1.9 cm). x kept −0.130. Sim: right open 0 mm; left open 0.2 mm."
+  },
+  "SP17": {
+   "position": [
+    -0.135,
+    1.2075,
+    0.0772
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.145,
+     1.202,
+     0.078
+    ],
+    "surface": "front"
+   },
+   "verdict": "neighbour",
+   "reviewers": {
+    "codex": "round 2 neighbour note",
+    "claude": "round 2 neighbour note; round 3 re-measured"
+   },
+   "confidence": "medium",
+   "basis": "Lateral distance: ST17 (nipple) at x -0.09 = 4 cun, so 1 cun = 0.0225 and 6 cun = x -0.135. PC1 at -0.1154 (5 cun) and KI22 at -0.05 (2 cun) use the same scale. Level: rib bands found by casting rays from the front-ray skin hit along the horizontal inward skin normal, 1 mm steps. At x -0.135, rib 6 is hit up to y 1.2000, the 5th intercostal space runs 1.2010-1.2140 (no rib within 8 cm) and rib 5 starts at 1.2150, so the centre is y 1.2075. Closest-point check from (-0.135, 1.2075, 0.0772): rib 5 at y 1.2178 above (30 mm), rib 6 at 1.1966 below (26 mm). The current SP17 (-0.1444, 1.202, 0.0442) has rib 6 at y 1.2000, 16.7 mm away and level with it, so it sits on rib 6. Front ray at (-0.135, 1.2075): first skin hit z 0.0772. Projection: right surface (-0.135, 1.2075, 0.0772), marker (-0.135, 1.2075, 0.0802), open air; left seedDist 3.5 mm. SP21 (-0.1571, 1.1995, 0.012) is now 72 mm away: 8 mm lower, 22 mm lateral and 68 mm posterior. The small height difference is real rib slope: the 6th space on the midaxillary line is 1.1917-1.2078, and the 5th space at x -0.135 is 1.2010-1.2140. SP18 is 41 mm away. Caveat for the unmoved line, not changed here: SP18 (-0.1508, 1.2368) has rib 5 at y 1.2373 and SP19 (-0.149, 1.262) has rib 4 at y 1.2620, so each sits on the rib below its own space. SP18-SP20 are also at x -0.149..-0.151 (6.6-6.7 cun), so SP17 at -0.135 leaves a 1.6 cm medial step in the line until they are re-measured. A version that keeps that line, at x -0.1444, would sit in the 5th space at y 1.213-1.222 (centre 1.2175). That column crosses a skin step at the pectoral fold (front-hit z 0.045 to 0.059 between y 1.213 and 1.222), so I did not choose it."
+  },
+  "SP21": {
+   "position": [
+    -0.155,
+    1.1995,
+    0.012
+   ],
+   "surface": "lateral",
+   "previous": {
+    "position": [
+     -0.173,
+     1.188,
+     0.012
+    ],
+    "surface": "lateral"
+   },
+   "verdict": "minor",
+   "reviewers": {
+    "codex": "ok",
+    "claude": "minor",
+    "adjudicator": "claude",
+    "judges": 2
+   },
+   "confidence": "medium",
+   "basis": "WHO: lateral thorax, 6th intercostal space, midaxillary line. Coronal bone sections (x < -0.11), lower edge of rib 6 (FMA8175) to upper edge of rib 7 (FMA8229): at z 0.000 the 6th ICS is y 1.1979-1.2151 (centre 1.2065); at z 0.012 it is 1.1917-1.2078 (centre 1.1998); at z 0.025 it is 1.1848-1.2003. At z 0.012, rib 7 occupies y 1.1719-1.1917. The current marker (y 1.188, z 0.0118) therefore sits over rib 7, 3.7 mm below its upper edge. It is 1.2 cm below the space centre, which is 0.49 trunk cun (xiphisternal y 1.2006 to CV8 y 1.005 = 8 cun, 2.445 cm per cun). Midaxillary z: the latissimus dorsi front edge is at z -0.0177 (y 1.20) and the pectoralis major lateral edge at z of about 0.03 (y 1.25), so the current z 0.012 is acceptable and kept. Replicated projection, lateral ray: seed [-0.1541,1.200,0.012] picks chest skin x -0.1541 (not the arm at -0.2053), 'kept', marker [-0.1571,1.200,0.012]. Mirrored left gives marker [0.1558,1.200,0.012]. Lateral rays at z <= -0.01 jump to the arm ('lifted'), so do not move z posteriorly."
+  },
+  "SP3": {
+   "position": [
+    -0.0514,
+    0.0185,
+    0.064
+   ],
+   "surface": "medial",
+   "previous": {
+    "position": [
+     -0.065,
+     0.018,
+     0.115
+    ],
+    "surface": "medial"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "both",
+    "judges": 2
+   },
+   "confidence": "high",
+   "basis": "WHO p.71: medial foot, in the depression proximal to the 1st MTP joint, at the red-white flesh border. Bone slices of the right foot (bone.glb). The 1st metatarsal FMA24507 runs z 0.0215-0.083. The proximal phalanx FMA43253 runs z 0.0787-0.1122, so the MTP joint is at z of about 0.080. The distal phalanx FMA32650 runs z 0.1057-0.1317. The head starts at z of about 0.063: the plantar flare grows from minY 0.0247 at z 0.060 to 0.0175 at z 0.065, and the medial eminence is at maxX -0.0629 at z 0.0753. The shaft's medial x is -0.0647 for z 0.045-0.060. The current right marker at z 0.1151 is on the hallux IP-joint region, about 5.2 cm (about 2.4 cun at about 2.2 cm per cun) distal to the target and on the wrong side of the MTP joint. Target: neck just behind the head, z 0.063. Height y 0.019 matches the outer medial skin bulge (medial-most skin x -0.0511 at y 0.016-0.020 for z 0.062). The bone's inferior-medial edge there is y of about 0.025. Replicated build-anchors projection, medial ray: seed [-0.0514,0.019,0.063] hits outer skin at x -0.0514, stays in open air ('kept'), marker [-0.0484,0.019,0.063]. Mirrored left gives marker [0.0473,0.019,0.063]."
+  },
+  "SP4": {
+   "position": [
+    -0.049,
+    0.0275,
+    0.0395
+   ],
+   "surface": "medial",
+   "previous": {
+    "position": [
+     -0.06,
+     0.032,
+     0.095
+    ],
+    "surface": "medial"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "both",
+    "judges": 2
+   },
+   "confidence": "high",
+   "basis": "WHO: medial foot, anteroinferior to the base of the 1st metatarsal, at the red-white flesh border. FMA24507 base: the posterior extreme is z 0.0215. The dorsal flare peaks at maxY 0.0571-0.0573 at z 0.030-0.035 and tapers to 0.054 at z 0.040 and 0.0499 at z 0.045, so the base ends at z of about 0.040. The medial cuneiform FMA24521 reaches z 0.0324. The base's medial lower edge is at y of about 0.038 (z 0.040 slice: x -0.0664 at y 0.0396, x -0.0697 at y 0.0379). The current right marker at z 0.0948 lies distal even to the metatarsal head (distal end z 0.083), on the proximal phalanx base. That is about 5.5 cm (about 2.5 cun) off. Target: z 0.040, just distal and below the base, at y 0.029 on the vertical medial arch face. Skin there is x -0.048 to -0.050 for y 0.020-0.036. Replicated projection, medial ray: seed [-0.0494,0.029,0.040] hits outer skin x -0.0494, 'kept', marker [-0.0464,0.029,0.040]. Mirrored left gives marker [0.0451,0.029,0.040]. SP3 to SP4 is 2.3 cm, about 1 cun."
+  },
+  "SP8": {
+   "position": [
+    -0.0449,
+    0.308,
+    -0.0205
+   ],
+   "surface": "medial",
+   "previous": {
+    "position": [
+     -0.04,
+     0.317,
+     0.001
+    ],
+    "surface": "medial"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "both",
+    "judges": 2
+   },
+   "confidence": "medium",
+   "basis": "WHO: tibial aspect of the leg, posterior to the medial border of the tibia, 3 B-cun inferior to SP9. Level: the medial malleolus prominence is tibia FMA24477 maxX -0.0488 at y 0.085 (-0.0495 at 0.09; tip minY 0.0733), so I use y of about 0.086. The medial condyle flare is steepest between y 0.37 and 0.39: maxX goes -0.0564 at 0.37, -0.0511 at 0.38, -0.0446 at 0.39, so the inferior border is at y of about 0.375-0.38. 13 cun is 0.289-0.294 m, about 2.22 cm per cun, which puts SP8 at y 0.308-0.312, so I use 0.310. The current y 0.317 is only about 0.3 cun high. Side of the border: at y 0.308/0.31 the tibia's anterior crest is at (-0.085, z 0.000) and the medial border at (-0.0693, z -0.021), maxX at y 0.31 being (-0.0692, -0.0203). The soleus FMA22558 front edge is at z -0.0239 (x -0.0629) and the medial gastrocnemius FMA45957 front edge at z -0.0279. The current marker's skin point (-0.0751, z 0.001) sits over the tibial face about 1 cm behind the crest. That is the wrong side of the medial border by about 2.5 cm (more than 1 cun). Medial skin at y 0.31 by z: 0 gives x -0.075, -0.01 gives -0.0618, -0.02 gives -0.0448, -0.023 gives -0.0417, -0.03 gives -0.0359. Seed z -0.023 is just behind the bone border z in a medial view and over the tibia-soleus groove. Replicated projection: seed [-0.0417,0.31,-0.023] gives outer skin x -0.0417, 'kept', marker [-0.0387,0.31,-0.023]. Mirrored left gives marker [0.0372,0.31,-0.023]."
+  },
+  "ST19": {
+   "position": [
+    -0.05,
+    1.1491,
+    0.1283
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.05,
+     1.167,
+     0.135
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 6 B-cun above umbilicus, 2 lateral. y 1.1491 (Δy −1.8 cm). x kept −0.05. Sim: right open 0 mm; left open 0.2 mm."
+  },
+  "ST20": {
+   "position": [
+    -0.05,
+    1.1224,
+    0.1268
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.05,
+     1.14,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 5 B-cun above umbilicus, 2 lateral. y 1.1224 (Δy −1.8 cm). Sim: right open 0 mm; left open 0.6 mm."
+  },
+  "ST21": {
+   "position": [
+    -0.05,
+    1.0958,
+    0.1233
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.05,
+     1.114,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 4 B-cun above umbilicus, 2 lateral. y 1.0958 (Δy −1.8 cm). Sim: right open 0 mm; left open 0.2 mm."
+  },
+  "ST22": {
+   "position": [
+    -0.05,
+    1.0691,
+    0.1166
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.05,
+     1.087,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 3 B-cun above umbilicus, 2 lateral. y 1.0691 (Δy −1.8 cm). Sim: right open 0 mm; left open 0.8 mm."
+  },
+  "ST23": {
+   "position": [
+    -0.05,
+    1.0424,
+    0.1151
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.05,
+     1.061,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 2 B-cun above umbilicus, 2 lateral. y 1.0424 (Δy −1.9 cm). Sim: right open 0 mm; left open 0.4 mm."
+  },
+  "ST24": {
+   "position": [
+    -0.05,
+    1.0157,
+    0.1125
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.05,
+     1.034,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 1 B-cun above umbilicus, 2 lateral. y 1.0157 (Δy −1.8 cm). Sim: right open 0 mm; left open 1.0 mm."
+  },
+  "ST25": {
+   "position": [
+    -0.05,
+    0.989,
+    0.1114
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.05,
+     1.005,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "minor",
+   "reviewers": {
+    "codex": "ok",
+    "claude": "minor",
+    "adjudicator": "claude",
+    "judges": 1
+   },
+   "confidence": "medium",
+   "basis": "I re-measured skin.glb by casting rays from +z to -z, on a grid with 1 mm y steps and 2 mm x steps. The umbilicus is a midline pit 6-9 mm deep. It is deepest at (x -0.0005, y 0.990, z 0.1065), while the flanking skin sits at z 0.114-0.117. The pit rim runs from y 0.980 to 0.995, and its centre is y 0.988-0.990. At CV8/ST25 height (y 1.005) the midline skin is smooth (z 0.1129), with no navel there. The skin close-up agrees. Enlarged 3x, the navel pit sits about 25 px (1.7 cm at 14.8 px/cm, scaled from the 10 cm gap between the dots) below the two gold ST25 dots, about 65% of the way down to ST26 (y 0.979). That gives 1.005 - 0.65*0.026 = 0.988. So the marker is 1.6 cm above the centre of the umbilicus. Cun on this body: the xiphisternal junction (sternal body minY 1.2006) to the navel (0.989) is 0.2116 m / 8 = 2.65 cm per cun. The model's own CV8-CV9 spacing is 2.49 cm. The 1.6 cm offset is therefore 0.6-0.64 cun upward. The lower-abdomen scale, from the bony symphysis top (hip bone FMA16586 near-midline maxY 0.8266) to the navel, is 0.162/5 = 3.24 cm per cun, which gives 0.49 cun. The lateral distance is acceptable: ST17 at x -0.09 marks 4 cun, so 2 cun = 4.5 cm. The marker is at 5.0 cm, 0.22 cun too lateral, so x -0.05 is kept to stay on the straight ST19-ST30 line. Rectus abdominis FMA13377 spans x -0.0088 to -0.0678 at y 0.984-0.994, so x -0.05 stays over the muscle. Seed check with the same rule as build-anchors (front ray): seed (-0.05, 0.989, 0.112) hits the outer skin at z 0.1114 (0.6 mm away), the first front-face hit from outside. The bones cannot decide the level on their own: L3 body front is y 1.0003-1.0306 and L4 body is 0.9652-0.9951, so both 0.989 and 1.005 are plausible umbilicus levels. The skin pit is the direct evidence."
+  },
+  "ST26": {
+   "position": [
+    -0.05,
+    0.9565,
+    0.1124
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.05,
+     0.979,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 1 B-cun below umbilicus, 2 lateral. y 0.9565 (Δy −2.3 cm). The old ST26 was only 1.0 cm below the corrected ST25. Sim: right open 0 mm; left open 0.8 mm."
+  },
+  "ST27": {
+   "position": [
+    -0.05,
+    0.924,
+    0.1068
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.05,
+     0.951,
+     0.14
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 2 B-cun below umbilicus, 2 lateral. y 0.9240 (Δy −2.7 cm). Sim: right open 0 mm; left open 1.5 mm."
+  },
+  "ST28": {
+   "position": [
+    -0.05,
+    0.8916,
+    0.0978
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.05,
+     0.924,
+     0.13
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 3 B-cun below umbilicus, 2 lateral. y 0.8916 (Δy −3.2 cm). Sim: right open 0 mm; left open 0.5 mm."
+  },
+  "ST29": {
+   "position": [
+    -0.05,
+    0.8591,
+    0.0878
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.05,
+     0.898,
+     0.12
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: 4 B-cun below umbilicus, 2 lateral. y 0.8591 (Δy −3.9 cm). Sim: right open 0 mm; left open 0.1 mm."
+  },
+  "ST30": {
+   "position": [
+    -0.05,
+    0.8266,
+    0.0723
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.05,
+     0.852,
+     0.1
+    ],
+    "surface": "front"
+   },
+   "verdict": "umbilicus-level",
+   "reviewers": {
+    "claude": "round 3 remap from measured umbilicus/xiphisternal/symphysis",
+    "codex": "landmarks independently within 1.4 mm; recompute from WHO cun"
+   },
+   "confidence": "high",
+   "basis": "WHO 2008: level of the superior border of the pubic symphysis, 2 B-cun lateral, over the femoral artery. y 0.8266 (Δy −2.5 cm). x −0.05 matches the right external iliac artery's lower end (centroid x −0.048 at y 0.835–0.86). Sim: right open 0 mm; left open 1.2 mm."
+  },
+  "ST34": {
+   "position": [
+    -0.104,
+    0.492,
+    0.054
+   ],
+   "surface": "front",
+   "previous": {
+    "position": [
+     -0.104,
+     0.505,
+     0.06
+    ],
+    "surface": "front"
+   },
+   "verdict": "minor",
+   "reviewers": {
+    "codex": "ok",
+    "claude": "minor",
+    "adjudicator": "claude",
+    "judges": 1
+   },
+   "confidence": "medium",
+   "basis": "Patella base (FMA24486 maxY) is at y 0.4503. Thigh cun from three WHO proportional segments: (a) pubic symphysis top on the hip bone mesh near the midline is y 0.8266 (FMA16586 vertex [-0.0061,0.8266,0.0412]); to the medial epicondyle (femur maxX y 0.4521) that is 0.3745/18 = 0.0208 m/cun, or 0.0209 if the patella base is used as the endpoint. (b) The greater trochanter prominence (femur minX y 0.8066) to the popliteal crease (0.425-0.429, BL40 0.429) gives 19 cun, about 0.0200 m/cun. (c) The CV2 marker (0.8479) to the epicondyle gives 0.0221 m/cun. The marker is 0.0547 m above the base, which is 2.48-2.75 cun (2.63 by the bone-based measure (a)). The target y for 2 cun is 0.490-0.4945. Codex's 2.11 cun comes from ASIS to patella base = 18 cun, which is not a WHO B-cun segment. Medial-lateral position is correct: in the slice at y 0.492, rectus femoris FMA38928 spans x -0.101 to -0.079 and vastus lateralis FMA38930 spans x -0.1256 to -0.0998, with its anterior peak at x -0.1059. The interval is at x about -0.101 to -0.109 (straight vs radial projection), so x -0.104 sits in it. A front ray at x -0.104, y 0.492 hits the skin first at z 0.0528. The sagittal slice shows a smooth skin profile with no usable patella bump (the skin is about 3 cm in front of the patella), so the bone base is the landmark to use."
+  },
+  "ST42": {
+   "position": [
+    -0.086,
+    0.074,
+    0.022
+   ],
+   "surface": "top",
+   "previous": {
+    "position": [
+     -0.085,
+     0.07,
+     0.075
+    ],
+    "surface": "top"
+   },
+   "verdict": "wrong",
+   "reviewers": {
+    "codex": "wrong",
+    "claude": "wrong",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "Second metatarsal FMA24509: base minZ [-0.0883,0.0448,0.0156], dorsal top of the base [-0.087,0.0617,0.0235], head maxZ [-0.0962,0.0211,0.0838]. Intermediate cuneiform FMA24523 spans z 0.0012 to 0.0234, maxZ [-0.0856,0.0616,0.0234], and its top at z 0.022 is [-0.0861,0.0632]. Downward bone rays at x -0.087 hit the cuneiform at z 0.022 (y 0.0628) and MT2 at z 0.025 (y 0.0612), so the dorsal joint line is at z about 0.021-0.023, x about -0.086 to -0.089. In a coronal slice at z 0.022, the EHL tendon is at x -0.073 to -0.068 and the EDL tendons at x -0.086 to -0.111, so x -0.086 is at the medial edge of EDL, between the two. The dorsal vessel in vessel-full.glb lies at x about -0.073 to -0.079 over z 0.02-0.035 (its node names are unreliable), so x was not moved further medially. A downward skin ray at (-0.086, z 0.022) hits the dorsum first at y 0.0726 (the next hit is 0.0672), so the seed at y 0.074 snaps to it. The current marker at z 0.0752 is about 1 cm short of the MT2 head and 5.3 cm (about 2.4 cun) distal to the joint."
+  },
+  "TE4": {
+   "position": [
+    -0.244,
+    0.827,
+    -0.0001
+   ],
+   "surface": "back",
+   "previous": {
+    "position": [
+     -0.254,
+     0.827,
+     0.01
+    ],
+    "surface": "back"
+   },
+   "verdict": "minor",
+   "reviewers": {
+    "codex": "unclear",
+    "claude": "ok",
+    "adjudicator": "neither",
+    "judges": 1
+   },
+   "confidence": "medium",
+   "basis": "Level is right. The marker is at y 0.8271, 2-3 mm distal to the ulnar styloid tip (0.8288) and radial styloid tip (0.8296), and level with LI5 (0.828). The side-to-side position is not right. I sliced the tendon meshes exactly with .cache/adjudicate/te-tendon.mjs and te-slice.mjs. At y 0.827 the extensor digitorum (FMA38501) spans x -0.2638 to -0.2451, centre -0.2544. At y 0.825 it separates into tendons at x -0.2645..-0.2573, -0.2559..-0.2529 and -0.2517..-0.2466. The extensor digiti minimi (FMA38504) is at x -0.2429..-0.2387. The depression ulnar to the extensor digitorum tendon (the ED/EDM gap) is therefore at x about -0.244. The gap holds its position at other levels: y 0.830 gives ED -0.2457 and EDM -0.2431; y 0.835 gives -0.2461 and -0.2436. An independent check agrees: at y 0.80 the 4th metacarpal maxX is -0.2437 and the 5th metacarpal minX is -0.2449, so the 4th-5th interspace, traced proximally, also reaches x -0.244. The marker at x -0.254 sits over the middle-finger extensor tendon, inside the extensor digitorum band, about 10 mm radial of the target. With 1 cun = 0.0207 m that is 0.48 cun, and the marker is not ulnar to the tendon. Projection check: seed [-0.244,0.827,-0.0001] on the back surface gives skin [-0.244,0.827,-0.0001] and marker [-0.244,0.827,-0.0031], both 'open'. The mirrored left side lands 0.1 mm from its seed."
+  },
+  "TE5": {
+   "position": [
+    -0.2445,
+    0.868,
+    -0.0147
+   ],
+   "surface": "back",
+   "previous": {
+    "position": [
+     -0.251,
+     0.88,
+     -0.02
+    ],
+    "surface": "back"
+   },
+   "verdict": "minor",
+   "reviewers": {
+    "codex": "minor",
+    "claude": "minor",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "Forearm scale: the elbow end is y 1.075-1.077. That comes from LU5 and HT3 (1.075), PC3 (1.0771), the humerus lateral epicondyle (1.078, measured), the medial epicondyle (1.0723) and the olecranon tip, ulna maxY (1.0764). The dorsal wrist crease is y 0.827, from TE4 and LI5 (0.828). 12 cun = 0.2485 m, so 1 cun = 0.0207 m. The target level is 0.827 + 2 cun = 0.868. The marker is at 0.8793, which is 2.52 cun above the crease, so it is 0.53 cun too proximal (0.45 cun if the crease is taken at 0.829). Side to side, from exact bone slices: at y 0.8793 the radius (FMA23464) spans x -0.2674..-0.2495 and the ulna (FMA23467) x -0.2368..-0.2259. The marker at x -0.2511 lies over the ulnar margin of the radius, 1.6 mm radial of its edge, not at the middle of the gap (-0.2432). The zoomed bone close-up shows the same: the gold dot sits on the radius edge, at the radial edge of the interosseous membrane. At y 0.868 the radius ulnar edge is -0.2505 and the ulna radial edge -0.2388, so the midpoint is -0.2447 (interosseous membrane FMA23707 x -0.2493..-0.2384). Total offset is about 11 mm proximal and 6.6 mm radial, roughly 13 mm or 0.62 cun. Projection check: seed [-0.2445,0.868,-0.0147] on the back surface gives skin z -0.0147 and marker [-0.2445,0.868,-0.0177], both 'open'. The left side lands 0.2 mm from its seed."
+  },
+  "TE6": {
+   "position": [
+    -0.242,
+    0.889,
+    -0.0221
+   ],
+   "surface": "back",
+   "previous": {
+    "position": [
+     -0.248,
+     0.902,
+     -0.026
+    ],
+    "surface": "back"
+   },
+   "verdict": "neighbour",
+   "reviewers": {
+    "codex": "round 2 neighbour note",
+    "claude": "round 2 neighbour note; round 3 re-measured"
+   },
+   "confidence": "medium",
+   "basis": "Level: WHO puts TE6 3 cun proximal to the dorsal wrist crease, level with TE7. Crease y 0.827 (TE4) and 1 cun = 0.0207, so y 0.889, equal to TE7 (0.889). The current TE6 at 0.9017 is 12.7 mm (0.61 cun) above TE7 and 1.63 cun above TE5. Side: y-slice at 0.889 gives the radius x -0.2654..-0.2487 and the ulna -0.2353..-0.2248, so the interosseous gap is -0.2487..-0.2353 with its midpoint at -0.242. The interosseous membrane FMA23707 spans -0.2495..-0.2345 (midpoint also -0.242). The current x of -0.248 sits on the radius's ulnar edge. Dorsal skin from +z rays at x -0.242: first hit z -0.0221, the forearm's most posterior point (skin posterior-most -0.2428, -0.0222). Projection: right surface (-0.242, 0.889, -0.0221), marker (-0.242, 0.889, -0.0251), open air; left seedDist 0.3 mm. Neighbours: TE7 (-0.237, 0.889) is 5.1 mm ulnar at the same level, as WHO requires. The small gap comes from this body's 13.4 mm interosseous space, and the dots are sized in screen pixels, so they separate when zoomed. TE5 is 22.4 mm distal (1.0 cun), on the same gap-midpoint line (x -0.2445). Unmoved TE8 (y 0.932) is still about 1 cun too high (4 cun = y 0.910, gap midpoint x about -0.240, as round 2 found). Not changed here."
+  },
+  "TE7": {
+   "position": [
+    -0.237,
+    0.889,
+    -0.0212
+   ],
+   "surface": "back",
+   "previous": {
+    "position": [
+     -0.239,
+     0.902,
+     -0.026
+    ],
+    "surface": "back"
+   },
+   "verdict": "minor",
+   "reviewers": {
+    "codex": "minor",
+    "claude": "minor",
+    "adjudicator": "both",
+    "judges": 1
+   },
+   "confidence": "high",
+   "basis": "Using the same scale (1 cun = 0.0207 m, crease y 0.827), the target level is 0.827 + 3 cun = 0.889. The marker is at 0.902, which is 3.63 cun above the crease, so it is 13 mm (0.63 cun) too proximal. It is still 0.5 cun too proximal if the crease is taken at 0.829. Side to side at y 0.889: the ulna radial edge is x -0.2354. Over it, the extensor digiti minimi ulnar edge (FMA38504) is at -0.2355 and the extensor carpi ulnaris radial edge (BP45) at -0.2353. So 'immediately radial to the ulna' is about x -0.236 to -0.237. The current x of -0.239 is 5 mm radial of the ulna edge at its own level (-0.2341 at y 0.902). That is acceptable, so only a 2 mm refinement goes with the level change. Projection check: seed [-0.237,0.889,-0.0212] on the back surface gives skin z -0.0212 and marker [-0.237,0.889,-0.0242], both 'open'. The left side lands 0.5 mm from its seed."
+  }
+ }
+}

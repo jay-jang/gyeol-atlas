@@ -85,6 +85,18 @@ export function pointTermsMatch(point: Pick<Point, 'id' | 'meridian'>, query: st
 export const KEY_CLASSES = ['yuan', 'mu', 'back-shu', 'xi', 'luo'];
 export const organKeyPointIds = (organ: string, list: readonly Pick<Point, 'id' | 'meridian'>[]) =>
   organClassPoints(organ, list).filter(g => KEY_CLASSES.includes(g.concept.id)).flatMap(g => g.points.map(p => p.id));
+// "원·모·유·극·락 (경맥별)" filter (Q47): the meridians a point is one of the
+// own 원·모·유·극·락혈 of. A zang-fu meridian owns them as organClassPoints does
+// (its mu/back-shu points may lie on another channel: BL13 is the lung's);
+// 임맥·독맥 own only their connecting points CV15·GV1. Extra-vessel xi points
+// belong to no listed meridian.
+export const KEY_FILTER = 'key';
+export const KEY_FILTER_NAME = '원·모·유·극·락';
+export function keyOwners(point: Pick<Point, 'id' | 'meridian'>): string[] {
+  const owners = organChoices.map(o => o.id).filter(z => KEY_CLASSES.some(c => ownedBy(point, z, c)));
+  if (['CV', 'GV'].includes(point.meridian) && pointConcepts[point.id]?.categories.includes('luo')) owners.push(point.meridian);
+  return owners;
+}
 
 // Which zang-fu an anatomical organ view stands for: the meshes the
 // traditional comparison of that zang-fu uses (comparison-reference.ts), or

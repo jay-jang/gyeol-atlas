@@ -1,0 +1,224 @@
+[
+ {
+  "group": "neighbours",
+  "umbilicus": [
+   0,
+   0.99,
+   0.1065
+  ],
+  "points": [
+   {
+    "id": "GB35",
+    "whoLocation": "On the fibular aspect of the leg, posterior to the fibula, 7 B-cun proximal to the prominence of the lateral malleolus (same level as GB36).",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same landmark (posterior to the fibula) and the same distance (7 cun above the prominence of the lateral malleolus).",
+    "verdict": "ok",
+    "error": "none; level within about 0.15 cun, posterior to the fibula's posterior border",
+    "suggested": null,
+    "basis": "Prominence of the lateral malleolus: lateral skin rays at z -0.049 give the bulge peak at x -0.1166, y 0.070 (fibula lateral-most x -0.1124 at y 0.066-0.071). Popliteal crease: the skin has no modelled fold (the posterior knee contour at x -0.09 runs smoothly from z -0.110 at y 0.34 to -0.065 at y 0.484). I used the joint line (tibial plateau rim y 0.4185, femoral condyles lowest y 0.4165-0.422) up to 1 cm above it, so crease y 0.419-0.430 and 1 cun = 0.0218-0.0225. 7 cun therefore lies at y 0.223-0.2275, and the marker is at y 0.226. Side: lateral rays at y 0.226 hit the fibula only for z -0.050..-0.038 (slice z -0.0509..-0.0372). Fibularis longus is at z -0.045..-0.057 (x -0.123), and soleus begins at z -0.061. The marker at z -0.057 is 6 mm behind the fibula's posterior border, at the fibularis/soleus interval, so it is posterior to the fibula. The skin there is at x -0.1346 and the marker at x -0.137, the usual 3 mm offset. The left marker mirrors it (0.1355, 0.226, -0.057).",
+    "neighbours": "In order. GB36 (-0.1352, 0.226, -0.030) is at the same level, 27 mm in front, anterior to the fibula, as WHO requires. BL58 (y 0.227) is also on the 7-cun level. GB34 (0.39) is above and GB37 (0.181) 2 cun below. Nothing overlaps."
+   },
+   {
+    "id": "GB38",
+    "whoLocation": "On the fibular aspect of the leg, anterior to the fibula, 4 B-cun proximal to the prominence of the lateral malleolus.",
+    "textMatches": true,
+    "textNote": "Same: anterior to the fibula, 4 cun above the prominence on the 16-cun popliteal crease-to-malleolus line.",
+    "verdict": "ok",
+    "error": "none; level exact, about 8 mm (0.35-0.4 cun) in front of the fibula's anterior border, still within tolerance",
+    "suggested": null,
+    "basis": "With the same scale (prominence y 0.070, 1 cun 0.0218-0.0225), 4 cun lies at y 0.157-0.160, and the marker is at y 0.160. Lateral rays at y 0.160 hit the fibula for z -0.052..-0.040, so its anterior border is about z -0.039. Muscles in front of it: z -0.033/-0.037 hits extensor digitorum longus (x -0.1035), z -0.029 tibialis anterior (x -0.093), and z -0.041/-0.045 fibularis brevis. The marker's z of -0.031 is at the EDL/tibialis anterior edge, about 8 mm in front of the fibula: anterior to the fibula as required. Optionally it could move about 4 mm back (z about -0.035) to sit right over the EDL-fibularis interval at the border. The skin at z -0.031 is at x -0.1181 and the marker at x -0.1211. The left marker mirrors it.",
+    "neighbours": "In order: GB37 at 0.181 (0.96 cun above), GB38 at 0.160, GB39 at 0.1375 (1.0 cun below). All three share the z -0.030/-0.031 line with GB36. Unmoved BL59 (-0.127, 0.176, -0.042), on another channel, is 20 mm from GB38 and 13 mm from GB37. It sits on the fibula's lateral face (fibula z -0.0524..-0.0385 at y 0.176) at 4.7 cun. WHO puts BL59 3 cun above BL60, between the fibula and the calcaneal tendon (about y 0.1375, z -0.062), so BL59 crowds the GB line and is itself misplaced."
+   },
+   {
+    "id": "GB39",
+    "whoLocation": "On the fibular aspect of the leg, anterior to the fibula, 3 B-cun proximal to the prominence of the lateral malleolus.",
+    "textMatches": true,
+    "textNote": "Same: anterior to the fibula, 3 cun above the prominence of the lateral malleolus.",
+    "verdict": "ok",
+    "error": "none; level within 0.1 cun, about 8 mm in front of the fibula's anterior border",
+    "suggested": null,
+    "basis": "3 cun lies at y 0.070 + 3 x (0.0218-0.0225) = 0.1355-0.1375, and the marker is at y 0.1375. Lateral rays at y 0.1375 hit the fibula for z -0.054..-0.040, so its anterior border is about z -0.039. In front of it, z -0.037 hits fibularis tertius, z -0.033/-0.029 extensor digitorum longus and z -0.025 tibialis anterior. The marker's z of -0.031 is over EDL directly in front of the fibula. The skin at z -0.031 is at x -0.1138 and the marker at x -0.1168. The old z of -0.016 was over tibialis anterior; the new placement fixes that. The left marker mirrors it.",
+    "neighbours": "In order: GB38 0.160 > GB39 0.1375 > GB40 0.055, at 1.0 cun to GB38. GB39 is on the same z line as GB36-GB38. The nearest other marker is BL59 (y 0.176), about 41 mm away, so nothing overlaps."
+   },
+   {
+    "id": "TE6",
+    "whoLocation": "On the posterior aspect of the forearm, midpoint of the interosseous space between the radius and the ulna, 3 B-cun proximal to the dorsal wrist crease.",
+    "textMatches": true,
+    "textNote": "Same: dorsal forearm, midpoint between the ulna and radius, 3 cun above the dorsal wrist crease.",
+    "verdict": "ok",
+    "error": "none; level within about 0.3 cun, x on the gap midpoint",
+    "suggested": null,
+    "basis": "The skin creases are not modelled: dorsal skin at x -0.245 changes linearly from z 0.000 at y 0.826 to -0.0224 at y 0.890. Dorsal wrist crease: TE4 is at y 0.827, and the distal radius articular surface is at y 0.831-0.835 (upward rays at z 0.010), so the crease is y 0.827-0.833. Cubital crease: LI11 at 1.0709 and PC3 at 1.0771, with the radial head top at 1.059 and the humerus lowest at 1.053. That gives 1 cun = 0.0203-0.0208 (12 cun), and 3 cun lies at y 0.888-0.895. The marker is at y 0.889. Width: the y-slice at 0.889 gives the radius at x -0.2654..-0.2487, the ulna at -0.2353..-0.2248 and the interosseous membrane at -0.2495..-0.2345. Dorsal bone rays hit nothing between x -0.248 and -0.236, so the gap midpoint is x -0.242, the same as the marker. Dorsal skin at x -0.242 is at z -0.0221 and the marker at z -0.0251. The left marker mirrors it (0.242, 0.889, -0.0254).",
+    "neighbours": "In order: TE4 0.827 < TE5 0.868 (1.0 cun distal, same gap line x -0.2445) < TE6 0.889 = TE7 0.889. TE7 sits 5 mm ulnar at x -0.237, 1.7 mm from the ulna's radial border (-0.2353), as WHO requires. The two dots are close but separate. Unmoved TE8 (-0.244, 0.932) is still about 5.1 cun above the crease. WHO 4 cun is y about 0.909, so TE8 is about 23 mm (1.1 cun) too proximal. The order is still correct."
+   },
+   {
+    "id": "BL62",
+    "whoLocation": "On the lateral aspect of the foot, directly inferior to the prominence of the lateral malleolus, in the depression between the inferior border of the lateral malleolus and the calcaneus.",
+    "textMatches": true,
+    "textNote": "Same landmarks. The added note that KI6 is the medial counterpart is commentary, not a location difference.",
+    "verdict": "ok",
+    "error": "none",
+    "suggested": null,
+    "basis": "The skin prominence of the lateral malleolus is at x -0.1166, y 0.070, z -0.049. The fibula's tip (minY) is at (-0.1057, 0.0539, -0.0491). Lateral bone rays at z -0.049 hit the fibula down to y 0.056, below that the calcaneus: a groove at x -0.093 for y 0.044-0.053, then its lateral bulge at x -0.0974 for y 0.038. Fibularis longus/brevis tendons lie at y 0.047-0.056 (x -0.098). Lateral skin rays at z -0.049 show a depression deepest at y 0.042-0.046 (x -0.1082/-0.1085), rising again to x -0.1118 at y 0.030. The marker (-0.1111, 0.045, -0.049) is in that depression, 9 mm (0.4 cun) below the malleolar tip and at the prominence's z, so it is directly inferior. The skin is at x -0.1081 and the marker 3 mm off it. The left marker mirrors it.",
+    "neighbours": "In order along the foot: BL61 (-0.1109, 0.0529, -0.0601) is 13.6 mm posterosuperior with no overlap, and BL63 (-0.1247, 0.028, -0.016) and BL64 lie anteroinferior. The problem is unmoved BL60 (-0.1161, 0.086, -0.045). At y 0.085 the fibula spans z -0.0554..-0.036, so BL60 sits on the lateral face of the malleolus, 16 mm (0.7 cun) above the prominence. WHO puts BL60 between the prominence and the calcaneal tendon. At y 0.070 the malleolus posterior edge is z -0.056 and the Achilles anterior edge z -0.074, so BL60 belongs at about (-0.104, 0.070, -0.065) on the skin. Its current position also puts BL61 almost straight below the malleolus instead of below BL60."
+   },
+   {
+    "id": "SP17",
+    "whoLocation": "In the anterior thoracic region, in the fifth intercostal space, 6 B-cun lateral to the anterior median line.",
+    "textMatches": true,
+    "textNote": "Same: 5th intercostal space, 6 cun lateral to the anterior median line.",
+    "verdict": "ok",
+    "error": "none; in the 5th ICS centre, 6 cun on the projected scale (about 0.3 cun lateral of the surface-arc estimate)",
+    "suggested": null,
+    "basis": "Width: ST17 (nipple) is at x -0.090, so 1 cun = 0.0225 and 6 cun = x -0.135, equal to the marker. Measured along the skin instead: at y 1.235 the arc from the midline to the nipple is 0.0934, and 6 cun of arc reaches x -0.129 (x -0.127 at y 1.2075). The marker is within 0.35 cun of either estimate. Level: horizontal bone rays along the inward skin normal (0.932, 0, -0.362) through the SP17 skin point (-0.135, 1.2075, 0.0772) hit rib 6 (FMA8175) at y 1.182-1.198. They pass through the chest wall for y 1.202-1.214, then hit rib 5 (FMA8066) at y 1.218-1.230. Pure +x rays give the same picture: at z 0.060, rib 6 1.186-1.198, gap 1.202-1.218, rib 5 1.222-1.234; at z 0.075, gap 1.198-1.210. So the 5th ICS centre is y 1.204-1.210, and the marker at 1.2075 is in it. Cross-checks: ST18 (1.2078) and KI22 (1.209) are in the same 5th ICS, and the nipple at y 1.235 is in the 4th ICS (rib 4 arc 1.254, rib 5 arc 1.211 at x -0.09). The skin contour at y 1.2075 passes (-0.1348, 0.0778), so the marker is on the anterolateral chest. The left marker mirrors it (0.135, 1.2075, 0.0767).",
+    "neighbours": "Vertical order is right: SP16 1.069 < SP17 1.2075 < SP18 1.2368 < SP19 1.262 < SP20 1.2901, with 25-29 mm steps. SP18 sits in the 4th ICS gap (1.234-1.246 on the same normal ray). However, the unmoved SP18 (x -0.1508), SP19 (-0.149) and SP20 (-0.1506) are 14-16 mm (about 0.7 cun) lateral to SP17's 6-cun line (-0.135), so the channel line kinks outward above SP17. They should come in to x about -0.135 (about -0.129 by surface arc) on the skin. SP21 (-0.1571, 1.1995, 0.012) overlaps SP17 only in the frontal screenshot; in 3D they are 72 mm apart."
+   }
+  ]
+ },
+ {
+  "group": "abdomen (round 4 re-levelling: CV3, CV4, CV5, CV8, CV12, CV14, KI16, ST25, ST28, ST29, SP14, LR12)",
+  "umbilicus": [
+   0,
+   0.989,
+   0.1072
+  ],
+  "points": [
+   {
+    "id": "CV3",
+    "whoLocation": "WHO 2008 p.221: on the lower abdomen, 4 B-cun inferior to the centre of the umbilicus, on the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives 4寸 below the umbilical centre on the anterior midline, the same as WHO.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "I measured the navel on skin FMA7163 with front rays on a 1 mm grid. The deepest point of the pit is (0, 0.990, z 0.1065) and the depth-weighted centroid is (-0.0008, 0.9889), so the umbilicus is at y 0.989. The upper border of the pubic symphysis is the top of hip bones FMA16586/16587 beside the symphysis: 0.8266 at x -0.006, 0.8268 at x -0.014, and 0.8279/0.8273 on the left (range 0.823-0.828). That gives 1 lower-abdominal cun = (0.989-0.827)/5 = 0.0324 m. 4 cun is y 0.8594 (0.857-0.860 across the symphysis range); the marker is at y 0.8591, x 0. Its z 0.0965 is the skin (0.0935) plus the 3 mm offset. The images show it one cun above CV2, which sits on the symphysis top.",
+    "neighbours": "CV2 0.8266, CV3 0.8591, CV4 0.8916, CV5 0.924, CV6 0.9403, CV7 0.9565, CV8 0.989: steps of 0.0325 per cun, matching the measured 0.0324. Order and spacing are correct."
+   },
+   {
+    "id": "CV4",
+    "whoLocation": "WHO 2008 p.221: on the lower abdomen, 3 B-cun inferior to the centre of the umbilicus, on the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives 3寸 below the umbilical centre on the midline, the same as WHO.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Umbilicus y 0.989 measured on the skin. Lower cun 0.0324 (symphysis top about 0.827 from FMA16586/16587). 3 cun is y 0.8918 (0.890-0.892); the marker is at 0.8916, x 0, z on the skin (0.1045) plus 3 mm. The skin and bone images place it about two-fifths of the way from the navel down towards the symphysis.",
+    "neighbours": "CV3 is 0.0325 below and CV5 0.0324 above, the same as the KI13 and ST28 level (0.8916). Correct."
+   },
+   {
+    "id": "CV5",
+    "whoLocation": "WHO 2008 p.222: on the lower abdomen, 2 B-cun inferior to the centre of the umbilicus, on the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives 2寸 below the umbilical centre, the same as WHO.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Umbilicus 0.989 minus 2 x 0.0324 = 0.9242 (0.9228-0.9246 across the symphysis range); the marker is at 0.924, x 0, z skin 0.1151 + 3 mm.",
+    "neighbours": "CV6 (0.9403) and CV7 (0.9565) are 0.5 cun steps above it, and CV4 is 1 cun below. KI14 and ST27 share the 0.924 level. Correct."
+   },
+   {
+    "id": "CV8",
+    "whoLocation": "WHO 2008 (no page given): on the upper abdomen, in the centre of the umbilicus.",
+    "textMatches": true,
+    "textNote": "KMCRIC '윗배, 배꼽의 중심' is the same as WHO.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "I measured the pit on skin FMA7163 without using any marker. The midline profile has its z minimum at y 0.990 (z 0.1065), and the surface rises to 0.1112 at y 0.995 and 0.1139 at y 0.980. Against a quadratic fitted to the rim, the part deeper than 4 mm spans x -0.004..+0.002 and y 0.983-0.993; the deepest point is (0, 0.990) and the depth-weighted centroid (-0.0008, 0.9889). The marker at (0, 0.989, 0.1102) is the skin (0.1072) plus 3 mm, within 1 mm of the pit centre. The skin images show the dot in the visible navel depression. The previous position (y 1.005) was 16 mm (0.6 cun) above the pit; the move fixes that.",
+    "neighbours": "KI16, ST25 and SP15 all sit at y 0.989, and CV9 (1.0157) and CV7 (0.9565) are 1 cun above and below on their respective scales. Correct."
+   },
+   {
+    "id": "CV12",
+    "whoLocation": "WHO 2008 p.225: on the upper abdomen, 4 B-cun superior to the centre of the umbilicus, on the anterior median line (midpoint between the xiphisternal junction and the umbilical centre).",
+    "textMatches": true,
+    "textNote": "KMCRIC gives 4寸 above the umbilical centre, the same as WHO.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Xiphisternal junction from bone.glb: on the anterior midline the sternal body FMA7487 ends at y 1.2025 (x ±0.002, z 0.1077), and the top of the xiphoid FMA7488 is at 1.2046. Upper cun = (1.2025-0.989)/8 = 0.0267 (0.0269 if the junction is taken at 1.2046). The midpoint is 1.0958 (1.0968). The marker is at 1.0958, x 0, z skin 0.1271 + 3 mm. The bone image shows it halfway between the sternal lower end (CV16) and the navel.",
+    "neighbours": "CV9 to CV16 run 1.0157, 1.0424, 1.0691, 1.0958, 1.1224, 1.1491, 1.1758, 1.2025: even steps of 0.0267. KI19 and ST21 share the 1.0958 level. Correct."
+   },
+   {
+    "id": "CV14",
+    "whoLocation": "WHO 2008 p.226: on the upper abdomen, 6 B-cun superior to the centre of the umbilicus, on the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives 6寸 above the umbilical centre, the same as WHO.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "0.989 + 6 x 0.0267 = 1.1491 (1.1507 with the junction at the xiphoid top). The marker is at 1.1491, x 0, z skin 0.1254 + 3 mm. Equivalently it is 2 cun below the xiphisternal junction (1.2025). The bone image shows it below the xiphoid tip (FMA7488 min y 1.1825), with CV15 (1.1758) between them.",
+    "neighbours": "CV15 is 1 cun above and CV13 1 cun below (0.0267 steps). KI21 and ST19 share the 1.1491 level. Correct."
+   },
+   {
+    "id": "KI16",
+    "whoLocation": "WHO 2008: on the upper abdomen, 0.5 B-cun lateral to the centre of the umbilicus.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives 0.5寸 lateral to the umbilical centre, the same as WHO.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Level: y 0.989 is the measured centre of the navel pit. Lateral distance: the nipple scale needs a nipple. The skin has a symmetric papilla-like bump about 2 mm high and about 10 mm wide at x ±0.107, y 1.240, in the 4th intercostal space (rib 4 arc 1.2547, rib 5 arc 1.2218 at x -0.11). That gives 1 transverse cun = 0.0268. The ST17 marker at x 0.09 would give 0.0225. 0.5 cun is therefore 0.011-0.013; the marker is at |x| 0.013, z skin 0.115 + 3 mm. It lies outside the pit, whose rim is about 6 mm from the centre.",
+    "neighbours": "KI11 to KI21 at x 0.013 run 0.8266, 0.8591, 0.8916, 0.924, 0.9565, 0.989, 1.0424, 1.0691, 1.0958, 1.1224, 1.1491. Each matches the CV level of the same cun (lower steps 0.0325, upper steps 0.0267). Correct."
+   },
+   {
+    "id": "ST25",
+    "whoLocation": "WHO 2008 p.58: on the upper abdomen, 2 B-cun lateral to the centre of the umbilicus.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives 2寸 lateral to the umbilical centre, the same as WHO.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Level y 0.989 is the measured navel. 2 cun is 0.045 (ST17-marker scale) to 0.0535 (skin-nipple scale); the marker is at |x| 0.050, at most 0.2 cun from either value, z skin 0.1114 + 3 mm. The muscle image shows it over the rectus abdominis, whose lateral border at this level is x -0.068 (FMA13377).",
+    "neighbours": "ST19 to ST30 at x 0.05 run 1.1491, 1.1224, 1.0958, 1.0691, 1.0424, 1.0157, 0.989, 0.9565, 0.924, 0.8916, 0.8591, 0.8266: 1-cun steps of 0.0267 above the navel and 0.0325 below, level with the matching CV and KI points. Correct."
+   },
+   {
+    "id": "ST28",
+    "whoLocation": "WHO 2008: on the lower abdomen, 3 B-cun inferior to the centre of the umbilicus, 2 B-cun lateral to the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives 3寸 below the navel and 2寸 lateral to the midline, the same as WHO.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "y = 0.989 - 3 x 0.0324 = 0.8918; the marker is at 0.8916. Lateral |x| 0.05 equals 2 cun within 0.2 cun (0.045-0.0535). z is the skin (0.0978/0.0983) + 3 mm. The previous y 0.924 was really ST27's level (1 cun high); this round corrects it.",
+    "neighbours": "ST27 (0.924) is above and ST29 (0.8591) below, both 1 cun steps, at the same level as CV4 and KI13. Correct."
+   },
+   {
+    "id": "ST29",
+    "whoLocation": "WHO 2008: on the lower abdomen, 4 B-cun inferior to the centre of the umbilicus, 2 B-cun lateral to the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives 4寸 below the navel and 2寸 lateral, the same as WHO.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "y = 0.989 - 4 x 0.0324 = 0.8594 (0.857-0.860); the marker is at 0.8591, |x| 0.05, z skin 0.0878 + 3 mm. It lies above the inguinal ligament, which is at y about 0.845 at x -0.05 (FMA21964). The previous y 0.898 was about 2.8 cun below the navel; that error is fixed.",
+    "neighbours": "It is 1 cun below ST28 (0.8916) and 1 cun above ST30 (0.8266, the symphysis level), at the same level as CV3 and KI12. Correct."
+   },
+   {
+    "id": "SP14",
+    "whoLocation": "WHO 2008: on the lower abdomen, 1.3 B-cun inferior to the centre of the umbilicus, 4 B-cun lateral to the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives 1.3寸 below the navel and 4寸 lateral, the same as WHO.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Level: 0.989 - 1.3 x 0.0324 = 0.9469 (0.9460-0.9471); the marker is at 0.9468, which is correct. Lateral: 4 cun equals the nipple line. Taking the measured skin papilla at x ±0.107 (y 1.240, 4th intercostal space) as the nipple, the marker at |x| 0.108 sits on it (0.04 cun off), z skin 0.0776 + 3 mm. Caveat: the ST17 marker sits at x 0.09, 17 mm medial to that skin bump. If the project treats x 0.09 as the nipple line, SP14 is about 0.8 cun too lateral and should be about [-0.090, 0.9468, 0.0916]. The muscle image shows SP14 on the external oblique, lateral to the rectus border (x -0.069), and about 3 cm above and 6 mm medial to the ASIS (hip bone anterior point (-0.1145, 0.9173)).",
+    "neighbours": "SP13 is at y 0.8493 (4.3 cun below the navel, correct) and SP15 at 0.989 (correct), so the vertical order and spacing are right. The x positions on the 4-cun line drift: SP13 0.100, SP14 0.108, SP15 0.112, and SP16 0.130 (not in this set, but more than 0.8 cun lateral of the others)."
+   },
+   {
+    "id": "LR12",
+    "whoLocation": "WHO 2008: in the groin region, at the same level as the superior border of the pubic symphysis, 2.5 B-cun lateral to the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC '샅부위, 두덩결합 위모서리와 같은 높이, 앞정중선에서 가쪽으로 2.5寸' is the same as WHO.",
+    "verdict": "wrong",
+    "error": "The new level is correct: y 0.8266 is the measured upper border of the symphysis (0.8266-0.8279). The lateral distance is wrong, and x was not changed in this move. |x| 0.043 is only 1.6-1.9 cun from the midline, 13-24 mm (about 0.6-0.9 cun) medial of 2.5 cun. It also sits medial to ST30 (x 0.05, 2 cun, same level), so the WHO order is reversed: LR12 should be 0.5 cun lateral to ST30. In the muscle and bone images it lies over the femoral vein instead of lateral to the ST30 line.",
+    "suggested": [
+     -0.065,
+     0.8266,
+     0.0732
+    ],
+    "basis": "Level: the hip-bone tops near the symphysis are 0.8266 (x -0.006), 0.8268 (x -0.014), and 0.8279/0.8273 on the left, and CV2, KI11 and ST30 sit at 0.8266. Lateral: 2.5 cun = 0.056 (ST17-marker scale 0.0225), 0.0625 (the model's own ST line, 2 cun = 0.05), or 0.067 (skin-nipple scale 0.0268). x -0.065 is 0.5 cun lateral to ST30 by any of these scales and stays medial to SP12 (x 0.077). The skin there is at z 0.0702 (front ray), so the marker z is 0.0702 + 0.003. The point lies about 2 cm below the inguinal ligament (y about 0.85 at x -0.065, FMA21964), in the groin crease or medial femoral triangle, consistent with 'groin region'.",
+    "neighbours": "Same level as CV2 (x 0), KI11 (0.013) and ST30 (0.05). Moving it to x 0.065 restores the order midline < KI11 < ST30 < LR12 < SP12 (0.077, y 0.85)."
+   }
+  ]
+ }
+]

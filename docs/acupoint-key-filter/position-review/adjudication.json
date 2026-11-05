@@ -1,0 +1,596 @@
+[
+ {
+  "zangfu": "HT",
+  "points": [
+   {
+    "id": "HT5",
+    "finalVerdict": "ok",
+    "sides": "claude",
+    "fix": false,
+    "seed": null,
+    "surface": "none",
+    "confidence": "medium",
+    "basis": "WHO 2008 places HT5 on the anteromedial forearm, radial to the flexor carpi ulnaris (FCU) tendon, 1 B-cun proximal to the palmar wrist crease. The KMCRIC text matches. I re-measured the right marker at (-0.2452, 0.8569, 0.0368).\n\nLEVEL. Forearm axis from the mean cubital-crease markers (LU5, PC3, HT3: -0.2223, 1.0757, -0.0008) to the mean wrist-crease markers (LU9, PC7, HT7: -0.2614, 0.8312, 0.0436): u = (0.155, 0.972, -0.176), length 0.2516 m, so 1 cun = 0.0210 m (measuring in y only gives 0.0208).\n- Projections onto the axis: HT5 s = 0.7884, HT7 s = 0.7662, pisiform proximal extreme (FMA24441 maxY -0.2357, 0.8253, 0.0318) s = 0.7601.\n- From the model's HT7, which both reviewers accepted as ok, HT5 is 1.06 cun proximal.\n- From the pisiform border, HT5 is 1.35 cun along the axis or 1.52 cun in y only, an excess of 0.35–0.52 cun.\n- From the styloid tips (radius minY 0.8296, ulna minY 0.8288), it is about 1.3 cun in y.\n- So the excess is 0.05–0.5 cun depending on which crease reference is used.\n- HT6 (0.8459) and HT7 (0.835) carry the same systematic offset relative to the pisiform, and both reviewers judged them ok. The HT7–HT6–HT5 spacing on this model is 0.53 / 0.53 cun, which is correct.\n- Codex's suggested position (-0.2462, 0.8461, 0.0384) is the HT6 marker's position (-0.2462, 0.8459, 0.0384). Moving HT5 there alone would stack it on HT6 and break the series, so it is not a usable correction.\n\nTRANSVERSE. The two tendon sources disagree.\n- muscle.glb (BodyParts3D) slices at y 0.857: FCU FMA38617 x -0.2334 to -0.2278 (z 0.013–0.019), palmaris longus (PL) FMA38463 x -0.2449 to -0.2405, FDS FMA38638 x -0.2481 to -0.2382, FCR FMA38460 x -0.2553 to -0.2494.\n- On that mesh the marker is 1.2 cm radial to the FCU edge, about 0.35–0.45 cun more radial than a point just beside the tendon, and near the PL edge.\n- The displayed neurovascular layer (vessel-full/nerve-full) disagrees. The superficial branch of the ulnar nerve is at x -0.2478 to -0.2463 (y 0.857) and -0.2442 to -0.2425 (y 0.867). The ulnar artery is at x -0.2516 to -0.2482 (y 0.867) and -0.2464 to -0.2439 (y 0.88).\n- So the marker x of -0.2452 lies over the ulnar neurovascular bundle, which is the classic HT5 relation. The two sources are offset by about 1 cm, so the transverse error cannot be measured clearly.\n- The marker is radial to FCU in both sources, so it is on the correct side of the tendon.\n\nSKIN. The skin slice at y 0.857 spans x -0.2818 to -0.2206; the anterior surface near x -0.245 is at z ≈ 0.031–0.034, matching marker surface z 0.0338. In the images, the gold dot sits on the ulnar anterior distal forearm, proximal to the carpus, between HT4 and HT6.",
+    "note": "Kept ok (Claude's verdict). The level error is 0.05–0.52 cun depending on the crease reference, which is at or below the tolerance boundary and shared by HT6 and HT7, both accepted. HT5 is 1.06 cun above the accepted HT7. Codex's correction lands exactly on HT6. On the BodyParts3D FCU mesh the marker looks too radial by about 0.4 cun, but the displayed ulnar nerve and artery layer puts it in the right place, so the evidence is mixed. Side issue, not adjudicated here: HT4 (y 0.8629) is only 0.006 m (0.29 cun) above HT5, where 0.5 cun is expected. Any future change to the crease level should move HT4–HT7 together."
+   }
+  ]
+ },
+ {
+  "zangfu": "LI",
+  "points": [
+   {
+    "id": "LI6",
+    "finalVerdict": "minor",
+    "sides": "claude",
+    "fix": true,
+    "seed": [
+     -0.2712,
+     0.889,
+     -0.005
+    ],
+    "surface": "lateral",
+    "confidence": "medium",
+    "basis": "Level: LI5 y 0.828 to LI11 y 1.0709 is 12 cun, so 1 cun is 0.0202 m and 3 cun is y 0.8887. The marker (surface y 0.8899) is level within about 0.06 cun, so the level is fine. Circumference: I ray-cast the skin contour at y 0.8895. The lateral extreme is x -0.2749 at z 0.003-0.0095. The marker surface point (-0.2737, 0.0124) is about 30 deg anterior of lateral: its offset normal points (-0.0027, +0.0004, +0.0013), i.e. anterolateral. It sits over the anterior edge of the brachioradialis (BR) tendon, which spans skin angle -30 to -7.5, BR surface z 0.0081 to 0.0022. Under the posterolateral face are ECRL at z 0 to -0.0022, ECRB at z -0.004 to -0.006, and APL from z -0.0067 posteriorly. Both neighbours sit behind the lateral extreme. LI5 (-0.2803, 0.828, 0.0081) lies between EPB (-0.2824, 0.0127) and EPL (-0.2720, 0.0073), about 2.0 cm posterior of the wrist extreme (-0.2893, 0.0258). LI7 (-0.270, 0.931, -0.0123) lies over ECRL (-0.2684, -0.0106), about 1.2 cm posterior of its extreme (-0.2717, 0). LI11 (-0.2448, 1.0709, -0.0029) is about 3.5 cm anterior of the elbow extreme (-0.2618, -0.031). Where the LI line should be at y 0.8895: unrolling LI5 to LI11 linearly in arc length gives about 0.6 cm posterior of the extreme, near (-0.274, 0.0). LI5 to LI7 interpolation gives about 1.5 cm posterior, near (-0.270, -0.008). A straight 3D chord gives (-0.2713, 0.0053) inside the skin, which projects to the extreme at z 0.005. Along the skin the marker is 0.7 / 1.27 / 1.7-2.2 cm (0.35 / 0.62 / 0.8-1.1 cun) anterior of these. WHO says 'posterolateral' and both neighbours are posterior of the extreme, so a posterior shift is warranted. Seed check: a lateral ray at (-0.2712, 0.889, -0.005) hits the skin first, exactly at the seed, with normal (-0.87, -0.06, -0.48), i.e. posterolateral; the marker lands at (-0.2742, 0.889, -0.005). The mirrored left seed hits at (0.2717, 0.889, -0.005), 0.5 mm off. The current seed's back ray at x -0.275 misses the skin entirely, so it lies just outside the lateral silhouette.",
+    "note": "WHO location: posterolateral aspect of the forearm, on the line from LI5 to LI11, 3 B-cun proximal to the dorsal wrist crease. The KMCRIC text matches. The marker's level is right, but it sits about 0.6-0.8 cun too far anterior around the forearm: on the lateral/anterolateral face in front of the BR tendon, not on the posterolateral face between BR and APL over ECRL/ECRB, where LI5 and LI7 put the line. Move it posteriorly to about z -0.005 on the skin. Codex judged only the y level and the x chord, so it missed the offset around the circumference. Scripts: /Users/nuinuri/workspace/anatomy-worktrees/acupoint-key-filter/.cache/adjudicate/li6-section.mjs (contours) and /Users/nuinuri/workspace/anatomy-worktrees/acupoint-key-filter/.cache/adjudicate/li6-project.mjs (projection check). The 'lateral' surface is chosen over 'back' because the back ray meets this face at about 61 deg incidence and hits a different facet on the left side."
+   }
+  ]
+ },
+ {
+  "zangfu": "SI",
+  "points": [
+   {
+    "id": "SI4",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.2245,
+     0.812,
+     0.027
+    ],
+    "surface": "medial",
+    "confidence": "high",
+    "basis": "WHO p.89: posteromedial wrist, in the depression between the base of the 5th metacarpal and the triquetrum, at the red-white flesh border (ulnar edge of the hand). KMCRIC gives the same location. Bone slices: the right 5th MC (FMA24472) base ends at y=0.8109, where its medial x is -0.2362 at y 0.810. The triquetrum (FMA24439) begins at y=0.8126, with medial x -0.2337 at y 0.814. At y 0.812 only the hamate is present, at medial x -0.2369, so the depression is at y≈0.812. The outer skin contour at y 0.812 (rays inward from [-0.255,0.025]) runs from the dorsum at z 0.0038-0.0047 to the palm at z 0.047. The ulnar border is the medial-most skin, x -0.2243…-0.2250 over z 0.025-0.030. The current marker is [-0.247,0.8029,0.0038] with its surface at z 0.0068. That is the dorsal skin over the 4th/5th MC base, 22.5 mm radial, 9 mm distal and 20 mm dorsal of the target: 31.6 mm, about 1.6 cun at 2.0 cm/cun (LU5/HT3 1.075 to HT7 0.835 = 12 cun). My mirror of the build-anchors axis-ray reproduces the current marker exactly. A medial seed [-0.2245,0.812,0.027] hits the ulnar-border skin at [-0.2245,0.812,0.0270], open air, seed distance 0. The marker goes to [-0.2215,0.812,0.027]. The left mirror hits [0.2232,0.812,0.027], also open. The thigh hits on this ray are at x≥-0.1432 and fall outside the nearest-hit choice.",
+    "note": "Both reviewers agree, and their corrections ([-0.2213,0.812,0.028] and [-0.221,0.812,0.030]) are marker positions, 3 mm outside the same skin point. Use surface 'medial' (from the midline outward). 'lateral' would pass through the thumb side first, and 'back' lands on the dorsum. Out of scope, but noticed: SI5 (surface [-0.2431,0.8368,-0.0028]) also sits on the dorsum, about 1.8 cm radial of the ulnar wrist border (x -0.2247 at y 0.837). After this fix the distal SI line will zigzag until SI5 is reviewed."
+   },
+   {
+    "id": "SI7",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.212,
+     0.937,
+     -0.031
+    ],
+    "surface": "back",
+    "confidence": "high",
+    "basis": "WHO: posteromedial forearm, between the medial border of the ulna and FCU, 5 B-cun proximal to the dorsal wrist crease. KMCRIC matches. Level: crease about 0.835-0.837 (HT7 0.835, SI5 0.8368) plus 5 × 2.0 cm = 0.935-0.937. The SI5-SI8 midpoint (0.8368, 1.080) minus 1 cun gives 0.938, so y=0.937. The current y of 0.944 is only 0.35 cun high. The transverse error is the real problem. At y 0.944 the ulna (FMA23467) spans x -0.2201…-0.2331 and the radius (FMA23464) x -0.2413…-0.2574. The current marker [-0.236,0.944,-0.0468] (surface z -0.0438) is at x -0.236, over the radius-ulna interosseous gap at the posterior apex of the forearm (contour 270° = [-0.235,-0.0439]). That is radial to the ulna, in the TE corridor (TE7 x -0.239, TE8 x -0.244), on the wrong side of the bone. At y 0.938: ECU (BP45/BP47) covers the posterior ulna to maxX -0.2208 (z -0.0213), and the FCU ulnar head (FMA38619) begins at minX -0.2218 (z -0.0177). They meet at the ulna's posteromedial edge, about [-0.2225,-0.018]. The local skin normal there points about 309° (contour 310° [-0.2152,-0.0336] to 330° [-0.2065,-0.0265]). Projecting the edge along that normal gives skin at about [-0.2115,-0.031]. Inward rays from skin [-0.212,0.937,-0.031] confirm it: along 129° they reach the ECU edge at [-0.2210,-0.0201], then the ulna at [-0.2228,-0.0179]; straight anterior they reach FCU at [-0.212,-0.021]. This is the ulna-FCU interval. New surface vs old: dx 24 mm, dy 7 mm, dz 13 mm, 28 mm total, about 1.4 cun. A back seed [-0.212,0.937,-0.031] hits the skin at [-0.2120,0.937,-0.0309], open air, seed distance 0.1 mm. The marker goes to [-0.212,0.937,-0.0339]. The left mirror hits [0.212,0.937,-0.0318], open. The ray meets no trunk skin.",
+    "note": "Both reviewers call it wrong for the same reason: radial/posterior of the ulna instead of in the ulna-FCU groove. My target is close to Claude's: skin [-0.214,-0.032], at y 0.935. Codex's skin point [-0.220,0.9381,-0.037] is about 8 mm more posterolateral, and inward rays from there pass through ECU to the ulna, so it is over ECU rather than the interval. Use surface 'back': the local normal is more posterior than medial (0.78 vs 0.63). Out of scope, but noticed: SI8 (x -0.222 at y 1.08) is lateral to the olecranon tip (ulna minZ point x -0.2088 at y 1.0602), so SI8 may also need review."
+   }
+  ]
+ },
+ {
+  "zangfu": "LU",
+  "points": [
+   {
+    "id": "LU1",
+    "finalVerdict": "minor",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.135,
+     1.327,
+     0.042
+    ],
+    "surface": "front",
+    "confidence": "medium",
+    "basis": "WHO p.26: level with the 1st ICS, lateral to the infraclavicular fossa, 6 B-cun from the anterior midline, 1 B-cun below LU2. Transverse scale: ST17 x=-0.090 is 4 cun, so 0.0225 m/cun and 6 cun is x=-0.135. The right coracoid tip (scapula FMA13395 most anterior vertices) is at x -0.126 to -0.138, y 1.347, so it also points to about -0.135. The marker at x=-0.147 is 6.53 cun, 12 mm (0.53 cun) too lateral. Level: bone sections give the 1st ICS at the sternal margin as x=-0.03 between cartilage 2 (FMA7886) top 1.3162 and cartilage 1 (FMA7875) bottom 1.3356, centre 1.326. At x=-0.04 it lies between 1.3174 and 1.3378, centre 1.328. LU2 marker y 1.350 minus 1 cun (0.02445 m from sternal body minY 1.2006 to CV8 1.005 = 8 cun) gives 1.3256. The marker y 1.315 is at the top of cartilage 2, about 12 mm (0.49 cun) low. The combined error is about 17 mm (0.7 cun). In muscle.glb at y 1.327 the clavicular pectoralis major (FMA34690) spans x -0.1535 to -0.098 and the deltoid starts at -0.1497, so the new seed stays on the pectoralis, medial to the deltopectoral boundary. Front ray at (-0.135, 1.327) hits the outer skin at z 0.0412 (0.8 mm from the seed; left mirror z 0.0403), so the marker lands at about z 0.044.",
+    "note": "Both reviewers proposed almost the same fix ([-0.135,1.33,0.04] and [-0.135,1.328,0.043]), and my measurements confirm it. Out of scope but worth flagging: ST14 (1.3149), KI26 (1.3155) and CV20 (1.3164) use the same low 1st-ICS level. Moving only LU1 leaves that row uneven. Also, at y 1.35 the LU2 marker (x -0.150) sits over the clavicular deltoid (medial edge -0.1118), which suggests LU2 is too lateral as well."
+   },
+   {
+    "id": "LU7",
+    "finalVerdict": "wrong",
+    "sides": "claude",
+    "fix": true,
+    "seed": [
+     -0.273,
+     0.86,
+     -0.001
+    ],
+    "surface": "lateral",
+    "confidence": "high",
+    "basis": "WHO: on the radial aspect of the forearm, between the APL and EPB tendons, in the APL tendon groove, 1.5 B-cun above the palmar wrist crease. The forearm is supinated (FCR is palmar at +z). Muscle.glb sections at y=0.860: APL (FMA38516) x[-0.2732,-0.268] z[-0.001,0.004]; EPB (FMA38519) x[-0.2668,-0.2573] z[-0.0049,0.0011]; brachioradialis (FMA38486) x[-0.2766,-0.2712] z[0.0073,0.0151]. At y=0.862 the values are similar (APL centre -0.2697,0.0005; BR -0.2731,0.0107). Outer skin contour at y=0.862 (rays toward the limb centre): lateral-most point (-0.2804, 0.012), skin over APL about (-0.273, -0.001). The current front seed hits the skin at (-0.274, 0.862, 0.0257), which reproduces the marker. That is the anterolateral corner of the forearm, palmar to the BR tendon. It is about 31 mm along the skin contour (about 1.5 cun at 0.0206 m/cun) from the APL/EPB interval and on the same palmar-radial line as LU8 (marker x -0.2784, z 0.031). So it is on the wrong side of the named tendons. Level is fine: 1.5 cun above the wrist crease is y 0.8585 (from LU9 0.8276) or 0.862 (from PC7 0.831), so I use y 0.860. A lateral ray at (y 0.860, z -0.001) first hits the outer skin at x -0.2727 (0.3 mm from the seed). The mirrored left seed hits at x 0.2714, so the marker lands at about x -0.2757, over the dorsal-ulnar edge of APL next to EPB.",
+    "note": "Codex said 'unclear' only because it had no tendon coordinates. The model's tendon meshes answer that, and they support Claude's finding. My seed is about 2 mm more dorsal than Claude's [-0.276,0.859,0.001], so it sits on the APL–EPB interval instead of on top of APL. With the lateral projection the marker sits on the radial border just behind the frontal silhouette, so it is best seen from the side."
+   },
+   {
+    "id": "LU9",
+    "finalVerdict": "ok",
+    "sides": "claude",
+    "fix": false,
+    "seed": null,
+    "surface": "none",
+    "confidence": "medium",
+    "basis": "WHO p.30: on the anterolateral wrist, between the radial styloid and the scaphoid, in the depression ulnar to the APL tendon (on the palmar wrist crease). Level: radius minY (styloid tip) is (-0.2773, 0.8296) and the scaphoid spans y 0.820–0.8357, so the marker y 0.8276 is 2 mm distal to the styloid tip at the styloid–scaphoid interval. PC7 at y 0.831 marks the same crease. Side of the tendon: in muscle.glb at y 0.8276, APL is at x[-0.2848,-0.2811] z[0.0172,0.0206] and FCR at x[-0.2633,-0.258] z[0.0327,0.0363]. The marker's skin point (-0.2772, 0.0431) is 4–7 mm ulnar to APL and 17 mm radial to FCR, where the radial artery lies. On the skin contour (lateral-most point (-0.2893, 0.028), palmar maximum z 0.0437) it is on the anterolateral palmar face. Images: the dot is at the radial end of the wrist crease beside the radial artery and over the styloid–scaphoid junction.",
+    "note": "Codex said 'unclear' only because tendon coordinates were missing. The APL and FCR sections place the marker on the correct ulnar side of APL, well within 0.5 cun. No change."
+   }
+  ]
+ },
+ {
+  "zangfu": "LI 대장 (ST25 천추, 모혈)",
+  "points": [
+   {
+    "id": "ST25",
+    "finalVerdict": "minor",
+    "sides": "claude",
+    "fix": true,
+    "seed": [
+     -0.05,
+     0.989,
+     0.1114
+    ],
+    "surface": "front",
+    "confidence": "medium",
+    "basis": "I re-measured skin.glb by casting rays from +z to -z, on a grid with 1 mm y steps and 2 mm x steps. The umbilicus is a midline pit 6-9 mm deep. It is deepest at (x -0.0005, y 0.990, z 0.1065), while the flanking skin sits at z 0.114-0.117. The pit rim runs from y 0.980 to 0.995, and its centre is y 0.988-0.990. At CV8/ST25 height (y 1.005) the midline skin is smooth (z 0.1129), with no navel there. The skin close-up agrees. Enlarged 3x, the navel pit sits about 25 px (1.7 cm at 14.8 px/cm, scaled from the 10 cm gap between the dots) below the two gold ST25 dots, about 65% of the way down to ST26 (y 0.979). That gives 1.005 - 0.65*0.026 = 0.988. So the marker is 1.6 cm above the centre of the umbilicus. Cun on this body: the xiphisternal junction (sternal body minY 1.2006) to the navel (0.989) is 0.2116 m / 8 = 2.65 cm per cun. The model's own CV8-CV9 spacing is 2.49 cm. The 1.6 cm offset is therefore 0.6-0.64 cun upward. The lower-abdomen scale, from the bony symphysis top (hip bone FMA16586 near-midline maxY 0.8266) to the navel, is 0.162/5 = 3.24 cm per cun, which gives 0.49 cun. The lateral distance is acceptable: ST17 at x -0.09 marks 4 cun, so 2 cun = 4.5 cm. The marker is at 5.0 cm, 0.22 cun too lateral, so x -0.05 is kept to stay on the straight ST19-ST30 line. Rectus abdominis FMA13377 spans x -0.0088 to -0.0678 at y 0.984-0.994, so x -0.05 stays over the muscle. Seed check with the same rule as build-anchors (front ray): seed (-0.05, 0.989, 0.112) hits the outer skin at z 0.1114 (0.6 mm away), the first front-face hit from outside. The bones cannot decide the level on their own: L3 body front is y 1.0003-1.0306 and L4 body is 0.9652-0.9951, so both 0.989 and 1.005 are plausible umbilicus levels. The skin pit is the direct evidence.",
+    "note": "Codex measured only against CV8 (y 1.005), which the brief calls the umbilicus. But the skin mesh puts the navel centre at about y 0.989, and the skin image shows the dots visibly above the navel. WHO places ST25 2 B-cun lateral to the centre of the umbilicus, so the anatomical navel controls. The error is about 0.6 cun upward, so the verdict is minor and the marker moves to y 0.989 with the same x and z on the skin. The text matches: KMCRIC and WHO both say upper abdomen, 2 cun lateral. Systemic caveat: CV8, KI16, SP15 and GB26 all share y 1.005 and carry the same 1.6 cm error. The 1-cun neighbours are also mis-levelled against the real navel: ST26 and CV7 at 0.979/0.976 are only about 1.0-1.3 cm below it, and ST24 and CV9 at 1.034/1.030 are about 4.5 cm above it. Those should be re-levelled together in a separate pass. Moving ST25 alone does not make them worse, but the ST25-ST26 spacing will look tight (1 cm) until they are fixed."
+   }
+  ]
+ },
+ {
+  "zangfu": "SP 비",
+  "points": [
+   {
+    "id": "SP3",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.0514,
+     0.019,
+     0.063
+    ],
+    "surface": "medial",
+    "confidence": "high",
+    "basis": "WHO p.71: medial foot, in the depression proximal to the 1st MTP joint, at the red-white flesh border. Bone slices of the right foot (bone.glb). The 1st metatarsal FMA24507 runs z 0.0215-0.083. The proximal phalanx FMA43253 runs z 0.0787-0.1122, so the MTP joint is at z of about 0.080. The distal phalanx FMA32650 runs z 0.1057-0.1317. The head starts at z of about 0.063: the plantar flare grows from minY 0.0247 at z 0.060 to 0.0175 at z 0.065, and the medial eminence is at maxX -0.0629 at z 0.0753. The shaft's medial x is -0.0647 for z 0.045-0.060. The current right marker at z 0.1151 is on the hallux IP-joint region, about 5.2 cm (about 2.4 cun at about 2.2 cm per cun) distal to the target and on the wrong side of the MTP joint. Target: neck just behind the head, z 0.063. Height y 0.019 matches the outer medial skin bulge (medial-most skin x -0.0511 at y 0.016-0.020 for z 0.062). The bone's inferior-medial edge there is y of about 0.025. Replicated build-anchors projection, medial ray: seed [-0.0514,0.019,0.063] hits outer skin at x -0.0514, stays in open air ('kept'), marker [-0.0484,0.019,0.063]. Mirrored left gives marker [0.0473,0.019,0.063].",
+    "note": "Both reviewers agree it is too distal (Codex z 0.070, Claude z 0.067). I put it about 5 mm more proximal, at the start of the head flare, so that it sits in the depression behind the head and about 1 cun distal to SP4. Out of scope but seen: SP2 (z 0.1425) is distal to SP1 (z 0.1364). The whole first-ray SP series is shifted distally."
+   },
+   {
+    "id": "SP4",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.0494,
+     0.029,
+     0.04
+    ],
+    "surface": "medial",
+    "confidence": "high",
+    "basis": "WHO: medial foot, anteroinferior to the base of the 1st metatarsal, at the red-white flesh border. FMA24507 base: the posterior extreme is z 0.0215. The dorsal flare peaks at maxY 0.0571-0.0573 at z 0.030-0.035 and tapers to 0.054 at z 0.040 and 0.0499 at z 0.045, so the base ends at z of about 0.040. The medial cuneiform FMA24521 reaches z 0.0324. The base's medial lower edge is at y of about 0.038 (z 0.040 slice: x -0.0664 at y 0.0396, x -0.0697 at y 0.0379). The current right marker at z 0.0948 lies distal even to the metatarsal head (distal end z 0.083), on the proximal phalanx base. That is about 5.5 cm (about 2.5 cun) off. Target: z 0.040, just distal and below the base, at y 0.029 on the vertical medial arch face. Skin there is x -0.048 to -0.050 for y 0.020-0.036. Replicated projection, medial ray: seed [-0.0494,0.029,0.040] hits outer skin x -0.0494, 'kept', marker [-0.0464,0.029,0.040]. Mirrored left gives marker [0.0451,0.029,0.040]. SP3 to SP4 is 2.3 cm, about 1 cun.",
+    "note": "Codex suggested z 0.035/y 0.032 and Claude z 0.037/y 0.027. My seed is within 3-5 mm of both. The y is taken between them, below the base's inferior-medial edge."
+   },
+   {
+    "id": "SP8",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.0417,
+     0.31,
+     -0.023
+    ],
+    "surface": "medial",
+    "confidence": "medium",
+    "basis": "WHO: tibial aspect of the leg, posterior to the medial border of the tibia, 3 B-cun inferior to SP9. Level: the medial malleolus prominence is tibia FMA24477 maxX -0.0488 at y 0.085 (-0.0495 at 0.09; tip minY 0.0733), so I use y of about 0.086. The medial condyle flare is steepest between y 0.37 and 0.39: maxX goes -0.0564 at 0.37, -0.0511 at 0.38, -0.0446 at 0.39, so the inferior border is at y of about 0.375-0.38. 13 cun is 0.289-0.294 m, about 2.22 cm per cun, which puts SP8 at y 0.308-0.312, so I use 0.310. The current y 0.317 is only about 0.3 cun high. Side of the border: at y 0.308/0.31 the tibia's anterior crest is at (-0.085, z 0.000) and the medial border at (-0.0693, z -0.021), maxX at y 0.31 being (-0.0692, -0.0203). The soleus FMA22558 front edge is at z -0.0239 (x -0.0629) and the medial gastrocnemius FMA45957 front edge at z -0.0279. The current marker's skin point (-0.0751, z 0.001) sits over the tibial face about 1 cm behind the crest. That is the wrong side of the medial border by about 2.5 cm (more than 1 cun). Medial skin at y 0.31 by z: 0 gives x -0.075, -0.01 gives -0.0618, -0.02 gives -0.0448, -0.023 gives -0.0417, -0.03 gives -0.0359. Seed z -0.023 is just behind the bone border z in a medial view and over the tibia-soleus groove. Replicated projection: seed [-0.0417,0.31,-0.023] gives outer skin x -0.0417, 'kept', marker [-0.0387,0.31,-0.023]. Mirrored left gives marker [0.0372,0.31,-0.023].",
+    "note": "Both reviewers say wrong. Codex's z -0.032 is about 1 cm too far onto the calf bulge. Claude's z -0.017 would look anterior to the bone border (z -0.021) in a medial view. I took the groove between the tibial border and the soleus front edge, and Claude's lower level. The inflated skin makes the exact skin z interpretation-dependent (about ±5 mm), hence medium confidence. Out of scope: SP7 (z -0.0116 vs border z -0.0265 at y 0.238) and SP9 (z 0.015) also look anterior to the border."
+   },
+   {
+    "id": "SP21",
+    "finalVerdict": "minor",
+    "sides": "claude",
+    "fix": true,
+    "seed": [
+     -0.1541,
+     1.2,
+     0.012
+    ],
+    "surface": "lateral",
+    "confidence": "medium",
+    "basis": "WHO: lateral thorax, 6th intercostal space, midaxillary line. Coronal bone sections (x < -0.11), lower edge of rib 6 (FMA8175) to upper edge of rib 7 (FMA8229): at z 0.000 the 6th ICS is y 1.1979-1.2151 (centre 1.2065); at z 0.012 it is 1.1917-1.2078 (centre 1.1998); at z 0.025 it is 1.1848-1.2003. At z 0.012, rib 7 occupies y 1.1719-1.1917. The current marker (y 1.188, z 0.0118) therefore sits over rib 7, 3.7 mm below its upper edge. It is 1.2 cm below the space centre, which is 0.49 trunk cun (xiphisternal y 1.2006 to CV8 y 1.005 = 8 cun, 2.445 cm per cun). Midaxillary z: the latissimus dorsi front edge is at z -0.0177 (y 1.20) and the pectoralis major lateral edge at z of about 0.03 (y 1.25), so the current z 0.012 is acceptable and kept. Replicated projection, lateral ray: seed [-0.1541,1.200,0.012] picks chest skin x -0.1541 (not the arm at -0.2053), 'kept', marker [-0.1571,1.200,0.012]. Mirrored left gives marker [0.1558,1.200,0.012]. Lateral rays at z <= -0.01 jump to the arm ('lifted'), so do not move z posteriorly.",
+    "note": "Codex called it ok using the ribs' lateral-extreme points (rib centres) and got a space centre of about 1.197-1.200. At the marker's own z the marker overlies rib 7 rather than the 6th space. The fix moves it 1.2 cm up into the space centre, about 0.5 cun, so it is a fix at the threshold. Out of scope: GB22 at y 1.238 (z 0.0005) falls in the 5th ICS (1.2327-1.2498 at z 0) rather than the 4th."
+   }
+  ]
+ },
+ {
+  "zangfu": "ST",
+  "points": [
+   {
+    "id": "ST34",
+    "finalVerdict": "minor",
+    "sides": "claude",
+    "fix": true,
+    "seed": [
+     -0.104,
+     0.492,
+     0.054
+    ],
+    "surface": "front",
+    "confidence": "medium",
+    "basis": "Patella base (FMA24486 maxY) is at y 0.4503. Thigh cun from three WHO proportional segments: (a) pubic symphysis top on the hip bone mesh near the midline is y 0.8266 (FMA16586 vertex [-0.0061,0.8266,0.0412]); to the medial epicondyle (femur maxX y 0.4521) that is 0.3745/18 = 0.0208 m/cun, or 0.0209 if the patella base is used as the endpoint. (b) The greater trochanter prominence (femur minX y 0.8066) to the popliteal crease (0.425-0.429, BL40 0.429) gives 19 cun, about 0.0200 m/cun. (c) The CV2 marker (0.8479) to the epicondyle gives 0.0221 m/cun. The marker is 0.0547 m above the base, which is 2.48-2.75 cun (2.63 by the bone-based measure (a)). The target y for 2 cun is 0.490-0.4945. Codex's 2.11 cun comes from ASIS to patella base = 18 cun, which is not a WHO B-cun segment. Medial-lateral position is correct: in the slice at y 0.492, rectus femoris FMA38928 spans x -0.101 to -0.079 and vastus lateralis FMA38930 spans x -0.1256 to -0.0998, with its anterior peak at x -0.1059. The interval is at x about -0.101 to -0.109 (straight vs radial projection), so x -0.104 sits in it. A front ray at x -0.104, y 0.492 hits the skin first at z 0.0528. The sagittal slice shows a smooth skin profile with no usable patella bump (the skin is about 3 cm in front of the patella), so the bone base is the landmark to use.",
+    "note": "Too high by about 0.013 m (about 0.6 cun; 0.48-0.75 cun depending on the segment). Move straight down to y 0.492 and keep x. ST33 (y 0.55, about 4.8 cun above the base) and SP10 (y 0.502) have the same upward bias but are out of scope here."
+   },
+   {
+    "id": "ST40",
+    "finalVerdict": "ok",
+    "sides": "codex",
+    "fix": false,
+    "seed": null,
+    "surface": "none",
+    "confidence": "medium",
+    "basis": "Level: lateral malleolus prominence (fibula FMA24480 lateral-most distal vertex [-0.1124,0.0659,-0.0476]; lateral extreme from y 0.061 to 0.076). With the popliteal crease at 0.425-0.429, 16 cun = 0.36 m (0.0227 m/cun), so 8 cun is y 0.2455-0.2475. The marker at 0.2391 is 0.3-0.37 cun low and level with ST38 (0.2399). Medial-lateral, from a muscle cross-section at y 0.24: tibialis anterior FMA22544 spans x -0.0819 to -0.1092 and its lateral edge [-0.1092,-0.0233] meets extensor digitorum longus FMA22548 (maxZ [-0.1099,-0.0251]). The fibula is deeper and posterolateral (x -0.104 to -0.115, z -0.036 to -0.050). Front-ray skin hits at y 0.24: x -0.110 at z -0.001, -0.120 at -0.0076, -0.125 at -0.0134, -0.130 at -0.0199. The subcutaneous layer is about 1.5-2 cm thick laterally, so radial or nearest-point projection of the TA-EDL junction lands on the skin at about x -0.120 to -0.1225, z -0.007 to -0.010. The marker's surface point (-0.1248,-0.0134) is 3-7 mm beyond that, and its nearest deep structure is the TA-EDL junction (about 1.9 cm away); the fibular anterior border projects at about (-0.131 to -0.133, -0.021 to -0.025). The marker is about 2.0 cm along the skin lateral to ST38 (one finger breadth, as WHO describes) and about 4.6 cm from the skin over the tibial crest (x -0.085). Claude's frontal-image argument ignores the thick lateral subcutaneous layer. Its suggested x -0.106 would sit over the TA belly, medial to ST38.",
+    "note": "Within tolerance: about 0.3 cun low and at most about 0.3 cun lateral of the projected tibialis anterior lateral border. No move."
+   },
+   {
+    "id": "ST42",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.086,
+     0.074,
+     0.022
+    ],
+    "surface": "top",
+    "confidence": "high",
+    "basis": "Second metatarsal FMA24509: base minZ [-0.0883,0.0448,0.0156], dorsal top of the base [-0.087,0.0617,0.0235], head maxZ [-0.0962,0.0211,0.0838]. Intermediate cuneiform FMA24523 spans z 0.0012 to 0.0234, maxZ [-0.0856,0.0616,0.0234], and its top at z 0.022 is [-0.0861,0.0632]. Downward bone rays at x -0.087 hit the cuneiform at z 0.022 (y 0.0628) and MT2 at z 0.025 (y 0.0612), so the dorsal joint line is at z about 0.021-0.023, x about -0.086 to -0.089. In a coronal slice at z 0.022, the EHL tendon is at x -0.073 to -0.068 and the EDL tendons at x -0.086 to -0.111, so x -0.086 is at the medial edge of EDL, between the two. The dorsal vessel in vessel-full.glb lies at x about -0.073 to -0.079 over z 0.02-0.035 (its node names are unreliable), so x was not moved further medially. A downward skin ray at (-0.086, z 0.022) hits the dorsum first at y 0.0726 (the next hit is 0.0672), so the seed at y 0.074 snaps to it. The current marker at z 0.0752 is about 1 cm short of the MT2 head and 5.3 cm (about 2.4 cun) distal to the joint.",
+    "note": "The marker is on the distal metatarsal shaft. Move it proximally to the MT2-intermediate cuneiform joint on the dorsum. Both reviewers agree; my x is 2 mm more medial to lean toward the dorsalis pedis side."
+   }
+  ]
+ },
+ {
+  "zangfu": "SP",
+  "points": [
+   {
+    "id": "SP3",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.0515,
+     0.018,
+     0.065
+    ],
+    "surface": "medial",
+    "confidence": "high",
+    "basis": "WHO p.71: medial foot, in the depression proximal to the 1st MTP joint, at the red-white border. Bone sections from bone.glb: right 1st metatarsal FMA24507 runs z 0.0215-0.083. Its plantar extent grows from y 0.0247 at z 0.060 to 0.0175 at z 0.065, so the head begins at about z 0.063-0.065. The medial head prominence is at z 0.0753. Proximal phalanx FMA43253 runs z 0.0787-0.1122 and distal phalanx FMA32650 runs z 0.1057-0.1317, so the MTP joint is at about z 0.080. The current right marker [-0.0653,0.0181,0.1151] sits at the hallux interphalangeal joint, about 5.0 cm (about 2.3 leg B-cun at 2.2 cm per cun) distal to the target, on the far side of the MTP joint. Skin: the medial ray at y 0.018, z 0.065 hits outer skin at x -0.0515. The local normal is close to horizontal at y 0.016-0.018 (y 0.016 gives (0.999,-0.05,0.01)), which marks the red-white border. The y of 0.018 is kept. Replicating build-anchors with the open-air test gives right surface [-0.0515,0.018,0.065] and marker [-0.0485,0.018,0.065], not lifted. The left mirror lands on skin 1.2 mm from its seed. The images show the gold dot on the great toe beside the SP2 label.",
+    "note": "Both reviewers found the same error, and their corrections (z 0.067 and 0.070) agree with this one within 5 mm. The new z is just proximal to the head flare. The KMCRIC text matches WHO. The neighbouring markers are also too far distal: SP2 at z 0.1425 is distal to SP1 at 0.1364, and SP2 belongs just distal to the MTP joint at about z 0.085-0.09. These were not adjudicated here."
+   },
+   {
+    "id": "SP4",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.0487,
+     0.026,
+     0.039
+    ],
+    "surface": "medial",
+    "confidence": "high",
+    "basis": "WHO: medial foot, anteroinferior to the base of the 1st metatarsal, at the red-white border. In FMA24507 z-sections the base flare (dorsal maxy 0.057 at z 0.030-0.035) narrows to 0.054 at z 0.040 and 0.050 at z 0.045. The inferior border is at y 0.032 from z 0.035 to 0.040, and the medial edge is at x -0.064. The medial cuneiform runs z 0.0003-0.0324. The point just distal and inferior to the base is therefore at about z 0.039, y 0.026. The current right marker [-0.0698,0.0316,0.0948] lies distal to the whole metatarsal (distal end z 0.083), over the proximal phalanx base, which is SP2 territory. That is about 5.6 cm (about 2.5 B-cun) too distal. Skin: the medial ray at z 0.038-0.039 hits outer skin at x -0.0486 to -0.0489 for y 0.024-0.028. The normal turns plantar below y about 0.022 (y 0.020 gives (0.94,-0.34,0.03)), so y 0.026 sits at the red-white border just below the bone's inferior edge. The build-anchors replica gives right surface [-0.0489,0.026,0.039] and marker [-0.0459,0.026,0.039], open, 0.2 mm from the seed. The left mirror is 1.2 mm from its seed. The images show the dot on the forefoot next to the toes.",
+    "note": "Both reviewers said wrong and proposed z 0.035 and 0.037. This seed lies between them, at y 0.026, which is Claude's height and not Codex's 0.032 (that is at the bone edge, above the skin border). The KMCRIC text matches WHO. Not adjudicated here: KI2 is at z 0.072, which is distal of the navicular (z -0.013 to 0.010), and it may need its own check."
+   },
+   {
+    "id": "SP8",
+    "finalVerdict": "wrong",
+    "sides": "claude",
+    "fix": true,
+    "seed": [
+     -0.048,
+     0.306,
+     -0.018
+    ],
+    "surface": "medial",
+    "confidence": "medium",
+    "basis": "WHO: posterior to the medial border of the tibia, 3 B-cun below SP9, with 13 B-cun from the inferior border of the medial condyle to the medial malleolus prominence. Right tibia FMA24477 sections: at y 0.305-0.317 the anterior crest is at (-0.085, z 0.000) and the medial border at (-0.0687 to -0.0695, z -0.022). The medial condyle flare (maxx -0.067 at y 0.33, -0.063 at 0.35, -0.0564 at 0.37, -0.0511 at 0.38, -0.0446 at 0.39) puts its inferior border at about y 0.373. The malleolus prominence is maxx -0.0488 at y 0.085-0.09. That gives 1 cun of about 2.2 cm and SP8 at about y 0.307. A cross-check with the upper third of the line from the patellar apex (FMA24486 minY 0.4106) to the malleolus gives 0.303, so y 0.306 is used. The current right skin point [-0.0751,0.317,0.001] lies on the subcutaneous medial face about 1 cm from the crest, which is anterior to the medial border (the wrong side of the landmark). It is also 1.1 cm too high, for a total of about 3.5 cm (about 1.6 cun). Outer skin at y 0.305 runs (-0.0754,z 0), (-0.0621,-0.010), (-0.0531,-0.015), (-0.0448,-0.020), (-0.040,-0.025). The skin point nearest the medial border is about (-0.062,-0.010), and the soleus attachment is at (-0.0646,-0.025). Just behind the border, the chosen skin point is (-0.0476,-0.018). Seen from the front it lies medial to the tibia's silhouette edge at x -0.069. The build-anchors replica gives right surface [-0.0476,0.306,-0.018] and marker [-0.0446,0.306,-0.018], open, 0.4 mm from the seed. The left mirror is 1.4 mm from its seed. In the muscle image the right SP8 dot sits mid-strip on the white tibial face.",
+    "note": "Both reviewers said wrong. This follows Claude's correction (y 0.305, z -0.017). Codex's z -0.032, x -0.0326 lies on the medial gastrocnemius bulge (gastrocnemius medial edge x -0.0344 at z -0.064), too far behind the border, and keeps y 0.317. Medium confidence because the thick skin shell (1.4-2.6 cm over bone) makes the exact skin point behind the border uncertain by about 5 mm. The direction of the correction is clear. Not adjudicated here: the SP9 marker at y 0.392 is about 1.9 cm above the condyle's inferior border (about 0.373). That offset is why SP8, measured 3 cun down from it, ended up too high."
+   },
+   {
+    "id": "SP21",
+    "finalVerdict": "minor",
+    "sides": "claude",
+    "fix": true,
+    "seed": [
+     -0.156,
+     1.199,
+     0.012
+    ],
+    "surface": "lateral",
+    "confidence": "medium",
+    "basis": "WHO: 6th intercostal space on the midaxillary line. Coronal rib sections from bone.glb, lateral part (x < -0.13): at the marker's own plane, z 0.012, rib 6 (FMA8175) spans y 1.2078-1.2252 and rib 7 (FMA8229) spans 1.1719-1.1917. The 6th intercostal space is therefore 1.1917-1.2078, centred at 1.1998. At z 0.0 the space is 1.1979-1.2151; at z 0.025 (the HT1 axilla z) it is 1.1848-1.2003. The current marker at y 1.188 (lateral ray at constant z) overlies the upper part of rib 7 in its own plane. It is low at every candidate midaxillary z, by 1.2 cm at z 0.012 (about 0.49 trunk B-cun; 1 cun = (1.2006-1.005)/8 = 2.45 cm). The torso's lateral skin at y 1.2 spans from about z 0.08 to -0.10, so the z of 0.012 is a reasonable midaxillary line and is kept. Only the height changes. The lateral ray at y 1.199, z 0.012 hits torso skin at x -0.1541, ahead of the arm surface at -0.205. The build-anchors replica gives right surface [-0.1541,1.199,0.012] and marker [-0.1571,1.199,0.012], open, not lifted. The left mirror lands 3.2 mm from its seed.",
+    "note": "Codex called it ok, at about 9-12 mm below the centre and within about 0.5 cun. Claude called it minor at about 0.5 cun low. Their numbers agree, so the dispute is only about the threshold. The marker overlies rib 7 rather than the intercostal space in its displayed plane, and the correction rests on concordant bone sections, so it is moved up 1.1 cm to the centre of the space. Medium confidence because the correction is at the 0.5-cun threshold. The KMCRIC text matches WHO."
+   },
+   {
+    "id": "LR13",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.146,
+     1.02,
+     0.003
+    ],
+    "surface": "lateral",
+    "confidence": "high",
+    "basis": "WHO p.202: lateral abdomen, inferior to the free extremity of the 11th rib. Right rib 11 (FMA8531) tip vertices: lowest at (-0.1099, 1.0258, -0.0009), most anterior at (-0.1119, 1.0305, 0.0042), most lateral at (-0.1165, 1.037, -0.0024). The tip is therefore at y 1.026-1.031, z about 0.002. The lowest part of the costal cartilage BP28, at (-0.1046, 1.0284, 0.040), continues from rib 10 (rib 10's lowest point is (-0.1176, 1.0389, 0.0184), next to BP28's minimum-z vertices at (-0.115, 1.040, 0.018)). It is not an 11th-rib tip and lies 3.6 cm anterior. At z 0, rib 10 spans y 1.0531-1.0744 and rib 9 spans 1.0954-1.1162. The current marker at y 1.079, z 0.006 therefore sits over the 9th intercostal space, about 5.3 cm above the rib-11 tip's lower edge and 5.9 cm (about 2.4 B-cun) above the target. The target is just below the tip, at y 1.020. The model's GB26 (-0.1498, 1.005, 0.002), directly below the same tip at umbilicus level, agrees with the tip's z. The lateral ray at y 1.020, z 0.003 hits torso skin at x -0.1429, with the arm 5 cm further out at -0.195. The build-anchors replica gives right surface [-0.1429,1.020,0.003] and marker [-0.1459,1.020,0.003], open. The left mirror lands 4.2 mm from its seed. In the bone image the dot sits beside the lateral ribs, well above the lowest costal ends.",
+    "note": "Both reviewers said wrong and gave nearly identical corrections, y 1.021 (Codex) and 1.018 (Claude), which this adopts. The KMCRIC text matches WHO. The corrected LR13 lies 1.5 cm above GB26. That spacing comes from this model, where the rib-11 tip is only about 2 cm above the umbilicus level."
+   },
+   {
+    "id": "BL20",
+    "finalVerdict": "ok",
+    "sides": "both",
+    "fix": false,
+    "seed": null,
+    "surface": "none",
+    "confidence": "high",
+    "basis": "Marker y 1.1058 matches T11 (FMA10059) spinousLowerBorderY 1.1059. The adjacent lower borders are T10 at 1.1313 and T12 at 1.0769, which confirms the vertebral level. The lateral offset of 3.78 cm is within tolerance of 1.5 cun (about 0.030-0.037 depending on the scapular or nipple-line rule) and matches the rest of the first bladder line (|x| 0.038).",
+    "note": "Both reviewers said ok, so this point was not in the disputed set and was not re-measured beyond the landmark check. No change."
+   }
+  ]
+ },
+ {
+  "zangfu": "KI",
+  "points": [
+   {
+    "id": "GB25",
+    "finalVerdict": "wrong",
+    "sides": "claude",
+    "fix": true,
+    "seed": [
+     -0.13,
+     1.02,
+     -0.04
+    ],
+    "surface": "lateral",
+    "confidence": "high",
+    "basis": "WHO 2008 p.184 puts GB25 on the lateral abdomen, inferior to the free extremity of the 12th rib. The KMCRIC text (옆배, 열두째 갈비뼈끝의 아래쪽) says the same. I re-measured the right 12th rib (FMA8533) by slicing the bone in x. Its centreline runs x -0.070 [y 1.0523, z -0.054], x -0.075 [1.0428, -0.0479], x -0.080 [1.0329, -0.040]. The free end is at x -0.083, with vertices at y 1.029-1.037 and z -0.034 to -0.041; its lowest bone point is [-0.0794, 1.0234, -0.0357]. The current marker is at [-0.1265, 1.046, -0.0428], from seed [-0.124, 1.046, -0.043] on the lateral surface. Seen from the side it lies over the rib shaft about 8 mm short of the end (the x -0.075 section spans y 1.032-1.055, z -0.053 to -0.043), not below the end. At 0.0245 m/cun (sternal body minY 1.2006 to CV8 y 1.005 = 8 cun), it sits 1.3-1.5 cm above the tip centre and 2.3 cm above the lowest bone edge. The target is about 2.6 cm (about 1.06 cun) lower. That is the wrong side of the named landmark, so the verdict is wrong; both reviewers also found it too high. New seed: y 1.020, which is 3 mm below the lowest bone edge, about 1.2 cm (about 0.5 cun) below the tip centre, and close to the L2 spinous lower border at 1.017. Horizontal position: from the tip, the outer skin in the y 1.02 plane is 39.5-40.6 mm away posterolaterally (-30 to -70 deg, e.g. [-0.1123, -0.0624]), 44.5 mm posteriorly and 50.6 mm laterally. So 'directly over the tip' alone cannot decide between lateral and posterolateral. I kept the lateral position at the tip's front-to-back level (z -0.04) because of the WHO region term 'lateral abdomen' and the classical rule that GB25 is 1.8 cun behind LR13. The 11th rib tip is at z about -0.001 (minX [-0.1165, 1.037, -0.0024]). Measured along the skin from the lateral skin there (x about -0.142, z 0) to z -0.04/-0.043 is 4.1-4.4 cm, about 1.7-1.8 cun. My emulation of build-anchors (lateral ray): seed [-0.130, 1.020, -0.040] hits the trunk skin at [-0.1302, 1.020, -0.040] (0.2 mm from the seed; the arm hits at x <= -0.197 are farther away). Air check passes ('kept'). Marker [-0.1332, 1.020, -0.040]. Left mirror: skin [0.129, 1.02, -0.04], marker [0.132, 1.02, -0.04].",
+    "note": "Both reviewers are right that the marker is about 1 cun too high: it sits on the end of the rib shaft instead of below the free end. I follow Claude's correction, which lowers the point and keeps it on the lateral skin at the tip's front-to-back level. I did not take Codex's [-0.10, 1.02, -0.076]. That spot is on the back-facing skin, only about 1 cun lateral of the BL52 line (x -0.0746). It would be about 2.9 cun behind LR13 rather than 1.8, and on this short 12th rib it is no nearer the tip than the lateral or posterolateral skin (all 40-50 mm). The open question is the horizontal position. A posterolateral point at about [-0.112, 1.02, -0.062] is the single nearest skin to the tip, about 1 cun round the flank from the chosen point. I did not adopt it because the evidence for it is not clear. LR13 is relevant here: its current marker (y 1.079) sits well above the 11th rib tip (minY 1.0258). It is being adjudicated separately, but if it moves it should stay about 1.8 cun in front of the new GB25."
+   }
+  ]
+ },
+ {
+  "zangfu": "PC",
+  "points": [
+   {
+    "id": "PC4",
+    "finalVerdict": "wrong",
+    "sides": "claude",
+    "fix": true,
+    "seed": [
+     -0.2225,
+     0.934,
+     0.0232
+    ],
+    "surface": "front",
+    "confidence": "high",
+    "basis": "Level: the cubital crease is at PC3 y 1.0771 and the wrist crease at PC7 y 0.831 (the radial styloid minY is 0.8296). 12 cun = 0.2461 m, so 1 cun = 0.02051 m and the 5-cun level is y 0.9335. The marker at y 0.936 is only 0.12 cun high, so the level is fine. Transverse position: I re-measured from the GLBs (muscle.glb FMA38460 right FCR, FMA38463 PL, FMA38486 BR, FMA38640/38638 FDS, FMA38617 FCU; bone.glb FMA23464 radius, FMA23467 ulna), using front rays (-z) every 2 mm at y 0.936 with my script .cache/adjudicate/pc4-ray.mjs. Forearm skin runs from x -0.272 to -0.199. Topmost structure under the skin, radial to ulnar: BR at -0.268 to -0.258; the BR-FCR gutter over the radius and FDS radial head at -0.256 to -0.244; FCR at -0.242 to -0.223 (z 0.021-0.023, skin 0.0247); PL at -0.222 to -0.218; FDS humeral head at -0.216 to -0.212; FCU at -0.210 to -0.202. A horizontal section (pc4-section.mjs) agrees: FCR x [-0.2432, -0.2217], PL x [-0.2220, -0.2169]. The marker at x -0.2551 lies in the BR-FCR gutter, 1.2 cm radial of FCR's radial border and only 2.7 mm from the LU5-LU9 line (x -0.2578 at this height). So it is on the wrong side of the FCR tendon, about 3.3 cm (about 1.6 cun) from the PL-FCR interval. I side with Claude's 'wrong' verdict, not with Codex's 'ok'. Claude's corrected x of -0.245 (the PC3-PC7 line) is still 2 mm radial of FCR's border (-0.2432), so I do not use it. At y 0.934, FCR is on top up to x -0.223 and PL starts at -0.222, which puts the interval at x -0.2225. Front-ray skin z there is 0.0234 at -0.223 and 0.0229 at -0.222, so the seed z is 0.0232, on the anterior skin, which is the first surface a +z ray reaches.",
+    "note": "Move the right marker to [-0.2225, 0.934, 0.0232] using the front surface (it mirrors to [0.2225, 0.934, 0.0232]). The KMCRIC text matches WHO. The same mesh profiles show the error is systematic across the forearm flexor-side markers, not unique to PC4. PC5 (x -0.255, y 0.899) is radial of FCR (FCR -0.248 to -0.234, interval about -0.233). PC6 (x -0.253, y 0.880) is radial of FCR (FCR -0.250 to -0.242, PL -0.236 to -0.234, interval about -0.240). PC7 (x -0.260, y 0.831) sits on the FCR tendon (-0.262 to -0.258; interval about -0.256). HT4 (x -0.2443, y 0.863) sits over FDS/PL, not on the radial side of FCU (FCU -0.232 to -0.228). Once PC4 moves, it will be about 3 cm ulnar of PC5 and PC6 until those are re-checked. The app draws markers only, with no meridian lines (I found no line code in src), so nothing visibly crosses. The read-only scripts I used are in /Users/nuinuri/workspace/anatomy-worktrees/acupoint-key-filter/.cache/adjudicate/: pc4-ray.mjs, pc4-section.mjs and pc4-skin.mjs."
+   }
+  ]
+ },
+ {
+  "zangfu": "BL 방광",
+  "points": [
+   {
+    "id": "BL28",
+    "finalVerdict": "minor",
+    "sides": "claude",
+    "fix": true,
+    "seed": [
+     -0.038,
+     0.9,
+     -0.117
+    ],
+    "surface": "back",
+    "confidence": "medium",
+    "basis": "I mapped the dorsal surface of the sacrum (FMA16202) with +z rays on a 2 mm grid, then a 1 mm grid near S2 (scripts .cache/adjudicate/bl_ray.mjs and bl_thick.mjs). The right side has four dorsal foramen pits: y 0.911-0.918 at x -0.026..-0.022 (floor z -0.041 against a -0.053..-0.060 rim, so S1); y 0.897-0.905 at x -0.022..-0.014 (floor -0.053..-0.056 against a -0.066..-0.068 rim, centre about 0.900, so S2); a through-hole at y 0.876-0.884 (S3); and a small hole at y 0.860 (S4). No pit lies above S1, only the superior articular processes at y 0.930-0.947. The median crest runs from y 0.930 down to 0.845, and below 0.845 the bone narrows to a stub. Measured along the dorsal surface the pits are about 2 cm apart. The model's own BL27 (0.913) and BL31 (0.918) sit on the S1 pit, which agrees with this count. The marker is at y 0.885, about 15 mm below the centre of the S2 pit and 5 mm above S3. Using the model's back scale (3 cun = 0.075, so 1 cun = 25 mm) that is about 0.6 cun. Codex's 'ok' relied on the BL32 marker (y 0.891), and BL32 is itself below S2. The x value of -0.038 (1.5 cun) is correct. The outer skin on a +z ray at (-0.038, 0.900) is at z -0.1168.",
+    "note": "Only the level moves: y 0.885 to 0.900, x unchanged. Outside this review: BL32 (y 0.891) is about 9 mm below S2. BL29 (0.856), BL33 (0.865), BL30 (0.836) and BL34 (0.842) are 1.5-2.4 cm below the S3 (0.880) and S4 (0.860) pits. The orchestrator may want those rechecked so BL28 and BL32 stay level with each other."
+   },
+   {
+    "id": "BL58",
+    "finalVerdict": "minor",
+    "sides": "claude",
+    "fix": true,
+    "seed": [
+     -0.108,
+     0.227,
+     -0.096
+    ],
+    "surface": "back",
+    "confidence": "medium",
+    "basis": "The popliteal crease is BL40 at y 0.429. The lateral malleolus prominence, taken as the most lateral skin, is x -0.116 at y 0.068-0.072, so y 0.070; the fibula's most lateral bone is -0.1124 at y 0.066-0.076. 16 cun therefore spans 0.359 m, so 1 cun = 22.4 mm. 7 B-cun above the prominence (WHO: 7 cun above BL60, which is level with the prominence) is y 0.227. On the muscle map from +z rays (bl_who.mjs, 2 mm grid), the inferolateral border of the lateral gastrocnemius head (FMA45960) is at x -0.116 at y 0.246, x -0.112 at y 0.240, x -0.110 at y 0.236, x -0.108 at y 0.229 and x -0.106 at y 0.226. A thin strip of calcaneal tendon (FMA258847) lies along that border, with soleus lateral to it. At the marker (-0.108, 0.239) the first muscle hit is the lateral head (FMA45960), so the marker sits on the head itself, about 1 cm above its inferior border. At (-0.108, 0.227) the first hit is the tendon strip at the head's lower edge, which matches the WHO landmark, and the outer skin is at z -0.0958. The marker is 10-12 mm too high, about 0.45-0.54 cun. Codex measured from the BL60 marker at y 0.086, but BL60 sits 16 mm above the prominence, so its number carries that error.",
+    "note": "This is a borderline 'minor'. The level and the muscle border give the same answer (about y 0.227-0.229), so I moved it. Out of scope: BL57 (y 0.262) is about 3 cm above the point where the two gastrocnemius heads meet the tendon on this mesh (about y 0.228 at x -0.083), and BL60 (y 0.086) is above the malleolus prominence (0.070)."
+   },
+   {
+    "id": "BL63",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.122,
+     0.028,
+     -0.016
+    ],
+    "surface": "lateral",
+    "confidence": "high",
+    "basis": "I fitted a principal axis to the 5th metatarsal (FMA24515): centroid [-0.1201, 0.0246, 0.0242], axis [-0.333, -0.22, 0.917]. The tuberosity extends up to 9.9 mm lateral of the shaft axis at z -0.0065..-0.0035 and tapers to the shaft (5.0 mm) by about z 0.012. Its posterior tip is [-0.1141, 0.027, -0.0122]. The cuboid's lateral face is x -0.105..-0.113 at y 0.029-0.048, and its lower lateral edge at z -0.015 is at y about 0.034-0.037. The calcaneus ends anteriorly at z -0.014 to -0.022, and the front of the lateral malleolus is at z -0.031. On lateral +x rays at z -0.015..-0.020, the bone falls back to the long plantar ligament (FMA44249) at x -0.087 at y 0.028, against -0.101 to -0.107 for the cuboid above. That is the depression behind the tuberosity and below the cuboid. The outer skin there, at (y 0.028, z -0.016), is x -0.1217, and the sole is at y 0.008. The marker [-0.1174, 0.0468, 0] has its skin hit at x -0.1144. It is about 2 cm above the cuboid's lateral face (y 0.0355 at z 0) and sits at z 0 over the distal half of the tuberosity and the cuboid-5th metatarsal joint. It is not posterior to the tuberosity and not below the cuboid. The error is about 20 mm in height and 16 mm in front-back distance, about 26 mm or 1.1 cun in total.",
+    "note": "Both reviewers called it 'wrong' and suggested almost the same target (Codex [-0.118, 0.027, -0.018], Claude [-0.125, 0.027, -0.017]). My seed is on the skin hit."
+   },
+   {
+    "id": "BL64",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.1365,
+     0.02,
+     0.014
+    ],
+    "surface": "lateral",
+    "confidence": "high",
+    "basis": "The marker is at [-0.1115, 0.0302, 0.0777]. A lateral ray at (y 0.031, z 0.078) passes above the toes and hits the top of the forefoot at x -0.1072. The bone below the marker, seen from above, is the 3rd/4th metatarsal head region (FMA24511/FMA24513). The marker is also anterior to the whole 5th metatarsal, which ends at z 0.0592, and level with the little-toe proximal phalanx (z 0.06-0.08). That is about 6.5 cm (about 3 cun) too far toward the toes and on top of the foot, not on its lateral border. On the shaft-axis profile above, the tuberosity ends at about z 0.012 (bulge 5.0 mm at z 0.0115, 4.5 mm at z 0.015). Just distal to it, the bone's lateral face is [-0.1214, 0.025, 0.014] and its lower edge is at y 0.0217. The skin's most lateral edge, standing in for the red-white border, is at x -0.136 for y 0.016-0.022 at z 0.010-0.015, with the sole at y 0.007-0.012. The skin hit for (y 0.020, z 0.014) is x -0.1365. Codex's z of 0.004 still sits on the tuberosity. Claude's [-0.1385, 0.019, 0.011] is within 3 mm of my seed.",
+    "note": "Out of scope: BL65 (z 0.0908) lies past the 5th metatarsal head (z 0.059), and BL66/BL67 (z 0.117-0.118) lie past the little-toe bones (up to about z 0.092). The rest of that series may also be shifted toward the toes. My scripts are .cache/adjudicate/bl_ray.mjs, bl_thick.mjs and bl_who.mjs in the acupoint-key-filter worktree. The scratch data file is /private/tmp/claude-501/-Users-nuinuri-workspace-anatomy/e58f6abb-ce09-49a6-a5ae-3d125197a93b/scratchpad/position-review/bl_m5.json."
+   }
+  ]
+ },
+ {
+  "zangfu": "GB 담",
+  "points": [
+   {
+    "id": "GB24",
+    "finalVerdict": "wrong",
+    "sides": "codex",
+    "fix": true,
+    "seed": [
+     -0.09,
+     1.122,
+     0.112
+    ],
+    "surface": "front",
+    "confidence": "high",
+    "basis": "WHO p.183: 7th intercostal space, 4 B-cun lateral to the anterior midline. The lateral distance is right: marker x=-0.0899 against ST17 x=-0.090. The level is wrong. I sliced the bone GLB in the sagittal plane x=-0.09, where the right 7th costal cartilage FMA8248 spans y 1.1318-1.1517 (z 0.089-0.096). The marker's y of 1.142 is exactly the centre of that cartilage. The right costal cartilage block BP28 (8th and lower cartilages) tops out at y 1.1123, so the 7th intercostal space at x=-0.09 is y 1.1123-1.1318, centre 1.122. The 6th cartilage FMA8194 and 6th rib FMA8175 start at y 1.1676, so the 6th space is 1.1517-1.1676, centre 1.160. The same values hold at x=-0.085 and x=-0.095. The marker is 0.020 m above the 7th-space centre and 0.018 m below the 6th-space centre. With a trunk cun of (1.2006-1.005)/8 = 0.02445 m, that is 0.82 cun, and the marker is not in the 7th space. Claude rated it ok because it had no cartilage data and interpolated the cartilage course. Skin check: a front ray at (-0.09, 1.122) hits the outer skin at z=0.1097, so the seed at z=0.112 is 2.3 mm outside it.",
+    "note": "New marker: about [-0.09, 1.122, 0.113]. This is close to Codex's suggestion. LR14 (y=1.169) sits on the lower edge of the 6th cartilage rather than in the middle of the 6th space (1.160). That point is outside this task and worth a later check."
+   },
+   {
+    "id": "GB36",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.133,
+     0.226,
+     -0.03
+    ],
+    "surface": "lateral",
+    "confidence": "high",
+    "basis": "WHO: fibular aspect of the leg, anterior to the fibula, 7 B-cun proximal to the prominence of the lateral malleolus. Popliteal crease: y 0.430 (BL39 0.4313, BL40 0.429). Lateral malleolus prominence: y 0.068. The lateral-most fibula bone is x -0.1124 at y 0.0659, on a plateau from y 0.060 to 0.076. A lateral skin ray grid puts the most lateral skin at x -0.1166, y 0.070, z -0.050. 1 cun = (0.430-0.068)/16 = 0.02263 m, so 7 cun is at y 0.226. Any prominence from 0.066 to 0.072 gives 0.224 to 0.229. The marker's y of 0.269 is 0.043 m (1.9 cun) too high, which is about 7 cun measured down from the crease instead of up from the malleolus. Front-back placement: at y=0.226 the fibula spans z -0.051 to -0.037 (anterior border x -0.1094, z -0.0372). EDL spans z -0.041 to -0.025, tibialis anterior z -0.029 to -0.006. The marker's z of -0.012 is over the tibialis anterior, on ST40's line (ST40 z -0.0104). z=-0.030 is just anterior to the fibula, over EDL. Skin check: a lateral ray at (y 0.226, z -0.030) hits x -0.1322, 0.8 mm from the seed.",
+    "note": "Codex and Claude agree on the height (about y 0.226-0.228). I took a z close to Codex's (-0.025) rather than Claude's (-0.015) so the point is just anterior to the fibula and not on the tibialis anterior. GB35 is outside this task but also needs a check. WHO puts it at the same level, but its marker is at y 0.244, and at z -0.029 it lies anterior to the fibula, not posterior. After this fix it would sit above and nearly in line with GB36. It should be at about y 0.226 and z of about -0.055."
+   },
+   {
+    "id": "GB37",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.123,
+     0.181,
+     -0.03
+    ],
+    "surface": "lateral",
+    "confidence": "high",
+    "basis": "WHO: anterior to the fibula, 5 B-cun proximal to the prominence of the lateral malleolus. Same frame as GB36: crease 0.430, prominence 0.068, 1 cun = 0.02263 m, so 5 cun is at y 0.181 (0.179-0.183 across the prominence range). The marker's y of 0.2136 is 0.0325 m (1.44 cun) too high. Even with the prominence taken at the BL60 level (0.086), 5 cun is at 0.194 and the marker is still about 0.9 cun high. At y=0.18 the fibula's anterior border is at z -0.0382 (x -0.1061). EDL spans z -0.041 to -0.029, and the tibialis anterior reaches z -0.013. The marker's z of -0.0125 is over the tibialis anterior and anterior to the GB line, so z=-0.030 is used. Skin check: lateral skin at y 0.18 is x -0.1223 at z -0.030 and x -0.1239 at z -0.035. A lateral ray at the seed hits x -0.1234, 0.4 mm away.",
+    "note": "After this fix GB37 (y 0.181) would sit below the uncorrected GB38 (y 0.1904), reversing their order. GB38 (4 cun, about y 0.158) and GB39 (3 cun, about y 0.136, at z of about -0.030) are outside this task but need the same downward shift."
+   },
+   {
+    "id": "GB40",
+    "finalVerdict": "minor",
+    "sides": "claude",
+    "fix": true,
+    "seed": [
+     -0.108,
+     0.055,
+     -0.027
+    ],
+    "surface": "lateral",
+    "confidence": "medium",
+    "basis": "WHO p.191: anterolateral ankle, in the depression lateral to the EDL tendon, anterior and distal to the lateral malleolus. The marker [-0.1137, 0.0641, -0.0397] sits on the malleolus itself. At y 0.064-0.065 the fibula spans z -0.0564 to -0.0316 and its lateral-most point is x -0.1124 at z -0.0476. The authored front seed (z 0.019) struck the bulge of the malleolus. Malleolus tip: y 0.0539 (z -0.049). The anterior border at y 0.058-0.074 is at about z -0.032. In the plane x=-0.106 there is no bone between y 0.047 (cuboid) and 0.058 (fibula) for z -0.04 to -0.01. Lateral skin rays show the depression: at y 0.055 the skin is least lateral at z -0.025 to -0.030 (x -0.1073), against x -0.1119 over the malleolus (z -0.05) and x -0.111 on the lateral foot (z 0.005). At y 0.050 it is x -0.1084 at z -0.030, and at y 0.060 x -0.1061 at z -0.020. The EDL tendon is at z 0.014-0.046 and peroneus tertius at z of about 0, so the target is clearly lateral to them. A lateral ray at the seed hits x -0.1073, 0.7 mm away. The shift from the marker is dy -0.009, dz +0.013, dx +0.006, about 0.016-0.018 m (0.7-0.8 cun).",
+    "note": "This is the same spot, the anterolateral ankle at the malleolus, so the verdict is minor rather than wrong, but the move is well measured and over 0.5 cun. My position is close to Claude's [-0.105, 0.056, -0.026]. Codex's z of -0.015 is more anterior, at the dorsal slope of the ankle near the peroneus tertius and EDB, rather than at the notch below and in front of the malleolus. Use the lateral surface: a front ray at this x would hit the lateral foot first."
+   }
+  ]
+ },
+ {
+  "zangfu": "TE 삼초",
+  "points": [
+   {
+    "id": "TE4",
+    "finalVerdict": "minor",
+    "sides": "neither",
+    "fix": true,
+    "seed": [
+     -0.244,
+     0.827,
+     -0.0001
+    ],
+    "surface": "back",
+    "confidence": "medium",
+    "basis": "Level is right. The marker is at y 0.8271, 2-3 mm distal to the ulnar styloid tip (0.8288) and radial styloid tip (0.8296), and level with LI5 (0.828). The side-to-side position is not right. I sliced the tendon meshes exactly with .cache/adjudicate/te-tendon.mjs and te-slice.mjs. At y 0.827 the extensor digitorum (FMA38501) spans x -0.2638 to -0.2451, centre -0.2544. At y 0.825 it separates into tendons at x -0.2645..-0.2573, -0.2559..-0.2529 and -0.2517..-0.2466. The extensor digiti minimi (FMA38504) is at x -0.2429..-0.2387. The depression ulnar to the extensor digitorum tendon (the ED/EDM gap) is therefore at x about -0.244. The gap holds its position at other levels: y 0.830 gives ED -0.2457 and EDM -0.2431; y 0.835 gives -0.2461 and -0.2436. An independent check agrees: at y 0.80 the 4th metacarpal maxX is -0.2437 and the 5th metacarpal minX is -0.2449, so the 4th-5th interspace, traced proximally, also reaches x -0.244. The marker at x -0.254 sits over the middle-finger extensor tendon, inside the extensor digitorum band, about 10 mm radial of the target. With 1 cun = 0.0207 m that is 0.48 cun, and the marker is not ulnar to the tendon. Projection check: seed [-0.244,0.827,-0.0001] on the back surface gives skin [-0.244,0.827,-0.0001] and marker [-0.244,0.827,-0.0031], both 'open'. The mirrored left side lands 0.1 mm from its seed.",
+    "note": "I side with neither reviewer. Codex called it unclear because it had no tendon border; the tendon mesh slices settle that. Claude called it ok, estimating the ED/EDM gap at x -0.249, but the measured gap is -0.244. Two related issues are outside this review. TE3 (x -0.2539) sits over the 4th metacarpal (x -0.2527..-0.2437 at y 0.766) rather than the 4th-5th interspace (about -0.2407), which is the same radial shift. SI5 (x -0.2431, y 0.8368) would end up just 1 cm proximal of the new TE4. SI5 also looks too radial and too proximal for 'between the triquetrum and the ulnar styloid', so review SI5 separately."
+   },
+   {
+    "id": "TE5",
+    "finalVerdict": "minor",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.2445,
+     0.868,
+     -0.0147
+    ],
+    "surface": "back",
+    "confidence": "high",
+    "basis": "Forearm scale: the elbow end is y 1.075-1.077. That comes from LU5 and HT3 (1.075), PC3 (1.0771), the humerus lateral epicondyle (1.078, measured), the medial epicondyle (1.0723) and the olecranon tip, ulna maxY (1.0764). The dorsal wrist crease is y 0.827, from TE4 and LI5 (0.828). 12 cun = 0.2485 m, so 1 cun = 0.0207 m. The target level is 0.827 + 2 cun = 0.868. The marker is at 0.8793, which is 2.52 cun above the crease, so it is 0.53 cun too proximal (0.45 cun if the crease is taken at 0.829). Side to side, from exact bone slices: at y 0.8793 the radius (FMA23464) spans x -0.2674..-0.2495 and the ulna (FMA23467) x -0.2368..-0.2259. The marker at x -0.2511 lies over the ulnar margin of the radius, 1.6 mm radial of its edge, not at the middle of the gap (-0.2432). The zoomed bone close-up shows the same: the gold dot sits on the radius edge, at the radial edge of the interosseous membrane. At y 0.868 the radius ulnar edge is -0.2505 and the ulna radial edge -0.2388, so the midpoint is -0.2447 (interosseous membrane FMA23707 x -0.2493..-0.2384). Total offset is about 11 mm proximal and 6.6 mm radial, roughly 13 mm or 0.62 cun. Projection check: seed [-0.2445,0.868,-0.0147] on the back surface gives skin z -0.0147 and marker [-0.2445,0.868,-0.0177], both 'open'. The left side lands 0.2 mm from its seed.",
+    "note": "Both reviewers measured the level correctly (target 0.868-0.8685) and I agree with their minor verdict. Both said the side-to-side position was correct and kept x at -0.250/-0.2517. The exact radius and ulna slices show that x is the ulnar edge of the radius, so I also moved x to the middle of the interosseous gap. After the move TE5 no longer sits level with PC6 (y 0.8799). PC6 itself is about 2.4 cun above PC7 (0.831), so check PC6 separately rather than keep TE5 high to match it."
+   },
+   {
+    "id": "TE7",
+    "finalVerdict": "minor",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.237,
+     0.889,
+     -0.0212
+    ],
+    "surface": "back",
+    "confidence": "high",
+    "basis": "Using the same scale (1 cun = 0.0207 m, crease y 0.827), the target level is 0.827 + 3 cun = 0.889. The marker is at 0.902, which is 3.63 cun above the crease, so it is 13 mm (0.63 cun) too proximal. It is still 0.5 cun too proximal if the crease is taken at 0.829. Side to side at y 0.889: the ulna radial edge is x -0.2354. Over it, the extensor digiti minimi ulnar edge (FMA38504) is at -0.2355 and the extensor carpi ulnaris radial edge (BP45) at -0.2353. So 'immediately radial to the ulna' is about x -0.236 to -0.237. The current x of -0.239 is 5 mm radial of the ulna edge at its own level (-0.2341 at y 0.902). That is acceptable, so only a 2 mm refinement goes with the level change. Projection check: seed [-0.237,0.889,-0.0212] on the back surface gives skin z -0.0212 and marker [-0.237,0.889,-0.0242], both 'open'. The left side lands 0.5 mm from its seed.",
+    "note": "I agree with both reviewers' minor verdict and level (0.888-0.8893). My x of -0.237 is close to theirs (-0.239/-0.2405), set on the measured ulna radial border. TE6 is not in this review, but it has the same faults: y 0.9017 is too proximal, and x -0.248 lies on the radius ulnar edge (-0.248 at y 0.902). If TE7 moves alone, it sits 13 mm distal to TE6 instead of level with it. To keep the pair level, TE6 should move as well, for example seed [-0.242,0.889,-0.0221] on the back surface (middle of the gap). That projects 'open' to marker [-0.242,0.889,-0.0251] and leaves TE7 5 mm ulnar to TE6."
+   }
+  ]
+ },
+ {
+  "zangfu": "LR",
+  "points": [
+   {
+    "id": "LR3",
+    "finalVerdict": "wrong",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.0835,
+     0.0615,
+     0.04
+    ],
+    "surface": "top",
+    "confidence": "high",
+    "basis": "WHO p.197: dorsum of foot, between MT1 and MT2, in the depression distal to the junction of their bases, over the dorsalis pedis artery. Measured from triangle and vertex slices of bone.glb in world coordinates. Right MT1 (FMA24507) base spans z 0.0215-0.035 and its head ends at z 0.083. Right MT2 (FMA24509) base starts at z 0.0156. The bases touch at z 0.025-0.030: MT1 lateral edge x -0.0837/-0.0840 against MT2 medial edge -0.0837. The gap opens at z 0.035 (-0.0835 vs -0.0863) and at z 0.040 (-0.0822 vs -0.0871), giving a gap centre of -0.0847. At z 0.040 the EHL tendon (FMA22546) is at x -0.0703 to -0.0674, so the target lies lateral to EHL. The dorsalis pedis artery (vessel-full.glb, world matrix applied) is at x -0.0809, y 0.0557 at z 0.040 and dives into the interspace at z about 0.049, x -0.0825. Dorsal skin at (x -0.0835, z 0.040) is y 0.0614. A replica of the build-anchors top ray gives right surface [-0.0835,0.0614,0.040] and marker [-0.0835,0.0644,0.040]; the left mirror marker is [0.0835,0.0647,0.040]. Both pass the open-air test. The current marker [-0.075,0.0308,0.110] is 2.7 cm beyond the MT1 head end (z 0.083), over the hallux MTP and proximal phalanx, and about 7 cm distal to the target.",
+    "note": "Both reviewers agree, and their suggestions (Claude [-0.082,0.062,0.04], Codex [-0.0837,0.0602,0.045]) are within about 5 mm of mine. I placed the seed between the bony gap centre (-0.0847) and the artery (-0.0809), just distal to the base junction. Out of scope but related: ST42 (z 0.075) and LR4 (z 0.021) also look too distal. After this fix, LR3 would lie proximal to ST42, which is anatomically inverted, so ST42 needs its own check."
+   },
+   {
+    "id": "LR6",
+    "finalVerdict": "minor",
+    "sides": "both",
+    "fix": true,
+    "seed": [
+     -0.0704,
+     0.25,
+     -0.0106
+    ],
+    "surface": "medial",
+    "confidence": "medium",
+    "basis": "WHO: anteromedial leg, centre of the medial surface of the tibia, 7 B-cun above the medial malleolar prominence. Level: the medial malleolar prominence (max x of the tibia FMA24477 slice) is -0.0489 at y 0.086, consistent with KI3 at 0.0871. On the model's medial scale (SP9 y 0.392), 13 cun = 0.306 m and 1 cun = 0.0235 m, so 7 cun is at y 0.2508. LR5 sits exactly at 5 cun on this scale (0.2039). Even if the lower border of the condyle is read at the flare bend (tibia max x -0.0543 at y 0.375 vs -0.0479 at 0.385), 7 cun is y 0.2416. The current y 0.2298 is therefore 0.012-0.021 m low (0.5-0.9 cun). It is only 0.026 m (1.1 cun) above LR5 instead of 2 cun, and it is below SP7 (0.238). Mediolateral: at y 0.25 the tibia slice has its anterior crest at (-0.0842,-0.0047) and its medial border at (-0.0698,-0.0255), with the contour centre of the medial surface at (-0.0752,-0.0140). A ray along the surface normal (0.822,0,0.569) meets the outer skin at (-0.0703,0.25,-0.0106), 6 mm from the bone; the great saphenous vein is at (-0.0658,-0.0239), behind the target. A replica of the build-anchors medial ray gives right surface (-0.0704,0.25,-0.0106) and marker [-0.0674,0.25,-0.0106]; the left mirror marker is [0.0662,0.25,-0.0106]. Both are open. The stored right surface (-0.0627,0.2298,-0.0159) lies over the posterior third of the medial surface, about 0.8 cm from the saphenous vein (-0.0682,-0.0232 at y 0.23), which matches the muscle close-up.",
+    "note": "I side with both reviewers on the level, about 0.9 cun low on the model's own scale. On mediolateral position I side with Claude. Codex's seed [-0.0548,0.25,-0.0159] would project to skin x -0.0578 at z -0.0159, about 1.4 cm from bone and behind the medial tibial surface. Re-projecting the current seed on today's skin would also land at (-0.0578,0.23,-0.018), not the stored -0.0627; the stored anchor was kept from an earlier skin. After the fix LR6 sits 1.2 cm above SP7 (y 0.238, z -0.0116) on the same skin line. SP7 should be behind the medial border, so it may need its own check (out of scope)."
+   }
+  ]
+ }
+]

@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import AnatomyControls from "./AnatomyControls";
 import PointTradition from "./PointTradition";
-import { xiMeridian, pointCategories, pointOrgans, organChoices, organText, pointColor, UNASSIGNED_COLOR, KEY_CLASSES, isOrganChoice, luoNote, organClassPoints, organKeyPointIds, organLabel, organScopes, organsOfView, pointTermsMatch } from "./point-display";
+import { xiMeridian, pointCategories, pointOrgans, organChoices, organText, pointColor, UNASSIGNED_COLOR, KEY_CLASSES, KEY_FILTER, KEY_FILTER_NAME, isOrganChoice, keyOwners, luoNote, organClassPoints, organKeyPointIds, organLabel, organScopes, organsOfView, pointTermsMatch } from "./point-display";
 import { contextIsDimmed } from "./selection-context";
 import { comparisonReference } from "./comparison-reference";
 import { referenceSourceFor } from "./reference-source";
@@ -69,6 +69,7 @@ function OrganPoints({ organ, selectedId, onPick, children }: { organ: string; s
     </section>
   );
 }
+const KEY_FILTER_HINT = "각 경맥(장부)의 원혈·모혈·유혈(배수혈)·극혈·낙혈만 봅니다. 모혈·유혈은 다른 경맥 위에 있어도 그 장부의 혈로 셉니다(폐의 유혈 BL13). 임맥·독맥은 낙혈 CV15·GV1만, 기경 극혈 KI8·BL59·KI9·GB35는 넣지 않습니다.";
 type Panel = "search" | "display" | "help" | "points" | "detail" | null;
 // Short pickers open over the scene without closing the open panel.
 type Popover = "meridian" | "depth" | null;
@@ -108,8 +109,8 @@ function femaleMarkerNote(id: string) {
   if (femaleAcupointNotes.facingException.includes(id)) notes.push("옮겨 온 방향에 맞는 피부면이 없어 반대쪽 면(가슴 옆벽)에 놓였고, 실제 위치와 다를 수 있습니다.");
   return `여성 근사 표식 · ${notes.join(" ")} 전문가 검수 전입니다.`;
 }
-function PointDetail({ point, swatch, onFocus, saved, onSave, onCompare, onClose, comparisonFeedback, femaleNote, modestyNote }: {
-  point: Point; swatch: string; onFocus: () => void; saved: boolean; onSave: () => void; onCompare: () => void; onClose: () => void; comparisonFeedback?: ReactNode; femaleNote?: string; modestyNote?: string;
+function PointDetail({ point, swatch, onFocus, saved, onSave, onCompare, onClose, onClear, comparisonFeedback, femaleNote, modestyNote }: {
+  point: Point; swatch: string; onFocus: () => void; saved: boolean; onSave: () => void; onCompare: () => void; onClose: () => void; onClear: () => void; comparisonFeedback?: ReactNode; femaleNote?: string; modestyNote?: string;
 }) {
   const feedbackRef = useRef<HTMLDivElement>(null);
   const hasComparisonFeedback = Boolean(comparisonFeedback);
@@ -148,6 +149,8 @@ function PointDetail({ point, swatch, onFocus, saved, onSave, onCompare, onClose
           {!!concept?.organIds.length && <button className="ax-primary" aria-label="대응 장부의 해부 구조 비교" onClick={onCompare}>해부 구조 비교</button>}
           <button className="focus-link" aria-label="3D에서 가까이 보기" onClick={onFocus}><Focus size={15} />가까이 보기</button>
           <a className="focus-link" aria-label="위키에서 더 알아보기" href={`#wiki/points/${point.id}`}><BookOpen size={15} />위키</a>
+          {/* Closing the panel keeps the point; this ends the selection (Q45). */}
+          <button className="focus-link" aria-label="경혈 선택 해제" onClick={onClear}><X size={15} />선택 해제</button>
         </div>
         {comparisonFeedback && <div ref={feedbackRef} className="comparison-feedback" role="status">{comparisonFeedback}</div>}
         <p className="concept-notice">
@@ -327,7 +330,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   // meridian, which its own picker shows; its ✕ clears exactly those (Q46).
   const barFilters = [
     query.trim() && `“${query.trim()}”`, onlySaved && "저장한 경혈",
-    concept !== "all" && concepts.find((c) => c.id === concept)?.name,
+    concept !== "all" && (concept === KEY_FILTER ? KEY_FILTER_NAME : concepts.find((c) => c.id === concept)?.name),
     organ !== "all" && (isOrganChoice(organ) ? organLabel(organ) : "장부 배속 없음"),
     bodyRegion !== "전체" && bodyRegion,
     catalogue !== "all" && (catalogue === "extra" ? "경외기혈" : "정규 경혈"),
@@ -345,16 +348,20 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
   const resetFilters = () => dispatch({ type: "reset-filters" });
   // Every filter but the meridian; the meridian picker counts against it.
   // The query uses the unified search's matcher, classes and zang-fu included.
+  // Under "원·모·유·극·락 (경맥별)" a meridian or zang-fu keeps its own five
+  // classes wherever they lie (the lung's back-shu BL13), not every point on it.
+  const keyMode = concept === KEY_FILTER;
   const beforeMeridian = useMemo(() => points.filter((p) =>
     (region === "전체" || p.region === region) &&
     (bodyRegion === "전체" || p.bodyRegion === bodyRegion) &&
     (catalogue === "all" || p.catalogue === catalogue) &&
-    (concept === "all" || pointConcepts[p.id]?.categories.includes(concept)) &&
-    (organ === "all" || (organ === "none" ? !pointOrgans(p).length : pointOrgans(p).includes(organ))) &&
+    (concept === "all" || (keyMode ? keyOwners(p).length > 0 : pointConcepts[p.id]?.categories.includes(concept))) &&
+    (organ === "all" || (organ === "none" ? !pointOrgans(p).length : keyMode ? keyOwners(p).includes(organ) : pointOrgans(p).includes(organ))) &&
     (!onlySaved || saved.includes(p.id)) &&
     pointScore(p, query, (x) => meridianOf(x)?.name, pointTermsMatch) !== null),
-  [region, bodyRegion, catalogue, concept, organ, onlySaved, saved, query]);
-  const found = useMemo(() => meridian === "all" ? beforeMeridian : beforeMeridian.filter((p) => p.meridian === meridian), [beforeMeridian, meridian]);
+  [region, bodyRegion, catalogue, concept, keyMode, organ, onlySaved, saved, query]);
+  const onMeridian = useCallback((p: Point, m: string) => keyMode ? keyOwners(p).includes(m) : p.meridian === m, [keyMode]);
+  const found = useMemo(() => meridian === "all" ? beforeMeridian : beforeMeridian.filter((p) => onMeridian(p, meridian)), [beforeMeridian, meridian, onMeridian]);
   const camera = (kind: CameraAction["kind"]) => {
     if (kind === "focus" && state.sex === "female" && !state.femaleMarkers) {
       setComparisonNotice("여성 표면의 경혈 좌표는 검수 전입니다. 남성 기준 좌표로 이동하지 않습니다.");
@@ -1177,6 +1184,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             <div className="ax-filter-grid">
               <label className="ax-field">경혈 분류<select aria-label="경혈 분류" value={concept} onChange={(e) => setFilter({ concept: e.target.value })}>
                 <option value="all">전체 분류</option>
+                <option value={KEY_FILTER}>{KEY_FILTER_NAME} (경맥별) · {points.filter((p) => keyOwners(p).length).length}</option>
                 {concepts.map((c) => <option key={c.id} value={c.id}>{c.name} · {points.filter((p) => pointConcepts[p.id]?.categories.includes(c.id)).length}/{c.expectedTotal}</option>)}
               </select></label>
               <label className="ax-field">연결 장부<select aria-label="연결 장부" value={organ} onChange={e => setFilter({ organ: e.target.value })}>
@@ -1200,7 +1208,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               {["전체", "머리·목", "몸통", "팔·손", "다리·발"].map((r) => <button key={r} aria-pressed={region === r} onClick={() => setFilter({ region: r })}>{r}</button>)}
             </div>
             <p className="ax-hint">장부는 전통적 분류입니다. 모혈·유혈의 대응과 소속 경맥을 함께 찾으며, 목록에 연결 근거를 표시합니다. 심포·삼초를 단일 해부 장기로 치환하지 않습니다.</p>
-            {concept !== "all" && <p className="ax-hint">{concepts.find((c) => c.id === concept)?.description}</p>}
+            {concept !== "all" && <p className="ax-hint">{keyMode ? KEY_FILTER_HINT : concepts.find((c) => c.id === concept)?.description}</p>}
             <div className="ax-row">
               <button className="ax-ghost" onClick={resetFilters}><RotateCcw size={13} />초기화</button>
               <p className="coverage-note">14개 경맥 · 경혈 {points.length}개 · 정규 361경혈 + 표준 경외기혈 48개</p>
@@ -1286,7 +1294,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               <ChevronDown size={15} />
             </button>
             <button className="ax-icon" aria-label="선택 경혈 확대" data-tip={state.detail ? "전신으로 돌아가 선택 경혈 확대" : "선택 경혈 확대"} onClick={focusPoint}><Focus size={17} /></button>
-            <button className="ax-icon ax-clear-point" aria-label="경혈 선택 해제" data-tip="경혈 선택 해제 · 마지막 선택은 다음 방문에 사용" onClick={clearPoint}><X size={17} /></button>
+            <button className="ax-icon ax-clear-point" aria-label="경혈 선택 해제" data-tip="경혈 선택 해제 · 마지막 선택은 다음 방문에 사용" onClick={clearPoint}><X size={17} /><span className="clear-text">해제</span></button>
           </> : (
             <button className="ax-point-empty" aria-label="경혈 선택 — 표식을 누르거나 목록에서 고르기" onClick={(e) => openPanel("points", e.currentTarget)}>
               <span className="ax-dot" />경혈 선택<small>표식을 누르거나 목록에서</small>
@@ -1302,6 +1310,7 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
             saved={saved.includes(selected.id)}
             onSave={() => toggle(selected.id)}
             onCompare={compare}
+            onClear={clearPoint}
             onClose={closePanel}
             femaleNote={state.sex === "female" && state.femaleMarkers ? femaleMarkerNote(selected.id) : undefined}
             modestyNote={state.sex === "male" && state.modesty && MODEST_MOVED_POINTS.includes(selected.id)
@@ -1459,13 +1468,17 @@ export default function AtlasPage({ id, saved, toggle, state, dispatch, navigate
               {popover === "meridian" && (
                 <div className="ax-popover ax-meridians" role="group" aria-label="경맥 선택">
                   {comparisonLine}
+                  <label className="ax-key-only" data-tip={KEY_FILTER_HINT} data-tip-side="top">
+                    <input type="checkbox" checked={keyMode} onChange={(e) => setFilter({ concept: e.target.checked ? KEY_FILTER : "all" })} />
+                    <span>{KEY_FILTER_NAME}혈만 <small>경맥별 · 유혈은 배수혈</small></span>
+                  </label>
                   <button aria-pressed={meridian === "all" && state.markers === "filtered"} aria-label="모든 경맥의 경혈 보기" onClick={() => { setFilter({ meridian: "all" }); closePopover(); }}>
                     전체<small>{beforeMeridian.length}</small>
                   </button>
                   {meridians.map((m) => (
                     <button key={m.id} style={{ ["--c" as string]: m.color }} aria-pressed={meridian === m.id && state.markers === "filtered"} aria-label={`${m.name} 경혈만 보기`}
                       onClick={() => { setFilter({ meridian: meridian === m.id && state.markers === "filtered" ? "all" : m.id }); closePopover(); }}>
-                      <i />{meridianChipName(m)}<small>{beforeMeridian.filter((p) => p.meridian === m.id).length}</small>
+                      <i />{meridianChipName(m)}<small>{beforeMeridian.filter((p) => onMeridian(p, m.id)).length}</small>
                     </button>
                   ))}
                 </div>

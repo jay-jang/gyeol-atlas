@@ -1,0 +1,5 @@
+# Round 4: verify the abdominal re-levelling and the re-measured neighbours
+
+Follow BRIEF.md (verdicts, cun scales, frame) with one change: do NOT take any marker as the umbilicus. Measure the navel pit on the skin yourself (skin.glb node FMA7163; it is a midline depression on the anterior abdomen), and the xiphisternal junction (sternal body FMA7487 / xiphoid FMA7488) and the pubic symphysis upper border (hip bones FMA16586/FMA16587 near x 0) from bone.glb. Read-only helper: cd /Users/nuinuri/workspace/anatomy-worktrees/acupoint-key-filter && PATH=/Users/nuinuri/.npm/_npx/3e062c1ecdbab29f/node_modules/node/bin:$PATH node .cache/adjudicate/mesh.mjs <bone|muscle|skin> <FMA id> [ymin ymax].
+
+Your file lists points that were just moved (`markers` = new, `previousMarkers` = before). For each, judge the NEW placement against WHO 2008 and check the order/spacing against the unmoved neighbours on the same line (landmarks3.json has every marker now). Return the same JSON per point as round 2 (with `neighbours`).

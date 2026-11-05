@@ -11,6 +11,7 @@ seeds = read('data/acupoint-seeds.json')
 theory = read('data/acupoint-theory.json')
 legacy = {p['id']: p for p in read('data/acupoint-authoring/legacy-points.json')}
 old_concepts = read('data/acupoint-authoring/legacy-point-concepts.json')
+reviewed = read('data/acupoint-authoring/position-review-2026-11-05.json')['points']
 multi = {
     'EX-HN1': [[0,1.643,.013], [0,1.637,-.037], [-.025,1.645,-.012], [.025,1.645,-.012]],
     'EX-B2': [[-.013,y,z] for y,z in [(1.378,-.08),(1.359,-.085),(1.335,-.096),(1.311,-.096),(1.279,-.095),(1.243,-.096),(1.216,-.094),(1.187,-.096),(1.163,-.092),(1.131,-.088),(1.106,-.08),(1.077,-.073),(1.04,-.067),(1.017,-.063),(.989,-.063),(.963,-.063),(.928,-.067)]],
@@ -61,6 +62,8 @@ points=[]; concepts={}
 for p in content:
     id=p['id']; old=legacy.get(id,{}); seed={**seeds[id]}
     if old: seed={k:old[k] for k in ['position','surface']}
+    # The 2026-11-05 WHO position cross-check replaces reviewed seeds last.
+    if id in reviewed: seed={k:reviewed[id][k] for k in ['position','surface']}
     region,detail=body_region(p,seed)
     bilateral=p['meridian'] not in ['GV','CV'] and id not in midline_extra
     positions=multi.get(id,[seed['position']])

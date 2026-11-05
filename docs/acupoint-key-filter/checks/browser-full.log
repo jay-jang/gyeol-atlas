@@ -1,0 +1,248 @@
+
+Running 210 tests using 1 worker
+
+[1/210] tests/browser/acupoints.spec.ts:5:1 › 409 points, extra-point regional meshes, multiple locations and theory survive wiki return
+[2/210] tests/browser/acupoints.spec.ts:35:1 › mobile regions and 34-site Jiaji retain the scene and expose sourced content
+[3/210] tests/browser/acupoints.spec.ts:53:1 › the acupoint bar names meridians in Korean and still filters by meridian
+[4/210] tests/browser/anatomy-region.spec.ts:8:46 › male limb regions agree with search, rendered meshes, peeling and restore
+[5/210] tests/browser/anatomy-region.spec.ts:8:46 › female limb regions agree with search, rendered meshes, peeling and restore
+[6/210] tests/browser/anatomy.spec.ts:4:1 › continuous dissection peels individual muscle meshes and exposes deep systems
+[7/210] tests/browser/anatomy.spec.ts:18:1 › seven real systems and shared layer/isolation transitions; clipping and bilingual structure selection
+[8/210] tests/browser/anatomy.spec.ts:27:1 › hand and foot phalanges are searchable, selectable and frameable
+[9/210] tests/browser/anatomy.spec.ts:33:1 › whole-body vessels and nerves expose names, hierarchy, descriptions and isolation
+[10/210] tests/browser/anatomy.spec.ts:41:1 › male and female references, body regions and lymph structures are independently explorable
+[11/210] tests/browser/anatomy.spec.ts:76:1 › point focus and marker preference survive stage changes
+[12/210] tests/browser/anatomy.spec.ts:80:1 › whole-organ bundles, internal click targeting and wiki/session restoration
+[13/210] tests/browser/anatomy.spec.ts:87:1 › mobile bundle comparison keeps its result visible and avoids page scroll; invalid snapshots recover
+[14/210] tests/browser/anterior-forearm-peel.spec.ts:5:1 › male anterior forearm preserves geometry and peels superficial, intermediate, then deep on desktop and mobile
+[15/210] tests/browser/anterior-thigh-peel.spec.ts:5:1 › female anterior thigh exposes vastus intermedius only after both rectus femoris sources peel
+[16/210] tests/browser/brain-bindings.spec.ts:33:1 › brain source bindings, ray selection and every half-percent peel preserve complete buffers
+tests/browser/brain-bindings.spec.ts:33:1 › brain source bindings, ray selection and every half-percent peel preserve complete buffers
+All 283 brain position/normal/index buffers unchanged at 0%
+
+All 283 brain position/normal/index buffers unchanged at 25%
+
+All 283 brain position/normal/index buffers unchanged at 50%
+
+All 283 brain position/normal/index buffers unchanged at 75%
+
+All 283 brain position/normal/index buffers unchanged at 100%
+
+[17/210] tests/browser/brain-bindings.spec.ts:129:1 › unreviewed female manifest is rejected before geometry download and retry recovers
+[18/210] tests/browser/brain-provenance.spec.ts:5:1 › female reference brain exposes provenance for bundle and individual selections
+[19/210] tests/browser/comparison-clear.spec.ts:4:45 › male: clearing a comparison removes the hidden highlight and survives reload
+[20/210] tests/browser/comparison-clear.spec.ts:4:45 › female: clearing a comparison removes the hidden highlight and survives reload
+[21/210] tests/browser/comparison-layout.spec.ts:6:1 › landscape comparisons and isolated bundles remain clear without changing their memberships
+[22/210] tests/browser/comparison-layout.spec.ts:41:1 › female organ comparisons use the female body and keep the CT stomach one explicit choice away
+[23/210] tests/browser/connective.spec.ts:15:1 › male ligaments and tendons are present, peel with their systems and can be hidden or viewed alone
+[24/210] tests/browser/connective.spec.ts:65:1 › female reference shows its source knee structures and the carried ligaments and tendons
+[25/210] tests/browser/connective.spec.ts:77:1 › the ligament setting and its view fit a phone without replacing the scene
+[26/210] tests/browser/connective.spec.ts:94:1 › ligaments and tendons are drawn apart in both bodies and the display settings name the two
+[27/210] tests/browser/continuity.spec.ts:10:1 › an organ stays in view and selected through peeling, acupoints and clearing
+[28/210] tests/browser/continuity.spec.ts:65:3 › motion › camera moves glide to the same pose that reduced motion jumps to
+[29/210] tests/browser/detail-context.spec.ts:24:29 › male heart: restoring detail context keeps every original member and the selected child
+[30/210] tests/browser/detail-context.spec.ts:24:29 › male liver: restoring detail context keeps every original member and the selected child
+[31/210] tests/browser/detail-context.spec.ts:24:29 › male lung: restoring detail context keeps every original member and the selected child
+[32/210] tests/browser/detail-context.spec.ts:24:29 › female abdomen-ct: restoring detail context keeps every original member and the selected child
+[33/210] tests/browser/detail-layout.spec.ts:13:4 › male-heart detail remains above its card and presets retain organ focus
+[34/210] tests/browser/detail-layout.spec.ts:13:4 › female-brain detail remains above its card and presets retain organ focus
+[35/210] tests/browser/detail-layout.spec.ts:13:4 › female-ct detail remains above its card and presets retain organ focus
+[36/210] tests/browser/detail-layout.spec.ts:64:1 › every major organ detail fits beside its collapsed and expanded card
+[37/210] tests/browser/detail-peel-return.spec.ts:8:12 › 남성 심장: direct detail return restores its original camera after reload
+[38/210] tests/browser/detail-peel-return.spec.ts:8:12 › 여성 뇌: direct detail return restores its original camera after reload
+[39/210] tests/browser/detail-peel-return.spec.ts:8:12 › 여성 위 (여성 CT): direct detail return restores its original camera after reload
+[40/210] tests/browser/detail-peel-return.spec.ts:31:1 › a point chosen from a directly opened heart detail returns to the original camera
+[41/210] tests/browser/detail-peel-return.spec.ts:52:12 › 남성 심장: detail return restores the actual 50.5% peel
+[42/210] tests/browser/detail-peel-return.spec.ts:52:12 › 여성 뇌: detail return restores the actual 50.5% peel
+[43/210] tests/browser/detail-peel-return.spec.ts:52:12 › 여성 위 (여성 CT): detail return restores the actual 50.5% peel
+[44/210] tests/browser/detail-peel-return.spec.ts:92:1 › selecting a point from heart detail restores peel layers and whole-body framing
+[45/210] tests/browser/detail-peel-return.spec.ts:109:1 › changing body region from female CT detail returns to the same female overview peel
+[46/210] tests/browser/details.spec.ts:7:1 › female uterine tubes and vagina have complete source-defined detail views on desktop and mobile
+[47/210] tests/browser/details.spec.ts:50:1 › organ details use their own complete source memberships and individual parts survive reload
+[48/210] tests/browser/details.spec.ts:113:1 › female peeling exposes each system and does not leak male anatomy
+[49/210] tests/browser/details.spec.ts:133:1 › a failed female geometry chunk shows a recoverable error and retry loads the independent body
+[50/210] tests/browser/details.spec.ts:146:1 › surface targeting exits organ detail and isolation for both reference bodies
+[51/210] tests/browser/dissection-input-scope.spec.ts:4:1 › Alt+arrows in a search field do not peel or move the model; canvas focus enables peeling
+[52/210] tests/browser/dissection-input-scope.spec.ts:22:1 › horizontal wheel over the depth slider leaves depth and camera unchanged
+[53/210] tests/browser/dissection-input-scope.spec.ts:38:1 › movement stops on canvas focus loss even before the held key is released
+[54/210] tests/browser/dissection-input-scope.spec.ts:51:1 › small Alt+wheel input on the canvas peels one half-step without zooming
+[55/210] tests/browser/expansion.spec.ts:3:1 › added muscles, spinal cord and thyroid can be searched, isolated and framed
+[56/210] tests/browser/face-surface.spec.ts:16:1 › the face reads as skin at 0% and shows its own systems once peeled
+[57/210] tests/browser/female-acupoints.spec.ts:30:3 › desktop › rule-placed markers sit on their female landmarks and the card names each method and exception
+[58/210] tests/browser/female-acupoints.spec.ts:30:3 › touch phone › rule-placed markers sit on their female landmarks and the card names each method and exception
+[59/210] tests/browser/female-airway.spec.ts:9:1 › female tracheobronchial tree opens every source mesh and keeps individual selection on desktop and mobile
+[60/210] tests/browser/female-airway.spec.ts:42:1 › female airway search keeps its original English name and enters the same source group
+[61/210] tests/browser/female-arm-registration.spec.ts:41:1 › female arm and toe rest poses match calibrated geometry through peeling, search, reload and sex changes
+[62/210] tests/browser/female-detail.spec.ts:5:1 › female CT details preserve source isolation, search, nearby organs, reload and HRA return
+[63/210] tests/browser/female-detail.spec.ts:67:1 › returning from female CT waits for the actual HRA source to reload
+[64/210] tests/browser/female-detail.spec.ts:81:1 › female CT chunk failure is recoverable without substituting male or HRA organs
+[65/210] tests/browser/female-gallbladder.spec.ts:8:1 › female gallbladder detail opens four actual meshes and restores the prior peel
+[66/210] tests/browser/female-gallbladder.spec.ts:37:1 › female cystic artery keeps its English source name and opens the abdominal group
+[67/210] tests/browser/female-knee-source-restoration.spec.ts:8:1 › 38 female knee source surfaces retain buffers and placement through all 201 peel values and selection
+tests/browser/female-knee-source-restoration.spec.ts:8:1 › 38 female knee source surfaces retain buffers and placement through all 201 peel values and selection
+Verified all 38 knee buffers/matrices at 0%
+
+Verified all 38 knee buffers/matrices at 25%
+
+Verified all 38 knee buffers/matrices at 50%
+
+Verified all 38 knee buffers/matrices at 75%
+
+Verified all 38 knee buffers/matrices at 100%
+
+[68/210] tests/browser/female-knee-source-restoration.spec.ts:51:1 › knee source fetch failure is visible and retry restores female source geometry
+[69/210] tests/browser/female-organs.spec.ts:30:1 › female-specific organs show in the peel and in 장기만 보기, in their own colours
+[70/210] tests/browser/female-organs.spec.ts:70:1 › female reproductive and breast views are found by common terms and return to the body
+[71/210] tests/browser/female-organs.spec.ts:115:1 › the male reproductive organs are one featured detail in the reproductive colour
+[72/210] tests/browser/female-organs.spec.ts:146:3 › on a touch phone › the reproductive views switch and return with 44 px targets and the card on screen
+[73/210] tests/browser/female-pelvic-bindings.spec.ts:18:1 › female uterine round-ligament IDs select the appropriate existing side at every peel step
+[74/210] tests/browser/female-source-restoration-failure.spec.ts:3:1 › female source restoration failure shows an error and retry loads the restored source without a male substitute
+[75/210] tests/browser/female-source-restoration.spec.ts:8:1 › female native source surface remains unchanged across all 201 peel values and selection restoration
+tests/browser/female-source-restoration.spec.ts:8:1 › female native source surface remains unchanged across all 201 peel values and selection restoration
+Verified source buffers at peel 0%
+
+Verified source buffers at peel 25%
+
+Verified source buffers at peel 50%
+
+Verified source buffers at peel 75%
+
+Verified source buffers at peel 100%
+
+[76/210] tests/browser/female-transport.spec.ts:20:1 › the female body is complete with the carried systems, peels in order and keeps sources
+[77/210] tests/browser/female-transport.spec.ts:69:1 › female approximate acupoints are opt-in, focus on the female surface and are remembered
+[78/210] tests/browser/femur-detail.spec.ts:7:1 › female femur selection opens every source child and keeps atomic selection separate
+[79/210] tests/browser/first-frame.spec.ts:42:1 › overview meshes that mount mid-peel use their peel opacity on their first draw
+[80/210] tests/browser/first-frame.spec.ts:73:1 › female and independent CT source mounts never draw the default all-visible packed scene
+[81/210] tests/browser/first-frame.spec.ts:119:1 › cancelled female and CT downloads cannot expose a late source after switching back
+[82/210] tests/browser/gluteal-peel.spec.ts:7:45 › male: sourced gluteal order and all existing relations hold in rendered meshes
+[83/210] tests/browser/gluteal-peel.spec.ts:7:45 › female: sourced gluteal order and all existing relations hold in rendered meshes
+[84/210] tests/browser/key-filter.spec.ts:8:3 › desktop: the meridian picker keeps only each meridian's own 원·모·유·극·락혈
+[85/210] tests/browser/key-filter.spec.ts:38:3 › desktop: a selected point is deselected from its detail panel or the labelled chip button
+[86/210] tests/browser/key-filter.spec.ts:8:3 › mobile: the meridian picker keeps only each meridian's own 원·모·유·극·락혈
+[87/210] tests/browser/key-filter.spec.ts:38:3 › mobile: a selected point is deselected from its detail panel or the labelled chip button
+[88/210] tests/browser/key-filter.spec.ts:8:3 › landscape: the meridian picker keeps only each meridian's own 원·모·유·극·락혈
+[89/210] tests/browser/key-filter.spec.ts:38:3 › landscape: a selected point is deselected from its detail panel or the labelled chip button
+[90/210] tests/browser/loading.spec.ts:4:1 › leaving a detailed reference does not mark unloaded overview layers ready
+[91/210] tests/browser/lung-source.spec.ts:9:34 › lung source views remain separate and selectable on desktop
+[92/210] tests/browser/lung-source.spec.ts:9:34 › lung source views remain separate and selectable on mobile
+[93/210] tests/browser/lung-source.spec.ts:47:1 › a retired fragment in a historical lung session restores a source bundle and preserves preferences
+[94/210] tests/browser/male-kidney-detail.spec.ts:5:1 › male kidney detail exposes original kidney, ureter and artery meshes and restores peeling
+[95/210] tests/browser/male-pancreas-detail.spec.ts:5:1 › male pancreas source views stay separate, expose original parts and return to the prior peel
+[96/210] tests/browser/male-stomach-detail.spec.ts:5:1 › male stomach and named vessel detail retains peel, selected vessel and sex boundary
+[97/210] tests/browser/marker-picking.spec.ts:43:1 › a near miss picks the acupoint, a drag is not a pick, and tissue is selected in place
+[98/210] tests/browser/marker-picking.spec.ts:103:3 › touch › a tap beside an acupoint picks it and tissue taps keep the camera on a phone
+[99/210] tests/browser/marker-picking.spec.ts:131:1 › over peeled tissue an acupoint keeps a smaller target, so organs near it stay clickable
+[100/210] tests/browser/modesty.spec.ts:18:1 › the genitals start hidden in every system and the shield or the settings show them
+[101/210] tests/browser/modesty.spec.ts:69:1 › a chosen genital structure and the reproductive detail are shown while hidden
+[102/210] tests/browser/modesty.spec.ts:105:1 › the groin markers the closure carries forward are drawn on it and say so on their card
+[103/210] tests/browser/movement.spec.ts:8:1 › the movement page lists the agreed movements without loading the 3D viewer
+[104/210] tests/browser/movement.spec.ts:24:1 › the movement page opens and plays while every model download fails
+[105/210] tests/browser/movement.spec.ts:36:1 › a movement opens paused on its first phase and steps without stacking history
+[106/210] tests/browser/movement.spec.ts:63:1 › reduced motion steps through phases; continuous motion only on request
+[107/210] tests/browser/movement.spec.ts:90:1 › stairs draw a staircase, report the cycle, tabulate one EMG recording and link the pair
+[108/210] tests/browser/movement.spec.ts:136:1 › the heel raise names its phases without a %, tabulates two EMG rows and links standing and walking
+[109/210] tests/browser/movement.spec.ts:171:1 › every stair phase keeps the diagram, controls and current phase on a 360×740 first screen
+[110/210] tests/browser/movement.spec.ts:201:1 › a structure link opens it once in the atlas, keeps preferences and links back
+[111/210] tests/browser/movement.spec.ts:242:1 › the female body opens carried copies, keeps the ligament preference, and offers the male model otherwise
+[112/210] tests/browser/movement.spec.ts:273:1 › citations move to the source list without leaving the page
+[113/210] tests/browser/movement.spec.ts:290:3 › header at 1440 px shows one movement label on one row without the movement page
+[114/210] tests/browser/movement.spec.ts:290:3 › header at 390 px shows one movement label on one row without the movement page
+[115/210] tests/browser/movement.spec.ts:290:3 › header at 360 px shows one movement label on one row without the movement page
+[116/210] tests/browser/movement.spec.ts:320:3 › phone 390×844 walking/loading-response: one column, no sideways scroll, readable and touchable
+[117/210] tests/browser/movement.spec.ts:320:3 › phone 360×740 walking/loading-response: one column, no sideways scroll, readable and touchable
+[118/210] tests/browser/movement.spec.ts:320:3 › phone 844×390 walking/loading-response: one column, no sideways scroll, readable and touchable
+[119/210] tests/browser/movement.spec.ts:320:3 › phone 390×844 stair-ascent/pull-up: one column, no sideways scroll, readable and touchable
+[120/210] tests/browser/movement.spec.ts:320:3 › phone 360×740 stair-descent/controlled-lowering: one column, no sideways scroll, readable and touchable
+[121/210] tests/browser/movement.spec.ts:320:3 › phone 844×390 stair-descent/weight-acceptance: one column, no sideways scroll, readable and touchable
+[122/210] tests/browser/movement.spec.ts:320:3 › phone 360×740 heel-raise/lowering: one column, no sideways scroll, readable and touchable
+[123/210] tests/browser/movement.spec.ts:320:3 › phone 844×390 heel-raise/rise: one column, no sideways scroll, readable and touchable
+[124/210] tests/browser/muscle-peel.spec.ts:5:45 › male: actual meshes obey sourced outer-to-inner peel precedence and selection restores a hidden muscle
+[125/210] tests/browser/muscle-peel.spec.ts:5:45 › female: actual meshes obey sourced outer-to-inner peel precedence and selection restores a hidden muscle
+[126/210] tests/browser/navigation.spec.ts:3:1 › movement, wheel zoom and modifier-wheel dissection work on the actual canvas
+[127/210] tests/browser/organ-region.spec.ts:10:45 › male: source organ regions, selection and restored scopes stay consistent
+[128/210] tests/browser/organ-region.spec.ts:10:45 › female: source organ regions, selection and restored scopes stay consistent
+[129/210] tests/browser/panel-keyboard.spec.ts:8:5 › desktop › search shortcut returns to its trigger and idle Escape leaves canvas focus alone
+[130/210] tests/browser/panel-keyboard.spec.ts:41:5 › desktop › acupoint detail tabs support arrows, Home/End and labelled content
+[131/210] tests/browser/panel-keyboard.spec.ts:8:5 › mobile › search shortcut returns to its trigger and idle Escape leaves canvas focus alone
+[132/210] tests/browser/panel-keyboard.spec.ts:41:5 › mobile › acupoint detail tabs support arrows, Home/End and labelled content
+[133/210] tests/browser/panel-keyboard.spec.ts:73:3 › desktop: home and history keep the saved comparison's acupoint
+[134/210] tests/browser/panel-keyboard.spec.ts:73:3 › mobile: home and history keep the saved comparison's acupoint
+[135/210] tests/browser/panel-keyboard.spec.ts:102:1 › an atlas with no selected acupoint does not highlight the fallback ST36 structures
+[136/210] tests/browser/panel-keyboard.spec.ts:117:1 › a connective bundle keeps its own isolation label and tooltips describe icon actions
+[137/210] tests/browser/peel-mode-entry.spec.ts:6:1 › a backward peel input at zero enters peeling from a comparison instead of being discarded
+[138/210] tests/browser/peel-mode-entry.spec.ts:21:36 › male: layer view has an explicit peel entry on desktop and touch
+[139/210] tests/browser/peel-mode-entry.spec.ts:21:36 › female: layer view has an explicit peel entry on desktop and touch
+[140/210] tests/browser/point-consistency.spec.ts:26:3 › desktop: filter and search choices show and clear the same way on the model
+[141/210] tests/browser/point-consistency.spec.ts:86:3 › desktop: an organ view names its zang-fu's source, front-mu, back-shu, xi-cleft and connecting points
+[142/210] tests/browser/point-consistency.spec.ts:26:3 › mobile: filter and search choices show and clear the same way on the model
+[143/210] tests/browser/point-consistency.spec.ts:86:3 › mobile: an organ view names its zang-fu's source, front-mu, back-shu, xi-cleft and connecting points
+[144/210] tests/browser/point-consistency.spec.ts:26:3 › small-mobile: filter and search choices show and clear the same way on the model
+[145/210] tests/browser/point-consistency.spec.ts:86:3 › small-mobile: an organ view names its zang-fu's source, front-mu, back-shu, xi-cleft and connecting points
+[146/210] tests/browser/point-consistency.spec.ts:26:3 › landscape: filter and search choices show and clear the same way on the model
+[147/210] tests/browser/point-consistency.spec.ts:86:3 › landscape: an organ view names its zang-fu's source, front-mu, back-shu, xi-cleft and connecting points
+[148/210] tests/browser/point-consistency.spec.ts:127:1 › a picked point is drawn while markers are hidden and the list explains every narrower model
+[149/210] tests/browser/point-consistency.spec.ts:162:1 › body selections, comparisons and both bodies map organs to zang-fu without inventing one
+[150/210] tests/browser/point-consistency.spec.ts:192:1 › a long filter set fits the bar beside the status and camera tools at laptop width
+[151/210] tests/browser/point-display.spec.ts:11:3 › desktop: classification and organ filters paint the model and keep the scene
+[152/210] tests/browser/point-display.spec.ts:11:3 › mobile: classification and organ filters paint the model and keep the scene
+[153/210] tests/browser/point-display.spec.ts:11:3 › small-mobile: classification and organ filters paint the model and keep the scene
+[154/210] tests/browser/point-display.spec.ts:11:3 › landscape: classification and organ filters paint the model and keep the scene
+[155/210] tests/browser/point-display.spec.ts:57:1 › actual GPU instance colours, overlaps, selection, wiki return and reload retain display preferences
+[156/210] tests/browser/point-display.spec.ts:99:1 › keyboard and touch operate classification controls; system changes retain colour and filters
+[157/210] tests/browser/point-display.spec.ts:144:1 › a Back-Shu comparison opens the complete organ bundle and retains marker settings
+[158/210] tests/browser/point-selection.spec.ts:9:3 › desktop › clear selection keeps the camera, filters and last point without a selected label
+[159/210] tests/browser/point-selection.spec.ts:9:3 › mobile › clear selection keeps the camera, filters and last point without a selected label
+[160/210] tests/browser/point-selection.spec.ts:9:3 › small-mobile › clear selection keeps the camera, filters and last point without a selected label
+[161/210] tests/browser/point-selection.spec.ts:9:3 › landscape › clear selection keeps the camera, filters and last point without a selected label
+[162/210] tests/browser/point-selection.spec.ts:42:1 › closing the tab and returning with only local storage restores the last selected point; a new choice replaces it
+[163/210] tests/browser/point-selection.spec.ts:56:1 › an explicit point link wins over cached/session choices; wiki-only visits still download no 3D
+[164/210] tests/browser/point-selection.spec.ts:66:1 › clear ends an isolated point comparison but leaves an independent anatomy selection intact
+[165/210] tests/browser/point-selection.spec.ts:80:1 › bad or blocked local storage falls back to an empty selection and still allows clearing
+[166/210] tests/browser/selection-context.spec.ts:51:75 › male: context aid reveals a selected internal organ without moving or isolating anatomy
+[167/210] tests/browser/selection-context.spec.ts:51:75 › female: context aid reveals a selected internal organ without moving or isolating anatomy
+[168/210] tests/browser/selection-context.spec.ts:118:1 › vascular, neural and lymph reference renderers share the aid and keyboard preference restoration
+[169/210] tests/browser/selection-navigation-return.spec.ts:6:1 › female same-point click keeps an ordinary organ selection; clearing returns to the prior peel
+[170/210] tests/browser/selection-navigation-return.spec.ts:47:13 › male: acupoints keep an ordinary selection; region navigation leaves it for the prior peel
+[171/210] tests/browser/selection-navigation-return.spec.ts:47:13 › female: acupoints keep an ordinary selection; region navigation leaves it for the prior peel
+[172/210] tests/browser/selection-opacity.spec.ts:7:45 › male: selection remains opaque without overwriting layer opacity preferences
+[173/210] tests/browser/selection-opacity.spec.ts:7:45 › female: selection remains opaque without overwriting layer opacity preferences
+[174/210] tests/browser/selection-peel-return.spec.ts:7:13 › male: clearing an ordinary structure restores the prior 50.5% peel and keeps the camera
+[175/210] tests/browser/selection-peel-return.spec.ts:7:13 › female: clearing an ordinary structure restores the prior 50.5% peel and keeps the camera
+[176/210] tests/browser/selection-peel-return.spec.ts:61:1 › female ordinary organ selection then detail returns to its original peel and pose
+[177/210] tests/browser/sex-switch-loading.spec.ts:4:1 › switching to female removes male organs even while the female geometry is delayed
+[178/210] tests/browser/site.spec.ts:7:1 › model-first scene, actual marker click, search, bookmarks and source-linked wiki
+[179/210] tests/browser/site.spec.ts:20:1 › mobile canvas and overlay coexist, filtered lists, keyboard dismissal and deep links
+[180/210] tests/browser/site.spec.ts:26:1 › failed GLB leaves wiki access and retry available
+[181/210] tests/browser/site.spec.ts:43:1 › wiki and sources open without 3D or web fonts, read clearly at 390 and 1440, and keep a skip link
+[182/210] tests/browser/site.spec.ts:82:3 › touch reading pages at 390 › wiki and sources read clearly and keep 44px touch targets
+[183/210] tests/browser/site.spec.ts:82:3 › touch reading pages at 1440 › wiki and sources read clearly and keep 44px touch targets
+[184/210] tests/browser/source-frame.spec.ts:8:1 › leaving an independent detail frame for peeling fits the loaded overview and preserves later layer views
+[185/210] tests/browser/source-frame.spec.ts:55:1 › female help and layer descriptions use the female overview inventory
+[186/210] tests/browser/spinal-detail.spec.ts:6:1 › female spinal cord partial rest pose retains whole and individually selectable segments
+[187/210] tests/browser/system-exclusion.spec.ts:263:3 › desktop 1440×900, male › a) the rail's own checks leave bone and organs out, keep the view and draw muscles with or without organs
+[188/210] tests/browser/system-exclusion.spec.ts:350:3 › desktop 1440×900, male › b) a left-out innermost system stops the peel before it and the last included system stays
+[189/210] tests/browser/system-exclusion.spec.ts:409:3 › desktop 1440×900, male › c) a left-out stop is inert and says why, its eye still shows it alone, and the peel entry returns with the exclusion
+[190/210] tests/browser/system-exclusion.spec.ts:487:3 › desktop 1440×900, male › d) keyboard only: the checks in the stop rows and Alt+Arrow peeling stop at the limit
+[191/210] tests/browser/system-exclusion.spec.ts:531:3 › desktop 1440×900, male › e) the 표시 설정 system checks stay a direct combination; the peel then applies the exclusion again
+[192/210] tests/browser/system-exclusion.spec.ts:568:3 › desktop 1440×900, male › f) reload restores the exclusions and the clamp; the female body keeps them
+[193/210] tests/browser/system-exclusion.spec.ts:622:3 › desktop 1440×900, male › f2) invalid saved exclusions fall back to a safe view; older sessions leave nothing out
+[194/210] tests/browser/system-exclusion.spec.ts:643:3 › phone 390×844 touch › g) the depth band's rows carry the checks with 44px targets; a stop or eye closes it and hands focus back
+[195/210] tests/browser/system-exclusion.spec.ts:752:3 › phone 360×740 touch › g2) the narrow band keeps 44px targets and one-line notes
+[196/210] tests/browser/system-exclusion.spec.ts:780:3 › phone 360×740 touch › g2b) a comparison takes the narrow band's hint line (not stacked), within 45%
+[197/210] tests/browser/system-exclusion.spec.ts:797:3 › short landscape 844×390 touch › h) the rail keeps region, 깊이 단계 and slider; the rows open in a 4×2 band beside it
+[198/210] tests/browser/system-exclusion.spec.ts:903:3 › short landscape 844×390 touch › h2) a comparison adds its notice on top of the landscape band, within 45%
+[199/210] tests/browser/system-exclusion.spec.ts:930:3 › body regions 1440×900 › i) at its stop every body region of both bodies still draws the innermost kept system
+[200/210] tests/browser/system-exclusion.spec.ts:982:5 › rail 1024×768 touch › j) stops stay apart with systems left out, and the checks fit the rail
+[201/210] tests/browser/system-exclusion.spec.ts:982:5 › rail 1280×720 touch › j) stops stay apart with systems left out, and the checks fit the rail
+[202/210] tests/browser/system-exclusion.spec.ts:982:5 › rail 1024×680 touch › j) stops stay apart with systems left out, and the checks fit the rail
+[203/210] tests/browser/system-exclusion.spec.ts:982:5 › rail 768×1024 touch › j) stops stay apart with systems left out, and the checks fit the rail
+[204/210] tests/browser/system-exclusion.spec.ts:982:5 › rail 1180×580 › j) stops stay apart with systems left out, and the checks fit the rail
+[205/210] tests/browser/system-exclusion.spec.ts:982:5 › rail 1366×768 › j) stops stay apart with systems left out, and the checks fit the rail
+[206/210] tests/browser/system-exclusion.spec.ts:1062:3 › desktop 1440×900 keys and click target › k) Escape on a check changes nothing; a band left open across a resize does not hold Escape; presenting ends in one press
+[207/210] tests/browser/system-exclusion.spec.ts:1113:3 › desktop 1440×900 keys and click target › l) with the click target set to internal structures, the male face keeps its ears, lips and eyes
+[208/210] tests/browser/translucent-depth.spec.ts:4:45 › male: transparent peel meshes do not occlude later transparent anatomy
+[209/210] tests/browser/translucent-depth.spec.ts:4:45 › female: transparent peel meshes do not occlude later transparent anatomy
+[210/210] tests/browser/upper-back-peel.spec.ts:5:1 › male upper-back muscles peel after their covering trapezius, without moving meshes
+  210 passed (19.4m)
+full exit 0

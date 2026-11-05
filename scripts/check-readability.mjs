@@ -49,6 +49,11 @@ try {
     }, '[aria-label="경혈 목록"]'],
     // The bar while those filters stay applied (the phone list button counts them).
     ['필터 적용 중 경혈 막대', async()=>{}, '.ax-point-bar'],
+    // The meridian picker with its per-meridian 원·모·유·극·락 check (Q47).
+    ['경맥 선택 · 원·모·유·극·락혈만', async()=>{
+      await page.locator('.ax-meridian-button').click();
+      await page.getByRole('checkbox',{name:/원·모·유·극·락혈만/}).check();
+    }, '.ax-meridians'],
     ['표시 설정', async()=>page.getByRole('button',{name:'표시 설정',exact:true}).click(), '[aria-label="표시 설정"][role="region"]'],
     ['검색', async()=>{await page.getByLabel('경혈·구조 검색').click();await page.getByLabel('경혈·구조 검색').fill('위');}, '[aria-label="검색 결과"]'],
     ['도움말', async()=>page.getByRole('button',{name:'도움말',exact:true}).click(), '[aria-label="도움말"][role="region"]'],
@@ -79,6 +84,7 @@ try {
       const sample=await page.locator('.viewer-help p').filter({hasText:'박리 백분율'}).evaluate(el=>{const r=el.getBoundingClientRect();return {text:el.textContent.trim().slice(0,40),visible:r.height>0};});
       assert.ok(sample.visible,'peel limitation note is visible in help');
     }
+    if(name.startsWith('경맥 선택'))await page.keyboard.press('Escape');
     const close=page.getByRole('button',{name:'도구 패널 닫기',exact:true});
     if(await close.count())await close.first().click();
   }

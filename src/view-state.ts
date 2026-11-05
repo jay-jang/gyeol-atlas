@@ -1,6 +1,6 @@
 import type { MarkerColorMode } from "./point-display.ts";
 import concepts from "../data/concepts.json" with {type:"json"};
-import { organChoices, isOrganChoice } from "./point-display.ts";
+import { organChoices, isOrganChoice, KEY_FILTER } from "./point-display.ts";
 import type { Layer } from "./anatomy";
 import type { Layers } from "./types";
 import { depthStage, dissectionLayers, peelLayers, peelLimit, peelOrder, quantizeDepth, stageDepth } from "./dissection.ts";
@@ -706,7 +706,7 @@ export function restoreView(
       !["전체", "머리·목", "몸통", "팔·손", "다리·발"].includes(
         s.filters.region,
       ) ||
-      !["all", ...concepts.map(c => c.id)].includes(s.filters.concept) ||
+      !["all", KEY_FILTER, ...concepts.map(c => c.id)].includes(s.filters.concept) ||
       ![
         "all",
         "LU",

@@ -1,0 +1,33 @@
+
+> anatomy2@1.0.0 build
+> node scripts/build-acupoint-theory.mjs && node scripts/build-anchors.mjs && node scripts/build-wiki.mjs && tsc && vite build
+
+Theory: 409 points; 60 Five Shu.
+Placed 6 anchors facing a closed contact pocket: HT2-0--1 kept, HT2-0-1 kept, LR10-0--1 kept, LR10-0-1 kept, LR11-0--1 kept, LR11-0-1 kept
+Projected 834 anchors; largest seed adjustment 59.9 mm (not a clinical accuracy measurement).
+Built 419 wiki articles; internal links verified.
+vite v8.2.2 building client environment for production...
+transforming...
+✓ 2747 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                 0.79 kB │ gzip:   0.51 kB
+dist/assets/draco_wasm_wrapper-fZCQGLGb.js     58.45 kB
+dist/assets/draco_wasm_wrapper-DxJM36Ib.js     58.76 kB
+dist/assets/draco_decoder-Z1_iN-Ht.wasm       192.42 kB │ gzip:  64.11 kB
+dist/assets/draco_decoder-C32yEggz.wasm       285.74 kB │ gzip:  89.66 kB
+dist/assets/draco_decoder-fzg4nYZr.js         719.41 kB
+dist/assets/MovementPage-ClQBEuZ_.css          26.86 kB │ gzip:   5.69 kB
+dist/assets/index-Fj_oJ5f3.css                 99.64 kB │ gzip:  20.26 kB
+dist/assets/rolldown-runtime-hePW80VL.js        0.71 kB │ gzip:   0.42 kB
+dist/assets/MovementPage-CosAdeh6.js          632.90 kB │ gzip: 171.56 kB
+dist/assets/Atlas-CK75XI30.js               1,191.40 kB │ gzip: 308.79 kB
+dist/assets/anatomy-DRZmxB01.js             2,407.56 kB │ gzip: 184.28 kB
+dist/assets/index-DFye_5jd.js               2,816.91 kB │ gzip: 393.03 kB
+
+✓ built in 426ms
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

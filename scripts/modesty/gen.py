@@ -24,7 +24,7 @@ import rt, scipy
 VERSIONS = {'numpy': (np, '1.26.4'), 'scipy': (scipy, '1.13.1'), 'networkx': (nx, '3.2.1')}
 IN = '.cache/modesty/in'; CACHE = '.cache/modesty'; OUT = 'data/modesty-male-skin.json'; ANCHORS = 'data/anchors.json'
 SKIN_SHA = 'fab135cd16d34e7459b7e0981d4a0f7ecfda6b776bfc14272a973bb4111945d5'
-ANCHORS_SHA = '4718ede3c6c96444ff6acb6c8c7b23b151d4b3450de240db74a203f8e36774a6'
+ANCHORS_SHA = 'b061d3389a70d3288986ec38476e77741582aaeb5cd4410cc2ca7d2d9ba65310'
 ELL_C = np.array([0, 0.752, 0.042]); ELL_R = np.array([0.048, 0.064, 0.072])   # the external genitals of FMA7163 (m)
 GROIN_C, GROIN_R = np.array([0, 0.76, 0.02]), 0.16                              # the centroid of every triangle the closure touches lies in this box
 CFG = dict(

@@ -1,0 +1,50 @@
+
+Running 46 tests using 1 worker
+
+[1/46] tests/browser/key-filter.spec.ts:8:3 › desktop: the meridian picker keeps only each meridian's own 원·모·유·극·락혈
+[2/46] tests/browser/key-filter.spec.ts:38:3 › desktop: a selected point is deselected from its detail panel or the labelled chip button
+[3/46] tests/browser/key-filter.spec.ts:8:3 › mobile: the meridian picker keeps only each meridian's own 원·모·유·극·락혈
+[4/46] tests/browser/key-filter.spec.ts:38:3 › mobile: a selected point is deselected from its detail panel or the labelled chip button
+[5/46] tests/browser/key-filter.spec.ts:8:3 › landscape: the meridian picker keeps only each meridian's own 원·모·유·극·락혈
+[6/46] tests/browser/key-filter.spec.ts:38:3 › landscape: a selected point is deselected from its detail panel or the labelled chip button
+[7/46] tests/browser/point-consistency.spec.ts:26:3 › desktop: filter and search choices show and clear the same way on the model
+[8/46] tests/browser/point-consistency.spec.ts:86:3 › desktop: an organ view names its zang-fu's source, front-mu, back-shu, xi-cleft and connecting points
+[9/46] tests/browser/point-consistency.spec.ts:26:3 › mobile: filter and search choices show and clear the same way on the model
+[10/46] tests/browser/point-consistency.spec.ts:86:3 › mobile: an organ view names its zang-fu's source, front-mu, back-shu, xi-cleft and connecting points
+[11/46] tests/browser/point-consistency.spec.ts:26:3 › small-mobile: filter and search choices show and clear the same way on the model
+[12/46] tests/browser/point-consistency.spec.ts:86:3 › small-mobile: an organ view names its zang-fu's source, front-mu, back-shu, xi-cleft and connecting points
+[13/46] tests/browser/point-consistency.spec.ts:26:3 › landscape: filter and search choices show and clear the same way on the model
+[14/46] tests/browser/point-consistency.spec.ts:86:3 › landscape: an organ view names its zang-fu's source, front-mu, back-shu, xi-cleft and connecting points
+[15/46] tests/browser/point-consistency.spec.ts:127:1 › a picked point is drawn while markers are hidden and the list explains every narrower model
+[16/46] tests/browser/point-consistency.spec.ts:162:1 › body selections, comparisons and both bodies map organs to zang-fu without inventing one
+[17/46] tests/browser/point-consistency.spec.ts:192:1 › a long filter set fits the bar beside the status and camera tools at laptop width
+[18/46] tests/browser/point-selection.spec.ts:9:3 › desktop › clear selection keeps the camera, filters and last point without a selected label
+[19/46] tests/browser/point-selection.spec.ts:9:3 › mobile › clear selection keeps the camera, filters and last point without a selected label
+[20/46] tests/browser/point-selection.spec.ts:9:3 › small-mobile › clear selection keeps the camera, filters and last point without a selected label
+[21/46] tests/browser/point-selection.spec.ts:9:3 › landscape › clear selection keeps the camera, filters and last point without a selected label
+[22/46] tests/browser/point-selection.spec.ts:42:1 › closing the tab and returning with only local storage restores the last selected point; a new choice replaces it
+[23/46] tests/browser/point-selection.spec.ts:56:1 › an explicit point link wins over cached/session choices; wiki-only visits still download no 3D
+[24/46] tests/browser/point-selection.spec.ts:66:1 › clear ends an isolated point comparison but leaves an independent anatomy selection intact
+[25/46] tests/browser/point-selection.spec.ts:80:1 › bad or blocked local storage falls back to an empty selection and still allows clearing
+[26/46] tests/browser/system-exclusion.spec.ts:263:3 › desktop 1440×900, male › a) the rail's own checks leave bone and organs out, keep the view and draw muscles with or without organs
+[27/46] tests/browser/system-exclusion.spec.ts:350:3 › desktop 1440×900, male › b) a left-out innermost system stops the peel before it and the last included system stays
+[28/46] tests/browser/system-exclusion.spec.ts:409:3 › desktop 1440×900, male › c) a left-out stop is inert and says why, its eye still shows it alone, and the peel entry returns with the exclusion
+[29/46] tests/browser/system-exclusion.spec.ts:487:3 › desktop 1440×900, male › d) keyboard only: the checks in the stop rows and Alt+Arrow peeling stop at the limit
+[30/46] tests/browser/system-exclusion.spec.ts:531:3 › desktop 1440×900, male › e) the 표시 설정 system checks stay a direct combination; the peel then applies the exclusion again
+[31/46] tests/browser/system-exclusion.spec.ts:568:3 › desktop 1440×900, male › f) reload restores the exclusions and the clamp; the female body keeps them
+[32/46] tests/browser/system-exclusion.spec.ts:622:3 › desktop 1440×900, male › f2) invalid saved exclusions fall back to a safe view; older sessions leave nothing out
+[33/46] tests/browser/system-exclusion.spec.ts:643:3 › phone 390×844 touch › g) the depth band's rows carry the checks with 44px targets; a stop or eye closes it and hands focus back
+[34/46] tests/browser/system-exclusion.spec.ts:752:3 › phone 360×740 touch › g2) the narrow band keeps 44px targets and one-line notes
+[35/46] tests/browser/system-exclusion.spec.ts:780:3 › phone 360×740 touch › g2b) a comparison takes the narrow band's hint line (not stacked), within 45%
+[36/46] tests/browser/system-exclusion.spec.ts:797:3 › short landscape 844×390 touch › h) the rail keeps region, 깊이 단계 and slider; the rows open in a 4×2 band beside it
+[37/46] tests/browser/system-exclusion.spec.ts:903:3 › short landscape 844×390 touch › h2) a comparison adds its notice on top of the landscape band, within 45%
+[38/46] tests/browser/system-exclusion.spec.ts:930:3 › body regions 1440×900 › i) at its stop every body region of both bodies still draws the innermost kept system
+[39/46] tests/browser/system-exclusion.spec.ts:982:5 › rail 1024×768 touch › j) stops stay apart with systems left out, and the checks fit the rail
+[40/46] tests/browser/system-exclusion.spec.ts:982:5 › rail 1280×720 touch › j) stops stay apart with systems left out, and the checks fit the rail
+[41/46] tests/browser/system-exclusion.spec.ts:982:5 › rail 1024×680 touch › j) stops stay apart with systems left out, and the checks fit the rail
+[42/46] tests/browser/system-exclusion.spec.ts:982:5 › rail 768×1024 touch › j) stops stay apart with systems left out, and the checks fit the rail
+[43/46] tests/browser/system-exclusion.spec.ts:982:5 › rail 1180×580 › j) stops stay apart with systems left out, and the checks fit the rail
+[44/46] tests/browser/system-exclusion.spec.ts:982:5 › rail 1366×768 › j) stops stay apart with systems left out, and the checks fit the rail
+[45/46] tests/browser/system-exclusion.spec.ts:1062:3 › desktop 1440×900 keys and click target › k) Escape on a check changes nothing; a band left open across a resize does not hold Escape; presenting ends in one press
+[46/46] tests/browser/system-exclusion.spec.ts:1113:3 › desktop 1440×900 keys and click target › l) with the click target set to internal structures, the male face keeps its ears, lips and eyes
+  46 passed (3.2m)

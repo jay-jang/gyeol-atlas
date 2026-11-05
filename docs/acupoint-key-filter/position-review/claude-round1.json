@@ -1,0 +1,780 @@
+[
+ {
+  "zangfu": "HT 심",
+  "points": [
+   {
+    "id": "HT5",
+    "whoLocation": "WHO 2008: On the anteromedial aspect of the forearm, radial to the flexor carpi ulnaris tendon, 1 B-cun proximal to the palmar wrist crease.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same tendon side (radial to the FCU tendon), the same reference (palmar wrist crease) and the same distance (1 cun proximal). Only the wording differs.",
+    "verdict": "ok",
+    "error": "About 0.35 cun proximal to the pisiform-defined wrist crease (1.35 cun instead of 1 cun). Measured from the model's own HT7 marker it is 1.06 cun. Both are within the 0.5 cun tolerance.",
+    "suggested": null,
+    "basis": "I measured along the forearm axis, using the elbow-to-wrist direction of the anterior crease markers: u ≈ (0.155, 0.972, -0.176), s = u·p. The radius runs from (-0.2345,1.059,-0.0229) to (-0.2773,0.8296,0.0178), so the forearm tilts about 10° forward. Cubital crease: LU5, PC3 and HT3 give s ≈ 1.009–1.013 (mean 1.011). Palmar wrist crease: the proximal border of the pisiform (pisiform maxY (-0.2357,0.8253,0.0318)) gives s = 0.760. LU9 gives s = 0.753 and PC7 s = 0.760. 12 cun = 0.251 m, so 1 cun = 0.0209 m. HT5 right (-0.2452,0.8569,0.0368) gives s = 0.788, which is 0.028 m (1.35 cun) above the crease; HT7 is at s = 0.766. x = -0.245 is about 0.8 cm radial to the pisiform's radial edge (minX -0.2409), so the marker is on the radial side of the FCU line. It sits over the radial half of the distal ulna (ulna minX -0.2481 at y 0.8415) on the anterior skin. In the skin, muscle and bone images, the gold dot is on the ulnar part of the anterior distal forearm, about 1.5 cm above where the hand widens and above the carpal bones. Left and right markers are symmetric. Side note: HT4 is only 0.29 cun above HT5, which compresses the HT4–HT5 spacing; HT4 itself was not reviewed here."
+   },
+   {
+    "id": "HT6",
+    "whoLocation": "WHO 2008: On the anteromedial aspect of the forearm, radial to the flexor carpi ulnaris tendon, 0.5 B-cun proximal to the palmar wrist crease.",
+    "textMatches": true,
+    "textNote": "KMCRIC matches WHO: radial side of the FCU tendon, 0.5 cun proximal to the palmar wrist crease.",
+    "verdict": "ok",
+    "error": "About 0.3 cun proximal to the target (0.82 cun above the pisiform-defined crease). Measured from the HT7 marker it is 0.53 cun. Within tolerance.",
+    "suggested": null,
+    "basis": "Same forearm-axis method: 1 cun = 0.0209 m, crease at s = 0.760 (proximal border of the pisiform, matching PC7 at 0.760 and LU9 at 0.753). HT6 right (-0.2462,0.8459,0.0384) gives s = 0.777. The target 0.5 cun proximal is s = 0.7705, so the marker is 0.0068 m (0.32 cun) more proximal. HT6 is spaced 0.0111 m (0.53 cun) from both HT7 and HT5, which is consistent. x = -0.246 is radial to the pisiform/FCU line (pisiform x -0.233 to -0.241) and the marker is on the anterior skin, z 0.038. In the images, the gold dot is between the HT5 and HT7 dots on the ulnar side of the anterior distal forearm, proximal to the carpal bones. The marker is on the anterior surface at every depth, and left and right are symmetric."
+   },
+   {
+    "id": "HT7",
+    "whoLocation": "WHO 2008 (p.85): On the anteromedial aspect of the wrist, radial to the flexor carpi ulnaris tendon, on the palmar wrist crease. Note: in the depression radial to the proximal border of the pisiform bone, on the palmar wrist crease.",
+    "textMatches": true,
+    "textNote": "KMCRIC ('radial to the radial border of the FCU tendon, on the palmar wrist crease') matches WHO. The shortLocation is a faithful abbreviation.",
+    "verdict": "ok",
+    "error": "About 0.3 cun (6 mm) proximal to the proximal border of the pisiform, at the level of the distal end of the ulna. This is within an educational marker's precision.",
+    "suggested": null,
+    "basis": "HT7 right (-0.247,0.835,0.0407) gives a forearm-axis s of 0.766. The pisiform proximal border (maxY (-0.2357,0.8253,0.0318)) gives s = 0.760 and the distal tip of the ulna (minY (-0.2368,0.8288,0.0126)) gives s = 0.767. The marker is therefore in the gap between the ulnar head and the pisiform, 0.006 m (0.29 cun at 0.0209 m/cun) proximal to the pisiform's proximal border. The other crease points are LU9 at s 0.753 and PC7 at s 0.760. Mediolaterally, the pisiform spans x -0.2324 to -0.2409 (FCU insertion) and the hook of the hamate is at maxZ_anterior (-0.2466,0.8144,0.0338). HT7 at x = -0.247 is just radial to the pisiform/FCU line and is not on the ulnar side of the tendon. In the bone image, the gold dot sits above and radial to the pisiform bulge at the proximal edge of the carpus. In the skin image, it is on the ulnar part of the wrist where the hand begins to widen. Left and right are symmetric."
+   },
+   {
+    "id": "BL15",
+    "whoLocation": "WHO 2008: In the upper back region, at the same level as the inferior border of the spinous process of the fifth thoracic vertebra (T5), 1.5 B-cun lateral to the posterior midline.",
+    "textMatches": true,
+    "textNote": "KMCRIC matches WHO exactly: T5 spinous process inferior border level, 1.5 cun lateral to the posterior midline.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "The T5 (FMA9922) spinousLowerBorderY is 1.2789; the marker is at y 1.279, so the level is exact. Vertebral series check: C7 tip 1.3971, T1 1.3827, T2 1.3621, T3 1.3375, T4 1.318, T5 1.2879, T6 1.2463. The neighbouring markers BL14 (1.311 = T4 lower border 1.3112) and BL16 (1.2428 = T6 lower border 1.2428) follow the same rule. The posterior midline is at x ≈ 0 (spinous tips x within ±0.003). Lateral distance |x| = 0.038 is half of the second-line distance used for BL41–BL47 (|x| = 0.075). In the bone image, the BL44 dots at 0.075 lie at the medial borders of the scapulae, so 3 cun ≈ 0.075 and 1.5 cun ≈ 0.0375. The landmark file has no scapula, so this check comes from the image. A chest-based cun (ST17 at |x| 0.09 = 4 cun) would give 1.5 cun = 0.034, which is still within 0.2 cun. In the skin, muscle and bone images, the two gold dots are symmetric about the spine (56 px each side, versus 111 px for the BL44 dots), on the paravertebral muscle between GV line and second line, and at the level between BL14 and BL16."
+   },
+   {
+    "id": "CV14",
+    "whoLocation": "WHO 2008 (p.226): On the upper abdomen, 6 B-cun superior to the centre of the umbilicus, on the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC matches WHO: upper abdomen, on the anterior median line, 6 cun above the centre of the umbilicus. The shortLocation is equivalent.",
+    "verdict": "ok",
+    "error": "About 0.34 cun (8 mm) superior to the B-cun target y ≈ 1.152. Within tolerance. The upper CV series is placed as if the xiphisternal junction were at the CV16 marker (y 1.214) rather than at the lower end of the sternal body (y 1.2006).",
+    "suggested": null,
+    "basis": "Umbilicus: CV8 at y 1.005. Xiphisternal junction: sternal body (FMA7487) minY 1.2006, and the xiphoid maxY is 1.2046. 8 cun = 0.1956 m, so 1 cun = 0.02445 m vertically, and 6 cun above CV8 gives y 1.1517. Measuring along the skin path through the CV8–CV16 markers gives y ≈ 1.154. The marker at (-0.0001,1.1601,0.1268) is 0.0084 m higher, about 0.34 cun. The marker is on the midline (x ≈ 0), 2.2 cm below the xiphoid tip (xiphoid minY 1.1825), on the linea alba below the infrasternal angle. This matches the bone and muscle images, where the gold dot is below the sternum and xiphoid, between the converging costal margins and above CV13/CV12. Consistency note: by this scale CV15 (1.1882) is at 7.49 cun and CV16 (1.2141) at 8.55 cun. The images show the CV16 dot about 1 cm above the lower end of the sternal body, which explains the slight upward bias. Caveat: in the skin image the visible navel depression is about 1–1.5 cm below the CV8 dot. If the true umbilical centre is lower, CV14 would be about 0.45–0.5 cun high, which is still borderline ok. Per the brief, CV8 was used as the umbilicus."
+   }
+  ]
+ },
+ {
+  "zangfu": "KI 신",
+  "points": [
+   {
+    "id": "BL23",
+    "whoLocation": "WHO 2008: In the lumbar region, at the same level as the inferior border of the spinous process of the second lumbar vertebra (L2), 1.5 B-cun lateral to the posterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC (L2 spinous lower border level, 1.5 cun lateral to the posterior midline) matches WHO. The point file has whoStandardPage = null, so no page was given.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Right marker [-0.038, 1.017, -0.0917]. The y equals the L2 (FMA13073) spinousLowerBorderY of 1.017. GV4 [0, 1.017, -0.0877] sits at the same level on the midline. x = 0.038 from the midline. No scapula is in landmarks.json, so lateral scale comes from the 3-cun second-line markers at x 0.075 (BL52 at the same level is at -0.0746; SI14, 3 cun lateral to T1, is at -0.0711). That makes 1.5 cun about 0.037 m, and 0.038 matches. A rough cross-check from the anterior trunk (8 cun xiphisternal-umbilicus ~0.198 m, about 0.025 m/cun) gives the same. In the posterior skin, muscle and bone images, the gold dots sit symmetrically over the paraspinal (erector spinae) bulge, level with the L2 spinous process and lateral to the transverse-process line. They are also level with BL52 (지실) on the second line."
+   },
+   {
+    "id": "KI3",
+    "whoLocation": "WHO 2008 p.137: On the posteromedial aspect of the ankle, in the depression between the prominence of the medial malleolus and the calcaneal tendon.",
+    "textMatches": true,
+    "textNote": "KMCRIC (안쪽복사 융기와 발꿈치힘줄 사이의 오목한 곳) matches WHO.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Right marker [-0.0405, 0.0871, -0.0471], skin [-0.0435, 0.0871, -0.0471]. Tibia (FMA24477) minY, the medial malleolus tip, is at [-0.0562, 0.0733, -0.0322], so the prominence is ~1-1.5 cm above it at y ~0.085-0.088. The marker's y 0.0871 is at prominence level. In z, the marker is 1.5 cm behind the malleolus (z ~-0.032) and well in front of the posterior heel/tendon line (calcaneus minZ_posterior z -0.0873; talus posterior process z -0.0627). That puts it in the malleolus-tendon gap, at most ~0.3 cun anterior of the exact midpoint (estimated z ~-0.05 to -0.055). The Achilles tendon is not in the landmarks, so that midpoint is an estimate. The images (anterior-left oblique of both ankles) show the gold dot on the posteromedial ankle, just behind the malleolus and above 대종/수천. The view cannot show the tendon edge clearly, but nothing shows the dot in front of the malleolus or on the tendon."
+   },
+   {
+    "id": "KI4",
+    "whoLocation": "WHO 2008: On the medial aspect of the foot, posteroinferior to the medial malleolus, superior to the calcaneus, in the depression anterior to the medial attachment of the calcaneal tendon.",
+    "textMatches": true,
+    "textNote": "KMCRIC (안쪽 복사 아래 뒤쪽, 발꿈치뼈 위쪽, 발꿈치힘줄 안쪽 부착부의 앞쪽 오목한 곳) matches WHO. The point file has no WHO page.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Right marker [-0.0443, 0.0659, -0.0648], skin x -0.0473. Calcaneus (FMA24497) maxY is [-0.0834, 0.061, -0.0577] and its posterior surface (minZ) is z -0.0873. The marker is ~0.5 cm above the calcaneal upper border and roughly 1-2 cm in front of the tendon line at the heel back, i.e. in the pre-Achilles depression. It is posteroinferior to KI3 [-0.0405, 0.0871, -0.0471]: 2.1 cm lower and 1.8 cm posterior. It is posteroinferior to the malleolus tip at y 0.0733, z -0.032, and higher and more posterior than KI5 (y 0.058, z -0.040), which is the expected KI3→KI4→KI5 arrangement. In the oblique ankle images the gold dot sits just below and behind 태계 at the posteromedial heel, above the calcaneus. The tendon itself cannot be resolved in these views."
+   },
+   {
+    "id": "KI5",
+    "whoLocation": "WHO 2008: On the medial aspect of the foot, 1 B-cun inferior to KI3, in the depression anterior to the calcaneal tuberosity.",
+    "textMatches": true,
+    "textNote": "Same location as WHO. KMCRIC adds a scaling rule not in WHO: take KI3-to-ground as 3 cun. On this body that cun is 0.029 m, against ~0.0235 m from the 13-cun leg B-cun, a ~6 mm difference. This is a measuring convention, not a different landmark.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Right marker [-0.0395, 0.058, -0.040]; KI3 is at y 0.0871, z -0.0471. The marker is 0.029 m below KI3, exactly 1 cun under KMCRIC's rule (KI3 to sole ~0.087 m = 3 cun). With the leg B-cun (SP9 y 0.392 to malleolus prominence ~0.087 = 13 cun, 0.0235 m/cun), the target y is ~0.064, so the marker is ~0.25 cun lower. Either way it is within 0.5 cun. It is 7 mm (~0.3 cun) anterior of straight below KI3 (z -0.047). It stays in front of the calcaneal tuberosity (posterior calcaneus z -0.0873; medial process at [-0.0574, 0.0254, -0.0726]) and below and behind the malleolus tip [-0.0562, 0.0733, -0.0322]. On this model 1 cun below KI3 falls level with the medial talus (talus maxX [-0.0563, 0.0627, -0.046]) rather than on the calcaneus itself, which is a model-proportion limitation. In all three images the right-side gold dot is hidden behind the 수천/조해 labels; only the left-side dot at the medial heel is visible. The image check therefore rests mainly on the numbers."
+   },
+   {
+    "id": "GB25",
+    "whoLocation": "WHO 2008 p.184: On the lateral abdomen, inferior to the free extremity of the 12th rib.",
+    "textMatches": true,
+    "textNote": "KMCRIC (옆배, 열두째 갈비뼈끝의 아래쪽) and the short text (열두째 갈비뼈 자유끝 아래) match WHO.",
+    "verdict": "wrong",
+    "error": "The marker sits above the free end of the 12th rib, not below it. It is about 2.3-2.8 cm (~1.1 cun) too superior. Its height is lateral to the 11th intercostal space and slightly above the 11th rib tip too. Its distance from the midline and its z are acceptable (lateral skin over the rib tip).",
+    "suggested": [
+     -0.125,
+     1.018,
+     -0.043
+    ],
+    "basis": "Right 12th rib (FMA8533): minX [-0.0833, 1.0349, -0.037], minY [-0.0794, 1.0234, -0.0357], last anterior-arc point [-0.07, 1.0332, -0.0444]. The free end therefore centres at ~[-0.081, 1.03, -0.037] and its lowest edge is at y 1.0234. The marker's y of 1.046 is 1.6 cm above the tip centre and 2.3 cm above its lower edge. The point belongs just below the tip, at y ~1.015-1.02 (about level with L2 spinousLowerBorderY 1.017 / BL23). Scale: xiphisternal junction (sternal body minY 1.2006) to umbilicus (CV8 y 1.005) = 8 cun, 0.0245 m/cun, so the error is ~1.1 cun. Seen from the side, at y 1.046 the 11th rib (anterior arc [-0.09, 1.0729, -0.0437] → [-0.11, 1.0305, 0.0042]) is at z ~-0.013 and the 12th at ~[-0.066, z -0.046]. The marker projects between them, and the 11th rib tip (minY 1.0258, minX at y 1.037) is also below it. In the frontal bone image the gold dot sits at the outer edge of the lower costal arch, above the level where the lower ribs end, not under a rib tip. The suggestion keeps the current lateral skin depth (skin x ~-0.122, +3 mm marker offset) and z ~-0.043 lateral to the tip, and lowers y to 1.018. The left side mirrors this: [0.125, 1.018, -0.043]."
+   }
+  ]
+ },
+ {
+  "zangfu": "LI",
+  "points": [
+   {
+    "id": "LI4",
+    "whoLocation": "On the dorsum of the hand, radial to the midpoint of the second metacarpal bone.",
+    "textMatches": true,
+    "textNote": "KMCRIC '손등, 둘째 손허리뼈 중점의 노쪽' is the same as the WHO text.",
+    "verdict": "ok",
+    "error": "The level is correct. The marker sits over the radial edge of the 2nd metacarpal shaft, about 1 mm inside its radial border. The textbook spot over the first dorsal interosseous is about 3–4 mm (≈0.2 cun) more radial. That is within marker precision.",
+    "suggested": null,
+    "basis": "Right 2nd metacarpal FMA24466 runs from minY y 0.7426 to maxY y 0.8108, so its midpoint is y 0.7767. The marker is at y 0.7782 (+1.5 mm). A cross-section of bone.glb at y 0.778 puts MC2 at x −0.2829..−0.2746 (centre −0.279, dorsal cortex z 0.021). The set of right dorsal interossei (FMA42404) lies radial to it at x −0.2932..−0.2829. Marker surfacePoint [-0.2818, 0.7782, 0.0164] is on the dorsal skin (skin z ≈0.016 at x −0.281), 3 mm radial to the shaft centre. MC1 (FMA24464) begins only above y 0.784, so the marker is in the first web space. In the skin, muscle and bone images (posterior view, thumb to the right) the gold dot is on the dorsum between thumb and index metacarpal, on the radial side of the index ray."
+   },
+   {
+    "id": "LI6",
+    "whoLocation": "On the posterolateral aspect of the forearm, on the line connecting LI5 with LI11, 3 B-cun superior to the dorsal wrist crease.",
+    "textMatches": true,
+    "textNote": "KMCRIC (아래팔 뒤가쪽면, LI5–LI11 선 위, 손등 쪽 손목주름 위 3寸) matches WHO. The only difference is the spacing in '아래 팔'.",
+    "verdict": "minor",
+    "error": "The height is exact. The marker is about 1.5–1.8 cm (≈0.8 cun) too far anterior around the forearm. It sits on the lateral-to-anterolateral surface, in front of the forearm's most lateral point and in front of the brachioradialis tendon, not on the posterolateral aspect. Its neighbours LI5 (dorsoradial) and LI7 (posterolateral) both lie behind it, so LI6 breaks the line.",
+    "suggested": [
+     -0.2712,
+     0.8895,
+     -0.005
+    ],
+    "basis": "Cun: LI5 [-0.2803,0.828,0.0051] (dorsal wrist crease) to LI11 [-0.2448,1.0709,0.0001] is 0.2455 m = 12 cun, so 1 cun ≈ 0.0205 m. 3 cun gives y 0.8895 (0.8897 if the crease is taken at LU5/HT3 y 1.075). Marker y 0.8903, surface 0.8899: OK. Side: skin ray-casts at y 0.8895 put the lateral extreme at x −0.2749, z 0.005–0.010, with the posterolateral skin at (−0.2712, −0.005) and (−0.2685, −0.010). Marker surfacePoint (−0.2737, z 0.0124) lies anterior to the lateral extreme. Muscle sections at y 0.89: brachioradialis z 0.0012..0.0092; ECRL z −0.0040..0.0015; ECRB z −0.0070..−0.0034; APL z −0.0143..−0.0063. Radius FMA23464 is centred near (−0.257, −0.001), so the marker lies anterolateral to the bone. Interpolating along the skin between LI5 (z 0.0081, dorsoradial snuffbox) and LI7 (z −0.0123) gives z ≈ −0.004 at this height. In the posterior-view images the LI6 dot sits on the lateral silhouette edge, while LI7 sits on the posterior face. The suggestion is the skin point; the 3 mm-lifted marker would be ≈[-0.274, 0.8895, -0.0065]. The left side [0.2756, 0.8901, 0.0132] mirrors the same offset."
+   },
+   {
+    "id": "LI7",
+    "whoLocation": "On the posterolateral aspect of the forearm, on the line connecting LI5 with LI11, 5 B-cun superior to the dorsal wrist crease.",
+    "textMatches": true,
+    "textNote": "KMCRIC (아래팔 뒤가쪽면, LI5–LI11 선 위, 손등 쪽 손목주름 위 5寸) matches WHO.",
+    "verdict": "ok",
+    "error": "No placement error. The height is within 2 mm of 5 cun, and the marker is on the posterolateral surface over and lateral to ECRL.",
+    "suggested": null,
+    "basis": "1 cun ≈ 0.0205 m (LI5–LI11 = 12 cun, 0.2455 m). 5 cun above the wrist crease (y 0.828) is y 0.9292–0.9309, depending on whether the cubital crease is LI11 1.0709 or LU5/HT3 1.075. Marker y 0.931. Skin ray-casts at y 0.931 put the lateral extreme at x −0.2717, z ≈0.000. The marker surface (−0.270, −0.0123) is 1.2 cm behind it, on the posterolateral corner (posterior skin z −0.0123 at x −0.270). Muscle sections at y 0.931: ECRL x −0.2685..−0.2633, z −0.0154..−0.0070; brachioradialis z −0.0068..0.0042. The radius is at x −0.2594..−0.2437, so the marker is radial-dorsal to it. Images (posterior view): the gold dot sits just inside the lateral silhouette of the mid-forearm, above LI5 and lateral to the radius shaft in the bone view."
+   },
+   {
+    "id": "ST25",
+    "whoLocation": "On the upper abdomen, 2 B-cun lateral to the centre of the umbilicus.",
+    "textMatches": true,
+    "textNote": "KMCRIC '윗배, 배꼽의 중심에서 가쪽으로 2寸' matches WHO, which also places it on the 'upper abdomen'.",
+    "verdict": "minor",
+    "error": "Measured against CV8, the marker is exact: same y 1.005, 5.0 cm lateral = 2.2 cun from ST17 at x 0.09 = 4 cun. But the umbilicus modelled on the skin is a pit centred at y ≈0.990 on the midline, 1.5 cm (≈0.6 cun) below CV8/ST25, so the marker sits visibly above the navel. The error comes from CV8's level. Other umbilicus-level markers keyed to y 1.005 (KI16 and SP15 in landmarks.json) share it.",
+    "suggested": [
+     -0.05,
+     0.99,
+     0.1143
+    ],
+    "basis": "Ray-casting skin.glb on the anterior midline gives a 6 mm-deep pit with z min 0.1065 at (x 0, y 0.990). The pit spans y 0.981–0.996 and is flanked by z ≈0.112–0.117. At y 1.005 (CV8) the midline skin is smooth (z 0.1129). In the skin image the navel shows about 25 px (≈1.7 cm at 14.8 px/cm, from the 10 cm gap between the ST25 dots) below the two gold dots. A cross-check with B-cun supports y 0.990: with the navel there, xiphisternal junction (sternal body minY 1.2006) to navel = 2.63 cm/cun and navel to the pubic symphysis top (CV2 0.8479) = 2.84 cm/cun. With CV8 1.005 those become 2.45 vs 3.14. Lateral distance is fine: 0.05 m against 2 cun = 0.045 m from ST17. The suggested skin z at (−0.05, 0.990) is 0.1113, plus the 3 mm lift = 0.1143. If CV8 is kept as the umbilicus by convention, this point is ok relative to it."
+   },
+   {
+    "id": "BL25",
+    "whoLocation": "In the lumbar region, at the same level as the inferior border of the spinous process of the fourth lumbar vertebra (L4), 1.5 B-cun lateral to the posterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC (넷째 허리뼈 가시돌기 아래모서리 높이, 뒤정중선 가쪽 1.5寸) matches WHO.",
+    "verdict": "ok",
+    "error": "No meaningful error. The level is 2.6 mm below the L4 spinous lower border, and the lateral distance of 3.8 cm is about 1.5–1.6 cun.",
+    "suggested": null,
+    "basis": "L4 FMA13075 has spinousLowerBorderY 0.9656 (tip 0.9712). Marker y 0.963, at the same level as GV3 0.9634. The L-level identification is consistent: the iliac crest top (FMA16586 maxY 0.9802) lies at the L4 spinous level (upper border 0.984), and L5's lower body edge 0.9276 sits on the sacrum (maxY 0.9495). Lateral: right scapula FMA13395 medial border at x −0.059..−0.076 (bone.glb), and SI14 = 3 cun at x −0.0711. That gives 1.5 cun ≈ 0.030–0.038 m, and the marker x −0.038 is at most ≈0.25 cun lateral. It matches BL20–BL24 (x −0.038) and the second line BL50–52 (x −0.075). Images: the gold dots sit at the iliac-crest line beside the L4/L5 spinous region, over the erector spinae mass in the muscle view."
+   }
+  ]
+ },
+ {
+  "zangfu": "LU 폐",
+  "points": [
+   {
+    "id": "LU1",
+    "whoLocation": "WHO 2008 (p.26): On the anterior thoracic region, at the same level as the first intercostal space, lateral to the infraclavicular fossa, 6 B-cun lateral to the anterior median line (note: 1 B-cun inferior to LU2).",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same landmarks and distance: 1st ICS level, lateral to the infraclavicular fossa, 6 cun from the anterior midline. The shortLocation is a faithful abbreviation.",
+    "verdict": "minor",
+    "error": "The marker is about 0.5 cun too far lateral and about 0.6 cun too low, roughly 0.8 cun off overall. x=0.147 m from the midline equals 6.5 cun (1 cun = 0.0225 m from ST17 at x=-0.090 = 4 cun), when it should be 0.135 m. y=1.3151 is at the top of the 2nd costal cartilage / sternal angle level, not at the 1st intercostal space (centre about y 1.328). It is still recognisably LU1, in the deltopectoral area below the lateral clavicle.",
+    "suggested": [
+     -0.135,
+     1.328,
+     0.043
+    ],
+    "basis": "Skin, muscle and bone images: the gold dot sits at the lateral edge of the pectoralis major near the deltopectoral boundary, level with the manubrium-body junction, 1.5 cun below the LU2 dot. Numbers: ST17 x=-0.090 (4 cun) gives 6 cun = 0.135. 1st ICS from bone.glb anterior sections: 1st costal cartilage lower edge y 1.335 (x=-0.03) and 1st rib lower edge 1.344 (x=-0.05); 2nd costal cartilage upper edge 1.317 (x=-0.02 to -0.04) and 2nd rib upper edge 1.321 (x=-0.05). The ICS spans about 1.317-1.341, centre about 1.328. Landmarks agree: rib1 anteriorArc y 1.3462 and rib2 y 1.3051 at x=-0.05. Sternal angle: manubrium minY 1.3076, sternal body maxY 1.3161, so the marker y 1.3151 is at that angle. Cross-check: LU2 marker y 1.350 minus 1 cun = 1.3275. Skin front surface at (-0.135, 1.328) is z=0.0403 by skin.glb ray, plus the 3 mm marker offset. Note: CV20 1.3164, KI26 1.3155 and ST14 1.3149 use the same low 1st-ICS convention."
+   },
+   {
+    "id": "LU6",
+    "whoLocation": "WHO 2008: On the anterolateral aspect of the forearm, on the line connecting LU5 with LU9, 7 B-cun superior to the palmar wrist crease.",
+    "textMatches": true,
+    "textNote": "KMCRIC text is identical in landmarks and distance (anterolateral forearm, on the LU5-LU9 line, 7 cun above the palmar wrist crease).",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "LU5 marker (-0.233, 1.075, 0.0002) at the cubital crease (humeral lateral epicondyle y 1.078) and LU9 (-0.2772, 0.8276, 0.0461) at the wrist crease. 12 cun = 0.2555 m along the line. The point 7/12 of the way from LU9 is (-0.2514, 0.9719, 0.0193); the marker (-0.255, 0.970, 0.0194) is 4 mm away (about 0.2 cun). The skin.glb section at y=0.97 puts the marker surface (z 0.0164) on the anterolateral face (lateral-most skin x -0.2745 at z -0.01; anterior face z about 0.02). Images: the dot lies on the straight line between the 척택 and 태연 dots, at the radial edge of the anterior forearm over the brachioradialis side."
+   },
+   {
+    "id": "LU7",
+    "whoLocation": "WHO 2008: On the radial aspect of the forearm, between the tendons of the abductor pollicis longus and the extensor pollicis brevis muscles, in the groove for the abductor pollicis longus tendon, 1.5 B-cun superior to the palmar wrist crease.",
+    "textMatches": true,
+    "textNote": "KMCRIC text matches WHO: radial aspect, between the APL and EPB tendons, in the APL tendon groove, 1.5 cun above the palmar wrist crease.",
+    "verdict": "wrong",
+    "error": "The level is correct (y 0.862, 1.6 cun above LU9). The marker is too far toward the palm, by about 2.4 cm (about 1.1 cun). At this level it sits on the anterolateral (palmar-radial) face at z=0.026, in front of the brachioradialis tendon (z 0.007-0.015) and the APL/EPB tendons (z -0.005 to 0.003). That puts it on the LU8 line (LU8 x -0.2784, z 0.031), on the wrong side of the named tendons, not in the APL groove on the radial/dorsoradial border.",
+    "suggested": [
+     -0.276,
+     0.859,
+     0.001
+    ],
+    "basis": "The frontal images only show the dot on the lateral silhouette and cannot show palmar/dorsal depth, so this verdict comes from read-only cross-sections of the model GLBs at y=0.862. APL centre (-0.2701, 0.0008), EPB (-0.2603, -0.0022), brachioradialis (-0.2730, 0.0108), FCR (-0.2512, 0.0279), radius x[-0.2716,-0.2505] z[-0.0003,0.0134]. Outer skin: lateral-most (-0.2805, 0.013), posterolateral (-0.2774, 0.0044) and (-0.2744, 0.0002). The marker surface (-0.2739, 0.0258) is the anterolateral corner vertex (-0.2741, 0.0256). Correction: y = LU9 0.8276 + 1.5 x 0.0206 (12 cun = 0.2474 m in y from LU5 to LU9) = 0.859. At y=0.859, APL is at (-0.2712, 0.0021) and EPB at (-0.2622, -0.0018); the skin over the APL groove is at about (-0.275, 0.001)."
+   },
+   {
+    "id": "LU9",
+    "whoLocation": "WHO 2008 (p.30): On the anterolateral aspect of the wrist, between the radial styloid process and the scaphoid bone, in the depression ulnar to the abductor pollicis longus tendon (on the palmar wrist crease).",
+    "textMatches": true,
+    "textNote": "KMCRIC matches WHO (anterolateral wrist, between the radial styloid and the scaphoid, in the depression on the ulnar side of the APL tendon). The shortLocation leaves out the APL tendon qualifier but is not wrong.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Radial styloid tip: radius minY (-0.2773, 0.8296); the lateral part of the scaphoid spans y 0.8251-0.8308 (bone.glb; landmark minX (-0.2738, 0.829)). The marker y 0.8276 is in that styloid-scaphoid band, 2 mm distal to the styloid tip. At y=0.8276 the APL tendon spans x -0.2811 to -0.2848 (z about 0.019) and FCR x -0.258 to -0.263. The marker x -0.2772 is 4-7 mm on the ulnar side of APL and 1.7 cm on the radial side of FCR, on the palmar skin (skin.glb zmax 0.0433 at x -0.279; marker surface z 0.0431). Images: the dot is at the radial side of the wrist crease at the thenar root, next to the radial artery in the muscle view, over the styloid-scaphoid junction in the bone view."
+   },
+   {
+    "id": "BL13",
+    "whoLocation": "WHO 2008: In the upper back region, at the same level as the inferior border of the spinous process of the third thoracic vertebra (T3), 1.5 B-cun lateral to the posterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC matches WHO (T3 spinous lower border level, 1.5 cun lateral to the posterior midline).",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Level: T3 spinousLowerBorderY 1.3349 vs marker y 1.3351 (GV12 1.335), exact. Lateral: the scapular medial border at y 1.335 is x -0.0599 (bone.glb right scapula; -0.0596 to -0.0648 over y 1.30-1.35). 3 cun = 0.060, so 1.5 cun = 0.030; the marker at 0.038 is 1.9 cun, about 0.4 cun lateral and within tolerance. It is just lateral to the T3 transverse process tip (minX -0.0339). Images: the dot is level with the gap below the T3 spinous process and medial to the scapula; 백호 BL42 lies on the scapula lateral to its medial border."
+   }
+  ]
+ },
+ {
+  "zangfu": "SI 소장",
+  "points": [
+   {
+    "id": "SI4",
+    "whoLocation": "WHO 2008 (p.89): On the posteromedial aspect of the wrist, in the depression between the base of the fifth metacarpal bone and the triquetrum bone, at the border between the red and white flesh.",
+    "textMatches": true,
+    "textNote": "KMCRIC text (손목 뒤 안쪽면, 다섯째 손허리뼈바닥과 세모뼈 사이의 오목한 곳, 赤白肉際) has the same landmarks and the same red-white border. The shortLocation drops the 赤白肉際 qualifier, but it is only a summary.",
+    "verdict": "wrong",
+    "error": "The marker is on the back of the hand, not on the ulnar border. It is about 2.3 cm radial (x) and about 2.3 cm dorsal (z) of the red-white edge, and about 0.9 cm distal to the gap between the 5th metacarpal base and the triquetrum. That puts it over the 4th–5th carpometacarpal junction. Surface distance is about 3.5 cm (about 1.7 cun at 2.03 cm/cun). In the skin and bone close-ups the gold dot sits about a quarter of the hand's width in from the ulnar silhouette.",
+    "suggested": [
+     -0.221,
+     0.812,
+     0.03
+    ],
+    "basis": "Right 5th metacarpal (FMA24472) base top y 0.811 (maxY [-0.2371,0.8109]); triquetrum (FMA24439) bottom y 0.8126. Bone slices show the medial gap at y≈0.812 (5th MC medial x -0.236 at 0.810, triquetrum medial x -0.234 at 0.814). Skin cross-section at y 0.811: medial-most (ulnar border) skin x -0.224 at z 0.029–0.033; dorsal skin z ≈0.004–0.007. Marker surfacePoint [-0.247,0.8029,0.0068] equals the 5th MC lateral base point (minX [-0.2461,0.8041]) on the dorsum. Forearm cun: cubital crease ≈1.075 (LU5/PC3/LI11) to wrist crease ≈0.833 is 12 cun, so 2.03 cm/cun. Correction: ulnar-border skin at y 0.812, z ≈0.030, plus the 3 mm marker offset toward +x."
+   },
+   {
+    "id": "SI6",
+    "whoLocation": "WHO 2008: On the posterior aspect of the forearm, in the depression radial to the head of the ulna, 1 B-cun proximal to the dorsal wrist crease. (No WHO page is given in the input.)",
+    "textMatches": true,
+    "textNote": "KMCRIC text (자뼈머리의 노쪽, 손등 쪽 손목주름에서 몸 쪽으로 1寸 지점의 오목한 곳) matches WHO.",
+    "verdict": "ok",
+    "error": "Within tolerance. The marker sits about 0.4 cm ulnar to the ulnar-head/radius groove, on the radial margin of the ulnar head (about 0.2 cun). Its level is within about 0.1 cun of 1 cun above the dorsal crease. An optional nudge to x≈-0.246 would centre it in the depression.",
+    "suggested": null,
+    "basis": "Dorsal wrist crease taken as y≈0.833: radiocarpal line, lunate top 0.8357, scaphoid top 0.8297, ulnar styloid tip 0.8288. 1 cun = 2.03 cm, so target y ≈0.853; marker y 0.8548. Ulna slices: radial edge of the head x -0.248 (y 0.840), -0.2444 (0.850), -0.2422 (0.855). Radius ulnar-notch edge x -0.2504 at 0.855. The groove is therefore at x≈-0.246; dorsal skin there is z≈-0.010. Marker surfacePoint [-0.2419,0.8548,-0.0095]. In the bone close-up the gold dot lies over the distal ulna at the head."
+   },
+   {
+    "id": "SI7",
+    "whoLocation": "WHO 2008: On the posteromedial aspect of the forearm, between the medial border of the ulna and the flexor carpi ulnaris muscle, 5 B-cun proximal to the dorsal wrist crease (1 B-cun distal to the midpoint of SI5–SI8). (No WHO page is given in the input.)",
+    "textMatches": true,
+    "textNote": "KMCRIC text (자뼈 안쪽모서리와 자쪽손목굽힘근의 사이, 손등 쪽 손목주름에서 몸 쪽으로 5寸) matches WHO.",
+    "verdict": "wrong",
+    "error": "The marker is on the radial side of the ulna, not between the ulna and FCU. At y 0.944 its x of -0.236 lies over the interosseous gap between the ulna (x -0.2201…-0.2331) and the radius (x -0.2413…-0.2574), above extensor digiti minimi. That is the TE corridor (TE8 x -0.244). It sits at the posterior apex of the forearm (skin z -0.044), not on the posteromedial aspect. It is about 2.3–2.5 cm radial/posterior of the correct groove (≈1.2 cun) and about 0.9 cm too proximal (≈0.45 cun).",
+    "suggested": [
+     -0.213,
+     0.935,
+     -0.035
+    ],
+    "basis": "Level: dorsal crease ≈0.833 + 5 × 2.03 cm = 0.935. The midpoint of SI5 (0.8368) and SI8 (1.080) minus 1 cun gives 0.938. Bone and muscle slices at y 0.935: ulna x -0.2208…-0.2332, posterior border [-0.2254,-0.0184], medial [-0.2208,-0.0124]; ECU over the posterior ulna (x -0.221…-0.237); FCU ulnar head medial to it (x -0.2047…-0.2218, z -0.014…-0.020). The ulna–FCU groove is at about [-0.221,-0.018]. The skin directly posteromedial to it is about [-0.214,-0.032] (skin envelope points [-0.2226,-0.0372] and [-0.2081,-0.0271]); the correction adds the 3 mm marker offset. Marker surfacePoint [-0.236,0.944,-0.0438]. In the muscle and bone close-ups the gold dot sits in from the medial silhouette, over the ulna's radial edge."
+   },
+   {
+    "id": "BL27",
+    "whoLocation": "WHO 2008: In the sacral region, at the same level as the first posterior sacral foramen, 1.5 B-cun lateral to the median sacral crest. (No WHO page is given in the input.)",
+    "textMatches": true,
+    "textNote": "KMCRIC text (첫째 뒤엉치뼈구멍과 같은 높이, 정중엉치뼈능선에서 가쪽으로 1.5寸) matches WHO.",
+    "verdict": "ok",
+    "error": "The level matches the S1 posterior foramen within about 0.2 cm. Lateral distance is 3.8 cm, about 0.4 cun wider than 1.5 cun on the brief's back scale (about 0.2 cun on the nipple scale). This is within tolerance. x -0.038 is the shared inner-line x for all BL back-shu markers here.",
+    "suggested": null,
+    "basis": "Ray-cast depth map of the right sacrum (FMA16202) posterior surface: the uppermost foramen pit is at x -0.022…-0.028, y 0.911–0.918 (first hit z -0.040…-0.047 against -0.056…-0.061 around it). Centre is y≈0.914, matching BL31 [-0.022,0.9179]. Pits/holes below at y≈0.900, 0.879 and 0.861 are S2–S4. Marker y 0.913. Lateral scale: right scapula (FMA13395) medial border x≈-0.0595 (y 1.30–1.33), so 3 cun = 5.95 cm and 1.5 cun = 3.0 cm, against the marker's 3.8 cm. ST17 x -0.09 gives 2.25 cm/cun, so 1.5 cun = 3.4 cm. In the bone close-up the dot is over the upper lateral sacrum, lateral to the S1 foramen and medial to the PSIS (hip bone posterior point [-0.0454,0.9294])."
+   },
+   {
+    "id": "CV4",
+    "whoLocation": "WHO 2008 (p.221): On the lower abdomen, 3 B-cun inferior to the centre of the umbilicus, on the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC text (앞정중선 위, 배꼽 중심에서 아래쪽으로 3寸) matches WHO.",
+    "verdict": "ok",
+    "error": "On the midline. About 0.9 cm (≈0.25 cun) superior to 3 cun below CV8 when the bony upper border of the symphysis is used. Caveat: in the skin close-up the visible navel dimple is about 1.5 cm below the CV8 dot (skin dip near y≈0.99). Measured from that dimple, the marker would be about 1.5 cm (≈0.45 cun) high. The CV8 placement deserves a separate check.",
+    "suggested": null,
+    "basis": "Umbilicus = CV8 y 1.005, as the brief specifies. Upper border of the pubic symphysis from the right hip bone (FMA16586) mesh: pubic crest top at the symphysis y 0.8259–0.8268 (x -0.005…-0.014). 5 cun = 0.178 m, so 3.57 cm/cun and CV4 = 1.005 − 0.107 = 0.898. Marker [0,0.907,0.1129]. Using the CV2 marker (0.8479) as the border instead gives 0.911. The marker lies between the two, on the midline (x 0)."
+   }
+  ]
+ },
+ {
+  "zangfu": "SP 비",
+  "points": [
+   {
+    "id": "SP3",
+    "whoLocation": "WHO 2008 p.71: On the medial aspect of the foot, in the depression proximal to the first metatarsophalangeal joint, at the border of the red and white flesh.",
+    "textMatches": true,
+    "textNote": "Same landmark as WHO: the depression proximal to the 1st MTP joint, at the red-white flesh border. '엄지발가락' only names the region.",
+    "verdict": "wrong",
+    "error": "About 4.5-5 cm (about 2 B-cun) too far distal and on the wrong side of the 1st MTP joint. The right marker at z=0.1151 sits at the hallux interphalangeal joint (proximal phalanx z 0.0787-0.1122, distal phalanx z 0.1057-0.1317). The 1st MTP joint is at z of about 0.080-0.083, and SP3 belongs just proximal to the metatarsal head at z of about 0.065-0.070. The height (y 0.018) and medial side are fine.",
+    "suggested": [
+     -0.0545,
+     0.02,
+     0.067
+    ],
+    "basis": "landmarks FMA24507 (right 1st metatarsal): maxZ_anterior z=0.083 (distal end of head), medial prominence of head maxX [-0.0629,0.0204,0.0753], plantar head minY 0.0144 at z 0.0748. From public/models/bone.glb (read only): proximal phalanx of right big toe z 0.0787-0.1122, distal phalanx z 0.1057-0.1317. From skin.glb: medial skin at y 0.020, z 0.0665 is x=-0.0575, so the marker goes 3 mm further medial. The skin foot runs from z -0.104 (heel) to 0.143 (toe tip), so the bones and skin agree. 1 cun is about 2.2 cm (13 cun = medial condyle border y 0.375 to medial malleolus prominence y 0.085). Images: on all three SP3 close-ups the gold dot sits on the big toe beside the SP2 label at toe-tip level, not at the ball of the foot. The other first-ray markers are also too far distal (SP2 z 0.1425 is distal to SP1 at 0.1364), so this looks like a systematic error."
+   },
+   {
+    "id": "SP4",
+    "whoLocation": "WHO 2008: On the medial aspect of the foot, anteroinferior to the base of the first metatarsal bone, at the border of the red and white flesh.",
+    "textMatches": true,
+    "textNote": "Identical to WHO: anteroinferior to the base of the 1st metatarsal, at the red-white flesh border.",
+    "verdict": "wrong",
+    "error": "About 5.5-6 cm (about 2.5-3 B-cun) too far distal. The right marker at z=0.0948 lies over the base of the hallux proximal phalanx just distal to the 1st MTP joint (z of about 0.080-0.083). That is the SP2 region, not the base of the 1st metatarsal (z 0.0215-0.035).",
+    "suggested": [
+     -0.049,
+     0.027,
+     0.037
+    ],
+    "basis": "landmarks FMA24507: base minZ_posterior [-0.0807,0.0397,0.0215], dorsal base maxY [-0.0789,0.0579,0.0331]. bone.glb slices of the 1st metatarsal: medial edge x of about -0.063 with inferior border y of about 0.032 at z 0.030-0.035; medial cuneiform z 0.0003-0.0324; proximal phalanx starts at z 0.0787. skin.glb medial skin: (y 0.024, z 0.036) x of about -0.048 and (y 0.033, z 0.032) x of about -0.057, so the marker sits about 3 mm outside the skin at y about 0.027. Images: in all three SP4 close-ups the gold dot sits on the forefoot next to the toes, below the SP5 (상구) dot at the ankle, far from the midfoot arch."
+   },
+   {
+    "id": "SP8",
+    "whoLocation": "WHO 2008: On the tibial aspect of the leg, posterior to the medial border of the tibia, 3 B-cun inferior to SP9 (13 B-cun from the inferior border of the medial tibial condyle to the prominence of the medial malleolus).",
+    "textMatches": true,
+    "textNote": "KMCRIC measures 13 cun from SP9 to the medial malleolus prominence. WHO measures it from the inferior border of the medial condyle, which is where SP9 lies, so the two are equivalent. KMCRIC also says posterior to the medial border of the tibia, 3 cun below SP9.",
+    "verdict": "wrong",
+    "error": "The marker sits on the wrong side of the tibial medial border, on the subcutaneous medial face of the tibia about 0.5 cm from the anterior crest. That is about 2.3 cm (about 1 B-cun) anterior to the medial border, instead of just behind it. It is also about 1.2 cm (about 0.5 B-cun) too high: y 0.317 against about 0.305.",
+    "suggested": [
+     -0.044,
+     0.305,
+     -0.017
+    ],
+    "basis": "bone.glb right tibia section at y 0.317: anterior crest x -0.0849 z 0.0007, medial border x -0.0687 z -0.0222. The marker's skin point (-0.0751, 0.001) projects onto the medial surface 0.55 cm from the crest. Medial condyle flare: medial edge x -0.0654 at y 0.34, -0.0564 at 0.37, -0.0446 at 0.39, so its inferior border is at about y 0.375. Medial malleolus prominence is at y of about 0.085 (tibia minY tip 0.0733). 13 cun = 0.29 m, so 1 cun is about 2.23 cm and SP8 is at y of about 0.308. Cross-check: the upper third of the line from the patellar apex (FMA24486 minY 0.4106) to the malleolus gives y 0.302. Skin at y 0.305 just posteromedial to the border is at about (-0.046, -0.019). The model's SP9 marker at y 0.392 sits about 1.7 cm above the condyle's inferior border, and measuring 3 cun down from it carried that error into SP8. Images: on the muscle and bone close-ups the right SP8 dot sits in the middle of the cream tibial-face strip, as do the 누곡 dots, not at the tibia/calf-muscle edge."
+   },
+   {
+    "id": "SP21",
+    "whoLocation": "WHO 2008: On the lateral thoracic region, in the 6th intercostal space, on the midaxillary line.",
+    "textMatches": true,
+    "textNote": "Identical: 6th intercostal space on the midaxillary line.",
+    "verdict": "minor",
+    "error": "About 1.2 cm (about 0.5 B-cun) too low. In the marker's own coronal plane (z about 0.012) the right 6th intercostal space runs from y 1.1917 (top of rib 7) to 1.2078 (bottom of rib 6), centre about 1.200. The marker at y 1.188 sits over the upper margin of rib 7. Its midaxillary position (z 0.012, lateral skin x about -0.154) is acceptable.",
+    "suggested": [
+     -0.157,
+     1.2,
+     0.012
+    ],
+    "basis": "bone.glb coronal sections at z=0.012: rib 6 (FMA8175) y 1.2078-1.2252 at x -0.1345; rib 7 (FMA8229) y 1.1719-1.1917 at x -0.1376; rib 8 y 1.1316-1.1489. These agree with landmarks minX for rib 6 (y 1.2162, z 0.0038) and rib 7 (y 1.1785, z 0.015). skin.glb lateral chest at z 0.012, y 1.17-1.22: x about -0.154. HT1 axillary apex z=0.0254. Trunk cun: sternal body lower end y 1.2006 to CV8 y 1.005 = 8 cun, so 1 cun is about 2.45 cm. Images: these are front views, so ribs cannot be counted at the midaxillary line from them. The dot sits at about the level of the sternal body's lower end, which fits the numbers."
+   },
+   {
+    "id": "BL20",
+    "whoLocation": "WHO 2008: In the upper back region, at the same level as the inferior border of the spinous process of the 11th thoracic vertebra (T11), 1.5 B-cun lateral to the posterior midline.",
+    "textMatches": true,
+    "textNote": "Identical: T11 spinous lower border level, 1.5 cun lateral. '위쪽 등부위' matches WHO's 'upper back region'.",
+    "verdict": "ok",
+    "error": "No placement error. The level is exact. The lateral offset of 3.78 cm is about 1.9 cun by the scapular rule (about 0.4 cun lateral of 1.5 cun), which is within tolerance and the same as the whole first bladder line on this model (|x| 0.038).",
+    "suggested": null,
+    "basis": "landmarks FMA10059 (T11) spinousLowerBorderY 1.1059 against the marker at y 1.1058. The midline GV6 (below T11) is at y 1.1067. Rib 11 and rib 12 heads (maxY 1.1536 and 1.1181) confirm the vertebral count. bone.glb right scapula medial border is at x -0.0596 to -0.062 (y 1.28-1.34), so 3 cun is about 0.060 and 1.5 cun about 0.030. The nipple-line rule (ST17 x -0.09 = 4 cun) gives 1.5 cun = 0.034. Images: in the back views the gold dots sit on the first bladder line between 담수 and 위수, in line with the other back-shu points, at the T11 spinous level in the bone view."
+   },
+   {
+    "id": "LR13",
+    "whoLocation": "WHO 2008 p.202: On the lateral abdomen, inferior to the free extremity of the 11th rib.",
+    "textMatches": true,
+    "textNote": "Identical: below the free end of the 11th rib on the lateral abdomen.",
+    "verdict": "wrong",
+    "error": "About 5-6 cm (about 2-2.5 B-cun) too high. The right marker at y 1.079, z 0.006 sits on the lateral rib cage between ribs 9 and 10: at that z, rib 10's upper edge is at about 1.07 and rib 9's lower edge at about 1.09. The free end of the right 11th rib is at y 1.026-1.038 (x -0.110 to -0.117, z about 0), so the point should be just below that.",
+    "suggested": [
+     -0.1465,
+     1.018,
+     0.003
+    ],
+    "basis": "landmarks FMA8531 (right rib 11): tip minY [-0.1099,1.0258,-0.0009], maxZ_anterior [-0.1119,1.0305,0.0042], and anteriorArc ends at x -0.11, y 1.0305. bone.glb: rib 11 at plane z=0 has lateral-most x -0.1164 over y 1.0259-1.0376. The lowest point of the right costal cartilage (BP28) is y 1.0284. Rib 10 at z 0-0.012 spans y 1.043-1.074 and rib 9 spans 1.085-1.116. skin.glb lateral abdomen at z 0.003, y 1.018 is x -0.1435. CV8 and GB26 (y 1.005) lie just below the corrected spot. 1 cun is about 2.45 cm (sternal body lower end 1.2006 to CV8 1.005 = 8 cun). Images: in the bone close-up the gold 장문 dot sits beside the lateral ribs, clearly above the lowest costal ends visible at the lateral margin."
+   }
+  ]
+ },
+ {
+  "zangfu": "ST 위",
+  "points": [
+   {
+    "id": "ST34",
+    "whoLocation": "On the anterolateral aspect of the thigh, between the vastus lateralis muscle and the lateral border of the rectus femoris tendon, 2 B-cun superior to the base of the patella.",
+    "textMatches": true,
+    "textNote": "The KMCRIC text gives the same muscle boundary (between vastus lateralis and the lateral edge of the rectus femoris tendon) and the same 2 cun above the patella base.",
+    "verdict": "minor",
+    "error": "About 0.011-0.015 m (0.5-0.7 cun) too high. The marker is 0.0547 m (about 2.5-2.7 cun) above the patella base when it should be 2 cun. The medial-lateral position is correct.",
+    "suggested": [
+     -0.104,
+     0.494,
+     0.057
+    ],
+    "basis": "Right patella base (FMA24486 maxY) is at y 0.4503 and its lateral edge at x -0.1052. Thigh cun, method 1: upper border of the pubic symphysis (CV2 y 0.848) to the medial femoral epicondyle (femur maxX, y 0.452) over 18 cun gives 0.022 m. Method 2: greater trochanter prominence (femur minX, y 0.8066) to the popliteal crease (about 0.425; tibia maxY 0.4197) over 19 cun gives 0.020 m. So 2 cun = 0.040-0.044 m and the target y is 0.490-0.494. The marker is at y 0.505. Bone image: the top of the patella projects about 70 px (about 5 cm) below the gold dot. Muscle image (camera centred on the marker, about 1450 px/m): a groove between vastus lateralis and rectus femoris runs at px 501-507 (x about -0.100 to -0.103), right beside the dot. So x -0.104 is correctly between VL and the lateral edge of RF. It is also on the ASIS (hip maxZ [-0.1145, 0.9173]) to lateral patella base line, which gives x of about -0.106 at this level. Only the y value needs to come down."
+   },
+   {
+    "id": "ST40",
+    "whoLocation": "On the anterolateral aspect of the leg, lateral border of the tibialis anterior muscle, 8 B-cun superior to the prominence of the lateral malleolus (WHO note: level with ST38, one finger-breadth lateral to it).",
+    "textMatches": true,
+    "textNote": "KMCRIC takes the 16 cun as the ST35-ST41 line, where WHO uses popliteal crease to lateral malleolus prominence. Both put the point 8 cun above the lateral malleolus at the lateral border of tibialis anterior, so this is a difference in framing, not in location.",
+    "verdict": "wrong",
+    "error": "About 0.017 m too lateral and 0.012 m too posterior (about 1 cun along the skin). The marker sits on the fibular side beyond extensor digitorum longus, on the model's own 'anterior to the fibula' line, not at the lateral border of tibialis anterior. It is also 0.008 m (about 0.35 cun) too low.",
+    "suggested": [
+     -0.106,
+     0.247,
+     0.003
+    ],
+    "basis": "Level: popliteal crease about 0.425 (tibia maxY 0.4197, femur minY 0.4165, model BL40 0.429). Lateral malleolus prominence about 0.069 (fibula tip minY 0.0539 plus about 1.5 cm). That gives 16 cun = 0.356 m, a cun of 0.0222 m, and an 8-cun level of y 0.247; the marker is at 0.2391. Medial-lateral: the symmetric pairs ST35 and ST41 place the camera at x about -0.1256 with centre column about px 499, so the view looks straight down z at the marker. In the muscle image the lateral silhouette of the muscle layer is at px 496-504, right under the dot. The tibialis anterior belly runs from px 535-565, with its lateral groove at px 521-536 (x about -0.101 to -0.110) and a septum line at px 514-516. In the bone image the fibula projects at px 515-525 (x about -0.106 to -0.114) and the tibial crest edge at about px 563 (x about -0.081). The marker [-0.1248, 0.2391, -0.0104] projects about 1 cm lateral to the fibula. It is within 2 mm of the GB36-GB37 'anterior to fibula' line interpolated to y 0.24 ([-0.1267, -0.0123]). The skin over the TA lateral border is at about x -0.106, z 0.003 (next to ST38 at z 0.0023). Note that ST38 (x -0.1092) is itself about 2.8 cm lateral to the crest, i.e. already on the TA border. If ST38 moves to about x -0.094, the corrected ST40 ends up one finger-breadth lateral to it, as WHO describes."
+   },
+   {
+    "id": "ST42",
+    "whoLocation": "On the dorsum of the foot, at the joint of the base of the second metatarsal bone and the intermediate cuneiform bone, over the dorsalis pedis artery.",
+    "textMatches": true,
+    "textNote": "Same landmark as WHO: the joint between the 2nd metatarsal base and the intermediate cuneiform, at the dorsalis pedis pulse.",
+    "verdict": "wrong",
+    "error": "About 0.055 m (about 2.5 cun) too distal. The marker is on the distal shaft/neck of the 2nd metatarsal, not at its base.",
+    "suggested": [
+     -0.088,
+     0.075,
+     0.019
+    ],
+    "basis": "Right 2nd metatarsal (FMA24509): proximal end of the base at minZ_posterior [-0.0883, 0.0448, 0.0156]; dorsal top of the base at maxY [-0.0879, 0.0617, 0.0236]; head at maxZ_anterior [-0.0962, 0.0211, 0.0838]. The navicular spans z -0.0133 to 0.010, so the intermediate cuneiform-MT2 joint is at z about 0.017-0.020, x about -0.088. The marker at z 0.0752 is only 0.9 cm short of the MT2 head and 2.9 cm proximal to ST43 (z 0.1041). Its seed y of 0.07 was dropped onto the forefoot skin at 0.0408. Skin over the joint: bone top 0.062 plus about 1.2 cm of soft tissue gives y about 0.075. Images (about 1400 px/m, camera tilted about 7 degrees downward, checked against ST37-ST43): the predicted MT2 base is at row about 437 and the head at about 486. The dot is at row 476, just above the toe phalanges (rows 490 and below) in the bone image, and at the base of the toes in the skin image."
+   },
+   {
+    "id": "BL21",
+    "whoLocation": "In the upper back region, at the same level as the inferior border of the spinous process of the twelfth thoracic vertebra (T12), 1.5 B-cun lateral to the posterior midline.",
+    "textMatches": true,
+    "textNote": "Same level (lower border of the T12 spinous process) and the same 1.5 cun lateral distance.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "T12 (FMA10081) spinousLowerBorderY is 1.0769 and the marker y is 1.077, an exact match. T12 is confirmed by the 12th rib head (FMA8533 maxY 1.1181), which sits against the T12 body (y 1.0769-1.1296). Lateral distance: x -0.038 is half the model's second-line distance (BL50 x -0.0752), which fits the 1.5/3 cun ratio. Using the chest cun (ST17 nipple at x -0.09 = 4 cun, so 0.0225 m), 1.5 cun is 0.034 m, so the marker is about 0.004 m (0.2 cun) wider than that. Images: the dot is on the first line, level with BL50 (위창), between BL20 (T11) and BL22 (L1). The landmark data has no scapula, so the medial-border scale could only be checked indirectly."
+   },
+   {
+    "id": "CV12",
+    "whoLocation": "On the upper abdomen, 4 B-cun superior to the centre of the umbilicus, on the anterior median line.",
+    "textMatches": true,
+    "textNote": "Same position: 4 cun above the umbilicus on the anterior midline.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Xiphisternal junction is at about y 1.203 (sternal body minY 1.2006, xiphoid maxY 1.2046). Umbilicus is CV8 at y 1.005. So 8 cun = 0.198 m, a cun of 0.0247 m, and the target is 1.005 + 0.099 = 1.104. The marker y 1.1103 is 0.006 m (0.25 cun) high, and x -0.0001 is on the midline. Skin and bone images: the dot is midway between the lower sternum (CV15/CV16, 구미/중정) and the umbilicus (CV8, 신궐), on the linea alba."
+   }
+  ]
+ },
+ {
+  "zangfu": "TE 삼초",
+  "points": [
+   {
+    "id": "BL22",
+    "whoLocation": "In the lumbar region, at the same level as the inferior border of the spinous process of the first lumbar vertebra (L1), 1.5 B-cun lateral to the posterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same landmark (inferior border of the L1 spinous process) and the same distance (1.5 cun lateral to the posterior midline).",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Level: the L1 spinousLowerBorderY is 1.0405 and the marker is at y 1.0400 (0.5 mm off). It is level with GV5 (1.040). The neighbouring markers follow the same rule: BL21 at 1.077 matches the T12 lower border at 1.0769, and BL23 at 1.017 matches the L2 lower border at 1.017. Distance from the midline: |x| is 0.0379, exactly half of the second-line marker BL51 at |x| 0.075, which is the model's 3 cun. On the front, nipple line |x| 0.09 = 4 cun gives about 0.0225 m per cun, so 1.5 cun would be about 0.034 m. The difference is under 0.2 cun. The scapula is not in landmarks.json, so I could not check the 3-cun width directly. Images: both gold dots sit over the erector spinae, just lateral to the tip of the L1 transverse process (|x| 0.0366, y 1.0775), with left and right symmetric (z -0.0929 and -0.0934)."
+   },
+   {
+    "id": "TE4",
+    "whoLocation": "On the posterior aspect of the wrist, in the depression ulnar to the extensor digitorum tendon, on the dorsal wrist crease.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same location: on the dorsal wrist crease, in the depression ulnar to the extensor digitorum tendon. Its added note (level with LI5 and SI5) agrees with WHO placing all three on the dorsal wrist crease.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Level: the marker is at y 0.8271. The radial styloid tip is at y 0.8296 and the ulnar styloid tip at 0.8288, so the marker is 2-3 mm distal to the ends of the forearm bones, at the radiocarpal line. It is level with LI5 (0.828). SI5 (0.8368) sits about 1 cm higher, which is a problem with SI5, not TE4. Side to side: the marker is at x -0.254. The radial edge of the ulnar head (ulna minX) is at x -0.2481, y 0.8415, and the base of the 4th metacarpal at x -0.2522. On the dorsal wrist line from LI5 (-0.2803) to SI5 (-0.2431), the marker is 30% of the way in from the ulnar side, which puts it ulnar of centre. Images: the gold dot sits on the extensor retinaculum, slightly ulnar of mid-wrist, right at the distal ends of the radius and ulna. The marker may be 3-5 mm radial of the ED/EDM gap (estimated just over the distal radioulnar joint at x about -0.249). That is about 0.25 cun, and the close-ups do not show which side of the tendon it is on."
+   },
+   {
+    "id": "TE5",
+    "whoLocation": "On the posterior aspect of the forearm, midpoint of the interosseous space between the radius and the ulna, 2 B-cun proximal to the dorsal wrist crease.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same location: midpoint between the ulna and radius, 2 cun proximal to the dorsal wrist crease. Its note that PC6 is the anterior counterpart is an editorial addition and does not change the location.",
+    "verdict": "minor",
+    "error": "The marker is about 1.1 cm (about 0.5 cun) too proximal; this is borderline between minor and ok. It sits 2.5 cun above the dorsal wrist crease instead of 2 cun. Its side-to-side position, in the radius-ulna gap, is correct.",
+    "suggested": [
+     -0.25,
+     0.868,
+     -0.0175
+    ],
+    "basis": "Forearm cun: the cubital crease is at y about 1.075 (LU5 1.075, PC3 1.0771, HT3 1.075; humeral lateral epicondyle y 1.078). The dorsal wrist crease is at 0.827-0.830 (TE4 0.8271, LI5 0.828, styloid tips 0.8288/0.8296). 12 cun = 0.245-0.248 m, so 1 cun is about 0.0205 m. Other markers on the same forearm fit this scale: LI6 at 0.8903 is 3.0 cun above LI5, LI7 at 0.931 is 5.0 cun above it, and TE9 at 0.9675 is about 5 cun below the olecranon prominence (y about 1.06-1.065). The marker gap TE5 minus TE4 is 0.8793 - 0.8271 = 0.052 m = 2.5 cun, so the correct level is 0.8271 + 0.041 = 0.868. If the crease is taken at 0.830 instead, the error is 0.4 cun. Side to side: in the bone close-up the dot projects into the gap between the radius and the ulna. Shaft interpolation puts the gap midpoint at x about -0.248 to -0.251. z is interpolated along the dorsal skin between TE4 (z -0.0035) and TE5 (z -0.0212). PC6 (0.8799) sits equally high, so moving TE5 alone would break the KMCRIC TE5-PC6 correspondence."
+   },
+   {
+    "id": "TE7",
+    "whoLocation": "On the posterior aspect of the forearm, 3 B-cun proximal to the dorsal wrist crease, on the radial border of the ulna.",
+    "textMatches": true,
+    "textNote": "KMCRIC '자뼈의 바로 노쪽' (immediately radial to the ulna) is the same as WHO 'on the radial border of the ulna'. The distance, 3 cun, also matches.",
+    "verdict": "minor",
+    "error": "The marker is about 1.3 cm (about 0.6 cun) too proximal. It sits 3.6 cun above the dorsal wrist crease instead of 3 cun. Its side-to-side position, on the radial border of the ulna and ulnar to TE6, is correct. TE6, at the same y 0.902, is high by the same amount.",
+    "suggested": [
+     -0.239,
+     0.888,
+     -0.025
+    ],
+    "basis": "Forearm scale as for TE5: 1 cun is about 0.0205 m, from the cubital crease at y about 1.075 (LU5, PC3, HT3; lateral epicondyle 1.078) to the dorsal crease at about 0.827 (TE4 0.8271, styloid tips 0.8288/0.8296). The marker gap TE7 minus TE4 is 0.902 - 0.8271 = 0.075 m = 3.6 cun, so the correct level is 0.8271 + 0.0615 = 0.888. Using 0.830 as the crease, the error is still 0.5 cun. Side to side: interpolating the ulna shaft from the olecranon (x about -0.207, y about 1.06; ulna maxY 1.0764) to the ulnar head (x about -0.240, y about 0.845; head radial edge -0.2481) puts the shaft axis at about -0.232 at y 0.89. The radial border is then about -0.238, and the marker's x of -0.239 fits. It is also 0.9 cm ulnar to TE6 (-0.248) at the same level, which is the correct relation. In all three close-ups the gold dot is mostly hidden behind the TE6 and TE7 labels, so I judged the side-to-side position from the numbers only. z is interpolated along the dorsal skin between TE5 (z -0.0212) and TE7 (z -0.0297)."
+   },
+   {
+    "id": "CV5",
+    "whoLocation": "On the lower abdomen, 2 B-cun inferior to the centre of the umbilicus, on the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same location: on the anterior midline, 2 cun below the centre of the umbilicus.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "The umbilicus is CV8 at y 1.005. The upper border of the pubic symphysis is about CV2 at y 0.8479. The right hip bone's most medial point, at y 0.8193, is the middle of the symphysis surface, and in the bone close-up the CV2 dot sits at the top of the symphysis. 5 cun = 0.157 m, so 1 cun is 0.0314 m and CV5 should be at 1.005 - 0.0629 = 0.942. The marker is at 0.940 (2 mm off), at x = 0, on the skin (z 0.1208). Its neighbours are consistent: CV6 0.958 (1.5 cun), CV4 0.907 (target 0.911), CV3 0.8749 (target 0.879). Caveat: in the skin close-up, the rendered navel dimple appears about 24 px (about 1.7 cm) below the CV8 dot, which puts it at about y 0.988-0.99 by the CV8-CV2 image scale. If that is taken as the umbilicus, CV5 should be at about 0.932 and the marker is about 0.8 cm (about 0.3 cun) high, which is still within ok. The CV8 placement may be worth re-checking separately."
+   }
+  ]
+ },
+ {
+  "zangfu": "BL",
+  "points": [
+   {
+    "id": "BL28",
+    "whoLocation": "WHO 2008: In the sacral region, at the same level as the second posterior sacral foramen, 1.5 B-cun lateral to the median sacral crest. (The point file gives no WHO page.)",
+    "textMatches": true,
+    "textNote": "KMCRIC names the same level (2nd posterior sacral foramen) and the same distance, 1.5 cun lateral to the median sacral crest. No real difference.",
+    "verdict": "minor",
+    "error": "The level is about 1.3 cm (about 0.5 cun) too low. The marker is at y 0.885, but the right S2 dorsal foramen is at y about 0.898. That puts the marker closer to the S3 foramen (y about 0.879) than to S2. It is also 0.6 cm below the model's own BL32 marker (y 0.891). The distance from the midline is correct: x -0.038 matches the model's 1.5-cun first bladder line (second line 0.075 = 3 cun).",
+    "suggested": [
+     -0.038,
+     0.898,
+     -0.122
+    ],
+    "basis": "landmarks.json gives only the sacrum's extremes (y 0.8042-0.9495), so I cast rays along +z through the sacrum mesh FMA16202 in public/models/bone.glb (read only, 1655 vertices). Dorsal foramen pits on the right are at y about 0.913 (x about -0.025), 0.898 (x about -0.018), 0.879 (a hole right through, x about -0.018) and 0.860. The left side mirrors them. They are numbered from the L5/S1 opening between the laminae at the midline (y 0.930-0.935, below the L5 spinous lower border 0.9442; the S1 lamina starts at 0.9275), so 0.913 is S1 and 0.898 is S2. Below 0.845 the bone narrows to coccyx width, which supports this numbering. BL27 (y 0.913) sits on the S1 pit, which fits. The rib-free back cun is 3 cun = 0.075, so 1.5 cun = 0.0375. Skin first hit at (-0.038, 0.898) is z -0.1187; I added the 3 mm marker offset. Images: in the skin, muscle and bone views the gold dots sit slightly below the 차료 (BL32) dots. Ligaments cover the sacrum in the bone view, so the foramina cannot be seen and the level rests on the mesh. Uncertainty is about ±0.5 cm because the mesh is low-poly."
+   },
+   {
+    "id": "BL58",
+    "whoLocation": "WHO 2008: On the posterolateral aspect of the leg, between the inferior border of the lateral head of the gastrocnemius muscle and the calcaneal tendon, at the same level as 7 B-cun superior to BL60 (about 1 B-cun inferolateral to BL57).",
+    "textMatches": true,
+    "textNote": "KMCRIC uses the same muscle and tendon landmarks. It sets the level as 1 cun inferolateral ('가먼쪽') to BL57 and leaves out WHO's main level reference, 7 B-cun above BL60. The two agree when BL57 is about 8 cun above BL60, so this is not a real conflict.",
+    "verdict": "minor",
+    "error": "The marker is about 1.2 cm (about 0.55 cun) too high, and it still lies over the lower belly of the lateral gastrocnemius head instead of just below its inferior border. At y 0.24 the lateral head spans x -0.115 to -0.088, which includes the marker's x of -0.108. The medial-lateral position is acceptable: 2.9 cm lateral to BL57 (x -0.079), on the posterolateral calf.",
+    "suggested": [
+     -0.107,
+     0.227,
+     -0.099
+    ],
+    "basis": "Popliteal crease = BL40, y 0.429. Prominence of the lateral malleolus = most lateral distal fibula vertices (x -0.1124) at y 0.066-0.072, so about 0.069; the tip is fibula minY 0.0539. 16 cun = 0.360 m, so 1 cun = 2.25 cm, and 7 cun above the prominence = y 0.2265. The BL60 marker (y 0.086) sits about 1.7 cm above the prominence. Counting 7 cun from BL60 gives 0.236, so the marker only looks right because BL60 itself is high. Lateral gastrocnemius head (muscle.glb FMA45960): lowest vertex y 0.2135; at y 0.23 it spans x -0.108 to -0.083 and at y 0.24 x -0.115 to -0.088. Its inferolateral border near x -0.108 is about y 0.23, and the calcaneal tendon top is y 0.2377. Muscle image: the gold dot is at the lateral edge of the lateral head, about 15-20 px (about 0.5 cun) above the head's lower end, with the soleus and tendon below. Skin first hit at (-0.107, 0.227) is z -0.0964; I added the 3 mm offset."
+   },
+   {
+    "id": "BL63",
+    "whoLocation": "WHO 2008: On the dorsum of the foot, distal to the anterior border of the lateral malleolus, posterior to the tuberosity of the fifth metatarsal bone, in the depression inferior to the cuboid bone.",
+    "textMatches": true,
+    "textNote": "KMCRIC has the same four landmarks (anterior border of the lateral malleolus, distal; posterior to the 5th metatarsal tuberosity; inferior to the cuboid; depression). No real difference.",
+    "verdict": "wrong",
+    "error": "The marker [-0.1174, 0.0468, 0] is on the wrong side of the tuberosity and above the cuboid. It is 1.2 cm anterior to the 5th metatarsal tuberosity tip (z -0.0122) and about 1.1 cm above the cuboid's lateral-most point (y 0.0355). That places it on the dorsolateral surface over the cuboid-5th metatarsal base junction, about 2.5 cm above the lateral foot border (the skin's lateral border at z 0 is x -0.131, y 0.022). It needs to move about 1.7 cm posterior and about 2 cm down, roughly 1.2 cun in total.",
+    "suggested": [
+     -0.125,
+     0.027,
+     -0.017
+    ],
+    "basis": "5th metatarsal minZ_posterior (tuberosity tip) is [-0.1141, 0.027, -0.0122]. Cuboid: minX [-0.1128, 0.0355, -0.0014], minY 0.0284, minZ_posterior z -0.0216 (calcaneocuboid joint). In the mesh the cuboid's lower lateral edge at z -0.010 to -0.015 is y about 0.028-0.030. The lateral malleolus anterior border is z about -0.035. So the target lies between z -0.0216 and -0.012, posterior to the tuberosity, just below the cuboid at y about 0.027. Skin first hit along +x at (y 0.027, z -0.017) is x -0.1223; I added the 3 mm offset. The front-view images cannot separate height from depth (the dot shows only on the side of the midfoot, below BL62), so the numbers decide this point."
+   },
+   {
+    "id": "BL64",
+    "whoLocation": "WHO 2008 p.132: On the lateral aspect of the foot, distal to the tuberosity of the fifth metatarsal bone, at the border between the red and white flesh.",
+    "textMatches": true,
+    "textNote": "KMCRIC matches WHO, including 赤白肉際. Only the app's shortLocation leaves out the red-white border.",
+    "verdict": "wrong",
+    "error": "The marker is about 6.5 cm (about 3 cun) too far toward the toes and sits on the dorsum instead of the lateral border. At z 0.0777 it is past the 5th metatarsal head (z 0.0592), level with the little-toe proximal phalanx (z 0.0546-0.0806). At x -0.1115, y 0.030 it is on top of the forefoot over the 4th MTP region (4th metatarsal head [-0.1174, 0.0193, 0.0713]), about 3.5 cm medial to the lateral skin border at that z (x -0.147). That is the BL65/BL66 area, not BL64.",
+    "suggested": [
+     -0.1385,
+     0.019,
+     0.011
+    ],
+    "basis": "5th metatarsal: tuberosity tip z -0.0122. Its lateral bulge in the mesh is x -0.120 to -0.121 for z -0.008 to 0.012, and the head's maxZ_anterior is z 0.0592. Little-toe phalanges (bone.glb) span z 0.0546-0.0948. A ray down through x -0.1115, z 0.0777 hits the top of the forefoot skin at y 0.0286, just under the marker. Red-white border just distal to the tuberosity: the lateral-most skin vertex near z 0.01 is [-0.1359, 0.0188, 0.0119], and the skin hit along +x at (y 0.019, z 0.011) is x -0.1355; I added the 3 mm offset. Images: in the skin, muscle and bone views the gold dot is at the forefoot near the base of the toes, just behind the 속골/지음 dots and well below the 금문 (BL63) dot, not at the tarsometatarsal junction."
+   },
+   {
+    "id": "CV3",
+    "whoLocation": "WHO 2008 p.221: On the lower abdomen, 4 B-cun inferior to the centre of the umbilicus, on the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC says the same: anterior midline, 4 cun below the centre of the umbilicus.",
+    "verdict": "ok",
+    "error": "No real error. The marker is about 1.3 cm (about 0.35 cun) above the ideal level measured from the bony symphysis, which is within tolerance. It is on the midline (x 0).",
+    "suggested": null,
+    "basis": "Umbilicus = CV8, y 1.005. Upper border of the pubic symphysis = highest right hip-bone vertex within 1.4 cm of the midline, y 0.8266 (bone.glb FMA16586; the landmark's medial point maxX is at y 0.8193, mid-symphysis). 5 cun = 0.178 m, so 1 cun = 3.57 cm, and 4 cun below the umbilicus = y 0.862. Marker y 0.8749 is +1.3 cm. If the model's CV2 marker (y 0.848) is taken as the border, the ideal is y 0.879 and the marker is 0.4 cm low. Either way it is within 0.5 cun. Images: the gold dot is on the linea alba midline between 관원 (CV4) and 곡골 (CV2), about 1 cun above the pubic crest in the bone view."
+   }
+  ]
+ },
+ {
+  "zangfu": "GB",
+  "points": [
+   {
+    "id": "BL19",
+    "whoLocation": "WHO 2008: In the upper back region, at the same level as the inferior border of the spinous process of the tenth thoracic vertebra (T10), 1.5 B-cun lateral to the posterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same landmark (inferior border of the T10 spinous process) and the same distance (1.5 cun lateral to the posterior midline). Only the wording differs.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "The T10 spinousLowerBorderY is 1.1313 and the marker is at y=1.131, the same level as GV7 (midline below T10, y=1.131). The marker is 0.038 m from the midline. The 3-cun second bladder line on this model (BL46 x=-0.075, BL47 x=-0.0748, BL48 x=-0.075) puts 1.5 cun at about 0.0375 m. In the bone image the second-line dots sit at about the medial scapular border, and the BL19 dots sit about halfway between them and the spinous processes. In the skin image the marker is on the paraspinal bulge (z=-0.115, versus GV7 z=-0.098). Level and distance both agree within a few millimetres."
+   },
+   {
+    "id": "GB24",
+    "whoLocation": "WHO 2008 (p.183): In the anterior thoracic region, in the seventh intercostal space, 4 B-cun lateral to the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same space (7th intercostal) and the same distance (4 cun lateral to the anterior midline).",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Lateral distance: the marker is at x=-0.0899, on the nipple line (ST17 x=-0.09, which is 4 cun). Level: at x=-0.09 the right rib 4 anterior arc is at y=1.2541 and rib 5 at y=1.2114, so the 4th intercostal space is about 1.233 (ST17 is at 1.235). Rib 6 is at 1.1817 (its bony end has minY 1.1679 at x=-0.0919), giving a 6th space of about 1.168 (LR14, the 6th-space point, is at 1.169). The bony end of rib 7 is at x about -0.108 to -0.110, y 1.135 to 1.149 (anterior arc point 1.1487). The bony end of rib 8 is at x about -0.111 to -0.115, y 1.100 to 1.114 (anterior arc point 1.1136). So at x=-0.11 the 7th intercostal space lies at about 1.12 to 1.135, and because the 7th and 8th costal cartilages rise medially it lies at about 1.13 to 1.145 at x=-0.09. The marker at y=1.142 is in the upper part of that space, about 2.7 cm (one rib space) below LR14. On this model 1 anterior-trunk cun = (1.2006-1.005)/8 = 0.0245 m, so the marker is within about 0.3 cun of the space centre. In the bone close-up the dot sits just medial to and below the bony end of rib 7, above the costal margin. Limitation: costal cartilages are not in the landmark data, so the cartilage course at x=-0.09 is interpolated."
+   },
+   {
+    "id": "GB36",
+    "whoLocation": "WHO 2008: On the fibular aspect of the leg, anterior to the fibula, 7 B-cun proximal to the prominence of the lateral malleolus. GB35 (posterior to the fibula) is at the same level.",
+    "textMatches": true,
+    "textNote": "KMCRIC matches WHO: fibular aspect of the leg, anterior to the fibula, 7 cun proximal to the prominence of the lateral malleolus.",
+    "verdict": "wrong",
+    "error": "The marker is about 1.5 to 2 cun (3.3 to 4.1 cm) too proximal. At y=0.269 it is about 8.8 cun above the lateral malleolus prominence. That puts it above the 8-cun midpoint of the popliteal crease to malleolus line (about 0.25) and above the ST40 marker (8 cun, y=0.2391), when it should be 1 cun below that midpoint. It is also 2.5 cm above GB35 (y=0.244), which WHO places at the same level. Its height matches 7 cun measured down from the popliteal crease (0.429 - 7 x 0.0223 = 0.273) rather than up from the malleolus. Its position anterior to the fibula and on the lateral surface is acceptable.",
+    "suggested": [
+     -0.128,
+     0.228,
+     -0.015
+    ],
+    "basis": "Popliteal crease: BL40 y=0.429 (BL39 0.4313; tibia top 0.4197). Lateral malleolus: the fibula tip (minY) is at y=0.0539, and the malleolar body is at about 0.076 to 0.079 (fibula minZ_posterior y=0.0757, maxX y=0.0793). That puts the prominence at about 0.072. 16 cun = 0.357 m, so 1 cun = 0.0223 m and 7 cun lies at 0.072 + 0.156 = 0.228. If the BL60 level (0.086) is taken as the prominence instead, 7 cun is at 0.236 and the marker is still 1.5 cun high. The fibula shaft at this level is at about x -0.113, z -0.041 (interpolated from the head near x -0.12, y 0.39 to the malleolus near x -0.105, z -0.047). The suggested point therefore keeps z at about -0.015, anterior to the fibula, with x on the lateral skin (between the GB37/GB36 marker contour, about -0.124 at z -0.012, and GB35, x -0.138 at z -0.029). In the frontal close-ups the gold dot sits at the lateral leg outline above the GB35 label, lateral to the fibula strip in the bone image, about a third of the way from the knee joint line to the ankle. It should be just below the middle of the leg."
+   },
+   {
+    "id": "GB37",
+    "whoLocation": "WHO 2008: On the fibular aspect of the leg, anterior to the fibula, 5 B-cun proximal to the prominence of the lateral malleolus.",
+    "textMatches": true,
+    "textNote": "KMCRIC matches WHO and spells out the 16-cun line from the lateral end of the popliteal crease to the lateral malleolus prominence, 5 cun above the prominence, anterior to the fibula.",
+    "verdict": "wrong",
+    "error": "The marker is about 1 to 1.4 cun (2 to 3 cm) too proximal. At y=0.2136 it is about 6.0 to 6.4 cun above the lateral malleolus prominence; 5 cun should be at about y=0.184 (0.193 at most if the prominence is taken at the BL60 level). Its anteroposterior placement, on the lateral skin anterior to the fibula, is acceptable. The neighbouring GB38 (y=0.1904) and GB39 (y=0.1658) markers are also proximal to their 4- and 3-cun levels (about 0.161 and 0.139). Moving GB37 alone would put it below GB38, so the distal GB markers need to be shifted together.",
+    "suggested": [
+     -0.115,
+     0.184,
+     -0.015
+    ],
+    "basis": "Same proportional frame as GB36. Popliteal crease: BL40 y=0.429. Lateral malleolus prominence: about 0.072 (fibula tip minY 0.0539; malleolar body about 0.076 to 0.079). 1 cun = 0.357/16 = 0.0223 m, so 5 cun lies at 0.072 + 0.112 = 0.184. With the prominence at 0.086, 5 cun is at 0.193 and the marker is still about 0.95 cun high. The fibula at y=0.18 to 0.21 is at about x -0.110 to -0.111, z -0.042 to -0.044, so z of about -0.015 on the lateral skin stays anterior to the fibula. The skin x follows the GB38/GB39 markers (x -0.1156 at y 0.1904; x -0.110 at y 0.1658). In the frontal close-ups the dot sits at the lateral leg outline just above the GB38 label, lateral to the fibula strip. It is clearly above the lower third of the leg."
+   },
+   {
+    "id": "GB40",
+    "whoLocation": "WHO 2008 (p.191): On the anterolateral aspect of the ankle, in the depression lateral to the tendon of the extensor digitorum longus, anterior and distal to the lateral malleolus.",
+    "textMatches": true,
+    "textNote": "KMCRIC matches WHO: anterolateral ankle, lateral to the extensor digitorum longus tendon, in the depression anterior and distal to the lateral malleolus.",
+    "verdict": "minor",
+    "error": "The marker is on the anterolateral slope of the lateral malleolus itself, about 1 cm above its tip, not in the depression anterior and distal to it. It is about 1.3 cm too posterior, about 0.9 cm too lateral and about 0.8 cm too high, roughly 1.8 cm in total (about 0.8 cun). The authored seed was at z=+0.019 (anterior), but snapping to the skin moved it back to z=-0.0397 (surfacePoint z=-0.0427, outward offset +z). So at x=-0.114 the ray first met the anterior face of the malleolar bulge. Moving x medially to about -0.105 lets the point fall into the sinus tarsi depression. It stays lateral to the EDL tendon either way.",
+    "suggested": [
+     -0.105,
+     0.056,
+     -0.026
+    ],
+    "basis": "Lateral malleolus: fibula tip minY is at (-0.1057, 0.0539, -0.0491), and the malleolar body is centred at about z -0.047 (fibula maxX at z -0.0502, minZ_posterior at -0.0565). With an anteroposterior width of about 2.2 cm, its anterior border is at about z -0.035. The marker at z -0.0397, y 0.064 is therefore just behind that anterior border and above the tip. The depression is bounded by the anterior border of the malleolus, the talar lateral process at (-0.0971, 0.0564, -0.0435), the calcaneus lateral surface at (-0.1034, 0.0421, -0.0227) and the cuboid at (-0.1128, 0.0355, -0.0014). It lies at about y 0.05 to 0.06, z -0.03 to -0.02, which puts the skin at about x -0.105. The ST41 ankle-crease point (-0.0896, 0.0932, -0.0023) is medial and above it. In the frontal close-ups the dot sits exactly on the lateral outline of the ankle at the malleolus. A point in the depression in front of the malleolus would project slightly inside the outline, over the anterolateral ankle."
+   }
+  ]
+ },
+ {
+  "zangfu": "LR 간",
+  "points": [
+   {
+    "id": "BL18",
+    "whoLocation": "WHO 2008: In the upper back region, at the same level as the inferior border of the spinous process of the ninth thoracic vertebra (T9), 1.5 B-cun lateral to the posterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same landmark (T9 spinous process, lower border), the same 1.5 cun and the same reference line. Only the wording differs.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "The right marker [-0.038, 1.163, -0.1234] sits at T9 spinousLowerBorderY 1.1625 (FMA10014). That is the same y as GV8 (1.163) and BL47 (1.1625), and it lies between BL17 (1.216, T7 lower border 1.2158) and BL19 (1.131, T10 lower border 1.1313). It is 0.038 m lateral, exactly half of the second-line BL47 (0.0748). Using the chest scale (ST17 nipple 4 cun = 0.09 m, so 1 cun is about 0.0225 m), 1.5 cun is about 0.034 m. If the second line (0.075) is taken as the scapular medial border, 1.5 cun is about 0.038 m. Either way the marker is within about 0.2 cun. The bone close-up shows the gold pair halfway between the spinous row and the 혼문 dots, roughly at the lower scapular angle level, with T9 directly between them. The scapula is not in landmarks.json, so the 3-cun width was judged only from the images."
+   },
+   {
+    "id": "LR3",
+    "whoLocation": "WHO 2008 p.197: On the dorsum of the foot, between the first and second metatarsal bones, in the depression distal to the junction of the bases of the two bones, over the dorsalis pedis artery.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same location: the 1st/2nd metatarsal space, distal to the junction of the bases, over the dorsalis pedis pulse.",
+    "verdict": "wrong",
+    "error": "The marker is about 6-7 cm (roughly 3 cun) too far distal. It sits at z 0.110 with skin height y 0.028-0.031, which is beyond the 1st metatarsal head (FMA24507 maxZ_anterior z 0.083, y 0.024), on the dorsum of the great toe's proximal phalanx and 1st MTP region. It should be at the proximal end of the 1st intermetatarsal space. At x -0.075 it is also over the hallux rather than the 1st/2nd interspace.",
+    "suggested": [
+     -0.082,
+     0.062,
+     0.04
+    ],
+    "basis": "Right 1st metatarsal (FMA24507): base at z 0.0215-0.033 (minZ_posterior z 0.0215, dorsal top maxY [-0.0789, 0.0579, 0.0331], lateral base facet minX [-0.084, 0.0388, 0.0284]); head at z 0.075-0.083. Right 2nd metatarsal (FMA24509): base at z 0.016-0.024 (medial base maxX [-0.0826, 0.0483, 0.0198], top maxY [-0.0879, 0.0617, 0.0236]); head at x -0.096, z 0.075. The two bases meet at about x -0.083, z 0.02-0.03, and the shafts separate just distal to that. So the depression is at about x -0.082, z 0.035-0.045, with dorsal skin at about y 0.058-0.062 plus the 3 mm marker offset. On the dorsum, y is the coordinate that follows the skin. The images agree: in the LR3, LR5 and LR6 bone close-ups the gold or green 태충 dot lies at the MTP/toe level, well distal to the tarsometatarsal region. The authored seed y 0.056 at z 0.11 was dropped onto the toe surface (y 0.028). Other foot markers show a similar distal shift (LR2 z 0.143, SP3 0.115, SP4 0.095, ST42 0.075, KI1 0.112), which suggests the foot was authored as too long. These are outside this file but worth re-checking."
+   },
+   {
+    "id": "LR5",
+    "whoLocation": "WHO 2008: On the anteromedial aspect of the leg, at the centre of the medial border (surface) of the tibia, 5 B-cun superior to the prominence of the medial malleolus (medial malleolus prominence to the lower border of the medial tibial condyle = 13 B-cun).",
+    "textMatches": true,
+    "textNote": "KMCRIC matches: centre of the tibia's medial border (surface), 5 cun above the medial malleolus prominence, on the 13-cun malleolus-to-SP9 scale. Its added note (level with KI9) agrees with KI9 also being 5 cun above the malleolus.",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Medial scale: KI3 (prominence level) y 0.0871 to SP9 (lower border of the medial condyle) y 0.392 is 0.305 m for 13 cun, so 1 cun is about 0.0235 m. Supporting landmarks: tibia minY 0.0733 is the malleolar tip, and tibia maxX y 0.404 is the medial condyle. 5 cun therefore falls at y 0.204, and the right marker is at y 0.2039. On the lateral scale (BL40 0.429 to the lateral malleolus at about 0.065, 16 cun, 1 cun about 0.0228) it is still within 2-3 mm. The model's KI9 is at 0.196, about 0.35 cun lower. In the anteromedial muscle and bone close-ups the gold dot lies on the bare white medial surface of the tibia, anterior to the great saphenous vein that marks the medial border, about at mid-surface. Marker x -0.0725 / z -0.0135 (skin -0.0755) is about 2.8 cm anterolateral to KI9 [-0.0442, 0.196, -0.036], which fits the anteromedial tibial surface."
+   },
+   {
+    "id": "LR6",
+    "whoLocation": "WHO 2008: On the anteromedial aspect of the leg, at the centre of the medial border (surface) of the tibia, 7 B-cun superior to the prominence of the medial malleolus.",
+    "textMatches": true,
+    "textNote": "KMCRIC matches: centre of the tibia's medial border (surface), 7 cun above the medial malleolus prominence on the 13-cun malleolus-to-SP9 scale.",
+    "verdict": "minor",
+    "error": "The marker is about 2 cm too low (about 0.8-0.9 cun). At y 0.2298 it sits at about 6.1 cun above the malleolus instead of 7. It is only 1.1 cun above the model's own LR5 instead of 2 cun, and it is even below the model's SP7 (6 cun, y 0.238). It is also about 1 cm (about 0.4 cun) posteromedial to mid-surface, on the medial tibial border along the great saphenous vein. Combined, this is close to the 1-cun 'wrong' threshold.",
+    "suggested": [
+     -0.071,
+     0.251,
+     -0.012
+    ],
+    "basis": "Same medial scale as LR5: KI3 0.0871 to SP9 0.392 = 13 cun, 1 cun about 0.0235 m. 7 cun is 0.0871 + 0.164 = y 0.251. The lateral scale (16 cun from BL40 0.429 to the lateral malleolus at about 0.065) gives 0.246. LR5 sits exactly at 5.0 cun on this scale (0.2039), but LR6 is only 0.026 m above it, where 2 cun is 0.047 m. In the right-leg muscle close-up (anteromedial view) the gold LR6 dot sits on the viewer-right edge of the white tibial strip, over the saphenous vein at the medial border, while the green LR5 dot lies inside the strip about 1 cm anterior. Marker x -0.0597 (skin -0.0627) is 1.3 cm more medial than LR5 at almost the same z. The suggested x/z keep the point on the mid-medial-surface line used by LR5. Re-project it onto the skin at y 0.251, as the calf contour there is not in landmarks.json."
+   },
+   {
+    "id": "LR14",
+    "whoLocation": "WHO 2008 p.202: In the anterior thoracic region, in the sixth intercostal space, 4 B-cun lateral to the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same intercostal space (6th) and distance (4 cun).",
+    "verdict": "ok",
+    "error": "",
+    "suggested": null,
+    "basis": "Right marker [-0.0898, 1.169, 0.1167]: x matches the nipple line (ST17 x -0.09; 8 cun between the nipples, so midline to nipple = 4 cun). Rib arcs at x -0.09: 4th rib 1.2541, 5th rib 1.2114, 6th rib 1.1817. That last point is the 6th rib's anterior bony end, and its lowest point is minY [-0.0919, 1.1679, 0.0918]. The 7th rib's bony end is at x -0.11, y 1.1487 (minY 1.1347). Its costal cartilage rises medially toward the xiphisternal junction (sternal body minY 1.2006), so it crosses x -0.09 at about y 1.155-1.16. The 6th ICS at the nipple line is therefore at about y 1.160-1.168. The marker is at its upper edge, just under the 6th rib's lower border, within about 0.5 cm (0.2 cun). Neighbours fit: ST17 at 1.235 is in the 4th ICS (1.2114-1.2541) and GB24 at 1.142 is one space lower. The bone close-up shows the gold dots at the lower edge of the 6th rib's anterior end, just above the 7th costal cartilage and the costal margin, about 3 cm below the xiphoid level."
+   }
+  ]
+ },
+ {
+  "zangfu": "PC 심포 (Pericardium): BL14 back-shu, PC4 xi-cleft, PC6 luo, PC7 yuan/shu-stream, CV17 front-mu",
+  "points": [
+   {
+    "id": "BL14",
+    "whoLocation": "WHO 2008 (the file gives no page): in the upper back region, level with the inferior border of the spinous process of T4, 1.5 B-cun lateral to the posterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same landmark (lower border of the T4 spinous process), level and distance (1.5寸 from the posterior midline). No real difference.",
+    "verdict": "ok",
+    "error": "None. The level matches to within 0.2 mm and the lateral distance is 1.5 cun.",
+    "suggested": null,
+    "basis": "Level: T4 (FMA9248) spinousLowerBorderY is 1.3112 and the marker is at y 1.311. The neighbours are on the correct vertebrae: BL13 at 1.3351 against the T3 lower border at 1.3349, and BL15 at 1.279 against the T5 lower border at 1.2789. Lateral: the second-line marker BL43 is at |x| 0.0751, the 3-cun line. In the bone close-up the medial border of the scapula lies at the BL43 dots, about 110 px from the spine at about 1474 px/m (BL14 dots at img x 387/499 for |x| 0.038), so about 0.075 m. That gives 1 cun of about 0.025 m and 1.5 cun of about 0.0375 m, against the marker's |x| of 0.038. Skin, muscle and bone images all show the gold dots halfway between the spinous line and the 고황 (BL43) dots, at the same height as BL43 (1.3112). z -0.1255 is on the skin behind the T4 spinous tip (z -0.0964). The left marker mirrors the right."
+   },
+   {
+    "id": "PC4",
+    "whoLocation": "WHO 2008 (the file gives no page): on the anterior aspect of the forearm, between the tendons of palmaris longus and flexor carpi radialis, 5 B-cun proximal to the palmar wrist crease. WHO note: 1 B-cun distal to the midpoint of the line from PC3 to PC7.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same tendon interval and the same 5寸 above the palmar wrist crease. It leaves out WHO's note about the PC3–PC7 midpoint, which is not a difference in location.",
+    "verdict": "wrong",
+    "error": "The level is right (5.1 cun above the crease). The marker is about 1.0–1.3 cm (about 0.5–0.6 cun) too far toward the radial side. It sits over the model's radial artery, only about 3 mm medial of the LU5–LU9 line, so it is on the radial side of FCR instead of between FCR and PL.",
+    "suggested": [
+     -0.245,
+     0.935,
+     0.031
+    ],
+    "basis": "Forearm scale: cubital crease at PC3 y 1.0771 (the humerus lateral epicondyle, minX, is at y 1.078; HT3 and LU5 are at 1.075). Wrist crease at PC7 y 0.831. So 12 cun = 0.2461 m and 1 cun = 0.0205 m. The 5-cun level is y 0.9335; the marker at 0.936 is 0.12 cun proximal, which is fine. Transverse: the straight PC3 (x -0.225) to PC7 (x -0.26) line gives x -0.2451 at y 0.936. PC6 (-0.253) sits on that line; PC4 (-0.2551) is 1.0 cm radial of it. The LU5 (-0.233, 1.075) to LU9 (-0.2772, 0.8276) line is at x -0.2578 at this height, only 2.7 mm away. The HT3–HT4 line is at -0.2321, 23 mm away. Skin close-up: at the dot's row the forearm silhouette runs from img x 476 to 578 (about 1503 px/m, frontal view checked against PC3–PC8 projections). The dot at 499 is 22% from the radial edge. The other PC points sit at about 41% (PC3), 40% (PC6) and 45% (PC7). Bone close-up at the same rows: radial artery at img x 501–503, radius at 506–516, interosseous space centred at about 524, ulna at 533–541. The dot is over the artery, radial to the radius. The dorsal counterpart is also inconsistent: PC6 and TE5 differ by 2 mm in x, but PC4 and TE8 (x -0.244, y 0.932) differ by 11 mm. The corrected x of about -0.245 is on the PC3–PC7 line, at about 41% of the silhouette and over the ulnar edge of the radius. That matches how PC6 sits. The y stays where it is, and z should be snapped to the skin (about 0.03). The left side mirrors to [0.245, 0.935, 0.031]. Outside this file, PC5 (x -0.255) is also about 0.5 cm radial of the line."
+   },
+   {
+    "id": "PC6",
+    "whoLocation": "WHO 2008 p.154: on the anterior aspect of the forearm, between the tendons of palmaris longus and flexor carpi radialis, 2 B-cun proximal to the palmar wrist crease. WHO notes: if palmaris longus is absent, PC6 is medial to the FCR tendon; TE5 is the corresponding point on the dorsal side.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same tendon interval and 2寸 above the palmar wrist crease, and includes WHO's TE5 note. It leaves out the note for an absent palmaris longus, which is not a difference in location. The short label says the same thing.",
+    "verdict": "ok",
+    "error": "Small. The marker is about 0.4 cun (0.8 cm) proximal of the exact 2-cun level, and at the radial margin of the expected interval. Both are within tolerance. An optional nudge to about y 0.872 and x -0.250 would centre it.",
+    "suggested": null,
+    "basis": "Level: 2 cun above PC7 (y 0.831) at 0.0205 m/cun is y 0.872. The marker at 0.8799 is 0.0079 m, or 0.39 cun, proximal. If the crease is taken at HT7's y of 0.835, the offset is 0.22 cun. Transverse: x -0.253 lies exactly on the PC3–PC7 line (-0.2535 at this height). It is 40% from the radial edge of the skin silhouette (img x 465–552 at the dot's row), in line with PC7 at 45%. It is opposite TE5 (-0.2511, 0.8793) to within 2 mm. Bone close-up: the dot lies over the ulnar edge of the radius, next to the narrow interosseous gap (about img x 507–513). It is about 5–6 mm ulnar of the model's radial artery (x about -0.258) and about 1 cm radial of a nerve trace that is probably the median nerve (x about -0.2425). It therefore sits on the radial side of the PL/FCR interval, but not clearly beyond FCR at the precision a surface marker can show. Skin and muscle close-ups show the dot on the anterior surface with the PC5/PC7 dots forming a smooth line."
+   },
+   {
+    "id": "PC7",
+    "whoLocation": "WHO 2008 p.155: on the anterior aspect of the wrist, between the tendons of palmaris longus and flexor carpi radialis, on the palmar wrist crease.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same two tendons and the same palmar wrist crease. No difference. The app's landmark tag '노뼈' (radius) is not part of the WHO definition; this is editorial only.",
+    "verdict": "ok",
+    "error": "None significant.",
+    "suggested": null,
+    "basis": "Level: y 0.831 is at the radiocarpal level of this skeleton. The radial styloid tip (radius minY) is at 0.8296 and the ulnar styloid (ulna minY) at 0.8288. The top of the pisiform is at 0.8253 and the top of the scaphoid at 0.8357. LU9 (0.8276) and HT7 (0.835) are on the same crease. Transverse: x -0.26 lies between LU9 (-0.2772) and HT7 (-0.247), 1.7 cm from LU9 and 1.3 cm from HT7. It is 45% from the radial edge of the wrist silhouette (img x 461–547 at the dot's row in the PC7 skin close-up), slightly radial of centre, which is where the PL/FCR interval should be. In the bone close-ups the radial artery turns laterally toward LU9 at the crease (about img x 460–467, close to LU9's projection), about 2 cm radial of the dot. The superficial palmar branch runs about 5 mm radial of the dot, and the probable median-nerve trace about 1 cm ulnar. The dot projects over the medial part of the distal radius: the radius spans -0.2801 to about -0.25, with the ulnar head at about -0.237 to -0.248. This is consistent with lying between FCR and PL."
+   },
+   {
+    "id": "CV17",
+    "whoLocation": "WHO 2008 p.228: in the anterior thoracic region, level with the fourth intercostal space, on the anterior median line.",
+    "textMatches": true,
+    "textNote": "KMCRIC gives the same anterior midline and 4th intercostal space level. No difference.",
+    "verdict": "ok",
+    "error": "About 0.3 cun high. The marker (y 1.2399) sits at the upper margin of the 4th intercostal space, just below the sternal attachment of the 4th costal cartilage. The centre of the space at the sternal border is about y 1.232, so an optional nudge of about 0.8 cm downward would centre it. It is not on the wrong space.",
+    "suggested": null,
+    "basis": "Bone close-up, read at the unobstructed left sternal border (image right; scale about 1490 px/m from the CV16/CV17/CV18 dots). The 4th costal cartilage meets the sternum at rows 461–473 (y about 1.249–1.242). The 4th intercostal space shows posterior rib through the gap at rows 474–498 (y about 1.241–1.224). The 5th cartilage starts at row 499. The right side mirrors this where the label does not cover it (the space shows at rows 489–498, and the 5th cartilage at about 500–512). Cartilages were identified by following each band laterally to its rib end. The 3rd band reaches rib 3's anterior end (FMA7909 maxZ [-0.0508, 1.2764]). The 4th reaches rib 4's end (FMA7957 maxZ [-0.068, 1.244], minY 1.2375). The 5th reaches rib 5's end (FMA8066 [-0.0808, 1.2104]). The 2nd reaches rib 2's end (FMA7882 [-0.045, 1.3051]). Cross-checks: ST17 at the nipple (4th ICS) is at y 1.235, KI23 at 1.237, PC1 at 1.234, and CV18 (3rd ICS) at 1.265. The vertical cun is 8 cun from the xiphisternal junction (about 1.2025, between the sternal body minY of 1.2006 and the xiphoid maxY of 1.2046) to CV8 at 1.005, or 2.47 cm/cun. A 0.7–0.8 cm offset is therefore about 0.3 cun, within tolerance. x -0.0003 is on the midline, and z 0.1146 is on the skin over the sternal body."
+   }
+  ]
+ }
+]
