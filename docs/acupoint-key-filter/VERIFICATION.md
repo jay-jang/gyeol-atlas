@@ -2,7 +2,7 @@
 
 요청: “이상태에서 위중혈을 해제 하는 방법이 없어. 방법을 알려줘. 그리고 각 경맥 내에서의 원혈, 모혈, 수혈 (유혈), 락혈, 극혈만 따로 필터할 수 있는 옵션 추가해줘. 그리고 관련 육장 육부 혈자라의 특정혈의 위치를 codex로 교차 검증까지 해줘.”
 
-작업 worktree: `/Users/nuinuri/workspace/anatomy-worktrees/acupoint-key-filter`, 브랜치 `feat/acupoint-key-filter`(main `c90e680` 기준).
+작업 worktree: `/Users/nuinuri/workspace/anatomy-worktrees/acupoint-key-filter`, 브랜치 `feat/acupoint-key-filter`(main `c90e680` 기준, 커밋 `5fb9a1c`).
 
 ## 1. 위중(BL40) 해제 방법
 
@@ -112,6 +112,15 @@
 직접 본 화면: [데스크톱 선택기](desktop-picker.png)·[휴대폰 선택기](mobile-picker.png)(63개, 경맥별 개수, 체크 설명), [폐경 후면](desktop-lung.png)(BL13 두 점과 손목 LU7·LU9 등 5혈), [가로 폐경](landscape-lung.png), [데스크톱 상세 해제](desktop-detail-clear.png)(칩 ‘X 해제’와 상세 ‘선택 해제’)·[휴대폰 상세 해제](mobile-detail-clear.png). 데스크톱 선택기 화면의 긴 설명은 체크에 마우스를 올렸을 때의 도움말입니다. 칩이 넓어져 데스크톱 칩의 분류 글자(‘오수혈 합’)는 더 일찍 말줄임됩니다(상세에 전부 표시).
 
 테스트 실행이 다시 만든 다른 기능의 기록 화면·JSON 179개는 되돌렸습니다.
+
+## 공개 배포 확인(2026-11-05)
+
+커밋 `5fb9a1c`을 main에 푸시한 뒤 GitHub Pages 배포(1분 20초)가 성공했고, https://jay-jang.github.io/gyeol-atlas/ 에서 다음을 확인했습니다.
+
+- 공개 스모크 통과: 경혈409, 정적 검색, 위키·동작 페이지 모델 요청0, 여성1,220+보완1,789, 뇌283, 남성 심장83, 오류0. [로그](checks/public-smoke.log)
+- 겹침 감사 8화면 102상태 실패0. [측정](public-scene-overlays.json) · [로그](checks/public-overlays.log)
+- 기능 확인(1440×900·390×844, [결과](public-check.json)): 처음 409개, ‘원·모·유·극·락혈만’ 체크로 63개를 그리고 선택기 전체63·폐경5·비경6, 폐경을 누르면 BL13·LU1·LU6·LU7·LU9, 체크 해제 시 폐경 11개. BL40 선택 → 상세 ‘선택 해제’로 `#atlas`·칩 없음, `#atlas/BL40`에서 칩 버튼(데스크톱 글자 ‘해제’, 휴대폰 아이콘)으로 해제. 공개된 남녀 표식 파일이 커밋과 바이트 단위로 같고 CV8은 y 0.989. 페이지 오류·4xx·가로 넘침0. [데스크톱 선택기](public-desktop-picker.png) · [휴대폰 상세 해제](public-mobile-detail-clear.png)
+- 렌더러: 공개 스모크·겹침 감사는 SwiftShader, 기능 확인은 Chromium ANGLE Metal.
 
 ## 한계
 
